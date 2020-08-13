@@ -1,0 +1,26 @@
+var classez_scene_context =
+[
+    [ "ezSceneContext", "d2/ded/classez_scene_context.htm#a133efc57a0b5ce157cf430e3f609b9bd", null ],
+    [ "~ezSceneContext", "d2/ded/classez_scene_context.htm#a189bd8df8dc7ab899b46ec778e5af4c6", null ],
+    [ "CreateViewContext", "d2/ded/classez_scene_context.htm#a32d52afa9d6d7832ccff0f9c2a3cf5eb", null ],
+    [ "DestroyViewContext", "d2/ded/classez_scene_context.htm#a2d749e34d03eb171c7437cc9b72a41cc", null ],
+    [ "ExportDocument", "d2/ded/classez_scene_context.htm#a4413f2cdd196a779cb7fe1290a76d60f", null ],
+    [ "ExportExposedParameters", "d2/ded/classez_scene_context.htm#af233a1a954db270c0f820c185d5f4e75", null ],
+    [ "GetGameState", "d2/ded/classez_scene_context.htm#a6fae4bbbc28e3e561d86a9124ad03b89", null ],
+    [ "GetGridDensity", "d2/ded/classez_scene_context.htm#a5f0b1aa487c81deb1d817dd6e230ca38", null ],
+    [ "GetGridTransform", "d2/ded/classez_scene_context.htm#acc588c574953f52aacb4ae0e45d1469e", null ],
+    [ "GetRenderSelectionBoxes", "d2/ded/classez_scene_context.htm#ae682e32b83d8272a838e04b2a3edd440", null ],
+    [ "GetRenderSelectionOverlay", "d2/ded/classez_scene_context.htm#a73e0e6370a9986f7a1d774ca5f584f87", null ],
+    [ "GetRenderShapeIcons", "d2/ded/classez_scene_context.htm#a42aece5c1449011b58a5c570b2ac7bcb", null ],
+    [ "GetSelection", "d2/ded/classez_scene_context.htm#a042de99f73c7b019c6e250f6961c1a6c", null ],
+    [ "GetSelectionWithChildren", "d2/ded/classez_scene_context.htm#ac39eac94708bd32a4cbc8698a2e8946f", null ],
+    [ "HandleMessage", "d2/ded/classez_scene_context.htm#a31c8f931b762e0cd68aceaba656751a4", null ],
+    [ "IsGridInGlobalSpace", "d2/ded/classez_scene_context.htm#aa4e03dd9d0977bb61d8c9a5b728d7f43", null ],
+    [ "IsPlayTheGameActive", "d2/ded/classez_scene_context.htm#a5d19369d972f2c0204d8298e25528680", null ],
+    [ "OnDeinitialize", "d2/ded/classez_scene_context.htm#aee1db7bd412b16af0cda785db8722957", null ],
+    [ "OnDestroyThumbnailViewContext", "d2/ded/classez_scene_context.htm#a036c52709310b85e87be88c076e1f033", null ],
+    [ "OnInitialize", "d2/ded/classez_scene_context.htm#ae0437fe1321dcef006dc27635b69c3e2", null ],
+    [ "OnThumbnailViewContextCreated", "d2/ded/classez_scene_context.htm#a6d54d9b7c579b8e2148d3cee255c69e4", null ],
+    [ "UpdateDocumentContext", "d2/ded/classez_scene_context.htm#aa15730a159209c462e1d82bf06903dd0", null ],
+    [ "UpdateThumbnailViewContext", "d2/ded/classez_scene_context.htm#afd189c8d70260157667806b8d2c30345", null ]
+];

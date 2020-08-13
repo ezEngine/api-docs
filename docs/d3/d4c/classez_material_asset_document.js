@@ -1,0 +1,28 @@
+var classez_material_asset_document =
+[
+    [ "ezMaterialAssetDocument", "d3/d4c/classez_material_asset_document.htm#acc1c3b3b252e3132297e0dc7219f6e5a", null ],
+    [ "~ezMaterialAssetDocument", "d3/d4c/classez_material_asset_document.htm#adde0339932b64ba00ff1f96ed69a7bab", null ],
+    [ "AttachMetaDataBeforeSaving", "d3/d4c/classez_material_asset_document.htm#adcc0cb9f4ea94a8a947e3d38d692d5b3", null ],
+    [ "CopySelectedObjects", "d3/d4c/classez_material_asset_document.htm#ab23359bfae098c9fe1ea949f40cbd11e", null ],
+    [ "EditorEventHandler", "d3/d4c/classez_material_asset_document.htm#a5b754adbfa1aed26129f49c777d70093", null ],
+    [ "GetSeedFromBaseMaterial", "d3/d4c/classez_material_asset_document.htm#ad21ff9e219423a5317a13a7f40ad5933", null ],
+    [ "GetShaderPropertyObject", "d3/d4c/classez_material_asset_document.htm#a1c6fee842df2f157aca3156d0319e07e", null ],
+    [ "GetShaderPropertyObject", "d3/d4c/classez_material_asset_document.htm#a9dfdfddb2ecdd50e9d4f208e215ab078", null ],
+    [ "GetSupportedMimeTypesForPasting", "d3/d4c/classez_material_asset_document.htm#a7822886180d3cb69a76e9b101c459ce0", null ],
+    [ "InitializeAfterLoading", "d3/d4c/classez_material_asset_document.htm#a5ed55ed978b3f8b7c29930429e12e085", null ],
+    [ "InternalCreateThumbnail", "d3/d4c/classez_material_asset_document.htm#a7d80d5f69b445bca3f570669e31df465", null ],
+    [ "InternalGetMetaDataHash", "d3/d4c/classez_material_asset_document.htm#a677f4f1cc8fe0f5193f4831efb0e8c24", null ],
+    [ "InternalTransformAsset", "d3/d4c/classez_material_asset_document.htm#a5f5423f405960178854949539eb6ad8a", null ],
+    [ "InternalTransformAsset", "d3/d4c/classez_material_asset_document.htm#aae745d561bd59ed67bdc2d113fb895b8", null ],
+    [ "InvalidateCachedShader", "d3/d4c/classez_material_asset_document.htm#ae44feea9dd9e92acdbaffdc1a5244f7d", null ],
+    [ "Paste", "d3/d4c/classez_material_asset_document.htm#a4fd554a3d21c5c560e90ad225e419d05", null ],
+    [ "RecreateVisualShaderFile", "d3/d4c/classez_material_asset_document.htm#aca6e80b5861ad471763c1ecf5105f487", null ],
+    [ "RemoveDisconnectedNodes", "d3/d4c/classez_material_asset_document.htm#a820ddee8c3716abcbf4aff19d8a047c6", null ],
+    [ "RestoreMetaDataAfterLoading", "d3/d4c/classez_material_asset_document.htm#a09e90a302dd544fa5461dac6038ed6de", null ],
+    [ "SetBaseMaterial", "d3/d4c/classez_material_asset_document.htm#a3d47a2aae09cd34a2db67ce16b4e3737", null ],
+    [ "TagVisualShaderFileInvalid", "d3/d4c/classez_material_asset_document.htm#a1e817acb31596a5e7d330aea6fbd43bd", null ],
+    [ "UpdateAssetDocumentInfo", "d3/d4c/classez_material_asset_document.htm#a90de3c93c913fe50f66a0ab248282ef2", null ],
+    [ "UpdatePrefabObject", "d3/d4c/classez_material_asset_document.htm#a092f295d6fcb50d3cb68c15661b2903b", null ],
+    [ "WriteMaterialAsset", "d3/d4c/classez_material_asset_document.htm#a130fc18722841c7290e07db22bd46bf7", null ],
+    [ "m_VisualShaderEvents", "d3/d4c/classez_material_asset_document.htm#a8584c169976ea71b6edce0ea7109e80a", null ]
+];

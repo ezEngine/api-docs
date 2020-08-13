@@ -1,0 +1,26 @@
+var classez_spot_light_component =
+[
+    [ "ezSpotLightComponent", "d9/dfc/classez_spot_light_component.htm#a47dc7de346d093c1043e32f6e82745f9", null ],
+    [ "~ezSpotLightComponent", "d9/dfc/classez_spot_light_component.htm#a96a5f2f07f71d1c6d68c303ed23cf714", null ],
+    [ "CalculateBoundingSphere", "d9/dfc/classez_spot_light_component.htm#a7e196daab75685157e6e3e1483587262", null ],
+    [ "DeserializeComponent", "d9/dfc/classez_spot_light_component.htm#a40d879f73405bba26a7916e8aa40ad16", null ],
+    [ "GetEffectiveRange", "d9/dfc/classez_spot_light_component.htm#ab30e0291276288949f9a7c829237fbc0", null ],
+    [ "GetInnerSpotAngle", "d9/dfc/classez_spot_light_component.htm#a80d88f15d20137cf5b353c14c9e9d1f7", null ],
+    [ "GetLocalBounds", "d9/dfc/classez_spot_light_component.htm#a8799111ac0345887d1c607913b74fb5b", null ],
+    [ "GetOuterSpotAngle", "d9/dfc/classez_spot_light_component.htm#a846d74baf9a23a2910cb21830d565261", null ],
+    [ "GetProjectedTexture", "d9/dfc/classez_spot_light_component.htm#acaee65526a340ab86c1ac27c7136d2c6", null ],
+    [ "GetProjectedTextureFile", "d9/dfc/classez_spot_light_component.htm#ae44a18b71350ef8dcb77aaa04c6e0f1a", null ],
+    [ "GetRange", "d9/dfc/classez_spot_light_component.htm#a42c1c3df7387fae1d403e48552c14f6e", null ],
+    [ "OnMsgExtractRenderData", "d9/dfc/classez_spot_light_component.htm#a4211908160000b7cf3326622cd262bd6", null ],
+    [ "SerializeComponent", "d9/dfc/classez_spot_light_component.htm#a39e20f2c3a29fa7290fd4b6bd4113057", null ],
+    [ "SetInnerSpotAngle", "d9/dfc/classez_spot_light_component.htm#a3df5733d9d045c1c3c18d7ddd6bd56d3", null ],
+    [ "SetOuterSpotAngle", "d9/dfc/classez_spot_light_component.htm#af6b531558b89055bbeabd14de67f9441", null ],
+    [ "SetProjectedTexture", "d9/dfc/classez_spot_light_component.htm#a469b198692434f359284b21c5e733d3e", null ],
+    [ "SetProjectedTextureFile", "d9/dfc/classez_spot_light_component.htm#ad46f1cab56ccc27d688fdb1dc4421798", null ],
+    [ "SetRange", "d9/dfc/classez_spot_light_component.htm#a58b196907113e80c0b71da40ab354f9c", null ],
+    [ "m_fEffectiveRange", "d9/dfc/classez_spot_light_component.htm#a756138c3ea0b2feb4361dbf0318d94b6", null ],
+    [ "m_fRange", "d9/dfc/classez_spot_light_component.htm#accfd4d55fb10550370e44aa7706ac496", null ],
+    [ "m_hProjectedTexture", "d9/dfc/classez_spot_light_component.htm#a1e607399e50b139df2fe42497f4334c2", null ],
+    [ "m_InnerSpotAngle", "d9/dfc/classez_spot_light_component.htm#ab576154992acbf15031cff8dbf33eeb5", null ],
+    [ "m_OuterSpotAngle", "d9/dfc/classez_spot_light_component.htm#a31197df94fb40856124944727a846370", null ]
+];

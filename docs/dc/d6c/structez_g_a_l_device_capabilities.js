@@ -1,0 +1,28 @@
+var structez_g_a_l_device_capabilities =
+[
+    [ "ezGALDeviceCapabilities", "dc/d6c/structez_g_a_l_device_capabilities.htm#a2592a4e5bc5b4fabf2e17f6bbc6efe6f", null ],
+    [ "m_b32BitIndices", "dc/d6c/structez_g_a_l_device_capabilities.htm#a66195ca241510ea3940562b718b22729", null ],
+    [ "m_bAlphaToCoverage", "dc/d6c/structez_g_a_l_device_capabilities.htm#a5f087a13a68b96d0747ef4999919e5e7", null ],
+    [ "m_bB5G6R5Textures", "dc/d6c/structez_g_a_l_device_capabilities.htm#a721df1c628803f460e2aef4fa5b061c2", null ],
+    [ "m_bConservativeRasterization", "dc/d6c/structez_g_a_l_device_capabilities.htm#a8ff779e6709492d39953417b7d423819", null ],
+    [ "m_bCubemapArrays", "dc/d6c/structez_g_a_l_device_capabilities.htm#ac1de9d006afd4ca803fc84221242f7e8", null ],
+    [ "m_bHardwareAccelerated", "dc/d6c/structez_g_a_l_device_capabilities.htm#a6a435292c461e63535cc9a3a934152ab", null ],
+    [ "m_bIndirectDraw", "dc/d6c/structez_g_a_l_device_capabilities.htm#ae34baa90854c895838e37c9f075924e8", null ],
+    [ "m_bInstancing", "dc/d6c/structez_g_a_l_device_capabilities.htm#aec84dd53eca14fcf73c19169799cfaf2", null ],
+    [ "m_bMultithreadedResourceCreation", "dc/d6c/structez_g_a_l_device_capabilities.htm#a2cb6b8cc77ecc3ee4832837b1229294b", null ],
+    [ "m_bNoOverwriteBufferUpdate", "dc/d6c/structez_g_a_l_device_capabilities.htm#adbd3da356c9b4ceaaffbb9eca9b8474f", null ],
+    [ "m_bShaderStageSupported", "dc/d6c/structez_g_a_l_device_capabilities.htm#a28436d2b1f40d1d81284a5d42c5253a7", null ],
+    [ "m_bStreamOut", "dc/d6c/structez_g_a_l_device_capabilities.htm#ace882438e42c94cc1debaa64855b646f", null ],
+    [ "m_bTextureArrays", "dc/d6c/structez_g_a_l_device_capabilities.htm#a5c0db16ed72d641c9e212f7825713a67", null ],
+    [ "m_sAdapterName", "dc/d6c/structez_g_a_l_device_capabilities.htm#a7eca0983fb5f775041fb9808090bac15", null ],
+    [ "m_uiDedicatedSystemRAM", "dc/d6c/structez_g_a_l_device_capabilities.htm#afce62f2411a1074bb00357495071c135", null ],
+    [ "m_uiDedicatedVRAM", "dc/d6c/structez_g_a_l_device_capabilities.htm#a46cc70f7c4647ee3d9c23823fe0d0aa2", null ],
+    [ "m_uiMax3DTextureDimension", "dc/d6c/structez_g_a_l_device_capabilities.htm#a4457e62e45d3ee6a33a7756d0beeb3d5", null ],
+    [ "m_uiMaxAnisotropy", "dc/d6c/structez_g_a_l_device_capabilities.htm#aefaa208c6c770dbbb10aab3445ed3bac", null ],
+    [ "m_uiMaxConstantBuffers", "dc/d6c/structez_g_a_l_device_capabilities.htm#a2e5e673a1393c7607494ce1a79bcd5ce", null ],
+    [ "m_uiMaxCubemapDimension", "dc/d6c/structez_g_a_l_device_capabilities.htm#ab5e888ec11593a5d26e92ba161740fec", null ],
+    [ "m_uiMaxRendertargets", "dc/d6c/structez_g_a_l_device_capabilities.htm#ac90de1d7d9b7d7a33048fb8a5679593c", null ],
+    [ "m_uiMaxTextureDimension", "dc/d6c/structez_g_a_l_device_capabilities.htm#a1ded74701bfe7e82651a75d85858ce8f", null ],
+    [ "m_uiSharedSystemRAM", "dc/d6c/structez_g_a_l_device_capabilities.htm#a93c8273f0cc8ea8ff15d3a8c59d8934f", null ],
+    [ "m_uiUAVCount", "dc/d6c/structez_g_a_l_device_capabilities.htm#af3ed8cf2282bbc154b4b4942fdfd0265", null ]
+];

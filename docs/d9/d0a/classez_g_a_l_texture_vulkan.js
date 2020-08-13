@@ -1,0 +1,25 @@
+var classez_g_a_l_texture_vulkan =
+[
+    [ "ezGALTextureVulkan", "d9/d0a/classez_g_a_l_texture_vulkan.htm#a185a6a6a2c463c7a5d4faf8f624499b0", null ],
+    [ "~ezGALTextureVulkan", "d9/d0a/classez_g_a_l_texture_vulkan.htm#a62de985d07be2d558bce9ffae8e88f39", null ],
+    [ "CreateStagingBuffer", "d9/d0a/classez_g_a_l_texture_vulkan.htm#aa3f2026d4b0851260a4f134b4cfb5cc3", null ],
+    [ "DeInitPlatform", "d9/d0a/classez_g_a_l_texture_vulkan.htm#a38826ad6cbbad923db840036c2309c0a", null ],
+    [ "GetImage", "d9/d0a/classez_g_a_l_texture_vulkan.htm#a62e22f689d4bb1d474ac5b3b65565b6c", null ],
+    [ "GetMemory", "d9/d0a/classez_g_a_l_texture_vulkan.htm#ad41fd2d4bd730d76ea49ec04b4cbbc5e", null ],
+    [ "GetMemoryOffset", "d9/d0a/classez_g_a_l_texture_vulkan.htm#a7914c1a61e11660a0d60c5812ac3b6de", null ],
+    [ "GetMemorySize", "d9/d0a/classez_g_a_l_texture_vulkan.htm#ab201a301b76397cad8ac7ba64bb8102c", null ],
+    [ "GetStagingBuffer", "d9/d0a/classez_g_a_l_texture_vulkan.htm#a41da0a4a37af966b450a6c5c6b1ebcbe", null ],
+    [ "InitPlatform", "d9/d0a/classez_g_a_l_texture_vulkan.htm#a4f141ad2f3ffb0c30195b69edda2b277", null ],
+    [ "ReplaceExisitingNativeObject", "d9/d0a/classez_g_a_l_texture_vulkan.htm#abf2801d0f0b5e9e4e1d718e4484e94d3", null ],
+    [ "SetDebugNamePlatform", "d9/d0a/classez_g_a_l_texture_vulkan.htm#a0862c7d956420208b7708953a831a9a4", null ],
+    [ "ezGALDeviceVulkan", "d9/d0a/classez_g_a_l_texture_vulkan.htm#a6146725f622bf7090bada94dc31cfd9e", null ],
+    [ "ezMemoryUtils", "d9/d0a/classez_g_a_l_texture_vulkan.htm#aedd88a418f4111b0f670c96423cfd850", null ],
+    [ "m_device", "d9/d0a/classez_g_a_l_texture_vulkan.htm#a5e69365eb8416948847632124f69f356", null ],
+    [ "m_image", "d9/d0a/classez_g_a_l_texture_vulkan.htm#a461e1fe543aac8525158d6b48d1737ce", null ],
+    [ "m_memory", "d9/d0a/classez_g_a_l_texture_vulkan.htm#ad53a525e3529bcb010836edc8d5462f1", null ],
+    [ "m_memoryOffset", "d9/d0a/classez_g_a_l_texture_vulkan.htm#aa17adc47e33c2d5ef85fea51d8e85880", null ],
+    [ "m_memorySize", "d9/d0a/classez_g_a_l_texture_vulkan.htm#a85ede1c66defc1b6dc1f74130d9217e1", null ],
+    [ "m_pExisitingNativeObject", "d9/d0a/classez_g_a_l_texture_vulkan.htm#aba50ce337e2309c2c110785f25870fbc", null ],
+    [ "m_pStagingBuffer", "d9/d0a/classez_g_a_l_texture_vulkan.htm#a1eed683c2cf53355ded4de68914fd2c1", null ],
+    [ "m_stagingBufferHandle", "d9/d0a/classez_g_a_l_texture_vulkan.htm#acf7987841081ad485050c005981cc0f9", null ]
+];

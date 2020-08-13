@@ -1,0 +1,27 @@
+var classez_mesh_asset_properties =
+[
+    [ "ezMeshAssetProperties", "db/dd3/classez_mesh_asset_properties.htm#a80e93ef62f8655f08cb1f6921ccc1f3e", null ],
+    [ "~ezMeshAssetProperties", "db/dd3/classez_mesh_asset_properties.htm#a584bcc0c649b29147051e399540a0965", null ],
+    [ "m_Angle", "db/dd3/classez_mesh_asset_properties.htm#afe45a956b23c93a072f10b2347ee4c60", null ],
+    [ "m_bCap", "db/dd3/classez_mesh_asset_properties.htm#ae6e47c223da6091148d23b300154be1a", null ],
+    [ "m_bCap2", "db/dd3/classez_mesh_asset_properties.htm#a4791fb35950e2d7b59738a54764d1aa4", null ],
+    [ "m_bFlipForwardDir", "db/dd3/classez_mesh_asset_properties.htm#a75dc267077b54bed2586311b65bea234", null ],
+    [ "m_bImportMaterials", "db/dd3/classez_mesh_asset_properties.htm#aa4a4d132b5724c870ac9d988a9443160", null ],
+    [ "m_bRecalculateNormals", "db/dd3/classez_mesh_asset_properties.htm#a18aa4e2848a0353e390087333282da86", null ],
+    [ "m_bRecalculateTrangents", "db/dd3/classez_mesh_asset_properties.htm#a6dcd975de63b1d829e8eebe26436de81", null ],
+    [ "m_fHeight", "db/dd3/classez_mesh_asset_properties.htm#a39cd299fbb9956e40089b3c02c08657a", null ],
+    [ "m_fRadius", "db/dd3/classez_mesh_asset_properties.htm#ac34ca08bc42ae10d42ba7b47499e2a2a", null ],
+    [ "m_fRadius2", "db/dd3/classez_mesh_asset_properties.htm#a880d75474ad247c8d66cbe76b9932ab6", null ],
+    [ "m_fUniformScaling", "db/dd3/classez_mesh_asset_properties.htm#afcfe968b78ef23cea4dd516ea6bd5b35", null ],
+    [ "m_NormalPrecision", "db/dd3/classez_mesh_asset_properties.htm#afaa5a5a8b00d9bb084be97b0bb9a50d1", null ],
+    [ "m_PrimitiveType", "db/dd3/classez_mesh_asset_properties.htm#a4f4810773ee37e3cbce679891b2e19c9", null ],
+    [ "m_RightDir", "db/dd3/classez_mesh_asset_properties.htm#a7f14993ae7f4f5c83fcf26fbf89ec074", null ],
+    [ "m_Slots", "db/dd3/classez_mesh_asset_properties.htm#a11120b7f631582d7dfbe8581703dec09", null ],
+    [ "m_sMeshFile", "db/dd3/classez_mesh_asset_properties.htm#afe509ed9891d1881e467ef2f903ecdee", null ],
+    [ "m_TexCoordPrecision", "db/dd3/classez_mesh_asset_properties.htm#a206ed710d833995bf76b6165c1b01ce2", null ],
+    [ "m_uiDetail", "db/dd3/classez_mesh_asset_properties.htm#a81a02770f5520eac7020574660f30537", null ],
+    [ "m_uiDetail2", "db/dd3/classez_mesh_asset_properties.htm#a0a0e55d131d55aa494c471118116d7e5", null ],
+    [ "m_uiTriangles", "db/dd3/classez_mesh_asset_properties.htm#ad1be515eb8b16a943b79d015d512b6ef", null ],
+    [ "m_uiVertices", "db/dd3/classez_mesh_asset_properties.htm#a88d4e5c4a62da571b380944cc6d84ddd", null ],
+    [ "m_UpDir", "db/dd3/classez_mesh_asset_properties.htm#a9238bf547b5738eeb91681395bc214ef", null ]
+];

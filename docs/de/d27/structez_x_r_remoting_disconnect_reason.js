@@ -1,0 +1,35 @@
+var structez_x_r_remoting_disconnect_reason =
+[
+    [ "StorageType", "de/d27/structez_x_r_remoting_disconnect_reason.htm#ae61be316156a2b6093c93fb31bf475b9", null ],
+    [ "Enum", "de/d27/structez_x_r_remoting_disconnect_reason.htm#a251a9547f62b20c881b2d68d19159810", [
+      [ "None", "de/d27/structez_x_r_remoting_disconnect_reason.htm#a251a9547f62b20c881b2d68d19159810ac92e0c3575620b70e44e903ba50083d8", null ],
+      [ "Unknown", "de/d27/structez_x_r_remoting_disconnect_reason.htm#a251a9547f62b20c881b2d68d19159810a64fb8691a13aaf7a3c717dba52cb524e", null ],
+      [ "NoServerCertificate", "de/d27/structez_x_r_remoting_disconnect_reason.htm#a251a9547f62b20c881b2d68d19159810a59df09b015c2c18b48e4cea1021feca3", null ],
+      [ "HandshakePortBusy", "de/d27/structez_x_r_remoting_disconnect_reason.htm#a251a9547f62b20c881b2d68d19159810af0165a3b87ea88f3ca67ef0f1a3b20e4", null ],
+      [ "HandshakeUnreachable", "de/d27/structez_x_r_remoting_disconnect_reason.htm#a251a9547f62b20c881b2d68d19159810aa6375fc1d2d20cb52fcd0f894cb4cdfb", null ],
+      [ "HandshakeConnectionFailed", "de/d27/structez_x_r_remoting_disconnect_reason.htm#a251a9547f62b20c881b2d68d19159810a9a56ef82936ef52173cc7b3b18008946", null ],
+      [ "AuthenticationFailed", "de/d27/structez_x_r_remoting_disconnect_reason.htm#a251a9547f62b20c881b2d68d19159810a33df2847915b20501de4ee96bd495e11", null ],
+      [ "RemotingVersionMismatch", "de/d27/structez_x_r_remoting_disconnect_reason.htm#a251a9547f62b20c881b2d68d19159810a755a945dd7187a3fb2c4157df38077cc", null ],
+      [ "IncompatibleTransportProtocols", "de/d27/structez_x_r_remoting_disconnect_reason.htm#a251a9547f62b20c881b2d68d19159810aa39eab444f3c3bfd6261b669420d8f41", null ],
+      [ "HandshakeFailed", "de/d27/structez_x_r_remoting_disconnect_reason.htm#a251a9547f62b20c881b2d68d19159810aea4b615f001af51f81bdc5ccf597f833", null ],
+      [ "TransportPortBusy", "de/d27/structez_x_r_remoting_disconnect_reason.htm#a251a9547f62b20c881b2d68d19159810a761ee27fdb01e0f2f048050143e02b98", null ],
+      [ "TransportUnreachable", "de/d27/structez_x_r_remoting_disconnect_reason.htm#a251a9547f62b20c881b2d68d19159810a93050542ba57c699340711259fb4a2f7", null ],
+      [ "TransportConnectionFailed", "de/d27/structez_x_r_remoting_disconnect_reason.htm#a251a9547f62b20c881b2d68d19159810abe08c2499b44790e2ad1f05d3de84f2c", null ],
+      [ "ProtocolVersionMismatch", "de/d27/structez_x_r_remoting_disconnect_reason.htm#a251a9547f62b20c881b2d68d19159810a60c6ff04f3c43784ff4cf3ded0563c7c", null ],
+      [ "ProtocolError", "de/d27/structez_x_r_remoting_disconnect_reason.htm#a251a9547f62b20c881b2d68d19159810a57c2dcbdd8532ce5996bfbe83455b1fe", null ],
+      [ "VideoCodecNotAvailable", "de/d27/structez_x_r_remoting_disconnect_reason.htm#a251a9547f62b20c881b2d68d19159810aa74faf3b0e2da06120a06fe0e6d9777f", null ],
+      [ "Canceled", "de/d27/structez_x_r_remoting_disconnect_reason.htm#a251a9547f62b20c881b2d68d19159810a385b46fbfebdbadf55628a79fe77f272", null ],
+      [ "ConnectionLost", "de/d27/structez_x_r_remoting_disconnect_reason.htm#a251a9547f62b20c881b2d68d19159810ad59c3b0f9eb1143796eb682bede289e7", null ],
+      [ "DeviceLost", "de/d27/structez_x_r_remoting_disconnect_reason.htm#a251a9547f62b20c881b2d68d19159810abb02cf608e8681bffc274acbf25ca600", null ],
+      [ "DisconnectRequest", "de/d27/structez_x_r_remoting_disconnect_reason.htm#a251a9547f62b20c881b2d68d19159810a8ff11de17259201cbf2d70ef5851896e", null ],
+      [ "HandshakeNetworkUnreachable", "de/d27/structez_x_r_remoting_disconnect_reason.htm#a251a9547f62b20c881b2d68d19159810a8ff2b19f2d10c600b047e3b7116473a0", null ],
+      [ "HandshakeConnectionRefused", "de/d27/structez_x_r_remoting_disconnect_reason.htm#a251a9547f62b20c881b2d68d19159810a48197a0916fef3d7139c82ed6f656272", null ],
+      [ "VideoFormatNotAvailable", "de/d27/structez_x_r_remoting_disconnect_reason.htm#a251a9547f62b20c881b2d68d19159810a07106d8ca05d4b2ba0c43ea28517aa18", null ],
+      [ "PeerDisconnectRequest", "de/d27/structez_x_r_remoting_disconnect_reason.htm#a251a9547f62b20c881b2d68d19159810abc8acb4f975f84bf412561248375f6fb", null ],
+      [ "PeerDisconnectTimeout", "de/d27/structez_x_r_remoting_disconnect_reason.htm#a251a9547f62b20c881b2d68d19159810afed9ce0239b1e2f51436fb3e0673ae2d", null ],
+      [ "SessionOpenTimeout", "de/d27/structez_x_r_remoting_disconnect_reason.htm#a251a9547f62b20c881b2d68d19159810aef3e01f324e4ee048c491b87b21d8fd6", null ],
+      [ "RemotingHandshakeTimeout", "de/d27/structez_x_r_remoting_disconnect_reason.htm#a251a9547f62b20c881b2d68d19159810abd5bfda539477fa75e19955e236c81f4", null ],
+      [ "InternalError", "de/d27/structez_x_r_remoting_disconnect_reason.htm#a251a9547f62b20c881b2d68d19159810a555118d7ae02fa8ae03fc4ff71bcff66", null ],
+      [ "Default", "de/d27/structez_x_r_remoting_disconnect_reason.htm#a251a9547f62b20c881b2d68d19159810a774d18ac6f2e7823f554b43a4c8b08c3", null ]
+    ] ]
+];

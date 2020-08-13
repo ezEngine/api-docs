@@ -1,0 +1,26 @@
+var classez_quat_template =
+[
+    [ "ComponentType", "de/d15/classez_quat_template.htm#a2486118d92d4d2060f58b066361a96e5", null ],
+    [ "ezQuatTemplate", "de/d15/classez_quat_template.htm#a2834e810484d0b6e230632daa3e66511", null ],
+    [ "ezQuatTemplate", "de/d15/classez_quat_template.htm#a43ac320085539183fb51a2fccdc99aae", null ],
+    [ "Dot", "de/d15/classez_quat_template.htm#af88ebc7b874c59247f8373809dbc3660", null ],
+    [ "EZ_DECLARE_POD_TYPE", "de/d15/classez_quat_template.htm#a61933cea95e6f1134b3f639a054967a5", null ],
+    [ "GetAsEulerAngles", "de/d15/classez_quat_template.htm#a5ef43d275286d8cc7aacde969310ec42", null ],
+    [ "GetAsMat3", "de/d15/classez_quat_template.htm#a6643b21b3f4055b8977927705080ecda", null ],
+    [ "GetAsMat4", "de/d15/classez_quat_template.htm#a96023dc43f9d97bfc70e7dfc174b0f6f", null ],
+    [ "GetRotationAxisAndAngle", "de/d15/classez_quat_template.htm#a9841dc2d8912ae12ed7fa1de01582366", null ],
+    [ "IsEqualRotation", "de/d15/classez_quat_template.htm#ab123a28f131b1c55564be6d1c8e5ccba", null ],
+    [ "IsNaN", "de/d15/classez_quat_template.htm#a38ff450723058f4d3ff03651a9454fd3", null ],
+    [ "IsValid", "de/d15/classez_quat_template.htm#a98a9dacef7a763f9d73f993a4fba7014", null ],
+    [ "Normalize", "de/d15/classez_quat_template.htm#a4f36bda405ca0b23e5b24f7b4650d923", null ],
+    [ "operator-", "de/d15/classez_quat_template.htm#a11362af76e4a27670f9c46e7c6cab558", null ],
+    [ "SetElements", "de/d15/classez_quat_template.htm#aa09ee1dac045f013c5edb97589002c44", null ],
+    [ "SetFromAxisAndAngle", "de/d15/classez_quat_template.htm#af0494cf29e9d89bf1e891ccdcee3a987", null ],
+    [ "SetFromEulerAngles", "de/d15/classez_quat_template.htm#aec6aed93014f09a7162808111f9872c0", null ],
+    [ "SetFromMat3", "de/d15/classez_quat_template.htm#a362594ad5e5b9854564b247044047cf5", null ],
+    [ "SetIdentity", "de/d15/classez_quat_template.htm#afa71082d9221e638fa1fbf3f1f4da3c9", null ],
+    [ "SetShortestRotation", "de/d15/classez_quat_template.htm#a10aebc74018c75e0bc56644553ebd308", null ],
+    [ "SetSlerp", "de/d15/classez_quat_template.htm#a228a95eff6e913b8f402708c288efd31", null ],
+    [ "v", "de/d15/classez_quat_template.htm#af2f9135a0ff723e1a384127c2d16efa4", null ],
+    [ "w", "de/d15/classez_quat_template.htm#ad491cb57114348356e44862314fde590", null ]
+];

@@ -1,0 +1,28 @@
+var classez_typed_resource_handle =
+[
+    [ "ResourceType", "d3/dd7/classez_typed_resource_handle.htm#a41d179774c1dfe244d66d126b3a561f7", null ],
+    [ "ezTypedResourceHandle", "d3/dd7/classez_typed_resource_handle.htm#afb2d923ed38175fed4760bae08f06ba1", null ],
+    [ "ezTypedResourceHandle", "d3/dd7/classez_typed_resource_handle.htm#a55ab68b343f4d3c1a98cab53a639e0bc", null ],
+    [ "ezTypedResourceHandle", "d3/dd7/classez_typed_resource_handle.htm#a7229e64c27343e2a43d72f00d03dbacf", null ],
+    [ "ezTypedResourceHandle", "d3/dd7/classez_typed_resource_handle.htm#a300ab8eb449ecfd0b96a1417ce7f7e63", null ],
+    [ "ezTypedResourceHandle", "d3/dd7/classez_typed_resource_handle.htm#a0bd6eaa06059f53488915514ba4ae774", null ],
+    [ "GetResourceID", "d3/dd7/classez_typed_resource_handle.htm#a9eab2cdfda5fb3e4483801d2b4f05575", null ],
+    [ "GetResourceIDHash", "d3/dd7/classez_typed_resource_handle.htm#a7e589a544fee87ec70806658d0a76e5e", null ],
+    [ "Invalidate", "d3/dd7/classez_typed_resource_handle.htm#ad94613b907cb34f90ef2f57424fe87c3", null ],
+    [ "IsValid", "d3/dd7/classez_typed_resource_handle.htm#ae477c3d836b941ece5ca0a77abd7e8cc", null ],
+    [ "operator bool", "d3/dd7/classez_typed_resource_handle.htm#a4c562e5737d157e42be71fb68f1a10fa", null ],
+    [ "operator const ezTypelessResourceHandle", "d3/dd7/classez_typed_resource_handle.htm#a3904b4649c715eff39e20ad5dcb54c42", null ],
+    [ "operator ezTypelessResourceHandle", "d3/dd7/classez_typed_resource_handle.htm#a9cb20b37c25438858dbc48d4527e9b14", null ],
+    [ "operator!=", "d3/dd7/classez_typed_resource_handle.htm#a6e0128df6f8ed8388a279cdcc722d610", null ],
+    [ "operator!=", "d3/dd7/classez_typed_resource_handle.htm#ac8e71f46c395802c701c7af8e78b3c38", null ],
+    [ "operator<", "d3/dd7/classez_typed_resource_handle.htm#ad64d6b6212ee42cbf1f720f3d8272637", null ],
+    [ "operator=", "d3/dd7/classez_typed_resource_handle.htm#a18649b702fd5b3c2515d2ef606768a5d", null ],
+    [ "operator=", "d3/dd7/classez_typed_resource_handle.htm#a0549d0c949a8c421bf003ea44a7c0e91", null ],
+    [ "operator==", "d3/dd7/classez_typed_resource_handle.htm#a162066ec12e16c6de6e57a39a2f11ee6", null ],
+    [ "operator==", "d3/dd7/classez_typed_resource_handle.htm#aff1f659d6ee0502349b7851e42601154", null ],
+    [ "ezTypedResourceHandle", "d3/dd7/classez_typed_resource_handle.htm#a5405b1647898af1a6f8b35394796809a", null ],
+    [ "ezResourceHandleReadContext", "d3/dd7/classez_typed_resource_handle.htm#a33fafc789a90ad89152deba59d171997", null ],
+    [ "ezResourceHandleStreamOperations", "d3/dd7/classez_typed_resource_handle.htm#a403407fa8bbd0ba548fd30687fd975c2", null ],
+    [ "ezResourceHandleWriteContext", "d3/dd7/classez_typed_resource_handle.htm#a00cb14e5f89042922d8dd1676bf64bed", null ],
+    [ "ezResourceManager", "d3/dd7/classez_typed_resource_handle.htm#a89485141196e369fad2c2da4905cd355", null ]
+];

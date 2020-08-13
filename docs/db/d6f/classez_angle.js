@@ -1,0 +1,28 @@
+var classez_angle =
+[
+    [ "ezAngle", "db/d6f/classez_angle.htm#a4313120f7698856e3215669339486c83", null ],
+    [ "DegToRad", "db/d6f/classez_angle.htm#aa83b377270c528dbb7b07288f723250c", null ],
+    [ "DegToRadMultiplier", "db/d6f/classez_angle.htm#ae5636ede3702fd71793ffd320f743072", null ],
+    [ "EZ_DECLARE_POD_TYPE", "db/d6f/classez_angle.htm#ab0661e29487026a99814d73c3bddb947", null ],
+    [ "GetDegree", "db/d6f/classez_angle.htm#a72444c5d0dbae7c823110344e59b4a69", null ],
+    [ "GetNormalizedRange", "db/d6f/classez_angle.htm#a204963eccf35f5c1c7b16f5cff4fcf0d", null ],
+    [ "GetRadian", "db/d6f/classez_angle.htm#ad0abad83b3f0b0ff5427034dc99111d0", null ],
+    [ "IsEqualNormalized", "db/d6f/classez_angle.htm#aca668207b56de72f89bbd6aa4585544a", null ],
+    [ "IsEqualSimple", "db/d6f/classez_angle.htm#aaf43f3a575a7f84e269c5a8d9be03c33", null ],
+    [ "NormalizeRange", "db/d6f/classez_angle.htm#ab7d2199f073fc8e747e1c5865b90b0e7", null ],
+    [ "operator!=", "db/d6f/classez_angle.htm#adf05dae5b83f660ae47b4c64f743f9d4", null ],
+    [ "operator+", "db/d6f/classez_angle.htm#aa0b6f7aabdc24b281f3b4e3f86455b4c", null ],
+    [ "operator+=", "db/d6f/classez_angle.htm#ac4d1ce486cfe10f1b1ee85d95e161f6f", null ],
+    [ "operator-", "db/d6f/classez_angle.htm#a8bf8795c04c9dee8d24202744e12e374", null ],
+    [ "operator-", "db/d6f/classez_angle.htm#ae03e793fcbc9dd625d84bb0016430349", null ],
+    [ "operator-=", "db/d6f/classez_angle.htm#aebcacf3f5cb0e201f324af11f6ca5cba", null ],
+    [ "operator<", "db/d6f/classez_angle.htm#a8a3e0d32741459909984fcf6e2edd169", null ],
+    [ "operator<=", "db/d6f/classez_angle.htm#a0a71d9e244cbc6a1ba860eaeebe5cf95", null ],
+    [ "operator==", "db/d6f/classez_angle.htm#a5d203ea1230f16c6fbf7e25822dff122", null ],
+    [ "operator>", "db/d6f/classez_angle.htm#a661b6f213d6a24c7f8f51dcc6c76fbaa", null ],
+    [ "operator>=", "db/d6f/classez_angle.htm#a50fd5b734f58f2d1a107cd45613754b4", null ],
+    [ "Pi", "db/d6f/classez_angle.htm#aed96a8db0c05572139ac49ef3bc142a3", null ],
+    [ "RadToDeg", "db/d6f/classez_angle.htm#a67295c83428f2e5850188dd37cead6ab", null ],
+    [ "RadToDegMultiplier", "db/d6f/classez_angle.htm#a7ff6a28b9e56d0f9cf6ef0015f81db90", null ],
+    [ "SetRadian", "db/d6f/classez_angle.htm#aa5715443d0ab1a9a2eb9ed6740341f93", null ]
+];
