@@ -3,7 +3,7 @@ var classez_collection_component =
     [ "ezCollectionComponent", "d9/dc5/classez_collection_component.htm#a05bd5e4a62cf59828c893225bb635dd9", null ],
     [ "~ezCollectionComponent", "d9/dc5/classez_collection_component.htm#a562f6e9a78b176f7b86330bae9db163f", null ],
     [ "DeserializeComponent", "d9/dc5/classez_collection_component.htm#a6640a5bac1c06d38d78173705787ba8c", null ],
-    [ "GetCollection", "d9/dc5/classez_collection_component.htm#a17222bfaab0c5f1f786115b906103fb5", null ],
+    [ "GetCollection", "d9/dc5/classez_collection_component.htm#ad6c14efd5390a132b61523345ac797dd", null ],
     [ "GetCollectionFile", "d9/dc5/classez_collection_component.htm#aa013bf5613be69ee9b21790609046f69", null ],
     [ "InitiatePreload", "d9/dc5/classez_collection_component.htm#a259dd66557c76a2260aa55469152b1db", null ],
     [ "OnSimulationStarted", "d9/dc5/classez_collection_component.htm#af4c265cfa69d049da30712f4c6fa2b9f", null ],

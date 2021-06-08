@@ -5,7 +5,7 @@ var classez_transform_template =
     [ "ContainsNegativeScale", "d3/db1/classez_transform_template.htm#afd4e93a858a6d3afea586780501c4f9c", null ],
     [ "ContainsUniformScale", "d3/db1/classez_transform_template.htm#a61bc322679bd592d6c3264162d64029b", null ],
     [ "EZ_DECLARE_POD_TYPE", "d3/db1/classez_transform_template.htm#a2935a3650d69b3cdfb44bb5002773e32", null ],
-    [ "GetAsMat4", "d3/db1/classez_transform_template.htm#a1b105957dcec7a96125c0524777560df", null ],
+    [ "GetAsMat4", "d3/db1/classez_transform_template.htm#a9fb801c72756ba90bb46f1ece2ae0c95", null ],
     [ "GetInverse", "d3/db1/classez_transform_template.htm#ae3486362d41fb7fecd769c7851f44435", null ],
     [ "GetMaxScale", "d3/db1/classez_transform_template.htm#acf35fe28ece862bc442af6550d95d60f", null ],
     [ "Invert", "d3/db1/classez_transform_template.htm#a650b8ade6950a885de5b2b27d65802cb", null ],

@@ -37,7 +37,7 @@ var classez_mat3_template =
     [ "SetScalingFactors", "db/daf/classez_mat3_template.htm#a5f388fbd9bb096f6a0acea9ff66b4c21", null ],
     [ "SetScalingMatrix", "db/daf/classez_mat3_template.htm#a8981123b92d415dfb7ac0b17b0c4e467", null ],
     [ "SetZero", "db/daf/classez_mat3_template.htm#ab0da5f6a998049e0e3190841888acb00", null ],
-    [ "TransformDirection", "db/daf/classez_mat3_template.htm#ad693de4e1c45bb59036f8f290d2105d1", null ],
+    [ "TransformDirection", "db/daf/classez_mat3_template.htm#ace20ee7b0ac3540cae559b8cd80e2883", null ],
     [ "Transpose", "db/daf/classez_mat3_template.htm#a809929fe288c252dc6eee01e4dc9dfaf", null ],
     [ "m_fElementsCM", "db/daf/classez_mat3_template.htm#a7e7202c21a5938cb87b6777136c19a51", null ]
 ];

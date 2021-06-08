@@ -7,7 +7,7 @@ var classez_visual_script_component =
     [ "DeserializeComponent", "de/dea/classez_visual_script_component.htm#a92e77f47a98305b8bfc4a31784b4a6e4", null ],
     [ "GetParameter", "de/dea/classez_visual_script_component.htm#a5211cf2aadea851c9cb9075fc6d68847", null ],
     [ "GetParameters", "de/dea/classez_visual_script_component.htm#a7fc6f01bb3157a7d55169c2c89bc500a", null ],
-    [ "GetScript", "de/dea/classez_visual_script_component.htm#a24e29904987a4be280752275c2336415", null ],
+    [ "GetScript", "de/dea/classez_visual_script_component.htm#a06390f7b44c7d41e1381c15a1e19790e", null ],
     [ "GetScriptFile", "de/dea/classez_visual_script_component.htm#a07277dab2d036f0b02839c90c063b58d", null ],
     [ "HandlesEventMessage", "de/dea/classez_visual_script_component.htm#ac335718b9040cdac9a43e9578b6b13d8", null ],
     [ "Initialize", "de/dea/classez_visual_script_component.htm#a4238af7e196c01a0a8bf6bdc9247bd75", null ],

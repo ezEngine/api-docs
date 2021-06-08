@@ -2,6 +2,8 @@ var classez_event_base =
 [
     [ "Unsubscriber", "df/d77/classez_event_base_1_1_unsubscriber.htm", "df/d77/classez_event_base_1_1_unsubscriber" ],
     [ "Handler", "dd/de2/classez_event_base.htm#a15db4b9552ac331db5b96c866d745f6b", null ],
+    [ "RecursionDepthSupported", "dd/de2/classez_event_base.htm#a11de2057aea99e8e01450e9fbccba383ad1c4019a445409016d524cee36e1917d", null ],
+    [ "MaxRecursionDepthDefault", "dd/de2/classez_event_base.htm#a11de2057aea99e8e01450e9fbccba383a3c37249bc19f1633b070c2bce1ff94bc", null ],
     [ "ezEventBase", "dd/de2/classez_event_base.htm#a091e9f94c1fae72cd796663b173a02c3", null ],
     [ "~ezEventBase", "dd/de2/classez_event_base.htm#a36b8dbac2d49c6b3f3c34e81d668cacd", null ],
     [ "AddEventHandler", "dd/de2/classez_event_base.htm#ab46b4d55704bf9f41af5be830ac46cf9", null ],

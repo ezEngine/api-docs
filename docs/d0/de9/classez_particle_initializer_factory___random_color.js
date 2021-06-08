@@ -1,7 +1,7 @@
 var classez_particle_initializer_factory___random_color =
 [
     [ "CopyInitializerProperties", "d0/de9/classez_particle_initializer_factory___random_color.htm#aa00663a422e1695a9e1766f1887b9648", null ],
-    [ "GetColorGradient", "d0/de9/classez_particle_initializer_factory___random_color.htm#aac7ca3b30ea5fc46737f9b74f8a57fdf", null ],
+    [ "GetColorGradient", "d0/de9/classez_particle_initializer_factory___random_color.htm#ade5263c6d6fa0fd7645e84f0fb95d9df", null ],
     [ "GetColorGradientFile", "d0/de9/classez_particle_initializer_factory___random_color.htm#a8905ef2721949665e0b371feefd715e2", null ],
     [ "GetInitializerType", "d0/de9/classez_particle_initializer_factory___random_color.htm#a8c7be0206e3687244e212f96e4bdb5ff", null ],
     [ "Load", "d0/de9/classez_particle_initializer_factory___random_color.htm#a7b4409e74a7e3b46b6cd947b33d7857a", null ],

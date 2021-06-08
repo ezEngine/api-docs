@@ -9,7 +9,7 @@ var structez_map_base_1_1_const_iterator =
     [ "ConstIterator", "dd/d35/structez_map_base_1_1_const_iterator.htm#a4f344418a4f4e4dd83d97d45e9f78af2", null ],
     [ "EZ_DECLARE_POD_TYPE", "dd/d35/structez_map_base_1_1_const_iterator.htm#a0a3467a2af49e704df2504ef4047bbec", null ],
     [ "IsValid", "dd/d35/structez_map_base_1_1_const_iterator.htm#a709b657328eb3e6a924c64bdaadb3eb0", null ],
-    [ "Key", "dd/d35/structez_map_base_1_1_const_iterator.htm#ab61ca253d144dee476e3a045218acd2a", null ],
+    [ "Key", "dd/d35/structez_map_base_1_1_const_iterator.htm#a3d8a98ad3acf3a947f49b01342c25417", null ],
     [ "Next", "dd/d35/structez_map_base_1_1_const_iterator.htm#a66d3c856b8cffbccf434341227dffd17", null ],
     [ "operator!=", "dd/d35/structez_map_base_1_1_const_iterator.htm#af19f1471106e5243cc62f5f7b6cac4a4", null ],
     [ "operator*", "dd/d35/structez_map_base_1_1_const_iterator.htm#a605b68ceb07f1322e7abcc0dc97a2248", null ],
@@ -17,7 +17,7 @@ var structez_map_base_1_1_const_iterator =
     [ "operator--", "dd/d35/structez_map_base_1_1_const_iterator.htm#aa8fc4f932a306a7e4a555bc16cf76846", null ],
     [ "operator==", "dd/d35/structez_map_base_1_1_const_iterator.htm#a666cc10103552788308d26e68ea163d1", null ],
     [ "Prev", "dd/d35/structez_map_base_1_1_const_iterator.htm#a9fe0b3b8c08e87dd08dca86a45f31261", null ],
-    [ "Value", "dd/d35/structez_map_base_1_1_const_iterator.htm#a3b308facbd9ff3b1424c40765abee1e8", null ],
+    [ "Value", "dd/d35/structez_map_base_1_1_const_iterator.htm#a6ed0e8cc048bc3f42e80c94cac206b9a", null ],
     [ "ezMapBase< KeyType, ValueType, Comparer >", "dd/d35/structez_map_base_1_1_const_iterator.htm#af4545168d5922dbff0cf6cf31c5d68ba", null ],
     [ "m_pElement", "dd/d35/structez_map_base_1_1_const_iterator.htm#a6b5395a7dbdd2827b817551b7709f22f", null ]
 ];

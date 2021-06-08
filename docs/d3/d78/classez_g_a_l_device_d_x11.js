@@ -40,7 +40,7 @@ var classez_g_a_l_device_d_x11 =
     [ "GetDXDevice3", "d3/d78/classez_g_a_l_device_d_x11.htm#af29ddd95c9a7a5bf2779091588cd8684", null ],
     [ "GetDXGIFactory", "d3/d78/classez_g_a_l_device_d_x11.htm#a0b6d7afcc6f24b57c4cfe509482f7d71", null ],
     [ "GetDXImmediateContext", "d3/d78/classez_g_a_l_device_d_x11.htm#a36f4f245835074ffd73676cce90cfb9c", null ],
-    [ "GetFormatLookupTable", "d3/d78/classez_g_a_l_device_d_x11.htm#a5d08b1a32d7fd3fc7f82e4fd23090612", null ],
+    [ "GetFormatLookupTable", "d3/d78/classez_g_a_l_device_d_x11.htm#a36bc163f1831afe3b411fb8d9d22dbcd", null ],
     [ "GetTimestampPlatform", "d3/d78/classez_g_a_l_device_d_x11.htm#ae74f7a6a4f83d803cc6104ca8e0e610b", null ],
     [ "GetTimestampResultPlatform", "d3/d78/classez_g_a_l_device_d_x11.htm#ac5c77161c68167d68e4264a00495106a", null ],
     [ "InitPlatform", "d3/d78/classez_g_a_l_device_d_x11.htm#aa58fa150a726edbde5abe5762ee6bb78", null ],

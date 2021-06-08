@@ -3,7 +3,7 @@ var classez_px_static_actor_component =
     [ "ezPxStaticActorComponent", "df/dfa/classez_px_static_actor_component.htm#a88998c551fbba904047b9bd27fab54fa", null ],
     [ "~ezPxStaticActorComponent", "df/dfa/classez_px_static_actor_component.htm#a69d843f62dbe25d212a12a26b7f75b0c", null ],
     [ "DeserializeComponent", "df/dfa/classez_px_static_actor_component.htm#a85044454c559882cdeb10937c4ea51d7", null ],
-    [ "GetMesh", "df/dfa/classez_px_static_actor_component.htm#ae07597c7c9c93e2a2779fa58d71a7188", null ],
+    [ "GetMesh", "df/dfa/classez_px_static_actor_component.htm#a2645b376c4ad175c723d70a38ce09fc0", null ],
     [ "GetMeshFile", "df/dfa/classez_px_static_actor_component.htm#a45257bbe386bb7a1d43a09b5ad735159", null ],
     [ "GetShapeId", "df/dfa/classez_px_static_actor_component.htm#a8f7dfcfa61527619f8cac1d7820d2269", null ],
     [ "OnDeactivated", "df/dfa/classez_px_static_actor_component.htm#a128fe1cd5c0ebab523f531115f1e3a12", null ],

@@ -7,7 +7,7 @@ var classez_mesh_component_base =
     [ "GetColor", "d8/d03/classez_mesh_component_base.htm#a3013052ac3bb051b1fa6c7b71f7d9e7c", null ],
     [ "GetLocalBounds", "d8/d03/classez_mesh_component_base.htm#a5a83a201eb035d2bc14a3b8c5d2fdb1f", null ],
     [ "GetMaterial", "d8/d03/classez_mesh_component_base.htm#a9e92e3f7a025b2ff7c82fed6a387307f", null ],
-    [ "GetMesh", "d8/d03/classez_mesh_component_base.htm#a40b349b6c374fa51852836b830db7af2", null ],
+    [ "GetMesh", "d8/d03/classez_mesh_component_base.htm#ac234ebc603b0bdf8ff9aa62cedc20399", null ],
     [ "GetMeshFile", "d8/d03/classez_mesh_component_base.htm#a7df2c2420806c8df43b173c3f5b43e5d", null ],
     [ "Materials_GetCount", "d8/d03/classez_mesh_component_base.htm#a49022e5f570298bda7f91671c636196f", null ],
     [ "Materials_GetValue", "d8/d03/classez_mesh_component_base.htm#acc0c818836da96e784d55cd6863110a2", null ],

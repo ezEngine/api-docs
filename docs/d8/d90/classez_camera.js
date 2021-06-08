@@ -21,7 +21,7 @@ var classez_camera =
     [ "GetPosition", "d8/d90/classez_camera.htm#a45d7f8210004c17f10100aca93b8e9ea", null ],
     [ "GetProjectionMatrix", "d8/d90/classez_camera.htm#a5a50a6d40b778ff3e3e456d2c47b7ecd", null ],
     [ "GetSettingsModificationCounter", "d8/d90/classez_camera.htm#a48fb7619b4a4039429c5cc147787444f", null ],
-    [ "GetViewMatrix", "d8/d90/classez_camera.htm#a6d7ee004063ef65d4b4ca67a98de4b8c", null ],
+    [ "GetViewMatrix", "d8/d90/classez_camera.htm#a6ca930c3adbcb39d8e930226ec062025", null ],
     [ "IsOrthographic", "d8/d90/classez_camera.htm#ae5c35ddc945d88e547158612f7e00987", null ],
     [ "IsPerspective", "d8/d90/classez_camera.htm#a5c47f316a059c4519a897e0db1a7f5d6", null ],
     [ "IsStereoscopic", "d8/d90/classez_camera.htm#ab56c12b84b474af2c5006da094aec4b8", null ],

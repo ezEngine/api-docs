@@ -6,7 +6,7 @@ var classez_prefab_reference_component =
     [ "DeserializeComponent", "d7/d40/classez_prefab_reference_component.htm#aef4dfcfbf1d93023bddd402b0ba94a91", null ],
     [ "GetParameter", "d7/d40/classez_prefab_reference_component.htm#a39295e3f7abf74c298f0896b850ac1f3", null ],
     [ "GetParameters", "d7/d40/classez_prefab_reference_component.htm#ad4cfebbcbda4c3d08ced16f1de88a8d4", null ],
-    [ "GetPrefab", "d7/d40/classez_prefab_reference_component.htm#a89722cdf9b54fee56b758708ca390228", null ],
+    [ "GetPrefab", "d7/d40/classez_prefab_reference_component.htm#a69c1ed13acb161bb5c2a7176d534fcaf", null ],
     [ "GetPrefabFile", "d7/d40/classez_prefab_reference_component.htm#a54e0389f66e7b9fe39b3f1dbd974334c", null ],
     [ "OnActivated", "d7/d40/classez_prefab_reference_component.htm#a86dd63bc23afde090f7dd5718a25f9c6", null ],
     [ "OnDeactivated", "d7/d40/classez_prefab_reference_component.htm#adace517b35dfd12af8372cd0410ffdb9", null ],

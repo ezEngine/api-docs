@@ -8,7 +8,7 @@ var classez_rect_template =
     [ "Contains", "de/dd8/classez_rect_template.htm#a96ec209b22c6c988fbe7e5418e1bc782", null ],
     [ "ExpandToInclude", "de/dd8/classez_rect_template.htm#ad20e4b60e8304277f6b72465a665659f", null ],
     [ "EZ_DECLARE_POD_TYPE", "de/dd8/classez_rect_template.htm#a9475c68d3a6d4463d2f07b7337d758f4", null ],
-    [ "GetClampedPoint", "de/dd8/classez_rect_template.htm#a1d5e5fe147441906c563decf7da42012", null ],
+    [ "GetClampedPoint", "de/dd8/classez_rect_template.htm#a9a6040a81786efad097f4e105df05d29", null ],
     [ "GetX1", "de/dd8/classez_rect_template.htm#a99c776183232f14e5d6589b2f1a980b3", null ],
     [ "GetX2", "de/dd8/classez_rect_template.htm#a37783b0bb68f7669373c6f236b40d1ad", null ],
     [ "GetY1", "de/dd8/classez_rect_template.htm#a9bed0d898d6b0a49a50358bdf28070ec", null ],

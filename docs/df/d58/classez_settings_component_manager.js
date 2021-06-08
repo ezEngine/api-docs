@@ -6,7 +6,7 @@ var classez_settings_component_manager =
     [ "CollectAllComponents", "df/d58/classez_settings_component_manager.htm#a7228a2854758e1fb6e33ed192943ccf9", null ],
     [ "CreateComponentStorage", "df/d58/classez_settings_component_manager.htm#a7889b2b00d2d90a638d2dc9108372cbc", null ],
     [ "DeleteComponentStorage", "df/d58/classez_settings_component_manager.htm#aede4f69b9b117478ec2d79a4b57fa62a", null ],
-    [ "GetSingletonComponent", "df/d58/classez_settings_component_manager.htm#a75c5f69a85f3d398ed5d3fce2b6a6ecc", null ],
-    [ "GetSingletonComponent", "df/d58/classez_settings_component_manager.htm#a9bdc1933a7026f943db41dde134ef0c7", null ],
+    [ "GetSingletonComponent", "df/d58/classez_settings_component_manager.htm#a66870afaa094f33f0993020241883da2", null ],
+    [ "GetSingletonComponent", "df/d58/classez_settings_component_manager.htm#a599feb56391d36b4ad7d5de06ebcd665", null ],
     [ "ezComponentManagerFactory", "df/d58/classez_settings_component_manager.htm#a424bcca17a966afcd6b1185e66a1c9f1", null ]
 ];

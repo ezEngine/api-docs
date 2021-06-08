@@ -13,7 +13,7 @@ var classez_quat_template =
     [ "IsNaN", "de/d15/classez_quat_template.htm#a38ff450723058f4d3ff03651a9454fd3", null ],
     [ "IsValid", "de/d15/classez_quat_template.htm#a98a9dacef7a763f9d73f993a4fba7014", null ],
     [ "Normalize", "de/d15/classez_quat_template.htm#a4f36bda405ca0b23e5b24f7b4650d923", null ],
-    [ "operator-", "de/d15/classez_quat_template.htm#a11362af76e4a27670f9c46e7c6cab558", null ],
+    [ "operator-", "de/d15/classez_quat_template.htm#a98b8e210d068262a107dea592b8b2676", null ],
     [ "SetElements", "de/d15/classez_quat_template.htm#aa09ee1dac045f013c5edb97589002c44", null ],
     [ "SetFromAxisAndAngle", "de/d15/classez_quat_template.htm#af0494cf29e9d89bf1e891ccdcee3a987", null ],
     [ "SetFromEulerAngles", "de/d15/classez_quat_template.htm#aec6aed93014f09a7162808111f9872c0", null ],

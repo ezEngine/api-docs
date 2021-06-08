@@ -11,7 +11,7 @@ var structez_hybrid_string_base =
     [ "~ezHybridStringBase", "d6/d43/structez_hybrid_string_base.htm#ae62faf872800bba225ee53e73dff7289", null ],
     [ "Clear", "d6/d43/structez_hybrid_string_base.htm#aaced07b48ca63da8bd4bacc7ebb1ad86", null ],
     [ "GetCharacterCount", "d6/d43/structez_hybrid_string_base.htm#af20ba0a27cc7fd6c9c98f8bad4d4d18f", null ],
-    [ "GetData", "d6/d43/structez_hybrid_string_base.htm#a98fb76791e36685a3d4dc2303c50f854", null ],
+    [ "GetData", "d6/d43/structez_hybrid_string_base.htm#a7e11b053ec999656b2b39354bdacf99e", null ],
     [ "GetElementCount", "d6/d43/structez_hybrid_string_base.htm#ab479457ea5ea6c0c5307003b65661042", null ],
     [ "GetFirst", "d6/d43/structez_hybrid_string_base.htm#a57069e63a857e02a96ce058b7e08b5a2", null ],
     [ "GetHeapMemoryUsage", "d6/d43/structez_hybrid_string_base.htm#a451a7e85318f69f8c6715b2d9059aa73", null ],

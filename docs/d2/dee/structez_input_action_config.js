@@ -1,5 +1,6 @@
 var structez_input_action_config =
 [
+    [ "MaxInputSlotAlternatives", "d2/dee/structez_input_action_config.htm#a9959dd0022ee68b960c9827895c887afaecdd5b1fc775e0af313c7851463ed361", null ],
     [ "OnEnterArea", "d2/dee/structez_input_action_config.htm#a4a93daa7c3290c539c19dba7102b48a7", [
       [ "ActivateImmediately", "d2/dee/structez_input_action_config.htm#a4a93daa7c3290c539c19dba7102b48a7aae72d4bbafae6f5e5fa8e183cb719245", null ],
       [ "RequireKeyUp", "d2/dee/structez_input_action_config.htm#a4a93daa7c3290c539c19dba7102b48a7afcc43c322af867883ba74ef6f1a1011b", null ]

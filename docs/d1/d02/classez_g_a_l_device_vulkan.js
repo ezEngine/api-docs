@@ -38,7 +38,7 @@ var classez_g_a_l_device_vulkan =
     [ "FillCapabilitiesPlatform", "d1/d02/classez_g_a_l_device_vulkan.htm#af13d63acb2e08943320983ca2ee92af6", null ],
     [ "FindTempBuffer", "d1/d02/classez_g_a_l_device_vulkan.htm#ac7ef99138b714ca91cc89710ecf4180a", null ],
     [ "FindTempTexture", "d1/d02/classez_g_a_l_device_vulkan.htm#addfd6f92a37c73afdf3624a513410b14", null ],
-    [ "GetFormatLookupTable", "d1/d02/classez_g_a_l_device_vulkan.htm#a2dfb7028fdae322f6f592728adb558d2", null ],
+    [ "GetFormatLookupTable", "d1/d02/classez_g_a_l_device_vulkan.htm#afbeb0949492f87661de9793972419a68", null ],
     [ "GetMemoryIndex", "d1/d02/classez_g_a_l_device_vulkan.htm#a95747662c0d33ebf2bd1d1a8065ffac1", null ],
     [ "GetPrimaryCommandBuffer", "d1/d02/classez_g_a_l_device_vulkan.htm#a79ab241d54a6bc5f9c0a7a1d107ebfa2", null ],
     [ "GetQueue", "d1/d02/classez_g_a_l_device_vulkan.htm#a652882005aa5de35a6a0fb4becf7b9a9", null ],

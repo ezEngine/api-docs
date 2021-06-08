@@ -20,6 +20,6 @@ var classez_small_array =
     [ "Reserve", "d0/d0c/classez_small_array.htm#ad5e06b407569ee00c782dff33239744d", null ],
     [ "SetCount", "d0/d0c/classez_small_array.htm#ac05c5e78b6da2c7c464f310504f19286", null ],
     [ "SetCount", "d0/d0c/classez_small_array.htm#a3b7ee63549057f1f508dc2ea5626eb1f", null ],
-    [ "SetCountUninitialized", "d0/d0c/classez_small_array.htm#aa14f69771a8254dab169d9c3ac21ca01", null ],
-    [ "SetCountUninitialized", "d0/d0c/classez_small_array.htm#a5aa266eedbf803e596ef9d8019240c08", null ]
+    [ "SetCountUninitialized", "d0/d0c/classez_small_array.htm#a5aa266eedbf803e596ef9d8019240c08", null ],
+    [ "SetCountUninitialized", "d0/d0c/classez_small_array.htm#aa14f69771a8254dab169d9c3ac21ca01", null ]
 ];

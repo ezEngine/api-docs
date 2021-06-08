@@ -18,7 +18,7 @@ var classez_property_anim_component =
     [ "CreatePropertyBindings", "dd/ddd/classez_property_anim_component.htm#a5216f7f4de0b86c1875731374ade6ccf", null ],
     [ "DeserializeComponent", "dd/ddd/classez_property_anim_component.htm#a2e9b41f58f74ab5360aa3f4fb2ee50a3", null ],
     [ "EvaluateEventTrack", "dd/ddd/classez_property_anim_component.htm#a5921b4c113dd730c6e070340f6acbec4", null ],
-    [ "GetPropertyAnim", "dd/ddd/classez_property_anim_component.htm#a5caefa59a9710c58b272871bf508d2a6", null ],
+    [ "GetPropertyAnim", "dd/ddd/classez_property_anim_component.htm#aaac0c0fae312dad1015144336bcd7cab", null ],
     [ "GetPropertyAnimFile", "dd/ddd/classez_property_anim_component.htm#a9bc64ed655daae120a3c934c69fbbf9d", null ],
     [ "OnMsgSetPlaying", "dd/ddd/classez_property_anim_component.htm#af55bde408187a6e6543784d36626c35a", null ],
     [ "OnSimulationStarted", "dd/ddd/classez_property_anim_component.htm#a1af5d9212c4031079d39ca26149e4954", null ],

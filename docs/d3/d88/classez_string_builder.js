@@ -28,7 +28,7 @@ var classez_string_builder =
     [ "Format", "d3/d88/classez_string_builder.htm#af2cccf2c238ff48182428aa9464a615e", null ],
     [ "GetAllocator", "d3/d88/classez_string_builder.htm#a79d01c58613d2704c36a582db95b1e42", null ],
     [ "GetCharacterCount", "d3/d88/classez_string_builder.htm#a0a3a36dcfd096259e15f167e2bd6ca07", null ],
-    [ "GetData", "d3/d88/classez_string_builder.htm#ae70343bc31fa6d5dff4e2bc66abbc6d5", null ],
+    [ "GetData", "d3/d88/classez_string_builder.htm#a3063473d38e978ef950a11d302983bba", null ],
     [ "GetElementCount", "d3/d88/classez_string_builder.htm#a946ff0b7b84634095a79a548777b51fd", null ],
     [ "GetFileDirectory", "d3/d88/classez_string_builder.htm#a20f0efd1e9666494ca11fb1495bcbf73", null ],
     [ "GetFileExtension", "d3/d88/classez_string_builder.htm#adf39deb8045ac38ec59f18b14fd77d7c", null ],

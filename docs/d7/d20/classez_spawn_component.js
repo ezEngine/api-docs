@@ -8,7 +8,7 @@ var classez_spawn_component =
     [ "GetAttachAsChild", "d7/d20/classez_spawn_component.htm#a507d4327e3164ed539bb730c0fe55634", null ],
     [ "GetParameter", "d7/d20/classez_spawn_component.htm#a85849725ffa8a493ba379edba1c9046d", null ],
     [ "GetParameters", "d7/d20/classez_spawn_component.htm#a489b4e30591db310827392535b30e648", null ],
-    [ "GetPrefab", "d7/d20/classez_spawn_component.htm#a5e06d47f98b438288fbead204c7d6fad", null ],
+    [ "GetPrefab", "d7/d20/classez_spawn_component.htm#ae03012edee18be346716c26aebd9b449", null ],
     [ "GetPrefabFile", "d7/d20/classez_spawn_component.htm#a4e20f957bdb96360779e1ed04efa0d3e", null ],
     [ "GetSpawnAtStart", "d7/d20/classez_spawn_component.htm#a485ad5b42dd717c4f757a181f39f3bda", null ],
     [ "GetSpawnContinuously", "d7/d20/classez_spawn_component.htm#abc10da178bc7bd772056d2b6aa58e7f2", null ],

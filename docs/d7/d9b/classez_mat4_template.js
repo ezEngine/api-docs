@@ -15,7 +15,7 @@ var classez_mat4_template =
     [ "GetRotationalPart", "d7/d9b/classez_mat4_template.htm#ac25997c1eb426b0537fc6f2df67b1d40", null ],
     [ "GetRow", "d7/d9b/classez_mat4_template.htm#ad5ad3b20d78e8b68b035acdcda48e6c5", null ],
     [ "GetScalingFactors", "d7/d9b/classez_mat4_template.htm#a7e7dd468c88d0d5f68a16180d72f4e58", null ],
-    [ "GetTranslationVector", "d7/d9b/classez_mat4_template.htm#adfcd25f6832ef5565d997d45d5249bcf", null ],
+    [ "GetTranslationVector", "d7/d9b/classez_mat4_template.htm#aab050c258583c4d84a9a2b79ead5b5d3", null ],
     [ "GetTranspose", "d7/d9b/classez_mat4_template.htm#a82ab389213bb162b324f25905305fac9", null ],
     [ "Invert", "d7/d9b/classez_mat4_template.htm#aa06a574bed25144d4fdec2d8b4c5627e", null ],
     [ "IsEqual", "d7/d9b/classez_mat4_template.htm#acbd7a2c0fab061db474d600439834b89", null ],

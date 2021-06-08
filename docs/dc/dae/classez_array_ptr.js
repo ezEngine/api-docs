@@ -31,7 +31,7 @@ var classez_array_ptr =
     [ "operator=", "dc/dae/classez_array_ptr.htm#a03f74ba7645e24527c88f9ed84c12688", null ],
     [ "operator==", "dc/dae/classez_array_ptr.htm#a6e5139469ee6b221fcd48f9faf32002b", null ],
     [ "operator[]", "dc/dae/classez_array_ptr.htm#a6a5481e38a0f7f27ce5f9b30d164615d", null ],
-    [ "operator[]", "dc/dae/classez_array_ptr.htm#aef2df35d119390a0fdd387188d47d2cb", null ],
+    [ "operator[]", "dc/dae/classez_array_ptr.htm#a51025e5b767d98284227689beb6f20bd", null ],
     [ "Swap", "dc/dae/classez_array_ptr.htm#a48d2a99ec6b59d294c52caea064d5b9d", null ],
     [ "ToByteArray", "dc/dae/classez_array_ptr.htm#a0d6372ea05aa99793a2ff091001902a2", null ],
     [ "ToByteArray", "dc/dae/classez_array_ptr.htm#a3c9a2ad76e6cb02a446dc489a99e5322", null ],

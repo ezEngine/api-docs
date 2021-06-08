@@ -6,7 +6,7 @@ var classez_typed_resource_handle =
     [ "ezTypedResourceHandle", "d3/dd7/classez_typed_resource_handle.htm#a7229e64c27343e2a43d72f00d03dbacf", null ],
     [ "ezTypedResourceHandle", "d3/dd7/classez_typed_resource_handle.htm#a300ab8eb449ecfd0b96a1417ce7f7e63", null ],
     [ "ezTypedResourceHandle", "d3/dd7/classez_typed_resource_handle.htm#a0bd6eaa06059f53488915514ba4ae774", null ],
-    [ "GetResourceID", "d3/dd7/classez_typed_resource_handle.htm#a9eab2cdfda5fb3e4483801d2b4f05575", null ],
+    [ "GetResourceID", "d3/dd7/classez_typed_resource_handle.htm#ae240eeaca64f6d6485466d6ba805f671", null ],
     [ "GetResourceIDHash", "d3/dd7/classez_typed_resource_handle.htm#a7e589a544fee87ec70806658d0a76e5e", null ],
     [ "Invalidate", "d3/dd7/classez_typed_resource_handle.htm#ad94613b907cb34f90ef2f57424fe87c3", null ],
     [ "IsValid", "d3/dd7/classez_typed_resource_handle.htm#ae477c3d836b941ece5ca0a77abd7e8cc", null ],
