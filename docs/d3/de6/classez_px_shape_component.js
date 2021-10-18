@@ -13,6 +13,7 @@ var classez_px_shape_component =
     [ "Initialize", "d3/de6/classez_px_shape_component.htm#a58a6255f69ce60c6f997e49ec19c9474", null ],
     [ "OnDeactivated", "d3/de6/classez_px_shape_component.htm#aa31c83259e7deda7620d75a4623e9761", null ],
     [ "SerializeComponent", "d3/de6/classez_px_shape_component.htm#ae2747bd40c0ba8b346bca693c9681639", null ],
+    [ "SetInitialShapeId", "d3/de6/classez_px_shape_component.htm#a2cf8954d570bfeca840b45fdc8f7077b", null ],
     [ "SetSurfaceFile", "d3/de6/classez_px_shape_component.htm#a247bfb2bb89e69e63fc1b667399c7212", null ],
     [ "ezPxActorComponent", "d3/de6/classez_px_shape_component.htm#a3fd09b3c03665a0ff7f5725848c4d59f", null ],
     [ "m_hSurface", "d3/de6/classez_px_shape_component.htm#abccbb0955f519958590da406fce07cd9", null ],

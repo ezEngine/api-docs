@@ -84,6 +84,7 @@ $(document).ready(function(){initNavTree('d3/d4d/classez_command_history.htm','.
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
@@ -92,7 +93,17 @@ $(document).ready(function(){initNavTree('d3/d4d/classez_command_history.htm','.
 <div class="title">ezCommandHistory Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Stores the undo / redo stacks of transactions done on a document.  
+ <a href="../../d3/d4d/classez_command_history.htm#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../db/d18/_command_history_8h_source.htm">CommandHistory.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d1d/classez_command_history_1_1_storage.htm">Storage</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a6d0eb2c7600e0f09bbd6a459304e28df"><td class="memItemLeft" align="right" valign="top"><a id="a6d0eb2c7600e0f09bbd6a459304e28df"></a>
@@ -136,7 +147,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsInUndoRedo</b> () c
 <tr class="separator:a4632bef49f18d00285bc2fd2e916ddf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7f8752162a9032efe7c57359e8664f6"><td class="memItemLeft" align="right" valign="top"><a id="af7f8752162a9032efe7c57359e8664f6"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d4d/classez_command_history.htm#af7f8752162a9032efe7c57359e8664f6">BeginTemporaryCommands</a> (const char *szDisplayString, bool bFireEventsWhenUndoingTempCommands=false)</td></tr>
-<tr class="memdesc:af7f8752162a9032efe7c57359e8664f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call this to start a serious of transactions that typically change the same value over and over (e.g. dragging an object to a position). Every time a new transaction is started, the previous one is undone first. At the end of a serious of temporary transactions, only the last transaction will be stored as a single undo step. Call this first and then start a transaction inside it. <br /></td></tr>
+<tr class="memdesc:af7f8752162a9032efe7c57359e8664f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call this to start a series of transactions that typically change the same value over and over (e.g. dragging an object to a position). Every time a new transaction is started, the previous one is undone first. At the end of a series of temporary transactions, only the last transaction will be stored as a single undo step. Call this first and then start a transaction inside it. <br /></td></tr>
 <tr class="separator:af7f8752162a9032efe7c57359e8664f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa983e2f7192dd6fd4b3353250c4a8e61"><td class="memItemLeft" align="right" valign="top"><a id="aa983e2f7192dd6fd4b3353250c4a8e61"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>CancelTemporaryCommands</b> ()</td></tr>
@@ -176,6 +187,12 @@ const <a class="el" href="../../db/d63/classez_command_transaction.htm">ezComman
 <tr class="memitem:a4a6f5c313b24dee2c7827f95d74dc666"><td class="memItemLeft" align="right" valign="top"><a id="a4a6f5c313b24dee2c7827f95d74dc666"></a>
 const <a class="el" href="../../db/d63/classez_command_transaction.htm">ezCommandTransaction</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>GetRedoStackEntry</b> (ezUInt32 iIndex) const</td></tr>
 <tr class="separator:a4a6f5c313b24dee2c7827f95d74dc666"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add65a6e1f5f69a007f33c68278dddd01"><td class="memItemLeft" align="right" valign="top"><a id="add65a6e1f5f69a007f33c68278dddd01"></a>
+<a class="el" href="../../de/dc1/classez_shared_ptr.htm">ezSharedPtr</a>&lt; <a class="el" href="../../d7/d1d/classez_command_history_1_1_storage.htm">ezCommandHistory::Storage</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>SwapStorage</b> (<a class="el" href="../../de/dc1/classez_shared_ptr.htm">ezSharedPtr</a>&lt; <a class="el" href="../../d7/d1d/classez_command_history_1_1_storage.htm">ezCommandHistory::Storage</a> &gt; pNewStorage)</td></tr>
+<tr class="separator:add65a6e1f5f69a007f33c68278dddd01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d27111ad6eadd682376c1d3547641fd"><td class="memItemLeft" align="right" valign="top"><a id="a3d27111ad6eadd682376c1d3547641fd"></a>
+<a class="el" href="../../de/dc1/classez_shared_ptr.htm">ezSharedPtr</a>&lt; <a class="el" href="../../d7/d1d/classez_command_history_1_1_storage.htm">ezCommandHistory::Storage</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>GetStorage</b> ()</td></tr>
+<tr class="separator:a3d27111ad6eadd682376c1d3547641fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -189,7 +206,9 @@ Friends</h2></td></tr>
 class&#160;</td><td class="memItemRight" valign="bottom"><b>ezCommand</b></td></tr>
 <tr class="separator:a51b090ff21d525332dd435d2c9421ffa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Stores the undo / redo stacks of transactions done on a document. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a3604fafe80e120bb6ebcb2654213c8a7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3604fafe80e120bb6ebcb2654213c8a7">&#9670;&nbsp;</a></span>MergeLastTwoTransactions()</h2>
 
@@ -204,7 +223,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>ezCommand</b></td></
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.htm#_todo000209">Todo:</a></b></dt><dd>This would not be necessary, if hierarchical transactions would not crash </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.htm#_todo000205">Todo:</a></b></dt><dd>This would not be necessary, if hierarchical transactions would not crash </dd></dl>
 
 </div>
 </div>
@@ -223,7 +242,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>ezCommand</b></td></
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.htm#_todo000208">Todo:</a></b></dt><dd>Allow to have a limited transaction history and clean up transactions after a while </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.htm#_todo000204">Todo:</a></b></dt><dd>Allow to have a limited transaction history and clean up transactions after a while </dd></dl>
 
 </div>
 </div>
@@ -237,7 +256,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>ezCommand</b></td></
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d3/d4d/classez_command_history.htm">ezCommandHistory</a></li>
-    <li class="footer">Generated on Tue Jun 8 2021 21:43:17 for ezEngine by
+    <li class="footer">Generated on Mon Oct 18 2021 15:24:16 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

@@ -90,59 +90,102 @@ $(document).ready(function(){initNavTree('d1/dba/_timestamp__osx_8h_source.htm',
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;Foundation/FoundationInternal.h&gt;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;EZ_FOUNDATION_INTERNAL_HEADER</div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;CoreFoundation/CoreFoundation.h&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;Foundation/Basics/Platform/OSX/ScopedCFRef.h&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">const</span> <a class="code" href="../../d9/d88/classez_timestamp.htm">ezTimestamp</a> <a class="code" href="../../d9/d88/classez_timestamp.htm#a739cac6b2f28d9ad01f348d44acf154b">ezTimestamp::CurrentTimestamp</a>()</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  timeval currentTime;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  gettimeofday(&amp;currentTime, <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../d9/d88/classez_timestamp.htm#ae3185ef7bce8acaee19aac97aff5a58a">ezTimestamp</a>(currentTime.tv_sec * 1000000LL + currentTime.tv_usec, <a class="code" href="../../de/d45/structez_s_i_unit_of_time.htm#a538e85facb1e675e5d47f8a92126235ba52c31273eead9fdf1ce1988d286ab661">ezSIUnitOfTime::Microsecond</a>);</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;CoreFoundation/CFCalendar.h&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;CoreFoundation/CoreFoundation.h&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">const</span> <a class="code" href="../../d9/d88/classez_timestamp.htm">ezTimestamp</a> <a class="code" href="../../d9/d88/classez_timestamp.htm#a739cac6b2f28d9ad01f348d44acf154b">ezTimestamp::CurrentTimestamp</a>()</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  timeval currentTime;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  gettimeofday(&amp;currentTime, <span class="keyword">nullptr</span>);</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">const</span> <a class="code" href="../../d9/d88/classez_timestamp.htm">ezTimestamp</a> <a class="code" href="../../df/d59/classez_date_time.htm#ab794cc732062e207d2d6905ee95ed3ed">ezDateTime::GetTimestamp</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  CFGregorianDate gdate;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  gdate.year = m_iYear;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  gdate.month = m_uiMonth;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  gdate.day = m_uiDay;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="comment">// gdate.dayOfWeek = m_uiDayOfWeek; // TODO: nothing like this exists</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  gdate.hour = m_uiHour;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  gdate.minute = m_uiMinute;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  gdate.second = (double)m_uiSecond + (<span class="keywordtype">double</span>)m_uiMicroseconds / 1000000.0;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../d9/d88/classez_timestamp.htm#ae3185ef7bce8acaee19aac97aff5a58a">ezTimestamp</a>(currentTime.tv_sec * 1000000LL + currentTime.tv_usec, <a class="code" href="../../de/d45/structez_s_i_unit_of_time.htm#a538e85facb1e675e5d47f8a92126235ba52c31273eead9fdf1ce1988d286ab661">ezSIUnitOfTime::Microsecond</a>);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">const</span> <a class="code" href="../../d9/d88/classez_timestamp.htm">ezTimestamp</a> <a class="code" href="../../df/d59/classez_date_time.htm#ab794cc732062e207d2d6905ee95ed3ed">ezDateTime::GetTimestamp</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <a class="code" href="../../d3/d69/classez_scoped_c_f_ref.htm">ezScopedCFRef&lt;CFTimeZoneRef&gt;</a> timezone(CFTimeZoneCreateWithTimeIntervalFromGMT(kCFAllocatorDefault, 0));</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <a class="code" href="../../d3/d69/classez_scoped_c_f_ref.htm">ezScopedCFRef&lt;CFCalendarRef&gt;</a> calendar(CFCalendarCreateWithIdentifier(kCFAllocatorSystemDefault, kCFGregorianCalendar));</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  CFCalendarSetTimeZone(calendar, timezone);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordtype">int</span> year = m_iYear, month = m_uiMonth, day = m_uiDay, hour = m_uiHour, minute = m_uiMinute, second = m_uiSecond;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keywordflow">if</span> (!CFGregorianDateIsValid(gdate, kCFGregorianAllUnits))</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d9/d88/classez_timestamp.htm">ezTimestamp</a>();</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  CFAbsoluteTime absTime = CFGregorianDateGetAbsoluteTime(gdate, <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../d9/d88/classez_timestamp.htm">ezTimestamp</a>(<span class="keyword">static_cast&lt;</span>ezInt64<span class="keyword">&gt;</span>((absTime + kCFAbsoluteTimeIntervalSince1970) * 1000000.0), <a class="code" href="../../de/d45/structez_s_i_unit_of_time.htm#a538e85facb1e675e5d47f8a92126235ba52c31273eead9fdf1ce1988d286ab661">ezSIUnitOfTime::Microsecond</a>);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../df/d59/classez_date_time.htm#a5a23b8409a8a2fab95ed83178165e916">ezDateTime::SetTimestamp</a>(<a class="code" href="../../d9/d88/classez_timestamp.htm">ezTimestamp</a> timestamp)</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  CFAbsoluteTime at = (<span class="keyword">static_cast&lt;</span>CFAbsoluteTime<span class="keyword">&gt;</span>(timestamp.<a class="code" href="../../d9/d88/classez_timestamp.htm#a3b0557de426d5aa0272285daae248b34">GetInt64</a>(<a class="code" href="../../de/d45/structez_s_i_unit_of_time.htm#a538e85facb1e675e5d47f8a92126235ba52c31273eead9fdf1ce1988d286ab661">ezSIUnitOfTime::Microsecond</a>) / 1000000.0)) - kCFAbsoluteTimeIntervalSince1970;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  CFGregorianDate gdate = CFAbsoluteTimeGetGregorianDate(at, <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordflow">if</span> (!CFGregorianDateIsValid(gdate, kCFGregorianAllUnits))</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="comment">// Validate the year against the valid range of the calendar</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">auto</span> yearMin = CFCalendarGetMinimumRangeOfUnit(calendar, kCFCalendarUnitYear), yearMax = CFCalendarGetMaximumRangeOfUnit(calendar, kCFCalendarUnitYear);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">if</span> (year &lt; yearMin.location || year &gt; yearMax.length)</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="../../d9/d88/classez_timestamp.htm">ezTimestamp</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="comment">// Validate the month against the valid range of the calendar</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">auto</span> monthMin = CFCalendarGetMinimumRangeOfUnit(calendar, kCFCalendarUnitMonth), monthMax = CFCalendarGetMaximumRangeOfUnit(calendar, kCFCalendarUnitMonth);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  m_iYear = (ezInt16)gdate.year;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  m_uiMonth = (ezUInt8)gdate.month;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  m_uiDay = (ezUInt8)gdate.day;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  m_uiDayOfWeek = ezMath::MaxValue&lt;ezUInt8&gt;(); <span class="comment">// TODO: no day of week exists, setting to uint8 max.</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  m_uiHour = (ezUInt8)gdate.hour;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  m_uiMinute = (ezUInt8)gdate.minute;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  m_uiSecond = (ezUInt8)<a class="code" href="../../db/d78/namespaceez_math.htm#a89a5cb364bf8bf76155b42b477e2540a">ezMath::Trunc</a>(gdate.second);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  m_uiMicroseconds = (ezUInt32)(<a class="code" href="../../db/d78/namespaceez_math.htm#ab6648cbd915168c7e2b5d4a922ee1974">ezMath::Fraction</a>(gdate.second) * 1000000.0);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">if</span> (month &lt; monthMin.location || month &gt; monthMax.length)</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="../../d9/d88/classez_timestamp.htm">ezTimestamp</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="comment">// Validate the day against the valid range of the calendar</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">auto</span> dayMin = CFCalendarGetMinimumRangeOfUnit(calendar, kCFCalendarUnitDay), dayMax = CFCalendarGetMaximumRangeOfUnit(calendar, kCFCalendarUnitDay);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">if</span> (day &lt; dayMin.location || day &gt; dayMax.length)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="../../d9/d88/classez_timestamp.htm">ezTimestamp</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  CFAbsoluteTime absTime;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordflow">if</span> (CFCalendarComposeAbsoluteTime(calendar, &amp;absTime, <span class="stringliteral">&quot;yMdHms&quot;</span>, year, month, day, hour, minute, second) == FALSE)</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d9/d88/classez_timestamp.htm">ezTimestamp</a>();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../d9/d88/classez_timestamp.htm">ezTimestamp</a>(<span class="keyword">static_cast&lt;</span>ezInt64<span class="keyword">&gt;</span>((absTime + kCFAbsoluteTimeIntervalSince1970) * 1000000.0), <a class="code" href="../../de/d45/structez_s_i_unit_of_time.htm#a538e85facb1e675e5d47f8a92126235ba52c31273eead9fdf1ce1988d286ab661">ezSIUnitOfTime::Microsecond</a>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../df/d59/classez_date_time.htm#a5a23b8409a8a2fab95ed83178165e916">ezDateTime::SetTimestamp</a>(<a class="code" href="../../d9/d88/classez_timestamp.htm">ezTimestamp</a> timestamp)</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;{</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="comment">// Round the microseconds to the full second so that we can reconstruct the right date / time afterwards</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  ezInt64 us = timestamp.<a class="code" href="../../d9/d88/classez_timestamp.htm#a3b0557de426d5aa0272285daae248b34">GetInt64</a>(<a class="code" href="../../de/d45/structez_s_i_unit_of_time.htm#a538e85facb1e675e5d47f8a92126235ba52c31273eead9fdf1ce1988d286ab661">ezSIUnitOfTime::Microsecond</a>);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  ezInt64 microseconds = us % (1000 * 1000);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  CFAbsoluteTime at = (<span class="keyword">static_cast&lt;</span>CFAbsoluteTime<span class="keyword">&gt;</span>((us - microseconds) / 1000000.0)) - kCFAbsoluteTimeIntervalSince1970;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <a class="code" href="../../d3/d69/classez_scoped_c_f_ref.htm">ezScopedCFRef&lt;CFTimeZoneRef&gt;</a> timezone(CFTimeZoneCreateWithTimeIntervalFromGMT(kCFAllocatorDefault, 0));</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <a class="code" href="../../d3/d69/classez_scoped_c_f_ref.htm">ezScopedCFRef&lt;CFCalendarRef&gt;</a> calendar(CFCalendarCreateWithIdentifier(kCFAllocatorSystemDefault, kCFGregorianCalendar));</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  CFCalendarSetTimeZone(calendar, timezone);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordtype">int</span> year, month, day, dayOfWeek, hour, minute, second;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keywordflow">if</span> (CFCalendarDecomposeAbsoluteTime(calendar, at, <span class="stringliteral">&quot;yMdHmsE&quot;</span>, &amp;year, &amp;month, &amp;day, &amp;hour, &amp;minute, &amp;second, &amp;dayOfWeek) == FALSE)</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  m_iYear = (ezInt16)year;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  m_uiMonth = (ezUInt8)month;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  m_uiDay = (ezUInt8)day;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  m_uiDayOfWeek = (ezUInt8)(dayOfWeek - 1);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  m_uiHour = (ezUInt8)hour;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  m_uiMinute = (ezUInt8)minute;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  m_uiSecond = (ezUInt8)second;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  m_uiMicroseconds = (ezUInt32)microseconds;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_date_time_htm_ab794cc732062e207d2d6905ee95ed3ed"><div class="ttname"><a href="../../df/d59/classez_date_time.htm#ab794cc732062e207d2d6905ee95ed3ed">ezDateTime::GetTimestamp</a></div><div class="ttdeci">const ezTimestamp GetTimestamp() const</div><div class="ttdoc">Converts this instance' values into a ezTimestamp.</div><div class="ttdef"><b>Definition:</b> Timestamp_android.h:36</div></div>
-<div class="ttc" id="anamespaceez_math_htm_ab6648cbd915168c7e2b5d4a922ee1974"><div class="ttname"><a href="../../db/d78/namespaceez_math.htm#ab6648cbd915168c7e2b5d4a922ee1974">ezMath::Fraction</a></div><div class="ttdeci">EZ_ALWAYS_INLINE Type Fraction(Type f)</div><div class="ttdoc">Returns the fraction-part of f.</div><div class="ttdef"><b>Definition:</b> Math_inl.h:187</div></div>
-<div class="ttc" id="anamespaceez_math_htm_a89a5cb364bf8bf76155b42b477e2540a"><div class="ttname"><a href="../../db/d78/namespaceez_math.htm#a89a5cb364bf8bf76155b42b477e2540a">ezMath::Trunc</a></div><div class="ttdeci">EZ_ALWAYS_INLINE Type Trunc(Type f)</div><div class="ttdoc">Returns the integer-part of f (removes the fraction).</div><div class="ttdef"><b>Definition:</b> Math_inl.h:178</div></div>
 <div class="ttc" id="aclassez_timestamp_htm"><div class="ttname"><a href="../../d9/d88/classez_timestamp.htm">ezTimestamp</a></div><div class="ttdoc">The timestamp class encapsulates a date in time as microseconds since Unix epoch.</div><div class="ttdef"><b>Definition:</b> Timestamp.h:22</div></div>
 <div class="ttc" id="astructez_s_i_unit_of_time_htm_a538e85facb1e675e5d47f8a92126235ba52c31273eead9fdf1ce1988d286ab661"><div class="ttname"><a href="../../de/d45/structez_s_i_unit_of_time.htm#a538e85facb1e675e5d47f8a92126235ba52c31273eead9fdf1ce1988d286ab661">ezSIUnitOfTime::Microsecond</a></div><div class="ttdeci">@ Microsecond</div><div class="ttdoc">SI-unit of time (10^-6 second)</div><div class="ttdef"><b>Definition:</b> Timestamp.h:11</div></div>
 <div class="ttc" id="aclassez_timestamp_htm_a739cac6b2f28d9ad01f348d44acf154b"><div class="ttname"><a href="../../d9/d88/classez_timestamp.htm#a739cac6b2f28d9ad01f348d44acf154b">ezTimestamp::CurrentTimestamp</a></div><div class="ttdeci">static const ezTimestamp CurrentTimestamp()</div><div class="ttdoc">Returns the current timestamp. Returned value will always be valid.</div><div class="ttdef"><b>Definition:</b> Timestamp_android.h:11</div></div>
+<div class="ttc" id="aclassez_scoped_c_f_ref_htm"><div class="ttname"><a href="../../d3/d69/classez_scoped_c_f_ref.htm">ezScopedCFRef</a></div><div class="ttdoc">Helper class to release references of core foundation objects correctly.</div><div class="ttdef"><b>Definition:</b> ScopedCFRef.h:10</div></div>
 <div class="ttc" id="aclassez_date_time_htm_a5a23b8409a8a2fab95ed83178165e916"><div class="ttname"><a href="../../df/d59/classez_date_time.htm#a5a23b8409a8a2fab95ed83178165e916">ezDateTime::SetTimestamp</a></div><div class="ttdeci">bool SetTimestamp(ezTimestamp timestamp)</div><div class="ttdoc">Sets this instance to the given timestamp.</div><div class="ttdef"><b>Definition:</b> Timestamp_android.h:66</div></div>
 <div class="ttc" id="aclassez_timestamp_htm_a3b0557de426d5aa0272285daae248b34"><div class="ttname"><a href="../../d9/d88/classez_timestamp.htm#a3b0557de426d5aa0272285daae248b34">ezTimestamp::GetInt64</a></div><div class="ttdeci">ezInt64 GetInt64(ezSIUnitOfTime::Enum unitOfTime) const</div><div class="ttdoc">Returns the number of 'unitOfTime' since Unix epoch.</div><div class="ttdef"><b>Definition:</b> Timestamp.cpp:17</div></div>
 <div class="ttc" id="aclassez_timestamp_htm_ae3185ef7bce8acaee19aac97aff5a58a"><div class="ttname"><a href="../../d9/d88/classez_timestamp.htm#ae3185ef7bce8acaee19aac97aff5a58a">ezTimestamp::ezTimestamp</a></div><div class="ttdeci">ezTimestamp()</div><div class="ttdoc">Creates an invalidated timestamp.</div><div class="ttdef"><b>Definition:</b> Timestamp_inl.h:8</div></div>
@@ -150,7 +193,7 @@ $(document).ready(function(){initNavTree('d1/dba/_timestamp__osx_8h_source.htm',
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_2ca30144367a1d3c7745a014e5802100.htm">Time</a></li><li class="navelem"><a class="el" href="../../dir_521869badcff1dcecad1bf20c9457d7d.htm">Implementation</a></li><li class="navelem"><a class="el" href="../../dir_0226d10b27aa890e44217c09c759fb99.htm">OSX</a></li><li class="navelem"><b>Timestamp_osx.h</b></li>
-    <li class="footer">Generated on Tue Jun 8 2021 21:43:12 for ezEngine by
+    <li class="footer">Generated on Mon Oct 18 2021 15:24:11 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

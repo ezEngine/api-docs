@@ -6,5 +6,6 @@ var classez_skeleton_builder =
     [ "AddJoint", "d1/d87/classez_skeleton_builder.htm#a612e69049a06e1b104622d22a22ea508", null ],
     [ "BuildSkeleton", "d1/d87/classez_skeleton_builder.htm#a59a7bfcf0e6288a5734663eacc061623", null ],
     [ "HasJoints", "d1/d87/classez_skeleton_builder.htm#af28094b865b6a8d88f8e226ecf2f77f9", null ],
+    [ "SetJointLimit", "d1/d87/classez_skeleton_builder.htm#a1fe1f6b5d54b0a80a988a23fd5f2f4bc", null ],
     [ "m_Joints", "d1/d87/classez_skeleton_builder.htm#ac7441cafbcd3b99a853b8699c8504ffe", null ]
 ];

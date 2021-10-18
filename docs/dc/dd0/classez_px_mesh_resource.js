@@ -2,7 +2,7 @@ var classez_px_mesh_resource =
 [
     [ "ezPxMeshResource", "dc/dd0/classez_px_mesh_resource.htm#a66cbe15f6abbb2bf157a0bd961ac1e26", null ],
     [ "~ezPxMeshResource", "dc/dd0/classez_px_mesh_resource.htm#aeccc041b4da2a726ccf7163b7a6ead92", null ],
-    [ "ExtractGeometry", "dc/dd0/classez_px_mesh_resource.htm#a9e08904dbf0aaabb11da2d677b1e57eb", null ],
+    [ "ConvertToCpuMesh", "dc/dd0/classez_px_mesh_resource.htm#aa2e8cef8d01bd094332c670881bec48d", null ],
     [ "GetBounds", "dc/dd0/classez_px_mesh_resource.htm#aa090c65fa99b7d5abb3b74a45f8321b7", null ],
     [ "GetConvexParts", "dc/dd0/classez_px_mesh_resource.htm#a21fe30ca861461d6173d4748522bbe4c", null ],
     [ "GetNumPolygons", "dc/dd0/classez_px_mesh_resource.htm#a12f2be9f7059a7b295eafd581c85c95e", null ],

@@ -16,6 +16,7 @@ var classez_command_line_utils =
     [ "GetStringOption", "d0/dc2/classez_command_line_utils.htm#a7b4ea2a3117298dff53f7a391a04f1db", null ],
     [ "GetStringOptionArguments", "d0/dc2/classez_command_line_utils.htm#a0223ea83df322f64338d9d6b54556ba1", null ],
     [ "GetUIntOption", "d0/dc2/classez_command_line_utils.htm#a66fddf56c24cb706454602afb3e8f13c", null ],
+    [ "HasOption", "d0/dc2/classez_command_line_utils.htm#a20cc0d501a1b6dd39fc6b8c5fe9f88e3", null ],
     [ "InjectCustomArgument", "d0/dc2/classez_command_line_utils.htm#a14abd797822dec55d298175c383d34a4", null ],
     [ "SetCommandLine", "d0/dc2/classez_command_line_utils.htm#ae00f2b76921058dcf736f7787b504661", null ],
     [ "SetCommandLine", "d0/dc2/classez_command_line_utils.htm#ac86a3bf73809f948fccb4de2d7c2565a", null ]

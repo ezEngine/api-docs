@@ -25,6 +25,7 @@ var classez_asset_document =
     [ "GetAssetTypeVersion", "d2/d47/classez_asset_document.htm#a7b937928cef716b2930c65806e89474e", null ],
     [ "GetChildHash", "d2/d47/classez_asset_document.htm#a04f80c7653ee0641ced294a56598acb6", null ],
     [ "GetCommonAssetUiState", "d2/d47/classez_asset_document.htm#a8a7ac3b86207a513a4616e3c981faed9", null ],
+    [ "GetCreateEngineMetaData", "d2/d47/classez_asset_document.htm#ad83dbde3610bcd4413ed56bd2ebbf78f", null ],
     [ "GetDocumentHash", "d2/d47/classez_asset_document.htm#a85212bdf1d2961edb4a3f8f493a2fa68", null ],
     [ "GetEditorEngineConnection", "d2/d47/classez_asset_document.htm#ab8ba453d1805d238fa3a34cca8964622", null ],
     [ "GetEngineStatus", "d2/d47/classez_asset_document.htm#a20d61d427f760cd2c9ff17ae2b83de1f", null ],

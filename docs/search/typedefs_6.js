@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['onpluginloadedfunction_18680',['OnPluginLoadedFunction',['../dd/d46/classez_plugin.htm#ae45d9789e8b3b1efeee3f9946a754858',1,'ezPlugin']]],
-  ['onpluginunloadedfunction_18681',['OnPluginUnloadedFunction',['../dd/d46/classez_plugin.htm#ada10236fa75ce342e5ec26aa89d00e27',1,'ezPlugin']]]
+  ['passthroughunknowncmdcb_19281',['PassThroughUnknownCmdCB',['../db/dfd/classez_preprocessor.htm#adaca1f54b9f566ce82015519cc4462fe',1,'ezPreprocessor']]],
+  ['printfunc_19282',['PrintFunc',['../d3/d42/classez_stack_tracer.htm#a306d78b1c80a522d07b90a3f67ca3d42',1,'ezStackTracer']]]
 ];

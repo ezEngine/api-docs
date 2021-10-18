@@ -8,6 +8,6 @@ var classez_decal_asset_document_manager =
     [ "GeneratesProfileSpecificAssets", "d7/da5/classez_decal_asset_document_manager.htm#a0250f3003e1439b241397ea9e6951f19", null ],
     [ "GetAssetTableEntry", "d7/da5/classez_decal_asset_document_manager.htm#ad3df6dbb6591eba01973d8bd2f1782e8", null ],
     [ "GetDecalTexturePath", "d7/da5/classez_decal_asset_document_manager.htm#a920c73ff3b0ba750bf7c8680becf774e", null ],
-    [ "InternalCreateDocument", "d7/da5/classez_decal_asset_document_manager.htm#adb625586d4825acd6cc6254f5ccbb6b9", null ],
+    [ "InternalCreateDocument", "d7/da5/classez_decal_asset_document_manager.htm#ada8a2f9fe0e4add0246e1316b96fa3e7", null ],
     [ "InternalGetSupportedDocumentTypes", "d7/da5/classez_decal_asset_document_manager.htm#a87970332f92595d91538def135f29882", null ]
 ];

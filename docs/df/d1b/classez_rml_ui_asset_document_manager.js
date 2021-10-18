@@ -3,6 +3,6 @@ var classez_rml_ui_asset_document_manager =
     [ "ezRmlUiAssetDocumentManager", "df/d1b/classez_rml_ui_asset_document_manager.htm#a8d1049edb70ed6d5168fb2d5b018cf4b", null ],
     [ "~ezRmlUiAssetDocumentManager", "df/d1b/classez_rml_ui_asset_document_manager.htm#a59142169e2c121a242197651c1300a91", null ],
     [ "GeneratesProfileSpecificAssets", "df/d1b/classez_rml_ui_asset_document_manager.htm#a574fe29eb0c4e67149f9e4f3163dfacd", null ],
-    [ "InternalCreateDocument", "df/d1b/classez_rml_ui_asset_document_manager.htm#a14205fc4161334771520f918814d2ea3", null ],
+    [ "InternalCreateDocument", "df/d1b/classez_rml_ui_asset_document_manager.htm#ac152f329be5608313e63516711847597", null ],
     [ "InternalGetSupportedDocumentTypes", "df/d1b/classez_rml_ui_asset_document_manager.htm#aaa1fede3eb4db90714e0e59789013229", null ]
 ];

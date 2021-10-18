@@ -5,6 +5,7 @@ var hierarchy =
     [ "ezMemoryPolicies::AlloctionMetaData", "d9/df4/structez_memory_policies_1_1_alloction_meta_data.htm", null ],
     [ "ezColorGradient::AlphaCP", "d5/dd9/structez_color_gradient_1_1_alpha_c_p.htm", null ],
     [ "ezGridNavmesh::AreaEdge", "db/d75/structez_grid_navmesh_1_1_area_edge.htm", null ],
+    [ "ezPxRagdollComponent::ArtLink", "df/dc0/structez_px_ragdoll_component_1_1_art_link.htm", null ],
     [ "ezShaderParser::AttributeDefinition", "db/da4/structez_shader_parser_1_1_attribute_definition.htm", null ],
     [ "Backtrace", "dd/d1d/struct_backtrace.htm", null ],
     [ "Base", null, [
@@ -18,43 +19,51 @@ var hierarchy =
         [ "ezPropertyAnimComponent::GameObjectBinding", "da/d48/structez_property_anim_component_1_1_game_object_binding.htm", null ]
       ] ]
     ] ],
+    [ "ezCVarFlags::Bits", "d6/d29/structez_c_var_flags_1_1_bits.htm", null ],
+    [ "ezPluginLoadFlags::Bits", "df/dfd/structez_plugin_load_flags_1_1_bits.htm", null ],
+    [ "ezDirectoryWatcher::Watch::Bits", "d9/db6/structez_directory_watcher_1_1_watch_1_1_bits.htm", null ],
     [ "ezShaderBindFlags::Bits", "dd/d69/structez_shader_bind_flags_1_1_bits.htm", null ],
     [ "ezRenderContextFlags::Bits", "d8/d80/structez_render_context_flags_1_1_bits.htm", null ],
     [ "ezDefaultSamplerFlags::Bits", "df/de5/structez_default_sampler_flags_1_1_bits.htm", null ],
     [ "ezShaderCompilerFlags::Bits", "de/d68/structez_shader_compiler_flags_1_1_bits.htm", null ],
-    [ "ezDirectoryWatcher::Watch::Bits", "d9/db6/structez_directory_watcher_1_1_watch_1_1_bits.htm", null ],
     [ "ezFileSystemIteratorFlags::Bits", "d6/d62/structez_file_system_iterator_flags_1_1_bits.htm", null ],
+    [ "ezAssetDocumentFlags::Bits", "d2/dcb/structez_asset_document_flags_1_1_bits.htm", null ],
     [ "ezMemoryTrackingFlags::Bits", "d8/dab/structez_memory_tracking_flags_1_1_bits.htm", null ],
     [ "ezPropertyFlags::Bits", "d8/df3/structez_property_flags_1_1_bits.htm", null ],
-    [ "ezAssetDocumentFlags::Bits", "d2/dcb/structez_asset_document_flags_1_1_bits.htm", null ],
     [ "ezTransformFlags::Bits", "d8/d0d/structez_transform_flags_1_1_bits.htm", null ],
     [ "ezVisualizerAnchor::Bits", "dd/d35/structez_visualizer_anchor_1_1_bits.htm", null ],
+    [ "ezTypeFlags::Bits", "df/d19/structez_type_flags_1_1_bits.htm", null ],
     [ "ezPxCharacterShapeCollisionFlags::Bits", "d1/d52/structez_px_character_shape_collision_flags_1_1_bits.htm", null ],
+    [ "ezPxActorLockingFlags::Bits", "d7/de0/structez_px_actor_locking_flags_1_1_bits.htm", null ],
     [ "ezPxAxis::Bits", "d6/d1b/structez_px_axis_1_1_bits.htm", null ],
     [ "ezOnPhysXContact::Bits", "d5/de4/structez_on_phys_x_contact_1_1_bits.htm", null ],
-    [ "ezTypeFlags::Bits", "df/d19/structez_type_flags_1_1_bits.htm", null ],
     [ "ezInputSlotFlags::Bits", "da/d98/structez_input_slot_flags_1_1_bits.htm", null ],
+    [ "ezEngineProcessDocumentContextFlags::Bits", "d9/d92/structez_engine_process_document_context_flags_1_1_bits.htm", null ],
+    [ "ezCrashHandler_WriteMiniDump::PathFlags::Bits", "d0/d9e/structez_crash_handler___write_mini_dump_1_1_path_flags_1_1_bits.htm", null ],
     [ "ezDynamicMenuAction::Item::ItemFlags::Bits", "d4/d38/structez_dynamic_menu_action_1_1_item_1_1_item_flags_1_1_bits.htm", null ],
     [ "ezStandardMenuTypes::Bits", "d8/d64/structez_standard_menu_types_1_1_bits.htm", null ],
-    [ "ezResourceFlags::Bits", "db/d35/structez_resource_flags_1_1_bits.htm", null ],
     [ "ezNodeFlags::Bits", "dc/dd6/structez_node_flags_1_1_bits.htm", null ],
-    [ "ezCrashHandler_WriteMiniDump::PathFlags::Bits", "d0/d9e/structez_crash_handler___write_mini_dump_1_1_path_flags_1_1_bits.htm", null ],
+    [ "ezResourceFlags::Bits", "db/d35/structez_resource_flags_1_1_bits.htm", null ],
     [ "ezBlackboardEntryFlags::Bits", "d4/d2c/structez_blackboard_entry_flags_1_1_bits.htm", null ],
     [ "ezDocumentFlags::Bits", "d4/dfa/structez_document_flags_1_1_bits.htm", null ],
     [ "ezQtEditorApp::StartupFlags::Bits", "d3/df1/structez_qt_editor_app_1_1_startup_flags_1_1_bits.htm", null ],
     [ "ezObjectFlags::Bits", "d5/da5/structez_object_flags_1_1_bits.htm", null ],
     [ "ezMoveToComponentFlags::Bits", "d1/de6/structez_move_to_component_flags_1_1_bits.htm", null ],
     [ "ezTransformComponentFlags::Bits", "d0/d27/structez_transform_component_flags_1_1_bits.htm", null ],
+    [ "ezSpatialData::Flags::Bits", "d7/d4a/structez_spatial_data_1_1_flags_1_1_bits.htm", null ],
     [ "ezSpawnComponentFlags::Bits", "de/dc4/structez_spawn_component_flags_1_1_bits.htm", null ],
-    [ "ezCVarFlags::Bits", "d6/d29/structez_c_var_flags_1_1_bits.htm", null ],
+    [ "ezClothSheetFlags::Bits", "d6/dec/structez_cloth_sheet_flags_1_1_bits.htm", null ],
     [ "ezXRDeviceFeatures::Bits", "db/d99/structez_x_r_device_features_1_1_bits.htm", null ],
     [ "ezMeshResourceDescriptor::BoneData", "d4/df7/structez_mesh_resource_descriptor_1_1_bone_data.htm", null ],
+    [ "ezSkeletonComponent::BoxShape", "d7/d39/structez_skeleton_component_1_1_box_shape.htm", null ],
     [ "ezSkeletonBuilder::BuilderJoint", "d7/dcb/structez_skeleton_builder_1_1_builder_joint.htm", null ],
     [ "ezArrayPtrDetail::ByteTypeHelper< U >", "d6/dbd/structez_array_ptr_detail_1_1_byte_type_helper.htm", null ],
     [ "ezArrayPtrDetail::ByteTypeHelper< const U >", "de/d3c/structez_array_ptr_detail_1_1_byte_type_helper_3_01const_01_u_01_4.htm", null ],
     [ "ezRenderData::Caching", "d3/d0a/structez_render_data_1_1_caching.htm", null ],
     [ "ezRenderWorld::CameraConfig", "db/d58/structez_render_world_1_1_camera_config.htm", null ],
+    [ "ezSkeletonComponent::CapsuleShape", "df/dfa/structez_skeleton_component_1_1_capsule_shape.htm", null ],
     [ "ezRenderData::Category", "de/dc4/structez_render_data_1_1_category.htm", null ],
+    [ "ezSpatialData::Category", "d4/d53/structez_spatial_data_1_1_category.htm", null ],
     [ "CDockWidget", null, [
       [ "ezQtApplicationPanel", "d7/d1d/classez_qt_application_panel.htm", [
         [ "ezQtAssetBrowserPanel", "dc/df0/classez_qt_asset_browser_panel.htm", null ],
@@ -95,10 +104,8 @@ var hierarchy =
     [ "ezScriptCompendiumResourceDesc::ComponentTypeInfo", "dd/d54/structez_script_compendium_resource_desc_1_1_component_type_info.htm", null ],
     [ "ezDGMLGraph::Connection", "d1/d42/structez_d_g_m_l_graph_1_1_connection.htm", null ],
     [ "ezLogWriter::Console", "d2/d9e/classez_log_writer_1_1_console.htm", null ],
-    [ "ezConsole::ConsoleEvent", "dd/d53/structez_console_1_1_console_event.htm", null ],
     [ "ezTypeScriptBinding::ConsoleFuncBinding", "d3/dec/structez_type_script_binding_1_1_console_func_binding.htm", null ],
     [ "ezTypeScriptBinding::ConsoleFuncBinding2", "d6/d8a/structez_type_script_binding_1_1_console_func_binding2.htm", null ],
-    [ "ezConsole::ConsoleString", "d7/df3/structez_console_1_1_console_string.htm", null ],
     [ "const_iterator_base< ARRAY, T, reverse >", "db/de6/structconst__iterator__base.htm", null ],
     [ "const_iterator_base< ARRAY, T, false >", "db/de6/structconst__iterator__base.htm", [
       [ "iterator_base< ARRAY, T, reverse >", "db/d66/structiterator__base.htm", null ]
@@ -110,9 +117,13 @@ var hierarchy =
     [ "ezGameObject::ConstChildIterator", "d0/db5/classez_game_object_1_1_const_child_iterator.htm", [
       [ "ezGameObject::ChildIterator", "d2/dbd/classez_game_object_1_1_child_iterator.htm", null ]
     ] ],
+    [ "ezHashTableBase< KeyType, ValueType, Hasher >::ConstIterator", "d7/db4/structez_hash_table_base_1_1_const_iterator.htm", [
+      [ "ezHashTableBase< KeyType, ValueType, Hasher >::Iterator", "d4/d81/structez_hash_table_base_1_1_iterator.htm", null ]
+    ] ],
     [ "ezIdTableBase< IdType, ValueType >::ConstIterator", "d8/d3d/classez_id_table_base_1_1_const_iterator.htm", [
       [ "ezIdTableBase< IdType, ValueType >::Iterator", "d7/d1b/structez_id_table_base_1_1_iterator.htm", null ]
     ] ],
+    [ "ezHashSetBase< KeyType, Hasher >::ConstIterator", "d3/d30/classez_hash_set_base_1_1_const_iterator.htm", null ],
     [ "ezMapBase< KeyType, ValueType, Comparer >::ConstIterator", "dd/d35/structez_map_base_1_1_const_iterator.htm", [
       [ "ezMapBase< KeyType, ValueType, Comparer >::Iterator", "da/d8e/structez_map_base_1_1_iterator.htm", null ]
     ] ],
@@ -121,10 +132,6 @@ var hierarchy =
     ] ],
     [ "ezRangeView< ValueType, IteratorType >::ConstIterator", "d9/dd1/structez_range_view_1_1_const_iterator.htm", [
       [ "ezRangeView< ValueType, IteratorType >::Iterator", "da/d51/structez_range_view_1_1_iterator.htm", null ]
-    ] ],
-    [ "ezHashSetBase< KeyType, Hasher >::ConstIterator", "d3/d30/classez_hash_set_base_1_1_const_iterator.htm", null ],
-    [ "ezHashTableBase< KeyType, ValueType, Hasher >::ConstIterator", "d7/db4/structez_hash_table_base_1_1_const_iterator.htm", [
-      [ "ezHashTableBase< KeyType, ValueType, Hasher >::Iterator", "d4/d81/structez_hash_table_base_1_1_iterator.htm", null ]
     ] ],
     [ "ezInternal::WorldData::ConstObjectIterator", "d6/de8/classez_internal_1_1_world_data_1_1_const_object_iterator.htm", null ],
     [ "ContextInstancer", null, [
@@ -147,8 +154,9 @@ var hierarchy =
     [ "ezJSONReader::Element", "dd/d9e/structez_j_s_o_n_reader_1_1_element.htm", null ],
     [ "ezQtPickDocumentObjectDlg::Element", "df/da0/structez_qt_pick_document_object_dlg_1_1_element.htm", null ],
     [ "ezQtPropertyContainerWidget::Element", "d1/dc8/structez_qt_property_container_widget_1_1_element.htm", null ],
-    [ "ezBlackboard::Entry", "de/d1b/structez_blackboard_1_1_entry.htm", null ],
     [ "ezMessageQueueBase< MetaDataType >::Entry", "d3/dca/structez_message_queue_base_1_1_entry.htm", null ],
+    [ "ezQtCVarModel::Entry", "d7/db6/structez_qt_c_var_model_1_1_entry.htm", null ],
+    [ "ezBlackboard::Entry", "de/d1b/structez_blackboard_1_1_entry.htm", null ],
     [ "ezBlackboard::EntryEvent", "d3/d20/structez_blackboard_1_1_entry_event.htm", null ],
     [ "ezReflectionUtils::EnumConversionMode", "d1/dc8/structez_reflection_utils_1_1_enum_conversion_mode.htm", null ],
     [ "ezShaderParser::EnumDefinition", "d3/db6/structez_shader_parser_1_1_enum_definition.htm", null ],
@@ -156,9 +164,9 @@ var hierarchy =
     [ "ezReflectionUtils::EnumKeyValuePair", "d9/dde/structez_reflection_utils_1_1_enum_key_value_pair.htm", null ],
     [ "ezShaderParser::EnumValue", "dd/d61/structez_shader_parser_1_1_enum_value.htm", null ],
     [ "ezLogWriter::ETW", "d7/d94/classez_log_writer_1_1_e_t_w.htm", null ],
-    [ "ezProcessCommunicationChannel::Event", "d2/d48/structez_process_communication_channel_1_1_event.htm", null ],
-    [ "ezEditorEngineProcessConnection::Event", "d5/d75/structez_editor_engine_process_connection_1_1_event.htm", null ],
     [ "ezWorldRttiConverterContext::Event", "dc/d50/structez_world_rtti_converter_context_1_1_event.htm", null ],
+    [ "ezEditorEngineProcessConnection::Event", "d5/d75/structez_editor_engine_process_connection_1_1_event.htm", null ],
+    [ "ezProcessCommunicationChannel::Event", "d2/d48/structez_process_communication_channel_1_1_event.htm", null ],
     [ "ezActionManager::Event", "d1/d3a/structez_action_manager_1_1_event.htm", null ],
     [ "ezQtUiServices::Event", "d0/d1d/structez_qt_ui_services_1_1_event.htm", null ],
     [ "ezDocumentManager::Event", "de/dad/structez_document_manager_1_1_event.htm", null ],
@@ -409,6 +417,11 @@ var hierarchy =
         [ "ezDynamicArray< BranchNodeExtraData >", "d2/d4f/classez_dynamic_array.htm", null ]
       ] ]
     ] ],
+    [ "ezArrayBase< CacheCandidate, ezDynamicArrayBase< CacheCandidate > >", "dc/d59/classez_array_base.htm", [
+      [ "ezDynamicArrayBase< CacheCandidate >", "d5/d3f/classez_dynamic_array_base.htm", [
+        [ "ezDynamicArray< CacheCandidate >", "d2/d4f/classez_dynamic_array.htm", null ]
+      ] ]
+    ] ],
     [ "ezArrayBase< CategoryData, ezDynamicArrayBase< CategoryData > >", "dc/d59/classez_array_base.htm", [
       [ "ezDynamicArrayBase< CategoryData >", "d5/d3f/classez_dynamic_array_base.htm", [
         [ "ezDynamicArray< CategoryData, ezDefaultAllocatorWrapper >", "d2/d4f/classez_dynamic_array.htm", [
@@ -419,6 +432,11 @@ var hierarchy =
     [ "ezArrayBase< CellData, ezDynamicArrayBase< CellData > >", "dc/d59/classez_array_base.htm", [
       [ "ezDynamicArrayBase< CellData >", "d5/d3f/classez_dynamic_array_base.htm", [
         [ "ezDynamicArray< CellData >", "d2/d4f/classez_dynamic_array.htm", null ]
+      ] ]
+    ] ],
+    [ "ezArrayBase< CellDataMapping, ezDynamicArrayBase< CellDataMapping > >", "dc/d59/classez_array_base.htm", [
+      [ "ezDynamicArrayBase< CellDataMapping >", "d5/d3f/classez_dynamic_array_base.htm", [
+        [ "ezDynamicArray< CellDataMapping >", "d2/d4f/classez_dynamic_array.htm", null ]
       ] ]
     ] ],
     [ "ezArrayBase< char, ezDynamicArrayBase< char > >", "dc/d59/classez_array_base.htm", [
@@ -831,6 +849,14 @@ var hierarchy =
         ] ]
       ] ]
     ] ],
+    [ "ezArrayBase< ezAssetDocumentTypeDescriptor, ezStaticArray< ezAssetDocumentTypeDescriptor, Capacity > >", "dc/d59/classez_array_base.htm", [
+      [ "ezStaticArray< ezAssetDocumentTypeDescriptor, 4 >", "df/d5c/classez_static_array.htm", null ]
+    ] ],
+    [ "ezArrayBase< ezBakingInternal::Volume, ezDynamicArrayBase< ezBakingInternal::Volume > >", "dc/d59/classez_array_base.htm", [
+      [ "ezDynamicArrayBase< ezBakingInternal::Volume >", "d5/d3f/classez_dynamic_array_base.htm", [
+        [ "ezDynamicArray< ezBakingInternal::Volume, ezAlignedAllocatorWrapper >", "d2/d4f/classez_dynamic_array.htm", null ]
+      ] ]
+    ] ],
     [ "ezArrayBase< ezBlackboardEntry, ezDynamicArrayBase< ezBlackboardEntry > >", "dc/d59/classez_array_base.htm", [
       [ "ezDynamicArrayBase< ezBlackboardEntry >", "d5/d3f/classez_dynamic_array_base.htm", [
         [ "ezDynamicArray< ezBlackboardEntry >", "d2/d4f/classez_dynamic_array.htm", null ]
@@ -844,6 +870,11 @@ var hierarchy =
     [ "ezArrayBase< ezBoundingSphereTemplate, ezDynamicArrayBase< ezBoundingSphereTemplate > >", "dc/d59/classez_array_base.htm", [
       [ "ezDynamicArrayBase< ezBoundingSphereTemplate >", "d5/d3f/classez_dynamic_array_base.htm", [
         [ "ezDynamicArray< ezBoundingSphereTemplate >", "d2/d4f/classez_dynamic_array.htm", null ]
+      ] ]
+    ] ],
+    [ "ezArrayBase< ezClothSimulator::Node, ezDynamicArrayBase< ezClothSimulator::Node > >", "dc/d59/classez_array_base.htm", [
+      [ "ezDynamicArrayBase< ezClothSimulator::Node >", "d5/d3f/classez_dynamic_array_base.htm", [
+        [ "ezDynamicArray< ezClothSimulator::Node, ezAlignedAllocatorWrapper >", "d2/d4f/classez_dynamic_array.htm", null ]
       ] ]
     ] ],
     [ "ezArrayBase< ezCollectionAssetEntry, ezDynamicArrayBase< ezCollectionAssetEntry > >", "dc/d59/classez_array_base.htm", [
@@ -864,6 +895,11 @@ var hierarchy =
     [ "ezArrayBase< ezColorControlPoint, ezDynamicArrayBase< ezColorControlPoint > >", "dc/d59/classez_array_base.htm", [
       [ "ezDynamicArrayBase< ezColorControlPoint >", "d5/d3f/classez_dynamic_array_base.htm", [
         [ "ezDynamicArray< ezColorControlPoint >", "d2/d4f/classez_dynamic_array.htm", null ]
+      ] ]
+    ] ],
+    [ "ezArrayBase< ezColorGammaUB, ezDynamicArrayBase< ezColorGammaUB > >", "dc/d59/classez_array_base.htm", [
+      [ "ezDynamicArrayBase< ezColorGammaUB >", "d5/d3f/classez_dynamic_array_base.htm", [
+        [ "ezDynamicArray< ezColorGammaUB >", "d2/d4f/classez_dynamic_array.htm", null ]
       ] ]
     ] ],
     [ "ezArrayBase< ezColorGradient::AlphaCP, ezDynamicArrayBase< ezColorGradient::AlphaCP > >", "dc/d59/classez_array_base.htm", [
@@ -912,6 +948,18 @@ var hierarchy =
         [ "ezDynamicArray< ezComponentHandle >", "d2/d4f/classez_dynamic_array.htm", null ]
       ] ]
     ] ],
+    [ "ezArrayBase< ezCompressedSkyVisibility, ezDynamicArrayBase< ezCompressedSkyVisibility > >", "dc/d59/classez_array_base.htm", [
+      [ "ezDynamicArrayBase< ezCompressedSkyVisibility >", "d5/d3f/classez_dynamic_array_base.htm", [
+        [ "ezDynamicArray< ezCompressedSkyVisibility >", "d2/d4f/classez_dynamic_array.htm", null ]
+      ] ]
+    ] ],
+    [ "ezArrayBase< ezConsoleString, ezDynamicArrayBase< ezConsoleString > >", "dc/d59/classez_array_base.htm", [
+      [ "ezDynamicArrayBase< ezConsoleString >", "d5/d3f/classez_dynamic_array_base.htm", [
+        [ "ezDynamicArray< ezConsoleString, ezDefaultAllocatorWrapper >", "d2/d4f/classez_dynamic_array.htm", [
+          [ "ezHybridArray< ezConsoleString, 16 >", "d8/deb/classez_hybrid_array.htm", null ]
+        ] ]
+      ] ]
+    ] ],
     [ "ezArrayBase< ezCurve1D, ezDynamicArrayBase< ezCurve1D > >", "dc/d59/classez_array_base.htm", [
       [ "ezDynamicArrayBase< ezCurve1D >", "d5/d3f/classez_dynamic_array_base.htm", [
         [ "ezDynamicArray< ezCurve1D >", "d2/d4f/classez_dynamic_array.htm", null ],
@@ -940,11 +988,6 @@ var hierarchy =
     [ "ezArrayBase< ezDataBlock< ezGameObject, BlockSizeInByte >, ezDynamicArrayBase< ezDataBlock< ezGameObject, BlockSizeInByte > > >", "dc/d59/classez_array_base.htm", [
       [ "ezDynamicArrayBase< ezDataBlock< ezGameObject, BlockSizeInByte > >", "d5/d3f/classez_dynamic_array_base.htm", [
         [ "ezDynamicArray< ezDataBlock< ezGameObject, BlockSizeInByte > >", "d2/d4f/classez_dynamic_array.htm", null ]
-      ] ]
-    ] ],
-    [ "ezArrayBase< ezDataBlock< ezSpatialData, BlockSizeInByte >, ezDynamicArrayBase< ezDataBlock< ezSpatialData, BlockSizeInByte > > >", "dc/d59/classez_array_base.htm", [
-      [ "ezDynamicArrayBase< ezDataBlock< ezSpatialData, BlockSizeInByte > >", "d5/d3f/classez_dynamic_array_base.htm", [
-        [ "ezDynamicArray< ezDataBlock< ezSpatialData, BlockSizeInByte > >", "d2/d4f/classez_dynamic_array.htm", null ]
       ] ]
     ] ],
     [ "ezArrayBase< ezDataBlock< T, BlockSizeInByte >, ezDynamicArrayBase< ezDataBlock< T, BlockSizeInByte > > >", "dc/d59/classez_array_base.htm", [
@@ -1060,20 +1103,6 @@ var hierarchy =
         ] ]
       ] ]
     ] ],
-    [ "ezArrayBase< ezDynamicArray< ezSimdBSphere >, ezDynamicArrayBase< ezDynamicArray< ezSimdBSphere > > >", "dc/d59/classez_array_base.htm", [
-      [ "ezDynamicArrayBase< ezDynamicArray< ezSimdBSphere > >", "d5/d3f/classez_dynamic_array_base.htm", [
-        [ "ezDynamicArray< ezDynamicArray< ezSimdBSphere >, ezDefaultAllocatorWrapper >", "d2/d4f/classez_dynamic_array.htm", [
-          [ "ezHybridArray< ezDynamicArray< ezSimdBSphere >, 4 >", "d8/deb/classez_hybrid_array.htm", null ]
-        ] ]
-      ] ]
-    ] ],
-    [ "ezArrayBase< ezDynamicArray< ezSpatialData * >, ezDynamicArrayBase< ezDynamicArray< ezSpatialData * > > >", "dc/d59/classez_array_base.htm", [
-      [ "ezDynamicArrayBase< ezDynamicArray< ezSpatialData * > >", "d5/d3f/classez_dynamic_array_base.htm", [
-        [ "ezDynamicArray< ezDynamicArray< ezSpatialData * >, ezDefaultAllocatorWrapper >", "d2/d4f/classez_dynamic_array.htm", [
-          [ "ezHybridArray< ezDynamicArray< ezSpatialData * >, 4 >", "d8/deb/classez_hybrid_array.htm", null ]
-        ] ]
-      ] ]
-    ] ],
     [ "ezArrayBase< ezDynamicArray< ezUInt16 >, ezDynamicArrayBase< ezDynamicArray< ezUInt16 > > >", "dc/d59/classez_array_base.htm", [
       [ "ezDynamicArrayBase< ezDynamicArray< ezUInt16 > >", "d5/d3f/classez_dynamic_array_base.htm", [
         [ "ezDynamicArray< ezDynamicArray< ezUInt16 > >", "d2/d4f/classez_dynamic_array.htm", null ]
@@ -1083,6 +1112,18 @@ var hierarchy =
       [ "ezDynamicArrayBase< ezDynamicMenuAction::Item >", "d5/d3f/classez_dynamic_array_base.htm", [
         [ "ezDynamicArray< ezDynamicMenuAction::Item, ezDefaultAllocatorWrapper >", "d2/d4f/classez_dynamic_array.htm", [
           [ "ezHybridArray< ezDynamicMenuAction::Item, 16 >", "d8/deb/classez_hybrid_array.htm", null ]
+        ] ]
+      ] ]
+    ] ],
+    [ "ezArrayBase< ezDynamicMeshVertex, ezDynamicArrayBase< ezDynamicMeshVertex > >", "dc/d59/classez_array_base.htm", [
+      [ "ezDynamicArrayBase< ezDynamicMeshVertex >", "d5/d3f/classez_dynamic_array_base.htm", [
+        [ "ezDynamicArray< ezDynamicMeshVertex, ezAlignedAllocatorWrapper >", "d2/d4f/classez_dynamic_array.htm", null ]
+      ] ]
+    ] ],
+    [ "ezArrayBase< ezEditableSkeletonBoneShape, ezDynamicArrayBase< ezEditableSkeletonBoneShape > >", "dc/d59/classez_array_base.htm", [
+      [ "ezDynamicArrayBase< ezEditableSkeletonBoneShape >", "d5/d3f/classez_dynamic_array_base.htm", [
+        [ "ezDynamicArray< ezEditableSkeletonBoneShape, ezDefaultAllocatorWrapper >", "d2/d4f/classez_dynamic_array.htm", [
+          [ "ezHybridArray< ezEditableSkeletonBoneShape, 1 >", "d8/deb/classez_hybrid_array.htm", null ]
         ] ]
       ] ]
     ] ],
@@ -1194,9 +1235,7 @@ var hierarchy =
     ] ],
     [ "ezArrayBase< ezGameObject *, ezDynamicArrayBase< ezGameObject * > >", "dc/d59/classez_array_base.htm", [
       [ "ezDynamicArrayBase< ezGameObject * >", "d5/d3f/classez_dynamic_array_base.htm", [
-        [ "ezDynamicArray< ezGameObject *, ezDefaultAllocatorWrapper >", "d2/d4f/classez_dynamic_array.htm", [
-          [ "ezHybridArray< ezGameObject *, 8 >", "d8/deb/classez_hybrid_array.htm", null ]
-        ] ]
+        [ "ezDynamicArray< ezGameObject * >", "d2/d4f/classez_dynamic_array.htm", null ]
       ] ]
     ] ],
     [ "ezArrayBase< ezGameObjectHandle, ezDynamicArrayBase< ezGameObjectHandle > >", "dc/d59/classez_array_base.htm", [
@@ -1234,13 +1273,6 @@ var hierarchy =
         ] ]
       ] ]
     ] ],
-    [ "ezArrayBase< ezHashTable< ezSpatialData *, ezUInt32 >, ezDynamicArrayBase< ezHashTable< ezSpatialData *, ezUInt32 > > >", "dc/d59/classez_array_base.htm", [
-      [ "ezDynamicArrayBase< ezHashTable< ezSpatialData *, ezUInt32 > >", "d5/d3f/classez_dynamic_array_base.htm", [
-        [ "ezDynamicArray< ezHashTable< ezSpatialData *, ezUInt32 >, ezDefaultAllocatorWrapper >", "d2/d4f/classez_dynamic_array.htm", [
-          [ "ezHybridArray< ezHashTable< ezSpatialData *, ezUInt32 >, 4 >", "d8/deb/classez_hybrid_array.htm", null ]
-        ] ]
-      ] ]
-    ] ],
     [ "ezArrayBase< ezHybridArray< ezUInt16, 1 >, ezDynamicArrayBase< ezHybridArray< ezUInt16, 1 > > >", "dc/d59/classez_array_base.htm", [
       [ "ezDynamicArrayBase< ezHybridArray< ezUInt16, 1 > >", "d5/d3f/classez_dynamic_array_base.htm", [
         [ "ezDynamicArray< ezHybridArray< ezUInt16, 1 > >", "d2/d4f/classez_dynamic_array.htm", null ]
@@ -1257,6 +1289,7 @@ var hierarchy =
         [ "ezDynamicArray< ezHybridString, ezDefaultAllocatorWrapper >", "d2/d4f/classez_dynamic_array.htm", [
           [ "ezHybridArray< ezHybridString, 1 >", "d8/deb/classez_hybrid_array.htm", null ],
           [ "ezHybridArray< ezHybridString, 16 >", "d8/deb/classez_hybrid_array.htm", null ],
+          [ "ezHybridArray< ezHybridString, 2 >", "d8/deb/classez_hybrid_array.htm", null ],
           [ "ezHybridArray< ezHybridString, 4 >", "d8/deb/classez_hybrid_array.htm", null ]
         ] ]
       ] ]
@@ -1351,6 +1384,11 @@ var hierarchy =
     [ "ezArrayBase< ezKrautTreeResourceDescriptor::VertexData, ezDynamicArrayBase< ezKrautTreeResourceDescriptor::VertexData > >", "dc/d59/classez_array_base.htm", [
       [ "ezDynamicArrayBase< ezKrautTreeResourceDescriptor::VertexData >", "d5/d3f/classez_dynamic_array_base.htm", [
         [ "ezDynamicArray< ezKrautTreeResourceDescriptor::VertexData >", "d2/d4f/classez_dynamic_array.htm", null ]
+      ] ]
+    ] ],
+    [ "ezArrayBase< ezLayerContext *, ezDynamicArrayBase< ezLayerContext * > >", "dc/d59/classez_array_base.htm", [
+      [ "ezDynamicArrayBase< ezLayerContext * >", "d5/d3f/classez_dynamic_array_base.htm", [
+        [ "ezDynamicArray< ezLayerContext * >", "d2/d4f/classez_dynamic_array.htm", null ]
       ] ]
     ] ],
     [ "ezArrayBase< ezLogEntry, ezDynamicArrayBase< ezLogEntry > >", "dc/d59/classez_array_base.htm", [
@@ -1605,6 +1643,13 @@ var hierarchy =
         ] ]
       ] ]
     ] ],
+    [ "ezArrayBase< ezPluginInitCallback, ezDynamicArrayBase< ezPluginInitCallback > >", "dc/d59/classez_array_base.htm", [
+      [ "ezDynamicArrayBase< ezPluginInitCallback >", "d5/d3f/classez_dynamic_array_base.htm", [
+        [ "ezDynamicArray< ezPluginInitCallback, ezDefaultAllocatorWrapper >", "d2/d4f/classez_dynamic_array.htm", [
+          [ "ezHybridArray< ezPluginInitCallback, 2 >", "d8/deb/classez_hybrid_array.htm", null ]
+        ] ]
+      ] ]
+    ] ],
     [ "ezArrayBase< ezProcessingStream *, ezDynamicArrayBase< ezProcessingStream * > >", "dc/d59/classez_array_base.htm", [
       [ "ezDynamicArrayBase< ezProcessingStream * >", "d5/d3f/classez_dynamic_array_base.htm", [
         [ "ezDynamicArray< ezProcessingStream *, ezDefaultAllocatorWrapper >", "d2/d4f/classez_dynamic_array.htm", [
@@ -1748,9 +1793,45 @@ var hierarchy =
         [ "ezDynamicArray< ezPushObjectStateData >", "d2/d4f/classez_dynamic_array.htm", null ]
       ] ]
     ] ],
+    [ "ezArrayBase< ezPxBoneColliderComponent::Shape, ezDynamicArrayBase< ezPxBoneColliderComponent::Shape > >", "dc/d59/classez_array_base.htm", [
+      [ "ezDynamicArrayBase< ezPxBoneColliderComponent::Shape >", "d5/d3f/classez_dynamic_array_base.htm", [
+        [ "ezDynamicArray< ezPxBoneColliderComponent::Shape >", "d2/d4f/classez_dynamic_array.htm", null ]
+      ] ]
+    ] ],
     [ "ezArrayBase< ezPxDynamicActorComponent *, ezDynamicArrayBase< ezPxDynamicActorComponent * > >", "dc/d59/classez_array_base.htm", [
       [ "ezDynamicArrayBase< ezPxDynamicActorComponent * >", "d5/d3f/classez_dynamic_array_base.htm", [
         [ "ezDynamicArray< ezPxDynamicActorComponent * >", "d2/d4f/classez_dynamic_array.htm", null ]
+      ] ]
+    ] ],
+    [ "ezArrayBase< ezPxQueryShapeActorComponent *, ezDynamicArrayBase< ezPxQueryShapeActorComponent * > >", "dc/d59/classez_array_base.htm", [
+      [ "ezDynamicArrayBase< ezPxQueryShapeActorComponent * >", "d5/d3f/classez_dynamic_array_base.htm", [
+        [ "ezDynamicArray< ezPxQueryShapeActorComponent * >", "d2/d4f/classez_dynamic_array.htm", null ]
+      ] ]
+    ] ],
+    [ "ezArrayBase< ezPxRagdollComponent::ArtLink, ezDynamicArrayBase< ezPxRagdollComponent::ArtLink > >", "dc/d59/classez_array_base.htm", [
+      [ "ezDynamicArrayBase< ezPxRagdollComponent::ArtLink >", "d5/d3f/classez_dynamic_array_base.htm", [
+        [ "ezDynamicArray< ezPxRagdollComponent::ArtLink >", "d2/d4f/classez_dynamic_array.htm", null ]
+      ] ]
+    ] ],
+    [ "ezArrayBase< ezPxRagdollComponent::Impulse, ezDynamicArrayBase< ezPxRagdollComponent::Impulse > >", "dc/d59/classez_array_base.htm", [
+      [ "ezDynamicArrayBase< ezPxRagdollComponent::Impulse >", "d5/d3f/classez_dynamic_array_base.htm", [
+        [ "ezDynamicArray< ezPxRagdollComponent::Impulse, ezDefaultAllocatorWrapper >", "d2/d4f/classez_dynamic_array.htm", [
+          [ "ezHybridArray< ezPxRagdollComponent::Impulse, 8 >", "d8/deb/classez_hybrid_array.htm", null ]
+        ] ]
+      ] ]
+    ] ],
+    [ "ezArrayBase< ezPxSimulationEventCallback::InteractionContact, ezDynamicArrayBase< ezPxSimulationEventCallback::InteractionContact > >", "dc/d59/classez_array_base.htm", [
+      [ "ezDynamicArrayBase< ezPxSimulationEventCallback::InteractionContact >", "d5/d3f/classez_dynamic_array_base.htm", [
+        [ "ezDynamicArray< ezPxSimulationEventCallback::InteractionContact, ezDefaultAllocatorWrapper >", "d2/d4f/classez_dynamic_array.htm", [
+          [ "ezHybridArray< ezPxSimulationEventCallback::InteractionContact, 8 >", "d8/deb/classez_hybrid_array.htm", null ]
+        ] ]
+      ] ]
+    ] ],
+    [ "ezArrayBase< ezPxSimulationEventCallback::SlideAndRollInfo, ezDynamicArrayBase< ezPxSimulationEventCallback::SlideAndRollInfo > >", "dc/d59/classez_array_base.htm", [
+      [ "ezDynamicArrayBase< ezPxSimulationEventCallback::SlideAndRollInfo >", "d5/d3f/classez_dynamic_array_base.htm", [
+        [ "ezDynamicArray< ezPxSimulationEventCallback::SlideAndRollInfo, ezDefaultAllocatorWrapper >", "d2/d4f/classez_dynamic_array.htm", [
+          [ "ezHybridArray< ezPxSimulationEventCallback::SlideAndRollInfo, 4 >", "d8/deb/classez_hybrid_array.htm", null ]
+        ] ]
       ] ]
     ] ],
     [ "ezArrayBase< ezPxTriggerComponent *, ezDynamicArrayBase< ezPxTriggerComponent * > >", "dc/d59/classez_array_base.htm", [
@@ -1768,6 +1849,11 @@ var hierarchy =
         [ "ezDynamicArray< ezQtConnection *, ezDefaultAllocatorWrapper >", "d2/d4f/classez_dynamic_array.htm", [
           [ "ezHybridArray< ezQtConnection *, 6 >", "d8/deb/classez_hybrid_array.htm", null ]
         ] ]
+      ] ]
+    ] ],
+    [ "ezArrayBase< ezQtCVarModel::Entry *, ezDynamicArrayBase< ezQtCVarModel::Entry * > >", "dc/d59/classez_array_base.htm", [
+      [ "ezDynamicArrayBase< ezQtCVarModel::Entry * >", "d5/d3f/classez_dynamic_array_base.htm", [
+        [ "ezDynamicArray< ezQtCVarModel::Entry * >", "d2/d4f/classez_dynamic_array.htm", null ]
       ] ]
     ] ],
     [ "ezArrayBase< ezQtDocumentPanel *, ezDynamicArrayBase< ezQtDocumentPanel * > >", "dc/d59/classez_array_base.htm", [
@@ -1874,6 +1960,16 @@ var hierarchy =
         [ "ezDynamicArray< ezRmlUiInternal::Batch >", "d2/d4f/classez_dynamic_array.htm", null ]
       ] ]
     ] ],
+    [ "ezArrayBase< ezRopeSimulator::Node, ezDynamicArrayBase< ezRopeSimulator::Node > >", "dc/d59/classez_array_base.htm", [
+      [ "ezDynamicArrayBase< ezRopeSimulator::Node >", "d5/d3f/classez_dynamic_array_base.htm", [
+        [ "ezDynamicArray< ezRopeSimulator::Node, ezAlignedAllocatorWrapper >", "d2/d4f/classez_dynamic_array.htm", null ]
+      ] ]
+    ] ],
+    [ "ezArrayBase< ezSceneLayerBase *, ezDynamicArrayBase< ezSceneLayerBase * > >", "dc/d59/classez_array_base.htm", [
+      [ "ezDynamicArrayBase< ezSceneLayerBase * >", "d5/d3f/classez_dynamic_array_base.htm", [
+        [ "ezDynamicArray< ezSceneLayerBase * >", "d2/d4f/classez_dynamic_array.htm", null ]
+      ] ]
+    ] ],
     [ "ezArrayBase< ezSelectedCurveCP, ezDynamicArrayBase< ezSelectedCurveCP > >", "dc/d59/classez_array_base.htm", [
       [ "ezDynamicArrayBase< ezSelectedCurveCP >", "d5/d3f/classez_dynamic_array_base.htm", [
         [ "ezDynamicArray< ezSelectedCurveCP >", "d2/d4f/classez_dynamic_array.htm", null ]
@@ -1912,6 +2008,12 @@ var hierarchy =
         [ "ezDynamicArray< ezShaderResourceBinding, ezDefaultAllocatorWrapper >", "d2/d4f/classez_dynamic_array.htm", [
           [ "ezHybridArray< ezShaderResourceBinding, 8 >", "d8/deb/classez_hybrid_array.htm", null ]
         ] ]
+      ] ]
+    ] ],
+    [ "ezArrayBase< ezShaderTransform, ezDynamicArrayBase< ezShaderTransform > >", "dc/d59/classez_array_base.htm", [
+      [ "ezDynamicArrayBase< ezShaderTransform >", "d5/d3f/classez_dynamic_array_base.htm", [
+        [ "ezDynamicArray< ezShaderTransform >", "d2/d4f/classez_dynamic_array.htm", null ],
+        [ "ezDynamicArray< ezShaderTransform, ezAlignedAllocatorWrapper >", "d2/d4f/classez_dynamic_array.htm", null ]
       ] ]
     ] ],
     [ "ezArrayBase< ezSharedPtr< const ezProcGenInternal::PlacementOutput >, ezDynamicArrayBase< ezSharedPtr< const ezProcGenInternal::PlacementOutput > > >", "dc/d59/classez_array_base.htm", [
@@ -1968,14 +2070,29 @@ var hierarchy =
         [ "ezDynamicArray< ezSingleCurveData * >", "d2/d4f/classez_dynamic_array.htm", null ]
       ] ]
     ] ],
+    [ "ezArrayBase< ezSkeletonComponent::BoxShape, ezDynamicArrayBase< ezSkeletonComponent::BoxShape > >", "dc/d59/classez_array_base.htm", [
+      [ "ezDynamicArrayBase< ezSkeletonComponent::BoxShape >", "d5/d3f/classez_dynamic_array_base.htm", [
+        [ "ezDynamicArray< ezSkeletonComponent::BoxShape >", "d2/d4f/classez_dynamic_array.htm", null ]
+      ] ]
+    ] ],
+    [ "ezArrayBase< ezSkeletonComponent::CapsuleShape, ezDynamicArrayBase< ezSkeletonComponent::CapsuleShape > >", "dc/d59/classez_array_base.htm", [
+      [ "ezDynamicArrayBase< ezSkeletonComponent::CapsuleShape >", "d5/d3f/classez_dynamic_array_base.htm", [
+        [ "ezDynamicArray< ezSkeletonComponent::CapsuleShape >", "d2/d4f/classez_dynamic_array.htm", null ]
+      ] ]
+    ] ],
+    [ "ezArrayBase< ezSkeletonComponent::SphereShape, ezDynamicArrayBase< ezSkeletonComponent::SphereShape > >", "dc/d59/classez_array_base.htm", [
+      [ "ezDynamicArrayBase< ezSkeletonComponent::SphereShape >", "d5/d3f/classez_dynamic_array_base.htm", [
+        [ "ezDynamicArray< ezSkeletonComponent::SphereShape >", "d2/d4f/classez_dynamic_array.htm", null ]
+      ] ]
+    ] ],
     [ "ezArrayBase< ezSkeletonJoint, ezDynamicArrayBase< ezSkeletonJoint > >", "dc/d59/classez_array_base.htm", [
       [ "ezDynamicArrayBase< ezSkeletonJoint >", "d5/d3f/classez_dynamic_array_base.htm", [
         [ "ezDynamicArray< ezSkeletonJoint >", "d2/d4f/classez_dynamic_array.htm", null ]
       ] ]
     ] ],
-    [ "ezArrayBase< ezSpatialData *, ezDynamicArrayBase< ezSpatialData * > >", "dc/d59/classez_array_base.htm", [
-      [ "ezDynamicArrayBase< ezSpatialData * >", "d5/d3f/classez_dynamic_array_base.htm", [
-        [ "ezDynamicArray< ezSpatialData * >", "d2/d4f/classez_dynamic_array.htm", null ]
+    [ "ezArrayBase< ezSkeletonResourceGeometry, ezDynamicArrayBase< ezSkeletonResourceGeometry > >", "dc/d59/classez_array_base.htm", [
+      [ "ezDynamicArrayBase< ezSkeletonResourceGeometry >", "d5/d3f/classez_dynamic_array_base.htm", [
+        [ "ezDynamicArray< ezSkeletonResourceGeometry >", "d2/d4f/classez_dynamic_array.htm", null ]
       ] ]
     ] ],
     [ "ezArrayBase< ezStandardJSONWriter::JSONState, ezDynamicArrayBase< ezStandardJSONWriter::JSONState > >", "dc/d59/classez_array_base.htm", [
@@ -1996,6 +2113,13 @@ var hierarchy =
       [ "ezDynamicArrayBase< ezSurfaceResourceSlot >", "d5/d3f/classez_dynamic_array_base.htm", [
         [ "ezDynamicArray< ezSurfaceResourceSlot, ezDefaultAllocatorWrapper >", "d2/d4f/classez_dynamic_array.htm", [
           [ "ezHybridArray< ezSurfaceResourceSlot, 8 >", "d8/deb/classez_hybrid_array.htm", null ]
+        ] ]
+      ] ]
+    ] ],
+    [ "ezArrayBase< ezTag, ezDynamicArrayBase< ezTag > >", "dc/d59/classez_array_base.htm", [
+      [ "ezDynamicArrayBase< ezTag >", "d5/d3f/classez_dynamic_array_base.htm", [
+        [ "ezDynamicArray< ezTag, ezDefaultAllocatorWrapper >", "d2/d4f/classez_dynamic_array.htm", [
+          [ "ezHybridArray< ezTag, 1 >", "d8/deb/classez_hybrid_array.htm", null ]
         ] ]
       ] ]
     ] ],
@@ -2156,6 +2280,7 @@ var hierarchy =
     [ "ezArrayBase< ezUInt16, ezDynamicArrayBase< ezUInt16 > >", "dc/d59/classez_array_base.htm", [
       [ "ezDynamicArrayBase< ezUInt16 >", "d5/d3f/classez_dynamic_array_base.htm", [
         [ "ezDynamicArray< ezUInt16 >", "d2/d4f/classez_dynamic_array.htm", null ],
+        [ "ezDynamicArray< ezUInt16, ezAlignedAllocatorWrapper >", "d2/d4f/classez_dynamic_array.htm", null ],
         [ "ezDynamicArray< ezUInt16, ezDefaultAllocatorWrapper >", "d2/d4f/classez_dynamic_array.htm", [
           [ "ezHybridArray< ezUInt16, 1 >", "d8/deb/classez_hybrid_array.htm", null ],
           [ "ezHybridArray< ezUInt16, 16 >", "d8/deb/classez_hybrid_array.htm", null ],
@@ -2167,6 +2292,7 @@ var hierarchy =
     [ "ezArrayBase< ezUInt32, ezDynamicArrayBase< ezUInt32 > >", "dc/d59/classez_array_base.htm", [
       [ "ezDynamicArrayBase< ezUInt32 >", "d5/d3f/classez_dynamic_array_base.htm", [
         [ "ezDynamicArray< ezUInt32 >", "d2/d4f/classez_dynamic_array.htm", null ],
+        [ "ezDynamicArray< ezUInt32, ezAlignedAllocatorWrapper >", "d2/d4f/classez_dynamic_array.htm", null ],
         [ "ezDynamicArray< ezUInt32, ezDefaultAllocatorWrapper >", "d2/d4f/classez_dynamic_array.htm", [
           [ "ezHybridArray< ezUInt32, 16 >", "d8/deb/classez_hybrid_array.htm", null ],
           [ "ezHybridArray< ezUInt32, 2 >", "d8/deb/classez_hybrid_array.htm", null ],
@@ -2203,6 +2329,18 @@ var hierarchy =
           [ "ezHybridArray< ezUInt8, 4 >", "d8/deb/classez_hybrid_array.htm", null ],
           [ "ezHybridArray< ezUInt8, 4096 >", "d8/deb/classez_hybrid_array.htm", null ],
           [ "ezHybridArray< ezUInt8, 64 >", "d8/deb/classez_hybrid_array.htm", null ]
+        ] ]
+      ] ]
+    ] ],
+    [ "ezArrayBase< ezUniquePtr< Cell >, ezDynamicArrayBase< ezUniquePtr< Cell > > >", "dc/d59/classez_array_base.htm", [
+      [ "ezDynamicArrayBase< ezUniquePtr< Cell > >", "d5/d3f/classez_dynamic_array_base.htm", [
+        [ "ezDynamicArray< ezUniquePtr< Cell > >", "d2/d4f/classez_dynamic_array.htm", null ]
+      ] ]
+    ] ],
+    [ "ezArrayBase< ezUniquePtr< class ezBakedProbesComponent >, ezDynamicArrayBase< ezUniquePtr< class ezBakedProbesComponent > > >", "dc/d59/classez_array_base.htm", [
+      [ "ezDynamicArrayBase< ezUniquePtr< class ezBakedProbesComponent > >", "d5/d3f/classez_dynamic_array_base.htm", [
+        [ "ezDynamicArray< ezUniquePtr< class ezBakedProbesComponent >, ezDefaultAllocatorWrapper >", "d2/d4f/classez_dynamic_array.htm", [
+          [ "ezHybridArray< ezUniquePtr< class ezBakedProbesComponent >, 2 >", "d8/deb/classez_hybrid_array.htm", null ]
         ] ]
       ] ]
     ] ],
@@ -2283,6 +2421,11 @@ var hierarchy =
         ] ]
       ] ]
     ] ],
+    [ "ezArrayBase< ezUniquePtr< Grid >, ezDynamicArrayBase< ezUniquePtr< Grid > > >", "dc/d59/classez_array_base.htm", [
+      [ "ezDynamicArrayBase< ezUniquePtr< Grid > >", "d5/d3f/classez_dynamic_array_base.htm", [
+        [ "ezDynamicArray< ezUniquePtr< Grid > >", "d2/d4f/classez_dynamic_array.htm", null ]
+      ] ]
+    ] ],
     [ "ezArrayBase< ezUniquePtr< WorkerOpInfo >, ezDynamicArrayBase< ezUniquePtr< WorkerOpInfo > > >", "dc/d59/classez_array_base.htm", [
       [ "ezDynamicArrayBase< ezUniquePtr< WorkerOpInfo > >", "d5/d3f/classez_dynamic_array_base.htm", [
         [ "ezDynamicArray< ezUniquePtr< WorkerOpInfo > >", "d2/d4f/classez_dynamic_array.htm", null ]
@@ -2292,6 +2435,7 @@ var hierarchy =
       [ "ezDynamicArrayBase< ezUuid >", "d5/d3f/classez_dynamic_array_base.htm", [
         [ "ezDynamicArray< ezUuid >", "d2/d4f/classez_dynamic_array.htm", null ],
         [ "ezDynamicArray< ezUuid, ezDefaultAllocatorWrapper >", "d2/d4f/classez_dynamic_array.htm", [
+          [ "ezHybridArray< ezUuid, 1 >", "d8/deb/classez_hybrid_array.htm", null ],
           [ "ezHybridArray< ezUuid, 16 >", "d8/deb/classez_hybrid_array.htm", null ],
           [ "ezHybridArray< ezUuid, 3 >", "d8/deb/classez_hybrid_array.htm", null ],
           [ "ezHybridArray< ezUuid, 32 >", "d8/deb/classez_hybrid_array.htm", null ]
@@ -2437,6 +2581,11 @@ var hierarchy =
         [ "ezDynamicArray< ezVolumeCollection::Box, ezAlignedAllocatorWrapper >", "d2/d4f/classez_dynamic_array.htm", null ]
       ] ]
     ] ],
+    [ "ezArrayBase< ezVolumeCollection::Image, ezDynamicArrayBase< ezVolumeCollection::Image > >", "dc/d59/classez_array_base.htm", [
+      [ "ezDynamicArrayBase< ezVolumeCollection::Image >", "d5/d3f/classez_dynamic_array_base.htm", [
+        [ "ezDynamicArray< ezVolumeCollection::Image, ezAlignedAllocatorWrapper >", "d2/d4f/classez_dynamic_array.htm", null ]
+      ] ]
+    ] ],
     [ "ezArrayBase< ezVolumeCollection::Sphere, ezDynamicArrayBase< ezVolumeCollection::Sphere > >", "dc/d59/classez_array_base.htm", [
       [ "ezDynamicArrayBase< ezVolumeCollection::Sphere >", "d5/d3f/classez_dynamic_array_base.htm", [
         [ "ezDynamicArray< ezVolumeCollection::Sphere, ezAlignedAllocatorWrapper >", "d2/d4f/classez_dynamic_array.htm", null ]
@@ -2460,6 +2609,11 @@ var hierarchy =
         [ "ezDynamicArray< ezWorldModuleConfig::InterfaceImpl, ezDefaultAllocatorWrapper >", "d2/d4f/classez_dynamic_array.htm", [
           [ "ezHybridArray< ezWorldModuleConfig::InterfaceImpl, 8 >", "d8/deb/classez_hybrid_array.htm", null ]
         ] ]
+      ] ]
+    ] ],
+    [ "ezArrayBase< ezWorldRttiConverterContext *, ezDynamicArrayBase< ezWorldRttiConverterContext * > >", "dc/d59/classez_array_base.htm", [
+      [ "ezDynamicArrayBase< ezWorldRttiConverterContext * >", "d5/d3f/classez_dynamic_array_base.htm", [
+        [ "ezDynamicArray< ezWorldRttiConverterContext * >", "d2/d4f/classez_dynamic_array.htm", null ]
       ] ]
     ] ],
     [ "ezArrayBase< Factory, ezDynamicArrayBase< Factory > >", "dc/d59/classez_array_base.htm", [
@@ -2529,9 +2683,9 @@ var hierarchy =
         [ "ezDynamicArray< InputVertex >", "d2/d4f/classez_dynamic_array.htm", null ]
       ] ]
     ] ],
-    [ "ezArrayBase< InteractionContact, ezDynamicArrayBase< InteractionContact > >", "dc/d59/classez_array_base.htm", [
-      [ "ezDynamicArrayBase< InteractionContact >", "d5/d3f/classez_dynamic_array_base.htm", [
-        [ "ezDynamicArray< InteractionContact >", "d2/d4f/classez_dynamic_array.htm", null ]
+    [ "ezArrayBase< InstancedGeometry, ezDynamicArrayBase< InstancedGeometry > >", "dc/d59/classez_array_base.htm", [
+      [ "ezDynamicArrayBase< InstancedGeometry >", "d5/d3f/classez_dynamic_array_base.htm", [
+        [ "ezDynamicArray< InstancedGeometry, ezAlignedAllocatorWrapper >", "d2/d4f/classez_dynamic_array.htm", null ]
       ] ]
     ] ],
     [ "ezArrayBase< JointData, ezStaticArray< JointData, Capacity > >", "dc/d59/classez_array_base.htm", [
@@ -2591,6 +2745,11 @@ var hierarchy =
     [ "ezArrayBase< PerObjectCache, ezDynamicArrayBase< PerObjectCache > >", "dc/d59/classez_array_base.htm", [
       [ "ezDynamicArrayBase< PerObjectCache >", "d5/d3f/classez_dynamic_array_base.htm", [
         [ "ezDynamicArray< PerObjectCache >", "d2/d4f/classez_dynamic_array.htm", null ]
+      ] ]
+    ] ],
+    [ "ezArrayBase< physx::PxArticulationLink *, ezDynamicArrayBase< physx::PxArticulationLink * > >", "dc/d59/classez_array_base.htm", [
+      [ "ezDynamicArrayBase< physx::PxArticulationLink * >", "d5/d3f/classez_dynamic_array_base.htm", [
+        [ "ezDynamicArray< physx::PxArticulationLink * >", "d2/d4f/classez_dynamic_array.htm", null ]
       ] ]
     ] ],
     [ "ezArrayBase< physx::PxConvexMesh *, ezDynamicArrayBase< physx::PxConvexMesh * > >", "dc/d59/classez_array_base.htm", [
@@ -2658,6 +2817,11 @@ var hierarchy =
         ] ]
       ] ]
     ] ],
+    [ "ezArrayBase< SortedCacheCandidate, ezDynamicArrayBase< SortedCacheCandidate > >", "dc/d59/classez_array_base.htm", [
+      [ "ezDynamicArrayBase< SortedCacheCandidate >", "d5/d3f/classez_dynamic_array_base.htm", [
+        [ "ezDynamicArray< SortedCacheCandidate >", "d2/d4f/classez_dynamic_array.htm", null ]
+      ] ]
+    ] ],
     [ "ezArrayBase< SortedProcessingTask, ezDynamicArrayBase< SortedProcessingTask > >", "dc/d59/classez_array_base.htm", [
       [ "ezDynamicArrayBase< SortedProcessingTask >", "d5/d3f/classez_dynamic_array_base.htm", [
         [ "ezDynamicArray< SortedProcessingTask >", "d2/d4f/classez_dynamic_array.htm", null ]
@@ -2719,6 +2883,11 @@ var hierarchy =
     ] ],
     [ "ezArrayBase< T, ezStaticArray< T, Capacity > >", "dc/d59/classez_array_base.htm", [
       [ "ezStaticArray< T, Capacity >", "df/d5c/classez_static_array.htm", null ]
+    ] ],
+    [ "ezArrayBase< TagGameObject, ezDynamicArrayBase< TagGameObject > >", "dc/d59/classez_array_base.htm", [
+      [ "ezDynamicArrayBase< TagGameObject >", "d5/d3f/classez_dynamic_array_base.htm", [
+        [ "ezDynamicArray< TagGameObject >", "d2/d4f/classez_dynamic_array.htm", null ]
+      ] ]
     ] ],
     [ "ezArrayBase< TaskAndGroup, ezDynamicArrayBase< TaskAndGroup > >", "dc/d59/classez_array_base.htm", [
       [ "ezDynamicArrayBase< TaskAndGroup >", "d5/d3f/classez_dynamic_array_base.htm", [
@@ -2835,9 +3004,13 @@ var hierarchy =
     ] ],
     [ "ezArrayPropertyAccessor< Class, Container, Member >", "d7/db9/structez_array_property_accessor.htm", null ],
     [ "ezArrayPtr< T >", "dc/dae/classez_array_ptr.htm", null ],
+    [ "ezArrayPtr< const ezBakingInternal::Volume >", "dc/dae/classez_array_ptr.htm", null ],
     [ "ezArrayPtr< const ezMat4Template >", "dc/dae/classez_array_ptr.htm", null ],
     [ "ezArrayPtr< const ezRenderDataBatch >", "dc/dae/classez_array_ptr.htm", null ],
+    [ "ezArrayPtr< const ezShaderTransform >", "dc/dae/classez_array_ptr.htm", null ],
+    [ "ezArrayPtr< const ezTransformTemplate >", "dc/dae/classez_array_ptr.htm", null ],
     [ "ezArrayPtr< const ezUInt8 >", "dc/dae/classez_array_ptr.htm", null ],
+    [ "ezArrayPtr< const ezVec3Template >", "dc/dae/classez_array_ptr.htm", null ],
     [ "ezArrayPtr< const ozz::math::SimdFloat4 >", "dc/dae/classez_array_ptr.htm", null ],
     [ "ezArrayPtr< ElemType >", "dc/dae/classez_array_ptr.htm", null ],
     [ "ezArrayPtr< ezAbstractFunctionProperty * >", "dc/dae/classez_array_ptr.htm", null ],
@@ -2858,8 +3031,10 @@ var hierarchy =
     [ "ezArrayPtr< ezQtPickDocumentObjectDlg::Element >", "dc/dae/classez_array_ptr.htm", null ],
     [ "ezArrayPtr< ezTangentQuadParticleShaderData >", "dc/dae/classez_array_ptr.htm", null ],
     [ "ezArrayPtr< ezTrailParticleShaderData >", "dc/dae/classez_array_ptr.htm", null ],
+    [ "ezArrayPtr< ezUInt16 >", "dc/dae/classez_array_ptr.htm", null ],
     [ "ezArrayPtr< ezUInt32 >", "dc/dae/classez_array_ptr.htm", null ],
     [ "ezArrayPtr< ezUInt8 >", "dc/dae/classez_array_ptr.htm", null ],
+    [ "ezArrayPtr< ezVec3Template >", "dc/dae/classez_array_ptr.htm", null ],
     [ "ezArrayPtr< ezVec4Template >", "dc/dae/classez_array_ptr.htm", null ],
     [ "ezArrayPtr< ozz::math::SoaTransform >", "dc/dae/classez_array_ptr.htm", null ],
     [ "ezArrayPtr< SortableRenderData >", "dc/dae/classez_array_ptr.htm", null ],
@@ -2884,6 +3059,11 @@ var hierarchy =
       [ "ezReflectedPropertyDescriptor", "db/deb/structez_reflected_property_descriptor.htm", null ],
       [ "ezReflectedTypeDescriptor", "dc/de3/structez_reflected_type_descriptor.htm", null ]
     ] ],
+    [ "ezBakingInterface", "d7/d52/classez_baking_interface.htm", [
+      [ "ezBaking", "db/d4c/classez_baking.htm", null ]
+    ] ],
+    [ "ezBakingScene", "d3/d7c/classez_baking_scene.htm", null ],
+    [ "ezBakingSettings", "d4/d7e/structez_baking_settings.htm", null ],
     [ "ezBasisAxis", "d7/d7a/structez_basis_axis.htm", [
       [ "ezEnum< ezBasisAxis >", "d6/dd9/structez_enum.htm", null ]
     ] ],
@@ -2892,8 +3072,10 @@ var hierarchy =
     [ "ezBitflags< T >", "d1/dec/structez_bitflags.htm", null ],
     [ "ezBitflags< ezAssetDocumentFlags >", "d1/dec/structez_bitflags.htm", null ],
     [ "ezBitflags< ezBlackboardEntryFlags >", "d1/dec/structez_bitflags.htm", null ],
+    [ "ezBitflags< ezClothSheetFlags >", "d1/dec/structez_bitflags.htm", null ],
     [ "ezBitflags< ezCVarFlags >", "d1/dec/structez_bitflags.htm", null ],
     [ "ezBitflags< ezDynamicMenuAction::Item::ItemFlags >", "d1/dec/structez_bitflags.htm", null ],
+    [ "ezBitflags< ezEngineProcessDocumentContextFlags >", "d1/dec/structez_bitflags.htm", null ],
     [ "ezBitflags< ezFileSystemIteratorFlags >", "d1/dec/structez_bitflags.htm", null ],
     [ "ezBitflags< ezImageConversionFlags >", "d1/dec/structez_bitflags.htm", null ],
     [ "ezBitflags< ezInputSlotFlags >", "d1/dec/structez_bitflags.htm", null ],
@@ -2904,12 +3086,14 @@ var hierarchy =
     [ "ezBitflags< ezOnPhysXContact >", "d1/dec/structez_bitflags.htm", null ],
     [ "ezBitflags< ezPhysicsShapeType >", "d1/dec/structez_bitflags.htm", null ],
     [ "ezBitflags< ezPropertyFlags >", "d1/dec/structez_bitflags.htm", null ],
+    [ "ezBitflags< ezPxActorLockingFlags >", "d1/dec/structez_bitflags.htm", null ],
     [ "ezBitflags< ezPxAxis >", "d1/dec/structez_bitflags.htm", null ],
     [ "ezBitflags< ezQtEditorApp::StartupFlags >", "d1/dec/structez_bitflags.htm", null ],
     [ "ezBitflags< ezRenderContextFlags >", "d1/dec/structez_bitflags.htm", null ],
     [ "ezBitflags< ezResourceFlags >", "d1/dec/structez_bitflags.htm", null ],
     [ "ezBitflags< ezShaderBindFlags >", "d1/dec/structez_bitflags.htm", null ],
     [ "ezBitflags< ezShaderCompilerFlags >", "d1/dec/structez_bitflags.htm", null ],
+    [ "ezBitflags< ezSpatialData::Flags >", "d1/dec/structez_bitflags.htm", null ],
     [ "ezBitflags< ezSpawnComponentFlags >", "d1/dec/structez_bitflags.htm", null ],
     [ "ezBitflags< ezTransformComponentFlags >", "d1/dec/structez_bitflags.htm", null ],
     [ "ezBitflags< ezTypeFlags >", "d1/dec/structez_bitflags.htm", null ],
@@ -2926,7 +3110,6 @@ var hierarchy =
     [ "ezBlockStorage< T, BlockSizeInByte, StorageType >", "d3/d1f/classez_block_storage.htm", null ],
     [ "ezBlockStorage< ComponentType, ezInternal::DEFAULT_BLOCK_SIZE, StorageType >", "d3/d1f/classez_block_storage.htm", null ],
     [ "ezBlockStorage< ezGameObject, ezInternal::DEFAULT_BLOCK_SIZE, ezBlockStorageType::Compact >", "d3/d1f/classez_block_storage.htm", null ],
-    [ "ezBlockStorage< ezSpatialData, ezInternal::DEFAULT_BLOCK_SIZE, ezBlockStorageType::FreeList >", "d3/d1f/classez_block_storage.htm", null ],
     [ "ezBlockStorageType", "d9/d03/structez_block_storage_type.htm", null ],
     [ "ezBoundingBoxSphereTemplate< Type >", "dc/d77/classez_bounding_box_sphere_template.htm", null ],
     [ "ezBoundingBoxSphereTemplate< float >", "dc/d77/classez_bounding_box_sphere_template.htm", null ],
@@ -2950,6 +3133,8 @@ var hierarchy =
     [ "ezClipSpaceDepthRange", "d5/d43/structez_clip_space_depth_range.htm", null ],
     [ "ezClipSpaceYMode", "d7/d2e/structez_clip_space_y_mode.htm", null ],
     [ "ezClock", "d6/dc5/classez_clock.htm", null ],
+    [ "ezClothSheetFlags", "d8/df9/structez_cloth_sheet_flags.htm", null ],
+    [ "ezClothSimulator", "d3/de4/classez_cloth_simulator.htm", null ],
     [ "ezClusteredDataGPU", "d9/d0e/structez_clustered_data_g_p_u.htm", null ],
     [ "ezCollectionEntry", "d2/d1c/structez_collection_entry.htm", null ],
     [ "ezCollectionResourceDescriptor", "d1/d3b/structez_collection_resource_descriptor.htm", null ],
@@ -2966,6 +3151,7 @@ var hierarchy =
     [ "ezCommandHistory", "d3/d4d/classez_command_history.htm", null ],
     [ "ezCommandHistoryActions", "d0/d8f/classez_command_history_actions.htm", null ],
     [ "ezCommandHistoryEvent", "dd/d88/structez_command_history_event.htm", null ],
+    [ "ezCommandInterpreterState", "d5/dbf/structez_command_interpreter_state.htm", null ],
     [ "ezCommandLineUtils", "d0/dc2/classez_command_line_utils.htm", null ],
     [ "ezCommonAssetActions", "df/d1e/classez_common_asset_actions.htm", null ],
     [ "ezCommonAssetUiState", "d8/d29/structez_common_asset_ui_state.htm", null ],
@@ -3007,7 +3193,6 @@ var hierarchy =
     [ "ezCompareHelper< KeyType >", "df/d11/structez_compare_helper.htm", null ],
     [ "ezCompareHelper< physx::PxConstraint * >", "df/d11/structez_compare_helper.htm", null ],
     [ "ezCompareHelper< PropertySemantic >", "df/d11/structez_compare_helper.htm", null ],
-    [ "ezCompareHelper< PxRigidDynamic * >", "df/d11/structez_compare_helper.htm", null ],
     [ "ezCompareHelper< QModelIndex >", "df/d11/structez_compare_helper.htm", null ],
     [ "ezCompareHelper< QString >", "df/d11/structez_compare_helper.htm", null ],
     [ "ezCompareHelper< QWidget * >", "df/d11/structez_compare_helper.htm", null ],
@@ -3029,7 +3214,11 @@ var hierarchy =
     [ "ezConditionToCompileTimeBool< cond >", "d2/d03/structez_condition_to_compile_time_bool.htm", null ],
     [ "ezConditionToCompileTimeBool< true >", "d6/d1d/structez_condition_to_compile_time_bool_3_01true_01_4.htm", null ],
     [ "ezConditionVariable", "d7/d18/classez_condition_variable.htm", null ],
-    [ "ezConsole", "d2/d7e/classez_console.htm", null ],
+    [ "ezConsole", "d2/d7e/classez_console.htm", [
+      [ "ezQuakeConsole", "dc/d33/classez_quake_console.htm", null ]
+    ] ],
+    [ "ezConsoleEvent", "d6/da3/structez_console_event.htm", null ],
+    [ "ezConsoleString", "df/dcb/structez_console_string.htm", null ],
     [ "ezConstantBufferStorageBase", "d1/df8/classez_constant_buffer_storage_base.htm", [
       [ "ezConstantBufferStorage< T >", "db/d58/classez_constant_buffer_storage.htm", null ],
       [ "ezConstantBufferStorage< ezKrautTreeConstants >", "db/d58/classez_constant_buffer_storage.htm", null ],
@@ -3071,7 +3260,6 @@ var hierarchy =
     [ "ezDataBlock< T, SizeInBytes >", "d6/d01/structez_data_block.htm", null ],
     [ "ezDataBlock< ComponentType, BlockSizeInByte >", "d6/d01/structez_data_block.htm", null ],
     [ "ezDataBlock< ezGameObject, BlockSizeInByte >", "d6/d01/structez_data_block.htm", null ],
-    [ "ezDataBlock< ezSpatialData, BlockSizeInByte >", "d6/d01/structez_data_block.htm", null ],
     [ "ezDataBlock< T, BlockSizeInByte >", "d6/d01/structez_data_block.htm", null ],
     [ "ezDataDirectoryReaderWriterBase", "d2/d00/classez_data_directory_reader_writer_base.htm", [
       [ "ezDataDirectoryReader", "d9/de4/classez_data_directory_reader.htm", [
@@ -3121,11 +3309,11 @@ var hierarchy =
       [ "ezDelegate< ezGameObjectHandle(const void *, ezComponentHandle, const char *)>", "d5/d68/structez_delegate.htm", null ],
       [ "ezDelegate< ezInternal::NewInstance< ezGALDevice >(ezAllocatorBase *, const ezGALDeviceCreationDescription &)>", "d5/d68/structez_delegate.htm", null ],
       [ "ezDelegate< ezQtEngineViewWidget *(ezQtEngineDocumentWindow *, ezEngineViewConfig *)>", "d5/d68/structez_delegate.htm", null ],
-      [ "ezDelegate< ezResult(const char *, ezConsole *)>", "d5/d68/structez_delegate.htm", null ],
       [ "ezDelegate< ezResult(const char *szAbsoluteFile, ezDynamicArray< ezUInt8 > &FileContent, ezTimestamp &out_FileModification)>", "d5/d68/structez_delegate.htm", null ],
       [ "ezDelegate< ezResult(const char *szCurAbsoluteFile, const char *szIncludeFile, IncludeType IncType, ezStringBuilder &out_sAbsoluteFilePath)>", "d5/d68/structez_delegate.htm", null ],
       [ "ezDelegate< ezResult(const ezExpression::GlobalData &)>", "d5/d68/structez_delegate.htm", null ],
       [ "ezDelegate< ezUInt64(const ezRenderData *, ezUInt32, const ezCamera &)>", "d5/d68/structez_delegate.htm", null ],
+      [ "ezDelegate< ezVisitorExecution::Enum(ezGameObject *)>", "d5/d68/structez_delegate.htm", null ],
       [ "ezDelegate< IteratorType()>", "d5/d68/structez_delegate.htm", null ],
       [ "ezDelegate< QPointF(const QPointF &)>", "d5/d68/structez_delegate.htm", null ],
       [ "ezDelegate< R(Args...), DataSize >", "de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm", null ],
@@ -3184,8 +3372,8 @@ var hierarchy =
     [ "ezDequeBase< ezComponentHandle, true >", "d7/d68/classez_deque_base.htm", [
       [ "ezDeque< ezComponentHandle >", "d9/dfe/classez_deque.htm", null ]
     ] ],
-    [ "ezDequeBase< ezConsole::ConsoleString, true >", "d7/d68/classez_deque_base.htm", [
-      [ "ezDeque< ezConsole::ConsoleString >", "d9/dfe/classez_deque.htm", null ]
+    [ "ezDequeBase< ezConsoleString, true >", "d7/d68/classez_deque_base.htm", [
+      [ "ezDeque< ezConsoleString >", "d9/dfe/classez_deque.htm", null ]
     ] ],
     [ "ezDequeBase< ezEditorEngineSyncObject *, true >", "d7/d68/classez_deque_base.htm", [
       [ "ezDeque< ezEditorEngineSyncObject * >", "d9/dfe/classez_deque.htm", null ]
@@ -3244,8 +3432,14 @@ var hierarchy =
     [ "ezDequeBase< ezParticleSystemInstance, true >", "d7/d68/classez_deque_base.htm", [
       [ "ezDeque< ezParticleSystemInstance >", "d9/dfe/classez_deque.htm", null ]
     ] ],
+    [ "ezDequeBase< ezPxSimulationEventCallback::TriggerEvent, true >", "d7/d68/classez_deque_base.htm", [
+      [ "ezDeque< ezPxSimulationEventCallback::TriggerEvent >", "d9/dfe/classez_deque.htm", null ]
+    ] ],
     [ "ezDequeBase< ezPxUserData, true >", "d7/d68/classez_deque_base.htm", [
       [ "ezDeque< ezPxUserData >", "d9/dfe/classez_deque.htm", null ]
+    ] ],
+    [ "ezDequeBase< ezQtCVarModel::Entry, true >", "d7/d68/classez_deque_base.htm", [
+      [ "ezDeque< ezQtCVarModel::Entry >", "d9/dfe/classez_deque.htm", null ]
     ] ],
     [ "ezDequeBase< ezQtFileserveActivityItem, true >", "d7/d68/classez_deque_base.htm", [
       [ "ezDeque< ezQtFileserveActivityItem >", "d9/dfe/classez_deque.htm", null ]
@@ -3316,15 +3510,6 @@ var hierarchy =
     [ "ezDequeBase< ezVolumeCollection, true >", "d7/d68/classez_deque_base.htm", [
       [ "ezDeque< ezVolumeCollection >", "d9/dfe/classez_deque.htm", null ]
     ] ],
-    [ "ezDequeBase< ezWorldGeoExtractionUtil::BoxShape, true >", "d7/d68/classez_deque_base.htm", [
-      [ "ezDeque< ezWorldGeoExtractionUtil::BoxShape >", "d9/dfe/classez_deque.htm", null ]
-    ] ],
-    [ "ezDequeBase< ezWorldGeoExtractionUtil::Triangle, true >", "d7/d68/classez_deque_base.htm", [
-      [ "ezDeque< ezWorldGeoExtractionUtil::Triangle >", "d9/dfe/classez_deque.htm", null ]
-    ] ],
-    [ "ezDequeBase< ezWorldGeoExtractionUtil::Vertex, true >", "d7/d68/classez_deque_base.htm", [
-      [ "ezDeque< ezWorldGeoExtractionUtil::Vertex >", "d9/dfe/classez_deque.htm", null ]
-    ] ],
     [ "ezDequeBase< FileData, true >", "d7/d68/classez_deque_base.htm", [
       [ "ezDeque< FileData >", "d9/dfe/classez_deque.htm", null ]
     ] ],
@@ -3333,6 +3518,9 @@ var hierarchy =
     ] ],
     [ "ezDequeBase< ListElement, Construct >", "d7/d68/classez_deque_base.htm", [
       [ "ezDeque< ListElement, ezNullAllocatorWrapper, false >", "d9/dfe/classez_deque.htm", null ]
+    ] ],
+    [ "ezDequeBase< MeshObject, true >", "d7/d68/classez_deque_base.htm", [
+      [ "ezDeque< MeshObject >", "d9/dfe/classez_deque.htm", null ]
     ] ],
     [ "ezDequeBase< Node, Construct >", "d7/d68/classez_deque_base.htm", [
       [ "ezDeque< Node, ezNullAllocatorWrapper, false >", "d9/dfe/classez_deque.htm", null ]
@@ -3363,9 +3551,6 @@ var hierarchy =
     ] ],
     [ "ezDequeBase< Triangle, true >", "d7/d68/classez_deque_base.htm", [
       [ "ezDeque< Triangle >", "d9/dfe/classez_deque.htm", null ]
-    ] ],
-    [ "ezDequeBase< TriggerEvent, true >", "d7/d68/classez_deque_base.htm", [
-      [ "ezDeque< TriggerEvent >", "d9/dfe/classez_deque.htm", null ]
     ] ],
     [ "ezDequeBase< UsedTempResource, true >", "d7/d68/classez_deque_base.htm", [
       [ "ezDeque< UsedTempResource, ezLocalAllocatorWrapper >", "d9/dfe/classez_deque.htm", null ]
@@ -3417,6 +3602,8 @@ var hierarchy =
     [ "ezDosDevicePath", "d9/dfc/classez_dos_device_path.htm", null ],
     [ "ezDoubleBufferedStackAllocator", "d4/d6a/classez_double_buffered_stack_allocator.htm", null ],
     [ "ezDynamicEnum", "df/d0a/classez_dynamic_enum.htm", null ],
+    [ "ezDynamicMeshBufferResourceDescriptor", "da/dd5/structez_dynamic_mesh_buffer_resource_descriptor.htm", null ],
+    [ "ezDynamicMeshVertex", "de/dae/structez_dynamic_mesh_vertex.htm", null ],
     [ "ezDynamicOctree", "da/d7a/classez_dynamic_octree.htm", null ],
     [ "ezDynamicQuadtree", "de/d1d/classez_dynamic_quadtree.htm", null ],
     [ "ezDynamicStringEnum", "d3/dd2/classez_dynamic_string_enum.htm", null ],
@@ -3436,6 +3623,7 @@ var hierarchy =
       [ "ezEnum< ezEffectInvisibleUpdateRate >", "d6/dd9/structez_enum.htm", null ]
     ] ],
     [ "ezEndianHelper", "d5/d34/structez_endian_helper.htm", null ],
+    [ "ezEngineProcessDocumentContextFlags", "d8/d19/structez_engine_process_document_context_flags.htm", null ],
     [ "ezEngineProcessViewContext", "d3/dad/classez_engine_process_view_context.htm", [
       [ "ezAnimatedMeshViewContext", "dd/d2a/classez_animated_mesh_view_context.htm", null ],
       [ "ezAnimationClipViewContext", "d9/d1a/classez_animation_clip_view_context.htm", null ],
@@ -3479,6 +3667,9 @@ var hierarchy =
     ] ],
     [ "ezEventBase< const ezCommonAssetUiState &, ezNoMutex, ezEventType::Default >", "dd/de2/classez_event_base.htm", [
       [ "ezEvent< const ezCommonAssetUiState & >", "d0/daf/classez_event.htm", null ]
+    ] ],
+    [ "ezEventBase< const ezConsoleEvent &, ezNoMutex, ezEventType::Default >", "dd/de2/classez_event_base.htm", [
+      [ "ezEvent< const ezConsoleEvent & >", "d0/daf/classez_event.htm", null ]
     ] ],
     [ "ezEventBase< const ezCVarEvent &, ezNoMutex, ezEventType::Default >", "dd/de2/classez_event_base.htm", [
       [ "ezEvent< const ezCVarEvent & >", "d0/daf/classez_event.htm", null ],
@@ -3580,9 +3771,6 @@ var hierarchy =
     [ "ezEventBase< const ezPhantomRttiManagerEvent &, ezNoMutex, ezEventType::Default >", "dd/de2/classez_event_base.htm", [
       [ "ezEvent< const ezPhantomRttiManagerEvent & >", "d0/daf/classez_event.htm", null ]
     ] ],
-    [ "ezEventBase< const ezPluginEvent &, ezNoMutex, ezEventType::Default >", "dd/de2/classez_event_base.htm", [
-      [ "ezEvent< const ezPluginEvent & >", "d0/daf/classez_event.htm", null ]
-    ] ],
     [ "ezEventBase< const ezPreprocessor::ProcessingEvent &, ezNoMutex, ezEventType::Default >", "dd/de2/classez_event_base.htm", [
       [ "ezEvent< const ezPreprocessor::ProcessingEvent & >", "d0/daf/classez_event.htm", null ]
     ] ],
@@ -3624,6 +3812,9 @@ var hierarchy =
     ] ],
     [ "ezEventBase< const ezRttiMappedObjectFactory::Event &, ezNoMutex, ezEventType::Default >", "dd/de2/classez_event_base.htm", [
       [ "ezEvent< const ezRttiMappedObjectFactory::Event & >", "d0/daf/classez_event.htm", null ]
+    ] ],
+    [ "ezEventBase< const ezScene2LayerEvent &, ezNoMutex, ezEventType::Default >", "dd/de2/classez_event_base.htm", [
+      [ "ezEvent< const ezScene2LayerEvent & >", "d0/daf/classez_event.htm", null ]
     ] ],
     [ "ezEventBase< const ezSelectionManagerEvent &, ezNoMutex, ezEventType::Default >", "dd/de2/classez_event_base.htm", [
       [ "ezEvent< const ezSelectionManagerEvent & >", "d0/daf/classez_event.htm", null ]
@@ -3675,9 +3866,6 @@ var hierarchy =
     ] ],
     [ "ezEventBase< ezBlackboard::EntryEvent, ezNoMutex, ezEventType::Default >", "dd/de2/classez_event_base.htm", [
       [ "ezEvent< ezBlackboard::EntryEvent >", "d0/daf/classez_event.htm", null ]
-    ] ],
-    [ "ezEventBase< ezConsole::ConsoleEvent &, ezNoMutex, ezEventType::Default >", "dd/de2/classez_event_base.htm", [
-      [ "ezEvent< ezConsole::ConsoleEvent & >", "d0/daf/classez_event.htm", null ]
     ] ],
     [ "ezEventBase< ezDocumentManager::Request &, ezNoMutex, ezEventType::Default >", "dd/de2/classez_event_base.htm", [
       [ "ezEvent< ezDocumentManager::Request & >", "d0/daf/classez_event.htm", null ]
@@ -3858,7 +4046,10 @@ var hierarchy =
     [ "ezGameObjectEvent", "df/d98/structez_game_object_event.htm", null ],
     [ "ezGameObjectGizmoInterface", "d4/d1b/classez_game_object_gizmo_interface.htm", [
       [ "ezQtPropertyAnimAssetDocumentWindow", "de/d5d/classez_qt_property_anim_asset_document_window.htm", null ],
-      [ "ezQtSceneDocumentWindow", "de/d49/classez_qt_scene_document_window.htm", null ]
+      [ "ezQtSceneDocumentWindowBase", "d1/dec/classez_qt_scene_document_window_base.htm", [
+        [ "ezQtScene2DocumentWindow", "d7/d40/classez_qt_scene2_document_window.htm", null ],
+        [ "ezQtSceneDocumentWindow", "de/d49/classez_qt_scene_document_window.htm", null ]
+      ] ]
     ] ],
     [ "ezGameObjectHandle", "d6/d5c/structez_game_object_handle.htm", null ],
     [ "ezGameObjectId", "dd/dee/structez_game_object_id.htm", null ],
@@ -4071,9 +4262,6 @@ var hierarchy =
     [ "ezHashTableBase< ezRenderPipelinePassConnection *, ezUInt32, ezHashHelper< ezRenderPipelinePassConnection * > >", "de/dc3/classez_hash_table_base.htm", [
       [ "ezHashTable< ezRenderPipelinePassConnection *, ezUInt32 >", "d8/d86/classez_hash_table.htm", null ]
     ] ],
-    [ "ezHashTableBase< ezSpatialData *, ezUInt32, ezHashHelper< ezSpatialData * > >", "de/dc3/classez_hash_table_base.htm", [
-      [ "ezHashTable< ezSpatialData *, ezUInt32 >", "d8/d86/classez_hash_table.htm", null ]
-    ] ],
     [ "ezHashTableBase< ezString, ezVariant, ezHashHelper< ezString > >", "de/dc3/classez_hash_table_base.htm", [
       [ "ezHashTable< ezString, ezVariant >", "d8/d86/classez_hash_table.htm", null ]
     ] ],
@@ -4170,8 +4358,8 @@ var hierarchy =
     [ "ezHashTableBase< ezUInt64, ezProcPlacementComponent::OutputContext::TileIndexAndAge, ezHashHelper< ezUInt64 > >", "de/dc3/classez_hash_table_base.htm", [
       [ "ezHashTable< ezUInt64, ezProcPlacementComponent::OutputContext::TileIndexAndAge >", "d8/d86/classez_hash_table.htm", null ]
     ] ],
-    [ "ezHashTableBase< ezUInt64, ezUniquePtr< Cell >, CellKeyHashHelper >", "de/dc3/classez_hash_table_base.htm", [
-      [ "ezHashTable< ezUInt64, ezUniquePtr< Cell >, CellKeyHashHelper, ezLocalAllocatorWrapper >", "d8/d86/classez_hash_table.htm", null ]
+    [ "ezHashTableBase< ezUInt64, ezUInt32, CellKeyHashHelper >", "de/dc3/classez_hash_table_base.htm", [
+      [ "ezHashTable< ezUInt64, ezUInt32, CellKeyHashHelper >", "d8/d86/classez_hash_table.htm", null ]
     ] ],
     [ "ezHashTableBase< ezUInt64, ResourceData, ezHashHelper< ezUInt64 > >", "de/dc3/classez_hash_table_base.htm", [
       [ "ezHashTable< ezUInt64, ResourceData >", "d8/d86/classez_hash_table.htm", null ]
@@ -4188,9 +4376,6 @@ var hierarchy =
     [ "ezHashTableBase< ezUuid, ezComponentHandle, ezHashHelper< ezUuid > >", "de/dc3/classez_hash_table_base.htm", [
       [ "ezHashTable< ezUuid, ezComponentHandle >", "d8/d86/classez_hash_table.htm", null ]
     ] ],
-    [ "ezHashTableBase< ezUuid, ezDocumentObjectMetaData, ezHashHelper< ezUuid > >", "de/dc3/classez_hash_table_base.htm", [
-      [ "ezHashTable< ezUuid, ezDocumentObjectMetaData >", "d8/d86/classez_hash_table.htm", null ]
-    ] ],
     [ "ezHashTableBase< ezUuid, ezEditorEngineSyncObject *, ezHashHelper< ezUuid > >", "de/dc3/classez_hash_table_base.htm", [
       [ "ezHashTable< ezUuid, ezEditorEngineSyncObject * >", "d8/d86/classez_hash_table.htm", null ]
     ] ],
@@ -4199,9 +4384,6 @@ var hierarchy =
     ] ],
     [ "ezHashTableBase< ezUuid, ezGameObjectHandle, ezHashHelper< ezUuid > >", "de/dc3/classez_hash_table_base.htm", [
       [ "ezHashTable< ezUuid, ezGameObjectHandle >", "d8/d86/classez_hash_table.htm", null ]
-    ] ],
-    [ "ezHashTableBase< ezUuid, ezGameObjectMetaData, ezHashHelper< ezUuid > >", "de/dc3/classez_hash_table_base.htm", [
-      [ "ezHashTable< ezUuid, ezGameObjectMetaData >", "d8/d86/classez_hash_table.htm", null ]
     ] ],
     [ "ezHashTableBase< ezUuid, ezHybridArray< ezPropertyReference, 1 >, ezHashHelper< ezUuid > >", "de/dc3/classez_hash_table_base.htm", [
       [ "ezHashTable< ezUuid, ezHybridArray< ezPropertyReference, 1 > >", "d8/d86/classez_hash_table.htm", null ]
@@ -4217,6 +4399,9 @@ var hierarchy =
     ] ],
     [ "ezHashTableBase< ezUuid, HandleType, ezHashHelper< ezUuid > >", "de/dc3/classez_hash_table_base.htm", [
       [ "ezHashTable< ezUuid, HandleType >", "d8/d86/classez_hash_table.htm", null ]
+    ] ],
+    [ "ezHashTableBase< ezUuid, LayerInfo, ezHashHelper< ezUuid > >", "de/dc3/classez_hash_table_base.htm", [
+      [ "ezHashTable< ezUuid, LayerInfo >", "d8/d86/classez_hash_table.htm", null ]
     ] ],
     [ "ezHashTableBase< ezUuid, QSharedPointer< ezQtProxy >, ezHashHelper< ezUuid > >", "de/dc3/classez_hash_table_base.htm", [
       [ "ezHashTable< ezUuid, QSharedPointer< ezQtProxy > >", "d8/d86/classez_hash_table.htm", null ]
@@ -4310,14 +4495,14 @@ var hierarchy =
     [ "ezIdTableBase< ezGenericId, ezParticleEffectInstance * >", "da/d31/classez_id_table_base.htm", [
       [ "ezIdTable< ezGenericId, ezParticleEffectInstance * >", "d8/ddb/classez_id_table.htm", null ]
     ] ],
+    [ "ezIdTableBase< ezGenericId< 24, 8 >, Data >", "da/d31/classez_id_table_base.htm", [
+      [ "ezIdTable< ezGenericId< 24, 8 >, Data, ezLocalAllocatorWrapper >", "d8/ddb/classez_id_table.htm", null ]
+    ] ],
     [ "ezIdTableBase< ezGenericId< 24, 8 >, ezActionDescriptor * >", "da/d31/classez_id_table_base.htm", [
       [ "ezIdTable< ezGenericId< 24, 8 >, ezActionDescriptor * >", "d8/ddb/classez_id_table.htm", null ]
     ] ],
     [ "ezIdTableBase< ezGenericId< 24, 8 >, ezConstantBufferStorageBase * >", "da/d31/classez_id_table_base.htm", [
       [ "ezIdTable< ezGenericId< 24, 8 >, ezConstantBufferStorageBase * >", "d8/ddb/classez_id_table.htm", null ]
-    ] ],
-    [ "ezIdTableBase< ezGenericId< 24, 8 >, ezSpatialData * >", "da/d31/classez_id_table_base.htm", [
-      [ "ezIdTable< ezGenericId< 24, 8 >, ezSpatialData *, ezLocalAllocatorWrapper >", "d8/ddb/classez_id_table.htm", null ]
     ] ],
     [ "ezIdTableBase< ezGenericId< 24, 8 >, ezUniquePtr< InitBatch > >", "da/d31/classez_id_table_base.htm", [
       [ "ezIdTable< ezGenericId< 24, 8 >, ezUniquePtr< InitBatch >, ezLocalAllocatorWrapper >", "d8/ddb/classez_id_table.htm", null ]
@@ -4369,6 +4554,7 @@ var hierarchy =
     [ "ezInputSlotFlags", "df/d72/structez_input_slot_flags.htm", null ],
     [ "ezInstanceData", "d8/d6b/structez_instance_data.htm", null ],
     [ "ezInt64DoubleUnion", "d6/db4/unionez_int64_double_union.htm", null ],
+    [ "ezInterval< Type >", "d5/d9f/classez_interval.htm", null ],
     [ "ezIntFloatUnion", "d8/d2c/unionez_int_float_union.htm", null ],
     [ "ezIpcChannel", "d0/d61/classez_ipc_channel.htm", null ],
     [ "ezIpcChannelEvent", "d5/dab/structez_ipc_channel_event.htm", null ],
@@ -4405,6 +4591,7 @@ var hierarchy =
     ] ],
     [ "ezLargeBlockAllocator< BlockSizeInByte >", "d1/d52/classez_large_block_allocator.htm", null ],
     [ "ezLargeBlockAllocator< DEFAULT_BLOCK_SIZE >", "d1/d52/classez_large_block_allocator.htm", null ],
+    [ "ezLayerActions", "d4/d19/classez_layer_actions.htm", null ],
     [ "ezListBase< T >", "d9/de2/classez_list_base.htm", [
       [ "ezList< T, AllocatorWrapper >", "d4/d51/classez_list.htm", null ]
     ] ],
@@ -4478,6 +4665,9 @@ var hierarchy =
     ] ],
     [ "ezMapBase< const ezDocument *, ezMap< ezActionDescriptorHandle, QWeakPointer< ezQtProxy > >, ezCompareHelper< const ezDocument * > >", "d1/d43/classez_map_base.htm", [
       [ "ezMap< const ezDocument *, ezMap< ezActionDescriptorHandle, QWeakPointer< ezQtProxy > > >", "d1/d79/classez_map.htm", null ]
+    ] ],
+    [ "ezMapBase< const ezDocumentObject *, ezHybridArray, ezCompareHelper< const ezDocumentObject * > >", "d1/d43/classez_map_base.htm", [
+      [ "ezMap< const ezDocumentObject *, ezHybridArray >", "d1/d79/classez_map.htm", null ]
     ] ],
     [ "ezMapBase< const ezDocumentObject *, ezQtNode *, ezCompareHelper< const ezDocumentObject * > >", "d1/d43/classez_map_base.htm", [
       [ "ezMap< const ezDocumentObject *, ezQtNode * >", "d1/d79/classez_map.htm", null ]
@@ -4812,6 +5002,9 @@ var hierarchy =
     [ "ezMapBase< ezUuid, ezHybridArray< GoReferenceTo, 4 >, ezCompareHelper< ezUuid > >", "d1/d43/classez_map_base.htm", [
       [ "ezMap< ezUuid, ezHybridArray< GoReferenceTo, 4 > >", "d1/d79/classez_map.htm", null ]
     ] ],
+    [ "ezMapBase< ezUuid, ezQtGameObjectWidget *, ezCompareHelper< ezUuid > >", "d1/d43/classez_map_base.htm", [
+      [ "ezMap< ezUuid, ezQtGameObjectWidget * >", "d1/d79/classez_map.htm", null ]
+    ] ],
     [ "ezMapBase< ezUuid, ezScriptCompendiumResourceDesc::ComponentTypeInfo, ezCompareHelper< ezUuid > >", "d1/d43/classez_map_base.htm", [
       [ "ezMap< ezUuid, ezScriptCompendiumResourceDesc::ComponentTypeInfo >", "d1/d79/classez_map.htm", null ]
     ] ],
@@ -4841,9 +5034,6 @@ var hierarchy =
     ] ],
     [ "ezMapBase< PropertySemantic, ezVariant, ezCompareHelper< PropertySemantic > >", "d1/d43/classez_map_base.htm", [
       [ "ezMap< PropertySemantic, ezVariant >", "d1/d79/classez_map.htm", null ]
-    ] ],
-    [ "ezMapBase< PxRigidDynamic *, SlidingInfo, ezCompareHelper< PxRigidDynamic * > >", "d1/d43/classez_map_base.htm", [
-      [ "ezMap< PxRigidDynamic *, SlidingInfo >", "d1/d79/classez_map.htm", null ]
     ] ],
     [ "ezMapBase< QModelIndex, bool, ezCompareHelper< QModelIndex > >", "d1/d43/classez_map_base.htm", [
       [ "ezMap< QModelIndex, bool >", "d1/d79/classez_map.htm", null ]
@@ -4990,9 +5180,6 @@ var hierarchy =
           [ "ezTgaFileFormat", "d6/d4a/classez_tga_file_format.htm", null ]
         ] ]
       ] ],
-      [ "ezEnumerable< ezPlugin >", "d5/d0b/classez_enumerable.htm", [
-        [ "ezPlugin", "dd/d46/classez_plugin.htm", null ]
-      ] ],
       [ "ezEnumerable< ezRTTI >", "d5/d0b/classez_enumerable.htm", [
         [ "ezRTTI", "dd/d19/classez_r_t_t_i.htm", [
           [ "ezPhantomRTTI", "dd/d98/classez_phantom_r_t_t_i.htm", null ]
@@ -5023,6 +5210,7 @@ var hierarchy =
                 [ "ezToggleWorldSpaceGizmo", "d0/d5b/classez_toggle_world_space_gizmo.htm", null ]
               ] ],
               [ "ezHelpActions", "de/dd0/classez_help_actions.htm", null ],
+              [ "ezLayerAction", "d4/d7a/classez_layer_action.htm", null ],
               [ "ezParticleAction", "d3/d2e/classez_particle_action.htm", null ],
               [ "ezPhysXAction", "da/d14/classez_phys_x_action.htm", null ],
               [ "ezProcGenAction", "d2/d04/classez_proc_gen_action.htm", null ],
@@ -5157,6 +5345,7 @@ var hierarchy =
           ] ],
           [ "ezAnimationControllerComponent", "d3/d14/classez_animation_controller_component.htm", null ],
           [ "ezAreaDamageComponent", "da/d40/classez_area_damage_component.htm", null ],
+          [ "ezBakedProbesVolumeComponent", "d9/d9e/classez_baked_probes_volume_component.htm", null ],
           [ "ezBlackboardComponent", "de/d19/classez_blackboard_component.htm", null ],
           [ "ezCameraComponent", "d5/d90/classez_camera_component.htm", null ],
           [ "ezCharacterControllerComponent", "d3/df6/classez_character_controller_component.htm", [
@@ -5170,6 +5359,7 @@ var hierarchy =
             [ "ezTypeScriptComponent", "df/d5d/classez_type_script_component.htm", null ],
             [ "ezVisualScriptComponent", "de/dea/classez_visual_script_component.htm", null ]
           ] ],
+          [ "ezFakeRopeComponent", "d4/dee/classez_fake_rope_component.htm", null ],
           [ "ezFmodComponent", "dc/d25/classez_fmod_component.htm", [
             [ "ezFmodEventComponent", "d8/d4f/classez_fmod_event_component.htm", null ],
             [ "ezFmodListenerComponent", "d5/db4/classez_fmod_listener_component.htm", null ]
@@ -5189,7 +5379,9 @@ var hierarchy =
           [ "ezPrefabReferenceComponent", "d7/d40/classez_prefab_reference_component.htm", null ],
           [ "ezProcPlacementComponent", "d5/d31/classez_proc_placement_component.htm", null ],
           [ "ezProcVolumeComponent", "d2/d56/classez_proc_volume_component.htm", [
-            [ "ezProcVolumeBoxComponent", "da/db6/classez_proc_volume_box_component.htm", null ],
+            [ "ezProcVolumeBoxComponent", "da/db6/classez_proc_volume_box_component.htm", [
+              [ "ezProcVolumeImageComponent", "d1/db7/classez_proc_volume_image_component.htm", null ]
+            ] ],
             [ "ezProcVolumeSphereComponent", "d1/dfd/classez_proc_volume_sphere_component.htm", null ]
           ] ],
           [ "ezProjectileComponent", "d5/d84/classez_projectile_component.htm", null ],
@@ -5197,9 +5389,11 @@ var hierarchy =
           [ "ezPxComponent", "d3/d11/classez_px_component.htm", [
             [ "ezPxActorComponent", "dd/d49/classez_px_actor_component.htm", [
               [ "ezPxDynamicActorComponent", "df/d39/classez_px_dynamic_actor_component.htm", null ],
+              [ "ezPxQueryShapeActorComponent", "d5/d73/classez_px_query_shape_actor_component.htm", null ],
               [ "ezPxStaticActorComponent", "df/dfa/classez_px_static_actor_component.htm", null ],
               [ "ezPxTriggerComponent", "db/d40/classez_px_trigger_component.htm", null ]
             ] ],
+            [ "ezPxBoneColliderComponent", "d9/dba/classez_px_bone_collider_component.htm", null ],
             [ "ezPxCenterOfMassComponent", "db/d62/classez_px_center_of_mass_component.htm", null ],
             [ "ezPxCharacterShapeComponent", "d9/d45/classez_px_character_shape_component.htm", [
               [ "ezPxCharacterCapsuleShapeComponent", "d1/dfd/classez_px_character_capsule_shape_component.htm", null ]
@@ -5213,6 +5407,8 @@ var hierarchy =
               [ "ezPxRevoluteJointComponent", "da/dd4/classez_px_revolute_joint_component.htm", null ],
               [ "ezPxSphericalJointComponent", "d7/d45/classez_px_spherical_joint_component.htm", null ]
             ] ],
+            [ "ezPxRagdollComponent", "d1/dc1/classez_px_ragdoll_component.htm", null ],
+            [ "ezPxRopeComponent", "dc/dab/classez_px_rope_component.htm", null ],
             [ "ezPxShapeComponent", "d3/de6/classez_px_shape_component.htm", [
               [ "ezPxShapeBoxComponent", "d4/d34/classez_px_shape_box_component.htm", null ],
               [ "ezPxShapeCapsuleComponent", "d6/db4/classez_px_shape_capsule_component.htm", null ],
@@ -5229,6 +5425,7 @@ var hierarchy =
             [ "ezAlwaysVisibleComponent", "d3/dbb/classez_always_visible_component.htm", null ],
             [ "ezBeamComponent", "d8/de0/classez_beam_component.htm", null ],
             [ "ezBreakableSheetComponent", "df/d1b/classez_breakable_sheet_component.htm", null ],
+            [ "ezClothSheetComponent", "d0/d9b/classez_cloth_sheet_component.htm", null ],
             [ "ezDecalComponent", "dc/d11/classez_decal_component.htm", null ],
             [ "ezGreyBoxComponent", "d5/d19/classez_grey_box_component.htm", null ],
             [ "ezHeightfieldComponent", "d8/d8f/classez_heightfield_component.htm", null ],
@@ -5253,12 +5450,14 @@ var hierarchy =
             [ "ezPxVisColMeshComponent", "dd/d74/classez_px_vis_col_mesh_component.htm", null ],
             [ "ezRenderTargetActivatorComponent", "d0/d80/classez_render_target_activator_component.htm", null ],
             [ "ezRmlUiCanvas2DComponent", "d9/dc8/classez_rml_ui_canvas2_d_component.htm", null ],
+            [ "ezRopeRenderComponent", "d6/d4f/classez_rope_render_component.htm", null ],
             [ "ezSkeletonComponent", "df/d1f/classez_skeleton_component.htm", null ],
             [ "ezSkyBoxComponent", "df/d51/classez_sky_box_component.htm", null ],
             [ "ezSpriteComponent", "d7/da8/classez_sprite_component.htm", null ]
           ] ],
           [ "ezSettingsComponent", "dd/d06/classez_settings_component.htm", [
             [ "ezAmbientLightComponent", "d9/d8d/classez_ambient_light_component.htm", null ],
+            [ "ezBakedProbesComponent", "d9/de6/classez_baked_probes_component.htm", null ],
             [ "ezFogComponent", "db/d6c/classez_fog_component.htm", null ],
             [ "ezPxSettingsComponent", "d8/d6a/classez_px_settings_component.htm", null ],
             [ "ezSkyLightComponent", "d0/d6f/classez_sky_light_component.htm", null ]
@@ -5274,7 +5473,12 @@ var hierarchy =
             [ "ezRotorComponent", "db/d77/classez_rotor_component.htm", null ],
             [ "ezSliderComponent", "d0/dfc/classez_slider_component.htm", null ]
           ] ],
-          [ "ezVisualizeHandComponent", "dc/d28/classez_visualize_hand_component.htm", null ]
+          [ "ezVisualizeHandComponent", "dc/d28/classez_visualize_hand_component.htm", null ],
+          [ "ezWindVolumeComponent", "d8/d1a/classez_wind_volume_component.htm", [
+            [ "ezWindVolumeConeComponent", "d8/d81/classez_wind_volume_cone_component.htm", null ],
+            [ "ezWindVolumeCylinderComponent", "db/d7f/classez_wind_volume_cylinder_component.htm", null ],
+            [ "ezWindVolumeSphereComponent", "d5/d94/classez_wind_volume_sphere_component.htm", null ]
+          ] ]
         ] ],
         [ "ezConnection", "d4/ddb/classez_connection.htm", [
           [ "ezVisualScriptConnection", "d8/d1e/classez_visual_script_connection.htm", null ],
@@ -5292,7 +5496,10 @@ var hierarchy =
                   [ "ezPropertyAnimAssetDocument", "db/d0f/classez_property_anim_asset_document.htm", null ]
                 ] ]
               ] ],
-              [ "ezSceneDocument", "de/d52/classez_scene_document.htm", null ]
+              [ "ezSceneDocument", "de/d52/classez_scene_document.htm", [
+                [ "ezLayerDocument", "d5/dce/classez_layer_document.htm", null ],
+                [ "ezScene2Document", "db/d02/classez_scene2_document.htm", null ]
+              ] ]
             ] ],
             [ "ezProcGenGraphAssetDocument", "d4/de8/classez_proc_gen_graph_asset_document.htm", null ],
             [ "ezRenderPipelineAssetDocument", "d8/db6/classez_render_pipeline_asset_document.htm", null ],
@@ -5421,10 +5628,15 @@ var hierarchy =
               [ "ezTypeScriptComponentDragDropHandler", "d4/de7/classez_type_script_component_drag_drop_handler.htm", null ]
             ] ],
             [ "ezMaterialDragDropHandler", "d7/d05/classez_material_drag_drop_handler.htm", null ]
+          ] ],
+          [ "ezLayerDragDropHandler", "d4/db1/classez_layer_drag_drop_handler.htm", [
+            [ "ezGameObjectOnLayerDragDropHandler", "de/d71/classez_game_object_on_layer_drag_drop_handler.htm", null ],
+            [ "ezLayerOnLayerDragDropHandler", "d6/dbd/classez_layer_on_layer_drag_drop_handler.htm", null ]
           ] ]
         ] ],
         [ "ezDragDropInfo", "d2/d56/classez_drag_drop_info.htm", null ],
         [ "ezEditableSkeleton", "d5/d83/classez_editable_skeleton.htm", null ],
+        [ "ezEditableSkeletonBoneShape", "d6/dc2/structez_editable_skeleton_bone_shape.htm", null ],
         [ "ezEditableSkeletonJoint", "d4/d8e/classez_editable_skeleton_joint.htm", null ],
         [ "ezEditorEngineSyncObject", "d4/d36/classez_editor_engine_sync_object.htm", [
           [ "ezEngineViewLightSettings", "dd/d30/classez_engine_view_light_settings.htm", null ],
@@ -5451,7 +5663,9 @@ var hierarchy =
           ] ],
           [ "ezOrbitCameraContext", "de/d86/classez_orbit_camera_context.htm", null ],
           [ "ezOrthoGizmoContext", "d9/d4e/classez_ortho_gizmo_context.htm", null ],
-          [ "ezSelectionContext", "d6/d7b/classez_selection_context.htm", null ]
+          [ "ezSelectionContext", "d6/d7b/classez_selection_context.htm", [
+            [ "ezSceneSelectionContext", "dd/de1/classez_scene_selection_context.htm", null ]
+          ] ]
         ] ],
         [ "ezEngineProcessDocumentContext", "d3/d26/classez_engine_process_document_context.htm", [
           [ "ezAnimatedMeshContext", "d3/dd3/classez_animated_mesh_context.htm", null ],
@@ -5459,6 +5673,7 @@ var hierarchy =
           [ "ezCollisionMeshContext", "d9/de7/classez_collision_mesh_context.htm", null ],
           [ "ezDecalContext", "df/d75/classez_decal_context.htm", null ],
           [ "ezKrautTreeContext", "d2/d53/classez_kraut_tree_context.htm", null ],
+          [ "ezLayerContext", "db/d72/classez_layer_context.htm", null ],
           [ "ezMaterialContext", "d0/df9/classez_material_context.htm", null ],
           [ "ezMeshContext", "d2/deb/classez_mesh_context.htm", null ],
           [ "ezParticleContext", "db/d55/classez_particle_context.htm", null ],
@@ -5490,8 +5705,9 @@ var hierarchy =
           [ "ezClusteredDataExtractor", "d6/da9/classez_clustered_data_extractor.htm", null ],
           [ "ezEditorGridExtractor", "de/dd3/classez_editor_grid_extractor.htm", null ],
           [ "ezEditorShapeIconsExtractor", "dd/dc5/classez_editor_shape_icons_extractor.htm", null ],
-          [ "ezSelectedObjectsExtractor", "d6/dc0/classez_selected_objects_extractor.htm", [
-            [ "ezEditorSelectedObjectsExtractor", "de/d21/classez_editor_selected_objects_extractor.htm", null ]
+          [ "ezSelectedObjectsExtractorBase", "df/d20/classez_selected_objects_extractor_base.htm", [
+            [ "ezEditorSelectedObjectsExtractor", "de/d21/classez_editor_selected_objects_extractor.htm", null ],
+            [ "ezSelectedObjectsExtractor", "d6/dc0/classez_selected_objects_extractor.htm", null ]
           ] ],
           [ "ezSimplifiedDataExtractor", "d9/d04/classez_simplified_data_extractor.htm", null ],
           [ "ezVisibleObjectsExtractor", "d3/d10/classez_visible_objects_extractor.htm", null ]
@@ -5529,9 +5745,11 @@ var hierarchy =
         [ "ezIntensityControlPoint", "d1/dd1/classez_intensity_control_point.htm", null ],
         [ "ezKrautTreeAssetProperties", "df/d0c/classez_kraut_tree_asset_properties.htm", null ],
         [ "ezLongOpProxy", "d1/ddc/classez_long_op_proxy.htm", [
+          [ "ezLongOpProxy_BakeScene", "d0/dfa/classez_long_op_proxy___bake_scene.htm", null ],
           [ "ezLongOpProxy_BuildNavMesh", "d2/d77/classez_long_op_proxy___build_nav_mesh.htm", null ]
         ] ],
         [ "ezLongOpWorker", "d6/df7/classez_long_op_worker.htm", [
+          [ "ezLongOpWorker_BakeScene", "d6/d56/classez_long_op_worker___bake_scene.htm", null ],
           [ "ezLongOpWorker_BuildNavMesh", "db/d94/classez_long_op_worker___build_nav_mesh.htm", null ]
         ] ],
         [ "ezLUTAssetProperties", "d1/d55/classez_l_u_t_asset_properties.htm", null ],
@@ -5567,6 +5785,7 @@ var hierarchy =
           [ "ezMsgPhysicsAddImpulse", "d2/d1f/structez_msg_physics_add_impulse.htm", null ],
           [ "ezMsgQueryAnimationSkeleton", "d2/d1b/structez_msg_query_animation_skeleton.htm", null ],
           [ "ezMsgRmlUiReload", "d4/dd2/structez_msg_rml_ui_reload.htm", null ],
+          [ "ezMsgRopePoseUpdated", "da/da5/structez_msg_rope_pose_updated.htm", null ],
           [ "ezMsgSetColor", "da/d92/structez_msg_set_color.htm", null ],
           [ "ezMsgSetFloatParameter", "d6/d43/structez_msg_set_float_parameter.htm", null ],
           [ "ezMsgSetMeshMaterial", "df/d7e/structez_msg_set_mesh_material.htm", null ],
@@ -5712,6 +5931,7 @@ var hierarchy =
         ] ],
         [ "ezProcessMessage", "db/d40/classez_process_message.htm", [
           [ "ezEditorEngineDocumentMsg", "d1/dfa/classez_editor_engine_document_msg.htm", [
+            [ "ezActiveLayerChangedMsgToEngine", "dd/dc3/classez_active_layer_changed_msg_to_engine.htm", null ],
             [ "ezCreateThumbnailMsgToEditor", "d5/d36/classez_create_thumbnail_msg_to_editor.htm", null ],
             [ "ezCreateThumbnailMsgToEngine", "d7/d0e/classez_create_thumbnail_msg_to_engine.htm", null ],
             [ "ezDocumentClearMsgToEngine", "db/dbc/classez_document_clear_msg_to_engine.htm", null ],
@@ -5741,6 +5961,7 @@ var hierarchy =
             [ "ezGameModeMsgToEngine", "d7/dbd/classez_game_mode_msg_to_engine.htm", null ],
             [ "ezGlobalSettingsMsgToEngine", "d2/d5c/classez_global_settings_msg_to_engine.htm", null ],
             [ "ezGridSettingsMsgToEngine", "df/d49/classez_grid_settings_msg_to_engine.htm", null ],
+            [ "ezLayerVisibilityChangedMsgToEngine", "df/dac/classez_layer_visibility_changed_msg_to_engine.htm", null ],
             [ "ezObjectSelectionMsgToEngine", "d3/d58/classez_object_selection_msg_to_engine.htm", null ],
             [ "ezObjectsForDebugVisMsgToEngine", "df/d43/classez_objects_for_debug_vis_msg_to_engine.htm", null ],
             [ "ezObjectTagMsgToEngine", "d0/d25/classez_object_tag_msg_to_engine.htm", null ],
@@ -5759,6 +5980,8 @@ var hierarchy =
           ] ],
           [ "ezEditorEngineMsg", "d2/d93/classez_editor_engine_msg.htm", [
             [ "ezChangeCVarMsgToEngine", "dd/d41/classez_change_c_var_msg_to_engine.htm", null ],
+            [ "ezConsoleCmdMsgToEngine", "df/ded/classez_console_cmd_msg_to_engine.htm", null ],
+            [ "ezConsoleCmdResultMsgToEditor", "db/d25/classez_console_cmd_result_msg_to_editor.htm", null ],
             [ "ezCVarMsgToEditor", "dc/d72/classez_c_var_msg_to_editor.htm", null ],
             [ "ezLogMsgToEditor", "d8/d26/classez_log_msg_to_editor.htm", null ],
             [ "ezLongOpProgressMsg", "d3/d17/classez_long_op_progress_msg.htm", null ],
@@ -5854,6 +6077,7 @@ var hierarchy =
           ] ]
         ] ],
         [ "ezRenderData", "d3/dab/classez_render_data.htm", [
+          [ "ezClothSheetRenderData", "d2/d2c/classez_cloth_sheet_render_data.htm", null ],
           [ "ezClusteredDataCPU", "d4/df8/classez_clustered_data_c_p_u.htm", null ],
           [ "ezDecalRenderData", "d8/da5/classez_decal_render_data.htm", null ],
           [ "ezFogRenderData", "d5/db0/classez_fog_render_data.htm", null ],
@@ -5878,6 +6102,7 @@ var hierarchy =
           [ "ezSpriteRenderData", "d2/d3b/classez_sprite_render_data.htm", null ]
         ] ],
         [ "ezRenderer", "d5/daa/classez_renderer.htm", [
+          [ "ezClothSheetRenderer", "db/d72/classez_cloth_sheet_renderer.htm", null ],
           [ "ezGizmoRenderer", "d0/d34/classez_gizmo_renderer.htm", null ],
           [ "ezGridRenderer", "db/d2e/classez_grid_renderer.htm", null ],
           [ "ezKrautRenderer", "dd/dd5/classez_kraut_renderer.htm", null ],
@@ -5930,6 +6155,7 @@ var hierarchy =
           [ "ezCurve1DResource", "db/df4/classez_curve1_d_resource.htm", null ],
           [ "ezDecalAtlasResource", "d6/d2a/classez_decal_atlas_resource.htm", null ],
           [ "ezDecalResource", "d2/dba/classez_decal_resource.htm", null ],
+          [ "ezDynamicMeshBufferResource", "d9/d6c/classez_dynamic_mesh_buffer_resource.htm", null ],
           [ "ezFmodSoundBankResource", "d9/db2/classez_fmod_sound_bank_resource.htm", null ],
           [ "ezFmodSoundEventResource", "d0/da5/classez_fmod_sound_event_resource.htm", null ],
           [ "ezImageDataResource", "d6/d05/classez_image_data_resource.htm", null ],
@@ -5940,6 +6166,7 @@ var hierarchy =
           [ "ezMeshResource", "df/d2f/classez_mesh_resource.htm", null ],
           [ "ezParticleEffectResource", "d4/de9/classez_particle_effect_resource.htm", null ],
           [ "ezPrefabResource", "de/de6/classez_prefab_resource.htm", null ],
+          [ "ezProbeTreeSectorResource", "d6/dd5/classez_probe_tree_sector_resource.htm", null ],
           [ "ezProcGenGraphResource", "d1/d1d/classez_proc_gen_graph_resource.htm", null ],
           [ "ezPropertyAnimResource", "df/d5d/classez_property_anim_resource.htm", null ],
           [ "ezPxMeshResource", "dc/dd0/classez_px_mesh_resource.htm", null ],
@@ -5959,11 +6186,19 @@ var hierarchy =
           [ "ezVisualScriptResource", "d6/dfb/classez_visual_script_resource.htm", null ]
         ] ],
         [ "ezRmlUiAssetProperties", "d1/d56/classez_rml_ui_asset_properties.htm", null ],
-        [ "ezSceneDocumentSettings", "dc/d79/classez_scene_document_settings.htm", null ],
+        [ "ezSceneDocumentSettingsBase", "d7/dfc/classez_scene_document_settings_base.htm", [
+          [ "ezLayerDocumentSettings", "d7/d37/classez_layer_document_settings.htm", null ],
+          [ "ezPrefabDocumentSettings", "dc/d75/classez_prefab_document_settings.htm", null ],
+          [ "ezSceneDocumentSettings", "dc/d79/classez_scene_document_settings.htm", null ]
+        ] ],
         [ "ezSceneExportModifier", "d5/dea/classez_scene_export_modifier.htm", [
           [ "ezSceneExportModifier_RemoveShapeIconComponents", "de/d89/classez_scene_export_modifier___remove_shape_icon_components.htm", null ],
           [ "ezSceneExportModifier_StaticMeshConversion", "d9/d22/classez_scene_export_modifier___static_mesh_conversion.htm", null ]
         ] ],
+        [ "ezSceneLayerBase", "d7/d8a/classez_scene_layer_base.htm", [
+          [ "ezSceneLayer", "d1/db1/classez_scene_layer.htm", null ]
+        ] ],
+        [ "ezSelectedObjectsContext", "d2/d07/classez_selected_objects_context.htm", null ],
         [ "ezShaderProgramCompiler", "d7/d28/classez_shader_program_compiler.htm", [
           [ "ezShaderCompilerDXC", "d4/d0b/classez_shader_compiler_d_x_c.htm", null ],
           [ "ezShaderCompilerHLSL", "df/d66/classez_shader_compiler_h_l_s_l.htm", null ]
@@ -6049,6 +6284,7 @@ var hierarchy =
         ] ],
         [ "ezVolumeCollection", "d8/d71/classez_volume_collection.htm", null ],
         [ "ezWorldModule", "d1/df7/classez_world_module.htm", [
+          [ "ezBakedProbesWorldModule", "d4/dfe/classez_baked_probes_world_module.htm", null ],
           [ "ezComponentManagerBase", "d8/d7d/classez_component_manager_base.htm", [
             [ "ezComponentManager< T, StorageType >", "d7/df2/classez_component_manager.htm", null ],
             [ "ezComponentManager< class ezAreaDamageComponent, ezBlockStorageType::FreeList >", "d7/df2/classez_component_manager.htm", [
@@ -6057,8 +6293,14 @@ var hierarchy =
             [ "ezComponentManager< class ezCameraComponent, ezBlockStorageType::Compact >", "d7/df2/classez_component_manager.htm", [
               [ "ezCameraComponentManager", "d0/d0a/classez_camera_component_manager.htm", null ]
             ] ],
+            [ "ezComponentManager< class ezClothSheetComponent, ezBlockStorageType::FreeList >", "d7/df2/classez_component_manager.htm", [
+              [ "ezClothSheetComponentManager", "dd/dae/classez_cloth_sheet_component_manager.htm", null ]
+            ] ],
             [ "ezComponentManager< class ezDecalComponent, ezBlockStorageType::Compact >", "d7/df2/classez_component_manager.htm", [
               [ "ezDecalComponentManager", "dc/db0/classez_decal_component_manager.htm", null ]
+            ] ],
+            [ "ezComponentManager< class ezFakeRopeComponent, ezBlockStorageType::FreeList >", "d7/df2/classez_component_manager.htm", [
+              [ "ezFakeRopeComponentManager", "d6/df7/classez_fake_rope_component_manager.htm", null ]
             ] ],
             [ "ezComponentManager< class ezFmodEventComponent, ezBlockStorageType::FreeList >", "d7/df2/classez_component_manager.htm", [
               [ "ezFmodEventComponentManager", "d5/da1/classez_fmod_event_component_manager.htm", null ]
@@ -6080,6 +6322,9 @@ var hierarchy =
             ] ],
             [ "ezComponentManager< class ezPxCharacterControllerComponent, ezBlockStorageType::Compact >", "d7/df2/classez_component_manager.htm", [
               [ "ezPxCharacterControllerComponentManager", "d3/db3/classez_px_character_controller_component_manager.htm", null ]
+            ] ],
+            [ "ezComponentManager< class ezPxRopeComponent, ezBlockStorageType::Compact >", "d7/df2/classez_component_manager.htm", [
+              [ "ezPxRopeComponentManager", "d1/d53/classez_px_rope_component_manager.htm", null ]
             ] ],
             [ "ezComponentManager< class ezPxTriggerComponent, ezBlockStorageType::FreeList >", "d7/df2/classez_component_manager.htm", [
               [ "ezPxTriggerComponentManager", "d5/d28/classez_px_trigger_component_manager.htm", null ]
@@ -6120,10 +6365,16 @@ var hierarchy =
             [ "ezComponentManager< ezPxDynamicActorComponent, ezBlockStorageType::FreeList >", "d7/df2/classez_component_manager.htm", [
               [ "ezPxDynamicActorComponentManager", "d1/dfc/classez_px_dynamic_actor_component_manager.htm", null ]
             ] ],
+            [ "ezComponentManager< ezPxQueryShapeActorComponent, ezBlockStorageType::FreeList >", "d7/df2/classez_component_manager.htm", [
+              [ "ezPxQueryShapeActorComponentManager", "dd/d26/classez_px_query_shape_actor_component_manager.htm", null ]
+            ] ],
             [ "ezComponentManager< ezVisualScriptComponent, ezBlockStorageType::Compact >", "d7/df2/classez_component_manager.htm", [
               [ "ezVisualScriptComponentManager", "dd/d6d/classez_visual_script_component_manager.htm", null ]
             ] ],
-            [ "ezSettingsComponentManager< ComponentType >", "df/d58/classez_settings_component_manager.htm", null ]
+            [ "ezSettingsComponentManager< ComponentType >", "df/d58/classez_settings_component_manager.htm", null ],
+            [ "ezSettingsComponentManager< class ezBakedProbesComponent >", "df/d58/classez_settings_component_manager.htm", [
+              [ "ezBakedProbesComponentManager", "d3/d33/classez_baked_probes_component_manager.htm", null ]
+            ] ]
           ] ],
           [ "ezParticleWorldModule", "d9/d41/classez_particle_world_module.htm", null ],
           [ "ezPhysicsWorldModuleInterface", "d0/d6a/classez_physics_world_module_interface.htm", [
@@ -6241,8 +6492,10 @@ var hierarchy =
     [ "ezPipeWin", "d8/d7c/structez_pipe_win.htm", null ],
     [ "ezPlaneTemplate< Type >", "d5/d8d/structez_plane_template.htm", null ],
     [ "ezPlaneTemplate< float >", "d5/d8d/structez_plane_template.htm", null ],
+    [ "ezPlugin", "dd/d46/classez_plugin.htm", null ],
     [ "ezPluginEvent", "d4/d72/structez_plugin_event.htm", null ],
     [ "ezPluginInfo", "d3/d7b/structez_plugin_info.htm", null ],
+    [ "ezPluginLoadFlags", "d3/d72/structez_plugin_load_flags.htm", null ],
     [ "ezPluginSet", "df/da0/structez_plugin_set.htm", null ],
     [ "ezPointerWithFlags< PtrType, NumFlagBits >", "da/dd1/classez_pointer_with_flags.htm", null ],
     [ "ezPointerWithFlags< ezAllocatorBase, 1 >", "da/dd1/classez_pointer_with_flags.htm", null ],
@@ -6254,6 +6507,7 @@ var hierarchy =
     [ "ezPrefabResourceDescriptor", "dd/db7/structez_prefab_resource_descriptor.htm", null ],
     [ "ezPrefabUtils", "de/d1b/classez_prefab_utils.htm", null ],
     [ "ezPreprocessor", "db/dfd/classez_preprocessor.htm", null ],
+    [ "ezProbeTreeSectorResourceDescriptor", "df/d43/structez_probe_tree_sector_resource_descriptor.htm", null ],
     [ "ezProcessCommunicationChannel", "d0/d97/classez_process_communication_channel.htm", [
       [ "ezEditorProcessCommunicationChannel", "df/df4/classez_editor_process_communication_channel.htm", null ],
       [ "ezEditorProcessRemoteCommunicationChannel", "d2/dc4/classez_editor_process_remote_communication_channel.htm", null ],
@@ -6271,11 +6525,17 @@ var hierarchy =
     [ "ezProcGenBoxExtents", "d1/dd3/structez_proc_gen_box_extents.htm", null ],
     [ "ezProcGenExpressionFunctions", "d1/d47/structez_proc_gen_expression_functions.htm", null ],
     [ "ezProcGenGraphResourceDescriptor", "da/d5c/structez_proc_gen_graph_resource_descriptor.htm", null ],
+    [ "ezProcPlacementMode", "dd/d33/structez_proc_placement_mode.htm", [
+      [ "ezEnum< ezProcPlacementMode >", "d6/dd9/structez_enum.htm", null ]
+    ] ],
     [ "ezProcVertexColorChannelMapping", "d6/dfc/structez_proc_vertex_color_channel_mapping.htm", [
       [ "ezEnum< ezProcVertexColorChannelMapping >", "d6/dd9/structez_enum.htm", null ]
     ] ],
     [ "ezProcVertexColorMapping", "da/d27/structez_proc_vertex_color_mapping.htm", null ],
     [ "ezProcVertexColorOutputDesc", "d7/d92/structez_proc_vertex_color_output_desc.htm", null ],
+    [ "ezProcVolumeImageMode", "de/d9b/structez_proc_volume_image_mode.htm", [
+      [ "ezEnum< ezProcVolumeImageMode >", "d6/dd9/structez_enum.htm", null ]
+    ] ],
     [ "ezProfileTargetPlatform", "d2/d1b/structez_profile_target_platform.htm", [
       [ "ezEnum< ezProfileTargetPlatform >", "d6/dd9/structez_enum.htm", null ]
     ] ],
@@ -6316,6 +6576,7 @@ var hierarchy =
     [ "ezPropertyUiState", "dc/de2/structez_property_ui_state.htm", null ],
     [ "ezMemoryPolicies::ezProxyAllocation", "d9/dd1/classez_memory_policies_1_1ez_proxy_allocation.htm", null ],
     [ "ezPushObjectStateData", "d4/df8/structez_push_object_state_data.htm", null ],
+    [ "ezPxActorLockingFlags", "d2/d58/structez_px_actor_locking_flags.htm", null ],
     [ "ezPxAxis", "d9/de5/structez_px_axis.htm", null ],
     [ "ezPxCharacterShapeCollisionFlags", "d2/dcc/structez_px_character_shape_collision_flags.htm", null ],
     [ "ezPxJointDriveMode", "d7/dce/structez_px_joint_drive_mode.htm", [
@@ -6325,6 +6586,9 @@ var hierarchy =
       [ "ezEnum< ezPxJointLimitMode >", "d6/dd9/structez_enum.htm", null ]
     ] ],
     [ "ezPxMeshResourceDescriptor", "d8/d67/structez_px_mesh_resource_descriptor.htm", null ],
+    [ "ezPxRagdollStart", "df/dad/structez_px_ragdoll_start.htm", [
+      [ "ezEnum< ezPxRagdollStart >", "d6/dd9/structez_enum.htm", null ]
+    ] ],
     [ "ezPxSettings", "d4/d23/structez_px_settings.htm", null ],
     [ "ezPxSteppingMode", "d8/d0d/structez_px_stepping_mode.htm", [
       [ "ezEnum< ezPxSteppingMode >", "d6/dd9/structez_enum.htm", null ]
@@ -6359,7 +6623,10 @@ var hierarchy =
     [ "ezRefCountingImpl", "d9/d13/classez_ref_counting_impl.htm", [
       [ "ezRefCounted", "d2/d70/classez_ref_counted.htm", [
         [ "ezAnimGraphSharedBoneWeights", "d3/d71/structez_anim_graph_shared_bone_weights.htm", null ],
+        [ "ezCommandHistory::Storage", "d7/d1d/classez_command_history_1_1_storage.htm", null ],
+        [ "ezCommandInterpreter", "df/de3/classez_command_interpreter.htm", null ],
         [ "ezCoordinateSystemProvider", "df/d57/classez_coordinate_system_provider.htm", null ],
+        [ "ezDocumentObjectManager::Storage", "d1/d14/classez_document_object_manager_1_1_storage.htm", null ],
         [ "ezGALFence", "d0/dd1/classez_g_a_l_fence.htm", [
           [ "ezGALFenceDX11", "d9/d10/classez_g_a_l_fence_d_x11.htm", null ],
           [ "ezGALFenceVulkan", "de/d87/classez_g_a_l_fence_vulkan.htm", null ]
@@ -6455,6 +6722,7 @@ var hierarchy =
           ] ],
           [ "ezMemoryStreamContainerWrapperStorage< CONTAINER >", "d1/d19/classez_memory_stream_container_wrapper_storage.htm", null ]
         ] ],
+        [ "ezObjectMetaData< KEY, VALUE >::Storage", "d0/dbf/classez_object_meta_data_1_1_storage.htm", null ],
         [ "ezParticleEffectParameters", "dd/db4/classez_particle_effect_parameters.htm", null ],
         [ "ezProcGenInternal::GraphSharedDataBase", "d3/d77/structez_proc_gen_internal_1_1_graph_shared_data_base.htm", [
           [ "ezProcGenInternal::GraphSharedData", "d0/d3e/classez_proc_gen_internal_1_1_graph_shared_data.htm", null ]
@@ -6466,10 +6734,13 @@ var hierarchy =
         [ "ezPropertyAnimResourceDescriptor", "df/d6c/structez_property_anim_resource_descriptor.htm", null ],
         [ "ezRefCountedContainer< TYPE >", "d5/d61/classez_ref_counted_container.htm", null ],
         [ "ezRenderPipeline", "d8/dfa/classez_render_pipeline.htm", null ],
+        [ "ezSelectionManager::Storage", "d9/dde/classez_selection_manager_1_1_storage.htm", null ],
         [ "ezShaderConstantBufferLayout", "d4/d07/classez_shader_constant_buffer_layout.htm", null ],
         [ "ezTask", "dd/d2b/classez_task.htm", [
           [ "ArrayPtrTask< ElemType >", "dd/dc9/class_array_ptr_task.htm", null ],
           [ "ezAfterSaveDocumentTask", "da/d3e/classez_after_save_document_task.htm", null ],
+          [ "ezBakingInternal::PlaceProbesTask", "d9/d23/classez_baking_internal_1_1_place_probes_task.htm", null ],
+          [ "ezBakingInternal::SkyVisibilityTask", "db/dfa/classez_baking_internal_1_1_sky_visibility_task.htm", null ],
           [ "ezDelegateTask< T >", "d7/d20/classez_delegate_task.htm", null ],
           [ "ezDelegateTask< void >", "db/ded/classez_delegate_task_3_01void_01_4.htm", null ],
           [ "ezDirectoryUpdateTask", "dd/d80/classez_directory_update_task.htm", null ],
@@ -6555,6 +6826,7 @@ var hierarchy =
     [ "ezRootMotionSource", "de/ded/structez_root_motion_source.htm", [
       [ "ezEnum< ezRootMotionSource >", "d6/dd9/structez_enum.htm", null ]
     ] ],
+    [ "ezRopeSimulator", "d0/dec/classez_rope_simulator.htm", null ],
     [ "ezRTTIAllocator", "db/df8/structez_r_t_t_i_allocator.htm", [
       [ "ezRTTIDefaultAllocator< CLASS, AllocatorWrapper >", "dc/ddb/structez_r_t_t_i_default_allocator.htm", null ],
       [ "ezRTTINoAllocator", "dd/d04/structez_r_t_t_i_no_allocator.htm", null ]
@@ -6575,9 +6847,11 @@ var hierarchy =
     [ "ezRttiMappedObjectFactory< ezQtPropertyWidget >", "d8/d28/classez_rtti_mapped_object_factory.htm", null ],
     [ "ezRttiMappedObjectFactory< ezQtProxy >", "d8/d28/classez_rtti_mapped_object_factory.htm", null ],
     [ "ezRttiMappedObjectFactory< ezVisualizerAdapter >", "d8/d28/classez_rtti_mapped_object_factory.htm", null ],
+    [ "ezScene2LayerEvent", "dc/de3/structez_scene2_layer_event.htm", null ],
     [ "ezSceneActions", "d3/dbc/classez_scene_actions.htm", null ],
     [ "ezSceneGizmoActions", "d2/daf/classez_scene_gizmo_actions.htm", null ],
     [ "ezSceneViewPerspective", "de/d4a/structez_scene_view_perspective.htm", null ],
+    [ "ezScopedCFRef< T >", "d3/d69/classez_scoped_c_f_ref.htm", null ],
     [ "ezScopedRefPointer< T >", "db/d20/classez_scoped_ref_pointer.htm", null ],
     [ "ezScopedRefPointer< const ezMemoryStreamStorageInterface >", "db/d20/classez_scoped_ref_pointer.htm", null ],
     [ "ezScopedRefPointer< ezGALShaderByteCode >", "db/d20/classez_scoped_ref_pointer.htm", null ],
@@ -6592,6 +6866,7 @@ var hierarchy =
     [ "ezSelectionActions", "d1/d54/classez_selection_actions.htm", null ],
     [ "ezSelectionManager", "d3/da7/classez_selection_manager.htm", null ],
     [ "ezSelectionManagerEvent", "da/df9/structez_selection_manager_event.htm", null ],
+    [ "ezSemaphore", "df/def/classez_semaphore.htm", null ],
     [ "ezSerializationContext< Derived >", "d6/ddf/classez_serialization_context.htm", null ],
     [ "ezSerializationContext< ezDeduplicationReadContext >", "d6/ddf/classez_serialization_context.htm", [
       [ "ezDeduplicationReadContext", "df/ddd/classez_deduplication_read_context.htm", null ]
@@ -6685,8 +6960,14 @@ var hierarchy =
     [ "ezSharedPtr< const ezProcGenInternal::PlacementOutput >", "de/dc1/classez_shared_ptr.htm", null ],
     [ "ezSharedPtr< const ezProcGenInternal::VertexColorOutput >", "de/dc1/classez_shared_ptr.htm", null ],
     [ "ezSharedPtr< ezAnimGraphSharedBoneWeights >", "de/dc1/classez_shared_ptr.htm", null ],
+    [ "ezSharedPtr< ezCommandHistory::Storage >", "de/dc1/classez_shared_ptr.htm", null ],
+    [ "ezSharedPtr< ezCommandInterpreter >", "de/dc1/classez_shared_ptr.htm", null ],
     [ "ezSharedPtr< ezCoordinateSystemProvider >", "de/dc1/classez_shared_ptr.htm", null ],
     [ "ezSharedPtr< ezDelegateTask< void > >", "de/dc1/classez_shared_ptr.htm", null ],
+    [ "ezSharedPtr< ezDocumentObjectManager::Storage >", "de/dc1/classez_shared_ptr.htm", null ],
+    [ "ezSharedPtr< ezObjectMetaData< ezUuid, ezDocumentObjectMetaData >ezObjectMetaData::Storage >", "de/dc1/classez_shared_ptr.htm", null ],
+    [ "ezSharedPtr< ezObjectMetaData< ezUuid, ezGameObjectMetaData >ezObjectMetaData::Storage >", "de/dc1/classez_shared_ptr.htm", null ],
+    [ "ezSharedPtr< ezObjectMetaData< KEY, VALUE >ezObjectMetaData::Storage >", "de/dc1/classez_shared_ptr.htm", null ],
     [ "ezSharedPtr< ezParticleEffectParameters >", "de/dc1/classez_shared_ptr.htm", null ],
     [ "ezSharedPtr< ezProcessTask >", "de/dc1/classez_shared_ptr.htm", null ],
     [ "ezSharedPtr< ezProcGenInternal::FindPlacementTilesTask >", "de/dc1/classez_shared_ptr.htm", null ],
@@ -6698,8 +6979,10 @@ var hierarchy =
     [ "ezSharedPtr< ezRenderPipeline >", "de/dc1/classez_shared_ptr.htm", null ],
     [ "ezSharedPtr< ezResourceManagerWorkerDataLoad >", "de/dc1/classez_shared_ptr.htm", null ],
     [ "ezSharedPtr< ezResourceManagerWorkerUpdateContent >", "de/dc1/classez_shared_ptr.htm", null ],
+    [ "ezSharedPtr< ezSelectionManager::Storage >", "de/dc1/classez_shared_ptr.htm", null ],
     [ "ezSharedPtr< ezTask >", "de/dc1/classez_shared_ptr.htm", null ],
     [ "ezSharedPtr< ezUpdateTask >", "de/dc1/classez_shared_ptr.htm", null ],
+    [ "ezSharedPtr< RenderDebugViewTask >", "de/dc1/classez_shared_ptr.htm", null ],
     [ "ezSharedPtr< UpdateTask >", "de/dc1/classez_shared_ptr.htm", null ],
     [ "ezSimdBBox", "db/dc7/classez_simd_b_box.htm", null ],
     [ "ezSimdBBoxSphere", "dc/d62/classez_simd_b_box_sphere.htm", null ],
@@ -6726,8 +7009,11 @@ var hierarchy =
     [ "ezSkeleton", "db/df5/classez_skeleton.htm", null ],
     [ "ezSkeletonBuilder", "d1/d87/classez_skeleton_builder.htm", null ],
     [ "ezSkeletonJoint", "d2/dde/classez_skeleton_joint.htm", null ],
-    [ "ezSkeletonJointGeometryType", "df/dd3/structez_skeleton_joint_geometry_type.htm", null ],
+    [ "ezSkeletonJointGeometryType", "df/dd3/structez_skeleton_joint_geometry_type.htm", [
+      [ "ezEnum< ezSkeletonJointGeometryType >", "d6/dd9/structez_enum.htm", null ]
+    ] ],
     [ "ezSkeletonResourceDescriptor", "db/d22/structez_skeleton_resource_descriptor.htm", null ],
+    [ "ezSkeletonResourceGeometry", "d3/d9a/structez_skeleton_resource_geometry.htm", null ],
     [ "ezSkinningSpaceAnimationPose", "df/dea/classez_skinning_space_animation_pose.htm", null ],
     [ "ezSmallArrayBase< T, Size >", "d4/d0b/classez_small_array_base.htm", [
       [ "ezSmallArray< T, Size, AllocatorWrapper >", "d0/d0c/classez_small_array.htm", null ]
@@ -6754,6 +7040,7 @@ var hierarchy =
     [ "ezSoundInterface", "d5/d50/classez_sound_interface.htm", [
       [ "ezFmod", "d4/d2b/classez_fmod.htm", null ]
     ] ],
+    [ "ezSpatialData", "dd/dae/structez_spatial_data.htm", null ],
     [ "ezSpatialDataHandle", "db/d2f/classez_spatial_data_handle.htm", null ],
     [ "ezSpawnComponentFlags", "d3/d29/structez_spawn_component_flags.htm", null ],
     [ "ezSpriteBlendMode", "d2/d89/structez_sprite_blend_mode.htm", [
@@ -6914,6 +7201,9 @@ var hierarchy =
     [ "ezToolsSerializationUtils", "dc/d48/classez_tools_serialization_utils.htm", null ],
     [ "ezToolsTag", "d4/d7e/structez_tools_tag.htm", null ],
     [ "ezToolsTagRegistry", "de/daf/classez_tools_tag_registry.htm", null ],
+    [ "ezTracerInterface", "d6/df3/classez_tracer_interface.htm", [
+      [ "ezTracerEmbree", "de/daa/classez_tracer_embree.htm", null ]
+    ] ],
     [ "ezTraitInt< v >", "d6/d09/structez_trait_int.htm", [
       [ "ezIsPodType< T * >", "d6/d65/structez_is_pod_type_3_01_t_01_5_01_4.htm", null ],
       [ "ezIsPodType< T[N]>", "d1/d13/structez_is_pod_type_3_01_t_0f_n_0e_4.htm", null ]
@@ -6952,10 +7242,13 @@ var hierarchy =
     [ "ezTypedResourceHandle< class ezAnimGraphResource >", "d3/dd7/classez_typed_resource_handle.htm", null ],
     [ "ezTypedResourceHandle< class ezCollectionResource >", "d3/dd7/classez_typed_resource_handle.htm", null ],
     [ "ezTypedResourceHandle< class ezColorGradientResource >", "d3/dd7/classez_typed_resource_handle.htm", null ],
+    [ "ezTypedResourceHandle< class ezCpuMeshResource >", "d3/dd7/classez_typed_resource_handle.htm", null ],
     [ "ezTypedResourceHandle< class ezCurve1DResource >", "d3/dd7/classez_typed_resource_handle.htm", null ],
     [ "ezTypedResourceHandle< class ezDecalAtlasResource >", "d3/dd7/classez_typed_resource_handle.htm", null ],
+    [ "ezTypedResourceHandle< class ezDynamicMeshBufferResource >", "d3/dd7/classez_typed_resource_handle.htm", null ],
     [ "ezTypedResourceHandle< class ezFmodSoundBankResource >", "d3/dd7/classez_typed_resource_handle.htm", null ],
     [ "ezTypedResourceHandle< class ezFmodSoundEventResource >", "d3/dd7/classez_typed_resource_handle.htm", null ],
+    [ "ezTypedResourceHandle< class ezImageDataResource >", "d3/dd7/classez_typed_resource_handle.htm", null ],
     [ "ezTypedResourceHandle< class ezKrautGeneratorResource >", "d3/dd7/classez_typed_resource_handle.htm", null ],
     [ "ezTypedResourceHandle< class ezKrautTreeResource >", "d3/dd7/classez_typed_resource_handle.htm", null ],
     [ "ezTypedResourceHandle< class ezMaterialResource >", "d3/dd7/classez_typed_resource_handle.htm", null ],
@@ -6963,6 +7256,7 @@ var hierarchy =
     [ "ezTypedResourceHandle< class ezMeshResource >", "d3/dd7/classez_typed_resource_handle.htm", null ],
     [ "ezTypedResourceHandle< class ezParticleEffectResource >", "d3/dd7/classez_typed_resource_handle.htm", null ],
     [ "ezTypedResourceHandle< class ezPrefabResource >", "d3/dd7/classez_typed_resource_handle.htm", null ],
+    [ "ezTypedResourceHandle< class ezProbeTreeSectorResource >", "d3/dd7/classez_typed_resource_handle.htm", null ],
     [ "ezTypedResourceHandle< class ezProcGenGraphResource >", "d3/dd7/classez_typed_resource_handle.htm", null ],
     [ "ezTypedResourceHandle< class ezPropertyAnimResource >", "d3/dd7/classez_typed_resource_handle.htm", null ],
     [ "ezTypedResourceHandle< class ezPxMeshResource >", "d3/dd7/classez_typed_resource_handle.htm", null ],
@@ -6979,7 +7273,6 @@ var hierarchy =
     [ "ezTypedResourceHandle< class ezTexture3DResource >", "d3/dd7/classez_typed_resource_handle.htm", null ],
     [ "ezTypedResourceHandle< class ezTextureCubeResource >", "d3/dd7/classez_typed_resource_handle.htm", null ],
     [ "ezTypedResourceHandle< class ezVisualScriptResource >", "d3/dd7/classez_typed_resource_handle.htm", null ],
-    [ "ezTypedResourceHandle< ezImageDataResource >", "d3/dd7/classez_typed_resource_handle.htm", null ],
     [ "ezTypeFlags", "da/dee/structez_type_flags.htm", null ],
     [ "ezTypelessBitflags< T >", "de/d7a/structez_typeless_bitflags.htm", null ],
     [ "ezTypelessResourceHandle", "d8/dac/classez_typeless_resource_handle.htm", null ],
@@ -6992,6 +7285,7 @@ var hierarchy =
     [ "ezUnicodeUtils", "d9/d32/classez_unicode_utils.htm", null ],
     [ "ezUniquePtr< T >", "d8/d96/classez_unique_ptr.htm", null ],
     [ "ezUniquePtr< Cell >", "d8/d96/classez_unique_ptr.htm", null ],
+    [ "ezUniquePtr< class ezBakedProbesComponent >", "d8/d96/classez_unique_ptr.htm", null ],
     [ "ezUniquePtr< ComponentType >", "d8/d96/classez_unique_ptr.htm", null ],
     [ "ezUniquePtr< Data >", "d8/d96/classez_unique_ptr.htm", null ],
     [ "ezUniquePtr< dtNavMeshQuery >", "d8/d96/classez_unique_ptr.htm", null ],
@@ -7007,9 +7301,10 @@ var hierarchy =
     [ "ezUniquePtr< ezAssetDocumentInfo >", "d8/d96/classez_unique_ptr.htm", null ],
     [ "ezUniquePtr< ezAssetWatcher >", "d8/d96/classez_unique_ptr.htm", null ],
     [ "ezUniquePtr< ezBlackboard >", "d8/d96/classez_unique_ptr.htm", null ],
-    [ "ezUniquePtr< ezConsole >", "d8/d96/classez_unique_ptr.htm", null ],
+    [ "ezUniquePtr< ezCommandHistory >", "d8/d96/classez_unique_ptr.htm", null ],
     [ "ezUniquePtr< ezConsoleFunctionBase >", "d8/d96/classez_unique_ptr.htm", null ],
     [ "ezUniquePtr< ezDataDirectory::ArchiveReaderUncompressed >", "d8/d96/classez_unique_ptr.htm", null ],
+    [ "ezUniquePtr< ezDocumentObjectManager >", "d8/d96/classez_unique_ptr.htm", null ],
     [ "ezUniquePtr< ezEditorEngineProcessApp >", "d8/d96/classez_unique_ptr.htm", null ],
     [ "ezUniquePtr< ezEditorProcessRemoteCommunicationChannel >", "d8/d96/classez_unique_ptr.htm", null ],
     [ "ezUniquePtr< ezExposedParameterCommandAccessor >", "d8/d96/classez_unique_ptr.htm", null ],
@@ -7033,6 +7328,9 @@ var hierarchy =
     [ "ezUniquePtr< ezMessage >", "d8/d96/classez_unique_ptr.htm", null ],
     [ "ezUniquePtr< ezNavMeshPointOfInterestGraph >", "d8/d96/classez_unique_ptr.htm", null ],
     [ "ezUniquePtr< ezObjectAccessorBase >", "d8/d96/classez_unique_ptr.htm", null ],
+    [ "ezUniquePtr< ezObjectCommandAccessor >", "d8/d96/classez_unique_ptr.htm", null ],
+    [ "ezUniquePtr< ezObjectMetaData< ezUuid, ezDocumentObjectMetaData > >", "d8/d96/classez_unique_ptr.htm", null ],
+    [ "ezUniquePtr< ezObjectMetaData< ezUuid, ezGameObjectMetaData > >", "d8/d96/classez_unique_ptr.htm", null ],
     [ "ezUniquePtr< ezOpenXRHandTracking >", "d8/d96/classez_unique_ptr.htm", null ],
     [ "ezUniquePtr< ezOpenXRInputDevice >", "d8/d96/classez_unique_ptr.htm", null ],
     [ "ezUniquePtr< ezOpenXRSpatialAnchors >", "d8/d96/classez_unique_ptr.htm", null ],
@@ -7043,12 +7341,15 @@ var hierarchy =
     [ "ezUniquePtr< ezProgressRange >", "d8/d96/classez_unique_ptr.htm", null ],
     [ "ezUniquePtr< ezPropertyAnimObjectAccessor >", "d8/d96/classez_unique_ptr.htm", null ],
     [ "ezUniquePtr< ezPxCharacterCapsuleShapeData >", "d8/d96/classez_unique_ptr.htm", null ],
+    [ "ezUniquePtr< ezQuakeConsole >", "d8/d96/classez_unique_ptr.htm", null ],
     [ "ezUniquePtr< ezRemoteInterface >", "d8/d96/classez_unique_ptr.htm", null ],
     [ "ezUniquePtr< ezRenderer >", "d8/d96/classez_unique_ptr.htm", null ],
     [ "ezUniquePtr< ezRenderPipelinePass >", "d8/d96/classez_unique_ptr.htm", null ],
     [ "ezUniquePtr< ezResourceManagerState >", "d8/d96/classez_unique_ptr.htm", null ],
     [ "ezUniquePtr< ezResourceTypeLoader >", "d8/d96/classez_unique_ptr.htm", null ],
     [ "ezUniquePtr< ezRmlUiDataBinding >", "d8/d96/classez_unique_ptr.htm", null ],
+    [ "ezUniquePtr< ezSelectionContext >", "d8/d96/classez_unique_ptr.htm", null ],
+    [ "ezUniquePtr< ezSelectionManager >", "d8/d96/classez_unique_ptr.htm", null ],
     [ "ezUniquePtr< ezSimpleFmod >", "d8/d96/classez_unique_ptr.htm", null ],
     [ "ezUniquePtr< ezSkeletonResourceDescriptor >", "d8/d96/classez_unique_ptr.htm", null ],
     [ "ezUniquePtr< ezSpatialSystem >", "d8/d96/classez_unique_ptr.htm", null ],
@@ -7058,6 +7359,7 @@ var hierarchy =
     [ "ezUniquePtr< ezTaskSystemState >", "d8/d96/classez_unique_ptr.htm", null ],
     [ "ezUniquePtr< ezTaskSystemThreadState >", "d8/d96/classez_unique_ptr.htm", null ],
     [ "ezUniquePtr< ezTimeStepSmoothing >", "d8/d96/classez_unique_ptr.htm", null ],
+    [ "ezUniquePtr< ezTracerInterface >", "d8/d96/classez_unique_ptr.htm", null ],
     [ "ezUniquePtr< ezTranslator >", "d8/d96/classez_unique_ptr.htm", null ],
     [ "ezUniquePtr< ezVisualScriptInstance >", "d8/d96/classez_unique_ptr.htm", null ],
     [ "ezUniquePtr< ezVisualScriptInstanceActivity >", "d8/d96/classez_unique_ptr.htm", null ],
@@ -7066,6 +7368,7 @@ var hierarchy =
     [ "ezUniquePtr< ezWindowOutputTargetXR >", "d8/d96/classez_unique_ptr.htm", null ],
     [ "ezUniquePtr< ezWindowXR >", "d8/d96/classez_unique_ptr.htm", null ],
     [ "ezUniquePtr< ezWorld >", "d8/d96/classez_unique_ptr.htm", null ],
+    [ "ezUniquePtr< Grid >", "d8/d96/classez_unique_ptr.htm", null ],
     [ "ezUniquePtr< ozz::animation::Skeleton >", "d8/d96/classez_unique_ptr.htm", null ],
     [ "ezUniquePtr< OzzImpl >", "d8/d96/classez_unique_ptr.htm", null ],
     [ "ezUniquePtr< WorkerOpInfo >", "d8/d96/classez_unique_ptr.htm", null ],
@@ -7105,8 +7408,10 @@ var hierarchy =
     [ "ezVec3Template< Type >", "d6/dbd/structez_vec3_template.htm", null ],
     [ "ezVec3Template< double >", "d6/dbd/structez_vec3_template.htm", null ],
     [ "ezVec3Template< ezInt32 >", "d6/dbd/structez_vec3_template.htm", null ],
+    [ "ezVec3Template< ezUInt32 >", "d6/dbd/structez_vec3_template.htm", null ],
     [ "ezVec3Template< float >", "d6/dbd/structez_vec3_template.htm", null ],
     [ "ezVec4Template< Type >", "da/dd2/classez_vec4_template.htm", null ],
+    [ "ezVec4Template< ezUInt16 >", "da/dd2/classez_vec4_template.htm", null ],
     [ "ezVec4Template< float >", "da/dd2/classez_vec4_template.htm", null ],
     [ "ezVersionKey", "d5/dee/structez_version_key.htm", null ],
     [ "ezVertexDeclarationInfo", "d4/d48/structez_vertex_declaration_info.htm", null ],
@@ -7179,6 +7484,9 @@ var hierarchy =
     [ "ezWindStrength", "d9/d28/structez_wind_strength.htm", [
       [ "ezEnum< ezWindStrength >", "d6/dd9/structez_enum.htm", null ]
     ] ],
+    [ "ezWindVolumeCylinderMode", "d9/d13/structez_wind_volume_cylinder_mode.htm", [
+      [ "ezEnum< ezWindVolumeCylinderMode >", "d6/dd9/structez_enum.htm", null ]
+    ] ],
     [ "ezWorkerThreadType", "d2/d9b/structez_worker_thread_type.htm", null ],
     [ "ezWorld", "da/d3c/classez_world.htm", null ],
     [ "ezWorldDesc", "d7/d54/structez_world_desc.htm", null ],
@@ -7232,12 +7540,12 @@ var hierarchy =
       [ "ezRmlUiInternal::FileInterface", "da/d47/classez_rml_ui_internal_1_1_file_interface.htm", null ]
     ] ],
     [ "ezFileserveClientContext::FileStatus", "d1/d9b/structez_fileserve_client_context_1_1_file_status.htm", null ],
+    [ "ezSpatialData::Flags", "d2/df4/structez_spatial_data_1_1_flags.htm", null ],
     [ "ezMinWindows::FromNativeImpl< T >", "df/d4a/structez_min_windows_1_1_from_native_impl.htm", null ],
     [ "ezTypeScriptBinding::FunctionBinding", "db/d42/structez_type_script_binding_1_1_function_binding.htm", null ],
     [ "GameMode", "d8/d48/struct_game_mode.htm", null ],
     [ "ezGameObjectDocument::GameModeData", "d9/d36/structez_game_object_document_1_1_game_mode_data.htm", null ],
     [ "ezProcGenNodeBase::GenerateASTContext", "d5/dc5/structez_proc_gen_node_base_1_1_generate_a_s_t_context.htm", null ],
-    [ "ezWorldGeoExtractionUtil::Geometry", "dc/d80/structez_world_geo_extraction_util_1_1_geometry.htm", null ],
     [ "getArgument< _Index, Args >", "d5/daf/structget_argument.htm", null ],
     [ "getArgument< 0, Head, Tail... >", "da/d80/structget_argument_3_010_00_01_head_00_01_tail_8_8_8_01_4.htm", null ],
     [ "getArgument< _Index, Head, Tail... >", "d5/dfd/structget_argument_3_01___index_00_01_head_00_01_tail_8_8_8_01_4.htm", null ],
@@ -7245,7 +7553,7 @@ var hierarchy =
     [ "ezHashedString::HashedData", "da/ddb/structez_hashed_string_1_1_hashed_data.htm", null ],
     [ "ezInternal::HashHelperImpl< T, isString >", "d3/d67/structez_internal_1_1_hash_helper_impl.htm", null ],
     [ "ezInternal::HashHelperImpl< T, true >", "da/dd5/structez_internal_1_1_hash_helper_impl_3_01_t_00_01true_01_4.htm", null ],
-    [ "ezDebugRenderer::HorizontalAlignment", "d0/d90/structez_debug_renderer_1_1_horizontal_alignment.htm", null ],
+    [ "ezTracerInterface::Hit", "df/d04/structez_tracer_interface_1_1_hit.htm", null ],
     [ "ezLogWriter::HTML", "d5/d7e/classez_log_writer_1_1_h_t_m_l.htm", null ],
     [ "ezAssetDocumentGenerator::ImportData", "db/dfa/structez_asset_document_generator_1_1_import_data.htm", null ],
     [ "ezModelImporter2::Importer", "d0/d4d/classez_model_importer2_1_1_importer.htm", [
@@ -7254,26 +7562,29 @@ var hierarchy =
       [ "ezModelImporter2::ImporterSourceBSP", "da/db4/classez_model_importer2_1_1_importer_source_b_s_p.htm", null ]
     ] ],
     [ "ezModelImporter2::ImportOptions", "df/d32/structez_model_importer2_1_1_import_options.htm", null ],
+    [ "ezPxRagdollComponent::Impulse", "d0/d94/structez_px_ragdoll_component_1_1_impulse.htm", null ],
     [ "ezAssetDocumentGenerator::Info", "dc/dbe/structez_asset_document_generator_1_1_info.htm", null ],
+    [ "ezPlugin::Init", "d4/d08/structez_plugin_1_1_init.htm", null ],
     [ "ezVirtualThumbStick::Input", "d8/de6/structez_virtual_thumb_stick_1_1_input.htm", null ],
     [ "ezInputManager::InputEventData", "db/dde/structez_input_manager_1_1_input_event_data.htm", null ],
     [ "ezDelegateBase::InstancePtr", "d7/dfb/unionez_delegate_base_1_1_instance_ptr.htm", null ],
     [ "ezWorldReader::InstantiationContextBase", "df/d82/classez_world_reader_1_1_instantiation_context_base.htm", null ],
     [ "ezMathExpression::InstructionType", "d6/d38/structez_math_expression_1_1_instruction_type.htm", null ],
     [ "ezColorGradient::IntensityCP", "d9/d76/structez_color_gradient_1_1_intensity_c_p.htm", null ],
+    [ "ezPxSimulationEventCallback::InteractionContact", "da/d92/structez_px_simulation_event_callback_1_1_interaction_contact.htm", null ],
     [ "ezQtEngineViewWidget::InteractionContext", "de/dfa/structez_qt_engine_view_widget_1_1_interaction_context.htm", null ],
     [ "ezWorldModuleConfig::InterfaceImpl", "d8/dbf/structez_world_module_config_1_1_interface_impl.htm", null ],
     [ "SpvReflectShaderModule::Internal", "df/de3/struct_spv_reflect_shader_module_1_1_internal.htm", null ],
     [ "ezProcGenInternal::InvalidatedArea", "d0/d7b/structez_proc_gen_internal_1_1_invalidated_area.htm", null ],
+    [ "ezTextureAtlasCreationDesc::Item", "d9/d55/structez_texture_atlas_creation_desc_1_1_item.htm", null ],
     [ "ezDynamicMenuAction::Item", "d1/d8e/structez_dynamic_menu_action_1_1_item.htm", null ],
     [ "ezTextureAtlasRuntimeDesc::Item", "d1/d60/structez_texture_atlas_runtime_desc_1_1_item.htm", null ],
-    [ "ezTextureAtlasCreationDesc::Item", "d9/d55/structez_texture_atlas_creation_desc_1_1_item.htm", null ],
     [ "ezDynamicMenuAction::Item::ItemFlags", "d4/d34/structez_dynamic_menu_action_1_1_item_1_1_item_flags.htm", null ],
-    [ "ezTagSetTemplate< BlockStorageAllocator >::Iterator", "db/db7/classez_tag_set_template_1_1_iterator.htm", null ],
+    [ "ezListBase< T >::Iterator", "db/d53/structez_list_base_1_1_iterator.htm", null ],
     [ "ezMemoryTracker::Iterator", "d2/d83/classez_memory_tracker_1_1_iterator.htm", null ],
     [ "ezSetBase< KeyType, Comparer >::Iterator", "de/d30/structez_set_base_1_1_iterator.htm", null ],
     [ "ezRenderDataBatch::Iterator< T >", "d3/ddf/classez_render_data_batch_1_1_iterator.htm", null ],
-    [ "ezListBase< T >::Iterator", "db/d53/structez_list_base_1_1_iterator.htm", null ],
+    [ "ezTagSetTemplate< BlockStorageAllocator >::Iterator", "db/db7/classez_tag_set_template_1_1_iterator.htm", null ],
     [ "ezAnimationClipResourceDescriptor::JointInfo", "d0/df4/structez_animation_clip_resource_descriptor_1_1_joint_info.htm", null ],
     [ "JSEdit", "d6/d81/struct_j_s_edit.htm", null ],
     [ "ezStandardJSONWriter::JSONState", "d5/d92/structez_standard_j_s_o_n_writer_1_1_j_s_o_n_state.htm", null ],
@@ -7281,12 +7592,13 @@ var hierarchy =
     [ "ezAnimationClipResourceDescriptor::KeyframeQuat", "d1/d0c/structez_animation_clip_resource_descriptor_1_1_keyframe_quat.htm", null ],
     [ "ezAnimationClipResourceDescriptor::KeyframeVec3", "d3/d78/structez_animation_clip_resource_descriptor_1_1_keyframe_vec3.htm", null ],
     [ "ezTextureAtlasCreationDesc::Layer", "d8/d35/structez_texture_atlas_creation_desc_1_1_layer.htm", null ],
-    [ "ezGeometry::Line", "d8/db3/structez_geometry_1_1_line.htm", null ],
     [ "ezDebugRenderer::Line", "d6/d2a/structez_debug_renderer_1_1_line.htm", null ],
-    [ "ezFmodSoundBankResourceLoader::LoadedData", "d3/dcb/structez_fmod_sound_bank_resource_loader_1_1_loaded_data.htm", null ],
+    [ "ezGeometry::Line", "d8/db3/structez_geometry_1_1_line.htm", null ],
+    [ "ezPxRagdollComponent::LinkData", "d1/d61/structez_px_ragdoll_component_1_1_link_data.htm", null ],
     [ "ezFmodSoundEventResourceLoader::LoadedData", "dd/da3/structez_fmod_sound_event_resource_loader_1_1_loaded_data.htm", null ],
-    [ "ezDecalResourceLoader::LoadedData", "d6/d31/structez_decal_resource_loader_1_1_loaded_data.htm", null ],
     [ "ezTextureResourceLoader::LoadedData", "d1/d5f/structez_texture_resource_loader_1_1_loaded_data.htm", null ],
+    [ "ezDecalResourceLoader::LoadedData", "d6/d31/structez_decal_resource_loader_1_1_loaded_data.htm", null ],
+    [ "ezFmodSoundBankResourceLoader::LoadedData", "d3/dcb/structez_fmod_sound_bank_resource_loader_1_1_loaded_data.htm", null ],
     [ "ezVisualScriptResourceDescriptor::LocalParameter", "dd/d26/structez_visual_script_resource_descriptor_1_1_local_parameter.htm", [
       [ "ezVisualScriptResourceDescriptor::LocalParameterBool", "de/ddb/structez_visual_script_resource_descriptor_1_1_local_parameter_bool.htm", null ],
       [ "ezVisualScriptResourceDescriptor::LocalParameterNumber", "d4/d96/structez_visual_script_resource_descriptor_1_1_local_parameter_number.htm", null ],
@@ -7299,6 +7611,7 @@ var hierarchy =
     [ "ezKrautTreeResourceDescriptor::MaterialData", "d9/d2c/structez_kraut_tree_resource_descriptor_1_1_material_data.htm", null ],
     [ "SpvReflectNumericTraits::Matrix", "dc/d40/struct_spv_reflect_numeric_traits_1_1_matrix.htm", null ],
     [ "ezResource::MemoryUsage", "d0/d12/structez_resource_1_1_memory_usage.htm", null ],
+    [ "ezWorldGeoExtractionUtil::MeshObject", "d7/d05/structez_world_geo_extraction_util_1_1_mesh_object.htm", null ],
     [ "ezInternal::MessageHandler< bIsConst >", "d5/df4/structez_internal_1_1_message_handler.htm", null ],
     [ "ezInternal::MessageHandler< true >", "db/dd8/structez_internal_1_1_message_handler_3_01true_01_4.htm", null ],
     [ "ezInternal::MessageHandlerTraits< Class, MessageType >", "dc/d29/structez_internal_1_1_message_handler_traits.htm", null ],
@@ -7307,7 +7620,10 @@ var hierarchy =
     [ "ezGAL::ModifiedRange", "d3/dde/structez_g_a_l_1_1_modified_range.htm", null ],
     [ "ezInputDeviceController::Motor", "db/dbe/structez_input_device_controller_1_1_motor.htm", null ],
     [ "ezInternal::NewInstance< T >", "da/d7c/structez_internal_1_1_new_instance.htm", null ],
+    [ "ezVisualScriptResourceDescriptor::Node", "dc/d3c/structez_visual_script_resource_descriptor_1_1_node.htm", null ],
     [ "ezDGMLGraph::Node", "db/d6e/structez_d_g_m_l_graph_1_1_node.htm", null ],
+    [ "ezClothSimulator::Node", "d3/d40/structez_cloth_simulator_1_1_node.htm", null ],
+    [ "ezRopeSimulator::Node", "d2/d55/structez_rope_simulator_1_1_node.htm", null ],
     [ "ezExpressionAST::Node", "d2/d95/structez_expression_a_s_t_1_1_node.htm", [
       [ "ezExpressionAST::BinaryOperator", "da/dcf/structez_expression_a_s_t_1_1_binary_operator.htm", null ],
       [ "ezExpressionAST::Constant", "d9/d4d/structez_expression_a_s_t_1_1_constant.htm", null ],
@@ -7317,7 +7633,6 @@ var hierarchy =
       [ "ezExpressionAST::Select", "dd/d00/structez_expression_a_s_t_1_1_select.htm", null ],
       [ "ezExpressionAST::UnaryOperator", "de/d35/structez_expression_a_s_t_1_1_unary_operator.htm", null ]
     ] ],
-    [ "ezVisualScriptResourceDescriptor::Node", "dc/d3c/structez_visual_script_resource_descriptor_1_1_node.htm", null ],
     [ "ezDGMLGraph::NodeDesc", "d6/de5/structez_d_g_m_l_graph_1_1_node_desc.htm", null ],
     [ "ezDocumentNodeManager::NodeInternal", "d7/d45/structez_document_node_manager_1_1_node_internal.htm", null ],
     [ "ezExpressionAST::NodeType", "d2/d8f/structez_expression_a_s_t_1_1_node_type.htm", [
@@ -7361,12 +7676,14 @@ var hierarchy =
     [ "ezProcGenInternal::PlacementTileDesc", "df/d19/structez_proc_gen_internal_1_1_placement_tile_desc.htm", null ],
     [ "ezProcGenInternal::PlacementTransform", "db/dc5/structez_proc_gen_internal_1_1_placement_transform.htm", null ],
     [ "ezApplicationPluginConfig::PluginConfig", "d5/db3/structez_application_plugin_config_1_1_plugin_config.htm", null ],
+    [ "ezPlugin::PluginInfo", "da/de9/structez_plugin_1_1_plugin_info.htm", null ],
     [ "ezProcGenInternal::Pattern::Point", "d7/d69/structez_proc_gen_internal_1_1_pattern_1_1_point.htm", null ],
     [ "ezGeometry::Polygon", "d2/d66/structez_geometry_1_1_polygon.htm", null ],
+    [ "ezBakedProbesWorldModule::ProbeIndexData", "df/d74/structez_baked_probes_world_module_1_1_probe_index_data.htm", null ],
     [ "ezPreprocessor::ProcessingEvent", "d0/d65/structez_preprocessor_1_1_processing_event.htm", null ],
     [ "ezProfilingSystem::ProfilingData", "d8/d0a/structez_profiling_system_1_1_profiling_data.htm", null ],
-    [ "ezAbstractObjectNode::Property", "d2/d41/structez_abstract_object_node_1_1_property.htm", null ],
     [ "ezVisualScriptResourceDescriptor::Property", "dd/d53/structez_visual_script_resource_descriptor_1_1_property.htm", null ],
+    [ "ezAbstractObjectNode::Property", "d2/d41/structez_abstract_object_node_1_1_property.htm", null ],
     [ "ezTypeScriptBinding::PropertyBinding", "d7/da5/structez_type_script_binding_1_1_property_binding.htm", null ],
     [ "ezDGMLGraph::PropertyType", "d1/da7/structez_d_g_m_l_graph_1_1_property_type.htm", null ],
     [ "ezDGMLGraph::PropertyValue", "d0/d5a/structez_d_g_m_l_graph_1_1_property_value.htm", null ],
@@ -7380,12 +7697,17 @@ var hierarchy =
     [ "PxQueryFilterCallback", null, [
       [ "ezPxQueryFilter", "d0/d84/classez_px_query_filter.htm", null ]
     ] ],
+    [ "PxSimulationEventCallback", null, [
+      [ "ezPxSimulationEventCallback", "dd/d2a/classez_px_simulation_event_callback.htm", null ]
+    ] ],
     [ "QAbstractItemModel", null, [
       [ "ezQtAssetBrowserModel", "d4/d65/classez_qt_asset_browser_model.htm", null ],
+      [ "ezQtCVarModel", "dd/d19/classez_qt_c_var_model.htm", null ],
       [ "ezQtDocumentTreeModel", "d8/dba/classez_qt_document_tree_model.htm", [
         [ "ezQtGameObjectModel", "d7/d72/classez_qt_game_object_model.htm", [
           [ "ezQtScenegraphModel", "d9/d69/classez_qt_scenegraph_model.htm", null ]
-        ] ]
+        ] ],
+        [ "ezQtLayerModel", "d3/d00/classez_qt_layer_model.htm", null ]
       ] ],
       [ "ezQtLogModel", "d0/de0/classez_qt_log_model.htm", null ],
       [ "ezQtPropertyAnimModel", "d0/db6/classez_qt_property_anim_model.htm", null ]
@@ -7424,9 +7746,9 @@ var hierarchy =
     ] ],
     [ "QDockWidget", null, [
       [ "ezQtDocumentPanel", "d7/d7a/classez_qt_document_panel.htm", [
-        [ "ezQtGameObjectPanel", "d3/d49/classez_qt_game_object_panel.htm", [
-          [ "ezQtScenegraphPanel", "de/dc7/classez_qt_scenegraph_panel.htm", null ]
-        ] ],
+        [ "ezQtGameObjectPanel", "d3/d49/classez_qt_game_object_panel.htm", null ],
+        [ "ezQtLayerPanel", "dc/d62/classez_qt_layer_panel.htm", null ],
+        [ "ezQtScenegraphPanel", "de/dc7/classez_qt_scenegraph_panel.htm", null ],
         [ "ezQtSkeletonPanel", "d7/d3d/classez_qt_skeleton_panel.htm", null ]
       ] ]
     ] ],
@@ -7467,8 +7789,10 @@ var hierarchy =
       [ "ezQtNodeView", "dd/d6c/classez_qt_node_view.htm", null ]
     ] ],
     [ "QItemDelegate", null, [
+      [ "ezQtCVarItemDelegate", "d0/d4b/classez_qt_c_var_item_delegate.htm", null ],
       [ "ezQtItemDelegate", "dc/d62/classez_qt_item_delegate.htm", [
-        [ "ezQtIconViewDelegate", "db/d2a/classez_qt_icon_view_delegate.htm", null ]
+        [ "ezQtIconViewDelegate", "db/d2a/classez_qt_icon_view_delegate.htm", null ],
+        [ "ezQtLayerDelegate", "d7/d45/classez_qt_layer_delegate.htm", null ]
       ] ]
     ] ],
     [ "QLabel", null, [
@@ -7485,22 +7809,21 @@ var hierarchy =
     [ "QMainWindow", null, [
       [ "ezQtContainerWindow", "df/d80/classez_qt_container_window.htm", null ],
       [ "ezQtDocumentWindow", "d1/d13/classez_qt_document_window.htm", [
+        [ "ezProcGenGraphAssetDocumentWindow", "d7/d29/classez_proc_gen_graph_asset_document_window.htm", null ],
         [ "ezQtAnimationControllerAssetDocumentWindow", "d3/d2e/classez_qt_animation_controller_asset_document_window.htm", null ],
         [ "ezQtCollectionAssetDocumentWindow", "d3/dc0/classez_qt_collection_asset_document_window.htm", null ],
         [ "ezQtColorGradientAssetDocumentWindow", "d8/dfe/classez_qt_color_gradient_asset_document_window.htm", null ],
         [ "ezQtCurve1DAssetDocumentWindow", "d4/daa/classez_qt_curve1_d_asset_document_window.htm", null ],
         [ "ezQtEngineDocumentWindow", "db/df1/classez_qt_engine_document_window.htm", [
-          [ "ezProcGenGraphAssetDocumentWindow", "d7/d29/classez_proc_gen_graph_asset_document_window.htm", null ],
           [ "ezQtAnimatedMeshAssetDocumentWindow", "d6/da3/classez_qt_animated_mesh_asset_document_window.htm", null ],
           [ "ezQtAnimationClipAssetDocumentWindow", "d0/d69/classez_qt_animation_clip_asset_document_window.htm", null ],
           [ "ezQtCollisionMeshAssetDocumentWindow", "d8/d36/classez_qt_collision_mesh_asset_document_window.htm", null ],
           [ "ezQtDecalAssetDocumentWindow", "d2/d72/classez_qt_decal_asset_document_window.htm", null ],
           [ "ezQtGameObjectDocumentWindow", "d3/dd9/classez_qt_game_object_document_window.htm", [
             [ "ezQtPropertyAnimAssetDocumentWindow", "de/d5d/classez_qt_property_anim_asset_document_window.htm", null ],
-            [ "ezQtSceneDocumentWindow", "de/d49/classez_qt_scene_document_window.htm", null ]
+            [ "ezQtSceneDocumentWindowBase", "d1/dec/classez_qt_scene_document_window_base.htm", null ]
           ] ],
           [ "ezQtKrautTreeAssetDocumentWindow", "d8/db9/classez_qt_kraut_tree_asset_document_window.htm", null ],
-          [ "ezQtLUTAssetDocumentWindow", "df/d18/classez_qt_l_u_t_asset_document_window.htm", null ],
           [ "ezQtMaterialAssetDocumentWindow", "dd/d90/classez_qt_material_asset_document_window.htm", null ],
           [ "ezQtMeshAssetDocumentWindow", "d6/d6a/classez_qt_mesh_asset_document_window.htm", null ],
           [ "ezQtParticleEffectAssetDocumentWindow", "d2/d21/classez_qt_particle_effect_asset_document_window.htm", null ],
@@ -7510,6 +7833,7 @@ var hierarchy =
           [ "ezQtTextureCubeAssetDocumentWindow", "dc/d64/classez_qt_texture_cube_asset_document_window.htm", null ]
         ] ],
         [ "ezQtImageDataAssetDocumentWindow", "dc/d22/classez_qt_image_data_asset_document_window.htm", null ],
+        [ "ezQtLUTAssetDocumentWindow", "df/d18/classez_qt_l_u_t_asset_document_window.htm", null ],
         [ "ezQtRenderPipelineAssetDocumentWindow", "d3/d79/classez_qt_render_pipeline_asset_document_window.htm", null ],
         [ "ezQtSettingsTab", "da/d6b/classez_qt_settings_tab.htm", null ],
         [ "ezQtSurfaceAssetDocumentWindow", "d5/deb/classez_qt_surface_asset_document_window.htm", null ],
@@ -7533,6 +7857,7 @@ var hierarchy =
       ] ],
       [ "ezQtDocumentTreeModelAdapter", "d1/d0d/classez_qt_document_tree_model_adapter.htm", [
         [ "ezQtDummyAdapter", "d4/dd0/classez_qt_dummy_adapter.htm", null ],
+        [ "ezQtLayerAdapter", "d6/dcc/classez_qt_layer_adapter.htm", null ],
         [ "ezQtNamedAdapter", "dd/d80/classez_qt_named_adapter.htm", [
           [ "ezQtJointAdapter", "dc/d9f/classez_qt_joint_adapter.htm", null ],
           [ "ezQtNameableAdapter", "d8/d99/classez_qt_nameable_adapter.htm", [
@@ -7575,11 +7900,13 @@ var hierarchy =
       [ "ezQtElementGroupButton", "df/dad/classez_qt_element_group_button.htm", null ]
     ] ],
     [ "QTreeView", null, [
-      [ "ezQtDocumentTreeView", "db/d9d/classez_qt_document_tree_view.htm", null ],
+      [ "ezQtItemView< QTreeView >", "d6/dc4/classez_qt_item_view.htm", [
+        [ "ezQtDocumentTreeView", "db/d9d/classez_qt_document_tree_view.htm", null ]
+      ] ],
       [ "ezQtPropertyAnimAssetTreeView", "db/d1f/classez_qt_property_anim_asset_tree_view.htm", null ]
     ] ],
     [ "ezInternal::QuadBool", "d4/d27/structez_internal_1_1_quad_bool.htm", null ],
-    [ "ezSpatialSystem::QueryStats", "de/d88/structez_spatial_system_1_1_query_stats.htm", null ],
+    [ "ezSpatialSystem::QueryParams", "d9/d7d/structez_spatial_system_1_1_query_params.htm", null ],
     [ "QWidget", null, [
       [ "ezQGridBarWidget", "d8/df7/classez_q_grid_bar_widget.htm", null ],
       [ "ezQtAssetBrowserWidget", "db/d27/classez_qt_asset_browser_widget.htm", null ],
@@ -7601,6 +7928,7 @@ var hierarchy =
       [ "ezQtEventTrackEditorWidget", "d0/d16/classez_qt_event_track_editor_widget.htm", null ],
       [ "ezQtEventTrackWidget", "d0/d2b/classez_qt_event_track_widget.htm", null ],
       [ "ezQtFileserveWidget", "d0/dc9/classez_qt_fileserve_widget.htm", null ],
+      [ "ezQtGameObjectWidget", "d8/da6/classez_qt_game_object_widget.htm", null ],
       [ "ezQtGroupBoxBase", "da/db7/classez_qt_group_box_base.htm", [
         [ "ezQtCollapsibleGroupBox", "d6/d4d/classez_qt_collapsible_group_box.htm", null ],
         [ "ezQtInlinedGroupBox", "da/dea/classez_qt_inlined_group_box.htm", null ]
@@ -7654,6 +7982,7 @@ var hierarchy =
       [ "ezQtSearchableMenu", "d2/d75/classez_qt_searchable_menu.htm", null ],
       [ "ezQtSliderWidgetAction", "d2/d72/classez_qt_slider_widget_action.htm", null ]
     ] ],
+    [ "ezTracerInterface::Ray", "d9/d9d/structez_tracer_interface_1_1_ray.htm", null ],
     [ "ezInternal::WorldData::ReadMarker", "d4/d8f/classez_internal_1_1_world_data_1_1_read_marker.htm", null ],
     [ "ezRecentFilesList::RecentFile", "dd/d22/structez_recent_files_list_1_1_recent_file.htm", null ],
     [ "ezInternal::RenderDataCacheEntry", "d4/dec/structez_internal_1_1_render_data_cache_entry.htm", null ],
@@ -7667,19 +7996,21 @@ var hierarchy =
     ] ],
     [ "SpvReflectNumericTraits::Scalar", "d2/d65/struct_spv_reflect_numeric_traits_1_1_scalar.htm", null ],
     [ "ezQtEventTrackWidget::SelectedPoint", "d0/d9e/structez_qt_event_track_widget_1_1_selected_point.htm", null ],
-    [ "ezWorldGeoExtractionUtil::Shape", "df/d60/structez_world_geo_extraction_util_1_1_shape.htm", [
-      [ "ezWorldGeoExtractionUtil::BoxShape", "d5/d9a/structez_world_geo_extraction_util_1_1_box_shape.htm", null ]
-    ] ],
     [ "ezVolumeCollection::Shape", "d0/d2b/structez_volume_collection_1_1_shape.htm", [
-      [ "ezVolumeCollection::Box", "d1/d38/structez_volume_collection_1_1_box.htm", null ],
+      [ "ezVolumeCollection::Box", "d1/d38/structez_volume_collection_1_1_box.htm", [
+        [ "ezVolumeCollection::Image", "de/daf/structez_volume_collection_1_1_image.htm", null ]
+      ] ],
       [ "ezVolumeCollection::Sphere", "de/d77/structez_volume_collection_1_1_sphere.htm", null ]
     ] ],
+    [ "ezPxBoneColliderComponent::Shape", "dd/d56/structez_px_bone_collider_component_1_1_shape.htm", null ],
     [ "ezVolumeCollection::ShapeType", "dd/d62/structez_volume_collection_1_1_shape_type.htm", [
       [ "ezEnum< ezVolumeCollection::ShapeType >", "d6/dd9/structez_enum.htm", null ]
     ] ],
     [ "ezSingletonRegistry::SingletonEntry", "db/d3a/structez_singleton_registry_1_1_singleton_entry.htm", null ],
+    [ "ezPxSimulationEventCallback::SlideAndRollInfo", "de/df9/structez_px_simulation_event_callback_1_1_slide_and_roll_info.htm", null ],
     [ "ezParticleTypeQuad::sod", "d1/d95/structez_particle_type_quad_1_1sod.htm", null ],
     [ "ezArchiveBuilder::SourceEntry", "da/d56/structez_archive_builder_1_1_source_entry.htm", null ],
+    [ "ezSkeletonComponent::SphereShape", "da/d05/structez_skeleton_component_1_1_sphere_shape.htm", null ],
     [ "SpvReflectArrayTraits", "d1/d71/struct_spv_reflect_array_traits.htm", null ],
     [ "SpvReflectBindingArrayTraits", "dd/d98/struct_spv_reflect_binding_array_traits.htm", null ],
     [ "SpvReflectBlockVariable", "de/d19/struct_spv_reflect_block_variable.htm", null ],
@@ -7696,11 +8027,11 @@ var hierarchy =
     [ "ezAllocatorBase::Stats", "df/df0/structez_allocator_base_1_1_stats.htm", null ],
     [ "ezStats::StatsEventData", "d4/da7/structez_stats_1_1_stats_event_data.htm", null ],
     [ "ezReflectedTypeStorageManager::ReflectedTypeStorageMapping::StorageInfo", "d5/d57/structez_reflected_type_storage_manager_1_1_reflected_type_storage_mapping_1_1_storage_info.htm", null ],
+    [ "ezExpression::Stream", "d4/d40/structez_expression_1_1_stream.htm", null ],
     [ "Stream", null, [
       [ "ezOzzStreamReader", "de/dd7/classez_ozz_stream_reader.htm", null ],
       [ "ezOzzStreamWriter", "d6/d5d/classez_ozz_stream_writer.htm", null ]
     ] ],
-    [ "ezExpression::Stream", "d4/d40/structez_expression_1_1_stream.htm", null ],
     [ "ezVariant::StringWrapper", "d0/dfa/structez_variant_1_1_string_wrapper.htm", null ],
     [ "ezMeshResourceDescriptor::SubMesh", "dc/dcb/structez_mesh_resource_descriptor_1_1_sub_mesh.htm", null ],
     [ "ezKrautTreeResourceDescriptor::SubMeshData", "d2/def/structez_kraut_tree_resource_descriptor_1_1_sub_mesh_data.htm", null ],
@@ -7724,18 +8055,18 @@ var hierarchy =
     [ "TransformationChanges", "dc/d47/struct_transformation_changes.htm", null ],
     [ "ezKrautTreeResource::TreeLod", "d3/d98/structez_kraut_tree_resource_1_1_tree_lod.htm", null ],
     [ "ezDebugRenderer::Triangle", "d5/d3a/structez_debug_renderer_1_1_triangle.htm", null ],
-    [ "ezWorldGeoExtractionUtil::Triangle", "db/d2e/structez_world_geo_extraction_util_1_1_triangle.htm", null ],
     [ "ezKrautTreeResourceDescriptor::TriangleData", "d3/dff/structez_kraut_tree_resource_descriptor_1_1_triangle_data.htm", null ],
+    [ "ezPxSimulationEventCallback::TriggerEvent", "d6/d62/structez_px_simulation_event_callback_1_1_trigger_event.htm", null ],
     [ "ezTypeScriptBinding::TsComponentInfo", "de/df5/structez_type_script_binding_1_1_ts_component_info.htm", null ],
     [ "ezTypeScriptBinding::TsMessageHandler", "db/dab/structez_type_script_binding_1_1_ts_message_handler.htm", null ],
+    [ "ezRenderPipelineNodePin::Type", "d7/d9f/structez_render_pipeline_node_pin_1_1_type.htm", [
+      [ "ezEnum< ezRenderPipelineNodePin::Type >", "d6/dd9/structez_enum.htm", null ]
+    ] ],
     [ "ezExpression::Stream::Type", "da/d5d/structez_expression_1_1_stream_1_1_type.htm", [
       [ "ezEnum< ezExpression::Stream::Type >", "d6/dd9/structez_enum.htm", null ]
     ] ],
     [ "ezShaderConstantBufferLayout::Constant::Type", "dc/d4b/structez_shader_constant_buffer_layout_1_1_constant_1_1_type.htm", [
       [ "ezEnum< ezShaderConstantBufferLayout::Constant::Type >", "d6/dd9/structez_enum.htm", null ]
-    ] ],
-    [ "ezRenderPipelineNodePin::Type", "d7/d9f/structez_render_pipeline_node_pin_1_1_type.htm", [
-      [ "ezEnum< ezRenderPipelineNodePin::Type >", "d6/dd9/structez_enum.htm", null ]
     ] ],
     [ "Ui_AssetBrowserDlg", null, [
       [ "ezQtAssetBrowserDlg", "d8/d7c/classez_qt_asset_browser_dlg.htm", null ]
@@ -7910,12 +8241,11 @@ var hierarchy =
     ] ],
     [ "ezUnicodeUtils::UtfInserter< IntType, Container >", "da/d97/structez_unicode_utils_1_1_utf_inserter.htm", null ],
     [ "SpvReflectNumericTraits::Vector", "d8/d10/struct_spv_reflect_numeric_traits_1_1_vector.htm", null ],
-    [ "ezWorldGeoExtractionUtil::Vertex", "d1/dc6/structez_world_geo_extraction_util_1_1_vertex.htm", null ],
-    [ "ezRmlUiInternal::Vertex", "db/dd2/structez_rml_ui_internal_1_1_vertex.htm", null ],
     [ "ezGeometry::Vertex", "db/d24/structez_geometry_1_1_vertex.htm", null ],
+    [ "ezRmlUiInternal::Vertex", "db/dd2/structez_rml_ui_internal_1_1_vertex.htm", null ],
     [ "ezKrautTreeResourceDescriptor::VertexData", "d9/d7e/structez_kraut_tree_resource_descriptor_1_1_vertex_data.htm", null ],
-    [ "ezDebugRenderer::VerticalAlignment", "d5/d69/structez_debug_renderer_1_1_vertical_alignment.htm", null ],
     [ "ezLogWriter::VisualStudio", "de/dab/classez_log_writer_1_1_visual_studio.htm", null ],
+    [ "ezBakingInternal::Volume", "dc/d39/structez_baking_internal_1_1_volume.htm", null ],
     [ "ezDirectoryWatcher::Watch", "d0/dd2/structez_directory_watcher_1_1_watch.htm", null ],
     [ "ezInternal::WorldData", "da/d5d/classez_internal_1_1_world_data.htm", null ],
     [ "ezInternal::WorldData::WriteMarker", "d8/dc8/classez_internal_1_1_world_data_1_1_write_marker.htm", null ],

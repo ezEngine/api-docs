@@ -9,5 +9,7 @@ var classez_proc_volume_sphere_component =
     [ "OnUpdateLocalBounds", "d1/dfd/classez_proc_volume_sphere_component.htm#ad97edd436b3bd343b7b2e0d124725163", null ],
     [ "SerializeComponent", "d1/dfd/classez_proc_volume_sphere_component.htm#a17c3218d23ea37d75c845503724999aa", null ],
     [ "SetFadeOutStart", "d1/dfd/classez_proc_volume_sphere_component.htm#a2ebe1cb545d51475c76026f669d53afb", null ],
-    [ "SetRadius", "d1/dfd/classez_proc_volume_sphere_component.htm#aed8874112d684830050e9a3e3471bd4b", null ]
+    [ "SetRadius", "d1/dfd/classez_proc_volume_sphere_component.htm#aed8874112d684830050e9a3e3471bd4b", null ],
+    [ "m_fFadeOutStart", "d1/dfd/classez_proc_volume_sphere_component.htm#a4ed4f04292e538bc0b78015008bc07eb", null ],
+    [ "m_fRadius", "d1/dfd/classez_proc_volume_sphere_component.htm#a6e2980be191b20a7136fadf06d34656c", null ]
 ];

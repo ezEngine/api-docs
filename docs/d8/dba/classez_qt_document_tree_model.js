@@ -1,6 +1,6 @@
 var classez_qt_document_tree_model =
 [
-    [ "ezQtDocumentTreeModel", "d8/dba/classez_qt_document_tree_model.htm#a871d23fcca3f4dd766f0332291bc6570", null ],
+    [ "ezQtDocumentTreeModel", "d8/dba/classez_qt_document_tree_model.htm#aa6f80939d3471193e00116e2b3da6ed9", null ],
     [ "~ezQtDocumentTreeModel", "d8/dba/classez_qt_document_tree_model.htm#a0bd2c82f2ecedf62af4d2d66e28632f8", null ],
     [ "AddAdapter", "d8/dba/classez_qt_document_tree_model.htm#a734d8e8f76dc45808c99e62189821027", null ],
     [ "canDropMimeData", "d8/dba/classez_qt_document_tree_model.htm#a8d1975943f715e13291fcb4ebb05cd16", null ],
@@ -21,5 +21,7 @@ var classez_qt_document_tree_model =
     [ "TreeEventHandler", "d8/dba/classez_qt_document_tree_model.htm#aaf35ed52fd620ab5e3b0024491d706c3", null ],
     [ "m_Adapters", "d8/dba/classez_qt_document_tree_model.htm#a71f7d1372c142ab0ed29839df743ab70", null ],
     [ "m_bAllowDragDrop", "d8/dba/classez_qt_document_tree_model.htm#a7d887f98218e4ca35db211cf53a02b5b", null ],
-    [ "m_pDocumentTree", "d8/dba/classez_qt_document_tree_model.htm#ac49fb9d89580e373f64717b4a78eb629", null ]
+    [ "m_pDocumentTree", "d8/dba/classez_qt_document_tree_model.htm#ac49fb9d89580e373f64717b4a78eb629", null ],
+    [ "m_root", "d8/dba/classez_qt_document_tree_model.htm#a597440ce8e1f83c6b93528e7e4fcafb5", null ],
+    [ "m_sTargetContext", "d8/dba/classez_qt_document_tree_model.htm#a3499fc76c8b5b26fd380929ba027b4a2", null ]
 ];

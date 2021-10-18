@@ -143,43 +143,47 @@ $(document).ready(function(){initNavTree('d8/df6/_phys_x_interface_8h_source.htm
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    RollYReactions = EZ_BIT(4),</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    RollZReactions = EZ_BIT(5),</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    Default = None</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  };</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="../../d5/de4/structez_on_phys_x_contact_1_1_bits.htm">   61</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../d5/de4/structez_on_phys_x_contact_1_1_bits.htm">Bits</a></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    StorageType SendReportMsg : 1;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    StorageType ImpactReactions : 1;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    StorageType SlideReactions : 1;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    StorageType RollXReactions : 1;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    StorageType RollYReactions : 1;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    StorageType RollZReactions : 1;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  };</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;};</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;EZ_DECLARE_FLAGS_OPERATORS(<a class="code" href="../../db/db3/structez_on_phys_x_contact.htm">ezOnPhysXContact</a>);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;EZ_DECLARE_REFLECTABLE_TYPE(EZ_PHYSXPLUGIN_DLL, <a class="code" href="../../db/db3/structez_on_phys_x_contact.htm">ezOnPhysXContact</a>);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="../../d4/d23/structez_px_settings.htm">   77</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../d4/d23/structez_px_settings.htm">ezPxSettings</a></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;{</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <a class="code" href="../../d6/dbd/structez_vec3_template.htm">ezVec3</a> m_vObjectGravity = <a class="code" href="../../d6/dbd/structez_vec3_template.htm">ezVec3</a>(0, 0, -9.81f);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <a class="code" href="../../d6/dbd/structez_vec3_template.htm">ezVec3</a> m_vCharacterGravity = <a class="code" href="../../d6/dbd/structez_vec3_template.htm">ezVec3</a>(0, 0, -12.0f);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordtype">float</span> m_fMaxDepenetrationVelocity = 1.0f;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <a class="code" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezPxSteppingMode&gt;</a> m_SteppingMode = ezPxSteppingMode::SemiFixed;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keywordtype">float</span> m_fFixedFrameRate = 60.0f;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  ezUInt32 m_uiMaxSubSteps = 4;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    AllRollReactions = RollXReactions | RollYReactions | RollZReactions,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    SlideAndRollReactions = AllRollReactions | SlideReactions,</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    AllReactions = ImpactReactions | AllRollReactions | SlideReactions,</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    Default = None</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  };</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="../../d5/de4/structez_on_phys_x_contact_1_1_bits.htm">   65</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../d5/de4/structez_on_phys_x_contact_1_1_bits.htm">Bits</a></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    StorageType SendReportMsg : 1;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    StorageType ImpactReactions : 1;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    StorageType SlideReactions : 1;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    StorageType RollXReactions : 1;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    StorageType RollYReactions : 1;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    StorageType RollZReactions : 1;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  };</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;};</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;EZ_DECLARE_FLAGS_OPERATORS(<a class="code" href="../../db/db3/structez_on_phys_x_contact.htm">ezOnPhysXContact</a>);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;EZ_DECLARE_REFLECTABLE_TYPE(EZ_PHYSXPLUGIN_DLL, <a class="code" href="../../db/db3/structez_on_phys_x_contact.htm">ezOnPhysXContact</a>);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="../../d4/d23/structez_px_settings.htm">   81</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../d4/d23/structez_px_settings.htm">ezPxSettings</a></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;{</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <a class="code" href="../../d6/dbd/structez_vec3_template.htm">ezVec3</a> m_vObjectGravity = <a class="code" href="../../d6/dbd/structez_vec3_template.htm">ezVec3</a>(0, 0, -9.81f);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <a class="code" href="../../d6/dbd/structez_vec3_template.htm">ezVec3</a> m_vCharacterGravity = <a class="code" href="../../d6/dbd/structez_vec3_template.htm">ezVec3</a>(0, 0, -12.0f);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordtype">float</span> m_fMaxDepenetrationVelocity = 1.0f;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  ezUInt32 m_uiScratchMemorySize = 256 * 1024;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;};</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <a class="code" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezPxSteppingMode&gt;</a> m_SteppingMode = ezPxSteppingMode::SemiFixed;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keywordtype">float</span> m_fFixedFrameRate = 60.0f;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  ezUInt32 m_uiMaxSubSteps = 4;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  ezUInt32 m_uiScratchMemorySize = 256 * 1024;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_phys_x_interface_htm"><div class="ttname"><a href="../../d3/d97/classez_phys_x_interface.htm">ezPhysXInterface</a></div><div class="ttdef"><b>Definition:</b> PhysXInterface.h:16</div></div>
 <div class="ttc" id="aclassez_collision_filter_config_htm"><div class="ttname"><a href="../../dc/dd8/classez_collision_filter_config.htm">ezCollisionFilterConfig</a></div><div class="ttdoc">A 32x32 matrix of named filters that can be configured to enable or disable collisions.</div><div class="ttdef"><b>Definition:</b> CollisionFilter.h:8</div></div>
-<div class="ttc" id="astructez_on_phys_x_contact_1_1_bits_htm"><div class="ttname"><a href="../../d5/de4/structez_on_phys_x_contact_1_1_bits.htm">ezOnPhysXContact::Bits</a></div><div class="ttdef"><b>Definition:</b> PhysXInterface.h:61</div></div>
+<div class="ttc" id="astructez_on_phys_x_contact_1_1_bits_htm"><div class="ttname"><a href="../../d5/de4/structez_on_phys_x_contact_1_1_bits.htm">ezOnPhysXContact::Bits</a></div><div class="ttdef"><b>Definition:</b> PhysXInterface.h:65</div></div>
 <div class="ttc" id="astructez_px_stepping_mode_htm"><div class="ttname"><a href="../../d8/d0d/structez_px_stepping_mode.htm">ezPxSteppingMode</a></div><div class="ttdef"><b>Definition:</b> PhysXInterface.h:26</div></div>
-<div class="ttc" id="astructez_px_settings_htm"><div class="ttname"><a href="../../d4/d23/structez_px_settings.htm">ezPxSettings</a></div><div class="ttdef"><b>Definition:</b> PhysXInterface.h:77</div></div>
+<div class="ttc" id="astructez_px_settings_htm"><div class="ttname"><a href="../../d4/d23/structez_px_settings.htm">ezPxSettings</a></div><div class="ttdef"><b>Definition:</b> PhysXInterface.h:81</div></div>
 <div class="ttc" id="astructez_enum_htm"><div class="ttname"><a href="../../d6/dd9/structez_enum.htm">ezEnum&lt; ezPxSteppingMode &gt;</a></div></div>
 <div class="ttc" id="astructez_on_phys_x_contact_htm"><div class="ttname"><a href="../../db/db3/structez_on_phys_x_contact.htm">ezOnPhysXContact</a></div><div class="ttdef"><b>Definition:</b> PhysXInterface.h:44</div></div>
 <div class="ttc" id="astructez_vec3_template_htm"><div class="ttname"><a href="../../d6/dbd/structez_vec3_template.htm">ezVec3Template&lt; float &gt;</a></div></div>
@@ -187,7 +191,7 @@ $(document).ready(function(){initNavTree('d8/df6/_phys_x_interface_8h_source.htm
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_103378c88ff4c88de6bfabe12da9ec96.htm">EnginePlugins</a></li><li class="navelem"><a class="el" href="../../dir_f005ef8928685eac504f8ad4860ca63f.htm">PhysXPlugin</a></li><li class="navelem"><b>PhysXInterface.h</b></li>
-    <li class="footer">Generated on Tue Jun 8 2021 21:43:15 for ezEngine by
+    <li class="footer">Generated on Mon Oct 18 2021 15:24:14 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

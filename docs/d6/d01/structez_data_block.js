@@ -1,7 +1,7 @@
 var structez_data_block =
 [
-    [ "SIZE_IN_BYTES", "d6/d01/structez_data_block.htm#a4978b8d2d5103191cb252ff75937d9d4ac8c0c531eec8130b4196b4686cac3c27", null ],
-    [ "CAPACITY", "d6/d01/structez_data_block.htm#a4978b8d2d5103191cb252ff75937d9d4a4573d7f72168c564f71f1a1a0eaa643a", null ],
+    [ "SIZE_IN_BYTES", "d6/d01/structez_data_block.htm#a02c55bb1fbfa5e804eda01362287b1f5ac8c0c531eec8130b4196b4686cac3c27", null ],
+    [ "CAPACITY", "d6/d01/structez_data_block.htm#a02c55bb1fbfa5e804eda01362287b1f5a4573d7f72168c564f71f1a1a0eaa643a", null ],
     [ "ezDataBlock", "d6/d01/structez_data_block.htm#a04dc2e198d584410c49b50342af8934f", null ],
     [ "EZ_DECLARE_POD_TYPE", "d6/d01/structez_data_block.htm#a3a618ad3dba13767cc88f83b24b79415", null ],
     [ "IsEmpty", "d6/d01/structez_data_block.htm#a430533cec44943bdc69bddd86fc677de", null ],

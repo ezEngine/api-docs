@@ -23,6 +23,7 @@ var structez_animation_clip_resource_descriptor =
     [ "operator=", "d6/d62/structez_animation_clip_resource_descriptor.htm#afbc9229a7ac3f31d25f3277cb3fb1a03", null ],
     [ "Serialize", "d6/d62/structez_animation_clip_resource_descriptor.htm#a189ff5386dfcf0feb49564be0aa7471b", null ],
     [ "SetDuration", "d6/d62/structez_animation_clip_resource_descriptor.htm#a9584374c7b6f53c5640ab4a136cc854f", null ],
+    [ "m_bAdditive", "d6/d62/structez_animation_clip_resource_descriptor.htm#a9605de54faf2d977bc97026651267627", null ],
     [ "m_EventTrack", "d6/d62/structez_animation_clip_resource_descriptor.htm#a3b5c6fda9196b78e4d8c1accba7784f4", null ],
     [ "m_vConstantRootMotion", "d6/d62/structez_animation_clip_resource_descriptor.htm#aac694f9bb3ffd2bbf6f53b477162715a", null ]
 ];

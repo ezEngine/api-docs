@@ -12,6 +12,5 @@ var structez_plugin_event =
       [ "AfterPluginChanges", "d4/d72/structez_plugin_event.htm#a82391f05eef90af4c7196a447983fc26a7a0ef7f0f2c502d36b13f5235177dd04", null ]
     ] ],
     [ "m_EventType", "d4/d72/structez_plugin_event.htm#accc145d263fe8349b4994b6138999dec", null ],
-    [ "m_pPluginObject", "d4/d72/structez_plugin_event.htm#a3128a32cd327c435c1f78707f2da8d49", null ],
-    [ "m_szPluginFile", "d4/d72/structez_plugin_event.htm#ab26d0b978149d4eec6ea0a31a01b8246", null ]
+    [ "m_szPluginBinary", "d4/d72/structez_plugin_event.htm#ae72332bfe83cfffabbefd438d21229e5", null ]
 ];

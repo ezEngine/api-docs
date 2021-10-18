@@ -136,69 +136,72 @@ $(document).ready(function(){initNavTree('da/dae/_action_map_8h_source.htm','../
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="../../d8/d7f/classez_tree_node.htm">ezTreeNode&lt;T&gt;</a>* pNode = EZ_DEFAULT_NEW(<a class="code" href="../../d8/d7f/classez_tree_node.htm">ezTreeNode&lt;T&gt;</a>, data);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    pNode-&gt;m_Guid.<a class="code" href="../../da/d89/classez_uuid.htm#acacf135e87d371793210496517fd4c92">CreateNewUuid</a>();</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    m_Children.<a class="code" href="../../dc/d59/classez_array_base.htm#ab5a80cbcab233ea8ad8de5c99783ce68">Insert</a>(pNode, iIndex);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">return</span> pNode;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordtype">bool</span> RemoveChild(ezUInt32 iIndex)</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">if</span> (iIndex &gt; m_Children.<a class="code" href="../../dc/d59/classez_array_base.htm#a51ba61fcbd2350ae8850754a41acbaa1">GetCount</a>())</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="../../d8/d7f/classez_tree_node.htm">ezTreeNode&lt;T&gt;</a>* pChild = m_Children[iIndex];</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    m_Children.<a class="code" href="../../dc/d59/classez_array_base.htm#a29dfedb3f609d9a698f9becb213b697c">RemoveAtAndCopy</a>(iIndex);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    EZ_DEFAULT_DELETE(pChild);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  }</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  ezUInt32 GetParentIndex()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    EZ_ASSERT_DEV(m_pParent != <span class="keyword">nullptr</span>, <span class="stringliteral">&quot;Can&#39;t compute parent index if no parent is present!&quot;</span>);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">for</span> (ezUInt32 i = 0; i &lt; m_pParent-&gt;GetChildren().GetCount(); i++)</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      <span class="keywordflow">if</span> (m_pParent-&gt;GetChildren()[i] == <span class="keyword">this</span>)</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">return</span> i;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    EZ_REPORT_FAILURE(<span class="stringliteral">&quot;Couldn&#39;t find oneself in own parent!&quot;</span>);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  T m_Data;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a> m_Guid;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <a class="code" href="../../d8/d7f/classez_tree_node.htm">ezTreeNode&lt;T&gt;</a>* m_pParent;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezTreeNode&lt;T&gt;</a>*, 8&gt; m_Children;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;};</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    pNode-&gt;m_pParent = <span class="keyword">this</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">return</span> pNode;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordtype">bool</span> RemoveChild(ezUInt32 iIndex)</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">if</span> (iIndex &gt; m_Children.<a class="code" href="../../dc/d59/classez_array_base.htm#a51ba61fcbd2350ae8850754a41acbaa1">GetCount</a>())</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="../../d8/d7f/classez_tree_node.htm">ezTreeNode&lt;T&gt;</a>* pChild = m_Children[iIndex];</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    m_Children.<a class="code" href="../../dc/d59/classez_array_base.htm#a29dfedb3f609d9a698f9becb213b697c">RemoveAtAndCopy</a>(iIndex);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    EZ_DEFAULT_DELETE(pChild);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  ezUInt32 GetParentIndex()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">  </span>{</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    EZ_ASSERT_DEV(m_pParent != <span class="keyword">nullptr</span>, <span class="stringliteral">&quot;Can&#39;t compute parent index if no parent is present!&quot;</span>);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">for</span> (ezUInt32 i = 0; i &lt; m_pParent-&gt;GetChildren().GetCount(); i++)</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      <span class="keywordflow">if</span> (m_pParent-&gt;GetChildren()[i] == <span class="keyword">this</span>)</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">return</span> i;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    EZ_REPORT_FAILURE(<span class="stringliteral">&quot;Couldn&#39;t find oneself in own parent!&quot;</span>);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  T m_Data;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a> m_Guid;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <a class="code" href="../../d8/d7f/classez_tree_node.htm">ezTreeNode&lt;T&gt;</a>* m_pParent;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezTreeNode&lt;T&gt;</a>*, 8&gt; m_Children;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;};</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="../../d2/dd6/classez_action_map.htm">   85</a></span>&#160;<span class="keyword">class </span>EZ_GUIFOUNDATION_DLL <a class="code" href="../../d2/dd6/classez_action_map.htm">ezActionMap</a></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;{</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keyword">typedef</span> <a class="code" href="../../d8/d7f/classez_tree_node.htm">ezTreeNode&lt;ezActionMapDescriptor&gt;</a> <a class="code" href="../../d8/d7f/classez_tree_node.htm">TreeNode</a>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <a class="code" href="../../d2/dd6/classez_action_map.htm">ezActionMap</a>();</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  ~<a class="code" href="../../d2/dd6/classez_action_map.htm">ezActionMap</a>();</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keywordtype">void</span> MapAction(<a class="code" href="../../d6/da8/classez_action_descriptor_handle.htm">ezActionDescriptorHandle</a> hAction, <span class="keyword">const</span> <span class="keywordtype">char</span>* szPath, <span class="keywordtype">float</span> m_fOrder);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a> MapAction(<span class="keyword">const</span> <a class="code" href="../../dd/d09/structez_action_map_descriptor.htm">ezActionMapDescriptor</a>&amp; desc);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> UnmapAction(<span class="keyword">const</span> <a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a>&amp; guid);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d8/d7f/classez_tree_node.htm">TreeNode</a>* GetRootObject()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> &amp;m_Root; }</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../dd/d09/structez_action_map_descriptor.htm">ezActionMapDescriptor</a>* GetDescriptor(<span class="keyword">const</span> <a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a>&amp; guid) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../dd/d09/structez_action_map_descriptor.htm">ezActionMapDescriptor</a>* GetDescriptor(<span class="keyword">const</span> <a class="code" href="../../d8/d7f/classez_tree_node.htm">ezTreeNode&lt;ezActionMapDescriptor&gt;</a>* pObject) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="keywordtype">bool</span> FindObjectByPath(<span class="keyword">const</span> <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a>&amp; sPath, <a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a>&amp; out_guid) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d8/d7f/classez_tree_node.htm">ezTreeNode&lt;ezActionMapDescriptor&gt;</a>* GetChildByName(<span class="keyword">const</span> <a class="code" href="../../d8/d7f/classez_tree_node.htm">ezTreeNode&lt;ezActionMapDescriptor&gt;</a>* pObject, <span class="keyword">const</span> <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a>&amp; sName) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <a class="code" href="../../d8/d7f/classez_tree_node.htm">TreeNode</a> m_Root;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;ezUuid, ezTreeNode&lt;ezActionMapDescriptor&gt;</a>*&gt; m_Descriptors;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;};</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="../../d2/dd6/classez_action_map.htm">   86</a></span>&#160;<span class="keyword">class </span>EZ_GUIFOUNDATION_DLL <a class="code" href="../../d2/dd6/classez_action_map.htm">ezActionMap</a></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;{</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keyword">typedef</span> <a class="code" href="../../d8/d7f/classez_tree_node.htm">ezTreeNode&lt;ezActionMapDescriptor&gt;</a> <a class="code" href="../../d8/d7f/classez_tree_node.htm">TreeNode</a>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <a class="code" href="../../d2/dd6/classez_action_map.htm">ezActionMap</a>();</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  ~<a class="code" href="../../d2/dd6/classez_action_map.htm">ezActionMap</a>();</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keywordtype">void</span> MapAction(<a class="code" href="../../d6/da8/classez_action_descriptor_handle.htm">ezActionDescriptorHandle</a> hAction, <span class="keyword">const</span> <span class="keywordtype">char</span>* szPath, <span class="keywordtype">float</span> m_fOrder);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a> MapAction(<span class="keyword">const</span> <a class="code" href="../../dd/d09/structez_action_map_descriptor.htm">ezActionMapDescriptor</a>&amp; desc);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> UnmapAction(<a class="code" href="../../d6/da8/classez_action_descriptor_handle.htm">ezActionDescriptorHandle</a> hAction, <span class="keyword">const</span> <span class="keywordtype">char</span>* szPath);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> UnmapAction(<span class="keyword">const</span> <a class="code" href="../../dd/d09/structez_action_map_descriptor.htm">ezActionMapDescriptor</a>&amp; desc);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> UnmapAction(<span class="keyword">const</span> <a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a>&amp; guid);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d8/d7f/classez_tree_node.htm">TreeNode</a>* GetRootObject()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> &amp;m_Root; }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../dd/d09/structez_action_map_descriptor.htm">ezActionMapDescriptor</a>* GetDescriptor(<span class="keyword">const</span> <a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a>&amp; guid) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../dd/d09/structez_action_map_descriptor.htm">ezActionMapDescriptor</a>* GetDescriptor(<span class="keyword">const</span> <a class="code" href="../../d8/d7f/classez_tree_node.htm">ezTreeNode&lt;ezActionMapDescriptor&gt;</a>* pObject) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="keywordtype">bool</span> FindObjectByPath(<span class="keyword">const</span> <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a>&amp; sPath, <a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a>&amp; out_guid) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d8/d7f/classez_tree_node.htm">ezTreeNode&lt;ezActionMapDescriptor&gt;</a>* GetChildByName(<span class="keyword">const</span> <a class="code" href="../../d8/d7f/classez_tree_node.htm">ezTreeNode&lt;ezActionMapDescriptor&gt;</a>* pObject, <span class="keyword">const</span> <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a>&amp; sName) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <a class="code" href="../../d8/d7f/classez_tree_node.htm">TreeNode</a> m_Root;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;ezUuid, ezTreeNode&lt;ezActionMapDescriptor&gt;</a>*&gt; m_Descriptors;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astructez_action_map_descriptor_htm_af5b4545e810d2d70326ae90813079ee1"><div class="ttname"><a href="../../dd/d09/structez_action_map_descriptor.htm#af5b4545e810d2d70326ae90813079ee1">ezActionMapDescriptor::m_fOrder</a></div><div class="ttdeci">float m_fOrder</div><div class="ttdoc">Ordering key to sort actions in the mapping path.</div><div class="ttdef"><b>Definition:</b> ActionMap.h:14</div></div>
-<div class="ttc" id="aclassez_document_htm"><div class="ttname"><a href="../../d6/dd3/classez_document.htm">ezDocument</a></div><div class="ttdef"><b>Definition:</b> Document.h:49</div></div>
-<div class="ttc" id="aclassez_action_map_htm"><div class="ttname"><a href="../../d2/dd6/classez_action_map.htm">ezActionMap</a></div><div class="ttdef"><b>Definition:</b> ActionMap.h:85</div></div>
+<div class="ttc" id="aclassez_document_htm"><div class="ttname"><a href="../../d6/dd3/classez_document.htm">ezDocument</a></div><div class="ttdef"><b>Definition:</b> Document.h:56</div></div>
+<div class="ttc" id="aclassez_action_map_htm"><div class="ttname"><a href="../../d2/dd6/classez_action_map.htm">ezActionMap</a></div><div class="ttdef"><b>Definition:</b> ActionMap.h:86</div></div>
 <div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition:</b> Types.h:50</div></div>
 <div class="ttc" id="aclassez_array_base_htm_ab5a80cbcab233ea8ad8de5c99783ce68"><div class="ttname"><a href="../../dc/d59/classez_array_base.htm#ab5a80cbcab233ea8ad8de5c99783ce68">ezArrayBase::Insert</a></div><div class="ttdeci">void Insert(const T &amp;value, ezUInt32 uiIndex)</div><div class="ttdoc">Inserts value at index by shifting all following elements.</div><div class="ttdef"><b>Definition:</b> ArrayBase_inl.h:183</div></div>
 <div class="ttc" id="astructez_action_map_descriptor_htm"><div class="ttname"><a href="../../dd/d09/structez_action_map_descriptor.htm">ezActionMapDescriptor</a></div><div class="ttdef"><b>Definition:</b> ActionMap.h:9</div></div>
@@ -219,7 +222,7 @@ $(document).ready(function(){initNavTree('da/dae/_action_map_8h_source.htm','../
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_07792d309f5611e62640e8ec1fb96105.htm">Tools</a></li><li class="navelem"><a class="el" href="../../dir_8e80be223102188e67d1ce7cce146de0.htm">Libs</a></li><li class="navelem"><a class="el" href="../../dir_67a151a8658de153dad045cdd2f730f7.htm">GuiFoundation</a></li><li class="navelem"><a class="el" href="../../dir_1e8b03fcf511e7cb7d064a590c09d14a.htm">Action</a></li><li class="navelem"><b>ActionMap.h</b></li>
-    <li class="footer">Generated on Tue Jun 8 2021 21:43:15 for ezEngine by
+    <li class="footer">Generated on Mon Oct 18 2021 15:24:14 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

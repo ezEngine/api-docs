@@ -1,5 +1,8 @@
 var classez_skeleton_component =
 [
+    [ "BoxShape", "d7/d39/structez_skeleton_component_1_1_box_shape.htm", "d7/d39/structez_skeleton_component_1_1_box_shape" ],
+    [ "CapsuleShape", "df/dfa/structez_skeleton_component_1_1_capsule_shape.htm", "df/dfa/structez_skeleton_component_1_1_capsule_shape" ],
+    [ "SphereShape", "da/d05/structez_skeleton_component_1_1_sphere_shape.htm", "da/d05/structez_skeleton_component_1_1_sphere_shape" ],
     [ "ezSkeletonComponent", "df/d1f/classez_skeleton_component.htm#a2785fea7125465c1a5f8e7cca0dda16d", null ],
     [ "~ezSkeletonComponent", "df/d1f/classez_skeleton_component.htm#a6073c544a39707166413151ecdf30ace", null ],
     [ "DeserializeComponent", "df/d1f/classez_skeleton_component.htm#ab8b133e6abf3f2169a92d39aa6d47c32", null ],
@@ -16,10 +19,15 @@ var classez_skeleton_component =
     [ "SetSkeletonFile", "df/d1f/classez_skeleton_component.htm#a9758a5d8acea77f4d5603c299ac88cd9", null ],
     [ "Update", "df/d1f/classez_skeleton_component.htm#a18d5a517f4a676cfb0ebadd0d0714c3c", null ],
     [ "UpdateSkeletonVis", "df/d1f/classez_skeleton_component.htm#a44793a8d4fc337af5aafb8dc2761017d", null ],
+    [ "m_BoxesSkeleton", "df/d1f/classez_skeleton_component.htm#a60841192e2fb11e780179e179cc6a758", null ],
+    [ "m_bVisualizeColliders", "df/d1f/classez_skeleton_component.htm#a60e594cf096b62f5517ffcca63ad81f4", null ],
+    [ "m_bVisualizeJoints", "df/d1f/classez_skeleton_component.htm#abb67c9c63ca835e4e16bbf9f86f62fc0", null ],
     [ "m_bVisualizeSkeleton", "df/d1f/classez_skeleton_component.htm#a3660516b81018fded77b036b72e84b34", null ],
+    [ "m_CapsulesSkeleton", "df/d1f/classez_skeleton_component.htm#a1fa2fb46959d8e55e900d00784625215", null ],
     [ "m_hSkeleton", "df/d1f/classez_skeleton_component.htm#a445c7afbc2935a78fa7850c4fb1f6698", null ],
     [ "m_LinesSkeleton", "df/d1f/classez_skeleton_component.htm#a285bca87bdd09261a8fe41ae16cf32e7", null ],
     [ "m_LocalBounds", "df/d1f/classez_skeleton_component.htm#a0567db6cc5e2a5ea05101760315bdd28", null ],
     [ "m_sBonesToHighlight", "df/d1f/classez_skeleton_component.htm#ae6088d25718df4cc038160c7000366fd", null ],
+    [ "m_SpheresSkeleton", "df/d1f/classez_skeleton_component.htm#a6d13473b090fa134ef91cdef3538ba22", null ],
     [ "m_uiSkeletonChangeCounter", "df/d1f/classez_skeleton_component.htm#a18a78a41c8ee1c0bdb3bfc70e4060e95", null ]
 ];

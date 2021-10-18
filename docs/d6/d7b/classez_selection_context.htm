@@ -85,7 +85,9 @@ $(document).ready(function(){initNavTree('d6/d7b/classez_selection_context.htm',
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-types">Protected Types</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="../../d1/d54/classez_selection_context-members.htm">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">ezSelectionContext Class Reference</div>  </div>
@@ -96,10 +98,11 @@ Inheritance diagram for ezSelectionContext:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d6/d98/classez_selection_context__inherit__graph.png" border="0" usemap="#ez_selection_context_inherit__map" alt="Inheritance graph"/></div>
 <map name="ez_selection_context_inherit__map" id="ez_selection_context_inherit__map">
-<area shape="rect" title=" " alt="" coords="11,229,159,256"/>
-<area shape="rect" href="../../df/d1c/classez_editor_input_context.htm" title=" " alt="" coords="5,155,164,181"/>
-<area shape="rect" href="../../db/d45/classez_reflected_class.htm" title="All classes that should be dynamically reflectable, need to be derived from this base class." alt="" coords="18,80,151,107"/>
-<area shape="rect" href="../../d4/d02/classez_no_base.htm" title="Dummy type to pass to templates and macros that expect a base type for a class that has no base." alt="" coords="41,5,128,32"/>
+<area shape="rect" title=" " alt="" coords="25,229,173,256"/>
+<area shape="rect" href="../../dd/de1/classez_scene_selection_context.htm" title="Custom selection context for the scene to allow switching the active layer if an object is clicked th..." alt="" coords="5,304,192,331"/>
+<area shape="rect" href="../../df/d1c/classez_editor_input_context.htm" title=" " alt="" coords="19,155,178,181"/>
+<area shape="rect" href="../../db/d45/classez_reflected_class.htm" title="All classes that should be dynamically reflectable, need to be derived from this base class." alt="" coords="32,80,165,107"/>
+<area shape="rect" href="../../d4/d02/classez_no_base.htm" title="Dummy type to pass to templates and macros that expect a base type for a class that has no base." alt="" coords="55,5,142,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="../../graph_legend.htm">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -187,6 +190,15 @@ template&lt;typename T &gt; </td></tr>
 <tr class="memdesc:a86c6a804cc97a425928bce744607400a inherit pub_methods_classez_reflected_class"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the type of this instance is of the given type or derived from it. <br /></td></tr>
 <tr class="separator:a86c6a804cc97a425928bce744607400a inherit pub_methods_classez_reflected_class"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-types"></a>
+Protected Types</h2></td></tr>
+<tr class="memitem:a96dc5b6f83aecd3ab81a2304de774297"><td class="memItemLeft" align="right" valign="top"><a id="a96dc5b6f83aecd3ab81a2304de774297"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>Mode</b> { <b>None</b>, 
+<b>Single</b>, 
+<b>MarqueeAdd</b>, 
+<b>MarqueeRemove</b>
+ }</td></tr>
+<tr class="separator:a96dc5b6f83aecd3ab81a2304de774297"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:aba1cdba9e05b5e61d8892a93dfc51075"><td class="memItemLeft" align="right" valign="top"><a id="aba1cdba9e05b5e61d8892a93dfc51075"></a>
@@ -212,10 +224,46 @@ const <a class="el" href="../../d2/d53/classez_document_object.htm">ezDocumentOb
 <tr class="memitem:a7f1ccc956dd864b2e591edd2fc83c879"><td class="memItemLeft" align="right" valign="top"><a id="a7f1ccc956dd864b2e591edd2fc83c879"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>DoFocusLost</b> (bool bCancel) override</td></tr>
 <tr class="separator:a7f1ccc956dd864b2e591edd2fc83c879"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81d65b06d797e0d96b6589f3ada9b2c4"><td class="memItemLeft" align="right" valign="top"><a id="a81d65b06d797e0d96b6589f3ada9b2c4"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>OpenDocumentForPickedObject</b> (const <a class="el" href="../../dc/dba/structez_object_picking_result.htm">ezObjectPickingResult</a> &amp;res) const</td></tr>
+<tr class="separator:a81d65b06d797e0d96b6589f3ada9b2c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a247d6eaf547bce576fd1ddd78f0ca7dd"><td class="memItemLeft" align="right" valign="top"><a id="a247d6eaf547bce576fd1ddd78f0ca7dd"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>SelectPickedObject</b> (const <a class="el" href="../../dc/dba/structez_object_picking_result.htm">ezObjectPickingResult</a> &amp;res, bool bToggle, bool bDirect) const</td></tr>
+<tr class="separator:a247d6eaf547bce576fd1ddd78f0ca7dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab49adce66a0334151b4387f3a1e2ae95"><td class="memItemLeft" align="right" valign="top"><a id="ab49adce66a0334151b4387f3a1e2ae95"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SendMarqueeMsg</b> (QMouseEvent *e, ezUInt8 uiWhatToDo)</td></tr>
+<tr class="separator:ab49adce66a0334151b4387f3a1e2ae95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classez_editor_input_context"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classez_editor_input_context')"><img src="../../closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="../../df/d1c/classez_editor_input_context.htm">ezEditorInputContext</a></td></tr>
 <tr class="memitem:ade942d6075081f2d0c32dbd1d957b6f5 inherit pro_methods_classez_editor_input_context"><td class="memItemLeft" align="right" valign="top"><a id="ade942d6075081f2d0c32dbd1d957b6f5"></a>
 virtual ezEditorInput&#160;</td><td class="memItemRight" valign="bottom"><b>DoWheelEvent</b> (QWheelEvent *e)</td></tr>
 <tr class="separator:ade942d6075081f2d0c32dbd1d957b6f5 inherit pro_methods_classez_editor_input_context"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a86489ca4bc728b9100ab46c9482d138d"><td class="memItemLeft" align="right" valign="top"><a id="a86489ca4bc728b9100ab46c9482d138d"></a>
+<a class="el" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>&lt; void(const <a class="el" href="../../d2/d53/classez_document_object.htm">ezDocumentObject</a> *)&gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_PickObjectOverride</b></td></tr>
+<tr class="separator:a86489ca4bc728b9100ab46c9482d138d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a863e35ea5e3fe55bfcb551c2aee702"><td class="memItemLeft" align="right" valign="top"><a id="a5a863e35ea5e3fe55bfcb551c2aee702"></a>
+const <a class="el" href="../../d8/d90/classez_camera.htm">ezCamera</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_pCamera</b></td></tr>
+<tr class="separator:a5a863e35ea5e3fe55bfcb551c2aee702"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af52f3d0df9da7230ad663d2ff985f3d1"><td class="memItemLeft" align="right" valign="top"><a id="af52f3d0df9da7230ad663d2ff985f3d1"></a>
+<a class="el" href="../../d1/df8/classez_vec2_template.htm">ezVec2I32</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_Viewport</b></td></tr>
+<tr class="separator:af52f3d0df9da7230ad663d2ff985f3d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f97003c007002d7c4ee11e4038fc6ce"><td class="memItemLeft" align="right" valign="top"><a id="a0f97003c007002d7c4ee11e4038fc6ce"></a>
+<a class="el" href="../../d3/def/classez_engine_gizmo_handle.htm">ezEngineGizmoHandle</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_MarqueeGizmo</b></td></tr>
+<tr class="separator:a0f97003c007002d7c4ee11e4038fc6ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae99d9dd00ae5a4810ab5dec456087d94"><td class="memItemLeft" align="right" valign="top"><a id="ae99d9dd00ae5a4810ab5dec456087d94"></a>
+<a class="el" href="../../d6/dbd/structez_vec3_template.htm">ezVec3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_vMarqueeStartPos</b></td></tr>
+<tr class="separator:ae99d9dd00ae5a4810ab5dec456087d94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a892b9cad568a1347ae22d7fad620578c"><td class="memItemLeft" align="right" valign="top"><a id="a892b9cad568a1347ae22d7fad620578c"></a>
+ezUInt32&#160;</td><td class="memItemRight" valign="bottom"><b>m_uiMarqueeID</b></td></tr>
+<tr class="separator:a892b9cad568a1347ae22d7fad620578c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a279bedb3180a213246040f6406951fe0"><td class="memItemLeft" align="right" valign="top"><a id="a279bedb3180a213246040f6406951fe0"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_bPressedSpace</b> = false</td></tr>
+<tr class="separator:a279bedb3180a213246040f6406951fe0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2945101738aa6f05bf1973b7fd869f04"><td class="memItemLeft" align="right" valign="top"><a id="a2945101738aa6f05bf1973b7fd869f04"></a>
+Mode&#160;</td><td class="memItemRight" valign="bottom"><b>m_Mode</b> = Mode::None</td></tr>
+<tr class="separator:a2945101738aa6f05bf1973b7fd869f04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -284,7 +332,7 @@ static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d6/d7b/classez_selection_context.htm">ezSelectionContext</a></li>
-    <li class="footer">Generated on Tue Jun 8 2021 21:43:22 for ezEngine by
+    <li class="footer">Generated on Mon Oct 18 2021 15:24:22 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

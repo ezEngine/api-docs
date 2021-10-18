@@ -13,5 +13,5 @@ var struct_spv_reflect_interface_variable =
     [ "spirv_id", "d8/d2e/struct_spv_reflect_interface_variable.htm#a60df4882fc2d2e93ffbd76daa1388435", null ],
     [ "storage_class", "d8/d2e/struct_spv_reflect_interface_variable.htm#a804e7071ca3aa65585bf9314175937ad", null ],
     [ "type_description", "d8/d2e/struct_spv_reflect_interface_variable.htm#ac015db40f2387a688cc310127d2898d2", null ],
-    [ "word_offset", "d8/d2e/struct_spv_reflect_interface_variable.htm#ab21391254001222bb4b4ca9b674d6393", null ]
+    [ "word_offset", "d8/d2e/struct_spv_reflect_interface_variable.htm#ad1b1fb5994596e2649bad9ad670bcd6a", null ]
 ];

@@ -109,6 +109,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a629ddc98e00e2d406bccc7bb09eb75be"><td class="memItemLeft" align="right" valign="top"><a id="a629ddc98e00e2d406bccc7bb09eb75be"></a>
 virtual <a class="el" href="../../d6/dbd/structez_vec3_template.htm">ezVec3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GetWindAt</b> (const <a class="el" href="../../d6/dbd/structez_vec3_template.htm">ezVec3</a> &amp;vPosition) const =0</td></tr>
 <tr class="separator:a629ddc98e00e2d406bccc7bb09eb75be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11f604b72e6ebe6441785ac03879bfb4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/dbd/structez_vec3_template.htm">ezVec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d91/classez_wind_world_module_interface.htm#a11f604b72e6ebe6441785ac03879bfb4">ComputeWindFlutter</a> (const <a class="el" href="../../d6/dbd/structez_vec3_template.htm">ezVec3</a> &amp;vWind, const <a class="el" href="../../d6/dbd/structez_vec3_template.htm">ezVec3</a> &amp;vObjectDir, float fFlutterSpeed, ezUInt32 uiFlutterRandomOffset) const</td></tr>
+<tr class="memdesc:a11f604b72e6ebe6441785ac03879bfb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes a 'fluttering' wind motion orthogonal to an object direction.  <a href="../../d1/d91/classez_wind_world_module_interface.htm#a11f604b72e6ebe6441785ac03879bfb4">More...</a><br /></td></tr>
+<tr class="separator:a11f604b72e6ebe6441785ac03879bfb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classez_world_module"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classez_world_module')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d1/df7/classez_world_module.htm">ezWorldModule</a></td></tr>
 <tr class="memitem:a198cada2342ab9d9921bd28cb706077f inherit pub_methods_classez_world_module"><td class="memItemLeft" align="right" valign="top"><a id="a198cada2342ab9d9921bd28cb706077f"></a>
 <a class="el" href="../../da/d3c/classez_world.htm">ezWorld</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/df7/classez_world_module.htm#a198cada2342ab9d9921bd28cb706077f">GetWorld</a> ()</td></tr>
@@ -198,6 +201,59 @@ typedef <a class="el" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>&l
 <a class="el" href="../../da/d3c/classez_world.htm">ezWorld</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_pWorld</b></td></tr>
 <tr class="separator:ae00cd951e5406e9764633d6a8c51bfc8 inherit pro_attribs_classez_world_module"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a11f604b72e6ebe6441785ac03879bfb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11f604b72e6ebe6441785ac03879bfb4">&#9670;&nbsp;</a></span>ComputeWindFlutter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d6/dbd/structez_vec3_template.htm">ezVec3</a> ezWindWorldModuleInterface::ComputeWindFlutter </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d6/dbd/structez_vec3_template.htm">ezVec3</a> &amp;&#160;</td>
+          <td class="paramname"><em>vWind</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d6/dbd/structez_vec3_template.htm">ezVec3</a> &amp;&#160;</td>
+          <td class="paramname"><em>vObjectDir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>fFlutterSpeed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ezUInt32&#160;</td>
+          <td class="paramname"><em>uiFlutterRandomOffset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes a 'fluttering' wind motion orthogonal to an object direction. </p>
+<p>This is used to apply sideways or upwards wind forces on an object, such that it flutters in the wind, even when the wind is constant.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vWind</td><td>The sampled (and potentially boosted or clamped) wind value. </td></tr>
+    <tr><td class="paramname">vObjectDir</td><td>The main direction of the object. For example the (average) direction of a tree branch, or the direction of a rope or cable. The flutter value will be orthogonal to the object direction and the wind direction. So when when blows sideways onto a branch, the branch would flutter upwards and downwards. For a rope hanging downwards, wind blowing against it would make it flutter sideways. </td></tr>
+    <tr><td class="paramname">fFlutterSpeed</td><td>How fast the object shall flutter (frequency). </td></tr>
+    <tr><td class="paramname">uiFlutterRandomOffset</td><td>A random number that adds an offset to the flutter, such that multiple objects next to each other will flutter out of phase. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Core/Interfaces/<a class="el" href="../../da/d5b/_wind_world_module_8h_source.htm">WindWorldModule.h</a></li>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Core/Interfaces/WindWorldModule.cpp</li>
@@ -208,7 +264,7 @@ typedef <a class="el" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>&l
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d1/d91/classez_wind_world_module_interface.htm">ezWindWorldModuleInterface</a></li>
-    <li class="footer">Generated on Tue Jun 8 2021 21:43:24 for ezEngine by
+    <li class="footer">Generated on Mon Oct 18 2021 15:24:24 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

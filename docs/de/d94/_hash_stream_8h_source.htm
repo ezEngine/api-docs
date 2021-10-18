@@ -92,49 +92,46 @@ $(document).ready(function(){initNavTree('de/d94/_hash_stream_8h_source.htm','..
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;Foundation/Basics.h&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;Foundation/IO/Stream.h&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>XXH32_state_s XXH32_state_t;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>XXH64_state_s XXH64_state_t;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="../../d5/d8f/classez_hash_stream_writer32.htm">   12</a></span>&#160;<span class="keyword">class </span>EZ_FOUNDATION_DLL <a class="code" href="../../d5/d8f/classez_hash_stream_writer32.htm">ezHashStreamWriter32</a> : <span class="keyword">public</span> <a class="code" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <a class="code" href="../../d5/d8f/classez_hash_stream_writer32.htm">ezHashStreamWriter32</a>(ezUInt32 seed = 0);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  ~<a class="code" href="../../d5/d8f/classez_hash_stream_writer32.htm">ezHashStreamWriter32</a>();</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="../../d5/d8f/classez_hash_stream_writer32.htm">    9</a></span>&#160;<span class="keyword">class </span>EZ_FOUNDATION_DLL <a class="code" href="../../d5/d8f/classez_hash_stream_writer32.htm">ezHashStreamWriter32</a> : <span class="keyword">public</span> <a class="code" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <a class="code" href="../../d5/d8f/classez_hash_stream_writer32.htm">ezHashStreamWriter32</a>(ezUInt32 seed = 0);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  ~<a class="code" href="../../d5/d8f/classez_hash_stream_writer32.htm">ezHashStreamWriter32</a>();</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> <a class="code" href="../../d6/dcc/classez_stream_writer.htm#a21fd5331a85b467ac9d5c11eecc3f0b0">WriteBytes</a>(<span class="keyword">const</span> <span class="keywordtype">void</span>* pWriteBuffer, ezUInt64 uiBytesToWrite) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> <a class="code" href="../../d6/dcc/classez_stream_writer.htm#a21fd5331a85b467ac9d5c11eecc3f0b0">WriteBytes</a>(<span class="keyword">const</span> <span class="keywordtype">void</span>* pWriteBuffer, ezUInt64 uiBytesToWrite) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  ezUInt32 GetHashValue() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  XXH32_state_t* m_state;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;};</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="../../db/d5a/classez_hash_stream_writer64.htm">   34</a></span>&#160;<span class="keyword">class </span>EZ_FOUNDATION_DLL <a class="code" href="../../db/d5a/classez_hash_stream_writer64.htm">ezHashStreamWriter64</a> : <span class="keyword">public</span> <a class="code" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <a class="code" href="../../db/d5a/classez_hash_stream_writer64.htm">ezHashStreamWriter64</a>(ezUInt64 seed = 0);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  ~<a class="code" href="../../db/d5a/classez_hash_stream_writer64.htm">ezHashStreamWriter64</a>();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  ezUInt32 GetHashValue() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keywordtype">void</span>* m_state = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;};</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="../../db/d5a/classez_hash_stream_writer64.htm">   31</a></span>&#160;<span class="keyword">class </span>EZ_FOUNDATION_DLL <a class="code" href="../../db/d5a/classez_hash_stream_writer64.htm">ezHashStreamWriter64</a> : <span class="keyword">public</span> <a class="code" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <a class="code" href="../../db/d5a/classez_hash_stream_writer64.htm">ezHashStreamWriter64</a>(ezUInt64 seed = 0);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  ~<a class="code" href="../../db/d5a/classez_hash_stream_writer64.htm">ezHashStreamWriter64</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> <a class="code" href="../../d6/dcc/classez_stream_writer.htm#a21fd5331a85b467ac9d5c11eecc3f0b0">WriteBytes</a>(<span class="keyword">const</span> <span class="keywordtype">void</span>* pWriteBuffer, ezUInt64 uiBytesToWrite) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> <a class="code" href="../../d6/dcc/classez_stream_writer.htm#a21fd5331a85b467ac9d5c11eecc3f0b0">WriteBytes</a>(<span class="keyword">const</span> <span class="keywordtype">void</span>* pWriteBuffer, ezUInt64 uiBytesToWrite) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  ezUInt64 GetHashValue() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  XXH64_state_t* m_state;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;};</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  ezUInt64 GetHashValue() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordtype">void</span>* m_state = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition:</b> Types.h:50</div></div>
 <div class="ttc" id="aclassez_stream_writer_htm"><div class="ttname"><a href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a></div><div class="ttdoc">Interface for binary out (write) streams.</div><div class="ttdef"><b>Definition:</b> Stream.h:101</div></div>
 <div class="ttc" id="aclassez_stream_writer_htm_a21fd5331a85b467ac9d5c11eecc3f0b0"><div class="ttname"><a href="../../d6/dcc/classez_stream_writer.htm#a21fd5331a85b467ac9d5c11eecc3f0b0">ezStreamWriter::WriteBytes</a></div><div class="ttdeci">virtual ezResult WriteBytes(const void *pWriteBuffer, ezUInt64 uiBytesToWrite)=0</div><div class="ttdoc">Writes a raw number of bytes from the buffer, this is the only method which has to be implemented to ...</div></div>
-<div class="ttc" id="aclassez_hash_stream_writer32_htm"><div class="ttname"><a href="../../d5/d8f/classez_hash_stream_writer32.htm">ezHashStreamWriter32</a></div><div class="ttdoc">A stream writer that hashes the data written to it.</div><div class="ttdef"><b>Definition:</b> HashStream.h:12</div></div>
-<div class="ttc" id="aclassez_hash_stream_writer64_htm"><div class="ttname"><a href="../../db/d5a/classez_hash_stream_writer64.htm">ezHashStreamWriter64</a></div><div class="ttdoc">A stream writer that hashes the data written to it.</div><div class="ttdef"><b>Definition:</b> HashStream.h:34</div></div>
+<div class="ttc" id="aclassez_hash_stream_writer32_htm"><div class="ttname"><a href="../../d5/d8f/classez_hash_stream_writer32.htm">ezHashStreamWriter32</a></div><div class="ttdoc">A stream writer that hashes the data written to it.</div><div class="ttdef"><b>Definition:</b> HashStream.h:9</div></div>
+<div class="ttc" id="aclassez_hash_stream_writer64_htm"><div class="ttname"><a href="../../db/d5a/classez_hash_stream_writer64.htm">ezHashStreamWriter64</a></div><div class="ttdoc">A stream writer that hashes the data written to it.</div><div class="ttdef"><b>Definition:</b> HashStream.h:31</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_cbf2a2ed1ea35b4af8265ff960a67fbe.htm">Algorithm</a></li><li class="navelem"><b>HashStream.h</b></li>
-    <li class="footer">Generated on Tue Jun 8 2021 21:43:07 for ezEngine by
+    <li class="footer">Generated on Mon Oct 18 2021 15:24:05 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

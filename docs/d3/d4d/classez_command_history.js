@@ -1,5 +1,6 @@
 var classez_command_history =
 [
+    [ "Storage", "d7/d1d/classez_command_history_1_1_storage.htm", "d7/d1d/classez_command_history_1_1_storage" ],
     [ "ezCommandHistory", "d3/d4d/classez_command_history.htm#a6d0eb2c7600e0f09bbd6a459304e28df", null ],
     [ "~ezCommandHistory", "d3/d4d/classez_command_history.htm#ab860abd81baaf11329ef54545fb63a4e", null ],
     [ "AddCommand", "d3/d4d/classez_command_history.htm#a19e83db9a77091f22e92061f91ae0cf8", null ],
@@ -16,6 +17,7 @@ var classez_command_history =
     [ "GetRedoDisplayString", "d3/d4d/classez_command_history.htm#a6a1f8a4f361357384689dab62f2b25e9", null ],
     [ "GetRedoStackEntry", "d3/d4d/classez_command_history.htm#a4a6f5c313b24dee2c7827f95d74dc666", null ],
     [ "GetRedoStackSize", "d3/d4d/classez_command_history.htm#aedc2490d83748ebebd5fd11d1af92764", null ],
+    [ "GetStorage", "d3/d4d/classez_command_history.htm#a3d27111ad6eadd682376c1d3547641fd", null ],
     [ "GetUndoDisplayString", "d3/d4d/classez_command_history.htm#a25c8ff4092403528d5b274b537368d35", null ],
     [ "GetUndoStackEntry", "d3/d4d/classez_command_history.htm#aef09f0e0022fb75f3bc96fb85bb3b460", null ],
     [ "GetUndoStackSize", "d3/d4d/classez_command_history.htm#af6ee3922f23da658d111ea0f792c7648", null ],
@@ -27,6 +29,7 @@ var classez_command_history =
     [ "ResumeTemporaryTransaction", "d3/d4d/classez_command_history.htm#a3eb3c5c8fb75ebc475c720e355836a01", null ],
     [ "StartTransaction", "d3/d4d/classez_command_history.htm#a966c42f94578d21ec1d9251709461094", null ],
     [ "SuspendTemporaryTransaction", "d3/d4d/classez_command_history.htm#a5919ff8d4b28ee1b75291e9d89ee4378", null ],
+    [ "SwapStorage", "d3/d4d/classez_command_history.htm#add65a6e1f5f69a007f33c68278dddd01", null ],
     [ "Undo", "d3/d4d/classez_command_history.htm#a8abe6adca925bf26c628d99ddd24b0bd", null ],
     [ "ezCommand", "d3/d4d/classez_command_history.htm#a51b090ff21d525332dd435d2c9421ffa", null ],
     [ "m_Events", "d3/d4d/classez_command_history.htm#af5d69ce1f0f8e1b436d65b2349ffdb95", null ]

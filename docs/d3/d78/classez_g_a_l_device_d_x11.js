@@ -30,7 +30,7 @@ var classez_g_a_l_device_d_x11 =
     [ "DestroyShaderPlatform", "d3/d78/classez_g_a_l_device_d_x11.htm#adc032fa161e1f9f3de4eeb5321894503", null ],
     [ "DestroySwapChainPlatform", "d3/d78/classez_g_a_l_device_d_x11.htm#aa48736d1da095ac049820a295dc11537", null ],
     [ "DestroyTexturePlatform", "d3/d78/classez_g_a_l_device_d_x11.htm#a14c868a285a1e8a7a9e674e3bae621d5", null ],
-    [ "DestroyUnorderedAccessViewPlatform", "d3/d78/classez_g_a_l_device_d_x11.htm#ae0b59b3f1856bc63af15a8820defdcaa", null ],
+    [ "DestroyUnorderedAccessViewPlatform", "d3/d78/classez_g_a_l_device_d_x11.htm#affb0e2b7ecc570f7512990968cd3a900", null ],
     [ "DestroyVertexDeclarationPlatform", "d3/d78/classez_g_a_l_device_d_x11.htm#aaed19edffa988c3761edf647fb88bc94", null ],
     [ "EndFramePlatform", "d3/d78/classez_g_a_l_device_d_x11.htm#a27479a4fac043e8f88ca9b0230c457de", null ],
     [ "EndPassPlatform", "d3/d78/classez_g_a_l_device_d_x11.htm#aabafbd23567664e6388f53629ff895ac", null ],

@@ -110,15 +110,15 @@ $(document).ready(function(){initNavTree('d9/d36/_mutex__posix_8h_source.htm','.
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  ++m_iLockCount;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="../../dd/dbe/classez_mutex.htm#a722100887a31e2be8cbc349d0c66962a">   24</a></span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> <a class="code" href="../../dd/dbe/classez_mutex.htm#a722100887a31e2be8cbc349d0c66962a">ezMutex::TryLock</a>()</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="../../dd/dbe/classez_mutex.htm#a159ba5cbe8a1bc74a1b24aca7ff71746">   24</a></span>&#160;EZ_ALWAYS_INLINE <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> <a class="code" href="../../dd/dbe/classez_mutex.htm#a159ba5cbe8a1bc74a1b24aca7ff71746">ezMutex::TryLock</a>()</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keywordflow">if</span> (pthread_mutex_trylock(&amp;m_Handle) == 0)</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  {</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    ++m_iLockCount;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">return</span> EZ_SUCCESS;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  }</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keywordflow">return</span> EZ_FAILURE;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
 <div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="../../dd/dbe/classez_mutex.htm#a5485e1e24ca9f365dc89f71afa5a3ab2">   34</a></span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dd/dbe/classez_mutex.htm#a5485e1e24ca9f365dc89f71afa5a3ab2">ezMutex::Unlock</a>()</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
@@ -127,14 +127,15 @@ $(document).ready(function(){initNavTree('d9/d36/_mutex__posix_8h_source.htm','.
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition:</b> Types.h:50</div></div>
 <div class="ttc" id="aclassez_mutex_htm_a7209d50aa8a5b13da57f2d3ab2c00b2f"><div class="ttname"><a href="../../dd/dbe/classez_mutex.htm#a7209d50aa8a5b13da57f2d3ab2c00b2f">ezMutex::Lock</a></div><div class="ttdeci">void Lock()</div><div class="ttdoc">Acquires an exclusive lock for this mutex object.</div><div class="ttdef"><b>Definition:</b> Mutex_posix.h:18</div></div>
-<div class="ttc" id="aclassez_mutex_htm_a722100887a31e2be8cbc349d0c66962a"><div class="ttname"><a href="../../dd/dbe/classez_mutex.htm#a722100887a31e2be8cbc349d0c66962a">ezMutex::TryLock</a></div><div class="ttdeci">bool TryLock()</div><div class="ttdoc">Attempts to acquire an exclusive lock for this mutex object. Returns true on success.</div><div class="ttdef"><b>Definition:</b> Mutex_posix.h:24</div></div>
 <div class="ttc" id="aclassez_mutex_htm_a5485e1e24ca9f365dc89f71afa5a3ab2"><div class="ttname"><a href="../../dd/dbe/classez_mutex.htm#a5485e1e24ca9f365dc89f71afa5a3ab2">ezMutex::Unlock</a></div><div class="ttdeci">void Unlock()</div><div class="ttdoc">Releases a lock that has been previously acquired.</div><div class="ttdef"><b>Definition:</b> Mutex_posix.h:34</div></div>
+<div class="ttc" id="aclassez_mutex_htm_a159ba5cbe8a1bc74a1b24aca7ff71746"><div class="ttname"><a href="../../dd/dbe/classez_mutex.htm#a159ba5cbe8a1bc74a1b24aca7ff71746">ezMutex::TryLock</a></div><div class="ttdeci">ezResult TryLock()</div><div class="ttdoc">Attempts to acquire an exclusive lock for this mutex object. Returns true on success.</div><div class="ttdef"><b>Definition:</b> Mutex_posix.h:24</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_05460f4aa032e23246d68b56847b5fed.htm">Threading</a></li><li class="navelem"><a class="el" href="../../dir_87563d8e459b6b2efd39d0a742560444.htm">Implementation</a></li><li class="navelem"><a class="el" href="../../dir_f7cba5d11400c314899a87dbddc6ab5d.htm">Posix</a></li><li class="navelem"><b>Mutex_posix.h</b></li>
-    <li class="footer">Generated on Tue Jun 8 2021 21:43:12 for ezEngine by
+    <li class="footer">Generated on Mon Oct 18 2021 15:24:11 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

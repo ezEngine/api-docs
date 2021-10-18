@@ -3,6 +3,7 @@ var classez_animation_clip_asset_properties =
     [ "ezAnimationClipAssetProperties", "d5/db0/classez_animation_clip_asset_properties.htm#af70faab499e4d1bb8fa152c040fd36f9", null ],
     [ "~ezAnimationClipAssetProperties", "d5/db0/classez_animation_clip_asset_properties.htm#aeecb83a7f50e5e62c934358da1f45536", null ],
     [ "m_AvailableClips", "d5/db0/classez_animation_clip_asset_properties.htm#abe029f892a0cc6ecafe337b1f4a0aeeb", null ],
+    [ "m_bAdditive", "d5/db0/classez_animation_clip_asset_properties.htm#a76bf10ef077c2c43a917e7ced9174cc8", null ],
     [ "m_EventTrack", "d5/db0/classez_animation_clip_asset_properties.htm#ab35bf24efd93a8c9c9ca1e0ccd271ccf", null ],
     [ "m_RootMotionMode", "d5/db0/classez_animation_clip_asset_properties.htm#abf30ee976b70f71762f86716df0a4133", null ],
     [ "m_sAnimationClipToExtract", "d5/db0/classez_animation_clip_asset_properties.htm#aa4fa724014dc53d7375f7acde1d7ffaa", null ],

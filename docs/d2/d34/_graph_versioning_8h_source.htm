@@ -155,47 +155,49 @@ $(document).ready(function(){initNavTree('d2/d34/_graph_versioning_8h_source.htm
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keywordtype">void</span> RenameClass(<span class="keyword">const</span> <span class="keywordtype">char</span>* szTypeName); <span class="comment">// [tested]</span></div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordtype">void</span> ChangeBaseClass(<a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;ezVersionKey&gt;</a> baseClasses); <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordtype">void</span> RenameClass(<span class="keyword">const</span> <span class="keywordtype">char</span>* szTypeName, ezUInt32 version);</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../df/d10/classez_graph_versioning.htm">ezGraphVersioning</a>;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <a class="code" href="../../d0/d82/classez_graph_patch_context.htm">ezGraphPatchContext</a>(<a class="code" href="../../df/d10/classez_graph_versioning.htm">ezGraphVersioning</a>* pParent, <a class="code" href="../../d1/d39/classez_abstract_object_graph.htm">ezAbstractObjectGraph</a>* pGraph, <a class="code" href="../../d1/d39/classez_abstract_object_graph.htm">ezAbstractObjectGraph</a>* pTypesGraph);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keywordtype">void</span> Patch(<a class="code" href="../../de/d70/classez_abstract_object_node.htm">ezAbstractObjectNode</a>* pNode);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keywordtype">void</span> Patch(ezUInt32 uiBaseClassIndex, ezUInt32 uiTypeVersion, <span class="keywordtype">bool</span> bForcePatch);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keywordtype">void</span> UpdateBaseClasses();</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <a class="code" href="../../df/d10/classez_graph_versioning.htm">ezGraphVersioning</a>* m_pParent = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <a class="code" href="../../d1/d39/classez_abstract_object_graph.htm">ezAbstractObjectGraph</a>* m_pGraph = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <a class="code" href="../../de/d70/classez_abstract_object_node.htm">ezAbstractObjectNode</a>* m_pNode = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezVersionKey&gt;</a> m_BaseClasses;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  ezUInt32 m_uiBaseClassIndex = 0;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <span class="keyword">mutable</span> <a class="code" href="../../d8/d86/classez_hash_table.htm">ezHashTable&lt;ezHashedString, ezTypeVersionInfo&gt;</a> m_TypeToInfo;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;};</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="../../df/d10/classez_graph_versioning.htm">  102</a></span>&#160;<span class="keyword">class </span>EZ_FOUNDATION_DLL <a class="code" href="../../df/d10/classez_graph_versioning.htm">ezGraphVersioning</a></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;{</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  EZ_DECLARE_SINGLETON(<a class="code" href="../../df/d10/classez_graph_versioning.htm">ezGraphVersioning</a>);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <a class="code" href="../../df/d10/classez_graph_versioning.htm">ezGraphVersioning</a>();</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  ~<a class="code" href="../../df/d10/classez_graph_versioning.htm">ezGraphVersioning</a>();</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <span class="keywordtype">void</span> PatchGraph(<a class="code" href="../../d1/d39/classez_abstract_object_graph.htm">ezAbstractObjectGraph</a>* pGraph, <a class="code" href="../../d1/d39/classez_abstract_object_graph.htm">ezAbstractObjectGraph</a>* pTypesGraph = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d0/d82/classez_graph_patch_context.htm">ezGraphPatchContext</a>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keywordtype">void</span> ChangeBaseClass(<a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;ezVersionKey&gt;</a> baseClasses); <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../df/d10/classez_graph_versioning.htm">ezGraphVersioning</a>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <a class="code" href="../../d0/d82/classez_graph_patch_context.htm">ezGraphPatchContext</a>(<a class="code" href="../../df/d10/classez_graph_versioning.htm">ezGraphVersioning</a>* pParent, <a class="code" href="../../d1/d39/classez_abstract_object_graph.htm">ezAbstractObjectGraph</a>* pGraph, <a class="code" href="../../d1/d39/classez_abstract_object_graph.htm">ezAbstractObjectGraph</a>* pTypesGraph);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keywordtype">void</span> Patch(<a class="code" href="../../de/d70/classez_abstract_object_node.htm">ezAbstractObjectNode</a>* pNode);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keywordtype">void</span> Patch(ezUInt32 uiBaseClassIndex, ezUInt32 uiTypeVersion, <span class="keywordtype">bool</span> bForcePatch);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keywordtype">void</span> UpdateBaseClasses();</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <a class="code" href="../../df/d10/classez_graph_versioning.htm">ezGraphVersioning</a>* m_pParent = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <a class="code" href="../../d1/d39/classez_abstract_object_graph.htm">ezAbstractObjectGraph</a>* m_pGraph = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <a class="code" href="../../de/d70/classez_abstract_object_node.htm">ezAbstractObjectNode</a>* m_pNode = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezVersionKey&gt;</a> m_BaseClasses;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  ezUInt32 m_uiBaseClassIndex = 0;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keyword">mutable</span> <a class="code" href="../../d8/d86/classez_hash_table.htm">ezHashTable&lt;ezHashedString, ezTypeVersionInfo&gt;</a> m_TypeToInfo;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;};</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="../../df/d10/classez_graph_versioning.htm">  105</a></span>&#160;<span class="keyword">class </span>EZ_FOUNDATION_DLL <a class="code" href="../../df/d10/classez_graph_versioning.htm">ezGraphVersioning</a></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;{</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  EZ_DECLARE_SINGLETON(<a class="code" href="../../df/d10/classez_graph_versioning.htm">ezGraphVersioning</a>);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <a class="code" href="../../df/d10/classez_graph_versioning.htm">ezGraphVersioning</a>();</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  ~<a class="code" href="../../df/d10/classez_graph_versioning.htm">ezGraphVersioning</a>();</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <span class="keywordtype">void</span> PatchGraph(<a class="code" href="../../d1/d39/classez_abstract_object_graph.htm">ezAbstractObjectGraph</a>* pGraph, <a class="code" href="../../d1/d39/classez_abstract_object_graph.htm">ezAbstractObjectGraph</a>* pTypesGraph = <span class="keyword">nullptr</span>);</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  EZ_MAKE_SUBSYSTEM_STARTUP_FRIEND(Foundation, GraphVersioning);</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <span class="keywordtype">void</span> PluginEventHandler(<span class="keyword">const</span> <a class="code" href="../../d4/d72/structez_plugin_event.htm">ezPluginEvent</a>&amp; EventData);</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <span class="keywordtype">void</span> UpdatePatches();</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  ezUInt32 GetMaxPatchVersion(<span class="keyword">const</span> <a class="code" href="../../de/dce/classez_hashed_string.htm">ezHashedString</a>&amp; sType) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <a class="code" href="../../d8/d86/classez_hash_table.htm">ezHashTable&lt;ezHashedString, ezUInt32&gt;</a> m_MaxPatchVersion; </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;const ezGraphPatch*&gt;</a> m_GraphPatches;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <a class="code" href="../../d8/d86/classez_hash_table.htm">ezHashTable&lt;ezVersionKey, const ezGraphPatch*, ezGraphVersioningHash&gt;</a> m_NodePatches;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;};</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d0/d82/classez_graph_patch_context.htm">ezGraphPatchContext</a>;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  EZ_MAKE_SUBSYSTEM_STARTUP_FRIEND(Foundation, GraphVersioning);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <span class="keywordtype">void</span> PluginEventHandler(<span class="keyword">const</span> <a class="code" href="../../d4/d72/structez_plugin_event.htm">ezPluginEvent</a>&amp; EventData);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <span class="keywordtype">void</span> UpdatePatches();</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  ezUInt32 GetMaxPatchVersion(<span class="keyword">const</span> <a class="code" href="../../de/dce/classez_hashed_string.htm">ezHashedString</a>&amp; sType) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <a class="code" href="../../d8/d86/classez_hash_table.htm">ezHashTable&lt;ezHashedString, ezUInt32&gt;</a> m_MaxPatchVersion; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;const ezGraphPatch*&gt;</a> m_GraphPatches;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <a class="code" href="../../d8/d86/classez_hash_table.htm">ezHashTable&lt;ezVersionKey, const ezGraphPatch*, ezGraphVersioningHash&gt;</a> m_NodePatches;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_hashed_string_htm_a98b45f1241d1e37de8045d4089a86992"><div class="ttname"><a href="../../de/dce/classez_hashed_string.htm#a98b45f1241d1e37de8045d4089a86992">ezHashedString::Assign</a></div><div class="ttdeci">void Assign(const char(&amp;szString)[N])</div><div class="ttdoc">Assigning a new string from a string constant is a slow operation, but the hash computation can happe...</div></div>
@@ -205,10 +207,10 @@ $(document).ready(function(){initNavTree('d2/d34/_graph_versioning_8h_source.htm
 <div class="ttc" id="aclassez_hashed_string_htm_ad3c8771100f669c9ea346e9b3a514ca6"><div class="ttname"><a href="../../de/dce/classez_hashed_string.htm#ad3c8771100f669c9ea346e9b3a514ca6">ezHashedString::GetHash</a></div><div class="ttdeci">ezUInt64 GetHash() const</div><div class="ttdoc">Returns the hash of the stored string.</div><div class="ttdef"><b>Definition:</b> HashedString_inl.h:125</div></div>
 <div class="ttc" id="aclassez_array_ptr_htm"><div class="ttname"><a href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr</a></div><div class="ttdoc">This class encapsulates an array and it's size. It is recommended to use this class instead of plain ...</div><div class="ttdef"><b>Definition:</b> ArrayPtr.h:36</div></div>
 <div class="ttc" id="aclassez_hashing_utils_htm_a5c65d83450f2edff74c18d5b4f894ec8"><div class="ttname"><a href="../../dd/dd0/classez_hashing_utils.htm#a5c65d83450f2edff74c18d5b4f894ec8">ezHashingUtils::xxHash32</a></div><div class="ttdeci">static ezUInt32 xxHash32(const void *pKey, size_t uiSizeInByte, ezUInt32 uiSeed=0)</div><div class="ttdoc">Calculates the 32bit xxHash of the given key.</div><div class="ttdef"><b>Definition:</b> HashingUtils.cpp:204</div></div>
-<div class="ttc" id="astructez_plugin_event_htm"><div class="ttname"><a href="../../d4/d72/structez_plugin_event.htm">ezPluginEvent</a></div><div class="ttdoc">The data that is broadcast whenever a plugin is (un-) loaded.</div><div class="ttdef"><b>Definition:</b> Plugin.h:13</div></div>
+<div class="ttc" id="astructez_plugin_event_htm"><div class="ttname"><a href="../../d4/d72/structez_plugin_event.htm">ezPluginEvent</a></div><div class="ttdoc">The data that is broadcast whenever a plugin is (un-) loaded.</div><div class="ttdef"><b>Definition:</b> Plugin.h:10</div></div>
 <div class="ttc" id="aclassez_graph_patch_htm"><div class="ttname"><a href="../../d9/dfd/classez_graph_patch.htm">ezGraphPatch</a></div><div class="ttdoc">Patch base class for ezAbstractObjectGraph patches.</div><div class="ttdef"><b>Definition:</b> GraphPatch.h:19</div></div>
 <div class="ttc" id="astructez_type_version_info_htm"><div class="ttname"><a href="../../d7/d01/structez_type_version_info.htm">ezTypeVersionInfo</a></div><div class="ttdoc">A class that overlaps ezReflectedTypeDescriptor with the properties needed for patching.</div><div class="ttdef"><b>Definition:</b> GraphVersioning.h:53</div></div>
-<div class="ttc" id="aclassez_graph_versioning_htm"><div class="ttname"><a href="../../df/d10/classez_graph_versioning.htm">ezGraphVersioning</a></div><div class="ttdoc">Singleton that allows version patching of ezAbstractObjectGraph.</div><div class="ttdef"><b>Definition:</b> GraphVersioning.h:102</div></div>
+<div class="ttc" id="aclassez_graph_versioning_htm"><div class="ttname"><a href="../../df/d10/classez_graph_versioning.htm">ezGraphVersioning</a></div><div class="ttdoc">Singleton that allows version patching of ezAbstractObjectGraph.</div><div class="ttdef"><b>Definition:</b> GraphVersioning.h:105</div></div>
 <div class="ttc" id="aclassez_dynamic_array_htm"><div class="ttname"><a href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt; ezVersionKey &gt;</a></div></div>
 <div class="ttc" id="aclassez_abstract_object_graph_htm"><div class="ttname"><a href="../../d1/d39/classez_abstract_object_graph.htm">ezAbstractObjectGraph</a></div><div class="ttdef"><b>Definition:</b> AbstractObjectGraph.h:117</div></div>
 <div class="ttc" id="aclassez_abstract_object_node_htm"><div class="ttname"><a href="../../de/d70/classez_abstract_object_node.htm">ezAbstractObjectNode</a></div><div class="ttdef"><b>Definition:</b> AbstractObjectGraph.h:16</div></div>
@@ -219,7 +221,7 @@ $(document).ready(function(){initNavTree('d2/d34/_graph_versioning_8h_source.htm
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_ca76d0c6570b9e8a3a0dc6b51850235c.htm">Serialization</a></li><li class="navelem"><b>GraphVersioning.h</b></li>
-    <li class="footer">Generated on Tue Jun 8 2021 21:43:11 for ezEngine by
+    <li class="footer">Generated on Mon Oct 18 2021 15:24:10 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

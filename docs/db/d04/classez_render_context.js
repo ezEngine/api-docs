@@ -11,6 +11,7 @@ var classez_render_context =
     [ "BindConstantBuffer", "db/d04/classez_render_context.htm#a243b5f246b4ff872a4377185ed6c23d5", null ],
     [ "BindConstantBuffer", "db/d04/classez_render_context.htm#a0ca4df7405163cdfcc10c3b9f5f877fe", null ],
     [ "BindMaterial", "db/d04/classez_render_context.htm#a2ccb09ac394644f076842686f5a57b4a", null ],
+    [ "BindMeshBuffer", "db/d04/classez_render_context.htm#a62cc31357b91a41cdf1d294d161f1a59", null ],
     [ "BindMeshBuffer", "db/d04/classez_render_context.htm#abc76f7514d35485c237026c717b84980", null ],
     [ "BindMeshBuffer", "db/d04/classez_render_context.htm#afbf62a81655a07fa325013fd845ae693", null ],
     [ "BindNullMeshBuffer", "db/d04/classez_render_context.htm#a222047456b02f37d5074b95cc96224c6", null ],

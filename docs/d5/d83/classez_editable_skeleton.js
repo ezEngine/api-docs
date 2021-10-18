@@ -2,6 +2,7 @@ var classez_editable_skeleton =
 [
     [ "ezEditableSkeleton", "d5/d83/classez_editable_skeleton.htm#a4759fabc597961ece1f479614e07646e", null ],
     [ "~ezEditableSkeleton", "d5/d83/classez_editable_skeleton.htm#af8df168f995de4dda6f4e81e56db22e4", null ],
+    [ "AddChildJoints", "d5/d83/classez_editable_skeleton.htm#aba58a48fff1327eaa902f4f04d4c673f", null ],
     [ "ClearJoints", "d5/d83/classez_editable_skeleton.htm#af796f448d79a7093d31a454b507bcb7c", null ],
     [ "FillResourceDescriptor", "d5/d83/classez_editable_skeleton.htm#a107ec5735f36cca36e910457f467c5ba", null ],
     [ "GenerateOzzSkeleton", "d5/d83/classez_editable_skeleton.htm#aa64fff9204b3d8cb3b0d1067a25bb5a6", null ],
@@ -12,5 +13,7 @@ var classez_editable_skeleton =
     [ "m_fUniformScaling", "d5/d83/classez_editable_skeleton.htm#aea5b8d624d73eef5eb014f66a6b28f11", null ],
     [ "m_RightDir", "d5/d83/classez_editable_skeleton.htm#a95b145b73d164f368ea5831a8f15d518", null ],
     [ "m_sAnimationFile", "d5/d83/classez_editable_skeleton.htm#ae913c79187beb04ddf9d6505b02b4a2d", null ],
+    [ "m_sSurfaceFile", "d5/d83/classez_editable_skeleton.htm#a1f21a1eb84539d2f6657b3ab495b2454", null ],
+    [ "m_uiCollisionLayer", "d5/d83/classez_editable_skeleton.htm#ad06f54789ad143e9b4cdd28c97444062", null ],
     [ "m_UpDir", "d5/d83/classez_editable_skeleton.htm#a6713a5f469fa31ba5375b4c5575cfcad", null ]
 ];

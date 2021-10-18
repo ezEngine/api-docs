@@ -1,5 +1,6 @@
 var structez_model_importer2_1_1_import_options =
 [
+    [ "m_bAdditiveAnimation", "df/d32/structez_model_importer2_1_1_import_options.htm#aecd05e6cac09f64e39801bd64e574d73", null ],
     [ "m_bImportSkinningData", "df/d32/structez_model_importer2_1_1_import_options.htm#a162cf64c0704ca586faaf7d1b8d870f3", null ],
     [ "m_bRecomputeNormals", "df/d32/structez_model_importer2_1_1_import_options.htm#addb4382b341031b543371beeb1f67f6f", null ],
     [ "m_bRecomputeTangents", "df/d32/structez_model_importer2_1_1_import_options.htm#a71916aa5e2ba25df22a1cae88998c2fc", null ],

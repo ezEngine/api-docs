@@ -1,8 +1,8 @@
 var classez_clustered_data_c_p_u =
 [
-    [ "MAX_LIGHT_DATA", "d4/df8/classez_clustered_data_c_p_u.htm#af8e339e26a4255b83c785364368d42e0aeb1d95c2cd195c81b20de29f1a2f3310", null ],
-    [ "MAX_DECAL_DATA", "d4/df8/classez_clustered_data_c_p_u.htm#af8e339e26a4255b83c785364368d42e0abcc22ca382a09f549ded7c6b1d29e3cc", null ],
-    [ "MAX_ITEMS_PER_CLUSTER", "d4/df8/classez_clustered_data_c_p_u.htm#af8e339e26a4255b83c785364368d42e0ac25dff5cf5db2d7e1bbd54ead1fa9d20", null ],
+    [ "MAX_LIGHT_DATA", "d4/df8/classez_clustered_data_c_p_u.htm#a43607283f7a4c916f3e553851f04039eaeb1d95c2cd195c81b20de29f1a2f3310", null ],
+    [ "MAX_DECAL_DATA", "d4/df8/classez_clustered_data_c_p_u.htm#a43607283f7a4c916f3e553851f04039eabcc22ca382a09f549ded7c6b1d29e3cc", null ],
+    [ "MAX_ITEMS_PER_CLUSTER", "d4/df8/classez_clustered_data_c_p_u.htm#a43607283f7a4c916f3e553851f04039eac25dff5cf5db2d7e1bbd54ead1fa9d20", null ],
     [ "ezClusteredDataCPU", "d4/df8/classez_clustered_data_c_p_u.htm#af846c734b8da5322e45e77f9a17272dd", null ],
     [ "~ezClusteredDataCPU", "d4/df8/classez_clustered_data_c_p_u.htm#aedf62440b110bae816eb4f7ff275853c", null ],
     [ "m_ClusterData", "d4/df8/classez_clustered_data_c_p_u.htm#a4563c8f61821efc2c2d01d0f93adcb21", null ],

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ezEngine: /home/runner/work/ezEngine/ezEngine/Code/Engine/Core/Utils/WorldGeoExtractionUtil.h Source File</title>
+<title>ezEngine: /home/runner/work/ezEngine/ezEngine/Code/Engine/RendererCore/Utils/WorldGeoExtractionUtil.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -89,97 +89,73 @@ $(document).ready(function(){initNavTree('d3/d5c/_world_geo_extraction_util_8h_s
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;Core/World/Declarations.h&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;Foundation/Communication/Message.h&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;Foundation/Containers/Deque.h&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;Foundation/Math/Vec3.h&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;Core/ResourceManager/ResourceHandle.h&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;Core/World/Declarations.h&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;Foundation/Communication/Message.h&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;Foundation/Containers/Deque.h&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;Foundation/Types/TagSet.h&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">class </span><a class="code" href="../../da/d3c/classez_world.htm">ezWorld</a>;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="../../da/d0d/classez_world_geo_extraction_util.htm">   16</a></span>&#160;<span class="keyword">class </span>EZ_CORE_DLL <a class="code" href="../../da/d0d/classez_world_geo_extraction_util.htm">ezWorldGeoExtractionUtil</a></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="../../d1/dc6/structez_world_geo_extraction_util_1_1_vertex.htm">   19</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../d1/dc6/structez_world_geo_extraction_util_1_1_vertex.htm">Vertex</a></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    EZ_DECLARE_POD_TYPE();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="../../d6/dbd/structez_vec3_template.htm">ezVec3</a> m_vPosition;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment">// ezVec2 m_vTexCoord;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;RendererCore/RendererCoreDLL.h&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">class </span><a class="code" href="../../da/d3c/classez_world.htm">ezWorld</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">using</span> <a class="code" href="../../d3/dd7/classez_typed_resource_handle.htm">ezCpuMeshResourceHandle</a> = <a class="code" href="../../d3/dd7/classez_typed_resource_handle.htm">ezTypedResourceHandle&lt;class ezCpuMeshResource&gt;</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="../../da/d0d/classez_world_geo_extraction_util.htm">   18</a></span>&#160;<span class="keyword">class </span>EZ_RENDERERCORE_DLL <a class="code" href="../../da/d0d/classez_world_geo_extraction_util.htm">ezWorldGeoExtractionUtil</a></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="../../d7/d05/structez_world_geo_extraction_util_1_1_mesh_object.htm">   21</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../d7/d05/structez_world_geo_extraction_util_1_1_mesh_object.htm">MeshObject</a></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="../../d3/db1/classez_transform_template.htm">ezTransform</a> m_GlobalTransform;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="../../d3/dd7/classez_typed_resource_handle.htm">ezCpuMeshResourceHandle</a> m_hMeshResource;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  };</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="../../db/d2e/structez_world_geo_extraction_util_1_1_triangle.htm">   27</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../db/d2e/structez_world_geo_extraction_util_1_1_triangle.htm">Triangle</a></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    EZ_DECLARE_POD_TYPE();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    ezUInt32 m_uiVertexIndices[3];</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  };</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="../../df/d60/structez_world_geo_extraction_util_1_1_shape.htm">   35</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../df/d60/structez_world_geo_extraction_util_1_1_shape.htm">Shape</a></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="../../d6/dbd/structez_vec3_template.htm">ezVec3</a> m_vPosition;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="../../de/d15/classez_quat_template.htm">ezQuat</a> m_qRotation;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">// TODO ground type etc.</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  };</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="../../d5/d9a/structez_world_geo_extraction_util_1_1_box_shape.htm">   43</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../d5/d9a/structez_world_geo_extraction_util_1_1_box_shape.htm">BoxShape</a> : <span class="keyword">public</span> <a class="code" href="../../df/d60/structez_world_geo_extraction_util_1_1_shape.htm">Shape</a></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="../../d6/dbd/structez_vec3_template.htm">ezVec3</a> m_vHalfExtents;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  };</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="../../dc/d80/structez_world_geo_extraction_util_1_1_geometry.htm">   48</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../dc/d80/structez_world_geo_extraction_util_1_1_geometry.htm">Geometry</a></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="../../d9/dfe/classez_deque.htm">ezDeque&lt;Vertex&gt;</a> m_Vertices;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="../../d9/dfe/classez_deque.htm">ezDeque&lt;Triangle&gt;</a> m_Triangles;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="../../d9/dfe/classez_deque.htm">ezDeque&lt;BoxShape&gt;</a> m_BoxShapes;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  };</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="../../da/d0d/classez_world_geo_extraction_util.htm#ac8114a1c666450c100cfe303252d6152">   56</a></span>&#160;  <span class="keyword">enum class</span> <a class="code" href="../../da/d0d/classez_world_geo_extraction_util.htm#ac8114a1c666450c100cfe303252d6152">ExtractionMode</a></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    RenderMesh,        </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    CollisionMesh,     </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    NavMeshGeneration, </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  };</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> ExtractWorldGeometry(Geometry&amp; geo, <span class="keyword">const</span> <a class="code" href="../../da/d3c/classez_world.htm">ezWorld</a>&amp; world, ExtractionMode mode, <a class="code" href="../../df/d2d/classez_tag_set_template.htm">ezTagSet</a>* pExcludeTags = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> ExtractWorldGeometry(Geometry&amp; geo, <span class="keyword">const</span> <a class="code" href="../../da/d3c/classez_world.htm">ezWorld</a>&amp; world, ExtractionMode mode, <span class="keyword">const</span> <a class="code" href="../../d9/dfe/classez_deque.htm">ezDeque&lt;ezGameObjectHandle&gt;</a>&amp; selection);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> WriteWorldGeometryToOBJ(<span class="keyword">const</span> <span class="keywordtype">char</span>* szFile, <span class="keyword">const</span> Geometry&amp; geo, <span class="keyword">const</span> <a class="code" href="../../db/daf/classez_mat3_template.htm">ezMat3</a>&amp; mTransform);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;};</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="../../dc/d6b/structez_msg_extract_geometry.htm">   81</a></span>&#160;<span class="keyword">struct </span>EZ_CORE_DLL <a class="code" href="../../dc/d6b/structez_msg_extract_geometry.htm">ezMsgExtractGeometry</a> : <span class="keyword">public</span> <a class="code" href="../../dd/d22/classez_message.htm">ezMessage</a></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;{</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  EZ_DECLARE_MESSAGE_TYPE(<a class="code" href="../../dc/d6b/structez_msg_extract_geometry.htm">ezMsgExtractGeometry</a>, <a class="code" href="../../dd/d22/classez_message.htm">ezMessage</a>);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="../../dc/d6b/structez_msg_extract_geometry.htm#a74118ff7fa3efc046911b6b41b71cec4">   86</a></span>&#160;  <a class="code" href="../../da/d0d/classez_world_geo_extraction_util.htm#ac8114a1c666450c100cfe303252d6152">ezWorldGeoExtractionUtil::ExtractionMode</a> m_Mode = <a class="code" href="../../da/d0d/classez_world_geo_extraction_util.htm#ac8114a1c666450c100cfe303252d6152a84b856a787790eb2399b192f4d37da2b">ezWorldGeoExtractionUtil::ExtractionMode::RenderMesh</a>;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="../../dc/d6b/structez_msg_extract_geometry.htm#a5399fb10e021d99bd63075cc9309827a">   89</a></span>&#160;  <a class="code" href="../../dc/d80/structez_world_geo_extraction_util_1_1_geometry.htm">ezWorldGeoExtractionUtil::Geometry</a>* m_pWorldGeometry = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;};</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keyword">using</span> <a class="code" href="../../d9/dfe/classez_deque.htm">MeshObjectList</a> = <a class="code" href="../../d9/dfe/classez_deque.htm">ezDeque&lt;MeshObject&gt;</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="../../da/d0d/classez_world_geo_extraction_util.htm#ac8114a1c666450c100cfe303252d6152">   30</a></span>&#160;  <span class="keyword">enum class</span> <a class="code" href="../../da/d0d/classez_world_geo_extraction_util.htm#ac8114a1c666450c100cfe303252d6152">ExtractionMode</a></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    RenderMesh,        </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    CollisionMesh,     </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    NavMeshGeneration, </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  };</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> ExtractWorldGeometry(MeshObjectList&amp; objects, <span class="keyword">const</span> <a class="code" href="../../da/d3c/classez_world.htm">ezWorld</a>&amp; world, ExtractionMode mode, <a class="code" href="../../df/d2d/classez_tag_set_template.htm">ezTagSet</a>* pExcludeTags = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> ExtractWorldGeometry(MeshObjectList&amp; objects, <span class="keyword">const</span> <a class="code" href="../../da/d3c/classez_world.htm">ezWorld</a>&amp; world, ExtractionMode mode, <span class="keyword">const</span> <a class="code" href="../../d9/dfe/classez_deque.htm">ezDeque&lt;ezGameObjectHandle&gt;</a>&amp; selection);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> WriteWorldGeometryToOBJ(<span class="keyword">const</span> <span class="keywordtype">char</span>* szFile, <span class="keyword">const</span> MeshObjectList&amp; objects, <span class="keyword">const</span> <a class="code" href="../../db/daf/classez_mat3_template.htm">ezMat3</a>&amp; mTransform);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;};</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="../../dc/d6b/structez_msg_extract_geometry.htm">   55</a></span>&#160;<span class="keyword">struct </span>EZ_RENDERERCORE_DLL <a class="code" href="../../dc/d6b/structez_msg_extract_geometry.htm">ezMsgExtractGeometry</a> : <span class="keyword">public</span> <a class="code" href="../../dd/d22/classez_message.htm">ezMessage</a></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  EZ_DECLARE_MESSAGE_TYPE(<a class="code" href="../../dc/d6b/structez_msg_extract_geometry.htm">ezMsgExtractGeometry</a>, <a class="code" href="../../dd/d22/classez_message.htm">ezMessage</a>);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="../../dc/d6b/structez_msg_extract_geometry.htm#a74118ff7fa3efc046911b6b41b71cec4">   60</a></span>&#160;  <a class="code" href="../../da/d0d/classez_world_geo_extraction_util.htm#ac8114a1c666450c100cfe303252d6152">ezWorldGeoExtractionUtil::ExtractionMode</a> m_Mode = <a class="code" href="../../da/d0d/classez_world_geo_extraction_util.htm#ac8114a1c666450c100cfe303252d6152a84b856a787790eb2399b192f4d37da2b">ezWorldGeoExtractionUtil::ExtractionMode::RenderMesh</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="../../dc/d6b/structez_msg_extract_geometry.htm#aa1e9255a8fcb4a351848b0ca9065c524">   63</a></span>&#160;  <a class="code" href="../../d9/dfe/classez_deque.htm">ezWorldGeoExtractionUtil::MeshObjectList</a>* <a class="code" href="../../dc/d6b/structez_msg_extract_geometry.htm#aa1e9255a8fcb4a351848b0ca9065c524">m_pMeshObjects</a>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordtype">void</span> AddMeshObject(<span class="keyword">const</span> <a class="code" href="../../d3/db1/classez_transform_template.htm">ezTransform</a>&amp; transform, <a class="code" href="../../d3/dd7/classez_typed_resource_handle.htm">ezCpuMeshResourceHandle</a> hMeshResource);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordtype">void</span> AddBox(<span class="keyword">const</span> <a class="code" href="../../d3/db1/classez_transform_template.htm">ezTransform</a>&amp; transform, <a class="code" href="../../d6/dbd/structez_vec3_template.htm">ezVec3</a> vExtents);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_message_htm"><div class="ttname"><a href="../../dd/d22/classez_message.htm">ezMessage</a></div><div class="ttdoc">Base class for all message types. Each message type has it's own id which is used to dispatch message...</div><div class="ttdef"><b>Definition:</b> Message.h:21</div></div>
-<div class="ttc" id="aclassez_deque_htm"><div class="ttname"><a href="../../d9/dfe/classez_deque.htm">ezDeque</a></div><div class="ttdef"><b>Definition:</b> Deque.h:269</div></div>
+<div class="ttc" id="aclassez_deque_htm"><div class="ttname"><a href="../../d9/dfe/classez_deque.htm">ezDeque&lt; MeshObject &gt;</a></div></div>
 <div class="ttc" id="aclassez_world_geo_extraction_util_htm_ac8114a1c666450c100cfe303252d6152a84b856a787790eb2399b192f4d37da2b"><div class="ttname"><a href="../../da/d0d/classez_world_geo_extraction_util.htm#ac8114a1c666450c100cfe303252d6152a84b856a787790eb2399b192f4d37da2b">ezWorldGeoExtractionUtil::ExtractionMode::RenderMesh</a></div><div class="ttdeci">@ RenderMesh</div><div class="ttdoc">The render geometry is desired. Typically for exporting it to file.</div></div>
 <div class="ttc" id="aclassez_tag_set_template_htm"><div class="ttname"><a href="../../df/d2d/classez_tag_set_template.htm">ezTagSetTemplate</a></div><div class="ttdoc">A dynamic collection of tags featuring fast lookups.</div><div class="ttdef"><b>Definition:</b> TagSet.h:22</div></div>
-<div class="ttc" id="astructez_world_geo_extraction_util_1_1_triangle_htm"><div class="ttname"><a href="../../db/d2e/structez_world_geo_extraction_util_1_1_triangle.htm">ezWorldGeoExtractionUtil::Triangle</a></div><div class="ttdef"><b>Definition:</b> WorldGeoExtractionUtil.h:27</div></div>
-<div class="ttc" id="astructez_world_geo_extraction_util_1_1_geometry_htm"><div class="ttname"><a href="../../dc/d80/structez_world_geo_extraction_util_1_1_geometry.htm">ezWorldGeoExtractionUtil::Geometry</a></div><div class="ttdef"><b>Definition:</b> WorldGeoExtractionUtil.h:48</div></div>
-<div class="ttc" id="aclassez_world_geo_extraction_util_htm"><div class="ttname"><a href="../../da/d0d/classez_world_geo_extraction_util.htm">ezWorldGeoExtractionUtil</a></div><div class="ttdoc">A utility to gather raw geometry from a world.</div><div class="ttdef"><b>Definition:</b> WorldGeoExtractionUtil.h:16</div></div>
-<div class="ttc" id="aclassez_mat3_template_htm"><div class="ttname"><a href="../../db/daf/classez_mat3_template.htm">ezMat3Template</a></div><div class="ttdoc">A 3x3 component matrix class.</div><div class="ttdef"><b>Definition:</b> Declarations.h:150</div></div>
-<div class="ttc" id="astructez_world_geo_extraction_util_1_1_shape_htm"><div class="ttname"><a href="../../df/d60/structez_world_geo_extraction_util_1_1_shape.htm">ezWorldGeoExtractionUtil::Shape</a></div><div class="ttdoc">Geometry can also be described as a number of shapes, which can be more efficient in some cases.</div><div class="ttdef"><b>Definition:</b> WorldGeoExtractionUtil.h:35</div></div>
-<div class="ttc" id="astructez_msg_extract_geometry_htm"><div class="ttname"><a href="../../dc/d6b/structez_msg_extract_geometry.htm">ezMsgExtractGeometry</a></div><div class="ttdoc">Sent by ezWorldGeoExtractionUtil to gather geometry information about objects in a world.</div><div class="ttdef"><b>Definition:</b> WorldGeoExtractionUtil.h:81</div></div>
-<div class="ttc" id="aclassez_quat_template_htm"><div class="ttname"><a href="../../de/d15/classez_quat_template.htm">ezQuatTemplate&lt; float &gt;</a></div></div>
-<div class="ttc" id="astructez_world_geo_extraction_util_1_1_vertex_htm"><div class="ttname"><a href="../../d1/dc6/structez_world_geo_extraction_util_1_1_vertex.htm">ezWorldGeoExtractionUtil::Vertex</a></div><div class="ttdef"><b>Definition:</b> WorldGeoExtractionUtil.h:19</div></div>
-<div class="ttc" id="aclassez_world_geo_extraction_util_htm_ac8114a1c666450c100cfe303252d6152"><div class="ttname"><a href="../../da/d0d/classez_world_geo_extraction_util.htm#ac8114a1c666450c100cfe303252d6152">ezWorldGeoExtractionUtil::ExtractionMode</a></div><div class="ttdeci">ExtractionMode</div><div class="ttdoc">Describes what the geometry is needed for.</div><div class="ttdef"><b>Definition:</b> WorldGeoExtractionUtil.h:56</div></div>
-<div class="ttc" id="astructez_world_geo_extraction_util_1_1_box_shape_htm"><div class="ttname"><a href="../../d5/d9a/structez_world_geo_extraction_util_1_1_box_shape.htm">ezWorldGeoExtractionUtil::BoxShape</a></div><div class="ttdef"><b>Definition:</b> WorldGeoExtractionUtil.h:43</div></div>
+<div class="ttc" id="aclassez_world_geo_extraction_util_htm"><div class="ttname"><a href="../../da/d0d/classez_world_geo_extraction_util.htm">ezWorldGeoExtractionUtil</a></div><div class="ttdoc">A utility to gather raw geometry from a world.</div><div class="ttdef"><b>Definition:</b> WorldGeoExtractionUtil.h:18</div></div>
+<div class="ttc" id="aclassez_mat3_template_htm"><div class="ttname"><a href="../../db/daf/classez_mat3_template.htm">ezMat3Template</a></div><div class="ttdoc">A 3x3 component matrix class.</div><div class="ttdef"><b>Definition:</b> Declarations.h:154</div></div>
+<div class="ttc" id="astructez_world_geo_extraction_util_1_1_mesh_object_htm"><div class="ttname"><a href="../../d7/d05/structez_world_geo_extraction_util_1_1_mesh_object.htm">ezWorldGeoExtractionUtil::MeshObject</a></div><div class="ttdef"><b>Definition:</b> WorldGeoExtractionUtil.h:21</div></div>
+<div class="ttc" id="astructez_msg_extract_geometry_htm"><div class="ttname"><a href="../../dc/d6b/structez_msg_extract_geometry.htm">ezMsgExtractGeometry</a></div><div class="ttdoc">Sent by ezWorldGeoExtractionUtil to gather geometry information about objects in a world.</div><div class="ttdef"><b>Definition:</b> WorldGeoExtractionUtil.h:55</div></div>
+<div class="ttc" id="aclassez_world_geo_extraction_util_htm_ac8114a1c666450c100cfe303252d6152"><div class="ttname"><a href="../../da/d0d/classez_world_geo_extraction_util.htm#ac8114a1c666450c100cfe303252d6152">ezWorldGeoExtractionUtil::ExtractionMode</a></div><div class="ttdeci">ExtractionMode</div><div class="ttdoc">Describes what the geometry is needed for.</div><div class="ttdef"><b>Definition:</b> WorldGeoExtractionUtil.h:30</div></div>
+<div class="ttc" id="astructez_msg_extract_geometry_htm_aa1e9255a8fcb4a351848b0ca9065c524"><div class="ttname"><a href="../../dc/d6b/structez_msg_extract_geometry.htm#aa1e9255a8fcb4a351848b0ca9065c524">ezMsgExtractGeometry::m_pMeshObjects</a></div><div class="ttdeci">ezWorldGeoExtractionUtil::MeshObjectList * m_pMeshObjects</div><div class="ttdoc">Append mesh objects to this to describe the requested world geometry.</div><div class="ttdef"><b>Definition:</b> WorldGeoExtractionUtil.h:63</div></div>
 <div class="ttc" id="aclassez_world_htm"><div class="ttname"><a href="../../da/d3c/classez_world.htm">ezWorld</a></div><div class="ttdoc">A world encapsulates a scene graph of game objects and various component managers and their component...</div><div class="ttdef"><b>Definition:</b> World.h:21</div></div>
+<div class="ttc" id="aclassez_transform_template_htm"><div class="ttname"><a href="../../d3/db1/classez_transform_template.htm">ezTransformTemplate&lt; float &gt;</a></div></div>
 <div class="ttc" id="astructez_vec3_template_htm"><div class="ttname"><a href="../../d6/dbd/structez_vec3_template.htm">ezVec3Template&lt; float &gt;</a></div></div>
+<div class="ttc" id="aclassez_typed_resource_handle_htm"><div class="ttname"><a href="../../d3/dd7/classez_typed_resource_handle.htm">ezTypedResourceHandle&lt; class ezCpuMeshResource &gt;</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_ac029bbb8a17b4d550e2f9d55d89a029.htm">Core</a></li><li class="navelem"><a class="el" href="../../dir_86f32016d07da093e911d6ad825bb1b6.htm">Utils</a></li><li class="navelem"><b>WorldGeoExtractionUtil.h</b></li>
-    <li class="footer">Generated on Tue Jun 8 2021 21:43:06 for ezEngine by
+    <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_9b39d7517b28e8ee3dee1b9d862ddabb.htm">RendererCore</a></li><li class="navelem"><a class="el" href="../../dir_2b4be6df296a197c26b54ee938b97dc0.htm">Utils</a></li><li class="navelem"><b>WorldGeoExtractionUtil.h</b></li>
+    <li class="footer">Generated on Mon Oct 18 2021 15:24:13 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

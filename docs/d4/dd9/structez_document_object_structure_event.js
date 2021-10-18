@@ -1,6 +1,8 @@
 var structez_document_object_structure_event =
 [
     [ "Type", "d4/dd9/structez_document_object_structure_event.htm#a68355c61d035b04e76b553e7d7c5b1f8", [
+      [ "BeforeReset", "d4/dd9/structez_document_object_structure_event.htm#a68355c61d035b04e76b553e7d7c5b1f8adf2c121efedffb3b6073620bc96b243c", null ],
+      [ "AfterReset", "d4/dd9/structez_document_object_structure_event.htm#a68355c61d035b04e76b553e7d7c5b1f8ab5629d41a1956e93e3862e5b29bd1466", null ],
       [ "BeforeObjectAdded", "d4/dd9/structez_document_object_structure_event.htm#a68355c61d035b04e76b553e7d7c5b1f8a2a748e1f8b0715665615d1c0fdb4ef67", null ],
       [ "AfterObjectAdded", "d4/dd9/structez_document_object_structure_event.htm#a68355c61d035b04e76b553e7d7c5b1f8a263b47579a8f3fdc60fe3bb0bd48c152", null ],
       [ "BeforeObjectRemoved", "d4/dd9/structez_document_object_structure_event.htm#a68355c61d035b04e76b553e7d7c5b1f8a06be0bb4ebac56723d39b3eecb478641", null ],

@@ -5,6 +5,7 @@ var classez_drag_drop_info =
     [ "m_bShiftKeyDown", "d2/d56/classez_drag_drop_info.htm#ab7093d58b0f07d54cdd17313b2243a01", null ],
     [ "m_iTargetObjectInsertChildIndex", "d2/d56/classez_drag_drop_info.htm#ae8e09838699307acf318690b69faac71", null ],
     [ "m_iTargetObjectSubID", "d2/d56/classez_drag_drop_info.htm#a70814b740cc500373ce8393889936e98", null ],
+    [ "m_pAdapter", "d2/d56/classez_drag_drop_info.htm#aa1048ef6f50dde0e2ae3f8c0d8e07040", null ],
     [ "m_pMimeData", "d2/d56/classez_drag_drop_info.htm#a762bc234ad1bbfcc6c693aaf21472abc", null ],
     [ "m_sTargetContext", "d2/d56/classez_drag_drop_info.htm#aee37e7adeda9b0ece2adc911d81486f8", null ],
     [ "m_TargetComponent", "d2/d56/classez_drag_drop_info.htm#acf9fe26fdacb19a96ff441b7b30b7f8d", null ],

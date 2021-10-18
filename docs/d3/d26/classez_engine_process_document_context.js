@@ -1,6 +1,6 @@
 var classez_engine_process_document_context =
 [
-    [ "ezEngineProcessDocumentContext", "d3/d26/classez_engine_process_document_context.htm#a831aa94d95f193a46efe3222a2529b84", null ],
+    [ "ezEngineProcessDocumentContext", "d3/d26/classez_engine_process_document_context.htm#a35308636d9151120edd6a569b42b56d9", null ],
     [ "~ezEngineProcessDocumentContext", "d3/d26/classez_engine_process_document_context.htm#a11a36d6ba41c18031966592a7026056f", null ],
     [ "ClearExistingObjects", "d3/d26/classez_engine_process_document_context.htm#a7db7c06b80a0e490f0551f6ce51a4378", null ],
     [ "ClearTagRecursive", "d3/d26/classez_engine_process_document_context.htm#a84b5d5b07f5875fe010f8dfa54e05734", null ],
@@ -15,7 +15,7 @@ var classez_engine_process_document_context =
     [ "GetWorld", "d3/d26/classez_engine_process_document_context.htm#aa5eaa268568e42919bc87c52dabe51a8", null ],
     [ "GetWorldBounds", "d3/d26/classez_engine_process_document_context.htm#ad48841a2617290b060421500d6b548d7", null ],
     [ "HandleMessage", "d3/d26/classez_engine_process_document_context.htm#af192a2c204856e79752d1b0629e61ec6", null ],
-    [ "Initialize", "d3/d26/classez_engine_process_document_context.htm#aed142f6c5daa6f8de9962870b09cdced", null ],
+    [ "Initialize", "d3/d26/classez_engine_process_document_context.htm#a2e4197c9e60ea7d5d7fd47b0383e57c6", null ],
     [ "OnDeinitialize", "d3/d26/classez_engine_process_document_context.htm#a40a62e00659df7bb8922150c171d6337", null ],
     [ "OnDestroyThumbnailViewContext", "d3/d26/classez_engine_process_document_context.htm#aba81f5562b49239cf77558100fc44ea6", null ],
     [ "OnInitialize", "d3/d26/classez_engine_process_document_context.htm#a0060e314769c42fc3cb09a3c340c11a1", null ],
@@ -33,6 +33,12 @@ var classez_engine_process_document_context =
     [ "UpdateThumbnailViewContext", "d3/d26/classez_engine_process_document_context.htm#a22873acc67ea30439cd9a49ac92e6ff0", null ],
     [ "ezEditorEngineSyncObject", "d3/d26/classez_engine_process_document_context.htm#a755372b6c5112c42118fa1f038854247", null ],
     [ "m_Context", "d3/d26/classez_engine_process_document_context.htm#a90a40051f4818e75a11cd245aa1d869b", null ],
+    [ "m_DocumentGuid", "d3/d26/classez_engine_process_document_context.htm#a068d4404312ee92d5041f83564bdcfbe", null ],
+    [ "m_flags", "d3/d26/classez_engine_process_document_context.htm#ac0ba3f027feb057d42dd1231745102d7", null ],
+    [ "m_MetaData", "d3/d26/classez_engine_process_document_context.htm#ad405b72671ab949585d4cf483d68c594", null ],
     [ "m_Mirror", "d3/d26/classez_engine_process_document_context.htm#a5bf1e07db42b0526dc97ac857db1ecd1", null ],
-    [ "m_pWorld", "d3/d26/classez_engine_process_document_context.htm#a14a05a4570ca79993ebc1b40f6d99d95", null ]
+    [ "m_pIPC", "d3/d26/classez_engine_process_document_context.htm#a4979d04d08a6d56c9b675758401ef220", null ],
+    [ "m_pWorld", "d3/d26/classez_engine_process_document_context.htm#a429f8bde780971f50f729c6b86666d74", null ],
+    [ "m_SyncObjects", "d3/d26/classez_engine_process_document_context.htm#af0aff43257e30b73bcf404545091f0a1", null ],
+    [ "m_ViewContexts", "d3/d26/classez_engine_process_document_context.htm#a0891e8a780ec803e5816c89dfc07604a", null ]
 ];

@@ -63,6 +63,5 @@ var classez_qt_editor_app =
     [ "StartupEditor", "d1/d59/classez_qt_editor_app.htm#a1edc71b308bba6e0b944e51c40bf0935", null ],
     [ "StoreEditorPluginsToBeLoaded", "d1/d59/classez_qt_editor_app.htm#a7b1af01fa1bd70808eac1952658d7bf4", null ],
     [ "StoreEnginePluginsToBeLoaded", "d1/d59/classez_qt_editor_app.htm#a5b4b5ffd36576c067470d26f3295d66b", null ],
-    [ "UnloadEditorPlugins", "d1/d59/classez_qt_editor_app.htm#a83f1c9e0adedce45cc85d10c5252cbc2", null ],
     [ "m_Events", "d1/d59/classez_qt_editor_app.htm#a11045427d62b1c6615d13074d753a5c0", null ]
 ];

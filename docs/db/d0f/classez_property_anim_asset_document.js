@@ -13,6 +13,7 @@ var classez_property_anim_asset_document =
     [ "FindTrack", "db/d0f/classez_property_anim_asset_document.htm#a5c29393e10b2a9e76ecf264c4409a1d2", null ],
     [ "GetAnimationDurationTicks", "db/d0f/classez_property_anim_asset_document.htm#ae0373920d1a8b33582d3178dad3403ed", null ],
     [ "GetAnimationDurationTime", "db/d0f/classez_property_anim_asset_document.htm#a1b8ae630eb7a1f197d45ea88f4026af1", null ],
+    [ "GetManipulatorSearchStrategy", "db/d0f/classez_property_anim_asset_document.htm#a3d6877ce491d15b519c5d9e4142bb35b", null ],
     [ "GetObjectAccessor", "db/d0f/classez_property_anim_asset_document.htm#adc7b6c6fc397e8bcbd0e5dd4816fc842", null ],
     [ "GetPlayAnimation", "db/d0f/classez_property_anim_asset_document.htm#aa589cc929b6b9be4e5431770120e5dc8", null ],
     [ "GetRepeatAnimation", "db/d0f/classez_property_anim_asset_document.htm#ab73b76fdfcdaa9c25ceb43a9457c7b7d", null ],

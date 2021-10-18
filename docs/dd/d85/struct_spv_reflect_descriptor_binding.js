@@ -15,5 +15,5 @@ var struct_spv_reflect_descriptor_binding =
     [ "type_description", "dd/d85/struct_spv_reflect_descriptor_binding.htm#a31bc3d34852b65f72c789fe0afd9e6ee", null ],
     [ "uav_counter_binding", "dd/d85/struct_spv_reflect_descriptor_binding.htm#acae4325a0ad44e6827694d8d7fc53b4d", null ],
     [ "uav_counter_id", "dd/d85/struct_spv_reflect_descriptor_binding.htm#a424b99c33348b8267e882ea888050b79", null ],
-    [ "word_offset", "dd/d85/struct_spv_reflect_descriptor_binding.htm#a606f83a3141df3db1e4bf25c774023cc", null ]
+    [ "word_offset", "dd/d85/struct_spv_reflect_descriptor_binding.htm#a120eead12f66c21dbb220c1c8e9a173b", null ]
 ];

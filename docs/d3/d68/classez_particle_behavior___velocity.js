@@ -10,5 +10,6 @@ var classez_particle_behavior___velocity =
     [ "m_pPhysicsModule", "d3/d68/classez_particle_behavior___velocity.htm#a09d69cde1e2d9e51bf7070be4b063dda", null ],
     [ "m_pStreamPosition", "d3/d68/classez_particle_behavior___velocity.htm#ab33138de4f301dc62b381a752a972c13", null ],
     [ "m_pStreamVelocity", "d3/d68/classez_particle_behavior___velocity.htm#a0c55b8388a11c1ba2f8080c061cc0d54", null ],
-    [ "m_pWindModule", "d3/d68/classez_particle_behavior___velocity.htm#afb07ec4557a72410eb41db25d78cb24d", null ]
+    [ "m_pWindModule", "d3/d68/classez_particle_behavior___velocity.htm#afb07ec4557a72410eb41db25d78cb24d", null ],
+    [ "m_vLastWind", "d3/d68/classez_particle_behavior___velocity.htm#a4910e4df01e2c9334f07cd33dba8c1da", null ]
 ];

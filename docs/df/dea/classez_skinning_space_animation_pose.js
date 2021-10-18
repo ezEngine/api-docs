@@ -7,5 +7,5 @@ var classez_skinning_space_animation_pose =
     [ "GetTransformCount", "df/dea/classez_skinning_space_animation_pose.htm#a6a3b3450291eb242f8dc04eb63ff6580", null ],
     [ "IsEmpty", "df/dea/classez_skinning_space_animation_pose.htm#a2c76e7f2f74e25482d39ef9dd31b9473", null ],
     [ "MapModelSpacePoseToSkinningSpace", "df/dea/classez_skinning_space_animation_pose.htm#ac080ae8213881cfd6efd2402d787910f", null ],
-    [ "m_Transforms", "df/dea/classez_skinning_space_animation_pose.htm#a1b8a1ea273fbcb329781a1682038015b", null ]
+    [ "m_Transforms", "df/dea/classez_skinning_space_animation_pose.htm#a924a9332229a8204184af0b8ba2d9918", null ]
 ];

@@ -13,6 +13,8 @@ var structez_plane_template =
     [ "GetCoplanarDirection", "d5/d8d/structez_plane_template.htm#a3ed189801d0cbdc6563cb6b3efd80169", null ],
     [ "GetDistanceTo", "d5/d8d/structez_plane_template.htm#a9e8f1c0e5f0ec6d086026ac817d3a72e", null ],
     [ "GetLineSegmentIntersection", "d5/d8d/structez_plane_template.htm#ac9475e8c27e7029cf1623d1628891274", null ],
+    [ "GetMaximumDistanceTo", "d5/d8d/structez_plane_template.htm#adb4e4f08d8024aac7fb06fbfad16cbef", null ],
+    [ "GetMinimumDistanceTo", "d5/d8d/structez_plane_template.htm#a777026308acdbf36bc9d15c920526613", null ],
     [ "GetMinimumDistanceTo", "d5/d8d/structez_plane_template.htm#a4f31e60fb1708add1aebcbbabfcdaa69", null ],
     [ "GetMinMaxDistanceTo", "d5/d8d/structez_plane_template.htm#adcf9fc9a41b04ab68a2f0dbe97096887", null ],
     [ "GetObjectPosition", "d5/d8d/structez_plane_template.htm#a6eed29e1468aefd5821cd6592555a6eb", null ],

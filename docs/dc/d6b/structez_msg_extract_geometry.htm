@@ -113,6 +113,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a26c95d50487f1479b00c27ee50e169fa"><td class="memItemLeft" align="right" valign="top"><a id="a26c95d50487f1479b00c27ee50e169fa"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>EZ_DECLARE_MESSAGE_TYPE</b> (<a class="el" href="../../dc/d6b/structez_msg_extract_geometry.htm">ezMsgExtractGeometry</a>, <a class="el" href="../../dd/d22/classez_message.htm">ezMessage</a>)</td></tr>
 <tr class="separator:a26c95d50487f1479b00c27ee50e169fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2706344217ba1c32c38471edf3db315d"><td class="memItemLeft" align="right" valign="top"><a id="a2706344217ba1c32c38471edf3db315d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>AddMeshObject</b> (const <a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransform</a> &amp;transform, <a class="el" href="../../d3/dd7/classez_typed_resource_handle.htm">ezCpuMeshResourceHandle</a> hMeshResource)</td></tr>
+<tr class="separator:a2706344217ba1c32c38471edf3db315d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3e4e58261b0c5526ac08c92ad59fc17"><td class="memItemLeft" align="right" valign="top"><a id="ac3e4e58261b0c5526ac08c92ad59fc17"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>AddBox</b> (const <a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransform</a> &amp;transform, <a class="el" href="../../d6/dbd/structez_vec3_template.htm">ezVec3</a> vExtents)</td></tr>
+<tr class="separator:ac3e4e58261b0c5526ac08c92ad59fc17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classez_message"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classez_message')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../dd/d22/classez_message.htm">ezMessage</a></td></tr>
 <tr class="memitem:a17e52e5ae650d021c714869d518ea235 inherit pub_methods_classez_message"><td class="memItemLeft" align="right" valign="top"><a id="a17e52e5ae650d021c714869d518ea235"></a>
 virtual ezInt32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d22/classez_message.htm#a17e52e5ae650d021c714869d518ea235">GetSortingKey</a> () const</td></tr>
@@ -155,10 +161,10 @@ Public Attributes</h2></td></tr>
 <a class="el" href="../../da/d0d/classez_world_geo_extraction_util.htm#ac8114a1c666450c100cfe303252d6152">ezWorldGeoExtractionUtil::ExtractionMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d6b/structez_msg_extract_geometry.htm#a74118ff7fa3efc046911b6b41b71cec4">m_Mode</a> = <a class="el" href="../../da/d0d/classez_world_geo_extraction_util.htm#ac8114a1c666450c100cfe303252d6152a84b856a787790eb2399b192f4d37da2b">ezWorldGeoExtractionUtil::ExtractionMode::RenderMesh</a></td></tr>
 <tr class="memdesc:a74118ff7fa3efc046911b6b41b71cec4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies what the geometry is extracted for, and thus what the message handler should write back. <br /></td></tr>
 <tr class="separator:a74118ff7fa3efc046911b6b41b71cec4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5399fb10e021d99bd63075cc9309827a"><td class="memItemLeft" align="right" valign="top"><a id="a5399fb10e021d99bd63075cc9309827a"></a>
-<a class="el" href="../../dc/d80/structez_world_geo_extraction_util_1_1_geometry.htm">ezWorldGeoExtractionUtil::Geometry</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d6b/structez_msg_extract_geometry.htm#a5399fb10e021d99bd63075cc9309827a">m_pWorldGeometry</a> = nullptr</td></tr>
-<tr class="memdesc:a5399fb10e021d99bd63075cc9309827a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append data to this to describe the requested world geometry. <br /></td></tr>
-<tr class="separator:a5399fb10e021d99bd63075cc9309827a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1e9255a8fcb4a351848b0ca9065c524"><td class="memItemLeft" align="right" valign="top"><a id="aa1e9255a8fcb4a351848b0ca9065c524"></a>
+<a class="el" href="../../d9/dfe/classez_deque.htm">ezWorldGeoExtractionUtil::MeshObjectList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d6b/structez_msg_extract_geometry.htm#aa1e9255a8fcb4a351848b0ca9065c524">m_pMeshObjects</a></td></tr>
+<tr class="memdesc:aa1e9255a8fcb4a351848b0ca9065c524"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append mesh objects to this to describe the requested world geometry. <br /></td></tr>
+<tr class="separator:aa1e9255a8fcb4a351848b0ca9065c524"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -196,8 +202,9 @@ static ezMessageId&#160;</td><td class="memItemRight" valign="bottom"><b>s_uiNex
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Sent by <a class="el" href="../../da/d0d/classez_world_geo_extraction_util.htm" title="A utility to gather raw geometry from a world.">ezWorldGeoExtractionUtil</a> to gather geometry information about objects in a world. </p>
 <p>The mode defines what the geometry is needed for, thus components should decide to participate or not and how detailed the geometry is they return. </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Core/Utils/<a class="el" href="../../d3/d5c/_world_geo_extraction_util_8h_source.htm">WorldGeoExtractionUtil.h</a></li>
+</div><hr/>The documentation for this struct was generated from the following files:<ul>
+<li>/home/runner/work/ezEngine/ezEngine/Code/Engine/RendererCore/Utils/<a class="el" href="../../d3/d5c/_world_geo_extraction_util_8h_source.htm">WorldGeoExtractionUtil.h</a></li>
+<li>/home/runner/work/ezEngine/ezEngine/Code/Engine/RendererCore/Utils/Implementation/WorldGeoExtractionUtil.cpp</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -205,7 +212,7 @@ static ezMessageId&#160;</td><td class="memItemRight" valign="bottom"><b>s_uiNex
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dc/d6b/structez_msg_extract_geometry.htm">ezMsgExtractGeometry</a></li>
-    <li class="footer">Generated on Tue Jun 8 2021 21:43:19 for ezEngine by
+    <li class="footer">Generated on Mon Oct 18 2021 15:24:19 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

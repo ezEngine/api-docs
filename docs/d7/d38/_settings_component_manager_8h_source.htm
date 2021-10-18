@@ -95,29 +95,31 @@ $(document).ready(function(){initNavTree('d7/d38/_settings_component_manager_8h_
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ComponentType&gt;</div>
 <div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="../../df/d58/classez_settings_component_manager.htm">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../df/d58/classez_settings_component_manager.htm">ezSettingsComponentManager</a> : <span class="keyword">public</span> <a class="code" href="../../d8/d7d/classez_component_manager_base.htm">ezComponentManagerBase</a></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <a class="code" href="../../df/d58/classez_settings_component_manager.htm">ezSettingsComponentManager</a>(<a class="code" href="../../da/d3c/classez_world.htm">ezWorld</a>* pWorld);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  ~<a class="code" href="../../df/d58/classez_settings_component_manager.htm">ezSettingsComponentManager</a>();</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  ComponentType* <a class="code" href="../../df/d58/classez_settings_component_manager.htm#a66870afaa094f33f0993020241883da2">GetSingletonComponent</a>();</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keyword">const</span> ComponentType* <a class="code" href="../../df/d58/classez_settings_component_manager.htm#a66870afaa094f33f0993020241883da2">GetSingletonComponent</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keyword">static</span> ezWorldModuleTypeId TypeId();</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  EZ_DISALLOW_COPY_AND_ASSIGN(<a class="code" href="../../df/d58/classez_settings_component_manager.htm">ezSettingsComponentManager</a>);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <a class="code" href="../../df/d58/classez_settings_component_manager.htm">ezSettingsComponentManager</a>(<a class="code" href="../../da/d3c/classez_world.htm">ezWorld</a>* pWorld);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  ~<a class="code" href="../../df/d58/classez_settings_component_manager.htm">ezSettingsComponentManager</a>();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  ComponentType* <a class="code" href="../../df/d58/classez_settings_component_manager.htm#a66870afaa094f33f0993020241883da2">GetSingletonComponent</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keyword">const</span> ComponentType* <a class="code" href="../../df/d58/classez_settings_component_manager.htm#a66870afaa094f33f0993020241883da2">GetSingletonComponent</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="comment">// ezComponentManagerBase implementation</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../df/d58/classez_settings_component_manager.htm#a7228a2854758e1fb6e33ed192943ccf9">CollectAllComponents</a>(<a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezComponentHandle&gt;</a>&amp; out_AllComponents, <span class="keywordtype">bool</span> bOnlyActive) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../df/d58/classez_settings_component_manager.htm#a7228a2854758e1fb6e33ed192943ccf9">CollectAllComponents</a>(<a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezComponent*&gt;</a>&amp; out_AllComponents, <span class="keywordtype">bool</span> bOnlyActive) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span>ezComponentManagerFactory;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d6/d30/classez_component.htm">ezComponent</a>* CreateComponentStorage() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> DeleteComponentStorage(<a class="code" href="../../d6/d30/classez_component.htm">ezComponent</a>* pComponent, <a class="code" href="../../d6/d30/classez_component.htm">ezComponent</a>*&amp; out_pMovedComponent) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezUniquePtr&lt;ComponentType&gt;</a>, 2&gt; m_Components;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;Core/World/Implementation/SettingsComponentManager_inl.h&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keyword">static</span> ezWorldModuleTypeId TypeId();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="comment">// ezComponentManagerBase implementation</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../df/d58/classez_settings_component_manager.htm#a7228a2854758e1fb6e33ed192943ccf9">CollectAllComponents</a>(<a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezComponentHandle&gt;</a>&amp; out_AllComponents, <span class="keywordtype">bool</span> bOnlyActive) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../df/d58/classez_settings_component_manager.htm#a7228a2854758e1fb6e33ed192943ccf9">CollectAllComponents</a>(<a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezComponent*&gt;</a>&amp; out_AllComponents, <span class="keywordtype">bool</span> bOnlyActive) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span>ezComponentManagerFactory;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d6/d30/classez_component.htm">ezComponent</a>* CreateComponentStorage() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> DeleteComponentStorage(<a class="code" href="../../d6/d30/classez_component.htm">ezComponent</a>* pComponent, <a class="code" href="../../d6/d30/classez_component.htm">ezComponent</a>*&amp; out_pMovedComponent) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezUniquePtr&lt;ComponentType&gt;</a>, 2&gt; m_Components;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;};</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &lt;Core/World/Implementation/SettingsComponentManager_inl.h&gt;</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_component_manager_base_htm"><div class="ttname"><a href="../../d8/d7d/classez_component_manager_base.htm">ezComponentManagerBase</a></div><div class="ttdoc">Base class for all component managers. Do not derive directly from this class, but derive from ezComp...</div><div class="ttdef"><b>Definition:</b> ComponentManager.h:20</div></div>
@@ -132,7 +134,7 @@ $(document).ready(function(){initNavTree('d7/d38/_settings_component_manager_8h_
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_ac029bbb8a17b4d550e2f9d55d89a029.htm">Core</a></li><li class="navelem"><a class="el" href="../../dir_89e289b549b3db86cc2bc4f6ebaf52c6.htm">World</a></li><li class="navelem"><b>SettingsComponentManager.h</b></li>
-    <li class="footer">Generated on Tue Jun 8 2021 21:43:07 for ezEngine by
+    <li class="footer">Generated on Mon Oct 18 2021 15:24:05 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

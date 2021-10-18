@@ -5,7 +5,7 @@ var classez_type_script_asset_document_manager =
     [ "GenerateScriptCompendium", "d1/df5/classez_type_script_asset_document_manager.htm#a38c1d852ef4929f2ec7e149021e5cb1f", null ],
     [ "GeneratesProfileSpecificAssets", "d1/df5/classez_type_script_asset_document_manager.htm#a96643da33b0eae272b5ca853d2bd271e", null ],
     [ "GetTranspiler", "d1/df5/classez_type_script_asset_document_manager.htm#a003518385ab4eecffa6fcdefeca33c5a", null ],
-    [ "InternalCreateDocument", "d1/df5/classez_type_script_asset_document_manager.htm#a775fa2ecb7dcade478e6a7968d14e435", null ],
+    [ "InternalCreateDocument", "d1/df5/classez_type_script_asset_document_manager.htm#a3d9ef4acfd6ebbb202e08307e60e2679", null ],
     [ "InternalGetSupportedDocumentTypes", "d1/df5/classez_type_script_asset_document_manager.htm#ab6b438bcb09fffbe9c3b9c4532dbb665", null ],
     [ "SetupProjectForTypeScript", "d1/df5/classez_type_script_asset_document_manager.htm#ad5158a2c09e85c3dd59c16659a5becba", null ]
 ];

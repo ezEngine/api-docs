@@ -8,5 +8,7 @@ var classez_action_map =
     [ "GetRootObject", "d2/dd6/classez_action_map.htm#aec5b8f9ad59819b609e21aa31dc5b3a9", null ],
     [ "MapAction", "d2/dd6/classez_action_map.htm#a7151f1710646c805f0704bfb374b9bef", null ],
     [ "MapAction", "d2/dd6/classez_action_map.htm#a033b049a78106afa5564302d71f4efec", null ],
-    [ "UnmapAction", "d2/dd6/classez_action_map.htm#a6ef6273104514324df0620098bb8c6dc", null ]
+    [ "UnmapAction", "d2/dd6/classez_action_map.htm#aab78d2bfffa8198296a0583da2cdf638", null ],
+    [ "UnmapAction", "d2/dd6/classez_action_map.htm#a6ef6273104514324df0620098bb8c6dc", null ],
+    [ "UnmapAction", "d2/dd6/classez_action_map.htm#a9c3ec2998462e46864dbfae84b934572", null ]
 ];

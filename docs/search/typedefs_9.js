@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['updatefunction_18685',['UpdateFunction',['../d1/df7/classez_world_module.htm#ac1d8ecf65d6913430682096879958455',1,'ezWorldModule']]]
+  ['visitorfunc_19285',['VisitorFunc',['../da/d3c/classez_world.htm#a3741bedbea111dc6178cbb37d225ad45',1,'ezWorld']]]
 ];

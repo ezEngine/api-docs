@@ -295,405 +295,411 @@ $(document).ready(function(){initNavTree('d3/de9/_memory_utils__inl_8h_source.ht
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;}</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;EZ_ALWAYS_INLINE T* <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a5181525aa2159916c8dc2713d9a6e8cb">ezMemoryUtils::Align</a>(T* ptr, <span class="keywordtype">size_t</span> uiAlignment)</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;EZ_ALWAYS_INLINE T* <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a7f5327cc82286e4d378b8101478c0eab">ezMemoryUtils::AlignBackwards</a>(T* ptr, <span class="keywordtype">size_t</span> uiAlignment)</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;{</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">reinterpret_cast&lt;</span>T*<span class="keyword">&gt;</span>(<span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(ptr) &amp; ~(uiAlignment - 1));</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;}</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;EZ_ALWAYS_INLINE T <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a2583fd48644a0a7b3eb72797c7c65a34">ezMemoryUtils::AlignSize</a>(T uiSize, T uiAlignment)</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;EZ_ALWAYS_INLINE T* <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a5a6c549d62f7a9de30863c9ef22ed0f6">ezMemoryUtils::AlignForwards</a>(T* ptr, <span class="keywordtype">size_t</span> uiAlignment)</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;{</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;  <span class="keywordflow">return</span> ((uiSize + (uiAlignment - 1)) &amp; ~(uiAlignment - 1));</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">reinterpret_cast&lt;</span>T*<span class="keyword">&gt;</span>((<span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(ptr) + uiAlignment - 1) &amp; ~(uiAlignment - 1));</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;}</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#aa7c2521406e21cf4c64519a4a460dffe">ezMemoryUtils::IsAligned</a>(<span class="keyword">const</span> T* ptr, <span class="keywordtype">size_t</span> uiAlignment)</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;EZ_ALWAYS_INLINE T <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a2583fd48644a0a7b3eb72797c7c65a34">ezMemoryUtils::AlignSize</a>(T uiSize, T uiAlignment)</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;{</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;  <span class="keywordflow">return</span> (<span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(ptr) &amp; (uiAlignment - 1)) == 0;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;  <span class="keywordflow">return</span> ((uiSize + (uiAlignment - 1)) &amp; ~(uiAlignment - 1));</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;}</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a9fffe2aadea9b3876e558e8cc8a6a45b">ezMemoryUtils::IsSizeAligned</a>(T uiSize, T uiAlignment)</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#aa7c2521406e21cf4c64519a4a460dffe">ezMemoryUtils::IsAligned</a>(<span class="keyword">const</span> T* ptr, <span class="keywordtype">size_t</span> uiAlignment)</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;{</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;  <span class="keywordflow">return</span> (uiSize &amp; (uiAlignment - 1)) == 0;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;  <span class="keywordflow">return</span> (<span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(ptr) &amp; (uiAlignment - 1)) == 0;</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;}</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="comment">// private methods</span></div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a2944b511c0f4181b4b6a96b472df703f">ezMemoryUtils::Construct</a>(T* pDestination, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsPod</a>)</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;{</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;  EZ_CHECK_AT_COMPILETIME_MSG(std::is_trivial&lt;T&gt;::value, <span class="stringliteral">&quot;This method should only be called for &#39;real&#39; pod aka trivial types&quot;</span>);</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;}</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a9fffe2aadea9b3876e558e8cc8a6a45b">ezMemoryUtils::IsSizeAligned</a>(T uiSize, T uiAlignment)</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;{</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;  <span class="keywordflow">return</span> (uiSize &amp; (uiAlignment - 1)) == 0;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;}</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="comment">// private methods</span></div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160; </div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a2944b511c0f4181b4b6a96b472df703f">ezMemoryUtils::Construct</a>(T* pDestination, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>)</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a2944b511c0f4181b4b6a96b472df703f">ezMemoryUtils::Construct</a>(T* pDestination, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsPod</a>)</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;{</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;  EZ_CHECK_CLASS(T);</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; uiCount; i++)</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;  {</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    ::new (pDestination + i) T();</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;  }</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;}</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;  EZ_CHECK_AT_COMPILETIME_MSG(std::is_trivial&lt;T&gt;::value, <span class="stringliteral">&quot;This method should only be called for &#39;real&#39; pod aka trivial types&quot;</span>);</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;}</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a2944b511c0f4181b4b6a96b472df703f">ezMemoryUtils::Construct</a>(T* pDestination, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>)</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;{</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;  EZ_CHECK_CLASS(T);</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;EZ_ALWAYS_INLINE ezMemoryUtils::ConstructorFunction <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a784da93eacf66f6fd369f5c93426f407">ezMemoryUtils::MakeConstructorFunction</a>(<a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsPod</a>)</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;{</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;  EZ_CHECK_AT_COMPILETIME_MSG(std::is_trivial&lt;T&gt;::value, <span class="stringliteral">&quot;This method should only be called for &#39;real&#39; pod aka trivial types&quot;</span>);</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;}</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160; </div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;EZ_ALWAYS_INLINE ezMemoryUtils::ConstructorFunction <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a784da93eacf66f6fd369f5c93426f407">ezMemoryUtils::MakeConstructorFunction</a>(<a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>)</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;{</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;  EZ_CHECK_CLASS(T);</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;  <span class="keyword">struct </span>Helper</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;  {</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a2944b511c0f4181b4b6a96b472df703f">Construct</a>(<span class="keywordtype">void</span>* pDestination) { <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a2944b511c0f4181b4b6a96b472df703f">ezMemoryUtils::Construct</a>(<span class="keyword">static_cast&lt;</span>T*<span class="keyword">&gt;</span>(pDestination), 1, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>()); }</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;  };</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;  <span class="keywordflow">return</span> &amp;Helper::Construct;</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;}</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Destination, <span class="keyword">typename</span> Source&gt;</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#ab768b24491ab1feb611b5036d37e39f2">ezMemoryUtils::CopyConstruct</a>(Destination* pDestination, <span class="keyword">const</span> Source&amp; copy, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsPod</a>)</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;{</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;  static_assert(std::is_same&lt;Destination, Source&gt;::value ||</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                  (std::is_base_of&lt;Destination, Source&gt;::value == <span class="keyword">false</span> &amp;&amp; std::is_base_of&lt;Source, Destination&gt;::value == <span class="keyword">false</span>),</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <span class="stringliteral">&quot;Can&#39;t copy POD types that are derived from each other. Are you certain any of these types should be POD?&quot;</span>);</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160; </div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;  <span class="keyword">const</span> Destination&amp; copyConverted = copy;</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; uiCount; i++)</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;  {</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    memcpy(pDestination + i, &amp;copyConverted, <span class="keyword">sizeof</span>(Destination));</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;  }</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;}</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160; </div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Destination, <span class="keyword">typename</span> Source&gt;</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#ab768b24491ab1feb611b5036d37e39f2">ezMemoryUtils::CopyConstruct</a>(Destination* pDestination, <span class="keyword">const</span> Source&amp; copy, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>)</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;{</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;  EZ_CHECK_CLASS(Destination);</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160; </div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; uiCount; i++)</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;  {</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    ::new (pDestination + i) Destination(copy); <span class="comment">// Note that until now copy has not been converted to Destination. This allows for calling</span></div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                                                <span class="comment">// specialized constructors if available.</span></div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;  }</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;}</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a4c12c5af647ec366b7a99b15cca9386b">ezMemoryUtils::CopyConstructArray</a>(T* pDestination, <span class="keyword">const</span> T* pSource, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsPod</a>)</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;{</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;  memcpy(pDestination, pSource, uiCount * <span class="keyword">sizeof</span>(T));</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; uiCount; i++)</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;  {</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    ::new (pDestination + i) T();</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;  }</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;}</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; </div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;EZ_ALWAYS_INLINE ezMemoryUtils::ConstructorFunction <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a784da93eacf66f6fd369f5c93426f407">ezMemoryUtils::MakeConstructorFunction</a>(<a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsPod</a>)</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;{</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;  EZ_CHECK_AT_COMPILETIME_MSG(std::is_trivial&lt;T&gt;::value, <span class="stringliteral">&quot;This method should only be called for &#39;real&#39; pod aka trivial types&quot;</span>);</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;}</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160; </div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;EZ_ALWAYS_INLINE ezMemoryUtils::ConstructorFunction <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a784da93eacf66f6fd369f5c93426f407">ezMemoryUtils::MakeConstructorFunction</a>(<a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>)</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;{</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;  EZ_CHECK_CLASS(T);</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160; </div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;  <span class="keyword">struct </span>Helper</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;  {</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a2944b511c0f4181b4b6a96b472df703f">Construct</a>(<span class="keywordtype">void</span>* pDestination) { <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a2944b511c0f4181b4b6a96b472df703f">ezMemoryUtils::Construct</a>(<span class="keyword">static_cast&lt;</span>T*<span class="keyword">&gt;</span>(pDestination), 1, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>()); }</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;  };</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160; </div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;  <span class="keywordflow">return</span> &amp;Helper::Construct;</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;}</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Destination, <span class="keyword">typename</span> Source&gt;</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#ab768b24491ab1feb611b5036d37e39f2">ezMemoryUtils::CopyConstruct</a>(Destination* pDestination, <span class="keyword">const</span> Source&amp; copy, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsPod</a>)</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;{</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;  static_assert(std::is_same&lt;Destination, Source&gt;::value ||</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                  (std::is_base_of&lt;Destination, Source&gt;::value == <span class="keyword">false</span> &amp;&amp; std::is_base_of&lt;Source, Destination&gt;::value == <span class="keyword">false</span>),</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <span class="stringliteral">&quot;Can&#39;t copy POD types that are derived from each other. Are you certain any of these types should be POD?&quot;</span>);</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160; </div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;  <span class="keyword">const</span> Destination&amp; copyConverted = copy;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; uiCount; i++)</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;  {</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    memcpy(pDestination + i, &amp;copyConverted, <span class="keyword">sizeof</span>(Destination));</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;  }</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;}</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160; </div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Destination, <span class="keyword">typename</span> Source&gt;</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#ab768b24491ab1feb611b5036d37e39f2">ezMemoryUtils::CopyConstruct</a>(Destination* pDestination, <span class="keyword">const</span> Source&amp; copy, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>)</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;{</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;  EZ_CHECK_CLASS(Destination);</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160; </div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; uiCount; i++)</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;  {</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    ::new (pDestination + i) Destination(copy); <span class="comment">// Note that until now copy has not been converted to Destination. This allows for calling</span></div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                                                <span class="comment">// specialized constructors if available.</span></div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;  }</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;}</div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160; </div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a4c12c5af647ec366b7a99b15cca9386b">ezMemoryUtils::CopyConstructArray</a>(T* pDestination, <span class="keyword">const</span> T* pSource, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>)</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a4c12c5af647ec366b7a99b15cca9386b">ezMemoryUtils::CopyConstructArray</a>(T* pDestination, <span class="keyword">const</span> T* pSource, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsPod</a>)</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;{</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;  EZ_CHECK_CLASS(T);</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; uiCount; i++)</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;  {</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    ::new (pDestination + i) T(pSource[i]);</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;  }</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;}</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;  memcpy(pDestination, pSource, uiCount * <span class="keyword">sizeof</span>(T));</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;}</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160; </div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a4c12c5af647ec366b7a99b15cca9386b">ezMemoryUtils::CopyConstructArray</a>(T* pDestination, <span class="keyword">const</span> T* pSource, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>)</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;{</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;  EZ_CHECK_CLASS(T);</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Destination, <span class="keyword">typename</span> Source&gt;</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a0a8156e3c8c1686be6a27ddac6e5772f">ezMemoryUtils::CopyOrMoveConstruct</a>(Destination* pDestination, <span class="keyword">const</span> Source&amp; source, NotRValueReference)</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;{</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;  CopyConstruct&lt;Destination, Source&gt;(pDestination, source, 1);</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; uiCount; i++)</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;  {</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    ::new (pDestination + i) T(pSource[i]);</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;  }</div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;}</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160; </div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Destination, <span class="keyword">typename</span> Source&gt;</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a0a8156e3c8c1686be6a27ddac6e5772f">ezMemoryUtils::CopyOrMoveConstruct</a>(Destination* pDestination, Source&amp;&amp; source, IsRValueReference)</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a0a8156e3c8c1686be6a27ddac6e5772f">ezMemoryUtils::CopyOrMoveConstruct</a>(Destination* pDestination, <span class="keyword">const</span> Source&amp; source, NotRValueReference)</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;{</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;  static_assert(std::is_rvalue_reference&lt;decltype(source)&gt;::value,</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="stringliteral">&quot;Implementation Error: This version of CopyOrMoveConstruct should only be called with a rvalue reference!&quot;</span>);</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;  ::new (pDestination) Destination(std::move(source));</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;}</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160; </div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a43ee17f152fe10a7e2cea71bdbf68521">ezMemoryUtils::RelocateConstruct</a>(T* pDestination, T* pSource, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsPod</a>)</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;{</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;  memcpy(pDestination, pSource, uiCount * <span class="keyword">sizeof</span>(T));</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;  CopyConstruct&lt;Destination, Source&gt;(pDestination, source, 1);</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;}</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160; </div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Destination, <span class="keyword">typename</span> Source&gt;</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a0a8156e3c8c1686be6a27ddac6e5772f">ezMemoryUtils::CopyOrMoveConstruct</a>(Destination* pDestination, Source&amp;&amp; source, IsRValueReference)</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;{</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;  static_assert(std::is_rvalue_reference&lt;decltype(source)&gt;::value,</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <span class="stringliteral">&quot;Implementation Error: This version of CopyOrMoveConstruct should only be called with a rvalue reference!&quot;</span>);</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;  ::new (pDestination) Destination(std::move(source));</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;}</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a43ee17f152fe10a7e2cea71bdbf68521">ezMemoryUtils::RelocateConstruct</a>(T* pDestination, T* pSource, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsMemRelocatable</a>)</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a43ee17f152fe10a7e2cea71bdbf68521">ezMemoryUtils::RelocateConstruct</a>(T* pDestination, T* pSource, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsPod</a>)</div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;{</div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;  memcpy(pDestination, pSource, uiCount * <span class="keyword">sizeof</span>(T));</div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;}</div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160; </div>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a43ee17f152fe10a7e2cea71bdbf68521">ezMemoryUtils::RelocateConstruct</a>(T* pDestination, T* pSource, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>)</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a43ee17f152fe10a7e2cea71bdbf68521">ezMemoryUtils::RelocateConstruct</a>(T* pDestination, T* pSource, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsMemRelocatable</a>)</div>
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;{</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;  EZ_CHECK_CLASS(T);</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160; </div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; uiCount; i++)</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;  {</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    <span class="comment">// Note that this calls the move constructor only if available and will copy otherwise.</span></div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    ::new (pDestination + i) T(std::move(pSource[i]));</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;  }</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;  memcpy(pDestination, pSource, uiCount * <span class="keyword">sizeof</span>(T));</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;}</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160; </div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a43ee17f152fe10a7e2cea71bdbf68521">ezMemoryUtils::RelocateConstruct</a>(T* pDestination, T* pSource, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>)</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;{</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;  EZ_CHECK_CLASS(T);</div>
 <div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160; </div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;  <a class="code" href="../../dc/d4d/classez_memory_utils.htm#aea6c4d3ce40c31abd9cc00fd94759c64">Destruct</a>(pSource, uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>());</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;}</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160; </div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#aea6c4d3ce40c31abd9cc00fd94759c64">ezMemoryUtils::Destruct</a>(T* pDestination, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsPod</a>)</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;{</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;  <span class="comment">// Nothing to do here. See Construct of for more info.</span></div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; uiCount; i++)</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;  {</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    <span class="comment">// Note that this calls the move constructor only if available and will copy otherwise.</span></div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    ::new (pDestination + i) T(std::move(pSource[i]));</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;  }</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160; </div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;  <a class="code" href="../../dc/d4d/classez_memory_utils.htm#aea6c4d3ce40c31abd9cc00fd94759c64">Destruct</a>(pSource, uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>());</div>
 <div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;}</div>
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160; </div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#aea6c4d3ce40c31abd9cc00fd94759c64">ezMemoryUtils::Destruct</a>(T* pDestination, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>)</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#aea6c4d3ce40c31abd9cc00fd94759c64">ezMemoryUtils::Destruct</a>(T* pDestination, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsPod</a>)</div>
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;{</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;  EZ_CHECK_CLASS(T);</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160; </div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = uiCount; i-- &gt; 0;)</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;  {</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    pDestination[i].~T();</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;  }</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;}</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;  <span class="comment">// Nothing to do here. See Construct of for more info.</span></div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;}</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160; </div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#aea6c4d3ce40c31abd9cc00fd94759c64">ezMemoryUtils::Destruct</a>(T* pDestination, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>)</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;{</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;  EZ_CHECK_CLASS(T);</div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160; </div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;EZ_ALWAYS_INLINE ezMemoryUtils::DestructorFunction <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a30225d2e06fd8980244a0bc8a07b66bc">ezMemoryUtils::MakeDestructorFunction</a>(<a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsPod</a>)</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;{</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = uiCount; i-- &gt; 0;)</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;  {</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    pDestination[i].~T();</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;  }</div>
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;}</div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160; </div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;EZ_ALWAYS_INLINE ezMemoryUtils::DestructorFunction <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a30225d2e06fd8980244a0bc8a07b66bc">ezMemoryUtils::MakeDestructorFunction</a>(<a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>)</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;EZ_ALWAYS_INLINE ezMemoryUtils::DestructorFunction <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a30225d2e06fd8980244a0bc8a07b66bc">ezMemoryUtils::MakeDestructorFunction</a>(<a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsPod</a>)</div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;{</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;  EZ_CHECK_CLASS(T);</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160; </div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;  <span class="keyword">struct </span>Helper</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;  {</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#aea6c4d3ce40c31abd9cc00fd94759c64">Destruct</a>(<span class="keywordtype">void</span>* pDestination) { <a class="code" href="../../dc/d4d/classez_memory_utils.htm#aea6c4d3ce40c31abd9cc00fd94759c64">ezMemoryUtils::Destruct</a>(<span class="keyword">static_cast&lt;</span>T*<span class="keyword">&gt;</span>(pDestination), 1, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>()); }</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;  };</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160; </div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;  <span class="keywordflow">return</span> &amp;Helper::Destruct;</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;}</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160; </div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a15ff9286bc6efd02271c6d61578b5c02">ezMemoryUtils::Copy</a>(T* pDestination, <span class="keyword">const</span> T* pSource, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsPod</a>)</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;{</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;  memcpy(pDestination, pSource, uiCount * <span class="keyword">sizeof</span>(T));</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;}</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160; </div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;EZ_ALWAYS_INLINE ezMemoryUtils::DestructorFunction <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a30225d2e06fd8980244a0bc8a07b66bc">ezMemoryUtils::MakeDestructorFunction</a>(<a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>)</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;{</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;  EZ_CHECK_CLASS(T);</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160; </div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;  <span class="keyword">struct </span>Helper</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;  {</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#aea6c4d3ce40c31abd9cc00fd94759c64">Destruct</a>(<span class="keywordtype">void</span>* pDestination) { <a class="code" href="../../dc/d4d/classez_memory_utils.htm#aea6c4d3ce40c31abd9cc00fd94759c64">ezMemoryUtils::Destruct</a>(<span class="keyword">static_cast&lt;</span>T*<span class="keyword">&gt;</span>(pDestination), 1, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>()); }</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;  };</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160; </div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;  <span class="keywordflow">return</span> &amp;Helper::Destruct;</div>
 <div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;}</div>
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160; </div>
 <div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a15ff9286bc6efd02271c6d61578b5c02">ezMemoryUtils::Copy</a>(T* pDestination, <span class="keyword">const</span> T* pSource, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>)</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a15ff9286bc6efd02271c6d61578b5c02">ezMemoryUtils::Copy</a>(T* pDestination, <span class="keyword">const</span> T* pSource, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsPod</a>)</div>
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;{</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;  EZ_CHECK_CLASS(T);</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160; </div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; uiCount; i++)</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;  {</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    pDestination[i] = pSource[i];</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;  }</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;}</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;  memcpy(pDestination, pSource, uiCount * <span class="keyword">sizeof</span>(T));</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;}</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160; </div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a15ff9286bc6efd02271c6d61578b5c02">ezMemoryUtils::Copy</a>(T* pDestination, <span class="keyword">const</span> T* pSource, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>)</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;{</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;  EZ_CHECK_CLASS(T);</div>
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160; </div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a3dcba6aa092c250b6569eed266df9184">ezMemoryUtils::CopyOverlapped</a>(T* pDestination, <span class="keyword">const</span> T* pSource, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsPod</a>)</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;{</div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;  memmove(pDestination, pSource, uiCount * <span class="keyword">sizeof</span>(T));</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; uiCount; i++)</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;  {</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    pDestination[i] = pSource[i];</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;  }</div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;}</div>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160; </div>
 <div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a3dcba6aa092c250b6569eed266df9184">ezMemoryUtils::CopyOverlapped</a>(T* pDestination, <span class="keyword">const</span> T* pSource, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>)</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a3dcba6aa092c250b6569eed266df9184">ezMemoryUtils::CopyOverlapped</a>(T* pDestination, <span class="keyword">const</span> T* pSource, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsPod</a>)</div>
 <div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;{</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;  EZ_CHECK_CLASS(T);</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160; </div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;  <span class="keywordflow">if</span> (pDestination == pSource)</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;    <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160; </div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;  <span class="keywordflow">if</span> (pDestination &lt; pSource)</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;  {</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; uiCount; i++)</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    {</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;      pDestination[i] = pSource[i];</div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    }</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;  }</div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;  {</div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = uiCount; i-- &gt; 0;)</div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;    {</div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;      pDestination[i] = pSource[i];</div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    }</div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;  }</div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;}</div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160; </div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a5b91f2f466d6009ce02116e3397dfbfb">ezMemoryUtils::Relocate</a>(T* pDestination, T* pSource, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsPod</a>)</div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;{</div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;  memcpy(pDestination, pSource, uiCount * <span class="keyword">sizeof</span>(T));</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;  memmove(pDestination, pSource, uiCount * <span class="keyword">sizeof</span>(T));</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;}</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160; </div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a3dcba6aa092c250b6569eed266df9184">ezMemoryUtils::CopyOverlapped</a>(T* pDestination, <span class="keyword">const</span> T* pSource, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>)</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;{</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;  EZ_CHECK_CLASS(T);</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160; </div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;  <span class="keywordflow">if</span> (pDestination == pSource)</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160; </div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;  <span class="keywordflow">if</span> (pDestination &lt; pSource)</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;  {</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; uiCount; i++)</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;    {</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;      pDestination[i] = pSource[i];</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    }</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;  }</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;  {</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = uiCount; i-- &gt; 0;)</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;    {</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;      pDestination[i] = pSource[i];</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;    }</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;  }</div>
 <div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;}</div>
 <div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160; </div>
 <div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a5b91f2f466d6009ce02116e3397dfbfb">ezMemoryUtils::Relocate</a>(T* pDestination, T* pSource, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsMemRelocatable</a>)</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a5b91f2f466d6009ce02116e3397dfbfb">ezMemoryUtils::Relocate</a>(T* pDestination, T* pSource, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsPod</a>)</div>
 <div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;{</div>
 <div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;  memcpy(pDestination, pSource, uiCount * <span class="keyword">sizeof</span>(T));</div>
 <div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;}</div>
 <div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160; </div>
 <div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a5b91f2f466d6009ce02116e3397dfbfb">ezMemoryUtils::Relocate</a>(T* pDestination, T* pSource, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>)</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a5b91f2f466d6009ce02116e3397dfbfb">ezMemoryUtils::Relocate</a>(T* pDestination, T* pSource, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsMemRelocatable</a>)</div>
 <div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;{</div>
-<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;  EZ_CHECK_CLASS(T);</div>
-<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160; </div>
-<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; uiCount; i++)</div>
-<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;  {</div>
-<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;    <span class="comment">// Note that this calls the move constructor only if available and will copy otherwise.</span></div>
-<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;    pDestination[i] = std::move(pSource[i]);</div>
-<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;  }</div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;  memcpy(pDestination, pSource, uiCount * <span class="keyword">sizeof</span>(T));</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;}</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160; </div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a5b91f2f466d6009ce02116e3397dfbfb">ezMemoryUtils::Relocate</a>(T* pDestination, T* pSource, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>)</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;{</div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;  EZ_CHECK_CLASS(T);</div>
 <div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160; </div>
-<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;  <a class="code" href="../../dc/d4d/classez_memory_utils.htm#aea6c4d3ce40c31abd9cc00fd94759c64">Destruct</a>(pSource, uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>());</div>
-<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;}</div>
-<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160; </div>
-<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#adce58a6d9b1e90c6c4f59e1bb9004c61">ezMemoryUtils::RelocateOverlapped</a>(T* pDestination, T* pSource, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsPod</a>)</div>
-<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;{</div>
-<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;  memmove(pDestination, pSource, uiCount * <span class="keyword">sizeof</span>(T));</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; uiCount; i++)</div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;  {</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;    <span class="comment">// Note that this calls the move constructor only if available and will copy otherwise.</span></div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;    pDestination[i] = std::move(pSource[i]);</div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;  }</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160; </div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;  <a class="code" href="../../dc/d4d/classez_memory_utils.htm#aea6c4d3ce40c31abd9cc00fd94759c64">Destruct</a>(pSource, uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>());</div>
 <div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;}</div>
 <div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160; </div>
 <div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#adce58a6d9b1e90c6c4f59e1bb9004c61">ezMemoryUtils::RelocateOverlapped</a>(T* pDestination, T* pSource, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsMemRelocatable</a>)</div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#adce58a6d9b1e90c6c4f59e1bb9004c61">ezMemoryUtils::RelocateOverlapped</a>(T* pDestination, T* pSource, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsPod</a>)</div>
 <div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;{</div>
-<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;  <span class="keywordflow">if</span> (pDestination &lt; pSource)</div>
-<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;  {</div>
-<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;    <span class="keywordtype">size_t</span> uiDestructCount = pSource - pDestination;</div>
-<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;    <a class="code" href="../../dc/d4d/classez_memory_utils.htm#aea6c4d3ce40c31abd9cc00fd94759c64">Destruct</a>(pDestination, uiDestructCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>());</div>
-<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;  }</div>
-<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;  {</div>
-<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;    <span class="keywordtype">size_t</span> uiDestructCount = pDestination - pSource;</div>
-<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;    <a class="code" href="../../dc/d4d/classez_memory_utils.htm#aea6c4d3ce40c31abd9cc00fd94759c64">Destruct</a>(pSource + uiCount, uiDestructCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>());</div>
-<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;  }</div>
-<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;  memmove(pDestination, pSource, uiCount * <span class="keyword">sizeof</span>(T));</div>
-<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;}</div>
-<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160; </div>
-<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#adce58a6d9b1e90c6c4f59e1bb9004c61">ezMemoryUtils::RelocateOverlapped</a>(T* pDestination, T* pSource, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>)</div>
-<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;{</div>
-<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;  EZ_CHECK_CLASS(T);</div>
-<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160; </div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;  <span class="keywordflow">if</span> (pDestination == pSource)</div>
-<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;    <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160; </div>
-<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;  <span class="keywordflow">if</span> (pDestination &lt; pSource)</div>
-<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;  {</div>
-<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; uiCount; i++)</div>
-<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;    {</div>
-<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;      pDestination[i] = std::move(pSource[i]);</div>
-<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;    }</div>
-<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160; </div>
-<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;    <span class="keywordtype">size_t</span> uiDestructCount = pSource - pDestination;</div>
-<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;    <a class="code" href="../../dc/d4d/classez_memory_utils.htm#aea6c4d3ce40c31abd9cc00fd94759c64">Destruct</a>(pSource + uiCount - uiDestructCount, uiDestructCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>());</div>
-<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;  }</div>
-<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;  {</div>
-<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = uiCount; i-- &gt; 0;)</div>
-<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;    {</div>
-<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;      pDestination[i] = std::move(pSource[i]);</div>
-<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;    }</div>
-<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160; </div>
-<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;    <span class="keywordtype">size_t</span> uiDestructCount = pDestination - pSource;</div>
-<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;    <a class="code" href="../../dc/d4d/classez_memory_utils.htm#aea6c4d3ce40c31abd9cc00fd94759c64">Destruct</a>(pSource, uiDestructCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>());</div>
-<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;  }</div>
-<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;}</div>
-<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160; </div>
-<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a9fd0a49960e146262101081c5ae0feeb">ezMemoryUtils::Prepend</a>(T* pDestination, <span class="keyword">const</span> T&amp; source, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsPod</a>)</div>
-<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;{</div>
-<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;  memmove(pDestination + 1, pDestination, uiCount * <span class="keyword">sizeof</span>(T));</div>
-<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;  <a class="code" href="../../dc/d4d/classez_memory_utils.htm#ab768b24491ab1feb611b5036d37e39f2">CopyConstruct</a>(pDestination, source, 1, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsPod</a>());</div>
-<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;}</div>
-<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160; </div>
-<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a9fd0a49960e146262101081c5ae0feeb">ezMemoryUtils::Prepend</a>(T* pDestination, <span class="keyword">const</span> T&amp; source, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsMemRelocatable</a>)</div>
-<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;{</div>
-<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;  memmove(pDestination + 1, pDestination, uiCount * <span class="keyword">sizeof</span>(T));</div>
-<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;  <a class="code" href="../../dc/d4d/classez_memory_utils.htm#ab768b24491ab1feb611b5036d37e39f2">CopyConstruct</a>(pDestination, source, 1, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>());</div>
-<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;}</div>
-<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160; </div>
-<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a9fd0a49960e146262101081c5ae0feeb">ezMemoryUtils::Prepend</a>(T* pDestination, <span class="keyword">const</span> T&amp; source, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>)</div>
-<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;{</div>
-<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;  EZ_CHECK_CLASS(T);</div>
-<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160; </div>
-<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;  <span class="keywordflow">if</span> (uiCount &gt; 0)</div>
-<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;  {</div>
-<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;    <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a945a697e081b8f264a7b9d4ec8f66ffe">MoveConstruct</a>(pDestination + uiCount, std::move(pDestination[uiCount - 1]));</div>
-<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160; </div>
-<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = uiCount - 1; i-- &gt; 0;)</div>
-<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;    {</div>
-<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;      pDestination[i + 1] = std::move(pDestination[i]);</div>
-<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;    }</div>
-<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160; </div>
-<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;    *pDestination = source;</div>
-<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;  }</div>
-<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;  {</div>
-<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;    <a class="code" href="../../dc/d4d/classez_memory_utils.htm#ab768b24491ab1feb611b5036d37e39f2">CopyConstruct</a>(pDestination, source, 1, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>());</div>
-<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;  }</div>
-<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;}</div>
-<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160; </div>
-<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a9fd0a49960e146262101081c5ae0feeb">ezMemoryUtils::Prepend</a>(T* pDestination, T&amp;&amp; source, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsPod</a>)</div>
-<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;{</div>
-<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;  memmove(pDestination + 1, pDestination, uiCount * <span class="keyword">sizeof</span>(T));</div>
-<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;  <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a945a697e081b8f264a7b9d4ec8f66ffe">MoveConstruct</a>(pDestination, std::move(source));</div>
-<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;}</div>
-<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160; </div>
-<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a9fd0a49960e146262101081c5ae0feeb">ezMemoryUtils::Prepend</a>(T* pDestination, T&amp;&amp; source, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsMemRelocatable</a>)</div>
-<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;{</div>
-<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;  memmove(pDestination + 1, pDestination, uiCount * <span class="keyword">sizeof</span>(T));</div>
-<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;  <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a945a697e081b8f264a7b9d4ec8f66ffe">MoveConstruct</a>(pDestination, std::move(source));</div>
-<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;}</div>
-<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160; </div>
-<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a9fd0a49960e146262101081c5ae0feeb">ezMemoryUtils::Prepend</a>(T* pDestination, T&amp;&amp; source, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>)</div>
-<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;{</div>
-<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;  EZ_CHECK_CLASS(T);</div>
-<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160; </div>
-<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;  <span class="keywordflow">if</span> (uiCount &gt; 0)</div>
-<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;  {</div>
-<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;    <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a945a697e081b8f264a7b9d4ec8f66ffe">MoveConstruct</a>(pDestination + uiCount, std::move(pDestination[uiCount - 1]));</div>
-<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160; </div>
-<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = uiCount - 1; i-- &gt; 0;)</div>
-<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;    {</div>
-<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;      pDestination[i + 1] = std::move(pDestination[i]);</div>
-<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;    }</div>
-<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160; </div>
-<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;    *pDestination = std::move(source);</div>
-<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;  }</div>
-<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;  {</div>
-<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;    <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a945a697e081b8f264a7b9d4ec8f66ffe">MoveConstruct</a>(pDestination, std::move(source));</div>
-<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;  }</div>
-<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;}</div>
-<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160; </div>
-<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a744d60b4b000c61f2dd3819a12410595">ezMemoryUtils::IsEqual</a>(<span class="keyword">const</span> T* a, <span class="keyword">const</span> T* b, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsPod</a>)</div>
-<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;{</div>
-<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;  <span class="keywordflow">return</span> memcmp(a, b, uiCount * <span class="keyword">sizeof</span>(T)) == 0;</div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;  memmove(pDestination, pSource, uiCount * <span class="keyword">sizeof</span>(T));</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;}</div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160; </div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#adce58a6d9b1e90c6c4f59e1bb9004c61">ezMemoryUtils::RelocateOverlapped</a>(T* pDestination, T* pSource, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsMemRelocatable</a>)</div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;{</div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;  <span class="keywordflow">if</span> (pDestination &lt; pSource)</div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;  {</div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;    <span class="keywordtype">size_t</span> uiDestructCount = pSource - pDestination;</div>
+<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;    <a class="code" href="../../dc/d4d/classez_memory_utils.htm#aea6c4d3ce40c31abd9cc00fd94759c64">Destruct</a>(pDestination, uiDestructCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>());</div>
+<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;  }</div>
+<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;  {</div>
+<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;    <span class="keywordtype">size_t</span> uiDestructCount = pDestination - pSource;</div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;    <a class="code" href="../../dc/d4d/classez_memory_utils.htm#aea6c4d3ce40c31abd9cc00fd94759c64">Destruct</a>(pSource + uiCount, uiDestructCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>());</div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;  }</div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;  memmove(pDestination, pSource, uiCount * <span class="keyword">sizeof</span>(T));</div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;}</div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160; </div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#adce58a6d9b1e90c6c4f59e1bb9004c61">ezMemoryUtils::RelocateOverlapped</a>(T* pDestination, T* pSource, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>)</div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;{</div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;  EZ_CHECK_CLASS(T);</div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160; </div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;  <span class="keywordflow">if</span> (pDestination == pSource)</div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160; </div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;  <span class="keywordflow">if</span> (pDestination &lt; pSource)</div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;  {</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; uiCount; i++)</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;    {</div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;      pDestination[i] = std::move(pSource[i]);</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;    }</div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160; </div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;    <span class="keywordtype">size_t</span> uiDestructCount = pSource - pDestination;</div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;    <a class="code" href="../../dc/d4d/classez_memory_utils.htm#aea6c4d3ce40c31abd9cc00fd94759c64">Destruct</a>(pSource + uiCount - uiDestructCount, uiDestructCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>());</div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;  }</div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;  {</div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = uiCount; i-- &gt; 0;)</div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;    {</div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;      pDestination[i] = std::move(pSource[i]);</div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;    }</div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160; </div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;    <span class="keywordtype">size_t</span> uiDestructCount = pDestination - pSource;</div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;    <a class="code" href="../../dc/d4d/classez_memory_utils.htm#aea6c4d3ce40c31abd9cc00fd94759c64">Destruct</a>(pSource, uiDestructCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>());</div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;  }</div>
+<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;}</div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160; </div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a9fd0a49960e146262101081c5ae0feeb">ezMemoryUtils::Prepend</a>(T* pDestination, <span class="keyword">const</span> T&amp; source, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsPod</a>)</div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;{</div>
+<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;  memmove(pDestination + 1, pDestination, uiCount * <span class="keyword">sizeof</span>(T));</div>
+<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;  <a class="code" href="../../dc/d4d/classez_memory_utils.htm#ab768b24491ab1feb611b5036d37e39f2">CopyConstruct</a>(pDestination, source, 1, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsPod</a>());</div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;}</div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160; </div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a9fd0a49960e146262101081c5ae0feeb">ezMemoryUtils::Prepend</a>(T* pDestination, <span class="keyword">const</span> T&amp; source, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsMemRelocatable</a>)</div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;{</div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;  memmove(pDestination + 1, pDestination, uiCount * <span class="keyword">sizeof</span>(T));</div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;  <a class="code" href="../../dc/d4d/classez_memory_utils.htm#ab768b24491ab1feb611b5036d37e39f2">CopyConstruct</a>(pDestination, source, 1, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>());</div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;}</div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160; </div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a9fd0a49960e146262101081c5ae0feeb">ezMemoryUtils::Prepend</a>(T* pDestination, <span class="keyword">const</span> T&amp; source, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>)</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;{</div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;  EZ_CHECK_CLASS(T);</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160; </div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;  <span class="keywordflow">if</span> (uiCount &gt; 0)</div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;  {</div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;    <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a945a697e081b8f264a7b9d4ec8f66ffe">MoveConstruct</a>(pDestination + uiCount, std::move(pDestination[uiCount - 1]));</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160; </div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = uiCount - 1; i-- &gt; 0;)</div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;    {</div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;      pDestination[i + 1] = std::move(pDestination[i]);</div>
+<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;    }</div>
+<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160; </div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;    *pDestination = source;</div>
+<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;  }</div>
+<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;  {</div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;    <a class="code" href="../../dc/d4d/classez_memory_utils.htm#ab768b24491ab1feb611b5036d37e39f2">CopyConstruct</a>(pDestination, source, 1, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>());</div>
+<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;  }</div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;}</div>
+<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160; </div>
+<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a9fd0a49960e146262101081c5ae0feeb">ezMemoryUtils::Prepend</a>(T* pDestination, T&amp;&amp; source, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsPod</a>)</div>
+<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;{</div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;  memmove(pDestination + 1, pDestination, uiCount * <span class="keyword">sizeof</span>(T));</div>
+<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;  <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a945a697e081b8f264a7b9d4ec8f66ffe">MoveConstruct</a>(pDestination, std::move(source));</div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;}</div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160; </div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a9fd0a49960e146262101081c5ae0feeb">ezMemoryUtils::Prepend</a>(T* pDestination, T&amp;&amp; source, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsMemRelocatable</a>)</div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;{</div>
+<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;  memmove(pDestination + 1, pDestination, uiCount * <span class="keyword">sizeof</span>(T));</div>
+<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;  <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a945a697e081b8f264a7b9d4ec8f66ffe">MoveConstruct</a>(pDestination, std::move(source));</div>
+<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;}</div>
+<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160; </div>
+<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a9fd0a49960e146262101081c5ae0feeb">ezMemoryUtils::Prepend</a>(T* pDestination, T&amp;&amp; source, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>)</div>
+<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;{</div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;  EZ_CHECK_CLASS(T);</div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160; </div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;  <span class="keywordflow">if</span> (uiCount &gt; 0)</div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;  {</div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;    <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a945a697e081b8f264a7b9d4ec8f66ffe">MoveConstruct</a>(pDestination + uiCount, std::move(pDestination[uiCount - 1]));</div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160; </div>
+<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = uiCount - 1; i-- &gt; 0;)</div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;    {</div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;      pDestination[i + 1] = std::move(pDestination[i]);</div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;    }</div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160; </div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;    *pDestination = std::move(source);</div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;  }</div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;  {</div>
+<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;    <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a945a697e081b8f264a7b9d4ec8f66ffe">MoveConstruct</a>(pDestination, std::move(source));</div>
+<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;  }</div>
 <div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;}</div>
 <div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160; </div>
 <div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a744d60b4b000c61f2dd3819a12410595">ezMemoryUtils::IsEqual</a>(<span class="keyword">const</span> T* a, <span class="keyword">const</span> T* b, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>)</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a744d60b4b000c61f2dd3819a12410595">ezMemoryUtils::IsEqual</a>(<span class="keyword">const</span> T* a, <span class="keyword">const</span> T* b, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsPod</a>)</div>
 <div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;{</div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;  EZ_CHECK_CLASS(T);</div>
-<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160; </div>
-<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; uiCount; i++)</div>
-<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;  {</div>
-<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;    <span class="keywordflow">if</span> (!(a[i] == b[i]))</div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;  }</div>
-<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;}</div>
-<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160; </div>
-<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160; </div>
-<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;<span class="preprocessor">#undef EZ_CHECK_CLASS</span></div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;  <span class="keywordflow">return</span> memcmp(a, b, uiCount * <span class="keyword">sizeof</span>(T)) == 0;</div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;}</div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160; </div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a744d60b4b000c61f2dd3819a12410595">ezMemoryUtils::IsEqual</a>(<span class="keyword">const</span> T* a, <span class="keyword">const</span> T* b, <span class="keywordtype">size_t</span> uiCount, <a class="code" href="../../d6/d09/structez_trait_int.htm">ezTypeIsClass</a>)</div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;{</div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;  EZ_CHECK_CLASS(T);</div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160; </div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; uiCount; i++)</div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;  {</div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;    <span class="keywordflow">if</span> (!(a[i] == b[i]))</div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;  }</div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;}</div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160; </div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160; </div>
+<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;<span class="preprocessor">#undef EZ_CHECK_CLASS</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_memory_utils_htm_a9e6294897c28081e935147d72340788d"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm#a9e6294897c28081e935147d72340788d">ezMemoryUtils::RawByteCompare</a></div><div class="ttdeci">static ezInt32 RawByteCompare(const void *a, const void *b, size_t uiNumBytesToCompare)</div><div class="ttdoc">Compares exactly uiNumBytesToCompare from a and b, independent of the involved types and their sizes.</div><div class="ttdef"><b>Definition:</b> MemoryUtils_inl.h:197</div></div>
@@ -704,6 +710,8 @@ $(document).ready(function(){initNavTree('d3/de9/_memory_utils__inl_8h_source.ht
 <div class="ttc" id="aclassez_memory_utils_htm_aa87226b4362949aa02ffbbea97bf14d0"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm#aa87226b4362949aa02ffbbea97bf14d0">ezMemoryUtils::MakeCopyConstructorFunction</a></div><div class="ttdeci">static CopyConstructorFunction MakeCopyConstructorFunction()</div><div class="ttdoc">Returns a function pointer to copy construct an instance of T.</div></div>
 <div class="ttc" id="astructez_get_type_class_htm"><div class="ttname"><a href="../../d5/d86/structez_get_type_class.htm">ezGetTypeClass</a></div><div class="ttdoc">If there is an % operator which takes a ezTypeIsMemRelocatable and returns a CompileTimeTrueType T is...</div><div class="ttdef"><b>Definition:</b> TypeTraits.h:66</div></div>
 <div class="ttc" id="aclassez_memory_utils_htm_adce58a6d9b1e90c6c4f59e1bb9004c61"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm#adce58a6d9b1e90c6c4f59e1bb9004c61">ezMemoryUtils::RelocateOverlapped</a></div><div class="ttdeci">static void RelocateOverlapped(T *pDestination, T *pSource, size_t uiCount)</div><div class="ttdoc">Moves objects of type T from pSource to pDestination.</div></div>
+<div class="ttc" id="aclassez_memory_utils_htm_a5a6c549d62f7a9de30863c9ef22ed0f6"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm#a5a6c549d62f7a9de30863c9ef22ed0f6">ezMemoryUtils::AlignForwards</a></div><div class="ttdeci">static T * AlignForwards(T *ptr, size_t uiAlignment)</div><div class="ttdoc">Aligns the pointer ptr by moving its address forwards to the next multiple of uiAlignment.</div></div>
+<div class="ttc" id="aclassez_memory_utils_htm_a7f5327cc82286e4d378b8101478c0eab"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm#a7f5327cc82286e4d378b8101478c0eab">ezMemoryUtils::AlignBackwards</a></div><div class="ttdeci">static T * AlignBackwards(T *ptr, size_t uiAlignment)</div><div class="ttdoc">Aligns the pointer ptr by moving its address backwards to the previous multiple of uiAlignment.</div></div>
 <div class="ttc" id="aclassez_memory_utils_htm_a974eaaa7df95b7d10480cfa7f2f41992"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm#a974eaaa7df95b7d10480cfa7f2f41992">ezMemoryUtils::MakeDefaultConstructorFunction</a></div><div class="ttdeci">static ConstructorFunction MakeDefaultConstructorFunction()</div><div class="ttdoc">Returns a function pointer to construct an instance of T. Always returns a constructor function regar...</div></div>
 <div class="ttc" id="aclassez_memory_utils_htm_a945a697e081b8f264a7b9d4ec8f66ffe"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm#a945a697e081b8f264a7b9d4ec8f66ffe">ezMemoryUtils::MoveConstruct</a></div><div class="ttdeci">static void MoveConstruct(T *pDestination, T &amp;&amp;source)</div><div class="ttdoc">Constructs an object of type T in a raw buffer at pDestination, by using move construction from sourc...</div></div>
 <div class="ttc" id="aclassez_memory_utils_htm_a15ff9286bc6efd02271c6d61578b5c02"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm#a15ff9286bc6efd02271c6d61578b5c02">ezMemoryUtils::Copy</a></div><div class="ttdeci">static void Copy(T *pDestination, const T *pSource, size_t uiCount)</div><div class="ttdoc">Copies objects of type T from pSource to pDestination.</div></div>
@@ -714,7 +722,6 @@ $(document).ready(function(){initNavTree('d3/de9/_memory_utils__inl_8h_source.ht
 <div class="ttc" id="aclassez_memory_utils_htm_a43ee17f152fe10a7e2cea71bdbf68521"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm#a43ee17f152fe10a7e2cea71bdbf68521">ezMemoryUtils::RelocateConstruct</a></div><div class="ttdeci">static void RelocateConstruct(T *pDestination, T *pSource, size_t uiCount)</div><div class="ttdoc">Constructs uiCount objects of type T in a raw buffer at pDestination from an existing array of object...</div></div>
 <div class="ttc" id="aclassez_memory_utils_htm_ab768b24491ab1feb611b5036d37e39f2"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm#ab768b24491ab1feb611b5036d37e39f2">ezMemoryUtils::CopyConstruct</a></div><div class="ttdeci">static void CopyConstruct(Destination *pDestination, const Source &amp;copy, size_t uiCount)</div><div class="ttdoc">Constructs uiCount objects of type T in a raw buffer at pDestination, by creating uiCount copies of c...</div></div>
 <div class="ttc" id="aclassez_memory_utils_htm_aea6c4d3ce40c31abd9cc00fd94759c64"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm#aea6c4d3ce40c31abd9cc00fd94759c64">ezMemoryUtils::Destruct</a></div><div class="ttdeci">static void Destruct(T *pDestination, size_t uiCount)</div><div class="ttdoc">Destructs uiCount objects of type T at pDestination.</div></div>
-<div class="ttc" id="aclassez_memory_utils_htm_a5181525aa2159916c8dc2713d9a6e8cb"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm#a5181525aa2159916c8dc2713d9a6e8cb">ezMemoryUtils::Align</a></div><div class="ttdeci">static T * Align(T *ptr, size_t uiAlignment)</div><div class="ttdoc">Aligns the pointer ptr by moving its address backwards to the previous multiple of uiAlignment.</div></div>
 <div class="ttc" id="aclassez_memory_utils_htm_a30225d2e06fd8980244a0bc8a07b66bc"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm#a30225d2e06fd8980244a0bc8a07b66bc">ezMemoryUtils::MakeDestructorFunction</a></div><div class="ttdeci">static DestructorFunction MakeDestructorFunction()</div><div class="ttdoc">Returns a function pointer to destruct an instance of T. Returns nullptr for POD-types.</div></div>
 <div class="ttc" id="aclassez_memory_utils_htm_a0a8156e3c8c1686be6a27ddac6e5772f"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm#a0a8156e3c8c1686be6a27ddac6e5772f">ezMemoryUtils::CopyOrMoveConstruct</a></div><div class="ttdeci">static void CopyOrMoveConstruct(Destination *pDestination, Source &amp;&amp;source)</div><div class="ttdoc">This function will either move call MoveConstruct or CopyConstruct for a single element source,...</div></div>
 <div class="ttc" id="aclassez_memory_utils_htm_a7671e5bce6bc9fd9636ab50206b0f033"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm#a7671e5bce6bc9fd9636ab50206b0f033">ezMemoryUtils::Compare</a></div><div class="ttdeci">static ezInt32 Compare(const T *a, const T *b, size_t uiCount=1)</div><div class="ttdoc">Compares two buffers of raw memory byte wise.</div></div>
@@ -731,7 +738,7 @@ $(document).ready(function(){initNavTree('d3/de9/_memory_utils__inl_8h_source.ht
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_adb0ac2a169525f5fa05f0527c58e205.htm">Memory</a></li><li class="navelem"><a class="el" href="../../dir_2b61d82766792ebb24827eac69b772f5.htm">Implementation</a></li><li class="navelem"><b>MemoryUtils_inl.h</b></li>
-    <li class="footer">Generated on Tue Jun 8 2021 21:43:11 for ezEngine by
+    <li class="footer">Generated on Mon Oct 18 2021 15:24:10 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

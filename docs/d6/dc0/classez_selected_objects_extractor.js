@@ -1,7 +1,8 @@
 var classez_selected_objects_extractor =
 [
-    [ "ezSelectedObjectsExtractor", "d6/dc0/classez_selected_objects_extractor.htm#a51bd7fd293155d69e6b359338034f68a", null ],
-    [ "Extract", "d6/dc0/classez_selected_objects_extractor.htm#a34fc042372f320cad9b9b17a13710a8e", null ],
-    [ "GetSelection", "d6/dc0/classez_selected_objects_extractor.htm#ad2f90b7db93d34d15ce5436fb6cea715", null ],
-    [ "m_OverrideCategory", "d6/dc0/classez_selected_objects_extractor.htm#ad47286cc817e5bbe727c5fa748b0c5e6", null ]
+    [ "ezSelectedObjectsExtractor", "d6/dc0/classez_selected_objects_extractor.htm#acae0e98b1bbc9613ea417d6c8b263cf8", null ],
+    [ "~ezSelectedObjectsExtractor", "d6/dc0/classez_selected_objects_extractor.htm#abae688c7f3057777eafa2aee4f5214d9", null ],
+    [ "GetSelection", "d6/dc0/classez_selected_objects_extractor.htm#a5bc6cc29fb039aae2a799323e4bdd4d5", null ],
+    [ "GetSelectionContext", "d6/dc0/classez_selected_objects_extractor.htm#a88efa0405d02bb18717a797d3302cd08", null ],
+    [ "SetSelectionContext", "d6/dc0/classez_selected_objects_extractor.htm#a4d2d14eae189eca1deb1899926ada747", null ]
 ];

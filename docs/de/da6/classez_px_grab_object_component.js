@@ -7,7 +7,7 @@ var classez_px_grab_object_component =
     [ "CreateJoint", "de/da6/classez_px_grab_object_component.htm#a597d58374f0f0b79b1a7208b93cd597c", null ],
     [ "DeserializeComponent", "de/da6/classez_px_grab_object_component.htm#aab84bcbb62de718f3455660bb7ef8646", null ],
     [ "DetectDistanceViolation", "de/da6/classez_px_grab_object_component.htm#a24dd8d966469b04006dcdce9a1b89de4", null ],
-    [ "DetermineGrabPoint", "de/da6/classez_px_grab_object_component.htm#a3016869c4d49b9a17b4d0fc55ff358cb", null ],
+    [ "DetermineGrabPoint", "de/da6/classez_px_grab_object_component.htm#ab3a7fcae7f50760518d9046a6c8e5d7e", null ],
     [ "DropGrabbedObject", "de/da6/classez_px_grab_object_component.htm#a5146e6fa41f108f7cdfca09d94ab19fd", null ],
     [ "FindNearbyObject", "de/da6/classez_px_grab_object_component.htm#a941eb5f84ecfa43aee602c12e949f23d", null ],
     [ "GetAttachToActor", "de/da6/classez_px_grab_object_component.htm#a7df4d1b3ff9cfa79fa920ef92d28a280", null ],

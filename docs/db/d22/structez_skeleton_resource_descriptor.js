@@ -9,6 +9,7 @@ var structez_skeleton_resource_descriptor =
     [ "operator=", "db/d22/structez_skeleton_resource_descriptor.htm#ae4ade96ba12a2dd3419580fa37ab4869", null ],
     [ "operator=", "db/d22/structez_skeleton_resource_descriptor.htm#a9519e7557658e7d861fb821b89be5ce6", null ],
     [ "Serialize", "db/d22/structez_skeleton_resource_descriptor.htm#a3b1af6f7029c2cb9fccde8ba5ffb38d7", null ],
+    [ "m_Geometry", "db/d22/structez_skeleton_resource_descriptor.htm#a65a598509010444aaad8591b7ba36af1", null ],
     [ "m_RootTransform", "db/d22/structez_skeleton_resource_descriptor.htm#a15b275bd866a97a5dae49fdba8092ff4", null ],
     [ "m_Skeleton", "db/d22/structez_skeleton_resource_descriptor.htm#a362d720d12cea73e7a78c4d22ecaa081", null ]
 ];
