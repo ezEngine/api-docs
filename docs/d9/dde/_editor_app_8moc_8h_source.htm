@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 21.6</span>
+   &#160;<span id="projectnumber">Release 21.10</span>
    </div>
   </td>
  </tr>
@@ -301,77 +301,80 @@ $(document).ready(function(){initNavTree('d9/dde/_editor_app_8moc_8h_source.htm'
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;  <span class="keywordtype">void</span> LoadProjectPreferences();</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;  <span class="keywordtype">void</span> DetectAvailableEditorPlugins();</div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;  <span class="keywordtype">void</span> DetectAvailableEnginePlugins();</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;  <span class="keywordtype">void</span> ReadEditorPluginsToBeLoaded();</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;  <span class="keywordtype">void</span> ReadEnginePluginConfig();</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;  <span class="keywordtype">void</span> SaveAllOpenDocuments();</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; </div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;  <span class="keywordtype">void</span> ValidateEnginePluginConfig();</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;  <span class="keywordtype">void</span> ReadTagRegistry();</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;  <span class="keywordtype">void</span> SetupDataDirectories();</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;  <span class="keywordtype">void</span> SetStyleSheet();</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;  <span class="keywordtype">void</span> CreatePanels();</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;  <span class="keywordtype">void</span> SetupAndShowSplashScreen();</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;  <span class="keywordtype">void</span> CloseSplashScreen();</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;  <span class="keywordtype">void</span> StoreEnginePluginModificationTimes();</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;  <span class="keywordtype">bool</span> CheckForEnginePluginModifications();</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;  <span class="keywordtype">void</span> RestartEngineProcessIfPluginsChanged();</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;  <span class="keywordtype">void</span> ReadEditorPluginsToBeLoaded();</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;  <span class="keywordtype">void</span> ReadEnginePluginConfig();</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;  <span class="keywordtype">void</span> SaveAllOpenDocuments();</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;  <span class="keywordtype">void</span> ValidateEnginePluginConfig();</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;  <span class="keywordtype">void</span> ReadTagRegistry();</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160; </div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;  <span class="keywordtype">void</span> SetupDataDirectories();</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;  <span class="keywordtype">void</span> SetStyleSheet();</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;  <span class="keywordtype">void</span> CreatePanels();</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160; </div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;  <span class="keywordtype">bool</span> m_bSavePreferencesAfterOpenProject;</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;  <span class="keywordtype">bool</span> m_bLoadingProjectInProgress = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;  <span class="keywordtype">void</span> SetupAndShowSplashScreen();</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;  <span class="keywordtype">void</span> CloseSplashScreen();</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; </div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;  <a class="code" href="../../d1/dec/structez_bitflags.htm">ezBitflags&lt;StartupFlags&gt;</a> m_StartupFlags;</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezString&gt;</a> m_DocumentsToOpen;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;  <span class="keywordtype">bool</span> m_bSavePreferencesAfterOpenProject;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;  <span class="keywordtype">bool</span> m_bLoadingProjectInProgress = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;  <a class="code" href="../../d0/d90/classez_set.htm">ezSet&lt;ezString&gt;</a> s_RestartRequiredReasons;</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;  <a class="code" href="../../d0/d90/classez_set.htm">ezSet&lt;ezString&gt;</a> s_ReloadProjectRequiredReasons;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;  <a class="code" href="../../d1/dec/structez_bitflags.htm">ezBitflags&lt;StartupFlags&gt;</a> m_StartupFlags;</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezString&gt;</a> m_DocumentsToOpen;</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;  <a class="code" href="../../df/da0/structez_plugin_set.htm">ezPluginSet</a> s_EditorPlugins;</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;  <a class="code" href="../../df/da0/structez_plugin_set.htm">ezPluginSet</a> s_EnginePlugins;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;  <a class="code" href="../../d0/d90/classez_set.htm">ezSet&lt;ezString&gt;</a> s_RestartRequiredReasons;</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;  <a class="code" href="../../d0/d90/classez_set.htm">ezSet&lt;ezString&gt;</a> s_ReloadProjectRequiredReasons;</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;  <span class="keywordtype">void</span> SaveRecentFiles();</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;  <span class="keywordtype">void</span> LoadRecentFiles();</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;  <a class="code" href="../../df/da0/structez_plugin_set.htm">ezPluginSet</a> s_EditorPlugins;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;  <a class="code" href="../../df/da0/structez_plugin_set.htm">ezPluginSet</a> s_EnginePlugins;</div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160; </div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;  <a class="code" href="../../dd/d3b/classez_recent_files_list.htm">ezRecentFilesList</a> s_RecentProjects;</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;  <a class="code" href="../../dd/d3b/classez_recent_files_list.htm">ezRecentFilesList</a> s_RecentDocuments;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;  <span class="keywordtype">void</span> SaveRecentFiles();</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;  <span class="keywordtype">void</span> LoadRecentFiles();</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160; </div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;  QApplication* s_pQtApplication = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;  <a class="code" href="../../dd/d69/classez_long_op_controller_manager.htm">ezLongOpControllerManager</a> m_LongOpControllerManager;</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;  <a class="code" href="../../d0/db7/classez_editor_engine_process_connection.htm">ezEditorEngineProcessConnection</a>* s_pEngineViewProcess;</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;  QTimer* m_pTimer = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  QSplashScreen* m_pSplashScreen = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;  <a class="code" href="../../d5/d7e/classez_log_writer_1_1_h_t_m_l.htm">ezLogWriter::HTML</a> m_LogHTML;</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160; </div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;  <a class="code" href="../../db/d81/classez_application_file_system_config.htm">ezApplicationFileSystemConfig</a> m_FileSystemConfig;</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;  <a class="code" href="../../d2/dd8/classez_application_plugin_config.htm">ezApplicationPluginConfig</a> m_EnginePluginConfig;</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;  <a class="code" href="../../dd/d3b/classez_recent_files_list.htm">ezRecentFilesList</a> s_RecentProjects;</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;  <a class="code" href="../../dd/d3b/classez_recent_files_list.htm">ezRecentFilesList</a> s_RecentDocuments;</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;  QApplication* s_pQtApplication = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;  <a class="code" href="../../dd/d69/classez_long_op_controller_manager.htm">ezLongOpControllerManager</a> m_LongOpControllerManager;</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  <a class="code" href="../../d0/db7/classez_editor_engine_process_connection.htm">ezEditorEngineProcessConnection</a>* s_pEngineViewProcess;</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;  QTimer* m_pTimer = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160; </div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;  QSplashScreen* m_pSplashScreen = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160; </div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;  <a class="code" href="../../d5/d7e/classez_log_writer_1_1_h_t_m_l.htm">ezLogWriter::HTML</a> m_LogHTML;</div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160; </div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;  <a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;ezString, ezSet&lt;ezString&gt;</a>&gt; m_AdditionalRuntimePluginDependencies;</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160; </div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;  <span class="comment">// *** Recent Paths ***</span></div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sLastDocumentFolder;</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sLastProjectFolder;</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;  <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> m_LastPluginModificationCheck;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;  <a class="code" href="../../db/d81/classez_application_file_system_config.htm">ezApplicationFileSystemConfig</a> m_FileSystemConfig;</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;  <a class="code" href="../../d2/dd8/classez_application_plugin_config.htm">ezApplicationPluginConfig</a> m_EnginePluginConfig;</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;  <a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;ezString, ezSet&lt;ezString&gt;</a>&gt; m_AdditionalRuntimePluginDependencies;</div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160; </div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;  <span class="comment">// *** Progress Bar ***</span></div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;  <span class="keywordtype">bool</span> IsProgressBarProcessingEvents() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;  <span class="comment">// *** Recent Paths ***</span></div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sLastDocumentFolder;</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sLastProjectFolder;</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;  <a class="code" href="../../d8/d41/classez_progress.htm">ezProgress</a>* m_pProgressbar = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;  <a class="code" href="../../d7/de1/classez_qt_progressbar.htm">ezQtProgressbar</a>* m_pQtProgressbar = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;  <span class="comment">// *** Progress Bar ***</span></div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;  <span class="keywordtype">bool</span> IsProgressBarProcessingEvents() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;  <span class="comment">// *** Localization ***</span></div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;  <a class="code" href="../../df/dea/classez_translator_from_files.htm">ezTranslatorFromFiles</a>* m_pTranslatorFromFiles = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;  <span class="comment">// *** Dynamic Enum Strings ***</span></div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;  <a class="code" href="../../d0/d90/classez_set.htm">ezSet&lt;ezString&gt;</a> m_DynamicEnumStringsToClear;</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;  <span class="keywordtype">void</span> OnDemandDynamicStringEnumLoad(<span class="keyword">const</span> <span class="keywordtype">char</span>* szEnum, <a class="code" href="../../d3/dd2/classez_dynamic_string_enum.htm">ezDynamicStringEnum</a>&amp; e);</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;  <a class="code" href="../../d8/d41/classez_progress.htm">ezProgress</a>* m_pProgressbar = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;  <a class="code" href="../../d7/de1/classez_qt_progressbar.htm">ezQtProgressbar</a>* m_pQtProgressbar = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;  <span class="comment">// *** Localization ***</span></div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;  <a class="code" href="../../df/dea/classez_translator_from_files.htm">ezTranslatorFromFiles</a>* m_pTranslatorFromFiles = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; </div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;  <a class="code" href="../../d1/d46/classez_qt_version_checker.htm">ezQtVersionChecker</a> m_VersionChecker;</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;};</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;EZ_DECLARE_FLAGS_OPERATORS(<a class="code" href="../../d7/db1/structez_qt_editor_app_1_1_startup_flags.htm">ezQtEditorApp::StartupFlags</a>);</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;  <span class="comment">// *** Dynamic Enum Strings ***</span></div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;  <a class="code" href="../../d0/d90/classez_set.htm">ezSet&lt;ezString&gt;</a> m_DynamicEnumStringsToClear;</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;  <span class="keywordtype">void</span> OnDemandDynamicStringEnumLoad(<span class="keyword">const</span> <span class="keywordtype">char</span>* szEnum, <a class="code" href="../../d3/dd2/classez_dynamic_string_enum.htm">ezDynamicStringEnum</a>&amp; e);</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160; </div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;  <a class="code" href="../../d1/d46/classez_qt_version_checker.htm">ezQtVersionChecker</a> m_VersionChecker;</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;};</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160; </div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;EZ_DECLARE_FLAGS_OPERATORS(<a class="code" href="../../d7/db1/structez_qt_editor_app_1_1_startup_flags.htm">ezQtEditorApp::StartupFlags</a>);</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_long_op_controller_manager_htm"><div class="ttname"><a href="../../dd/d69/classez_long_op_controller_manager.htm">ezLongOpControllerManager</a></div><div class="ttdoc">The LongOp controller is active in the editor process and manages which long ops are available,...</div><div class="ttdef"><b>Definition:</b> LongOpControllerManager.h:29</div></div>
@@ -382,6 +385,7 @@ $(document).ready(function(){initNavTree('d9/dde/_editor_app_8moc_8h_source.htm'
 <div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition:</b> Types.h:50</div></div>
 <div class="ttc" id="aclassez_set_htm"><div class="ttname"><a href="../../d0/d90/classez_set.htm">ezSet</a></div><div class="ttdef"><b>Definition:</b> Set.h:237</div></div>
 <div class="ttc" id="aclassez_dynamic_string_enum_htm"><div class="ttname"><a href="../../d3/dd2/classez_dynamic_string_enum.htm">ezDynamicStringEnum</a></div><div class="ttdoc">Stores the valid values and names for 'dynamic' enums.</div><div class="ttdef"><b>Definition:</b> DynamicStringEnum.h:13</div></div>
+<div class="ttc" id="astructez_time_htm"><div class="ttname"><a href="../../d3/d90/structez_time.htm">ezTime</a></div><div class="ttdoc">The time class encapsulates a double value storing the time in seconds.</div><div class="ttdef"><b>Definition:</b> Time.h:11</div></div>
 <div class="ttc" id="astructez_tools_project_event_htm"><div class="ttname"><a href="../../d4/d43/structez_tools_project_event.htm">ezToolsProjectEvent</a></div><div class="ttdef"><b>Definition:</b> ToolsProject.h:12</div></div>
 <div class="ttc" id="aclassez_qt_editor_app_htm"><div class="ttname"><a href="../../d1/d59/classez_qt_editor_app.htm">ezQtEditorApp</a></div><div class="ttdef"><b>Definition:</b> EditorApp.moc.h:44</div></div>
 <div class="ttc" id="aclassez_progress_htm"><div class="ttname"><a href="../../d8/d41/classez_progress.htm">ezProgress</a></div><div class="ttdoc">Manages the way a progress bar is subdivided and advanced.</div><div class="ttdef"><b>Definition:</b> Progress.h:35</div></div>
@@ -399,7 +403,7 @@ $(document).ready(function(){initNavTree('d9/dde/_editor_app_8moc_8h_source.htm'
 <div class="ttc" id="aclassez_qt_editor_app_htm_a9988b9adb00e51af26571e7fa5bcf3d4"><div class="ttname"><a href="../../d1/d59/classez_qt_editor_app.htm#a9988b9adb00e51af26571e7fa5bcf3d4">ezQtEditorApp::IsInSafeMode</a></div><div class="ttdeci">bool IsInSafeMode() const</div><div class="ttdoc">Can be set via the command line option '-safe'. In this mode the editor will not automatically load r...</div><div class="ttdef"><b>Definition:</b> EditorApp.moc.h:112</div></div>
 <div class="ttc" id="aclassez_map_htm"><div class="ttname"><a href="../../d1/d79/classez_map.htm">ezMap</a></div><div class="ttdef"><b>Definition:</b> Map.h:327</div></div>
 <div class="ttc" id="aclassez_event_htm"><div class="ttname"><a href="../../d0/daf/classez_event.htm">ezEvent&lt; const ezEditorAppEvent &amp; &gt;</a></div></div>
-<div class="ttc" id="astructez_plugin_set_htm"><div class="ttname"><a href="../../df/da0/structez_plugin_set.htm">ezPluginSet</a></div><div class="ttdoc">Describes a set of plugins. Name is the plugin file name used to load it through ezPlugin,...</div><div class="ttdef"><b>Definition:</b> Plugins.h:24</div></div>
+<div class="ttc" id="astructez_plugin_set_htm"><div class="ttname"><a href="../../df/da0/structez_plugin_set.htm">ezPluginSet</a></div><div class="ttdoc">Describes a set of plugins. Name is the plugin file name used to load it through ezPlugin,...</div><div class="ttdef"><b>Definition:</b> Plugins.h:26</div></div>
 <div class="ttc" id="aclassez_document_object_htm"><div class="ttname"><a href="../../d2/d53/classez_document_object.htm">ezDocumentObject</a></div><div class="ttdef"><b>Definition:</b> DocumentObjectBase.h:10</div></div>
 <div class="ttc" id="astructez_document_manager_1_1_event_htm"><div class="ttname"><a href="../../de/dad/structez_document_manager_1_1_event.htm">ezDocumentManager::Event</a></div><div class="ttdef"><b>Definition:</b> DocumentManager.h:64</div></div>
 <div class="ttc" id="astructez_log_msg_type_htm_a109cef5358039d006c48754b19db92e8a5ded666f00c7edf588e1d1086f46deab"><div class="ttname"><a href="../../d0/d07/structez_log_msg_type.htm#a109cef5358039d006c48754b19db92e8a5ded666f00c7edf588e1d1086f46deab">ezLogMsgType::WarningMsg</a></div><div class="ttdeci">@ WarningMsg</div><div class="ttdoc">A warning message.</div><div class="ttdef"><b>Definition:</b> Log.h:37</div></div>
@@ -420,7 +424,7 @@ $(document).ready(function(){initNavTree('d9/dde/_editor_app_8moc_8h_source.htm'
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_898824d97bbfb864e5ee6bfb2857fc31.htm">Editor</a></li><li class="navelem"><a class="el" href="../../dir_2c11fbcc86473fad6c721ead68acf992.htm">EditorFramework</a></li><li class="navelem"><a class="el" href="../../dir_31e8a62d704a531bdf879e50ba4667ff.htm">EditorApp</a></li><li class="navelem"><b>EditorApp.moc.h</b></li>
-    <li class="footer">Generated on Mon Oct 18 2021 15:24:04 for ezEngine by
+    <li class="footer">Generated on Mon Oct 18 2021 15:33:22 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

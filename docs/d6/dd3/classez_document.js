@@ -7,6 +7,7 @@ var classez_document =
     [ "ArePrefabsAllowed", "d6/dd3/classez_document.htm#a7b16d9249114072598ba94a8943b28ed", null ],
     [ "AttachMetaDataBeforeSaving", "d6/dd3/classez_document.htm#a4b5810c202235e3116f9168646ac46a7", null ],
     [ "BroadcastInterDocumentMessage", "d6/dd3/classez_document.htm#a30f0d8f0c09c6477147ded1801642c71", null ],
+    [ "CanEngineProcessBeRestarted", "d6/dd3/classez_document.htm#a170a7699197c950a56eb5ccf92e67a51", null ],
     [ "ComputeObjectTransformation", "d6/dd3/classez_document.htm#a429b42f829e25602b3819fc67a26b9c6", null ],
     [ "CopySelectedObjects", "d6/dd3/classez_document.htm#abe0e7603506e28a71ca9b57b799ef1af", null ],
     [ "CreateDocumentInfo", "d6/dd3/classez_document.htm#afe38ef00fd14e58eabdf69b3cc30ae71", null ],

@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 21.6</span>
+   &#160;<span id="projectnumber">Release 21.10</span>
    </div>
   </td>
  </tr>
@@ -92,38 +92,41 @@ $(document).ready(function(){initNavTree('d1/daa/_plugins_8h_source.htm','../../
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;EditorFramework/EditorFrameworkDLL.h&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;Foundation/Containers/Map.h&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;Foundation/Strings/String.h&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="../../d3/d7b/structez_plugin_info.htm">    8</a></span>&#160;<span class="keyword">struct </span>EZ_EDITORFRAMEWORK_DLL <a class="code" href="../../d3/d7b/structez_plugin_info.htm">ezPluginInfo</a></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keywordtype">bool</span> m_bAvailable = <span class="keyword">false</span>;  <span class="comment">// exists on disk</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keywordtype">bool</span> m_bActive = <span class="keyword">false</span>;     <span class="comment">// currently loaded into the process</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <span class="keywordtype">bool</span> m_bToBeLoaded = <span class="keyword">false</span>; <span class="comment">// supposed to be loaded into the process next restart</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keywordtype">bool</span> m_bLoadCopy = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code" href="../../d3/d7b/structez_plugin_info.htm">ezPluginInfo</a>&amp; rhs)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">return</span> m_bAvailable == rhs.m_bAvailable &amp;&amp; m_bActive == rhs.m_bActive &amp;&amp; m_bToBeLoaded == rhs.m_bToBeLoaded &amp;&amp; m_bLoadCopy == rhs.m_bLoadCopy;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  }</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> <a class="code" href="../../d3/d7b/structez_plugin_info.htm">ezPluginInfo</a>&amp; rhs)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> !(*<span class="keyword">this</span> == rhs); }</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;};</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="../../df/da0/structez_plugin_set.htm">   24</a></span>&#160;<span class="keyword">struct </span>EZ_EDITORFRAMEWORK_DLL <a class="code" href="../../df/da0/structez_plugin_set.htm">ezPluginSet</a></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;ezString, ezPluginInfo&gt;</a> m_Plugins;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code" href="../../df/da0/structez_plugin_set.htm">ezPluginSet</a>&amp; rhs)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_Plugins == rhs.m_Plugins; }</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> <a class="code" href="../../df/da0/structez_plugin_set.htm">ezPluginSet</a>&amp; rhs)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> !(*<span class="keyword">this</span> == rhs); }</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;};</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;Foundation/Time/Timestamp.h&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="../../d3/d7b/structez_plugin_info.htm">    9</a></span>&#160;<span class="keyword">struct </span>EZ_EDITORFRAMEWORK_DLL <a class="code" href="../../d3/d7b/structez_plugin_info.htm">ezPluginInfo</a></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keywordtype">bool</span> m_bAvailable = <span class="keyword">false</span>;  <span class="comment">// exists on disk</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <span class="keywordtype">bool</span> m_bActive = <span class="keyword">false</span>;     <span class="comment">// currently loaded into the process</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keywordtype">bool</span> m_bToBeLoaded = <span class="keyword">false</span>; <span class="comment">// supposed to be loaded into the process next restart</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keywordtype">bool</span> m_bLoadCopy = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <a class="code" href="../../d9/d88/classez_timestamp.htm">ezTimestamp</a> m_LastModification;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code" href="../../d3/d7b/structez_plugin_info.htm">ezPluginInfo</a>&amp; rhs)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">  </span>{</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">return</span> m_bAvailable == rhs.m_bAvailable &amp;&amp; m_bActive == rhs.m_bActive &amp;&amp; m_bToBeLoaded == rhs.m_bToBeLoaded &amp;&amp; m_bLoadCopy == rhs.m_bLoadCopy;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  }</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> <a class="code" href="../../d3/d7b/structez_plugin_info.htm">ezPluginInfo</a>&amp; rhs)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> !(*<span class="keyword">this</span> == rhs); }</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;};</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../df/da0/structez_plugin_set.htm">   26</a></span>&#160;<span class="keyword">struct </span>EZ_EDITORFRAMEWORK_DLL <a class="code" href="../../df/da0/structez_plugin_set.htm">ezPluginSet</a></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;ezString, ezPluginInfo&gt;</a> m_Plugins;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code" href="../../df/da0/structez_plugin_set.htm">ezPluginSet</a>&amp; rhs)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_Plugins == rhs.m_Plugins; }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> <a class="code" href="../../df/da0/structez_plugin_set.htm">ezPluginSet</a>&amp; rhs)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> !(*<span class="keyword">this</span> == rhs); }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="astructez_plugin_info_htm"><div class="ttname"><a href="../../d3/d7b/structez_plugin_info.htm">ezPluginInfo</a></div><div class="ttdoc">Holds information about a plugin. Used for editor and engine plugins, where the user can configure wh...</div><div class="ttdef"><b>Definition:</b> Plugins.h:8</div></div>
+<div class="ttc" id="aclassez_timestamp_htm"><div class="ttname"><a href="../../d9/d88/classez_timestamp.htm">ezTimestamp</a></div><div class="ttdoc">The timestamp class encapsulates a date in time as microseconds since Unix epoch.</div><div class="ttdef"><b>Definition:</b> Timestamp.h:22</div></div>
+<div class="ttc" id="astructez_plugin_info_htm"><div class="ttname"><a href="../../d3/d7b/structez_plugin_info.htm">ezPluginInfo</a></div><div class="ttdoc">Holds information about a plugin. Used for editor and engine plugins, where the user can configure wh...</div><div class="ttdef"><b>Definition:</b> Plugins.h:9</div></div>
 <div class="ttc" id="aclassez_map_htm"><div class="ttname"><a href="../../d1/d79/classez_map.htm">ezMap</a></div><div class="ttdef"><b>Definition:</b> Map.h:327</div></div>
-<div class="ttc" id="astructez_plugin_set_htm"><div class="ttname"><a href="../../df/da0/structez_plugin_set.htm">ezPluginSet</a></div><div class="ttdoc">Describes a set of plugins. Name is the plugin file name used to load it through ezPlugin,...</div><div class="ttdef"><b>Definition:</b> Plugins.h:24</div></div>
+<div class="ttc" id="astructez_plugin_set_htm"><div class="ttname"><a href="../../df/da0/structez_plugin_set.htm">ezPluginSet</a></div><div class="ttdoc">Describes a set of plugins. Name is the plugin file name used to load it through ezPlugin,...</div><div class="ttdef"><b>Definition:</b> Plugins.h:26</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_898824d97bbfb864e5ee6bfb2857fc31.htm">Editor</a></li><li class="navelem"><a class="el" href="../../dir_2c11fbcc86473fad6c721ead68acf992.htm">EditorFramework</a></li><li class="navelem"><a class="el" href="../../dir_31e8a62d704a531bdf879e50ba4667ff.htm">EditorApp</a></li><li class="navelem"><a class="el" href="../../dir_d871f29f427b236444aa3b423d18a5a4.htm">Configuration</a></li><li class="navelem"><b>Plugins.h</b></li>
-    <li class="footer">Generated on Mon Oct 18 2021 15:24:04 for ezEngine by
+    <li class="footer">Generated on Mon Oct 18 2021 15:33:22 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

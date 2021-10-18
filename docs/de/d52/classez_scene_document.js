@@ -15,6 +15,7 @@ var classez_scene_document =
     [ "ApplyRecursive", "de/d52/classez_scene_document.htm#a2f91e3ac0f4a64b7849b3b361596078f", null ],
     [ "ArePrefabsAllowed", "de/d52/classez_scene_document.htm#a4f93f5f4b105db3623fefa504e56d0f1", null ],
     [ "AttachToObject", "de/d52/classez_scene_document.htm#a5ba234c8f9167d8c8ebd0f79f00ce6b2", null ],
+    [ "CanEngineProcessBeRestarted", "de/d52/classez_scene_document.htm#af89ef187e727cdb5cd7a1f9d88568c8a", null ],
     [ "ConvertToEditorPrefab", "de/d52/classez_scene_document.htm#a17314a9e76201214b56f59de3ab1936c", null ],
     [ "ConvertToEnginePrefab", "de/d52/classez_scene_document.htm#aec4f6d0563535148b7a2a1b1b835a9a7", null ],
     [ "CopyReference", "de/d52/classez_scene_document.htm#ac2d6c19f4c5737fff09e19e9d5bb5bea", null ],

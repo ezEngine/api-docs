@@ -5,5 +5,6 @@ var structez_plugin_info =
     [ "m_bActive", "d3/d7b/structez_plugin_info.htm#ac19ca8eb9f3dbad6a3207a3a6bdeb803", null ],
     [ "m_bAvailable", "d3/d7b/structez_plugin_info.htm#ad87d5174095c8dc30bb883ba349d151e", null ],
     [ "m_bLoadCopy", "d3/d7b/structez_plugin_info.htm#a84e0cc6ab8ead8351ddf8e1ee40aa224", null ],
-    [ "m_bToBeLoaded", "d3/d7b/structez_plugin_info.htm#ad0ddcb4aa33539e2f1ee0481446aa6d1", null ]
+    [ "m_bToBeLoaded", "d3/d7b/structez_plugin_info.htm#ad0ddcb4aa33539e2f1ee0481446aa6d1", null ],
+    [ "m_LastModification", "d3/d7b/structez_plugin_info.htm#a44f94a48f2317fa664c9643f344752e0", null ]
 ];
