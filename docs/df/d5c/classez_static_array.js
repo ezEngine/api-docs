@@ -13,6 +13,5 @@ var classez_static_array =
     [ "operator=", "df/d5c/classez_static_array.htm#a8a148dcec51bd95a18b15643cfc5ed52", null ],
     [ "operator=", "df/d5c/classez_static_array.htm#ae8236320850db4ba10c206f352ab403e", null ],
     [ "Reserve", "df/d5c/classez_static_array.htm#ab36e115696659385ce7b18cafcfb142e", null ],
-    [ "ezArrayBase< T, ezStaticArray< T, Capacity > >", "df/d5c/classez_static_array.htm#a434ffbf4985bc0d1e3fcaab375e10464", null ],
-    [ "m_Data", "df/d5c/classez_static_array.htm#a3192ef165cec2a3d83bf54363bea4dd2", null ]
+    [ "ezArrayBase< T, ezStaticArray< T, Capacity > >", "df/d5c/classez_static_array.htm#a434ffbf4985bc0d1e3fcaab375e10464", null ]
 ];

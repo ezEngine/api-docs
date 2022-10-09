@@ -10,6 +10,7 @@ var classez_manipulator_adapter =
     [ "Finalize", "db/d05/classez_manipulator_adapter.htm#a86bdefa269173a553a56f822ffbfd6e7", null ],
     [ "GetObjectAccessor", "db/d05/classez_manipulator_adapter.htm#a5888235d19c6cd70a95aae8f98c20c50", null ],
     [ "GetObjectTransform", "db/d05/classez_manipulator_adapter.htm#aaf20be19c5ce333d2daf395cf661d604", null ],
+    [ "GetOffsetTransform", "db/d05/classez_manipulator_adapter.htm#ae7138d71fee5d998e4df7eb0c24a7bee", null ],
     [ "GetProperty", "db/d05/classez_manipulator_adapter.htm#a8baf45ee9038cd11b0f2b5b86d7b16b1", null ],
     [ "QueryGridSettings", "db/d05/classez_manipulator_adapter.htm#a62ed14afc02f422f1c32590af75a50f8", null ],
     [ "SetManipulator", "db/d05/classez_manipulator_adapter.htm#a45b66bad23169d067c254d023c1c62a7", null ],

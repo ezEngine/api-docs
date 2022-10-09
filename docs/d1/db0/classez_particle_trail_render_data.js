@@ -10,7 +10,7 @@ var classez_particle_trail_render_data =
     [ "m_TotalEffectLifeTime", "d1/db0/classez_particle_trail_render_data.htm#a7b288229ba4b0778088115ded2575dee", null ],
     [ "m_TrailParticleData", "d1/db0/classez_particle_trail_render_data.htm#a55ae0d213f41d4ec5a8fbfb5b461f62d", null ],
     [ "m_TrailPointsShared", "d1/db0/classez_particle_trail_render_data.htm#a967f526962146a0898d43818d6da89f0", null ],
-    [ "m_uiMaxTrailPoints", "d1/db0/classez_particle_trail_render_data.htm#a03db8f5d1270a47ea8e7359e9cf35620", null ],
+    [ "m_uiMaxTrailPoints", "d1/db0/classez_particle_trail_render_data.htm#a40a9a6f90a0bbeb7cc0118208e380491", null ],
     [ "m_uiNumFlipbookAnimationsX", "d1/db0/classez_particle_trail_render_data.htm#aa010030874d355b4d996f489d50c173b", null ],
     [ "m_uiNumFlipbookAnimationsY", "d1/db0/classez_particle_trail_render_data.htm#af08b614c5c0802aad70622d54a12a257", null ],
     [ "m_uiNumVariationsX", "d1/db0/classez_particle_trail_render_data.htm#ae111a21c8a4b0dd1c361c9e0fbb8b898", null ],

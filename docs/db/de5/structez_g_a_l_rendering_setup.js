@@ -1,5 +1,7 @@
 var structez_g_a_l_rendering_setup =
 [
+    [ "operator!=", "db/de5/structez_g_a_l_rendering_setup.htm#a094b667657af1b5938f84fb64ba51d24", null ],
+    [ "operator==", "db/de5/structez_g_a_l_rendering_setup.htm#a5beb4a7c57613cba842276883125459a", null ],
     [ "m_bClearDepth", "db/de5/structez_g_a_l_rendering_setup.htm#a2b842465f6a0ae90cdd49ca0a8f9d7cb", null ],
     [ "m_bClearStencil", "db/de5/structez_g_a_l_rendering_setup.htm#a963c9b3c867292343c42285ee628c4b0", null ],
     [ "m_bDiscardColor", "db/de5/structez_g_a_l_rendering_setup.htm#a54301bfa598efa4b75085f22d3f0161c", null ],

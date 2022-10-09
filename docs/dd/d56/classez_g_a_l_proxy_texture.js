@@ -5,7 +5,6 @@ var classez_g_a_l_proxy_texture =
     [ "DeInitPlatform", "dd/d56/classez_g_a_l_proxy_texture.htm#aedec6e79fd5fa8df92589ac1eda0aab5", null ],
     [ "GetParentResource", "dd/d56/classez_g_a_l_proxy_texture.htm#acf3511c4ec7a3833c1524ba976029c5e", null ],
     [ "InitPlatform", "dd/d56/classez_g_a_l_proxy_texture.htm#ace71b09acb6b2179383f0f90a8af2306", null ],
-    [ "ReplaceExisitingNativeObject", "dd/d56/classez_g_a_l_proxy_texture.htm#aa54577ac3955604bd27f0bc548af19d4", null ],
     [ "SetDebugNamePlatform", "dd/d56/classez_g_a_l_proxy_texture.htm#a056810b2fc26b43c0e1c1428a0404997", null ],
     [ "ezGALDevice", "dd/d56/classez_g_a_l_proxy_texture.htm#a8dcbecd17dea850cbe8b1f3181dacb0f", null ],
     [ "m_pParentTexture", "dd/d56/classez_g_a_l_proxy_texture.htm#a1ea469d5ad856c49781b710a3d18ad29", null ]

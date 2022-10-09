@@ -28,6 +28,7 @@ var classez_remote_interface =
     [ "ReportMessage", "df/d93/classez_remote_interface.htm#a381c3260a66bf4783f44fffb3cc31ff1", null ],
     [ "Send", "df/d93/classez_remote_interface.htm#ae0882d792013f5dc5426e09303405e6b", null ],
     [ "Send", "df/d93/classez_remote_interface.htm#a601ada9b5589d8818ba1357d8fa58f0a", null ],
+    [ "Send", "df/d93/classez_remote_interface.htm#a985afd67c08f46df194c01c09f8c794a", null ],
     [ "Send", "df/d93/classez_remote_interface.htm#a1fc4ebec6018198572618680216da0a3", null ],
     [ "Send", "df/d93/classez_remote_interface.htm#ab542626bb273287105135f5544290c7f", null ],
     [ "SetMessageHandler", "df/d93/classez_remote_interface.htm#ac2d9c2f478ee90260ba745ca18d63c3d", null ],

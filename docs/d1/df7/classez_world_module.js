@@ -11,7 +11,7 @@ var classez_world_module =
     [ "GetBlockAllocator", "d1/df7/classez_world_module.htm#a42ca7cc6f1e8c4035c41722e917a3098", null ],
     [ "GetWorld", "d1/df7/classez_world_module.htm#a198cada2342ab9d9921bd28cb706077f", null ],
     [ "GetWorld", "d1/df7/classez_world_module.htm#a07ed771ba10b4d8f3210fdcc44c1f6ce", null ],
-    [ "GetWorldIndex", "d1/df7/classez_world_module.htm#a0b9cf8ad083785d93a4adc7c8539c863", null ],
+    [ "GetWorldIndex", "d1/df7/classez_world_module.htm#ae268e0f729cf264d11c80d3ce3960d5e", null ],
     [ "GetWorldSimulationEnabled", "d1/df7/classez_world_module.htm#a5026bfe8a40f781299f4945b0cf732d5", null ],
     [ "Initialize", "d1/df7/classez_world_module.htm#a36d1b1638b4cf6d195044c865544c9d9", null ],
     [ "OnSimulationStarted", "d1/df7/classez_world_module.htm#af81db86d00f8f4e3db6ae704c0c9e6fc", null ],

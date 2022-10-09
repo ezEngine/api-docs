@@ -1,6 +1,6 @@
 var structez_world_desc =
 [
-    [ "ezWorldDesc", "d7/d54/structez_world_desc.htm#ae9cb244eb443b6880c641feb59feaa4c", null ],
+    [ "ezWorldDesc", "d7/d54/structez_world_desc.htm#a73e946be696089b9db2044b2c90fb916", null ],
     [ "EZ_DECLARE_POD_TYPE", "d7/d54/structez_world_desc.htm#a745d484848ca9df285691e798011b9ac", null ],
     [ "m_bAutoCreateSpatialSystem", "d7/d54/structez_world_desc.htm#a1fa58541b8db069e00b06f78f6a348c3", null ],
     [ "m_bReportErrorWhenStaticObjectMoves", "d7/d54/structez_world_desc.htm#a8ef5fb79f1d48104056dfc2fc788c475", null ],

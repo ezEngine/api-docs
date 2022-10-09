@@ -226,22 +226,24 @@ $(document).ready(function(){initNavTree('d2/de0/_task_system_declarations_8h_so
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
 <div class="line"><a name="l00186"></a><span class="lineno"><a class="line" href="../../de/d73/structez_parallel_for_params.htm#ae7a0d95ed442cc1c77d26eb968e850ea">  186</a></span>&#160;  <a class="code" href="../../d1/d4c/classez_allocator_base.htm">ezAllocatorBase</a>* pTaskAllocator = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  ezUInt32 DetermineMultiplicity(ezUInt32 uiNumTaskItems) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  ezUInt32 DetermineMultiplicity(ezUInt64 uiNumTaskItems) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  ezUInt32 DetermineItemsPerInvocation(ezUInt32 uiNumTaskItems, ezUInt32 uiMultiplicity) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;};</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="keyword">using</span> <a class="code" href="../../d5/d68/structez_delegate.htm">ezParallelForIndexedFunction</a> = <a class="code" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>&lt;void(ezUInt32, ezUInt32), 48&gt;;</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ElemType&gt;</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="keyword">using</span> <a class="code" href="../../d5/d68/structez_delegate.htm">ezParallelForFunction</a> = <a class="code" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>&lt;void(ezUInt32, <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;ElemType&gt;</a>), 48&gt;;</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="keyword">enum class</span> ezTaskWorkerState</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;{</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;  Active = 0,</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;  Idle = 1,</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;  Blocked = 2,</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;};</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  ezUInt64 DetermineItemsPerInvocation(ezUInt64 uiNumTaskItems, ezUInt32 uiMultiplicity) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;  ezUInt32 DetermineItemsPerInvocation(ezUInt32 uiNumTaskItems, ezUInt32 uiMultiplicity) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;};</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="keyword">using</span> <a class="code" href="../../d5/d68/structez_delegate.htm">ezParallelForIndexedFunction32</a> = <a class="code" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>&lt;void(ezUInt32, ezUInt32), 48&gt;;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="keyword">using</span> <a class="code" href="../../d5/d68/structez_delegate.htm">ezParallelForIndexedFunction64</a> = <a class="code" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>&lt;void(ezUInt64, ezUInt64), 48&gt;;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ElemType&gt;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="keyword">using</span> <a class="code" href="../../d5/d68/structez_delegate.htm">ezParallelForFunction</a> = <a class="code" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>&lt;void(ezUInt32, <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;ElemType&gt;</a>), 48&gt;;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="keyword">enum class</span> ezTaskWorkerState</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;{</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;  Active = 0,</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;  Idle = 1,</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;  Blocked = 2,</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astructez_parallel_for_params_htm"><div class="ttname"><a href="../../de/d73/structez_parallel_for_params.htm">ezParallelForParams</a></div><div class="ttdoc">Settings for ezTaskSystem::ParallelFor invocations.</div><div class="ttdef"><b>Definition:</b> TaskSystemDeclarations.h:166</div></div>
@@ -291,7 +293,7 @@ $(document).ready(function(){initNavTree('d2/de0/_task_system_declarations_8h_so
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_05460f4aa032e23246d68b56847b5fed.htm">Threading</a></li><li class="navelem"><a class="el" href="../../dir_87563d8e459b6b2efd39d0a742560444.htm">Implementation</a></li><li class="navelem"><b>TaskSystemDeclarations.h</b></li>
-    <li class="footer">Generated on Mon Oct 18 2021 15:33:30 for ezEngine by
+    <li class="footer">Generated on Sun Oct 9 2022 14:44:56 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

@@ -39,11 +39,11 @@ var classez_resource =
     [ "UnloadData", "d3/d0a/classez_resource.htm#aafc6ffb811439fcdf0ca0b2363606e69", null ],
     [ "UpdateContent", "d3/d0a/classez_resource.htm#acadf91c5f483db8c9777467552a14149", null ],
     [ "UpdateMemoryUsage", "d3/d0a/classez_resource.htm#a6e9b6c3670b43b22fff2ed62537f69ce", null ],
-    [ "DecreaseResourceRefCount", "d3/d0a/classez_resource.htm#a97b1bad81a79d60d21ba82f2f93c3ecf", null ],
+    [ "DecreaseResourceRefCount", "d3/d0a/classez_resource.htm#a879df71dc9b671bb47e5cfa7495b5022", null ],
     [ "ezResourceManager", "d3/d0a/classez_resource.htm#a89485141196e369fad2c2da4905cd355", null ],
     [ "ezResourceManagerWorkerDataLoad", "d3/d0a/classez_resource.htm#a182af4a111d72b8b744603a37722e621", null ],
     [ "ezResourceManagerWorkerUpdateContent", "d3/d0a/classez_resource.htm#a251284a6be67bb5d716dd548f896e939", null ],
     [ "ezTypedResourceHandle", "d3/d0a/classez_resource.htm#a5405b1647898af1a6f8b35394796809a", null ],
-    [ "IncreaseResourceRefCount", "d3/d0a/classez_resource.htm#ae9e883b35fcf4ec93ea7e56964d47801", null ],
+    [ "IncreaseResourceRefCount", "d3/d0a/classez_resource.htm#acb18c0b7756b58695537f6bd07c9f780", null ],
     [ "m_ResourceEvents", "d3/d0a/classez_resource.htm#a25562a922c2f82f4ead6a601c0bfa78c", null ]
 ];

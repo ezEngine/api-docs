@@ -31,7 +31,7 @@ var classez_d_g_m_l_graph =
       [ "Button", "d1/dd8/classez_d_g_m_l_graph.htm#a083f04bc75701694b886694c9e2422d7a87b7760f14fbff78d8819291f36ab9a0", null ]
     ] ],
     [ "ezDGMLGraph", "d1/dd8/classez_d_g_m_l_graph.htm#ac0d202b4475a50c7911633f6be8256a1", null ],
-    [ "AddConnection", "d1/dd8/classez_d_g_m_l_graph.htm#afc1365f6329fc6696e1c6286f93ae9e7", null ],
+    [ "AddConnection", "d1/dd8/classez_d_g_m_l_graph.htm#a2f4aa953b7d8fd7b4c2dfed8ab67aa47", null ],
     [ "AddGroup", "d1/dd8/classez_d_g_m_l_graph.htm#ae9dacc5882347c16b3dbee77e84c0e2a", null ],
     [ "AddNode", "d1/dd8/classez_d_g_m_l_graph.htm#acbc85549859cac8e84dd0de3a972aa24", null ],
     [ "AddNodeProperty", "d1/dd8/classez_d_g_m_l_graph.htm#abd7f8e51be8e2ad0798c39b3d56229a3", null ],

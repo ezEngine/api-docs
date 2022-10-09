@@ -11,6 +11,7 @@ var structez_shader_helper_1_1ez_shader_sections =
       [ "DOMAINSHADER", "db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402a43f92c2da5dcc26c3c6231e3efd4601b", null ],
       [ "GEOMETRYSHADER", "db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402a309431c755c63c8273465809f40702f2", null ],
       [ "PIXELSHADER", "db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402affd32d2387e6498df3471776e32a5412", null ],
-      [ "COMPUTESHADER", "db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402aae7d54d3120f86dbeaa44be303a4f1aa", null ]
+      [ "COMPUTESHADER", "db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402aae7d54d3120f86dbeaa44be303a4f1aa", null ],
+      [ "TEMPLATE_VARS", "db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402abc3e76f912c84825caba17c02668699b", null ]
     ] ]
 ];

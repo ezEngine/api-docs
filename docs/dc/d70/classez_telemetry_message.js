@@ -4,7 +4,6 @@ var classez_telemetry_message =
     [ "ezTelemetryMessage", "dc/d70/classez_telemetry_message.htm#aaa88f2b8f1d319d12c707cc4ebda8ceb", null ],
     [ "~ezTelemetryMessage", "dc/d70/classez_telemetry_message.htm#a2f6b5ee322594813ee64907b3c585172", null ],
     [ "GetMessageID", "dc/d70/classez_telemetry_message.htm#a7be3a7138d0a88e1f3e83cb1d2dd198b", null ],
-    [ "GetMessageSize", "dc/d70/classez_telemetry_message.htm#aec6a0898cad24835b5e58a9e476277e5", null ],
     [ "GetReader", "dc/d70/classez_telemetry_message.htm#aa8e249248bcd6308b3847a61c8bc9da3", null ],
     [ "GetSystemID", "dc/d70/classez_telemetry_message.htm#a2c6ac5a8aee06f9838dbd850696145ce", null ],
     [ "GetWriter", "dc/d70/classez_telemetry_message.htm#af6b791f760c908c1e32e3de78b9ea0fa", null ],

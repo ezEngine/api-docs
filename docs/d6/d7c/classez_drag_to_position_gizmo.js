@@ -21,6 +21,8 @@ var classez_drag_to_position_gizmo =
     [ "m_AlignPZ", "d6/d7c/classez_drag_to_position_gizmo.htm#ab38413f0d3aa1ca6c2be455605fa8d35", null ],
     [ "m_bModifiesRotation", "d6/d7c/classez_drag_to_position_gizmo.htm#ac2531a1dd30715020b7b0f54b169a7f3", null ],
     [ "m_Bobble", "d6/d7c/classez_drag_to_position_gizmo.htm#ae71969bdac29977ab69a0e5783a16fd3", null ],
+    [ "m_bUseExperimentalGizmo", "d6/d7c/classez_drag_to_position_gizmo.htm#ad49bf0497e8a6e2c5f0acd2aa8162c29", null ],
     [ "m_LastInteraction", "d6/d7c/classez_drag_to_position_gizmo.htm#ac7f25ad27f5b61dadb67ad501f43ceea", null ],
+    [ "m_qStartOrientation", "d6/d7c/classez_drag_to_position_gizmo.htm#a3bd2a7ec5d89238e78684b613136739e", null ],
     [ "m_vStartPosition", "d6/d7c/classez_drag_to_position_gizmo.htm#ad2d9cb78fb9f39e56eb8de61ff7d370b", null ]
 ];

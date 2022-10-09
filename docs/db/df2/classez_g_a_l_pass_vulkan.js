@@ -8,6 +8,9 @@ var classez_g_a_l_pass_vulkan =
     [ "EndComputePlatform", "db/df2/classez_g_a_l_pass_vulkan.htm#a8e6518ebc4e1431236de9913a4633a86", null ],
     [ "EndPass", "db/df2/classez_g_a_l_pass_vulkan.htm#aadaa9de04987de3fbbbeda6c024e3f8d", null ],
     [ "EndRenderingPlatform", "db/df2/classez_g_a_l_pass_vulkan.htm#a12fac68707accbc0595de4dc0614ac56", null ],
+    [ "MarkDirty", "db/df2/classez_g_a_l_pass_vulkan.htm#a1b56e0d1c92b566a89557593a2171eb3", null ],
+    [ "Reset", "db/df2/classez_g_a_l_pass_vulkan.htm#a5744fb25ca1c680989a7f9972896fb20", null ],
+    [ "SetCurrentCommandBuffer", "db/df2/classez_g_a_l_pass_vulkan.htm#ac731a999684f987047bd8296575626d7", null ],
     [ "ezGALDeviceVulkan", "db/df2/classez_g_a_l_pass_vulkan.htm#a6146725f622bf7090bada94dc31cfd9e", null ],
     [ "ezMemoryUtils", "db/df2/classez_g_a_l_pass_vulkan.htm#aedd88a418f4111b0f670c96423cfd850", null ]
 ];

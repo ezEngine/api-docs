@@ -7,7 +7,6 @@ var classez_g_a_l_texture_d_x11 =
     [ "GetDXStagingTexture", "d5/dca/classez_g_a_l_texture_d_x11.htm#a1325f30f605c9e92b8fb0bdcb1e7da7e", null ],
     [ "GetDXTexture", "d5/dca/classez_g_a_l_texture_d_x11.htm#a4ae4e15638eb544ca43597da56df3463", null ],
     [ "InitPlatform", "d5/dca/classez_g_a_l_texture_d_x11.htm#a1175db02ff4796657060cef13deaa464", null ],
-    [ "ReplaceExisitingNativeObject", "d5/dca/classez_g_a_l_texture_d_x11.htm#a4f21c7a76f49269ab05a30ef8aa2976e", null ],
     [ "SetDebugNamePlatform", "d5/dca/classez_g_a_l_texture_d_x11.htm#a3d2687e514313690c4fbb12339d4560f", null ],
     [ "ezGALDeviceDX11", "d5/dca/classez_g_a_l_texture_d_x11.htm#af6317ae5bf9c369d27c87f6b3ec93352", null ],
     [ "ezMemoryUtils", "d5/dca/classez_g_a_l_texture_d_x11.htm#aedd88a418f4111b0f670c96423cfd850", null ],

@@ -7,6 +7,7 @@ var classez_process_communication_channel =
     [ "MessageFunc", "d0/d97/classez_process_communication_channel.htm#a24ff1576231be1302cfd35126157f954", null ],
     [ "ProcessMessages", "d0/d97/classez_process_communication_channel.htm#a2a44df837d5d1e0b569fa2f8589d8ea7", null ],
     [ "SendMessage", "d0/d97/classez_process_communication_channel.htm#a29a578760791e5b12f8e23f33a7200ae", null ],
+    [ "WaitForConnection", "d0/d97/classez_process_communication_channel.htm#a160c3448570d25f9f3f439731f512e0d", null ],
     [ "WaitForMessage", "d0/d97/classez_process_communication_channel.htm#a7e570789d78fd1e32eee3f403e2b33f0", null ],
     [ "WaitForMessages", "d0/d97/classez_process_communication_channel.htm#a6f2191d1535163b19313854ae267cc9c", null ],
     [ "m_Events", "d0/d97/classez_process_communication_channel.htm#a2a9b611e0dec92691b5779c0adfab13f", null ],

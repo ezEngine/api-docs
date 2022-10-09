@@ -3,7 +3,7 @@ var classez_g_a_l_blend_state_vulkan =
     [ "ezGALBlendStateVulkan", "d8/d9c/classez_g_a_l_blend_state_vulkan.htm#af334305e92a120bd160f153472dbf5b4", null ],
     [ "~ezGALBlendStateVulkan", "d8/d9c/classez_g_a_l_blend_state_vulkan.htm#a0f7ec88e1f6e7ccd49d05721a9046b14", null ],
     [ "DeInitPlatform", "d8/d9c/classez_g_a_l_blend_state_vulkan.htm#a5c43aad017fd0491a98a4fd933bf7163", null ],
-    [ "GetDXBlendState", "d8/d9c/classez_g_a_l_blend_state_vulkan.htm#ae033b16ceb53eadfbf451f11c921f8b1", null ],
+    [ "GetBlendState", "d8/d9c/classez_g_a_l_blend_state_vulkan.htm#a2a155e3779bfb1bce49020996e122ada", null ],
     [ "InitPlatform", "d8/d9c/classez_g_a_l_blend_state_vulkan.htm#a6b1859d1375e751bcb1b1ccf843ce99d", null ],
     [ "ezGALDeviceVulkan", "d8/d9c/classez_g_a_l_blend_state_vulkan.htm#a6146725f622bf7090bada94dc31cfd9e", null ],
     [ "ezMemoryUtils", "d8/d9c/classez_g_a_l_blend_state_vulkan.htm#aedd88a418f4111b0f670c96423cfd850", null ],

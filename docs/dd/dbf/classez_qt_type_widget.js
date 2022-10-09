@@ -5,5 +5,6 @@ var classez_qt_type_widget =
     [ "GetSelection", "dd/dbf/classez_qt_type_widget.htm#a05cdb4cbc4acc904945ab623d9c16a7c", null ],
     [ "GetType", "dd/dbf/classez_qt_type_widget.htm#a11b8ffbd75c16f0b2246eecf422310f5", null ],
     [ "PrepareToDie", "dd/dbf/classez_qt_type_widget.htm#a375e5ec399e2a2b6947e15f0a5fbd3f0", null ],
-    [ "SetSelection", "dd/dbf/classez_qt_type_widget.htm#ae29b7ab75d49dd7ae3a8f9b41a5f346f", null ]
+    [ "SetSelection", "dd/dbf/classez_qt_type_widget.htm#ae29b7ab75d49dd7ae3a8f9b41a5f346f", null ],
+    [ "showEvent", "dd/dbf/classez_qt_type_widget.htm#a3b63648b73f65d00a518d91a3cc47f00", null ]
 ];

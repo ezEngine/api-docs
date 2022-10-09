@@ -2,6 +2,7 @@ var classez_g_a_l_command_encoder_impl_d_x11 =
 [
     [ "ezGALCommandEncoderImplDX11", "d3/d58/classez_g_a_l_command_encoder_impl_d_x11.htm#a6253355235bf27fe7f8119de3da4a259", null ],
     [ "~ezGALCommandEncoderImplDX11", "d3/d58/classez_g_a_l_command_encoder_impl_d_x11.htm#a435424f2fe9581cba8d9b3a7ee896687", null ],
+    [ "BeginCompute", "d3/d58/classez_g_a_l_command_encoder_impl_d_x11.htm#a37ccfc639bd97d03d5e4dbf969d9d904", null ],
     [ "BeginQueryPlatform", "d3/d58/classez_g_a_l_command_encoder_impl_d_x11.htm#ab49e676c01691d878f88889a489c3081", null ],
     [ "BeginRendering", "d3/d58/classez_g_a_l_command_encoder_impl_d_x11.htm#ac6304a7aed164282e7c9a2da877a525c", null ],
     [ "BeginStreamOutPlatform", "d3/d58/classez_g_a_l_command_encoder_impl_d_x11.htm#a1c646fd1ac723f32c6f18bd2f2987e01", null ],
@@ -28,9 +29,7 @@ var classez_g_a_l_command_encoder_impl_d_x11 =
     [ "GenerateMipMapsPlatform", "d3/d58/classez_g_a_l_command_encoder_impl_d_x11.htm#a286ff490f699caae28cc4e9b475d3deb", null ],
     [ "GetQueryResultPlatform", "d3/d58/classez_g_a_l_command_encoder_impl_d_x11.htm#a7b07cbbbff0b4b9feaa18a49b9666822", null ],
     [ "InsertEventMarkerPlatform", "d3/d58/classez_g_a_l_command_encoder_impl_d_x11.htm#a60ca20f5a4f2c2ea6d2e51a08a846f70", null ],
-    [ "InsertFencePlatform", "d3/d58/classez_g_a_l_command_encoder_impl_d_x11.htm#aa5a878bad4948dd4fd59001e4c58a15b", null ],
     [ "InsertTimestampPlatform", "d3/d58/classez_g_a_l_command_encoder_impl_d_x11.htm#a69045965082f4e3fd61d872c402d3d5c", null ],
-    [ "IsFenceReachedPlatform", "d3/d58/classez_g_a_l_command_encoder_impl_d_x11.htm#ab3205b196690edc87df04dd05dbdf3fd", null ],
     [ "PopMarkerPlatform", "d3/d58/classez_g_a_l_command_encoder_impl_d_x11.htm#af49647053216ccb1bf819cd36b6126e1", null ],
     [ "PushMarkerPlatform", "d3/d58/classez_g_a_l_command_encoder_impl_d_x11.htm#ac74559a00ce26ad1cc074652aec5faae", null ],
     [ "ReadbackTexturePlatform", "d3/d58/classez_g_a_l_command_encoder_impl_d_x11.htm#ae3fb5b0b4f38da862aefd4e4ffe12cda", null ],
@@ -52,6 +51,5 @@ var classez_g_a_l_command_encoder_impl_d_x11 =
     [ "SetViewportPlatform", "d3/d58/classez_g_a_l_command_encoder_impl_d_x11.htm#a1f7f8245207e3c2b69e7cfa153602f17", null ],
     [ "UpdateBufferPlatform", "d3/d58/classez_g_a_l_command_encoder_impl_d_x11.htm#aa85ab841813abab62cc14781a0e22cdd", null ],
     [ "UpdateTexturePlatform", "d3/d58/classez_g_a_l_command_encoder_impl_d_x11.htm#a870e5bdd9338513dc5ee74ce61aa962a", null ],
-    [ "WaitForFencePlatform", "d3/d58/classez_g_a_l_command_encoder_impl_d_x11.htm#afed4ff5af95ed75ea2dbd39643c519df", null ],
     [ "ezGALPassDX11", "d3/d58/classez_g_a_l_command_encoder_impl_d_x11.htm#a326c98a7654f02f731064ea9f158c7ce", null ]
 ];

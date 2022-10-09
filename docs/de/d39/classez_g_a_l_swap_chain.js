@@ -1,9 +1,14 @@
 var classez_g_a_l_swap_chain =
 [
-    [ "ezGALSwapChain", "de/d39/classez_g_a_l_swap_chain.htm#a56ef8f2d9cd10f2d192ff97ffdf5e165", null ],
     [ "~ezGALSwapChain", "de/d39/classez_g_a_l_swap_chain.htm#ae400c1def5a6d36bf92054a2a1f04e8a", null ],
-    [ "DeInitPlatform", "de/d39/classez_g_a_l_swap_chain.htm#a2a566846d8a5fe97283934d75f581e7c", null ],
+    [ "ezGALSwapChain", "de/d39/classez_g_a_l_swap_chain.htm#ab53db7cef8bf01d41fa9e74d796dfcf4", null ],
+    [ "AcquireNextRenderTarget", "de/d39/classez_g_a_l_swap_chain.htm#a4676a4d88209e58a370d47f019089c3f", null ],
+    [ "DeInitPlatform", "de/d39/classez_g_a_l_swap_chain.htm#abd24750a67c2e82ddd8f777f6494a04b", null ],
     [ "GetBackBufferTexture", "de/d39/classez_g_a_l_swap_chain.htm#ab634a6f63864e99f3d2123b335aeeceb", null ],
+    [ "GetRenderTargets", "de/d39/classez_g_a_l_swap_chain.htm#ae37387af558c51665d5c732b84209619", null ],
     [ "InitPlatform", "de/d39/classez_g_a_l_swap_chain.htm#a23d35573752d0d403b94728fa0395ea1", null ],
-    [ "m_hBackBufferTexture", "de/d39/classez_g_a_l_swap_chain.htm#a6ddf9ec771bdfbee61ca7a3733d85629", null ]
+    [ "PresentRenderTarget", "de/d39/classez_g_a_l_swap_chain.htm#a80047a4fb56529d21bbafcf23d8ad4c5", null ],
+    [ "UpdateSwapChain", "de/d39/classez_g_a_l_swap_chain.htm#a53d6912fb80be0869d2c30e1c49f996d", null ],
+    [ "ezGALDevice", "de/d39/classez_g_a_l_swap_chain.htm#a8dcbecd17dea850cbe8b1f3181dacb0f", null ],
+    [ "m_RenderTargets", "de/d39/classez_g_a_l_swap_chain.htm#a2dcadba89c874889020a83f821ba6042", null ]
 ];

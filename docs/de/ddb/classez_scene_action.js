@@ -54,5 +54,5 @@ var classez_scene_action =
     [ "~ezSceneAction", "de/ddb/classez_scene_action.htm#ab4d201b7bcc34256734f3ac3dbd5ed81", null ],
     [ "Execute", "de/ddb/classez_scene_action.htm#a5e94aa0e78f5117c2486a9a7b4c039d0", null ],
     [ "GetPlayerCommandLine", "de/ddb/classez_scene_action.htm#a79c00fdbff6d898ca624b59244d9ad5e", null ],
-    [ "LaunchPlayer", "de/ddb/classez_scene_action.htm#a222053a99b69a94af1f8964423c72805", null ]
+    [ "LaunchPlayer", "de/ddb/classez_scene_action.htm#a712742991a644f57f5d16378f4dd0f4b", null ]
 ];

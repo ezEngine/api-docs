@@ -13,6 +13,6 @@ var classez_uuid =
     [ "operator==", "da/d89/classez_uuid.htm#ab235eeab26c2664e343686e231713772", null ],
     [ "RevertCombinationWithSeed", "da/d89/classez_uuid.htm#ab17640b3aa636a6eda4891c3e4c92a33", null ],
     [ "SetInvalid", "da/d89/classez_uuid.htm#a9166bc7a5ba8abd57aed67c952cdea41", null ],
-    [ "operator<<", "da/d89/classez_uuid.htm#afc06cd9fef4d3946e3c325dccd366bac", null ],
-    [ "operator>>", "da/d89/classez_uuid.htm#aa7c3e889d7433ac41a9111da5d9919b1", null ]
+    [ "operator<<", "da/d89/classez_uuid.htm#a7feadcfb1b874255db9e78fc8888f76b", null ],
+    [ "operator>>", "da/d89/classez_uuid.htm#ac755618f6a7e14329eb7ac6757ad9659", null ]
 ];

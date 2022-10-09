@@ -121,105 +121,108 @@ $(document).ready(function(){initNavTree('dd/d73/_plugin_8h_source.htm','../../'
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  {</div>
 <div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="../../d3/d72/structez_plugin_load_flags.htm#acaee5a81ae0dcc615281ed550b9904d8a02f564a7036a8769a6b530185fb63304">   36</a></span>&#160;    <a class="code" href="../../d3/d72/structez_plugin_load_flags.htm#acaee5a81ae0dcc615281ed550b9904d8a02f564a7036a8769a6b530185fb63304">LoadCopy</a> = EZ_BIT(0),         </div>
 <div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="../../d3/d72/structez_plugin_load_flags.htm#acaee5a81ae0dcc615281ed550b9904d8a7c3ded7ff139c9a016c92975f6575962">   37</a></span>&#160;    <a class="code" href="../../d3/d72/structez_plugin_load_flags.htm#acaee5a81ae0dcc615281ed550b9904d8a7c3ded7ff139c9a016c92975f6575962">PluginIsOptional</a> = EZ_BIT(1), </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    Default = 0,</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  };</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="../../df/dfd/structez_plugin_load_flags_1_1_bits.htm">   42</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../df/dfd/structez_plugin_load_flags_1_1_bits.htm">Bits</a></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    StorageType LoadCopy : 1;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    StorageType PluginIsOptional : 1;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  };</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;};</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">using</span> ezPluginInitCallback = void (*)();</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="../../dd/d46/classez_plugin.htm">   65</a></span>&#160;<span class="keyword">class </span>EZ_FOUNDATION_DLL <a class="code" href="../../dd/d46/classez_plugin.htm">ezPlugin</a></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="../../d0/daf/classez_event.htm">ezCopyOnBroadcastEvent&lt;const ezPluginEvent&amp;&gt;</a>&amp; Events(); <span class="comment">// [tested]</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> InitializeStaticallyLinkedPlugins(); <span class="comment">// [tested]</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> BeginPluginChanges();</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> EndPluginChanges();</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">bool</span> ExistsPluginFile(<span class="keyword">const</span> <span class="keywordtype">char</span>* szPluginFile);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> LoadPlugin(<span class="keyword">const</span> <span class="keywordtype">char</span>* szPluginFile, <a class="code" href="../../d1/dec/structez_bitflags.htm">ezBitflags&lt;ezPluginLoadFlags&gt;</a> flags = ezPluginLoadFlags::Default); <span class="comment">// [tested]</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> UnloadAllPlugins(); <span class="comment">// [tested]</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> SetMaxParallelInstances(ezUInt32 uiMaxParallelInstances);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="../../d4/d08/structez_plugin_1_1_init.htm">  109</a></span>&#160;  <span class="keyword">struct </span>EZ_FOUNDATION_DLL <a class="code" href="../../d4/d08/structez_plugin_1_1_init.htm">Init</a></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  {</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <a class="code" href="../../d4/d08/structez_plugin_1_1_init.htm">Init</a>(ezPluginInitCallback OnLoadOrUnloadCB, <span class="keywordtype">bool</span> bOnLoad);</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <a class="code" href="../../d4/d08/structez_plugin_1_1_init.htm">Init</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* szAddPluginDependency);</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  };</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="../../da/de9/structez_plugin_1_1_plugin_info.htm">  116</a></span>&#160;  <span class="keyword">struct </span>EZ_FOUNDATION_DLL <a class="code" href="../../da/de9/structez_plugin_1_1_plugin_info.htm">PluginInfo</a></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  {</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sName;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezString, 2&gt;</a> m_sDependencies;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  };</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> GetAllPluginInfos(<a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;PluginInfo&gt;</a>&amp; infos);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> GetPluginPaths(<span class="keyword">const</span> <span class="keywordtype">char</span>* szPluginName, <a class="code" href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a>&amp; sOriginalFile, <a class="code" href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a>&amp; sCopiedFile, ezUInt8 uiFileCopyNumber);</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <a class="code" href="../../dd/d46/classez_plugin.htm">ezPlugin</a>() = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;};</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="preprocessor">#define EZ_PLUGIN_DEPENDENCY(PluginName) \</span></div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="preprocessor">  ezPlugin::Init EZ_CONCAT(EZ_CONCAT(plugin_dep_, PluginName), EZ_SOURCE_LINE)(EZ_PP_STRINGIFY(PluginName))</span></div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="preprocessor">#define EZ_PLUGIN_ON_LOADED()                                \</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="preprocessor">  static void plugin_OnLoaded();                             \</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="preprocessor">  ezPlugin::Init plugin_OnLoadedInit(plugin_OnLoaded, true); \</span></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="preprocessor">  static void plugin_OnLoaded()</span></div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="preprocessor">#define EZ_PLUGIN_ON_UNLOADED()                                   \</span></div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="preprocessor">  static void plugin_OnUnloaded();                                \</span></div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="preprocessor">  ezPlugin::Init plugin_OnUnloadedInit(plugin_OnUnloaded, false); \</span></div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="preprocessor">  static void plugin_OnUnloaded()</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="../../d3/d72/structez_plugin_load_flags.htm#acaee5a81ae0dcc615281ed550b9904d8acb9edab17de5c25d1ab07d5d581e1439">   38</a></span>&#160;    <a class="code" href="../../d3/d72/structez_plugin_load_flags.htm#acaee5a81ae0dcc615281ed550b9904d8acb9edab17de5c25d1ab07d5d581e1439">CustomDependency</a> = EZ_BIT(2), </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    Default = 0,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  };</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="../../df/dfd/structez_plugin_load_flags_1_1_bits.htm">   43</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../df/dfd/structez_plugin_load_flags_1_1_bits.htm">Bits</a></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    StorageType LoadCopy : 1;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    StorageType PluginIsOptional : 1;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  };</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;};</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">using</span> ezPluginInitCallback = void (*)();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="../../dd/d46/classez_plugin.htm">   66</a></span>&#160;<span class="keyword">class </span>EZ_FOUNDATION_DLL <a class="code" href="../../dd/d46/classez_plugin.htm">ezPlugin</a></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="../../d0/daf/classez_event.htm">ezCopyOnBroadcastEvent&lt;const ezPluginEvent&amp;&gt;</a>&amp; Events(); <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> InitializeStaticallyLinkedPlugins(); <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> BeginPluginChanges();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> EndPluginChanges();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">bool</span> ExistsPluginFile(<span class="keyword">const</span> <span class="keywordtype">char</span>* szPluginFile);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> LoadPlugin(<span class="keyword">const</span> <span class="keywordtype">char</span>* szPluginFile, <a class="code" href="../../d1/dec/structez_bitflags.htm">ezBitflags&lt;ezPluginLoadFlags&gt;</a> flags = ezPluginLoadFlags::Default); <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> UnloadAllPlugins(); <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> SetMaxParallelInstances(ezUInt32 uiMaxParallelInstances);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="../../d4/d08/structez_plugin_1_1_init.htm">  110</a></span>&#160;  <span class="keyword">struct </span>EZ_FOUNDATION_DLL <a class="code" href="../../d4/d08/structez_plugin_1_1_init.htm">Init</a></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <a class="code" href="../../d4/d08/structez_plugin_1_1_init.htm">Init</a>(ezPluginInitCallback OnLoadOrUnloadCB, <span class="keywordtype">bool</span> bOnLoad);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="../../d4/d08/structez_plugin_1_1_init.htm">Init</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* szAddPluginDependency);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  };</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="../../da/de9/structez_plugin_1_1_plugin_info.htm">  117</a></span>&#160;  <span class="keyword">struct </span>EZ_FOUNDATION_DLL <a class="code" href="../../da/de9/structez_plugin_1_1_plugin_info.htm">PluginInfo</a></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sName;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezString, 2&gt;</a> m_sDependencies;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <a class="code" href="../../d1/dec/structez_bitflags.htm">ezBitflags&lt;ezPluginLoadFlags&gt;</a> m_LoadFlags;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  };</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> GetAllPluginInfos(<a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;PluginInfo&gt;</a>&amp; infos);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> GetPluginPaths(<span class="keyword">const</span> <span class="keywordtype">char</span>* szPluginName, <a class="code" href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a>&amp; sOriginalFile, <a class="code" href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a>&amp; sCopiedFile, ezUInt8 uiFileCopyNumber);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <a class="code" href="../../dd/d46/classez_plugin.htm">ezPlugin</a>() = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;};</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="preprocessor">#define EZ_PLUGIN_DEPENDENCY(PluginName) \</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="preprocessor">  ezPlugin::Init EZ_CONCAT(EZ_CONCAT(plugin_dep_, PluginName), EZ_SOURCE_LINE)(EZ_PP_STRINGIFY(PluginName))</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="preprocessor">#define EZ_PLUGIN_ON_LOADED()                                \</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="preprocessor">  static void plugin_OnLoaded();                             \</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="preprocessor">  ezPlugin::Init plugin_OnLoadedInit(plugin_OnLoaded, true); \</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="preprocessor">  static void plugin_OnLoaded()</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="preprocessor">#define EZ_PLUGIN_ON_UNLOADED()                                   \</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="preprocessor">  static void plugin_OnUnloaded();                                \</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="preprocessor">  ezPlugin::Init plugin_OnUnloadedInit(plugin_OnUnloaded, false); \</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="preprocessor">  static void plugin_OnUnloaded()</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astructez_plugin_event_htm_a82391f05eef90af4c7196a447983fc26abfd3179ba89f3ab9c3eed2174f0dad73"><div class="ttname"><a href="../../d4/d72/structez_plugin_event.htm#a82391f05eef90af4c7196a447983fc26abfd3179ba89f3ab9c3eed2174f0dad73">ezPluginEvent::AfterUnloading</a></div><div class="ttdeci">@ AfterUnloading</div><div class="ttdoc">Sent after a plugin has been unloaded.</div><div class="ttdef"><b>Definition:</b> Plugin.h:20</div></div>
-<div class="ttc" id="astructez_bitflags_htm"><div class="ttname"><a href="../../d1/dec/structez_bitflags.htm">ezBitflags</a></div><div class="ttdoc">The ezBitflags class allows you to work with type-safe bitflags.</div><div class="ttdef"><b>Definition:</b> Bitflags.h:80</div></div>
+<div class="ttc" id="astructez_bitflags_htm"><div class="ttname"><a href="../../d1/dec/structez_bitflags.htm">ezBitflags&lt; ezPluginLoadFlags &gt;</a></div></div>
 <div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition:</b> Types.h:50</div></div>
 <div class="ttc" id="astructez_plugin_event_htm_a82391f05eef90af4c7196a447983fc26a1a61edd4c75ac622dfd18a4c3f5b9244"><div class="ttname"><a href="../../d4/d72/structez_plugin_event.htm#a82391f05eef90af4c7196a447983fc26a1a61edd4c75ac622dfd18a4c3f5b9244">ezPluginEvent::StartupShutdown</a></div><div class="ttdeci">@ StartupShutdown</div><div class="ttdoc">Used by the startup system for automatic shutdown.</div><div class="ttdef"><b>Definition:</b> Plugin.h:18</div></div>
 <div class="ttc" id="astructez_plugin_event_htm_a82391f05eef90af4c7196a447983fc26af01b5fea13a2588c0f197f52fb0a0b58"><div class="ttname"><a href="../../d4/d72/structez_plugin_event.htm#a82391f05eef90af4c7196a447983fc26af01b5fea13a2588c0f197f52fb0a0b58">ezPluginEvent::BeforePluginChanges</a></div><div class="ttdeci">@ BeforePluginChanges</div><div class="ttdoc">Sent (once) before any (group) plugin changes (load/unload) are done.</div><div class="ttdef"><b>Definition:</b> Plugin.h:21</div></div>
 <div class="ttc" id="astructez_plugin_event_htm_a82391f05eef90af4c7196a447983fc26a7a0ef7f0f2c502d36b13f5235177dd04"><div class="ttname"><a href="../../d4/d72/structez_plugin_event.htm#a82391f05eef90af4c7196a447983fc26a7a0ef7f0f2c502d36b13f5235177dd04">ezPluginEvent::AfterPluginChanges</a></div><div class="ttdeci">@ AfterPluginChanges</div><div class="ttdoc">Sent (once) after all (group) plugin changes (unload/load) are finished.</div><div class="ttdef"><b>Definition:</b> Plugin.h:22</div></div>
 <div class="ttc" id="astructez_plugin_event_htm_ae72332bfe83cfffabbefd438d21229e5"><div class="ttname"><a href="../../d4/d72/structez_plugin_event.htm#ae72332bfe83cfffabbefd438d21229e5">ezPluginEvent::m_szPluginBinary</a></div><div class="ttdeci">const char * m_szPluginBinary</div><div class="ttdoc">The file name of the affected plugin.</div><div class="ttdef"><b>Definition:</b> Plugin.h:26</div></div>
+<div class="ttc" id="astructez_plugin_load_flags_htm_acaee5a81ae0dcc615281ed550b9904d8acb9edab17de5c25d1ab07d5d581e1439"><div class="ttname"><a href="../../d3/d72/structez_plugin_load_flags.htm#acaee5a81ae0dcc615281ed550b9904d8acb9edab17de5c25d1ab07d5d581e1439">ezPluginLoadFlags::CustomDependency</a></div><div class="ttdeci">@ CustomDependency</div><div class="ttdoc">The plugin is an injected dependency (usually for the editor), and thus might get treated differently...</div><div class="ttdef"><b>Definition:</b> Plugin.h:38</div></div>
 <div class="ttc" id="astructez_plugin_event_htm_a82391f05eef90af4c7196a447983fc26aad52915321326b0bb6b0d78b9f31a696"><div class="ttname"><a href="../../d4/d72/structez_plugin_event.htm#a82391f05eef90af4c7196a447983fc26aad52915321326b0bb6b0d78b9f31a696">ezPluginEvent::BeforeLoading</a></div><div class="ttdeci">@ BeforeLoading</div><div class="ttdoc">Sent shortly before a new plugin is loaded.</div><div class="ttdef"><b>Definition:</b> Plugin.h:14</div></div>
 <div class="ttc" id="astructez_plugin_event_htm_a82391f05eef90af4c7196a447983fc26a73f5344c0850f12d7d844c53fa445a55"><div class="ttname"><a href="../../d4/d72/structez_plugin_event.htm#a82391f05eef90af4c7196a447983fc26a73f5344c0850f12d7d844c53fa445a55">ezPluginEvent::BeforeUnloading</a></div><div class="ttdeci">@ BeforeUnloading</div><div class="ttdoc">Sent before a plugin is going to be unloaded.</div><div class="ttdef"><b>Definition:</b> Plugin.h:17</div></div>
 <div class="ttc" id="astructez_plugin_event_htm"><div class="ttname"><a href="../../d4/d72/structez_plugin_event.htm">ezPluginEvent</a></div><div class="ttdoc">The data that is broadcast whenever a plugin is (un-) loaded.</div><div class="ttdef"><b>Definition:</b> Plugin.h:10</div></div>
 <div class="ttc" id="astructez_plugin_load_flags_htm_acaee5a81ae0dcc615281ed550b9904d8a02f564a7036a8769a6b530185fb63304"><div class="ttname"><a href="../../d3/d72/structez_plugin_load_flags.htm#acaee5a81ae0dcc615281ed550b9904d8a02f564a7036a8769a6b530185fb63304">ezPluginLoadFlags::LoadCopy</a></div><div class="ttdeci">@ LoadCopy</div><div class="ttdoc">Don't load a DLL directly, but create a copy of the file and load that instead. This allows to contin...</div><div class="ttdef"><b>Definition:</b> Plugin.h:36</div></div>
 <div class="ttc" id="astructez_hybrid_string_htm"><div class="ttname"><a href="../../d4/d53/structez_hybrid_string.htm">ezHybridString</a></div><div class="ttdef"><b>Definition:</b> Stream.h:15</div></div>
-<div class="ttc" id="astructez_plugin_load_flags_1_1_bits_htm"><div class="ttname"><a href="../../df/dfd/structez_plugin_load_flags_1_1_bits.htm">ezPluginLoadFlags::Bits</a></div><div class="ttdef"><b>Definition:</b> Plugin.h:42</div></div>
+<div class="ttc" id="astructez_plugin_load_flags_1_1_bits_htm"><div class="ttname"><a href="../../df/dfd/structez_plugin_load_flags_1_1_bits.htm">ezPluginLoadFlags::Bits</a></div><div class="ttdef"><b>Definition:</b> Plugin.h:43</div></div>
 <div class="ttc" id="astructez_plugin_event_htm_a82391f05eef90af4c7196a447983fc26"><div class="ttname"><a href="../../d4/d72/structez_plugin_event.htm#a82391f05eef90af4c7196a447983fc26">ezPluginEvent::Type</a></div><div class="ttdeci">Type</div><div class="ttdef"><b>Definition:</b> Plugin.h:12</div></div>
 <div class="ttc" id="astructez_plugin_event_htm_a82391f05eef90af4c7196a447983fc26a946143665aca78ae4321e46219bd5e41"><div class="ttname"><a href="../../d4/d72/structez_plugin_event.htm#a82391f05eef90af4c7196a447983fc26a946143665aca78ae4321e46219bd5e41">ezPluginEvent::AfterLoading</a></div><div class="ttdeci">@ AfterLoading</div><div class="ttdoc">Sent after a new plugin has been loaded and initialized.</div><div class="ttdef"><b>Definition:</b> Plugin.h:16</div></div>
 <div class="ttc" id="astructez_plugin_event_htm_a82391f05eef90af4c7196a447983fc26a90b832f77997f6cc54093eb5d8ef576a"><div class="ttname"><a href="../../d4/d72/structez_plugin_event.htm#a82391f05eef90af4c7196a447983fc26a90b832f77997f6cc54093eb5d8ef576a">ezPluginEvent::AfterLoadingBeforeInit</a></div><div class="ttdeci">@ AfterLoadingBeforeInit</div><div class="ttdoc">Sent immediately after a new plugin has been loaded, even before it is initialized (which might trigg...</div><div class="ttdef"><b>Definition:</b> Plugin.h:15</div></div>
-<div class="ttc" id="astructez_plugin_1_1_plugin_info_htm"><div class="ttname"><a href="../../da/de9/structez_plugin_1_1_plugin_info.htm">ezPlugin::PluginInfo</a></div><div class="ttdoc">Contains basic information about a loaded plugin.</div><div class="ttdef"><b>Definition:</b> Plugin.h:116</div></div>
+<div class="ttc" id="astructez_plugin_1_1_plugin_info_htm"><div class="ttname"><a href="../../da/de9/structez_plugin_1_1_plugin_info.htm">ezPlugin::PluginInfo</a></div><div class="ttdoc">Contains basic information about a loaded plugin.</div><div class="ttdef"><b>Definition:</b> Plugin.h:117</div></div>
 <div class="ttc" id="aclassez_dynamic_array_htm"><div class="ttname"><a href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray</a></div><div class="ttdef"><b>Definition:</b> DynamicArray.h:80</div></div>
 <div class="ttc" id="astructez_plugin_event_htm_a82391f05eef90af4c7196a447983fc26afe1190fad66d6e2321a5dea05946faa5"><div class="ttname"><a href="../../d4/d72/structez_plugin_event.htm#a82391f05eef90af4c7196a447983fc26afe1190fad66d6e2321a5dea05946faa5">ezPluginEvent::AfterStartupShutdown</a></div><div class="ttdeci">@ AfterStartupShutdown</div><div class="ttdoc">Used by the ResourceManager to unload now unreferenced resources after the startup system shutdown is...</div><div class="ttdef"><b>Definition:</b> Plugin.h:19</div></div>
 <div class="ttc" id="astructez_plugin_load_flags_htm_acaee5a81ae0dcc615281ed550b9904d8a7c3ded7ff139c9a016c92975f6575962"><div class="ttname"><a href="../../d3/d72/structez_plugin_load_flags.htm#acaee5a81ae0dcc615281ed550b9904d8a7c3ded7ff139c9a016c92975f6575962">ezPluginLoadFlags::PluginIsOptional</a></div><div class="ttdeci">@ PluginIsOptional</div><div class="ttdoc">When an optional plugin can't be loaded (missing file usually), no error is logged....</div><div class="ttdef"><b>Definition:</b> Plugin.h:37</div></div>
 <div class="ttc" id="aclassez_event_htm"><div class="ttname"><a href="../../d0/daf/classez_event.htm">ezEvent</a></div><div class="ttdef"><b>Definition:</b> Event.h:174</div></div>
 <div class="ttc" id="astructez_plugin_event_htm_accc145d263fe8349b4994b6138999dec"><div class="ttname"><a href="../../d4/d72/structez_plugin_event.htm#accc145d263fe8349b4994b6138999dec">ezPluginEvent::m_EventType</a></div><div class="ttdeci">Type m_EventType</div><div class="ttdoc">Which type of event this is.</div><div class="ttdef"><b>Definition:</b> Plugin.h:25</div></div>
-<div class="ttc" id="aclassez_plugin_htm"><div class="ttname"><a href="../../dd/d46/classez_plugin.htm">ezPlugin</a></div><div class="ttdoc">ezPlugin manages all dynamically loadable plugins.</div><div class="ttdef"><b>Definition:</b> Plugin.h:65</div></div>
+<div class="ttc" id="aclassez_plugin_htm"><div class="ttname"><a href="../../dd/d46/classez_plugin.htm">ezPlugin</a></div><div class="ttdoc">ezPlugin manages all dynamically loadable plugins.</div><div class="ttdef"><b>Definition:</b> Plugin.h:66</div></div>
 <div class="ttc" id="aclassez_hybrid_array_htm"><div class="ttname"><a href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray</a></div><div class="ttdoc">A hybrid array uses in-place storage to handle the first few elements without any allocation....</div><div class="ttdef"><b>Definition:</b> HybridArray.h:11</div></div>
 <div class="ttc" id="aclassez_string_builder_htm"><div class="ttname"><a href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a></div><div class="ttdoc">ezStringBuilder is a class that is meant for creating and modifying strings.</div><div class="ttdef"><b>Definition:</b> StringBuilder.h:34</div></div>
 <div class="ttc" id="astructez_plugin_load_flags_htm"><div class="ttname"><a href="../../d3/d72/structez_plugin_load_flags.htm">ezPluginLoadFlags</a></div><div class="ttdoc">Flags for loading a plugin.</div><div class="ttdef"><b>Definition:</b> Plugin.h:30</div></div>
 <div class="ttc" id="astructez_plugin_load_flags_htm_acaee5a81ae0dcc615281ed550b9904d8"><div class="ttname"><a href="../../d3/d72/structez_plugin_load_flags.htm#acaee5a81ae0dcc615281ed550b9904d8">ezPluginLoadFlags::Enum</a></div><div class="ttdeci">Enum</div><div class="ttdef"><b>Definition:</b> Plugin.h:34</div></div>
-<div class="ttc" id="astructez_plugin_1_1_init_htm"><div class="ttname"><a href="../../d4/d08/structez_plugin_1_1_init.htm">ezPlugin::Init</a></div><div class="ttdef"><b>Definition:</b> Plugin.h:109</div></div>
+<div class="ttc" id="astructez_plugin_1_1_init_htm"><div class="ttname"><a href="../../d4/d08/structez_plugin_1_1_init.htm">ezPlugin::Init</a></div><div class="ttdef"><b>Definition:</b> Plugin.h:110</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_d3a457baa6374475358035c7c7fd0218.htm">Configuration</a></li><li class="navelem"><b>Plugin.h</b></li>
-    <li class="footer">Generated on Mon Oct 18 2021 15:33:24 for ezEngine by
+    <li class="footer">Generated on Sun Oct 9 2022 14:44:49 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

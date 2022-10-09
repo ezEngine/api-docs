@@ -13,9 +13,7 @@ var classez_g_a_l_command_encoder_common_platform_interface =
     [ "GenerateMipMapsPlatform", "d8/d24/classez_g_a_l_command_encoder_common_platform_interface.htm#a12ca77da990a87254bffbac9561d22e4", null ],
     [ "GetQueryResultPlatform", "d8/d24/classez_g_a_l_command_encoder_common_platform_interface.htm#a80c7a727720f0c1900f0665dd6e9c8f4", null ],
     [ "InsertEventMarkerPlatform", "d8/d24/classez_g_a_l_command_encoder_common_platform_interface.htm#a1bed4210f5eefa0429d3652548653bad", null ],
-    [ "InsertFencePlatform", "d8/d24/classez_g_a_l_command_encoder_common_platform_interface.htm#a2b7cbbbdea9ac84e7525b6cb48e5d355", null ],
     [ "InsertTimestampPlatform", "d8/d24/classez_g_a_l_command_encoder_common_platform_interface.htm#aa031de49e4739dbb172207d6f2534c00", null ],
-    [ "IsFenceReachedPlatform", "d8/d24/classez_g_a_l_command_encoder_common_platform_interface.htm#a15c7080f854b375e7462588cb85c4d72", null ],
     [ "PopMarkerPlatform", "d8/d24/classez_g_a_l_command_encoder_common_platform_interface.htm#ad8a6fe225225d37c73c4cd13c5bb5313", null ],
     [ "PushMarkerPlatform", "d8/d24/classez_g_a_l_command_encoder_common_platform_interface.htm#ae6b938ff665d2d5a3bc647d59bd03975", null ],
     [ "ReadbackTexturePlatform", "d8/d24/classez_g_a_l_command_encoder_common_platform_interface.htm#aeffd7e47086cf5731b34f6f0ee31d569", null ],
@@ -26,6 +24,5 @@ var classez_g_a_l_command_encoder_common_platform_interface =
     [ "SetShaderPlatform", "d8/d24/classez_g_a_l_command_encoder_common_platform_interface.htm#a76f5a5a0e9c9f9a632c92f7661e91dc5", null ],
     [ "SetUnorderedAccessViewPlatform", "d8/d24/classez_g_a_l_command_encoder_common_platform_interface.htm#a443f630ba94408feb69fec3baf619f65", null ],
     [ "UpdateBufferPlatform", "d8/d24/classez_g_a_l_command_encoder_common_platform_interface.htm#a4492f5c555bcb2672f21e03cc7f042de", null ],
-    [ "UpdateTexturePlatform", "d8/d24/classez_g_a_l_command_encoder_common_platform_interface.htm#affbcd9291d9613c487755abb79ddf817", null ],
-    [ "WaitForFencePlatform", "d8/d24/classez_g_a_l_command_encoder_common_platform_interface.htm#ad0869fc1b744d5e8600b01e263ab4773", null ]
+    [ "UpdateTexturePlatform", "d8/d24/classez_g_a_l_command_encoder_common_platform_interface.htm#affbcd9291d9613c487755abb79ddf817", null ]
 ];

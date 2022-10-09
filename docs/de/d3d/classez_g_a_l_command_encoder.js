@@ -20,10 +20,8 @@ var classez_g_a_l_command_encoder =
     [ "GetDevice", "de/d3d/classez_g_a_l_command_encoder.htm#ad9ce5d6d095d1682ff2b16dc7baf3608", null ],
     [ "GetQueryResult", "de/d3d/classez_g_a_l_command_encoder.htm#a4c88926bf811952556d86837ea20f32e", null ],
     [ "InsertEventMarker", "de/d3d/classez_g_a_l_command_encoder.htm#a36f6213e8fc7d99e42355a3ca969c962", null ],
-    [ "InsertFence", "de/d3d/classez_g_a_l_command_encoder.htm#a2c6a46cf0b59384150c0dced92519890", null ],
     [ "InsertTimestamp", "de/d3d/classez_g_a_l_command_encoder.htm#aad18cad96c090d09e4c3e87dc826ba0b", null ],
     [ "InvalidateState", "de/d3d/classez_g_a_l_command_encoder.htm#ae955adb73dc6bf423a91331eee76d5e6", null ],
-    [ "IsFenceReached", "de/d3d/classez_g_a_l_command_encoder.htm#a5be7ddf8e392c19d2a95c9cbbe6c03c8", null ],
     [ "PopMarker", "de/d3d/classez_g_a_l_command_encoder.htm#a0e6f3b9422ff5ba2daa1ed178cf9bd74", null ],
     [ "PushMarker", "de/d3d/classez_g_a_l_command_encoder.htm#a5ee205eb16b155eb12b234ff2f365d51", null ],
     [ "ReadbackTexture", "de/d3d/classez_g_a_l_command_encoder.htm#a334995ebb367bdd8058b9cfccccc7e12", null ],
@@ -37,7 +35,6 @@ var classez_g_a_l_command_encoder =
     [ "UnsetUnorderedAccessViews", "de/d3d/classez_g_a_l_command_encoder.htm#a21d8f9ecc31bcda756b438a412bfb652", null ],
     [ "UpdateBuffer", "de/d3d/classez_g_a_l_command_encoder.htm#ad21f61604fccb8b64d497891c606d8c3", null ],
     [ "UpdateTexture", "de/d3d/classez_g_a_l_command_encoder.htm#aa7e9ec441396e36513fc578eb834f8bc", null ],
-    [ "WaitForFence", "de/d3d/classez_g_a_l_command_encoder.htm#af0c1e0345db4ec060767533ad5e026c1", null ],
     [ "ezGALDevice", "de/d3d/classez_g_a_l_command_encoder.htm#a8dcbecd17dea850cbe8b1f3181dacb0f", null ],
     [ "ezMemoryUtils", "de/d3d/classez_g_a_l_command_encoder.htm#aedd88a418f4111b0f670c96423cfd850", null ]
 ];

@@ -1,6 +1,6 @@
 var classez_memory_policies_1_1ez_stack_allocation =
 [
-    [ "Alignment", "d8/d5d/classez_memory_policies_1_1ez_stack_allocation.htm#a562ca10284caadcb563cfc625e3ffc83a16dfe9b6a3bbc1ee5056ea2b123f60cc", null ],
+    [ "Alignment", "d8/d5d/classez_memory_policies_1_1ez_stack_allocation.htm#a623308261160381f7608afd389d57c03a16dfe9b6a3bbc1ee5056ea2b123f60cc", null ],
     [ "ezStackAllocation", "d8/d5d/classez_memory_policies_1_1ez_stack_allocation.htm#a8093f87cb7b2ebb8efef72871d66bd27", null ],
     [ "~ezStackAllocation", "d8/d5d/classez_memory_policies_1_1ez_stack_allocation.htm#a20d9cf00ae65d418bf6ff3b7e9e39e4f", null ],
     [ "Allocate", "d8/d5d/classez_memory_policies_1_1ez_stack_allocation.htm#a1d596853e70f516c364653b9568dea21", null ],

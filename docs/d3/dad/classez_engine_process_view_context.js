@@ -13,7 +13,7 @@ var classez_engine_process_view_context =
     [ "Redraw", "d3/dad/classez_engine_process_view_context.htm#a4696bbba5662603a695810b3f329ec73", null ],
     [ "SendViewMessage", "d3/dad/classez_engine_process_view_context.htm#aa99707ef49f501a3e0b84c165ef3f956", null ],
     [ "SetCamera", "d3/dad/classez_engine_process_view_context.htm#ab9793ce7100e5b70990e9a8d728eb2de", null ],
-    [ "SetupRenderTarget", "d3/dad/classez_engine_process_view_context.htm#a2ff0a1a50ff0d5c2b99df53c463a01ff", null ],
+    [ "SetupRenderTarget", "d3/dad/classez_engine_process_view_context.htm#a5433ad93ea162bc3e241d7698551c746", null ],
     [ "SetViewID", "d3/dad/classez_engine_process_view_context.htm#afeb5126d812981a3fad68f5b97c81e44", null ],
     [ "m_Camera", "d3/dad/classez_engine_process_view_context.htm#a9c2c6a1fa930f787c07e068bca7c078c", null ],
     [ "m_hView", "d3/dad/classez_engine_process_view_context.htm#a37593581074932f63d1431a3bd457190", null ],

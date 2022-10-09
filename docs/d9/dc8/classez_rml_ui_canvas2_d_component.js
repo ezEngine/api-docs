@@ -2,7 +2,7 @@ var classez_rml_ui_canvas2_d_component =
 [
     [ "ezRmlUiCanvas2DComponent", "d9/dc8/classez_rml_ui_canvas2_d_component.htm#a0bbd545a3a7ef668e30c9c154be5e318", null ],
     [ "~ezRmlUiCanvas2DComponent", "d9/dc8/classez_rml_ui_canvas2_d_component.htm#a88890e5556d9361d30e6acbfa9848573", null ],
-    [ "AddBlackboardBinding", "d9/dc8/classez_rml_ui_canvas2_d_component.htm#aab0f9244d3cb831bae8fbdb38b320ced", null ],
+    [ "AddBlackboardBinding", "d9/dc8/classez_rml_ui_canvas2_d_component.htm#af4dd2b255818b9be0f1a725f973faa81", null ],
     [ "AddDataBinding", "d9/dc8/classez_rml_ui_canvas2_d_component.htm#a9febfdf19f275a1c506750834e3b522f", null ],
     [ "Deinitialize", "d9/dc8/classez_rml_ui_canvas2_d_component.htm#a23b360cb033ad8fe50e4751773f234b5", null ],
     [ "DeserializeComponent", "d9/dc8/classez_rml_ui_canvas2_d_component.htm#a30e51c48f842c79d47e810979accda0d", null ],

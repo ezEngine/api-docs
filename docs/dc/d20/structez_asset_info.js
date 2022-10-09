@@ -23,7 +23,8 @@ var structez_asset_info =
     [ "m_MissingReferences", "dc/d20/structez_asset_info.htm#ae155cf263be1483387a0fee20c3c74b0", null ],
     [ "m_pDocumentTypeDescriptor", "dc/d20/structez_asset_info.htm#a0ddb29f3d6adda35010356b3978f6f43", null ],
     [ "m_sAbsolutePath", "dc/d20/structez_asset_info.htm#a818151bd31e5335898baed5d11183b8f", null ],
-    [ "m_sDataDirRelativePath", "dc/d20/structez_asset_info.htm#a9550c47294a59c5f34a85965acc0a5d9", null ],
+    [ "m_sDataDirParentRelativePath", "dc/d20/structez_asset_info.htm#a52fb3f61a47bcd2de4ba1ccb65b9ac18", null ],
+    [ "m_sDataDirRelativePath", "dc/d20/structez_asset_info.htm#af33a51b85db7195f35240c8d9d725a65", null ],
     [ "m_SubAssets", "dc/d20/structez_asset_info.htm#a0b7f6dc29ebe52511fe1d0d5592b9b17", null ],
     [ "m_ThumbHash", "dc/d20/structez_asset_info.htm#a6be73bdf73b74c5955cee67c147aa7a8", null ],
     [ "m_TransformState", "dc/d20/structez_asset_info.htm#ad51480f2d6fc7fc93c70c426fe6f1b98", null ]

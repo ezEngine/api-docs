@@ -26,6 +26,7 @@ var structez_plane_template =
     [ "GetRayIntersection", "d5/d8d/structez_plane_template.htm#a69ff59bb630412f17ae9905cda71c196", null ],
     [ "GetRayIntersectionBiDirectional", "d5/d8d/structez_plane_template.htm#a36f46b295d2ffbd14f4735fd2c244635", null ],
     [ "IsEqual", "d5/d8d/structez_plane_template.htm#ac09e6e736ffe4763aaf75c13bc7ad87b", null ],
+    [ "IsFinite", "d5/d8d/structez_plane_template.htm#ab61816663e35211f64eff20ec0561155", null ],
     [ "IsIdentical", "d5/d8d/structez_plane_template.htm#a28ed715903e01728f3c7d414019a5aa4", null ],
     [ "IsNaN", "d5/d8d/structez_plane_template.htm#ab552082d9b537a4d3f52f12cec194cc0", null ],
     [ "IsValid", "d5/d8d/structez_plane_template.htm#a6c1a787b6d5994e283150fb7c98fb27a", null ],

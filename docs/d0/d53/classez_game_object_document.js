@@ -9,6 +9,7 @@ var classez_game_object_document =
     [ "ComputeTopLevelSelectedGameObjects", "d0/d53/classez_game_object_document.htm#aed6e602ab566e685742a3ad8a3d19607", null ],
     [ "CreateGameObjectHere", "d0/d53/classez_game_object_document.htm#ac7c267d33a5d0c3691bbcdb087e6afa3", null ],
     [ "DetermineNodeName", "d0/d53/classez_game_object_document.htm#ae07bde8bc4dcf76da95dc612cc9f80a4", null ],
+    [ "GameObjectDocumentEventHandler", "d0/d53/classez_game_object_document.htm#ad5fbcd7c05a034a6e1754722955d7f00", null ],
     [ "GenerateFullDisplayName", "d0/d53/classez_game_object_document.htm#a53cbbf27a5dbe11ee74df0a62aa4f28d", null ],
     [ "GetActiveEditTool", "d0/d53/classez_game_object_document.htm#a951d5f4f88edf549682e588f7ce18779", null ],
     [ "GetAddAmbientLight", "d0/d53/classez_game_object_document.htm#a005959e6289ed411cd3a2a5b1a4b933d", null ],

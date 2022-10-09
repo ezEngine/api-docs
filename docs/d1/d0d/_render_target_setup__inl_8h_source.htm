@@ -90,35 +90,30 @@ $(document).ready(function(){initNavTree('d1/d0d/_render_target_setup__inl_8h_so
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keywordtype">bool</span> ezGALRenderTargetSetup::HasRenderTargets()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;ezUInt8 ezGALRenderTargetSetup::GetRenderTargetCount()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;  <span class="keywordflow">return</span> m_uiMaxRTIndex != 0xFFu;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;  <span class="keywordflow">return</span> m_uiRTCount;</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;}</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;ezUInt8 ezGALRenderTargetSetup::GetMaxRenderTargetIndex()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<a class="code" href="../../da/ded/classez_g_a_l_render_target_view_handle.htm">ezGALRenderTargetViewHandle</a> ezGALRenderTargetSetup::GetRenderTarget(ezUInt8 uiIndex)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keywordflow">return</span> m_uiMaxRTIndex;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<a class="code" href="../../da/ded/classez_g_a_l_render_target_view_handle.htm">ezGALRenderTargetViewHandle</a> ezGALRenderTargetSetup::GetRenderTarget(ezUInt8 uiIndex)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  EZ_ASSERT_DEBUG(uiIndex &lt;= m_uiMaxRTIndex, <span class="stringliteral">&quot;Render target index out of range&quot;</span>);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keywordflow">return</span> m_hRTs[uiIndex];</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  EZ_ASSERT_DEBUG(uiIndex &lt; m_uiRTCount, <span class="stringliteral">&quot;Render target index out of range&quot;</span>);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keywordflow">return</span> m_hRTs[uiIndex];</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<a class="code" href="../../da/ded/classez_g_a_l_render_target_view_handle.htm">ezGALRenderTargetViewHandle</a> ezGALRenderTargetSetup::GetDepthStencilTarget()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keywordflow">return</span> m_hDSTarget;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<a class="code" href="../../da/ded/classez_g_a_l_render_target_view_handle.htm">ezGALRenderTargetViewHandle</a> ezGALRenderTargetSetup::GetDepthStencilTarget()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordflow">return</span> m_hDSTarget;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassez_g_a_l_render_target_view_handle_htm"><div class="ttname"><a href="../../da/ded/classez_g_a_l_render_target_view_handle.htm">ezGALRenderTargetViewHandle</a></div><div class="ttdef"><b>Definition:</b> RendererFoundationDLL.h:356</div></div>
+<div class="ttc" id="aclassez_g_a_l_render_target_view_handle_htm"><div class="ttname"><a href="../../da/ded/classez_g_a_l_render_target_view_handle.htm">ezGALRenderTargetViewHandle</a></div><div class="ttdef"><b>Definition:</b> RendererFoundationDLL.h:358</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_86889b9ebd9c49a9e3637c5d5b24303b.htm">RendererFoundation</a></li><li class="navelem"><a class="el" href="../../dir_605a225a53de44174045bdc4b3538716.htm">Resources</a></li><li class="navelem"><a class="el" href="../../dir_63f0c48f5f199adc732826379b8e24e7.htm">Implementation</a></li><li class="navelem"><b>RenderTargetSetup_inl.h</b></li>
-    <li class="footer">Generated on Mon Oct 18 2021 15:33:32 for ezEngine by
+    <li class="footer">Generated on Sun Oct 9 2022 14:44:58 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

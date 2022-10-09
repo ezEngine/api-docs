@@ -103,113 +103,115 @@ $(document).ready(function(){initNavTree('da/d19/_format_string_impl_8h_source.h
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="comment">// If a BuildString function requires more storage, it may need to do some trickery.</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="comment">// For an example look at BuildString for ezArgErrorCode, which uses an increased thread_local temp buffer.</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keyword">static</span> constexpr ezUInt32 TempStringLength = 64;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <a class="code" href="../../df/d42/classez_format_string_impl.htm">ezFormatStringImpl</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* szFormat, ARGS&amp;&amp;... args)</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    : m_Arguments(std::forward&lt;ARGS&gt;(args)...)</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    m_szString = szFormat;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  }</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="../../df/d42/classez_format_string_impl.htm#aa1ce493e065577fb06ce1e9effcbe602">   29</a></span>&#160;  <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="../../df/d42/classez_format_string_impl.htm#aa1ce493e065577fb06ce1e9effcbe602">GetText</a>(<a class="code" href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a>&amp; sb)<span class="keyword"> const override</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../de/df8/classez_string_utils.htm#a63980b08e0aa463640f7e93786cf46da">ezStringUtils::IsNullOrEmpty</a>(m_szString))</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;      <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> param[10];</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="comment">// Maximum number of parameters. Results in compilation error if exceeded.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keyword">static</span> constexpr ezUInt32 MaxNumParameters = 12;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <a class="code" href="../../df/d42/classez_format_string_impl.htm">ezFormatStringImpl</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* szFormat, ARGS&amp;&amp;... args)</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    : m_Arguments(std::forward&lt;ARGS&gt;(args)...)</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    m_szString = szFormat;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  }</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="../../df/d42/classez_format_string_impl.htm#aa1ce493e065577fb06ce1e9effcbe602">   31</a></span>&#160;  <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="../../df/d42/classez_format_string_impl.htm#aa1ce493e065577fb06ce1e9effcbe602">GetText</a>(<a class="code" href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a>&amp; sb)<span class="keyword"> const override</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">  </span>{</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../de/df8/classez_string_utils.htm#a26f868ce8249b864f448837638ffde33">ezStringUtils::IsNullOrEmpty</a>(m_szString))</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;      <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">char</span> tmp[10][TempStringLength];</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    ReplaceString&lt;0&gt;(tmp, param);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* szString = m_szString;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> param[MaxNumParameters];</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">char</span> tmp[MaxNumParameters][TempStringLength];</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    ReplaceString&lt;0&gt;(tmp, param);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">int</span> iLastParam = -1;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* szString = m_szString;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    SBClear(sb);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">while</span> (*szString != <span class="charliteral">&#39;\0&#39;</span>)</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      <span class="keywordflow">if</span> (*szString == <span class="charliteral">&#39;%&#39;</span>)</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">if</span> (*(szString + 1) == <span class="charliteral">&#39;%&#39;</span>)</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;          SBAppendView(sb, <span class="stringliteral">&quot;%&quot;</span>);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;          EZ_ASSERT_DEBUG(<span class="keyword">false</span>, <span class="stringliteral">&quot;Single percentage signs are not allowed in ezFormatString. Did you forgot to migrate a printf-style &quot;</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                 <span class="stringliteral">&quot;string? Use double percentage signs for the actual character.&quot;</span>);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        szString += 2;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (*szString == <span class="charliteral">&#39;{&#39;</span> &amp;&amp; *(szString + 1) &gt;= <span class="charliteral">&#39;0&#39;</span> &amp;&amp; *(szString + 1) &lt;= <span class="charliteral">&#39;9&#39;</span> &amp;&amp; *(szString + 2) == <span class="charliteral">&#39;}&#39;</span>)</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        iLastParam = *(szString + 1) - <span class="charliteral">&#39;0&#39;</span>;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        SBAppendView(sb, param[iLastParam]);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        szString += 3;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (*szString == <span class="charliteral">&#39;{&#39;</span> &amp;&amp; *(szString + 1) == <span class="charliteral">&#39;}&#39;</span>)</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        ++iLastParam;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        EZ_ASSERT_DEV(iLastParam &lt; 10, <span class="stringliteral">&quot;Too many placeholders in format string&quot;</span>);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">if</span> (iLastParam &lt; 10)</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;          SBAppendView(sb, param[iLastParam]);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        szString += 2;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keyword">const</span> ezUInt32 character = <a class="code" href="../../d9/d32/classez_unicode_utils.htm#a171663ca5da4e2cbb440866d55cb2769">ezUnicodeUtils::DecodeUtf8ToUtf32</a>(szString);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        SBAppendChar(sb, character);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      }</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">return</span> SBReturn(sb);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keyword">template</span> &lt;ezInt32 N&gt;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keyword">typename</span> std::enable_if&lt;<span class="keyword">sizeof</span>...(ARGS) != N&gt;::type ReplaceString(<span class="keywordtype">char</span> tmp[10][TempStringLength], <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a>* pViews) <span class="keyword">const</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  {</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    EZ_CHECK_AT_COMPILETIME_MSG(N &lt; 10, <span class="stringliteral">&quot;Maximum number of format arguments reached&quot;</span>);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">// using a free function allows to overload with various different argument types</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    pViews[N] = BuildString(tmp[N], TempStringLength - 1, std::get&lt;N&gt;(m_Arguments));</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">// Recurse, chip off one argument</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    ReplaceString&lt;N + 1&gt;(tmp, pViews);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  }</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="comment">// Recursion end if we reached the number of arguments.</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <span class="keyword">template</span> &lt;ezInt32 N&gt;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="keyword">typename</span> std::enable_if&lt;<span class="keyword">sizeof</span>...(ARGS) == N&gt;::type ReplaceString(<span class="keywordtype">char</span> tmp[10][TempStringLength], <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a>* pViews) <span class="keyword">const</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  {</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  }</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="comment">// stores the arguments</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  std::tuple&lt;ARGS...&gt; m_Arguments;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;};</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">int</span> iLastParam = -1;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    SBClear(sb);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">while</span> (*szString != <span class="charliteral">&#39;\0&#39;</span>)</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      <span class="keywordflow">if</span> (*szString == <span class="charliteral">&#39;%&#39;</span>)</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">if</span> (*(szString + 1) == <span class="charliteral">&#39;%&#39;</span>)</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;          SBAppendView(sb, <span class="stringliteral">&quot;%&quot;</span>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;          EZ_ASSERT_DEBUG(<span class="keyword">false</span>, <span class="stringliteral">&quot;Single percentage signs are not allowed in ezFormatString. Did you forgot to migrate a printf-style &quot;</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                                 <span class="stringliteral">&quot;string? Use double percentage signs for the actual character.&quot;</span>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        szString += 2;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (*szString == <span class="charliteral">&#39;{&#39;</span> &amp;&amp; *(szString + 1) &gt;= <span class="charliteral">&#39;0&#39;</span> &amp;&amp; *(szString + 1) &lt;= <span class="charliteral">&#39;9&#39;</span> &amp;&amp; *(szString + 2) == <span class="charliteral">&#39;}&#39;</span>)</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        iLastParam = *(szString + 1) - <span class="charliteral">&#39;0&#39;</span>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        SBAppendView(sb, param[iLastParam]);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        szString += 3;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (*szString == <span class="charliteral">&#39;{&#39;</span> &amp;&amp; *(szString + 1) == <span class="charliteral">&#39;}&#39;</span>)</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        ++iLastParam;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        EZ_ASSERT_DEV(iLastParam &lt; MaxNumParameters, <span class="stringliteral">&quot;Too many placeholders in format string&quot;</span>);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">if</span> (iLastParam &lt; MaxNumParameters)</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;          SBAppendView(sb, param[iLastParam]);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        szString += 2;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;      {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keyword">const</span> ezUInt32 character = <a class="code" href="../../d9/d32/classez_unicode_utils.htm#a171663ca5da4e2cbb440866d55cb2769">ezUnicodeUtils::DecodeUtf8ToUtf32</a>(szString);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        SBAppendChar(sb, character);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;      }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">return</span> SBReturn(sb);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keyword">template</span> &lt;ezInt32 N&gt;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keyword">typename</span> std::enable_if&lt;<span class="keyword">sizeof</span>...(ARGS) != N&gt;::type ReplaceString(<span class="keywordtype">char</span> tmp[MaxNumParameters][TempStringLength], <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a>* pViews) <span class="keyword">const</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    EZ_CHECK_AT_COMPILETIME_MSG(N &lt; MaxNumParameters, <span class="stringliteral">&quot;Maximum number of format arguments reached&quot;</span>);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment">// using a free function allows to overload with various different argument types</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    pViews[N] = BuildString(tmp[N], TempStringLength - 1, std::get&lt;N&gt;(m_Arguments));</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="comment">// Recurse, chip off one argument</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    ReplaceString&lt;N + 1&gt;(tmp, pViews);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="comment">// Recursion end if we reached the number of arguments.</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <span class="keyword">template</span> &lt;ezInt32 N&gt;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="keyword">typename</span> std::enable_if&lt;<span class="keyword">sizeof</span>...(ARGS) == N&gt;::type ReplaceString(<span class="keywordtype">char</span> tmp[MaxNumParameters][TempStringLength], <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a>* pViews) <span class="keyword">const</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  {</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <span class="comment">// stores the arguments</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  std::tuple&lt;ARGS...&gt; m_Arguments;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_format_string_htm"><div class="ttname"><a href="../../d4/d2e/classez_format_string.htm">ezFormatString</a></div><div class="ttdoc">Implements formating of strings with placeholders and formatting options.</div><div class="ttdef"><b>Definition:</b> FormatString.h:54</div></div>
 <div class="ttc" id="aclassez_format_string_impl_htm"><div class="ttname"><a href="../../df/d42/classez_format_string_impl.htm">ezFormatStringImpl</a></div><div class="ttdef"><b>Definition:</b> FormatStringImpl.h:8</div></div>
-<div class="ttc" id="aclassez_string_utils_htm_a63980b08e0aa463640f7e93786cf46da"><div class="ttname"><a href="../../de/df8/classez_string_utils.htm#a63980b08e0aa463640f7e93786cf46da">ezStringUtils::IsNullOrEmpty</a></div><div class="ttdeci">static bool IsNullOrEmpty(const T *pString)</div><div class="ttdoc">Returns true, if the given string is a nullptr pointer or a string that immediately terminates with a...</div></div>
 <div class="ttc" id="aclassez_unicode_utils_htm_a171663ca5da4e2cbb440866d55cb2769"><div class="ttname"><a href="../../d9/d32/classez_unicode_utils.htm#a171663ca5da4e2cbb440866d55cb2769">ezUnicodeUtils::DecodeUtf8ToUtf32</a></div><div class="ttdeci">static ezUInt32 DecodeUtf8ToUtf32(ByteIterator &amp;szUtf8Iterator)</div><div class="ttdoc">Decodes the next character from the given Utf8 sequence to Utf32 and increments the iterator as far a...</div><div class="ttdef"><b>Definition:</b> UnicodeUtils_inl.h:51</div></div>
-<div class="ttc" id="aclassez_format_string_impl_htm_aa1ce493e065577fb06ce1e9effcbe602"><div class="ttname"><a href="../../df/d42/classez_format_string_impl.htm#aa1ce493e065577fb06ce1e9effcbe602">ezFormatStringImpl::GetText</a></div><div class="ttdeci">virtual const char * GetText(ezStringBuilder &amp;sb) const override</div><div class="ttdoc">Generates the formatted text. Make sure to only call this function once and only when the formatted s...</div><div class="ttdef"><b>Definition:</b> FormatStringImpl.h:29</div></div>
-<div class="ttc" id="astructez_string_view_htm"><div class="ttname"><a href="../../de/db8/structez_string_view.htm">ezStringView</a></div><div class="ttdoc">ezStringView represent a read-only sub-string of a larger string, as it can store a dedicated string ...</div><div class="ttdef"><b>Definition:</b> StringView.h:20</div></div>
+<div class="ttc" id="aclassez_format_string_impl_htm_aa1ce493e065577fb06ce1e9effcbe602"><div class="ttname"><a href="../../df/d42/classez_format_string_impl.htm#aa1ce493e065577fb06ce1e9effcbe602">ezFormatStringImpl::GetText</a></div><div class="ttdeci">virtual const char * GetText(ezStringBuilder &amp;sb) const override</div><div class="ttdoc">Generates the formatted text. Make sure to only call this function once and only when the formatted s...</div><div class="ttdef"><b>Definition:</b> FormatStringImpl.h:31</div></div>
+<div class="ttc" id="astructez_string_view_htm"><div class="ttname"><a href="../../de/db8/structez_string_view.htm">ezStringView</a></div><div class="ttdoc">ezStringView represent a read-only sub-string of a larger string, as it can store a dedicated string ...</div><div class="ttdef"><b>Definition:</b> StringView.h:22</div></div>
 <div class="ttc" id="aclassez_string_builder_htm"><div class="ttname"><a href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a></div><div class="ttdoc">ezStringBuilder is a class that is meant for creating and modifying strings.</div><div class="ttdef"><b>Definition:</b> StringBuilder.h:34</div></div>
+<div class="ttc" id="aclassez_string_utils_htm_a26f868ce8249b864f448837638ffde33"><div class="ttname"><a href="../../de/df8/classez_string_utils.htm#a26f868ce8249b864f448837638ffde33">ezStringUtils::IsNullOrEmpty</a></div><div class="ttdeci">static constexpr bool IsNullOrEmpty(const T *pString)</div><div class="ttdoc">Returns true, if the given string is a nullptr pointer or a string that immediately terminates with a...</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_b52479c911fe9a42767226b3387b3a02.htm">Strings</a></li><li class="navelem"><a class="el" href="../../dir_067384bf2c73f8a8078edb859c0ba426.htm">Implementation</a></li><li class="navelem"><b>FormatStringImpl.h</b></li>
-    <li class="footer">Generated on Mon Oct 18 2021 15:33:29 for ezEngine by
+    <li class="footer">Generated on Sun Oct 9 2022 14:44:55 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

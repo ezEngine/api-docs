@@ -2,7 +2,7 @@ var classez_l_s_a_o_pass =
 [
     [ "ezLSAOPass", "db/d17/classez_l_s_a_o_pass.htm#aa5be571688a5c4dc434a186ca41fa981", null ],
     [ "~ezLSAOPass", "db/d17/classez_l_s_a_o_pass.htm#a8a567159fb53bc5b5749dd6eb58a0286", null ],
-    [ "AddLinesForDirection", "db/d17/classez_l_s_a_o_pass.htm#a16eb6ffc8b49c3daa05644be595c5ffb", null ],
+    [ "AddLinesForDirection", "db/d17/classez_l_s_a_o_pass.htm#a1dac238db46c2d9189afcd7d57b81b71", null ],
     [ "DestroyLineSweepData", "db/d17/classez_l_s_a_o_pass.htm#a510091252a6083f244ba3e00dd11e4ed", null ],
     [ "Execute", "db/d17/classez_l_s_a_o_pass.htm#aebd2155cf85131aa1758980a2086e357", null ],
     [ "ExecuteInactive", "db/d17/classez_l_s_a_o_pass.htm#ac86945e263c8dd6afff5113348a99d71", null ],
@@ -16,7 +16,7 @@ var classez_l_s_a_o_pass =
     [ "SetLineSamplePixelOffset", "db/d17/classez_l_s_a_o_pass.htm#a9a5471e2d295ddaff34bd4d86b378ed2", null ],
     [ "SetLineToLinePixelOffset", "db/d17/classez_l_s_a_o_pass.htm#a3586954b5a52199983bf6500b2c2e371", null ],
     [ "SetOcclusionFalloff", "db/d17/classez_l_s_a_o_pass.htm#a8ad4615b4bd222960311e4fb0b710fce", null ],
-    [ "SetupLineSweepData", "db/d17/classez_l_s_a_o_pass.htm#a4891f42c3dc52fc3cf9d1291bc5a90b2", null ],
+    [ "SetupLineSweepData", "db/d17/classez_l_s_a_o_pass.htm#a95e43b6f819ee66c422cc0bbb96a6ac9", null ],
     [ "m_bDistributedGathering", "db/d17/classez_l_s_a_o_pass.htm#a6347a71314d936f15e42a607970ac924", null ],
     [ "m_bSweepDataDirty", "db/d17/classez_l_s_a_o_pass.htm#a32e48c8f24fce9623f0fa14f60eec9f7", null ],
     [ "m_DepthCompareFunction", "db/d17/classez_l_s_a_o_pass.htm#a5f5ba8db07caabd6193b22a977526e05", null ],

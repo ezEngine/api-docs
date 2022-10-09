@@ -154,14 +154,15 @@ $(document).ready(function(){initNavTree('d0/d58/_mesh_resource_descriptor_8h_so
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <a class="code" href="../../d3/dd7/classez_typed_resource_handle.htm">ezSkeletonResourceHandle</a> m_hDefaultSkeleton;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <a class="code" href="../../d8/d86/classez_hash_table.htm">ezHashTable&lt;ezHashedString, BoneData&gt;</a> m_Bones;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;Material, 8&gt;</a> m_Materials;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;SubMesh, 8&gt;</a> m_SubMeshes;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <a class="code" href="../../db/d43/structez_mesh_buffer_resource_descriptor.htm">ezMeshBufferResourceDescriptor</a> m_MeshBufferDescriptor;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <a class="code" href="../../d3/dd7/classez_typed_resource_handle.htm">ezMeshBufferResourceHandle</a> m_hMeshBuffer;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <a class="code" href="../../dc/d77/classez_bounding_box_sphere_template.htm">ezBoundingBoxSphere</a> m_Bounds;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;};</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordtype">float</span> m_fMaxBoneVertexOffset = 0.0f; <span class="comment">// the maximum distance between any vertex and its influencing bones, can be used for adjusting the bounding box of a pose</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;Material, 8&gt;</a> m_Materials;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;SubMesh, 8&gt;</a> m_SubMeshes;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <a class="code" href="../../db/d43/structez_mesh_buffer_resource_descriptor.htm">ezMeshBufferResourceDescriptor</a> m_MeshBufferDescriptor;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <a class="code" href="../../d3/dd7/classez_typed_resource_handle.htm">ezMeshBufferResourceHandle</a> m_hMeshBuffer;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <a class="code" href="../../dc/d77/classez_bounding_box_sphere_template.htm">ezBoundingBoxSphere</a> m_Bounds;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition:</b> Types.h:50</div></div>
@@ -176,14 +177,14 @@ $(document).ready(function(){initNavTree('d0/d58/_mesh_resource_descriptor_8h_so
 <div class="ttc" id="aclassez_hybrid_array_htm"><div class="ttname"><a href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray</a></div><div class="ttdoc">A hybrid array uses in-place storage to handle the first few elements without any allocation....</div><div class="ttdef"><b>Definition:</b> HybridArray.h:11</div></div>
 <div class="ttc" id="aclassez_mesh_resource_descriptor_htm"><div class="ttname"><a href="../../d2/d6b/classez_mesh_resource_descriptor.htm">ezMeshResourceDescriptor</a></div><div class="ttdef"><b>Definition:</b> MeshResourceDescriptor.h:8</div></div>
 <div class="ttc" id="astructez_mesh_resource_descriptor_1_1_material_htm"><div class="ttname"><a href="../../d3/d14/structez_mesh_resource_descriptor_1_1_material.htm">ezMeshResourceDescriptor::Material</a></div><div class="ttdef"><b>Definition:</b> MeshResourceDescriptor.h:22</div></div>
-<div class="ttc" id="astructez_mesh_buffer_resource_descriptor_htm"><div class="ttname"><a href="../../db/d43/structez_mesh_buffer_resource_descriptor.htm">ezMeshBufferResourceDescriptor</a></div><div class="ttdef"><b>Definition:</b> MeshBufferResource.h:31</div></div>
-<div class="ttc" id="aclassez_hash_table_htm"><div class="ttname"><a href="../../d8/d86/classez_hash_table.htm">ezHashTable</a></div><div class="ttdef"><b>Definition:</b> HashTable.h:257</div></div>
+<div class="ttc" id="astructez_mesh_buffer_resource_descriptor_htm"><div class="ttname"><a href="../../db/d43/structez_mesh_buffer_resource_descriptor.htm">ezMeshBufferResourceDescriptor</a></div><div class="ttdef"><b>Definition:</b> MeshBufferResource.h:32</div></div>
+<div class="ttc" id="aclassez_hash_table_htm"><div class="ttname"><a href="../../d8/d86/classez_hash_table.htm">ezHashTable</a></div><div class="ttdef"><b>Definition:</b> HashTable.h:263</div></div>
 <div class="ttc" id="aclassez_typed_resource_handle_htm"><div class="ttname"><a href="../../d3/dd7/classez_typed_resource_handle.htm">ezTypedResourceHandle&lt; class ezMeshBufferResource &gt;</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_9b39d7517b28e8ee3dee1b9d862ddabb.htm">RendererCore</a></li><li class="navelem"><a class="el" href="../../dir_86dbb1b2e83b0d7392768ac2411967d1.htm">Meshes</a></li><li class="navelem"><b>MeshResourceDescriptor.h</b></li>
-    <li class="footer">Generated on Mon Oct 18 2021 15:33:31 for ezEngine by
+    <li class="footer">Generated on Sun Oct 9 2022 14:44:57 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

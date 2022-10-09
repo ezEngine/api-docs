@@ -6,7 +6,6 @@ var structez_property_ui_state =
       [ "Disabled", "dc/de2/structez_property_ui_state.htm#aaa261838e748a26fb5e7a1b9b8a5d535aa57d1c14ff3ee9e2bef1f8ce2ab25d37", null ]
     ] ],
     [ "ezPropertyUiState", "dc/de2/structez_property_ui_state.htm#a9bacb47998befd8021dfe002ff1112e1", null ],
-    [ "m_bIsDefaultValue", "dc/de2/structez_property_ui_state.htm#a281d40b28d927f7f77d152285d6d4037", null ],
     [ "m_sNewLabelText", "dc/de2/structez_property_ui_state.htm#a5f47e596a72e2c10e7dc3d4010589712", null ],
     [ "m_Visibility", "dc/de2/structez_property_ui_state.htm#ae3f2dd941c781da96b958819364aa731", null ]
 ];

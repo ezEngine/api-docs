@@ -1,6 +1,7 @@
 var structez_result =
 [
     [ "ezResult", "d4/da9/structez_result.htm#a895682ca5abc4a9199debd10a542aa2a", null ],
+    [ "AssertSuccess", "d4/da9/structez_result.htm#a743205fe26249135306145c8cc5c951e", null ],
     [ "Failed", "d4/da9/structez_result.htm#aecca09f8cfba67f8f26485f7ba761a09", null ],
     [ "IgnoreResult", "d4/da9/structez_result.htm#acb0bb72646ee6d5966edd5b4108fb670", null ],
     [ "operator!=", "d4/da9/structez_result.htm#a960b63904526208f1c0020891f7ae2b8", null ],

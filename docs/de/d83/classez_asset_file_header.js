@@ -7,6 +7,6 @@ var classez_asset_file_header =
     [ "IsFileUpToDate", "de/d83/classez_asset_file_header.htm#af6b9cda444f49eaab943500e7afd5190", null ],
     [ "Read", "de/d83/classez_asset_file_header.htm#a2f2d68993adf0d75a570377e7960ab61", null ],
     [ "SetFileHashAndVersion", "de/d83/classez_asset_file_header.htm#aecf03ee58dfb95e3324d59c80affd6ac", null ],
-    [ "SetGenerator", "de/d83/classez_asset_file_header.htm#ac4c9960b69072751e81c72a9bcfe2bdf", null ],
+    [ "SetGenerator", "de/d83/classez_asset_file_header.htm#a905f1f27e5271f1556fed33457e38f9f", null ],
     [ "Write", "de/d83/classez_asset_file_header.htm#ae35c43fb98835ffb51ded49225ac151e", null ]
 ];

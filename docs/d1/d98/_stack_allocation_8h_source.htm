@@ -144,65 +144,67 @@ $(document).ready(function(){initNavTree('d1/d98/_stack_allocation_8h_source.htm
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      {</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">while</span> (uiSize &gt; m_uiNextBucketSize)</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;          m_uiNextBucketSize *= 2;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        m_uiCurrentBucketIndex = m_Buckets.<a class="code" href="../../dc/d59/classez_array_base.htm#a51ba61fcbd2350ae8850754a41acbaa1">GetCount</a>();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;          EZ_ASSERT_DEBUG(m_uiNextBucketSize &gt; 0, <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;          m_uiNextBucketSize *= 2;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keyword">auto</span> newBucket = <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;ezUInt8&gt;</a>(<span class="keyword">static_cast&lt;</span>ezUInt8*<span class="keyword">&gt;</span>(m_pParent-&gt;<a class="code" href="../../d1/d4c/classez_allocator_base.htm#af33e254a20311a5698b10bc62e1fb197">Allocate</a>(m_uiNextBucketSize, Alignment)), m_uiNextBucketSize);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        m_Buckets.<a class="code" href="../../dc/d59/classez_array_base.htm#abc514bdf8b2de7b5b220ffdbd862e830">PushBack</a>(newBucket);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        m_pNextAllocation = newBucket.GetPtr();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        m_uiCurrentBucketIndex = m_Buckets.<a class="code" href="../../dc/d59/classez_array_base.htm#a51ba61fcbd2350ae8850754a41acbaa1">GetCount</a>();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keyword">auto</span> newBucket = <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;ezUInt8&gt;</a>(<span class="keyword">static_cast&lt;</span>ezUInt8*<span class="keyword">&gt;</span>(m_pParent-&gt;<a class="code" href="../../d1/d4c/classez_allocator_base.htm#af33e254a20311a5698b10bc62e1fb197">Allocate</a>(m_uiNextBucketSize, Alignment)), m_uiNextBucketSize);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        m_Buckets.<a class="code" href="../../dc/d59/classez_array_base.htm#abc514bdf8b2de7b5b220ffdbd862e830">PushBack</a>(newBucket);</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        m_uiNextBucketSize *= 2;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      }</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      EZ_ASSERT_DEBUG(m_pNextAllocation + uiSize &lt;= m_Buckets[m_uiCurrentBucketIndex].GetEndPtr(), <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        m_pNextAllocation = newBucket.GetPtr();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        m_uiNextBucketSize *= 2;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      }</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      ezUInt8* ptr = m_pNextAllocation;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      m_pNextAllocation += uiSize;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      <span class="keywordflow">return</span> ptr;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    EZ_FORCE_INLINE <span class="keywordtype">void</span> Deallocate(<span class="keywordtype">void</span>* ptr)</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      <span class="comment">// Individual deallocation is not supported by this allocator</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    EZ_FORCE_INLINE <span class="keywordtype">void</span> Reset()</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;      m_uiCurrentBucketIndex = 0;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      m_pNextAllocation = !m_Buckets.<a class="code" href="../../dc/d59/classez_array_base.htm#a35630a870ec53cf3b022653232a31c60">IsEmpty</a>() ? m_Buckets[0].GetPtr() : <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    EZ_FORCE_INLINE <span class="keywordtype">void</span> FillStats(<a class="code" href="../../df/df0/structez_allocator_base_1_1_stats.htm">ezAllocatorBase::Stats</a>&amp; stats)</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;      stats.<a class="code" href="../../df/df0/structez_allocator_base_1_1_stats.htm#a4a1683e74cd8038c281dd9f6d29b088c">m_uiNumAllocations</a> = m_Buckets.<a class="code" href="../../dc/d59/classez_array_base.htm#a51ba61fcbd2350ae8850754a41acbaa1">GetCount</a>();</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;      <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; bucket : m_Buckets)</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        stats.<a class="code" href="../../df/df0/structez_allocator_base_1_1_stats.htm#adc92c105009504b209a27ab697713a71">m_uiAllocationSize</a> += bucket.GetCount();</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;      }</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    EZ_ALWAYS_INLINE <a class="code" href="../../d1/d4c/classez_allocator_base.htm">ezAllocatorBase</a>* GetParent()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pParent; }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      EZ_ASSERT_DEBUG(m_pNextAllocation + uiSize &lt;= m_Buckets[m_uiCurrentBucketIndex].GetEndPtr(), <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      ezUInt8* ptr = m_pNextAllocation;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      m_pNextAllocation += uiSize;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      <span class="keywordflow">return</span> ptr;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    EZ_FORCE_INLINE <span class="keywordtype">void</span> Deallocate(<span class="keywordtype">void</span>* ptr)</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      <span class="comment">// Individual deallocation is not supported by this allocator</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    EZ_FORCE_INLINE <span class="keywordtype">void</span> Reset()</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;      m_uiCurrentBucketIndex = 0;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;      m_pNextAllocation = !m_Buckets.<a class="code" href="../../dc/d59/classez_array_base.htm#a35630a870ec53cf3b022653232a31c60">IsEmpty</a>() ? m_Buckets[0].GetPtr() : <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    EZ_FORCE_INLINE <span class="keywordtype">void</span> FillStats(<a class="code" href="../../df/df0/structez_allocator_base_1_1_stats.htm">ezAllocatorBase::Stats</a>&amp; stats)</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      stats.<a class="code" href="../../df/df0/structez_allocator_base_1_1_stats.htm#a4a1683e74cd8038c281dd9f6d29b088c">m_uiNumAllocations</a> = m_Buckets.<a class="code" href="../../dc/d59/classez_array_base.htm#a51ba61fcbd2350ae8850754a41acbaa1">GetCount</a>();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;      <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; bucket : m_Buckets)</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;      {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        stats.<a class="code" href="../../df/df0/structez_allocator_base_1_1_stats.htm#adc92c105009504b209a27ab697713a71">m_uiAllocationSize</a> += bucket.GetCount();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;      }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <a class="code" href="../../d1/d4c/classez_allocator_base.htm">ezAllocatorBase</a>* m_pParent = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    ezUInt32 m_uiCurrentBucketIndex = 0;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    ezUInt32 m_uiNextBucketSize = 0;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    ezUInt8* m_pNextAllocation = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    EZ_ALWAYS_INLINE <a class="code" href="../../d1/d4c/classez_allocator_base.htm">ezAllocatorBase</a>* GetParent()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pParent; }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <a class="code" href="../../d1/d4c/classez_allocator_base.htm">ezAllocatorBase</a>* m_pParent = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    ezUInt32 m_uiCurrentBucketIndex = 0;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    ezUInt32 m_uiNextBucketSize = 0;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezArrayPtr&lt;ezUInt8&gt;</a>, 4&gt; m_Buckets;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  };</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;} <span class="comment">// namespace ezMemoryPolicies</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    ezUInt8* m_pNextAllocation = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezArrayPtr&lt;ezUInt8&gt;</a>, 4&gt; m_Buckets;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  };</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;} <span class="comment">// namespace ezMemoryPolicies</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_memory_policies_1_1ez_stack_allocation_htm"><div class="ttname"><a href="../../d8/d5d/classez_memory_policies_1_1ez_stack_allocation.htm">ezMemoryPolicies::ezStackAllocation</a></div><div class="ttdoc">This allocation policy works like a stack. You can only &quot;push&quot; and &quot;pop&quot; allocations in the correct o...</div><div class="ttdef"><b>Definition:</b> StackAllocation.h:13</div></div>
 <div class="ttc" id="astructez_allocator_base_1_1_stats_htm_a4a1683e74cd8038c281dd9f6d29b088c"><div class="ttname"><a href="../../df/df0/structez_allocator_base_1_1_stats.htm#a4a1683e74cd8038c281dd9f6d29b088c">ezAllocatorBase::Stats::m_uiNumAllocations</a></div><div class="ttdeci">ezUInt64 m_uiNumAllocations</div><div class="ttdoc">total number of allocations</div><div class="ttdef"><b>Definition:</b> AllocatorBase.h:29</div></div>
 <div class="ttc" id="astructez_allocator_base_1_1_stats_htm"><div class="ttname"><a href="../../df/df0/structez_allocator_base_1_1_stats.htm">ezAllocatorBase::Stats</a></div><div class="ttdef"><b>Definition:</b> AllocatorBase.h:25</div></div>
-<div class="ttc" id="aclassez_array_base_htm_abc514bdf8b2de7b5b220ffdbd862e830"><div class="ttname"><a href="../../dc/d59/classez_array_base.htm#abc514bdf8b2de7b5b220ffdbd862e830">ezArrayBase::PushBack</a></div><div class="ttdeci">void PushBack(const T &amp;value)</div><div class="ttdoc">Pushes value at the end of the array.</div><div class="ttdef"><b>Definition:</b> ArrayBase_inl.h:304</div></div>
+<div class="ttc" id="aclassez_array_base_htm_abc514bdf8b2de7b5b220ffdbd862e830"><div class="ttname"><a href="../../dc/d59/classez_array_base.htm#abc514bdf8b2de7b5b220ffdbd862e830">ezArrayBase::PushBack</a></div><div class="ttdeci">void PushBack(const T &amp;value)</div><div class="ttdoc">Pushes value at the end of the array.</div><div class="ttdef"><b>Definition:</b> ArrayBase_inl.h:321</div></div>
 <div class="ttc" id="aclassez_array_ptr_htm"><div class="ttname"><a href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt; ezUInt8 &gt;</a></div></div>
 <div class="ttc" id="aclassez_allocator_base_htm_af33e254a20311a5698b10bc62e1fb197"><div class="ttname"><a href="../../d1/d4c/classez_allocator_base.htm#af33e254a20311a5698b10bc62e1fb197">ezAllocatorBase::Allocate</a></div><div class="ttdeci">virtual void * Allocate(size_t uiSize, size_t uiAlign, ezMemoryUtils::DestructorFunction destructorFunc=nullptr)=0</div><div class="ttdoc">Interface, do not use this directly, always use the new/delete macros below.</div></div>
 <div class="ttc" id="astructez_allocator_base_1_1_stats_htm_adc92c105009504b209a27ab697713a71"><div class="ttname"><a href="../../df/df0/structez_allocator_base_1_1_stats.htm#adc92c105009504b209a27ab697713a71">ezAllocatorBase::Stats::m_uiAllocationSize</a></div><div class="ttdeci">ezUInt64 m_uiAllocationSize</div><div class="ttdoc">total allocation size in bytes</div><div class="ttdef"><b>Definition:</b> AllocatorBase.h:31</div></div>
@@ -215,7 +217,7 @@ $(document).ready(function(){initNavTree('d1/d98/_stack_allocation_8h_source.htm
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_adb0ac2a169525f5fa05f0527c58e205.htm">Memory</a></li><li class="navelem"><a class="el" href="../../dir_7e8e2491845ec7b2b62df622f0295925.htm">Policies</a></li><li class="navelem"><b>StackAllocation.h</b></li>
-    <li class="footer">Generated on Mon Oct 18 2021 15:33:28 for ezEngine by
+    <li class="footer">Generated on Sun Oct 9 2022 14:44:54 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

@@ -9,6 +9,6 @@ var classez_string_deduplication_write_context =
     [ "SerializeString", "df/dc7/classez_string_deduplication_write_context.htm#ac3db13e3d84f8bc07a5dda861b645f3a", null ],
     [ "m_DeduplicatedStrings", "df/dc7/classez_string_deduplication_write_context.htm#a2c41ad736a56594706a50ce50c2a8330", null ],
     [ "m_OriginalStream", "df/dc7/classez_string_deduplication_write_context.htm#a794ffe5b5117b7683aa0fdde7210e300", null ],
-    [ "m_TempStreamStorage", "df/dc7/classez_string_deduplication_write_context.htm#a63bfdc9c984cc1f2db13dd2337d8c7bc", null ],
+    [ "m_TempStreamStorage", "df/dc7/classez_string_deduplication_write_context.htm#ae98d2cbc8f8c05decdcfc808a4d46c6c", null ],
     [ "m_TempStreamWriter", "df/dc7/classez_string_deduplication_write_context.htm#a80747c975f16dd581e0e493390d4bf31", null ]
 ];

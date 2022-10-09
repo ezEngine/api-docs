@@ -3,6 +3,7 @@ var classez_transform_manipulator_adapter =
     [ "ezTransformManipulatorAdapter", "dc/da1/classez_transform_manipulator_adapter.htm#a07f83ddf8035a80108dc2db8d5eb06f3", null ],
     [ "~ezTransformManipulatorAdapter", "dc/da1/classez_transform_manipulator_adapter.htm#a54512993e04f5812ccb45644359a3da7", null ],
     [ "Finalize", "dc/da1/classez_transform_manipulator_adapter.htm#a0e6d45c14201138a26f263097cb1c065", null ],
+    [ "GetOffsetTransform", "dc/da1/classez_transform_manipulator_adapter.htm#ac330008e6f80cc1cf546812a31b80945", null ],
     [ "GetRotation", "dc/da1/classez_transform_manipulator_adapter.htm#a8d2f86f8c12bc36889bda88c03be0195", null ],
     [ "GetScale", "dc/da1/classez_transform_manipulator_adapter.htm#a5975a2b3175ae499aea43b5b02ec4dda", null ],
     [ "GetTranslation", "dc/da1/classez_transform_manipulator_adapter.htm#a2af54dfabb9e5288469a22f9784bb412", null ],

@@ -1,8 +1,8 @@
 var structez_dynamic_mesh_buffer_resource_descriptor =
 [
+    [ "m_bColorStream", "da/dd5/structez_dynamic_mesh_buffer_resource_descriptor.htm#a1425eef37e05ee97e65ee90c021bc4d8", null ],
+    [ "m_IndexType", "da/dd5/structez_dynamic_mesh_buffer_resource_descriptor.htm#ad44b0420ed52ea83588edb38cc888c61", null ],
     [ "m_Topology", "da/dd5/structez_dynamic_mesh_buffer_resource_descriptor.htm#a0a5e0c6c3cc1d61bb6706ee5c938854e", null ],
-    [ "m_uiNumIndices16", "da/dd5/structez_dynamic_mesh_buffer_resource_descriptor.htm#a9093ed63bdeb253a167582ab8e041676", null ],
-    [ "m_uiNumIndices32", "da/dd5/structez_dynamic_mesh_buffer_resource_descriptor.htm#aa9897d7f990fa2a3499af46a4c277847", null ],
-    [ "m_uiNumPrimitives", "da/dd5/structez_dynamic_mesh_buffer_resource_descriptor.htm#a43bd492e0213c7ca1d4029812a0a34b3", null ],
-    [ "m_uiNumVertices", "da/dd5/structez_dynamic_mesh_buffer_resource_descriptor.htm#ac0458c617b4b2dfea918ab99aec8431c", null ]
+    [ "m_uiMaxPrimitives", "da/dd5/structez_dynamic_mesh_buffer_resource_descriptor.htm#a53f16f351c7dabfc6820a418082848eb", null ],
+    [ "m_uiMaxVertices", "da/dd5/structez_dynamic_mesh_buffer_resource_descriptor.htm#ab79307c7effce9d75418f16f6fa57e97", null ]
 ];

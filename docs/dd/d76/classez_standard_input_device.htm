@@ -86,23 +86,19 @@ $(document).ready(function(){initNavTree('dd/d76/classez_standard_input_device.h
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="../../d4/d90/classez_standard_input_device-members.htm">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">ezStandardInputDevice Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>Implements an input device abstraction on top of the SFML library.  
- <a href="../../dd/d76/classez_standard_input_device.htm#details">More...</a></p>
-
-<p><code>#include &lt;<a class="el" href="../../dd/d72/_input_device___s_f_m_l_8h_source.htm">InputDevice_SFML.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ezStandardInputDevice:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../da/d02/classez_standard_input_device__inherit__graph.png" border="0" usemap="#ez_standard_input_device_inherit__map" alt="Inheritance graph"/></div>
 <map name="ez_standard_input_device_inherit__map" id="ez_standard_input_device_inherit__map">
-<area shape="rect" title="Implements an input device abstraction on top of the SFML library." alt="" coords="32,393,205,420"/>
+<area shape="rect" title=" " alt="" coords="32,393,205,420"/>
 <area shape="rect" href="../../d2/db3/classez_input_device_mouse_keyboard.htm" title="This is the base class for all input devices that handle mouse and keyboard input." alt="" coords="9,319,228,345"/>
 <area shape="rect" href="../../df/d18/classez_input_device.htm" title="The base class for all input device types." alt="" coords="61,244,176,271"/>
 <area shape="rect" href="../../d5/d0b/classez_enumerable.htm" title=" " alt="" coords="5,155,232,196"/>
@@ -113,13 +109,17 @@ Inheritance diagram for ezStandardInputDevice:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac3d108e5ad84a933a635956d83b8b1fe"><td class="memItemLeft" align="right" valign="top"><a id="ac3d108e5ad84a933a635956d83b8b1fe"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ezStandardInputDevice</b> (ezUInt32 uiWindowNumber)</td></tr>
-<tr class="separator:ac3d108e5ad84a933a635956d83b8b1fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a146f9bf3263ba7cfc11021b6b0ce03d7"><td class="memItemLeft" align="right" valign="top"><a id="a146f9bf3263ba7cfc11021b6b0ce03d7"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ezStandardInputDevice</b> (ezUInt32 uiWindowNumber, GLFWwindow *windowHandle)</td></tr>
+<tr class="separator:a146f9bf3263ba7cfc11021b6b0ce03d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adcea19b1ebc60963589f78680cd8fbeb"><td class="memItemLeft" align="right" valign="top"><a id="adcea19b1ebc60963589f78680cd8fbeb"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d76/classez_standard_input_device.htm#adcea19b1ebc60963589f78680cd8fbeb">SetShowMouseCursor</a> (bool bShow) override</td></tr>
 <tr class="memdesc:adcea19b1ebc60963589f78680cd8fbeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shows or hides the mouse cursor inside the application window. <br /></td></tr>
 <tr class="separator:adcea19b1ebc60963589f78680cd8fbeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5df989ff64a3a986828f92da9989a7ea"><td class="memItemLeft" align="right" valign="top"><a id="a5df989ff64a3a986828f92da9989a7ea"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d76/classez_standard_input_device.htm#a5df989ff64a3a986828f92da9989a7ea">GetShowMouseCursor</a> () const override</td></tr>
+<tr class="memdesc:a5df989ff64a3a986828f92da9989a7ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the mouse cursor is shown. <br /></td></tr>
+<tr class="separator:a5df989ff64a3a986828f92da9989a7ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19e1bf9435566824ef063c270ef131a7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d76/classez_standard_input_device.htm#a19e1bf9435566824ef063c270ef131a7">SetClipMouseCursor</a> (<a class="el" href="../../de/d43/structez_mouse_cursor_clip_mode.htm#aca2bf78cfea16819fa36e7d35a784849">ezMouseCursorClipMode::Enum</a> mode) override</td></tr>
 <tr class="memdesc:a19e1bf9435566824ef063c270ef131a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will trap the mouse inside the application window. Should usually be enabled, to prevent accidental task switches.  <a href="../../dd/d76/classez_standard_input_device.htm#a19e1bf9435566824ef063c270ef131a7">More...</a><br /></td></tr>
 <tr class="separator:a19e1bf9435566824ef063c270ef131a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -127,13 +127,28 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 virtual <a class="el" href="../../de/d43/structez_mouse_cursor_clip_mode.htm#aca2bf78cfea16819fa36e7d35a784849">ezMouseCursorClipMode::Enum</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d76/classez_standard_input_device.htm#a4d9744bdea2a43c38bc16ec7b80f4f8c">GetClipMouseCursor</a> () const override</td></tr>
 <tr class="memdesc:a4d9744bdea2a43c38bc16ec7b80f4f8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the mouse is confined to the application window or not. <br /></td></tr>
 <tr class="separator:a4d9744bdea2a43c38bc16ec7b80f4f8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99536aa71f83438c4552095c77cb3c60"><td class="memItemLeft" align="right" valign="top"><a id="a99536aa71f83438c4552095c77cb3c60"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ezStandardInputDevice</b> (sf::Window *pWindow, ezUInt32 uiWindowNumber)</td></tr>
-<tr class="separator:a99536aa71f83438c4552095c77cb3c60"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b23ee3bc910ec3cfe6eaa5885a1f1c2"><td class="memItemLeft" align="right" valign="top"><a id="a1b23ee3bc910ec3cfe6eaa5885a1f1c2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d76/classez_standard_input_device.htm#a1b23ee3bc910ec3cfe6eaa5885a1f1c2">WindowMessage</a> (const sf::Event &amp;TheEvent)</td></tr>
-<tr class="memdesc:a1b23ee3bc910ec3cfe6eaa5885a1f1c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function needs to be called whenever an SFML event arrives, such that the input device can handle it. <br /></td></tr>
-<tr class="separator:a1b23ee3bc910ec3cfe6eaa5885a1f1c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6936b12cbf098989029eeb79da23080c"><td class="memItemLeft" align="right" valign="top"><a id="a6936b12cbf098989029eeb79da23080c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>OnKey</b> (int key, int scancode, int action, int mods)</td></tr>
+<tr class="separator:a6936b12cbf098989029eeb79da23080c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60c5f9086d4044563e07b5afbfba71d8"><td class="memItemLeft" align="right" valign="top"><a id="a60c5f9086d4044563e07b5afbfba71d8"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>OnCharacter</b> (unsigned int codepoint)</td></tr>
+<tr class="separator:a60c5f9086d4044563e07b5afbfba71d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4db62836680a67cdccd03c8905dee7f9"><td class="memItemLeft" align="right" valign="top"><a id="a4db62836680a67cdccd03c8905dee7f9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>OnCursorPosition</b> (double xpos, double ypos)</td></tr>
+<tr class="separator:a4db62836680a67cdccd03c8905dee7f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ac0ef28b8502ac9817cd66a6f563738"><td class="memItemLeft" align="right" valign="top"><a id="a0ac0ef28b8502ac9817cd66a6f563738"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>OnMouseButton</b> (int button, int action, int mods)</td></tr>
+<tr class="separator:a0ac0ef28b8502ac9817cd66a6f563738"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83198aee126ccc3f76ec21df2c808b7c"><td class="memItemLeft" align="right" valign="top"><a id="a83198aee126ccc3f76ec21df2c808b7c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>OnScroll</b> (double xoffset, double yoffset)</td></tr>
+<tr class="separator:a83198aee126ccc3f76ec21df2c808b7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3d108e5ad84a933a635956d83b8b1fe"><td class="memItemLeft" align="right" valign="top"><a id="ac3d108e5ad84a933a635956d83b8b1fe"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ezStandardInputDevice</b> (ezUInt32 uiWindowNumber)</td></tr>
+<tr class="separator:ac3d108e5ad84a933a635956d83b8b1fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2ee0aba89ee8ad5ff1e518699007f7c"><td class="memItemLeft" align="right" valign="top"><a id="ac2ee0aba89ee8ad5ff1e518699007f7c"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d76/classez_standard_input_device.htm#ac2ee0aba89ee8ad5ff1e518699007f7c">SetShowMouseCursor</a> (bool bShow) override</td></tr>
+<tr class="memdesc:ac2ee0aba89ee8ad5ff1e518699007f7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shows or hides the mouse cursor inside the application window. <br /></td></tr>
+<tr class="separator:ac2ee0aba89ee8ad5ff1e518699007f7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6da64e674d8ed9fee0c7e94314a4c34c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d76/classez_standard_input_device.htm#a6da64e674d8ed9fee0c7e94314a4c34c">SetClipMouseCursor</a> (<a class="el" href="../../de/d43/structez_mouse_cursor_clip_mode.htm#aca2bf78cfea16819fa36e7d35a784849">ezMouseCursorClipMode::Enum</a> mode) override</td></tr>
 <tr class="memdesc:a6da64e674d8ed9fee0c7e94314a4c34c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will trap the mouse inside the application window. Should usually be enabled, to prevent accidental task switches.  <a href="../../dd/d76/classez_standard_input_device.htm#a6da64e674d8ed9fee0c7e94314a4c34c">More...</a><br /></td></tr>
 <tr class="separator:a6da64e674d8ed9fee0c7e94314a4c34c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -141,13 +156,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 virtual <a class="el" href="../../de/d43/structez_mouse_cursor_clip_mode.htm#aca2bf78cfea16819fa36e7d35a784849">ezMouseCursorClipMode::Enum</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d76/classez_standard_input_device.htm#a37378137c8b89e4b143f3281fa7e87ee">GetClipMouseCursor</a> () const override</td></tr>
 <tr class="memdesc:a37378137c8b89e4b143f3281fa7e87ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the mouse is confined to the application window or not. <br /></td></tr>
 <tr class="separator:a37378137c8b89e4b143f3281fa7e87ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2ee0aba89ee8ad5ff1e518699007f7c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d76/classez_standard_input_device.htm#ac2ee0aba89ee8ad5ff1e518699007f7c">SetShowMouseCursor</a> (bool bShow) override</td></tr>
-<tr class="memdesc:ac2ee0aba89ee8ad5ff1e518699007f7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shows or hides the mouse cursor inside the application window.  <a href="../../dd/d76/classez_standard_input_device.htm#ac2ee0aba89ee8ad5ff1e518699007f7c">More...</a><br /></td></tr>
-<tr class="separator:ac2ee0aba89ee8ad5ff1e518699007f7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5df989ff64a3a986828f92da9989a7ea"><td class="memItemLeft" align="right" valign="top"><a id="a5df989ff64a3a986828f92da9989a7ea"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d76/classez_standard_input_device.htm#a5df989ff64a3a986828f92da9989a7ea">GetShowMouseCursor</a> () const override</td></tr>
-<tr class="memdesc:a5df989ff64a3a986828f92da9989a7ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the mouse cursor is shown. <br /></td></tr>
-<tr class="separator:a5df989ff64a3a986828f92da9989a7ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5e1b53279417b3728a3f294e9da57f5"><td class="memItemLeft" align="right" valign="top"><a id="af5e1b53279417b3728a3f294e9da57f5"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>ezStandardInputDevice</b> (ABI::Windows::UI::Core::ICoreWindow *coreWindow)</td></tr>
 <tr class="separator:af5e1b53279417b3728a3f294e9da57f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -229,14 +237,6 @@ template&lt;typename T &gt; </td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a13faf6908d2d656305e53e7be41a92cb"><td class="memItemLeft" align="right" valign="top"><a id="a13faf6908d2d656305e53e7be41a92cb"></a>
-static <a class="el" href="../../dd/d76/classez_standard_input_device.htm">ezStandardInputDevice</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d76/classez_standard_input_device.htm#a13faf6908d2d656305e53e7be41a92cb">GetDevice</a> (ezUInt32 uiWindowNumber=0)</td></tr>
-<tr class="memdesc:a13faf6908d2d656305e53e7be41a92cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an <a class="el" href="../../dd/d76/classez_standard_input_device.htm" title="Implements an input device abstraction on top of the SFML library.">ezStandardInputDevice</a> device for the given window. <br /></td></tr>
-<tr class="separator:a13faf6908d2d656305e53e7be41a92cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45ef2c63969d9e651b8ba9fd739e0146"><td class="memItemLeft" align="right" valign="top"><a id="a45ef2c63969d9e651b8ba9fd739e0146"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d76/classez_standard_input_device.htm#a45ef2c63969d9e651b8ba9fd739e0146">DestroyAllDevices</a> ()</td></tr>
-<tr class="memdesc:a45ef2c63969d9e651b8ba9fd739e0146"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys all devices of this type. Automatically called at engine shutdown. <br /></td></tr>
-<tr class="separator:a45ef2c63969d9e651b8ba9fd739e0146"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2840742d88394a8d88ec3332af8f814e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d76/classez_standard_input_device.htm#a2840742d88394a8d88ec3332af8f814e">LocalizeButtonDisplayNames</a> ()</td></tr>
 <tr class="memdesc:a2840742d88394a8d88ec3332af8f814e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calling this function will 'translate' most key names from English to the OS language, by querying that information from the OS.  <a href="../../dd/d76/classez_standard_input_device.htm#a2840742d88394a8d88ec3332af8f814e">More...</a><br /></td></tr>
 <tr class="separator:a2840742d88394a8d88ec3332af8f814e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -250,28 +250,37 @@ static ezInt32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>GetStaticRTTI</b> ()</td></tr>
 <tr class="separator:ad676281ced156eb886aa4f74a2a45d2f inherit pub_static_methods_classez_no_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a4a70384a87f78533338c5ee3e3618167"><td class="memItemLeft" align="right" valign="top"><a id="a4a70384a87f78533338c5ee3e3618167"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d76/classez_standard_input_device.htm#a4a70384a87f78533338c5ee3e3618167">InitializeDevice</a> () override</td></tr>
+<tr class="memdesc:a4a70384a87f78533338c5ee3e3618167"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override this if you need to do device specific initialization before the first use. <br /></td></tr>
+<tr class="separator:a4a70384a87f78533338c5ee3e3618167"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a57ea8ada3f8c8568244dd7f892aa17"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d76/classez_standard_input_device.htm#a1a57ea8ada3f8c8568244dd7f892aa17">RegisterInputSlots</a> () override</td></tr>
+<tr class="memdesc:a1a57ea8ada3f8c8568244dd7f892aa17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override this to register all the input slots that this device exposes.  <a href="../../dd/d76/classez_standard_input_device.htm#a1a57ea8ada3f8c8568244dd7f892aa17">More...</a><br /></td></tr>
+<tr class="separator:a1a57ea8ada3f8c8568244dd7f892aa17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a239c0be3ec7638508b014fa8517e90d7"><td class="memItemLeft" align="right" valign="top"><a id="a239c0be3ec7638508b014fa8517e90d7"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d76/classez_standard_input_device.htm#a239c0be3ec7638508b014fa8517e90d7">ResetInputSlotValues</a> () override</td></tr>
+<tr class="memdesc:a239c0be3ec7638508b014fa8517e90d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override this, if you need to reset certain input slot values to zero, after the <a class="el" href="../../d8/d45/classez_input_manager.htm" title="The central class to set up and query the state of all input.">ezInputManager</a> is finished with the current frame update. <br /></td></tr>
+<tr class="separator:a239c0be3ec7638508b014fa8517e90d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ace5f49dd821b3d00ba05c69c234f0c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d76/classez_standard_input_device.htm#a5ace5f49dd821b3d00ba05c69c234f0c">UpdateInputSlotValues</a> () override</td></tr>
+<tr class="memdesc:a5ace5f49dd821b3d00ba05c69c234f0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override this, if you need to query the state of the hardware to update the input slots.  <a href="../../dd/d76/classez_standard_input_device.htm#a5ace5f49dd821b3d00ba05c69c234f0c">More...</a><br /></td></tr>
+<tr class="separator:a5ace5f49dd821b3d00ba05c69c234f0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classez_input_device"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classez_input_device')"><img src="../../closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="../../df/d18/classez_input_device.htm">ezInputDevice</a></td></tr>
+<tr class="memitem:ac56c8b35631ad7da84c901a2c64ac9f7 inherit pro_methods_classez_input_device"><td class="memItemLeft" align="right" valign="top"><a id="ac56c8b35631ad7da84c901a2c64ac9f7"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d18/classez_input_device.htm#ac56c8b35631ad7da84c901a2c64ac9f7">UpdateHardwareState</a> (<a class="el" href="../../d3/d90/structez_time.htm">ezTime</a> tTimeDifference)</td></tr>
+<tr class="memdesc:ac56c8b35631ad7da84c901a2c64ac9f7 inherit pro_methods_classez_input_device"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is called once after <a class="el" href="../../d8/d45/classez_input_manager.htm#aeabab35c354ecb105150be7a40339ba0" title="Updates the state of the input manager. This should be called exactly once each frame.">ezInputManager::Update</a> with the same time delta value. It allows to update hardware state, such as the vibration of gamepad motors. <br /></td></tr>
+<tr class="separator:ac56c8b35631ad7da84c901a2c64ac9f7 inherit pro_methods_classez_input_device"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:ac5372a9599241cadc0791a0795925b08"><td class="memItemLeft" align="right" valign="top"><a id="ac5372a9599241cadc0791a0795925b08"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d76/classez_standard_input_device.htm#ac5372a9599241cadc0791a0795925b08">InitializeDevice</a> () override</td></tr>
 <tr class="memdesc:ac5372a9599241cadc0791a0795925b08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override this if you need to do device specific initialization before the first use. <br /></td></tr>
 <tr class="separator:ac5372a9599241cadc0791a0795925b08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ace5f49dd821b3d00ba05c69c234f0c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d76/classez_standard_input_device.htm#a5ace5f49dd821b3d00ba05c69c234f0c">UpdateInputSlotValues</a> () override</td></tr>
-<tr class="memdesc:a5ace5f49dd821b3d00ba05c69c234f0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override this, if you need to query the state of the hardware to update the input slots.  <a href="../../dd/d76/classez_standard_input_device.htm#a5ace5f49dd821b3d00ba05c69c234f0c">More...</a><br /></td></tr>
-<tr class="separator:a5ace5f49dd821b3d00ba05c69c234f0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adaad5d6f060ef014155ff2433f7db5fe"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d76/classez_standard_input_device.htm#adaad5d6f060ef014155ff2433f7db5fe">RegisterInputSlots</a> () override</td></tr>
 <tr class="memdesc:adaad5d6f060ef014155ff2433f7db5fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override this to register all the input slots that this device exposes.  <a href="../../dd/d76/classez_standard_input_device.htm#adaad5d6f060ef014155ff2433f7db5fe">More...</a><br /></td></tr>
 <tr class="separator:adaad5d6f060ef014155ff2433f7db5fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a70384a87f78533338c5ee3e3618167"><td class="memItemLeft" align="right" valign="top"><a id="a4a70384a87f78533338c5ee3e3618167"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d76/classez_standard_input_device.htm#a4a70384a87f78533338c5ee3e3618167">InitializeDevice</a> () override</td></tr>
-<tr class="memdesc:a4a70384a87f78533338c5ee3e3618167"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override this if you need to do device specific initialization before the first use. <br /></td></tr>
-<tr class="separator:a4a70384a87f78533338c5ee3e3618167"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad20eba8955f584453c07768d433c17b2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d76/classez_standard_input_device.htm#ad20eba8955f584453c07768d433c17b2">UpdateInputSlotValues</a> () override</td></tr>
-<tr class="memdesc:ad20eba8955f584453c07768d433c17b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override this, if you need to query the state of the hardware to update the input slots.  <a href="../../dd/d76/classez_standard_input_device.htm#ad20eba8955f584453c07768d433c17b2">More...</a><br /></td></tr>
-<tr class="separator:ad20eba8955f584453c07768d433c17b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a57ea8ada3f8c8568244dd7f892aa17"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d76/classez_standard_input_device.htm#a1a57ea8ada3f8c8568244dd7f892aa17">RegisterInputSlots</a> () override</td></tr>
-<tr class="memdesc:a1a57ea8ada3f8c8568244dd7f892aa17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override this to register all the input slots that this device exposes.  <a href="../../dd/d76/classez_standard_input_device.htm#a1a57ea8ada3f8c8568244dd7f892aa17">More...</a><br /></td></tr>
-<tr class="separator:a1a57ea8ada3f8c8568244dd7f892aa17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afeea89c35e57fa61572c38085fed56c7"><td class="memItemLeft" align="right" valign="top"><a id="afeea89c35e57fa61572c38085fed56c7"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d76/classez_standard_input_device.htm#afeea89c35e57fa61572c38085fed56c7">ResetInputSlotValues</a> () override</td></tr>
 <tr class="memdesc:afeea89c35e57fa61572c38085fed56c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override this, if you need to reset certain input slot values to zero, after the <a class="el" href="../../d8/d45/classez_input_manager.htm" title="The central class to set up and query the state of all input.">ezInputManager</a> is finished with the current frame update. <br /></td></tr>
@@ -280,23 +289,13 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d76/classez_standard_input_device.htm#a4a70384a87f78533338c5ee3e3618167">InitializeDevice</a> () override</td></tr>
 <tr class="memdesc:a4a70384a87f78533338c5ee3e3618167"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override this if you need to do device specific initialization before the first use. <br /></td></tr>
 <tr class="separator:a4a70384a87f78533338c5ee3e3618167"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad20eba8955f584453c07768d433c17b2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d76/classez_standard_input_device.htm#ad20eba8955f584453c07768d433c17b2">UpdateInputSlotValues</a> () override</td></tr>
-<tr class="memdesc:ad20eba8955f584453c07768d433c17b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override this, if you need to query the state of the hardware to update the input slots.  <a href="../../dd/d76/classez_standard_input_device.htm#ad20eba8955f584453c07768d433c17b2">More...</a><br /></td></tr>
-<tr class="separator:ad20eba8955f584453c07768d433c17b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a57ea8ada3f8c8568244dd7f892aa17"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d76/classez_standard_input_device.htm#a1a57ea8ada3f8c8568244dd7f892aa17">RegisterInputSlots</a> () override</td></tr>
 <tr class="memdesc:a1a57ea8ada3f8c8568244dd7f892aa17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override this to register all the input slots that this device exposes.  <a href="../../dd/d76/classez_standard_input_device.htm#a1a57ea8ada3f8c8568244dd7f892aa17">More...</a><br /></td></tr>
 <tr class="separator:a1a57ea8ada3f8c8568244dd7f892aa17"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a239c0be3ec7638508b014fa8517e90d7"><td class="memItemLeft" align="right" valign="top"><a id="a239c0be3ec7638508b014fa8517e90d7"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d76/classez_standard_input_device.htm#a239c0be3ec7638508b014fa8517e90d7">ResetInputSlotValues</a> () override</td></tr>
-<tr class="memdesc:a239c0be3ec7638508b014fa8517e90d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override this, if you need to reset certain input slot values to zero, after the <a class="el" href="../../d8/d45/classez_input_manager.htm" title="The central class to set up and query the state of all input.">ezInputManager</a> is finished with the current frame update. <br /></td></tr>
-<tr class="separator:a239c0be3ec7638508b014fa8517e90d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a70384a87f78533338c5ee3e3618167"><td class="memItemLeft" align="right" valign="top"><a id="a4a70384a87f78533338c5ee3e3618167"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d76/classez_standard_input_device.htm#a4a70384a87f78533338c5ee3e3618167">InitializeDevice</a> () override</td></tr>
 <tr class="memdesc:a4a70384a87f78533338c5ee3e3618167"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override this if you need to do device specific initialization before the first use. <br /></td></tr>
 <tr class="separator:a4a70384a87f78533338c5ee3e3618167"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad20eba8955f584453c07768d433c17b2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d76/classez_standard_input_device.htm#ad20eba8955f584453c07768d433c17b2">UpdateInputSlotValues</a> () override</td></tr>
-<tr class="memdesc:ad20eba8955f584453c07768d433c17b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override this, if you need to query the state of the hardware to update the input slots.  <a href="../../dd/d76/classez_standard_input_device.htm#ad20eba8955f584453c07768d433c17b2">More...</a><br /></td></tr>
-<tr class="separator:ad20eba8955f584453c07768d433c17b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a57ea8ada3f8c8568244dd7f892aa17"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d76/classez_standard_input_device.htm#a1a57ea8ada3f8c8568244dd7f892aa17">RegisterInputSlots</a> () override</td></tr>
 <tr class="memdesc:a1a57ea8ada3f8c8568244dd7f892aa17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override this to register all the input slots that this device exposes.  <a href="../../dd/d76/classez_standard_input_device.htm#a1a57ea8ada3f8c8568244dd7f892aa17">More...</a><br /></td></tr>
 <tr class="separator:a1a57ea8ada3f8c8568244dd7f892aa17"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -313,12 +312,9 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <tr class="memdesc:a504b39eb54d144d61594a2e88fa3cdde inherit pro_static_methods_classez_input_device"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <a class="el" href="../../df/d18/classez_input_device.htm#a504b39eb54d144d61594a2e88fa3cdde" title="Calls RegisterInputSlot() on the ezInputManager and passes the parameters through.">RegisterInputSlot()</a> on the <a class="el" href="../../d8/d45/classez_input_manager.htm" title="The central class to set up and query the state of all input.">ezInputManager</a> and passes the parameters through. <br /></td></tr>
 <tr class="separator:a504b39eb54d144d61594a2e88fa3cdde inherit pro_static_methods_classez_input_device"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classez_input_device_mouse_keyboard"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classez_input_device_mouse_keyboard')"><img src="../../closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="../../d2/db3/classez_input_device_mouse_keyboard.htm">ezInputDeviceMouseKeyboard</a></td></tr>
-<tr class="memitem:a10ad830157d1883ff4f53305697d706a inherit pro_attribs_classez_input_device_mouse_keyboard"><td class="memItemLeft" align="right" valign="top"><a id="a10ad830157d1883ff4f53305697d706a"></a>
-<a class="el" href="../../d1/df8/classez_vec2_template.htm">ezVec2</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_vMouseScale</b></td></tr>
-<tr class="separator:a10ad830157d1883ff4f53305697d706a inherit pro_attribs_classez_input_device_mouse_keyboard"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22bf884dfc704db53218d22d447d0f82 inherit pro_attribs_classez_input_device_mouse_keyboard"><td class="memItemLeft" align="right" valign="top"><a id="a22bf884dfc704db53218d22d447d0f82"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_bIsFocused</b> = true</td></tr>
-<tr class="separator:a22bf884dfc704db53218d22d447d0f82 inherit pro_attribs_classez_input_device_mouse_keyboard"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20236ae991133da65ba6d39a4d7f714b inherit pro_attribs_classez_input_device_mouse_keyboard"><td class="memItemLeft" align="right" valign="top"><a id="a20236ae991133da65ba6d39a4d7f714b"></a>
+<a class="el" href="../../d3/d90/structez_time.htm">ezTime</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_DoubleClickTime</b> = <a class="el" href="../../d3/d90/structez_time.htm#a3061c9851afc84d16a45aa129566b3ae">ezTime::Milliseconds</a>(500)</td></tr>
+<tr class="separator:a20236ae991133da65ba6d39a4d7f714b inherit pro_attribs_classez_input_device_mouse_keyboard"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classez_input_device"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classez_input_device')"><img src="../../closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="../../df/d18/classez_input_device.htm">ezInputDevice</a></td></tr>
 <tr class="memitem:aa020904d039e3c7ee81829b22d6919ff inherit pro_attribs_classez_input_device"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/d79/classez_map.htm">ezMap</a>&lt; <a class="el" href="../../d4/d53/structez_hybrid_string.htm">ezString</a>, float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d18/classez_input_device.htm#aa020904d039e3c7ee81829b22d6919ff">m_InputSlotValues</a></td></tr>
 <tr class="memdesc:aa020904d039e3c7ee81829b22d6919ff inherit pro_attribs_classez_input_device"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores all the values for all input slots that this device handles.  <a href="../../df/d18/classez_input_device.htm#aa020904d039e3c7ee81829b22d6919ff">More...</a><br /></td></tr>
@@ -336,12 +332,7 @@ ezUInt32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 static ezInt32&#160;</td><td class="memItemRight" valign="bottom"><b>m_iMouseIsOverWindowNumber</b> = -1</td></tr>
 <tr class="separator:a4cf3e5b52f20bc8fcb8d55248920c5ee inherit pro_static_attribs_classez_input_device_mouse_keyboard"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Implements an input device abstraction on top of the SFML library. </p>
-<p>Unfortunately SFML does neither support relative mouse motion, nor clipping a mouse cursor to the window area. Thus relative and absolute mouse position are 'emulated' by this device. As a consequence, relative mouse motion only works without limits, when the mouse cursor is clipped (in that case it is reset to the window center after each movement).</p>
-<p>SFML has several other limitations, as well. For example keyboard input is not language setting independent. To see the effect, just try out what different things happen when you use an English, German and Russian language setting :-( Therefore, it is highly advised to make all key-mappings configurable, such that users with other language settings can 'fix' this on their end.</p>
-<p>Also many special keys are not properly supported by SFML, most notably Numpad Enter is handled like Return. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a id="a2840742d88394a8d88ec3332af8f814e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2840742d88394a8d88ec3332af8f814e">&#9670;&nbsp;</a></span>LocalizeButtonDisplayNames()</h2>
 
@@ -370,8 +361,8 @@ static ezInt32&#160;</td><td class="memItemRight" valign="bottom"><b>m_iMouseIsO
 
 </div>
 </div>
-<a id="adaad5d6f060ef014155ff2433f7db5fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adaad5d6f060ef014155ff2433f7db5fe">&#9670;&nbsp;</a></span>RegisterInputSlots() <span class="overload">[1/4]</span></h2>
+<a id="a1a57ea8ada3f8c8568244dd7f892aa17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a57ea8ada3f8c8568244dd7f892aa17">&#9670;&nbsp;</a></span>RegisterInputSlots() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -380,7 +371,7 @@ static ezInt32&#160;</td><td class="memItemRight" valign="bottom"><b>m_iMouseIsO
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void ezStandardInputDevice::RegisterInputSlots </td>
+          <td class="memname">virtual void ezStandardInputDevice::RegisterInputSlots </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -418,7 +409,7 @@ static ezInt32&#160;</td><td class="memItemRight" valign="bottom"><b>m_iMouseIsO
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -460,8 +451,8 @@ static ezInt32&#160;</td><td class="memItemRight" valign="bottom"><b>m_iMouseIsO
 
 </div>
 </div>
-<a id="a1a57ea8ada3f8c8568244dd7f892aa17"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a57ea8ada3f8c8568244dd7f892aa17">&#9670;&nbsp;</a></span>RegisterInputSlots() <span class="overload">[4/4]</span></h2>
+<a id="adaad5d6f060ef014155ff2433f7db5fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adaad5d6f060ef014155ff2433f7db5fe">&#9670;&nbsp;</a></span>RegisterInputSlots() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -470,7 +461,7 @@ static ezInt32&#160;</td><td class="memItemRight" valign="bottom"><b>m_iMouseIsO
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void ezStandardInputDevice::RegisterInputSlots </td>
+          <td class="memname">void ezStandardInputDevice::RegisterInputSlots </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -490,8 +481,8 @@ static ezInt32&#160;</td><td class="memItemRight" valign="bottom"><b>m_iMouseIsO
 
 </div>
 </div>
-<a id="a19e1bf9435566824ef063c270ef131a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a19e1bf9435566824ef063c270ef131a7">&#9670;&nbsp;</a></span>SetClipMouseCursor() <span class="overload">[1/4]</span></h2>
+<a id="a6da64e674d8ed9fee0c7e94314a4c34c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6da64e674d8ed9fee0c7e94314a4c34c">&#9670;&nbsp;</a></span>SetClipMouseCursor() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -500,7 +491,7 @@ static ezInt32&#160;</td><td class="memItemRight" valign="bottom"><b>m_iMouseIsO
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void ezStandardInputDevice::SetClipMouseCursor </td>
+          <td class="memname">virtual void ezStandardInputDevice::SetClipMouseCursor </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="../../de/d43/structez_mouse_cursor_clip_mode.htm#aca2bf78cfea16819fa36e7d35a784849">ezMouseCursorClipMode::Enum</a>&#160;</td>
           <td class="paramname"><em>mode</em></td><td>)</td>
@@ -554,8 +545,8 @@ static ezInt32&#160;</td><td class="memItemRight" valign="bottom"><b>m_iMouseIsO
 
 </div>
 </div>
-<a id="a6da64e674d8ed9fee0c7e94314a4c34c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6da64e674d8ed9fee0c7e94314a4c34c">&#9670;&nbsp;</a></span>SetClipMouseCursor() <span class="overload">[3/4]</span></h2>
+<a id="a19e1bf9435566824ef063c270ef131a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19e1bf9435566824ef063c270ef131a7">&#9670;&nbsp;</a></span>SetClipMouseCursor() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -564,7 +555,7 @@ static ezInt32&#160;</td><td class="memItemRight" valign="bottom"><b>m_iMouseIsO
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void ezStandardInputDevice::SetClipMouseCursor </td>
+          <td class="memname">void ezStandardInputDevice::SetClipMouseCursor </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="../../de/d43/structez_mouse_cursor_clip_mode.htm#aca2bf78cfea16819fa36e7d35a784849">ezMouseCursorClipMode::Enum</a>&#160;</td>
           <td class="paramname"><em>mode</em></td><td>)</td>
@@ -611,47 +602,15 @@ static ezInt32&#160;</td><td class="memItemRight" valign="bottom"><b>m_iMouseIsO
 </div><div class="memdoc">
 
 <p>Will trap the mouse inside the application window. Should usually be enabled, to prevent accidental task switches. </p>
-<p>Especially on multi-monitor systems, the mouse can easily leave the application window (even in full-screen mode). Do NOT use this function when you have multiple windows and require absolute mouse positions.</p>
-<dl class="section note"><dt>Note</dt><dd>Unfortunately the SFML implementation has some restrictions regarding relative and absolute mouse positions. Therefore when the mouse cursor is clipped to the window area, it is actually always centered in the window. This enables relative mouse motions without limits (ie. the cursor cannot reach the screen border, thus it can be moved indefinitely). On the other hand, it does not make much sense to show the mouse cursor and have it clipped, as the actual OS cursor position will be quite useless. However, ez then 'emulates' the absolute cursor position, thus retrieving the absolute mouse position from the input device still works as expected.</dd></dl>
-<p>If, however, you need to allow the user to move the mouse cursor outside the window, be aware that the relative mouse motions will stop working, once the mouse cursor reaches the screen borders. </p>
+<p>Especially on multi-monitor systems, the mouse can easily leave the application window (even in fullscreen mode). Do NOT use this function when you have multiple windows and require absolute mouse positions.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../de/d43/structez_mouse_cursor_clip_mode.htm" title="Specifies how to restrict movement of the Operating System mouse.">ezMouseCursorClipMode</a> </dd></dl>
 
 <p>Implements <a class="el" href="../../d2/db3/classez_input_device_mouse_keyboard.htm#a7bf38324186c002deaa420a3fd15aa7d">ezInputDeviceMouseKeyboard</a>.</p>
 
 </div>
 </div>
-<a id="ac2ee0aba89ee8ad5ff1e518699007f7c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac2ee0aba89ee8ad5ff1e518699007f7c">&#9670;&nbsp;</a></span>SetShowMouseCursor()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void ezStandardInputDevice::SetShowMouseCursor </td>
-          <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>bShow</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Shows or hides the mouse cursor inside the application window. </p>
-<dl class="section note"><dt>Note</dt><dd>When SetClipMouseCursor is enabled, the mouse will always be centered in the window. In that case it should also always be hidden. </dd></dl>
-
-<p>Implements <a class="el" href="../../d2/db3/classez_input_device_mouse_keyboard.htm#a0c3ec199ee0cd91db01a00c286e0fb03">ezInputDeviceMouseKeyboard</a>.</p>
-
-</div>
-</div>
 <a id="a5ace5f49dd821b3d00ba05c69c234f0c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ace5f49dd821b3d00ba05c69c234f0c">&#9670;&nbsp;</a></span>UpdateInputSlotValues() <span class="overload">[1/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ace5f49dd821b3d00ba05c69c234f0c">&#9670;&nbsp;</a></span>UpdateInputSlotValues()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -668,7 +627,7 @@ static ezInt32&#160;</td><td class="memItemRight" valign="bottom"><b>m_iMouseIsO
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -676,107 +635,17 @@ static ezInt32&#160;</td><td class="memItemRight" valign="bottom"><b>m_iMouseIsO
 <p>Override this, if you need to query the state of the hardware to update the input slots. </p>
 <dl class="section note"><dt>Note</dt><dd>This function might be called multiple times before <a class="el" href="../../dd/d76/classez_standard_input_device.htm#afeea89c35e57fa61572c38085fed56c7" title="Override this, if you need to reset certain input slot values to zero, after the ezInputManager is fi...">ResetInputSlotValues()</a> is called. This will be the case when <a class="el" href="../../d8/d45/classez_input_manager.htm#a5da4de03391ce691ec6aa07514f01b99" title="Makes sure that hardware input is processed at this moment, which allows to do this more often than U...">ezInputManager::PollHardware</a> is used to make more frequent hardware updates than input is actually processed. Just make sure to always accumulate delta values (such as mouse move values) and don't expect <a class="el" href="../../dd/d76/classez_standard_input_device.htm#afeea89c35e57fa61572c38085fed56c7" title="Override this, if you need to reset certain input slot values to zero, after the ezInputManager is fi...">ResetInputSlotValues()</a> to be called in tandem with this function and it will be fine. </dd></dl>
 
-<p>Implements <a class="el" href="../../df/d18/classez_input_device.htm#a45c72b370f50d7b314571fccbb0fe6e2">ezInputDevice</a>.</p>
-
-</div>
-</div>
-<a id="ad20eba8955f584453c07768d433c17b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad20eba8955f584453c07768d433c17b2">&#9670;&nbsp;</a></span>UpdateInputSlotValues() <span class="overload">[2/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void ezStandardInputDevice::UpdateInputSlotValues </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Override this, if you need to query the state of the hardware to update the input slots. </p>
-<dl class="section note"><dt>Note</dt><dd>This function might be called multiple times before <a class="el" href="../../dd/d76/classez_standard_input_device.htm#afeea89c35e57fa61572c38085fed56c7" title="Override this, if you need to reset certain input slot values to zero, after the ezInputManager is fi...">ResetInputSlotValues()</a> is called. This will be the case when <a class="el" href="../../d8/d45/classez_input_manager.htm#a5da4de03391ce691ec6aa07514f01b99" title="Makes sure that hardware input is processed at this moment, which allows to do this more often than U...">ezInputManager::PollHardware</a> is used to make more frequent hardware updates than input is actually processed. Just make sure to always accumulate delta values (such as mouse move values) and don't expect <a class="el" href="../../dd/d76/classez_standard_input_device.htm#afeea89c35e57fa61572c38085fed56c7" title="Override this, if you need to reset certain input slot values to zero, after the ezInputManager is fi...">ResetInputSlotValues()</a> to be called in tandem with this function and it will be fine. </dd></dl>
-
-<p>Implements <a class="el" href="../../df/d18/classez_input_device.htm#a45c72b370f50d7b314571fccbb0fe6e2">ezInputDevice</a>.</p>
-
-</div>
-</div>
-<a id="ad20eba8955f584453c07768d433c17b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad20eba8955f584453c07768d433c17b2">&#9670;&nbsp;</a></span>UpdateInputSlotValues() <span class="overload">[3/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void ezStandardInputDevice::UpdateInputSlotValues </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Override this, if you need to query the state of the hardware to update the input slots. </p>
-<dl class="section note"><dt>Note</dt><dd>This function might be called multiple times before <a class="el" href="../../dd/d76/classez_standard_input_device.htm#afeea89c35e57fa61572c38085fed56c7" title="Override this, if you need to reset certain input slot values to zero, after the ezInputManager is fi...">ResetInputSlotValues()</a> is called. This will be the case when <a class="el" href="../../d8/d45/classez_input_manager.htm#a5da4de03391ce691ec6aa07514f01b99" title="Makes sure that hardware input is processed at this moment, which allows to do this more often than U...">ezInputManager::PollHardware</a> is used to make more frequent hardware updates than input is actually processed. Just make sure to always accumulate delta values (such as mouse move values) and don't expect <a class="el" href="../../dd/d76/classez_standard_input_device.htm#afeea89c35e57fa61572c38085fed56c7" title="Override this, if you need to reset certain input slot values to zero, after the ezInputManager is fi...">ResetInputSlotValues()</a> to be called in tandem with this function and it will be fine. </dd></dl>
-
-<p>Implements <a class="el" href="../../df/d18/classez_input_device.htm#a45c72b370f50d7b314571fccbb0fe6e2">ezInputDevice</a>.</p>
-
-</div>
-</div>
-<a id="ad20eba8955f584453c07768d433c17b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad20eba8955f584453c07768d433c17b2">&#9670;&nbsp;</a></span>UpdateInputSlotValues() <span class="overload">[4/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void ezStandardInputDevice::UpdateInputSlotValues </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Override this, if you need to query the state of the hardware to update the input slots. </p>
-<dl class="section note"><dt>Note</dt><dd>This function might be called multiple times before <a class="el" href="../../dd/d76/classez_standard_input_device.htm#afeea89c35e57fa61572c38085fed56c7" title="Override this, if you need to reset certain input slot values to zero, after the ezInputManager is fi...">ResetInputSlotValues()</a> is called. This will be the case when <a class="el" href="../../d8/d45/classez_input_manager.htm#a5da4de03391ce691ec6aa07514f01b99" title="Makes sure that hardware input is processed at this moment, which allows to do this more often than U...">ezInputManager::PollHardware</a> is used to make more frequent hardware updates than input is actually processed. Just make sure to always accumulate delta values (such as mouse move values) and don't expect <a class="el" href="../../dd/d76/classez_standard_input_device.htm#afeea89c35e57fa61572c38085fed56c7" title="Override this, if you need to reset certain input slot values to zero, after the ezInputManager is fi...">ResetInputSlotValues()</a> to be called in tandem with this function and it will be fine. </dd></dl>
-
-<p>Implements <a class="el" href="../../df/d18/classez_input_device.htm#a45c72b370f50d7b314571fccbb0fe6e2">ezInputDevice</a>.</p>
+<p>Reimplemented from <a class="el" href="../../d2/db3/classez_input_device_mouse_keyboard.htm#ac63f586d1bb21a095e8a442af2b7b58d">ezInputDeviceMouseKeyboard</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Core/System/Implementation/null/<a class="el" href="../../d9/deb/_input_device__null_8h_source.htm">InputDevice_null.h</a></li>
-<li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Core/System/Implementation/SFML/<a class="el" href="../../dd/d72/_input_device___s_f_m_l_8h_source.htm">InputDevice_SFML.h</a></li>
+<li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Core/System/Implementation/glfw/<a class="el" href="../../df/d5f/_input_device__glfw_8h_source.htm">InputDevice_glfw.h</a></li>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Core/System/Implementation/uwp/<a class="el" href="../../d4/d85/_input_device__uwp_8h_source.htm">InputDevice_uwp.h</a></li>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Core/System/Implementation/Win/<a class="el" href="../../d4/dfe/_input_device__win32_8h_source.htm">InputDevice_win32.h</a></li>
+<li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Core/System/Implementation/null/<a class="el" href="../../d9/deb/_input_device__null_8h_source.htm">InputDevice_null.h</a></li>
+<li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Core/System/Implementation/glfw/InputDevice_glfw.inl</li>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Core/System/Implementation/null/InputDevice_null.inl</li>
-<li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Core/System/Implementation/SFML/InputDevice_SFML.inl</li>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Core/System/Implementation/uwp/InputDevice_uwp.inl</li>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Core/System/Implementation/Win/InputDevice_win32.inl</li>
 </ul>
@@ -786,7 +655,7 @@ static ezInt32&#160;</td><td class="memItemRight" valign="bottom"><b>m_iMouseIsO
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dd/d76/classez_standard_input_device.htm">ezStandardInputDevice</a></li>
-    <li class="footer">Generated on Mon Oct 18 2021 15:33:41 for ezEngine by
+    <li class="footer">Generated on Sun Oct 9 2022 14:45:09 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

@@ -90,84 +90,97 @@ $(document).ready(function(){initNavTree('d5/d02/_directory_watcher_8h_source.ht
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;Foundation/Basics.h&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;Foundation/Strings/String.h&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;Foundation/Types/Bitflags.h&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;Foundation/Types/Delegate.h&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">struct </span><a class="code" href="../../dc/d81/structez_directory_watcher_impl.htm">ezDirectoryWatcherImpl</a>;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">enum class</span> ezDirectoryWatcherAction</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  None,</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  Added,</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  Removed,</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  Modified,</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  RenamedOldName,</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  RenamedNewName,</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;};</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="../../d8/dc8/classez_directory_watcher.htm">   23</a></span>&#160;<span class="keyword">class </span>EZ_FOUNDATION_DLL <a class="code" href="../../d8/dc8/classez_directory_watcher.htm">ezDirectoryWatcher</a></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="../../d0/dd2/structez_directory_watcher_1_1_watch.htm">   27</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../d0/dd2/structez_directory_watcher_1_1_watch.htm">Watch</a></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">typedef</span> ezUInt8 StorageType;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#if EZ_ENABLED(EZ_SUPPORTS_DIRECTORY_WATCHER)</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#  include &lt;Foundation/Basics.h&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#  include &lt;Foundation/Strings/String.h&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#  include &lt;Foundation/Types/Bitflags.h&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#  include &lt;Foundation/Types/Delegate.h&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">struct </span><a class="code" href="../../dc/d81/structez_directory_watcher_impl.htm">ezDirectoryWatcherImpl</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">enum class</span> ezDirectoryWatcherAction</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  None,           </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  Added,          </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  Removed,        </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  Modified,       </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  RenamedOldName, </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  RenamedNewName, </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;};</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">enum class</span> ezDirectoryWatcherType</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  File,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  Directory</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;};</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="../../d0/dd2/structez_directory_watcher_1_1_watch.htm#a15273fb1b38bd081a898620bb293af05">   32</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="../../d0/dd2/structez_directory_watcher_1_1_watch.htm#a15273fb1b38bd081a898620bb293af05">Enum</a></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="../../d0/dd2/structez_directory_watcher_1_1_watch.htm#a15273fb1b38bd081a898620bb293af05a55bd00e858a29b5c391cc01ad4cdd56b">   34</a></span>&#160;      Reads = EZ_BIT(0),         </div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="../../d0/dd2/structez_directory_watcher_1_1_watch.htm#a15273fb1b38bd081a898620bb293af05aa11e7b3ddccf522dc2f4ea337785884c">   35</a></span>&#160;      Writes = EZ_BIT(1),        </div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="../../d0/dd2/structez_directory_watcher_1_1_watch.htm#a15273fb1b38bd081a898620bb293af05a8301697829d7eb05455c867e5f0ea599">   36</a></span>&#160;      Creates = EZ_BIT(2),       </div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="../../d0/dd2/structez_directory_watcher_1_1_watch.htm#a15273fb1b38bd081a898620bb293af05a13f93e60ee28b0db3940776982bbecb3">   37</a></span>&#160;      Renames = EZ_BIT(3),       </div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="../../d0/dd2/structez_directory_watcher_1_1_watch.htm#a15273fb1b38bd081a898620bb293af05ab616eed427147224ff49234b5ba37d54">   38</a></span>&#160;      Subdirectories = EZ_BIT(4) </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    };</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="../../d9/db6/structez_directory_watcher_1_1_watch_1_1_bits.htm">   41</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="../../d9/db6/structez_directory_watcher_1_1_watch_1_1_bits.htm">Bits</a></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      StorageType Reads : 1;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      StorageType Writes : 1;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      StorageType Creates : 1;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      StorageType Renames : 1;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      StorageType Subdirectories : 1;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    };</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  };</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <a class="code" href="../../d8/dc8/classez_directory_watcher.htm">ezDirectoryWatcher</a>();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  ~<a class="code" href="../../d8/dc8/classez_directory_watcher.htm">ezDirectoryWatcher</a>();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> OpenDirectory(<span class="keyword">const</span> <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a>&amp; absolutePath, <a class="code" href="../../d1/dec/structez_bitflags.htm">ezBitflags&lt;Watch&gt;</a> whatToWatch);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordtype">void</span> CloseDirectory();</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="../../d8/dc8/classez_directory_watcher.htm#a803b7fe0416339c851f2ae7edb4e964e">   66</a></span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="../../d8/dc8/classez_directory_watcher.htm#a803b7fe0416339c851f2ae7edb4e964e">GetDirectory</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_sDirectoryPath; }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keyword">using</span> EnumerateChangesFunction = <a class="code" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>&lt;void(<span class="keyword">const</span> <span class="keywordtype">char</span>* filename, ezDirectoryWatcherAction action), 48&gt;;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordtype">void</span> EnumerateChanges(EnumerateChangesFunction func);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sDirectoryPath;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <a class="code" href="../../dc/d81/structez_directory_watcher_impl.htm">ezDirectoryWatcherImpl</a>* m_pImpl = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;};</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;EZ_DECLARE_FLAGS_OPERATORS(<a class="code" href="../../d0/dd2/structez_directory_watcher_1_1_watch.htm">ezDirectoryWatcher::Watch</a>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">class </span>EZ_FOUNDATION_DLL ezDirectoryWatcher</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keyword">struct </span>Watch</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">typedef</span> ezUInt8 StorageType;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    constexpr <span class="keyword">static</span> ezUInt8 Default = 0;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">enum</span> Enum</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      Writes = EZ_BIT(0),         </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      Creates = EZ_BIT(1),        </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      Deletes = EZ_BIT(2),        </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      Renames = EZ_BIT(3),        </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      Subdirectories = EZ_BIT(4), </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    };</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">struct </span>Bits</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      StorageType Writes : 1;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      StorageType Creates : 1;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      StorageType Deletes : 1;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      StorageType Renames : 1;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      StorageType Subdirectories : 1;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    };</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  };</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  ezDirectoryWatcher();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  ~ezDirectoryWatcher();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> OpenDirectory(<span class="keyword">const</span> <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a>&amp; absolutePath, <a class="code" href="../../d1/dec/structez_bitflags.htm">ezBitflags&lt;Watch&gt;</a> whatToWatch);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordtype">void</span> CloseDirectory();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* GetDirectory()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_sDirectoryPath; }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keyword">using</span> EnumerateChangesFunction = <a class="code" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>&lt;void(<span class="keyword">const</span> <span class="keywordtype">char</span>* filename, ezDirectoryWatcherAction action, ezDirectoryWatcherType type), 48&gt;;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keywordtype">void</span> EnumerateChanges(EnumerateChangesFunction func, <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> waitUpTo = <a class="code" href="../../d3/d90/structez_time.htm#a87b37655fad76f9e6972af8d88b540f4">ezTime::Zero</a>());</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> EnumerateChanges(<a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;ezDirectoryWatcher*&gt;</a> watchers, EnumerateChangesFunction func, <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> waitUpTo = <a class="code" href="../../d3/d90/structez_time.htm#a87b37655fad76f9e6972af8d88b540f4">ezTime::Zero</a>());</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sDirectoryPath;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <a class="code" href="../../dc/d81/structez_directory_watcher_impl.htm">ezDirectoryWatcherImpl</a>* m_pImpl = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;};</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;EZ_DECLARE_FLAGS_OPERATORS(ezDirectoryWatcher::Watch);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astructez_bitflags_htm"><div class="ttname"><a href="../../d1/dec/structez_bitflags.htm">ezBitflags</a></div><div class="ttdoc">The ezBitflags class allows you to work with type-safe bitflags.</div><div class="ttdef"><b>Definition:</b> Bitflags.h:80</div></div>
 <div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition:</b> Types.h:50</div></div>
-<div class="ttc" id="astructez_directory_watcher_1_1_watch_htm"><div class="ttname"><a href="../../d0/dd2/structez_directory_watcher_1_1_watch.htm">ezDirectoryWatcher::Watch</a></div><div class="ttdoc">What to watch out for.</div><div class="ttdef"><b>Definition:</b> DirectoryWatcher.h:27</div></div>
-<div class="ttc" id="aclassez_directory_watcher_htm"><div class="ttname"><a href="../../d8/dc8/classez_directory_watcher.htm">ezDirectoryWatcher</a></div><div class="ttdoc">Watches file actions in a directory. Changes need to be polled.</div><div class="ttdef"><b>Definition:</b> DirectoryWatcher.h:23</div></div>
-<div class="ttc" id="astructez_hybrid_string_htm"><div class="ttname"><a href="../../d4/d53/structez_hybrid_string.htm">ezHybridString&lt; 32, ezDefaultAllocatorWrapper &gt;</a></div></div>
-<div class="ttc" id="aclassez_directory_watcher_htm_a803b7fe0416339c851f2ae7edb4e964e"><div class="ttname"><a href="../../d8/dc8/classez_directory_watcher.htm#a803b7fe0416339c851f2ae7edb4e964e">ezDirectoryWatcher::GetDirectory</a></div><div class="ttdeci">const char * GetDirectory() const</div><div class="ttdoc">Returns the opened directory, will be empty if no directory was opened.</div><div class="ttdef"><b>Definition:</b> DirectoryWatcher.h:66</div></div>
+<div class="ttc" id="astructez_time_htm"><div class="ttname"><a href="../../d3/d90/structez_time.htm">ezTime</a></div><div class="ttdoc">The time class encapsulates a double value storing the time in seconds.</div><div class="ttdef"><b>Definition:</b> Time.h:11</div></div>
+<div class="ttc" id="aclassez_array_ptr_htm"><div class="ttname"><a href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr</a></div><div class="ttdoc">This class encapsulates an array and it's size. It is recommended to use this class instead of plain ...</div><div class="ttdef"><b>Definition:</b> ArrayPtr.h:36</div></div>
+<div class="ttc" id="astructez_time_htm_a87b37655fad76f9e6972af8d88b540f4"><div class="ttname"><a href="../../d3/d90/structez_time.htm#a87b37655fad76f9e6972af8d88b540f4">ezTime::Zero</a></div><div class="ttdeci">constexpr static EZ_ALWAYS_INLINE ezTime Zero()</div><div class="ttdoc">Creates an instance of ezTime that was initialized with zero.</div><div class="ttdef"><b>Definition:</b> Time.h:36</div></div>
+<div class="ttc" id="astructez_hybrid_string_htm"><div class="ttname"><a href="../../d4/d53/structez_hybrid_string.htm">ezHybridString</a></div><div class="ttdef"><b>Definition:</b> Stream.h:15</div></div>
 <div class="ttc" id="astructez_delegate_htm"><div class="ttname"><a href="../../d5/d68/structez_delegate.htm">ezDelegate</a></div><div class="ttdoc">A generic delegate class which supports static functions and member functions.</div><div class="ttdef"><b>Definition:</b> Delegate.h:75</div></div>
-<div class="ttc" id="astructez_directory_watcher_impl_htm"><div class="ttname"><a href="../../dc/d81/structez_directory_watcher_impl.htm">ezDirectoryWatcherImpl</a></div><div class="ttdef"><b>Definition:</b> DirectoryWatcher_posix.h:5</div></div>
-<div class="ttc" id="astructez_directory_watcher_1_1_watch_1_1_bits_htm"><div class="ttname"><a href="../../d9/db6/structez_directory_watcher_1_1_watch_1_1_bits.htm">ezDirectoryWatcher::Watch::Bits</a></div><div class="ttdef"><b>Definition:</b> DirectoryWatcher.h:41</div></div>
-<div class="ttc" id="astructez_directory_watcher_1_1_watch_htm_a15273fb1b38bd081a898620bb293af05"><div class="ttname"><a href="../../d0/dd2/structez_directory_watcher_1_1_watch.htm#a15273fb1b38bd081a898620bb293af05">ezDirectoryWatcher::Watch::Enum</a></div><div class="ttdeci">Enum</div><div class="ttdoc">Enum values.</div><div class="ttdef"><b>Definition:</b> DirectoryWatcher.h:32</div></div>
+<div class="ttc" id="astructez_directory_watcher_impl_htm"><div class="ttname"><a href="../../dc/d81/structez_directory_watcher_impl.htm">ezDirectoryWatcherImpl</a></div><div class="ttdef"><b>Definition:</b> DirectoryWatcher_posix.h:672</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_64fdcb4094ee5a27b054d4fa23e28e01.htm">IO</a></li><li class="navelem"><b>DirectoryWatcher.h</b></li>
-    <li class="footer">Generated on Mon Oct 18 2021 15:33:27 for ezEngine by
+    <li class="footer">Generated on Sun Oct 9 2022 14:44:53 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

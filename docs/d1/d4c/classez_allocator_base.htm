@@ -139,8 +139,8 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Deallocate</b
 <tr class="memitem:a58d8c5729c9dffe78ce8f559d30885c2"><td class="memItemLeft" align="right" valign="top"><a id="a58d8c5729c9dffe78ce8f559d30885c2"></a>
 virtual void *&#160;</td><td class="memItemRight" valign="bottom"><b>Reallocate</b> (void *ptr, size_t uiCurrentSize, size_t uiNewSize, size_t uiAlign)</td></tr>
 <tr class="separator:a58d8c5729c9dffe78ce8f559d30885c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad86c7b4959ead0e4d90c581f6fbcc62d"><td class="memItemLeft" align="right" valign="top"><a id="ad86c7b4959ead0e4d90c581f6fbcc62d"></a>
-virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><b>AllocatedSize</b> (const void *ptr)=0</td></tr>
+<tr class="memitem:ad86c7b4959ead0e4d90c581f6fbcc62d"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d4c/classez_allocator_base.htm#ad86c7b4959ead0e4d90c581f6fbcc62d">AllocatedSize</a> (const void *ptr)=0</td></tr>
+<tr class="memdesc:ad86c7b4959ead0e4d90c581f6fbcc62d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of bytes allocated at this address.  <a href="../../d1/d4c/classez_allocator_base.htm#ad86c7b4959ead0e4d90c581f6fbcc62d">More...</a><br /></td></tr>
 <tr class="separator:ad86c7b4959ead0e4d90c581f6fbcc62d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae5d17399bcda2f4e0057c204935886c"><td class="memItemLeft" align="right" valign="top"><a id="aae5d17399bcda2f4e0057c204935886c"></a>
 virtual <a class="el" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GetId</b> () const =0</td></tr>
@@ -151,7 +151,39 @@ virtual <a class="el" href="../../df/df0/structez_allocator_base_1_1_stats.htm">
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Base class for all memory allocators. </p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ad86c7b4959ead0e4d90c581f6fbcc62d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad86c7b4959ead0e4d90c581f6fbcc62d">&#9670;&nbsp;</a></span>AllocatedSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual size_t ezAllocatorBase::AllocatedSize </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>ptr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the number of bytes allocated at this address. </p>
+<dl class="section note"><dt>Note</dt><dd>Careful! This information is only available, if allocation tracking is enabled! Otherwise 0 is returned. See <a class="el" href="../../d6/dce/structez_memory_tracking_flags.htm#ae574bce1a09f0b0742cb69e86500fa27a76e52cf3966f310380bb75759c7e37d3" title="Enable tracking of individual allocations.">ezMemoryTrackingFlags::EnableAllocationTracking</a> and EZ_USE_ALLOCATION_TRACKING. </dd></dl>
+
+<p>Implemented in <a class="el" href="../../d2/d98/classez_internal_1_1ez_allocator_impl.htm#aa76425aac75d252adbfeae6c57ca7bf5">ezInternal::ezAllocatorImpl&lt; AllocationPolicy, TrackingFlags &gt;</a>, <a class="el" href="../../d2/d98/classez_internal_1_1ez_allocator_impl.htm#aa76425aac75d252adbfeae6c57ca7bf5">ezInternal::ezAllocatorImpl&lt; ezMemoryPolicies::ezStackAllocation, TrackingFlags &gt;</a>, <a class="el" href="../../d2/d98/classez_internal_1_1ez_allocator_impl.htm#aa76425aac75d252adbfeae6c57ca7bf5">ezInternal::ezAllocatorImpl&lt; ezMemoryPolicies::ezProxyAllocation, TrackingFlags &gt;</a>, and <a class="el" href="../../d2/d98/classez_internal_1_1ez_allocator_impl.htm#aa76425aac75d252adbfeae6c57ca7bf5">ezInternal::ezAllocatorImpl&lt; ezMemoryPolicies::ezHeapAllocation, TrackingFlags &gt;</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/Memory/<a class="el" href="../../de/dc1/_allocator_base_8h_source.htm">AllocatorBase.h</a></li>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/Memory/Implementation/AllocatorBase.cpp</li>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/Memory/Implementation/<a class="el" href="../../da/d76/_allocator_base__inl_8h_source.htm">AllocatorBase_inl.h</a></li>
@@ -162,7 +194,7 @@ virtual <a class="el" href="../../df/df0/structez_allocator_base_1_1_stats.htm">
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d1/d4c/classez_allocator_base.htm">ezAllocatorBase</a></li>
-    <li class="footer">Generated on Mon Oct 18 2021 15:33:34 for ezEngine by
+    <li class="footer">Generated on Sun Oct 9 2022 14:45:00 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

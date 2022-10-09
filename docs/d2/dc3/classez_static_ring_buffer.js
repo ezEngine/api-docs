@@ -19,6 +19,5 @@ var classez_static_ring_buffer =
     [ "PeekFront", "d2/dc3/classez_static_ring_buffer.htm#a5d4fd78ce4d7541bc0e232d0d345d42f", null ],
     [ "PopFront", "d2/dc3/classez_static_ring_buffer.htm#acd1fea24ed2aed3a88c791ae43cd7176", null ],
     [ "PushBack", "d2/dc3/classez_static_ring_buffer.htm#a62c5ae16b401f8c5f4f15fe1cea8812b", null ],
-    [ "PushBack", "d2/dc3/classez_static_ring_buffer.htm#a432bd14dfdb5d89b623ad7753a468ee9", null ],
-    [ "m_Data", "d2/dc3/classez_static_ring_buffer.htm#a06e59db381a2c8b25f90187cc3cee3e0", null ]
+    [ "PushBack", "d2/dc3/classez_static_ring_buffer.htm#a432bd14dfdb5d89b623ad7753a468ee9", null ]
 ];

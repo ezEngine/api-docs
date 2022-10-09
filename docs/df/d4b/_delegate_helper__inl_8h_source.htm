@@ -210,245 +210,255 @@ $(document).ready(function(){initNavTree('df/d4b/_delegate_helper__inl_8h_source
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keyword">using</span> signature = R(Args...);</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordflow">if</span> constexpr (functionSize &lt;= DataSize &amp;&amp; std::is_assignable&lt;signature*&amp;, Function&gt;::value)</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    {</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;      CopyFunctionToInplaceStorage(<span class="keyword">function</span>);</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;      m_pInstance.m_ConstPtr = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;      m_pDispatchFunction = &amp;DispatchToFunction&lt;Function&gt;;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    }</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    {</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;      constexpr <span class="keywordtype">size_t</span> storageSize = <span class="keyword">sizeof</span>(<a class="code" href="../../dd/dcc/structez_lambda_delegate_storage.htm">ezLambdaDelegateStorage&lt;Function&gt;</a>);</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;      <span class="keywordflow">if</span> constexpr (storageSize &lt;= DataSize)</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;      {</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        m_pInstance.m_ConstPtr = InplaceLambda();</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="keyword">new</span> (m_Data) <a class="code" href="../../dd/dcc/structez_lambda_delegate_storage.htm">ezLambdaDelegateStorage&lt;Function&gt;</a>(std::move(<span class="keyword">function</span>));</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        memset(m_Data + storageSize, 0, DataSize - storageSize);</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        m_pDispatchFunction = &amp;DispatchToInplaceLambda&lt;Function&gt;;</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;      }</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;      <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;      {</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        m_pInstance.m_ConstPtr = HeapLambda();</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        m_pLambdaStorage = EZ_NEW(pAllocator, <a class="code" href="../../dd/dcc/structez_lambda_delegate_storage.htm">ezLambdaDelegateStorage&lt;Function&gt;</a>, std::move(<span class="keyword">function</span>));</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        m_pAllocator = pAllocator;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        memset(m_Data + 2 * <span class="keyword">sizeof</span>(<span class="keywordtype">void</span>*), 0, DataSize - 2 * <span class="keyword">sizeof</span>(<span class="keywordtype">void</span>*));</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        m_pDispatchFunction = &amp;DispatchToHeapLambda&lt;Function&gt;;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;      }</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    }</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  }</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  EZ_ALWAYS_INLINE ~<a class="code" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>() { Invalidate(); }</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
-<div class="line"><a name="l00157"></a><span class="lineno"><a class="line" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#aa2072d015f3ca5de31ef15eb0b22efe2">  157</a></span>&#160;  EZ_FORCE_INLINE <span class="keywordtype">void</span> <a class="code" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#aa2072d015f3ca5de31ef15eb0b22efe2">operator=</a>(<span class="keyword">const</span> <a class="code" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm">SelfType</a>&amp; other)</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  {</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    Invalidate();</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordflow">if</span> (other.IsHeapLambda())</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    {</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;      m_pAllocator = other.m_pAllocator;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;      m_pLambdaStorage = other.m_pLambdaStorage-&gt;Clone(m_pAllocator);</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    }</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (other.IsInplaceLambda())</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    {</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;      <span class="keyword">auto</span> pOtherLambdaStorage = <span class="keyword">reinterpret_cast&lt;</span><a class="code" href="../../d0/d58/structez_lambda_delegate_storage_base.htm">ezLambdaDelegateStorageBase</a>*<span class="keyword">&gt;</span>(&amp;other.m_Data);</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;      pOtherLambdaStorage-&gt;InplaceCopy(m_Data);</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    }</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;      <span class="comment">// Lambdas with no capture have a size of 1.</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;      <span class="comment">// Lambdas with no capture actually have no data. Do not copy the 1 uninitialized byte.</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;      <span class="comment">// Propper function pointers have a size of &gt; 4 or 8 (depending on pointer size)</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;      <span class="keywordflow">if</span> constexpr (functionSize &gt; 1)</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;      {</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        CopyFunctionToInplaceStorage(<span class="keyword">function</span>);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;      }</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;      <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;      {</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        memset(m_Data, 0, DataSize);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;      }</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;      m_pInstance.m_ConstPtr = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;      m_pDispatchFunction = &amp;DispatchToFunction&lt;Function&gt;;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    }</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    {</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;      constexpr <span class="keywordtype">size_t</span> storageSize = <span class="keyword">sizeof</span>(<a class="code" href="../../dd/dcc/structez_lambda_delegate_storage.htm">ezLambdaDelegateStorage&lt;Function&gt;</a>);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;      <span class="keywordflow">if</span> constexpr (storageSize &lt;= DataSize)</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;      {</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        m_pInstance.m_ConstPtr = InplaceLambda();</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="keyword">new</span> (m_Data) <a class="code" href="../../dd/dcc/structez_lambda_delegate_storage.htm">ezLambdaDelegateStorage&lt;Function&gt;</a>(std::move(<span class="keyword">function</span>));</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        memset(m_Data + storageSize, 0, DataSize - storageSize);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        m_pDispatchFunction = &amp;DispatchToInplaceLambda&lt;Function&gt;;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;      }</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;      <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;      {</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        m_pInstance.m_ConstPtr = HeapLambda();</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        m_pLambdaStorage = EZ_NEW(pAllocator, <a class="code" href="../../dd/dcc/structez_lambda_delegate_storage.htm">ezLambdaDelegateStorage&lt;Function&gt;</a>, std::move(<span class="keyword">function</span>));</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        m_pAllocator = pAllocator;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        memset(m_Data + 2 * <span class="keyword">sizeof</span>(<span class="keywordtype">void</span>*), 0, DataSize - 2 * <span class="keyword">sizeof</span>(<span class="keywordtype">void</span>*));</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        m_pDispatchFunction = &amp;DispatchToHeapLambda&lt;Function&gt;;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;      }</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    }</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  }</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  EZ_ALWAYS_INLINE ~<a class="code" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>() { Invalidate(); }</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
+<div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#aa2072d015f3ca5de31ef15eb0b22efe2">  167</a></span>&#160;  EZ_FORCE_INLINE <span class="keywordtype">void</span> <a class="code" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#aa2072d015f3ca5de31ef15eb0b22efe2">operator=</a>(<span class="keyword">const</span> <a class="code" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm">SelfType</a>&amp; other)</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  {</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    Invalidate();</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordflow">if</span> (other.IsHeapLambda())</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    {</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;      memcpy(m_Data, other.m_Data, DataSize);</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    }</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    m_pInstance = other.m_pInstance;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    m_pDispatchFunction = other.m_pDispatchFunction;</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;  }</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
-<div class="line"><a name="l00181"></a><span class="lineno"><a class="line" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#a78101b7ac9cfebfd49d0aeb6ace4d3ea">  181</a></span>&#160;  EZ_FORCE_INLINE <span class="keywordtype">void</span> <a class="code" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#a78101b7ac9cfebfd49d0aeb6ace4d3ea">operator=</a>(<a class="code" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm">SelfType</a>&amp;&amp; other)</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  {</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    Invalidate();</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    m_pInstance = other.m_pInstance;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    m_pDispatchFunction = other.m_pDispatchFunction;</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keywordflow">if</span> (other.IsInplaceLambda())</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    {</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;      <span class="keyword">auto</span> pOtherLambdaStorage = <span class="keyword">reinterpret_cast&lt;</span><a class="code" href="../../d0/d58/structez_lambda_delegate_storage_base.htm">ezLambdaDelegateStorageBase</a>*<span class="keyword">&gt;</span>(&amp;other.m_Data);</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;      pOtherLambdaStorage-&gt;InplaceMove(m_Data);</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    }</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    {</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;      memcpy(m_Data, other.m_Data, DataSize);</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    }</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;      m_pAllocator = other.m_pAllocator;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;      m_pLambdaStorage = other.m_pLambdaStorage-&gt;Clone(m_pAllocator);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    }</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (other.IsInplaceLambda())</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    {</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;      <span class="keyword">auto</span> pOtherLambdaStorage = <span class="keyword">reinterpret_cast&lt;</span><a class="code" href="../../d0/d58/structez_lambda_delegate_storage_base.htm">ezLambdaDelegateStorageBase</a>*<span class="keyword">&gt;</span>(&amp;other.m_Data);</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;      pOtherLambdaStorage-&gt;InplaceCopy(m_Data);</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    }</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    {</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;      memcpy(m_Data, other.m_Data, DataSize);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    }</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    m_pInstance = other.m_pInstance;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    m_pDispatchFunction = other.m_pDispatchFunction;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  }</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
+<div class="line"><a name="l00191"></a><span class="lineno"><a class="line" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#a78101b7ac9cfebfd49d0aeb6ace4d3ea">  191</a></span>&#160;  EZ_FORCE_INLINE <span class="keywordtype">void</span> <a class="code" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#a78101b7ac9cfebfd49d0aeb6ace4d3ea">operator=</a>(<a class="code" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm">SelfType</a>&amp;&amp; other)</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  {</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    Invalidate();</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    m_pInstance = other.m_pInstance;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    m_pDispatchFunction = other.m_pDispatchFunction;</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    other.m_pInstance.m_Ptr = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    other.m_pDispatchFunction = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    memset(other.m_Data, 0, DataSize);</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;  }</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
-<div class="line"><a name="l00203"></a><span class="lineno"><a class="line" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#ac7af4563a8fd6bb7ba078628d152910e">  203</a></span>&#160;  EZ_FORCE_INLINE <span class="keywordtype">void</span> <a class="code" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#ac7af4563a8fd6bb7ba078628d152910e">operator=</a>(std::nullptr_t) { Invalidate(); }</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
-<div class="line"><a name="l00206"></a><span class="lineno"><a class="line" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#a55e3f0023ec6eca84017c99eea37a9ce">  206</a></span>&#160;  EZ_FORCE_INLINE R <a class="code" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#a55e3f0023ec6eca84017c99eea37a9ce">operator()</a>(Args... params)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    EZ_ASSERT_DEBUG(m_pDispatchFunction != <span class="keyword">nullptr</span>, <span class="stringliteral">&quot;Delegate is not bound.&quot;</span>);</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keywordflow">return</span> (*m_pDispatchFunction)(*<span class="keyword">this</span>, params...);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="keywordflow">if</span> (other.IsInplaceLambda())</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    {</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;      <span class="keyword">auto</span> pOtherLambdaStorage = <span class="keyword">reinterpret_cast&lt;</span><a class="code" href="../../d0/d58/structez_lambda_delegate_storage_base.htm">ezLambdaDelegateStorageBase</a>*<span class="keyword">&gt;</span>(&amp;other.m_Data);</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;      pOtherLambdaStorage-&gt;InplaceMove(m_Data);</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    }</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    {</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;      memcpy(m_Data, other.m_Data, DataSize);</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    }</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    other.m_pInstance.m_Ptr = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    other.m_pDispatchFunction = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    memset(other.m_Data, 0, DataSize);</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;  }</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
-<div class="line"><a name="l00213"></a><span class="lineno"><a class="line" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#abc4b48199e61fa712c56d1c7539549ce">  213</a></span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> <a class="code" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#abc4b48199e61fa712c56d1c7539549ce">operator==</a>(<span class="keyword">const</span> <a class="code" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm">SelfType</a>&amp; other)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    EZ_REPORT_FAILURE(<span class="stringliteral">&quot;operator== for ezDelegate must not be used. Use IsEqualIfNotHeapAllocated() and read its documentation!&quot;</span>);</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;  }</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
-<div class="line"><a name="l00223"></a><span class="lineno"><a class="line" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#a32e64026e8d0b4bb645c0a7a61f12ba9">  223</a></span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> <a class="code" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#a32e64026e8d0b4bb645c0a7a61f12ba9">IsEqualIfComparable</a>(<span class="keyword">const</span> <a class="code" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm">SelfType</a>&amp; other)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno"><a class="line" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#ac7af4563a8fd6bb7ba078628d152910e">  213</a></span>&#160;  EZ_FORCE_INLINE <span class="keywordtype">void</span> <a class="code" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#ac7af4563a8fd6bb7ba078628d152910e">operator=</a>(std::nullptr_t) { Invalidate(); }</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
+<div class="line"><a name="l00216"></a><span class="lineno"><a class="line" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#a55e3f0023ec6eca84017c99eea37a9ce">  216</a></span>&#160;  EZ_FORCE_INLINE R <a class="code" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#a55e3f0023ec6eca84017c99eea37a9ce">operator()</a>(Args... params)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="keyword">  </span>{</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    EZ_ASSERT_DEBUG(m_pDispatchFunction != <span class="keyword">nullptr</span>, <span class="stringliteral">&quot;Delegate is not bound.&quot;</span>);</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="keywordflow">return</span> (*m_pDispatchFunction)(*<span class="keyword">this</span>, params...);</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;  }</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160; </div>
+<div class="line"><a name="l00223"></a><span class="lineno"><a class="line" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#abc4b48199e61fa712c56d1c7539549ce">  223</a></span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> <a class="code" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#abc4b48199e61fa712c56d1c7539549ce">operator==</a>(<span class="keyword">const</span> <a class="code" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm">SelfType</a>&amp; other)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="keywordflow">return</span> m_pInstance.m_Ptr == other.m_pInstance.m_Ptr &amp;&amp; m_pDispatchFunction == other.m_pDispatchFunction &amp;&amp;</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;           memcmp(m_Data, other.m_Data, DataSize) == 0;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    EZ_REPORT_FAILURE(<span class="stringliteral">&quot;operator== for ezDelegate must not be used. Use IsEqualIfNotHeapAllocated() and read its documentation!&quot;</span>);</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;  }</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
-<div class="line"><a name="l00230"></a><span class="lineno"><a class="line" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#aa797a42a45ab2ff8d71732b08deedca2">  230</a></span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> <a class="code" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#aa797a42a45ab2ff8d71732b08deedca2">IsValid</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pDispatchFunction != <span class="keyword">nullptr</span>; }</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
-<div class="line"><a name="l00233"></a><span class="lineno"><a class="line" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#aedb7b2318091b1969e595a7467fc9943">  233</a></span>&#160;  EZ_FORCE_INLINE <span class="keywordtype">void</span> <a class="code" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#aedb7b2318091b1969e595a7467fc9943">Invalidate</a>()</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;  {</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    m_pDispatchFunction = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <span class="keywordflow">if</span> (IsHeapLambda())</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    {</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;      EZ_DELETE(m_pAllocator, m_pLambdaStorage);</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    }</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (IsInplaceLambda())</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    {</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;      <span class="keyword">auto</span> pLambdaStorage = <span class="keyword">reinterpret_cast&lt;</span><a class="code" href="../../d0/d58/structez_lambda_delegate_storage_base.htm">ezLambdaDelegateStorageBase</a>*<span class="keyword">&gt;</span>(&amp;m_Data);</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;      pLambdaStorage-&gt;~ezLambdaDelegateStorageBase();</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    }</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    m_pInstance.m_Ptr = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    memset(m_Data, 0, DataSize);</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;  }</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160; </div>
-<div class="line"><a name="l00251"></a><span class="lineno"><a class="line" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#a1c38ac09b677cf13b3aa3f294bd1b9ef">  251</a></span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">void</span>* <a class="code" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#a1c38ac09b677cf13b3aa3f294bd1b9ef">GetClassInstance</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> IsComparable() ? m_pInstance.m_Ptr : <span class="keyword">nullptr</span>; }</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
-<div class="line"><a name="l00254"></a><span class="lineno"><a class="line" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#ad104ff4a5657cbbe27b957ea8489b568">  254</a></span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> <a class="code" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#ad104ff4a5657cbbe27b957ea8489b568">IsComparable</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pInstance.m_ConstPtr &lt; InplaceLambda(); } <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno"><a class="line" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#a32e64026e8d0b4bb645c0a7a61f12ba9">  233</a></span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> <a class="code" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#a32e64026e8d0b4bb645c0a7a61f12ba9">IsEqualIfComparable</a>(<span class="keyword">const</span> <a class="code" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm">SelfType</a>&amp; other)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="keyword">  </span>{</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="keywordflow">return</span> m_pInstance.m_Ptr == other.m_pInstance.m_Ptr &amp;&amp; m_pDispatchFunction == other.m_pDispatchFunction &amp;&amp;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;           memcmp(m_Data, other.m_Data, DataSize) == 0;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;  }</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
+<div class="line"><a name="l00240"></a><span class="lineno"><a class="line" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#aa797a42a45ab2ff8d71732b08deedca2">  240</a></span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> <a class="code" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#aa797a42a45ab2ff8d71732b08deedca2">IsValid</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pDispatchFunction != <span class="keyword">nullptr</span>; }</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
+<div class="line"><a name="l00243"></a><span class="lineno"><a class="line" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#aedb7b2318091b1969e595a7467fc9943">  243</a></span>&#160;  EZ_FORCE_INLINE <span class="keywordtype">void</span> <a class="code" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#aedb7b2318091b1969e595a7467fc9943">Invalidate</a>()</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;  {</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    m_pDispatchFunction = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <span class="keywordflow">if</span> (IsHeapLambda())</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    {</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;      EZ_DELETE(m_pAllocator, m_pLambdaStorage);</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    }</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (IsInplaceLambda())</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    {</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;      <span class="keyword">auto</span> pLambdaStorage = <span class="keyword">reinterpret_cast&lt;</span><a class="code" href="../../d0/d58/structez_lambda_delegate_storage_base.htm">ezLambdaDelegateStorageBase</a>*<span class="keyword">&gt;</span>(&amp;m_Data);</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;      pLambdaStorage-&gt;~ezLambdaDelegateStorageBase();</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    }</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Function&gt;</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;  EZ_FORCE_INLINE <span class="keywordtype">void</span> CopyFunctionToInplaceStorage(Function <span class="keyword">function</span>)</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;  {</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    EZ_ASSERT_DEBUG(</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;      <a class="code" href="../../dc/d4d/classez_memory_utils.htm#aa7c2521406e21cf4c64519a4a460dffe">ezMemoryUtils::IsAligned</a>(&amp;m_Data, EZ_ALIGNMENT_OF(Function)), <span class="stringliteral">&quot;Wrong alignment. Expected {0} bytes alignment&quot;</span>, EZ_ALIGNMENT_OF(Function));</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    m_pInstance.m_Ptr = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    memset(m_Data, 0, DataSize);</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;  }</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
+<div class="line"><a name="l00261"></a><span class="lineno"><a class="line" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#a1c38ac09b677cf13b3aa3f294bd1b9ef">  261</a></span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">void</span>* <a class="code" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#a1c38ac09b677cf13b3aa3f294bd1b9ef">GetClassInstance</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> IsComparable() ? m_pInstance.m_Ptr : <span class="keyword">nullptr</span>; }</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    memcpy(m_Data, &amp;<span class="keyword">function</span>, <span class="keyword">sizeof</span>(Function));</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    memset(m_Data + <span class="keyword">sizeof</span>(Function), 0, DataSize - <span class="keyword">sizeof</span>(Function));</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;  }</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Method&gt;</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;  EZ_FORCE_INLINE <span class="keywordtype">void</span> CopyMemberFunctionToInplaceStorage(Method method)</div>
+<div class="line"><a name="l00264"></a><span class="lineno"><a class="line" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#ad104ff4a5657cbbe27b957ea8489b568">  264</a></span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> <a class="code" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#ad104ff4a5657cbbe27b957ea8489b568">IsComparable</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pInstance.m_ConstPtr &lt; InplaceLambda(); } <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Function&gt;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;  EZ_FORCE_INLINE <span class="keywordtype">void</span> CopyFunctionToInplaceStorage(Function <span class="keyword">function</span>)</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;  {</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    EZ_CHECK_AT_COMPILETIME_MSG(DataSize &gt;= 16, <span class="stringliteral">&quot;DataSize must be at least 16 bytes&quot;</span>);</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    EZ_CHECK_AT_COMPILETIME_MSG(<span class="keyword">sizeof</span>(Method) &lt;= DataSize, <span class="stringliteral">&quot;Member function pointer must not be bigger than 16 bytes&quot;</span>);</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    EZ_ASSERT_DEBUG(</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;      <a class="code" href="../../dc/d4d/classez_memory_utils.htm#aa7c2521406e21cf4c64519a4a460dffe">ezMemoryUtils::IsAligned</a>(&amp;m_Data, EZ_ALIGNMENT_OF(Function)), <span class="stringliteral">&quot;Wrong alignment. Expected {0} bytes alignment&quot;</span>, EZ_ALIGNMENT_OF(Function));</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    CopyFunctionToInplaceStorage(method);</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="comment">// Member Function Pointers in MSVC are 12 bytes in size and have 4 byte padding</span></div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <span class="comment">// MSVC builds a member function pointer on the stack writing only 12 bytes and then copies it</span></div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="comment">// to the final location by copying 16 bytes. Thus the 4 byte padding get a random value (whatever is on the stack at that time).</span></div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="comment">// To make the delegate comparable by memcmp we zero out those 4 byte padding.</span></div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;<span class="preprocessor">#if EZ_ENABLED(EZ_COMPILER_MSVC)</span></div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    *<span class="keyword">reinterpret_cast&lt;</span>ezUInt32*<span class="keyword">&gt;</span>(m_Data + 12) = 0;</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;  }</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160; </div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> IsInplaceLambda()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pInstance.m_ConstPtr == InplaceLambda(); }</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> IsHeapLambda()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pInstance.m_ConstPtr == HeapLambda(); }</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Method, <span class="keyword">typename</span> Class&gt;</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;  <span class="keyword">static</span> EZ_FORCE_INLINE R DispatchToMethod(<span class="keyword">const</span> SelfType&amp; <span class="keyword">self</span>, Args... params)</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;  {</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    EZ_ASSERT_DEBUG(<span class="keyword">self</span>.m_pInstance.m_Ptr != <span class="keyword">nullptr</span>, <span class="stringliteral">&quot;Instance must not be null.&quot;</span>);</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    Method method = *<span class="keyword">reinterpret_cast&lt;</span>Method*<span class="keyword">&gt;</span>(&amp;<span class="keyword">self</span>.m_Data);</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    <span class="keywordflow">return</span> (<span class="keyword">static_cast&lt;</span>Class*<span class="keyword">&gt;</span>(<span class="keyword">self</span>.m_pInstance.m_Ptr)-&gt;*method)(params...);</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;  }</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160; </div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Method, <span class="keyword">typename</span> Class&gt;</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;  <span class="keyword">static</span> EZ_FORCE_INLINE R DispatchToConstMethod(<span class="keyword">const</span> SelfType&amp; <span class="keyword">self</span>, Args... params)</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;  {</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    EZ_ASSERT_DEBUG(<span class="keyword">self</span>.m_pInstance.m_ConstPtr != <span class="keyword">nullptr</span>, <span class="stringliteral">&quot;Instance must not be null.&quot;</span>);</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    Method method = *<span class="keyword">reinterpret_cast&lt;</span>Method*<span class="keyword">&gt;</span>(&amp;<span class="keyword">self</span>.m_Data);</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <span class="keywordflow">return</span> (<span class="keyword">static_cast&lt;</span><span class="keyword">const </span>Class*<span class="keyword">&gt;</span>(<span class="keyword">self</span>.m_pInstance.m_ConstPtr)-&gt;*method)(params...);</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;  }</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160; </div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Function&gt;</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;  <span class="keyword">static</span> EZ_ALWAYS_INLINE R DispatchToFunction(<span class="keyword">const</span> SelfType&amp; <span class="keyword">self</span>, Args... params)</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;  {</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    <span class="keywordflow">return</span> (*<span class="keyword">reinterpret_cast&lt;</span>Function*<span class="keyword">&gt;</span>(&amp;<span class="keyword">self</span>.m_Data))(params...);</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;  }</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160; </div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Function&gt;</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;  <span class="keyword">static</span> EZ_ALWAYS_INLINE R DispatchToHeapLambda(<span class="keyword">const</span> SelfType&amp; <span class="keyword">self</span>, Args... params)</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;  {</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="../../dd/dcc/structez_lambda_delegate_storage.htm">ezLambdaDelegateStorage&lt;Function&gt;</a>*<span class="keyword">&gt;</span>(<span class="keyword">self</span>.m_pLambdaStorage)-&gt;m_func(params...);</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;  }</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; </div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Function&gt;</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;  <span class="keyword">static</span> EZ_ALWAYS_INLINE R DispatchToInplaceLambda(<span class="keyword">const</span> SelfType&amp; <span class="keyword">self</span>, Args... params)</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;  {</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">reinterpret_cast&lt;</span><a class="code" href="../../dd/dcc/structez_lambda_delegate_storage.htm">ezLambdaDelegateStorage&lt;Function&gt;</a>*<span class="keyword">&gt;</span>(&amp;<span class="keyword">self</span>.m_Data)-&gt;m_func(params...);</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;  }</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160; </div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;  <span class="keyword">using</span> DispatchFunction = R (*)(<span class="keyword">const</span> SelfType&amp;, Args...);</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;  DispatchFunction m_pDispatchFunction;</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160; </div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;  <span class="keyword">union</span></div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;  {</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    <span class="keyword">mutable</span> ezUInt8 m_Data[DataSize];</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    <span class="keyword">struct</span></div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    {</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;      <a class="code" href="../../d0/d58/structez_lambda_delegate_storage_base.htm">ezLambdaDelegateStorageBase</a>* m_pLambdaStorage;</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;      <a class="code" href="../../d1/d4c/classez_allocator_base.htm">ezAllocatorBase</a>* m_pAllocator;</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    };</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;  };</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;};</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160; </div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;<span class="keyword">struct </span><a class="code" href="../../d1/dbd/structez_make_delegate_helper.htm">ezMakeDelegateHelper</a></div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;{</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;};</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160; </div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Class, <span class="keyword">typename</span> R, <span class="keyword">typename</span>... Args&gt;</div>
-<div class="line"><a name="l00341"></a><span class="lineno"><a class="line" href="../../d8/d63/structez_make_delegate_helper_3_01_r_07_class_1_1_5_08_07_args_8_8_8_08_4.htm">  341</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../d1/dbd/structez_make_delegate_helper.htm">ezMakeDelegateHelper</a>&lt;R (Class::*)(Args...)&gt;</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;{</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;  <span class="keyword">using</span> <a class="code" href="../../d5/d68/structez_delegate.htm">DelegateType</a> = <a class="code" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>&lt;R(Args...)&gt;;</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;};</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160; </div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Class, <span class="keyword">typename</span> R, <span class="keyword">typename</span>... Args&gt;</div>
-<div class="line"><a name="l00347"></a><span class="lineno"><a class="line" href="../../da/d07/structez_make_delegate_helper_3_01_r_07_class_1_1_5_08_07_args_8_8_8_08_01const_01_4.htm">  347</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../d1/dbd/structez_make_delegate_helper.htm">ezMakeDelegateHelper</a>&lt;R (Class::*)(Args...) const&gt;</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;{</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;  <span class="keyword">using</span> <a class="code" href="../../d5/d68/structez_delegate.htm">DelegateType</a> = <a class="code" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>&lt;R(Args...)&gt;;</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;};</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    memcpy(m_Data, &amp;<span class="keyword">function</span>, <span class="keyword">sizeof</span>(Function));</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    memset(m_Data + <span class="keyword">sizeof</span>(Function), 0, DataSize - <span class="keyword">sizeof</span>(Function));</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;  }</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Method&gt;</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;  EZ_FORCE_INLINE <span class="keywordtype">void</span> CopyMemberFunctionToInplaceStorage(Method method)</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;  {</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    EZ_CHECK_AT_COMPILETIME_MSG(DataSize &gt;= 16, <span class="stringliteral">&quot;DataSize must be at least 16 bytes&quot;</span>);</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    EZ_CHECK_AT_COMPILETIME_MSG(<span class="keyword">sizeof</span>(Method) &lt;= DataSize, <span class="stringliteral">&quot;Member function pointer must not be bigger than 16 bytes&quot;</span>);</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    CopyFunctionToInplaceStorage(method);</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160; </div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="comment">// Member Function Pointers in MSVC are 12 bytes in size and have 4 byte padding</span></div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <span class="comment">// MSVC builds a member function pointer on the stack writing only 12 bytes and then copies it</span></div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <span class="comment">// to the final location by copying 16 bytes. Thus the 4 byte padding get a random value (whatever is on the stack at that time).</span></div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <span class="comment">// To make the delegate comparable by memcmp we zero out those 4 byte padding.</span></div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;<span class="preprocessor">#if EZ_ENABLED(EZ_COMPILER_MSVC)</span></div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    *<span class="keyword">reinterpret_cast&lt;</span>ezUInt32*<span class="keyword">&gt;</span>(m_Data + 12) = 0;</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;  }</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> IsInplaceLambda()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pInstance.m_ConstPtr == InplaceLambda(); }</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> IsHeapLambda()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pInstance.m_ConstPtr == HeapLambda(); }</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Method, <span class="keyword">typename</span> Class&gt;</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;  <span class="keyword">static</span> EZ_FORCE_INLINE R DispatchToMethod(<span class="keyword">const</span> SelfType&amp; <span class="keyword">self</span>, Args... params)</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;  {</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    EZ_ASSERT_DEBUG(<span class="keyword">self</span>.m_pInstance.m_Ptr != <span class="keyword">nullptr</span>, <span class="stringliteral">&quot;Instance must not be null.&quot;</span>);</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    Method method = *<span class="keyword">reinterpret_cast&lt;</span>Method*<span class="keyword">&gt;</span>(&amp;<span class="keyword">self</span>.m_Data);</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="keywordflow">return</span> (<span class="keyword">static_cast&lt;</span>Class*<span class="keyword">&gt;</span>(<span class="keyword">self</span>.m_pInstance.m_Ptr)-&gt;*method)(params...);</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;  }</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; </div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Method, <span class="keyword">typename</span> Class&gt;</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;  <span class="keyword">static</span> EZ_FORCE_INLINE R DispatchToConstMethod(<span class="keyword">const</span> SelfType&amp; <span class="keyword">self</span>, Args... params)</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;  {</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    EZ_ASSERT_DEBUG(<span class="keyword">self</span>.m_pInstance.m_ConstPtr != <span class="keyword">nullptr</span>, <span class="stringliteral">&quot;Instance must not be null.&quot;</span>);</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    Method method = *<span class="keyword">reinterpret_cast&lt;</span>Method*<span class="keyword">&gt;</span>(&amp;<span class="keyword">self</span>.m_Data);</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="keywordflow">return</span> (<span class="keyword">static_cast&lt;</span><span class="keyword">const </span>Class*<span class="keyword">&gt;</span>(<span class="keyword">self</span>.m_pInstance.m_ConstPtr)-&gt;*method)(params...);</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;  }</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160; </div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Function&gt;</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;  <span class="keyword">static</span> EZ_ALWAYS_INLINE R DispatchToFunction(<span class="keyword">const</span> SelfType&amp; <span class="keyword">self</span>, Args... params)</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;  {</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    <span class="keywordflow">return</span> (*<span class="keyword">reinterpret_cast&lt;</span>Function*<span class="keyword">&gt;</span>(&amp;<span class="keyword">self</span>.m_Data))(params...);</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;  }</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160; </div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Function&gt;</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;  <span class="keyword">static</span> EZ_ALWAYS_INLINE R DispatchToHeapLambda(<span class="keyword">const</span> SelfType&amp; <span class="keyword">self</span>, Args... params)</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;  {</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="../../dd/dcc/structez_lambda_delegate_storage.htm">ezLambdaDelegateStorage&lt;Function&gt;</a>*<span class="keyword">&gt;</span>(<span class="keyword">self</span>.m_pLambdaStorage)-&gt;m_func(params...);</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;  }</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160; </div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Function&gt;</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;  <span class="keyword">static</span> EZ_ALWAYS_INLINE R DispatchToInplaceLambda(<span class="keyword">const</span> SelfType&amp; <span class="keyword">self</span>, Args... params)</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;  {</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">reinterpret_cast&lt;</span><a class="code" href="../../dd/dcc/structez_lambda_delegate_storage.htm">ezLambdaDelegateStorage&lt;Function&gt;</a>*<span class="keyword">&gt;</span>(&amp;<span class="keyword">self</span>.m_Data)-&gt;m_func(params...);</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;  }</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160; </div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;  <span class="keyword">using</span> DispatchFunction = R (*)(<span class="keyword">const</span> SelfType&amp;, Args...);</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;  DispatchFunction m_pDispatchFunction;</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;  <span class="keyword">union</span></div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;  {</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    <span class="keyword">mutable</span> ezUInt8 m_Data[DataSize];</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    <span class="keyword">struct</span></div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    {</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;      <a class="code" href="../../d0/d58/structez_lambda_delegate_storage_base.htm">ezLambdaDelegateStorageBase</a>* m_pLambdaStorage;</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;      <a class="code" href="../../d1/d4c/classez_allocator_base.htm">ezAllocatorBase</a>* m_pAllocator;</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    };</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;  };</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;};</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160; </div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;<span class="keyword">struct </span><a class="code" href="../../d1/dbd/structez_make_delegate_helper.htm">ezMakeDelegateHelper</a></div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;{</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;};</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160; </div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Class, <span class="keyword">typename</span> R, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="line"><a name="l00351"></a><span class="lineno"><a class="line" href="../../d8/d63/structez_make_delegate_helper_3_01_r_07_class_1_1_5_08_07_args_8_8_8_08_4.htm">  351</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../d1/dbd/structez_make_delegate_helper.htm">ezMakeDelegateHelper</a>&lt;R (Class::*)(Args...)&gt;</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;{</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;  <span class="keyword">using</span> <a class="code" href="../../d5/d68/structez_delegate.htm">DelegateType</a> = <a class="code" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>&lt;R(Args...)&gt;;</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;};</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160; </div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Class, <span class="keyword">typename</span> R, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="line"><a name="l00357"></a><span class="lineno"><a class="line" href="../../da/d07/structez_make_delegate_helper_3_01_r_07_class_1_1_5_08_07_args_8_8_8_08_01const_01_4.htm">  357</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../d1/dbd/structez_make_delegate_helper.htm">ezMakeDelegateHelper</a>&lt;R (Class::*)(Args...) const&gt;</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;{</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;  <span class="keyword">using</span> <a class="code" href="../../d5/d68/structez_delegate.htm">DelegateType</a> = <a class="code" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>&lt;R(Args...)&gt;;</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astructez_lambda_delegate_storage_htm"><div class="ttname"><a href="../../dd/dcc/structez_lambda_delegate_storage.htm">ezLambdaDelegateStorage</a></div><div class="ttdef"><b>Definition:</b> DelegateHelper_inl.h:19</div></div>
 <div class="ttc" id="astructez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4_htm_ac62c84935e8322dee3c0958187ca096b"><div class="ttname"><a href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#ac62c84935e8322dee3c0958187ca096b">ezDelegate&lt; R(Args...), DataSize &gt;::ezDelegate</a></div><div class="ttdeci">EZ_FORCE_INLINE ezDelegate(Method method, const Class *pInstance)</div><div class="ttdoc">Constructs the delegate from a member function type and takes the (const) class instance on which to ...</div><div class="ttdef"><b>Definition:</b> DelegateHelper_inl.h:105</div></div>
 <div class="ttc" id="aclassez_delegate_base_htm"><div class="ttname"><a href="../../d5/dc3/classez_delegate_base.htm">ezDelegateBase</a></div><div class="ttdoc">Base class for ezDelegate.</div><div class="ttdef"><b>Definition:</b> Delegate.h:6</div></div>
 <div class="ttc" id="astructez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4_htm_a09c2dfcd182add6f1246f509910cd3b0"><div class="ttname"><a href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#a09c2dfcd182add6f1246f509910cd3b0">ezDelegate&lt; R(Args...), DataSize &gt;::ezDelegate</a></div><div class="ttdeci">EZ_FORCE_INLINE ezDelegate(Method method, Class *pInstance)</div><div class="ttdoc">Constructs the delegate from a member function type and takes the class instance on which to call the...</div><div class="ttdef"><b>Definition:</b> DelegateHelper_inl.h:95</div></div>
-<div class="ttc" id="aclassez_foundation_htm_a54836d4a247f8ea89b716701f1f1a4a7"><div class="ttname"><a href="../../d0/d49/classez_foundation.htm#a54836d4a247f8ea89b716701f1f1a4a7">ezFoundation::GetDefaultAllocator</a></div><div class="ttdeci">static EZ_ALWAYS_INLINE ezAllocatorBase * GetDefaultAllocator()</div><div class="ttdoc">The default allocator can be used for any kind of allocation if no alignment is required.</div><div class="ttdef"><b>Definition:</b> Basics.h:77</div></div>
-<div class="ttc" id="astructez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4_htm_aedb7b2318091b1969e595a7467fc9943"><div class="ttname"><a href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#aedb7b2318091b1969e595a7467fc9943">ezDelegate&lt; R(Args...), DataSize &gt;::Invalidate</a></div><div class="ttdeci">EZ_FORCE_INLINE void Invalidate()</div><div class="ttdoc">Resets a delegate to an invalid state.</div><div class="ttdef"><b>Definition:</b> DelegateHelper_inl.h:233</div></div>
-<div class="ttc" id="astructez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4_htm_a1c38ac09b677cf13b3aa3f294bd1b9ef"><div class="ttname"><a href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#a1c38ac09b677cf13b3aa3f294bd1b9ef">ezDelegate&lt; R(Args...), DataSize &gt;::GetClassInstance</a></div><div class="ttdeci">EZ_ALWAYS_INLINE void * GetClassInstance() const</div><div class="ttdoc">Returns the class instance that is used to call a member function pointer on.</div><div class="ttdef"><b>Definition:</b> DelegateHelper_inl.h:251</div></div>
-<div class="ttc" id="astructez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4_htm_ac7af4563a8fd6bb7ba078628d152910e"><div class="ttname"><a href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#ac7af4563a8fd6bb7ba078628d152910e">ezDelegate&lt; R(Args...), DataSize &gt;::operator=</a></div><div class="ttdeci">EZ_FORCE_INLINE void operator=(std::nullptr_t)</div><div class="ttdoc">Resets a delegate to an invalid state.</div><div class="ttdef"><b>Definition:</b> DelegateHelper_inl.h:203</div></div>
-<div class="ttc" id="astructez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4_htm_a55e3f0023ec6eca84017c99eea37a9ce"><div class="ttname"><a href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#a55e3f0023ec6eca84017c99eea37a9ce">ezDelegate&lt; R(Args...), DataSize &gt;::operator()</a></div><div class="ttdeci">EZ_FORCE_INLINE R operator()(Args... params) const</div><div class="ttdoc">Function call operator. This will call the function that is bound to the delegate,...</div><div class="ttdef"><b>Definition:</b> DelegateHelper_inl.h:206</div></div>
-<div class="ttc" id="astructez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4_htm_a78101b7ac9cfebfd49d0aeb6ace4d3ea"><div class="ttname"><a href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#a78101b7ac9cfebfd49d0aeb6ace4d3ea">ezDelegate&lt; R(Args...), DataSize &gt;::operator=</a></div><div class="ttdeci">EZ_FORCE_INLINE void operator=(SelfType &amp;&amp;other)</div><div class="ttdoc">Moves the data from another delegate.</div><div class="ttdef"><b>Definition:</b> DelegateHelper_inl.h:181</div></div>
-<div class="ttc" id="astructez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4_htm_abc4b48199e61fa712c56d1c7539549ce"><div class="ttname"><a href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#abc4b48199e61fa712c56d1c7539549ce">ezDelegate&lt; R(Args...), DataSize &gt;::operator==</a></div><div class="ttdeci">EZ_ALWAYS_INLINE bool operator==(const SelfType &amp;other) const</div><div class="ttdoc">This function only exists to make code compile, but it will assert when used. Use IsEqualIfNotHeapAll...</div><div class="ttdef"><b>Definition:</b> DelegateHelper_inl.h:213</div></div>
+<div class="ttc" id="aclassez_foundation_htm_a54836d4a247f8ea89b716701f1f1a4a7"><div class="ttname"><a href="../../d0/d49/classez_foundation.htm#a54836d4a247f8ea89b716701f1f1a4a7">ezFoundation::GetDefaultAllocator</a></div><div class="ttdeci">static EZ_ALWAYS_INLINE ezAllocatorBase * GetDefaultAllocator()</div><div class="ttdoc">The default allocator can be used for any kind of allocation if no alignment is required.</div><div class="ttdef"><b>Definition:</b> Basics.h:80</div></div>
+<div class="ttc" id="astructez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4_htm_aedb7b2318091b1969e595a7467fc9943"><div class="ttname"><a href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#aedb7b2318091b1969e595a7467fc9943">ezDelegate&lt; R(Args...), DataSize &gt;::Invalidate</a></div><div class="ttdeci">EZ_FORCE_INLINE void Invalidate()</div><div class="ttdoc">Resets a delegate to an invalid state.</div><div class="ttdef"><b>Definition:</b> DelegateHelper_inl.h:243</div></div>
+<div class="ttc" id="astructez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4_htm_a1c38ac09b677cf13b3aa3f294bd1b9ef"><div class="ttname"><a href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#a1c38ac09b677cf13b3aa3f294bd1b9ef">ezDelegate&lt; R(Args...), DataSize &gt;::GetClassInstance</a></div><div class="ttdeci">EZ_ALWAYS_INLINE void * GetClassInstance() const</div><div class="ttdoc">Returns the class instance that is used to call a member function pointer on.</div><div class="ttdef"><b>Definition:</b> DelegateHelper_inl.h:261</div></div>
+<div class="ttc" id="astructez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4_htm_ac7af4563a8fd6bb7ba078628d152910e"><div class="ttname"><a href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#ac7af4563a8fd6bb7ba078628d152910e">ezDelegate&lt; R(Args...), DataSize &gt;::operator=</a></div><div class="ttdeci">EZ_FORCE_INLINE void operator=(std::nullptr_t)</div><div class="ttdoc">Resets a delegate to an invalid state.</div><div class="ttdef"><b>Definition:</b> DelegateHelper_inl.h:213</div></div>
+<div class="ttc" id="astructez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4_htm_a55e3f0023ec6eca84017c99eea37a9ce"><div class="ttname"><a href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#a55e3f0023ec6eca84017c99eea37a9ce">ezDelegate&lt; R(Args...), DataSize &gt;::operator()</a></div><div class="ttdeci">EZ_FORCE_INLINE R operator()(Args... params) const</div><div class="ttdoc">Function call operator. This will call the function that is bound to the delegate,...</div><div class="ttdef"><b>Definition:</b> DelegateHelper_inl.h:216</div></div>
+<div class="ttc" id="astructez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4_htm_a78101b7ac9cfebfd49d0aeb6ace4d3ea"><div class="ttname"><a href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#a78101b7ac9cfebfd49d0aeb6ace4d3ea">ezDelegate&lt; R(Args...), DataSize &gt;::operator=</a></div><div class="ttdeci">EZ_FORCE_INLINE void operator=(SelfType &amp;&amp;other)</div><div class="ttdoc">Moves the data from another delegate.</div><div class="ttdef"><b>Definition:</b> DelegateHelper_inl.h:191</div></div>
+<div class="ttc" id="astructez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4_htm_abc4b48199e61fa712c56d1c7539549ce"><div class="ttname"><a href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#abc4b48199e61fa712c56d1c7539549ce">ezDelegate&lt; R(Args...), DataSize &gt;::operator==</a></div><div class="ttdeci">EZ_ALWAYS_INLINE bool operator==(const SelfType &amp;other) const</div><div class="ttdoc">This function only exists to make code compile, but it will assert when used. Use IsEqualIfNotHeapAll...</div><div class="ttdef"><b>Definition:</b> DelegateHelper_inl.h:223</div></div>
 <div class="ttc" id="aclassez_memory_utils_htm_aa7c2521406e21cf4c64519a4a460dffe"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm#aa7c2521406e21cf4c64519a4a460dffe">ezMemoryUtils::IsAligned</a></div><div class="ttdeci">static bool IsAligned(const T *ptr, size_t uiAlignment)</div><div class="ttdoc">Checks whether ptr is aligned to a memory address that is a multiple of uiAlignment.</div></div>
 <div class="ttc" id="aclassez_allocator_base_htm"><div class="ttname"><a href="../../d1/d4c/classez_allocator_base.htm">ezAllocatorBase</a></div><div class="ttdoc">Base class for all memory allocators.</div><div class="ttdef"><b>Definition:</b> AllocatorBase.h:22</div></div>
-<div class="ttc" id="astructez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4_htm_aa2072d015f3ca5de31ef15eb0b22efe2"><div class="ttname"><a href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#aa2072d015f3ca5de31ef15eb0b22efe2">ezDelegate&lt; R(Args...), DataSize &gt;::operator=</a></div><div class="ttdeci">EZ_FORCE_INLINE void operator=(const SelfType &amp;other)</div><div class="ttdoc">Copies the data from another delegate.</div><div class="ttdef"><b>Definition:</b> DelegateHelper_inl.h:157</div></div>
+<div class="ttc" id="astructez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4_htm_aa2072d015f3ca5de31ef15eb0b22efe2"><div class="ttname"><a href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#aa2072d015f3ca5de31ef15eb0b22efe2">ezDelegate&lt; R(Args...), DataSize &gt;::operator=</a></div><div class="ttdeci">EZ_FORCE_INLINE void operator=(const SelfType &amp;other)</div><div class="ttdoc">Copies the data from another delegate.</div><div class="ttdef"><b>Definition:</b> DelegateHelper_inl.h:167</div></div>
 <div class="ttc" id="astructez_delegate_htm"><div class="ttname"><a href="../../d5/d68/structez_delegate.htm">ezDelegate</a></div><div class="ttdoc">A generic delegate class which supports static functions and member functions.</div><div class="ttdef"><b>Definition:</b> Delegate.h:75</div></div>
-<div class="ttc" id="astructez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4_htm_ad104ff4a5657cbbe27b957ea8489b568"><div class="ttname"><a href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#ad104ff4a5657cbbe27b957ea8489b568">ezDelegate&lt; R(Args...), DataSize &gt;::IsComparable</a></div><div class="ttdeci">EZ_ALWAYS_INLINE bool IsComparable() const</div><div class="ttdoc">Returns whether the delegate is comparable with other delegates of the same type. This is not the cas...</div><div class="ttdef"><b>Definition:</b> DelegateHelper_inl.h:254</div></div>
-<div class="ttc" id="astructez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4_htm_a32e64026e8d0b4bb645c0a7a61f12ba9"><div class="ttname"><a href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#a32e64026e8d0b4bb645c0a7a61f12ba9">ezDelegate&lt; R(Args...), DataSize &gt;::IsEqualIfComparable</a></div><div class="ttdeci">EZ_ALWAYS_INLINE bool IsEqualIfComparable(const SelfType &amp;other) const</div><div class="ttdoc">Checks whether two delegates are bound to the exact same function, including the class instance.</div><div class="ttdef"><b>Definition:</b> DelegateHelper_inl.h:223</div></div>
+<div class="ttc" id="astructez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4_htm_ad104ff4a5657cbbe27b957ea8489b568"><div class="ttname"><a href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#ad104ff4a5657cbbe27b957ea8489b568">ezDelegate&lt; R(Args...), DataSize &gt;::IsComparable</a></div><div class="ttdeci">EZ_ALWAYS_INLINE bool IsComparable() const</div><div class="ttdoc">Returns whether the delegate is comparable with other delegates of the same type. This is not the cas...</div><div class="ttdef"><b>Definition:</b> DelegateHelper_inl.h:264</div></div>
+<div class="ttc" id="astructez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4_htm_a32e64026e8d0b4bb645c0a7a61f12ba9"><div class="ttname"><a href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#a32e64026e8d0b4bb645c0a7a61f12ba9">ezDelegate&lt; R(Args...), DataSize &gt;::IsEqualIfComparable</a></div><div class="ttdeci">EZ_ALWAYS_INLINE bool IsEqualIfComparable(const SelfType &amp;other) const</div><div class="ttdoc">Checks whether two delegates are bound to the exact same function, including the class instance.</div><div class="ttdef"><b>Definition:</b> DelegateHelper_inl.h:233</div></div>
 <div class="ttc" id="astructez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4_htm_a1fda1119b12c6c5c89497d23c3e4fd8a"><div class="ttname"><a href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#a1fda1119b12c6c5c89497d23c3e4fd8a">ezDelegate&lt; R(Args...), DataSize &gt;::ezDelegate</a></div><div class="ttdeci">EZ_FORCE_INLINE ezDelegate(Function function, ezAllocatorBase *pAllocator=ezFoundation::GetDefaultAllocator())</div><div class="ttdoc">Constructs the delegate from a regular C function type.</div><div class="ttdef"><b>Definition:</b> DelegateHelper_inl.h:115</div></div>
 <div class="ttc" id="astructez_make_delegate_helper_htm"><div class="ttname"><a href="../../d1/dbd/structez_make_delegate_helper.htm">ezMakeDelegateHelper</a></div><div class="ttdef"><b>Definition:</b> Delegate.h:80</div></div>
 <div class="ttc" id="astructez_lambda_delegate_storage_base_htm"><div class="ttname"><a href="../../d0/d58/structez_lambda_delegate_storage_base.htm">ezLambdaDelegateStorageBase</a></div><div class="ttdoc">[Internal] Storage for lambdas with captures in ezDelegate.</div><div class="ttdef"><b>Definition:</b> DelegateHelper_inl.h:3</div></div>
 <div class="ttc" id="astructez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4_htm"><div class="ttname"><a href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm">ezDelegate&lt; R(Args...), DataSize &gt;</a></div><div class="ttdef"><b>Definition:</b> DelegateHelper_inl.h:76</div></div>
-<div class="ttc" id="astructez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4_htm_aa797a42a45ab2ff8d71732b08deedca2"><div class="ttname"><a href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#aa797a42a45ab2ff8d71732b08deedca2">ezDelegate&lt; R(Args...), DataSize &gt;::IsValid</a></div><div class="ttdeci">EZ_ALWAYS_INLINE bool IsValid() const</div><div class="ttdoc">Returns true when the delegate is bound to a valid non-nullptr function.</div><div class="ttdef"><b>Definition:</b> DelegateHelper_inl.h:230</div></div>
+<div class="ttc" id="astructez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4_htm_aa797a42a45ab2ff8d71732b08deedca2"><div class="ttname"><a href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#aa797a42a45ab2ff8d71732b08deedca2">ezDelegate&lt; R(Args...), DataSize &gt;::IsValid</a></div><div class="ttdeci">EZ_ALWAYS_INLINE bool IsValid() const</div><div class="ttdoc">Returns true when the delegate is bound to a valid non-nullptr function.</div><div class="ttdef"><b>Definition:</b> DelegateHelper_inl.h:240</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_f95f7c440efc771b227d40e9293549bd.htm">Types</a></li><li class="navelem"><a class="el" href="../../dir_81708b2bf5e0f7f3d10c3c7a8700c5a1.htm">Implementation</a></li><li class="navelem"><b>DelegateHelper_inl.h</b></li>
-    <li class="footer">Generated on Mon Oct 18 2021 15:33:30 for ezEngine by
+    <li class="footer">Generated on Sun Oct 9 2022 14:44:56 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

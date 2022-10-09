@@ -123,15 +123,34 @@ $(document).ready(function(){initNavTree('da/d9b/_o_s_thread__posix_8h_source.ht
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  EZ_IGNORE_UNUSED(iReturnCode);</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  EZ_ASSERT_RELEASE(iReturnCode == 0, <span class="stringliteral">&quot;Thread creation failed!&quot;</span>);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  m_ThreadID = m_Handle;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  pthread_attr_destroy(&amp;ThreadAttributes);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="../../dc/dee/classez_o_s_thread.htm#a9aa84088cdf474e556a71d2ae301f132">   44</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dc/dee/classez_o_s_thread.htm#a9aa84088cdf474e556a71d2ae301f132">ezOSThread::Join</a>()</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  pthread_join(m_Handle, <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#if EZ_ENABLED(EZ_PLATFORM_LINUX) || EZ_ENABLED(EZ_PLATFORM_ANDROID)</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keywordflow">if</span> (iReturnCode == 0 &amp;&amp; m_szName != <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">// pthread has a thread name limit of 16 bytes.</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">// This means 15 characters and the terminating &#39;\0&#39;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">if</span> (strlen(m_szName) &lt; 16)</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      pthread_setname_np(m_Handle, m_szName);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      <span class="keywordtype">char</span> threadName[16];</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      strncpy(threadName, m_szName, 15);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      threadName[15] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      pthread_setname_np(m_Handle, threadName);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  m_ThreadID = m_Handle;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  pthread_attr_destroy(&amp;ThreadAttributes);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="../../dc/dee/classez_o_s_thread.htm#a9aa84088cdf474e556a71d2ae301f132">   63</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dc/dee/classez_o_s_thread.htm#a9aa84088cdf474e556a71d2ae301f132">ezOSThread::Join</a>()</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  pthread_join(m_Handle, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_o_s_thread_htm_a3f9f56cabbd59ede07a6be3e2bc724b5"><div class="ttname"><a href="../../dc/dee/classez_o_s_thread.htm#a3f9f56cabbd59ede07a6be3e2bc724b5">ezOSThread::~ezOSThread</a></div><div class="ttdeci">virtual ~ezOSThread()</div><div class="ttdoc">Destructor.</div><div class="ttdef"><b>Definition:</b> OSThread_posix.h:21</div></div>
@@ -139,13 +158,13 @@ $(document).ready(function(){initNavTree('da/d9b/_o_s_thread__posix_8h_source.ht
 <div class="ttc" id="aclassez_o_s_thread_htm_a81378a5f2603905a76395b344f0a0c65"><div class="ttname"><a href="../../dc/dee/classez_o_s_thread.htm#a81378a5f2603905a76395b344f0a0c65">ezOSThread::Start</a></div><div class="ttdeci">void Start()</div><div class="ttdoc">Starts the thread.</div><div class="ttdef"><b>Definition:</b> OSThread_posix.h:27</div></div>
 <div class="ttc" id="aclassez_atomic_integer_htm_a70ef3cc6d6a3879d990d54be95b62c48"><div class="ttname"><a href="../../da/d01/classez_atomic_integer.htm#a70ef3cc6d6a3879d990d54be95b62c48">ezAtomicInteger::Increment</a></div><div class="ttdeci">T Increment()</div><div class="ttdoc">Increments the internal value and returns the incremented value.</div><div class="ttdef"><b>Definition:</b> AtomicInteger_inl.h:35</div></div>
 <div class="ttc" id="aclassez_atomic_integer_htm_a8564e051c86ff5ea7f4002d668b7f93b"><div class="ttname"><a href="../../da/d01/classez_atomic_integer.htm#a8564e051c86ff5ea7f4002d668b7f93b">ezAtomicInteger::Decrement</a></div><div class="ttdeci">T Decrement()</div><div class="ttdoc">Decrements the internal value and returns the decremented value.</div><div class="ttdef"><b>Definition:</b> AtomicInteger_inl.h:41</div></div>
-<div class="ttc" id="aclassez_o_s_thread_htm_a9aa84088cdf474e556a71d2ae301f132"><div class="ttname"><a href="../../dc/dee/classez_o_s_thread.htm#a9aa84088cdf474e556a71d2ae301f132">ezOSThread::Join</a></div><div class="ttdeci">void Join()</div><div class="ttdoc">Waits in the calling thread until the thread has finished execution (e.g. returned from the thread fu...</div><div class="ttdef"><b>Definition:</b> OSThread_posix.h:44</div></div>
+<div class="ttc" id="aclassez_o_s_thread_htm_a9aa84088cdf474e556a71d2ae301f132"><div class="ttname"><a href="../../dc/dee/classez_o_s_thread.htm#a9aa84088cdf474e556a71d2ae301f132">ezOSThread::Join</a></div><div class="ttdeci">void Join()</div><div class="ttdoc">Waits in the calling thread until the thread has finished execution (e.g. returned from the thread fu...</div><div class="ttdef"><b>Definition:</b> OSThread_posix.h:63</div></div>
 <div class="ttc" id="aclassez_atomic_integer_htm"><div class="ttname"><a href="../../da/d01/classez_atomic_integer.htm">ezAtomicInteger&lt; ezInt32 &gt;</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_05460f4aa032e23246d68b56847b5fed.htm">Threading</a></li><li class="navelem"><a class="el" href="../../dir_87563d8e459b6b2efd39d0a742560444.htm">Implementation</a></li><li class="navelem"><a class="el" href="../../dir_f7cba5d11400c314899a87dbddc6ab5d.htm">Posix</a></li><li class="navelem"><b>OSThread_posix.h</b></li>
-    <li class="footer">Generated on Mon Oct 18 2021 15:33:29 for ezEngine by
+    <li class="footer">Generated on Sun Oct 9 2022 14:44:56 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

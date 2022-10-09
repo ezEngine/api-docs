@@ -106,9 +106,9 @@ Inheritance diagram for ezEngineGizmoHandle:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a21b75827f5b90ef5f4ae0102d7325020"><td class="memItemLeft" align="right" valign="top"><a id="a21b75827f5b90ef5f4ae0102d7325020"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Configure</b> (<a class="el" href="../../d4/d05/classez_gizmo.htm">ezGizmo</a> *pParentGizmo, ezEngineGizmoHandleType type, const <a class="el" href="../../dd/d01/classez_color.htm">ezColor</a> &amp;col, bool bConstantSize=true, bool bAlwaysOnTop=false, bool bVisualizer=false, bool bShowInOrtho=false, bool bIsPickable=true)</td></tr>
-<tr class="separator:a21b75827f5b90ef5f4ae0102d7325020"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a139982cb0789072157546d25fa1f4fff"><td class="memItemLeft" align="right" valign="top"><a id="a139982cb0789072157546d25fa1f4fff"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ConfigureHandle</b> (<a class="el" href="../../d4/d05/classez_gizmo.htm">ezGizmo</a> *pParentGizmo, ezEngineGizmoHandleType type, const <a class="el" href="../../dd/d01/classez_color.htm">ezColor</a> &amp;col, <a class="el" href="../../d1/dec/structez_bitflags.htm">ezBitflags</a>&lt; <a class="el" href="../../d8/db5/structez_gizmo_flags.htm">ezGizmoFlags</a> &gt; flags, const char *szCustomMesh=nullptr)</td></tr>
+<tr class="separator:a139982cb0789072157546d25fa1f4fff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5945ce8812c7ffba2aeff94ddc55e9d"><td class="memItemLeft" align="right" valign="top"><a id="ae5945ce8812c7ffba2aeff94ddc55e9d"></a>
 virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>SetupForEngine</b> (<a class="el" href="../../da/d3c/classez_world.htm">ezWorld</a> *pWorld, ezUInt32 uiNextComponentPickingID) override</td></tr>
 <tr class="separator:ae5945ce8812c7ffba2aeff94ddc55e9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -167,38 +167,44 @@ template&lt;typename T &gt; </td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a7f5b750f8cd40212fb0415fa60532cdb"><td class="memItemLeft" align="right" valign="top"><a id="a7f5b750f8cd40212fb0415fa60532cdb"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_bConstantSize</b></td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_bConstantSize</b> = true</td></tr>
 <tr class="separator:a7f5b750f8cd40212fb0415fa60532cdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a1df4b44b26762f074c8ffe43cdd70e"><td class="memItemLeft" align="right" valign="top"><a id="a1a1df4b44b26762f074c8ffe43cdd70e"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_bAlwaysOnTop</b></td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_bAlwaysOnTop</b> = false</td></tr>
 <tr class="separator:a1a1df4b44b26762f074c8ffe43cdd70e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab5f3881b8bb63112c7342aced9b816b6"><td class="memItemLeft" align="right" valign="top"><a id="ab5f3881b8bb63112c7342aced9b816b6"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_bVisualizer</b></td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_bVisualizer</b> = false</td></tr>
 <tr class="separator:ab5f3881b8bb63112c7342aced9b816b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4c09e9416cec75f4a3e57841fd0e13b"><td class="memItemLeft" align="right" valign="top"><a id="af4c09e9416cec75f4a3e57841fd0e13b"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_bShowInOrtho</b></td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_bShowInOrtho</b> = false</td></tr>
 <tr class="separator:af4c09e9416cec75f4a3e57841fd0e13b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad736147f302fc2a8717616f7ea3f31dc"><td class="memItemLeft" align="right" valign="top"><a id="ad736147f302fc2a8717616f7ea3f31dc"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_bIsPickable</b> = true</td></tr>
 <tr class="separator:ad736147f302fc2a8717616f7ea3f31dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc61ea82b39aa024e999168a2cfab603"><td class="memItemLeft" align="right" valign="top"><a id="abc61ea82b39aa024e999168a2cfab603"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_bFaceCamera</b> = false</td></tr>
+<tr class="separator:abc61ea82b39aa024e999168a2cfab603"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3230355fa17db34c43549ac7896ff83e"><td class="memItemLeft" align="right" valign="top"><a id="a3230355fa17db34c43549ac7896ff83e"></a>
-ezInt32&#160;</td><td class="memItemRight" valign="bottom"><b>m_iHandleType</b></td></tr>
+ezInt32&#160;</td><td class="memItemRight" valign="bottom"><b>m_iHandleType</b> = -1</td></tr>
 <tr class="separator:a3230355fa17db34c43549ac7896ff83e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab25f276de0a5ff808ac7e617832ed241"><td class="memItemLeft" align="right" valign="top"><a id="ab25f276de0a5ff808ac7e617832ed241"></a>
+<a class="el" href="../../d4/d53/structez_hybrid_string.htm">ezString</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_sGizmoHandleMesh</b></td></tr>
+<tr class="separator:ab25f276de0a5ff808ac7e617832ed241"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a785ba6c6e3dfbcf77fa78109a2e263"><td class="memItemLeft" align="right" valign="top"><a id="a8a785ba6c6e3dfbcf77fa78109a2e263"></a>
 <a class="el" href="../../d6/d5c/structez_game_object_handle.htm">ezGameObjectHandle</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_hGameObject</b></td></tr>
 <tr class="separator:a8a785ba6c6e3dfbcf77fa78109a2e263"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ca3a15e58f07b46373dbd79840e1518"><td class="memItemLeft" align="right" valign="top"><a id="a7ca3a15e58f07b46373dbd79840e1518"></a>
-<a class="el" href="../../d4/dca/classez_gizmo_component.htm">ezGizmoComponent</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_pGizmoComponent</b></td></tr>
+<a class="el" href="../../d4/dca/classez_gizmo_component.htm">ezGizmoComponent</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_pGizmoComponent</b> = nullptr</td></tr>
 <tr class="separator:a7ca3a15e58f07b46373dbd79840e1518"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26d2eafa8c46965892b85c8b50074cc8"><td class="memItemLeft" align="right" valign="top"><a id="a26d2eafa8c46965892b85c8b50074cc8"></a>
-<a class="el" href="../../dd/d01/classez_color.htm">ezColor</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_Color</b></td></tr>
+<a class="el" href="../../dd/d01/classez_color.htm">ezColor</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_Color</b> = <a class="el" href="../../dd/d01/classez_color.htm#ac539af13b3148c70aae32947c8349854">ezColor::CornflowerBlue</a></td></tr>
 <tr class="separator:a26d2eafa8c46965892b85c8b50074cc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea4a113982b80c16d2424eb713bf4af8"><td class="memItemLeft" align="right" valign="top"><a id="aea4a113982b80c16d2424eb713bf4af8"></a>
-<a class="el" href="../../da/d3c/classez_world.htm">ezWorld</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_pWorld</b></td></tr>
+<a class="el" href="../../da/d3c/classez_world.htm">ezWorld</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_pWorld</b> = nullptr</td></tr>
 <tr class="separator:aea4a113982b80c16d2424eb713bf4af8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classez_gizmo_handle"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classez_gizmo_handle')"><img src="../../closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="../../d2/db8/classez_gizmo_handle.htm">ezGizmoHandle</a></td></tr>
 <tr class="memitem:a7992ee84da715a62814e23de61c474ab inherit pro_attribs_classez_gizmo_handle"><td class="memItemLeft" align="right" valign="top"><a id="a7992ee84da715a62814e23de61c474ab"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_bVisible</b></td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_bVisible</b> = false</td></tr>
 <tr class="separator:a7992ee84da715a62814e23de61c474ab inherit pro_attribs_classez_gizmo_handle"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac04dbe16a9228833899538bc3b1a8146 inherit pro_attribs_classez_gizmo_handle"><td class="memItemLeft" align="right" valign="top"><a id="ac04dbe16a9228833899538bc3b1a8146"></a>
 <a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransform</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_Transformation</b></td></tr>
@@ -225,7 +231,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SetParentGizmo</b> (<
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d3/def/classez_engine_gizmo_handle.htm">ezEngineGizmoHandle</a></li>
-    <li class="footer">Generated on Mon Oct 18 2021 15:33:35 for ezEngine by
+    <li class="footer">Generated on Sun Oct 9 2022 14:45:02 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

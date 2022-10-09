@@ -103,83 +103,98 @@ $(document).ready(function(){initNavTree('dd/dbc/_plugin___win_8h_source.htm','.
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keywordtype">void</span> ezPlugin::GetPluginPaths(<span class="keyword">const</span> <span class="keywordtype">char</span>* szPluginName, <a class="code" href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a>&amp; sOriginalFile, <a class="code" href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a>&amp; sCopiedFile, ezUInt8 uiFileCopyNumber)</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  sOriginalFile = <a class="code" href="../../db/d00/classez_o_s_file.htm#a0f8f96ff0fa85cf30484262995c0db79">ezOSFile::GetApplicationDirectory</a>();</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  sOriginalFile.<a class="code" href="../../d3/d88/classez_string_builder.htm#ac6b96e398a7232a42c307c753e34b6d8">AppendPath</a>(szPluginName);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  sOriginalFile.<a class="code" href="../../d3/d88/classez_string_builder.htm#a605f325ea4c9c3242454a16657e24ef7">Append</a>(<span class="stringliteral">&quot;.dll&quot;</span>);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  sCopiedFile = <a class="code" href="../../db/d00/classez_o_s_file.htm#a0f8f96ff0fa85cf30484262995c0db79">ezOSFile::GetApplicationDirectory</a>();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  sCopiedFile.<a class="code" href="../../d3/d88/classez_string_builder.htm#ac6b96e398a7232a42c307c753e34b6d8">AppendPath</a>(szPluginName);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keywordflow">if</span> (uiFileCopyNumber &gt; 0)</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    sCopiedFile.<a class="code" href="../../d3/d88/classez_string_builder.htm#aa405316a4995b2fd4883d42f74db9f9a">AppendFormat</a>(<span class="stringliteral">&quot;{0}&quot;</span>, uiFileCopyNumber);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  sCopiedFile.<a class="code" href="../../d3/d88/classez_string_builder.htm#a605f325ea4c9c3242454a16657e24ef7">Append</a>(<span class="stringliteral">&quot;.loaded&quot;</span>);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> UnloadPluginModule(ezPluginModule&amp; Module, <span class="keyword">const</span> <span class="keywordtype">char</span>* szPluginFile)</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="comment">// reset last error code</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  SetLastError(ERROR_SUCCESS);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordflow">if</span> (FreeLibrary(Module) == FALSE)</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="../../dc/d9e/classez_log.htm#ae5b1ee0c969668bdac113be5f4b15fa3">ezLog::Error</a>(<span class="stringliteral">&quot;Could not unload plugin &#39;{0}&#39;. Error-Code {1}&quot;</span>, szPluginFile, ezArgErrorCode(GetLastError()));</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">return</span> EZ_FAILURE;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  }</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  Module = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordflow">return</span> EZ_SUCCESS;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> LoadPluginModule(<span class="keyword">const</span> <span class="keywordtype">char</span>* szFileToLoad, ezPluginModule&amp; Module, <span class="keyword">const</span> <span class="keywordtype">char</span>* szPluginFile)</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="comment">// reset last error code</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  SetLastError(ERROR_SUCCESS);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#  if EZ_ENABLED(EZ_PLATFORM_WINDOWS_UWP)</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <a class="code" href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a> relativePath = szFileToLoad;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  EZ_SUCCEED_OR_RETURN(relativePath.<a class="code" href="../../d3/d88/classez_string_builder.htm#a0f424155f13f3b6e6596b6e1e032c682">MakeRelativeTo</a>(<a class="code" href="../../db/d00/classez_o_s_file.htm#a0f8f96ff0fa85cf30484262995c0db79">ezOSFile::GetApplicationDirectory</a>()));</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  Module = LoadPackagedLibrary(<a class="code" href="../../df/d6c/classez_string_w_char.htm">ezStringWChar</a>(relativePath).GetData(), 0);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#  else</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  Module = LoadLibraryW(<a class="code" href="../../df/d6c/classez_string_w_char.htm">ezStringWChar</a>(szFileToLoad).GetData());</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#  endif</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordflow">if</span> (Module == <span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">const</span> DWORD err = GetLastError();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="../../dc/d9e/classez_log.htm#ae5b1ee0c969668bdac113be5f4b15fa3">ezLog::Error</a>(<span class="stringliteral">&quot;Could not load plugin &#39;{0}&#39;. Error-Code {1}&quot;</span>, szPluginFile, ezArgErrorCode(err));</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">if</span> (err == 126)</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      <a class="code" href="../../dc/d9e/classez_log.htm#ae5b1ee0c969668bdac113be5f4b15fa3">ezLog::Error</a>(<span class="stringliteral">&quot;Please Note: This means that the plugin exists, but a DLL dependency of the plugin is missing. You probably need to copy 3rd &quot;</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                   <span class="stringliteral">&quot;party DLLs next to the plugin.&quot;</span>);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">return</span> EZ_FAILURE;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordflow">return</span> EZ_SUCCESS;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="keyword">auto</span> sPluginName = <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a>(szPluginName);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  sOriginalFile = <a class="code" href="../../db/d00/classez_o_s_file.htm#a0f8f96ff0fa85cf30484262995c0db79">ezOSFile::GetApplicationDirectory</a>();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  sOriginalFile.<a class="code" href="../../d3/d88/classez_string_builder.htm#ab79507e3dccd411cb2df68c60d560677">AppendPath</a>(sPluginName);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  sOriginalFile.<a class="code" href="../../d3/d88/classez_string_builder.htm#a605f325ea4c9c3242454a16657e24ef7">Append</a>(<span class="stringliteral">&quot;.dll&quot;</span>);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  sCopiedFile = <a class="code" href="../../db/d00/classez_o_s_file.htm#a0f8f96ff0fa85cf30484262995c0db79">ezOSFile::GetApplicationDirectory</a>();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  sCopiedFile.<a class="code" href="../../d3/d88/classez_string_builder.htm#ab79507e3dccd411cb2df68c60d560677">AppendPath</a>(sPluginName);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keywordflow">if</span> (!<a class="code" href="../../db/d00/classez_o_s_file.htm#a5e5e7411d47ffde7ef30c8e9550e364c">ezOSFile::ExistsFile</a>(sOriginalFile))</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    sOriginalFile = <a class="code" href="../../db/d00/classez_o_s_file.htm#acd2b022287e9ee1fca901b2797cd0384">ezOSFile::GetCurrentWorkingDirectory</a>();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    sOriginalFile.<a class="code" href="../../d3/d88/classez_string_builder.htm#ab79507e3dccd411cb2df68c60d560677">AppendPath</a>(sPluginName);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    sOriginalFile.<a class="code" href="../../d3/d88/classez_string_builder.htm#a605f325ea4c9c3242454a16657e24ef7">Append</a>(<span class="stringliteral">&quot;.dll&quot;</span>);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    sCopiedFile = <a class="code" href="../../db/d00/classez_o_s_file.htm#acd2b022287e9ee1fca901b2797cd0384">ezOSFile::GetCurrentWorkingDirectory</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    sCopiedFile.<a class="code" href="../../d3/d88/classez_string_builder.htm#ab79507e3dccd411cb2df68c60d560677">AppendPath</a>(sPluginName);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordflow">if</span> (uiFileCopyNumber &gt; 0)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    sCopiedFile.<a class="code" href="../../d3/d88/classez_string_builder.htm#aa405316a4995b2fd4883d42f74db9f9a">AppendFormat</a>(<span class="stringliteral">&quot;{0}&quot;</span>, uiFileCopyNumber);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  sCopiedFile.<a class="code" href="../../d3/d88/classez_string_builder.htm#a605f325ea4c9c3242454a16657e24ef7">Append</a>(<span class="stringliteral">&quot;.loaded&quot;</span>);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> UnloadPluginModule(ezPluginModule&amp; Module, <span class="keyword">const</span> <span class="keywordtype">char</span>* szPluginFile)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="comment">// reset last error code</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  SetLastError(ERROR_SUCCESS);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordflow">if</span> (FreeLibrary(Module) == FALSE)</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="../../dc/d9e/classez_log.htm#ae5b1ee0c969668bdac113be5f4b15fa3">ezLog::Error</a>(<span class="stringliteral">&quot;Could not unload plugin &#39;{0}&#39;. Error-Code {1}&quot;</span>, szPluginFile, ezArgErrorCode(GetLastError()));</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">return</span> EZ_FAILURE;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  Module = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordflow">return</span> EZ_SUCCESS;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> LoadPluginModule(<span class="keyword">const</span> <span class="keywordtype">char</span>* szFileToLoad, ezPluginModule&amp; Module, <span class="keyword">const</span> <span class="keywordtype">char</span>* szPluginFile)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="comment">// reset last error code</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  SetLastError(ERROR_SUCCESS);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#  if EZ_ENABLED(EZ_PLATFORM_WINDOWS_UWP)</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <a class="code" href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a> relativePath = szFileToLoad;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  EZ_SUCCEED_OR_RETURN(relativePath.<a class="code" href="../../d3/d88/classez_string_builder.htm#a2d14277bf37c42065340015ac40ada67">MakeRelativeTo</a>(<a class="code" href="../../db/d00/classez_o_s_file.htm#a0f8f96ff0fa85cf30484262995c0db79">ezOSFile::GetApplicationDirectory</a>()));</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  Module = LoadPackagedLibrary(<a class="code" href="../../df/d6c/classez_string_w_char.htm">ezStringWChar</a>(relativePath).GetData(), 0);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#  else</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  Module = LoadLibraryW(<a class="code" href="../../df/d6c/classez_string_w_char.htm">ezStringWChar</a>(szFileToLoad).GetData());</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#  endif</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordflow">if</span> (Module == <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">const</span> DWORD err = GetLastError();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="../../dc/d9e/classez_log.htm#ae5b1ee0c969668bdac113be5f4b15fa3">ezLog::Error</a>(<span class="stringliteral">&quot;Could not load plugin &#39;{0}&#39;. Error-Code {1}&quot;</span>, szPluginFile, ezArgErrorCode(err));</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#  error &quot;This file should not have been included.&quot;</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">if</span> (err == 126)</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      <a class="code" href="../../dc/d9e/classez_log.htm#ae5b1ee0c969668bdac113be5f4b15fa3">ezLog::Error</a>(<span class="stringliteral">&quot;Please Note: This means that the plugin exists, but a DLL dependency of the plugin is missing. You probably need to copy 3rd &quot;</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                   <span class="stringliteral">&quot;party DLLs next to the plugin.&quot;</span>);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">return</span> EZ_FAILURE;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keywordflow">return</span> EZ_SUCCESS;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#  error &quot;This file should not have been included.&quot;</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassez_log_htm_ae5b1ee0c969668bdac113be5f4b15fa3"><div class="ttname"><a href="../../dc/d9e/classez_log.htm#ae5b1ee0c969668bdac113be5f4b15fa3">ezLog::Error</a></div><div class="ttdeci">static void Error(ezLogInterface *pInterface, const ezFormatString &amp;string)</div><div class="ttdoc">An error that needs to be fixed as soon as possible.</div><div class="ttdef"><b>Definition:</b> Log.cpp:337</div></div>
-<div class="ttc" id="aclassez_string_builder_htm_a0f424155f13f3b6e6596b6e1e032c682"><div class="ttname"><a href="../../d3/d88/classez_string_builder.htm#a0f424155f13f3b6e6596b6e1e032c682">ezStringBuilder::MakeRelativeTo</a></div><div class="ttdeci">ezResult MakeRelativeTo(const char *szAbsolutePathToMakeThisRelativeTo)</div><div class="ttdoc">Converts this path into a relative path to the path with the awesome variable name 'szAbsolutePathToM...</div><div class="ttdef"><b>Definition:</b> StringBuilder.cpp:928</div></div>
+<div class="ttc" id="aclassez_o_s_file_htm_a5e5e7411d47ffde7ef30c8e9550e364c"><div class="ttname"><a href="../../db/d00/classez_o_s_file.htm#a5e5e7411d47ffde7ef30c8e9550e364c">ezOSFile::ExistsFile</a></div><div class="ttdeci">static bool ExistsFile(const char *szFile)</div><div class="ttdoc">Checks whether the given file exists.</div><div class="ttdef"><b>Definition:</b> OSFile.cpp:226</div></div>
+<div class="ttc" id="aclassez_log_htm_ae5b1ee0c969668bdac113be5f4b15fa3"><div class="ttname"><a href="../../dc/d9e/classez_log.htm#ae5b1ee0c969668bdac113be5f4b15fa3">ezLog::Error</a></div><div class="ttdeci">static void Error(ezLogInterface *pInterface, const ezFormatString &amp;string)</div><div class="ttdoc">An error that needs to be fixed as soon as possible.</div><div class="ttdef"><b>Definition:</b> Log.cpp:362</div></div>
+<div class="ttc" id="aclassez_string_builder_htm_a2d14277bf37c42065340015ac40ada67"><div class="ttname"><a href="../../d3/d88/classez_string_builder.htm#a2d14277bf37c42065340015ac40ada67">ezStringBuilder::MakeRelativeTo</a></div><div class="ttdeci">ezResult MakeRelativeTo(ezStringView sAbsolutePathToMakeThisRelativeTo)</div><div class="ttdoc">Converts this path into a relative path to the path with the awesome variable name 'szAbsolutePathToM...</div><div class="ttdef"><b>Definition:</b> StringBuilder.cpp:873</div></div>
 <div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition:</b> Types.h:50</div></div>
-<div class="ttc" id="aclassez_o_s_file_htm_a0f8f96ff0fa85cf30484262995c0db79"><div class="ttname"><a href="../../db/d00/classez_o_s_file.htm#a0f8f96ff0fa85cf30484262995c0db79">ezOSFile::GetApplicationDirectory</a></div><div class="ttdeci">static const char * GetApplicationDirectory()</div><div class="ttdoc">Returns the path in which the applications binary file is located.</div><div class="ttdef"><b>Definition:</b> OSFile_win.h:534</div></div>
-<div class="ttc" id="aclassez_string_w_char_htm"><div class="ttname"><a href="../../df/d6c/classez_string_w_char.htm">ezStringWChar</a></div><div class="ttdoc">A very simple string class that should only be used to temporarily convert text to the OSes native wc...</div><div class="ttdef"><b>Definition:</b> StringConversion.h:18</div></div>
-<div class="ttc" id="aclassez_string_builder_htm_aa405316a4995b2fd4883d42f74db9f9a"><div class="ttname"><a href="../../d3/d88/classez_string_builder.htm#aa405316a4995b2fd4883d42f74db9f9a">ezStringBuilder::AppendFormat</a></div><div class="ttdeci">void AppendFormat(const ezFormatString &amp;string)</div><div class="ttdoc">Appends a formatted string. Uses '{}' formatting placeholders, see ezFormatString for details.</div><div class="ttdef"><b>Definition:</b> StringBuilder.cpp:1227</div></div>
+<div class="ttc" id="aclassez_string_builder_htm_ab79507e3dccd411cb2df68c60d560677"><div class="ttname"><a href="../../d3/d88/classez_string_builder.htm#ab79507e3dccd411cb2df68c60d560677">ezStringBuilder::AppendPath</a></div><div class="ttdeci">void AppendPath(ezStringView sPath1, ezStringView sPath2={}, ezStringView sPath3={}, ezStringView sPath4={})</div><div class="ttdoc">Appends several path pieces. Makes sure they are always properly separated by a slash.</div><div class="ttdef"><b>Definition:</b> StringBuilder.cpp:757</div></div>
+<div class="ttc" id="aclassez_o_s_file_htm_acd2b022287e9ee1fca901b2797cd0384"><div class="ttname"><a href="../../db/d00/classez_o_s_file.htm#acd2b022287e9ee1fca901b2797cd0384">ezOSFile::GetCurrentWorkingDirectory</a></div><div class="ttdeci">static const ezString GetCurrentWorkingDirectory()</div><div class="ttdoc">Returns the processes current working directory (CWD).</div><div class="ttdef"><b>Definition:</b> OSFile_win.h:657</div></div>
+<div class="ttc" id="aclassez_o_s_file_htm_a0f8f96ff0fa85cf30484262995c0db79"><div class="ttname"><a href="../../db/d00/classez_o_s_file.htm#a0f8f96ff0fa85cf30484262995c0db79">ezOSFile::GetApplicationDirectory</a></div><div class="ttdeci">static const char * GetApplicationDirectory()</div><div class="ttdoc">Returns the path in which the applications binary file is located.</div><div class="ttdef"><b>Definition:</b> OSFile_win.h:522</div></div>
+<div class="ttc" id="aclassez_string_w_char_htm"><div class="ttname"><a href="../../df/d6c/classez_string_w_char.htm">ezStringWChar</a></div><div class="ttdoc">A very simple string class that should only be used to temporarily convert text to the OSes native wc...</div><div class="ttdef"><b>Definition:</b> StringConversion.h:19</div></div>
+<div class="ttc" id="aclassez_string_builder_htm_aa405316a4995b2fd4883d42f74db9f9a"><div class="ttname"><a href="../../d3/d88/classez_string_builder.htm#aa405316a4995b2fd4883d42f74db9f9a">ezStringBuilder::AppendFormat</a></div><div class="ttdeci">void AppendFormat(const ezFormatString &amp;string)</div><div class="ttdoc">Appends a formatted string. Uses '{}' formatting placeholders, see ezFormatString for details.</div><div class="ttdef"><b>Definition:</b> StringBuilder.cpp:1175</div></div>
 <div class="ttc" id="aclassez_string_builder_htm_a605f325ea4c9c3242454a16657e24ef7"><div class="ttname"><a href="../../d3/d88/classez_string_builder.htm#a605f325ea4c9c3242454a16657e24ef7">ezStringBuilder::Append</a></div><div class="ttdeci">void Append(ezUInt32 uiChar)</div><div class="ttdoc">Appends a single Utf32 character.</div><div class="ttdef"><b>Definition:</b> StringBuilder_inl.h:114</div></div>
-<div class="ttc" id="aclassez_string_builder_htm_ac6b96e398a7232a42c307c753e34b6d8"><div class="ttname"><a href="../../d3/d88/classez_string_builder.htm#ac6b96e398a7232a42c307c753e34b6d8">ezStringBuilder::AppendPath</a></div><div class="ttdeci">void AppendPath(const char *szPath1, const char *szPath2=nullptr, const char *szPath3=nullptr, const char *szPath4=nullptr)</div><div class="ttdoc">Appends several path pieces. Makes sure they are always properly separated by a slash.</div><div class="ttdef"><b>Definition:</b> StringBuilder.cpp:811</div></div>
+<div class="ttc" id="astructez_string_view_htm"><div class="ttname"><a href="../../de/db8/structez_string_view.htm">ezStringView</a></div><div class="ttdoc">ezStringView represent a read-only sub-string of a larger string, as it can store a dedicated string ...</div><div class="ttdef"><b>Definition:</b> StringView.h:22</div></div>
 <div class="ttc" id="aclassez_string_builder_htm"><div class="ttname"><a href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a></div><div class="ttdoc">ezStringBuilder is a class that is meant for creating and modifying strings.</div><div class="ttdef"><b>Definition:</b> StringBuilder.h:34</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_d3a457baa6374475358035c7c7fd0218.htm">Configuration</a></li><li class="navelem"><a class="el" href="../../dir_245892f8103d4491f071f55ed2cafe6d.htm">Implementation</a></li><li class="navelem"><a class="el" href="../../dir_2b645a0bed4e82a93eb46a466e392909.htm">Win</a></li><li class="navelem"><b>Plugin_Win.h</b></li>
-    <li class="footer">Generated on Mon Oct 18 2021 15:33:24 for ezEngine by
+    <li class="footer">Generated on Sun Oct 9 2022 14:44:49 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

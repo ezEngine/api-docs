@@ -101,78 +101,78 @@ $(document).ready(function(){initNavTree('d7/dd3/_foundation_2_profiling_2_profi
 <div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="../../d8/d69/classez_profiling_scope.htm">   16</a></span>&#160;<span class="keyword">class </span>EZ_FOUNDATION_DLL <a class="code" href="../../d8/d69/classez_profiling_scope.htm">ezProfilingScope</a></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <a class="code" href="../../d8/d69/classez_profiling_scope.htm">ezProfilingScope</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* szName, <span class="keyword">const</span> <span class="keywordtype">char</span>* szFunctionName);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <a class="code" href="../../d8/d69/classez_profiling_scope.htm">ezProfilingScope</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* szName, <span class="keyword">const</span> <span class="keywordtype">char</span>* szFunctionName, <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> timeout);</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  ~<a class="code" href="../../d8/d69/classez_profiling_scope.htm">ezProfilingScope</a>();</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">protected</span>:</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* m_szName;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* m_szFunction;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> m_BeginTime;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;};</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="../../d3/d39/classez_profiling_list_scope.htm">   36</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d3/d39/classez_profiling_list_scope.htm">ezProfilingListScope</a></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  EZ_FOUNDATION_DLL <a class="code" href="../../d3/d39/classez_profiling_list_scope.htm">ezProfilingListScope</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* szListName, <span class="keyword">const</span> <span class="keywordtype">char</span>* szFirstSectionName, <span class="keyword">const</span> <span class="keywordtype">char</span>* szFunctionName);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  EZ_FOUNDATION_DLL ~<a class="code" href="../../d3/d39/classez_profiling_list_scope.htm">ezProfilingListScope</a>();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  EZ_FOUNDATION_DLL <span class="keyword">static</span> <span class="keywordtype">void</span> StartNextSection(<span class="keyword">const</span> <span class="keywordtype">char</span>* szNextSectionName);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keyword">static</span> thread_local <a class="code" href="../../d3/d39/classez_profiling_list_scope.htm">ezProfilingListScope</a>* s_pCurrentList;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <a class="code" href="../../d3/d39/classez_profiling_list_scope.htm">ezProfilingListScope</a>* m_pPreviousList;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* m_szListName;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* m_szListFunction;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> m_ListBeginTime;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* m_szCurSectionName;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> m_CurSectionBeginTime;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;};</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="../../d1/dba/classez_profiling_system.htm">   58</a></span>&#160;<span class="keyword">class </span>EZ_FOUNDATION_DLL <a class="code" href="../../d1/dba/classez_profiling_system.htm">ezProfilingSystem</a></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="../../d1/d1c/structez_profiling_system_1_1_thread_info.htm">   61</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../d1/d1c/structez_profiling_system_1_1_thread_info.htm">ThreadInfo</a></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    ezUInt64 m_uiThreadId;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sName;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  };</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="../../d7/da3/structez_profiling_system_1_1_c_p_u_scope.htm">   67</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../d7/da3/structez_profiling_system_1_1_c_p_u_scope.htm">CPUScope</a></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    EZ_DECLARE_POD_TYPE();</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">static</span> constexpr ezUInt32 NAME_SIZE = 40;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* m_szFunctionName;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> m_BeginTime;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> m_EndTime;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">char</span> m_szName[NAME_SIZE];</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  };</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="../../d9/d2d/structez_profiling_system_1_1_c_p_u_scopes_buffer_flat.htm">   79</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../d9/d2d/structez_profiling_system_1_1_c_p_u_scopes_buffer_flat.htm">CPUScopesBufferFlat</a></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;CPUScope&gt;</a> m_Data;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    ezUInt64 m_uiThreadId = 0;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  };</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="../../db/dc6/structez_profiling_system_1_1_g_p_u_scope.htm">   86</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../db/dc6/structez_profiling_system_1_1_g_p_u_scope.htm">GPUScope</a></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  {</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    EZ_DECLARE_POD_TYPE();</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keyword">static</span> constexpr ezUInt32 NAME_SIZE = 48;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> m_BeginTime;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> m_EndTime;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">char</span> m_szName[NAME_SIZE];</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  };</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="../../d8/d0a/structez_profiling_system_1_1_profiling_data.htm">   97</a></span>&#160;  <span class="keyword">struct </span>EZ_FOUNDATION_DLL <a class="code" href="../../d8/d0a/structez_profiling_system_1_1_profiling_data.htm">ProfilingData</a></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    ezUInt32 m_uiFramesThreadID = 0;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    ezUInt32 m_uiGPUThreadID = 0;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> m_Timeout;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;};</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="../../d3/d39/classez_profiling_list_scope.htm">   37</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d3/d39/classez_profiling_list_scope.htm">ezProfilingListScope</a></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  EZ_FOUNDATION_DLL <a class="code" href="../../d3/d39/classez_profiling_list_scope.htm">ezProfilingListScope</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* szListName, <span class="keyword">const</span> <span class="keywordtype">char</span>* szFirstSectionName, <span class="keyword">const</span> <span class="keywordtype">char</span>* szFunctionName);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  EZ_FOUNDATION_DLL ~<a class="code" href="../../d3/d39/classez_profiling_list_scope.htm">ezProfilingListScope</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  EZ_FOUNDATION_DLL <span class="keyword">static</span> <span class="keywordtype">void</span> StartNextSection(<span class="keyword">const</span> <span class="keywordtype">char</span>* szNextSectionName);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keyword">static</span> thread_local <a class="code" href="../../d3/d39/classez_profiling_list_scope.htm">ezProfilingListScope</a>* s_pCurrentList;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <a class="code" href="../../d3/d39/classez_profiling_list_scope.htm">ezProfilingListScope</a>* m_pPreviousList;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* m_szListName;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* m_szListFunction;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> m_ListBeginTime;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* m_szCurSectionName;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> m_CurSectionBeginTime;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;};</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="../../d1/dba/classez_profiling_system.htm">   59</a></span>&#160;<span class="keyword">class </span>EZ_FOUNDATION_DLL <a class="code" href="../../d1/dba/classez_profiling_system.htm">ezProfilingSystem</a></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="../../d1/d1c/structez_profiling_system_1_1_thread_info.htm">   62</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../d1/d1c/structez_profiling_system_1_1_thread_info.htm">ThreadInfo</a></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    ezUInt64 m_uiThreadId;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sName;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  };</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="../../d7/da3/structez_profiling_system_1_1_c_p_u_scope.htm">   68</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../d7/da3/structez_profiling_system_1_1_c_p_u_scope.htm">CPUScope</a></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    EZ_DECLARE_POD_TYPE();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">static</span> constexpr ezUInt32 NAME_SIZE = 40;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* m_szFunctionName;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> m_BeginTime;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> m_EndTime;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">char</span> m_szName[NAME_SIZE];</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  };</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="../../d9/d2d/structez_profiling_system_1_1_c_p_u_scopes_buffer_flat.htm">   80</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../d9/d2d/structez_profiling_system_1_1_c_p_u_scopes_buffer_flat.htm">CPUScopesBufferFlat</a></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;CPUScope&gt;</a> m_Data;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    ezUInt64 m_uiThreadId = 0;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  };</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="../../db/dc6/structez_profiling_system_1_1_g_p_u_scope.htm">   87</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../db/dc6/structez_profiling_system_1_1_g_p_u_scope.htm">GPUScope</a></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    EZ_DECLARE_POD_TYPE();</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keyword">static</span> constexpr ezUInt32 NAME_SIZE = 48;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> m_BeginTime;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> m_EndTime;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">char</span> m_szName[NAME_SIZE];</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  };</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="../../d8/d0a/structez_profiling_system_1_1_profiling_data.htm">   98</a></span>&#160;  <span class="keyword">struct </span>EZ_FOUNDATION_DLL <a class="code" href="../../d8/d0a/structez_profiling_system_1_1_profiling_data.htm">ProfilingData</a></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    ezUInt32 m_uiFramesThreadID = 0;</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    ezOsProcessID m_uiProcessID = 0;</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ThreadInfo, 16&gt;</a> m_ThreadInfos;</div>
@@ -182,7 +182,7 @@ $(document).ready(function(){initNavTree('d7/dd3/_foundation_2_profiling_2_profi
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    ezUInt64 m_uiFrameCount = 0;</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezTime&gt;</a> m_FrameStartTimes;</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;GPUScope&gt;</a> m_GPUScopes;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezDynamicArray&lt;GPUScope&gt;</a>&gt; m_GPUScopes;</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> Write(<a class="code" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a>&amp; outputStream) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
@@ -198,69 +198,79 @@ $(document).ready(function(){initNavTree('d7/dd3/_foundation_2_profiling_2_profi
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> SetDiscardThreshold(<a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> threshold);</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> StartNewFrame();</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> AddCPUScope(<span class="keyword">const</span> <span class="keywordtype">char</span>* szName, <span class="keyword">const</span> <span class="keywordtype">char</span>* szFunctionName, <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> beginTime, <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> endTime);</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <span class="keyword">static</span> ezUInt64 GetFrameCount();</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  EZ_MAKE_SUBSYSTEM_STARTUP_FRIEND(Foundation, ProfilingSystem);</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  <span class="keyword">friend</span> ezUInt32 RunThread(<a class="code" href="../../d2/d18/classez_thread.htm">ezThread</a>* pThread);</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> Initialize();</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> Reset();</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> SetThreadName(<span class="keyword">const</span> <span class="keywordtype">char</span>* szThreadName);</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> RemoveThread();</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> InitializeGPUData();</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> AddGPUScope(<span class="keyword">const</span> <span class="keywordtype">char</span>* szName, <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> beginTime, <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> endTime);</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;};</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="preprocessor">#if EZ_ENABLED(EZ_USE_PROFILING) || defined(EZ_DOCS)</span></div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="preprocessor">#  define EZ_PROFILE_SCOPE(szScopeName) ezProfilingScope EZ_CONCAT(_ezProfilingScope, EZ_SOURCE_LINE)(szScopeName, EZ_SOURCE_FUNCTION)</span></div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="preprocessor">#  define EZ_PROFILE_LIST_SCOPE(szListName, szFirstSectionName) \</span></div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="preprocessor">    ezProfilingListScope EZ_CONCAT(_ezProfilingScope, EZ_SOURCE_LINE)(szListName, szFirstSectionName, EZ_SOURCE_FUNCTION)</span></div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="preprocessor">#  define EZ_PROFILE_LIST_NEXT_SECTION(szNextSectionName) ezProfilingListScope::StartNextSection(szNextSectionName)</span></div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="preprocessor">#  define EZ_PROFILE_SCOPE(Name) </span><span class="comment">/*empty*/</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="preprocessor">#  define EZ_PROFILE_LIST_SCOPE(szListName, szFirstSectionName) </span><span class="comment">/*empty*/</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="preprocessor">#  define EZ_PROFILE_LIST_NEXT_SECTION(szNextSectionName) </span><span class="comment">/*empty*/</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <span class="keyword">using</span> <a class="code" href="../../d5/d68/structez_delegate.htm">ScopeTimeoutDelegate</a> = <a class="code" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>&lt;void(<span class="keyword">const</span> <span class="keywordtype">char</span>* szName, <span class="keyword">const</span> <span class="keywordtype">char</span>* szFunctionName, <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> duration)&gt;;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> SetScopeTimeoutCallback(<a class="code" href="../../d5/d68/structez_delegate.htm">ScopeTimeoutDelegate</a> callback);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> StartNewFrame();</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> AddCPUScope(<span class="keyword">const</span> <span class="keywordtype">char</span>* szName, <span class="keyword">const</span> <span class="keywordtype">char</span>* szFunctionName, <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> beginTime, <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> endTime, <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> scopeTimeout);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  <span class="keyword">static</span> ezUInt64 GetFrameCount();</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  EZ_MAKE_SUBSYSTEM_STARTUP_FRIEND(Foundation, ProfilingSystem);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  <span class="keyword">friend</span> ezUInt32 RunThread(<a class="code" href="../../d2/d18/classez_thread.htm">ezThread</a>* pThread);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> Initialize();</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> Reset();</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> SetThreadName(<span class="keyword">const</span> <span class="keywordtype">char</span>* szThreadName);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> RemoveThread();</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> InitializeGPUData(ezUInt32 gpuCount = 1);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> AddGPUScope(<span class="keyword">const</span> <span class="keywordtype">char</span>* szName, <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> beginTime, <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> endTime, ezUInt32 gpuIndex = 0);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;};</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="preprocessor">#if EZ_ENABLED(EZ_USE_PROFILING) || defined(EZ_DOCS)</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="preprocessor">#  define EZ_PROFILE_SCOPE(szScopeName) ezProfilingScope EZ_CONCAT(_ezProfilingScope, EZ_SOURCE_LINE)(szScopeName, EZ_SOURCE_FUNCTION, ezTime::Zero())</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="preprocessor">#  define EZ_PROFILE_SCOPE_WITH_TIMEOUT(szScopeName, Timeout) ezProfilingScope EZ_CONCAT(_ezProfilingScope, EZ_SOURCE_LINE)(szScopeName, EZ_SOURCE_FUNCTION, Timeout)</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="preprocessor">#  define EZ_PROFILE_LIST_SCOPE(szListName, szFirstSectionName) \</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="preprocessor">    ezProfilingListScope EZ_CONCAT(_ezProfilingScope, EZ_SOURCE_LINE)(szListName, szFirstSectionName, EZ_SOURCE_FUNCTION)</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="preprocessor">#  define EZ_PROFILE_LIST_NEXT_SECTION(szNextSectionName) ezProfilingListScope::StartNextSection(szNextSectionName)</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="preprocessor">#  define EZ_PROFILE_SCOPE(Name) </span><span class="comment">/*empty*/</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="preprocessor">#  define EZ_PROFILE_SCOPE_WITH_TIMEOUT(szScopeName, Timeout) </span><span class="comment">/*empty*/</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="preprocessor">#  define EZ_PROFILE_LIST_SCOPE(szListName, szFirstSectionName) </span><span class="comment">/*empty*/</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="preprocessor">#  define EZ_PROFILE_LIST_NEXT_SECTION(szNextSectionName) </span><span class="comment">/*empty*/</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160; </div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition:</b> Types.h:50</div></div>
 <div class="ttc" id="aclassez_stream_writer_htm"><div class="ttname"><a href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a></div><div class="ttdoc">Interface for binary out (write) streams.</div><div class="ttdef"><b>Definition:</b> Stream.h:101</div></div>
-<div class="ttc" id="astructez_profiling_system_1_1_c_p_u_scopes_buffer_flat_htm"><div class="ttname"><a href="../../d9/d2d/structez_profiling_system_1_1_c_p_u_scopes_buffer_flat.htm">ezProfilingSystem::CPUScopesBufferFlat</a></div><div class="ttdef"><b>Definition:</b> Profiling.h:79</div></div>
+<div class="ttc" id="astructez_profiling_system_1_1_c_p_u_scopes_buffer_flat_htm"><div class="ttname"><a href="../../d9/d2d/structez_profiling_system_1_1_c_p_u_scopes_buffer_flat.htm">ezProfilingSystem::CPUScopesBufferFlat</a></div><div class="ttdef"><b>Definition:</b> Profiling.h:80</div></div>
 <div class="ttc" id="astructez_time_htm"><div class="ttname"><a href="../../d3/d90/structez_time.htm">ezTime</a></div><div class="ttdoc">The time class encapsulates a double value storing the time in seconds.</div><div class="ttdef"><b>Definition:</b> Time.h:11</div></div>
 <div class="ttc" id="aclassez_profiling_scope_htm"><div class="ttname"><a href="../../d8/d69/classez_profiling_scope.htm">ezProfilingScope</a></div><div class="ttdoc">This class encapsulates a profiling scope.</div><div class="ttdef"><b>Definition:</b> Profiling.h:16</div></div>
-<div class="ttc" id="aclassez_profiling_list_scope_htm"><div class="ttname"><a href="../../d3/d39/classez_profiling_list_scope.htm">ezProfilingListScope</a></div><div class="ttdoc">This class implements a profiling scope similar to ezProfilingScope, but with additional sub-scopes w...</div><div class="ttdef"><b>Definition:</b> Profiling.h:36</div></div>
+<div class="ttc" id="aclassez_profiling_list_scope_htm"><div class="ttname"><a href="../../d3/d39/classez_profiling_list_scope.htm">ezProfilingListScope</a></div><div class="ttdoc">This class implements a profiling scope similar to ezProfilingScope, but with additional sub-scopes w...</div><div class="ttdef"><b>Definition:</b> Profiling.h:37</div></div>
 <div class="ttc" id="aclassez_array_ptr_htm"><div class="ttname"><a href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr</a></div><div class="ttdoc">This class encapsulates an array and it's size. It is recommended to use this class instead of plain ...</div><div class="ttdef"><b>Definition:</b> ArrayPtr.h:36</div></div>
-<div class="ttc" id="aclassez_profiling_system_htm"><div class="ttname"><a href="../../d1/dba/classez_profiling_system.htm">ezProfilingSystem</a></div><div class="ttdoc">Helper functionality of the profiling system.</div><div class="ttdef"><b>Definition:</b> Profiling.h:58</div></div>
+<div class="ttc" id="aclassez_profiling_system_htm"><div class="ttname"><a href="../../d1/dba/classez_profiling_system.htm">ezProfilingSystem</a></div><div class="ttdoc">Helper functionality of the profiling system.</div><div class="ttdef"><b>Definition:</b> Profiling.h:59</div></div>
 <div class="ttc" id="astructez_hybrid_string_htm"><div class="ttname"><a href="../../d4/d53/structez_hybrid_string.htm">ezHybridString&lt; 32, ezDefaultAllocatorWrapper &gt;</a></div></div>
-<div class="ttc" id="astructez_profiling_system_1_1_g_p_u_scope_htm"><div class="ttname"><a href="../../db/dc6/structez_profiling_system_1_1_g_p_u_scope.htm">ezProfilingSystem::GPUScope</a></div><div class="ttdoc">Helper struct to hold GPU profiling data.</div><div class="ttdef"><b>Definition:</b> Profiling.h:86</div></div>
+<div class="ttc" id="astructez_profiling_system_1_1_g_p_u_scope_htm"><div class="ttname"><a href="../../db/dc6/structez_profiling_system_1_1_g_p_u_scope.htm">ezProfilingSystem::GPUScope</a></div><div class="ttdoc">Helper struct to hold GPU profiling data.</div><div class="ttdef"><b>Definition:</b> Profiling.h:87</div></div>
 <div class="ttc" id="aclassez_dynamic_array_htm"><div class="ttname"><a href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray</a></div><div class="ttdef"><b>Definition:</b> DynamicArray.h:80</div></div>
+<div class="ttc" id="astructez_delegate_htm"><div class="ttname"><a href="../../d5/d68/structez_delegate.htm">ezDelegate</a></div><div class="ttdoc">A generic delegate class which supports static functions and member functions.</div><div class="ttdef"><b>Definition:</b> Delegate.h:75</div></div>
 <div class="ttc" id="aclassez_thread_htm"><div class="ttname"><a href="../../d2/d18/classez_thread.htm">ezThread</a></div><div class="ttdoc">This class is the base class for platform independent long running threads.</div><div class="ttdef"><b>Definition:</b> Thread.h:39</div></div>
-<div class="ttc" id="astructez_profiling_system_1_1_thread_info_htm"><div class="ttname"><a href="../../d1/d1c/structez_profiling_system_1_1_thread_info.htm">ezProfilingSystem::ThreadInfo</a></div><div class="ttdef"><b>Definition:</b> Profiling.h:61</div></div>
+<div class="ttc" id="astructez_profiling_system_1_1_thread_info_htm"><div class="ttname"><a href="../../d1/d1c/structez_profiling_system_1_1_thread_info.htm">ezProfilingSystem::ThreadInfo</a></div><div class="ttdef"><b>Definition:</b> Profiling.h:62</div></div>
 <div class="ttc" id="aclassez_hybrid_array_htm"><div class="ttname"><a href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray</a></div><div class="ttdoc">A hybrid array uses in-place storage to handle the first few elements without any allocation....</div><div class="ttdef"><b>Definition:</b> HybridArray.h:11</div></div>
-<div class="ttc" id="astructez_profiling_system_1_1_profiling_data_htm"><div class="ttname"><a href="../../d8/d0a/structez_profiling_system_1_1_profiling_data.htm">ezProfilingSystem::ProfilingData</a></div><div class="ttdef"><b>Definition:</b> Profiling.h:97</div></div>
-<div class="ttc" id="astructez_profiling_system_1_1_c_p_u_scope_htm"><div class="ttname"><a href="../../d7/da3/structez_profiling_system_1_1_c_p_u_scope.htm">ezProfilingSystem::CPUScope</a></div><div class="ttdef"><b>Definition:</b> Profiling.h:67</div></div>
+<div class="ttc" id="astructez_profiling_system_1_1_profiling_data_htm"><div class="ttname"><a href="../../d8/d0a/structez_profiling_system_1_1_profiling_data.htm">ezProfilingSystem::ProfilingData</a></div><div class="ttdef"><b>Definition:</b> Profiling.h:98</div></div>
+<div class="ttc" id="astructez_profiling_system_1_1_c_p_u_scope_htm"><div class="ttname"><a href="../../d7/da3/structez_profiling_system_1_1_c_p_u_scope.htm">ezProfilingSystem::CPUScope</a></div><div class="ttdef"><b>Definition:</b> Profiling.h:68</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_3f71f1fb2a597d5f333d160727d3cc0a.htm">Profiling</a></li><li class="navelem"><b>Profiling.h</b></li>
-    <li class="footer">Generated on Mon Oct 18 2021 15:33:28 for ezEngine by
+    <li class="footer">Generated on Sun Oct 9 2022 14:44:54 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

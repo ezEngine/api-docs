@@ -12,8 +12,8 @@ var structez_expression_byte_code_1_1_op_code =
       [ "ATan_R", "d0/d29/structez_expression_byte_code_1_1_op_code.htm#a9711f28193f9ba219d7357358611b3a6a82f48f6af4e079db3818fc8a78eaf368", null ],
       [ "Mov_R", "d0/d29/structez_expression_byte_code_1_1_op_code.htm#a9711f28193f9ba219d7357358611b3a6a318e699adfc5e3ec0cfb7549852a4288", null ],
       [ "Mov_C", "d0/d29/structez_expression_byte_code_1_1_op_code.htm#a9711f28193f9ba219d7357358611b3a6ad927dc6bfc2db41123d512fd54bccd51", null ],
-      [ "Mov_I", "d0/d29/structez_expression_byte_code_1_1_op_code.htm#a9711f28193f9ba219d7357358611b3a6a6a1e93cd93b978858bf09f36bc04e1d4", null ],
-      [ "Mov_O", "d0/d29/structez_expression_byte_code_1_1_op_code.htm#a9711f28193f9ba219d7357358611b3a6ac677087f9f0091ca1c2b4114c51d7bb0", null ],
+      [ "Load", "d0/d29/structez_expression_byte_code_1_1_op_code.htm#a9711f28193f9ba219d7357358611b3a6ab77adee41961e4d57c1d4c07d319a474", null ],
+      [ "Store", "d0/d29/structez_expression_byte_code_1_1_op_code.htm#a9711f28193f9ba219d7357358611b3a6a075e7e31acbfdc87b985761120a07028", null ],
       [ "LastUnary", "d0/d29/structez_expression_byte_code_1_1_op_code.htm#a9711f28193f9ba219d7357358611b3a6afc8a068f39077e263ee3145a482dc3c7", null ],
       [ "FirstBinary", "d0/d29/structez_expression_byte_code_1_1_op_code.htm#a9711f28193f9ba219d7357358611b3a6a38404f89b3a34339e1d316deed67a341", null ],
       [ "Add_RR", "d0/d29/structez_expression_byte_code_1_1_op_code.htm#a9711f28193f9ba219d7357358611b3a6a86099dd3c90bee5d12a10747849bb843", null ],
@@ -30,6 +30,7 @@ var structez_expression_byte_code_1_1_op_code =
       [ "Max_CR", "d0/d29/structez_expression_byte_code_1_1_op_code.htm#a9711f28193f9ba219d7357358611b3a6a325c56453cf59dfb66cd5cdba64ce507", null ],
       [ "LastBinary", "d0/d29/structez_expression_byte_code_1_1_op_code.htm#a9711f28193f9ba219d7357358611b3a6a5ac221b16aade6ed18c9770b2be6a944", null ],
       [ "Call", "d0/d29/structez_expression_byte_code_1_1_op_code.htm#a9711f28193f9ba219d7357358611b3a6a670958c5b10f6bc4d46e24c0c46acddb", null ],
+      [ "Nop", "d0/d29/structez_expression_byte_code_1_1_op_code.htm#a9711f28193f9ba219d7357358611b3a6a5620a82e5ffaa9489438791894144c59", null ],
       [ "Count", "d0/d29/structez_expression_byte_code_1_1_op_code.htm#a9711f28193f9ba219d7357358611b3a6ab21e861e54716a50322a7fd2e97cd78a", null ]
     ] ]
 ];

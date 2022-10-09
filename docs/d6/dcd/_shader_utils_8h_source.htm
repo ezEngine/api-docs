@@ -95,54 +95,85 @@ $(document).ready(function(){initNavTree('d6/dcd/_shader_utils_8h_source.htm','.
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;Foundation/Math/Vec2.h&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;Foundation/Math/Vec3.h&gt;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span>ezShaderUtils</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="../../db/d68/classez_shader_utils.htm">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../db/d68/classez_shader_utils.htm">ezShaderUtils</a></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  EZ_ALWAYS_INLINE ezUInt32 Float3ToRGB10(<a class="code" href="../../d6/dbd/structez_vec3_template.htm">ezVec3</a> value)</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d6/dbd/structez_vec3_template.htm">ezVec3</a> unsignedValue = value * 0.5f + <a class="code" href="../../d6/dbd/structez_vec3_template.htm">ezVec3</a>(0.5f);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">const</span> ezUInt32 r = <a class="code" href="../../db/d78/namespaceez_math.htm#aaaedc100ad5d35ae5362021b9d1b0e7c">ezMath::Clamp</a>(<span class="keyword">static_cast&lt;</span>ezUInt32<span class="keyword">&gt;</span>(unsignedValue.x * 1023.0f + 0.5f), 0u, 1023u);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">const</span> ezUInt32 g = <a class="code" href="../../db/d78/namespaceez_math.htm#aaaedc100ad5d35ae5362021b9d1b0e7c">ezMath::Clamp</a>(<span class="keyword">static_cast&lt;</span>ezUInt32<span class="keyword">&gt;</span>(unsignedValue.y * 1023.0f + 0.5f), 0u, 1023u);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">const</span> ezUInt32 b = <a class="code" href="../../db/d78/namespaceez_math.htm#aaaedc100ad5d35ae5362021b9d1b0e7c">ezMath::Clamp</a>(<span class="keyword">static_cast&lt;</span>ezUInt32<span class="keyword">&gt;</span>(unsignedValue.z * 1023.0f + 0.5f), 0u, 1023u);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">return</span> r | (g &lt;&lt; 10) | (b &lt;&lt; 20);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  }</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  EZ_ALWAYS_INLINE ezUInt32 PackFloat16intoUint(<a class="code" href="../../d7/dca/classez_float16.htm">ezFloat16</a> x, <a class="code" href="../../d7/dca/classez_float16.htm">ezFloat16</a> y)</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">const</span> ezUInt32 r = x.<a class="code" href="../../d7/dca/classez_float16.htm#a20d94b79d49e2aa1e148f6e761bc727c">GetRawData</a>();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">const</span> ezUInt32 g = y.<a class="code" href="../../d7/dca/classez_float16.htm#a20d94b79d49e2aa1e148f6e761bc727c">GetRawData</a>();</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">return</span> r | (g &lt;&lt; 16);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  }</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  EZ_ALWAYS_INLINE ezUInt32 Float2ToRG16F(<a class="code" href="../../d1/df8/classez_vec2_template.htm">ezVec2</a> value)</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">const</span> ezUInt32 r = <a class="code" href="../../d7/dca/classez_float16.htm">ezFloat16</a>(value.x).<a class="code" href="../../d7/dca/classez_float16.htm#a20d94b79d49e2aa1e148f6e761bc727c">GetRawData</a>();</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">const</span> ezUInt32 g = <a class="code" href="../../d7/dca/classez_float16.htm">ezFloat16</a>(value.y).<a class="code" href="../../d7/dca/classez_float16.htm#a20d94b79d49e2aa1e148f6e761bc727c">GetRawData</a>();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">return</span> r | (g &lt;&lt; 16);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  }</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">void</span> Float4ToRGBA16F(<a class="code" href="../../da/dd2/classez_vec4_template.htm">ezVec4</a> value, ezUInt32&amp; out_RG, ezUInt32&amp; out_BA)</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    out_RG = Float2ToRG16F(<a class="code" href="../../d1/df8/classez_vec2_template.htm">ezVec2</a>(value.x, value.y));</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    out_BA = Float2ToRG16F(<a class="code" href="../../d1/df8/classez_vec2_template.htm">ezVec2</a>(value.z, value.w));</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;} <span class="comment">// namespace ezShaderUtils</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  EZ_ALWAYS_INLINE <span class="keyword">static</span> ezUInt32 Float3ToRGB10(<a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> value)</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> unsignedValue = value * 0.5f + <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>(0.5f);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">const</span> ezUInt32 r = <a class="code" href="../../db/d78/namespaceez_math.htm#aaaedc100ad5d35ae5362021b9d1b0e7c">ezMath::Clamp</a>(<span class="keyword">static_cast&lt;</span>ezUInt32<span class="keyword">&gt;</span>(unsignedValue.x * 1023.0f + 0.5f), 0u, 1023u);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">const</span> ezUInt32 g = <a class="code" href="../../db/d78/namespaceez_math.htm#aaaedc100ad5d35ae5362021b9d1b0e7c">ezMath::Clamp</a>(<span class="keyword">static_cast&lt;</span>ezUInt32<span class="keyword">&gt;</span>(unsignedValue.y * 1023.0f + 0.5f), 0u, 1023u);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">const</span> ezUInt32 b = <a class="code" href="../../db/d78/namespaceez_math.htm#aaaedc100ad5d35ae5362021b9d1b0e7c">ezMath::Clamp</a>(<span class="keyword">static_cast&lt;</span>ezUInt32<span class="keyword">&gt;</span>(unsignedValue.z * 1023.0f + 0.5f), 0u, 1023u);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">return</span> r | (g &lt;&lt; 10) | (b &lt;&lt; 20);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  }</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  EZ_ALWAYS_INLINE <span class="keyword">static</span> ezUInt32 PackFloat16intoUint(<a class="code" href="../../d7/dca/classez_float16.htm">ezFloat16</a> x, <a class="code" href="../../d7/dca/classez_float16.htm">ezFloat16</a> y)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">const</span> ezUInt32 r = x.<a class="code" href="../../d7/dca/classez_float16.htm#a20d94b79d49e2aa1e148f6e761bc727c">GetRawData</a>();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">const</span> ezUInt32 g = y.<a class="code" href="../../d7/dca/classez_float16.htm#a20d94b79d49e2aa1e148f6e761bc727c">GetRawData</a>();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">return</span> r | (g &lt;&lt; 16);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  EZ_ALWAYS_INLINE <span class="keyword">static</span> ezUInt32 Float2ToRG16F(<a class="code" href="../../d1/df8/classez_vec2_template.htm">ezVec2</a> value)</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">const</span> ezUInt32 r = <a class="code" href="../../d7/dca/classez_float16.htm">ezFloat16</a>(value.x).<a class="code" href="../../d7/dca/classez_float16.htm#a20d94b79d49e2aa1e148f6e761bc727c">GetRawData</a>();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">const</span> ezUInt32 g = <a class="code" href="../../d7/dca/classez_float16.htm">ezFloat16</a>(value.y).<a class="code" href="../../d7/dca/classez_float16.htm#a20d94b79d49e2aa1e148f6e761bc727c">GetRawData</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">return</span> r | (g &lt;&lt; 16);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  EZ_ALWAYS_INLINE <span class="keyword">static</span> <span class="keywordtype">void</span> Float4ToRGBA16F(<a class="code" href="../../da/dd2/classez_vec4_template.htm">ezVec4</a> value, ezUInt32&amp; out_RG, ezUInt32&amp; out_BA)</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    out_RG = Float2ToRG16F(<a class="code" href="../../d1/df8/classez_vec2_template.htm">ezVec2</a>(value.x, value.y));</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    out_BA = Float2ToRG16F(<a class="code" href="../../d1/df8/classez_vec2_template.htm">ezVec2</a>(value.z, value.w));</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keyword">enum class</span> ezBuiltinShaderType</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    CopyImage,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    CopyImageArray,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    DownscaleImage,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    DownscaleImageArray,</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  };</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="../../d4/df4/structez_shader_utils_1_1ez_builtin_shader.htm">   53</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../d4/df4/structez_shader_utils_1_1ez_builtin_shader.htm">ezBuiltinShader</a></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="../../d1/d55/classez_g_a_l_shader_handle.htm">ezGALShaderHandle</a> m_hActiveGALShader;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="../../de/d2f/classez_g_a_l_blend_state_handle.htm">ezGALBlendStateHandle</a> m_hBlendState;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="../../d6/d5b/classez_g_a_l_depth_stencil_state_handle.htm">ezGALDepthStencilStateHandle</a> m_hDepthStencilState;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="../../d7/d7f/classez_g_a_l_rasterizer_state_handle.htm">ezGALRasterizerStateHandle</a> m_hRasterizerState;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  };</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  EZ_RENDERERFOUNDATION_DLL <span class="keyword">static</span> <a class="code" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>&lt;void(ezBuiltinShaderType type, <a class="code" href="../../d4/df4/structez_shader_utils_1_1ez_builtin_shader.htm">ezBuiltinShader</a>&amp; out_shader)&gt; g_RequestBuiltinShaderCallback;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  EZ_ALWAYS_INLINE <span class="keyword">static</span> <span class="keywordtype">void</span> RequestBuiltinShader(ezBuiltinShaderType type, <a class="code" href="../../d4/df4/structez_shader_utils_1_1ez_builtin_shader.htm">ezBuiltinShader</a>&amp; out_shader)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    g_RequestBuiltinShaderCallback(type, out_shader);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="astructez_shader_utils_1_1ez_builtin_shader_htm"><div class="ttname"><a href="../../d4/df4/structez_shader_utils_1_1ez_builtin_shader.htm">ezShaderUtils::ezBuiltinShader</a></div><div class="ttdef"><b>Definition:</b> ShaderUtils.h:53</div></div>
 <div class="ttc" id="aclassez_float16_htm"><div class="ttname"><a href="../../d7/dca/classez_float16.htm">ezFloat16</a></div><div class="ttdoc">A 16 bit IEEE float class. Often called &quot;half&quot;.</div><div class="ttdef"><b>Definition:</b> Float16.h:7</div></div>
+<div class="ttc" id="aclassez_g_a_l_blend_state_handle_htm"><div class="ttname"><a href="../../de/d2f/classez_g_a_l_blend_state_handle.htm">ezGALBlendStateHandle</a></div><div class="ttdef"><b>Definition:</b> RendererFoundationDLL.h:372</div></div>
+<div class="ttc" id="aclassez_g_a_l_depth_stencil_state_handle_htm"><div class="ttname"><a href="../../d6/d5b/classez_g_a_l_depth_stencil_state_handle.htm">ezGALDepthStencilStateHandle</a></div><div class="ttdef"><b>Definition:</b> RendererFoundationDLL.h:365</div></div>
 <div class="ttc" id="anamespaceez_math_htm_aaaedc100ad5d35ae5362021b9d1b0e7c"><div class="ttname"><a href="../../db/d78/namespaceez_math.htm#aaaedc100ad5d35ae5362021b9d1b0e7c">ezMath::Clamp</a></div><div class="ttdeci">constexpr EZ_ALWAYS_INLINE T Clamp(T value, T min_val, T max_val)</div><div class="ttdoc">Clamps &quot;value&quot; to the range [min; max]. Returns &quot;value&quot;, if it is inside the range already.</div><div class="ttdef"><b>Definition:</b> Math_inl.h:50</div></div>
-<div class="ttc" id="astructez_vec3_template_htm"><div class="ttname"><a href="../../d6/dbd/structez_vec3_template.htm">ezVec3Template&lt; float &gt;</a></div></div>
-<div class="ttc" id="aclassez_vec2_template_htm"><div class="ttname"><a href="../../d1/df8/classez_vec2_template.htm">ezVec2Template</a></div><div class="ttdoc">A 2-component vector class.</div><div class="ttdef"><b>Definition:</b> Declarations.h:126</div></div>
-<div class="ttc" id="aclassez_vec4_template_htm"><div class="ttname"><a href="../../da/dd2/classez_vec4_template.htm">ezVec4Template</a></div><div class="ttdoc">A 4-component vector class.</div><div class="ttdef"><b>Definition:</b> Declarations.h:142</div></div>
+<div class="ttc" id="aclassez_shader_utils_htm"><div class="ttname"><a href="../../db/d68/classez_shader_utils.htm">ezShaderUtils</a></div><div class="ttdef"><b>Definition:</b> ShaderUtils.h:9</div></div>
+<div class="ttc" id="aclassez_g_a_l_shader_handle_htm"><div class="ttname"><a href="../../d1/d55/classez_g_a_l_shader_handle.htm">ezGALShaderHandle</a></div><div class="ttdef"><b>Definition:</b> RendererFoundationDLL.h:323</div></div>
+<div class="ttc" id="astructez_delegate_htm"><div class="ttname"><a href="../../d5/d68/structez_delegate.htm">ezDelegate</a></div><div class="ttdoc">A generic delegate class which supports static functions and member functions.</div><div class="ttdef"><b>Definition:</b> Delegate.h:75</div></div>
+<div class="ttc" id="aclassez_g_a_l_rasterizer_state_handle_htm"><div class="ttname"><a href="../../d7/d7f/classez_g_a_l_rasterizer_state_handle.htm">ezGALRasterizerStateHandle</a></div><div class="ttdef"><b>Definition:</b> RendererFoundationDLL.h:379</div></div>
+<div class="ttc" id="aclassez_vec2_template_htm"><div class="ttname"><a href="../../d1/df8/classez_vec2_template.htm">ezVec2Template&lt; float &gt;</a></div></div>
+<div class="ttc" id="aclassez_vec4_template_htm"><div class="ttname"><a href="../../da/dd2/classez_vec4_template.htm">ezVec4Template&lt; float &gt;</a></div></div>
+<div class="ttc" id="aclassez_vec3_template_htm"><div class="ttname"><a href="../../da/df1/classez_vec3_template.htm">ezVec3Template&lt; float &gt;</a></div></div>
 <div class="ttc" id="aclassez_float16_htm_a20d94b79d49e2aa1e148f6e761bc727c"><div class="ttname"><a href="../../d7/dca/classez_float16.htm#a20d94b79d49e2aa1e148f6e761bc727c">ezFloat16::GetRawData</a></div><div class="ttdeci">ezUInt16 GetRawData() const</div><div class="ttdoc">Returns the raw 16 Bit data.</div><div class="ttdef"><b>Definition:</b> Float16.h:26</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_86889b9ebd9c49a9e3637c5d5b24303b.htm">RendererFoundation</a></li><li class="navelem"><a class="el" href="../../dir_b90e2f50d63f5b3eb887d768efdf99ab.htm">Shader</a></li><li class="navelem"><b>ShaderUtils.h</b></li>
-    <li class="footer">Generated on Mon Oct 18 2021 15:33:32 for ezEngine by
+    <li class="footer">Generated on Sun Oct 9 2022 14:44:58 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

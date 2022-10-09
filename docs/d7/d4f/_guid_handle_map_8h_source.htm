@@ -103,65 +103,71 @@ $(document).ready(function(){initNavTree('d7/d4f/_guid_handle_map_8h_source.htm'
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keywordtype">void</span> RegisterObject(<a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a> guid, HandleType handle)</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    m_GuidToHandle[guid] = handle;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    m_HandleToGuid[handle] = guid;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="comment">// apparently this happens during undo/redo (same guid, new handle on undo)</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="comment">// EZ_ASSERT_DEV(m_GuidToHandle.GetCount() == m_HandleToGuid.GetCount(), &quot;1:1 relationship is broken. Check operator&lt; for handle type.&quot;);</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  }</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keywordtype">void</span> UnregisterObject(<a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a> guid)</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">const</span> HandleType handle = m_GuidToHandle[guid];</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    m_GuidToHandle.<a class="code" href="../../de/dc3/classez_hash_table_base.htm#a833d9e945a03427c985e5338d88d0a80">Remove</a>(guid);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    m_HandleToGuid.<a class="code" href="../../d1/d43/classez_map_base.htm#a39ec812de69d422bdff1acc12d1d516f">Remove</a>(handle);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">// apparently this happens during undo/redo (same guid, new handle on undo)</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">// EZ_ASSERT_DEV(m_GuidToHandle.GetCount() == m_HandleToGuid.GetCount(), &quot;1:1 relationship is broken. Check operator&lt; for handle type.&quot;);</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  }</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordtype">void</span> UnregisterObject(HandleType handle)</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a> guid = m_HandleToGuid[handle];</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    m_GuidToHandle.<a class="code" href="../../de/dc3/classez_hash_table_base.htm#a833d9e945a03427c985e5338d88d0a80">Remove</a>(guid);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    m_HandleToGuid.<a class="code" href="../../d1/d43/classez_map_base.htm#a39ec812de69d422bdff1acc12d1d516f">Remove</a>(handle);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">// apparently this happens during undo/redo (same guid, new handle on undo)</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">// EZ_ASSERT_DEV(m_GuidToHandle.GetCount() == m_HandleToGuid.GetCount(), &quot;1:1 relationship is broken. Check operator&lt; for handle type.&quot;);</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  }</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">auto</span> it = m_GuidToHandle.<a class="code" href="../../de/dc3/classez_hash_table_base.htm#a9c2ec41f21459ef7916326b393e415ce">Find</a>(guid);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">if</span> (it.IsValid())</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;      <span class="comment">// During undo/redo we may register the same object again. In that case, just use the new version.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;      UnregisterObject(guid);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    m_GuidToHandle[guid] = handle;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    m_HandleToGuid[handle] = guid;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    EZ_ASSERT_DEV(m_GuidToHandle.<a class="code" href="../../de/dc3/classez_hash_table_base.htm#a402cd17d004d929d9f777ca089bf8d8f">GetCount</a>() == m_HandleToGuid.<a class="code" href="../../d1/d43/classez_map_base.htm#a400e55a001e58137d0e483a2aba85784">GetCount</a>(), <span class="stringliteral">&quot;1:1 relationship is broken. Check operator&lt; for handle type.&quot;</span>);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordtype">void</span> UnregisterObject(<a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a> guid)</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">const</span> HandleType handle = m_GuidToHandle[guid];</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    m_GuidToHandle.<a class="code" href="../../de/dc3/classez_hash_table_base.htm#a833d9e945a03427c985e5338d88d0a80">Remove</a>(guid);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    m_HandleToGuid.<a class="code" href="../../d1/d43/classez_map_base.htm#a39ec812de69d422bdff1acc12d1d516f">Remove</a>(handle);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    EZ_ASSERT_DEV(m_GuidToHandle.<a class="code" href="../../de/dc3/classez_hash_table_base.htm#a402cd17d004d929d9f777ca089bf8d8f">GetCount</a>() == m_HandleToGuid.<a class="code" href="../../d1/d43/classez_map_base.htm#a400e55a001e58137d0e483a2aba85784">GetCount</a>(), <span class="stringliteral">&quot;1:1 relationship is broken. Check operator&lt; for handle type.&quot;</span>);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordtype">void</span> UnregisterObject(HandleType handle)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a> guid = m_HandleToGuid[handle];</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    m_GuidToHandle.<a class="code" href="../../de/dc3/classez_hash_table_base.htm#a833d9e945a03427c985e5338d88d0a80">Remove</a>(guid);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    m_HandleToGuid.<a class="code" href="../../d1/d43/classez_map_base.htm#a39ec812de69d422bdff1acc12d1d516f">Remove</a>(handle);</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  HandleType GetHandle(<a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a> guid)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    HandleType res = HandleType();</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    m_GuidToHandle.<a class="code" href="../../de/dc3/classez_hash_table_base.htm#a6c279d62f8e45eb196bd532f2f9c95a5">TryGetValue</a>(guid, res);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">return</span> res;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  }</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a> GetGuid(HandleType handle)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_HandleToGuid.<a class="code" href="../../d1/d43/classez_map_base.htm#a607565550de36a41762eec35182ad52d">GetValueOrDefault</a>(handle, <a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a>()); }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;HandleType, ezUuid&gt;</a>&amp; GetHandleToGuidMap()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_HandleToGuid; }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <a class="code" href="../../d8/d86/classez_hash_table.htm">ezHashTable&lt;ezUuid, HandleType&gt;</a> m_GuidToHandle;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;HandleType, ezUuid&gt;</a> m_HandleToGuid;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;};</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    EZ_ASSERT_DEV(m_GuidToHandle.<a class="code" href="../../de/dc3/classez_hash_table_base.htm#a402cd17d004d929d9f777ca089bf8d8f">GetCount</a>() == m_HandleToGuid.<a class="code" href="../../d1/d43/classez_map_base.htm#a400e55a001e58137d0e483a2aba85784">GetCount</a>(), <span class="stringliteral">&quot;1:1 relationship is broken. Check operator&lt; for handle type.&quot;</span>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  HandleType GetHandle(<a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a> guid)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">  </span>{</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    HandleType res = HandleType();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    m_GuidToHandle.<a class="code" href="../../de/dc3/classez_hash_table_base.htm#a6c279d62f8e45eb196bd532f2f9c95a5">TryGetValue</a>(guid, res);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">return</span> res;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a> GetGuid(HandleType handle)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_HandleToGuid.<a class="code" href="../../d1/d43/classez_map_base.htm#a607565550de36a41762eec35182ad52d">GetValueOrDefault</a>(handle, <a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a>()); }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;HandleType, ezUuid&gt;</a>&amp; GetHandleToGuidMap()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_HandleToGuid; }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <a class="code" href="../../d8/d86/classez_hash_table.htm">ezHashTable&lt;ezUuid, HandleType&gt;</a> m_GuidToHandle;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;HandleType, ezUuid&gt;</a> m_HandleToGuid;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_hash_table_base_htm_a833d9e945a03427c985e5338d88d0a80"><div class="ttname"><a href="../../de/dc3/classez_hash_table_base.htm#a833d9e945a03427c985e5338d88d0a80">ezHashTableBase::Remove</a></div><div class="ttdeci">bool Remove(const CompatibleKeyType &amp;key, ValueType *out_oldValue=nullptr)</div><div class="ttdoc">Removes the entry with the given key. Returns whether an entry was removed and optionally writes out ...</div></div>
 <div class="ttc" id="aclassez_map_base_htm_a5946a15134311c8353deeee06670e412"><div class="ttname"><a href="../../d1/d43/classez_map_base.htm#a5946a15134311c8353deeee06670e412">ezMapBase::Clear</a></div><div class="ttdeci">void Clear()</div><div class="ttdoc">Destroys all elements in the map and resets its size to zero.</div><div class="ttdef"><b>Definition:</b> Map_inl.h:160</div></div>
+<div class="ttc" id="aclassez_map_base_htm_a400e55a001e58137d0e483a2aba85784"><div class="ttname"><a href="../../d1/d43/classez_map_base.htm#a400e55a001e58137d0e483a2aba85784">ezMapBase::GetCount</a></div><div class="ttdeci">ezUInt32 GetCount() const</div><div class="ttdoc">Returns the number of elements currently stored in the map. O(1) operation.</div><div class="ttdef"><b>Definition:</b> Map_inl.h:185</div></div>
 <div class="ttc" id="aclassez_editor_guid_engine_handle_map_htm"><div class="ttname"><a href="../../d9/deb/classez_editor_guid_engine_handle_map.htm">ezEditorGuidEngineHandleMap</a></div><div class="ttdef"><b>Definition:</b> GuidHandleMap.h:6</div></div>
 <div class="ttc" id="aclassez_map_htm"><div class="ttname"><a href="../../d1/d79/classez_map.htm">ezMap&lt; HandleType, ezUuid &gt;</a></div></div>
 <div class="ttc" id="aclassez_map_base_htm_a607565550de36a41762eec35182ad52d"><div class="ttname"><a href="../../d1/d43/classez_map_base.htm#a607565550de36a41762eec35182ad52d">ezMapBase::GetValueOrDefault</a></div><div class="ttdeci">const ValueType &amp; GetValueOrDefault(const CompatibleKeyType &amp;key, const ValueType &amp;defaultValue) const</div><div class="ttdoc">Either returns the value of the entry with the given key, if found, or the provided default value.</div></div>
 <div class="ttc" id="aclassez_uuid_htm"><div class="ttname"><a href="../../da/d89/classez_uuid.htm">ezUuid</a></div><div class="ttdoc">This data type is the abstraction for 128-bit Uuid (also known as GUID) instances.</div><div class="ttdef"><b>Definition:</b> Uuid.h:10</div></div>
 <div class="ttc" id="aclassez_hash_table_base_htm_af42ca8f8e469ae41fe6aa8a87f8a1ccc"><div class="ttname"><a href="../../de/dc3/classez_hash_table_base.htm#af42ca8f8e469ae41fe6aa8a87f8a1ccc">ezHashTableBase::Clear</a></div><div class="ttdeci">void Clear()</div><div class="ttdoc">Clears the table.</div><div class="ttdef"><b>Definition:</b> HashTable_inl.h:314</div></div>
+<div class="ttc" id="aclassez_hash_table_base_htm_a402cd17d004d929d9f777ca089bf8d8f"><div class="ttname"><a href="../../de/dc3/classez_hash_table_base.htm#a402cd17d004d929d9f777ca089bf8d8f">ezHashTableBase::GetCount</a></div><div class="ttdeci">ezUInt32 GetCount() const</div><div class="ttdoc">Returns the number of active entries in the table.</div><div class="ttdef"><b>Definition:</b> HashTable_inl.h:302</div></div>
 <div class="ttc" id="aclassez_map_base_htm_a39ec812de69d422bdff1acc12d1d516f"><div class="ttname"><a href="../../d1/d43/classez_map_base.htm#a39ec812de69d422bdff1acc12d1d516f">ezMapBase::Remove</a></div><div class="ttdeci">bool Remove(const CompatibleKeyType &amp;key)</div><div class="ttdoc">Erases the key/value pair with the given key, if it exists. O(log n) operation.</div><div class="ttdef"><b>Definition:</b> Map_inl.h:530</div></div>
 <div class="ttc" id="aclassez_hash_table_htm"><div class="ttname"><a href="../../d8/d86/classez_hash_table.htm">ezHashTable&lt; ezUuid, HandleType &gt;</a></div></div>
 <div class="ttc" id="aclassez_hash_table_base_htm_a6c279d62f8e45eb196bd532f2f9c95a5"><div class="ttname"><a href="../../de/dc3/classez_hash_table_base.htm#a6c279d62f8e45eb196bd532f2f9c95a5">ezHashTableBase::TryGetValue</a></div><div class="ttdeci">bool TryGetValue(const CompatibleKeyType &amp;key, ValueType &amp;out_value) const</div><div class="ttdoc">Returns whether an entry with the given key was found and if found writes out the corresponding value...</div></div>
+<div class="ttc" id="aclassez_hash_table_base_htm_a9c2ec41f21459ef7916326b393e415ce"><div class="ttname"><a href="../../de/dc3/classez_hash_table_base.htm#a9c2ec41f21459ef7916326b393e415ce">ezHashTableBase::Find</a></div><div class="ttdeci">ConstIterator Find(const CompatibleKeyType &amp;key) const</div><div class="ttdoc">Searches for key, returns a ConstIterator to it or an invalid iterator, if no such key is found....</div><div class="ttdef"><b>Definition:</b> HashTable_inl.h:484</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_898824d97bbfb864e5ee6bfb2857fc31.htm">Editor</a></li><li class="navelem"><a class="el" href="../../dir_58cd665830f691b636779262d22385da.htm">EditorEngineProcessFramework</a></li><li class="navelem"><a class="el" href="../../dir_2191880c6b569b9c9b9d9bd637a2d0d3.htm">EngineProcess</a></li><li class="navelem"><b>GuidHandleMap.h</b></li>
-    <li class="footer">Generated on Mon Oct 18 2021 15:33:22 for ezEngine by
+    <li class="footer">Generated on Sun Oct 9 2022 14:44:47 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

@@ -111,7 +111,7 @@ $(document).ready(function(){initNavTree('d6/df1/_particle_effect_controller_8h_
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordtype">bool</span> IsContinuousEffect()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> GetInstance()-&gt;IsContinuous(); }</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keywordtype">void</span> SetTransform(<span class="keyword">const</span> <a class="code" href="../../d3/db1/classez_transform_template.htm">ezTransform</a>&amp; t, <span class="keyword">const</span> <a class="code" href="../../d6/dbd/structez_vec3_template.htm">ezVec3</a>&amp; vParticleStartVelocity) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keywordtype">void</span> SetTransform(<span class="keyword">const</span> <a class="code" href="../../d3/db1/classez_transform_template.htm">ezTransform</a>&amp; t, <span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; vParticleStartVelocity) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordtype">void</span> Tick(<span class="keyword">const</span> <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a>&amp; tDiff) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
@@ -121,22 +121,28 @@ $(document).ready(function(){initNavTree('d6/df1/_particle_effect_controller_8h_
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordtype">void</span> GetBoundingVolume(<a class="code" href="../../dc/d77/classez_bounding_box_sphere_template.htm">ezBoundingBoxSphere</a>&amp; volume) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keywordtype">void</span> SetParameter(<span class="keyword">const</span> <a class="code" href="../../db/dcf/classez_temp_hashed_string.htm">ezTempHashedString</a>&amp; name, <span class="keywordtype">float</span> value);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordtype">void</span> SetParameter(<span class="keyword">const</span> <a class="code" href="../../db/dcf/classez_temp_hashed_string.htm">ezTempHashedString</a>&amp; name, <span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; value);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d9/d41/classez_particle_world_module.htm">ezParticleWorldModule</a>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <a class="code" href="../../dd/d1d/classez_particle_effect_controller.htm">ezParticleEffectController</a>(<a class="code" href="../../d9/d41/classez_particle_world_module.htm">ezParticleWorldModule</a>* pModule, <a class="code" href="../../da/d99/classez_particle_effect_handle.htm">ezParticleEffectHandle</a> hEffect);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="../../d9/d98/classez_particle_effect_instance.htm">ezParticleEffectInstance</a>* GetInstance() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">void</span>* m_pSharedInstanceOwner = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <a class="code" href="../../d9/d41/classez_particle_world_module.htm">ezParticleWorldModule</a>* m_pModule = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <a class="code" href="../../da/d99/classez_particle_effect_handle.htm">ezParticleEffectHandle</a> m_hEffect;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;};</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordtype">void</span> UpdateWindSamples();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordtype">void</span> ForceVisible();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  ezUInt64 GetNumActiveParticles() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordtype">void</span> SetParameter(<span class="keyword">const</span> <a class="code" href="../../db/dcf/classez_temp_hashed_string.htm">ezTempHashedString</a>&amp; name, <span class="keywordtype">float</span> value);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordtype">void</span> SetParameter(<span class="keyword">const</span> <a class="code" href="../../db/dcf/classez_temp_hashed_string.htm">ezTempHashedString</a>&amp; name, <span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; value);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d9/d41/classez_particle_world_module.htm">ezParticleWorldModule</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <a class="code" href="../../dd/d1d/classez_particle_effect_controller.htm">ezParticleEffectController</a>(<a class="code" href="../../d9/d41/classez_particle_world_module.htm">ezParticleWorldModule</a>* pModule, <a class="code" href="../../da/d99/classez_particle_effect_handle.htm">ezParticleEffectHandle</a> hEffect);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <a class="code" href="../../d9/d98/classez_particle_effect_instance.htm">ezParticleEffectInstance</a>* GetInstance() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">void</span>* m_pSharedInstanceOwner = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <a class="code" href="../../d9/d41/classez_particle_world_module.htm">ezParticleWorldModule</a>* m_pModule = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <a class="code" href="../../da/d99/classez_particle_effect_handle.htm">ezParticleEffectHandle</a> m_hEffect;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_particle_world_module_htm"><div class="ttname"><a href="../../d9/d41/classez_particle_world_module.htm">ezParticleWorldModule</a></div><div class="ttdoc">This world module stores all particle effect data that is active in a given ezWorld instance.</div><div class="ttdef"><b>Definition:</b> ParticleWorldModule.h:23</div></div>
@@ -145,18 +151,18 @@ $(document).ready(function(){initNavTree('d6/df1/_particle_effect_controller_8h_
 <div class="ttc" id="aclassez_bounding_box_sphere_template_htm"><div class="ttname"><a href="../../dc/d77/classez_bounding_box_sphere_template.htm">ezBoundingBoxSphereTemplate&lt; float &gt;</a></div></div>
 <div class="ttc" id="aclassez_array_ptr_htm"><div class="ttname"><a href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr</a></div><div class="ttdoc">This class encapsulates an array and it's size. It is recommended to use this class instead of plain ...</div><div class="ttdef"><b>Definition:</b> ArrayPtr.h:36</div></div>
 <div class="ttc" id="aclassez_temp_hashed_string_htm"><div class="ttname"><a href="../../db/dcf/classez_temp_hashed_string.htm">ezTempHashedString</a></div><div class="ttdoc">A class to use together with ezHashedString for quick comparisons with temporary strings that need no...</div><div class="ttdef"><b>Definition:</b> HashedString.h:152</div></div>
-<div class="ttc" id="astructez_msg_extract_render_data_htm"><div class="ttname"><a href="../../d8/dab/structez_msg_extract_render_data.htm">ezMsgExtractRenderData</a></div><div class="ttdef"><b>Definition:</b> RenderData.h:106</div></div>
+<div class="ttc" id="astructez_msg_extract_render_data_htm"><div class="ttname"><a href="../../d8/dab/structez_msg_extract_render_data.htm">ezMsgExtractRenderData</a></div><div class="ttdef"><b>Definition:</b> RenderData.h:107</div></div>
 <div class="ttc" id="aclassez_particle_effect_instance_htm"><div class="ttname"><a href="../../d9/d98/classez_particle_effect_instance.htm">ezParticleEffectInstance</a></div><div class="ttdef"><b>Definition:</b> ParticleEffectInstance.h:25</div></div>
 <div class="ttc" id="aclassez_particle_effect_controller_htm"><div class="ttname"><a href="../../dd/d1d/classez_particle_effect_controller.htm">ezParticleEffectController</a></div><div class="ttdef"><b>Definition:</b> ParticleEffectController.h:6</div></div>
 <div class="ttc" id="aclassez_particle_effect_handle_htm"><div class="ttname"><a href="../../da/d99/classez_particle_effect_handle.htm">ezParticleEffectHandle</a></div><div class="ttdoc">A handle to a particle effect.</div><div class="ttdef"><b>Definition:</b> Declarations.h:38</div></div>
 <div class="ttc" id="aclassez_transform_template_htm"><div class="ttname"><a href="../../d3/db1/classez_transform_template.htm">ezTransformTemplate&lt; float &gt;</a></div></div>
-<div class="ttc" id="astructez_vec3_template_htm"><div class="ttname"><a href="../../d6/dbd/structez_vec3_template.htm">ezVec3Template&lt; float &gt;</a></div></div>
+<div class="ttc" id="aclassez_vec3_template_htm"><div class="ttname"><a href="../../da/df1/classez_vec3_template.htm">ezVec3Template&lt; float &gt;</a></div></div>
 <div class="ttc" id="aclassez_typed_resource_handle_htm"><div class="ttname"><a href="../../d3/dd7/classez_typed_resource_handle.htm">ezTypedResourceHandle&lt; class ezParticleEffectResource &gt;</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_103378c88ff4c88de6bfabe12da9ec96.htm">EnginePlugins</a></li><li class="navelem"><a class="el" href="../../dir_9aa8b4544ca68b692a3a4785c1118130.htm">ParticlePlugin</a></li><li class="navelem"><a class="el" href="../../dir_61105d32874e1e73504cd9d782aae4bb.htm">Effect</a></li><li class="navelem"><b>ParticleEffectController.h</b></li>
-    <li class="footer">Generated on Mon Oct 18 2021 15:33:32 for ezEngine by
+    <li class="footer">Generated on Sun Oct 9 2022 14:44:59 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

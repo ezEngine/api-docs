@@ -7,6 +7,8 @@ var classez_qt_document_window =
     [ "CloseDocumentWindow", "d1/d13/classez_qt_document_window.htm#ab6fda1ed7d58b1347e500a8d42360735", null ],
     [ "CreateImageCapture", "d1/d13/classez_qt_document_window.htm#a6e062c65cc9174649163a81e9d1f6483", null ],
     [ "EnsureVisible", "d1/d13/classez_qt_document_window.htm#ae0f7f535fe84e9c2aa086436437ed317", null ],
+    [ "event", "d1/d13/classez_qt_document_window.htm#a6c68bcfd42e3b43f850d3ce37570a0db", null ],
+    [ "eventFilter", "d1/d13/classez_qt_document_window.htm#af8776d471c81be11b629cb6181c3f5d1", null ],
     [ "FinishWindowCreation", "d1/d13/classez_qt_document_window.htm#a5232c49489e6d43bfe36c77ec2085be7", null ],
     [ "GetContainerWindow", "d1/d13/classez_qt_document_window.htm#ae49e635a47b3887bbc912e2f360afe8c", null ],
     [ "GetDisplayName", "d1/d13/classez_qt_document_window.htm#a261fd9844578c61f445f937ff70bfed5", null ],
@@ -29,6 +31,6 @@ var classez_qt_document_window =
     [ "SetTargetFramerate", "d1/d13/classez_qt_document_window.htm#a0e4d77d4a6b20e1999de780db757da17", null ],
     [ "showEvent", "d1/d13/classez_qt_document_window.htm#a8b0af01caf10e870a26c03344d44d298", null ],
     [ "ShowTemporaryStatusBarMsg", "d1/d13/classez_qt_document_window.htm#a6f7ef1b25f4f7ae9eb9ef70d6303b22e", null ],
-    [ "TriggerRedraw", "d1/d13/classez_qt_document_window.htm#aef15cb82be3a5e3b37a55a835cad0471", null ],
+    [ "TriggerRedraw", "d1/d13/classez_qt_document_window.htm#a5a21b5faa6e161a1d349b945d45011b5", null ],
     [ "ezQtContainerWindow", "d1/d13/classez_qt_document_window.htm#a6e683de4f1df13e8f276bc6fab0d28bf", null ]
 ];

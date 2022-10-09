@@ -9,5 +9,6 @@ var classez_mesh_resource =
     [ "UpdateContent", "df/d2f/classez_mesh_resource.htm#adb43c594f5ed2bf43405ebcc8b6ef954", null ],
     [ "UpdateMemoryUsage", "df/d2f/classez_mesh_resource.htm#a7a6f3e667fdf834e2b10d5f496e870cf", null ],
     [ "m_Bones", "df/d2f/classez_mesh_resource.htm#a5013892c13ddb0de311097e5daf02691", null ],
+    [ "m_fMaxBoneVertexOffset", "df/d2f/classez_mesh_resource.htm#a872db015b9f07f94867418e34148c570", null ],
     [ "m_hDefaultSkeleton", "df/d2f/classez_mesh_resource.htm#a75ebd81e114163d1cba7381860a7282f", null ]
 ];

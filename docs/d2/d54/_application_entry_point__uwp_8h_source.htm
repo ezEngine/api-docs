@@ -108,7 +108,7 @@ $(document).ready(function(){initNavTree('d2/d54/_application_entry_point__uwp_8
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> AppClass, <span class="keyword">typename</span>... Args&gt;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keywordtype">int</span> EntryFunc(Args&amp;&amp;... arguments)</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    EZ_ALIGN_VARIABLE(<span class="keyword">static</span> <span class="keywordtype">char</span> appBuffer[<span class="keyword">sizeof</span>(AppClass)], EZ_ALIGNMENT_OF(AppClass)); <span class="comment">// Not on the stack to cope with smaller stacks.</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">alignas</span>(EZ_ALIGNMENT_OF(AppClass)) <span class="keyword">static</span> <span class="keywordtype">char</span> appBuffer[<span class="keyword">sizeof</span>(AppClass)]; <span class="comment">// Not on the stack to cope with smaller stacks.</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">if</span> (InitializeWinrt().Failed())</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    {</div>
@@ -117,7 +117,7 @@ $(document).ready(function(){initNavTree('d2/d54/_application_entry_point__uwp_8
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    AppClass* pApp = <span class="keyword">new</span> (appBuffer) AppClass(std::forward&lt;Args&gt;(arguments)...);</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    ezUWPRun(pApp).IgnoreResult();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    ezUWPRun(pApp).<a class="code" href="../../d4/da9/structez_result.htm#acb0bb72646ee6d5966edd5b4108fb670">IgnoreResult</a>();</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> iReturnCode = pApp-&gt;GetReturnCode();</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">if</span> (iReturnCode != 0)</div>
@@ -133,25 +133,28 @@ $(document).ready(function(){initNavTree('d2/d54/_application_entry_point__uwp_8
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  }</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;} <span class="comment">// namespace ezApplicationDetails</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#define EZ_CONSOLEAPP_ENTRY_POINT(AppClass, ...)                                                                                            \</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">  EZ_ALIGN_VARIABLE(static char appBuffer[sizeof(AppClass)], EZ_ALIGNMENT_OF(AppClass)); </span><span class="comment">/* Not on the stack to cope with smaller stacks */</span><span class="preprocessor"> \</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">                                                                                                                                            \</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">  int main(int argc, const char** argv) { return ::ezApplicationDetails::EntryFunc&lt;AppClass&gt;(__VA_ARGS__); }</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#define EZ_APPLICATION_ENTRY_POINT(AppClass, ...)                                                   \</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">  int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) \</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">  {                                                                                                 \</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">    return ::ezApplicationDetails::EntryFunc&lt;AppClass&gt;(__VA_ARGS__);                                \</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">  }</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#define EZ_CONSOLEAPP_ENTRY_POINT(AppClass, ...)                                                                                 \</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">  alignas(EZ_ALIGNMENT_OF(AppClass)) static char appBuffer[sizeof(AppClass)]; </span><span class="comment">/* Not on the stack to cope with smaller stacks */</span><span class="preprocessor"> \</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">                                                                                                                                 \</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">  EZ_APPLICATION_ENTRY_POINT_CODE_INJECTION                                                                                      \</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">  int main(int argc, const char** argv) { return ::ezApplicationDetails::EntryFunc&lt;AppClass&gt;(__VA_ARGS__); }</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#define EZ_APPLICATION_ENTRY_POINT(AppClass, ...)                                                   \</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">  EZ_APPLICATION_ENTRY_POINT_CODE_INJECTION                                                         \</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">  int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) \</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">  {                                                                                                 \</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">    return ::ezApplicationDetails::EntryFunc&lt;AppClass&gt;(__VA_ARGS__);                                \</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">  }</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition:</b> Types.h:50</div></div>
+<div class="ttc" id="astructez_result_htm_acb0bb72646ee6d5966edd5b4108fb670"><div class="ttname"><a href="../../d4/da9/structez_result.htm#acb0bb72646ee6d5966edd5b4108fb670">ezResult::IgnoreResult</a></div><div class="ttdeci">EZ_ALWAYS_INLINE void IgnoreResult()</div><div class="ttdoc">Used to silence compiler warnings, when success or failure doesn't matter.</div><div class="ttdef"><b>Definition:</b> Types.h:66</div></div>
 <div class="ttc" id="aclassez_application_htm"><div class="ttname"><a href="../../da/d72/classez_application.htm">ezApplication</a></div><div class="ttdoc">Base class to be used by applications based on ezEngine.</div><div class="ttdef"><b>Definition:</b> Application.h:63</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_eae87a02f723c2a298fc925f987f7e77.htm">Application</a></li><li class="navelem"><a class="el" href="../../dir_adb9cd854478c5cd8f741d3411743012.htm">Implementation</a></li><li class="navelem"><a class="el" href="../../dir_e6801fb5bda70fee6aadcde5e11f20dc.htm">uwp</a></li><li class="navelem"><b>ApplicationEntryPoint_uwp.h</b></li>
-    <li class="footer">Generated on Mon Oct 18 2021 15:33:24 for ezEngine by
+    <li class="footer">Generated on Sun Oct 9 2022 14:44:49 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

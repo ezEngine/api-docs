@@ -21,5 +21,6 @@ var classez_mesh_resource_descriptor =
     [ "SetMaterial", "d2/d6b/classez_mesh_resource_descriptor.htm#a58dbe518e2c4ab389efbf4e411ed1da0", null ],
     [ "UseExistingMeshBuffer", "d2/d6b/classez_mesh_resource_descriptor.htm#ab2b9f34c01313bd65d17e54644a82867", null ],
     [ "m_Bones", "d2/d6b/classez_mesh_resource_descriptor.htm#a7f62d07a6cf8cd34012cea8e09b6dbf3", null ],
+    [ "m_fMaxBoneVertexOffset", "d2/d6b/classez_mesh_resource_descriptor.htm#a9cfe88d1079090bcf3fce476125a6ee8", null ],
     [ "m_hDefaultSkeleton", "d2/d6b/classez_mesh_resource_descriptor.htm#a1f6bf4d91864394652364dcd26811062", null ]
 ];

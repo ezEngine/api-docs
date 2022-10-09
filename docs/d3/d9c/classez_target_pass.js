@@ -4,7 +4,7 @@ var classez_target_pass =
     [ "~ezTargetPass", "d3/d9c/classez_target_pass.htm#a80ffb5f6e68a97af81d7d33cfa1fd74d", null ],
     [ "Execute", "d3/d9c/classez_target_pass.htm#a4f70dc8c03cb2a0efe5f9560e6cfe3dd", null ],
     [ "GetRenderTargetDescriptions", "d3/d9c/classez_target_pass.htm#aabf2bd77be52b957f7eb0a3949c1e63b", null ],
-    [ "GetTextureHandle", "d3/d9c/classez_target_pass.htm#a66ee49655b498467a19c8fb87ee971c2", null ],
+    [ "GetTextureHandle", "d3/d9c/classez_target_pass.htm#a09d1721de71f3db93539e77597d43cb8", null ],
     [ "m_PinColor0", "d3/d9c/classez_target_pass.htm#aa0016b1d58a565a35c1a69c50b2ccd1b", null ],
     [ "m_PinColor1", "d3/d9c/classez_target_pass.htm#a620ecfd672019b7a9a83176dc34dd128", null ],
     [ "m_PinColor2", "d3/d9c/classez_target_pass.htm#a5a62803e11de9686d945c0281d0654c3", null ],

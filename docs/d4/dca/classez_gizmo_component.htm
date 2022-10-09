@@ -123,6 +123,10 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:af868782bc9c7931757fe49f236f57b79"><td class="memItemLeft" align="right" valign="top"><a id="af868782bc9c7931757fe49f236f57b79"></a>
 virtual <a class="el" href="../../d7/d71/classez_mesh_render_data.htm">ezMeshRenderData</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>CreateRenderData</b> () const override</td></tr>
 <tr class="separator:af868782bc9c7931757fe49f236f57b79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3de4d4bda8b830a9dce0763741522394"><td class="memItemLeft" align="right" valign="top"><a id="a3de4d4bda8b830a9dce0763741522394"></a>
+virtual <a class="el" href="../../d4/da9/structez_result.htm">ezResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dca/classez_gizmo_component.htm#a3de4d4bda8b830a9dce0763741522394">GetLocalBounds</a> (<a class="el" href="../../dc/d77/classez_bounding_box_sphere_template.htm">ezBoundingBoxSphere</a> &amp;bounds, bool &amp;bAlwaysVisible) override</td></tr>
+<tr class="memdesc:a3de4d4bda8b830a9dce0763741522394"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called by ezRenderComponent::OnUpdateLocalBounds(). If EZ_SUCCESS is returned, <em>bounds</em> and <em>bAlwaysVisible</em> will be integrated into the <a class="el" href="../../df/dda/structez_msg_update_local_bounds.htm">ezMsgUpdateLocalBounds</a> result, otherwise the out values are simply ignored. <br /></td></tr>
+<tr class="separator:a3de4d4bda8b830a9dce0763741522394"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classez_mesh_component_base"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classez_mesh_component_base')"><img src="../../closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="../../d8/d03/classez_mesh_component_base.htm">ezMeshComponentBase</a></td></tr>
 <tr class="memitem:a49022e5f570298bda7f91671c636196f inherit pro_methods_classez_mesh_component_base"><td class="memItemLeft" align="right" valign="top"><a id="a49022e5f570298bda7f91671c636196f"></a>
 ezUInt32&#160;</td><td class="memItemRight" valign="bottom"><b>Materials_GetCount</b> () const</td></tr>
@@ -205,10 +209,6 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <tr class="memitem:a6fc3655aea04e23959e75464a95a40c8 inherit pub_methods_classez_mesh_component_base"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d03/classez_mesh_component_base.htm#a6fc3655aea04e23959e75464a95a40c8">DeserializeComponent</a> (<a class="el" href="../../d9/dd6/classez_world_reader.htm">ezWorldReader</a> &amp;stream) override</td></tr>
 <tr class="memdesc:a6fc3655aea04e23959e75464a95a40c8 inherit pub_methods_classez_mesh_component_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override this to load the current state of the component from the given stream.  <a href="../../d8/d03/classez_mesh_component_base.htm#a6fc3655aea04e23959e75464a95a40c8">More...</a><br /></td></tr>
 <tr class="separator:a6fc3655aea04e23959e75464a95a40c8 inherit pub_methods_classez_mesh_component_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a83a201eb035d2bc14a3b8c5d2fdb1f inherit pub_methods_classez_mesh_component_base"><td class="memItemLeft" align="right" valign="top"><a id="a5a83a201eb035d2bc14a3b8c5d2fdb1f"></a>
-virtual <a class="el" href="../../d4/da9/structez_result.htm">ezResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d03/classez_mesh_component_base.htm#a5a83a201eb035d2bc14a3b8c5d2fdb1f">GetLocalBounds</a> (<a class="el" href="../../dc/d77/classez_bounding_box_sphere_template.htm">ezBoundingBoxSphere</a> &amp;bounds, bool &amp;bAlwaysVisible) override</td></tr>
-<tr class="memdesc:a5a83a201eb035d2bc14a3b8c5d2fdb1f inherit pub_methods_classez_mesh_component_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called by ezRenderComponent::OnUpdateLocalBounds(). If EZ_SUCCESS is returned, <em>bounds</em> and <em>bAlwaysVisible</em> will be integrated into the <a class="el" href="../../df/dda/structez_msg_update_local_bounds.htm">ezMsgUpdateLocalBounds</a> result, otherwise the out values are simply ignored. <br /></td></tr>
-<tr class="separator:a5a83a201eb035d2bc14a3b8c5d2fdb1f inherit pub_methods_classez_mesh_component_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1fc22f040dfa8f110fe7bd673f3b3b50 inherit pub_methods_classez_mesh_component_base"><td class="memItemLeft" align="right" valign="top"><a id="a1fc22f040dfa8f110fe7bd673f3b3b50"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>SetMesh</b> (const <a class="el" href="../../d3/dd7/classez_typed_resource_handle.htm">ezMeshResourceHandle</a> &amp;hMesh)</td></tr>
 <tr class="separator:a1fc22f040dfa8f110fe7bd673f3b3b50 inherit pub_methods_classez_mesh_component_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -378,7 +378,7 @@ const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&#160;</
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d4/dca/classez_gizmo_component.htm">ezGizmoComponent</a></li>
-    <li class="footer">Generated on Mon Oct 18 2021 15:33:36 for ezEngine by
+    <li class="footer">Generated on Sun Oct 9 2022 14:45:03 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

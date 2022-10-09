@@ -15,6 +15,7 @@ var classez_raycast_component =
     [ "m_bForceTargetParentless", "d6/dc4/classez_raycast_component.htm#aacd8349575a66ad69da0bfa32eb6fe43", null ],
     [ "m_fMaxDistance", "d6/dc4/classez_raycast_component.htm#ad65f3f17351b3c663bd0231d41504c80", null ],
     [ "m_hRaycastEndObject", "d6/dc4/classez_raycast_component.htm#a61dfa55d6664bc3f492b3616f35ef28f", null ],
+    [ "m_ShapeTypesToHit", "d6/dc4/classez_raycast_component.htm#a0182d82618c5d1de194d749ea89ada9e", null ],
     [ "m_uiCollisionLayerEndPoint", "d6/dc4/classez_raycast_component.htm#a90a95fbb1b65f07e6985fa01ee1776b9", null ],
     [ "m_uiCollisionLayerTrigger", "d6/dc4/classez_raycast_component.htm#a064414fb86b86439684c95ac426fa202", null ]
 ];

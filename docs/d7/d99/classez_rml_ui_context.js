@@ -1,17 +1,12 @@
 var classez_rml_ui_context =
 [
     [ "EventHandler", "d7/d99/classez_rml_ui_context.htm#a5d0ad3e5207262f79e9b99af96de4834", null ],
-    [ "ezRmlUiContext", "d7/d99/classez_rml_ui_context.htm#a061e33aa7dceb6b96377ea5cdfcbc57b", null ],
     [ "ezRmlUiContext", "d7/d99/classez_rml_ui_context.htm#a51ad40ee17c2ffbdac8237e40b2402d8", null ],
     [ "~ezRmlUiContext", "d7/d99/classez_rml_ui_context.htm#a6b7e532b47d815f890e045005b68eb54", null ],
-    [ "CreateViewContext", "d7/d99/classez_rml_ui_context.htm#a8a6fd5e61aff686cef8926556a0ba6e4", null ],
     [ "DeregisterEventHandler", "d7/d99/classez_rml_ui_context.htm#a7ec4b7fa9e7c3bcb1f1fe1c68c448903", null ],
-    [ "DestroyViewContext", "d7/d99/classez_rml_ui_context.htm#a7206c40c87a0ab012aec14f38aa75a93", null ],
-    [ "GetResource", "d7/d99/classez_rml_ui_context.htm#a7278a821a59e907691106f1b6c89bf32", null ],
     [ "HideDocument", "d7/d99/classez_rml_ui_context.htm#a236d34c4b769f8d3d2c7fde6a3b118ee", null ],
     [ "LoadDocumentFromResource", "d7/d99/classez_rml_ui_context.htm#a333ab49a8aee99d932d1f2bc96faaf4c", null ],
     [ "LoadDocumentFromString", "d7/d99/classez_rml_ui_context.htm#a6410af19b41b449e9012c22de49a887f", null ],
-    [ "OnInitialize", "d7/d99/classez_rml_ui_context.htm#a5c4a6354042b67a08338b8f4bb93d0fe", null ],
     [ "RegisterEventHandler", "d7/d99/classez_rml_ui_context.htm#a1917cc5e4af1e4d1c661ece34a923c32", null ],
     [ "ReloadDocumentFromResource", "d7/d99/classez_rml_ui_context.htm#a96fc035e4fff8b857e3662bfb0d67bd6", null ],
     [ "SetDpiScale", "d7/d99/classez_rml_ui_context.htm#af65d971559bfac8c3d909701be48a405", null ],
@@ -20,7 +15,6 @@ var classez_rml_ui_context =
     [ "ShowDocument", "d7/d99/classez_rml_ui_context.htm#a7ddecf005d4ba12419454d1486d17ed5", null ],
     [ "UnloadDocument", "d7/d99/classez_rml_ui_context.htm#a5d31737a4301edecf9e65dd6ea592d01", null ],
     [ "UpdateInput", "d7/d99/classez_rml_ui_context.htm#a32286b2e1daa9f2fed564100d5c410a1", null ],
-    [ "UpdateThumbnailViewContext", "d7/d99/classez_rml_ui_context.htm#ad89409702bcd3702dc80944dd83020a9", null ],
     [ "WantsInput", "d7/d99/classez_rml_ui_context.htm#a5d99ec5ac5158940ea9c4a12429320f0", null ],
     [ "ezRmlUi", "d7/d99/classez_rml_ui_context.htm#ab7faf63ff452db10c9d232ed2e8d14af", null ],
     [ "ezRmlUiInternal::EventListener", "d7/d99/classez_rml_ui_context.htm#a36aaa9270d53a923c815f6744f689217", null ]

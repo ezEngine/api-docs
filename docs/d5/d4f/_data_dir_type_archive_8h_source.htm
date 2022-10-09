@@ -90,149 +90,126 @@ $(document).ready(function(){initNavTree('d5/d4f/_data_dir_type_archive_8h_sourc
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;Foundation/IO/Archive/ArchiveReader.h&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;Foundation/IO/CompressedStreamZlib.h&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;Foundation/IO/CompressedStreamZstd.h&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;Foundation/IO/FileSystem/FileSystem.h&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;Foundation/IO/FileSystem/Implementation/DataDirType.h&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;Foundation/IO/MemoryStream.h&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;Foundation/Time/Timestamp.h&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">class </span><a class="code" href="../../dd/dd9/classez_archive_entry.htm">ezArchiveEntry</a>;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span>ezDataDirectory</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keyword">class </span>ArchiveReaderUncompressed;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keyword">class </span>ArchiveReaderZstd;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="keyword">class </span>ArchiveReaderZip;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="../../d1/d49/classez_data_directory_1_1_archive_type.htm">   19</a></span>&#160;  <span class="keyword">class </span>EZ_FOUNDATION_DLL <a class="code" href="../../d1/d49/classez_data_directory_1_1_archive_type.htm">ArchiveType</a> : <span class="keyword">public</span> <a class="code" href="../../dc/de0/classez_data_directory_type.htm">ezDataDirectoryType</a></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="../../d1/d49/classez_data_directory_1_1_archive_type.htm">ArchiveType</a>();</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    ~<a class="code" href="../../d1/d49/classez_data_directory_1_1_archive_type.htm">ArchiveType</a>();</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">static</span> <a class="code" href="../../dc/de0/classez_data_directory_type.htm">ezDataDirectoryType</a>* Factory(<span class="keyword">const</span> <span class="keywordtype">char</span>* szDataDirectory, <span class="keyword">const</span> <span class="keywordtype">char</span>* szGroup, <span class="keyword">const</span> <span class="keywordtype">char</span>* szRootName, <a class="code" href="../../d4/d6b/classez_file_system.htm#af239e48a0e961061e4d4008ca4fac3f8">ezFileSystem::DataDirUsage</a> Usage);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="../../d1/d49/classez_data_directory_1_1_archive_type.htm#aa38e2c86683063a81cb58b1e22d4ac74">   27</a></span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString128</a>&amp; <a class="code" href="../../d1/d49/classez_data_directory_1_1_archive_type.htm#aa38e2c86683063a81cb58b1e22d4ac74">GetRedirectedDataDirectoryPath</a>()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> m_sRedirectedDataDirPath; }</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="../../d9/de4/classez_data_directory_reader.htm">ezDataDirectoryReader</a>* OpenFileToRead(<span class="keyword">const</span> <span class="keywordtype">char</span>* szFile, <a class="code" href="../../d1/dc7/structez_file_share_mode.htm#ac456d922b1a94be53ae1fdd50916739c">ezFileShareMode::Enum</a> FileShareMode, <span class="keywordtype">bool</span> bSpecificallyThisDataDir) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> RemoveDataDirectory() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> ExistsFile(<span class="keyword">const</span> <span class="keywordtype">char</span>* szFile, <span class="keywordtype">bool</span> bOneSpecificDataDir) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> GetFileStats(<span class="keyword">const</span> <span class="keywordtype">char</span>* szFileOrFolder, <span class="keywordtype">bool</span> bOneSpecificDataDir, <a class="code" href="../../de/d41/structez_file_stats.htm">ezFileStats</a>&amp; out_Stats) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> InternalInitializeDataDirectory(<span class="keyword">const</span> <span class="keywordtype">char</span>* szDirectory) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> OnReaderWriterClose(<a class="code" href="../../d2/d00/classez_data_directory_reader_writer_base.htm">ezDataDirectoryReaderWriterBase</a>* pClosed) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString128</a> m_sRedirectedDataDirPath;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString32</a> m_sArchiveSubFolder;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="../../d9/d88/classez_timestamp.htm">ezTimestamp</a> m_LastModificationTime;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="../../de/d5e/classez_archive_reader.htm">ezArchiveReader</a> m_ArchiveReader;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="../../dd/dbe/classez_mutex.htm">ezMutex</a> m_ReaderMutex;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezUniquePtr&lt;ArchiveReaderUncompressed&gt;</a>, 4&gt; m_ReadersUncompressed;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ArchiveReaderUncompressed*, 4&gt;</a> m_FreeReadersUncompressed;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#ifdef BUILDSYSTEM_ENABLE_ZSTD_SUPPORT</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezUniquePtr&lt;ArchiveReaderZstd&gt;</a>, 4&gt; m_ReadersZstd;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ArchiveReaderZstd*, 4&gt;</a> m_FreeReadersZstd;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#ifdef BUILDSYSTEM_ENABLE_ZLIB_SUPPORT</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezUniquePtr&lt;ArchiveReaderZip&gt;</a>, 4&gt; m_ReadersZip;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ArchiveReaderZip*, 4&gt;</a> m_FreeReadersZip;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  };</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="../../d3/d0c/classez_data_directory_1_1_archive_reader_uncompressed.htm">   61</a></span>&#160;  <span class="keyword">class </span>EZ_FOUNDATION_DLL <a class="code" href="../../d3/d0c/classez_data_directory_1_1_archive_reader_uncompressed.htm">ArchiveReaderUncompressed</a> : <span class="keyword">public</span> <a class="code" href="../../d9/de4/classez_data_directory_reader.htm">ezDataDirectoryReader</a></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    EZ_DISALLOW_COPY_AND_ASSIGN(<a class="code" href="../../d3/d0c/classez_data_directory_1_1_archive_reader_uncompressed.htm">ArchiveReaderUncompressed</a>);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="../../d3/d0c/classez_data_directory_1_1_archive_reader_uncompressed.htm">ArchiveReaderUncompressed</a>(ezInt32 iDataDirUserData);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    ~<a class="code" href="../../d3/d0c/classez_data_directory_1_1_archive_reader_uncompressed.htm">ArchiveReaderUncompressed</a>();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">virtual</span> ezUInt64 Read(<span class="keywordtype">void</span>* pBuffer, ezUInt64 uiBytes) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">virtual</span> ezUInt64 GetFileSize() <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> InternalOpen(<a class="code" href="../../d1/dc7/structez_file_share_mode.htm#ac456d922b1a94be53ae1fdd50916739c">ezFileShareMode::Enum</a> FileShareMode) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> InternalClose() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d1/d49/classez_data_directory_1_1_archive_type.htm">ArchiveType</a>;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;Foundation/IO/CompressedStreamZstd.h&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;Foundation/IO/FileSystem/FileSystem.h&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;Foundation/IO/FileSystem/Implementation/DataDirType.h&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;Foundation/IO/MemoryStream.h&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;Foundation/Time/Timestamp.h&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">class </span><a class="code" href="../../dd/dd9/classez_archive_entry.htm">ezArchiveEntry</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span>ezDataDirectory</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keyword">class </span>ArchiveReaderUncompressed;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keyword">class </span>ArchiveReaderZstd;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keyword">class </span>ArchiveReaderZip;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="../../d1/d49/classez_data_directory_1_1_archive_type.htm">   18</a></span>&#160;  <span class="keyword">class </span>EZ_FOUNDATION_DLL <a class="code" href="../../d1/d49/classez_data_directory_1_1_archive_type.htm">ArchiveType</a> : <span class="keyword">public</span> <a class="code" href="../../dc/de0/classez_data_directory_type.htm">ezDataDirectoryType</a></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="../../d1/d49/classez_data_directory_1_1_archive_type.htm">ArchiveType</a>();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    ~<a class="code" href="../../d1/d49/classez_data_directory_1_1_archive_type.htm">ArchiveType</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">static</span> <a class="code" href="../../dc/de0/classez_data_directory_type.htm">ezDataDirectoryType</a>* Factory(<span class="keyword">const</span> <span class="keywordtype">char</span>* szDataDirectory, <span class="keyword">const</span> <span class="keywordtype">char</span>* szGroup, <span class="keyword">const</span> <span class="keywordtype">char</span>* szRootName, <a class="code" href="../../d4/d6b/classez_file_system.htm#af239e48a0e961061e4d4008ca4fac3f8">ezFileSystem::DataDirUsage</a> Usage);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../d1/d49/classez_data_directory_1_1_archive_type.htm#aa38e2c86683063a81cb58b1e22d4ac74">   26</a></span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString128</a>&amp; <a class="code" href="../../d1/d49/classez_data_directory_1_1_archive_type.htm#aa38e2c86683063a81cb58b1e22d4ac74">GetRedirectedDataDirectoryPath</a>()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> m_sRedirectedDataDirPath; }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="../../d9/de4/classez_data_directory_reader.htm">ezDataDirectoryReader</a>* OpenFileToRead(<span class="keyword">const</span> <span class="keywordtype">char</span>* szFile, <a class="code" href="../../d1/dc7/structez_file_share_mode.htm#ac456d922b1a94be53ae1fdd50916739c">ezFileShareMode::Enum</a> FileShareMode, <span class="keywordtype">bool</span> bSpecificallyThisDataDir) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> RemoveDataDirectory() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> ExistsFile(<span class="keyword">const</span> <span class="keywordtype">char</span>* szFile, <span class="keywordtype">bool</span> bOneSpecificDataDir) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> GetFileStats(<span class="keyword">const</span> <span class="keywordtype">char</span>* szFileOrFolder, <span class="keywordtype">bool</span> bOneSpecificDataDir, <a class="code" href="../../de/d41/structez_file_stats.htm">ezFileStats</a>&amp; out_Stats) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> InternalInitializeDataDirectory(<span class="keyword">const</span> <span class="keywordtype">char</span>* szDirectory) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> OnReaderWriterClose(<a class="code" href="../../d2/d00/classez_data_directory_reader_writer_base.htm">ezDataDirectoryReaderWriterBase</a>* pClosed) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString128</a> m_sRedirectedDataDirPath;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString32</a> m_sArchiveSubFolder;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="../../d9/d88/classez_timestamp.htm">ezTimestamp</a> m_LastModificationTime;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="../../de/d5e/classez_archive_reader.htm">ezArchiveReader</a> m_ArchiveReader;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="../../dd/dbe/classez_mutex.htm">ezMutex</a> m_ReaderMutex;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezUniquePtr&lt;ArchiveReaderUncompressed&gt;</a>, 4&gt; m_ReadersUncompressed;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ArchiveReaderUncompressed*, 4&gt;</a> m_FreeReadersUncompressed;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#ifdef BUILDSYSTEM_ENABLE_ZSTD_SUPPORT</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezUniquePtr&lt;ArchiveReaderZstd&gt;</a>, 4&gt; m_ReadersZstd;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ArchiveReaderZstd*, 4&gt;</a> m_FreeReadersZstd;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  };</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="../../d3/d0c/classez_data_directory_1_1_archive_reader_uncompressed.htm">   56</a></span>&#160;  <span class="keyword">class </span>EZ_FOUNDATION_DLL <a class="code" href="../../d3/d0c/classez_data_directory_1_1_archive_reader_uncompressed.htm">ArchiveReaderUncompressed</a> : <span class="keyword">public</span> <a class="code" href="../../d9/de4/classez_data_directory_reader.htm">ezDataDirectoryReader</a></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    EZ_DISALLOW_COPY_AND_ASSIGN(<a class="code" href="../../d3/d0c/classez_data_directory_1_1_archive_reader_uncompressed.htm">ArchiveReaderUncompressed</a>);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="../../d3/d0c/classez_data_directory_1_1_archive_reader_uncompressed.htm">ArchiveReaderUncompressed</a>(ezInt32 iDataDirUserData);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    ~<a class="code" href="../../d3/d0c/classez_data_directory_1_1_archive_reader_uncompressed.htm">ArchiveReaderUncompressed</a>();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">virtual</span> ezUInt64 Read(<span class="keywordtype">void</span>* pBuffer, ezUInt64 uiBytes) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">virtual</span> ezUInt64 GetFileSize() <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> InternalOpen(<a class="code" href="../../d1/dc7/structez_file_share_mode.htm#ac456d922b1a94be53ae1fdd50916739c">ezFileShareMode::Enum</a> FileShareMode) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> InternalClose() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d1/d49/classez_data_directory_1_1_archive_type.htm">ArchiveType</a>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    ezUInt64 m_uiUncompressedSize = 0;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    ezUInt64 m_uiCompressedSize = 0;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="../../da/d34/classez_raw_memory_stream_reader.htm">ezRawMemoryStreamReader</a> m_MemStreamReader;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  };</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    ezUInt64 m_uiUncompressedSize = 0;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    ezUInt64 m_uiCompressedSize = 0;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="../../da/d34/classez_raw_memory_stream_reader.htm">ezRawMemoryStreamReader</a> m_MemStreamReader;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  };</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#ifdef BUILDSYSTEM_ENABLE_ZSTD_SUPPORT</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keyword">class </span>EZ_FOUNDATION_DLL ArchiveReaderZstd : <span class="keyword">public</span> <a class="code" href="../../d3/d0c/classez_data_directory_1_1_archive_reader_uncompressed.htm">ArchiveReaderUncompressed</a></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    EZ_DISALLOW_COPY_AND_ASSIGN(ArchiveReaderZstd);</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#ifdef BUILDSYSTEM_ENABLE_ZSTD_SUPPORT</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keyword">class </span>EZ_FOUNDATION_DLL ArchiveReaderZstd : <span class="keyword">public</span> <a class="code" href="../../d3/d0c/classez_data_directory_1_1_archive_reader_uncompressed.htm">ArchiveReaderUncompressed</a></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    EZ_DISALLOW_COPY_AND_ASSIGN(ArchiveReaderZstd);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    ArchiveReaderZstd(ezInt32 iDataDirUserData);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    ~ArchiveReaderZstd();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    ArchiveReaderZstd(ezInt32 iDataDirUserData);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    ~ArchiveReaderZstd();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keyword">virtual</span> ezUInt64 Read(<span class="keywordtype">void</span>* pBuffer, ezUInt64 uiBytes) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> InternalOpen(<a class="code" href="../../d1/dc7/structez_file_share_mode.htm#ac456d922b1a94be53ae1fdd50916739c">ezFileShareMode::Enum</a> FileShareMode) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keyword">virtual</span> ezUInt64 Read(<span class="keywordtype">void</span>* pBuffer, ezUInt64 uiBytes) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d1/d49/classez_data_directory_1_1_archive_type.htm">ArchiveType</a>;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> InternalOpen(<a class="code" href="../../d1/dc7/structez_file_share_mode.htm#ac456d922b1a94be53ae1fdd50916739c">ezFileShareMode::Enum</a> FileShareMode) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d1/d49/classez_data_directory_1_1_archive_type.htm">ArchiveType</a>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    ezCompressedStreamReaderZstd m_CompressedStreamReader;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  };</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    ezCompressedStreamReaderZstd m_CompressedStreamReader;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  };</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#ifdef BUILDSYSTEM_ENABLE_ZLIB_SUPPORT</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="keyword">class </span>EZ_FOUNDATION_DLL ArchiveReaderZip : <span class="keyword">public</span> ArchiveReaderUncompressed</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  {</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    EZ_DISALLOW_COPY_AND_ASSIGN(ArchiveReaderZip);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    ArchiveReaderZip(ezInt32 iDataDirUserData);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    ~ArchiveReaderZip();</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keyword">virtual</span> ezUInt64 Read(<span class="keywordtype">void</span>* pBuffer, ezUInt64 uiBytes) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> InternalOpen(<a class="code" href="../../d1/dc7/structez_file_share_mode.htm#ac456d922b1a94be53ae1fdd50916739c">ezFileShareMode::Enum</a> FileShareMode) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span>ArchiveType;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    ezCompressedStreamReaderZip m_CompressedStreamReader;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  };</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;} <span class="comment">// namespace ezDataDirectory</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;} <span class="comment">// namespace ezDataDirectory</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition:</b> Types.h:50</div></div>
 <div class="ttc" id="astructez_file_stats_htm"><div class="ttname"><a href="../../de/d41/structez_file_stats.htm">ezFileStats</a></div><div class="ttdoc">Holds the stats for a file.</div><div class="ttdef"><b>Definition:</b> OSFile.h:33</div></div>
 <div class="ttc" id="aclassez_mutex_htm"><div class="ttname"><a href="../../dd/dbe/classez_mutex.htm">ezMutex</a></div><div class="ttdoc">Provides a simple mechanism for mutual exclusion to prevent multiple threads from accessing a shared ...</div><div class="ttdef"><b>Definition:</b> Mutex.h:12</div></div>
 <div class="ttc" id="aclassez_timestamp_htm"><div class="ttname"><a href="../../d9/d88/classez_timestamp.htm">ezTimestamp</a></div><div class="ttdoc">The timestamp class encapsulates a date in time as microseconds since Unix epoch.</div><div class="ttdef"><b>Definition:</b> Timestamp.h:22</div></div>
-<div class="ttc" id="aclassez_data_directory_1_1_archive_type_htm_aa38e2c86683063a81cb58b1e22d4ac74"><div class="ttname"><a href="../../d1/d49/classez_data_directory_1_1_archive_type.htm#aa38e2c86683063a81cb58b1e22d4ac74">ezDataDirectory::ArchiveType::GetRedirectedDataDirectoryPath</a></div><div class="ttdeci">virtual const ezString128 &amp; GetRedirectedDataDirectoryPath() const override</div><div class="ttdoc">By default this is the same as GetDataDirectoryPath(), but derived implementations may use a differen...</div><div class="ttdef"><b>Definition:</b> DataDirTypeArchive.h:27</div></div>
+<div class="ttc" id="aclassez_data_directory_1_1_archive_type_htm_aa38e2c86683063a81cb58b1e22d4ac74"><div class="ttname"><a href="../../d1/d49/classez_data_directory_1_1_archive_type.htm#aa38e2c86683063a81cb58b1e22d4ac74">ezDataDirectory::ArchiveType::GetRedirectedDataDirectoryPath</a></div><div class="ttdeci">virtual const ezString128 &amp; GetRedirectedDataDirectoryPath() const override</div><div class="ttdoc">By default this is the same as GetDataDirectoryPath(), but derived implementations may use a differen...</div><div class="ttdef"><b>Definition:</b> DataDirTypeArchive.h:26</div></div>
 <div class="ttc" id="astructez_hybrid_string_htm"><div class="ttname"><a href="../../d4/d53/structez_hybrid_string.htm">ezHybridString&lt; 128 &gt;</a></div></div>
 <div class="ttc" id="aclassez_data_directory_reader_htm"><div class="ttname"><a href="../../d9/de4/classez_data_directory_reader.htm">ezDataDirectoryReader</a></div><div class="ttdoc">A base class for readers that handle reading from a (virtual) file inside a data directory.</div><div class="ttdef"><b>Definition:</b> DataDirType.h:155</div></div>
 <div class="ttc" id="aclassez_data_directory_reader_writer_base_htm"><div class="ttname"><a href="../../d2/d00/classez_data_directory_reader_writer_base.htm">ezDataDirectoryReaderWriterBase</a></div><div class="ttdoc">This is the base class for all data directory readers/writers.</div><div class="ttdef"><b>Definition:</b> DataDirType.h:109</div></div>
-<div class="ttc" id="aclassez_data_directory_1_1_archive_type_htm"><div class="ttname"><a href="../../d1/d49/classez_data_directory_1_1_archive_type.htm">ezDataDirectory::ArchiveType</a></div><div class="ttdef"><b>Definition:</b> DataDirTypeArchive.h:19</div></div>
-<div class="ttc" id="aclassez_data_directory_1_1_archive_reader_uncompressed_htm"><div class="ttname"><a href="../../d3/d0c/classez_data_directory_1_1_archive_reader_uncompressed.htm">ezDataDirectory::ArchiveReaderUncompressed</a></div><div class="ttdef"><b>Definition:</b> DataDirTypeArchive.h:61</div></div>
-<div class="ttc" id="aclassez_file_system_htm_af239e48a0e961061e4d4008ca4fac3f8"><div class="ttname"><a href="../../d4/d6b/classez_file_system.htm#af239e48a0e961061e4d4008ca4fac3f8">ezFileSystem::DataDirUsage</a></div><div class="ttdeci">DataDirUsage</div><div class="ttdoc">Describes in which mode a data directory is mounted.</div><div class="ttdef"><b>Definition:</b> FileSystem.h:59</div></div>
+<div class="ttc" id="aclassez_data_directory_1_1_archive_type_htm"><div class="ttname"><a href="../../d1/d49/classez_data_directory_1_1_archive_type.htm">ezDataDirectory::ArchiveType</a></div><div class="ttdef"><b>Definition:</b> DataDirTypeArchive.h:18</div></div>
+<div class="ttc" id="aclassez_data_directory_1_1_archive_reader_uncompressed_htm"><div class="ttname"><a href="../../d3/d0c/classez_data_directory_1_1_archive_reader_uncompressed.htm">ezDataDirectory::ArchiveReaderUncompressed</a></div><div class="ttdef"><b>Definition:</b> DataDirTypeArchive.h:56</div></div>
+<div class="ttc" id="aclassez_file_system_htm_af239e48a0e961061e4d4008ca4fac3f8"><div class="ttname"><a href="../../d4/d6b/classez_file_system.htm#af239e48a0e961061e4d4008ca4fac3f8">ezFileSystem::DataDirUsage</a></div><div class="ttdeci">DataDirUsage</div><div class="ttdoc">Describes in which mode a data directory is mounted.</div><div class="ttdef"><b>Definition:</b> FileSystem.h:60</div></div>
 <div class="ttc" id="aclassez_data_directory_type_htm"><div class="ttname"><a href="../../dc/de0/classez_data_directory_type.htm">ezDataDirectoryType</a></div><div class="ttdoc">The base class for all data directory types.</div><div class="ttdef"><b>Definition:</b> DataDirType.h:19</div></div>
 <div class="ttc" id="astructez_file_share_mode_htm_ac456d922b1a94be53ae1fdd50916739c"><div class="ttname"><a href="../../d1/dc7/structez_file_share_mode.htm#ac456d922b1a94be53ae1fdd50916739c">ezFileShareMode::Enum</a></div><div class="ttdeci">Enum</div><div class="ttdef"><b>Definition:</b> FileEnums.h:6</div></div>
 <div class="ttc" id="aclassez_archive_reader_htm"><div class="ttname"><a href="../../de/d5e/classez_archive_reader.htm">ezArchiveReader</a></div><div class="ttdoc">A utility class for reading from ezArchive files.</div><div class="ttdef"><b>Definition:</b> ArchiveReader.h:11</div></div>
 <div class="ttc" id="aclassez_hybrid_array_htm"><div class="ttname"><a href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray</a></div><div class="ttdoc">A hybrid array uses in-place storage to handle the first few elements without any allocation....</div><div class="ttdef"><b>Definition:</b> HybridArray.h:11</div></div>
 <div class="ttc" id="aclassez_archive_entry_htm"><div class="ttname"><a href="../../dd/dd9/classez_archive_entry.htm">ezArchiveEntry</a></div><div class="ttdoc">Data for a single file entry in an ezArchive file.</div><div class="ttdef"><b>Definition:</b> Archive.h:18</div></div>
-<div class="ttc" id="aclassez_raw_memory_stream_reader_htm"><div class="ttname"><a href="../../da/d34/classez_raw_memory_stream_reader.htm">ezRawMemoryStreamReader</a></div><div class="ttdoc">Maps a raw chunk of memory to the ezStreamReader interface.</div><div class="ttdef"><b>Definition:</b> MemoryStream.h:257</div></div>
+<div class="ttc" id="aclassez_raw_memory_stream_reader_htm"><div class="ttname"><a href="../../da/d34/classez_raw_memory_stream_reader.htm">ezRawMemoryStreamReader</a></div><div class="ttdoc">Maps a raw chunk of memory to the ezStreamReader interface.</div><div class="ttdef"><b>Definition:</b> MemoryStream.h:357</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_64fdcb4094ee5a27b054d4fa23e28e01.htm">IO</a></li><li class="navelem"><a class="el" href="../../dir_875d7adf883bab473c21f3095068c3c1.htm">Archive</a></li><li class="navelem"><b>DataDirTypeArchive.h</b></li>
-    <li class="footer">Generated on Mon Oct 18 2021 15:33:27 for ezEngine by
+    <li class="footer">Generated on Sun Oct 9 2022 14:44:53 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

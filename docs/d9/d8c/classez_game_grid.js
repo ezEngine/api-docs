@@ -14,6 +14,8 @@ var classez_game_grid =
     [ "GetCell", "d9/d8c/classez_game_grid.htm#a06b8f856134fe662e70582be11fa5eb4", null ],
     [ "GetCell", "d9/d8c/classez_game_grid.htm#acafa1f7e13f687b5b095235a29e91ada", null ],
     [ "GetCellAtWorldPosition", "d9/d8c/classez_game_grid.htm#a73362adf1ab0eff005b0f5e73306324b", null ],
+    [ "GetCellLocalSpaceCenter", "d9/d8c/classez_game_grid.htm#a91a7002b4caf33e9662b5b61da2953a3", null ],
+    [ "GetCellLocalSpaceOrigin", "d9/d8c/classez_game_grid.htm#a35db762bee316ab77c26995d7442a3f9", null ],
     [ "GetCellSize", "d9/d8c/classez_game_grid.htm#a383153b263a8f679e39e8d1cf6b9ea7d", null ],
     [ "GetCellWorldSpaceCenter", "d9/d8c/classez_game_grid.htm#a21aa8b65ae86190537d48b7ec29e6b5e", null ],
     [ "GetCellWorldSpaceOrigin", "d9/d8c/classez_game_grid.htm#ab5f117700c8c14450537e6ad58aeb6af", null ],

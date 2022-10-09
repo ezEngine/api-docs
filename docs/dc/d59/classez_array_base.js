@@ -1,8 +1,8 @@
 var classez_array_base =
 [
-    [ "const_iterator", "dc/d59/classez_array_base.htm#a4b8102fffbe1baa10d6890a137ea3f3a", null ],
+    [ "const_iterator", "dc/d59/classez_array_base.htm#a31e1c30e7ad39edc567f13e551848d68", null ],
     [ "const_reverse_iterator", "dc/d59/classez_array_base.htm#a9ef6d9a5139acdaac6670775720ee896", null ],
-    [ "iterator", "dc/d59/classez_array_base.htm#a8e6b03d3d096963531d9309ba5ab296b", null ],
+    [ "iterator", "dc/d59/classez_array_base.htm#ae8f35d916abc6421efd8611dc0c1ae0e", null ],
     [ "reverse_iterator", "dc/d59/classez_array_base.htm#ac86e99ba04dd1a9e4d75b216ddf22d58", null ],
     [ "ezArrayBase", "dc/d59/classez_array_base.htm#a0f03847a20991108666c982066d651bc", null ],
     [ "~ezArrayBase", "dc/d59/classez_array_base.htm#a8001e2991c2675e975efca088795fa6a", null ],
@@ -11,6 +11,7 @@ var classez_array_base =
     [ "DoSwap", "dc/d59/classez_array_base.htm#a13b030bd72634b97cd7a42bb1a6c2a09", null ],
     [ "EnsureCount", "dc/d59/classez_array_base.htm#ad74465b5a0c6474b1611bbb462f635ef", null ],
     [ "ExpandAndGetRef", "dc/d59/classez_array_base.htm#a0f0562f5239ac1e43a81764086de2e25", null ],
+    [ "ExpandBy", "dc/d59/classez_array_base.htm#acec909d380f58c957b2643d89870359e", null ],
     [ "GetArrayPtr", "dc/d59/classez_array_base.htm#a44e03a9168d3860a6df71b16da2e3e82", null ],
     [ "GetArrayPtr", "dc/d59/classez_array_base.htm#a863871bf771e16281c67619f157b1c8c", null ],
     [ "GetByteArrayPtr", "dc/d59/classez_array_base.htm#a69ce04b9d7424160568357814e4de851", null ],
@@ -22,6 +23,7 @@ var classez_array_base =
     [ "IndexOf", "dc/d59/classez_array_base.htm#ad0b2297aad995f6b5b6c83318f1deec4", null ],
     [ "Insert", "dc/d59/classez_array_base.htm#ab5a80cbcab233ea8ad8de5c99783ce68", null ],
     [ "Insert", "dc/d59/classez_array_base.htm#af18f7e2130d4dd921d0978827e35a6c2", null ],
+    [ "InsertRange", "dc/d59/classez_array_base.htm#adaecd138f527b7a013478e2ae81f4c40", null ],
     [ "IsEmpty", "dc/d59/classez_array_base.htm#a35630a870ec53cf3b022653232a31c60", null ],
     [ "LastIndexOf", "dc/d59/classez_array_base.htm#a394c5310d1f8bc5907014761f72a4884", null ],
     [ "operator ezArrayPtr< const T >", "dc/d59/classez_array_base.htm#a6f3159683169130e19c955855dd0d854", null ],

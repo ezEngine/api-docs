@@ -1,8 +1,10 @@
 var classez_qt_double_spin_box =
 [
     [ "ezQtDoubleSpinBox", "da/d95/classez_qt_double_spin_box.htm#a9389042781baa751c969758c8ec62258", null ],
+    [ "event", "da/d95/classez_qt_double_spin_box.htm#a1579334ca95a7747d7da22ab94d4583c", null ],
     [ "focusInEvent", "da/d95/classez_qt_double_spin_box.htm#ac78eb52ffb12c3d5b35e1bdfbc4f8ec9", null ],
     [ "focusOutEvent", "da/d95/classez_qt_double_spin_box.htm#a2fdce52dfe6e39169996c44d6b36bfb1", null ],
+    [ "keyPressEvent", "da/d95/classez_qt_double_spin_box.htm#aa8b40d5d01ebffb3a7ee67b7465cbe2a", null ],
     [ "mouseMoveEvent", "da/d95/classez_qt_double_spin_box.htm#ac4b550d991ed010dbaf6f66eca4bbbd4", null ],
     [ "mousePressEvent", "da/d95/classez_qt_double_spin_box.htm#a99afb4d92fad653fe6914ae04d751039", null ],
     [ "mouseReleaseEvent", "da/d95/classez_qt_double_spin_box.htm#aad4f24f6ebea411acf69e6263e059bdc", null ],

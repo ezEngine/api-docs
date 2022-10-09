@@ -23,6 +23,7 @@ var classez_ipc_channel =
     [ "Send", "d0/d61/classez_ipc_channel.htm#a9dc201efacb94d833db37369fc18b109", null ],
     [ "Tick", "d0/d61/classez_ipc_channel.htm#a0a13231f40feb31b1cd97d3e2dd7ffae", null ],
     [ "WaitForMessages", "d0/d61/classez_ipc_channel.htm#aa139ab8f73416e0104cb7171bdc11ac1", null ],
+    [ "WaitForMessages", "d0/d61/classez_ipc_channel.htm#a072033b7983932d3f567801f049cb119", null ],
     [ "ezMessageLoop", "d0/d61/classez_ipc_channel.htm#a2688b76d7986159bd5b9ecd7201ff6b8", null ],
     [ "m_Connected", "d0/d61/classez_ipc_channel.htm#a48410b153f277f994260c29ae9e38588", null ],
     [ "m_Events", "d0/d61/classez_ipc_channel.htm#acc4e32419e89f84c4108fe3f9ad6494e", null ],
@@ -32,7 +33,7 @@ var classez_ipc_channel =
     [ "m_MessageAccumulator", "d0/d61/classez_ipc_channel.htm#a9309a2d3bf5fcaef5aca9638f6324e17", null ],
     [ "m_MessageEvent", "d0/d61/classez_ipc_channel.htm#aa0a64348ac7ad6c7b0c48d3c10069a52", null ],
     [ "m_Mode", "d0/d61/classez_ipc_channel.htm#ae97a10b997e686795e57b72e42a9af8c", null ],
-    [ "m_OutputQueue", "d0/d61/classez_ipc_channel.htm#a34cde9892bea7080e8cc9855699a3cda", null ],
+    [ "m_OutputQueue", "d0/d61/classez_ipc_channel.htm#ac6a209e42db327057075df77ef5c8851", null ],
     [ "m_OutputQueueMutex", "d0/d61/classez_ipc_channel.htm#a8396e1524ef785f356e4bb3d2a3149b9", null ],
     [ "m_pOwner", "d0/d61/classez_ipc_channel.htm#a2c8c9cdae6314c3c6d00554ba534caa1", null ],
     [ "m_ThreadId", "d0/d61/classez_ipc_channel.htm#a61181a68cd1cbec31c1ca358f354fc9b", null ]

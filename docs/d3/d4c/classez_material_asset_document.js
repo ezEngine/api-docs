@@ -24,5 +24,6 @@ var classez_material_asset_document =
     [ "UpdateAssetDocumentInfo", "d3/d4c/classez_material_asset_document.htm#a90de3c93c913fe50f66a0ab248282ef2", null ],
     [ "UpdatePrefabObject", "d3/d4c/classez_material_asset_document.htm#a092f295d6fcb50d3cb68c15661b2903b", null ],
     [ "WriteMaterialAsset", "d3/d4c/classez_material_asset_document.htm#a130fc18722841c7290e07db22bd46bf7", null ],
+    [ "m_PreviewModel", "d3/d4c/classez_material_asset_document.htm#ad24b47643a73f205db2c8f22278ce86b", null ],
     [ "m_VisualShaderEvents", "d3/d4c/classez_material_asset_document.htm#a8584c169976ea71b6edce0ea7109e80a", null ]
 ];

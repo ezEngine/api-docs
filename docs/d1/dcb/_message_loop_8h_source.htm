@@ -136,21 +136,27 @@ $(document).ready(function(){initNavTree('d1/dcb/_message_loop_8h_source.htm','.
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezIpcChannel*&gt;</a> m_ConnectQueue;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezIpcChannel*&gt;</a> m_DisconnectQueue;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezIpcChannel*&gt;</a> m_SendQueue;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezIpcChannel*&gt;</a> m_AllAddedChannels;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;};</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="comment">// Thread local copies of the different queues for the ProcessTasks method</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezIpcChannel*&gt;</a> m_ConnectQueueTask;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezIpcChannel*&gt;</a> m_DisconnectQueueTask;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezIpcChannel*&gt;</a> m_SendQueueTask;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezIpcChannel*&gt;</a> m_AllAddedChannels;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassez_process_message_htm"><div class="ttname"><a href="../../db/d40/classez_process_message.htm">ezProcessMessage</a></div><div class="ttdoc">Base class for IPC messages transmitted by ezIpcChannel.</div><div class="ttdef"><b>Definition:</b> RemoteMessage.h:61</div></div>
+<div class="ttc" id="aclassez_process_message_htm"><div class="ttname"><a href="../../db/d40/classez_process_message.htm">ezProcessMessage</a></div><div class="ttdoc">Base class for IPC messages transmitted by ezIpcChannel.</div><div class="ttdef"><b>Definition:</b> RemoteMessage.h:63</div></div>
 <div class="ttc" id="aclassez_mutex_htm"><div class="ttname"><a href="../../dd/dbe/classez_mutex.htm">ezMutex</a></div><div class="ttdoc">Provides a simple mechanism for mutual exclusion to prevent multiple threads from accessing a shared ...</div><div class="ttdef"><b>Definition:</b> Mutex.h:12</div></div>
 <div class="ttc" id="aclassez_dynamic_array_htm"><div class="ttname"><a href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt; ezIpcChannel * &gt;</a></div></div>
 <div class="ttc" id="aclassez_message_loop_htm"><div class="ttname"><a href="../../de/d68/classez_message_loop.htm">ezMessageLoop</a></div><div class="ttdoc">Internal sub-system used by ezIpcChannel.</div><div class="ttdef"><b>Definition:</b> MessageLoop.h:19</div></div>
 <div class="ttc" id="aclassez_ipc_channel_htm"><div class="ttname"><a href="../../d0/d61/classez_ipc_channel.htm">ezIpcChannel</a></div><div class="ttdoc">Base class for a communication channel between processes.</div><div class="ttdef"><b>Definition:</b> IpcChannel.h:37</div></div>
-<div class="ttc" id="aclassez_ipc_channel_htm_aa139ab8f73416e0104cb7171bdc11ac1"><div class="ttname"><a href="../../d0/d61/classez_ipc_channel.htm#aa139ab8f73416e0104cb7171bdc11ac1">ezIpcChannel::WaitForMessages</a></div><div class="ttdeci">void WaitForMessages()</div><div class="ttdoc">Block and wait for new messages and call ProcessMessages.</div><div class="ttdef"><b>Definition:</b> IpcChannel.cpp:115</div></div>
+<div class="ttc" id="aclassez_ipc_channel_htm_aa139ab8f73416e0104cb7171bdc11ac1"><div class="ttname"><a href="../../d0/d61/classez_ipc_channel.htm#aa139ab8f73416e0104cb7171bdc11ac1">ezIpcChannel::WaitForMessages</a></div><div class="ttdeci">void WaitForMessages()</div><div class="ttdoc">Block and wait for new messages and call ProcessMessages.</div><div class="ttdef"><b>Definition:</b> IpcChannel.cpp:125</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_6842fd92e2bb67127825eb6bd43440c7.htm">Communication</a></li><li class="navelem"><a class="el" href="../../dir_d3382816f6d65c06a1f9ee25730eaa5d.htm">Implementation</a></li><li class="navelem"><b>MessageLoop.h</b></li>
-    <li class="footer">Generated on Mon Oct 18 2021 15:33:24 for ezEngine by
+    <li class="footer">Generated on Sun Oct 9 2022 14:44:49 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

@@ -1,7 +1,7 @@
 var classez_sub_system =
 [
     [ "ezSubSystem", "d9/d6b/classez_sub_system.htm#a12f175fee6749693487584d4a025009b", null ],
-    [ "~ezSubSystem", "d9/d6b/classez_sub_system.htm#a0a9ee4a4b80508cdd518250cd0c663da", null ],
+    [ "~ezSubSystem", "d9/d6b/classez_sub_system.htm#a985c1483894a6f097d6509541715248a", null ],
     [ "GetDependency", "d9/d6b/classez_sub_system.htm#a73376a54914e5c12c2f6a0aa44dee79c", null ],
     [ "GetGroupName", "d9/d6b/classez_sub_system.htm#a93c30f283184ebdc08903d868f946c71", null ],
     [ "GetPluginName", "d9/d6b/classez_sub_system.htm#acbddbfe55dfde8d18d9b3db4c778b0c4", null ],

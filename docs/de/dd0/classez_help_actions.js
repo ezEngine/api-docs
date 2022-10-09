@@ -1,8 +1,6 @@
 var classez_help_actions =
 [
     [ "ButtonType", "de/dd0/classez_help_actions.htm#a4f8f74835c3db84a601f47c00719e3c5", [
-      [ "OpenDocumentation", "de/dd0/classez_help_actions.htm#a4f8f74835c3db84a601f47c00719e3c5a77f3889cc20bc5db128993607854ddb4", null ],
-      [ "OpenReleaseNotes", "de/dd0/classez_help_actions.htm#a4f8f74835c3db84a601f47c00719e3c5af492b759aea328e5da014eddbaf3f4e6", null ],
       [ "CheckForUpdates", "de/dd0/classez_help_actions.htm#a4f8f74835c3db84a601f47c00719e3c5a513b8178ba63bcf53b0947fc5465b8c9", null ],
       [ "ReportProblem", "de/dd0/classez_help_actions.htm#a4f8f74835c3db84a601f47c00719e3c5acfa09c9f59a7408201b26f10e3890b2c", null ]
     ] ],

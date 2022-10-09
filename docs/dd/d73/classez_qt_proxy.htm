@@ -94,12 +94,17 @@ $(document).ready(function(){initNavTree('dd/d73/classez_qt_proxy.htm','../../')
 <div class="title">ezQtProxy Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Glue class that maps ezActions to QActions. QActions are only created if the <a class="el" href="../../d2/d03/classez_action.htm">ezAction</a> is actually mapped somewhere. Document and Global actions are manually executed and don't solely rely on Qt's ShortcutContext setting to prevent ambiguous action shortcuts.  
+ <a href="../../dd/d73/classez_qt_proxy.htm#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d3/dd2/_qt_proxy_8moc_8h_source.htm">QtProxy.moc.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ezQtProxy:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../dc/d68/classez_qt_proxy__inherit__graph.png" border="0" usemap="#ez_qt_proxy_inherit__map" alt="Inheritance graph"/></div>
 <map name="ez_qt_proxy_inherit__map" id="ez_qt_proxy_inherit__map">
-<area shape="rect" title=" " alt="" coords="271,80,360,107"/>
+<area shape="rect" title="Glue class that maps ezActions to QActions. QActions are only created if the ezAction is actually map..." alt="" coords="271,80,360,107"/>
 <area shape="rect" href="../../d9/dfa/classez_qt_action_proxy.htm" title=" " alt="" coords="86,155,217,181"/>
 <area shape="rect" href="../../d1/d68/classez_qt_category_proxy.htm" title=" " alt="" coords="241,155,389,181"/>
 <area shape="rect" href="../../d2/dae/classez_qt_menu_proxy.htm" title=" " alt="" coords="414,155,539,181"/>
@@ -125,6 +130,9 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>SetAction</b>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a5822e76f34b13166e24777b9fcd7e613"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d73/classez_qt_proxy.htm#a5822e76f34b13166e24777b9fcd7e613">TriggerDocumentAction</a> (<a class="el" href="../../d6/dd3/classez_document.htm">ezDocument</a> *pDocument, QKeyEvent *event)</td></tr>
+<tr class="memdesc:a5822e76f34b13166e24777b9fcd7e613"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the QKeyEvent into a shortcut and tries to find a matching action in the document and global action list.  <a href="../../dd/d73/classez_qt_proxy.htm#a5822e76f34b13166e24777b9fcd7e613">More...</a><br /></td></tr>
+<tr class="separator:a5822e76f34b13166e24777b9fcd7e613"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c605ed37abc058ff9ca3e5c4a300650"><td class="memItemLeft" align="right" valign="top"><a id="a0c605ed37abc058ff9ca3e5c4a300650"></a>
 static <a class="el" href="../../d8/d28/classez_rtti_mapped_object_factory.htm">ezRttiMappedObjectFactory</a>&lt; <a class="el" href="../../dd/d73/classez_qt_proxy.htm">ezQtProxy</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetFactory</b> ()</td></tr>
 <tr class="separator:a0c605ed37abc058ff9ca3e5c4a300650"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -162,6 +170,56 @@ static <a class="el" href="../../d1/d79/classez_map.htm">ezMap</a>&lt; QWidget *
 static QObject *&#160;</td><td class="memItemRight" valign="bottom"><b>s_pSignalProxy</b> = nullptr</td></tr>
 <tr class="separator:a5b20141eb7c1fef2135943bb577fed33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Glue class that maps ezActions to QActions. QActions are only created if the <a class="el" href="../../d2/d03/classez_action.htm">ezAction</a> is actually mapped somewhere. Document and Global actions are manually executed and don't solely rely on Qt's ShortcutContext setting to prevent ambiguous action shortcuts. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a5822e76f34b13166e24777b9fcd7e613"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5822e76f34b13166e24777b9fcd7e613">&#9670;&nbsp;</a></span>TriggerDocumentAction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ezQtProxy::TriggerDocumentAction </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d6/dd3/classez_document.htm">ezDocument</a> *&#160;</td>
+          <td class="paramname"><em>pDocument</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QKeyEvent *&#160;</td>
+          <td class="paramname"><em>event</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts the QKeyEvent into a shortcut and tries to find a matching action in the document and global action list. </p>
+<p>Document actions are not mapped as ShortcutContext::WindowShortcut because docking allows for multiple documents to be mapped into the same window. Instead, ShortcutContext::WidgetWithChildrenShortcut is used to prevent ambiguous action shortcuts and the actions are executed manually via filtering QEvent::ShortcutOverride at the dock widget level.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pDocument</td><td>The document for which matching actions should be searched for. If null, only global actions are searched. </td></tr>
+    <tr><td class="paramname">event</td><td>The key event that should be converted into a shortcut. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether the key event was consumed and an action executed. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Tools/Libs/GuiFoundation/ActionViews/<a class="el" href="../../d3/dd2/_qt_proxy_8moc_8h_source.htm">QtProxy.moc.h</a></li>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Tools/Libs/GuiFoundation/ActionViews/Implementation/QtProxy.cpp</li>
@@ -172,7 +230,7 @@ static QObject *&#160;</td><td class="memItemRight" valign="bottom"><b>s_pSignal
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dd/d73/classez_qt_proxy.htm">ezQtProxy</a></li>
-    <li class="footer">Generated on Mon Oct 18 2021 15:33:40 for ezEngine by
+    <li class="footer">Generated on Sun Oct 9 2022 14:45:07 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

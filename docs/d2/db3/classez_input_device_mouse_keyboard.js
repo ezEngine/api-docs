@@ -8,6 +8,6 @@ var classez_input_device_mouse_keyboard =
     [ "SetClipMouseCursor", "d2/db3/classez_input_device_mouse_keyboard.htm#a7bf38324186c002deaa420a3fd15aa7d", null ],
     [ "SetMouseSpeed", "d2/db3/classez_input_device_mouse_keyboard.htm#a7961910cdaf34b60c3db00c4470f4de6", null ],
     [ "SetShowMouseCursor", "d2/db3/classez_input_device_mouse_keyboard.htm#a0c3ec199ee0cd91db01a00c286e0fb03", null ],
-    [ "m_bIsFocused", "d2/db3/classez_input_device_mouse_keyboard.htm#a22bf884dfc704db53218d22d447d0f82", null ],
-    [ "m_vMouseScale", "d2/db3/classez_input_device_mouse_keyboard.htm#a10ad830157d1883ff4f53305697d706a", null ]
+    [ "UpdateInputSlotValues", "d2/db3/classez_input_device_mouse_keyboard.htm#ac63f586d1bb21a095e8a442af2b7b58d", null ],
+    [ "m_DoubleClickTime", "d2/db3/classez_input_device_mouse_keyboard.htm#a20236ae991133da65ba6d39a4d7f714b", null ]
 ];

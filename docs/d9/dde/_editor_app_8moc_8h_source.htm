@@ -105,8 +105,8 @@ $(document).ready(function(){initNavTree('d9/dde/_editor_app_8moc_8h_source.htm'
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;Foundation/Types/UniquePtr.h&gt;</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;GuiFoundation/ContainerWindow/ContainerWindow.moc.h&gt;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;QApplication&gt;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;ToolsFoundation/Basics/RecentFilesList.h&gt;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;ToolsFoundation/Project/ToolsProject.h&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;ToolsFoundation/Project/ToolsProject.h&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;ToolsFoundation/Utilities/RecentFilesList.h&gt;</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">class </span>QMainWindow;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">class </span>QWidget;</div>
@@ -124,191 +124,189 @@ $(document).ready(function(){initNavTree('d9/dde/_editor_app_8moc_8h_source.htm'
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  {</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    BeforeApplyDataDirectories, </div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    ReloadResources,            </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  };</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  Type m_Type;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;};</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="../../d1/d59/classez_qt_editor_app.htm">   44</a></span>&#160;<span class="keyword">class </span>EZ_EDITORFRAMEWORK_DLL <a class="code" href="../../d1/d59/classez_qt_editor_app.htm">ezQtEditorApp</a> : <span class="keyword">public</span> QObject</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  Q_OBJECT</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  EZ_DECLARE_SINGLETON(<a class="code" href="../../d1/d59/classez_qt_editor_app.htm">ezQtEditorApp</a>);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="../../d7/db1/structez_qt_editor_app_1_1_startup_flags.htm">   51</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../d7/db1/structez_qt_editor_app_1_1_startup_flags.htm">StartupFlags</a></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">typedef</span> ezUInt8 StorageType;</div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="../../d7/db1/structez_qt_editor_app_1_1_startup_flags.htm#a957ad3eca94ddd2e1d3659f45f8c07ef">   54</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="../../d7/db1/structez_qt_editor_app_1_1_startup_flags.htm#a957ad3eca94ddd2e1d3659f45f8c07ef">Enum</a></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    {</div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="../../d7/db1/structez_qt_editor_app_1_1_startup_flags.htm#a957ad3eca94ddd2e1d3659f45f8c07efaa006cfcfd697bc3802d49ae1747bd8ae">   56</a></span>&#160;      Headless = EZ_BIT(0), </div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="../../d7/db1/structez_qt_editor_app_1_1_startup_flags.htm#a957ad3eca94ddd2e1d3659f45f8c07efab0e4e8393ead2d89af311152485b33bd">   57</a></span>&#160;      SafeMode = EZ_BIT(1), </div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="../../d7/db1/structez_qt_editor_app_1_1_startup_flags.htm#a957ad3eca94ddd2e1d3659f45f8c07efa0da7e06d259a96a6062367d61a5cefa4">   58</a></span>&#160;      NoRecent = EZ_BIT(2), </div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="../../d7/db1/structez_qt_editor_app_1_1_startup_flags.htm#a957ad3eca94ddd2e1d3659f45f8c07efac6f822f6c6b2daecfac98746e65d4bf2">   59</a></span>&#160;      Debug = EZ_BIT(3),    </div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="../../d7/db1/structez_qt_editor_app_1_1_startup_flags.htm#a957ad3eca94ddd2e1d3659f45f8c07efa11fc195758f4f50dfb4e6025f8533c1f">   60</a></span>&#160;      UnitTest = EZ_BIT(4), </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      Default = 0,</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    };</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="../../d3/df1/structez_qt_editor_app_1_1_startup_flags_1_1_bits.htm">   64</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="../../d3/df1/structez_qt_editor_app_1_1_startup_flags_1_1_bits.htm">Bits</a></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      StorageType Headless : 1;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      StorageType SafeMode : 1;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      StorageType NoRecent : 1;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      StorageType Debug : 1;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    };</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  };</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <a class="code" href="../../d1/d59/classez_qt_editor_app.htm">ezQtEditorApp</a>();</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  ~<a class="code" href="../../d1/d59/classez_qt_editor_app.htm">ezQtEditorApp</a>();</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <a class="code" href="../../d0/daf/classez_event.htm">ezEvent&lt;const ezEditorAppEvent&amp;&gt;</a> m_Events;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="comment">//</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="comment">// External Tools</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="comment">//</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> GetExternalToolsFolder(<span class="keywordtype">bool</span> bForceUseCustomTools = <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> FindToolApplication(<span class="keyword">const</span> <span class="keywordtype">char</span>* szToolName);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <a class="code" href="../../d7/d6e/structez_status.htm">ezStatus</a> ExecuteTool(<span class="keyword">const</span> <span class="keywordtype">char</span>* szTool, <span class="keyword">const</span> QStringList&amp; arguments, ezUInt32 uiSecondsTillTimeout, <a class="code" href="../../d2/d9e/classez_log_interface.htm">ezLogInterface</a>* pLogOutput = <span class="keyword">nullptr</span>, <a class="code" href="../../d0/d07/structez_log_msg_type.htm#a109cef5358039d006c48754b19db92e8">ezLogMsgType::Enum</a> LogLevel = <a class="code" href="../../d0/d07/structez_log_msg_type.htm#a109cef5358039d006c48754b19db92e8a5ded666f00c7edf588e1d1086f46deab">ezLogMsgType::WarningMsg</a>, <span class="keyword">const</span> <span class="keywordtype">char</span>* szCWD = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> BuildFileserveCommandLine() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keywordtype">void</span> RunFileserve();</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <span class="keywordtype">void</span> RunInspector();</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <span class="comment">//</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    EditorStarted,              </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  };</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  Type m_Type;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;};</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="../../d1/d59/classez_qt_editor_app.htm">   45</a></span>&#160;<span class="keyword">class </span>EZ_EDITORFRAMEWORK_DLL <a class="code" href="../../d1/d59/classez_qt_editor_app.htm">ezQtEditorApp</a> : <span class="keyword">public</span> QObject</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  Q_OBJECT</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  EZ_DECLARE_SINGLETON(<a class="code" href="../../d1/d59/classez_qt_editor_app.htm">ezQtEditorApp</a>);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="../../d7/db1/structez_qt_editor_app_1_1_startup_flags.htm">   52</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../d7/db1/structez_qt_editor_app_1_1_startup_flags.htm">StartupFlags</a></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">typedef</span> ezUInt8 StorageType;</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="../../d7/db1/structez_qt_editor_app_1_1_startup_flags.htm#a957ad3eca94ddd2e1d3659f45f8c07ef">   55</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="../../d7/db1/structez_qt_editor_app_1_1_startup_flags.htm#a957ad3eca94ddd2e1d3659f45f8c07ef">Enum</a></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    {</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="../../d7/db1/structez_qt_editor_app_1_1_startup_flags.htm#a957ad3eca94ddd2e1d3659f45f8c07efaa006cfcfd697bc3802d49ae1747bd8ae">   57</a></span>&#160;      Headless = EZ_BIT(0), </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="../../d7/db1/structez_qt_editor_app_1_1_startup_flags.htm#a957ad3eca94ddd2e1d3659f45f8c07efab0e4e8393ead2d89af311152485b33bd">   58</a></span>&#160;      SafeMode = EZ_BIT(1), </div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="../../d7/db1/structez_qt_editor_app_1_1_startup_flags.htm#a957ad3eca94ddd2e1d3659f45f8c07efa0da7e06d259a96a6062367d61a5cefa4">   59</a></span>&#160;      NoRecent = EZ_BIT(2), </div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="../../d7/db1/structez_qt_editor_app_1_1_startup_flags.htm#a957ad3eca94ddd2e1d3659f45f8c07efac6f822f6c6b2daecfac98746e65d4bf2">   60</a></span>&#160;      Debug = EZ_BIT(3),    </div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="../../d7/db1/structez_qt_editor_app_1_1_startup_flags.htm#a957ad3eca94ddd2e1d3659f45f8c07efa11fc195758f4f50dfb4e6025f8533c1f">   61</a></span>&#160;      UnitTest = EZ_BIT(4), </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      Default = 0,</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    };</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="../../d3/df1/structez_qt_editor_app_1_1_startup_flags_1_1_bits.htm">   65</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="../../d3/df1/structez_qt_editor_app_1_1_startup_flags_1_1_bits.htm">Bits</a></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      StorageType Headless : 1;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      StorageType SafeMode : 1;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      StorageType NoRecent : 1;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      StorageType Debug : 1;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    };</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  };</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <a class="code" href="../../d1/d59/classez_qt_editor_app.htm">ezQtEditorApp</a>();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  ~<a class="code" href="../../d1/d59/classez_qt_editor_app.htm">ezQtEditorApp</a>();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d0/daf/classez_event.htm">ezEvent&lt;const ezEditorAppEvent&amp;&gt;</a> m_Events;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="comment">//</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="comment">// External Tools</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="comment">//</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> GetExternalToolsFolder(<span class="keywordtype">bool</span> bForceUseCustomTools = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> FindToolApplication(<span class="keyword">const</span> <span class="keywordtype">char</span>* szToolName);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <a class="code" href="../../d7/d6e/structez_status.htm">ezStatus</a> ExecuteTool(<span class="keyword">const</span> <span class="keywordtype">char</span>* szTool, <span class="keyword">const</span> QStringList&amp; arguments, ezUInt32 uiSecondsTillTimeout, <a class="code" href="../../d2/d9e/classez_log_interface.htm">ezLogInterface</a>* pLogOutput = <span class="keyword">nullptr</span>, <a class="code" href="../../d0/d07/structez_log_msg_type.htm#a109cef5358039d006c48754b19db92e8">ezLogMsgType::Enum</a> LogLevel = <a class="code" href="../../d0/d07/structez_log_msg_type.htm#a109cef5358039d006c48754b19db92e8a5ded666f00c7edf588e1d1086f46deab">ezLogMsgType::WarningMsg</a>, <span class="keyword">const</span> <span class="keywordtype">char</span>* szCWD = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> BuildFileserveCommandLine() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <span class="keywordtype">void</span> RunFileserve();</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="keywordtype">void</span> RunInspector();</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="comment">//</span></div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="comment">//</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="../../d1/d59/classez_qt_editor_app.htm#a9988b9adb00e51af26571e7fa5bcf3d4">  112</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="../../d1/d59/classez_qt_editor_app.htm#a9988b9adb00e51af26571e7fa5bcf3d4">IsInSafeMode</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_StartupFlags.IsSet(StartupFlags::SafeMode); }</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="../../d1/d59/classez_qt_editor_app.htm#ab343ef05557ebf19f77ac90172e3fc5b">  115</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="../../d1/d59/classez_qt_editor_app.htm#ab343ef05557ebf19f77ac90172e3fc5b">IsInHeadlessMode</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_StartupFlags.IsSet(StartupFlags::Headless); }</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../df/da0/structez_plugin_set.htm">ezPluginSet</a>&amp; GetEditorPlugins()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> s_EditorPlugins; }</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../df/da0/structez_plugin_set.htm">ezPluginSet</a>&amp; GetEnginePlugins()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> s_EnginePlugins; }</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <a class="code" href="../../df/da0/structez_plugin_set.htm">ezPluginSet</a>&amp; GetEditorPlugins() { <span class="keywordflow">return</span> s_EditorPlugins; }</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <a class="code" href="../../df/da0/structez_plugin_set.htm">ezPluginSet</a>&amp; GetEnginePlugins() { <span class="keywordflow">return</span> s_EnginePlugins; }</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <span class="keywordtype">void</span> StoreEditorPluginsToBeLoaded();</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <span class="keywordtype">void</span> StoreEnginePluginsToBeLoaded();</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <span class="keywordtype">void</span> AddRestartRequiredReason(<span class="keyword">const</span> <span class="keywordtype">char</span>* szReason);</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d0/d90/classez_set.htm">ezSet&lt;ezString&gt;</a>&amp; GetRestartRequiredReasons() { <span class="keywordflow">return</span> s_RestartRequiredReasons; }</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <span class="keywordtype">void</span> AddReloadProjectRequiredReason(<span class="keyword">const</span> <span class="keywordtype">char</span>* szReason);</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d0/d90/classez_set.htm">ezSet&lt;ezString&gt;</a>&amp; GetReloadProjectRequiredReason() { <span class="keywordflow">return</span> s_ReloadProjectRequiredReasons; }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <span class="comment">//</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="../../d1/d59/classez_qt_editor_app.htm#a9988b9adb00e51af26571e7fa5bcf3d4">  113</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="../../d1/d59/classez_qt_editor_app.htm#a9988b9adb00e51af26571e7fa5bcf3d4">IsInSafeMode</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_StartupFlags.IsSet(StartupFlags::SafeMode); }</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="../../d1/d59/classez_qt_editor_app.htm#ab343ef05557ebf19f77ac90172e3fc5b">  116</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="../../d1/d59/classez_qt_editor_app.htm#ab343ef05557ebf19f77ac90172e3fc5b">IsInHeadlessMode</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_StartupFlags.IsSet(StartupFlags::Headless); }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="../../d1/d59/classez_qt_editor_app.htm#a99fc1adc2934e3937db45e2685669aa4">  119</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="../../d1/d59/classez_qt_editor_app.htm#a99fc1adc2934e3937db45e2685669aa4">IsInUnitTestMode</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_StartupFlags.IsSet(StartupFlags::UnitTest); }</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d0/d36/structez_plugin_bundle_set.htm">ezPluginBundleSet</a>&amp; GetPluginBundles()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_PluginBundles; }</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <a class="code" href="../../d0/d36/structez_plugin_bundle_set.htm">ezPluginBundleSet</a>&amp; GetPluginBundles() { <span class="keywordflow">return</span> m_PluginBundles; }</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <span class="keywordtype">void</span> AddRestartRequiredReason(<span class="keyword">const</span> <span class="keywordtype">char</span>* szReason);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d0/d90/classez_set.htm">ezSet&lt;ezString&gt;</a>&amp; GetRestartRequiredReasons() { <span class="keywordflow">return</span> s_RestartRequiredReasons; }</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <span class="keywordtype">void</span> AddReloadProjectRequiredReason(<span class="keyword">const</span> <span class="keywordtype">char</span>* szReason);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d0/d90/classez_set.htm">ezSet&lt;ezString&gt;</a>&amp; GetReloadProjectRequiredReason() { <span class="keywordflow">return</span> s_ReloadProjectRequiredReasons; }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  <span class="keywordtype">void</span> SaveSettings();</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  <span class="keywordtype">void</span> SaveSettings();</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  <span class="keywordtype">void</span> SaveOpenDocumentsList();</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  <a class="code" href="../../dd/d3b/classez_recent_files_list.htm">ezRecentFilesList</a> LoadOpenDocumentsList();</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  <span class="keywordtype">void</span> InitQt(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv);</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  <span class="keywordtype">void</span> StartupEditor();</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  <span class="keywordtype">void</span> StartupEditor(<a class="code" href="../../d1/dec/structez_bitflags.htm">ezBitflags&lt;StartupFlags&gt;</a> startupFlags, <span class="keyword">const</span> <span class="keywordtype">char</span>* szUserDataFolder = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  <span class="keywordtype">void</span> ShutdownEditor();</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  ezInt32 RunEditor();</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  <span class="keywordtype">void</span> DeInitQt();</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  <span class="keywordtype">void</span> SaveOpenDocumentsList();</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <a class="code" href="../../dd/d3b/classez_recent_files_list.htm">ezRecentFilesList</a> LoadOpenDocumentsList();</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  <span class="keywordtype">void</span> InitQt(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  <span class="keywordtype">void</span> StartupEditor();</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  <span class="keywordtype">void</span> StartupEditor(<a class="code" href="../../d1/dec/structez_bitflags.htm">ezBitflags&lt;StartupFlags&gt;</a> startupFlags, <span class="keyword">const</span> <span class="keywordtype">char</span>* szUserDataFolder = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  <span class="keywordtype">void</span> ShutdownEditor();</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  ezInt32 RunEditor();</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  <span class="keywordtype">void</span> DeInitQt();</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  <span class="keywordtype">void</span> LoadEditorPlugins();</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  <span class="keywordtype">void</span> LoadEditorPlugins();</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  <a class="code" href="../../dd/d3b/classez_recent_files_list.htm">ezRecentFilesList</a>&amp; GetRecentProjectsList() { <span class="keywordflow">return</span> s_RecentProjects; }</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  <a class="code" href="../../dd/d3b/classez_recent_files_list.htm">ezRecentFilesList</a>&amp; GetRecentDocumentsList() { <span class="keywordflow">return</span> s_RecentDocuments; }</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  <a class="code" href="../../dd/d3b/classez_recent_files_list.htm">ezRecentFilesList</a>&amp; GetRecentProjectsList() { <span class="keywordflow">return</span> s_RecentProjects; }</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  <a class="code" href="../../dd/d3b/classez_recent_files_list.htm">ezRecentFilesList</a>&amp; GetRecentDocumentsList() { <span class="keywordflow">return</span> s_RecentDocuments; }</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  <a class="code" href="../../d0/db7/classez_editor_engine_process_connection.htm">ezEditorEngineProcessConnection</a>* GetEngineViewProcess() { <span class="keywordflow">return</span> s_pEngineViewProcess; }</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  <a class="code" href="../../d0/db7/classez_editor_engine_process_connection.htm">ezEditorEngineProcessConnection</a>* GetEngineViewProcess() { <span class="keywordflow">return</span> s_pEngineViewProcess; }</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  <span class="keywordtype">void</span> ShowSettingsDocument();</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  <span class="keywordtype">void</span> CloseSettingsDocument();</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  <span class="keywordtype">void</span> CloseProject();</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> OpenProject(<span class="keyword">const</span> <span class="keywordtype">char</span>* szProject, <span class="keywordtype">bool</span> bImmediate = <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  <span class="keywordtype">void</span> GuiCreateDocument();</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  <span class="keywordtype">void</span> GuiOpenDocument();</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  <span class="keywordtype">void</span> GuiOpenDashboard();</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  <span class="keywordtype">bool</span> GuiCreateProject(<span class="keywordtype">bool</span> bImmediate = <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  <span class="keywordtype">bool</span> GuiOpenProject(<span class="keywordtype">bool</span> bImmediate = <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  <span class="keywordtype">void</span> OpenDocumentQueued(<span class="keyword">const</span> <span class="keywordtype">char</span>* szDocument, <span class="keyword">const</span> <a class="code" href="../../d2/d53/classez_document_object.htm">ezDocumentObject</a>* pOpenContext = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  <a class="code" href="../../d6/dd3/classez_document.htm">ezDocument</a>* OpenDocument(<span class="keyword">const</span> <span class="keywordtype">char</span>* szDocument, <a class="code" href="../../d1/dec/structez_bitflags.htm">ezBitflags&lt;ezDocumentFlags&gt;</a> flags, <span class="keyword">const</span> <a class="code" href="../../d2/d53/classez_document_object.htm">ezDocumentObject</a>* pOpenContext = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  <a class="code" href="../../d6/dd3/classez_document.htm">ezDocument</a>* CreateDocument(<span class="keyword">const</span> <span class="keywordtype">char</span>* szDocument, <a class="code" href="../../d1/dec/structez_bitflags.htm">ezBitflags&lt;ezDocumentFlags&gt;</a> flags, <span class="keyword">const</span> <a class="code" href="../../d2/d53/classez_document_object.htm">ezDocumentObject</a>* pOpenContext = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> CreateOrOpenProject(<span class="keywordtype">bool</span> bCreate, <span class="keyword">const</span> <span class="keywordtype">char</span>* szFile);</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  <span class="keywordtype">void</span> AddPluginDataDirDependency(<span class="keyword">const</span> <span class="keywordtype">char</span>* szSdkRootRelativePath, <span class="keyword">const</span> <span class="keywordtype">char</span>* szRootName = <span class="keyword">nullptr</span>, <span class="keywordtype">bool</span> bWriteable = <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../db/d81/classez_application_file_system_config.htm">ezApplicationFileSystemConfig</a>&amp; GetFileSystemConfig()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_FileSystemConfig; }</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d2/dd8/classez_application_plugin_config.htm">ezApplicationPluginConfig</a>&amp; GetEnginePluginConfig()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_EnginePluginConfig; }</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  <span class="keywordtype">void</span> SetFileSystemConfig(<span class="keyword">const</span> <a class="code" href="../../db/d81/classez_application_file_system_config.htm">ezApplicationFileSystemConfig</a>&amp; cfg);</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  <span class="keywordtype">bool</span> MakeDataDirectoryRelativePathAbsolute(<a class="code" href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a>&amp; sPath) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  <span class="keywordtype">bool</span> MakeDataDirectoryRelativePathAbsolute(<a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a>&amp; sPath) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;  <span class="keywordtype">bool</span> MakePathDataDirectoryRelative(<a class="code" href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a>&amp; sPath) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  <span class="keywordtype">bool</span> MakePathDataDirectoryRelative(<a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a>&amp; sPath) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  <span class="keywordtype">bool</span> MakePathDataDirectoryParentRelative(<a class="code" href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a>&amp; sPath) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  <span class="keywordtype">bool</span> MakeParentDataDirectoryRelativePathAbsolute(<a class="code" href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a>&amp; sPath, <span class="keywordtype">bool</span> bCheckExists) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  <span class="keywordtype">void</span> ShowSettingsDocument();</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  <span class="keywordtype">void</span> CloseSettingsDocument();</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  <span class="keywordtype">void</span> CloseProject();</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> OpenProject(<span class="keyword">const</span> <span class="keywordtype">char</span>* szProject, <span class="keywordtype">bool</span> bImmediate = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  <span class="keywordtype">void</span> GuiCreateDocument();</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  <span class="keywordtype">void</span> GuiOpenDocument();</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  <span class="keywordtype">void</span> GuiOpenDashboard();</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  <span class="keywordtype">void</span> GuiOpenDocsAndCommunity();</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  <span class="keywordtype">bool</span> GuiCreateProject(<span class="keywordtype">bool</span> bImmediate = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  <span class="keywordtype">bool</span> GuiOpenProject(<span class="keywordtype">bool</span> bImmediate = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  <span class="keywordtype">void</span> OpenDocumentQueued(<span class="keyword">const</span> <span class="keywordtype">char</span>* szDocument, <span class="keyword">const</span> <a class="code" href="../../d2/d53/classez_document_object.htm">ezDocumentObject</a>* pOpenContext = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  <a class="code" href="../../d6/dd3/classez_document.htm">ezDocument</a>* OpenDocument(<span class="keyword">const</span> <span class="keywordtype">char</span>* szDocument, <a class="code" href="../../d1/dec/structez_bitflags.htm">ezBitflags&lt;ezDocumentFlags&gt;</a> flags, <span class="keyword">const</span> <a class="code" href="../../d2/d53/classez_document_object.htm">ezDocumentObject</a>* pOpenContext = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  <a class="code" href="../../d6/dd3/classez_document.htm">ezDocument</a>* CreateDocument(<span class="keyword">const</span> <span class="keywordtype">char</span>* szDocument, <a class="code" href="../../d1/dec/structez_bitflags.htm">ezBitflags&lt;ezDocumentFlags&gt;</a> flags, <span class="keyword">const</span> <a class="code" href="../../d2/d53/classez_document_object.htm">ezDocumentObject</a>* pOpenContext = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> CreateOrOpenProject(<span class="keywordtype">bool</span> bCreate, <span class="keyword">const</span> <span class="keywordtype">char</span>* szFile);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  <span class="keywordtype">bool</span> ExistsPluginSelectionStateDDL(<span class="keyword">const</span> <span class="keywordtype">char</span>* szProjectDir = <span class="stringliteral">&quot;:project&quot;</span>);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  <span class="keywordtype">void</span> WritePluginSelectionStateDDL(<span class="keyword">const</span> <span class="keywordtype">char</span>* szProjectDir = <span class="stringliteral">&quot;:project&quot;</span>);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;  <span class="keywordtype">void</span> CreatePluginSelectionDDL(<span class="keyword">const</span> <span class="keywordtype">char</span>* szProjectFile, <span class="keyword">const</span> <span class="keywordtype">char</span>* szTemplate);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  <span class="keywordtype">void</span> LoadPluginBundleDlls(<span class="keyword">const</span> <span class="keywordtype">char</span>* szProjectFile);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  <span class="keywordtype">void</span> DetectAvailablePluginBundles();</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;  <span class="keywordtype">void</span> LaunchEditor(<span class="keyword">const</span> <span class="keywordtype">char</span>* szProject, <span class="keywordtype">bool</span> bCreate);</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  <span class="keywordtype">void</span> AddPluginDataDirDependency(<span class="keyword">const</span> <span class="keywordtype">char</span>* szSdkRootRelativePath, <span class="keyword">const</span> <span class="keywordtype">char</span>* szRootName = <span class="keyword">nullptr</span>, <span class="keywordtype">bool</span> bWriteable = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../db/d81/classez_application_file_system_config.htm">ezApplicationFileSystemConfig</a>&amp; GetFileSystemConfig()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_FileSystemConfig; }</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d2/dd8/classez_application_plugin_config.htm">ezApplicationPluginConfig</a> GetRuntimePluginConfig(<span class="keywordtype">bool</span> bIncludeEditorPlugins) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  <span class="keywordtype">void</span> SetFileSystemConfig(<span class="keyword">const</span> <a class="code" href="../../db/d81/classez_application_file_system_config.htm">ezApplicationFileSystemConfig</a>&amp; cfg);</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  <span class="keywordtype">void</span> AddRuntimePluginDependency(<span class="keyword">const</span> <span class="keywordtype">char</span>* szEditorPluginName, <span class="keyword">const</span> <span class="keywordtype">char</span>* szRuntimeDependency);</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  <a class="code" href="../../d7/d6e/structez_status.htm">ezStatus</a> SaveTagRegistry();</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  <span class="keywordtype">void</span> GetKnownInputSlots(<a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezString&gt;</a>&amp; slots) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  <span class="keywordtype">bool</span> MakeDataDirectoryRelativePathAbsolute(<a class="code" href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a>&amp; sPath) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  <span class="keywordtype">bool</span> MakeDataDirectoryRelativePathAbsolute(<a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a>&amp; sPath) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  <span class="keywordtype">bool</span> MakePathDataDirectoryRelative(<a class="code" href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a>&amp; sPath) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  <span class="keywordtype">bool</span> MakePathDataDirectoryRelative(<a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a>&amp; sPath) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;  <span class="keywordtype">bool</span> MakePathDataDirectoryParentRelative(<a class="code" href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a>&amp; sPath) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;  <span class="keywordtype">bool</span> MakeParentDataDirectoryRelativePathAbsolute(<a class="code" href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a>&amp; sPath, <span class="keywordtype">bool</span> bCheckExists) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  <a class="code" href="../../d7/d6e/structez_status.htm">ezStatus</a> SaveTagRegistry();</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;  <span class="keywordtype">void</span> ReloadEngineResources();</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;Q_SIGNALS:</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;  <span class="keywordtype">void</span> IdleEvent();</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;  <span class="keywordtype">void</span> GetKnownInputSlots(<a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezString&gt;</a>&amp; slots) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> BuildDocumentTypeFileFilter(<span class="keywordtype">bool</span> bForCreation);</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;  <span class="keywordtype">void</span> ReloadEngineResources();</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;  <span class="keywordtype">void</span> InternalGuiOpenDashboard();</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;  <span class="keywordtype">void</span> GuiCreateOrOpenDocument(<span class="keywordtype">bool</span> bCreate);</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;  <span class="keywordtype">bool</span> GuiCreateOrOpenProject(<span class="keywordtype">bool</span> bCreate);</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="keyword">private</span> Q_SLOTS:</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;  <span class="keywordtype">void</span> SlotTimedUpdate();</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;  <span class="keywordtype">void</span> SlotQueuedCloseProject();</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;  <span class="keywordtype">void</span> SlotQueuedOpenProject(QString sProject);</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;  <span class="keywordtype">void</span> SlotQueuedOpenDocument(QString sProject, <span class="keywordtype">void</span>* pOpenContext);</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;  <span class="keywordtype">void</span> SlotQueuedGuiOpenDashboard();</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;  <span class="keywordtype">void</span> SlotQueuedGuiCreateOrOpenProject(<span class="keywordtype">bool</span> bCreate);</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;  <span class="keywordtype">void</span> SlotSaveSettings();</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;  <span class="keywordtype">void</span> SlotVersionCheckCompleted(<span class="keywordtype">bool</span> bNewVersionReleased, <span class="keywordtype">bool</span> bForced);</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;  <span class="keywordtype">void</span> UpdateGlobalStatusBarMessage();</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;  <span class="keywordtype">void</span> DocumentManagerRequestHandler(<a class="code" href="../../dd/dc9/structez_document_manager_1_1_request.htm">ezDocumentManager::Request</a>&amp; r);</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;  <span class="keywordtype">void</span> DocumentManagerEventHandler(<span class="keyword">const</span> <a class="code" href="../../de/dad/structez_document_manager_1_1_event.htm">ezDocumentManager::Event</a>&amp; r);</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;  <span class="keywordtype">void</span> DocumentEventHandler(<span class="keyword">const</span> <a class="code" href="../../d8/dc7/structez_document_event.htm">ezDocumentEvent</a>&amp; e);</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;  <span class="keywordtype">void</span> DocumentWindowEventHandler(<span class="keyword">const</span> <a class="code" href="../../dd/d86/structez_qt_document_window_event.htm">ezQtDocumentWindowEvent</a>&amp; e);</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;  <span class="keywordtype">void</span> ProjectRequestHandler(<a class="code" href="../../da/d3a/structez_tools_project_request.htm">ezToolsProjectRequest</a>&amp; r);</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;  <span class="keywordtype">void</span> ProjectEventHandler(<span class="keyword">const</span> <a class="code" href="../../d4/d43/structez_tools_project_event.htm">ezToolsProjectEvent</a>&amp; r);</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;  <span class="keywordtype">void</span> EngineProcessMsgHandler(<span class="keyword">const</span> <a class="code" href="../../d5/d75/structez_editor_engine_process_connection_1_1_event.htm">ezEditorEngineProcessConnection::Event</a>&amp; e);</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;  <span class="keywordtype">void</span> UiServicesEvents(<span class="keyword">const</span> <a class="code" href="../../d0/d1d/structez_qt_ui_services_1_1_event.htm">ezQtUiServices::Event</a>&amp; e);</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160; </div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;  <span class="keywordtype">void</span> LoadEditorPreferences();</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;  <span class="keywordtype">void</span> LoadProjectPreferences();</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;  <span class="keywordtype">void</span> DetectAvailableEditorPlugins();</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;  <span class="keywordtype">void</span> DetectAvailableEnginePlugins();</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;  <span class="keywordtype">void</span> StoreEnginePluginModificationTimes();</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;  <span class="keywordtype">bool</span> CheckForEnginePluginModifications();</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;  <span class="keywordtype">void</span> RestartEngineProcessIfPluginsChanged();</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;  <span class="keywordtype">void</span> ReadEditorPluginsToBeLoaded();</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;  <span class="keywordtype">void</span> ReadEnginePluginConfig();</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;  <span class="keywordtype">void</span> SaveAllOpenDocuments();</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;  <span class="keywordtype">void</span> ValidateEnginePluginConfig();</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;Q_SIGNALS:</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;  <span class="keywordtype">void</span> IdleEvent();</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> BuildDocumentTypeFileFilter(<span class="keywordtype">bool</span> bForCreation);</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;  <span class="keywordtype">void</span> GuiCreateOrOpenDocument(<span class="keywordtype">bool</span> bCreate);</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;  <span class="keywordtype">bool</span> GuiCreateOrOpenProject(<span class="keywordtype">bool</span> bCreate);</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="keyword">private</span> Q_SLOTS:</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;  <span class="keywordtype">void</span> SlotTimedUpdate();</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;  <span class="keywordtype">void</span> SlotQueuedCloseProject();</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;  <span class="keywordtype">void</span> SlotQueuedOpenProject(QString sProject);</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;  <span class="keywordtype">void</span> SlotQueuedOpenDocument(QString sProject, <span class="keywordtype">void</span>* pOpenContext);</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;  <span class="keywordtype">void</span> SlotQueuedGuiOpenDashboard();</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;  <span class="keywordtype">void</span> SlotQueuedGuiOpenDocsAndCommunity();</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;  <span class="keywordtype">void</span> SlotQueuedGuiCreateOrOpenProject(<span class="keywordtype">bool</span> bCreate);</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;  <span class="keywordtype">void</span> SlotSaveSettings();</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;  <span class="keywordtype">void</span> SlotVersionCheckCompleted(<span class="keywordtype">bool</span> bNewVersionReleased, <span class="keywordtype">bool</span> bForced);</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;  <span class="keywordtype">void</span> UpdateGlobalStatusBarMessage();</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;  <span class="keywordtype">void</span> DocumentManagerRequestHandler(<a class="code" href="../../dd/dc9/structez_document_manager_1_1_request.htm">ezDocumentManager::Request</a>&amp; r);</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;  <span class="keywordtype">void</span> DocumentManagerEventHandler(<span class="keyword">const</span> <a class="code" href="../../de/dad/structez_document_manager_1_1_event.htm">ezDocumentManager::Event</a>&amp; r);</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;  <span class="keywordtype">void</span> DocumentEventHandler(<span class="keyword">const</span> <a class="code" href="../../d8/dc7/structez_document_event.htm">ezDocumentEvent</a>&amp; e);</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;  <span class="keywordtype">void</span> DocumentWindowEventHandler(<span class="keyword">const</span> <a class="code" href="../../dd/d86/structez_qt_document_window_event.htm">ezQtDocumentWindowEvent</a>&amp; e);</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;  <span class="keywordtype">void</span> ProjectRequestHandler(<a class="code" href="../../da/d3a/structez_tools_project_request.htm">ezToolsProjectRequest</a>&amp; r);</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;  <span class="keywordtype">void</span> ProjectEventHandler(<span class="keyword">const</span> <a class="code" href="../../d4/d43/structez_tools_project_event.htm">ezToolsProjectEvent</a>&amp; r);</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;  <span class="keywordtype">void</span> EngineProcessMsgHandler(<span class="keyword">const</span> <a class="code" href="../../d5/d75/structez_editor_engine_process_connection_1_1_event.htm">ezEditorEngineProcessConnection::Event</a>&amp; e);</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;  <span class="keywordtype">void</span> UiServicesEvents(<span class="keyword">const</span> <a class="code" href="../../d0/d1d/structez_qt_ui_services_1_1_event.htm">ezQtUiServices::Event</a>&amp; e);</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; </div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;  <span class="keywordtype">void</span> LoadEditorPreferences();</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;  <span class="keywordtype">void</span> LoadProjectPreferences();</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;  <span class="keywordtype">void</span> StoreEnginePluginModificationTimes();</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;  <span class="keywordtype">bool</span> CheckForEnginePluginModifications();</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;  <span class="keywordtype">void</span> RestartEngineProcessIfPluginsChanged();</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;  <span class="keywordtype">void</span> SaveAllOpenDocuments();</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;  <span class="keywordtype">void</span> ReadTagRegistry();</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160; </div>
@@ -319,38 +317,38 @@ $(document).ready(function(){initNavTree('d9/dde/_editor_app_8moc_8h_source.htm'
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;  <span class="keywordtype">void</span> SetupAndShowSplashScreen();</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;  <span class="keywordtype">void</span> CloseSplashScreen();</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; </div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;  <span class="keywordtype">bool</span> m_bSavePreferencesAfterOpenProject;</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;  <span class="keywordtype">bool</span> m_bLoadingProjectInProgress = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;  <a class="code" href="../../d1/dec/structez_bitflags.htm">ezBitflags&lt;StartupFlags&gt;</a> m_StartupFlags;</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezString&gt;</a> m_DocumentsToOpen;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> AddBundlesInOrder(<a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezApplicationPluginConfig::PluginConfig&gt;</a>&amp; order, <span class="keyword">const</span> <a class="code" href="../../d0/d36/structez_plugin_bundle_set.htm">ezPluginBundleSet</a>&amp; bundles, <span class="keyword">const</span> <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a>&amp; start, <span class="keywordtype">bool</span> bEditor, <span class="keywordtype">bool</span> bEditorEngine, <span class="keywordtype">bool</span> bRuntime) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;  <span class="keywordtype">bool</span> m_bSavePreferencesAfterOpenProject;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;  <span class="keywordtype">bool</span> m_bLoadingProjectInProgress = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;  <span class="keywordtype">bool</span> m_bAnyProjectOpened = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;  <a class="code" href="../../d0/d90/classez_set.htm">ezSet&lt;ezString&gt;</a> s_RestartRequiredReasons;</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;  <a class="code" href="../../d0/d90/classez_set.htm">ezSet&lt;ezString&gt;</a> s_ReloadProjectRequiredReasons;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;  <a class="code" href="../../d1/dec/structez_bitflags.htm">ezBitflags&lt;StartupFlags&gt;</a> m_StartupFlags;</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezString&gt;</a> m_DocumentsToOpen;</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;  <a class="code" href="../../df/da0/structez_plugin_set.htm">ezPluginSet</a> s_EditorPlugins;</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;  <a class="code" href="../../df/da0/structez_plugin_set.htm">ezPluginSet</a> s_EnginePlugins;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;  <a class="code" href="../../d0/d90/classez_set.htm">ezSet&lt;ezString&gt;</a> s_RestartRequiredReasons;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;  <a class="code" href="../../d0/d90/classez_set.htm">ezSet&lt;ezString&gt;</a> s_ReloadProjectRequiredReasons;</div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160; </div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;  <span class="keywordtype">void</span> SaveRecentFiles();</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;  <span class="keywordtype">void</span> LoadRecentFiles();</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160; </div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;  <a class="code" href="../../dd/d3b/classez_recent_files_list.htm">ezRecentFilesList</a> s_RecentProjects;</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;  <a class="code" href="../../dd/d3b/classez_recent_files_list.htm">ezRecentFilesList</a> s_RecentDocuments;</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;  QApplication* s_pQtApplication = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;  <a class="code" href="../../dd/d69/classez_long_op_controller_manager.htm">ezLongOpControllerManager</a> m_LongOpControllerManager;</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  <a class="code" href="../../d0/db7/classez_editor_engine_process_connection.htm">ezEditorEngineProcessConnection</a>* s_pEngineViewProcess;</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;  QTimer* m_pTimer = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160; </div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;  QSplashScreen* m_pSplashScreen = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160; </div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;  <a class="code" href="../../d5/d7e/classez_log_writer_1_1_h_t_m_l.htm">ezLogWriter::HTML</a> m_LogHTML;</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160; </div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;  <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> m_LastPluginModificationCheck;</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;  <a class="code" href="../../db/d81/classez_application_file_system_config.htm">ezApplicationFileSystemConfig</a> m_FileSystemConfig;</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;  <a class="code" href="../../d2/dd8/classez_application_plugin_config.htm">ezApplicationPluginConfig</a> m_EnginePluginConfig;</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;  <a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;ezString, ezSet&lt;ezString&gt;</a>&gt; m_AdditionalRuntimePluginDependencies;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;  <a class="code" href="../../d0/d36/structez_plugin_bundle_set.htm">ezPluginBundleSet</a> m_PluginBundles;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;  <span class="keywordtype">void</span> SaveRecentFiles();</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;  <span class="keywordtype">void</span> LoadRecentFiles();</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160; </div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;  <a class="code" href="../../dd/d3b/classez_recent_files_list.htm">ezRecentFilesList</a> s_RecentProjects;</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;  <a class="code" href="../../dd/d3b/classez_recent_files_list.htm">ezRecentFilesList</a> s_RecentDocuments;</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  <span class="keywordtype">int</span> m_iArgc = 0;</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;  QApplication* m_pQtApplication = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;  <a class="code" href="../../dd/d69/classez_long_op_controller_manager.htm">ezLongOpControllerManager</a> m_LongOpControllerManager;</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;  <a class="code" href="../../d0/db7/classez_editor_engine_process_connection.htm">ezEditorEngineProcessConnection</a>* s_pEngineViewProcess;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;  QTimer* m_pTimer = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;  QSplashScreen* m_pSplashScreen = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160; </div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;  <a class="code" href="../../d5/d7e/classez_log_writer_1_1_h_t_m_l.htm">ezLogWriter::HTML</a> m_LogHTML;</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;  <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> m_LastPluginModificationCheck;</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;  <a class="code" href="../../db/d81/classez_application_file_system_config.htm">ezApplicationFileSystemConfig</a> m_FileSystemConfig;</div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160; </div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;  <span class="comment">// *** Recent Paths ***</span></div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sLastDocumentFolder;</div>
@@ -387,10 +385,11 @@ $(document).ready(function(){initNavTree('d9/dde/_editor_app_8moc_8h_source.htm'
 <div class="ttc" id="aclassez_dynamic_string_enum_htm"><div class="ttname"><a href="../../d3/dd2/classez_dynamic_string_enum.htm">ezDynamicStringEnum</a></div><div class="ttdoc">Stores the valid values and names for 'dynamic' enums.</div><div class="ttdef"><b>Definition:</b> DynamicStringEnum.h:13</div></div>
 <div class="ttc" id="astructez_time_htm"><div class="ttname"><a href="../../d3/d90/structez_time.htm">ezTime</a></div><div class="ttdoc">The time class encapsulates a double value storing the time in seconds.</div><div class="ttdef"><b>Definition:</b> Time.h:11</div></div>
 <div class="ttc" id="astructez_tools_project_event_htm"><div class="ttname"><a href="../../d4/d43/structez_tools_project_event.htm">ezToolsProjectEvent</a></div><div class="ttdef"><b>Definition:</b> ToolsProject.h:12</div></div>
-<div class="ttc" id="aclassez_qt_editor_app_htm"><div class="ttname"><a href="../../d1/d59/classez_qt_editor_app.htm">ezQtEditorApp</a></div><div class="ttdef"><b>Definition:</b> EditorApp.moc.h:44</div></div>
+<div class="ttc" id="aclassez_qt_editor_app_htm"><div class="ttname"><a href="../../d1/d59/classez_qt_editor_app.htm">ezQtEditorApp</a></div><div class="ttdef"><b>Definition:</b> EditorApp.moc.h:45</div></div>
 <div class="ttc" id="aclassez_progress_htm"><div class="ttname"><a href="../../d8/d41/classez_progress.htm">ezProgress</a></div><div class="ttdoc">Manages the way a progress bar is subdivided and advanced.</div><div class="ttdef"><b>Definition:</b> Progress.h:35</div></div>
-<div class="ttc" id="astructez_document_event_htm"><div class="ttname"><a href="../../d8/dc7/structez_document_event.htm">ezDocumentEvent</a></div><div class="ttdef"><b>Definition:</b> Declarations.h:43</div></div>
-<div class="ttc" id="aclassez_editor_engine_process_connection_htm"><div class="ttname"><a href="../../d0/db7/classez_editor_engine_process_connection.htm">ezEditorEngineProcessConnection</a></div><div class="ttdef"><b>Definition:</b> EngineProcessConnection.h:19</div></div>
+<div class="ttc" id="astructez_document_event_htm"><div class="ttname"><a href="../../d8/dc7/structez_document_event.htm">ezDocumentEvent</a></div><div class="ttdef"><b>Definition:</b> Declarations.h:50</div></div>
+<div class="ttc" id="aclassez_editor_engine_process_connection_htm"><div class="ttname"><a href="../../d0/db7/classez_editor_engine_process_connection.htm">ezEditorEngineProcessConnection</a></div><div class="ttdef"><b>Definition:</b> EngineProcessConnection.h:20</div></div>
+<div class="ttc" id="aclassez_qt_editor_app_htm_a99fc1adc2934e3937db45e2685669aa4"><div class="ttname"><a href="../../d1/d59/classez_qt_editor_app.htm#a99fc1adc2934e3937db45e2685669aa4">ezQtEditorApp::IsInUnitTestMode</a></div><div class="ttdeci">bool IsInUnitTestMode() const</div><div class="ttdoc">Returns true if the editor is started is run in test mode.</div><div class="ttdef"><b>Definition:</b> EditorApp.moc.h:119</div></div>
 <div class="ttc" id="aclassez_log_interface_htm"><div class="ttname"><a href="../../d2/d9e/classez_log_interface.htm">ezLogInterface</a></div><div class="ttdoc">Base class for all logging classes.</div><div class="ttdef"><b>Definition:</b> Log.h:76</div></div>
 <div class="ttc" id="astructez_hybrid_string_htm"><div class="ttname"><a href="../../d4/d53/structez_hybrid_string.htm">ezHybridString</a></div><div class="ttdef"><b>Definition:</b> Stream.h:15</div></div>
 <div class="ttc" id="astructez_log_msg_type_htm_a109cef5358039d006c48754b19db92e8"><div class="ttname"><a href="../../d0/d07/structez_log_msg_type.htm#a109cef5358039d006c48754b19db92e8">ezLogMsgType::Enum</a></div><div class="ttdeci">Enum</div><div class="ttdef"><b>Definition:</b> Log.h:28</div></div>
@@ -399,32 +398,31 @@ $(document).ready(function(){initNavTree('d9/dde/_editor_app_8moc_8h_source.htm'
 <div class="ttc" id="aclassez_recent_files_list_htm"><div class="ttname"><a href="../../dd/d3b/classez_recent_files_list.htm">ezRecentFilesList</a></div><div class="ttdoc">Maintains a list of recently used files and the container window ID they previously resided in.</div><div class="ttdef"><b>Definition:</b> RecentFilesList.h:6</div></div>
 <div class="ttc" id="aclassez_dynamic_array_htm"><div class="ttname"><a href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray</a></div><div class="ttdef"><b>Definition:</b> DynamicArray.h:80</div></div>
 <div class="ttc" id="astructez_qt_document_window_event_htm"><div class="ttname"><a href="../../dd/d86/structez_qt_document_window_event.htm">ezQtDocumentWindowEvent</a></div><div class="ttdef"><b>Definition:</b> DocumentWindow.moc.h:18</div></div>
-<div class="ttc" id="aclassez_qt_editor_app_htm_ab343ef05557ebf19f77ac90172e3fc5b"><div class="ttname"><a href="../../d1/d59/classez_qt_editor_app.htm#ab343ef05557ebf19f77ac90172e3fc5b">ezQtEditorApp::IsInHeadlessMode</a></div><div class="ttdeci">bool IsInHeadlessMode() const</div><div class="ttdoc">Returns true if StartupEditor was called with true. This is the case in an EditorProcessor.</div><div class="ttdef"><b>Definition:</b> EditorApp.moc.h:115</div></div>
-<div class="ttc" id="aclassez_qt_editor_app_htm_a9988b9adb00e51af26571e7fa5bcf3d4"><div class="ttname"><a href="../../d1/d59/classez_qt_editor_app.htm#a9988b9adb00e51af26571e7fa5bcf3d4">ezQtEditorApp::IsInSafeMode</a></div><div class="ttdeci">bool IsInSafeMode() const</div><div class="ttdoc">Can be set via the command line option '-safe'. In this mode the editor will not automatically load r...</div><div class="ttdef"><b>Definition:</b> EditorApp.moc.h:112</div></div>
-<div class="ttc" id="aclassez_map_htm"><div class="ttname"><a href="../../d1/d79/classez_map.htm">ezMap</a></div><div class="ttdef"><b>Definition:</b> Map.h:327</div></div>
+<div class="ttc" id="aclassez_qt_editor_app_htm_ab343ef05557ebf19f77ac90172e3fc5b"><div class="ttname"><a href="../../d1/d59/classez_qt_editor_app.htm#ab343ef05557ebf19f77ac90172e3fc5b">ezQtEditorApp::IsInHeadlessMode</a></div><div class="ttdeci">bool IsInHeadlessMode() const</div><div class="ttdoc">Returns true if the the app shouldn't display anything. This is the case in an EditorProcessor.</div><div class="ttdef"><b>Definition:</b> EditorApp.moc.h:116</div></div>
+<div class="ttc" id="aclassez_qt_editor_app_htm_a9988b9adb00e51af26571e7fa5bcf3d4"><div class="ttname"><a href="../../d1/d59/classez_qt_editor_app.htm#a9988b9adb00e51af26571e7fa5bcf3d4">ezQtEditorApp::IsInSafeMode</a></div><div class="ttdeci">bool IsInSafeMode() const</div><div class="ttdoc">Can be set via the command line option '-safe'. In this mode the editor will not automatically load r...</div><div class="ttdef"><b>Definition:</b> EditorApp.moc.h:113</div></div>
 <div class="ttc" id="aclassez_event_htm"><div class="ttname"><a href="../../d0/daf/classez_event.htm">ezEvent&lt; const ezEditorAppEvent &amp; &gt;</a></div></div>
-<div class="ttc" id="astructez_plugin_set_htm"><div class="ttname"><a href="../../df/da0/structez_plugin_set.htm">ezPluginSet</a></div><div class="ttdoc">Describes a set of plugins. Name is the plugin file name used to load it through ezPlugin,...</div><div class="ttdef"><b>Definition:</b> Plugins.h:26</div></div>
 <div class="ttc" id="aclassez_document_object_htm"><div class="ttname"><a href="../../d2/d53/classez_document_object.htm">ezDocumentObject</a></div><div class="ttdef"><b>Definition:</b> DocumentObjectBase.h:10</div></div>
 <div class="ttc" id="astructez_document_manager_1_1_event_htm"><div class="ttname"><a href="../../de/dad/structez_document_manager_1_1_event.htm">ezDocumentManager::Event</a></div><div class="ttdef"><b>Definition:</b> DocumentManager.h:64</div></div>
 <div class="ttc" id="astructez_log_msg_type_htm_a109cef5358039d006c48754b19db92e8a5ded666f00c7edf588e1d1086f46deab"><div class="ttname"><a href="../../d0/d07/structez_log_msg_type.htm#a109cef5358039d006c48754b19db92e8a5ded666f00c7edf588e1d1086f46deab">ezLogMsgType::WarningMsg</a></div><div class="ttdeci">@ WarningMsg</div><div class="ttdoc">A warning message.</div><div class="ttdef"><b>Definition:</b> Log.h:37</div></div>
 <div class="ttc" id="aclassez_log_writer_1_1_h_t_m_l_htm"><div class="ttname"><a href="../../d5/d7e/classez_log_writer_1_1_h_t_m_l.htm">ezLogWriter::HTML</a></div><div class="ttdoc">A log writer that writes out log messages to an HTML file.</div><div class="ttdef"><b>Definition:</b> HTMLWriter.h:13</div></div>
-<div class="ttc" id="astructez_qt_editor_app_1_1_startup_flags_htm"><div class="ttname"><a href="../../d7/db1/structez_qt_editor_app_1_1_startup_flags.htm">ezQtEditorApp::StartupFlags</a></div><div class="ttdef"><b>Definition:</b> EditorApp.moc.h:51</div></div>
+<div class="ttc" id="astructez_qt_editor_app_1_1_startup_flags_htm"><div class="ttname"><a href="../../d7/db1/structez_qt_editor_app_1_1_startup_flags.htm">ezQtEditorApp::StartupFlags</a></div><div class="ttdef"><b>Definition:</b> EditorApp.moc.h:52</div></div>
 <div class="ttc" id="aclassez_translator_from_files_htm"><div class="ttname"><a href="../../df/dea/classez_translator_from_files.htm">ezTranslatorFromFiles</a></div><div class="ttdoc">Loads translations from files. Each translator can have different search paths, but the files to be l...</div><div class="ttdef"><b>Definition:</b> TranslationLookup.h:83</div></div>
-<div class="ttc" id="astructez_qt_editor_app_1_1_startup_flags_htm_a957ad3eca94ddd2e1d3659f45f8c07ef"><div class="ttname"><a href="../../d7/db1/structez_qt_editor_app_1_1_startup_flags.htm#a957ad3eca94ddd2e1d3659f45f8c07ef">ezQtEditorApp::StartupFlags::Enum</a></div><div class="ttdeci">Enum</div><div class="ttdef"><b>Definition:</b> EditorApp.moc.h:54</div></div>
+<div class="ttc" id="astructez_qt_editor_app_1_1_startup_flags_htm_a957ad3eca94ddd2e1d3659f45f8c07ef"><div class="ttname"><a href="../../d7/db1/structez_qt_editor_app_1_1_startup_flags.htm#a957ad3eca94ddd2e1d3659f45f8c07ef">ezQtEditorApp::StartupFlags::Enum</a></div><div class="ttdeci">Enum</div><div class="ttdef"><b>Definition:</b> EditorApp.moc.h:55</div></div>
 <div class="ttc" id="aclassez_qt_version_checker_htm"><div class="ttname"><a href="../../d1/d46/classez_qt_version_checker.htm">ezQtVersionChecker</a></div><div class="ttdoc">Downloads a web page and checks whether the latest version online is newer than the current one.</div><div class="ttdef"><b>Definition:</b> CheckVersion.moc.h:29</div></div>
 <div class="ttc" id="aclassez_application_plugin_config_htm"><div class="ttname"><a href="../../d2/dd8/classez_application_plugin_config.htm">ezApplicationPluginConfig</a></div><div class="ttdef"><b>Definition:</b> PluginConfig.h:8</div></div>
 <div class="ttc" id="astructez_document_manager_1_1_request_htm"><div class="ttname"><a href="../../dd/dc9/structez_document_manager_1_1_request.htm">ezDocumentManager::Request</a></div><div class="ttdef"><b>Definition:</b> DocumentManager.h:86</div></div>
 <div class="ttc" id="aclassez_string_builder_htm"><div class="ttname"><a href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a></div><div class="ttdoc">ezStringBuilder is a class that is meant for creating and modifying strings.</div><div class="ttdef"><b>Definition:</b> StringBuilder.h:34</div></div>
-<div class="ttc" id="astructez_qt_editor_app_1_1_startup_flags_1_1_bits_htm"><div class="ttname"><a href="../../d3/df1/structez_qt_editor_app_1_1_startup_flags_1_1_bits.htm">ezQtEditorApp::StartupFlags::Bits</a></div><div class="ttdef"><b>Definition:</b> EditorApp.moc.h:64</div></div>
+<div class="ttc" id="astructez_plugin_bundle_set_htm"><div class="ttname"><a href="../../d0/d36/structez_plugin_bundle_set.htm">ezPluginBundleSet</a></div><div class="ttdoc">Contains multiple ezPluginBundle's.</div><div class="ttdef"><b>Definition:</b> Plugins.h:55</div></div>
+<div class="ttc" id="astructez_qt_editor_app_1_1_startup_flags_1_1_bits_htm"><div class="ttname"><a href="../../d3/df1/structez_qt_editor_app_1_1_startup_flags_1_1_bits.htm">ezQtEditorApp::StartupFlags::Bits</a></div><div class="ttdef"><b>Definition:</b> EditorApp.moc.h:65</div></div>
 <div class="ttc" id="astructez_editor_app_event_htm"><div class="ttname"><a href="../../d3/d7b/structez_editor_app_event.htm">ezEditorAppEvent</a></div><div class="ttdef"><b>Definition:</b> EditorApp.moc.h:32</div></div>
-<div class="ttc" id="astructez_editor_engine_process_connection_1_1_event_htm"><div class="ttname"><a href="../../d5/d75/structez_editor_engine_process_connection_1_1_event.htm">ezEditorEngineProcessConnection::Event</a></div><div class="ttdef"><b>Definition:</b> EngineProcessConnection.h:72</div></div>
+<div class="ttc" id="astructez_editor_engine_process_connection_1_1_event_htm"><div class="ttname"><a href="../../d5/d75/structez_editor_engine_process_connection_1_1_event.htm">ezEditorEngineProcessConnection::Event</a></div><div class="ttdef"><b>Definition:</b> EngineProcessConnection.h:73</div></div>
 <div class="ttc" id="astructez_editor_app_event_htm_aebc38406324666dc404aae3e922cdf64"><div class="ttname"><a href="../../d3/d7b/structez_editor_app_event.htm#aebc38406324666dc404aae3e922cdf64">ezEditorAppEvent::Type</a></div><div class="ttdeci">Type</div><div class="ttdef"><b>Definition:</b> EditorApp.moc.h:34</div></div>
 <div class="ttc" id="aclassez_application_file_system_config_htm"><div class="ttname"><a href="../../db/d81/classez_application_file_system_config.htm">ezApplicationFileSystemConfig</a></div><div class="ttdef"><b>Definition:</b> FileSystemConfig.h:7</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_898824d97bbfb864e5ee6bfb2857fc31.htm">Editor</a></li><li class="navelem"><a class="el" href="../../dir_2c11fbcc86473fad6c721ead68acf992.htm">EditorFramework</a></li><li class="navelem"><a class="el" href="../../dir_31e8a62d704a531bdf879e50ba4667ff.htm">EditorApp</a></li><li class="navelem"><b>EditorApp.moc.h</b></li>
-    <li class="footer">Generated on Mon Oct 18 2021 15:33:22 for ezEngine by
+    <li class="footer">Generated on Sun Oct 9 2022 14:44:47 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

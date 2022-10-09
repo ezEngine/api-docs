@@ -102,8 +102,8 @@ $(document).ready(function(){initNavTree('de/d42/_window_8h_source.htm','../../'
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">class </span><a class="code" href="../../db/d71/classez_open_ddl_reader_element.htm">ezOpenDdlReaderElement</a>;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// Include the proper Input implementation to use</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#if EZ_ENABLED(EZ_SUPPORTS_SFML)</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#  include &lt;Core/System/Implementation/SFML/InputDevice_SFML.h&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#if EZ_ENABLED(EZ_SUPPORTS_GLFW)</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#  include &lt;Core/System/Implementation/glfw/InputDevice_glfw.h&gt;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#elif EZ_ENABLED(EZ_PLATFORM_WINDOWS_DESKTOP)</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#  include &lt;Core/System/Implementation/Win/InputDevice_win32.h&gt;</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#elif EZ_ENABLED(EZ_PLATFORM_WINDOWS_UWP)</span></div>
@@ -112,203 +112,275 @@ $(document).ready(function(){initNavTree('de/d42/_window_8h_source.htm','../../'
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#  include &lt;Core/System/Implementation/null/InputDevice_null.h&gt;</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#if EZ_ENABLED(EZ_SUPPORTS_SFML)</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">using</span> ezWindowHandle = sf::Window*;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#  define INVALID_WINDOW_HANDLE_VALUE (sf::Window*)(0)</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// Currently the following scenarios are possible</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// - Windows native implementation, using HWND</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// - GLFW on windows, using GLFWWindow* internally and HWND to pass windows around</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// - GLFW / XCB on linux. Runtime uses GLFWWindow*. Editor uses xcb-window. Tagged union is passed around as window handle.</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#elif EZ_ENABLED(EZ_PLATFORM_WINDOWS_DESKTOP)</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#if EZ_ENABLED(EZ_SUPPORTS_GLFW)</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#  include &lt;Foundation/Basics/Platform/Win/MinWindows.h&gt;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">using</span> ezWindowHandle = ezMinWindows::HWND;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#  define INVALID_WINDOW_HANDLE_VALUE (ezWindowHandle)(0)</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#elif EZ_ENABLED(EZ_PLATFORM_WINDOWS_UWP)</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">using</span> ezWindowHandle = IUnknown*;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#  define INVALID_WINDOW_HANDLE_VALUE nullptr</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">using</span> ezWindowHandle = <span class="keywordtype">void</span>*;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#  define INVALID_WINDOW_HANDLE_VALUE nullptr</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="../../d4/d8c/classez_window_base.htm">   50</a></span>&#160;<span class="keyword">class </span>EZ_CORE_DLL <a class="code" href="../../d4/d8c/classez_window_base.htm">ezWindowBase</a></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keyword">virtual</span> ~<a class="code" href="../../d4/d8c/classez_window_base.htm">ezWindowBase</a>() {}</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d1/d2c/classez_size_template.htm">ezSizeU32</a> GetClientAreaSize() <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">virtual</span> ezWindowHandle GetNativeWindowHandle() <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> IsFullscreenWindow(<span class="keywordtype">bool</span> bOnlyProperFullscreenMode = <span class="keyword">false</span>) <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> ProcessWindowMessages() = 0;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;};</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="../../de/d8c/structez_window_mode.htm">   68</a></span>&#160;<span class="keyword">struct </span>EZ_CORE_DLL <a class="code" href="../../de/d8c/structez_window_mode.htm">ezWindowMode</a></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;{</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keyword">using</span> StorageType = ezUInt8;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="../../de/d8c/structez_window_mode.htm#a9d016072ce39a9c85bb11f609f39b843">   72</a></span>&#160;  <span class="keyword">enum</span> <a class="code" href="../../de/d8c/structez_window_mode.htm#a9d016072ce39a9c85bb11f609f39b843">Enum</a></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  {</div>
-<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="../../de/d8c/structez_window_mode.htm#a9d016072ce39a9c85bb11f609f39b843a7d53b3b3eeb5a83d56dccc1b323bc91c">   74</a></span>&#160;    <a class="code" href="../../de/d8c/structez_window_mode.htm#a9d016072ce39a9c85bb11f609f39b843a7d53b3b3eeb5a83d56dccc1b323bc91c">WindowFixedResolution</a>,                </div>
-<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="../../de/d8c/structez_window_mode.htm#a9d016072ce39a9c85bb11f609f39b843ada079ee7d642a170cde6da3d63f20ab0">   75</a></span>&#160;    <a class="code" href="../../de/d8c/structez_window_mode.htm#a9d016072ce39a9c85bb11f609f39b843ada079ee7d642a170cde6da3d63f20ab0">WindowResizable</a>,                      </div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="../../de/d8c/structez_window_mode.htm#a9d016072ce39a9c85bb11f609f39b843aa9db4cf767368cc58312c4d67364c052">   76</a></span>&#160;    FullscreenBorderlessNativeResolution, </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    FullscreenFixedResolution,            </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    Default = WindowFixedResolution</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  };</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="../../de/d8c/structez_window_mode.htm#a9ad2f02ead0d39bdf12299ad47abff08">   85</a></span>&#160;  <span class="keyword">static</span> constexpr <span class="keywordtype">bool</span> <a class="code" href="../../de/d8c/structez_window_mode.htm#a9ad2f02ead0d39bdf12299ad47abff08">IsFullscreen</a>(<a class="code" href="../../de/d8c/structez_window_mode.htm#a9d016072ce39a9c85bb11f609f39b843">Enum</a> e) { <span class="keywordflow">return</span> e == FullscreenBorderlessNativeResolution || e == FullscreenFixedResolution; }</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;};</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="../../dd/d3b/structez_window_creation_desc.htm">   89</a></span>&#160;<span class="keyword">struct </span>EZ_CORE_DLL <a class="code" href="../../dd/d3b/structez_window_creation_desc.htm">ezWindowCreationDesc</a></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;{</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> AdjustWindowSizeAndPosition();</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="keywordtype">void</span> SaveToDDL(<a class="code" href="../../d0/ddb/classez_open_ddl_writer.htm">ezOpenDdlWriter</a>&amp; writer);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> SaveToDDL(<span class="keyword">const</span> <span class="keywordtype">char</span>* szFile);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <span class="keywordtype">void</span> LoadFromDDL(<span class="keyword">const</span> <a class="code" href="../../db/d71/classez_open_ddl_reader_element.htm">ezOpenDdlReaderElement</a>* pParentElement);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> LoadFromDDL(<span class="keyword">const</span> <span class="keywordtype">char</span>* szFile);</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="../../dd/d3b/structez_window_creation_desc.htm#a6cc221a1e2c439f2c7a0d3b0978bc2b0">  114</a></span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_Title = <span class="stringliteral">&quot;ezEngine&quot;</span>;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="../../dd/d3b/structez_window_creation_desc.htm#ab66e09a1992de3ab00d880fdac785864">  117</a></span>&#160;  <a class="code" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezWindowMode&gt;</a> <a class="code" href="../../dd/d3b/structez_window_creation_desc.htm#ab66e09a1992de3ab00d880fdac785864">m_WindowMode</a>;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="../../dd/d3b/structez_window_creation_desc.htm#ab1ca42ced4911818b6787839d563f3df">  121</a></span>&#160;  ezInt8 m_iMonitor = -1;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keyword">typedef</span> <span class="keyword">struct </span>GLFWwindow GLFWwindow;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#  if EZ_ENABLED(EZ_PLATFORM_WINDOWS_DESKTOP)</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#    include &lt;Foundation/Basics/Platform/Win/MinWindows.h&gt;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">using</span> ezWindowHandle = ezMinWindows::HWND;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">using</span> ezWindowInternalHandle = GLFWwindow*;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#    define INVALID_WINDOW_HANDLE_VALUE (ezWindowHandle)(0)</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#    define INVALID_INTERNAL_WINDOW_HANDLE_VALUE nullptr</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#  elif EZ_ENABLED(EZ_PLATFORM_LINUX)</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keyword">typedef</span> <span class="keyword">struct </span>xcb_connection_t xcb_connection_t;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">struct </span>ezXcbWindowHandle</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  xcb_connection_t* m_pConnection;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  ezUInt32 m_Window;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;};</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">struct </span>ezWindowHandle</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keyword">enum class</span> Type</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    Invalid = 0,</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    GLFW = 1, <span class="comment">// Used by the runtime</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    XCB = 2   <span class="comment">// Used by the editor</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  };</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  Type type;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keyword">union</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    GLFWwindow* glfwWindow;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    ezXcbWindowHandle xcbWindow;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  };</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;};</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keyword">using</span> ezWindowInternalHandle = ezWindowHandle;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#    define INVALID_WINDOW_HANDLE_VALUE \</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">      ezWindowHandle {}</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#  else</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword">using</span> ezWindowHandle = GLFWwindow*;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keyword">using</span> ezWindowInternalHandle = GLFWwindow*;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#    define INVALID_WINDOW_HANDLE_VALUE (GLFWwindow*)(0)</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#  endif</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#elif EZ_ENABLED(EZ_PLATFORM_WINDOWS_DESKTOP)</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#  include &lt;Foundation/Basics/Platform/Win/MinWindows.h&gt;</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">using</span> ezWindowHandle = ezMinWindows::HWND;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keyword">using</span> ezWindowInternalHandle = ezWindowHandle;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#  define INVALID_WINDOW_HANDLE_VALUE (ezWindowHandle)(0)</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#elif EZ_ENABLED(EZ_PLATFORM_WINDOWS_UWP)</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keyword">using</span> ezWindowHandle = IUnknown*;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="keyword">using</span> ezWindowInternalHandle = ezWindowHandle;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#  define INVALID_WINDOW_HANDLE_VALUE nullptr</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keyword">using</span> ezWindowHandle = <span class="keywordtype">void</span>*;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="keyword">using</span> ezWindowInternalHandle = ezWindowHandle;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor">#  define INVALID_WINDOW_HANDLE_VALUE nullptr</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">#ifndef INVALID_INTERNAL_WINDOW_HANDLE_VALUE</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">#  define INVALID_INTERNAL_WINDOW_HANDLE_VALUE INVALID_WINDOW_HANDLE_VALUE</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="../../d4/d8c/classez_window_base.htm">  109</a></span>&#160;<span class="keyword">class </span>EZ_CORE_DLL <a class="code" href="../../d4/d8c/classez_window_base.htm">ezWindowBase</a></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;{</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <span class="keyword">virtual</span> ~<a class="code" href="../../d4/d8c/classez_window_base.htm">ezWindowBase</a>() {}</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d1/d2c/classez_size_template.htm">ezSizeU32</a> GetClientAreaSize() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <span class="keyword">virtual</span> ezWindowHandle GetNativeWindowHandle() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> IsFullscreenWindow(<span class="keywordtype">bool</span> bOnlyProperFullscreenMode = <span class="keyword">false</span>) <span class="keyword">const</span> = 0;</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="../../dd/d3b/structez_window_creation_desc.htm#af8bfb9ba851d7c56a856f363748bfb60">  124</a></span>&#160;  <a class="code" href="../../d1/df8/classez_vec2_template.htm">ezVec2I32</a> m_Position = <a class="code" href="../../d1/df8/classez_vec2_template.htm">ezVec2I32</a>(0x80000000, 0x80000000); <span class="comment">// Magic number on windows that positions the window at a &#39;good default position&#39;</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> ProcessWindowMessages() = 0;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;};</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
-<div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="../../dd/d3b/structez_window_creation_desc.htm#a887fbcdbd14bce043e3c85edbbfa695e">  127</a></span>&#160;  <a class="code" href="../../d1/d2c/classez_size_template.htm">ezSizeU32</a> m_Resolution = <a class="code" href="../../d1/d2c/classez_size_template.htm">ezSizeU32</a>(1280, 720);</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
-<div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="../../dd/d3b/structez_window_creation_desc.htm#a55e6b8930abc977981f44765c0b17bd2">  131</a></span>&#160;  ezUInt8 m_uiWindowNumber = 0;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="../../dd/d3b/structez_window_creation_desc.htm#a6acf4ad9c75d5de18753eafa6b807263">  135</a></span>&#160;  <span class="keywordtype">bool</span> m_bClipMouseCursor = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
-<div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="../../dd/d3b/structez_window_creation_desc.htm#a41b03cf3d067079dca47699ad5a32bdf">  139</a></span>&#160;  <span class="keywordtype">bool</span> m_bShowMouseCursor = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
-<div class="line"><a name="l00142"></a><span class="lineno"><a class="line" href="../../dd/d3b/structez_window_creation_desc.htm#af348ff68586d6307997d95867aebf11e">  142</a></span>&#160;  <span class="keywordtype">bool</span> m_bSetForegroundOnInit = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;};</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
-<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="../../da/db5/classez_window.htm">  150</a></span>&#160;<span class="keyword">class </span>EZ_CORE_DLL <a class="code" href="../../da/db5/classez_window.htm">ezWindow</a> : <span class="keyword">public</span> <a class="code" href="../../d4/d8c/classez_window_base.htm">ezWindowBase</a></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;{</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  <a class="code" href="../../da/db5/classez_window.htm">ezWindow</a>();</div>
+<div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="../../de/d8c/structez_window_mode.htm">  127</a></span>&#160;<span class="keyword">struct </span>EZ_CORE_DLL <a class="code" href="../../de/d8c/structez_window_mode.htm">ezWindowMode</a></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;{</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <span class="keyword">using</span> StorageType = ezUInt8;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="../../de/d8c/structez_window_mode.htm#a9d016072ce39a9c85bb11f609f39b843">  131</a></span>&#160;  <span class="keyword">enum</span> <a class="code" href="../../de/d8c/structez_window_mode.htm#a9d016072ce39a9c85bb11f609f39b843">Enum</a></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  {</div>
+<div class="line"><a name="l00133"></a><span class="lineno"><a class="line" href="../../de/d8c/structez_window_mode.htm#a9d016072ce39a9c85bb11f609f39b843a7d53b3b3eeb5a83d56dccc1b323bc91c">  133</a></span>&#160;    <a class="code" href="../../de/d8c/structez_window_mode.htm#a9d016072ce39a9c85bb11f609f39b843a7d53b3b3eeb5a83d56dccc1b323bc91c">WindowFixedResolution</a>,                </div>
+<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="../../de/d8c/structez_window_mode.htm#a9d016072ce39a9c85bb11f609f39b843ada079ee7d642a170cde6da3d63f20ab0">  134</a></span>&#160;    <a class="code" href="../../de/d8c/structez_window_mode.htm#a9d016072ce39a9c85bb11f609f39b843ada079ee7d642a170cde6da3d63f20ab0">WindowResizable</a>,                      </div>
+<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="../../de/d8c/structez_window_mode.htm#a9d016072ce39a9c85bb11f609f39b843aa9db4cf767368cc58312c4d67364c052">  135</a></span>&#160;    FullscreenBorderlessNativeResolution, </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    FullscreenFixedResolution,            </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    Default = WindowFixedResolution</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  };</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="../../de/d8c/structez_window_mode.htm#a9ad2f02ead0d39bdf12299ad47abff08">  144</a></span>&#160;  <span class="keyword">static</span> constexpr <span class="keywordtype">bool</span> <a class="code" href="../../de/d8c/structez_window_mode.htm#a9ad2f02ead0d39bdf12299ad47abff08">IsFullscreen</a>(<a class="code" href="../../de/d8c/structez_window_mode.htm#a9d016072ce39a9c85bb11f609f39b843">Enum</a> e) { <span class="keywordflow">return</span> e == FullscreenBorderlessNativeResolution || e == FullscreenFixedResolution; }</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;};</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="../../dd/d3b/structez_window_creation_desc.htm">  148</a></span>&#160;<span class="keyword">struct </span>EZ_CORE_DLL <a class="code" href="../../dd/d3b/structez_window_creation_desc.htm">ezWindowCreationDesc</a></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;{</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> AdjustWindowSizeAndPosition();</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  <span class="keyword">virtual</span> ~<a class="code" href="../../da/db5/classez_window.htm">ezWindow</a>();</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  <span class="keywordtype">void</span> SaveToDDL(<a class="code" href="../../d0/ddb/classez_open_ddl_writer.htm">ezOpenDdlWriter</a>&amp; writer);</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
-<div class="line"><a name="l00163"></a><span class="lineno"><a class="line" href="../../da/db5/classez_window.htm#aea84f75daf9ef08f81d800d9344c71af">  163</a></span>&#160;  <span class="keyword">inline</span> <span class="keyword">const</span> <a class="code" href="../../dd/d3b/structez_window_creation_desc.htm">ezWindowCreationDesc</a>&amp; <a class="code" href="../../da/db5/classez_window.htm#aea84f75daf9ef08f81d800d9344c71af">GetCreationDescription</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_CreationDescription; }</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> SaveToDDL(<span class="keyword">const</span> <span class="keywordtype">char</span>* szFile);</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
-<div class="line"><a name="l00166"></a><span class="lineno"><a class="line" href="../../da/db5/classez_window.htm#ad0ed522d074fa2f789f302f24bac286a">  166</a></span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d1/d2c/classez_size_template.htm">ezSizeU32</a> <a class="code" href="../../da/db5/classez_window.htm#ad0ed522d074fa2f789f302f24bac286a">GetClientAreaSize</a>()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> m_CreationDescription.m_Resolution; }</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  <span class="keywordtype">void</span> LoadFromDDL(<span class="keyword">const</span> <a class="code" href="../../db/d71/classez_open_ddl_reader_element.htm">ezOpenDdlReaderElement</a>* pParentElement);</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
-<div class="line"><a name="l00169"></a><span class="lineno"><a class="line" href="../../da/db5/classez_window.htm#abd40dbddafffb709ac0e1ff08fd61ecb">  169</a></span>&#160;  <span class="keyword">virtual</span> ezWindowHandle <a class="code" href="../../da/db5/classez_window.htm#abd40dbddafffb709ac0e1ff08fd61ecb">GetNativeWindowHandle</a>()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> m_WindowHandle; }</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> LoadFromDDL(<span class="keyword">const</span> <span class="keywordtype">char</span>* szFile);</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
-<div class="line"><a name="l00174"></a><span class="lineno"><a class="line" href="../../da/db5/classez_window.htm#ac22ee094096c851ea9468661f67c694e">  174</a></span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="../../da/db5/classez_window.htm#ac22ee094096c851ea9468661f67c694e">IsFullscreenWindow</a>(<span class="keywordtype">bool</span> bOnlyProperFullscreenMode = <span class="keyword">false</span>)<span class="keyword"> const override</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordflow">if</span> (bOnlyProperFullscreenMode)</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;      <span class="keywordflow">return</span> m_CreationDescription.m_WindowMode == <a class="code" href="../../de/d8c/structez_window_mode.htm#a9d016072ce39a9c85bb11f609f39b843ad15ecf48f724525a8e01dcfe56c921c8">ezWindowMode::FullscreenFixedResolution</a>;</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../de/d8c/structez_window_mode.htm#a9ad2f02ead0d39bdf12299ad47abff08">ezWindowMode::IsFullscreen</a>(m_CreationDescription.m_WindowMode);</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  }</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
+<div class="line"><a name="l00173"></a><span class="lineno"><a class="line" href="../../dd/d3b/structez_window_creation_desc.htm#a6cc221a1e2c439f2c7a0d3b0978bc2b0">  173</a></span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_Title = <span class="stringliteral">&quot;ezEngine&quot;</span>;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
+<div class="line"><a name="l00176"></a><span class="lineno"><a class="line" href="../../dd/d3b/structez_window_creation_desc.htm#ab66e09a1992de3ab00d880fdac785864">  176</a></span>&#160;  <a class="code" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezWindowMode&gt;</a> <a class="code" href="../../dd/d3b/structez_window_creation_desc.htm#ab66e09a1992de3ab00d880fdac785864">m_WindowMode</a>;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
+<div class="line"><a name="l00180"></a><span class="lineno"><a class="line" href="../../dd/d3b/structez_window_creation_desc.htm#ab1ca42ced4911818b6787839d563f3df">  180</a></span>&#160;  ezInt8 m_iMonitor = -1;</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> ProcessWindowMessages() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00183"></a><span class="lineno"><a class="line" href="../../dd/d3b/structez_window_creation_desc.htm#af8bfb9ba851d7c56a856f363748bfb60">  183</a></span>&#160;  <a class="code" href="../../d1/df8/classez_vec2_template.htm">ezVec2I32</a> m_Position = <a class="code" href="../../d1/df8/classez_vec2_template.htm">ezVec2I32</a>(0x80000000, 0x80000000); <span class="comment">// Magic number on windows that positions the window at a &#39;good default position&#39;</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
+<div class="line"><a name="l00186"></a><span class="lineno"><a class="line" href="../../dd/d3b/structez_window_creation_desc.htm#a887fbcdbd14bce043e3c85edbbfa695e">  186</a></span>&#160;  <a class="code" href="../../d1/d2c/classez_size_template.htm">ezSizeU32</a> m_Resolution = <a class="code" href="../../d1/d2c/classez_size_template.htm">ezSizeU32</a>(1280, 720);</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> Initialize();</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
-<div class="line"><a name="l00203"></a><span class="lineno"><a class="line" href="../../da/db5/classez_window.htm#ae45f5a95d4b76ca3a6a56ee5d0cc8414">  203</a></span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> <a class="code" href="../../da/db5/classez_window.htm#ae45f5a95d4b76ca3a6a56ee5d0cc8414">Initialize</a>(<span class="keyword">const</span> <a class="code" href="../../dd/d3b/structez_window_creation_desc.htm">ezWindowCreationDesc</a>&amp; creationDescription)</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;  {</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    m_CreationDescription = creationDescription;</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="keywordflow">return</span> Initialize();</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;  }</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
-<div class="line"><a name="l00210"></a><span class="lineno"><a class="line" href="../../da/db5/classez_window.htm#a3ef91d2da3eee8b03cf6e8b881f38a07">  210</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="../../da/db5/classez_window.htm#a3ef91d2da3eee8b03cf6e8b881f38a07">IsInitialized</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_bInitialized; }</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> Destroy();</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> OnResize(<span class="keyword">const</span> <a class="code" href="../../d1/d2c/classez_size_template.htm">ezSizeU32</a>&amp; newWindowSize);</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160; </div>
-<div class="line"><a name="l00223"></a><span class="lineno"><a class="line" href="../../da/db5/classez_window.htm#aaed507824205f3a2c7b5eb6e78c99d9c">  223</a></span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../da/db5/classez_window.htm#aaed507824205f3a2c7b5eb6e78c99d9c">OnWindowMove</a>(<span class="keyword">const</span> ezInt32 newPosX, <span class="keyword">const</span> ezInt32 newPosY) {}</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
-<div class="line"><a name="l00226"></a><span class="lineno"><a class="line" href="../../da/db5/classez_window.htm#a249c1b596d362f578afeea22a93397c8">  226</a></span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../da/db5/classez_window.htm#a249c1b596d362f578afeea22a93397c8">OnFocus</a>(<span class="keywordtype">bool</span> bHasFocus) {}</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
-<div class="line"><a name="l00229"></a><span class="lineno"><a class="line" href="../../da/db5/classez_window.htm#a686788c5c7d797c7d8e9f65f847159e2">  229</a></span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../da/db5/classez_window.htm#a686788c5c7d797c7d8e9f65f847159e2">OnClickClose</a>() {}</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="preprocessor">#if EZ_ENABLED(EZ_PLATFORM_WINDOWS)</span></div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> OnWindowMessage(ezMinWindows::HWND hWnd, ezMinWindows::UINT Msg, ezMinWindows::WPARAM WParam, ezMinWindows::LPARAM LParam);</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; </div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;<span class="preprocessor">#elif EZ_ENABLED(EZ_PLATFORM_OSX)</span></div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;<span class="preprocessor">#elif EZ_ENABLED(EZ_PLATFORM_LINUX)</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno"><a class="line" href="../../dd/d3b/structez_window_creation_desc.htm#a55e6b8930abc977981f44765c0b17bd2">  190</a></span>&#160;  ezUInt8 m_uiWindowNumber = 0;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
+<div class="line"><a name="l00194"></a><span class="lineno"><a class="line" href="../../dd/d3b/structez_window_creation_desc.htm#a6acf4ad9c75d5de18753eafa6b807263">  194</a></span>&#160;  <span class="keywordtype">bool</span> m_bClipMouseCursor = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
+<div class="line"><a name="l00198"></a><span class="lineno"><a class="line" href="../../dd/d3b/structez_window_creation_desc.htm#a41b03cf3d067079dca47699ad5a32bdf">  198</a></span>&#160;  <span class="keywordtype">bool</span> m_bShowMouseCursor = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
+<div class="line"><a name="l00201"></a><span class="lineno"><a class="line" href="../../dd/d3b/structez_window_creation_desc.htm#af348ff68586d6307997d95867aebf11e">  201</a></span>&#160;  <span class="keywordtype">bool</span> m_bSetForegroundOnInit = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;};</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
+<div class="line"><a name="l00209"></a><span class="lineno"><a class="line" href="../../da/db5/classez_window.htm">  209</a></span>&#160;<span class="keyword">class </span>EZ_CORE_DLL <a class="code" href="../../da/db5/classez_window.htm">ezWindow</a> : <span class="keyword">public</span> <a class="code" href="../../d4/d8c/classez_window_base.htm">ezWindowBase</a></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;{</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;  <a class="code" href="../../da/db5/classez_window.htm">ezWindow</a>();</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;  <span class="keyword">virtual</span> ~<a class="code" href="../../da/db5/classez_window.htm">ezWindow</a>();</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
+<div class="line"><a name="l00222"></a><span class="lineno"><a class="line" href="../../da/db5/classez_window.htm#aea84f75daf9ef08f81d800d9344c71af">  222</a></span>&#160;  <span class="keyword">inline</span> <span class="keyword">const</span> <a class="code" href="../../dd/d3b/structez_window_creation_desc.htm">ezWindowCreationDesc</a>&amp; <a class="code" href="../../da/db5/classez_window.htm#aea84f75daf9ef08f81d800d9344c71af">GetCreationDescription</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_CreationDescription; }</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
+<div class="line"><a name="l00225"></a><span class="lineno"><a class="line" href="../../da/db5/classez_window.htm#ad0ed522d074fa2f789f302f24bac286a">  225</a></span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d1/d2c/classez_size_template.htm">ezSizeU32</a> <a class="code" href="../../da/db5/classez_window.htm#ad0ed522d074fa2f789f302f24bac286a">GetClientAreaSize</a>()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> m_CreationDescription.m_Resolution; }</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;  <span class="keyword">virtual</span> ezWindowHandle GetNativeWindowHandle() <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
+<div class="line"><a name="l00233"></a><span class="lineno"><a class="line" href="../../da/db5/classez_window.htm#ac22ee094096c851ea9468661f67c694e">  233</a></span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="../../da/db5/classez_window.htm#ac22ee094096c851ea9468661f67c694e">IsFullscreenWindow</a>(<span class="keywordtype">bool</span> bOnlyProperFullscreenMode = <span class="keyword">false</span>)<span class="keyword"> const override</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="keyword">  </span>{</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="keywordflow">if</span> (bOnlyProperFullscreenMode)</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;      <span class="keywordflow">return</span> m_CreationDescription.m_WindowMode == <a class="code" href="../../de/d8c/structez_window_mode.htm#a9d016072ce39a9c85bb11f609f39b843ad15ecf48f724525a8e01dcfe56c921c8">ezWindowMode::FullscreenFixedResolution</a>;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../de/d8c/structez_window_mode.htm#a9ad2f02ead0d39bdf12299ad47abff08">ezWindowMode::IsFullscreen</a>(m_CreationDescription.m_WindowMode);</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;  }</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; </div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> ProcessWindowMessages() <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;<span class="preprocessor">#elif EZ_ENABLED(EZ_PLATFORM_ANDROID)</span></div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;<span class="preprocessor">#  error &quot;Missing code for ezWindow on this platform!&quot;</span></div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
-<div class="line"><a name="l00254"></a><span class="lineno"><a class="line" href="../../da/db5/classez_window.htm#ac397e1f82cf8de8f39b732a50c2cc6a4">  254</a></span>&#160;  <a class="code" href="../../dd/d76/classez_standard_input_device.htm">ezStandardInputDevice</a>* <a class="code" href="../../da/db5/classez_window.htm#ac397e1f82cf8de8f39b732a50c2cc6a4">GetInputDevice</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pInputDevice.Borrow(); }</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;  <span class="keyword">static</span> ezUInt8 GetNextUnusedWindowNumber();</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00264"></a><span class="lineno"><a class="line" href="../../da/db5/classez_window.htm#ad8b40662e5a1c4e60c2d1e225906d33d">  264</a></span>&#160;  <a class="code" href="../../dd/d3b/structez_window_creation_desc.htm">ezWindowCreationDesc</a> <a class="code" href="../../da/db5/classez_window.htm#ad8b40662e5a1c4e60c2d1e225906d33d">m_CreationDescription</a>;</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;  <span class="keywordtype">bool</span> m_bInitialized = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160; </div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;  <a class="code" href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt;ezStandardInputDevice&gt;</a> m_pInputDevice;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> Initialize();</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160; </div>
+<div class="line"><a name="l00262"></a><span class="lineno"><a class="line" href="../../da/db5/classez_window.htm#ae45f5a95d4b76ca3a6a56ee5d0cc8414">  262</a></span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> <a class="code" href="../../da/db5/classez_window.htm#ae45f5a95d4b76ca3a6a56ee5d0cc8414">Initialize</a>(<span class="keyword">const</span> <a class="code" href="../../dd/d3b/structez_window_creation_desc.htm">ezWindowCreationDesc</a>&amp; creationDescription)</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;  {</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    m_CreationDescription = creationDescription;</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="keywordflow">return</span> Initialize();</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;  }</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
+<div class="line"><a name="l00269"></a><span class="lineno"><a class="line" href="../../da/db5/classez_window.htm#a3ef91d2da3eee8b03cf6e8b881f38a07">  269</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="../../da/db5/classez_window.htm#a3ef91d2da3eee8b03cf6e8b881f38a07">IsInitialized</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_bInitialized; }</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;  <span class="keyword">mutable</span> ezWindowHandle m_WindowHandle = ezWindowHandle();</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;  <span class="keyword">static</span> ezUInt8 s_uiNextUnusedWindowNumber;</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;};</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> Destroy();</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160; </div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> Resize(<span class="keyword">const</span> <a class="code" href="../../d1/d2c/classez_size_template.htm">ezSizeU32</a>&amp; newWindowSize);</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160; </div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> OnResize(<span class="keyword">const</span> <a class="code" href="../../d1/d2c/classez_size_template.htm">ezSizeU32</a>&amp; newWindowSize);</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160; </div>
+<div class="line"><a name="l00286"></a><span class="lineno"><a class="line" href="../../da/db5/classez_window.htm#aaed507824205f3a2c7b5eb6e78c99d9c">  286</a></span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../da/db5/classez_window.htm#aaed507824205f3a2c7b5eb6e78c99d9c">OnWindowMove</a>(<span class="keyword">const</span> ezInt32 newPosX, <span class="keyword">const</span> ezInt32 newPosY) {}</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
+<div class="line"><a name="l00289"></a><span class="lineno"><a class="line" href="../../da/db5/classez_window.htm#a249c1b596d362f578afeea22a93397c8">  289</a></span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../da/db5/classez_window.htm#a249c1b596d362f578afeea22a93397c8">OnFocus</a>(<span class="keywordtype">bool</span> bHasFocus) {}</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160; </div>
+<div class="line"><a name="l00292"></a><span class="lineno"><a class="line" href="../../da/db5/classez_window.htm#a686788c5c7d797c7d8e9f65f847159e2">  292</a></span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../da/db5/classez_window.htm#a686788c5c7d797c7d8e9f65f847159e2">OnClickClose</a>() {}</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160; </div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;<span class="preprocessor">#if EZ_ENABLED(EZ_PLATFORM_WINDOWS)</span></div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> OnWindowMessage(ezMinWindows::HWND hWnd, ezMinWindows::UINT Msg, ezMinWindows::WPARAM WParam, ezMinWindows::LPARAM LParam);</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span class="preprocessor">#elif EZ_ENABLED(EZ_PLATFORM_OSX)</span></div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="preprocessor">#elif EZ_ENABLED(EZ_PLATFORM_LINUX)</span></div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;<span class="preprocessor">#elif EZ_ENABLED(EZ_PLATFORM_ANDROID)</span></div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160; </div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;<span class="preprocessor">#  error &quot;Missing code for ezWindow on this platform!&quot;</span></div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160; </div>
+<div class="line"><a name="l00317"></a><span class="lineno"><a class="line" href="../../da/db5/classez_window.htm#ac397e1f82cf8de8f39b732a50c2cc6a4">  317</a></span>&#160;  <a class="code" href="../../dd/d76/classez_standard_input_device.htm">ezStandardInputDevice</a>* <a class="code" href="../../da/db5/classez_window.htm#ac397e1f82cf8de8f39b732a50c2cc6a4">GetInputDevice</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pInputDevice.Borrow(); }</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160; </div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;  <span class="keyword">static</span> ezUInt8 GetNextUnusedWindowNumber();</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160; </div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00327"></a><span class="lineno"><a class="line" href="../../da/db5/classez_window.htm#ad8b40662e5a1c4e60c2d1e225906d33d">  327</a></span>&#160;  <a class="code" href="../../dd/d3b/structez_window_creation_desc.htm">ezWindowCreationDesc</a> <a class="code" href="../../da/db5/classez_window.htm#ad8b40662e5a1c4e60c2d1e225906d33d">m_CreationDescription</a>;</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160; </div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;  <span class="keywordtype">bool</span> m_bInitialized = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160; </div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;  <a class="code" href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt;ezStandardInputDevice&gt;</a> m_pInputDevice;</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;  <span class="keyword">mutable</span> ezWindowInternalHandle m_WindowHandle = ezWindowInternalHandle();</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160; </div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;<span class="preprocessor">#if EZ_ENABLED(EZ_SUPPORTS_GLFW)</span></div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> SizeCallback(GLFWwindow* window, <span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height);</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> PositionCallback(GLFWwindow* window, <span class="keywordtype">int</span> xpos, <span class="keywordtype">int</span> ypos);</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> CloseCallback(GLFWwindow* window);</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> FocusCallback(GLFWwindow* window, <span class="keywordtype">int</span> focused);</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> KeyCallback(GLFWwindow* window, <span class="keywordtype">int</span> key, <span class="keywordtype">int</span> scancode, <span class="keywordtype">int</span> action, <span class="keywordtype">int</span> mods);</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> CharacterCallback(GLFWwindow* window, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> codepoint);</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> CursorPositionCallback(GLFWwindow* window, <span class="keywordtype">double</span> xpos, <span class="keywordtype">double</span> ypos);</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> MouseButtonCallback(GLFWwindow* window, <span class="keywordtype">int</span> button, <span class="keywordtype">int</span> action, <span class="keywordtype">int</span> mods);</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> ScrollCallback(GLFWwindow* window, <span class="keywordtype">double</span> xoffset, <span class="keywordtype">double</span> yoffset);</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160; </div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;  <span class="keyword">static</span> ezUInt8 s_uiNextUnusedWindowNumber;</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="astructez_window_mode_htm_a9d016072ce39a9c85bb11f609f39b843a7d53b3b3eeb5a83d56dccc1b323bc91c"><div class="ttname"><a href="../../de/d8c/structez_window_mode.htm#a9d016072ce39a9c85bb11f609f39b843a7d53b3b3eeb5a83d56dccc1b323bc91c">ezWindowMode::WindowFixedResolution</a></div><div class="ttdeci">@ WindowFixedResolution</div><div class="ttdoc">The resolution and size are what the user picked and will not be changed. The window will not be resi...</div><div class="ttdef"><b>Definition:</b> Window.h:74</div></div>
-<div class="ttc" id="aclassez_window_htm_abd40dbddafffb709ac0e1ff08fd61ecb"><div class="ttname"><a href="../../da/db5/classez_window.htm#abd40dbddafffb709ac0e1ff08fd61ecb">ezWindow::GetNativeWindowHandle</a></div><div class="ttdeci">virtual ezWindowHandle GetNativeWindowHandle() const override</div><div class="ttdoc">Returns the platform specific window handle.</div><div class="ttdef"><b>Definition:</b> Window.h:169</div></div>
-<div class="ttc" id="astructez_window_creation_desc_htm_ab66e09a1992de3ab00d880fdac785864"><div class="ttname"><a href="../../dd/d3b/structez_window_creation_desc.htm#ab66e09a1992de3ab00d880fdac785864">ezWindowCreationDesc::m_WindowMode</a></div><div class="ttdeci">ezEnum&lt; ezWindowMode &gt; m_WindowMode</div><div class="ttdoc">Defines how the window size is determined.</div><div class="ttdef"><b>Definition:</b> Window.h:117</div></div>
+<div class="ttc" id="astructez_window_mode_htm_a9d016072ce39a9c85bb11f609f39b843a7d53b3b3eeb5a83d56dccc1b323bc91c"><div class="ttname"><a href="../../de/d8c/structez_window_mode.htm#a9d016072ce39a9c85bb11f609f39b843a7d53b3b3eeb5a83d56dccc1b323bc91c">ezWindowMode::WindowFixedResolution</a></div><div class="ttdeci">@ WindowFixedResolution</div><div class="ttdoc">The resolution and size are what the user picked and will not be changed. The window will not be resi...</div><div class="ttdef"><b>Definition:</b> Window.h:133</div></div>
+<div class="ttc" id="astructez_window_creation_desc_htm_ab66e09a1992de3ab00d880fdac785864"><div class="ttname"><a href="../../dd/d3b/structez_window_creation_desc.htm#ab66e09a1992de3ab00d880fdac785864">ezWindowCreationDesc::m_WindowMode</a></div><div class="ttdeci">ezEnum&lt; ezWindowMode &gt; m_WindowMode</div><div class="ttdoc">Defines how the window size is determined.</div><div class="ttdef"><b>Definition:</b> Window.h:176</div></div>
 <div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition:</b> Types.h:50</div></div>
-<div class="ttc" id="astructez_window_mode_htm_a9d016072ce39a9c85bb11f609f39b843"><div class="ttname"><a href="../../de/d8c/structez_window_mode.htm#a9d016072ce39a9c85bb11f609f39b843">ezWindowMode::Enum</a></div><div class="ttdeci">Enum</div><div class="ttdef"><b>Definition:</b> Window.h:72</div></div>
-<div class="ttc" id="aclassez_window_htm_ae45f5a95d4b76ca3a6a56ee5d0cc8414"><div class="ttname"><a href="../../da/db5/classez_window.htm#ae45f5a95d4b76ca3a6a56ee5d0cc8414">ezWindow::Initialize</a></div><div class="ttdeci">ezResult Initialize(const ezWindowCreationDesc &amp;creationDescription)</div><div class="ttdoc">Creates a new platform specific window with the given settings.</div><div class="ttdef"><b>Definition:</b> Window.h:203</div></div>
-<div class="ttc" id="aclassez_window_htm_aaed507824205f3a2c7b5eb6e78c99d9c"><div class="ttname"><a href="../../da/db5/classez_window.htm#aaed507824205f3a2c7b5eb6e78c99d9c">ezWindow::OnWindowMove</a></div><div class="ttdeci">virtual void OnWindowMove(const ezInt32 newPosX, const ezInt32 newPosY)</div><div class="ttdoc">Called when the window position is changed. Not possible on all OSes.</div><div class="ttdef"><b>Definition:</b> Window.h:223</div></div>
-<div class="ttc" id="astructez_window_mode_htm_a9ad2f02ead0d39bdf12299ad47abff08"><div class="ttname"><a href="../../de/d8c/structez_window_mode.htm#a9ad2f02ead0d39bdf12299ad47abff08">ezWindowMode::IsFullscreen</a></div><div class="ttdeci">static constexpr bool IsFullscreen(Enum e)</div><div class="ttdoc">Returns whether the window covers an entire monitor. This includes borderless windows and proper full...</div><div class="ttdef"><b>Definition:</b> Window.h:85</div></div>
-<div class="ttc" id="aclassez_window_htm_ac397e1f82cf8de8f39b732a50c2cc6a4"><div class="ttname"><a href="../../da/db5/classez_window.htm#ac397e1f82cf8de8f39b732a50c2cc6a4">ezWindow::GetInputDevice</a></div><div class="ttdeci">ezStandardInputDevice * GetInputDevice() const</div><div class="ttdoc">Returns the input device that is attached to this window and typically provides mouse / keyboard inpu...</div><div class="ttdef"><b>Definition:</b> Window.h:254</div></div>
-<div class="ttc" id="astructez_window_mode_htm_a9d016072ce39a9c85bb11f609f39b843ada079ee7d642a170cde6da3d63f20ab0"><div class="ttname"><a href="../../de/d8c/structez_window_mode.htm#a9d016072ce39a9c85bb11f609f39b843ada079ee7d642a170cde6da3d63f20ab0">ezWindowMode::WindowResizable</a></div><div class="ttdeci">@ WindowResizable</div><div class="ttdoc">The resolution and size are what the user picked and will not be changed. Allows window resizing by t...</div><div class="ttdef"><b>Definition:</b> Window.h:75</div></div>
-<div class="ttc" id="aclassez_window_htm"><div class="ttname"><a href="../../da/db5/classez_window.htm">ezWindow</a></div><div class="ttdoc">A simple abstraction for platform specific window creation.</div><div class="ttdef"><b>Definition:</b> Window.h:150</div></div>
+<div class="ttc" id="astructez_window_mode_htm_a9d016072ce39a9c85bb11f609f39b843"><div class="ttname"><a href="../../de/d8c/structez_window_mode.htm#a9d016072ce39a9c85bb11f609f39b843">ezWindowMode::Enum</a></div><div class="ttdeci">Enum</div><div class="ttdef"><b>Definition:</b> Window.h:131</div></div>
+<div class="ttc" id="aclassez_window_htm_ae45f5a95d4b76ca3a6a56ee5d0cc8414"><div class="ttname"><a href="../../da/db5/classez_window.htm#ae45f5a95d4b76ca3a6a56ee5d0cc8414">ezWindow::Initialize</a></div><div class="ttdeci">ezResult Initialize(const ezWindowCreationDesc &amp;creationDescription)</div><div class="ttdoc">Creates a new platform specific window with the given settings.</div><div class="ttdef"><b>Definition:</b> Window.h:262</div></div>
+<div class="ttc" id="aclassez_window_htm_aaed507824205f3a2c7b5eb6e78c99d9c"><div class="ttname"><a href="../../da/db5/classez_window.htm#aaed507824205f3a2c7b5eb6e78c99d9c">ezWindow::OnWindowMove</a></div><div class="ttdeci">virtual void OnWindowMove(const ezInt32 newPosX, const ezInt32 newPosY)</div><div class="ttdoc">Called when the window position is changed. Not possible on all OSes.</div><div class="ttdef"><b>Definition:</b> Window.h:286</div></div>
+<div class="ttc" id="astructez_window_mode_htm_a9ad2f02ead0d39bdf12299ad47abff08"><div class="ttname"><a href="../../de/d8c/structez_window_mode.htm#a9ad2f02ead0d39bdf12299ad47abff08">ezWindowMode::IsFullscreen</a></div><div class="ttdeci">static constexpr bool IsFullscreen(Enum e)</div><div class="ttdoc">Returns whether the window covers an entire monitor. This includes borderless windows and proper full...</div><div class="ttdef"><b>Definition:</b> Window.h:144</div></div>
+<div class="ttc" id="aclassez_window_htm_ac397e1f82cf8de8f39b732a50c2cc6a4"><div class="ttname"><a href="../../da/db5/classez_window.htm#ac397e1f82cf8de8f39b732a50c2cc6a4">ezWindow::GetInputDevice</a></div><div class="ttdeci">ezStandardInputDevice * GetInputDevice() const</div><div class="ttdoc">Returns the input device that is attached to this window and typically provides mouse / keyboard inpu...</div><div class="ttdef"><b>Definition:</b> Window.h:317</div></div>
+<div class="ttc" id="astructez_window_mode_htm_a9d016072ce39a9c85bb11f609f39b843ada079ee7d642a170cde6da3d63f20ab0"><div class="ttname"><a href="../../de/d8c/structez_window_mode.htm#a9d016072ce39a9c85bb11f609f39b843ada079ee7d642a170cde6da3d63f20ab0">ezWindowMode::WindowResizable</a></div><div class="ttdeci">@ WindowResizable</div><div class="ttdoc">The resolution and size are what the user picked and will not be changed. Allows window resizing by t...</div><div class="ttdef"><b>Definition:</b> Window.h:134</div></div>
+<div class="ttc" id="aclassez_window_htm"><div class="ttname"><a href="../../da/db5/classez_window.htm">ezWindow</a></div><div class="ttdoc">A simple abstraction for platform specific window creation.</div><div class="ttdef"><b>Definition:</b> Window.h:209</div></div>
 <div class="ttc" id="aclassez_size_template_htm"><div class="ttname"><a href="../../d1/d2c/classez_size_template.htm">ezSizeTemplate&lt; ezUInt32 &gt;</a></div></div>
-<div class="ttc" id="astructez_window_mode_htm"><div class="ttname"><a href="../../de/d8c/structez_window_mode.htm">ezWindowMode</a></div><div class="ttdoc">Determines how the position and resolution for a window are picked.</div><div class="ttdef"><b>Definition:</b> Window.h:68</div></div>
-<div class="ttc" id="aclassez_standard_input_device_htm"><div class="ttname"><a href="../../dd/d76/classez_standard_input_device.htm">ezStandardInputDevice</a></div><div class="ttdoc">Implements an input device abstraction on top of the SFML library.</div><div class="ttdef"><b>Definition:</b> InputDevice_null.h:5</div></div>
+<div class="ttc" id="astructez_window_mode_htm"><div class="ttname"><a href="../../de/d8c/structez_window_mode.htm">ezWindowMode</a></div><div class="ttdoc">Determines how the position and resolution for a window are picked.</div><div class="ttdef"><b>Definition:</b> Window.h:127</div></div>
+<div class="ttc" id="aclassez_standard_input_device_htm"><div class="ttname"><a href="../../dd/d76/classez_standard_input_device.htm">ezStandardInputDevice</a></div><div class="ttdef"><b>Definition:</b> InputDevice_glfw.h:10</div></div>
 <div class="ttc" id="aclassez_open_ddl_reader_htm"><div class="ttname"><a href="../../d1/da2/classez_open_ddl_reader.htm">ezOpenDdlReader</a></div><div class="ttdoc">An OpenDDL reader parses an entire DDL document and creates an in-memory representation of the docume...</div><div class="ttdef"><b>Definition:</b> OpenDdlReader.h:117</div></div>
-<div class="ttc" id="aclassez_window_htm_ac22ee094096c851ea9468661f67c694e"><div class="ttname"><a href="../../da/db5/classez_window.htm#ac22ee094096c851ea9468661f67c694e">ezWindow::IsFullscreenWindow</a></div><div class="ttdeci">virtual bool IsFullscreenWindow(bool bOnlyProperFullscreenMode=false) const override</div><div class="ttdoc">Returns whether the window covers an entire monitor.</div><div class="ttdef"><b>Definition:</b> Window.h:174</div></div>
+<div class="ttc" id="aclassez_window_htm_ac22ee094096c851ea9468661f67c694e"><div class="ttname"><a href="../../da/db5/classez_window.htm#ac22ee094096c851ea9468661f67c694e">ezWindow::IsFullscreenWindow</a></div><div class="ttdeci">virtual bool IsFullscreenWindow(bool bOnlyProperFullscreenMode=false) const override</div><div class="ttdoc">Returns whether the window covers an entire monitor.</div><div class="ttdef"><b>Definition:</b> Window.h:233</div></div>
 <div class="ttc" id="astructez_hybrid_string_htm"><div class="ttname"><a href="../../d4/d53/structez_hybrid_string.htm">ezHybridString&lt; 32, ezDefaultAllocatorWrapper &gt;</a></div></div>
-<div class="ttc" id="aclassez_window_htm_a249c1b596d362f578afeea22a93397c8"><div class="ttname"><a href="../../da/db5/classez_window.htm#a249c1b596d362f578afeea22a93397c8">ezWindow::OnFocus</a></div><div class="ttdeci">virtual void OnFocus(bool bHasFocus)</div><div class="ttdoc">Called when the window gets focus or loses focus.</div><div class="ttdef"><b>Definition:</b> Window.h:226</div></div>
+<div class="ttc" id="aclassez_window_htm_a249c1b596d362f578afeea22a93397c8"><div class="ttname"><a href="../../da/db5/classez_window.htm#a249c1b596d362f578afeea22a93397c8">ezWindow::OnFocus</a></div><div class="ttdeci">virtual void OnFocus(bool bHasFocus)</div><div class="ttdoc">Called when the window gets focus or loses focus.</div><div class="ttdef"><b>Definition:</b> Window.h:289</div></div>
 <div class="ttc" id="aclassez_open_ddl_writer_htm"><div class="ttname"><a href="../../d0/ddb/classez_open_ddl_writer.htm">ezOpenDdlWriter</a></div><div class="ttdoc">The base class for OpenDDL writers.</div><div class="ttdef"><b>Definition:</b> OpenDdlWriter.h:12</div></div>
-<div class="ttc" id="aclassez_window_htm_a686788c5c7d797c7d8e9f65f847159e2"><div class="ttname"><a href="../../da/db5/classez_window.htm#a686788c5c7d797c7d8e9f65f847159e2">ezWindow::OnClickClose</a></div><div class="ttdeci">virtual void OnClickClose()</div><div class="ttdoc">Called when the close button of the window is clicked. Does nothing by default.</div><div class="ttdef"><b>Definition:</b> Window.h:229</div></div>
+<div class="ttc" id="aclassez_window_htm_a686788c5c7d797c7d8e9f65f847159e2"><div class="ttname"><a href="../../da/db5/classez_window.htm#a686788c5c7d797c7d8e9f65f847159e2">ezWindow::OnClickClose</a></div><div class="ttdeci">virtual void OnClickClose()</div><div class="ttdoc">Called when the close button of the window is clicked. Does nothing by default.</div><div class="ttdef"><b>Definition:</b> Window.h:292</div></div>
 <div class="ttc" id="aclassez_unique_ptr_htm"><div class="ttname"><a href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt; ezStandardInputDevice &gt;</a></div></div>
-<div class="ttc" id="aclassez_window_htm_ad8b40662e5a1c4e60c2d1e225906d33d"><div class="ttname"><a href="../../da/db5/classez_window.htm#ad8b40662e5a1c4e60c2d1e225906d33d">ezWindow::m_CreationDescription</a></div><div class="ttdeci">ezWindowCreationDesc m_CreationDescription</div><div class="ttdef"><b>Definition:</b> Window.h:264</div></div>
-<div class="ttc" id="aclassez_window_base_htm"><div class="ttname"><a href="../../d4/d8c/classez_window_base.htm">ezWindowBase</a></div><div class="ttdoc">Base class of all window classes that have a client area and a native window handle.</div><div class="ttdef"><b>Definition:</b> Window.h:50</div></div>
+<div class="ttc" id="aclassez_window_htm_ad8b40662e5a1c4e60c2d1e225906d33d"><div class="ttname"><a href="../../da/db5/classez_window.htm#ad8b40662e5a1c4e60c2d1e225906d33d">ezWindow::m_CreationDescription</a></div><div class="ttdeci">ezWindowCreationDesc m_CreationDescription</div><div class="ttdef"><b>Definition:</b> Window.h:327</div></div>
+<div class="ttc" id="aclassez_window_base_htm"><div class="ttname"><a href="../../d4/d8c/classez_window_base.htm">ezWindowBase</a></div><div class="ttdoc">Base class of all window classes that have a client area and a native window handle.</div><div class="ttdef"><b>Definition:</b> Window.h:109</div></div>
 <div class="ttc" id="astructez_enum_htm"><div class="ttname"><a href="../../d6/dd9/structez_enum.htm">ezEnum&lt; ezWindowMode &gt;</a></div></div>
-<div class="ttc" id="aclassez_window_htm_aea84f75daf9ef08f81d800d9344c71af"><div class="ttname"><a href="../../da/db5/classez_window.htm#aea84f75daf9ef08f81d800d9344c71af">ezWindow::GetCreationDescription</a></div><div class="ttdeci">const ezWindowCreationDesc &amp; GetCreationDescription() const</div><div class="ttdoc">Returns the currently active description struct.</div><div class="ttdef"><b>Definition:</b> Window.h:163</div></div>
-<div class="ttc" id="aclassez_window_htm_a3ef91d2da3eee8b03cf6e8b881f38a07"><div class="ttname"><a href="../../da/db5/classez_window.htm#a3ef91d2da3eee8b03cf6e8b881f38a07">ezWindow::IsInitialized</a></div><div class="ttdeci">bool IsInitialized() const</div><div class="ttdoc">Gets if the window is up and running.</div><div class="ttdef"><b>Definition:</b> Window.h:210</div></div>
-<div class="ttc" id="aclassez_window_htm_ad0ed522d074fa2f789f302f24bac286a"><div class="ttname"><a href="../../da/db5/classez_window.htm#ad0ed522d074fa2f789f302f24bac286a">ezWindow::GetClientAreaSize</a></div><div class="ttdeci">virtual ezSizeU32 GetClientAreaSize() const override</div><div class="ttdoc">Returns the size of the client area / ie. the window resolution.</div><div class="ttdef"><b>Definition:</b> Window.h:166</div></div>
+<div class="ttc" id="aclassez_window_htm_aea84f75daf9ef08f81d800d9344c71af"><div class="ttname"><a href="../../da/db5/classez_window.htm#aea84f75daf9ef08f81d800d9344c71af">ezWindow::GetCreationDescription</a></div><div class="ttdeci">const ezWindowCreationDesc &amp; GetCreationDescription() const</div><div class="ttdoc">Returns the currently active description struct.</div><div class="ttdef"><b>Definition:</b> Window.h:222</div></div>
+<div class="ttc" id="aclassez_window_htm_a3ef91d2da3eee8b03cf6e8b881f38a07"><div class="ttname"><a href="../../da/db5/classez_window.htm#a3ef91d2da3eee8b03cf6e8b881f38a07">ezWindow::IsInitialized</a></div><div class="ttdeci">bool IsInitialized() const</div><div class="ttdoc">Gets if the window is up and running.</div><div class="ttdef"><b>Definition:</b> Window.h:269</div></div>
+<div class="ttc" id="aclassez_window_htm_ad0ed522d074fa2f789f302f24bac286a"><div class="ttname"><a href="../../da/db5/classez_window.htm#ad0ed522d074fa2f789f302f24bac286a">ezWindow::GetClientAreaSize</a></div><div class="ttdeci">virtual ezSizeU32 GetClientAreaSize() const override</div><div class="ttdoc">Returns the size of the client area / ie. the window resolution.</div><div class="ttdef"><b>Definition:</b> Window.h:225</div></div>
 <div class="ttc" id="aclassez_open_ddl_reader_element_htm"><div class="ttname"><a href="../../db/d71/classez_open_ddl_reader_element.htm">ezOpenDdlReaderElement</a></div><div class="ttdoc">Represents a single 'object' in a DDL document, e.g. either a custom type or a primitives list.</div><div class="ttdef"><b>Definition:</b> OpenDdlReader.h:10</div></div>
-<div class="ttc" id="astructez_window_creation_desc_htm"><div class="ttname"><a href="../../dd/d3b/structez_window_creation_desc.htm">ezWindowCreationDesc</a></div><div class="ttdoc">Parameters for creating a window, such as position and resolution.</div><div class="ttdef"><b>Definition:</b> Window.h:89</div></div>
-<div class="ttc" id="astructez_window_mode_htm_a9d016072ce39a9c85bb11f609f39b843ad15ecf48f724525a8e01dcfe56c921c8"><div class="ttname"><a href="../../de/d8c/structez_window_mode.htm#a9d016072ce39a9c85bb11f609f39b843ad15ecf48f724525a8e01dcfe56c921c8">ezWindowMode::FullscreenFixedResolution</a></div><div class="ttdeci">@ FullscreenFixedResolution</div><div class="ttdef"><b>Definition:</b> Window.h:78</div></div>
+<div class="ttc" id="astructez_window_creation_desc_htm"><div class="ttname"><a href="../../dd/d3b/structez_window_creation_desc.htm">ezWindowCreationDesc</a></div><div class="ttdoc">Parameters for creating a window, such as position and resolution.</div><div class="ttdef"><b>Definition:</b> Window.h:148</div></div>
+<div class="ttc" id="astructez_window_mode_htm_a9d016072ce39a9c85bb11f609f39b843ad15ecf48f724525a8e01dcfe56c921c8"><div class="ttname"><a href="../../de/d8c/structez_window_mode.htm#a9d016072ce39a9c85bb11f609f39b843ad15ecf48f724525a8e01dcfe56c921c8">ezWindowMode::FullscreenFixedResolution</a></div><div class="ttdeci">@ FullscreenFixedResolution</div><div class="ttdef"><b>Definition:</b> Window.h:137</div></div>
 <div class="ttc" id="aclassez_vec2_template_htm"><div class="ttname"><a href="../../d1/df8/classez_vec2_template.htm">ezVec2Template&lt; ezInt32 &gt;</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_ac029bbb8a17b4d550e2f9d55d89a029.htm">Core</a></li><li class="navelem"><a class="el" href="../../dir_ad1f2e84ecc4b03acf6a2a27e3eba505.htm">System</a></li><li class="navelem"><b>Window.h</b></li>
-    <li class="footer">Generated on Mon Oct 18 2021 15:33:23 for ezEngine by
+    <li class="footer">Generated on Sun Oct 9 2022 14:44:49 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

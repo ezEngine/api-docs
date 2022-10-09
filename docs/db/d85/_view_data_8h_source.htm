@@ -93,80 +93,85 @@ $(document).ready(function(){initNavTree('db/d85/_view_data_8h_source.htm','../.
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;Foundation/Math/Rect.h&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;Foundation/Utilities/GraphicsUtils.h&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;RendererCore/Pipeline/ViewRenderMode.h&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="../../d7/da7/structez_view_data.htm">    9</a></span>&#160;<span class="keyword">struct </span>EZ_RENDERERCORE_DLL <a class="code" href="../../d7/da7/structez_view_data.htm">ezViewData</a></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <a class="code" href="../../d7/da7/structez_view_data.htm">ezViewData</a>()</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    m_ViewPortRect = <a class="code" href="../../de/dd8/classez_rect_template.htm">ezRectFloat</a>(0.0f, 0.0f);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    m_ViewRenderMode = ezViewRenderMode::None;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 2; ++i)</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;      m_ViewMatrix[i].SetIdentity();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;      m_InverseViewMatrix[i].SetIdentity();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;      m_ProjectionMatrix[i].SetIdentity();</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;      m_InverseProjectionMatrix[i].SetIdentity();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;      m_ViewProjectionMatrix[i].SetIdentity();</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;      m_InverseViewProjectionMatrix[i].SetIdentity();</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    }</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  }</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="../../de/dd8/classez_rect_template.htm">ezRectFloat</a> m_ViewPortRect;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <a class="code" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezViewRenderMode&gt;</a> m_ViewRenderMode;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <a class="code" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezCameraUsageHint&gt;</a> m_CameraUsageHint;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="comment">// Each matrix is there for both left and right camera lens.</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <a class="code" href="../../d7/d9b/classez_mat4_template.htm">ezMat4</a> m_ViewMatrix[2];</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <a class="code" href="../../d7/d9b/classez_mat4_template.htm">ezMat4</a> m_InverseViewMatrix[2];</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <a class="code" href="../../d7/d9b/classez_mat4_template.htm">ezMat4</a> m_ProjectionMatrix[2];</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <a class="code" href="../../d7/d9b/classez_mat4_template.htm">ezMat4</a> m_InverseProjectionMatrix[2];</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <a class="code" href="../../d7/d9b/classez_mat4_template.htm">ezMat4</a> m_ViewProjectionMatrix[2];</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <a class="code" href="../../d7/d9b/classez_mat4_template.htm">ezMat4</a> m_InverseViewProjectionMatrix[2];</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="../../d7/da7/structez_view_data.htm#a52149d6dc477e94708723bb6ce759998">   43</a></span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> <a class="code" href="../../d7/da7/structez_view_data.htm#a52149d6dc477e94708723bb6ce759998">ComputePickingRay</a>(</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">float</span> fScreenPosX, <span class="keywordtype">float</span> fScreenPosY, <a class="code" href="../../d6/dbd/structez_vec3_template.htm">ezVec3</a>&amp; out_RayStartPos, <a class="code" href="../../d6/dbd/structez_vec3_template.htm">ezVec3</a>&amp; out_RayDir, ezCameraEye eye = ezCameraEye::Left)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="../../d6/dbd/structez_vec3_template.htm">ezVec3</a> vScreenPos;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    vScreenPos.x = fScreenPosX;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    vScreenPos.y = 1.0f - fScreenPosY;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    vScreenPos.z = 0.0f;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">return</span> ezGraphicsUtils::ConvertScreenPosToWorldPos(</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      m_InverseViewProjectionMatrix[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(eye)], 0, 0, 1, 1, vScreenPos, out_RayStartPos, &amp;out_RayDir);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ComputeScreenSpacePos(<span class="keyword">const</span> <a class="code" href="../../d6/dbd/structez_vec3_template.htm">ezVec3</a>&amp; vPoint, <a class="code" href="../../d6/dbd/structez_vec3_template.htm">ezVec3</a>&amp; out_vScreenPos, ezCameraEye eye = ezCameraEye::Left)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    ezUInt32 x = (ezUInt32)m_ViewPortRect.x;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    ezUInt32 y = (ezUInt32)m_ViewPortRect.y;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    ezUInt32 w = (ezUInt32)m_ViewPortRect.width;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    ezUInt32 h = (ezUInt32)m_ViewPortRect.height;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">if</span> (ezGraphicsUtils::ConvertWorldPosToScreenPos(m_ViewProjectionMatrix[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(eye)], x, y, w, h, vPoint, out_vScreenPos).Succeeded())</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      out_vScreenPos.y = m_ViewPortRect.height - out_vScreenPos.y;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      <span class="keywordflow">return</span> EZ_SUCCESS;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;RendererFoundation/Device/SwapChain.h&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="../../d7/da7/structez_view_data.htm">   10</a></span>&#160;<span class="keyword">struct </span>EZ_RENDERERCORE_DLL <a class="code" href="../../d7/da7/structez_view_data.htm">ezViewData</a></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <a class="code" href="../../d7/da7/structez_view_data.htm">ezViewData</a>()</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    m_ViewPortRect = <a class="code" href="../../de/dd8/classez_rect_template.htm">ezRectFloat</a>(0.0f, 0.0f);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    m_ViewRenderMode = ezViewRenderMode::None;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 2; ++i)</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;      m_ViewMatrix[i].SetIdentity();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;      m_InverseViewMatrix[i].SetIdentity();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;      m_ProjectionMatrix[i].SetIdentity();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;      m_InverseProjectionMatrix[i].SetIdentity();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;      m_ViewProjectionMatrix[i].SetIdentity();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;      m_InverseViewProjectionMatrix[i].SetIdentity();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <a class="code" href="../../d2/d2f/structez_g_a_l_render_targets.htm">ezGALRenderTargets</a> m_renderTargets;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <a class="code" href="../../db/dae/classez_g_a_l_swap_chain_handle.htm">ezGALSwapChainHandle</a> m_hSwapChain;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <a class="code" href="../../de/dd8/classez_rect_template.htm">ezRectFloat</a> m_ViewPortRect;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <a class="code" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezViewRenderMode&gt;</a> m_ViewRenderMode;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <a class="code" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezCameraUsageHint&gt;</a> m_CameraUsageHint;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="comment">// Each matrix is there for both left and right camera lens.</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <a class="code" href="../../d7/d9b/classez_mat4_template.htm">ezMat4</a> m_ViewMatrix[2];</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <a class="code" href="../../d7/d9b/classez_mat4_template.htm">ezMat4</a> m_InverseViewMatrix[2];</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <a class="code" href="../../d7/d9b/classez_mat4_template.htm">ezMat4</a> m_ProjectionMatrix[2];</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <a class="code" href="../../d7/d9b/classez_mat4_template.htm">ezMat4</a> m_InverseProjectionMatrix[2];</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <a class="code" href="../../d7/d9b/classez_mat4_template.htm">ezMat4</a> m_ViewProjectionMatrix[2];</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="../../d7/d9b/classez_mat4_template.htm">ezMat4</a> m_InverseViewProjectionMatrix[2];</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="../../d7/da7/structez_view_data.htm#a52149d6dc477e94708723bb6ce759998">   46</a></span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> <a class="code" href="../../d7/da7/structez_view_data.htm#a52149d6dc477e94708723bb6ce759998">ComputePickingRay</a>(</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">float</span> fScreenPosX, <span class="keywordtype">float</span> fScreenPosY, <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; out_RayStartPos, <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; out_RayDir, ezCameraEye eye = ezCameraEye::Left)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">  </span>{</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> vScreenPos;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    vScreenPos.x = fScreenPosX;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    vScreenPos.y = 1.0f - fScreenPosY;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    vScreenPos.z = 0.0f;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">return</span> ezGraphicsUtils::ConvertScreenPosToWorldPos(</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      m_InverseViewProjectionMatrix[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(eye)], 0, 0, 1, 1, vScreenPos, out_RayStartPos, &amp;out_RayDir);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ComputeScreenSpacePos(<span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; vPoint, <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; out_vScreenPos, ezCameraEye eye = ezCameraEye::Left)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">  </span>{</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    ezUInt32 x = (ezUInt32)m_ViewPortRect.x;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    ezUInt32 y = (ezUInt32)m_ViewPortRect.y;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    ezUInt32 w = (ezUInt32)m_ViewPortRect.width;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    ezUInt32 h = (ezUInt32)m_ViewPortRect.height;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">if</span> (ezGraphicsUtils::ConvertWorldPosToScreenPos(m_ViewProjectionMatrix[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(eye)], x, y, w, h, vPoint, out_vScreenPos).Succeeded())</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      out_vScreenPos.y = m_ViewPortRect.height - out_vScreenPos.y;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">return</span> EZ_FAILURE;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      <span class="keywordflow">return</span> EZ_SUCCESS;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">return</span> EZ_FAILURE;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition:</b> Types.h:50</div></div>
-<div class="ttc" id="astructez_view_data_htm_a52149d6dc477e94708723bb6ce759998"><div class="ttname"><a href="../../d7/da7/structez_view_data.htm#a52149d6dc477e94708723bb6ce759998">ezViewData::ComputePickingRay</a></div><div class="ttdeci">ezResult ComputePickingRay(float fScreenPosX, float fScreenPosY, ezVec3 &amp;out_RayStartPos, ezVec3 &amp;out_RayDir, ezCameraEye eye=ezCameraEye::Left) const</div><div class="ttdoc">Returns the start position and direction (in world space) of the picking ray through the screen posit...</div><div class="ttdef"><b>Definition:</b> ViewData.h:43</div></div>
-<div class="ttc" id="astructez_view_data_htm"><div class="ttname"><a href="../../d7/da7/structez_view_data.htm">ezViewData</a></div><div class="ttdoc">Holds view data like the viewport, view and projection matrices.</div><div class="ttdef"><b>Definition:</b> ViewData.h:9</div></div>
+<div class="ttc" id="astructez_view_data_htm_a52149d6dc477e94708723bb6ce759998"><div class="ttname"><a href="../../d7/da7/structez_view_data.htm#a52149d6dc477e94708723bb6ce759998">ezViewData::ComputePickingRay</a></div><div class="ttdeci">ezResult ComputePickingRay(float fScreenPosX, float fScreenPosY, ezVec3 &amp;out_RayStartPos, ezVec3 &amp;out_RayDir, ezCameraEye eye=ezCameraEye::Left) const</div><div class="ttdoc">Returns the start position and direction (in world space) of the picking ray through the screen posit...</div><div class="ttdef"><b>Definition:</b> ViewData.h:46</div></div>
+<div class="ttc" id="astructez_view_data_htm"><div class="ttname"><a href="../../d7/da7/structez_view_data.htm">ezViewData</a></div><div class="ttdoc">Holds view data like the viewport, view and projection matrices.</div><div class="ttdef"><b>Definition:</b> ViewData.h:10</div></div>
+<div class="ttc" id="aclassez_g_a_l_swap_chain_handle_htm"><div class="ttname"><a href="../../db/dae/classez_g_a_l_swap_chain_handle.htm">ezGALSwapChainHandle</a></div><div class="ttdef"><b>Definition:</b> RendererFoundationDLL.h:316</div></div>
 <div class="ttc" id="aclassez_mat4_template_htm"><div class="ttname"><a href="../../d7/d9b/classez_mat4_template.htm">ezMat4Template&lt; float &gt;</a></div></div>
+<div class="ttc" id="astructez_g_a_l_render_targets_htm"><div class="ttname"><a href="../../d2/d2f/structez_g_a_l_render_targets.htm">ezGALRenderTargets</a></div><div class="ttdef"><b>Definition:</b> RenderTargetSetup.h:8</div></div>
 <div class="ttc" id="astructez_enum_htm"><div class="ttname"><a href="../../d6/dd9/structez_enum.htm">ezEnum&lt; ezViewRenderMode &gt;</a></div></div>
 <div class="ttc" id="aclassez_rect_template_htm"><div class="ttname"><a href="../../de/dd8/classez_rect_template.htm">ezRectTemplate&lt; float &gt;</a></div></div>
-<div class="ttc" id="astructez_vec3_template_htm"><div class="ttname"><a href="../../d6/dbd/structez_vec3_template.htm">ezVec3Template&lt; float &gt;</a></div></div>
+<div class="ttc" id="aclassez_vec3_template_htm"><div class="ttname"><a href="../../da/df1/classez_vec3_template.htm">ezVec3Template&lt; float &gt;</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_9b39d7517b28e8ee3dee1b9d862ddabb.htm">RendererCore</a></li><li class="navelem"><a class="el" href="../../dir_eb76da9386bef717669986d87e939c0d.htm">Pipeline</a></li><li class="navelem"><b>ViewData.h</b></li>
-    <li class="footer">Generated on Mon Oct 18 2021 15:33:31 for ezEngine by
+    <li class="footer">Generated on Sun Oct 9 2022 14:44:58 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

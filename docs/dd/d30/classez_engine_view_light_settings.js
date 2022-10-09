@@ -20,7 +20,7 @@ var classez_engine_view_light_settings =
     [ "SetSkyLight", "dd/d30/classez_engine_view_light_settings.htm#a9ed25593a1ac06b5a5ce2cc14a10aa49", null ],
     [ "SetSkyLightCubeMap", "dd/d30/classez_engine_view_light_settings.htm#afbf9590b13d92bad588e1a6f23966dad", null ],
     [ "SetSkyLightIntensity", "dd/d30/classez_engine_view_light_settings.htm#a8cdb1b5e70fb40e21267a2926a1caad9", null ],
-    [ "SetupForEngine", "dd/d30/classez_engine_view_light_settings.htm#ac247e9fc275485a7343ca4c98a530fa7", null ],
-    [ "UpdateForEngine", "dd/d30/classez_engine_view_light_settings.htm#a48eed8afae32b823ecfe0bf69993462f", null ],
+    [ "SetupForEngine", "dd/d30/classez_engine_view_light_settings.htm#acc3285c5b96b95fae87e76711688a8c4", null ],
+    [ "UpdateForEngine", "dd/d30/classez_engine_view_light_settings.htm#a66cc94fc689d0398f314963b90504cad", null ],
     [ "m_EngineViewLightSettingsEvents", "dd/d30/classez_engine_view_light_settings.htm#a0fcb132c4d4dbedd3ea5a1ff2c18128e", null ]
 ];

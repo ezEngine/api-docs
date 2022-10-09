@@ -40,6 +40,7 @@ var classez_vec2_template =
     [ "operator/=", "d1/df8/classez_vec2_template.htm#a1b9a65ebaa272372f2f90d8f7c527e87", null ],
     [ "Set", "d1/df8/classez_vec2_template.htm#ad2dd883bb140e34ea7482f84112012ec", null ],
     [ "Set", "d1/df8/classez_vec2_template.htm#a2f0a2c626e9ec2f773f9828d3e6fe37f", null ],
+    [ "SetLength", "d1/df8/classez_vec2_template.htm#ae7b0df7ffa11bc0ba3aa39e5205ab9aa", null ],
     [ "SetZero", "d1/df8/classez_vec2_template.htm#a755c841102239d0061f37367e4cce317", null ],
     [ "x", "d1/df8/classez_vec2_template.htm#aae0183c9c1613ee47a9e63b95dd991db", null ],
     [ "y", "d1/df8/classez_vec2_template.htm#a938387ca39e8034f130be42436b32dde", null ]

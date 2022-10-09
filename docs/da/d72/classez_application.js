@@ -28,9 +28,9 @@ var classez_application =
     [ "SetReturnCode", "da/d72/classez_application.htm#a8e76e01da8cc0f14aea5a3b49c27520d", null ],
     [ "TranslateReturnCode", "da/d72/classez_application.htm#afd33b7ab600517fbf05a3b6a1faab2b9", null ],
     [ "WasQuitRequested", "da/d72/classez_application.htm#aeb6e9c8227c78df6398d1b956eeefaa8", null ],
-    [ "ezRun", "da/d72/classez_application.htm#a4a5472811ce703ffa264490dc606212c", null ],
-    [ "ezRun_MainLoop", "da/d72/classez_application.htm#aa5286ce09848f73f6b77d1399d8e592e", null ],
-    [ "ezRun_Shutdown", "da/d72/classez_application.htm#a654b10fc6327f9a8c5362d71bb25bfec", null ],
-    [ "ezRun_Startup", "da/d72/classez_application.htm#a392fafc72ef52d9953b0a6eaae543914", null ],
+    [ "ezRun", "da/d72/classez_application.htm#a0e1526eb90ec5af11c9825560d50382f", null ],
+    [ "ezRun_MainLoop", "da/d72/classez_application.htm#a750e383a756bfbc534ee4b7015648684", null ],
+    [ "ezRun_Shutdown", "da/d72/classez_application.htm#a4772a8e6164e5af5f0247b1ecbb45e7a", null ],
+    [ "ezRun_Startup", "da/d72/classez_application.htm#a1686f5bf905c06ba6957f206139afcbc", null ],
     [ "m_bWasQuitRequested", "da/d72/classez_application.htm#a06cce1328a5847be3c2bcad005a0a2b8", null ]
 ];
