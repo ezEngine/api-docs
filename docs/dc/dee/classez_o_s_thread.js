@@ -6,7 +6,7 @@ var classez_o_s_thread =
     [ "Join", "dc/dee/classez_o_s_thread.htm#a9aa84088cdf474e556a71d2ae301f132", null ],
     [ "Start", "dc/dee/classez_o_s_thread.htm#a81378a5f2603905a76395b344f0a0c65", null ],
     [ "m_EntryPoint", "dc/dee/classez_o_s_thread.htm#afdc4d12bd1e038122e8d2d69d58c9dfb", null ],
-    [ "m_Handle", "dc/dee/classez_o_s_thread.htm#af9e9ec145a2849e3f0ad0ebdde39c5c6", null ],
+    [ "m_hHandle", "dc/dee/classez_o_s_thread.htm#ad5adfdf0fbbb094f5169da5bfc93bcdb", null ],
     [ "m_pUserData", "dc/dee/classez_o_s_thread.htm#ac3eab25b81a8e380762c93e6e8c4c574", null ],
     [ "m_szName", "dc/dee/classez_o_s_thread.htm#ad29903e7516dc9671ce77561e8fd6402", null ],
     [ "m_ThreadID", "dc/dee/classez_o_s_thread.htm#ae3e2c5c220b21615f178259d6d2f559d", null ],

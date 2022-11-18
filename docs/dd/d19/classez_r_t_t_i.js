@@ -34,7 +34,6 @@ var classez_r_t_t_i =
     [ "m_Attributes", "dd/d19/classez_r_t_t_i.htm#a9e911036c6d9a2fc032f617607a09049", null ],
     [ "m_bGatheredDynamicMessageHandlers", "dd/d19/classez_r_t_t_i.htm#a0be8ba6124d8df49c9dfc23422f85bcc", null ],
     [ "m_DynamicMessageHandlers", "dd/d19/classez_r_t_t_i.htm#ae588b69390a1ad158fc29603d9d78d28", null ],
-    [ "m_fnVerifyParent", "dd/d19/classez_r_t_t_i.htm#a6d95dfa2c63dd903bed83bc18239c6d3", null ],
     [ "m_Functions", "dd/d19/classez_r_t_t_i.htm#ac2ee6cdb6b9a52aef8f9d71a3246cbef", null ],
     [ "m_MessageHandlers", "dd/d19/classez_r_t_t_i.htm#afd9a484ad7e0d2062b567c3883b0b69a", null ],
     [ "m_MessageSenders", "dd/d19/classez_r_t_t_i.htm#acb93f0b342a614c4866e0edb881d34ed", null ],
@@ -49,5 +48,6 @@ var classez_r_t_t_i =
     [ "m_uiTypeNameHash", "dd/d19/classez_r_t_t_i.htm#a0460589c5f25dad9c470f396ea39934d", null ],
     [ "m_uiTypeSize", "dd/d19/classez_r_t_t_i.htm#aabc6eed004a8044dfdb73520b0043186", null ],
     [ "m_uiTypeVersion", "dd/d19/classez_r_t_t_i.htm#af59eec5db31e42848e81cb9072901946", null ],
-    [ "m_uiVariantType", "dd/d19/classez_r_t_t_i.htm#a3c548946d1d3fdc940946bb91a08fdc0", null ]
+    [ "m_uiVariantType", "dd/d19/classez_r_t_t_i.htm#a3c548946d1d3fdc940946bb91a08fdc0", null ],
+    [ "m_VerifyParent", "dd/d19/classez_r_t_t_i.htm#a643d58890c1e8ca318442df8461d3ec8", null ]
 ];

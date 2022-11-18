@@ -24,6 +24,7 @@ var classez_jolt_dynamic_actor_component =
     [ "SetUseCustomCoM", "db/dcd/classez_jolt_dynamic_actor_component.htm#a62c4a7134d2bdac99b9b384902897402", null ],
     [ "m_bCCD", "db/dcd/classez_jolt_dynamic_actor_component.htm#a43a8377c300f5630a319f4ddd534e178", null ],
     [ "m_bKinematic", "db/dcd/classez_jolt_dynamic_actor_component.htm#af0beefac024072ad96a8a384fa8cf5d7", null ],
+    [ "m_bStartAsleep", "db/dcd/classez_jolt_dynamic_actor_component.htm#ab7b0407d459c458daa8888d28f622bfb", null ],
     [ "m_fAngularDamping", "db/dcd/classez_jolt_dynamic_actor_component.htm#a98c0f1af6d4a8bf74f378246031a7808", null ],
     [ "m_fDensity", "db/dcd/classez_jolt_dynamic_actor_component.htm#a53ae2c9f4b7940cdf64a84c5ed0ea566", null ],
     [ "m_fGravityFactor", "db/dcd/classez_jolt_dynamic_actor_component.htm#ad2478e421b07436c981e931b6454a646", null ],

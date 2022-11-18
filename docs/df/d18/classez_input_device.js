@@ -10,5 +10,5 @@ var classez_input_device =
     [ "UpdateInputSlotValues", "df/d18/classez_input_device.htm#a45c72b370f50d7b314571fccbb0fe6e2", null ],
     [ "ezInputManager", "df/d18/classez_input_device.htm#acf738ab77a446180fdf791df30c48f11", null ],
     [ "m_InputSlotValues", "df/d18/classez_input_device.htm#aa020904d039e3c7ee81829b22d6919ff", null ],
-    [ "m_LastCharacter", "df/d18/classez_input_device.htm#ac4dd6868f2c0994cb9f48a9df4da1a0b", null ]
+    [ "m_uiLastCharacter", "df/d18/classez_input_device.htm#a053bacaca498574994f6013e1fe72dc4", null ]
 ];

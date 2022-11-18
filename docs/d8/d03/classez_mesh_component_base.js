@@ -5,7 +5,7 @@ var classez_mesh_component_base =
     [ "CreateRenderData", "d8/d03/classez_mesh_component_base.htm#a7a38ad3669965248df1d7519d628b9c3", null ],
     [ "DeserializeComponent", "d8/d03/classez_mesh_component_base.htm#a6fc3655aea04e23959e75464a95a40c8", null ],
     [ "GetColor", "d8/d03/classez_mesh_component_base.htm#a3013052ac3bb051b1fa6c7b71f7d9e7c", null ],
-    [ "GetLocalBounds", "d8/d03/classez_mesh_component_base.htm#a5a83a201eb035d2bc14a3b8c5d2fdb1f", null ],
+    [ "GetLocalBounds", "d8/d03/classez_mesh_component_base.htm#af83c0b671e0fd47831980e3857f33406", null ],
     [ "GetMaterial", "d8/d03/classez_mesh_component_base.htm#a9e92e3f7a025b2ff7c82fed6a387307f", null ],
     [ "GetMesh", "d8/d03/classez_mesh_component_base.htm#ac234ebc603b0bdf8ff9aa62cedc20399", null ],
     [ "GetMeshFile", "d8/d03/classez_mesh_component_base.htm#a7df2c2420806c8df43b173c3f5b43e5d", null ],

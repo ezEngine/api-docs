@@ -7,7 +7,7 @@ var classez_beam_component =
     [ "CreateMeshes", "d8/de0/classez_beam_component.htm#a69170c3783ae628a801af32f4c900e5e", null ],
     [ "DeserializeComponent", "d8/de0/classez_beam_component.htm#a784e8d790ff862c555d51258c8b80a79", null ],
     [ "DummyGetter", "d8/de0/classez_beam_component.htm#ab630e170f334739f629c2a0851207ce5", null ],
-    [ "GetLocalBounds", "d8/de0/classez_beam_component.htm#ad93835bf4225a3b71aabfbf1819486be", null ],
+    [ "GetLocalBounds", "d8/de0/classez_beam_component.htm#aaa575dbef18e806a8a2fd5070c92f43e", null ],
     [ "GetMaterial", "d8/de0/classez_beam_component.htm#a8c2ac8b5b024fd8fb97353760cb05aa1", null ],
     [ "GetMaterialFile", "d8/de0/classez_beam_component.htm#a44eebfd580be82b632b8b5bbdf0ab937", null ],
     [ "GetUVUnitsPerWorldUnit", "d8/de0/classez_beam_component.htm#a9212e69860a884e5c7b168405b004bb4", null ],

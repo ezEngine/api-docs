@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 21.10</span>
+   &#160;<span id="projectnumber">Release 22.11</span>
    </div>
   </td>
  </tr>
@@ -122,7 +122,7 @@ $(document).ready(function(){initNavTree('dc/dd2/_camera_component_8h_source.htm
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordtype">void</span> OnViewCreated(<a class="code" href="../../d2/d23/classez_view.htm">ezView</a>* pView);</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordtype">void</span> OnCameraConfigsChanged(<span class="keywordtype">void</span>* dummy);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezComponentHandle&gt;</a> m_modifiedCameras;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezComponentHandle&gt;</a> m_ModifiedCameras;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezComponentHandle&gt;</a> m_RenderTargetCameras;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;};</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
@@ -154,10 +154,10 @@ $(document).ready(function(){initNavTree('dc/dd2/_camera_component_8h_source.htm
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* GetRenderTargetFile() <span class="keyword">const</span>;      <span class="comment">// [ property ]</span></div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordtype">void</span> SetRenderTargetRectOffset(<a class="code" href="../../d1/df8/classez_vec2_template.htm">ezVec2</a> value);                                 <span class="comment">// [ property ]</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <a class="code" href="../../d1/df8/classez_vec2_template.htm">ezVec2</a> GetRenderTargetRectOffset()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_RenderTargetRectOffset; } <span class="comment">// [ property ]</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <a class="code" href="../../d1/df8/classez_vec2_template.htm">ezVec2</a> GetRenderTargetRectOffset()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_vRenderTargetRectOffset; } <span class="comment">// [ property ]</span></div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordtype">void</span> SetRenderTargetRectSize(<a class="code" href="../../d1/df8/classez_vec2_template.htm">ezVec2</a> value);                               <span class="comment">// [ property ]</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <a class="code" href="../../d1/df8/classez_vec2_template.htm">ezVec2</a> GetRenderTargetRectSize()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_RenderTargetRectSize; } <span class="comment">// [ property ]</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <a class="code" href="../../d1/df8/classez_vec2_template.htm">ezVec2</a> GetRenderTargetRectSize()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_vRenderTargetRectSize; } <span class="comment">// [ property ]</span></div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <a class="code" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezCameraMode&gt;</a> GetCameraMode()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_Mode; } <span class="comment">// [ property ]</span></div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordtype">void</span> SetCameraMode(<a class="code" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezCameraMode&gt;</a> val);                 <span class="comment">// [ property ]</span></div>
@@ -233,8 +233,8 @@ $(document).ready(function(){initNavTree('dc/dd2/_camera_component_8h_source.htm
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  <span class="keywordtype">void</span> DeactivateRenderToTexture();</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  <a class="code" href="../../dd/d6d/classez_view_handle.htm">ezViewHandle</a> m_hRenderTargetView;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  <a class="code" href="../../d1/df8/classez_vec2_template.htm">ezVec2</a> m_RenderTargetRectOffset = <a class="code" href="../../d1/df8/classez_vec2_template.htm">ezVec2</a>(0.0f);</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  <a class="code" href="../../d1/df8/classez_vec2_template.htm">ezVec2</a> m_RenderTargetRectSize = <a class="code" href="../../d1/df8/classez_vec2_template.htm">ezVec2</a>(1.0f);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  <a class="code" href="../../d1/df8/classez_vec2_template.htm">ezVec2</a> m_vRenderTargetRectOffset = <a class="code" href="../../d1/df8/classez_vec2_template.htm">ezVec2</a>(0.0f);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  <a class="code" href="../../d1/df8/classez_vec2_template.htm">ezVec2</a> m_vRenderTargetRectSize = <a class="code" href="../../d1/df8/classez_vec2_template.htm">ezVec2</a>(1.0f);</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  <a class="code" href="../../d8/d90/classez_camera.htm">ezCamera</a> m_RenderTargetCamera;</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  <a class="code" href="../../de/dce/classez_hashed_string.htm">ezHashedString</a> m_sRenderPipeline;</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;};</div>
@@ -270,7 +270,7 @@ $(document).ready(function(){initNavTree('dc/dd2/_camera_component_8h_source.htm
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_9b39d7517b28e8ee3dee1b9d862ddabb.htm">RendererCore</a></li><li class="navelem"><a class="el" href="../../dir_59cee5fa375fe31f3adf8efa6840c9e7.htm">Components</a></li><li class="navelem"><b>CameraComponent.h</b></li>
-    <li class="footer">Generated on Sun Oct 9 2022 14:44:57 for ezEngine by
+    <li class="footer">Generated on Fri Nov 18 2022 14:48:02 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

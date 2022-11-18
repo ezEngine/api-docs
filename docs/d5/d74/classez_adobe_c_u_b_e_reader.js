@@ -9,9 +9,9 @@ var classez_adobe_c_u_b_e_reader =
     [ "GetLUTSize", "d5/d74/classez_adobe_c_u_b_e_reader.htm#a56c8f20f913a5d077085df58cbc4060c", null ],
     [ "GetTitle", "d5/d74/classez_adobe_c_u_b_e_reader.htm#a269e5f806df60411fb2ef836ade99b53", null ],
     [ "ParseFile", "d5/d74/classez_adobe_c_u_b_e_reader.htm#aedcbaf82d29ed4f9c9f048b36f1c8393", null ],
-    [ "m_DomainMax", "d5/d74/classez_adobe_c_u_b_e_reader.htm#a4f5a2b7df6b98b5fcf1ccdf6bd8f1f6a", null ],
-    [ "m_DomainMin", "d5/d74/classez_adobe_c_u_b_e_reader.htm#aa571fb484a1bf4efdc0ffa87921f3b55", null ],
     [ "m_LUTValues", "d5/d74/classez_adobe_c_u_b_e_reader.htm#a9204deda465bae568b3320ac495cdeec", null ],
     [ "m_sTitle", "d5/d74/classez_adobe_c_u_b_e_reader.htm#a15921f16ee3f25c4c78d121fb1815191", null ],
-    [ "m_uiLUTSize", "d5/d74/classez_adobe_c_u_b_e_reader.htm#abc2c46858f34e3939d18b25bc6f99f44", null ]
+    [ "m_uiLUTSize", "d5/d74/classez_adobe_c_u_b_e_reader.htm#abc2c46858f34e3939d18b25bc6f99f44", null ],
+    [ "m_vDomainMax", "d5/d74/classez_adobe_c_u_b_e_reader.htm#a72070902a0a49ee4d7ef04e517e7d9de", null ],
+    [ "m_vDomainMin", "d5/d74/classez_adobe_c_u_b_e_reader.htm#aed9a597069e811c4a15fe12db7a7163c", null ]
 ];

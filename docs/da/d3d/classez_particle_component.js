@@ -3,7 +3,7 @@ var classez_particle_component =
     [ "ezParticleComponent", "da/d3d/classez_particle_component.htm#a29990b6682fea1dea34ae75de3ca3c37", null ],
     [ "~ezParticleComponent", "da/d3d/classez_particle_component.htm#ae68bc9209fc74a7b324dfdfb58073787", null ],
     [ "DeserializeComponent", "da/d3d/classez_particle_component.htm#aaa6bcd9ee5c7d6c20cc8ec07ca920dda", null ],
-    [ "GetLocalBounds", "da/d3d/classez_particle_component.htm#a726d34825052b7025e9f4a03f86f2d98", null ],
+    [ "GetLocalBounds", "da/d3d/classez_particle_component.htm#a2f1c37fe069cb725df237ce2e2cd9cd2", null ],
     [ "GetParameter", "da/d3d/classez_particle_component.htm#ab6e54cf43caa2cc01aaf4d10e0250196", null ],
     [ "GetParameters", "da/d3d/classez_particle_component.htm#a0619382f1161bdba1423a21ae42479e2", null ],
     [ "GetParticleEffect", "da/d3d/classez_particle_component.htm#a43165e678b9608e0afb83cb71985d7b3", null ],

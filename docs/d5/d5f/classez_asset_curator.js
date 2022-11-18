@@ -34,6 +34,7 @@ var classez_asset_curator =
     [ "NotifyOfFileChange", "d5/d5f/classez_asset_curator.htm#acb5637b9ef054c1f381daaac99c1d6bd", null ],
     [ "ResaveAllAssets", "d5/d5f/classez_asset_curator.htm#a6402b0107a8e9731d52cbfadb52d4e99", null ],
     [ "SaveAssetProfiles", "d5/d5f/classez_asset_curator.htm#a8e946069ddddea179b147e342d905c98", null ],
+    [ "SaveRuntimeProfiles", "d5/d5f/classez_asset_curator.htm#ac54c3e2b1655661c3949e21100d83003", null ],
     [ "SetActiveAssetProfileByIndex", "d5/d5f/classez_asset_curator.htm#a23e1466e50f064c43110350a66ffd746", null ],
     [ "StartInitialize", "d5/d5f/classez_asset_curator.htm#a50323774859159f36ae200198b0445cd", null ],
     [ "StoreFullTransformDate", "d5/d5f/classez_asset_curator.htm#a1018ace1160ab123bbafd4f49da3276f", null ],

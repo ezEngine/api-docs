@@ -19,6 +19,6 @@ var classez_simple_animation_component =
     [ "m_fSpeed", "d3/da0/classez_simple_animation_component.htm#a82525316965377f8516d0190fa897964", null ],
     [ "m_hAnimationClip", "d3/da0/classez_simple_animation_component.htm#a884a632ef0b26a92d4bc49597cdb62ef", null ],
     [ "m_hSkeleton", "d3/da0/classez_simple_animation_component.htm#a589e59212d7bee031b4b36350b0255b1", null ],
-    [ "m_ozzLocalTransforms", "d3/da0/classez_simple_animation_component.htm#a72198380f16b70751e9f30fa66455633", null ],
+    [ "m_OzzLocalTransforms", "d3/da0/classez_simple_animation_component.htm#a0506610d441469c56107de3cef2bea3b", null ],
     [ "m_RootMotionMode", "d3/da0/classez_simple_animation_component.htm#a113b900e495b67fd4892e179e27690ae", null ]
 ];

@@ -6,7 +6,7 @@ var classez_kraut_tree_component =
     [ "GetCustomRandomSeed", "d3/d9f/classez_kraut_tree_component.htm#a563029791d523550a393670d56c5caa9", null ],
     [ "GetKrautFile", "d3/d9f/classez_kraut_tree_component.htm#ad5ffa36409ac26cf4a0e7a88a3575fb1", null ],
     [ "GetKrautGeneratorResource", "d3/d9f/classez_kraut_tree_component.htm#aed94d309d0ecfab3211faabe814f968b", null ],
-    [ "GetLocalBounds", "d3/d9f/classez_kraut_tree_component.htm#a6c71a9960fe524731b06de5e810d07f7", null ],
+    [ "GetLocalBounds", "d3/d9f/classez_kraut_tree_component.htm#a43b662a73e1a91534f2868d2eb305369", null ],
     [ "GetVariationIndex", "d3/d9f/classez_kraut_tree_component.htm#ac98494a60f080e9a727d17fcfda2fe3e", null ],
     [ "OnActivated", "d3/d9f/classez_kraut_tree_component.htm#a5e6f543c855eb444e2a5fdf239f8199d", null ],
     [ "OnBuildStaticMesh", "d3/d9f/classez_kraut_tree_component.htm#a2d23e913bf8069b04d2edb63bbfb4401", null ],

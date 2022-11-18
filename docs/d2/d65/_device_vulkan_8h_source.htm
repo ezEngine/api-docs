@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 21.10</span>
+   &#160;<span id="projectnumber">Release 22.11</span>
    </div>
   </td>
  </tr>
@@ -147,9 +147,9 @@ $(document).ready(function(){initNavTree('d2/d65/_device_vulkan_8h_source.htm','
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">bool</span> m_bDebugUtils = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    PFN_vkCreateDebugUtilsMessengerEXT pfn_vkCreateDebugUtilsMessengerEXT;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    PFN_vkDestroyDebugUtilsMessengerEXT pfn_vkDestroyDebugUtilsMessengerEXT;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    PFN_vkSetDebugUtilsObjectNameEXT pfn_vkSetDebugUtilsObjectNameEXT;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    PFN_vkCreateDebugUtilsMessengerEXT pfn_vkCreateDebugUtilsMessengerEXT = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    PFN_vkDestroyDebugUtilsMessengerEXT pfn_vkDestroyDebugUtilsMessengerEXT = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    PFN_vkSetDebugUtilsObjectNameEXT pfn_vkSetDebugUtilsObjectNameEXT = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">bool</span> m_bDeviceSwapChain = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">bool</span> m_bShaderViewportIndexLayer = <span class="keyword">false</span>;</div>
@@ -383,17 +383,19 @@ $(document).ready(function(){initNavTree('d2/d65/_device_vulkan_8h_source.htm','
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;  PerFrameData m_PerFrameData[4];</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160; </div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;  <span class="keyword">struct </span>GPUTimingScope* m_pFrameTimingScope = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;  <span class="keyword">struct </span>GPUTimingScope* m_pPipelineTimingScope = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;  <span class="keyword">struct </span>GPUTimingScope* m_pPassTimingScope = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160; </div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;  Extensions m_extensions;</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;<span class="preprocessor">#if EZ_ENABLED(EZ_COMPILE_FOR_DEVELOPMENT)</span></div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;  VkDebugUtilsMessengerEXT m_debugMessenger;</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;};</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;<span class="preprocessor">#include &lt;RendererVulkan/Device/Implementation/DeviceVulkan_inl.h&gt;</span></div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;<span class="preprocessor">#if EZ_ENABLED(EZ_USE_PROFILING)</span></div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;  <span class="keyword">struct </span>GPUTimingScope* m_pFrameTimingScope = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;  <span class="keyword">struct </span>GPUTimingScope* m_pPipelineTimingScope = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;  <span class="keyword">struct </span>GPUTimingScope* m_pPassTimingScope = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;  Extensions m_extensions;</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="preprocessor">#if EZ_ENABLED(EZ_COMPILE_FOR_DEVELOPMENT)</span></div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;  VkDebugUtilsMessengerEXT m_debugMessenger = VK_NULL_HANDLE;</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;};</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160; </div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;<span class="preprocessor">#include &lt;RendererVulkan/Device/Implementation/DeviceVulkan_inl.h&gt;</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astructez_g_a_l_rasterizer_state_creation_description_htm"><div class="ttname"><a href="../../d8/db2/structez_g_a_l_rasterizer_state_creation_description.htm">ezGALRasterizerStateCreationDescription</a></div><div class="ttdoc">Describes the settings for a new rasterizer state. See ezGALDevice::CreateRasterizerState.</div><div class="ttdef"><b>Definition:</b> Descriptors.h:145</div></div>
@@ -460,7 +462,7 @@ $(document).ready(function(){initNavTree('d2/d65/_device_vulkan_8h_source.htm','
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_f7a638e0cc6766080d9014908e70532b.htm">RendererVulkan</a></li><li class="navelem"><a class="el" href="../../dir_481124ea12e2e728293d92ffaf0c05ac.htm">Device</a></li><li class="navelem"><b>DeviceVulkan.h</b></li>
-    <li class="footer">Generated on Sun Oct 9 2022 14:44:58 for ezEngine by
+    <li class="footer">Generated on Fri Nov 18 2022 14:48:02 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

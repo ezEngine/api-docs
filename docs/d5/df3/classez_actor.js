@@ -10,6 +10,7 @@ var classez_actor =
     [ "GetName", "d5/df3/classez_actor.htm#a2a1bff698dd88333e2420eb7090a1f87", null ],
     [ "GetPlugin", "d5/df3/classez_actor.htm#af8ae9f4210944a4903c9e93663d80d0c", null ],
     [ "GetPlugin", "d5/df3/classez_actor.htm#acadb0d4f6d098c87fa077027c4008bf2", null ],
+    [ "IsActorQueuedForDestruction", "d5/df3/classez_actor.htm#a5aa08a1fc84cf133ed8f880109df8851", null ],
     [ "Update", "d5/df3/classez_actor.htm#ab6d3046da81369d7de3f9f57484ae17a", null ],
     [ "UpdateAllPlugins", "d5/df3/classez_actor.htm#a4b71cc6c14b1ee2d43c35ce35e668ac4", null ],
     [ "ezActorManager", "d5/df3/classez_actor.htm#a75a341ee0ab31c72d91da07966b85720", null ]

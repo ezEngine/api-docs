@@ -7,7 +7,7 @@ var classez_sky_box_component =
     [ "GetCubeMapFile", "df/d51/classez_sky_box_component.htm#a3fd1ce7b8eb1a27b64c1d79591d7bcfa", null ],
     [ "GetExposureBias", "df/d51/classez_sky_box_component.htm#a5fc1e32a69bf5304becf0b964d25d8a3", null ],
     [ "GetInverseTonemap", "df/d51/classez_sky_box_component.htm#a9df14f5d87b2402c76d57681a9f5f9e5", null ],
-    [ "GetLocalBounds", "df/d51/classez_sky_box_component.htm#acc91a125567f791efbd4ffcb4acd0adf", null ],
+    [ "GetLocalBounds", "df/d51/classez_sky_box_component.htm#aba690efac04e39ccd06a5290536eda4f", null ],
     [ "GetUseFog", "df/d51/classez_sky_box_component.htm#aa3d4a67c1dbda2a0b6ab47744d3d6d98", null ],
     [ "GetVirtualDistance", "df/d51/classez_sky_box_component.htm#a9e385efe1a8054ccd963a74ef79dad91", null ],
     [ "Initialize", "df/d51/classez_sky_box_component.htm#abae18de51835027ec22d42b0c67d126b", null ],

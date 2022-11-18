@@ -30,6 +30,7 @@ var classez_array_ptr =
     [ "LastIndexOf", "dc/dae/classez_array_ptr.htm#a655dfb1bf410d067ee9410d6986012fe", null ],
     [ "operator ezArrayPtr< const T >", "dc/dae/classez_array_ptr.htm#acf661424131b05cb44aad430236c5041", null ],
     [ "operator!=", "dc/dae/classez_array_ptr.htm#a4bf22645cc9210c9c992fe939249d080", null ],
+    [ "operator<", "dc/dae/classez_array_ptr.htm#a6966f3eb34ead18fa2c57528fd7308bf", null ],
     [ "operator=", "dc/dae/classez_array_ptr.htm#ae7011299cdaa4c40c9af60ff0c605d16", null ],
     [ "operator=", "dc/dae/classez_array_ptr.htm#a03f74ba7645e24527c88f9ed84c12688", null ],
     [ "operator==", "dc/dae/classez_array_ptr.htm#a6e5139469ee6b221fcd48f9faf32002b", null ],

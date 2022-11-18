@@ -26,7 +26,7 @@ var classez_jolt_constraint_component =
     [ "m_hActorA", "d0/db2/classez_jolt_constraint_component.htm#adb3c5ff4823f1eaf8d04f726c004da82", null ],
     [ "m_hActorB", "d0/db2/classez_jolt_constraint_component.htm#a4f71141bf0bf4633a1629e90efc60d3c", null ],
     [ "m_hActorBAnchor", "d0/db2/classez_jolt_constraint_component.htm#a919d4c4bea164b249ac506b554fcd48f", null ],
-    [ "m_localFrameA", "d0/db2/classez_jolt_constraint_component.htm#a6c62ec2217dab97dd8c8bdb88002c5e9", null ],
-    [ "m_localFrameB", "d0/db2/classez_jolt_constraint_component.htm#a777290174f616905f5e4c544ca4687a3", null ],
+    [ "m_LocalFrameA", "d0/db2/classez_jolt_constraint_component.htm#aa6215a0dde21e8dfa899f01a5041e5dc", null ],
+    [ "m_LocalFrameB", "d0/db2/classez_jolt_constraint_component.htm#ae1229279aeb6d19aab0b487196cf5192", null ],
     [ "m_pConstraint", "d0/db2/classez_jolt_constraint_component.htm#ae5054f52e3101f3f014cda56754ad7d2", null ]
 ];

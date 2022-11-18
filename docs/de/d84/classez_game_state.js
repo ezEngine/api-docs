@@ -20,8 +20,8 @@ var classez_game_state =
     [ "m_bStateWantsToQuit", "de/d84/classez_game_state.htm#a36705ac881a97ed0810e5ba6c573d5ae", null ],
     [ "m_bXREnabled", "de/d84/classez_game_state.htm#aaaf179a56af0b0a33ae31357239b4336", null ],
     [ "m_bXRRemotingEnabled", "de/d84/classez_game_state.htm#a3025c067647c5cd8c52ef75edef5479d", null ],
-    [ "m_dummyXR", "de/d84/classez_game_state.htm#ad03e5437844b328d12f63980230b23fb", null ],
     [ "m_hMainView", "de/d84/classez_game_state.htm#accca8bd64d2e956c2d1c9c66fc658938", null ],
     [ "m_MainCamera", "de/d84/classez_game_state.htm#a49752ca8b80e4aeb55532e7567ddc723", null ],
+    [ "m_pDummyXR", "de/d84/classez_game_state.htm#a7da59322f7f35fb4eb2ef1ad3bb70b13", null ],
     [ "m_pMainWorld", "de/d84/classez_game_state.htm#a4a8278ec7d28bf90b6846a066500ecd4", null ]
 ];

@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 21.10</span>
+   &#160;<span id="projectnumber">Release 22.11</span>
    </div>
   </td>
  </tr>
@@ -95,8 +95,8 @@ $(document).ready(function(){initNavTree('d0/d20/_game_grid__inl_8h_source.htm',
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;  m_uiGridSizeX = 0;</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  m_uiGridSizeY = 0;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  m_RotateToWorldspace.SetIdentity();</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  m_RotateToGridspace.SetIdentity();</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  m_mRotateToWorldspace.SetIdentity();</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  m_mRotateToGridspace.SetIdentity();</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  m_vWorldSpaceOrigin.SetZero();</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  m_vLocalSpaceCellSize.Set(1.0f);</div>
@@ -142,14 +142,14 @@ $(document).ready(function(){initNavTree('d0/d20/_game_grid__inl_8h_source.htm',
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  m_vLocalSpaceCellSize = vCellSize;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  m_vInverseLocalSpaceCellSize = <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>(1.0f).<a class="code" href="../../da/df1/classez_vec3_template.htm#a97da3d92338ae762c2ddf6573cadd832">CompDiv</a>(vCellSize);</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  m_RotateToWorldspace = mRotation;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  m_RotateToGridspace = mRotation.<a class="code" href="../../db/daf/classez_mat3_template.htm#a6ceb62a1ded51226a6f23918e9d9a192">GetInverse</a>();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  m_mRotateToWorldspace = mRotation;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  m_mRotateToGridspace = mRotation.<a class="code" href="../../db/daf/classez_mat3_template.htm#a6ceb62a1ded51226a6f23918e9d9a192">GetInverse</a>();</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> CellData&gt;</div>
 <div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="../../d9/d8c/classez_game_grid.htm#a73362adf1ab0eff005b0f5e73306324b">   61</a></span>&#160;<a class="code" href="../../d1/df8/classez_vec2_template.htm">ezVec2I32</a> <a class="code" href="../../d9/d8c/classez_game_grid.htm#a73362adf1ab0eff005b0f5e73306324b">ezGameGrid&lt;CellData&gt;::GetCellAtWorldPosition</a>(<span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; vWorldSpacePos)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> vCell = (m_RotateToGridspace * ((vWorldSpacePos - m_vWorldSpaceOrigin)).CompMul(m_vInverseLocalSpaceCellSize));</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> vCell = (m_mRotateToGridspace * ((vWorldSpacePos - m_vWorldSpaceOrigin)).CompMul(m_vInverseLocalSpaceCellSize));</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="comment">// Without the Floor, the border case when the position is outside (-1 / -1) is not immediately detected</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../d1/df8/classez_vec2_template.htm">ezVec2I32</a>((ezInt32)ezMath::Floor(vCell.x), (ezInt32)ezMath::Floor(vCell.y));</div>
@@ -158,7 +158,7 @@ $(document).ready(function(){initNavTree('d0/d20/_game_grid__inl_8h_source.htm',
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> CellData&gt;</div>
 <div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="../../d9/d8c/classez_game_grid.htm#ab5f117700c8c14450537e6ad58aeb6af">   70</a></span>&#160;<a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> <a class="code" href="../../d9/d8c/classez_game_grid.htm#ab5f117700c8c14450537e6ad58aeb6af">ezGameGrid&lt;CellData&gt;::GetCellWorldSpaceOrigin</a>(<span class="keyword">const</span> <a class="code" href="../../d1/df8/classez_vec2_template.htm">ezVec2I32</a>&amp; Coord)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordflow">return</span> m_vWorldSpaceOrigin + m_RotateToWorldspace * GetCellLocalSpaceOrigin(Coord);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordflow">return</span> m_vWorldSpaceOrigin + m_mRotateToWorldspace * GetCellLocalSpaceOrigin(Coord);</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> CellData&gt;</div>
@@ -170,7 +170,7 @@ $(document).ready(function(){initNavTree('d0/d20/_game_grid__inl_8h_source.htm',
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> CellData&gt;</div>
 <div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="../../d9/d8c/classez_game_grid.htm#a21aa8b65ae86190537d48b7ec29e6b5e">   82</a></span>&#160;<a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> <a class="code" href="../../d9/d8c/classez_game_grid.htm#a21aa8b65ae86190537d48b7ec29e6b5e">ezGameGrid&lt;CellData&gt;::GetCellWorldSpaceCenter</a>(<span class="keyword">const</span> <a class="code" href="../../d1/df8/classez_vec2_template.htm">ezVec2I32</a>&amp; Coord)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keywordflow">return</span> m_vWorldSpaceOrigin + m_RotateToWorldspace * GetCellLocalSpaceCenter(Coord);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keywordflow">return</span> m_vWorldSpaceOrigin + m_mRotateToWorldspace * GetCellLocalSpaceCenter(Coord);</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> CellData&gt;</div>
@@ -189,7 +189,7 @@ $(document).ready(function(){initNavTree('d0/d20/_game_grid__inl_8h_source.htm',
 <div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="../../d9/d8c/classez_game_grid.htm#ae197be7ea383d4418d8dba8651fe3c1c">  100</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../d9/d8c/classez_game_grid.htm#ae197be7ea383d4418d8dba8651fe3c1c">ezGameGrid&lt;CellData&gt;::PickCell</a>(<span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; vRayStartPos, <span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; vRayDirNorm, <a class="code" href="../../d1/df8/classez_vec2_template.htm">ezVec2I32</a>* out_CellCoord, <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>* out_vIntersection)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <a class="code" href="../../d5/d8d/structez_plane_template.htm">ezPlane</a> p;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  p.<a class="code" href="../../d5/d8d/structez_plane_template.htm#a261718ccc6a71577378fce22f4fb4d39">SetFromNormalAndPoint</a>(m_RotateToWorldspace * <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>(0, 0, -1), m_vWorldSpaceOrigin);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  p.<a class="code" href="../../d5/d8d/structez_plane_template.htm#a261718ccc6a71577378fce22f4fb4d39">SetFromNormalAndPoint</a>(m_mRotateToWorldspace * <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>(0, 0, -1), m_vWorldSpaceOrigin);</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> vPos;</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
@@ -210,7 +210,7 @@ $(document).ready(function(){initNavTree('d0/d20/_game_grid__inl_8h_source.htm',
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> vGridBox(m_uiGridSizeX, m_uiGridSizeY, 1.0f);</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  vGridBox = m_RotateToWorldspace * m_vLocalSpaceCellSize.<a class="code" href="../../da/df1/classez_vec3_template.htm#a1e0aabc06569839962d16a71def3ae6b">CompMul</a>(vGridBox);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  vGridBox = m_mRotateToWorldspace * m_vLocalSpaceCellSize.<a class="code" href="../../da/df1/classez_vec3_template.htm#a1e0aabc06569839962d16a71def3ae6b">CompMul</a>(vGridBox);</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../d6/d25/classez_bounding_box_template.htm">ezBoundingBox</a>(m_vWorldSpaceOrigin, m_vWorldSpaceOrigin + vGridBox);</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;}</div>
@@ -219,8 +219,8 @@ $(document).ready(function(){initNavTree('d0/d20/_game_grid__inl_8h_source.htm',
 <div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="../../d9/d8c/classez_game_grid.htm#aa4899352f8006c5804f8b2744a002bef">  130</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../d9/d8c/classez_game_grid.htm#aa4899352f8006c5804f8b2744a002bef">ezGameGrid&lt;CellData&gt;::GetRayIntersection</a>(<span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; vRayStartWorldSpace, <span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; vRayDirNormalizedWorldSpace, <span class="keywordtype">float</span> fMaxLength,</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <span class="keywordtype">float</span>&amp; out_fIntersection, <a class="code" href="../../d1/df8/classez_vec2_template.htm">ezVec2I32</a>&amp; out_CellCoord)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> vRayStart = m_RotateToGridspace * (vRayStartWorldSpace - m_vWorldSpaceOrigin);</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> vRayDir = m_RotateToGridspace * vRayDirNormalizedWorldSpace;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> vRayStart = m_mRotateToGridspace * (vRayStartWorldSpace - m_vWorldSpaceOrigin);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> vRayDir = m_mRotateToGridspace * vRayDirNormalizedWorldSpace;</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> vGridBox(m_uiGridSizeX, m_uiGridSizeY, 1.0f);</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
@@ -256,8 +256,8 @@ $(document).ready(function(){initNavTree('d0/d20/_game_grid__inl_8h_source.htm',
 <div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="../../d9/d8c/classez_game_grid.htm#a4bb91ddd6badad53561ad797a8e8decd">  167</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../d9/d8c/classez_game_grid.htm#a4bb91ddd6badad53561ad797a8e8decd">ezGameGrid&lt;CellData&gt;::GetRayIntersectionExpandedBBox</a>(<span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; vRayStartWorldSpace, <span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; vRayDirNormalizedWorldSpace,</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  <span class="keywordtype">float</span> fMaxLength, <span class="keywordtype">float</span>&amp; out_fIntersection, <span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; vExpandBBoxByThis)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> vRayStart = m_RotateToGridspace * (vRayStartWorldSpace - m_vWorldSpaceOrigin);</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> vRayDir = m_RotateToGridspace * vRayDirNormalizedWorldSpace;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> vRayStart = m_mRotateToGridspace * (vRayStartWorldSpace - m_vWorldSpaceOrigin);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> vRayDir = m_mRotateToGridspace * vRayDirNormalizedWorldSpace;</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> vGridBox(m_uiGridSizeX, m_uiGridSizeY, 1.0f);</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
@@ -315,7 +315,7 @@ $(document).ready(function(){initNavTree('d0/d20/_game_grid__inl_8h_source.htm',
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_313417988e5cb64d4fc37d0cee521906.htm">Utilities</a></li><li class="navelem"><a class="el" href="../../dir_e2bcb8e903af2fb2da1e278e44e296b0.htm">DataStructures</a></li><li class="navelem"><a class="el" href="../../dir_5f679a448db5a1f8279f45eda4ec64b5.htm">Implementation</a></li><li class="navelem"><b>GameGrid_inl.h</b></li>
-    <li class="footer">Generated on Sun Oct 9 2022 14:44:58 for ezEngine by
+    <li class="footer">Generated on Fri Nov 18 2022 14:48:03 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

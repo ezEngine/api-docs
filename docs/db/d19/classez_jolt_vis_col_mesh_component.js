@@ -4,7 +4,7 @@ var classez_jolt_vis_col_mesh_component =
     [ "~ezJoltVisColMeshComponent", "db/d19/classez_jolt_vis_col_mesh_component.htm#a78f1ed6e8bb76330d3227e991a71dc0f", null ],
     [ "CreateCollisionRenderMesh", "db/d19/classez_jolt_vis_col_mesh_component.htm#a9567f593f6f8f0b3c7b4d19ec46cf556", null ],
     [ "DeserializeComponent", "db/d19/classez_jolt_vis_col_mesh_component.htm#a93519e1f4e3b9f56c8967e3b55c65f7c", null ],
-    [ "GetLocalBounds", "db/d19/classez_jolt_vis_col_mesh_component.htm#aabea247f9fb9dd5f728e4d272a0ee467", null ],
+    [ "GetLocalBounds", "db/d19/classez_jolt_vis_col_mesh_component.htm#aa74150f69da0f993966bceec55a535ea", null ],
     [ "GetMesh", "db/d19/classez_jolt_vis_col_mesh_component.htm#ae0d18695188fb2270b68d4ab9bff922a", null ],
     [ "GetMeshFile", "db/d19/classez_jolt_vis_col_mesh_component.htm#abe7e32d8ed266ee9b4f681922a707395", null ],
     [ "Initialize", "db/d19/classez_jolt_vis_col_mesh_component.htm#a5b0e6b8eaf1ab7f426933353d954915c", null ],

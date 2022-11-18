@@ -11,6 +11,6 @@ var classez_qt_property_anim_asset_tree_view =
     [ "RebindSelectedItemsEvent", "db/d1f/classez_qt_property_anim_asset_tree_view.htm#a68eebef6e2f690629ed3d5ecdedff3f0", null ],
     [ "restoreExpandState", "db/d1f/classez_qt_property_anim_asset_tree_view.htm#a29e1526173522e59a255ddb4b799aff8", null ],
     [ "storeExpandState", "db/d1f/classez_qt_property_anim_asset_tree_view.htm#a7d6ea8fed413df40effa4c22dd266ce8", null ],
-    [ "m_notExpandedState", "db/d1f/classez_qt_property_anim_asset_tree_view.htm#ad14da1d39d3a7d5b91de0925e9f7aa3b", null ],
-    [ "m_selectedItems", "db/d1f/classez_qt_property_anim_asset_tree_view.htm#a92c8da08e3d8905ab9545d716299dac6", null ]
+    [ "m_NotExpandedState", "db/d1f/classez_qt_property_anim_asset_tree_view.htm#a434d0d2f82a48b27c39b48733972a8c4", null ],
+    [ "m_SelectedItems", "db/d1f/classez_qt_property_anim_asset_tree_view.htm#aeeaeedaf35574db47be5a25255e1a27f", null ]
 ];

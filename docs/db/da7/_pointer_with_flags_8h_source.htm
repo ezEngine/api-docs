@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 21.10</span>
+   &#160;<span id="projectnumber">Release 22.11</span>
    </div>
   </td>
  </tr>
@@ -103,7 +103,7 @@ $(document).ready(function(){initNavTree('db/da7/_pointer_with_flags_8h_source.h
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    PtrMask = ~FlagsMask,</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  };</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keywordtype">void</span>* m_ptr = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keywordtype">void</span>* m_pPtr = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <a class="code" href="../../da/dd1/classez_pointer_with_flags.htm#acb1fb04451c24483047618ac673e6a63">ezPointerWithFlags</a>() = <span class="keywordflow">default</span>;</div>
@@ -113,20 +113,20 @@ $(document).ready(function(){initNavTree('db/da7/_pointer_with_flags_8h_source.h
 <div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="../../da/dd1/classez_pointer_with_flags.htm#aebeacaa3a8bedbf9ab82a803b3e635ac">   32</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="../../da/dd1/classez_pointer_with_flags.htm#aebeacaa3a8bedbf9ab82a803b3e635ac">SetPtrAndFlags</a>(PtrType* ptr, uint8_t flags)</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  {</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">const</span> std::uintptr_t isrc = *<span class="keyword">reinterpret_cast&lt;</span>std::uintptr_t*<span class="keyword">&gt;</span>(&amp;ptr);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    std::uintptr_t&amp; iptr = *<span class="keyword">reinterpret_cast&lt;</span>std::uintptr_t*<span class="keyword">&gt;</span>(&amp;m_ptr);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    std::uintptr_t&amp; iptr = *<span class="keyword">reinterpret_cast&lt;</span>std::uintptr_t*<span class="keyword">&gt;</span>(&amp;m_pPtr);</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    iptr = (isrc &amp; PtrMask) | (flags &amp; FlagsMask);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  }</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="../../da/dd1/classez_pointer_with_flags.htm#a0311637d648366070eab3258c8aabbe0">   41</a></span>&#160;  <span class="keyword">const</span> PtrType* <a class="code" href="../../da/dd1/classez_pointer_with_flags.htm#a0311637d648366070eab3258c8aabbe0">GetPtr</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">const</span> std::uintptr_t&amp; iptr = *<span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span>std::uintptr_t*<span class="keyword">&gt;</span>(&amp;m_ptr);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">const</span> std::uintptr_t&amp; iptr = *<span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span>std::uintptr_t*<span class="keyword">&gt;</span>(&amp;m_pPtr);</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span>PtrType*<span class="keyword">&gt;</span>(iptr &amp; PtrMask); <span class="comment">// mask off lower N bits</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  }</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
 <div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="../../da/dd1/classez_pointer_with_flags.htm#a52cd270a6284c98d1f6080d4af5a0f37">   48</a></span>&#160;  PtrType* <a class="code" href="../../da/dd1/classez_pointer_with_flags.htm#a52cd270a6284c98d1f6080d4af5a0f37">GetPtr</a>()</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    std::uintptr_t&amp; iptr = *<span class="keyword">reinterpret_cast&lt;</span>std::uintptr_t*<span class="keyword">&gt;</span>(&amp;m_ptr);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    std::uintptr_t&amp; iptr = *<span class="keyword">reinterpret_cast&lt;</span>std::uintptr_t*<span class="keyword">&gt;</span>(&amp;m_pPtr);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">reinterpret_cast&lt;</span>PtrType*<span class="keyword">&gt;</span>(iptr &amp; PtrMask); <span class="comment">// mask off lower N bits</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  }</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
@@ -136,13 +136,13 @@ $(document).ready(function(){initNavTree('db/da7/_pointer_with_flags_8h_source.h
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    EZ_ASSERT_DEBUG(</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      (isrc &amp; FlagsMask) == 0, <span class="stringliteral">&quot;The given pointer does not have an {} byte alignment and thus cannot be stored lossless.&quot;</span>, 1u &lt;&lt; NumFlagBits);</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    std::uintptr_t&amp; iptr = *<span class="keyword">reinterpret_cast&lt;</span>std::uintptr_t*<span class="keyword">&gt;</span>(&amp;m_ptr);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    std::uintptr_t&amp; iptr = *<span class="keyword">reinterpret_cast&lt;</span>std::uintptr_t*<span class="keyword">&gt;</span>(&amp;m_pPtr);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    iptr = (isrc &amp; PtrMask) | (iptr &amp; FlagsMask);</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  }</div>
 <div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="../../da/dd1/classez_pointer_with_flags.htm#a4bc07dd71f6fac77b630fa6c72ce6b14">   66</a></span>&#160;  uint8_t <a class="code" href="../../da/dd1/classez_pointer_with_flags.htm#a4bc07dd71f6fac77b630fa6c72ce6b14">GetFlags</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">const</span> std::uintptr_t&amp; iptr = *<span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span>std::uintptr_t*<span class="keyword">&gt;</span>(&amp;m_ptr);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">const</span> std::uintptr_t&amp; iptr = *<span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span>std::uintptr_t*<span class="keyword">&gt;</span>(&amp;m_pPtr);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(iptr &amp; FlagsMask);</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  }</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
@@ -150,7 +150,7 @@ $(document).ready(function(){initNavTree('db/da7/_pointer_with_flags_8h_source.h
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  {</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    EZ_ASSERT_DEBUG(flags &lt;= FlagsMask, <span class="stringliteral">&quot;The flag value {} requires more than {} bits&quot;</span>, flags, NumFlagBits);</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    std::uintptr_t&amp; iptr = *<span class="keyword">reinterpret_cast&lt;</span>std::uintptr_t*<span class="keyword">&gt;</span>(&amp;m_ptr);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    std::uintptr_t&amp; iptr = *<span class="keyword">reinterpret_cast&lt;</span>std::uintptr_t*<span class="keyword">&gt;</span>(&amp;m_pPtr);</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    iptr = (iptr &amp; PtrMask) | (flags &amp; FlagsMask);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  }</div>
@@ -209,7 +209,7 @@ $(document).ready(function(){initNavTree('db/da7/_pointer_with_flags_8h_source.h
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_f95f7c440efc771b227d40e9293549bd.htm">Types</a></li><li class="navelem"><b>PointerWithFlags.h</b></li>
-    <li class="footer">Generated on Sun Oct 9 2022 14:44:56 for ezEngine by
+    <li class="footer">Generated on Fri Nov 18 2022 14:48:01 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

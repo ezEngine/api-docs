@@ -38,5 +38,5 @@ var classez_remote_interface =
     [ "UpdateRemoteInterface", "df/d93/classez_remote_interface.htm#a18be040b1b818cfa41167e2162777a11", null ],
     [ "WaitForConnectionToServer", "df/d93/classez_remote_interface.htm#a8d5026c2be88e5bd5bc49fdbd6233d4e", null ],
     [ "m_RemoteEvents", "df/d93/classez_remote_interface.htm#af845876725fef721bbf5359bb50b8e66", null ],
-    [ "m_ServerInfoIP", "df/d93/classez_remote_interface.htm#a1c60432e63c62537152231e659618f3b", null ]
+    [ "m_sServerInfoIP", "df/d93/classez_remote_interface.htm#a938624f81db21e634c2f8fba07dbe2b9", null ]
 ];

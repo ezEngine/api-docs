@@ -11,6 +11,6 @@ var classez_rotor_component =
     [ "m_fAcceleration", "db/d77/classez_rotor_component.htm#a553b00bcd49a0905e6f7d163fb870e8b", null ],
     [ "m_fDeceleration", "db/d77/classez_rotor_component.htm#a70a6fe5bf34847167cc692d00a419e72", null ],
     [ "m_iDegreeToRotate", "db/d77/classez_rotor_component.htm#abe8ca72b465940012825e8670da75ea0", null ],
-    [ "m_LastRotation", "db/d77/classez_rotor_component.htm#a28639eb67fcfa9e22c839dd7b093b617", null ],
+    [ "m_qLastRotation", "db/d77/classez_rotor_component.htm#aa030f524af0716542c81bfdee15c98ce", null ],
     [ "m_vRotationAxis", "db/d77/classez_rotor_component.htm#ad4a17e025d5b9cc6ea911e776058342a", null ]
 ];

@@ -33,7 +33,7 @@ var classez_sky_light_component =
     [ "SetShowDebugInfo", "d0/d6f/classez_sky_light_component.htm#abb3732421c9295fbd0f19abcec386ff2", null ],
     [ "SetShowMipMaps", "d0/d6f/classez_sky_light_component.htm#a2a8bed10c96cfcd073aee40bf8750b4c", null ],
     [ "m_bStatesDirty", "d0/d6f/classez_sky_light_component.htm#a77d907267e15c59b28dcc8cb5ae0ae4b", null ],
-    [ "m_desc", "d0/d6f/classez_sky_light_component.htm#aacf9bd967150779e1775150a4caccec9", null ],
+    [ "m_Desc", "d0/d6f/classez_sky_light_component.htm#ab01a9c1cd17cb3216d5d9afb06f4285f", null ],
     [ "m_hCubeMap", "d0/d6f/classez_sky_light_component.htm#a6f07305bc2606522f421d8d99648a5f4", null ],
     [ "m_Id", "d0/d6f/classez_sky_light_component.htm#ae5bfdfae4651f5c8f791dd1aef536caf", null ]
 ];

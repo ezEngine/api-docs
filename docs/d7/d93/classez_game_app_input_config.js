@@ -1,6 +1,5 @@
 var classez_game_app_input_config =
 [
-    [ "MaxInputSlotAlternatives", "d7/d93/classez_game_app_input_config.htm#ad224467f1945b959bc03d8c9b2eb1674aad799797c0eb0ab06cfda87b90775b19", null ],
     [ "ezGameAppInputConfig", "d7/d93/classez_game_app_input_config.htm#aee98f7a4e175aec2c1ecd5c649e5baca", null ],
     [ "Apply", "d7/d93/classez_game_app_input_config.htm#ae11a22834a4e000f62a34306765cea33", null ],
     [ "ReadFromDDL", "d7/d93/classez_game_app_input_config.htm#a45c2db6fb364da779c62b330812892ce", null ],

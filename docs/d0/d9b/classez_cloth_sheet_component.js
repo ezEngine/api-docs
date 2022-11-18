@@ -4,7 +4,7 @@ var classez_cloth_sheet_component =
     [ "~ezClothSheetComponent", "d0/d9b/classez_cloth_sheet_component.htm#a7ed84c8e2d388bc0afba4e43f2c46a03", null ],
     [ "DeserializeComponent", "d0/d9b/classez_cloth_sheet_component.htm#a82f954b317dcdf25cc8baf1b8319ca81", null ],
     [ "GetFlags", "d0/d9b/classez_cloth_sheet_component.htm#af8acb5cb3b55897067a53fdf5d066941", null ],
-    [ "GetLocalBounds", "d0/d9b/classez_cloth_sheet_component.htm#a1ad2ed2675635ab31c6d01a27ae9df69", null ],
+    [ "GetLocalBounds", "d0/d9b/classez_cloth_sheet_component.htm#a0d7605b757b6c64ead0db0aaf9802ce0", null ],
     [ "GetMaterialFile", "d0/d9b/classez_cloth_sheet_component.htm#a6e9a6c0acb3de030da26b38070e3be83", null ],
     [ "GetSegments", "d0/d9b/classez_cloth_sheet_component.htm#a83d0151ea3372f70187db343d08053fa", null ],
     [ "GetSize", "d0/d9b/classez_cloth_sheet_component.htm#a5c7597b8c441a395d572acc9c8b47a05", null ],

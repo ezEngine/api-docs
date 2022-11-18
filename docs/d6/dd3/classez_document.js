@@ -68,15 +68,15 @@ var classez_document =
     [ "ezCommandHistory", "d6/dd3/classez_document.htm#af893ee8c3aaf1655a650523b92491f5d", null ],
     [ "ezDocumentManager", "d6/dd3/classez_document.htm#a137c83e461e15417c5f1d95830742df4", null ],
     [ "ezSaveDocumentTask", "d6/dd3/classez_document.htm#ae731da5e2b025c5d3e50a2b1c1ff0ab3", null ],
-    [ "m_CommandHistory", "d6/dd3/classez_document.htm#ae2ae762f1a2777b50ba21a4228a0a542", null ],
     [ "m_DocumentObjectMetaData", "d6/dd3/classez_document.htm#a5fd5c07f34c917e365cfcb6acfb047cc", null ],
     [ "m_EventsOne", "d6/dd3/classez_document.htm#a334d73c18aab7e32667eef5fbe44cd43", null ],
-    [ "m_ObjectAccessor", "d6/dd3/classez_document.htm#a6fff21b2eac105f91eae7f7152e4df4e", null ],
     [ "m_ObjectAccessorChangeEvents", "d6/dd3/classez_document.htm#a7452d28b1b56227e89d2867433e1337f", null ],
     [ "m_pActiveSubDocument", "d6/dd3/classez_document.htm#a376135836ef02a0228a47af4c0ff17f9", null ],
+    [ "m_pCommandHistory", "d6/dd3/classez_document.htm#ae93fd80c3afe413b9a8037fda681b7e8", null ],
     [ "m_pDocumentInfo", "d6/dd3/classez_document.htm#a0d41b51d1d82195234d7841eed4081da", null ],
     [ "m_pHostDocument", "d6/dd3/classez_document.htm#a61097e2ac8d255762292d22843910079", null ],
+    [ "m_pObjectAccessor", "d6/dd3/classez_document.htm#a1c8038b2642e67a172bf8f38e4b61461", null ],
     [ "m_pObjectManager", "d6/dd3/classez_document.htm#ac223eed871006a7928989076492291da", null ],
-    [ "m_pTypeDescriptor", "d6/dd3/classez_document.htm#aa8347047aeff9122811069a225966115", null ],
-    [ "m_SelectionManager", "d6/dd3/classez_document.htm#a4aabac3d2fb42ec29d933c4190959204", null ]
+    [ "m_pSelectionManager", "d6/dd3/classez_document.htm#af320baeda219d6670c9d8ee9b3c35fa4", null ],
+    [ "m_pTypeDescriptor", "d6/dd3/classez_document.htm#aa8347047aeff9122811069a225966115", null ]
 ];

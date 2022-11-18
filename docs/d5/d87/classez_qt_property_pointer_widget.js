@@ -8,6 +8,7 @@ var classez_qt_property_pointer_widget =
     [ "OnInit", "d5/d87/classez_qt_property_pointer_widget.htm#abe9ad1c51e11883d73dec37ebe8fcaed", null ],
     [ "SetSelection", "d5/d87/classez_qt_property_pointer_widget.htm#ad797e5e413421a7e762a1a5d805a08e7", null ],
     [ "StructureEventHandler", "d5/d87/classez_qt_property_pointer_widget.htm#a240674404486a84ebefd6f6ae9f36aa8", null ],
+    [ "UpdateTitle", "d5/d87/classez_qt_property_pointer_widget.htm#a537ed9e182949ddc8f9e8370b74a1aff", null ],
     [ "m_pAddButton", "d5/d87/classez_qt_property_pointer_widget.htm#ae843b29655169e5edcd2b186fae0293e", null ],
     [ "m_pDeleteButton", "d5/d87/classez_qt_property_pointer_widget.htm#a8cfeaf834e0b51c273bc0ee95f94c0db", null ],
     [ "m_pGroup", "d5/d87/classez_qt_property_pointer_widget.htm#a8f1eabaa3fe3ceb3e06841eaf8dc3f5d", null ],

@@ -19,5 +19,5 @@ var classez_qt_graphics_view =
     [ "m_fMaxZoom", "d5/d62/classez_qt_graphics_view.htm#a43c5b80024bd94e4e89148162eb1f7c2", null ],
     [ "m_fMinZoom", "d5/d62/classez_qt_graphics_view.htm#aef47a85817bb20396589e4d6d6987751", null ],
     [ "m_fZoom", "d5/d62/classez_qt_graphics_view.htm#a587e2c36febd117511a170bf80ce6be0", null ],
-    [ "m_lastGlobalMouseMovePos", "d5/d62/classez_qt_graphics_view.htm#a7ffa6dd5ed493d081bd4ca97a4c4e1ae", null ]
+    [ "m_LastGlobalMouseMovePos", "d5/d62/classez_qt_graphics_view.htm#a45e9b8d257ca6f5b2d088ae50d43e373", null ]
 ];

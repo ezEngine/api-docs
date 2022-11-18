@@ -8,7 +8,7 @@ var classez_rml_ui_canvas2_d_component =
     [ "DeserializeComponent", "d9/dc8/classez_rml_ui_canvas2_d_component.htm#a30e51c48f842c79d47e810979accda0d", null ],
     [ "GetAnchorPoint", "d9/dc8/classez_rml_ui_canvas2_d_component.htm#a6cb2ccb4ce14f6c16d529f790f6646ef", null ],
     [ "GetAutobindBlackboards", "d9/dc8/classez_rml_ui_canvas2_d_component.htm#a81d041658942d03a369e0f8d26df131c", null ],
-    [ "GetLocalBounds", "d9/dc8/classez_rml_ui_canvas2_d_component.htm#a98871cf4d984addc61ea373665ccea4e", null ],
+    [ "GetLocalBounds", "d9/dc8/classez_rml_ui_canvas2_d_component.htm#ae8542fd4a33eaf4765707f251e6f4286", null ],
     [ "GetOffset", "d9/dc8/classez_rml_ui_canvas2_d_component.htm#af252f9d5b582169db5aebaaed8b1ec37", null ],
     [ "GetOrCreateRmlContext", "d9/dc8/classez_rml_ui_canvas2_d_component.htm#ae512962ec1921abbd5000adb2fe86e97", null ],
     [ "GetPassInput", "d9/dc8/classez_rml_ui_canvas2_d_component.htm#afdd46bd5bf9d1ad87844c7941ce20055", null ],
@@ -35,15 +35,15 @@ var classez_rml_ui_canvas2_d_component =
     [ "Update", "d9/dc8/classez_rml_ui_canvas2_d_component.htm#a4e29c5b944f749b37ac890b1995dda34", null ],
     [ "UpdateAutobinding", "d9/dc8/classez_rml_ui_canvas2_d_component.htm#a8e033e03bdd68b53c3803d9790bba609", null ],
     [ "UpdateCachedValues", "d9/dc8/classez_rml_ui_canvas2_d_component.htm#a24e633130414bca0748b4703ee1ca990", null ],
-    [ "m_AnchorPoint", "d9/dc8/classez_rml_ui_canvas2_d_component.htm#aed1874f7b6f592baf1c90cf05926ff84", null ],
     [ "m_AutoBindings", "d9/dc8/classez_rml_ui_canvas2_d_component.htm#ad7740834d53938a8d1632ba08da9ee35", null ],
     [ "m_bAutobindBlackboards", "d9/dc8/classez_rml_ui_canvas2_d_component.htm#af07cef4892b7778b04c40b48c1ee901c", null ],
     [ "m_bPassInput", "d9/dc8/classez_rml_ui_canvas2_d_component.htm#aa6c7b83171c849a06b3e430f68fce66b", null ],
     [ "m_DataBindings", "d9/dc8/classez_rml_ui_canvas2_d_component.htm#a5687e16ea55f2fa259dff89349cf109d", null ],
     [ "m_hResource", "d9/dc8/classez_rml_ui_canvas2_d_component.htm#a2159bf78cea7f0433820bfb12b7ba671", null ],
-    [ "m_Offset", "d9/dc8/classez_rml_ui_canvas2_d_component.htm#a1eca3fcf44daee1124c3499c159d9813", null ],
     [ "m_pContext", "d9/dc8/classez_rml_ui_canvas2_d_component.htm#a216e8296199499afea926d552d18ca3a", null ],
-    [ "m_ReferenceResolution", "d9/dc8/classez_rml_ui_canvas2_d_component.htm#ab026c78cb0f2a245e73e9ee29020adef", null ],
     [ "m_ResourceEventUnsubscriber", "d9/dc8/classez_rml_ui_canvas2_d_component.htm#a335e53897ffb1674805509781931c48d", null ],
-    [ "m_Size", "d9/dc8/classez_rml_ui_canvas2_d_component.htm#ac8bd538bf4fe1c93bc57402a4797a849", null ]
+    [ "m_vAnchorPoint", "d9/dc8/classez_rml_ui_canvas2_d_component.htm#a443c24b25682c190cc0ebb972d563a50", null ],
+    [ "m_vOffset", "d9/dc8/classez_rml_ui_canvas2_d_component.htm#a27a6ab2bb9ceb0e2a392a7d2238d6a1b", null ],
+    [ "m_vReferenceResolution", "d9/dc8/classez_rml_ui_canvas2_d_component.htm#a51f436d70548ea93d13e6514e84b4d44", null ],
+    [ "m_vSize", "d9/dc8/classez_rml_ui_canvas2_d_component.htm#a19ff5825f157ac5c69f749893feaac9f", null ]
 ];

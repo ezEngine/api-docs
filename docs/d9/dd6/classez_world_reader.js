@@ -14,5 +14,5 @@ var classez_world_reader =
     [ "InstantiateWorld", "d9/dd6/classez_world_reader.htm#a6bb0570e1b1b8e18d2dac4d120d7d4ec", null ],
     [ "ReadComponentHandle", "d9/dd6/classez_world_reader.htm#ad4a132aebe64446a55a4212b1aa07d45", null ],
     [ "ReadGameObjectHandle", "d9/dd6/classez_world_reader.htm#a7375b53b12e8575750f58f8415273f46", null ],
-    [ "ReadWorldDescription", "d9/dd6/classez_world_reader.htm#aec923860122bba7336f759914be2d6bf", null ]
+    [ "ReadWorldDescription", "d9/dd6/classez_world_reader.htm#ae0d2d2445811a4b147cd2d8b604f5aeb", null ]
 ];

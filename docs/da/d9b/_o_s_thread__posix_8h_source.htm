@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 21.10</span>
+   &#160;<span id="projectnumber">Release 22.11</span>
    </div>
   </td>
  </tr>
@@ -119,7 +119,7 @@ $(document).ready(function(){initNavTree('da/d9b/_o_s_thread__posix_8h_source.ht
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  pthread_attr_setdetachstate(&amp;ThreadAttributes, PTHREAD_CREATE_JOINABLE);</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  pthread_attr_setstacksize(&amp;ThreadAttributes, m_uiStackSize);</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordtype">int</span> iReturnCode = pthread_create(&amp;m_Handle, &amp;ThreadAttributes, m_EntryPoint, m_pUserData);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordtype">int</span> iReturnCode = pthread_create(&amp;m_hHandle, &amp;ThreadAttributes, m_EntryPoint, m_pUserData);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  EZ_IGNORE_UNUSED(iReturnCode);</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  EZ_ASSERT_RELEASE(iReturnCode == 0, <span class="stringliteral">&quot;Thread creation failed!&quot;</span>);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
@@ -130,26 +130,26 @@ $(document).ready(function(){initNavTree('da/d9b/_o_s_thread__posix_8h_source.ht
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">// This means 15 characters and the terminating &#39;\0&#39;</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">if</span> (strlen(m_szName) &lt; 16)</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      pthread_setname_np(m_Handle, m_szName);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      pthread_setname_np(m_hHandle, m_szName);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    {</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      <span class="keywordtype">char</span> threadName[16];</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      strncpy(threadName, m_szName, 15);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      threadName[15] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      pthread_setname_np(m_Handle, threadName);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      pthread_setname_np(m_hHandle, threadName);</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  }</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  m_ThreadID = m_Handle;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  m_ThreadID = m_hHandle;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  pthread_attr_destroy(&amp;ThreadAttributes);</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
 <div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="../../dc/dee/classez_o_s_thread.htm#a9aa84088cdf474e556a71d2ae301f132">   63</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dc/dee/classez_o_s_thread.htm#a9aa84088cdf474e556a71d2ae301f132">ezOSThread::Join</a>()</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  pthread_join(m_Handle, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  pthread_join(m_hHandle, <span class="keyword">nullptr</span>);</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -164,7 +164,7 @@ $(document).ready(function(){initNavTree('da/d9b/_o_s_thread__posix_8h_source.ht
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_05460f4aa032e23246d68b56847b5fed.htm">Threading</a></li><li class="navelem"><a class="el" href="../../dir_87563d8e459b6b2efd39d0a742560444.htm">Implementation</a></li><li class="navelem"><a class="el" href="../../dir_f7cba5d11400c314899a87dbddc6ab5d.htm">Posix</a></li><li class="navelem"><b>OSThread_posix.h</b></li>
-    <li class="footer">Generated on Sun Oct 9 2022 14:44:56 for ezEngine by
+    <li class="footer">Generated on Fri Nov 18 2022 14:48:00 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

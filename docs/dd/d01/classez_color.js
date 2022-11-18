@@ -1,7 +1,7 @@
 var classez_color =
 [
     [ "ezColor", "dd/d01/classez_color.htm#a6d241057cc50e7000ab9b18c476a42ff", null ],
-    [ "ezColor", "dd/d01/classez_color.htm#a52b1b673b364c19fa87f78cc5b19346a", null ],
+    [ "ezColor", "dd/d01/classez_color.htm#afccccce90272969a619eb4b2f49413d4", null ],
     [ "ezColor", "dd/d01/classez_color.htm#aa6eedb15b1ce1df0147726c83944787d", null ],
     [ "ezColor", "dd/d01/classez_color.htm#ae2211bcc693db49690413cb998f7c4bc", null ],
     [ "ApplyHdrExposureValue", "dd/d01/classez_color.htm#a291ec284b91635f5b7174c904c3b6dd7", null ],

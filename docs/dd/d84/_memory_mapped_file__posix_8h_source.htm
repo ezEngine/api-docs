@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 21.10</span>
+   &#160;<span id="projectnumber">Release 22.11</span>
    </div>
   </td>
  </tr>
@@ -144,7 +144,7 @@ $(document).ready(function(){initNavTree('dd/d84/_memory_mapped_file__posix_8h_s
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;ezMemoryMappedFile::ezMemoryMappedFile()</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  m_Impl = EZ_DEFAULT_NEW(<a class="code" href="../../dc/d1a/structez_memory_mapped_file_impl.htm">ezMemoryMappedFileImpl</a>);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  m_pImpl = EZ_DEFAULT_NEW(<a class="code" href="../../dc/d1a/structez_memory_mapped_file_impl.htm">ezMemoryMappedFileImpl</a>);</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;ezMemoryMappedFile::~ezMemoryMappedFile()</div>
@@ -162,7 +162,7 @@ $(document).ready(function(){initNavTree('dd/d84/_memory_mapped_file__posix_8h_s
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <a class="code" href="../../dc/d34/classez_memory_mapped_file.htm#ab6f6614d5bac3cad577e264980031cfa">Close</a>();</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  m_Impl-&gt;m_Mode = mode;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  m_pImpl-&gt;m_Mode = mode;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keywordtype">int</span> access = O_RDONLY;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keywordtype">int</span> prot = PROT_READ;</div>
@@ -178,8 +178,8 @@ $(document).ready(function(){initNavTree('dd/d84/_memory_mapped_file__posix_8h_s
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  flags |= MAP_POPULATE;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#    endif</span></div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#  endif</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  m_Impl-&gt;m_hFile = open(szAbsolutePath, access | O_CLOEXEC, 0);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keywordflow">if</span> (m_Impl-&gt;m_hFile == -1)</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  m_pImpl-&gt;m_hFile = open(szAbsolutePath, access | O_CLOEXEC, 0);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keywordflow">if</span> (m_pImpl-&gt;m_hFile == -1)</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  {</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <a class="code" href="../../dc/d9e/classez_log.htm#ae5b1ee0c969668bdac113be5f4b15fa3">ezLog::Error</a>(<span class="stringliteral">&quot;Could not open file for memory mapping - {}&quot;</span>, strerror(errno));</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <a class="code" href="../../dc/d34/classez_memory_mapped_file.htm#ab6f6614d5bac3cad577e264980031cfa">Close</a>();</div>
@@ -192,10 +192,10 @@ $(document).ready(function(){initNavTree('dd/d84/_memory_mapped_file__posix_8h_s
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <a class="code" href="../../dc/d34/classez_memory_mapped_file.htm#ab6f6614d5bac3cad577e264980031cfa">Close</a>();</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">return</span> EZ_FAILURE;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  }</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  m_Impl-&gt;m_uiFileSize = sb.st_size;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  m_pImpl-&gt;m_uiFileSize = sb.st_size;</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  m_Impl-&gt;m_pMappedFilePtr = mmap(<span class="keyword">nullptr</span>, m_Impl-&gt;m_uiFileSize, prot, flags, m_Impl-&gt;m_hFile, 0);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="keywordflow">if</span> (m_Impl-&gt;m_pMappedFilePtr == <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  m_pImpl-&gt;m_pMappedFilePtr = mmap(<span class="keyword">nullptr</span>, m_pImpl-&gt;m_uiFileSize, prot, flags, m_pImpl-&gt;m_hFile, 0);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="keywordflow">if</span> (m_pImpl-&gt;m_pMappedFilePtr == <span class="keyword">nullptr</span>)</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  {</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <a class="code" href="../../dc/d9e/classez_log.htm#ae5b1ee0c969668bdac113be5f4b15fa3">ezLog::Error</a>(<span class="stringliteral">&quot;Could not create memory mapping of file - {}&quot;</span>, strerror(errno));</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <a class="code" href="../../dc/d34/classez_memory_mapped_file.htm#ab6f6614d5bac3cad577e264980031cfa">Close</a>();</div>
@@ -216,7 +216,7 @@ $(document).ready(function(){initNavTree('dd/d84/_memory_mapped_file__posix_8h_s
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <a class="code" href="../../dc/d34/classez_memory_mapped_file.htm#ab6f6614d5bac3cad577e264980031cfa">Close</a>();</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  m_Impl-&gt;m_Mode = mode;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  m_pImpl-&gt;m_Mode = mode;</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  <span class="keywordtype">int</span> prot = PROT_READ;</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  <span class="keywordtype">int</span> oflag = O_RDONLY;</div>
@@ -234,25 +234,25 @@ $(document).ready(function(){initNavTree('dd/d84/_memory_mapped_file__posix_8h_s
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  }</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  oflag |= O_CREAT;</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  m_Impl-&gt;m_hFile = shm_open(szSharedName, oflag, 0666);</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  <span class="keywordflow">if</span> (m_Impl-&gt;m_hFile == -1)</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  m_pImpl-&gt;m_hFile = shm_open(szSharedName, oflag, 0666);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  <span class="keywordflow">if</span> (m_pImpl-&gt;m_hFile == -1)</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  {</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <a class="code" href="../../dc/d9e/classez_log.htm#ae5b1ee0c969668bdac113be5f4b15fa3">ezLog::Error</a>(<span class="stringliteral">&quot;Could not open shared memory mapping - {}&quot;</span>, strerror(errno));</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <a class="code" href="../../dc/d34/classez_memory_mapped_file.htm#ab6f6614d5bac3cad577e264980031cfa">Close</a>();</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordflow">return</span> EZ_FAILURE;</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  }</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  m_Impl-&gt;m_sSharedMemoryName = szSharedName;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  m_pImpl-&gt;m_sSharedMemoryName = szSharedName;</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  <span class="keywordflow">if</span> (ftruncate(m_Impl-&gt;m_hFile, uiSize) == -1)</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  <span class="keywordflow">if</span> (ftruncate(m_pImpl-&gt;m_hFile, uiSize) == -1)</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  {</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <a class="code" href="../../dc/d9e/classez_log.htm#ae5b1ee0c969668bdac113be5f4b15fa3">ezLog::Error</a>(<span class="stringliteral">&quot;Could not open shared memory mapping - {}&quot;</span>, strerror(errno));</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <a class="code" href="../../dc/d34/classez_memory_mapped_file.htm#ab6f6614d5bac3cad577e264980031cfa">Close</a>();</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordflow">return</span> EZ_FAILURE;</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  }</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  m_Impl-&gt;m_uiFileSize = uiSize;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  m_pImpl-&gt;m_uiFileSize = uiSize;</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  m_Impl-&gt;m_pMappedFilePtr = mmap(<span class="keyword">nullptr</span>, m_Impl-&gt;m_uiFileSize, prot, flags, m_Impl-&gt;m_hFile, 0);</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  <span class="keywordflow">if</span> (m_Impl-&gt;m_pMappedFilePtr == <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  m_pImpl-&gt;m_pMappedFilePtr = mmap(<span class="keyword">nullptr</span>, m_pImpl-&gt;m_uiFileSize, prot, flags, m_pImpl-&gt;m_hFile, 0);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  <span class="keywordflow">if</span> (m_pImpl-&gt;m_pMappedFilePtr == <span class="keyword">nullptr</span>)</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  {</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <a class="code" href="../../dc/d9e/classez_log.htm#ae5b1ee0c969668bdac113be5f4b15fa3">ezLog::Error</a>(<span class="stringliteral">&quot;Could not create memory mapping of file - {}&quot;</span>, strerror(errno));</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <a class="code" href="../../dc/d34/classez_memory_mapped_file.htm#ab6f6614d5bac3cad577e264980031cfa">Close</a>();</div>
@@ -264,47 +264,47 @@ $(document).ready(function(){initNavTree('dd/d84/_memory_mapped_file__posix_8h_s
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
 <div class="line"><a name="l00176"></a><span class="lineno"><a class="line" href="../../dc/d34/classez_memory_mapped_file.htm#ab6f6614d5bac3cad577e264980031cfa">  176</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dc/d34/classez_memory_mapped_file.htm#ab6f6614d5bac3cad577e264980031cfa">ezMemoryMappedFile::Close</a>()</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;{</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;  m_Impl = EZ_DEFAULT_NEW(<a class="code" href="../../dc/d1a/structez_memory_mapped_file_impl.htm">ezMemoryMappedFileImpl</a>);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;  m_pImpl = EZ_DEFAULT_NEW(<a class="code" href="../../dc/d1a/structez_memory_mapped_file_impl.htm">ezMemoryMappedFileImpl</a>);</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;}</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
 <div class="line"><a name="l00181"></a><span class="lineno"><a class="line" href="../../dc/d34/classez_memory_mapped_file.htm#a43d3dace6a2341fc2d648b635f45df8d">  181</a></span>&#160;<a class="code" href="../../dc/d34/classez_memory_mapped_file.htm#ab9b5b8780ab020ed46b9efd20075ec84">ezMemoryMappedFile::Mode</a> <a class="code" href="../../dc/d34/classez_memory_mapped_file.htm#a43d3dace6a2341fc2d648b635f45df8d">ezMemoryMappedFile::GetMode</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  <span class="keywordflow">return</span> m_Impl-&gt;m_Mode;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  <span class="keywordflow">return</span> m_pImpl-&gt;m_Mode;</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;}</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
 <div class="line"><a name="l00186"></a><span class="lineno"><a class="line" href="../../dc/d34/classez_memory_mapped_file.htm#a5d2fa5241ddf02d85fbbe67b7accfd42">  186</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">void</span>* <a class="code" href="../../dc/d34/classez_memory_mapped_file.htm#a5d2fa5241ddf02d85fbbe67b7accfd42">ezMemoryMappedFile::GetReadPointer</a>(ezUInt64 uiOffset <span class="comment">/*= 0*/</span>, <a class="code" href="../../dc/d34/classez_memory_mapped_file.htm#ab974b914f116c9508d94ca4244fd7e3e">OffsetBase</a> base <span class="comment">/*= OffsetBase::Start*/</span>)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  EZ_ASSERT_DEBUG(m_Impl-&gt;m_Mode &gt;= <a class="code" href="../../dc/d34/classez_memory_mapped_file.htm#ab9b5b8780ab020ed46b9efd20075ec84a131fb182a881796e7606ed6da27f1197">Mode::ReadOnly</a>, <span class="stringliteral">&quot;File must be opened with read access before accessing it for reading.&quot;</span>);</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  EZ_ASSERT_DEBUG(uiOffset &lt;= m_Impl-&gt;m_uiFileSize, <span class="stringliteral">&quot;Read offset must be smaller than mapped file size&quot;</span>);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  EZ_ASSERT_DEBUG(m_pImpl-&gt;m_Mode &gt;= <a class="code" href="../../dc/d34/classez_memory_mapped_file.htm#ab9b5b8780ab020ed46b9efd20075ec84a131fb182a881796e7606ed6da27f1197">Mode::ReadOnly</a>, <span class="stringliteral">&quot;File must be opened with read access before accessing it for reading.&quot;</span>);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  EZ_ASSERT_DEBUG(uiOffset &lt;= m_pImpl-&gt;m_uiFileSize, <span class="stringliteral">&quot;Read offset must be smaller than mapped file size&quot;</span>);</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  <span class="keywordflow">if</span> (base == <a class="code" href="../../dc/d34/classez_memory_mapped_file.htm#ab974b914f116c9508d94ca4244fd7e3eaa6122a65eaa676f700ae68d393054a37">OffsetBase::Start</a>)</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  {</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a154a2ccb52b2abdfdbe6d068948bc6b4">ezMemoryUtils::AddByteOffset</a>(m_Impl-&gt;m_pMappedFilePtr, uiOffset);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a154a2ccb52b2abdfdbe6d068948bc6b4">ezMemoryUtils::AddByteOffset</a>(m_pImpl-&gt;m_pMappedFilePtr, uiOffset);</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  }</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;  <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;  {</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a154a2ccb52b2abdfdbe6d068948bc6b4">ezMemoryUtils::AddByteOffset</a>(m_Impl-&gt;m_pMappedFilePtr, m_Impl-&gt;m_uiFileSize - uiOffset);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a154a2ccb52b2abdfdbe6d068948bc6b4">ezMemoryUtils::AddByteOffset</a>(m_pImpl-&gt;m_pMappedFilePtr, m_pImpl-&gt;m_uiFileSize - uiOffset);</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  }</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;}</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
 <div class="line"><a name="l00201"></a><span class="lineno"><a class="line" href="../../dc/d34/classez_memory_mapped_file.htm#a0df8a2ae74d16fcb9c6d37ea6b58d34f">  201</a></span>&#160;<span class="keywordtype">void</span>* <a class="code" href="../../dc/d34/classez_memory_mapped_file.htm#a0df8a2ae74d16fcb9c6d37ea6b58d34f">ezMemoryMappedFile::GetWritePointer</a>(ezUInt64 uiOffset <span class="comment">/*= 0*/</span>, <a class="code" href="../../dc/d34/classez_memory_mapped_file.htm#ab974b914f116c9508d94ca4244fd7e3e">OffsetBase</a> base <span class="comment">/*= OffsetBase::Start*/</span>)</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;{</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;  EZ_ASSERT_DEBUG(m_Impl-&gt;m_Mode &gt;= <a class="code" href="../../dc/d34/classez_memory_mapped_file.htm#ab9b5b8780ab020ed46b9efd20075ec84a70a2a84088d405a2e3f1e3accaa16723">Mode::ReadWrite</a>, <span class="stringliteral">&quot;File must be opened with read/write access before accessing it for writing.&quot;</span>);</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;  EZ_ASSERT_DEBUG(uiOffset &lt;= m_Impl-&gt;m_uiFileSize, <span class="stringliteral">&quot;Read offset must be smaller than mapped file size&quot;</span>);</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;  EZ_ASSERT_DEBUG(m_pImpl-&gt;m_Mode &gt;= <a class="code" href="../../dc/d34/classez_memory_mapped_file.htm#ab9b5b8780ab020ed46b9efd20075ec84a70a2a84088d405a2e3f1e3accaa16723">Mode::ReadWrite</a>, <span class="stringliteral">&quot;File must be opened with read/write access before accessing it for writing.&quot;</span>);</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;  EZ_ASSERT_DEBUG(uiOffset &lt;= m_pImpl-&gt;m_uiFileSize, <span class="stringliteral">&quot;Read offset must be smaller than mapped file size&quot;</span>);</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;  <span class="keywordflow">if</span> (base == <a class="code" href="../../dc/d34/classez_memory_mapped_file.htm#ab974b914f116c9508d94ca4244fd7e3eaa6122a65eaa676f700ae68d393054a37">OffsetBase::Start</a>)</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;  {</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a154a2ccb52b2abdfdbe6d068948bc6b4">ezMemoryUtils::AddByteOffset</a>(m_Impl-&gt;m_pMappedFilePtr, uiOffset);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a154a2ccb52b2abdfdbe6d068948bc6b4">ezMemoryUtils::AddByteOffset</a>(m_pImpl-&gt;m_pMappedFilePtr, uiOffset);</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;  }</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;  <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;  {</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a154a2ccb52b2abdfdbe6d068948bc6b4">ezMemoryUtils::AddByteOffset</a>(m_Impl-&gt;m_pMappedFilePtr, m_Impl-&gt;m_uiFileSize - uiOffset);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a154a2ccb52b2abdfdbe6d068948bc6b4">ezMemoryUtils::AddByteOffset</a>(m_pImpl-&gt;m_pMappedFilePtr, m_pImpl-&gt;m_uiFileSize - uiOffset);</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;  }</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;}</div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160; </div>
 <div class="line"><a name="l00216"></a><span class="lineno"><a class="line" href="../../dc/d34/classez_memory_mapped_file.htm#a9060fa9bf2eff3546f3ac0582063aa83">  216</a></span>&#160;ezUInt64 <a class="code" href="../../dc/d34/classez_memory_mapped_file.htm#a9060fa9bf2eff3546f3ac0582063aa83">ezMemoryMappedFile::GetFileSize</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;  <span class="keywordflow">return</span> m_Impl-&gt;m_uiFileSize;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;  <span class="keywordflow">return</span> m_pImpl-&gt;m_uiFileSize;</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -331,7 +331,7 @@ $(document).ready(function(){initNavTree('dd/d84/_memory_mapped_file__posix_8h_s
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_64fdcb4094ee5a27b054d4fa23e28e01.htm">IO</a></li><li class="navelem"><a class="el" href="../../dir_958a535fafce83ab8c10e8fc15932487.htm">Implementation</a></li><li class="navelem"><a class="el" href="../../dir_d3bb4bf8cf6d18e2bc69b272d5489078.htm">Posix</a></li><li class="navelem"><b>MemoryMappedFile_posix.h</b></li>
-    <li class="footer">Generated on Sun Oct 9 2022 14:44:54 for ezEngine by
+    <li class="footer">Generated on Fri Nov 18 2022 14:47:58 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

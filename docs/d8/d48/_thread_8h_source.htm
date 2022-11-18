@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 21.10</span>
+   &#160;<span id="projectnumber">Release 22.11</span>
    </div>
   </td>
  </tr>
@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('d8/d48/_thread_8h_source.htm','../../'
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// accessed in the constructor (so no operations on a not completely initialized object happen)</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define EZ_MSVC_WARNING_NUMBER 4355</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;Foundation/Basics/Compiler/DisableWarning.h&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;Foundation/Basics/Compiler/MSVC/DisableWarning_MSVC.h&gt;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#ifndef EZ_THREAD_CLASS_ENTRY_POINT</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#  error &quot;Definition for ezThreadClassEntryPoint is missing on this platform!&quot;</span></div>
@@ -140,7 +140,7 @@ $(document).ready(function(){initNavTree('d8/d48/_thread_8h_source.htm','../../'
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
 <div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="../../d2/d18/classez_thread.htm#ac51078b748e5d455ec533015b0fd2f1b">   60</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="../../d2/d18/classez_thread.htm#ac51078b748e5d455ec533015b0fd2f1b">IsRunning</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_ThreadStatus == Running; }</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="../../d2/d18/classez_thread.htm#aa5e0daf61cd4ce105dd842c98c2d9058">   63</a></span>&#160;  <span class="keyword">inline</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="../../d2/d18/classez_thread.htm#aa5e0daf61cd4ce105dd842c98c2d9058">GetThreadName</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_Name.GetData(); }</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="../../d2/d18/classez_thread.htm#aa5e0daf61cd4ce105dd842c98c2d9058">   63</a></span>&#160;  <span class="keyword">inline</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="../../d2/d18/classez_thread.htm#aa5e0daf61cd4ce105dd842c98c2d9058">GetThreadName</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_sName.GetData(); }</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
 <div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="../../d2/d18/classez_thread.htm#aa158f14b4122da09a3318d32f3ffc72f">   69</a></span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d0/daf/classez_event.htm">ezEvent&lt;const ezThreadEvent&amp;, ezMutex&gt;</a> <a class="code" href="../../d2/d18/classez_thread.htm#aa158f14b4122da09a3318d32f3ffc72f">s_ThreadEvents</a>;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
@@ -150,12 +150,12 @@ $(document).ready(function(){initNavTree('d8/d48/_thread_8h_source.htm','../../'
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keyword">volatile</span> <a class="code" href="../../d2/d18/classez_thread.htm#ab29443bbc7acde16bb8330ef64d1b792">ezThreadStatus</a> m_ThreadStatus;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_Name;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sName;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keyword">friend</span> ezUInt32 RunThread(<a class="code" href="../../d2/d18/classez_thread.htm">ezThread</a>* pThread);</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;};</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#include &lt;Foundation/Basics/Compiler/RestoreWarning.h&gt;</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#include &lt;Foundation/Basics/Compiler/MSVC/RestoreWarning_MSVC.h&gt;</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astructez_thread_event_htm_a4f93b4be4d9010fd58a4769273766f11a4ad2dfcc55361022c8187fd09292aeca"><div class="ttname"><a href="../../df/d87/structez_thread_event.htm#a4f93b4be4d9010fd58a4769273766f11a4ad2dfcc55361022c8187fd09292aeca">ezThreadEvent::Type::FinishedExecution</a></div><div class="ttdeci">@ FinishedExecution</div><div class="ttdoc">Called on the thread that executes the ezThread instance.</div></div>
@@ -177,7 +177,7 @@ $(document).ready(function(){initNavTree('d8/d48/_thread_8h_source.htm','../../'
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_05460f4aa032e23246d68b56847b5fed.htm">Threading</a></li><li class="navelem"><b>Thread.h</b></li>
-    <li class="footer">Generated on Sun Oct 9 2022 14:44:56 for ezEngine by
+    <li class="footer">Generated on Fri Nov 18 2022 14:48:00 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

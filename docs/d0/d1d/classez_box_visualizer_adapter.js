@@ -6,8 +6,8 @@ var classez_box_visualizer_adapter =
     [ "Update", "d0/d1d/classez_box_visualizer_adapter.htm#a2bf8941958d6b8026e7c52ef03b674e4", null ],
     [ "UpdateGizmoTransform", "d0/d1d/classez_box_visualizer_adapter.htm#a18d7af7e862026d49e17ada9115a4861", null ],
     [ "m_Anchor", "d0/d1d/classez_box_visualizer_adapter.htm#ad5ed2dbda6a9156ee673fa0f982cf127", null ],
-    [ "m_Gizmo", "d0/d1d/classez_box_visualizer_adapter.htm#a93de0cfbd2bd60c89f25303969864eb3", null ],
-    [ "m_Rotation", "d0/d1d/classez_box_visualizer_adapter.htm#a96848a51e38230923b2d1a4e22445e19", null ],
-    [ "m_Scale", "d0/d1d/classez_box_visualizer_adapter.htm#a5bbf79e39cbc65c4745ac1f4d1093039", null ],
-    [ "m_vPositionOffset", "d0/d1d/classez_box_visualizer_adapter.htm#a51b881d4ae0c90c455cedf29da80d288", null ]
+    [ "m_hGizmo", "d0/d1d/classez_box_visualizer_adapter.htm#a7f126daa763d80bf5631b71e22e4fbce", null ],
+    [ "m_qRotation", "d0/d1d/classez_box_visualizer_adapter.htm#a091a25b1ca004f4427a16ddde17585d5", null ],
+    [ "m_vPositionOffset", "d0/d1d/classez_box_visualizer_adapter.htm#a51b881d4ae0c90c455cedf29da80d288", null ],
+    [ "m_vScale", "d0/d1d/classez_box_visualizer_adapter.htm#aeeebe12c0695b8091da979a36aa453d1", null ]
 ];

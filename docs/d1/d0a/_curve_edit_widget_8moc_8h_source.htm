@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 21.10</span>
+   &#160;<span id="projectnumber">Release 22.11</span>
    </div>
   </td>
  </tr>
@@ -210,53 +210,55 @@ $(document).ready(function(){initNavTree('d1/d0a/_curve_edit_widget_8moc_8h_sour
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="keywordtype">bool</span> PickCpAt(<span class="keyword">const</span> QPoint&amp; pos, <span class="keywordtype">float</span> fMaxPixelDistance, <a class="code" href="../../d6/d67/structez_selected_curve_c_p.htm">ezSelectedCurveCP</a>&amp; out_Result) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  ClickTarget DetectClickTarget(<span class="keyword">const</span> QPoint&amp; pos);</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <span class="keywordtype">void</span> ExecMultiSelection(<a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezSelectedCurveCP&gt;</a>&amp; out_Selection);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <span class="keywordtype">bool</span> CombineSelection(<a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezSelectedCurveCP&gt;</a>&amp; inout_Selection, <span class="keyword">const</span> <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezSelectedCurveCP&gt;</a>&amp; change, <span class="keywordtype">bool</span> add);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <span class="keywordtype">void</span> ComputeSelectionRect();</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  SelectArea WhereIsPoint(QPoint pos) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  ezInt32 PickCurveAt(QPoint pos) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <span class="keywordtype">void</span> ClampZoomPan();</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  <a class="code" href="../../d8/df7/classez_q_grid_bar_widget.htm">ezQGridBarWidget</a>* m_pGridBar = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <span class="keywordtype">bool</span> CombineSelectionAdd(<a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezSelectedCurveCP&gt;</a>&amp; inout_Selection, <span class="keyword">const</span> <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezSelectedCurveCP&gt;</a>&amp; change);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <span class="keywordtype">bool</span> CombineSelectionRemove(<a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezSelectedCurveCP&gt;</a>&amp; inout_Selection, <span class="keyword">const</span> <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezSelectedCurveCP&gt;</a>&amp; change);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <span class="keywordtype">bool</span> CombineSelectionToggle(<a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezSelectedCurveCP&gt;</a>&amp; inout_Selection, <span class="keyword">const</span> <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezSelectedCurveCP&gt;</a>&amp; change);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <span class="keywordtype">void</span> ComputeSelectionRect();</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  SelectArea WhereIsPoint(QPoint pos) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  ezInt32 PickCurveAt(QPoint pos) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  <span class="keywordtype">void</span> ClampZoomPan();</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  EditState m_State = EditState::None;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  ezInt32 m_iDraggedCurve;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  <a class="code" href="../../d8/d29/classez_curve_group_data.htm">ezCurveGroupData</a>* m_pCurveEditData;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezCurve1D, 4&gt;</a> m_Curves;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezCurve1D, 4&gt;</a> m_CurvesSorted;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezVec2d, 4&gt;</a> m_CurveExtents;</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  <span class="keywordtype">double</span> m_fMinExtentValue;</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  <span class="keywordtype">double</span> m_fMaxExtentValue;</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  <span class="keywordtype">double</span> m_fMinValue, m_fMaxValue;</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  QPointF m_SceneTranslation;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  QPointF m_SceneToPixelScale;</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  QPoint m_LastMousePos;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  QBrush m_ControlPointBrush;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  QBrush m_SelectedControlPointBrush;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  QPen m_TangentLinePen;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  QBrush m_TangentHandleBrush;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezSelectedCurveCP&gt;</a> m_SelectedCPs;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  ezInt32 m_iSelectedTangentCurve = -1;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  ezInt32 m_iSelectedTangentPoint = -1;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  <span class="keywordtype">bool</span> m_bSelectedTangentLeft = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  <span class="keywordtype">bool</span> m_bBegunChanges = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  <span class="keywordtype">bool</span> m_bFrameBeforePaint = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  QPoint m_multiSelectionStart;</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  QRect m_multiSelectRect;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  QRectF m_selectionBRect;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  QPointF m_scaleReferencePoint;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  QPointF m_scaleStartPoint;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  QPointF m_totalPointDrag;</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  QRubberBand* m_pRubberband = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  <span class="keywordtype">bool</span> m_bShowScrubber = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  <span class="keywordtype">double</span> m_fScrubberPosition = 0;</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;};</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  <a class="code" href="../../d8/df7/classez_q_grid_bar_widget.htm">ezQGridBarWidget</a>* m_pGridBar = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  EditState m_State = EditState::None;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  ezInt32 m_iDraggedCurve;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  <a class="code" href="../../d8/d29/classez_curve_group_data.htm">ezCurveGroupData</a>* m_pCurveEditData;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezCurve1D, 4&gt;</a> m_Curves;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezCurve1D, 4&gt;</a> m_CurvesSorted;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezVec2d, 4&gt;</a> m_CurveExtents;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  <span class="keywordtype">double</span> m_fMinExtentValue;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  <span class="keywordtype">double</span> m_fMaxExtentValue;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  <span class="keywordtype">double</span> m_fMinValue, m_fMaxValue;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  QPointF m_SceneTranslation;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  QPointF m_SceneToPixelScale;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  QPoint m_LastMousePos;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  QBrush m_ControlPointBrush;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  QBrush m_SelectedControlPointBrush;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  QPen m_TangentLinePen;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  QBrush m_TangentHandleBrush;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezSelectedCurveCP&gt;</a> m_SelectedCPs;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  ezInt32 m_iSelectedTangentCurve = -1;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  ezInt32 m_iSelectedTangentPoint = -1;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  <span class="keywordtype">bool</span> m_bSelectedTangentLeft = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  <span class="keywordtype">bool</span> m_bBegunChanges = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  <span class="keywordtype">bool</span> m_bFrameBeforePaint = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  QPoint m_MultiSelectionStart;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  QRect m_MultiSelectRect;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  QRectF m_SelectionBRect;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  QPointF m_ScaleReferencePoint;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  QPointF m_ScaleStartPoint;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  QPointF m_TotalPointDrag;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  QRubberBand* m_pRubberband = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  <span class="keywordtype">bool</span> m_bShowScrubber = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  <span class="keywordtype">double</span> m_fScrubberPosition = 0;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_curve_group_data_htm"><div class="ttname"><a href="../../d8/d29/classez_curve_group_data.htm">ezCurveGroupData</a></div><div class="ttdef"><b>Definition:</b> CurveEditData.h:108</div></div>
@@ -270,7 +272,7 @@ $(document).ready(function(){initNavTree('d1/d0a/_curve_edit_widget_8moc_8h_sour
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_07792d309f5611e62640e8ec1fb96105.htm">Tools</a></li><li class="navelem"><a class="el" href="../../dir_8e80be223102188e67d1ce7cce146de0.htm">Libs</a></li><li class="navelem"><a class="el" href="../../dir_67a151a8658de153dad045cdd2f730f7.htm">GuiFoundation</a></li><li class="navelem"><a class="el" href="../../dir_fe889430e45ae34820f0cbcb0d83e0e4.htm">Widgets</a></li><li class="navelem"><b>CurveEditWidget.moc.h</b></li>
-    <li class="footer">Generated on Sun Oct 9 2022 14:45:00 for ezEngine by
+    <li class="footer">Generated on Fri Nov 18 2022 14:48:04 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

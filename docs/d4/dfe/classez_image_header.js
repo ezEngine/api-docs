@@ -24,7 +24,7 @@ var classez_image_header =
     [ "SetNumFaces", "d4/dfe/classez_image_header.htm#a5feccd8d5c77bacd6b8e83027c9ade95", null ],
     [ "SetNumMipLevels", "d4/dfe/classez_image_header.htm#a52212da1366c3b7076da9f995af6c508", null ],
     [ "SetWidth", "d4/dfe/classez_image_header.htm#af5052184ab4fc9a5cf6096ea14c48631", null ],
-    [ "m_format", "d4/dfe/classez_image_header.htm#af898be3fca4dddecfdf04dea802f9edb", null ],
+    [ "m_Format", "d4/dfe/classez_image_header.htm#a92176379ac85e482509eb0e80c0e3656", null ],
     [ "m_uiDepth", "d4/dfe/classez_image_header.htm#aa81dc97296a7dfb611188c56144d3817", null ],
     [ "m_uiHeight", "d4/dfe/classez_image_header.htm#a1978f00029d2662f9a445b8751b2af66", null ],
     [ "m_uiNumArrayIndices", "d4/dfe/classez_image_header.htm#a3b98d1e9bf99dbab84653437c0291bd4", null ],

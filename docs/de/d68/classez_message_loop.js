@@ -26,5 +26,5 @@ var classez_message_loop =
     [ "m_SendQueue", "de/d68/classez_message_loop.htm#ac3873aeaf4bfba3a15046181066a19c3", null ],
     [ "m_SendQueueTask", "de/d68/classez_message_loop.htm#abf151b4b6178939f601b42fb6b139e83", null ],
     [ "m_TasksMutex", "de/d68/classez_message_loop.htm#ac0b5f5274e90f3938e670054773367cb", null ],
-    [ "m_threadId", "de/d68/classez_message_loop.htm#a50d3b4de5fd4c635043196ac368fa6f3", null ]
+    [ "m_ThreadId", "de/d68/classez_message_loop.htm#abd0519a28743bead04804db0842fd869", null ]
 ];

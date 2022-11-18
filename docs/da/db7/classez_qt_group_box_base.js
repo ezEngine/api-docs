@@ -31,6 +31,6 @@ var classez_qt_group_box_base =
     [ "m_bDragging", "da/db7/classez_qt_group_box_base.htm#a50eaab6d8e8369f8ddb8c5482e7321a6", null ],
     [ "m_FillColor", "da/db7/classez_qt_group_box_base.htm#a198fa98c38ae46ccc2f6d7179a4d88d9", null ],
     [ "m_Icon", "da/db7/classez_qt_group_box_base.htm#a9bd2e902b5646d9cc7453e64be0468ab", null ],
-    [ "m_startCursor", "da/db7/classez_qt_group_box_base.htm#a269cfcec383ffbd3af9c289a4e1e3de5", null ],
+    [ "m_StartCursor", "da/db7/classez_qt_group_box_base.htm#ae0015fe449dec016d585c325c6ee86d6", null ],
     [ "m_sTitle", "da/db7/classez_qt_group_box_base.htm#a1abee083547c063175eec58c1fe482be", null ]
 ];

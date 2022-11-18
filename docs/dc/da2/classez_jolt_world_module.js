@@ -24,7 +24,7 @@ var classez_jolt_world_module =
     [ "OverlapTestCapsule", "dc/da2/classez_jolt_world_module.htm#a16c8d2f0d1f42a53345a5bda7af35498", null ],
     [ "OverlapTestSphere", "dc/da2/classez_jolt_world_module.htm#a2994042eb159083fcc7e667f69034d62", null ],
     [ "QueryShapesInSphere", "dc/da2/classez_jolt_world_module.htm#a0168af083024c6de287bf2c39f1c421b", null ],
-    [ "QueueBodyToAdd", "dc/da2/classez_jolt_world_module.htm#a8a2e363415e6edba28285c621f6d080b", null ],
+    [ "QueueBodyToAdd", "dc/da2/classez_jolt_world_module.htm#a5468f98927e9e29f2158a76972b342d3", null ],
     [ "Raycast", "dc/da2/classez_jolt_world_module.htm#aa324a0db6e1a5da0f2a2f4d7828bdedc", null ],
     [ "RaycastAll", "dc/da2/classez_jolt_world_module.htm#af57db7ace6ad1e4992493d9451b77e70", null ],
     [ "SetGravity", "dc/da2/classez_jolt_world_module.htm#a6415839ec57c961565ed84da11bf7801", null ],

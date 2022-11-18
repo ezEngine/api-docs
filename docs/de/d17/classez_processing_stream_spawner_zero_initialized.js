@@ -6,5 +6,5 @@ var classez_processing_stream_spawner_zero_initialized =
     [ "SetStreamName", "de/d17/classez_processing_stream_spawner_zero_initialized.htm#a9d50856a5f630aa06bae590341713543", null ],
     [ "UpdateStreamBindings", "de/d17/classez_processing_stream_spawner_zero_initialized.htm#aee63707f731c6def04d76b0a7bc3c607", null ],
     [ "m_pStream", "de/d17/classez_processing_stream_spawner_zero_initialized.htm#a011e7d6f93823b3f5fb6d0c74441c9cb", null ],
-    [ "m_StreamName", "de/d17/classez_processing_stream_spawner_zero_initialized.htm#aaf33011f53c1b0fa913f1a735be65632", null ]
+    [ "m_sStreamName", "de/d17/classez_processing_stream_spawner_zero_initialized.htm#a658c536cedea81d4f9a2554defbc16b6", null ]
 ];

@@ -7,5 +7,5 @@ var classez_spot_light_visualizer_adapter =
     [ "UpdateGizmoTransform", "dc/d09/classez_spot_light_visualizer_adapter.htm#aa1ab17049d38b9e80d9bba7d2212e69c", null ],
     [ "m_fAngleScale", "dc/d09/classez_spot_light_visualizer_adapter.htm#a3d96730394b3424395504f2343c991db", null ],
     [ "m_fScale", "dc/d09/classez_spot_light_visualizer_adapter.htm#a9370e4755a4ea2bcf6519789593d1cd2", null ],
-    [ "m_Gizmo", "dc/d09/classez_spot_light_visualizer_adapter.htm#a39a6d6080db93c1f26d5f694eabb1233", null ]
+    [ "m_hGizmo", "dc/d09/classez_spot_light_visualizer_adapter.htm#a93dd5d0c297e547fa1cd9830ab962794", null ]
 ];

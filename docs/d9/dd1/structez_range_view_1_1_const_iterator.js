@@ -15,5 +15,5 @@ var structez_range_view_1_1_const_iterator =
     [ "Value", "d9/dd1/structez_range_view_1_1_const_iterator.htm#aea0f79df0d0f074c48146f8fa27c25e1", null ],
     [ "ezRangeView< ValueType, IteratorType >", "d9/dd1/structez_range_view_1_1_const_iterator.htm#ad4b9d5c906e664f3d2cfd6fc9febdfc5", null ],
     [ "m_Pos", "d9/dd1/structez_range_view_1_1_const_iterator.htm#a51f821cea0c83f8cce7ea0374fa4019d", null ],
-    [ "m_View", "d9/dd1/structez_range_view_1_1_const_iterator.htm#aa6af1fad13725bacde88b17b8f5c2664", null ]
+    [ "m_pView", "d9/dd1/structez_range_view_1_1_const_iterator.htm#a8c7f04e4de6448fc2732e7860f35f27b", null ]
 ];

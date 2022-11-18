@@ -25,6 +25,6 @@ var structconst__iterator__base =
     [ "operator>", "db/de6/structconst__iterator__base.htm#a8c68390440f67b0883be869c9fdd9c4e", null ],
     [ "operator>=", "db/de6/structconst__iterator__base.htm#a3a4684a5b9d2691ce83004fb4bfd1058", null ],
     [ "operator[]", "db/de6/structconst__iterator__base.htm#acb55f0decd6788f8722ac2e44cac842a", null ],
-    [ "m_Array", "db/de6/structconst__iterator__base.htm#a3363acc929025b3c4d9a98dda5948dbd", null ],
-    [ "m_iIndex", "db/de6/structconst__iterator__base.htm#ad2967fdb04ff081eecd09e9a5cbcd88b", null ]
+    [ "m_pArray", "db/de6/structconst__iterator__base.htm#afd29af213ff9a06b616060e66ba3b25a", null ],
+    [ "m_uiIndex", "db/de6/structconst__iterator__base.htm#aa1e23074bc4a9b5d3fdd5c8486b486b0", null ]
 ];

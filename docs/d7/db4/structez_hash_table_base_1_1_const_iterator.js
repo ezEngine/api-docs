@@ -18,7 +18,7 @@ var structez_hash_table_base_1_1_const_iterator =
     [ "SetToEnd", "d7/db4/structez_hash_table_base_1_1_const_iterator.htm#a2bb20d6b9d584668339189c5353be30e", null ],
     [ "Value", "d7/db4/structez_hash_table_base_1_1_const_iterator.htm#aaa0a9a694539c17381996375646873cc", null ],
     [ "ezHashTableBase< KeyType, ValueType, Hasher >", "d7/db4/structez_hash_table_base_1_1_const_iterator.htm#a99946b8e059796c30b94fc58f5d34406", null ],
-    [ "m_hashTable", "d7/db4/structez_hash_table_base_1_1_const_iterator.htm#ae69f4dca49e6604f8401859216e18cce", null ],
+    [ "m_pHashTable", "d7/db4/structez_hash_table_base_1_1_const_iterator.htm#a50c7ec229fb34605d423f32ce7bd9dee", null ],
     [ "m_uiCurrentCount", "d7/db4/structez_hash_table_base_1_1_const_iterator.htm#a441a904588620c691696a818778a055c", null ],
     [ "m_uiCurrentIndex", "d7/db4/structez_hash_table_base_1_1_const_iterator.htm#ae2a0eb7062d090c1bbfd50730395db55", null ]
 ];

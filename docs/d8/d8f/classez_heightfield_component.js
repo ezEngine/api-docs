@@ -13,7 +13,7 @@ var classez_heightfield_component =
     [ "GetHeightfield", "d8/d8f/classez_heightfield_component.htm#ad53b97887b7439d9fda23d81aab1b8f8", null ],
     [ "GetHeightfieldFile", "d8/d8f/classez_heightfield_component.htm#ab973724a733545717057d57b91a3d661", null ],
     [ "GetIncludeInNavmesh", "d8/d8f/classez_heightfield_component.htm#a3d15bdc9e0ea4d0c8b9bc4ef673d98ef", null ],
-    [ "GetLocalBounds", "d8/d8f/classez_heightfield_component.htm#ac9cbe6c18b6215c10a79ca2238293e4a", null ],
+    [ "GetLocalBounds", "d8/d8f/classez_heightfield_component.htm#a1b41a1667a09e71f7d843724221279b2", null ],
     [ "GetMaterial", "d8/d8f/classez_heightfield_component.htm#a1a2c8add12351e3b3462b7d74315d400", null ],
     [ "GetMaterialFile", "d8/d8f/classez_heightfield_component.htm#a9adb8599c3a230796f0b6920319ee897", null ],
     [ "GetTesselation", "d8/d8f/classez_heightfield_component.htm#aee031f8fed43d5f3645dd2a9b18948fb", null ],

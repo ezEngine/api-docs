@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 21.10</span>
+   &#160;<span id="projectnumber">Release 22.11</span>
    </div>
   </td>
  </tr>
@@ -170,7 +170,7 @@ $(document).ready(function(){initNavTree('df/d4b/_delegate_helper__inl_8h_source
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  EZ_ALWAYS_INLINE <a class="code" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>()</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    : m_pDispatchFunction(<span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    : m_DispatchFunction(<span class="keyword">nullptr</span>)</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  {</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  }</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
@@ -183,8 +183,8 @@ $(document).ready(function(){initNavTree('df/d4b/_delegate_helper__inl_8h_source
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  {</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    CopyMemberFunctionToInplaceStorage(method);</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    m_pInstance.m_Ptr = pInstance;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    m_pDispatchFunction = &amp;DispatchToMethod&lt;Method, Class&gt;;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    m_Instance.m_Ptr = pInstance;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    m_DispatchFunction = &amp;DispatchToMethod&lt;Method, Class&gt;;</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  }</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Method, <span class="keyword">typename</span> Class&gt;</div>
@@ -192,8 +192,8 @@ $(document).ready(function(){initNavTree('df/d4b/_delegate_helper__inl_8h_source
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  {</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    CopyMemberFunctionToInplaceStorage(method);</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    m_pInstance.m_ConstPtr = pInstance;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    m_pDispatchFunction = &amp;DispatchToConstMethod&lt;Method, Class&gt;;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    m_Instance.m_ConstPtr = pInstance;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    m_DispatchFunction = &amp;DispatchToConstMethod&lt;Method, Class&gt;;</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  }</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Function&gt;</div>
@@ -222,26 +222,26 @@ $(document).ready(function(){initNavTree('df/d4b/_delegate_helper__inl_8h_source
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        memset(m_Data, 0, DataSize);</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;      }</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;      m_pInstance.m_ConstPtr = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;      m_pDispatchFunction = &amp;DispatchToFunction&lt;Function&gt;;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;      m_Instance.m_ConstPtr = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;      m_DispatchFunction = &amp;DispatchToFunction&lt;Function&gt;;</div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    }</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    {</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;      constexpr <span class="keywordtype">size_t</span> storageSize = <span class="keyword">sizeof</span>(<a class="code" href="../../dd/dcc/structez_lambda_delegate_storage.htm">ezLambdaDelegateStorage&lt;Function&gt;</a>);</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;      <span class="keywordflow">if</span> constexpr (storageSize &lt;= DataSize)</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;      {</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        m_pInstance.m_ConstPtr = InplaceLambda();</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        m_Instance.m_ConstPtr = InplaceLambda();</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="keyword">new</span> (m_Data) <a class="code" href="../../dd/dcc/structez_lambda_delegate_storage.htm">ezLambdaDelegateStorage&lt;Function&gt;</a>(std::move(<span class="keyword">function</span>));</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        memset(m_Data + storageSize, 0, DataSize - storageSize);</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        m_pDispatchFunction = &amp;DispatchToInplaceLambda&lt;Function&gt;;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        m_DispatchFunction = &amp;DispatchToInplaceLambda&lt;Function&gt;;</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;      }</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;      <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;      {</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        m_pInstance.m_ConstPtr = HeapLambda();</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        m_Instance.m_ConstPtr = HeapLambda();</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        m_pLambdaStorage = EZ_NEW(pAllocator, <a class="code" href="../../dd/dcc/structez_lambda_delegate_storage.htm">ezLambdaDelegateStorage&lt;Function&gt;</a>, std::move(<span class="keyword">function</span>));</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        m_pAllocator = pAllocator;</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        memset(m_Data + 2 * <span class="keyword">sizeof</span>(<span class="keywordtype">void</span>*), 0, DataSize - 2 * <span class="keyword">sizeof</span>(<span class="keywordtype">void</span>*));</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        m_pDispatchFunction = &amp;DispatchToHeapLambda&lt;Function&gt;;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        m_DispatchFunction = &amp;DispatchToHeapLambda&lt;Function&gt;;</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;      }</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    }</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  }</div>
@@ -267,15 +267,15 @@ $(document).ready(function(){initNavTree('df/d4b/_delegate_helper__inl_8h_source
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;      memcpy(m_Data, other.m_Data, DataSize);</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    }</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    m_pInstance = other.m_pInstance;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    m_pDispatchFunction = other.m_pDispatchFunction;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    m_Instance = other.m_Instance;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    m_DispatchFunction = other.m_DispatchFunction;</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  }</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
 <div class="line"><a name="l00191"></a><span class="lineno"><a class="line" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#a78101b7ac9cfebfd49d0aeb6ace4d3ea">  191</a></span>&#160;  EZ_FORCE_INLINE <span class="keywordtype">void</span> <a class="code" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#a78101b7ac9cfebfd49d0aeb6ace4d3ea">operator=</a>(<a class="code" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm">SelfType</a>&amp;&amp; other)</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  {</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    Invalidate();</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    m_pInstance = other.m_pInstance;</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    m_pDispatchFunction = other.m_pDispatchFunction;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    m_Instance = other.m_Instance;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    m_DispatchFunction = other.m_DispatchFunction;</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="keywordflow">if</span> (other.IsInplaceLambda())</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    {</div>
@@ -287,8 +287,8 @@ $(document).ready(function(){initNavTree('df/d4b/_delegate_helper__inl_8h_source
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;      memcpy(m_Data, other.m_Data, DataSize);</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    }</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    other.m_pInstance.m_Ptr = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    other.m_pDispatchFunction = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    other.m_Instance.m_Ptr = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    other.m_DispatchFunction = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    memset(other.m_Data, 0, DataSize);</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;  }</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
@@ -296,8 +296,8 @@ $(document).ready(function(){initNavTree('df/d4b/_delegate_helper__inl_8h_source
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
 <div class="line"><a name="l00216"></a><span class="lineno"><a class="line" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#a55e3f0023ec6eca84017c99eea37a9ce">  216</a></span>&#160;  EZ_FORCE_INLINE R <a class="code" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#a55e3f0023ec6eca84017c99eea37a9ce">operator()</a>(Args... params)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    EZ_ASSERT_DEBUG(m_pDispatchFunction != <span class="keyword">nullptr</span>, <span class="stringliteral">&quot;Delegate is not bound.&quot;</span>);</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="keywordflow">return</span> (*m_pDispatchFunction)(*<span class="keyword">this</span>, params...);</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    EZ_ASSERT_DEBUG(m_DispatchFunction != <span class="keyword">nullptr</span>, <span class="stringliteral">&quot;Delegate is not bound.&quot;</span>);</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="keywordflow">return</span> (*m_DispatchFunction)(*<span class="keyword">this</span>, params...);</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;  }</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160; </div>
 <div class="line"><a name="l00223"></a><span class="lineno"><a class="line" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#abc4b48199e61fa712c56d1c7539549ce">  223</a></span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> <a class="code" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#abc4b48199e61fa712c56d1c7539549ce">operator==</a>(<span class="keyword">const</span> <a class="code" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm">SelfType</a>&amp; other)<span class="keyword"> const</span></div>
@@ -308,15 +308,15 @@ $(document).ready(function(){initNavTree('df/d4b/_delegate_helper__inl_8h_source
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
 <div class="line"><a name="l00233"></a><span class="lineno"><a class="line" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#a32e64026e8d0b4bb645c0a7a61f12ba9">  233</a></span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> <a class="code" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#a32e64026e8d0b4bb645c0a7a61f12ba9">IsEqualIfComparable</a>(<span class="keyword">const</span> <a class="code" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm">SelfType</a>&amp; other)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="keywordflow">return</span> m_pInstance.m_Ptr == other.m_pInstance.m_Ptr &amp;&amp; m_pDispatchFunction == other.m_pDispatchFunction &amp;&amp;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="keywordflow">return</span> m_Instance.m_Ptr == other.m_Instance.m_Ptr &amp;&amp; m_DispatchFunction == other.m_DispatchFunction &amp;&amp;</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;           memcmp(m_Data, other.m_Data, DataSize) == 0;</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;  }</div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
-<div class="line"><a name="l00240"></a><span class="lineno"><a class="line" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#aa797a42a45ab2ff8d71732b08deedca2">  240</a></span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> <a class="code" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#aa797a42a45ab2ff8d71732b08deedca2">IsValid</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pDispatchFunction != <span class="keyword">nullptr</span>; }</div>
+<div class="line"><a name="l00240"></a><span class="lineno"><a class="line" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#aa797a42a45ab2ff8d71732b08deedca2">  240</a></span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> <a class="code" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#aa797a42a45ab2ff8d71732b08deedca2">IsValid</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_DispatchFunction != <span class="keyword">nullptr</span>; }</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
 <div class="line"><a name="l00243"></a><span class="lineno"><a class="line" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#aedb7b2318091b1969e595a7467fc9943">  243</a></span>&#160;  EZ_FORCE_INLINE <span class="keywordtype">void</span> <a class="code" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#aedb7b2318091b1969e595a7467fc9943">Invalidate</a>()</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;  {</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    m_pDispatchFunction = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    m_DispatchFunction = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <span class="keywordflow">if</span> (IsHeapLambda())</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    {</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;      EZ_DELETE(m_pAllocator, m_pLambdaStorage);</div>
@@ -327,13 +327,13 @@ $(document).ready(function(){initNavTree('df/d4b/_delegate_helper__inl_8h_source
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;      pLambdaStorage-&gt;~ezLambdaDelegateStorageBase();</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    }</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    m_pInstance.m_Ptr = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    m_Instance.m_Ptr = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    memset(m_Data, 0, DataSize);</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;  }</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
-<div class="line"><a name="l00261"></a><span class="lineno"><a class="line" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#a1c38ac09b677cf13b3aa3f294bd1b9ef">  261</a></span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">void</span>* <a class="code" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#a1c38ac09b677cf13b3aa3f294bd1b9ef">GetClassInstance</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> IsComparable() ? m_pInstance.m_Ptr : <span class="keyword">nullptr</span>; }</div>
+<div class="line"><a name="l00261"></a><span class="lineno"><a class="line" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#a1c38ac09b677cf13b3aa3f294bd1b9ef">  261</a></span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">void</span>* <a class="code" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#a1c38ac09b677cf13b3aa3f294bd1b9ef">GetClassInstance</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> IsComparable() ? m_Instance.m_Ptr : <span class="keyword">nullptr</span>; }</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
-<div class="line"><a name="l00264"></a><span class="lineno"><a class="line" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#ad104ff4a5657cbbe27b957ea8489b568">  264</a></span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> <a class="code" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#ad104ff4a5657cbbe27b957ea8489b568">IsComparable</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pInstance.m_ConstPtr &lt; InplaceLambda(); } <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00264"></a><span class="lineno"><a class="line" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#ad104ff4a5657cbbe27b957ea8489b568">  264</a></span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> <a class="code" href="../../de/df7/structez_delegate_3_01_r_07_args_8_8_8_08_00_01_data_size_01_4.htm#ad104ff4a5657cbbe27b957ea8489b568">IsComparable</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_Instance.m_ConstPtr &lt; InplaceLambda(); } <span class="comment">// [tested]</span></div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Function&gt;</div>
@@ -363,23 +363,23 @@ $(document).ready(function(){initNavTree('df/d4b/_delegate_helper__inl_8h_source
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;  }</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> IsInplaceLambda()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pInstance.m_ConstPtr == InplaceLambda(); }</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> IsHeapLambda()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pInstance.m_ConstPtr == HeapLambda(); }</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> IsInplaceLambda()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_Instance.m_ConstPtr == InplaceLambda(); }</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> IsHeapLambda()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_Instance.m_ConstPtr == HeapLambda(); }</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Method, <span class="keyword">typename</span> Class&gt;</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;  <span class="keyword">static</span> EZ_FORCE_INLINE R DispatchToMethod(<span class="keyword">const</span> SelfType&amp; <span class="keyword">self</span>, Args... params)</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;  {</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    EZ_ASSERT_DEBUG(<span class="keyword">self</span>.m_pInstance.m_Ptr != <span class="keyword">nullptr</span>, <span class="stringliteral">&quot;Instance must not be null.&quot;</span>);</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    EZ_ASSERT_DEBUG(<span class="keyword">self</span>.m_Instance.m_Ptr != <span class="keyword">nullptr</span>, <span class="stringliteral">&quot;Instance must not be null.&quot;</span>);</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    Method method = *<span class="keyword">reinterpret_cast&lt;</span>Method*<span class="keyword">&gt;</span>(&amp;<span class="keyword">self</span>.m_Data);</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="keywordflow">return</span> (<span class="keyword">static_cast&lt;</span>Class*<span class="keyword">&gt;</span>(<span class="keyword">self</span>.m_pInstance.m_Ptr)-&gt;*method)(params...);</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="keywordflow">return</span> (<span class="keyword">static_cast&lt;</span>Class*<span class="keyword">&gt;</span>(<span class="keyword">self</span>.m_Instance.m_Ptr)-&gt;*method)(params...);</div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;  }</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; </div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Method, <span class="keyword">typename</span> Class&gt;</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;  <span class="keyword">static</span> EZ_FORCE_INLINE R DispatchToConstMethod(<span class="keyword">const</span> SelfType&amp; <span class="keyword">self</span>, Args... params)</div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;  {</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    EZ_ASSERT_DEBUG(<span class="keyword">self</span>.m_pInstance.m_ConstPtr != <span class="keyword">nullptr</span>, <span class="stringliteral">&quot;Instance must not be null.&quot;</span>);</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    EZ_ASSERT_DEBUG(<span class="keyword">self</span>.m_Instance.m_ConstPtr != <span class="keyword">nullptr</span>, <span class="stringliteral">&quot;Instance must not be null.&quot;</span>);</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    Method method = *<span class="keyword">reinterpret_cast&lt;</span>Method*<span class="keyword">&gt;</span>(&amp;<span class="keyword">self</span>.m_Data);</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="keywordflow">return</span> (<span class="keyword">static_cast&lt;</span><span class="keyword">const </span>Class*<span class="keyword">&gt;</span>(<span class="keyword">self</span>.m_pInstance.m_ConstPtr)-&gt;*method)(params...);</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="keywordflow">return</span> (<span class="keyword">static_cast&lt;</span><span class="keyword">const </span>Class*<span class="keyword">&gt;</span>(<span class="keyword">self</span>.m_Instance.m_ConstPtr)-&gt;*method)(params...);</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;  }</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160; </div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Function&gt;</div>
@@ -401,7 +401,7 @@ $(document).ready(function(){initNavTree('df/d4b/_delegate_helper__inl_8h_source
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;  }</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160; </div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;  <span class="keyword">using</span> DispatchFunction = R (*)(<span class="keyword">const</span> SelfType&amp;, Args...);</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;  DispatchFunction m_pDispatchFunction;</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;  DispatchFunction m_DispatchFunction;</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;  <span class="keyword">union</span></div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;  {</div>
@@ -458,7 +458,7 @@ $(document).ready(function(){initNavTree('df/d4b/_delegate_helper__inl_8h_source
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_f95f7c440efc771b227d40e9293549bd.htm">Types</a></li><li class="navelem"><a class="el" href="../../dir_81708b2bf5e0f7f3d10c3c7a8700c5a1.htm">Implementation</a></li><li class="navelem"><b>DelegateHelper_inl.h</b></li>
-    <li class="footer">Generated on Sun Oct 9 2022 14:44:56 for ezEngine by
+    <li class="footer">Generated on Fri Nov 18 2022 14:48:01 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

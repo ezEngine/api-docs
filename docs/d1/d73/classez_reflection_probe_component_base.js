@@ -24,6 +24,6 @@ var classez_reflection_probe_component_base =
     [ "SetShowDebugInfo", "d1/d73/classez_reflection_probe_component_base.htm#a5655a34f0ae190d2c01e219beeb4f411", null ],
     [ "SetShowMipMaps", "d1/d73/classez_reflection_probe_component_base.htm#a12bcaf2d44785824db276f9eabb42e0e", null ],
     [ "m_bStatesDirty", "d1/d73/classez_reflection_probe_component_base.htm#a273f739b971438a142f136c92c0473c3", null ],
-    [ "m_desc", "d1/d73/classez_reflection_probe_component_base.htm#a58395021308a40c7d2e10854b75bc63e", null ],
+    [ "m_Desc", "d1/d73/classez_reflection_probe_component_base.htm#acb2cf53a58bc7fe18327412847ca2527", null ],
     [ "m_Id", "d1/d73/classez_reflection_probe_component_base.htm#ad14a8522379b0d14576b9da1502617c7", null ]
 ];

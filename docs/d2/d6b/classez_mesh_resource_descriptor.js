@@ -6,6 +6,7 @@ var classez_mesh_resource_descriptor =
     [ "ezMeshResourceDescriptor", "d2/d6b/classez_mesh_resource_descriptor.htm#a4d73789ee56f4444a06312e919321702", null ],
     [ "AddSubMesh", "d2/d6b/classez_mesh_resource_descriptor.htm#af704bbf26b1a5ad708df5d88e622c382", null ],
     [ "Clear", "d2/d6b/classez_mesh_resource_descriptor.htm#a5a662194f22337c2d789ca1eb643d09d", null ],
+    [ "CollapseSubMeshes", "d2/d6b/classez_mesh_resource_descriptor.htm#a12f51eb8201365a19a7b18f753598244", null ],
     [ "ComputeBounds", "d2/d6b/classez_mesh_resource_descriptor.htm#a055f0bd1503a725348094a004b241306", null ],
     [ "GetBounds", "d2/d6b/classez_mesh_resource_descriptor.htm#a70d65dae4adf65d85b270fed95591a0a", null ],
     [ "GetExistingMeshBuffer", "d2/d6b/classez_mesh_resource_descriptor.htm#a087eabbbc9d6d6b3a8215a8880ce29a0", null ],

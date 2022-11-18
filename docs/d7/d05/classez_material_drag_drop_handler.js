@@ -7,5 +7,5 @@ var classez_material_drag_drop_handler =
     [ "OnDrop", "d7/d05/classez_material_drag_drop_handler.htm#afa9c0b23751dc91827cb6401d41a11cc", null ],
     [ "RequestConfiguration", "d7/d05/classez_material_drag_drop_handler.htm#a7ba163a18bab4ddf8afa8823ca5390c3", null ],
     [ "m_AppliedToComponent", "d7/d05/classez_material_drag_drop_handler.htm#a31394d7eab02e777fe1d21c38c140d16", null ],
-    [ "m_uiAppliedToSlot", "d7/d05/classez_material_drag_drop_handler.htm#ad127b4b9c9b3014f9e74e0e99167ba13", null ]
+    [ "m_iAppliedToSlot", "d7/d05/classez_material_drag_drop_handler.htm#a94c1e7eaa470cea691a50e5733ee557b", null ]
 ];

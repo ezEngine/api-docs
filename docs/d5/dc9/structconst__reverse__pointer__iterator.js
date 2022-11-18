@@ -25,5 +25,5 @@ var structconst__reverse__pointer__iterator =
     [ "operator>", "d5/dc9/structconst__reverse__pointer__iterator.htm#a189f3c424685b7b29e78c1e2c4ca4b26", null ],
     [ "operator>=", "d5/dc9/structconst__reverse__pointer__iterator.htm#a6ef92aa4c360af7f7bf40c3a7a4d319b", null ],
     [ "operator[]", "d5/dc9/structconst__reverse__pointer__iterator.htm#ae6447c72b20337777dfa1e8bfe85a92f", null ],
-    [ "m_ptr", "d5/dc9/structconst__reverse__pointer__iterator.htm#a33b93b9af779798675944da66a918414", null ]
+    [ "m_pPtr", "d5/dc9/structconst__reverse__pointer__iterator.htm#a728fb43dd50fcb3ed2eb9f99845474fa", null ]
 ];

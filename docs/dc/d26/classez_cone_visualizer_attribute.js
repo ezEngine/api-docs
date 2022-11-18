@@ -1,7 +1,7 @@
 var classez_cone_visualizer_attribute =
 [
     [ "ezConeVisualizerAttribute", "dc/d26/classez_cone_visualizer_attribute.htm#a4e3bb92be90d466ac1ba650d2231eaff", null ],
-    [ "ezConeVisualizerAttribute", "dc/d26/classez_cone_visualizer_attribute.htm#a61bad3157f74120e33f840d101998931", null ],
+    [ "ezConeVisualizerAttribute", "dc/d26/classez_cone_visualizer_attribute.htm#a975da90bedc16bc12df2a82327a04e09", null ],
     [ "GetAngleProperty", "dc/d26/classez_cone_visualizer_attribute.htm#a482953e6b26a6ad8a914034888859610", null ],
     [ "GetColorProperty", "dc/d26/classez_cone_visualizer_attribute.htm#a131da95ae468e8f0073f206e335ecfd6", null ],
     [ "GetRadiusProperty", "dc/d26/classez_cone_visualizer_attribute.htm#aaea08a9084489a878c19c7eeca3dbb2a", null ],

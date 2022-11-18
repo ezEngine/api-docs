@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 21.10</span>
+   &#160;<span id="projectnumber">Release 22.11</span>
    </div>
   </td>
  </tr>
@@ -413,7 +413,7 @@ $(document).ready(function(){initNavTree('d6/d56/_process__posix_8h_source.htm',
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160; </div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;ezProcess::ezProcess()</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;{</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;  m_impl = EZ_DEFAULT_NEW(<a class="code" href="../../dd/dd3/structez_process_impl.htm">ezProcessImpl</a>);</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;  m_pImpl = EZ_DEFAULT_NEW(<a class="code" href="../../dd/dd3/structez_process_impl.htm">ezProcessImpl</a>);</div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;}</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160; </div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;ezProcess::~ezProcess()</div>
@@ -427,7 +427,7 @@ $(document).ready(function(){initNavTree('d6/d56/_process__posix_8h_source.htm',
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160; </div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;  <span class="comment">// Explicitly clear the implementation here so that member</span></div>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;  <span class="comment">// state (e.g. delegates) used by the impl survives the implementation.</span></div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;  m_impl.Clear();</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;  m_pImpl.Clear();</div>
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;}</div>
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160; </div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;<a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ezProcess::Execute(<span class="keyword">const</span> ezProcessOptions&amp; opt, ezInt32* out_iExitCode <span class="comment">/*= nullptr*/</span>)</div>
@@ -481,32 +481,32 @@ $(document).ready(function(){initNavTree('d6/d56/_process__posix_8h_source.htm',
 <div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160; </div>
 <div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;<a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ezProcess::Launch(<span class="keyword">const</span> ezProcessOptions&amp; opt, <a class="code" href="../../d1/dec/structez_bitflags.htm">ezBitflags&lt;ezProcessLaunchFlags&gt;</a> launchFlags <span class="comment">/*= ezProcessLaunchFlags::None*/</span>)</div>
 <div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;{</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;  EZ_ASSERT_DEV(m_impl-&gt;m_childPid == -1, <span class="stringliteral">&quot;Can not reuse an instance of ezProcess&quot;</span>);</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;  EZ_ASSERT_DEV(m_pImpl-&gt;m_childPid == -1, <span class="stringliteral">&quot;Can not reuse an instance of ezProcess&quot;</span>);</div>
 <div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160; </div>
 <div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;  <span class="keywordtype">int</span> stdoutFd = -1;</div>
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;  <span class="keywordtype">int</span> stderrFd = -1;</div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160; </div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;  <span class="keywordflow">if</span> (ezProcessImpl::StartChildProcess(opt, m_impl-&gt;m_childPid, launchFlags.<a class="code" href="../../d1/dec/structez_bitflags.htm#a0f23fb5379d0fa6c092c565e44830cbe">IsSet</a>(ezProcessLaunchFlags::Suspended), stdoutFd, stderrFd).Failed())</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;  <span class="keywordflow">if</span> (ezProcessImpl::StartChildProcess(opt, m_pImpl-&gt;m_childPid, launchFlags.<a class="code" href="../../d1/dec/structez_bitflags.htm#a0f23fb5379d0fa6c092c565e44830cbe">IsSet</a>(ezProcessLaunchFlags::Suspended), stdoutFd, stderrFd).Failed())</div>
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;  {</div>
 <div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    <span class="keywordflow">return</span> EZ_FAILURE;</div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;  }</div>
 <div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160; </div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;  m_impl-&gt;m_exitCodeAvailable = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;  m_impl-&gt;m_processSuspended = launchFlags.<a class="code" href="../../d1/dec/structez_bitflags.htm#a0f23fb5379d0fa6c092c565e44830cbe">IsSet</a>(ezProcessLaunchFlags::Suspended);</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;  m_pImpl-&gt;m_exitCodeAvailable = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;  m_pImpl-&gt;m_processSuspended = launchFlags.<a class="code" href="../../d1/dec/structez_bitflags.htm#a0f23fb5379d0fa6c092c565e44830cbe">IsSet</a>(ezProcessLaunchFlags::Suspended);</div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160; </div>
 <div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;  <span class="keywordflow">if</span> (stdoutFd &gt;= 0)</div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;  {</div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    m_impl-&gt;AddStream(stdoutFd, opt.m_onStdOut);</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    m_pImpl-&gt;AddStream(stdoutFd, opt.m_onStdOut);</div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;  }</div>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160; </div>
 <div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;  <span class="keywordflow">if</span> (stderrFd &gt;= 0)</div>
 <div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;  {</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    m_impl-&gt;AddStream(stderrFd, opt.m_onStdError);</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    m_pImpl-&gt;AddStream(stderrFd, opt.m_onStdError);</div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;  }</div>
 <div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160; </div>
 <div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;  <span class="keywordflow">if</span> (stdoutFd &gt;= 0 || stderrFd &gt;= 0)</div>
 <div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;  {</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    <span class="keywordflow">if</span> (m_impl-&gt;StartStreamWatcher().Failed())</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    <span class="keywordflow">if</span> (m_pImpl-&gt;StartStreamWatcher().Failed())</div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    {</div>
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;      <span class="keywordflow">return</span> EZ_FAILURE;</div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    }</div>
@@ -522,27 +522,27 @@ $(document).ready(function(){initNavTree('d6/d56/_process__posix_8h_source.htm',
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160; </div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;<a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ezProcess::ResumeSuspended()</div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;{</div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;  <span class="keywordflow">if</span> (m_impl-&gt;m_childPid &lt; 0 || !m_impl-&gt;m_processSuspended)</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;  <span class="keywordflow">if</span> (m_pImpl-&gt;m_childPid &lt; 0 || !m_pImpl-&gt;m_processSuspended)</div>
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;  {</div>
 <div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;    <span class="keywordflow">return</span> EZ_FAILURE;</div>
 <div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;  }</div>
 <div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160; </div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;  <span class="keywordflow">if</span> (kill(m_impl-&gt;m_childPid, SIGCONT) &lt; 0)</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;  <span class="keywordflow">if</span> (kill(m_pImpl-&gt;m_childPid, SIGCONT) &lt; 0)</div>
 <div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;  {</div>
 <div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    <span class="keywordflow">return</span> EZ_FAILURE;</div>
 <div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;  }</div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;  m_impl-&gt;m_processSuspended = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;  m_pImpl-&gt;m_processSuspended = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;  <span class="keywordflow">return</span> EZ_SUCCESS;</div>
 <div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;}</div>
 <div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160; </div>
 <div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;<a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ezProcess::WaitToFinish(<a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> timeout <span class="comment">/*= ezTime::Zero()*/</span>)</div>
 <div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;{</div>
 <div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;  <span class="keywordtype">int</span> childStatus = 0;</div>
-<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;  EZ_SCOPE_EXIT(m_impl-&gt;StopStreamWatcher());</div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;  EZ_SCOPE_EXIT(m_pImpl-&gt;StopStreamWatcher());</div>
 <div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160; </div>
 <div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;  <span class="keywordflow">if</span> (timeout.<a class="code" href="../../d3/d90/structez_time.htm#a68ad20e2069c826060662cfd319807ea">IsZero</a>())</div>
 <div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;  {</div>
-<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;    <span class="keywordflow">if</span> (waitpid(m_impl-&gt;m_childPid, &amp;childStatus, 0) &lt; 0)</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;    <span class="keywordflow">if</span> (waitpid(m_pImpl-&gt;m_childPid, &amp;childStatus, 0) &lt; 0)</div>
 <div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;    {</div>
 <div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;      <span class="keywordflow">return</span> EZ_FAILURE;</div>
 <div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;    }</div>
@@ -553,7 +553,7 @@ $(document).ready(function(){initNavTree('d6/d56/_process__posix_8h_source.htm',
 <div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;    <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> startWait = <a class="code" href="../../d3/d90/structez_time.htm#a577fcb032cde755e39b3880d5ee0dadf">ezTime::Now</a>();</div>
 <div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;    <span class="keywordflow">while</span> (<span class="keyword">true</span>)</div>
 <div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;    {</div>
-<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;      waitResult = waitpid(m_impl-&gt;m_childPid, &amp;childStatus, WNOHANG);</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;      waitResult = waitpid(m_pImpl-&gt;m_childPid, &amp;childStatus, WNOHANG);</div>
 <div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;      <span class="keywordflow">if</span> (waitResult &lt; 0)</div>
 <div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;      {</div>
 <div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;        <span class="keywordflow">return</span> EZ_FAILURE;</div>
@@ -579,28 +579,28 @@ $(document).ready(function(){initNavTree('d6/d56/_process__posix_8h_source.htm',
 <div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;  {</div>
 <div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;    m_iExitCode = -1;</div>
 <div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;  }</div>
-<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;  m_impl-&gt;m_exitCodeAvailable = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;  m_pImpl-&gt;m_exitCodeAvailable = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160; </div>
 <div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;  <span class="keywordflow">return</span> EZ_SUCCESS;</div>
 <div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;}</div>
 <div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160; </div>
 <div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;<a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ezProcess::Terminate()</div>
 <div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;{</div>
-<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;  <span class="keywordflow">if</span> (m_impl-&gt;m_childPid == -1)</div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;  <span class="keywordflow">if</span> (m_pImpl-&gt;m_childPid == -1)</div>
 <div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;  {</div>
 <div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;    <span class="keywordflow">return</span> EZ_FAILURE;</div>
 <div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;  }</div>
 <div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160; </div>
-<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;  EZ_SCOPE_EXIT(m_impl-&gt;StopStreamWatcher());</div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;  EZ_SCOPE_EXIT(m_pImpl-&gt;StopStreamWatcher());</div>
 <div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160; </div>
-<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;  <span class="keywordflow">if</span> (kill(m_impl-&gt;m_childPid, SIGKILL) &lt; 0)</div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;  <span class="keywordflow">if</span> (kill(m_pImpl-&gt;m_childPid, SIGKILL) &lt; 0)</div>
 <div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;  {</div>
 <div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;    <span class="keywordflow">if</span> (errno != ESRCH) <span class="comment">// ESRCH = Process does not exist</span></div>
 <div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;    {</div>
 <div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;      <span class="keywordflow">return</span> EZ_FAILURE;</div>
 <div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;    }</div>
 <div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;  }</div>
-<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;  m_impl-&gt;m_exitCodeAvailable = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;  m_pImpl-&gt;m_exitCodeAvailable = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;  m_iExitCode = -1;</div>
 <div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160; </div>
 <div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;  <span class="keywordflow">return</span> EZ_SUCCESS;</div>
@@ -608,24 +608,24 @@ $(document).ready(function(){initNavTree('d6/d56/_process__posix_8h_source.htm',
 <div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160; </div>
 <div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;ezProcessState ezProcess::GetState()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;  <span class="keywordflow">if</span> (m_impl-&gt;m_childPid == -1)</div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;  <span class="keywordflow">if</span> (m_pImpl-&gt;m_childPid == -1)</div>
 <div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;  {</div>
 <div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;    <span class="keywordflow">return</span> ezProcessState::NotStarted;</div>
 <div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;  }</div>
 <div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160; </div>
-<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;  <span class="keywordflow">if</span> (m_impl-&gt;m_exitCodeAvailable)</div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;  <span class="keywordflow">if</span> (m_pImpl-&gt;m_exitCodeAvailable)</div>
 <div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;  {</div>
 <div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;    <span class="keywordflow">return</span> ezProcessState::Finished;</div>
 <div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;  }</div>
 <div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160; </div>
 <div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;  <span class="keywordtype">int</span> childStatus = -1;</div>
-<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;  <span class="keywordtype">int</span> waitResult = waitpid(m_impl-&gt;m_childPid, &amp;childStatus, WNOHANG);</div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;  <span class="keywordtype">int</span> waitResult = waitpid(m_pImpl-&gt;m_childPid, &amp;childStatus, WNOHANG);</div>
 <div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;  <span class="keywordflow">if</span> (waitResult &gt; 0)</div>
 <div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;  {</div>
 <div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;    m_iExitCode = WEXITSTATUS(childStatus);</div>
-<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;    m_impl-&gt;m_exitCodeAvailable = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;    m_pImpl-&gt;m_exitCodeAvailable = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160; </div>
-<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;    m_impl-&gt;StopStreamWatcher();</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;    m_pImpl-&gt;StopStreamWatcher();</div>
 <div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160; </div>
 <div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;    <span class="keywordflow">return</span> ezProcessState::Finished;</div>
 <div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;  }</div>
@@ -635,7 +635,7 @@ $(document).ready(function(){initNavTree('d6/d56/_process__posix_8h_source.htm',
 <div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160; </div>
 <div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;<span class="keywordtype">void</span> ezProcess::Detach()</div>
 <div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;{</div>
-<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;  m_impl-&gt;m_childPid = -1;</div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;  m_pImpl-&gt;m_childPid = -1;</div>
 <div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;}</div>
 <div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160; </div>
 <div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;ezOsProcessHandle ezProcess::GetProcessHandle()<span class="keyword"> const</span></div>
@@ -646,8 +646,8 @@ $(document).ready(function(){initNavTree('d6/d56/_process__posix_8h_source.htm',
 <div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160; </div>
 <div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;ezOsProcessID ezProcess::GetProcessID()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;  EZ_ASSERT_DEV(m_impl-&gt;m_childPid != -1, <span class="stringliteral">&quot;No ProcessID available&quot;</span>);</div>
-<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;  <span class="keywordflow">return</span> m_impl-&gt;m_childPid;</div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;  EZ_ASSERT_DEV(m_pImpl-&gt;m_childPid != -1, <span class="stringliteral">&quot;No ProcessID available&quot;</span>);</div>
+<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;  <span class="keywordflow">return</span> m_pImpl-&gt;m_childPid;</div>
 <div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;}</div>
 <div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160; </div>
 <div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;ezOsProcessID ezProcess::GetCurrentProcessID()</div>
@@ -656,42 +656,42 @@ $(document).ready(function(){initNavTree('d6/d56/_process__posix_8h_source.htm',
 <div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassez_array_base_htm_ac84ae40d109f1c6473e8349a88717634"><div class="ttname"><a href="../../dc/d59/classez_array_base.htm#ac84ae40d109f1c6473e8349a88717634">ezArrayBase&lt; T, ezDynamicArrayBase&lt; T &gt; &gt;::GetData</a></div><div class="ttdeci">T * GetData()</div><div class="ttdoc">Returns a pointer to the array data, or nullptr if the array is empty.</div><div class="ttdef"><b>Definition:</b> ArrayBase_inl.h:412</div></div>
+<div class="ttc" id="aclassez_array_base_htm_ac84ae40d109f1c6473e8349a88717634"><div class="ttname"><a href="../../dc/d59/classez_array_base.htm#ac84ae40d109f1c6473e8349a88717634">ezArrayBase&lt; T, ezDynamicArrayBase&lt; T &gt; &gt;::GetData</a></div><div class="ttdeci">T * GetData()</div><div class="ttdoc">Returns a pointer to the array data, or nullptr if the array is empty.</div><div class="ttdef"><b>Definition:</b> ArrayBase_inl.h:418</div></div>
 <div class="ttc" id="aclassez_log_htm_ae5b1ee0c969668bdac113be5f4b15fa3"><div class="ttname"><a href="../../dc/d9e/classez_log.htm#ae5b1ee0c969668bdac113be5f4b15fa3">ezLog::Error</a></div><div class="ttdeci">static void Error(ezLogInterface *pInterface, const ezFormatString &amp;string)</div><div class="ttdoc">An error that needs to be fixed as soon as possible.</div><div class="ttdef"><b>Definition:</b> Log.cpp:362</div></div>
 <div class="ttc" id="astructez_bitflags_htm"><div class="ttname"><a href="../../d1/dec/structez_bitflags.htm">ezBitflags</a></div><div class="ttdoc">The ezBitflags class allows you to work with type-safe bitflags.</div><div class="ttdef"><b>Definition:</b> Bitflags.h:80</div></div>
 <div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition:</b> Types.h:50</div></div>
 <div class="ttc" id="astructez_time_htm"><div class="ttname"><a href="../../d3/d90/structez_time.htm">ezTime</a></div><div class="ttdoc">The time class encapsulates a double value storing the time in seconds.</div><div class="ttdef"><b>Definition:</b> Time.h:11</div></div>
 <div class="ttc" id="astructez_time_htm_a577fcb032cde755e39b3880d5ee0dadf"><div class="ttname"><a href="../../d3/d90/structez_time.htm#a577fcb032cde755e39b3880d5ee0dadf">ezTime::Now</a></div><div class="ttdeci">static ezTime Now()</div><div class="ttdoc">Gets the current time.</div><div class="ttdef"><b>Definition:</b> Time_osx.h:17</div></div>
-<div class="ttc" id="aclassez_array_base_htm_abc514bdf8b2de7b5b220ffdbd862e830"><div class="ttname"><a href="../../dc/d59/classez_array_base.htm#abc514bdf8b2de7b5b220ffdbd862e830">ezArrayBase&lt; T, ezDynamicArrayBase&lt; T &gt; &gt;::PushBack</a></div><div class="ttdeci">void PushBack(const T &amp;value)</div><div class="ttdoc">Pushes value at the end of the array.</div><div class="ttdef"><b>Definition:</b> ArrayBase_inl.h:321</div></div>
-<div class="ttc" id="astructez_time_htm_a68ad20e2069c826060662cfd319807ea"><div class="ttname"><a href="../../d3/d90/structez_time.htm#a68ad20e2069c826060662cfd319807ea">ezTime::IsZero</a></div><div class="ttdeci">constexpr EZ_ALWAYS_INLINE bool IsZero() const</div><div class="ttdoc">Returns true if the stored time is exactly zero. That typically means the value was not changed from ...</div><div class="ttdef"><b>Definition:</b> Time.h:50</div></div>
+<div class="ttc" id="aclassez_array_base_htm_abc514bdf8b2de7b5b220ffdbd862e830"><div class="ttname"><a href="../../dc/d59/classez_array_base.htm#abc514bdf8b2de7b5b220ffdbd862e830">ezArrayBase&lt; T, ezDynamicArrayBase&lt; T &gt; &gt;::PushBack</a></div><div class="ttdeci">void PushBack(const T &amp;value)</div><div class="ttdoc">Pushes value at the end of the array.</div><div class="ttdef"><b>Definition:</b> ArrayBase_inl.h:327</div></div>
+<div class="ttc" id="astructez_time_htm_a68ad20e2069c826060662cfd319807ea"><div class="ttname"><a href="../../d3/d90/structez_time.htm#a68ad20e2069c826060662cfd319807ea">ezTime::IsZero</a></div><div class="ttdeci">constexpr EZ_ALWAYS_INLINE bool IsZero() const</div><div class="ttdoc">Returns true if the stored time is exactly zero. That typically means the value was not changed from ...</div><div class="ttdef"><b>Definition:</b> Time.h:47</div></div>
 <div class="ttc" id="aclassez_o_s_thread_htm"><div class="ttname"><a href="../../dc/dee/classez_o_s_thread.htm">ezOSThread</a></div><div class="ttdoc">Implementation of a thread.</div><div class="ttdef"><b>Definition:</b> OSThread.h:11</div></div>
 <div class="ttc" id="aclassez_log_htm_afbe4730716fa79b0f35f2ceacbdff862"><div class="ttname"><a href="../../dc/d9e/classez_log.htm#afbe4730716fa79b0f35f2ceacbdff862">ezLog::Dev</a></div><div class="ttdeci">static void Dev(ezLogInterface *pInterface, const ezFormatString &amp;string)</div><div class="ttdoc">Status information that is nice to have during development.</div></div>
 <div class="ttc" id="astructez_time_htm_a3061c9851afc84d16a45aa129566b3ae"><div class="ttname"><a href="../../d3/d90/structez_time.htm#a3061c9851afc84d16a45aa129566b3ae">ezTime::Milliseconds</a></div><div class="ttdeci">constexpr static EZ_ALWAYS_INLINE ezTime Milliseconds(double fMilliseconds)</div><div class="ttdoc">Creates an instance of ezTime that was initialized from milliseconds.</div><div class="ttdef"><b>Definition:</b> Time.h:24</div></div>
 <div class="ttc" id="astructez_hybrid_string_htm"><div class="ttname"><a href="../../d4/d53/structez_hybrid_string.htm">ezHybridString</a></div><div class="ttdef"><b>Definition:</b> Stream.h:15</div></div>
-<div class="ttc" id="aclassez_string_builder_htm_a162e5eb18bb60fd044c2fbbcdfa79228"><div class="ttname"><a href="../../d3/d88/classez_string_builder.htm#a162e5eb18bb60fd044c2fbbcdfa79228">ezStringBuilder::Clear</a></div><div class="ttdeci">void Clear()</div><div class="ttdoc">Resets this string to be empty. Does not deallocate any previously allocated data,...</div><div class="ttdef"><b>Definition:</b> StringBuilder_inl.h:107</div></div>
-<div class="ttc" id="aclassez_array_base_htm_a51ba61fcbd2350ae8850754a41acbaa1"><div class="ttname"><a href="../../dc/d59/classez_array_base.htm#a51ba61fcbd2350ae8850754a41acbaa1">ezArrayBase&lt; T, ezDynamicArrayBase&lt; T &gt; &gt;::GetCount</a></div><div class="ttdeci">ezUInt32 GetCount() const</div><div class="ttdoc">Returns the number of active elements in the array.</div><div class="ttdef"><b>Definition:</b> ArrayBase_inl.h:158</div></div>
+<div class="ttc" id="aclassez_string_builder_htm_a162e5eb18bb60fd044c2fbbcdfa79228"><div class="ttname"><a href="../../d3/d88/classez_string_builder.htm#a162e5eb18bb60fd044c2fbbcdfa79228">ezStringBuilder::Clear</a></div><div class="ttdeci">void Clear()</div><div class="ttdoc">Resets this string to be empty. Does not deallocate any previously allocated data,...</div><div class="ttdef"><b>Definition:</b> StringBuilder_inl.h:96</div></div>
+<div class="ttc" id="aclassez_array_base_htm_a51ba61fcbd2350ae8850754a41acbaa1"><div class="ttname"><a href="../../dc/d59/classez_array_base.htm#a51ba61fcbd2350ae8850754a41acbaa1">ezArrayBase&lt; T, ezDynamicArrayBase&lt; T &gt; &gt;::GetCount</a></div><div class="ttdeci">ezUInt32 GetCount() const</div><div class="ttdoc">Returns the number of active elements in the array.</div><div class="ttdef"><b>Definition:</b> ArrayBase_inl.h:164</div></div>
 <div class="ttc" id="aclassez_thread_utils_htm_aec2882433229ae37bc7af680bec899dc"><div class="ttname"><a href="../../d4/d1d/classez_thread_utils.htm#aec2882433229ae37bc7af680bec899dc">ezThreadUtils::Sleep</a></div><div class="ttdeci">static void Sleep(const ezTime &amp;duration)</div><div class="ttdoc">Suspends the execution of the current thread for the given amount of time. (Precision may vary accord...</div><div class="ttdef"><b>Definition:</b> ThreadUtils_posix.h:25</div></div>
 <div class="ttc" id="aclassez_unique_ptr_htm"><div class="ttname"><a href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt; ezOSThread &gt;</a></div></div>
 <div class="ttc" id="aclassez_dynamic_array_htm"><div class="ttname"><a href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt; ezStringBuilder &gt;</a></div></div>
 <div class="ttc" id="astructez_delegate_htm"><div class="ttname"><a href="../../d5/d68/structez_delegate.htm">ezDelegate</a></div><div class="ttdoc">A generic delegate class which supports static functions and member functions.</div><div class="ttdef"><b>Definition:</b> Delegate.h:75</div></div>
-<div class="ttc" id="aclassez_string_builder_htm_a605f325ea4c9c3242454a16657e24ef7"><div class="ttname"><a href="../../d3/d88/classez_string_builder.htm#a605f325ea4c9c3242454a16657e24ef7">ezStringBuilder::Append</a></div><div class="ttdeci">void Append(ezUInt32 uiChar)</div><div class="ttdoc">Appends a single Utf32 character.</div><div class="ttdef"><b>Definition:</b> StringBuilder_inl.h:114</div></div>
+<div class="ttc" id="aclassez_string_builder_htm_a605f325ea4c9c3242454a16657e24ef7"><div class="ttname"><a href="../../d3/d88/classez_string_builder.htm#a605f325ea4c9c3242454a16657e24ef7">ezStringBuilder::Append</a></div><div class="ttdeci">void Append(ezUInt32 uiChar)</div><div class="ttdoc">Appends a single Utf32 character.</div><div class="ttdef"><b>Definition:</b> StringBuilder_inl.h:103</div></div>
 <div class="ttc" id="aclassez_o_s_thread_htm_a81378a5f2603905a76395b344f0a0c65"><div class="ttname"><a href="../../dc/dee/classez_o_s_thread.htm#a81378a5f2603905a76395b344f0a0c65">ezOSThread::Start</a></div><div class="ttdeci">void Start()</div><div class="ttdoc">Starts the thread.</div><div class="ttdef"><b>Definition:</b> OSThread_posix.h:27</div></div>
 <div class="ttc" id="astructez_string_base_htm_a3b169646f62ef8a8d33b63e2b8731afb"><div class="ttname"><a href="../../dd/d69/structez_string_base.htm#a3b169646f62ef8a8d33b63e2b8731afb">ezStringBase::IsEmpty</a></div><div class="ttdeci">bool IsEmpty() const</div><div class="ttdoc">Returns whether the string is an empty string.</div><div class="ttdef"><b>Definition:</b> StringBase_inl.h:25</div></div>
 <div class="ttc" id="astructez_process_impl_htm"><div class="ttname"><a href="../../dd/dd3/structez_process_impl.htm">ezProcessImpl</a></div><div class="ttdef"><b>Definition:</b> Process_posix.h:32</div></div>
 <div class="ttc" id="anamespaceez_math_htm_ad8009b4da9cb427658d71e30576f209e"><div class="ttname"><a href="../../db/d78/namespaceez_math.htm#ad8009b4da9cb427658d71e30576f209e">ezMath::Min</a></div><div class="ttdeci">constexpr EZ_ALWAYS_INLINE T Min(T f1, T f2)</div><div class="ttdoc">Returns the smaller value, f1 or f2.</div><div class="ttdef"><b>Definition:</b> Math_inl.h:26</div></div>
-<div class="ttc" id="astructez_string_view_htm"><div class="ttname"><a href="../../de/db8/structez_string_view.htm">ezStringView</a></div><div class="ttdoc">ezStringView represent a read-only sub-string of a larger string, as it can store a dedicated string ...</div><div class="ttdef"><b>Definition:</b> StringView.h:22</div></div>
+<div class="ttc" id="astructez_string_view_htm"><div class="ttname"><a href="../../de/db8/structez_string_view.htm">ezStringView</a></div><div class="ttdoc">ezStringView represent a read-only sub-string of a larger string, as it can store a dedicated string ...</div><div class="ttdef"><b>Definition:</b> StringView.h:23</div></div>
 <div class="ttc" id="aclassez_string_utils_htm_a4e7bb80c9b5b1bc468d88e70379895ff"><div class="ttname"><a href="../../de/df8/classez_string_utils.htm#a4e7bb80c9b5b1bc468d88e70379895ff">ezStringUtils::FindSubString</a></div><div class="ttdeci">static const char * FindSubString(const char *szSource, const char *szStringToFind, const char *pSourceEnd=ezUnicodeUtils::GetMaxStringEnd&lt; char &gt;(), const char *szStringToFindEnd=ezUnicodeUtils::GetMaxStringEnd&lt; char &gt;())</div><div class="ttdoc">Searches for the first occurrence of szStringToFind in szSource.</div><div class="ttdef"><b>Definition:</b> StringUtils.cpp:604</div></div>
 <div class="ttc" id="aclassez_hybrid_array_htm"><div class="ttname"><a href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray</a></div><div class="ttdoc">A hybrid array uses in-place storage to handle the first few elements without any allocation....</div><div class="ttdef"><b>Definition:</b> HybridArray.h:11</div></div>
 <div class="ttc" id="astructez_process_impl_1_1_std_stream_info_htm"><div class="ttname"><a href="../../d0/df0/structez_process_impl_1_1_std_stream_info.htm">ezProcessImpl::StdStreamInfo</a></div><div class="ttdef"><b>Definition:</b> Process_posix.h:43</div></div>
 <div class="ttc" id="aclassez_string_builder_htm"><div class="ttname"><a href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a></div><div class="ttdoc">ezStringBuilder is a class that is meant for creating and modifying strings.</div><div class="ttdef"><b>Definition:</b> StringBuilder.h:34</div></div>
 <div class="ttc" id="astructez_bitflags_htm_a0f23fb5379d0fa6c092c565e44830cbe"><div class="ttname"><a href="../../d1/dec/structez_bitflags.htm#a0f23fb5379d0fa6c092c565e44830cbe">ezBitflags::IsSet</a></div><div class="ttdeci">EZ_ALWAYS_INLINE bool IsSet(Enum flag) const</div><div class="ttdoc">Checks if certain flags are set within the bitfield.</div><div class="ttdef"><b>Definition:</b> Bitflags.h:124</div></div>
 <div class="ttc" id="aclassez_o_s_thread_htm_a9aa84088cdf474e556a71d2ae301f132"><div class="ttname"><a href="../../dc/dee/classez_o_s_thread.htm#a9aa84088cdf474e556a71d2ae301f132">ezOSThread::Join</a></div><div class="ttdeci">void Join()</div><div class="ttdoc">Waits in the calling thread until the thread has finished execution (e.g. returned from the thread fu...</div><div class="ttdef"><b>Definition:</b> OSThread_posix.h:63</div></div>
-<div class="ttc" id="aclassez_array_base_htm_acb1665da46f44fab7a676561cc1d611c"><div class="ttname"><a href="../../dc/d59/classez_array_base.htm#acb1665da46f44fab7a676561cc1d611c">ezArrayBase::SetCount</a></div><div class="ttdeci">void SetCount(ezUInt32 uiCount)</div><div class="ttdoc">Resizes the array to have exactly uiCount elements. Default constructs extra elements if the array is...</div><div class="ttdef"><b>Definition:</b> ArrayBase_inl.h:89</div></div>
+<div class="ttc" id="aclassez_array_base_htm_acb1665da46f44fab7a676561cc1d611c"><div class="ttname"><a href="../../dc/d59/classez_array_base.htm#acb1665da46f44fab7a676561cc1d611c">ezArrayBase::SetCount</a></div><div class="ttdeci">void SetCount(ezUInt32 uiCount)</div><div class="ttdoc">Resizes the array to have exactly uiCount elements. Default constructs extra elements if the array is...</div><div class="ttdef"><b>Definition:</b> ArrayBase_inl.h:95</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_755fdcfb6b850fe41cc906fd4ef666a8.htm">System</a></li><li class="navelem"><a class="el" href="../../dir_8580235f0f8f387a258dcf4b47a3ab70.htm">Implementation</a></li><li class="navelem"><a class="el" href="../../dir_a2012d26ec404754be871fd7b4ae5611.htm">Posix</a></li><li class="navelem"><b>Process_posix.h</b></li>
-    <li class="footer">Generated on Sun Oct 9 2022 14:44:55 for ezEngine by
+    <li class="footer">Generated on Fri Nov 18 2022 14:48:00 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

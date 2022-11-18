@@ -6,7 +6,7 @@ var classez_spot_light_component =
     [ "DeserializeComponent", "d9/dfc/classez_spot_light_component.htm#a40d879f73405bba26a7916e8aa40ad16", null ],
     [ "GetEffectiveRange", "d9/dfc/classez_spot_light_component.htm#ab30e0291276288949f9a7c829237fbc0", null ],
     [ "GetInnerSpotAngle", "d9/dfc/classez_spot_light_component.htm#a80d88f15d20137cf5b353c14c9e9d1f7", null ],
-    [ "GetLocalBounds", "d9/dfc/classez_spot_light_component.htm#a8799111ac0345887d1c607913b74fb5b", null ],
+    [ "GetLocalBounds", "d9/dfc/classez_spot_light_component.htm#ace40a466946b0e105e971bb0bf7e9cba", null ],
     [ "GetOuterSpotAngle", "d9/dfc/classez_spot_light_component.htm#a846d74baf9a23a2910cb21830d565261", null ],
     [ "GetProjectedTexture", "d9/dfc/classez_spot_light_component.htm#acaee65526a340ab86c1ac27c7136d2c6", null ],
     [ "GetProjectedTextureFile", "d9/dfc/classez_spot_light_component.htm#ae44a18b71350ef8dcb77aaa04c6e0f1a", null ],

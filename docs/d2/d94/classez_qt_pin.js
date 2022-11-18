@@ -17,8 +17,10 @@ var classez_qt_pin =
     [ "RemoveConnection", "d2/d94/classez_qt_pin.htm#a0975439f136f08d6d2fc1f66a09531b7", null ],
     [ "SetActive", "d2/d94/classez_qt_pin.htm#ab12072081c4b358bbcf988988da16ddb", null ],
     [ "SetHighlightState", "d2/d94/classez_qt_pin.htm#a874f0acfcdab466340fd5d1d615e94bd", null ],
-    [ "SetPin", "d2/d94/classez_qt_pin.htm#a52be7ad9fdddd9058e4896aee19e4e94", null ],
+    [ "SetPin", "d2/d94/classez_qt_pin.htm#a030526b75718f7c35722ccc15b7bb2c3", null ],
     [ "type", "d2/d94/classez_qt_pin.htm#ae6abfef45cf2d1727557828d0f2a0fa2", null ],
     [ "UpdateConnections", "d2/d94/classez_qt_pin.htm#a87a54842db8dbc4bb601380c65b9238a", null ],
-    [ "m_HighlightState", "d2/d94/classez_qt_pin.htm#a04d5d14cfbf8408ac041f492f940c051", null ]
+    [ "m_HighlightState", "d2/d94/classez_qt_pin.htm#a04d5d14cfbf8408ac041f492f940c051", null ],
+    [ "m_PinCenter", "d2/d94/classez_qt_pin.htm#a68fe5c25b1d38b59390b38be17e23b75", null ],
+    [ "m_pLabel", "d2/d94/classez_qt_pin.htm#a98a0f41684b5852313dc824b0cf825a3", null ]
 ];

@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 21.10</span>
+   &#160;<span id="projectnumber">Release 22.11</span>
    </div>
   </td>
  </tr>
@@ -96,19 +96,19 @@ $(document).ready(function(){initNavTree('d9/d2b/_hash_table__inl_8h_source.htm'
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> V, <span class="keyword">typename</span> H&gt;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<a class="code" href="../../de/dc3/classez_hash_table_base.htm">ezHashTableBase&lt;K, V, H&gt;::ConstIterator::ConstIterator</a>(<span class="keyword">const</span> <a class="code" href="../../de/dc3/classez_hash_table_base.htm">ezHashTableBase&lt;K, V, H&gt;</a>&amp; hashTable)</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  : m_hashTable(&amp;hashTable)</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  : m_pHashTable(&amp;hashTable)</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;}</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> V, <span class="keyword">typename</span> H&gt;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../de/dc3/classez_hash_table_base.htm">ezHashTableBase&lt;K, V, H&gt;::ConstIterator::SetToBegin</a>()</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keywordflow">if</span> (m_hashTable-&gt;IsEmpty())</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keywordflow">if</span> (m_pHashTable-&gt;IsEmpty())</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    m_uiCurrentIndex = m_hashTable-&gt;m_uiCapacity;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    m_uiCurrentIndex = m_pHashTable-&gt;m_uiCapacity;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  }</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordflow">while</span> (!m_hashTable-&gt;IsValidEntry(m_uiCurrentIndex))</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordflow">while</span> (!m_pHashTable-&gt;IsValidEntry(m_uiCurrentIndex))</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  {</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    ++m_uiCurrentIndex;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  }</div>
@@ -117,21 +117,21 @@ $(document).ready(function(){initNavTree('d9/d2b/_hash_table__inl_8h_source.htm'
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> V, <span class="keyword">typename</span> H&gt;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="../../de/dc3/classez_hash_table_base.htm">ezHashTableBase&lt;K, V, H&gt;::ConstIterator::SetToEnd</a>()</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  m_uiCurrentCount = m_hashTable-&gt;m_uiCount;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  m_uiCurrentIndex = m_hashTable-&gt;m_uiCapacity;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  m_uiCurrentCount = m_pHashTable-&gt;m_uiCount;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  m_uiCurrentIndex = m_pHashTable-&gt;m_uiCapacity;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> V, <span class="keyword">typename</span> H&gt;</div>
 <div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="../../d7/db4/structez_hash_table_base_1_1_const_iterator.htm#ac6bebb12f1a8a6536d75ec2c6d8be7fb">   38</a></span>&#160;EZ_FORCE_INLINE <span class="keywordtype">bool</span> <a class="code" href="../../d7/db4/structez_hash_table_base_1_1_const_iterator.htm#ac6bebb12f1a8a6536d75ec2c6d8be7fb">ezHashTableBase&lt;K, V, H&gt;::ConstIterator::IsValid</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordflow">return</span> m_uiCurrentCount &lt; m_hashTable-&gt;m_uiCount;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordflow">return</span> m_uiCurrentCount &lt; m_pHashTable-&gt;m_uiCount;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> V, <span class="keyword">typename</span> H&gt;</div>
 <div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="../../d7/db4/structez_hash_table_base_1_1_const_iterator.htm#a92debe4b5f0496e5c3face370c67b7b7">   44</a></span>&#160;EZ_FORCE_INLINE <span class="keywordtype">bool</span> <a class="code" href="../../d7/db4/structez_hash_table_base_1_1_const_iterator.htm#a92debe4b5f0496e5c3face370c67b7b7">ezHashTableBase&lt;K, V, H&gt;::ConstIterator::operator==</a>(<span class="keyword">const</span> <span class="keyword">typename</span> <a class="code" href="../../d7/db4/structez_hash_table_base_1_1_const_iterator.htm">ezHashTableBase&lt;K, V, H&gt;::ConstIterator</a>&amp; rhs)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordflow">return</span> m_uiCurrentIndex == rhs.m_uiCurrentIndex &amp;&amp; m_hashTable-&gt;m_pEntries == rhs.m_hashTable-&gt;m_pEntries;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordflow">return</span> m_uiCurrentIndex == rhs.m_uiCurrentIndex &amp;&amp; m_pHashTable-&gt;m_pEntries == rhs.m_pHashTable-&gt;m_pEntries;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> V, <span class="keyword">typename</span> H&gt;</div>
@@ -143,20 +143,20 @@ $(document).ready(function(){initNavTree('d9/d2b/_hash_table__inl_8h_source.htm'
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> V, <span class="keyword">typename</span> H&gt;</div>
 <div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="../../d7/db4/structez_hash_table_base_1_1_const_iterator.htm#ad5a8de24c6b3f3fa2d9df8f480dccaea">   56</a></span>&#160;EZ_ALWAYS_INLINE <span class="keyword">const</span> K&amp; <a class="code" href="../../d7/db4/structez_hash_table_base_1_1_const_iterator.htm#ad5a8de24c6b3f3fa2d9df8f480dccaea">ezHashTableBase&lt;K, V, H&gt;::ConstIterator::Key</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordflow">return</span> m_hashTable-&gt;m_pEntries[m_uiCurrentIndex].key;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordflow">return</span> m_pHashTable-&gt;m_pEntries[m_uiCurrentIndex].key;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> V, <span class="keyword">typename</span> H&gt;</div>
 <div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="../../d7/db4/structez_hash_table_base_1_1_const_iterator.htm#aaa0a9a694539c17381996375646873cc">   62</a></span>&#160;EZ_ALWAYS_INLINE <span class="keyword">const</span> V&amp; <a class="code" href="../../d7/db4/structez_hash_table_base_1_1_const_iterator.htm#aaa0a9a694539c17381996375646873cc">ezHashTableBase&lt;K, V, H&gt;::ConstIterator::Value</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordflow">return</span> m_hashTable-&gt;m_pEntries[m_uiCurrentIndex].value;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordflow">return</span> m_pHashTable-&gt;m_pEntries[m_uiCurrentIndex].value;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> V, <span class="keyword">typename</span> H&gt;</div>
 <div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="../../d7/db4/structez_hash_table_base_1_1_const_iterator.htm#a429425405a856b0ab7b56933ae6d7f2a">   68</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d7/db4/structez_hash_table_base_1_1_const_iterator.htm#a429425405a856b0ab7b56933ae6d7f2a">ezHashTableBase&lt;K, V, H&gt;::ConstIterator::Next</a>()</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;{</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="comment">// if we already iterated over the amount of valid elements that the hash-table stores, early out</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordflow">if</span> (m_uiCurrentCount &gt;= m_hashTable-&gt;m_uiCount)</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordflow">if</span> (m_uiCurrentCount &gt;= m_pHashTable-&gt;m_uiCount)</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="comment">// increase the counter of how many elements we have seen</span></div>
@@ -165,9 +165,9 @@ $(document).ready(function(){initNavTree('d9/d2b/_hash_table__inl_8h_source.htm'
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  ++m_uiCurrentIndex;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="comment">// check that we don&#39;t leave the valid range of element indices</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keywordflow">while</span> (m_uiCurrentIndex &lt; m_hashTable-&gt;m_uiCapacity)</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keywordflow">while</span> (m_uiCurrentIndex &lt; m_pHashTable-&gt;m_uiCapacity)</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">if</span> (m_hashTable-&gt;IsValidEntry(m_uiCurrentIndex))</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">if</span> (m_pHashTable-&gt;IsValidEntry(m_uiCurrentIndex))</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    ++m_uiCurrentIndex;</div>
@@ -175,7 +175,7 @@ $(document).ready(function(){initNavTree('d9/d2b/_hash_table__inl_8h_source.htm'
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="comment">// if we fell through this loop, we reached the end of all elements in the container</span></div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="comment">// set the m_uiCurrentCount to maximum, to enable early-out in the future and to make &#39;IsValid&#39; return &#39;false&#39;</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  m_uiCurrentCount = m_hashTable-&gt;m_uiCount;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  m_uiCurrentCount = m_pHashTable-&gt;m_uiCount;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> V, <span class="keyword">typename</span> H&gt;</div>
@@ -195,7 +195,7 @@ $(document).ready(function(){initNavTree('d9/d2b/_hash_table__inl_8h_source.htm'
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> V, <span class="keyword">typename</span> H&gt;</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<a class="code" href="../../d4/d81/structez_hash_table_base_1_1_iterator.htm#a5249b12c3949ab8f9abb6de1eaefc62c">ezHashTableBase&lt;K, V, H&gt;::Iterator::Iterator</a>(<span class="keyword">const</span> <span class="keyword">typename</span> <a class="code" href="../../d4/d81/structez_hash_table_base_1_1_iterator.htm">ezHashTableBase&lt;K, V, H&gt;::Iterator</a>&amp; rhs)</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  : ConstIterator(*rhs.m_hashTable)</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  : ConstIterator(*rhs.m_pHashTable)</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;{</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  this-&gt;m_uiCurrentIndex = rhs.m_uiCurrentIndex;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  this-&gt;m_uiCurrentCount = rhs.m_uiCurrentCount;</div>
@@ -204,7 +204,7 @@ $(document).ready(function(){initNavTree('d9/d2b/_hash_table__inl_8h_source.htm'
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> V, <span class="keyword">typename</span> H&gt;</div>
 <div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="../../d4/d81/structez_hash_table_base_1_1_iterator.htm#a16e94765fd55fc6aef9ff6ad7764cd91">  117</a></span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../d4/d81/structez_hash_table_base_1_1_iterator.htm#a16e94765fd55fc6aef9ff6ad7764cd91">ezHashTableBase&lt;K, V, H&gt;::Iterator::operator=</a>(<span class="keyword">const</span> <a class="code" href="../../d4/d81/structez_hash_table_base_1_1_iterator.htm">Iterator</a>&amp; rhs) <span class="comment">// [tested]</span></div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;{</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  this-&gt;m_hashTable = rhs.m_hashTable;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  this-&gt;m_pHashTable = rhs.m_pHashTable;</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  this-&gt;m_uiCurrentIndex = rhs.m_uiCurrentIndex;</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  this-&gt;m_uiCurrentCount = rhs.m_uiCurrentCount;</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;}</div>
@@ -212,7 +212,7 @@ $(document).ready(function(){initNavTree('d9/d2b/_hash_table__inl_8h_source.htm'
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> V, <span class="keyword">typename</span> H&gt;</div>
 <div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="../../d4/d81/structez_hash_table_base_1_1_iterator.htm#ad725e998251de4c5a24ae629ab914d3a">  125</a></span>&#160;EZ_FORCE_INLINE V&amp; <a class="code" href="../../d4/d81/structez_hash_table_base_1_1_iterator.htm#ad725e998251de4c5a24ae629ab914d3a">ezHashTableBase&lt;K, V, H&gt;::Iterator::Value</a>()</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;{</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <span class="keywordflow">return</span> this-&gt;m_hashTable-&gt;m_pEntries[this-&gt;m_uiCurrentIndex].value;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <span class="keywordflow">return</span> this-&gt;m_pHashTable-&gt;m_pEntries[this-&gt;m_uiCurrentIndex].value;</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;}</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
@@ -479,7 +479,7 @@ $(document).ready(function(){initNavTree('d9/d2b/_hash_table__inl_8h_source.htm'
 <div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> K, <span class="keyword">typename</span> V, <span class="keyword">typename</span> H&gt;</div>
 <div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;<span class="keyword">typename</span> <a class="code" href="../../d4/d81/structez_hash_table_base_1_1_iterator.htm">ezHashTableBase&lt;K, V, H&gt;::Iterator</a> <a class="code" href="../../de/dc3/classez_hash_table_base.htm#a833d9e945a03427c985e5338d88d0a80">ezHashTableBase&lt;K, V, H&gt;::Remove</a>(<span class="keyword">const</span> <span class="keyword">typename</span> <a class="code" href="../../d4/d81/structez_hash_table_base_1_1_iterator.htm">ezHashTableBase&lt;K, V, H&gt;::Iterator</a>&amp; pos)</div>
 <div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;{</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;  EZ_ASSERT_DEBUG(pos.m_hashTable == <span class="keyword">this</span>, <span class="stringliteral">&quot;Iterator from wrong hashtable&quot;</span>);</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;  EZ_ASSERT_DEBUG(pos.m_pHashTable == <span class="keyword">this</span>, <span class="stringliteral">&quot;Iterator from wrong hashtable&quot;</span>);</div>
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;  Iterator it = pos;</div>
 <div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;  ezUInt32 uiIndex = pos.m_uiCurrentIndex;</div>
 <div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;  ++it;</div>
@@ -942,7 +942,7 @@ $(document).ready(function(){initNavTree('d9/d2b/_hash_table__inl_8h_source.htm'
 <div class="ttc" id="astructez_hash_table_base_1_1_const_iterator_htm_ac1c8d651540ae45b0b8a2776d0961fbb"><div class="ttname"><a href="../../d7/db4/structez_hash_table_base_1_1_const_iterator.htm#ac1c8d651540ae45b0b8a2776d0961fbb">ezHashTableBase::ConstIterator::operator!=</a></div><div class="ttdeci">bool operator!=(const typename ezHashTableBase&lt; KeyType, ValueType, Hasher &gt;::ConstIterator &amp;rhs) const</div><div class="ttdoc">Checks whether the two iterators point to the same element.</div><div class="ttdef"><b>Definition:</b> HashTable_inl.h:50</div></div>
 <div class="ttc" id="aclassez_memory_utils_htm_a0a8156e3c8c1686be6a27ddac6e5772f"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm#a0a8156e3c8c1686be6a27ddac6e5772f">ezMemoryUtils::CopyOrMoveConstruct</a></div><div class="ttdeci">static void CopyOrMoveConstruct(Destination *pDestination, Source &amp;&amp;source)</div><div class="ttdoc">This function will either move call MoveConstruct or CopyConstruct for a single element source,...</div></div>
 <div class="ttc" id="astructez_hash_table_base_1_1_iterator_htm_a5249b12c3949ab8f9abb6de1eaefc62c"><div class="ttname"><a href="../../d4/d81/structez_hash_table_base_1_1_iterator.htm#a5249b12c3949ab8f9abb6de1eaefc62c">ezHashTableBase::Iterator::Iterator</a></div><div class="ttdeci">EZ_ALWAYS_INLINE Iterator(const Iterator &amp;rhs)</div><div class="ttdoc">Creates a new iterator from another.</div></div>
-<div class="ttc" id="anamespaceez_math_htm_ac03a1258ad9611e0d8d109e1876e34e2"><div class="ttname"><a href="../../db/d78/namespaceez_math.htm#ac03a1258ad9611e0d8d109e1876e34e2">ezMath::PowerOfTwo_Ceil</a></div><div class="ttdeci">EZ_FOUNDATION_DLL ezUInt32 PowerOfTwo_Ceil(ezUInt32 value)</div><div class="ttdoc">Returns the next power-of-two that is &gt;= value.</div><div class="ttdef"><b>Definition:</b> Math.cpp:46</div></div>
+<div class="ttc" id="anamespaceez_math_htm_ac03a1258ad9611e0d8d109e1876e34e2"><div class="ttname"><a href="../../db/d78/namespaceez_math.htm#ac03a1258ad9611e0d8d109e1876e34e2">ezMath::PowerOfTwo_Ceil</a></div><div class="ttdeci">EZ_FOUNDATION_DLL ezUInt32 PowerOfTwo_Ceil(ezUInt32 value)</div><div class="ttdoc">Returns the next power-of-two that is &gt;= value.</div><div class="ttdef"><b>Definition:</b> Math.cpp:47</div></div>
 <div class="ttc" id="aclassez_memory_utils_htm_ac8fa5b7a4d059fb8c423be8ff75cfcf8"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm#ac8fa5b7a4d059fb8c423be8ff75cfcf8">ezMemoryUtils::DefaultConstruct</a></div><div class="ttdeci">static void DefaultConstruct(T *pDestination, size_t uiCount)</div><div class="ttdoc">Default constructs uiCount objects of type T in a raw buffer at pDestination regardless of T being a ...</div></div>
 <div class="ttc" id="astructez_hash_table_base_1_1_const_iterator_htm_aaa0a9a694539c17381996375646873cc"><div class="ttname"><a href="../../d7/db4/structez_hash_table_base_1_1_const_iterator.htm#aaa0a9a694539c17381996375646873cc">ezHashTableBase::ConstIterator::Value</a></div><div class="ttdeci">const ValueType &amp; Value() const</div><div class="ttdoc">Returns the 'value' of the element that this iterator points to.</div><div class="ttdef"><b>Definition:</b> HashTable_inl.h:62</div></div>
 <div class="ttc" id="aclassez_hash_table_base_htm_acfb17c64cb0bea7d9299d1573f7611a5"><div class="ttname"><a href="../../de/dc3/classez_hash_table_base.htm#acfb17c64cb0bea7d9299d1573f7611a5">ezHashTableBase::FindOrAdd</a></div><div class="ttdeci">ValueType &amp; FindOrAdd(const KeyType &amp;key, bool *bExisted)</div><div class="ttdoc">Returns the value stored at the given key. If none exists, one is created. bExisted indicates whether...</div><div class="ttdef"><b>Definition:</b> HashTable_inl.h:539</div></div>
@@ -958,7 +958,7 @@ $(document).ready(function(){initNavTree('d9/d2b/_hash_table__inl_8h_source.htm'
 <div class="ttc" id="astructez_hash_table_base_1_1_const_iterator_htm_a429425405a856b0ab7b56933ae6d7f2a"><div class="ttname"><a href="../../d7/db4/structez_hash_table_base_1_1_const_iterator.htm#a429425405a856b0ab7b56933ae6d7f2a">ezHashTableBase::ConstIterator::Next</a></div><div class="ttdeci">void Next()</div><div class="ttdoc">Advances the iterator to the next element in the map. The iterator will not be valid anymore,...</div><div class="ttdef"><b>Definition:</b> HashTable_inl.h:68</div></div>
 <div class="ttc" id="aclassez_hash_table_base_htm_a9dd5adf9423563532b8217ce7c1b4539"><div class="ttname"><a href="../../de/dc3/classez_hash_table_base.htm#a9dd5adf9423563532b8217ce7c1b4539">ezHashTableBase::GetIterator</a></div><div class="ttdeci">Iterator GetIterator()</div><div class="ttdoc">Returns an Iterator to the very first element.</div><div class="ttdef"><b>Definition:</b> HashTable_inl.h:579</div></div>
 <div class="ttc" id="anamespaceez_math_htm_ac2cacaea5875d86a0459205bfd82ed13"><div class="ttname"><a href="../../db/d78/namespaceez_math.htm#ac2cacaea5875d86a0459205bfd82ed13">ezMath::Swap</a></div><div class="ttdeci">EZ_ALWAYS_INLINE void Swap(T &amp;f1, T &amp;f2)</div><div class="ttdoc">Swaps the values in the two variables f1 and f2.</div><div class="ttdef"><b>Definition:</b> Math_inl.h:203</div></div>
-<div class="ttc" id="aclassez_hash_table_htm"><div class="ttname"><a href="../../d8/d86/classez_hash_table.htm">ezHashTable</a></div><div class="ttdef"><b>Definition:</b> HashTable.h:263</div></div>
+<div class="ttc" id="aclassez_hash_table_htm"><div class="ttname"><a href="../../d8/d86/classez_hash_table.htm">ezHashTable</a></div><div class="ttdef"><b>Definition:</b> HashTable.h:264</div></div>
 <div class="ttc" id="aclassez_hash_table_base_htm_a6c279d62f8e45eb196bd532f2f9c95a5"><div class="ttname"><a href="../../de/dc3/classez_hash_table_base.htm#a6c279d62f8e45eb196bd532f2f9c95a5">ezHashTableBase::TryGetValue</a></div><div class="ttdeci">bool TryGetValue(const CompatibleKeyType &amp;key, ValueType &amp;out_value) const</div><div class="ttdoc">Returns whether an entry with the given key was found and if found writes out the corresponding value...</div></div>
 <div class="ttc" id="aclassez_hash_table_base_htm_a9c2ec41f21459ef7916326b393e415ce"><div class="ttname"><a href="../../de/dc3/classez_hash_table_base.htm#a9c2ec41f21459ef7916326b393e415ce">ezHashTableBase::Find</a></div><div class="ttdeci">ConstIterator Find(const CompatibleKeyType &amp;key) const</div><div class="ttdoc">Searches for key, returns a ConstIterator to it or an invalid iterator, if no such key is found....</div><div class="ttdef"><b>Definition:</b> HashTable_inl.h:484</div></div>
 <div class="ttc" id="aclassez_memory_utils_htm_aed226ed6447ce30053c0b5b990b978ff"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm#aed226ed6447ce30053c0b5b990b978ff">ezMemoryUtils::ZeroFill</a></div><div class="ttdeci">static void ZeroFill(T *pDestination, size_t uiCount)</div><div class="ttdoc">Zeros every byte in the provided memory buffer.</div></div>
@@ -966,7 +966,7 @@ $(document).ready(function(){initNavTree('d9/d2b/_hash_table__inl_8h_source.htm'
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_6b567e6755824bd0b8ffd754b9d67ac0.htm">Containers</a></li><li class="navelem"><a class="el" href="../../dir_ab7c7fd106dde24a64865a60f78fe0d2.htm">Implementation</a></li><li class="navelem"><b>HashTable_inl.h</b></li>
-    <li class="footer">Generated on Sun Oct 9 2022 14:44:53 for ezEngine by
+    <li class="footer">Generated on Fri Nov 18 2022 14:47:58 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

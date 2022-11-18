@@ -10,7 +10,7 @@ var classez_px_character_capsule_shape_component =
     [ "SerializeComponent", "d1/dfd/classez_px_character_capsule_shape_component.htm#afab31098fa7cbdcb892c9577c838d279", null ],
     [ "TestShapeOverlap", "d1/dfd/classez_px_character_capsule_shape_component.htm#a41005f078ad935014bbdf4f187caff34", null ],
     [ "TestShapeSweep", "d1/dfd/classez_px_character_capsule_shape_component.htm#a12eee04db21095ba0f87ab0ceb417127", null ],
-    [ "m_Data", "d1/dfd/classez_px_character_capsule_shape_component.htm#a6e518b2e3a8e1b8e35a78a8061a94d68", null ],
     [ "m_fCapsuleHeight", "d1/dfd/classez_px_character_capsule_shape_component.htm#acafcee51f00ad9afe4649ea152529822", null ],
-    [ "m_fCapsuleRadius", "d1/dfd/classez_px_character_capsule_shape_component.htm#a8ee4d344b9d33073ced070e6ed52e7f7", null ]
+    [ "m_fCapsuleRadius", "d1/dfd/classez_px_character_capsule_shape_component.htm#a8ee4d344b9d33073ced070e6ed52e7f7", null ],
+    [ "m_pData", "d1/dfd/classez_px_character_capsule_shape_component.htm#ad93766f253340cd57e0360f0ad399f32", null ]
 ];

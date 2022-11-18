@@ -29,9 +29,9 @@ var classez_l_s_a_o_pass =
     [ "m_hShaderAverage", "db/d17/classez_l_s_a_o_pass.htm#a3703889367d3ff357ac49ecd0a8191b7", null ],
     [ "m_hShaderGather", "db/d17/classez_l_s_a_o_pass.htm#a94fcd706c5cbcc555e97f40fcb0b98e2", null ],
     [ "m_hShaderLineSweep", "db/d17/classez_l_s_a_o_pass.htm#a00d8cbd2dbdcf3feb63f661c3ed4631e", null ],
-    [ "m_numSweepLines", "db/d17/classez_l_s_a_o_pass.htm#aa2fbb85c5f00fff3c15e4263e1f37f4f", null ],
+    [ "m_iLineSamplePixelOffsetFactor", "db/d17/classez_l_s_a_o_pass.htm#afe8e96421d26ca40f6819e5bcdb4f7b1", null ],
+    [ "m_iLineToLinePixelOffset", "db/d17/classez_l_s_a_o_pass.htm#a39d377e893a815188d36a16d1e9d076e", null ],
     [ "m_PinDepthInput", "db/d17/classez_l_s_a_o_pass.htm#a09a1d06b91f5165ffa5a68df2fc2d72b", null ],
     [ "m_PinOutput", "db/d17/classez_l_s_a_o_pass.htm#a4f5863b30b66ba05cd5070fa4dabed1b", null ],
-    [ "m_uiLineSamplePixelOffsetFactor", "db/d17/classez_l_s_a_o_pass.htm#a40194b0580041960b19f8ec04b02e183", null ],
-    [ "m_uiLineToLinePixelOffset", "db/d17/classez_l_s_a_o_pass.htm#a2200c92c51586afaf481227c1cfaf001", null ]
+    [ "m_uiNumSweepLines", "db/d17/classez_l_s_a_o_pass.htm#ade406d1f85781564accce4408106db9a", null ]
 ];

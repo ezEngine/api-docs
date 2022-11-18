@@ -32,7 +32,6 @@ var classez_property_anim_component =
     [ "m_AnimationRangeHigh", "dd/ddd/classez_property_anim_component.htm#adfe6ee95c8174ecb30722d149d305270", null ],
     [ "m_AnimationRangeLow", "dd/ddd/classez_property_anim_component.htm#a2bb6e6d9548e8440a9ec548707bfe483", null ],
     [ "m_AnimationTime", "dd/ddd/classez_property_anim_component.htm#afa395052aeea0046b9e81b0fa8e556e0", null ],
-    [ "m_AnimDesc", "dd/ddd/classez_property_anim_component.htm#a2a2d856c11977cb458d9e7ad17859da4", null ],
     [ "m_bPlaying", "dd/ddd/classez_property_anim_component.htm#a518f3bb263b02fe06dc2ad0b15088dc0", null ],
     [ "m_bReverse", "dd/ddd/classez_property_anim_component.htm#a60dee40c7b7da07ece65fa6bb1ef91ef", null ],
     [ "m_ColorBindings", "dd/ddd/classez_property_anim_component.htm#a60df3fa00c9e7ae5400586c619b44e73", null ],
@@ -41,6 +40,7 @@ var classez_property_anim_component =
     [ "m_fSpeed", "dd/ddd/classez_property_anim_component.htm#a837ddd26f67bf44f8e082749e812133e", null ],
     [ "m_GoFloatBindings", "dd/ddd/classez_property_anim_component.htm#a64928a13fc615feebaaed24693f92f76", null ],
     [ "m_hPropertyAnim", "dd/ddd/classez_property_anim_component.htm#aff594595834c8c1a8a526844b4cf8bc0", null ],
+    [ "m_pAnimDesc", "dd/ddd/classez_property_anim_component.htm#a36c102a4335a0ce4cfbb24353710f4e9", null ],
     [ "m_RandomOffset", "dd/ddd/classez_property_anim_component.htm#ad49a09a35b7aaf7dbc9067485e88ffa7", null ],
     [ "m_ReachedEndMsgSender", "dd/ddd/classez_property_anim_component.htm#a60e817d4df2cbd922572b88809465f11", null ]
 ];

@@ -10,8 +10,8 @@ var classez_scale_gizmo =
     [ "OnTransformationChanged", "dd/d2f/classez_scale_gizmo.htm#a141037ce889d1cabf035606e4194842b", null ],
     [ "OnVisibleChanged", "dd/d2f/classez_scale_gizmo.htm#adab1e10ffb3623e2030de515b0c44ee9", null ],
     [ "UpdateStatusBarText", "dd/d2f/classez_scale_gizmo.htm#aa17c69a9ca68c93a4370375b0875833e", null ],
-    [ "m_AxisX", "dd/d2f/classez_scale_gizmo.htm#afd55c4aae527f08161453b9fc4b4d884", null ],
-    [ "m_AxisXYZ", "dd/d2f/classez_scale_gizmo.htm#ae13a69cd1c2d04552063ded410a119d3", null ],
-    [ "m_AxisY", "dd/d2f/classez_scale_gizmo.htm#a98e8a29b4a424b6d28b353533bdef1fc", null ],
-    [ "m_AxisZ", "dd/d2f/classez_scale_gizmo.htm#a9d444d98984cfff4eb3872ad0f3f864c", null ]
+    [ "m_hAxisX", "dd/d2f/classez_scale_gizmo.htm#a4243e593e10e2148654e7a14c3c3db5e", null ],
+    [ "m_hAxisXYZ", "dd/d2f/classez_scale_gizmo.htm#aa057237c4d9e6930f940c59a415b41cf", null ],
+    [ "m_hAxisY", "dd/d2f/classez_scale_gizmo.htm#a72508c70a2683ce3a6185c4b20af3bf8", null ],
+    [ "m_hAxisZ", "dd/d2f/classez_scale_gizmo.htm#a186a19a54174ae6b981e09f6acab3ed5", null ]
 ];

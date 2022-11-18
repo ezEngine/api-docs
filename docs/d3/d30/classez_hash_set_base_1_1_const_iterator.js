@@ -11,7 +11,7 @@ var classez_hash_set_base_1_1_const_iterator =
     [ "SetToBegin", "d3/d30/classez_hash_set_base_1_1_const_iterator.htm#a94b67616814aef44cd14c984fe396f3b", null ],
     [ "SetToEnd", "d3/d30/classez_hash_set_base_1_1_const_iterator.htm#a42f4e7d3ff4e943050c815a0a17a1c37", null ],
     [ "ezHashSetBase< KeyType, Hasher >", "d3/d30/classez_hash_set_base_1_1_const_iterator.htm#af2547a87360a94913cad460b2557bcb3", null ],
-    [ "m_hashSet", "d3/d30/classez_hash_set_base_1_1_const_iterator.htm#aabada841961e3f25263ec405d4883946", null ],
+    [ "m_pHashSet", "d3/d30/classez_hash_set_base_1_1_const_iterator.htm#a3a6240a5ed5d04e2e4339938436c9d0d", null ],
     [ "m_uiCurrentCount", "d3/d30/classez_hash_set_base_1_1_const_iterator.htm#a7d77b63df299c9266c0f9569c53713be", null ],
     [ "m_uiCurrentIndex", "d3/d30/classez_hash_set_base_1_1_const_iterator.htm#af751517eb014588631600a2edd9381f4", null ]
 ];

@@ -4,7 +4,7 @@ var classez_px_vis_col_mesh_component =
     [ "~ezPxVisColMeshComponent", "dd/d74/classez_px_vis_col_mesh_component.htm#a455c0e3617f2d2d024b09eb65e4ac728", null ],
     [ "CreateCollisionRenderMesh", "dd/d74/classez_px_vis_col_mesh_component.htm#af7e73e2ab1420e7037261af9d9168ddd", null ],
     [ "DeserializeComponent", "dd/d74/classez_px_vis_col_mesh_component.htm#a79d586b0ced9753393bfd2ae51d0eaaf", null ],
-    [ "GetLocalBounds", "dd/d74/classez_px_vis_col_mesh_component.htm#ab2ac5058237a14400dcf74a16ae7e336", null ],
+    [ "GetLocalBounds", "dd/d74/classez_px_vis_col_mesh_component.htm#a58e6bba6404e0290f7f5bbef9cdd4c6b", null ],
     [ "GetMesh", "dd/d74/classez_px_vis_col_mesh_component.htm#ab36334fea11552f4f502248b167a643f", null ],
     [ "GetMeshFile", "dd/d74/classez_px_vis_col_mesh_component.htm#a03f36f913248155dae732ce739500ea3", null ],
     [ "Initialize", "dd/d74/classez_px_vis_col_mesh_component.htm#ac14ff191510cdabf7e6f3fe66af91bd6", null ],

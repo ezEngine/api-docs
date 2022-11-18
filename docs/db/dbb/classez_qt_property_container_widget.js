@@ -34,7 +34,7 @@ var classez_qt_property_container_widget =
     [ "m_iDropTarget", "db/dbb/classez_qt_property_container_widget.htm#aba6b4f5f808a08de494db5d6b2da28af", null ],
     [ "m_Keys", "db/dbb/classez_qt_property_container_widget.htm#ac09d672be11a0d5c036c145fcb2a4537", null ],
     [ "m_pAddButton", "db/dbb/classez_qt_property_container_widget.htm#a04dbe5ce7fcefac7b4d14df0dab2e3ed", null ],
-    [ "m_pal", "db/dbb/classez_qt_property_container_widget.htm#a7d8aee973405a046021f72620f57664a", null ],
+    [ "m_Pal", "db/dbb/classez_qt_property_container_widget.htm#abafef72a2cad0b8b110eb30c4ad33a23", null ],
     [ "m_pGroup", "db/dbb/classez_qt_property_container_widget.htm#ac5784b606e89fe26a3810e2b9c9f5e7e", null ],
     [ "m_pGroupLayout", "db/dbb/classez_qt_property_container_widget.htm#acaf08d00292d8685bf2b54bcbb2e5b73", null ],
     [ "m_pLayout", "db/dbb/classez_qt_property_container_widget.htm#a7fd2d7629feba4c858a6f1f9c6a4bd97", null ]

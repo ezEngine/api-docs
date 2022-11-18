@@ -4,7 +4,7 @@ var classez_animated_mesh_component =
     [ "~ezAnimatedMeshComponent", "d7/d53/classez_animated_mesh_component.htm#a4a53dc35be3d0ab1b53c7d5cca6e1d37", null ],
     [ "CreateRenderData", "d7/d53/classez_animated_mesh_component.htm#afb6d9e9f0713007cf992407bfe0f7dd9", null ],
     [ "DeserializeComponent", "d7/d53/classez_animated_mesh_component.htm#ae6178a3ccb513fc66196168061ffc501", null ],
-    [ "GetLocalBounds", "d7/d53/classez_animated_mesh_component.htm#a68645169d04c0d70bb2f10948ffe5fc7", null ],
+    [ "GetLocalBounds", "d7/d53/classez_animated_mesh_component.htm#aa31b0a01618787e37716719b17bf4694", null ],
     [ "InitializeAnimationPose", "d7/d53/classez_animated_mesh_component.htm#a56ca4b6e9e4c0f398c6179c5cd6f5753", null ],
     [ "MapModelSpacePoseToSkinningSpace", "d7/d53/classez_animated_mesh_component.htm#a3a548fc5a6f3ed393d5ab9bd649df9b5", null ],
     [ "OnActivated", "d7/d53/classez_animated_mesh_component.htm#a1f3c0e04c586045cd0a0daef943c6610", null ],

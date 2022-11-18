@@ -5,7 +5,7 @@ var classez_instanced_mesh_component =
     [ "CreateRenderData", "d2/dbb/classez_instanced_mesh_component.htm#a2e714e9078d46a38595f92240a91a2e7", null ],
     [ "DeserializeComponent", "d2/dbb/classez_instanced_mesh_component.htm#acb12b718b3343f77310e4ae8f712bf55", null ],
     [ "GetInstanceData", "d2/dbb/classez_instanced_mesh_component.htm#abc1fef3c0ad1b67d5f8a3649c2bc2ab9", null ],
-    [ "GetLocalBounds", "d2/dbb/classez_instanced_mesh_component.htm#a12ee102b872b4fbadac46c3dc203ecd1", null ],
+    [ "GetLocalBounds", "d2/dbb/classez_instanced_mesh_component.htm#a014a700789c43aa70ef26dbf054eae3f", null ],
     [ "Instances_GetCount", "d2/dbb/classez_instanced_mesh_component.htm#a4090b5ffb1221967f76b5abef28e5f9c", null ],
     [ "Instances_GetValue", "d2/dbb/classez_instanced_mesh_component.htm#a596dbe219d02c924315f6153b3e272d6", null ],
     [ "Instances_Insert", "d2/dbb/classez_instanced_mesh_component.htm#aa2746c24f52b077645c68ca4348b553e", null ],
@@ -17,6 +17,6 @@ var classez_instanced_mesh_component =
     [ "OnMsgExtractRenderData", "d2/dbb/classez_instanced_mesh_component.htm#ae1adb9455ab75a16b2e640c7d427ba55", null ],
     [ "SerializeComponent", "d2/dbb/classez_instanced_mesh_component.htm#a2f97eebe522d2aab14b3875c4cc53cde", null ],
     [ "m_pExplicitInstanceData", "d2/dbb/classez_instanced_mesh_component.htm#ae170b3d2a736935c583f12fda65ef8d5", null ],
-    [ "m_rawInstancedData", "d2/dbb/classez_instanced_mesh_component.htm#a431bc2aa423b7d12f9be6b9baabe215c", null ],
+    [ "m_RawInstancedData", "d2/dbb/classez_instanced_mesh_component.htm#abee4ba23dbbec29c62ce917ebeb8492e", null ],
     [ "m_uiEnqueuedFrame", "d2/dbb/classez_instanced_mesh_component.htm#af31b96d1196bc7d7c917028a0582180c", null ]
 ];

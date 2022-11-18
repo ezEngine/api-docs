@@ -12,7 +12,6 @@ var classez_pin =
     ] ],
     [ "ezPin", "d7/d84/classez_pin.htm#ab1da2e512191873fbbeda42d1c46bbbc", null ],
     [ "GetColor", "d7/d84/classez_pin.htm#a43dc5c8a63a8ea80914e0d2fbedeb5a9", null ],
-    [ "GetConnections", "d7/d84/classez_pin.htm#aa6a2ab7b785419ecd328972f2a00181d", null ],
     [ "GetName", "d7/d84/classez_pin.htm#a99ab239d255cd19f1dc947f2fe6b84dd", null ],
     [ "GetParent", "d7/d84/classez_pin.htm#a838685e8d3639be71301bddd15ca847b", null ],
     [ "GetType", "d7/d84/classez_pin.htm#abf51e6302714d9077938bcd6004d1e44", null ],

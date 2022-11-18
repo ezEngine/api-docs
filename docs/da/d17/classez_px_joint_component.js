@@ -31,7 +31,7 @@ var classez_px_joint_component =
     [ "m_hActorA", "da/d17/classez_px_joint_component.htm#a9fae2f51da8c5c6ccfdd90eae7f1b04b", null ],
     [ "m_hActorB", "da/d17/classez_px_joint_component.htm#ac751cfeb3d2711b3aa51a8f9f2cc62c3", null ],
     [ "m_hActorBAnchor", "da/d17/classez_px_joint_component.htm#a1f3ead26093efbd2870a6e5cde0ad156", null ],
-    [ "m_localFrameA", "da/d17/classez_px_joint_component.htm#ad3cc86ef75f4d990c45af40375ed2f70", null ],
-    [ "m_localFrameB", "da/d17/classez_px_joint_component.htm#aea54539cf04f763736b627e6b80b5adf", null ],
+    [ "m_LocalFrameA", "da/d17/classez_px_joint_component.htm#a16b837dd787de217a8555d1918f70f3c", null ],
+    [ "m_LocalFrameB", "da/d17/classez_px_joint_component.htm#ae28a139618fd50025e6501b016c6babe", null ],
     [ "m_pJoint", "da/d17/classez_px_joint_component.htm#a2342d2b6069dabf9e41e8d7726699f0f", null ]
 ];

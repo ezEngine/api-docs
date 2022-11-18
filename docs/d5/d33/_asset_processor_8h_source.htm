@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 21.10</span>
+   &#160;<span id="projectnumber">Release 22.11</span>
    </div>
   </td>
  </tr>
@@ -150,7 +150,7 @@ $(document).ready(function(){initNavTree('d5/d33/_asset_processor_8h_source.htm'
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keyword">mutable</span> <a class="code" href="../../dd/dbe/classez_mutex.htm">ezMutex</a> m_ProcessorMutex;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <a class="code" href="../../d0/d5a/classez_asset_processor_log.htm">ezAssetProcessorLog</a> m_CuratorLog;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <a class="code" href="../../da/d01/classez_atomic_integer.htm">ezAtomicInteger32</a> m_bRunProcessTask;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <a class="code" href="../../d0/daf/classez_atomic_bool.htm">ezAtomicBool</a> m_bRunProcessTask;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keyword">struct </span>TaskAndGroup</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  {</div>
@@ -159,7 +159,7 @@ $(document).ready(function(){initNavTree('d5/d33/_asset_processor_8h_source.htm'
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  };</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;TaskAndGroup&gt;</a> m_ProcessTasks;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <a class="code" href="../../da/d01/classez_atomic_integer.htm">ezAtomicInteger32</a> m_TicksWithIdleTasks;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <a class="code" href="../../da/d01/classez_atomic_integer.htm">ezAtomicInteger32</a> m_iTicksWithIdleTasks;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;};</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
 <div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="../../d6/d4e/classez_process_task.htm">   79</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d6/d4e/classez_process_task.htm">ezProcessTask</a> final : <span class="keyword">public</span> <a class="code" href="../../dd/d2b/classez_task.htm">ezTask</a></div>
@@ -180,9 +180,9 @@ $(document).ready(function(){initNavTree('d5/d33/_asset_processor_8h_source.htm'
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  ezUInt32 m_uiProcessorID;</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a> m_assetGuid;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  ezUInt64 m_AssetHash = 0;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  ezUInt64 m_ThumbHash = 0;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a> m_AssetGuid;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  ezUInt64 m_uiAssetHash = 0;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  ezUInt64 m_uiThumbHash = 0;</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <a class="code" href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a> m_sAssetPath;</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <a class="code" href="../../df/df4/classez_editor_process_communication_channel.htm">ezEditorProcessCommunicationChannel</a>* m_pIPC;</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keywordtype">bool</span> m_bProcessShouldBeRunning;</div>
@@ -195,6 +195,7 @@ $(document).ready(function(){initNavTree('d5/d33/_asset_processor_8h_source.htm'
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astructez_asset_info_htm"><div class="ttname"><a href="../../dc/d20/structez_asset_info.htm">ezAssetInfo</a></div><div class="ttdef"><b>Definition:</b> AssetCurator.h:54</div></div>
+<div class="ttc" id="aclassez_atomic_bool_htm"><div class="ttname"><a href="../../d0/daf/classez_atomic_bool.htm">ezAtomicBool</a></div><div class="ttdoc">An atomic boolean variable. This is just a wrapper around an atomic int32 for convenience.</div><div class="ttdef"><b>Definition:</b> AtomicInteger.h:68</div></div>
 <div class="ttc" id="aclassez_shared_ptr_htm"><div class="ttname"><a href="../../de/dc1/classez_shared_ptr.htm">ezSharedPtr&lt; ezTask &gt;</a></div></div>
 <div class="ttc" id="astructez_logging_event_data_htm"><div class="ttname"><a href="../../de/d62/structez_logging_event_data.htm">ezLoggingEventData</a></div><div class="ttdoc">The data that is sent through ezLogInterface.</div><div class="ttdef"><b>Definition:</b> Log.h:49</div></div>
 <div class="ttc" id="astructez_asset_processor_event_htm"><div class="ttname"><a href="../../d9/d15/structez_asset_processor_event.htm">ezAssetProcessorEvent</a></div><div class="ttdef"><b>Definition:</b> AssetProcessor.h:26</div></div>
@@ -205,7 +206,7 @@ $(document).ready(function(){initNavTree('d5/d33/_asset_processor_8h_source.htm'
 <div class="ttc" id="aclassez_asset_processor_htm"><div class="ttname"><a href="../../d5/d88/classez_asset_processor.htm">ezAssetProcessor</a></div><div class="ttdoc">Background asset processing is handled by this class. Creates EditorProcessor processes.</div><div class="ttdef"><b>Definition:</b> AssetProcessor.h:38</div></div>
 <div class="ttc" id="aclassez_process_task_htm"><div class="ttname"><a href="../../d6/d4e/classez_process_task.htm">ezProcessTask</a></div><div class="ttdef"><b>Definition:</b> AssetProcessor.h:79</div></div>
 <div class="ttc" id="aclassez_event_base_htm_a15db4b9552ac331db5b96c866d745f6b"><div class="ttname"><a href="../../dd/de2/classez_event_base.htm#a15db4b9552ac331db5b96c866d745f6b">ezEventBase&lt; const ezLoggingEventData &amp;, ezMutex, ezEventType::Default &gt;::Handler</a></div><div class="ttdeci">ezDelegate&lt; void(const ezLoggingEventData &amp;)&gt; Handler</div><div class="ttdoc">Notification callback type for events.</div><div class="ttdef"><b>Definition:</b> Event.h:46</div></div>
-<div class="ttc" id="aclassez_editor_process_communication_channel_htm"><div class="ttname"><a href="../../df/df4/classez_editor_process_communication_channel.htm">ezEditorProcessCommunicationChannel</a></div><div class="ttdef"><b>Definition:</b> EditorProcessCommunicationChannel.h:9</div></div>
+<div class="ttc" id="aclassez_editor_process_communication_channel_htm"><div class="ttname"><a href="../../df/df4/classez_editor_process_communication_channel.htm">ezEditorProcessCommunicationChannel</a></div><div class="ttdef"><b>Definition:</b> EditorProcessCommunicationChannel.h:12</div></div>
 <div class="ttc" id="aclassez_dynamic_array_htm"><div class="ttname"><a href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt; TaskAndGroup &gt;</a></div></div>
 <div class="ttc" id="astructez_delegate_htm"><div class="ttname"><a href="../../d5/d68/structez_delegate.htm">ezDelegate&lt; void(const ezSharedPtr&lt; ezTask &gt; &amp;)&gt;</a></div></div>
 <div class="ttc" id="aclassez_asset_curator_htm"><div class="ttname"><a href="../../d5/d5f/classez_asset_curator.htm">ezAssetCurator</a></div><div class="ttdef"><b>Definition:</b> AssetCurator.h:151</div></div>
@@ -222,7 +223,7 @@ $(document).ready(function(){initNavTree('d5/d33/_asset_processor_8h_source.htm'
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_898824d97bbfb864e5ee6bfb2857fc31.htm">Editor</a></li><li class="navelem"><a class="el" href="../../dir_2c11fbcc86473fad6c721ead68acf992.htm">EditorFramework</a></li><li class="navelem"><a class="el" href="../../dir_5814822b5fe0e25e106f6a2b5290738d.htm">Assets</a></li><li class="navelem"><b>AssetProcessor.h</b></li>
-    <li class="footer">Generated on Sun Oct 9 2022 14:44:47 for ezEngine by
+    <li class="footer">Generated on Fri Nov 18 2022 14:47:53 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

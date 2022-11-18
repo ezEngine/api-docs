@@ -4,7 +4,7 @@ var classez_point_light_component =
     [ "~ezPointLightComponent", "d4/d1c/classez_point_light_component.htm#a06570a019d0af88dd24ff6ae96cc5de0", null ],
     [ "DeserializeComponent", "d4/d1c/classez_point_light_component.htm#a59dabeaff2966dd40a789ee64a81a334", null ],
     [ "GetEffectiveRange", "d4/d1c/classez_point_light_component.htm#ad991dd05733bc78c1abe7219168d7d67", null ],
-    [ "GetLocalBounds", "d4/d1c/classez_point_light_component.htm#af24e237627237156507f656d44b6ef00", null ],
+    [ "GetLocalBounds", "d4/d1c/classez_point_light_component.htm#a99c3ea15bda21003ad391e11505f1351", null ],
     [ "GetProjectedTexture", "d4/d1c/classez_point_light_component.htm#a9a8565a0f3fac7732ed8ae8be995523c", null ],
     [ "GetProjectedTextureFile", "d4/d1c/classez_point_light_component.htm#aa695041b89cc90eee40c547b187e295c", null ],
     [ "GetRange", "d4/d1c/classez_point_light_component.htm#a27bf92d9f696866f6dcb998158392512", null ],

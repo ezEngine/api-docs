@@ -4,7 +4,7 @@ var classez_directional_light_component =
     [ "~ezDirectionalLightComponent", "d2/d5d/classez_directional_light_component.htm#a1e91fc582b1f59444b7eeafbd05fbb0b", null ],
     [ "DeserializeComponent", "d2/d5d/classez_directional_light_component.htm#ad37850be03f5369539c245400eff6979", null ],
     [ "GetFadeOutStart", "d2/d5d/classez_directional_light_component.htm#ac0bf53770622cb8843045a0ae7eac517", null ],
-    [ "GetLocalBounds", "d2/d5d/classez_directional_light_component.htm#ae6d85974edef959754b28b2375f92851", null ],
+    [ "GetLocalBounds", "d2/d5d/classez_directional_light_component.htm#ad1c2fdd2afa803b53f840d9707e7d25f", null ],
     [ "GetMinShadowRange", "d2/d5d/classez_directional_light_component.htm#a7ed552bf84b862a5e4e517cb122886d2", null ],
     [ "GetNearPlaneOffset", "d2/d5d/classez_directional_light_component.htm#a76215630a527f7a253d273ef821b5198", null ],
     [ "GetNumCascades", "d2/d5d/classez_directional_light_component.htm#a97e38fcf9ae876b953e1c52431980ed4", null ],

@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 21.10</span>
+   &#160;<span id="projectnumber">Release 22.11</span>
    </div>
   </td>
  </tr>
@@ -106,33 +106,33 @@ $(document).ready(function(){initNavTree('d3/da9/_blob_8h_source.htm','../../');
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keyword">using</span> PointerType = T*;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="../../d3/da7/classez_blob_ptr.htm#a9668881d3b9f41795447191f4e3cd2fe">   24</a></span>&#160;  EZ_ALWAYS_INLINE <a class="code" href="../../d3/da7/classez_blob_ptr.htm#a9668881d3b9f41795447191f4e3cd2fe">ezBlobPtr</a>()</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    : m_ptr(nullptr)</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    : m_pPtr(nullptr)</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    , m_uiCount(0u)</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  {</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  }</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> U&gt;</div>
 <div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="../../d3/da7/classez_blob_ptr.htm#aa56da8c6e9411ccfd5a4c82c0c74f965">   32</a></span>&#160;  <span class="keyword">inline</span> <a class="code" href="../../d3/da7/classez_blob_ptr.htm#aa56da8c6e9411ccfd5a4c82c0c74f965">ezBlobPtr</a>(U* ptr, ezUInt64 uiCount)</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    : m_ptr(ptr)</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    : m_pPtr(ptr)</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    , m_uiCount(uiCount)</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  {</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">// If any of the arguments is invalid, we invalidate ourself.</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">if</span> (m_ptr == <span class="keyword">nullptr</span> || m_uiCount == 0)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">if</span> (m_pPtr == <span class="keyword">nullptr</span> || m_uiCount == 0)</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      m_ptr = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      m_pPtr = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;      m_uiCount = 0;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  }</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keyword">template</span> &lt;<span class="keywordtype">size_t</span> N&gt;</div>
 <div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="../../d3/da7/classez_blob_ptr.htm#a317a1e5de3f974d0e498a75db1956886">   46</a></span>&#160;  EZ_ALWAYS_INLINE <a class="code" href="../../d3/da7/classez_blob_ptr.htm#a317a1e5de3f974d0e498a75db1956886">ezBlobPtr</a>(ValueType (&amp;staticArray)[N])</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    : m_ptr(staticArray)</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    : m_pPtr(staticArray)</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    , m_uiCount(static_cast&lt;ezUInt64&gt;(N))</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  {</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  }</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
 <div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="../../d3/da7/classez_blob_ptr.htm#a9d8ea856d504f38be18f1ae7247933f5">   53</a></span>&#160;  EZ_ALWAYS_INLINE <a class="code" href="../../d3/da7/classez_blob_ptr.htm#a9d8ea856d504f38be18f1ae7247933f5">ezBlobPtr</a>(<span class="keyword">const</span> <a class="code" href="../../d3/da7/classez_blob_ptr.htm">ezBlobPtr&lt;T&gt;</a>&amp; other)</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    : m_ptr(other.m_ptr)</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    : m_pPtr(other.m_pPtr)</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    , m_uiCount(other.m_uiCount)</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  {</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  }</div>
@@ -141,29 +141,29 @@ $(document).ready(function(){initNavTree('d3/da9/_blob_8h_source.htm','../../');
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
 <div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="../../d3/da7/classez_blob_ptr.htm#a135088d7eeddb6a98ba64c7907bd6c3c">   63</a></span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../d3/da7/classez_blob_ptr.htm#a135088d7eeddb6a98ba64c7907bd6c3c">operator=</a>(<span class="keyword">const</span> <a class="code" href="../../d3/da7/classez_blob_ptr.htm">ezBlobPtr&lt;T&gt;</a>&amp; other)</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    m_ptr = other.m_ptr;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    m_pPtr = other.m_pPtr;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    m_uiCount = other.m_uiCount;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  }</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
 <div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="../../d3/da7/classez_blob_ptr.htm#a2e1fdec1af16b1507f9d775cc9d4f533">   70</a></span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../d3/da7/classez_blob_ptr.htm#a2e1fdec1af16b1507f9d775cc9d4f533">Clear</a>()</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    m_ptr = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    m_pPtr = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    m_uiCount = 0;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  }</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../d3/da7/classez_blob_ptr.htm#a135088d7eeddb6a98ba64c7907bd6c3c">operator=</a>(std::nullptr_t)</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    m_ptr = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    m_pPtr = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    m_uiCount = 0;</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  }</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="../../d3/da7/classez_blob_ptr.htm#a183e45d443a6494e7a3c2ddea826b354">   83</a></span>&#160;  EZ_ALWAYS_INLINE PointerType <a class="code" href="../../d3/da7/classez_blob_ptr.htm#a183e45d443a6494e7a3c2ddea826b354">GetPtr</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_ptr; }</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="../../d3/da7/classez_blob_ptr.htm#a183e45d443a6494e7a3c2ddea826b354">   83</a></span>&#160;  EZ_ALWAYS_INLINE PointerType <a class="code" href="../../d3/da7/classez_blob_ptr.htm#a183e45d443a6494e7a3c2ddea826b354">GetPtr</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pPtr; }</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="../../d3/da7/classez_blob_ptr.htm#a0fa3769cce78cf513df8ef35fb277bc2">   86</a></span>&#160;  EZ_ALWAYS_INLINE PointerType <a class="code" href="../../d3/da7/classez_blob_ptr.htm#a0fa3769cce78cf513df8ef35fb277bc2">GetPtr</a>() { <span class="keywordflow">return</span> m_ptr; }</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="../../d3/da7/classez_blob_ptr.htm#a0fa3769cce78cf513df8ef35fb277bc2">   86</a></span>&#160;  EZ_ALWAYS_INLINE PointerType <a class="code" href="../../d3/da7/classez_blob_ptr.htm#a0fa3769cce78cf513df8ef35fb277bc2">GetPtr</a>() { <span class="keywordflow">return</span> m_pPtr; }</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="../../d3/da7/classez_blob_ptr.htm#a4e3bbf73b652ce242ba30cdc756f288e">   89</a></span>&#160;  EZ_ALWAYS_INLINE PointerType <a class="code" href="../../d3/da7/classez_blob_ptr.htm#a4e3bbf73b652ce242ba30cdc756f288e">GetEndPtr</a>() { <span class="keywordflow">return</span> m_ptr + m_uiCount; }</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="../../d3/da7/classez_blob_ptr.htm#a4e3bbf73b652ce242ba30cdc756f288e">   89</a></span>&#160;  EZ_ALWAYS_INLINE PointerType <a class="code" href="../../d3/da7/classez_blob_ptr.htm#a4e3bbf73b652ce242ba30cdc756f288e">GetEndPtr</a>() { <span class="keywordflow">return</span> m_pPtr + m_uiCount; }</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="../../d3/da7/classez_blob_ptr.htm#a75d59f4449a76b89ee170d7eb29374b5">   92</a></span>&#160;  EZ_ALWAYS_INLINE PointerType <a class="code" href="../../d3/da7/classez_blob_ptr.htm#a75d59f4449a76b89ee170d7eb29374b5">GetEndPtr</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_ptr + m_uiCount; }</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="../../d3/da7/classez_blob_ptr.htm#a75d59f4449a76b89ee170d7eb29374b5">   92</a></span>&#160;  EZ_ALWAYS_INLINE PointerType <a class="code" href="../../d3/da7/classez_blob_ptr.htm#a75d59f4449a76b89ee170d7eb29374b5">GetEndPtr</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pPtr + m_uiCount; }</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
 <div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="../../d3/da7/classez_blob_ptr.htm#a530052b53346ced27aeee754cc5f10db">   95</a></span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> <a class="code" href="../../d3/da7/classez_blob_ptr.htm#a530052b53346ced27aeee754cc5f10db">IsEmpty</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="../../d3/da7/classez_blob_ptr.htm#a36043e87f673094c53d4d0f7e8e8a970">GetCount</a>() == 0; }</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
@@ -240,7 +240,7 @@ $(document).ready(function(){initNavTree('d3/da9/_blob_8h_source.htm','../../');
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">void</span> Swap(<a class="code" href="../../d3/da7/classez_blob_ptr.htm">ezBlobPtr&lt;T&gt;</a>&amp; other)</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  {</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <a class="code" href="../../db/d78/namespaceez_math.htm#ac2cacaea5875d86a0459205bfd82ed13">ezMath::Swap</a>(m_ptr, other.m_ptr);</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <a class="code" href="../../db/d78/namespaceez_math.htm#ac2cacaea5875d86a0459205bfd82ed13">ezMath::Swap</a>(m_pPtr, other.m_pPtr);</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <a class="code" href="../../db/d78/namespaceez_math.htm#ac2cacaea5875d86a0459205bfd82ed13">ezMath::Swap</a>(m_uiCount, other.m_uiCount);</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  }</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
@@ -250,7 +250,7 @@ $(document).ready(function(){initNavTree('d3/da9/_blob_8h_source.htm','../../');
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  <span class="keyword">typedef</span> <a class="code" href="../../d3/df2/structreverse__pointer__iterator.htm">reverse_pointer_iterator&lt;T&gt;</a> reverse_iterator;</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  PointerType m_ptr;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  PointerType m_pPtr;</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  ezUInt64 m_uiCount;</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;};</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
@@ -447,7 +447,7 @@ $(document).ready(function(){initNavTree('d3/da9/_blob_8h_source.htm','../../');
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_6b567e6755824bd0b8ffd754b9d67ac0.htm">Containers</a></li><li class="navelem"><b>Blob.h</b></li>
-    <li class="footer">Generated on Sun Oct 9 2022 14:44:51 for ezEngine by
+    <li class="footer">Generated on Fri Nov 18 2022 14:47:57 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

@@ -4,7 +4,7 @@ var classez_rope_render_component =
     [ "~ezRopeRenderComponent", "d6/d4f/classez_rope_render_component.htm#ad8a6c4ded9e60fc2126c1ec7cb99387e", null ],
     [ "DeserializeComponent", "d6/d4f/classez_rope_render_component.htm#abc101c0a8e9d3e5f826797e90dc3aecd", null ],
     [ "GetDetail", "d6/d4f/classez_rope_render_component.htm#ae3a684d26a83b03a988d0c2164e9fa85", null ],
-    [ "GetLocalBounds", "d6/d4f/classez_rope_render_component.htm#a6d2526dfd2c2916c7e1d644f5f6a124d", null ],
+    [ "GetLocalBounds", "d6/d4f/classez_rope_render_component.htm#a45f92d6748ca7fb87457f85b0ec914c6", null ],
     [ "GetMaterial", "d6/d4f/classez_rope_render_component.htm#a4e50b7a41c10a628fc53e74204b515c4", null ],
     [ "GetMaterialFile", "d6/d4f/classez_rope_render_component.htm#ac867aa305ccc36874c14ece25afe369c", null ],
     [ "GetSubdivide", "d6/d4f/classez_rope_render_component.htm#acb3e5e0ab741da0d98b2d2db8d878d3c", null ],

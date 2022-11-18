@@ -32,6 +32,6 @@ var classez_image_view =
     [ "SaveTo", "d2/d06/classez_image_view.htm#a948b7b310e5fa5851fba87163e85cb22", null ],
     [ "ValidateDataTypeAccessor", "d2/d06/classez_image_view.htm#af3a31d9c6d21ddbf57f9ae67a4d1d0cd", null ],
     [ "ValidateSubImageIndices", "d2/d06/classez_image_view.htm#afde124a384ab5324384266f001c987bd", null ],
-    [ "m_dataPtr", "d2/d06/classez_image_view.htm#ae8e2bbe0ec684c93b37ac4d56139f5ae", null ],
-    [ "m_subImageOffsets", "d2/d06/classez_image_view.htm#a2b7283160038b576d088d74f56353fe6", null ]
+    [ "m_DataPtr", "d2/d06/classez_image_view.htm#a18efed05a0c08f80b2828cb02796a9fe", null ],
+    [ "m_SubImageOffsets", "d2/d06/classez_image_view.htm#a05cef10923641dac492eb4530d359098", null ]
 ];

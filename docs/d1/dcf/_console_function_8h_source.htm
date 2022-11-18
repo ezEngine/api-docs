@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 21.10</span>
+   &#160;<span id="projectnumber">Release 22.11</span>
    </div>
   </td>
  </tr>
@@ -90,85 +90,86 @@ $(document).ready(function(){initNavTree('d1/dcf/_console_function_8h_source.htm
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;Core/CoreDLL.h&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;Foundation/Types/Variant.h&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;Foundation/Utilities/EnumerableClass.h&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="../../df/d47/classez_console_function_base.htm">   35</a></span>&#160;<span class="keyword">class </span>EZ_CORE_DLL <a class="code" href="../../df/d47/classez_console_function_base.htm">ezConsoleFunctionBase</a> : <span class="keyword">public</span> <a class="code" href="../../d5/d0b/classez_enumerable.htm">ezEnumerable</a>&lt;ezConsoleFunctionBase&gt;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  EZ_DECLARE_ENUMERABLE_CLASS(<a class="code" href="../../df/d47/classez_console_function_base.htm">ezConsoleFunctionBase</a>);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="../../df/d47/classez_console_function_base.htm#a6906137d9cd48703a43a093e9ec8fde2">   41</a></span>&#160;  <a class="code" href="../../df/d47/classez_console_function_base.htm#a6906137d9cd48703a43a093e9ec8fde2">ezConsoleFunctionBase</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* szFunctionName, <span class="keyword">const</span> <span class="keywordtype">char</span>* szDescription)</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    m_szFunctionName = szFunctionName;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    m_szDescription = szDescription;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="../../df/d47/classez_console_function_base.htm#aa648b193b14af40e13b1c376a2e03c77">   48</a></span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="../../df/d47/classez_console_function_base.htm#aa648b193b14af40e13b1c376a2e03c77">GetName</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_szFunctionName; }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="../../df/d47/classez_console_function_base.htm#a16ffe5361e4bd44a72cc77f0d306817c">   51</a></span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="../../df/d47/classez_console_function_base.htm#a16ffe5361e4bd44a72cc77f0d306817c">GetDescription</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_szDescription; }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">virtual</span> ezUInt32 GetNumParameters() <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../da/d6c/structez_variant_type.htm#a91ecf53decb31d57981c71043fa30299">ezVariant::Type::Enum</a> GetParameterType(ezUInt32 uiParam) <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> Call(<a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;ezVariant&gt;</a> params) = 0;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* m_szFunctionName;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* m_szDescription;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;};</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;Foundation/Types/Delegate.h&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;Foundation/Types/Variant.h&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;Foundation/Utilities/EnumerableClass.h&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="../../df/d47/classez_console_function_base.htm">   36</a></span>&#160;<span class="keyword">class </span>EZ_CORE_DLL <a class="code" href="../../df/d47/classez_console_function_base.htm">ezConsoleFunctionBase</a> : <span class="keyword">public</span> <a class="code" href="../../d5/d0b/classez_enumerable.htm">ezEnumerable</a>&lt;ezConsoleFunctionBase&gt;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  EZ_DECLARE_ENUMERABLE_CLASS(<a class="code" href="../../df/d47/classez_console_function_base.htm">ezConsoleFunctionBase</a>);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="../../df/d47/classez_console_function_base.htm#a6906137d9cd48703a43a093e9ec8fde2">   42</a></span>&#160;  <a class="code" href="../../df/d47/classez_console_function_base.htm#a6906137d9cd48703a43a093e9ec8fde2">ezConsoleFunctionBase</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* szFunctionName, <span class="keyword">const</span> <span class="keywordtype">char</span>* szDescription)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    m_szFunctionName = szFunctionName;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    m_szDescription = szDescription;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="../../df/d47/classez_console_function_base.htm#aa648b193b14af40e13b1c376a2e03c77">   49</a></span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="../../df/d47/classez_console_function_base.htm#aa648b193b14af40e13b1c376a2e03c77">GetName</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_szFunctionName; }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="../../df/d47/classez_console_function_base.htm#a16ffe5361e4bd44a72cc77f0d306817c">   52</a></span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="../../df/d47/classez_console_function_base.htm#a16ffe5361e4bd44a72cc77f0d306817c">GetDescription</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_szDescription; }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keyword">virtual</span> ezUInt32 GetNumParameters() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../da/d6c/structez_variant_type.htm#a91ecf53decb31d57981c71043fa30299">ezVariant::Type::Enum</a> GetParameterType(ezUInt32 uiParam) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> Call(<a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;ezVariant&gt;</a> params) = 0;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* m_szFunctionName;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* m_szDescription;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;};</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> R&gt;</div>
-<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="../../d4/dc2/classez_console_function.htm">   74</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d4/dc2/classez_console_function.htm">ezConsoleFunction</a> : <span class="keyword">public</span> <a class="code" href="../../df/d47/classez_console_function_base.htm">ezConsoleFunctionBase</a></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;{</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;};</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> R&gt;</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="../../d4/dc2/classez_console_function.htm">   75</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d4/dc2/classez_console_function.htm">ezConsoleFunction</a> : <span class="keyword">public</span> <a class="code" href="../../df/d47/classez_console_function_base.htm">ezConsoleFunctionBase</a></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;{</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;};</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#define ARG_COUNT 0</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#include &lt;Core/Console/Implementation/ConsoleFunctionHelper_inl.h&gt;</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#undef ARG_COUNT</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#define ARG_COUNT 1</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#include &lt;Core/Console/Implementation/ConsoleFunctionHelper_inl.h&gt;</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#undef ARG_COUNT</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">#define ARG_COUNT 2</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#include &lt;Core/Console/Implementation/ConsoleFunctionHelper_inl.h&gt;</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#undef ARG_COUNT</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#define ARG_COUNT 3</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#include &lt;Core/Console/Implementation/ConsoleFunctionHelper_inl.h&gt;</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#undef ARG_COUNT</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#define ARG_COUNT 4</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">#include &lt;Core/Console/Implementation/ConsoleFunctionHelper_inl.h&gt;</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#undef ARG_COUNT</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#define ARG_COUNT 5</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor">#include &lt;Core/Console/Implementation/ConsoleFunctionHelper_inl.h&gt;</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#undef ARG_COUNT</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#define ARG_COUNT 6</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">#include &lt;Core/Console/Implementation/ConsoleFunctionHelper_inl.h&gt;</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">#undef ARG_COUNT</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#define ARG_COUNT 0</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#include &lt;Core/Console/Implementation/ConsoleFunctionHelper_inl.h&gt;</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#undef ARG_COUNT</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#define ARG_COUNT 1</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#include &lt;Core/Console/Implementation/ConsoleFunctionHelper_inl.h&gt;</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#undef ARG_COUNT</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#define ARG_COUNT 2</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#include &lt;Core/Console/Implementation/ConsoleFunctionHelper_inl.h&gt;</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#undef ARG_COUNT</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#define ARG_COUNT 3</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#include &lt;Core/Console/Implementation/ConsoleFunctionHelper_inl.h&gt;</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#undef ARG_COUNT</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">#define ARG_COUNT 4</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#include &lt;Core/Console/Implementation/ConsoleFunctionHelper_inl.h&gt;</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#undef ARG_COUNT</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor">#define ARG_COUNT 5</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#include &lt;Core/Console/Implementation/ConsoleFunctionHelper_inl.h&gt;</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#undef ARG_COUNT</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">#define ARG_COUNT 6</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">#include &lt;Core/Console/Implementation/ConsoleFunctionHelper_inl.h&gt;</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#undef ARG_COUNT</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition:</b> Types.h:50</div></div>
 <div class="ttc" id="astructez_variant_type_htm_a91ecf53decb31d57981c71043fa30299"><div class="ttname"><a href="../../da/d6c/structez_variant_type.htm#a91ecf53decb31d57981c71043fa30299">ezVariantType::Enum</a></div><div class="ttdeci">Enum</div><div class="ttdoc">This enum describes the type of data that is currently stored inside the variant. Note that changes t...</div><div class="ttdef"><b>Definition:</b> VariantType.h:25</div></div>
 <div class="ttc" id="aclassez_array_ptr_htm"><div class="ttname"><a href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr</a></div><div class="ttdoc">This class encapsulates an array and it's size. It is recommended to use this class instead of plain ...</div><div class="ttdef"><b>Definition:</b> ArrayPtr.h:36</div></div>
-<div class="ttc" id="aclassez_console_function_base_htm_aa648b193b14af40e13b1c376a2e03c77"><div class="ttname"><a href="../../df/d47/classez_console_function_base.htm#aa648b193b14af40e13b1c376a2e03c77">ezConsoleFunctionBase::GetName</a></div><div class="ttdeci">const char * GetName() const</div><div class="ttdoc">Returns the name of the function as it should be exposed in the console.</div><div class="ttdef"><b>Definition:</b> ConsoleFunction.h:48</div></div>
-<div class="ttc" id="aclassez_console_function_base_htm"><div class="ttname"><a href="../../df/d47/classez_console_function_base.htm">ezConsoleFunctionBase</a></div><div class="ttdoc">Base class for all types of ezConsoleFunction, represents functions to be exposed to ezConsole.</div><div class="ttdef"><b>Definition:</b> ConsoleFunction.h:35</div></div>
-<div class="ttc" id="aclassez_console_function_htm"><div class="ttname"><a href="../../d4/dc2/classez_console_function.htm">ezConsoleFunction</a></div><div class="ttdoc">Implements the functionality of ezConsoleFunctionBase for functions with different parameter types....</div><div class="ttdef"><b>Definition:</b> ConsoleFunction.h:74</div></div>
-<div class="ttc" id="aclassez_console_function_base_htm_a6906137d9cd48703a43a093e9ec8fde2"><div class="ttname"><a href="../../df/d47/classez_console_function_base.htm#a6906137d9cd48703a43a093e9ec8fde2">ezConsoleFunctionBase::ezConsoleFunctionBase</a></div><div class="ttdeci">ezConsoleFunctionBase(const char *szFunctionName, const char *szDescription)</div><div class="ttdoc">The constructor takes the function name and description as it should appear in the console.</div><div class="ttdef"><b>Definition:</b> ConsoleFunction.h:41</div></div>
+<div class="ttc" id="aclassez_console_function_base_htm_aa648b193b14af40e13b1c376a2e03c77"><div class="ttname"><a href="../../df/d47/classez_console_function_base.htm#aa648b193b14af40e13b1c376a2e03c77">ezConsoleFunctionBase::GetName</a></div><div class="ttdeci">const char * GetName() const</div><div class="ttdoc">Returns the name of the function as it should be exposed in the console.</div><div class="ttdef"><b>Definition:</b> ConsoleFunction.h:49</div></div>
+<div class="ttc" id="aclassez_console_function_base_htm"><div class="ttname"><a href="../../df/d47/classez_console_function_base.htm">ezConsoleFunctionBase</a></div><div class="ttdoc">Base class for all types of ezConsoleFunction, represents functions to be exposed to ezConsole.</div><div class="ttdef"><b>Definition:</b> ConsoleFunction.h:36</div></div>
+<div class="ttc" id="aclassez_console_function_htm"><div class="ttname"><a href="../../d4/dc2/classez_console_function.htm">ezConsoleFunction</a></div><div class="ttdoc">Implements the functionality of ezConsoleFunctionBase for functions with different parameter types....</div><div class="ttdef"><b>Definition:</b> ConsoleFunction.h:75</div></div>
+<div class="ttc" id="aclassez_console_function_base_htm_a6906137d9cd48703a43a093e9ec8fde2"><div class="ttname"><a href="../../df/d47/classez_console_function_base.htm#a6906137d9cd48703a43a093e9ec8fde2">ezConsoleFunctionBase::ezConsoleFunctionBase</a></div><div class="ttdeci">ezConsoleFunctionBase(const char *szFunctionName, const char *szDescription)</div><div class="ttdoc">The constructor takes the function name and description as it should appear in the console.</div><div class="ttdef"><b>Definition:</b> ConsoleFunction.h:42</div></div>
 <div class="ttc" id="aclassez_enumerable_htm"><div class="ttname"><a href="../../d5/d0b/classez_enumerable.htm">ezEnumerable</a></div><div class="ttdoc">Base class to add the ability to another class to enumerate all active instance of it,...</div><div class="ttdef"><b>Definition:</b> EnumerableClass.h:27</div></div>
-<div class="ttc" id="aclassez_console_function_base_htm_a16ffe5361e4bd44a72cc77f0d306817c"><div class="ttname"><a href="../../df/d47/classez_console_function_base.htm#a16ffe5361e4bd44a72cc77f0d306817c">ezConsoleFunctionBase::GetDescription</a></div><div class="ttdeci">const char * GetDescription() const</div><div class="ttdoc">Returns the description of the function as it should appear in the console.</div><div class="ttdef"><b>Definition:</b> ConsoleFunction.h:51</div></div>
+<div class="ttc" id="aclassez_console_function_base_htm_a16ffe5361e4bd44a72cc77f0d306817c"><div class="ttname"><a href="../../df/d47/classez_console_function_base.htm#a16ffe5361e4bd44a72cc77f0d306817c">ezConsoleFunctionBase::GetDescription</a></div><div class="ttdeci">const char * GetDescription() const</div><div class="ttdoc">Returns the description of the function as it should appear in the console.</div><div class="ttdef"><b>Definition:</b> ConsoleFunction.h:52</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_ac029bbb8a17b4d550e2f9d55d89a029.htm">Core</a></li><li class="navelem"><a class="el" href="../../dir_fe07e6e67d7478ce3859f4937b43c708.htm">Console</a></li><li class="navelem"><b>ConsoleFunction.h</b></li>
-    <li class="footer">Generated on Sun Oct 9 2022 14:44:48 for ezEngine by
+    <li class="footer">Generated on Fri Nov 18 2022 14:47:54 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

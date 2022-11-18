@@ -70,6 +70,6 @@ var classez_open_ddl_writer =
     [ "m_iIndentation", "d0/ddb/classez_open_ddl_writer.htm#a33fb0b18a1966fed6d5bf8ac44e11f32", null ],
     [ "m_pOutput", "d0/ddb/classez_open_ddl_writer.htm#aadd4868e8d3905a3ebb9a8b7d1c9d02a", null ],
     [ "m_StateStack", "d0/ddb/classez_open_ddl_writer.htm#a521e7a1fe23951a6a290fced01278892", null ],
-    [ "m_Temp", "d0/ddb/classez_open_ddl_writer.htm#a111c86dadac71374f7408b232bd7c2d2", null ],
+    [ "m_sTemp", "d0/ddb/classez_open_ddl_writer.htm#a1b461fbd8af8e7736c4e4deeecb21da9", null ],
     [ "m_TypeStringMode", "d0/ddb/classez_open_ddl_writer.htm#a9e4b152fab7ecd0e3de4ed010d2f849f", null ]
 ];

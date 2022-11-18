@@ -25,7 +25,7 @@ var classez_ipc_channel =
     [ "WaitForMessages", "d0/d61/classez_ipc_channel.htm#aa139ab8f73416e0104cb7171bdc11ac1", null ],
     [ "WaitForMessages", "d0/d61/classez_ipc_channel.htm#a072033b7983932d3f567801f049cb119", null ],
     [ "ezMessageLoop", "d0/d61/classez_ipc_channel.htm#a2688b76d7986159bd5b9ecd7201ff6b8", null ],
-    [ "m_Connected", "d0/d61/classez_ipc_channel.htm#a48410b153f277f994260c29ae9e38588", null ],
+    [ "m_bConnected", "d0/d61/classez_ipc_channel.htm#a58d6c0ef6d33000b0d1cb07fd313c1f8", null ],
     [ "m_Events", "d0/d61/classez_ipc_channel.htm#acc4e32419e89f84c4108fe3f9ad6494e", null ],
     [ "m_IncomingMessages", "d0/d61/classez_ipc_channel.htm#a0cce56d8581ddc5b8461b5d69ae71c34", null ],
     [ "m_IncomingQueue", "d0/d61/classez_ipc_channel.htm#ab4157e2c4afe1a675e0a5be8d6aa3a26", null ],

@@ -14,7 +14,7 @@ var classez_skeleton_component =
     [ "BuildSkeletonVisualization", "df/d1f/classez_skeleton_component.htm#ac98759508165248b929e0817c690109e", null ],
     [ "DeserializeComponent", "df/d1f/classez_skeleton_component.htm#ab8b133e6abf3f2169a92d39aa6d47c32", null ],
     [ "GetBonesToHighlight", "df/d1f/classez_skeleton_component.htm#a5cbcbb0b2e9cb6c2dccd3bc9ac04ded1", null ],
-    [ "GetLocalBounds", "df/d1f/classez_skeleton_component.htm#ad1004dde11b9fbe4fe352073320cc468", null ],
+    [ "GetLocalBounds", "df/d1f/classez_skeleton_component.htm#ad431f69372d0afb3cbcbef7d7489ed1e", null ],
     [ "GetSkeleton", "df/d1f/classez_skeleton_component.htm#aefdb333ece6147d8b3987733971274bd", null ],
     [ "GetSkeletonFile", "df/d1f/classez_skeleton_component.htm#a18cf0af913ca681e3f20a69ec784be00", null ],
     [ "OnActivated", "df/d1f/classez_skeleton_component.htm#a9386a45699f2f761cad7830e1338b201", null ],

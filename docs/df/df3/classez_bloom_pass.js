@@ -11,9 +11,9 @@ var classez_bloom_pass =
     [ "m_fThreshold", "df/df3/classez_bloom_pass.htm#a7c838197b86754187b7b4a7115970e6f", null ],
     [ "m_hConstantBuffer", "df/df3/classez_bloom_pass.htm#add532d6f3469864a9dda03576ecffe9d", null ],
     [ "m_hShader", "df/df3/classez_bloom_pass.htm#ae090de1e236f1bf4f5c23c3c4eb0c18a", null ],
-    [ "m_innerTintColor", "df/df3/classez_bloom_pass.htm#a65ef70db0b88d67760a10937e7627831", null ],
-    [ "m_midTintColor", "df/df3/classez_bloom_pass.htm#a7239935398cdc4ced24dd8590968fb7d", null ],
-    [ "m_outerTintColor", "df/df3/classez_bloom_pass.htm#a279a8fa6f8d4d938038de8c33ff02358", null ],
+    [ "m_InnerTintColor", "df/df3/classez_bloom_pass.htm#a92bfb91547c8aacf062f74f24df89a47", null ],
+    [ "m_MidTintColor", "df/df3/classez_bloom_pass.htm#a65a78c2ce335504a8c7b57a7c7186139", null ],
+    [ "m_OuterTintColor", "df/df3/classez_bloom_pass.htm#a4d13d2b18c6103d2d9c3688ff8783af0", null ],
     [ "m_PinInput", "df/df3/classez_bloom_pass.htm#a2ec53aee278662bc10bffe4e8d84f807", null ],
     [ "m_PinOutput", "df/df3/classez_bloom_pass.htm#a77325700b580bc9dc67b3336985c0c7c", null ]
 ];

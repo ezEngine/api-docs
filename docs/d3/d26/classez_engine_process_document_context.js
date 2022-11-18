@@ -34,7 +34,7 @@ var classez_engine_process_document_context =
     [ "ezEditorEngineSyncObject", "d3/d26/classez_engine_process_document_context.htm#a755372b6c5112c42118fa1f038854247", null ],
     [ "m_Context", "d3/d26/classez_engine_process_document_context.htm#a90a40051f4818e75a11cd245aa1d869b", null ],
     [ "m_DocumentGuid", "d3/d26/classez_engine_process_document_context.htm#a068d4404312ee92d5041f83564bdcfbe", null ],
-    [ "m_flags", "d3/d26/classez_engine_process_document_context.htm#ac0ba3f027feb057d42dd1231745102d7", null ],
+    [ "m_Flags", "d3/d26/classez_engine_process_document_context.htm#a2b362d787f6e4af9e1f1388246a99e94", null ],
     [ "m_MetaData", "d3/d26/classez_engine_process_document_context.htm#ad405b72671ab949585d4cf483d68c594", null ],
     [ "m_Mirror", "d3/d26/classez_engine_process_document_context.htm#a5bf1e07db42b0526dc97ac857db1ecd1", null ],
     [ "m_pIPC", "d3/d26/classez_engine_process_document_context.htm#a4979d04d08a6d56c9b675758401ef220", null ],

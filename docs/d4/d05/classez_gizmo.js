@@ -11,6 +11,6 @@ var classez_gizmo =
     [ "m_GizmoEvents", "d4/d05/classez_gizmo.htm#a98ec492f2b79d66ad4ae47c7b15d4943", null ],
     [ "m_pCamera", "d4/d05/classez_gizmo.htm#a7314c008e5521060805439b04ecfcb1e", null ],
     [ "m_pInteractionGizmoHandle", "d4/d05/classez_gizmo.htm#ab38ed58e65f2e14d7dc40b34b05cd1f9", null ],
-    [ "m_Viewport", "d4/d05/classez_gizmo.htm#aedfed0330afff6fb44e9350057a327f1", null ],
-    [ "m_vInteractionPivot", "d4/d05/classez_gizmo.htm#a254265982ccd18903db2af8bf63fb6f6", null ]
+    [ "m_vInteractionPivot", "d4/d05/classez_gizmo.htm#a254265982ccd18903db2af8bf63fb6f6", null ],
+    [ "m_vViewport", "d4/d05/classez_gizmo.htm#aa1b9ae846f7d50d78337761750e0f17b", null ]
 ];

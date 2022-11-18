@@ -19,7 +19,7 @@ var classez_qt_asset_property_widget =
     [ "ThumbnailLoaded", "d2/d01/classez_qt_asset_property_widget.htm#a8062a233ab9272dfd76887c02cdea774", null ],
     [ "UpdateThumbnail", "d2/d01/classez_qt_asset_property_widget.htm#a22906c35d18e365efbc233fb6895bf2a", null ],
     [ "m_AssetGuid", "d2/d01/classez_qt_asset_property_widget.htm#a67e312cbafdb6e7e0c977997749fb8f3", null ],
-    [ "m_pal", "d2/d01/classez_qt_asset_property_widget.htm#ae923f1a0a003d40f4540018e178c7cbe", null ],
+    [ "m_Pal", "d2/d01/classez_qt_asset_property_widget.htm#aff5ef73e80b065a4aaf1fef6b0d52140", null ],
     [ "m_pButton", "d2/d01/classez_qt_asset_property_widget.htm#ab86d340ca1dc136877fb3262b218d8f8", null ],
     [ "m_pLayout", "d2/d01/classez_qt_asset_property_widget.htm#a63d73238b4f0a0191b5b83aca40c9d01", null ],
     [ "m_pWidget", "d2/d01/classez_qt_asset_property_widget.htm#ad7008881ed3cab215f0e9a0e7467041d", null ],

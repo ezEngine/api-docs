@@ -9,5 +9,5 @@ var classez_sprite_renderer =
     [ "GetSupportedRenderDataTypes", "d4/d30/classez_sprite_renderer.htm#aec7f3da68b0f8b2586cd432ae4fddea4", null ],
     [ "RenderBatch", "d4/d30/classez_sprite_renderer.htm#a5b9234f312a4ae2b4222597fc3a15743", null ],
     [ "m_hShader", "d4/d30/classez_sprite_renderer.htm#af6c8a9750a8123b5d4cc5e1febb5dce3", null ],
-    [ "m_spriteData", "d4/d30/classez_sprite_renderer.htm#a30b71488de66e7149e8f1916da91439a", null ]
+    [ "m_SpriteData", "d4/d30/classez_sprite_renderer.htm#afc94508f4438e5200e7c03b7c992d37e", null ]
 ];

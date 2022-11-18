@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 21.10</span>
+   &#160;<span id="projectnumber">Release 22.11</span>
    </div>
   </td>
  </tr>
@@ -104,14 +104,14 @@ $(document).ready(function(){initNavTree('d7/d71/_resource_manager_state_8h_sour
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span>ezResourceHandleReadContext;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <a class="code" href="../../d0/daf/classez_event.htm">ezEvent&lt;const ezResourceEvent&amp;, ezMutex&gt;</a> s_ResourceEvents;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <a class="code" href="../../d0/daf/classez_event.htm">ezEvent&lt;const ezResourceManagerEvent&amp;, ezMutex&gt;</a> s_ManagerEvents;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <a class="code" href="../../d0/daf/classez_event.htm">ezEvent&lt;const ezResourceEvent&amp;, ezMutex&gt;</a> m_ResourceEvents;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <a class="code" href="../../d0/daf/classez_event.htm">ezEvent&lt;const ezResourceManagerEvent&amp;, ezMutex&gt;</a> m_ManagerEvents;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezResourceManager::ResourceCleanupCB&gt;</a> s_ResourceCleanupCallbacks;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezResourceManager::ResourceCleanupCB&gt;</a> m_ResourceCleanupCallbacks;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;const ezRTTI*, ezResourcePriority&gt;</a> s_ResourceTypePriorities;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;const ezRTTI*, ezResourcePriority&gt;</a> m_ResourceTypePriorities;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keyword">struct </span>TaskDataUpdateContent</div>
@@ -127,55 +127,55 @@ $(document).ready(function(){initNavTree('d7/d71/_resource_manager_state_8h_sour
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  };</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordtype">bool</span> m_bTaskNamesInitialized = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordtype">bool</span> s_bBroadcastExistsEvent = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  ezUInt32 s_uiForceNoFallbackAcquisition = 0;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordtype">bool</span> m_bBroadcastExistsEvent = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  ezUInt32 m_uiForceNoFallbackAcquisition = 0;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="comment">// resources in this queue are waiting for a task to load them</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <a class="code" href="../../d9/dfe/classez_deque.htm">ezDeque&lt;ezResourceManager::LoadingInfo&gt;</a> s_LoadingQueue;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <a class="code" href="../../d9/dfe/classez_deque.htm">ezDeque&lt;ezResourceManager::LoadingInfo&gt;</a> m_LoadingQueue;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <a class="code" href="../../d8/d86/classez_hash_table.htm">ezHashTable&lt;const ezRTTI*, ezResourceManager::LoadedResources&gt;</a> s_LoadedResources;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <a class="code" href="../../d8/d86/classez_hash_table.htm">ezHashTable&lt;const ezRTTI*, ezResourceManager::LoadedResources&gt;</a> m_LoadedResources;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordtype">bool</span> s_bAllowLaunchDataLoadTask = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordtype">bool</span> s_bShutdown = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordtype">bool</span> m_bAllowLaunchDataLoadTask = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordtype">bool</span> m_bShutdown = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;TaskDataUpdateContent, 24&gt;</a> s_WorkerTasksUpdateContent;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;TaskDataDataLoad, 8&gt;</a> s_WorkerTasksDataLoad;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;TaskDataUpdateContent, 24&gt;</a> m_WorkerTasksUpdateContent;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;TaskDataDataLoad, 8&gt;</a> m_WorkerTasksDataLoad;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> s_LastFrameUpdate;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  ezUInt32 s_uiLastResourcePriorityUpdateIdx = 0;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> m_LastFrameUpdate;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  ezUInt32 m_uiLastResourcePriorityUpdateIdx = 0;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezResource*&gt;</a> s_LoadedResourceOfTypeTempContainer;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <a class="code" href="../../d8/d86/classez_hash_table.htm">ezHashTable&lt;ezTempHashedString, const ezRTTI*&gt;</a> s_ResourcesToUnloadOnMainThread;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezResource*&gt;</a> m_LoadedResourceOfTypeTempContainer;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <a class="code" href="../../d8/d86/classez_hash_table.htm">ezHashTable&lt;ezTempHashedString, const ezRTTI*&gt;</a> m_ResourcesToUnloadOnMainThread;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a>* s_pFreeUnusedLastType = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <a class="code" href="../../db/dcf/classez_temp_hashed_string.htm">ezTempHashedString</a> s_FreeUnusedLastResourceID;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a>* m_pFreeUnusedLastType = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <a class="code" href="../../db/dcf/classez_temp_hashed_string.htm">ezTempHashedString</a> m_sFreeUnusedLastResourceID;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="comment">// Type Loaders</span></div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;const ezRTTI*, ezResourceTypeLoader*&gt;</a> s_ResourceTypeLoader;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <a class="code" href="../../d3/d5e/classez_resource_loader_from_file.htm">ezResourceLoaderFromFile</a> s_FileResourceLoader;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <a class="code" href="../../d1/d17/classez_resource_type_loader.htm">ezResourceTypeLoader</a>* s_pDefaultResourceLoader = &amp;s_FileResourceLoader;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;ezResource*, ezUniquePtr&lt;ezResourceTypeLoader&gt;</a>&gt; s_CustomLoaders;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;const ezRTTI*, ezResourceTypeLoader*&gt;</a> m_ResourceTypeLoader;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <a class="code" href="../../d3/d5e/classez_resource_loader_from_file.htm">ezResourceLoaderFromFile</a> m_FileResourceLoader;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <a class="code" href="../../d1/d17/classez_resource_type_loader.htm">ezResourceTypeLoader</a>* m_pDefaultResourceLoader = &amp;m_FileResourceLoader;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;ezResource*, ezUniquePtr&lt;ezResourceTypeLoader&gt;</a>&gt; m_CustomLoaders;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="comment">// Override / derived resources</span></div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;const ezRTTI*, ezHybridArray&lt;ezResourceManager::DerivedTypeInfo, 4&gt;</a>&gt; s_DerivedTypeInfos;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;const ezRTTI*, ezHybridArray&lt;ezResourceManager::DerivedTypeInfo, 4&gt;</a>&gt; m_DerivedTypeInfos;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="comment">// Named resources</span></div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <a class="code" href="../../d8/d86/classez_hash_table.htm">ezHashTable&lt;ezTempHashedString, ezHashedString&gt;</a> s_NamedResources;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <a class="code" href="../../d8/d86/classez_hash_table.htm">ezHashTable&lt;ezTempHashedString, ezHashedString&gt;</a> m_NamedResources;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="comment">// Asset system interaction</span></div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;ezString, const ezRTTI*&gt;</a> s_AssetToResourceType;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;ezString, const ezRTTI*&gt;</a> m_AssetToResourceType;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="comment">// Export mode</span></div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="keywordtype">bool</span> s_bExportMode = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  ezUInt32 s_uiNextResourceID = 0;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="keywordtype">bool</span> m_bExportMode = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  ezUInt32 m_uiNextResourceID = 0;</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="comment">// Resource Unloading</span></div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> m_AutoFreeUnusedTimeout = <a class="code" href="../../d3/d90/structez_time.htm#a87b37655fad76f9e6972af8d88b540f4">ezTime::Zero</a>();</div>
@@ -208,7 +208,7 @@ $(document).ready(function(){initNavTree('d7/d71/_resource_manager_state_8h_sour
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_ac029bbb8a17b4d550e2f9d55d89a029.htm">Core</a></li><li class="navelem"><a class="el" href="../../dir_c5013b15d1bfa268ac06620c02b54ea0.htm">ResourceManager</a></li><li class="navelem"><a class="el" href="../../dir_872432f39de3ba1a1ecc13384e19a19f.htm">Implementation</a></li><li class="navelem"><b>ResourceManagerState.h</b></li>
-    <li class="footer">Generated on Sun Oct 9 2022 14:44:49 for ezEngine by
+    <li class="footer">Generated on Fri Nov 18 2022 14:47:54 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

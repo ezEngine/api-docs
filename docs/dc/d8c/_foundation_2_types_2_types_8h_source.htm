@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 21.10</span>
+   &#160;<span id="projectnumber">Release 22.11</span>
    </div>
   </td>
  </tr>
@@ -138,16 +138,16 @@ $(document).ready(function(){initNavTree('dc/d8c/_foundation_2_types_2_types_8h_
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a>(ezResultEnum res)</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    : e(res)</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    : m_E(res)</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  {</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  }</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordtype">void</span> operator=(ezResultEnum rhs) { e = rhs; }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordtype">bool</span> operator==(ezResultEnum cmp)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> e == cmp; }</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">bool</span> operator!=(ezResultEnum cmp)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> e != cmp; }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordtype">void</span> operator=(ezResultEnum rhs) { m_E = rhs; }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordtype">bool</span> operator==(ezResultEnum cmp)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_E == cmp; }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">bool</span> operator!=(ezResultEnum cmp)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_E != cmp; }</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> Succeeded()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> e == EZ_SUCCESS; }</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> Failed()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> e == EZ_FAILURE; }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> Succeeded()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_E == EZ_SUCCESS; }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> Failed()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_E == EZ_FAILURE; }</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
 <div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="../../d4/da9/structez_result.htm#acb0bb72646ee6d5966edd5b4108fb670">   66</a></span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../d4/da9/structez_result.htm#acb0bb72646ee6d5966edd5b4108fb670">IgnoreResult</a>()</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  { <span class="comment">/* dummy to be called when a return value is [[nodiscard]] but the result is not needed */</span></div>
@@ -156,7 +156,7 @@ $(document).ready(function(){initNavTree('dc/d8c/_foundation_2_types_2_types_8h_
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordtype">void</span> AssertSuccess(<span class="keyword">const</span> <span class="keywordtype">char</span>* msg = <span class="keyword">nullptr</span>, <span class="keyword">const</span> <span class="keywordtype">char</span>* details = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  ezResultEnum e;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  ezResultEnum m_E;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;};</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;EZ_ALWAYS_INLINE <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ezToResult(<a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> result)</div>
@@ -266,7 +266,7 @@ $(document).ready(function(){initNavTree('dc/d8c/_foundation_2_types_2_types_8h_
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_f95f7c440efc771b227d40e9293549bd.htm">Types</a></li><li class="navelem"><b>Types.h</b></li>
-    <li class="footer">Generated on Sun Oct 9 2022 14:44:57 for ezEngine by
+    <li class="footer">Generated on Fri Nov 18 2022 14:48:01 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

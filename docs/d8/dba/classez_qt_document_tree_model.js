@@ -22,6 +22,6 @@ var classez_qt_document_tree_model =
     [ "m_Adapters", "d8/dba/classez_qt_document_tree_model.htm#a71f7d1372c142ab0ed29839df743ab70", null ],
     [ "m_bAllowDragDrop", "d8/dba/classez_qt_document_tree_model.htm#a7d887f98218e4ca35db211cf53a02b5b", null ],
     [ "m_pDocumentTree", "d8/dba/classez_qt_document_tree_model.htm#ac49fb9d89580e373f64717b4a78eb629", null ],
-    [ "m_root", "d8/dba/classez_qt_document_tree_model.htm#a597440ce8e1f83c6b93528e7e4fcafb5", null ],
+    [ "m_Root", "d8/dba/classez_qt_document_tree_model.htm#ad3527fd5bf0ebb76f369d016028641b9", null ],
     [ "m_sTargetContext", "d8/dba/classez_qt_document_tree_model.htm#a3499fc76c8b5b26fd380929ba027b4a2", null ]
 ];

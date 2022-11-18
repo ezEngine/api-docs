@@ -9,5 +9,5 @@ var classez_proc_volume_image_component =
     [ "SerializeComponent", "d1/db7/classez_proc_volume_image_component.htm#a2d725727e719358946a9e27db06f14e8", null ],
     [ "SetImage", "d1/db7/classez_proc_volume_image_component.htm#a151102123b158c96a6ffa5907498567a", null ],
     [ "SetImageFile", "d1/db7/classez_proc_volume_image_component.htm#a502512221fc14c2d042f9de0db36be19", null ],
-    [ "m_Image", "d1/db7/classez_proc_volume_image_component.htm#a886f3824de8f3e1c18e5b6a51e0b5516", null ]
+    [ "m_hImage", "d1/db7/classez_proc_volume_image_component.htm#afbc64a29d33a8fba43e2828b8ce23332", null ]
 ];

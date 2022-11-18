@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 21.10</span>
+   &#160;<span id="projectnumber">Release 22.11</span>
    </div>
   </td>
  </tr>
@@ -122,30 +122,35 @@ $(document).ready(function(){initNavTree('de/deb/_actor_8h_source.htm','../../')
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keywordtype">void</span> GetAllPlugins(<a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezActorPlugin*, 8&gt;</a>&amp; out_AllPlugins);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordtype">void</span> UpdateAllPlugins();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">protected</span>: <span class="comment">// directly touched by ezActorManager</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d6/d87/classez_actor_manager.htm">ezActorManager</a>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> Activate();</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="../../d5/df3/classez_actor.htm#a5aa08a1fc84cf133ed8f880109df8851">   44</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="../../d5/df3/classez_actor.htm#a5aa08a1fc84cf133ed8f880109df8851">IsActorQueuedForDestruction</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">  </span>{</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">return</span> m_State == State::QueuedForDestruction;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordtype">void</span> UpdateAllPlugins();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d6/d87/classez_actor_manager.htm#ab91a79b5b48ba821d918aa2e5cde550d">Update</a>();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">private</span>: <span class="comment">// directly touched by ezActorManager</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keyword">enum class</span> State</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    New,</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    Active,</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    QueuedForDestruction</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  };</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  State m_State = State::New;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <a class="code" href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt;ezActorImpl&gt;</a> m_pImpl;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;};</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">protected</span>: <span class="comment">// directly touched by ezActorManager</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d6/d87/classez_actor_manager.htm">ezActorManager</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> Activate();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d6/d87/classez_actor_manager.htm#ab91a79b5b48ba821d918aa2e5cde550d">Update</a>();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">private</span>: <span class="comment">// directly touched by ezActorManager</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keyword">enum class</span> State</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    New,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    Active,</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    QueuedForDestruction</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  };</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  State m_State = State::New;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <a class="code" href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt;ezActorImpl&gt;</a> m_pImpl;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_actor_plugin_htm"><div class="ttname"><a href="../../d0/ddc/classez_actor_plugin.htm">ezActorPlugin</a></div><div class="ttdef"><b>Definition:</b> ActorPlugin.h:8</div></div>
@@ -153,6 +158,7 @@ $(document).ready(function(){initNavTree('de/deb/_actor_8h_source.htm','../../')
 <div class="ttc" id="aclassez_actor_manager_htm"><div class="ttname"><a href="../../d6/d87/classez_actor_manager.htm">ezActorManager</a></div><div class="ttdef"><b>Definition:</b> ActorManager.h:27</div></div>
 <div class="ttc" id="aclassez_actor_htm_af8ae9f4210944a4903c9e93663d80d0c"><div class="ttname"><a href="../../d5/df3/classez_actor.htm#af8ae9f4210944a4903c9e93663d80d0c">ezActor::GetPlugin</a></div><div class="ttdeci">Type * GetPlugin() const</div><div class="ttdoc">Templated overload of GetPlugin() that automatically casts to the desired class type.</div><div class="ttdef"><b>Definition:</b> Actor.h:32</div></div>
 <div class="ttc" id="aclassez_actor_htm"><div class="ttname"><a href="../../d5/df3/classez_actor.htm">ezActor</a></div><div class="ttdef"><b>Definition:</b> Actor.h:8</div></div>
+<div class="ttc" id="aclassez_actor_htm_a5aa08a1fc84cf133ed8f880109df8851"><div class="ttname"><a href="../../d5/df3/classez_actor.htm#a5aa08a1fc84cf133ed8f880109df8851">ezActor::IsActorQueuedForDestruction</a></div><div class="ttdeci">bool IsActorQueuedForDestruction() const</div><div class="ttdoc">Checks whether the actor is queued for destruction at the end of the frame.</div><div class="ttdef"><b>Definition:</b> Actor.h:44</div></div>
 <div class="ttc" id="aclassez_unique_ptr_htm"><div class="ttname"><a href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt; ezActorPlugin &gt;</a></div></div>
 <div class="ttc" id="aclassez_hybrid_array_htm"><div class="ttname"><a href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray</a></div><div class="ttdoc">A hybrid array uses in-place storage to handle the first few elements without any allocation....</div><div class="ttdef"><b>Definition:</b> HybridArray.h:11</div></div>
 <div class="ttc" id="aclassez_reflected_class_htm"><div class="ttname"><a href="../../db/d45/classez_reflected_class.htm">ezReflectedClass</a></div><div class="ttdoc">All classes that should be dynamically reflectable, need to be derived from this base class.</div><div class="ttdef"><b>Definition:</b> DynamicRTTI.h:67</div></div>
@@ -161,7 +167,7 @@ $(document).ready(function(){initNavTree('de/deb/_actor_8h_source.htm','../../')
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_ac029bbb8a17b4d550e2f9d55d89a029.htm">Core</a></li><li class="navelem"><a class="el" href="../../dir_647471508b09f3f1c4d733f908435c39.htm">ActorSystem</a></li><li class="navelem"><b>Actor.h</b></li>
-    <li class="footer">Generated on Sun Oct 9 2022 14:44:48 for ezEngine by
+    <li class="footer">Generated on Fri Nov 18 2022 14:47:54 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

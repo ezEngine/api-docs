@@ -29,6 +29,7 @@ var classez_array_base =
     [ "operator ezArrayPtr< const T >", "dc/d59/classez_array_base.htm#a6f3159683169130e19c955855dd0d854", null ],
     [ "operator ezArrayPtr< T >", "dc/d59/classez_array_base.htm#ab9b31378a3f8bc9df6ad9fe4187bcef1", null ],
     [ "operator!=", "dc/d59/classez_array_base.htm#a38748597d810f9982c54ee74e6913a0d", null ],
+    [ "operator<", "dc/d59/classez_array_base.htm#aa642cb0d0cdf68484c854098d4493129", null ],
     [ "operator=", "dc/d59/classez_array_base.htm#a6da9ac91524c489b32ed8e390c52b402", null ],
     [ "operator==", "dc/d59/classez_array_base.htm#ad1859a7e3f593f46b6b8873ff8c546ab", null ],
     [ "operator[]", "dc/d59/classez_array_base.htm#a5203f6eabcda79429422f4d1e14b7920", null ],

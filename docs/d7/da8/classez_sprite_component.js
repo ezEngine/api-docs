@@ -4,7 +4,7 @@ var classez_sprite_component =
     [ "~ezSpriteComponent", "d7/da8/classez_sprite_component.htm#a9e3e890923fb0f570ba8502d90bf952c", null ],
     [ "DeserializeComponent", "d7/da8/classez_sprite_component.htm#acd13cded307c9873fc0533e6ad70d9a6", null ],
     [ "GetColor", "d7/da8/classez_sprite_component.htm#ad6d5bb9b521885c7a64a2a0846d4e0d2", null ],
-    [ "GetLocalBounds", "d7/da8/classez_sprite_component.htm#ae7d544cdf434aa55607303a26fc101a4", null ],
+    [ "GetLocalBounds", "d7/da8/classez_sprite_component.htm#a5773be147945d88735b9dc0e3ab7ce67", null ],
     [ "GetMaxScreenSize", "d7/da8/classez_sprite_component.htm#a3a5e572b4feeaa9a14d3acb919572541", null ],
     [ "GetSize", "d7/da8/classez_sprite_component.htm#a5eb6b8b175ab0d782a132fdd938c520d", null ],
     [ "GetTexture", "d7/da8/classez_sprite_component.htm#a21056ce27d70f670856d1a1719df379b", null ],

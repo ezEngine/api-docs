@@ -8,5 +8,6 @@ var structez_profiling_system_1_1_profiling_data =
     [ "m_ThreadInfos", "d8/d0a/structez_profiling_system_1_1_profiling_data.htm#aaeb56d6c94c4bcb3c66f8dfab8d46666", null ],
     [ "m_uiFrameCount", "d8/d0a/structez_profiling_system_1_1_profiling_data.htm#a1384cdea2c7bdfebb5900dd09a838d69", null ],
     [ "m_uiFramesThreadID", "d8/d0a/structez_profiling_system_1_1_profiling_data.htm#a9480549032096453fa13e12b01e4b0e5", null ],
-    [ "m_uiProcessID", "d8/d0a/structez_profiling_system_1_1_profiling_data.htm#a5292c3118618cebb51735e5854fa5e4e", null ]
+    [ "m_uiProcessID", "d8/d0a/structez_profiling_system_1_1_profiling_data.htm#a5292c3118618cebb51735e5854fa5e4e", null ],
+    [ "m_uiProcessSortIndex", "d8/d0a/structez_profiling_system_1_1_profiling_data.htm#a8f53054875acccb4b5ab320ccb7da6cb", null ]
 ];

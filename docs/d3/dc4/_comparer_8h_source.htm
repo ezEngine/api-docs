@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 21.10</span>
+   &#160;<span id="projectnumber">Release 22.11</span>
    </div>
   </td>
  </tr>
@@ -93,22 +93,56 @@ $(document).ready(function(){initNavTree('d3/dc4/_comparer_8h_source.htm','../..
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="../../df/d11/structez_compare_helper.htm">    6</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../df/d11/structez_compare_helper.htm">ezCompareHelper</a></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="../../df/d11/structez_compare_helper.htm#a3f394a0862648a3cd5e1f4ade72db74f">    9</a></span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> <a class="code" href="../../df/d11/structez_compare_helper.htm#a3f394a0862648a3cd5e1f4ade72db74f">Less</a>(<span class="keyword">const</span> T&amp; a, <span class="keyword">const</span> T&amp; b)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> a &lt; b; }</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="../../df/d11/structez_compare_helper.htm#acc5fae1663b04e280a3fe57045208c95">   12</a></span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> <a class="code" href="../../df/d11/structez_compare_helper.htm#acc5fae1663b04e280a3fe57045208c95">Equal</a>(<span class="keyword">const</span> T&amp; a, <span class="keyword">const</span> T&amp; b)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> a == b; }</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;};</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// See &lt;Foundation/Strings/String.h&gt; for ezString specialization and case insensitive version.</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="../../df/d11/structez_compare_helper.htm#a3f394a0862648a3cd5e1f4ade72db74f">    9</a></span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> <a class="code" href="../../df/d11/structez_compare_helper.htm#a3f394a0862648a3cd5e1f4ade72db74f">Less</a>(<span class="keyword">const</span> T&amp; a, <span class="keyword">const</span> T&amp; b)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">  </span>{</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordflow">return</span> a &lt; b;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  }</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> U&gt;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="../../df/d11/structez_compare_helper.htm#a9f69c19058c51b5bd6223c5085c99894">   16</a></span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> <a class="code" href="../../df/d11/structez_compare_helper.htm#a9f69c19058c51b5bd6223c5085c99894">Less</a>(<span class="keyword">const</span> T&amp; a, <span class="keyword">const</span> U&amp; b)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">  </span>{</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">return</span> a &lt; b;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  }</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> U&gt;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="../../df/d11/structez_compare_helper.htm#a043700995c239d0145d5ae4444d2ccea">   23</a></span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> <a class="code" href="../../df/d11/structez_compare_helper.htm#a043700995c239d0145d5ae4444d2ccea">Less</a>(<span class="keyword">const</span> U&amp; a, <span class="keyword">const</span> T&amp; b)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">  </span>{</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">return</span> a &lt; b;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="../../df/d11/structez_compare_helper.htm#acc5fae1663b04e280a3fe57045208c95">   29</a></span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> <a class="code" href="../../df/d11/structez_compare_helper.htm#acc5fae1663b04e280a3fe57045208c95">Equal</a>(<span class="keyword">const</span> T&amp; a, <span class="keyword">const</span> T&amp; b)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">  </span>{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">return</span> a == b;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> U&gt;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="../../df/d11/structez_compare_helper.htm#a404f35b935aa34c663ef4d944343314d">   36</a></span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> <a class="code" href="../../df/d11/structez_compare_helper.htm#a404f35b935aa34c663ef4d944343314d">Equal</a>(<span class="keyword">const</span> T&amp; a, <span class="keyword">const</span> U&amp; b)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">  </span>{</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">return</span> a == b;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> U&gt;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="../../df/d11/structez_compare_helper.htm#adee2a17dc5115ac45504ae795b879a7e">   43</a></span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> <a class="code" href="../../df/d11/structez_compare_helper.htm#adee2a17dc5115ac45504ae795b879a7e">Equal</a>(<span class="keyword">const</span> U&amp; a, <span class="keyword">const</span> T&amp; b)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">  </span>{</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">return</span> a == b;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;};</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">// See &lt;Foundation/Strings/String.h&gt; for ezString specialization and case insensitive version.</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astructez_compare_helper_htm"><div class="ttname"><a href="../../df/d11/structez_compare_helper.htm">ezCompareHelper</a></div><div class="ttdoc">A comparer object is used in sorting algorithms to compare to objects of the same type.</div><div class="ttdef"><b>Definition:</b> Comparer.h:6</div></div>
-<div class="ttc" id="astructez_compare_helper_htm_acc5fae1663b04e280a3fe57045208c95"><div class="ttname"><a href="../../df/d11/structez_compare_helper.htm#acc5fae1663b04e280a3fe57045208c95">ezCompareHelper::Equal</a></div><div class="ttdeci">EZ_ALWAYS_INLINE bool Equal(const T &amp;a, const T &amp;b) const</div><div class="ttdoc">Returns true if a is equal to b.</div><div class="ttdef"><b>Definition:</b> Comparer.h:12</div></div>
+<div class="ttc" id="astructez_compare_helper_htm_a404f35b935aa34c663ef4d944343314d"><div class="ttname"><a href="../../df/d11/structez_compare_helper.htm#a404f35b935aa34c663ef4d944343314d">ezCompareHelper::Equal</a></div><div class="ttdeci">EZ_ALWAYS_INLINE bool Equal(const T &amp;a, const U &amp;b) const</div><div class="ttdoc">Returns true if a is equal to b.</div><div class="ttdef"><b>Definition:</b> Comparer.h:36</div></div>
+<div class="ttc" id="astructez_compare_helper_htm_a9f69c19058c51b5bd6223c5085c99894"><div class="ttname"><a href="../../df/d11/structez_compare_helper.htm#a9f69c19058c51b5bd6223c5085c99894">ezCompareHelper::Less</a></div><div class="ttdeci">EZ_ALWAYS_INLINE bool Less(const T &amp;a, const U &amp;b) const</div><div class="ttdoc">Returns true if a is less than b.</div><div class="ttdef"><b>Definition:</b> Comparer.h:16</div></div>
+<div class="ttc" id="astructez_compare_helper_htm_acc5fae1663b04e280a3fe57045208c95"><div class="ttname"><a href="../../df/d11/structez_compare_helper.htm#acc5fae1663b04e280a3fe57045208c95">ezCompareHelper::Equal</a></div><div class="ttdeci">EZ_ALWAYS_INLINE bool Equal(const T &amp;a, const T &amp;b) const</div><div class="ttdoc">Returns true if a is equal to b.</div><div class="ttdef"><b>Definition:</b> Comparer.h:29</div></div>
+<div class="ttc" id="astructez_compare_helper_htm_a043700995c239d0145d5ae4444d2ccea"><div class="ttname"><a href="../../df/d11/structez_compare_helper.htm#a043700995c239d0145d5ae4444d2ccea">ezCompareHelper::Less</a></div><div class="ttdeci">EZ_ALWAYS_INLINE bool Less(const U &amp;a, const T &amp;b) const</div><div class="ttdoc">Returns true if a is less than b.</div><div class="ttdef"><b>Definition:</b> Comparer.h:23</div></div>
+<div class="ttc" id="astructez_compare_helper_htm_adee2a17dc5115ac45504ae795b879a7e"><div class="ttname"><a href="../../df/d11/structez_compare_helper.htm#adee2a17dc5115ac45504ae795b879a7e">ezCompareHelper::Equal</a></div><div class="ttdeci">EZ_ALWAYS_INLINE bool Equal(const U &amp;a, const T &amp;b) const</div><div class="ttdoc">Returns true if a is equal to b.</div><div class="ttdef"><b>Definition:</b> Comparer.h:43</div></div>
 <div class="ttc" id="astructez_compare_helper_htm_a3f394a0862648a3cd5e1f4ade72db74f"><div class="ttname"><a href="../../df/d11/structez_compare_helper.htm#a3f394a0862648a3cd5e1f4ade72db74f">ezCompareHelper::Less</a></div><div class="ttdeci">EZ_ALWAYS_INLINE bool Less(const T &amp;a, const T &amp;b) const</div><div class="ttdoc">Returns true if a is less than b.</div><div class="ttdef"><b>Definition:</b> Comparer.h:9</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_cbf2a2ed1ea35b4af8265ff960a67fbe.htm">Algorithm</a></li><li class="navelem"><b>Comparer.h</b></li>
-    <li class="footer">Generated on Sun Oct 9 2022 14:44:49 for ezEngine by
+    <li class="footer">Generated on Fri Nov 18 2022 14:47:54 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

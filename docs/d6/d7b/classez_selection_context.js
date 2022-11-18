@@ -22,11 +22,11 @@ var classez_selection_context =
     [ "SetPickObjectOverride", "d6/d7b/classez_selection_context.htm#ab8ce9c348d97436fdb24f42e9b9e13ee", null ],
     [ "SetWindowConfig", "d6/d7b/classez_selection_context.htm#ac73c5d02d05d48c79df39efac11763b8", null ],
     [ "m_bPressedSpace", "d6/d7b/classez_selection_context.htm#a279bedb3180a213246040f6406951fe0", null ],
-    [ "m_MarqueeGizmo", "d6/d7b/classez_selection_context.htm#a0f97003c007002d7c4ee11e4038fc6ce", null ],
+    [ "m_hMarqueeGizmo", "d6/d7b/classez_selection_context.htm#a3abe052ca64c1a45a88a055314508fc4", null ],
     [ "m_Mode", "d6/d7b/classez_selection_context.htm#a2945101738aa6f05bf1973b7fd869f04", null ],
     [ "m_pCamera", "d6/d7b/classez_selection_context.htm#a5a863e35ea5e3fe55bfcb551c2aee702", null ],
     [ "m_PickObjectOverride", "d6/d7b/classez_selection_context.htm#a86489ca4bc728b9100ab46c9482d138d", null ],
     [ "m_uiMarqueeID", "d6/d7b/classez_selection_context.htm#a892b9cad568a1347ae22d7fad620578c", null ],
-    [ "m_Viewport", "d6/d7b/classez_selection_context.htm#af52f3d0df9da7230ad663d2ff985f3d1", null ],
-    [ "m_vMarqueeStartPos", "d6/d7b/classez_selection_context.htm#ae99d9dd00ae5a4810ab5dec456087d94", null ]
+    [ "m_vMarqueeStartPos", "d6/d7b/classez_selection_context.htm#ae99d9dd00ae5a4810ab5dec456087d94", null ],
+    [ "m_vViewport", "d6/d7b/classez_selection_context.htm#ab00665ab43516eec3470f3aec593dff0", null ]
 ];

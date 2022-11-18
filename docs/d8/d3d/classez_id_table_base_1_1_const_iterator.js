@@ -9,7 +9,7 @@ var classez_id_table_base_1_1_const_iterator =
     [ "operator==", "d8/d3d/classez_id_table_base_1_1_const_iterator.htm#a8a021d7a095d9ce1bdab46a1faf97e39", null ],
     [ "Value", "d8/d3d/classez_id_table_base_1_1_const_iterator.htm#a386382e8489925828ddc17deffff39fc", null ],
     [ "ezIdTableBase< IdType, ValueType >", "d8/d3d/classez_id_table_base_1_1_const_iterator.htm#afb8c2c155e700e9171310f6703386c4b", null ],
-    [ "m_idTable", "d8/d3d/classez_id_table_base_1_1_const_iterator.htm#a06e8d635bbd50fe9c2b6869afb8f7479", null ],
-    [ "m_uiCurrentCount", "d8/d3d/classez_id_table_base_1_1_const_iterator.htm#a6ff831110a295a6927abf3d24814304e", null ],
-    [ "m_uiCurrentIndex", "d8/d3d/classez_id_table_base_1_1_const_iterator.htm#aa1472dfb4c0518caba522fe3b97223cb", null ]
+    [ "m_CurrentCount", "d8/d3d/classez_id_table_base_1_1_const_iterator.htm#a7f1afeb15233a9078adfab238b8041e6", null ],
+    [ "m_CurrentIndex", "d8/d3d/classez_id_table_base_1_1_const_iterator.htm#af0a88fe1c9d2e5935d264d1a006da2aa", null ],
+    [ "m_IdTable", "d8/d3d/classez_id_table_base_1_1_const_iterator.htm#ac03ec3575f41c849ac3bcbb167f37a5d", null ]
 ];

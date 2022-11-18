@@ -14,6 +14,7 @@ var classez_jolt_character_controller_component =
     [ "GetJoltCharacter", "d6/d30/classez_jolt_character_controller_component.htm#afe67e20c9252cfbe6f9b6906d093783c", null ],
     [ "GetMass", "d6/d30/classez_jolt_character_controller_component.htm#a944d22eb74f0a97bb0f64cf30939ad99", null ],
     [ "GetMaxClimbingSlope", "d6/d30/classez_jolt_character_controller_component.htm#ad377b07a2286918b43e98c2ea1a4df0c", null ],
+    [ "GetShapeRadius", "d6/d30/classez_jolt_character_controller_component.htm#a26122c7ddc99aec9f36ff2fea5667e13", null ],
     [ "GetStrength", "d6/d30/classez_jolt_character_controller_component.htm#af45ad367d9d38c0e298de4f5f549c9b1", null ],
     [ "GetUpdateTimeDelta", "d6/d30/classez_jolt_character_controller_component.htm#a92712eca1332bcf1a5fc1e687a6a3e9a", null ],
     [ "MakeNextCharacterShape", "d6/d30/classez_jolt_character_controller_component.htm#ab29888e125a83dc59849a3d93ef269c5", null ],
@@ -21,13 +22,14 @@ var classez_jolt_character_controller_component =
     [ "OnSimulationStarted", "d6/d30/classez_jolt_character_controller_component.htm#a5a06127054734a0cce923dada69d6339", null ],
     [ "RawMoveIntoDirection", "d6/d30/classez_jolt_character_controller_component.htm#ad9c464a9874aea502e3f86812a7afd83", null ],
     [ "RawMoveToPosition", "d6/d30/classez_jolt_character_controller_component.htm#a0e9f857359fb296d1082d69763ead0d6", null ],
-    [ "RawMoveWithVelocity", "d6/d30/classez_jolt_character_controller_component.htm#a18e2727b0fe67d60fd6a4bf6f3b68b24", null ],
+    [ "RawMoveWithVelocity", "d6/d30/classez_jolt_character_controller_component.htm#a3cf2544cdfd8ac1a4b85d62f36eb3329", null ],
     [ "SerializeComponent", "d6/d30/classez_jolt_character_controller_component.htm#ac4c8333cd4be9e3dbb49a0bafea76fc3", null ],
     [ "SetMass", "d6/d30/classez_jolt_character_controller_component.htm#afbdb70101dfc666e4d67c23245951e78", null ],
     [ "SetMaxClimbingSlope", "d6/d30/classez_jolt_character_controller_component.htm#a5f981b62e34b2cf3830c92a8acda4277", null ],
     [ "SetObjectToIgnore", "d6/d30/classez_jolt_character_controller_component.htm#afd448efa503d921f529044f19ed963fc", null ],
     [ "SetStrength", "d6/d30/classez_jolt_character_controller_component.htm#a6e02708f294d7989f942f2261a513688", null ],
     [ "SpawnContactInteraction", "d6/d30/classez_jolt_character_controller_component.htm#acd862ce0aaa70ead4c7843fcafbee886", null ],
+    [ "StickToGround", "d6/d30/classez_jolt_character_controller_component.htm#ae73a6725d392c95ae2ecab1de31de1b3", null ],
     [ "TeleportToPosition", "d6/d30/classez_jolt_character_controller_component.htm#ac8af80355fe0636a187447093878270a", null ],
     [ "TryChangeShape", "d6/d30/classez_jolt_character_controller_component.htm#aaee901c7186fd7cc7110a0208ce9e110", null ],
     [ "UpdateCharacter", "d6/d30/classez_jolt_character_controller_component.htm#a160cf34a037cf453ccadf313fffbb78e", null ],
@@ -35,5 +37,6 @@ var classez_jolt_character_controller_component =
     [ "VisualizeContacts", "d6/d30/classez_jolt_character_controller_component.htm#a4be5e0fd8df8ffdf6868b51e6b0eb4ea", null ],
     [ "ezJoltWorldModule", "d6/d30/classez_jolt_character_controller_component.htm#aa0ab423c4ae4151ebb55bb0167c4393a", null ],
     [ "m_DebugFlags", "d6/d30/classez_jolt_character_controller_component.htm#aef659fb3a863c3e62f1af441ad34f3e4", null ],
-    [ "m_uiCollisionLayer", "d6/d30/classez_jolt_character_controller_component.htm#a5ae22df2bf0f1271f67b6394c9147c1a", null ]
+    [ "m_uiCollisionLayer", "d6/d30/classez_jolt_character_controller_component.htm#a2877608507da9887d598200b39347429", null ],
+    [ "m_uiPresenceCollisionLayer", "d6/d30/classez_jolt_character_controller_component.htm#a506867e46ae5f57bbe275d3f39c6248c", null ]
 ];

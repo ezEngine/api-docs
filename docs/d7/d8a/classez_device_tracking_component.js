@@ -13,7 +13,7 @@ var classez_device_tracking_component =
     [ "Update", "d7/d8a/classez_device_tracking_component.htm#a3139d517662721285170327fa53864ea", null ],
     [ "m_bRotation", "d7/d8a/classez_device_tracking_component.htm#a4a55f6ff36e1484542739e7aec1d37db", null ],
     [ "m_bScale", "d7/d8a/classez_device_tracking_component.htm#aa16b9787c7a7e52e8e96aef8578d1e9f", null ],
-    [ "m_deviceType", "d7/d8a/classez_device_tracking_component.htm#abae4709ee39b8f8fc1733ba893f5ffeb", null ],
-    [ "m_poseLocation", "d7/d8a/classez_device_tracking_component.htm#a83dbadc86f0c846e95ea4d279fb8b607", null ],
-    [ "m_space", "d7/d8a/classez_device_tracking_component.htm#ac91dfae53920bee778aa7b02625fc167", null ]
+    [ "m_DeviceType", "d7/d8a/classez_device_tracking_component.htm#a7d2d78af546533bfe8198e27a7086c89", null ],
+    [ "m_PoseLocation", "d7/d8a/classez_device_tracking_component.htm#ae22684947893cc5d582131e3ce66463c", null ],
+    [ "m_Space", "d7/d8a/classez_device_tracking_component.htm#ac1ec9c00318133929f8cc320b79b422c", null ]
 ];

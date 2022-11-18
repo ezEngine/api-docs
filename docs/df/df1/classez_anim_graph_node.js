@@ -9,5 +9,5 @@ var classez_anim_graph_node =
     [ "SetCustomNodeTitle", "df/df1/classez_anim_graph_node.htm#acb0a11ff1dede01999d0ab8c456a3153", null ],
     [ "Step", "df/df1/classez_anim_graph_node.htm#ab2e315ced2a86083c4ba572905425651", null ],
     [ "ezAnimGraph", "df/df1/classez_anim_graph_node.htm#a57134cffc66a3e7b70f61b99ad555785", null ],
-    [ "m_CustomNodeTitle", "df/df1/classez_anim_graph_node.htm#aad6c3886f96611769ef810359822e6f8", null ]
+    [ "m_sCustomNodeTitle", "df/df1/classez_anim_graph_node.htm#aba3d698fa7dcfaa56336ee2af418e7ee", null ]
 ];

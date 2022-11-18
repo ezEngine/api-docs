@@ -1,6 +1,6 @@
 var structez_time =
 [
-    [ "ezTime", "d3/d90/structez_time.htm#afab0899c68c93801f56c3a7aad59ab85", null ],
+    [ "ezTime", "d3/d90/structez_time.htm#ac5f6ebaf105ede35f3b1a8088db30e61", null ],
     [ "AsFloatInSeconds", "d3/d90/structez_time.htm#aae93fb5e3f7f99df0732f23e9b345bc4", null ],
     [ "EZ_DECLARE_POD_TYPE", "d3/d90/structez_time.htm#af213508db8a9e593a2780871c72a1e91", null ],
     [ "GetHours", "d3/d90/structez_time.htm#a0b818bac0e5917e9a014d525ba8cddb9", null ],

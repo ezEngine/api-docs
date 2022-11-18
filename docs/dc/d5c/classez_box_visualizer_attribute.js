@@ -1,7 +1,7 @@
 var classez_box_visualizer_attribute =
 [
     [ "ezBoxVisualizerAttribute", "dc/d5c/classez_box_visualizer_attribute.htm#aabf5201d28d6d748e11758891f429e0d", null ],
-    [ "ezBoxVisualizerAttribute", "dc/d5c/classez_box_visualizer_attribute.htm#afc31855e8683884c582d1a24ab77711e", null ],
+    [ "ezBoxVisualizerAttribute", "dc/d5c/classez_box_visualizer_attribute.htm#ac0155847a373ffd94d7b121fb3d700ad", null ],
     [ "GetColorProperty", "dc/d5c/classez_box_visualizer_attribute.htm#a6db78e9a4dd28ffe52204e5a4331d15d", null ],
     [ "GetOffsetProperty", "dc/d5c/classez_box_visualizer_attribute.htm#a6feea2ea4f21f16d93da085988170bfe", null ],
     [ "GetRotationProperty", "dc/d5c/classez_box_visualizer_attribute.htm#a78f6322fce77c5d8fa761ef3c2d0e36d", null ],
