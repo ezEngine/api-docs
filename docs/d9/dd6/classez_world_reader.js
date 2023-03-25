@@ -10,9 +10,9 @@ var classez_world_reader =
     [ "GetHeapMemoryUsage", "d9/dd6/classez_world_reader.htm#a820af3e64374542dc6b508f4c708ed21", null ],
     [ "GetRootObjectCount", "d9/dd6/classez_world_reader.htm#adcb54dbfad49ecdf42f09ee14289d85d", null ],
     [ "GetStream", "d9/dd6/classez_world_reader.htm#a86fdeb781618bbb91558364cb5722925", null ],
-    [ "InstantiatePrefab", "d9/dd6/classez_world_reader.htm#a7aa3fae091f1894aac9ed7517b0b6492", null ],
-    [ "InstantiateWorld", "d9/dd6/classez_world_reader.htm#a6bb0570e1b1b8e18d2dac4d120d7d4ec", null ],
+    [ "InstantiatePrefab", "d9/dd6/classez_world_reader.htm#abb526b22a12a38e51e7eee4fd2028a6f", null ],
+    [ "InstantiateWorld", "d9/dd6/classez_world_reader.htm#a71a21e4d106c1bec47de4c895f9c25e7", null ],
     [ "ReadComponentHandle", "d9/dd6/classez_world_reader.htm#ad4a132aebe64446a55a4212b1aa07d45", null ],
     [ "ReadGameObjectHandle", "d9/dd6/classez_world_reader.htm#a7375b53b12e8575750f58f8415273f46", null ],
-    [ "ReadWorldDescription", "d9/dd6/classez_world_reader.htm#ae0d2d2445811a4b147cd2d8b604f5aeb", null ]
+    [ "ReadWorldDescription", "d9/dd6/classez_world_reader.htm#afee473850b2769be1831b34e5f69db67", null ]
 ];

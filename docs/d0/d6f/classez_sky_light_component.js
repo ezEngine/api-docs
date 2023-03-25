@@ -2,7 +2,7 @@ var classez_sky_light_component =
 [
     [ "ezSkyLightComponent", "d0/d6f/classez_sky_light_component.htm#ad864e7cc456d29afed1e31abfcbae5df", null ],
     [ "~ezSkyLightComponent", "d0/d6f/classez_sky_light_component.htm#afb0d849a5e397dec6dcae5567b4ea7c9", null ],
-    [ "DeserializeComponent", "d0/d6f/classez_sky_light_component.htm#a6d436eb5903f1e9e205457fea3883de0", null ],
+    [ "DeserializeComponent", "d0/d6f/classez_sky_light_component.htm#af5d34312c870fc9de12a705157ce40a3", null ],
     [ "GetCubeMap", "d0/d6f/classez_sky_light_component.htm#aad84b08db0adcae9f58937b4fecb3100", null ],
     [ "GetCubeMapFile", "d0/d6f/classez_sky_light_component.htm#a7e02a01c4dfc53a1d569ed74b3ae2c6a", null ],
     [ "GetExcludeTags", "d0/d6f/classez_sky_light_component.htm#ae1ffd67c6c63e5976ed3c71e1cec4f20", null ],
@@ -23,7 +23,7 @@ var classez_sky_light_component =
     [ "OnUpdateLocalBounds", "d0/d6f/classez_sky_light_component.htm#af88348a72dba71ae1108f3f0e4aae8dc", null ],
     [ "RemoveExcludeTag", "d0/d6f/classez_sky_light_component.htm#a91aaef05c976a3ac5449e2b7e1f40cc2", null ],
     [ "RemoveIncludeTag", "d0/d6f/classez_sky_light_component.htm#ab4ad4c55e94d6a8cbfa7addc33d104e4", null ],
-    [ "SerializeComponent", "d0/d6f/classez_sky_light_component.htm#a3fd03079256f26957e8a39338d13ba5a", null ],
+    [ "SerializeComponent", "d0/d6f/classez_sky_light_component.htm#a5b2212075bf0af25b25f41383682117d", null ],
     [ "SetCubeMapFile", "d0/d6f/classez_sky_light_component.htm#a83a34ee0b8b520afb5704ca8004305fc", null ],
     [ "SetFarPlane", "d0/d6f/classez_sky_light_component.htm#af1cec3e698976ef119e2338793805a0f", null ],
     [ "SetIntensity", "d0/d6f/classez_sky_light_component.htm#ae981dc14aa055bda8d61e488559689ec", null ],

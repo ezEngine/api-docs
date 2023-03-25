@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 22.11</span>
+   &#160;<span id="projectnumber">Release 23.04</span>
    </div>
   </td>
  </tr>
@@ -111,96 +111,96 @@ $(document).ready(function(){initNavTree('d9/da8/_mesh_buffer_utils__inl_8h_sour
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// static</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;EZ_ALWAYS_INLINE <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ezMeshBufferUtils::EncodeNormal(<span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; normal, <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;ezUInt8&gt;</a> dest, ezMeshNormalPrecision::Enum normalPrecision)</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;EZ_ALWAYS_INLINE <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ezMeshBufferUtils::EncodeNormal(<span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; vNormal, <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;ezUInt8&gt;</a> dest, ezMeshNormalPrecision::Enum normalPrecision)</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordflow">return</span> EncodeNormal(normal, dest, <a class="code" href="../../d2/d9e/structez_mesh_normal_precision.htm#ab901c91d952f71d04130ac1d81db36ad">ezMeshNormalPrecision::ToResourceFormatNormal</a>(normalPrecision));</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordflow">return</span> EncodeNormal(vNormal, dest, <a class="code" href="../../d2/d9e/structez_mesh_normal_precision.htm#ab901c91d952f71d04130ac1d81db36ad">ezMeshNormalPrecision::ToResourceFormatNormal</a>(normalPrecision));</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">// static</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;EZ_ALWAYS_INLINE <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ezMeshBufferUtils::EncodeTangent(</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; tangent, <span class="keywordtype">float</span> biTangentSign, <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;ezUInt8&gt;</a> dest, ezMeshNormalPrecision::Enum tangentPrecision)</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; vTangent, <span class="keywordtype">float</span> fTangentSign, <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;ezUInt8&gt;</a> dest, ezMeshNormalPrecision::Enum tangentPrecision)</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordflow">return</span> EncodeTangent(tangent, biTangentSign, dest, <a class="code" href="../../d2/d9e/structez_mesh_normal_precision.htm#afd607bc9a86a9bfb39a38a7bf5030f09">ezMeshNormalPrecision::ToResourceFormatTangent</a>(tangentPrecision));</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordflow">return</span> EncodeTangent(vTangent, fTangentSign, dest, <a class="code" href="../../d2/d9e/structez_mesh_normal_precision.htm#afd607bc9a86a9bfb39a38a7bf5030f09">ezMeshNormalPrecision::ToResourceFormatTangent</a>(tangentPrecision));</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">// static</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;EZ_ALWAYS_INLINE <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ezMeshBufferUtils::EncodeTexCoord(</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d1/df8/classez_vec2_template.htm">ezVec2</a>&amp; texCoord, <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;ezUInt8&gt;</a> dest, ezMeshTexCoordPrecision::Enum texCoordPrecision)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d1/df8/classez_vec2_template.htm">ezVec2</a>&amp; vTexCoord, <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;ezUInt8&gt;</a> dest, ezMeshTexCoordPrecision::Enum texCoordPrecision)</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordflow">return</span> EncodeTexCoord(texCoord, dest, <a class="code" href="../../db/dc1/structez_mesh_tex_coord_precision.htm#ae405ba722cb8fa68f912e82497f21534">ezMeshTexCoordPrecision::ToResourceFormat</a>(texCoordPrecision));</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordflow">return</span> EncodeTexCoord(vTexCoord, dest, <a class="code" href="../../db/dc1/structez_mesh_tex_coord_precision.htm#ae405ba722cb8fa68f912e82497f21534">ezMeshTexCoordPrecision::ToResourceFormat</a>(texCoordPrecision));</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">// static</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;EZ_ALWAYS_INLINE <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ezMeshBufferUtils::EncodeNormal(<span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; normal, <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;ezUInt8&gt;</a> dest, ezGALResourceFormat::Enum destFormat)</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;EZ_ALWAYS_INLINE <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ezMeshBufferUtils::EncodeNormal(<span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; vNormal, <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;ezUInt8&gt;</a> dest, ezGALResourceFormat::Enum destFormat)</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;{</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="comment">// we store normals in unsigned formats thus we need to map from -1..1 to 0..1 here</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordflow">return</span> EncodeFromVec3(normal * 0.5f + <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>(0.5f), dest, destFormat);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordflow">return</span> EncodeFromVec3(vNormal * 0.5f + <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>(0.5f), dest, destFormat);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">// static</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;EZ_ALWAYS_INLINE <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ezMeshBufferUtils::EncodeTangent(</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; tangent, <span class="keywordtype">float</span> biTangentSign, <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;ezUInt8&gt;</a> dest, ezGALResourceFormat::Enum destFormat)</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; vTangent, <span class="keywordtype">float</span> fTangentSign, <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;ezUInt8&gt;</a> dest, ezGALResourceFormat::Enum destFormat)</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="comment">// make sure biTangentSign is either -1 or 1</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  biTangentSign = (biTangentSign &lt; 0.0f) ? -1.0f : 1.0f;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  fTangentSign = (fTangentSign &lt; 0.0f) ? -1.0f : 1.0f;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="comment">// we store tangents in unsigned formats thus we need to map from -1..1 to 0..1 here</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordflow">return</span> EncodeFromVec4(tangent.<a class="code" href="../../da/df1/classez_vec3_template.htm#afa8ece8eae7a8a5be1ff2296a9416787">GetAsVec4</a>(biTangentSign) * 0.5f + <a class="code" href="../../da/dd2/classez_vec4_template.htm">ezVec4</a>(0.5f), dest, destFormat);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordflow">return</span> EncodeFromVec4(vTangent.<a class="code" href="../../da/df1/classez_vec3_template.htm#afa8ece8eae7a8a5be1ff2296a9416787">GetAsVec4</a>(fTangentSign) * 0.5f + <a class="code" href="../../da/dd2/classez_vec4_template.htm">ezVec4</a>(0.5f), dest, destFormat);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">// static</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;EZ_ALWAYS_INLINE <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ezMeshBufferUtils::EncodeTexCoord(<span class="keyword">const</span> <a class="code" href="../../d1/df8/classez_vec2_template.htm">ezVec2</a>&amp; texCoord, <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;ezUInt8&gt;</a> dest, ezGALResourceFormat::Enum destFormat)</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;EZ_ALWAYS_INLINE <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ezMeshBufferUtils::EncodeTexCoord(<span class="keyword">const</span> <a class="code" href="../../d1/df8/classez_vec2_template.htm">ezVec2</a>&amp; vTexCoord, <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;ezUInt8&gt;</a> dest, ezGALResourceFormat::Enum destFormat)</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordflow">return</span> EncodeFromVec2(texCoord, dest, destFormat);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordflow">return</span> EncodeFromVec2(vTexCoord, dest, destFormat);</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">// static</span></div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;EZ_ALWAYS_INLINE <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ezMeshBufferUtils::DecodeNormal(</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;const ezUInt8&gt;</a> source, <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; destNormal, ezMeshNormalPrecision::Enum normalPrecision)</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;const ezUInt8&gt;</a> source, <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; ref_vDestNormal, ezMeshNormalPrecision::Enum normalPrecision)</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;{</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordflow">return</span> DecodeNormal(source, <a class="code" href="../../d2/d9e/structez_mesh_normal_precision.htm#ab901c91d952f71d04130ac1d81db36ad">ezMeshNormalPrecision::ToResourceFormatNormal</a>(normalPrecision), destNormal);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordflow">return</span> DecodeNormal(source, <a class="code" href="../../d2/d9e/structez_mesh_normal_precision.htm#ab901c91d952f71d04130ac1d81db36ad">ezMeshNormalPrecision::ToResourceFormatNormal</a>(normalPrecision), ref_vDestNormal);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">// static</span></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;EZ_ALWAYS_INLINE <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ezMeshBufferUtils::DecodeTangent(</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;const ezUInt8&gt;</a> source, <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; destTangent, <span class="keywordtype">float</span>&amp; destBiTangentSign, ezMeshNormalPrecision::Enum tangentPrecision)</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;const ezUInt8&gt;</a> source, <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; ref_vDestTangent, <span class="keywordtype">float</span>&amp; ref_fDestBiTangentSign, ezMeshNormalPrecision::Enum tangentPrecision)</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;{</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordflow">return</span> DecodeTangent(source, <a class="code" href="../../d2/d9e/structez_mesh_normal_precision.htm#afd607bc9a86a9bfb39a38a7bf5030f09">ezMeshNormalPrecision::ToResourceFormatTangent</a>(tangentPrecision), destTangent, destBiTangentSign);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordflow">return</span> DecodeTangent(source, <a class="code" href="../../d2/d9e/structez_mesh_normal_precision.htm#afd607bc9a86a9bfb39a38a7bf5030f09">ezMeshNormalPrecision::ToResourceFormatTangent</a>(tangentPrecision), ref_vDestTangent, ref_fDestBiTangentSign);</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">// static</span></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;EZ_ALWAYS_INLINE <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ezMeshBufferUtils::DecodeTexCoord(</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;const ezUInt8&gt;</a> source, <a class="code" href="../../d1/df8/classez_vec2_template.htm">ezVec2</a>&amp; destTexCoord, ezMeshTexCoordPrecision::Enum texCoordPrecision)</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;const ezUInt8&gt;</a> source, <a class="code" href="../../d1/df8/classez_vec2_template.htm">ezVec2</a>&amp; ref_vDestTexCoord, ezMeshTexCoordPrecision::Enum texCoordPrecision)</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;{</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keywordflow">return</span> DecodeTexCoord(source, <a class="code" href="../../db/dc1/structez_mesh_tex_coord_precision.htm#ae405ba722cb8fa68f912e82497f21534">ezMeshTexCoordPrecision::ToResourceFormat</a>(texCoordPrecision), destTexCoord);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keywordflow">return</span> DecodeTexCoord(source, <a class="code" href="../../db/dc1/structez_mesh_tex_coord_precision.htm#ae405ba722cb8fa68f912e82497f21534">ezMeshTexCoordPrecision::ToResourceFormat</a>(texCoordPrecision), ref_vDestTexCoord);</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">// static</span></div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;EZ_ALWAYS_INLINE <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ezMeshBufferUtils::DecodeNormal(</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;const ezUInt8&gt;</a> source, ezGALResourceFormat::Enum sourceFormat, <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; destNormal)</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;const ezUInt8&gt;</a> source, ezGALResourceFormat::Enum sourceFormat, <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; ref_vDestNormal)</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;{</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> tempNormal;</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  EZ_SUCCEED_OR_RETURN(DecodeToVec3(source, sourceFormat, tempNormal));</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  destNormal = tempNormal * 2.0f - <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>(1.0f);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  ref_vDestNormal = tempNormal * 2.0f - <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>(1.0f);</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keywordflow">return</span> EZ_SUCCESS;</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">// static</span></div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;EZ_ALWAYS_INLINE <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ezMeshBufferUtils::DecodeTangent(</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;const ezUInt8&gt;</a> source, ezGALResourceFormat::Enum sourceFormat, <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; destTangent, <span class="keywordtype">float</span>&amp; destBiTangentSign)</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;const ezUInt8&gt;</a> source, ezGALResourceFormat::Enum sourceFormat, <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; ref_vDestTangent, <span class="keywordtype">float</span>&amp; ref_fDestBiTangentSign)</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;{</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <a class="code" href="../../da/dd2/classez_vec4_template.htm">ezVec4</a> tempTangent;</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  EZ_SUCCEED_OR_RETURN(DecodeToVec4(source, sourceFormat, tempTangent));</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  destTangent = tempTangent.<a class="code" href="../../da/dd2/classez_vec4_template.htm#a54bfbe91369aa9bd44c87741e1210463">GetAsVec3</a>() * 2.0f - <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>(1.0f);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  destBiTangentSign = tempTangent.w * 2.0f - 1.0f;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  ref_vDestTangent = tempTangent.<a class="code" href="../../da/dd2/classez_vec4_template.htm#a54bfbe91369aa9bd44c87741e1210463">GetAsVec3</a>() * 2.0f - <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>(1.0f);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  ref_fDestBiTangentSign = tempTangent.w * 2.0f - 1.0f;</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="keywordflow">return</span> EZ_SUCCESS;</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">// static</span></div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;EZ_ALWAYS_INLINE <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ezMeshBufferUtils::DecodeTexCoord(</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;const ezUInt8&gt;</a> source, ezGALResourceFormat::Enum sourceFormat, <a class="code" href="../../d1/df8/classez_vec2_template.htm">ezVec2</a>&amp; destTexCoord)</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;const ezUInt8&gt;</a> source, ezGALResourceFormat::Enum sourceFormat, <a class="code" href="../../d1/df8/classez_vec2_template.htm">ezVec2</a>&amp; ref_vDestTexCoord)</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;{</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <span class="keywordflow">return</span> DecodeToVec2(source, sourceFormat, destTexCoord);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <span class="keywordflow">return</span> DecodeToVec2(source, sourceFormat, ref_vDestTexCoord);</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -218,7 +218,7 @@ $(document).ready(function(){initNavTree('d9/da8/_mesh_buffer_utils__inl_8h_sour
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_9b39d7517b28e8ee3dee1b9d862ddabb.htm">RendererCore</a></li><li class="navelem"><a class="el" href="../../dir_86dbb1b2e83b0d7392768ac2411967d1.htm">Meshes</a></li><li class="navelem"><a class="el" href="../../dir_681d5f3e3140fed45bbdbc5de34b6bbc.htm">Implementation</a></li><li class="navelem"><b>MeshBufferUtils_inl.h</b></li>
-    <li class="footer">Generated on Fri Nov 18 2022 14:48:02 for ezEngine by
+    <li class="footer">Generated on Sat Mar 25 2023 19:21:58 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

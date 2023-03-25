@@ -1,7 +1,7 @@
 var structez_recast_config =
 [
-    [ "Deserialize", "df/d0b/structez_recast_config.htm#a63c35a9dcfb4cf592bce55d24bf3cb92", null ],
-    [ "Serialize", "df/d0b/structez_recast_config.htm#aee583a72d07d5696e735996ca02e01d3", null ],
+    [ "Deserialize", "df/d0b/structez_recast_config.htm#afedf8a8bb65edcd92f4b8233b0974023", null ],
+    [ "Serialize", "df/d0b/structez_recast_config.htm#a9c901634ee268da2372b55d8abf317bf", null ],
     [ "m_fAgentClimbHeight", "df/d0b/structez_recast_config.htm#a19e65ed676d7a0c6a5005c2091a9ec35", null ],
     [ "m_fAgentHeight", "df/d0b/structez_recast_config.htm#a4a9d30f95afcf457139fd76d811813f8", null ],
     [ "m_fAgentRadius", "df/d0b/structez_recast_config.htm#abf6267f5995078133f6e92efb2b50f76", null ],

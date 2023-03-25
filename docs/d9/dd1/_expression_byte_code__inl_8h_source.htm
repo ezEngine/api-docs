@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 22.11</span>
+   &#160;<span id="projectnumber">Release 23.04</span>
    </div>
   </td>
  </tr>
@@ -108,71 +108,73 @@ $(document).ready(function(){initNavTree('d9/dd1/_expression_byte_code__inl_8h_s
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keywordflow">return</span> m_uiNumTempRegisters;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;EZ_ALWAYS_INLINE <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;const ezHashedString&gt;</a> ezExpressionByteCode::GetInputs()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;EZ_ALWAYS_INLINE <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;const ezExpression::StreamDesc&gt;</a> ezExpressionByteCode::GetInputs()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keywordflow">return</span> m_Inputs;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;EZ_ALWAYS_INLINE <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;const ezHashedString&gt;</a> ezExpressionByteCode::GetOutputs()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;EZ_ALWAYS_INLINE <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;const ezExpression::StreamDesc&gt;</a> ezExpressionByteCode::GetOutputs()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordflow">return</span> m_Outputs;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;EZ_ALWAYS_INLINE <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;const ezHashedString&gt;</a> ezExpressionByteCode::GetFunctions()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;EZ_ALWAYS_INLINE <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;const ezExpression::FunctionDesc&gt;</a> ezExpressionByteCode::GetFunctions()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordflow">return</span> m_Functions;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">// static</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;EZ_ALWAYS_INLINE ezExpressionByteCode::OpCode::Enum ezExpressionByteCode::GetOpCode(<span class="keyword">const</span> StorageType*&amp; pByteCode)</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;EZ_ALWAYS_INLINE ezExpressionByteCode::OpCode::Enum ezExpressionByteCode::GetOpCode(<span class="keyword">const</span> StorageType*&amp; ref_pByteCode)</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  ezUInt32 uiOpCode = *pByteCode;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  ++pByteCode;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>OpCode::Enum<span class="keyword">&gt;</span>(uiOpCode);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  ezUInt32 uiOpCode = *ref_pByteCode;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  ++ref_pByteCode;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>OpCode::Enum<span class="keyword">&gt;</span>((uiOpCode &gt;= 0 &amp;&amp; uiOpCode &lt; OpCode::Count) ? uiOpCode : 0);</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">// static</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;EZ_ALWAYS_INLINE ezUInt32 ezExpressionByteCode::GetRegisterIndex(<span class="keyword">const</span> StorageType*&amp; pByteCode, ezUInt32 uiNumRegisters)</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;EZ_ALWAYS_INLINE ezUInt32 ezExpressionByteCode::GetRegisterIndex(<span class="keyword">const</span> StorageType*&amp; ref_pByteCode)</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  ezUInt32 uiIndex = *pByteCode * uiNumRegisters;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  ++pByteCode;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  ezUInt32 uiIndex = *ref_pByteCode;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  ++ref_pByteCode;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordflow">return</span> uiIndex;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">// static</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;EZ_ALWAYS_INLINE <a class="code" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a> ezExpressionByteCode::GetConstant(<span class="keyword">const</span> StorageType*&amp; pByteCode)</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;EZ_ALWAYS_INLINE <a class="code" href="../../dc/d66/structez_expression_1_1_register.htm">ezExpression::Register</a> ezExpressionByteCode::GetConstant(<span class="keyword">const</span> StorageType*&amp; ref_pByteCode)</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordtype">float</span> c = *<span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">float</span>*<span class="keyword">&gt;</span>(pByteCode);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  ++pByteCode;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a>(c);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">// static</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;EZ_ALWAYS_INLINE ezUInt32 ezExpressionByteCode::GetFunctionIndex(<span class="keyword">const</span> StorageType*&amp; pByteCode)</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;{</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  ezUInt32 uiIndex = *pByteCode;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  ++pByteCode;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordflow">return</span> uiIndex;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">// static</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;EZ_ALWAYS_INLINE ezUInt32 ezExpressionByteCode::GetFunctionArgCount(<span class="keyword">const</span> StorageType*&amp; pByteCode)</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  ezUInt32 uiArgCount = *pByteCode;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  ++pByteCode;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordflow">return</span> uiArgCount;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <a class="code" href="../../dc/d66/structez_expression_1_1_register.htm">ezExpression::Register</a> r;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  r.i = <a class="code" href="../../d6/d8e/classez_simd_vec4i.htm">ezSimdVec4i</a>(*ref_pByteCode);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  ++ref_pByteCode;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordflow">return</span> r;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">// static</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;EZ_ALWAYS_INLINE ezUInt32 ezExpressionByteCode::GetFunctionIndex(<span class="keyword">const</span> StorageType*&amp; ref_pByteCode)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  ezUInt32 uiIndex = *ref_pByteCode;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  ++ref_pByteCode;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordflow">return</span> uiIndex;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">// static</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;EZ_ALWAYS_INLINE ezUInt32 ezExpressionByteCode::GetFunctionArgCount(<span class="keyword">const</span> StorageType*&amp; ref_pByteCode)</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;{</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  ezUInt32 uiArgCount = *ref_pByteCode;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  ++ref_pByteCode;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordflow">return</span> uiArgCount;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_array_base_htm_ac84ae40d109f1c6473e8349a88717634"><div class="ttname"><a href="../../dc/d59/classez_array_base.htm#ac84ae40d109f1c6473e8349a88717634">ezArrayBase::GetData</a></div><div class="ttdeci">T * GetData()</div><div class="ttdoc">Returns a pointer to the array data, or nullptr if the array is empty.</div><div class="ttdef"><b>Definition:</b> ArrayBase_inl.h:418</div></div>
 <div class="ttc" id="aclassez_array_ptr_htm"><div class="ttname"><a href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr</a></div><div class="ttdoc">This class encapsulates an array and it's size. It is recommended to use this class instead of plain ...</div><div class="ttdef"><b>Definition:</b> ArrayPtr.h:36</div></div>
 <div class="ttc" id="aclassez_array_base_htm_a51ba61fcbd2350ae8850754a41acbaa1"><div class="ttname"><a href="../../dc/d59/classez_array_base.htm#a51ba61fcbd2350ae8850754a41acbaa1">ezArrayBase::GetCount</a></div><div class="ttdeci">ezUInt32 GetCount() const</div><div class="ttdoc">Returns the number of active elements in the array.</div><div class="ttdef"><b>Definition:</b> ArrayBase_inl.h:164</div></div>
-<div class="ttc" id="aclassez_simd_vec4f_htm"><div class="ttname"><a href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a></div><div class="ttdoc">A 4-component SIMD vector class.</div><div class="ttdef"><b>Definition:</b> SimdVec4f.h:7</div></div>
+<div class="ttc" id="aclassez_simd_vec4i_htm"><div class="ttname"><a href="../../d6/d8e/classez_simd_vec4i.htm">ezSimdVec4i</a></div><div class="ttdoc">A SIMD 4-component vector class of signed 32b integers.</div><div class="ttdef"><b>Definition:</b> SimdVec4i.h:8</div></div>
+<div class="ttc" id="astructez_expression_1_1_register_htm"><div class="ttname"><a href="../../dc/d66/structez_expression_1_1_register.htm">ezExpression::Register</a></div><div class="ttdef"><b>Definition:</b> ExpressionDeclarations.h:15</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_2c7b76dee074c0486b4059e88dfd18f0.htm">CodeUtils</a></li><li class="navelem"><a class="el" href="../../dir_8a03cd053a0d4b8ee4241c2a06b55d89.htm">Expression</a></li><li class="navelem"><a class="el" href="../../dir_6405463430c32561abcbcf63f8d69644.htm">Implementation</a></li><li class="navelem"><b>ExpressionByteCode_inl.h</b></li>
-    <li class="footer">Generated on Fri Nov 18 2022 14:47:55 for ezEngine by
+    <li class="footer">Generated on Sat Mar 25 2023 19:21:51 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

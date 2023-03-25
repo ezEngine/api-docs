@@ -24,6 +24,6 @@ var structez_hybrid_string_base =
     [ "operator=", "d6/d43/structez_hybrid_string_base.htm#ae68d1a260ef632266a596419853b12aa", null ],
     [ "operator=", "d6/d43/structez_hybrid_string_base.htm#a55dbfd982101ad25513f432b624ee7df", null ],
     [ "operator=", "d6/d43/structez_hybrid_string_base.htm#a397d42cc575aff87ad3184a73c3cdbd1", null ],
-    [ "ReadAll", "d6/d43/structez_hybrid_string_base.htm#ae6ed257766f300943d9707f716837c76", null ],
+    [ "ReadAll", "d6/d43/structez_hybrid_string_base.htm#a64473cc36d9507d6fe5620ff5c71ebdd", null ],
     [ "ezStringBuilder", "d6/d43/structez_hybrid_string_base.htm#a5e46a93a55134b0ea1b6b2f7b13fbbdc", null ]
 ];

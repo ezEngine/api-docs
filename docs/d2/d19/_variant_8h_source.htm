@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 22.11</span>
+   &#160;<span id="projectnumber">Release 23.04</span>
    </div>
   </td>
  </tr>
@@ -128,8 +128,8 @@ $(document).ready(function(){initNavTree('d2/d19/_variant_8h_source.htm','../../
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
 <div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="../../d0/dfa/structez_variant_1_1_string_wrapper.htm">   53</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../d0/dfa/structez_variant_1_1_string_wrapper.htm">StringWrapper</a></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    EZ_ALWAYS_INLINE <a class="code" href="../../d0/dfa/structez_variant_1_1_string_wrapper.htm">StringWrapper</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* str)</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      : m_str(str)</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    EZ_ALWAYS_INLINE <a class="code" href="../../d0/dfa/structez_variant_1_1_string_wrapper.htm">StringWrapper</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* szStr)</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      : m_str(szStr)</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    {</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* m_str;</div>
@@ -265,7 +265,7 @@ $(document).ready(function(){initNavTree('d2/d19/_variant_8h_source.htm','../../
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../de/de6/classez_variant.htm">ezVariant</a> operator[](ezUInt32 uiIndex) <span class="keyword">const</span>; <span class="comment">// [tested]</span></div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../de/de6/classez_variant.htm">ezVariant</a> operator[](<a class="code" href="../../d0/dfa/structez_variant_1_1_string_wrapper.htm">StringWrapper</a> szKey) <span class="keyword">const</span>; <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../de/de6/classez_variant.htm">ezVariant</a> operator[](<a class="code" href="../../d0/dfa/structez_variant_1_1_string_wrapper.htm">StringWrapper</a> key) <span class="keyword">const</span>; <span class="comment">// [tested]</span></div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;  <span class="keywordtype">bool</span> CanConvertTo() <span class="keyword">const</span>; <span class="comment">// [tested]</span></div>
@@ -278,7 +278,7 @@ $(document).ready(function(){initNavTree('d2/d19/_variant_8h_source.htm','../../
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  <a class="code" href="../../de/de6/classez_variant.htm">ezVariant</a> ConvertTo(<a class="code" href="../../da/d6c/structez_variant_type.htm#a91ecf53decb31d57981c71043fa30299">Type::Enum</a> type, <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a>* out_pConversionStatus = <span class="keyword">nullptr</span>) <span class="keyword">const</span>; <span class="comment">// [tested]</span></div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Functor, <span class="keyword">class</span>... Args&gt;</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;  <span class="keyword">static</span> <span class="keyword">auto</span> DispatchTo(Functor&amp; functor, <a class="code" href="../../da/d6c/structez_variant_type.htm#a91ecf53decb31d57981c71043fa30299">Type::Enum</a> type, Args&amp;&amp;... args); <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;  <span class="keyword">static</span> <span class="keyword">auto</span> DispatchTo(Functor&amp; ref_functor, <a class="code" href="../../da/d6c/structez_variant_type.htm#a91ecf53decb31d57981c71043fa30299">Type::Enum</a> type, Args&amp;&amp;... args); <span class="comment">// [tested]</span></div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160; </div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;  ezUInt64 ComputeHash(ezUInt64 uiSeed = 0) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
@@ -292,8 +292,8 @@ $(document).ready(function(){initNavTree('d2/d19/_variant_8h_source.htm','../../
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="keywordtype">void</span>* m_Ptr;</div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a>* m_pType;</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <a class="code" href="../../da/d01/classez_atomic_integer.htm">ezAtomicInteger32</a> m_uiRef = 1;</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    EZ_ALWAYS_INLINE SharedData(<span class="keywordtype">void</span>* ptr, <span class="keyword">const</span> <a class="code" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a>* pType)</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;      : m_Ptr(ptr)</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    EZ_ALWAYS_INLINE SharedData(<span class="keywordtype">void</span>* pPtr, <span class="keyword">const</span> <a class="code" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a>* pType)</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;      : m_Ptr(pPtr)</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;      , m_pType(pType)</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    {</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    }</div>
@@ -442,7 +442,7 @@ $(document).ready(function(){initNavTree('d2/d19/_variant_8h_source.htm','../../
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_f95f7c440efc771b227d40e9293549bd.htm">Types</a></li><li class="navelem"><b>Variant.h</b></li>
-    <li class="footer">Generated on Fri Nov 18 2022 14:48:01 for ezEngine by
+    <li class="footer">Generated on Sat Mar 25 2023 19:21:58 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

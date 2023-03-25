@@ -15,6 +15,7 @@ var classez_object_accessor_base =
     [ "Get", "dd/d98/classez_object_accessor_base.htm#a2fe8d2a640312c01c215e409a1617e09", null ],
     [ "Get", "dd/d98/classez_object_accessor_base.htm#a17edb0933f1191f8cb2c3065e75e731d", null ],
     [ "GetChildObject", "dd/d98/classez_object_accessor_base.htm#a5ce282e6a570ed1056ac39a9bd8b6490", null ],
+    [ "GetCount", "dd/d98/classez_object_accessor_base.htm#a0341b5273c0634a1bf3af8336bc40323", null ],
     [ "GetCount", "dd/d98/classez_object_accessor_base.htm#a0f6ed1e52c5bf59a5a592ca72b8ce81f", null ],
     [ "GetCount", "dd/d98/classez_object_accessor_base.htm#a9f964f568a21a354267171eb6b7859a7", null ],
     [ "GetCount", "dd/d98/classez_object_accessor_base.htm#a0ee4f07792f36bef2f19b339eeab3dcb", null ],

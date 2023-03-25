@@ -4,7 +4,7 @@ var classez_box_manipulator_adapter =
     [ "~ezBoxManipulatorAdapter", "d8/d0b/classez_box_manipulator_adapter.htm#aa1434c0257f64f1d4ab13dc93ac22d1f", null ],
     [ "Finalize", "d8/d0b/classez_box_manipulator_adapter.htm#a114434b44c94e875d1a9122257959ca1", null ],
     [ "GizmoEventHandler", "d8/d0b/classez_box_manipulator_adapter.htm#ac948feac7b15d14874ad20b53e8a6637", null ],
-    [ "QueryGridSettings", "d8/d0b/classez_box_manipulator_adapter.htm#ab3ecfe4694e6521fe61f03061efa410f", null ],
+    [ "QueryGridSettings", "d8/d0b/classez_box_manipulator_adapter.htm#a0105cdf0b6a7686b0905cfc439b9a6a2", null ],
     [ "Update", "d8/d0b/classez_box_manipulator_adapter.htm#a5bc261c65b7ef88fc721abe546d4fcce", null ],
     [ "UpdateGizmoTransform", "d8/d0b/classez_box_manipulator_adapter.htm#ab7d9c2a508b0685ade86bb0892611284", null ],
     [ "m_Gizmo", "d8/d0b/classez_box_manipulator_adapter.htm#ab5ea6afd9bf2595206fa08dab44a701e", null ],

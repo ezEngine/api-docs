@@ -10,5 +10,5 @@ var classez_non_uniform_box_gizmo =
     [ "OnSetOwner", "da/d5d/classez_non_uniform_box_gizmo.htm#a212045122834e16d2eb27ccfb3c1a401", null ],
     [ "OnTransformationChanged", "da/d5d/classez_non_uniform_box_gizmo.htm#a6622d416ed28588d2ce9ee7bc5652995", null ],
     [ "OnVisibleChanged", "da/d5d/classez_non_uniform_box_gizmo.htm#a16e725e2b19bf4c3a80440bd3b9da9a9", null ],
-    [ "SetSize", "da/d5d/classez_non_uniform_box_gizmo.htm#a7e74c5201928463c378a1273919ca8a0", null ]
+    [ "SetSize", "da/d5d/classez_non_uniform_box_gizmo.htm#acde8a9e6118338ee77289e0d48997b41", null ]
 ];

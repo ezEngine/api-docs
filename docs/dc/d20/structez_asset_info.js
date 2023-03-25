@@ -3,7 +3,7 @@ var structez_asset_info =
     [ "TransformState", "dc/d20/structez_asset_info.htm#a8dbcdb6aff84fb21e851e44fae260610", [
       [ "Unknown", "dc/d20/structez_asset_info.htm#a8dbcdb6aff84fb21e851e44fae260610a0c0353427a1180d38a505928f7527024", null ],
       [ "UpToDate", "dc/d20/structez_asset_info.htm#a8dbcdb6aff84fb21e851e44fae260610a8c3a4e46b170a068c7d09c4c5806fb4a", null ],
-      [ "Updating", "dc/d20/structez_asset_info.htm#a8dbcdb6aff84fb21e851e44fae260610af1f7cbc456a25e0a0ebe91b682231ca8", null ],
+      [ "NeedsImport", "dc/d20/structez_asset_info.htm#a8dbcdb6aff84fb21e851e44fae260610a8b763bfddc7b147952801821ec385d8c", null ],
       [ "NeedsTransform", "dc/d20/structez_asset_info.htm#a8dbcdb6aff84fb21e851e44fae260610ad4490128639fc621c1a0e3ad4843afd4", null ],
       [ "NeedsThumbnail", "dc/d20/structez_asset_info.htm#a8dbcdb6aff84fb21e851e44fae260610afa60ef146655184dce3c1704c56c935c", null ],
       [ "TransformError", "dc/d20/structez_asset_info.htm#a8dbcdb6aff84fb21e851e44fae260610a99bca24b5502582a0c4d5ed76b106cd1", null ],

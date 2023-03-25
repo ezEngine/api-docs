@@ -1,6 +1,6 @@
 var classez_qt_stat_vis_widget =
 [
-    [ "ezQtStatVisWidget", "d8/d10/classez_qt_stat_vis_widget.htm#a89bb50d5f01ba3b3526b5f52aa5ddeba", null ],
+    [ "ezQtStatVisWidget", "d8/d10/classez_qt_stat_vis_widget.htm#a8edc039aab2a827b8309ce583d67d3bd", null ],
     [ "~ezQtStatVisWidget", "d8/d10/classez_qt_stat_vis_widget.htm#a9162468e2ff16213b16b3d62ba90a118", null ],
     [ "AddStat", "d8/d10/classez_qt_stat_vis_widget.htm#ad7848786586cde34717259a8a80cf20a", null ],
     [ "Load", "d8/d10/classez_qt_stat_vis_widget.htm#a4922759669ceb6577f6bcf4b131fe1be", null ],

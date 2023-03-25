@@ -15,7 +15,7 @@ var classez_simd_b_box_sphere =
     [ "operator==", "dc/d62/classez_simd_b_box_sphere.htm#a9d3aacd42dfb5169a7f97bd31481da05", null ],
     [ "SetFromPoints", "dc/d62/classez_simd_b_box_sphere.htm#aeddd8ccb2adb1079406813a3ec2617e8", null ],
     [ "SetInvalid", "dc/d62/classez_simd_b_box_sphere.htm#aeb7b14414ef182aa77a6b68fa7e28a97", null ],
-    [ "Transform", "dc/d62/classez_simd_b_box_sphere.htm#a53f615b93401051b8a8362df5e4e0f9e", null ],
+    [ "Transform", "dc/d62/classez_simd_b_box_sphere.htm#add7b210a110b747d6855a83845a34e6d", null ],
     [ "Transform", "dc/d62/classez_simd_b_box_sphere.htm#a6c2cddee9fbc7a0580d284739335c274", null ],
     [ "m_BoxHalfExtents", "dc/d62/classez_simd_b_box_sphere.htm#abcb36f863ffa79c9f46b1a0d6119d639", null ],
     [ "m_CenterAndRadius", "dc/d62/classez_simd_b_box_sphere.htm#a0d6da6e06ce543bb4d5dbd475f760dc4", null ]

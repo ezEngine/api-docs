@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ezEngine: /home/runner/work/ezEngine/ezEngine/Code/Engine/GameEngine/AI/PointOfInterestGraph.h Source File</title>
+<title>ezEngine: /home/runner/work/ezEngine/ezEngine/Code/EnginePlugins/RecastPlugin/Components/PointOfInterestGraph.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 22.11</span>
+   &#160;<span id="projectnumber">Release 23.04</span>
    </div>
   </td>
  </tr>
@@ -90,18 +90,18 @@ $(document).ready(function(){initNavTree('d1/df1/_point_of_interest_graph_8h_sou
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;Foundation/Math/Vec3.h&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;GameEngine/GameEngineDLL.h&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;GameComponentsPlugin/GameComponentsDLL.h&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;Utilities/DataStructures/DynamicOctree.h&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> POINTTYPE&gt;</div>
 <div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="../../d7/dc1/classez_point_of_interest_graph.htm">    8</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d7/dc1/classez_point_of_interest_graph.htm">ezPointOfInterestGraph</a></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keywordtype">void</span> Initialize(<span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; center, <span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; halfExtents, <span class="keywordtype">float</span> cellSize = 1.0f);</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keywordtype">void</span> Initialize(<span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; vCenter, <span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; vHalfExtents, <span class="keywordtype">float</span> fCellSize = 1.0f);</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  POINTTYPE&amp; AddPoint(<span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; position);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  POINTTYPE&amp; AddPoint(<span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; vPosition);</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keywordtype">void</span> FindPointsOfInterest(<span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; position, <span class="keywordtype">float</span> radius, <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezUInt32&gt;</a>&amp; out_Points) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keywordtype">void</span> FindPointsOfInterest(<span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; vPosition, <span class="keywordtype">float</span> fRadius, <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezUInt32&gt;</a>&amp; out_points) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d9/dfe/classez_deque.htm">ezDeque&lt;POINTTYPE&gt;</a>&amp; GetPoints()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_Points; }</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <a class="code" href="../../d9/dfe/classez_deque.htm">ezDeque&lt;POINTTYPE&gt;</a>&amp; AccessPoints() { <span class="keywordflow">return</span> m_Points; }</div>
@@ -111,7 +111,7 @@ $(document).ready(function(){initNavTree('d1/df1/_point_of_interest_graph_8h_sou
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <a class="code" href="../../da/d7a/classez_dynamic_octree.htm">ezDynamicOctree</a> m_Octree;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;};</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;GameEngine/AI/Implementation/PointOfInterestGraph_inl.h&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;RecastPlugin/Components/PointOfInterestGraph_inl.h&gt;</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_deque_htm"><div class="ttname"><a href="../../d9/dfe/classez_deque.htm">ezDeque&lt; POINTTYPE &gt;</a></div></div>
@@ -122,8 +122,8 @@ $(document).ready(function(){initNavTree('d1/df1/_point_of_interest_graph_8h_sou
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_fe4f349dd73c6459187bb04ae7deb06f.htm">GameEngine</a></li><li class="navelem"><a class="el" href="../../dir_d63e3ae36ad61b17f93e69f63d6f1865.htm">AI</a></li><li class="navelem"><b>PointOfInterestGraph.h</b></li>
-    <li class="footer">Generated on Fri Nov 18 2022 14:48:01 for ezEngine by
+    <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_103378c88ff4c88de6bfabe12da9ec96.htm">EnginePlugins</a></li><li class="navelem"><a class="el" href="../../dir_f779ecf89334b4f89f4073d2ae070f2b.htm">RecastPlugin</a></li><li class="navelem"><a class="el" href="../../dir_e007e9b5a866a65d0e39e08a5909611f.htm">Components</a></li><li class="navelem"><b>PointOfInterestGraph.h</b></li>
+    <li class="footer">Generated on Sat Mar 25 2023 19:22:00 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

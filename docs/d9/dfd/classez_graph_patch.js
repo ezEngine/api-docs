@@ -9,5 +9,5 @@ var classez_graph_patch =
     [ "GetPatchType", "d9/dfd/classez_graph_patch.htm#a0fced0dcdbbf92a50f90c33800b2749f", null ],
     [ "GetType", "d9/dfd/classez_graph_patch.htm#a1ca37af0441a54ef305e987d48a893da", null ],
     [ "GetTypeVersion", "d9/dfd/classez_graph_patch.htm#ab5fa870d9715d1e792abf3d712a836f1", null ],
-    [ "Patch", "d9/dfd/classez_graph_patch.htm#a9f5e19e529f40b836ab6cfe794c595a0", null ]
+    [ "Patch", "d9/dfd/classez_graph_patch.htm#a4ebb05f3cf1329e050cfd230e61bf79d", null ]
 ];

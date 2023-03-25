@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 22.11</span>
+   &#160;<span id="projectnumber">Release 23.04</span>
    </div>
   </td>
  </tr>
@@ -185,21 +185,21 @@ $(document).ready(function(){initNavTree('db/d3c/_simd_b_box_sphere__inl_8h_sour
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <a class="code" href="../../dc/d62/classez_simd_b_box_sphere.htm#a6c2cddee9fbc7a0580d284739335c274">Transform</a>(t.<a class="code" href="../../da/d8b/classez_simd_transform.htm#a0dcd0925688984021e1d9b0f1e4d9f25">GetAsMat4</a>());</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="../../dc/d62/classez_simd_b_box_sphere.htm#a53f615b93401051b8a8362df5e4e0f9e">   99</a></span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d62/classez_simd_b_box_sphere.htm#a6c2cddee9fbc7a0580d284739335c274">ezSimdBBoxSphere::Transform</a>(<span class="keyword">const</span> <a class="code" href="../../d2/d62/classez_simd_mat4f.htm">ezSimdMat4f</a>&amp; mat)</div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="../../dc/d62/classez_simd_b_box_sphere.htm#add7b210a110b747d6855a83845a34e6d">   99</a></span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../dc/d62/classez_simd_b_box_sphere.htm#a6c2cddee9fbc7a0580d284739335c274">ezSimdBBoxSphere::Transform</a>(<span class="keyword">const</span> <a class="code" href="../../d2/d62/classez_simd_mat4f.htm">ezSimdMat4f</a>&amp; mMat)</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;{</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <a class="code" href="../../d2/d0c/classez_simd_float.htm">ezSimdFloat</a> radius = m_CenterAndRadius.w();</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  m_CenterAndRadius = mat.<a class="code" href="../../d2/d62/classez_simd_mat4f.htm#a849d351580f175be2956da10ac443d02">TransformPosition</a>(m_CenterAndRadius);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  m_CenterAndRadius = mMat.<a class="code" href="../../d2/d62/classez_simd_mat4f.htm#a849d351580f175be2956da10ac443d02">TransformPosition</a>(m_CenterAndRadius);</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <a class="code" href="../../d2/d0c/classez_simd_float.htm">ezSimdFloat</a> maxRadius = mat.m_col0.Dot&lt;3&gt;(mat.m_col0);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  maxRadius = maxRadius.Max(mat.m_col1.Dot&lt;3&gt;(mat.m_col1));</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  maxRadius = maxRadius.Max(mat.m_col2.Dot&lt;3&gt;(mat.m_col2));</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <a class="code" href="../../d2/d0c/classez_simd_float.htm">ezSimdFloat</a> maxRadius = mMat.m_col0.Dot&lt;3&gt;(mMat.m_col0);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  maxRadius = maxRadius.Max(mMat.m_col1.Dot&lt;3&gt;(mMat.m_col1));</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  maxRadius = maxRadius.Max(mMat.m_col2.Dot&lt;3&gt;(mMat.m_col2));</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  radius *= maxRadius.GetSqrt();</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  m_CenterAndRadius.SetW(radius);</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <a class="code" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a> newHalfExtents = mat.m_col0.Abs() * m_BoxHalfExtents.x();</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  newHalfExtents += mat.m_col1.Abs() * m_BoxHalfExtents.y();</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  newHalfExtents += mat.m_col2.Abs() * m_BoxHalfExtents.z();</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <a class="code" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a> newHalfExtents = mMat.m_col0.Abs() * m_BoxHalfExtents.x();</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  newHalfExtents += mMat.m_col1.Abs() * m_BoxHalfExtents.y();</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  newHalfExtents += mMat.m_col2.Abs() * m_BoxHalfExtents.z();</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  m_BoxHalfExtents = newHalfExtents.CompMin(<a class="code" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a>(radius));</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
@@ -244,7 +244,7 @@ $(document).ready(function(){initNavTree('db/d3c/_simd_b_box_sphere__inl_8h_sour
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_6b9381ed4ec7e78ad4ad9509acce36a5.htm">SimdMath</a></li><li class="navelem"><a class="el" href="../../dir_3d955f3f3e7fff9f34f1ed045c0694e5.htm">Implementation</a></li><li class="navelem"><b>SimdBBoxSphere_inl.h</b></li>
-    <li class="footer">Generated on Fri Nov 18 2022 14:48:00 for ezEngine by
+    <li class="footer">Generated on Sat Mar 25 2023 19:21:56 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

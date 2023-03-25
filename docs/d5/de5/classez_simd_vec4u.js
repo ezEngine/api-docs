@@ -1,7 +1,7 @@
 var classez_simd_vec4u =
 [
     [ "ezSimdVec4u", "d5/de5/classez_simd_vec4u.htm#a9e421214c12b82b78ebd1d771cee2709", null ],
-    [ "ezSimdVec4u", "d5/de5/classez_simd_vec4u.htm#ad38ff3b38a4b1c9fe91c1431f5193a60", null ],
+    [ "ezSimdVec4u", "d5/de5/classez_simd_vec4u.htm#ad8b49307726e9f641962d40d89bac8d5", null ],
     [ "ezSimdVec4u", "d5/de5/classez_simd_vec4u.htm#a1ad501e8d226682738a93ee53d3f0c06", null ],
     [ "ezSimdVec4u", "d5/de5/classez_simd_vec4u.htm#abf4bb208485cef6ce76351b6303844fe", null ],
     [ "ezSimdVec4u", "d5/de5/classez_simd_vec4u.htm#a0c957321a13ba248e37529b72a339bd2", null ],
@@ -34,8 +34,8 @@ var classez_simd_vec4u =
     [ "operator|", "d5/de5/classez_simd_vec4u.htm#aa6b91a42159b56b882a541ba770f725c", null ],
     [ "operator|=", "d5/de5/classez_simd_vec4u.htm#a6c02373bec807400a1b603e33f9afb82", null ],
     [ "operator~", "d5/de5/classez_simd_vec4u.htm#a6d457715ff8541bdc9bace695ea46474", null ],
+    [ "Set", "d5/de5/classez_simd_vec4u.htm#a199b9b875f7a4a5f633db2cc60fa9993", null ],
     [ "Set", "d5/de5/classez_simd_vec4u.htm#a69394e1aaef94222f5acc8ffda2a0994", null ],
-    [ "Set", "d5/de5/classez_simd_vec4u.htm#a306a90bbbe4f9d12de5cf83a77d0a4f0", null ],
     [ "SetZero", "d5/de5/classez_simd_vec4u.htm#af4ea3ffbbae65d4540d4dbd6e2510f4a", null ],
     [ "ToFloat", "d5/de5/classez_simd_vec4u.htm#affd1df006a1dcb0befd67eda336ab101", null ],
     [ "w", "d5/de5/classez_simd_vec4u.htm#ae0d4772d2e7df8a180eef10185a45c48", null ],

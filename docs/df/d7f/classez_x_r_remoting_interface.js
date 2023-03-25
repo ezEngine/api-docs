@@ -1,6 +1,6 @@
 var classez_x_r_remoting_interface =
 [
-    [ "Connect", "df/d7f/classez_x_r_remoting_interface.htm#a0301999272c3a7a1c01fe9a95a05ee3f", null ],
+    [ "Connect", "df/d7f/classez_x_r_remoting_interface.htm#a15fab8166c021ad8f0310ef5cdbfb434", null ],
     [ "Deinitialize", "df/d7f/classez_x_r_remoting_interface.htm#aa451fdf643c8575b4871fde0011ffc5c", null ],
     [ "Disconnect", "df/d7f/classez_x_r_remoting_interface.htm#afa3a6d252fbd0bdbb10c5d4532b28a4a", null ],
     [ "GetConnectionEvent", "df/d7f/classez_x_r_remoting_interface.htm#aeabe946292a359fa4b70077f99b26de4", null ],

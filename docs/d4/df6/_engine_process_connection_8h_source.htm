@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 22.11</span>
+   &#160;<span id="projectnumber">Release 23.04</span>
    </div>
   </td>
  </tr>
@@ -128,9 +128,9 @@ $(document).ready(function(){initNavTree('d4/df6/_engine_process_connection_8h_s
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordtype">void</span> SendMessage(<a class="code" href="../../db/d40/classez_process_message.htm">ezProcessMessage</a>* pMessage);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> WaitForMessage(<span class="keyword">const</span> <a class="code" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a>* pMessageType, <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> tTimeout, <a class="code" href="../../d0/d97/classez_process_communication_channel.htm#a20630b6ccf4b16e470fee80d40e29239">ezProcessCommunicationChannel ::WaitForMessageCallback</a>* pCallback = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> WaitForMessage(<span class="keyword">const</span> <a class="code" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a>* pMessageType, <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> timeout, <a class="code" href="../../d0/d97/classez_process_communication_channel.htm#a20630b6ccf4b16e470fee80d40e29239">ezProcessCommunicationChannel ::WaitForMessageCallback</a>* pCallback = <span class="keyword">nullptr</span>);</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> WaitForDocumentMessage(</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a>&amp; assetGuid, <span class="keyword">const</span> <a class="code" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a>* pMessageType, <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> tTimeout, <a class="code" href="../../d5/d68/structez_delegate.htm">ezProcessCommunicationChannel::WaitForMessageCallback</a>* pCallback = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a>&amp; assetGuid, <span class="keyword">const</span> <a class="code" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a>* pMessageType, <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> timeout, <a class="code" href="../../d5/d68/structez_delegate.htm">ezProcessCommunicationChannel::WaitForMessageCallback</a>* pCallback = <span class="keyword">nullptr</span>);</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordtype">void</span> SetWaitForDebugger(<span class="keywordtype">bool</span> bWait) { m_bProcessShouldWaitForDebugger = bWait; }</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordtype">bool</span> GetWaitForDebugger()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_bProcessShouldWaitForDebugger; }</div>
@@ -140,74 +140,72 @@ $(document).ready(function(){initNavTree('d4/df6/_engine_process_connection_8h_s
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordtype">bool</span> IsEngineSetup()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_bClientIsConfigured; }</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordtype">void</span> SendDocumentOpenMessage(<span class="keyword">const</span> <a class="code" href="../../d2/d47/classez_asset_document.htm">ezAssetDocument</a>* pDocument, <span class="keywordtype">bool</span> bOpen);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordtype">void</span> ActivateRemoteProcess(<span class="keyword">const</span> <a class="code" href="../../d2/d47/classez_asset_document.htm">ezAssetDocument</a>* pDocument, ezUInt32 uiViewID);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <a class="code" href="../../d0/d97/classez_process_communication_channel.htm">ezProcessCommunicationChannel</a>&amp; GetCommunicationChannel() { <span class="keywordflow">return</span> m_IPC; }</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="../../d5/d75/structez_editor_engine_process_connection_1_1_event.htm">   73</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../d5/d75/structez_editor_engine_process_connection_1_1_event.htm">Event</a></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keyword">enum class</span> Type</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      Invalid,</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      ProcessStarted,</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      ProcessCrashed,</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      ProcessShutdown,</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      ProcessMessage,</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      ProcessRestarted,</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    };</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="../../d5/d75/structez_editor_engine_process_connection_1_1_event.htm">Event</a>()</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;      m_Type = Type::Invalid;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      m_pMsg = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    Type m_Type;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../db/d40/classez_process_message.htm">ezProcessMessage</a>* m_pMsg;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  };</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d0/daf/classez_event.htm">ezEvent&lt;const Event&amp;&gt;</a> s_Events;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keywordtype">void</span> Initialize(<span class="keyword">const</span> <a class="code" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a>* pFirstAllowedMessageType);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keywordtype">void</span> HandleIPCEvent(<span class="keyword">const</span> <a class="code" href="../../d2/d48/structez_process_communication_channel_1_1_event.htm">ezProcessCommunicationChannel::Event</a>&amp; e);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keywordtype">void</span> UIServicesTickEventHandler(<span class="keyword">const</span> <a class="code" href="../../d9/ddb/structez_qt_ui_services_1_1_tick_event.htm">ezQtUiServices::TickEvent</a>&amp; e);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="keywordtype">bool</span> ConnectToRemoteProcess();</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keywordtype">void</span> ShutdownRemoteProcess();</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="keywordtype">bool</span> m_bProcessShouldWaitForDebugger;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <span class="keywordtype">bool</span> m_bProcessShouldBeRunning;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="keywordtype">bool</span> m_bProcessCrashed;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <span class="keywordtype">bool</span> m_bClientIsConfigured;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  ezEventSubscriptionID m_TickEventSubscriptionID = 0;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  ezUInt32 m_uiRedrawCountSent = 0;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  ezUInt32 m_uiRedrawCountReceived = 0;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sRenderer;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <a class="code" href="../../df/df4/classez_editor_process_communication_channel.htm">ezEditorProcessCommunicationChannel</a> m_IPC;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <a class="code" href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt;ezEditorProcessRemoteCommunicationChannel&gt;</a> m_pRemoteProcess;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <a class="code" href="../../db/d81/classez_application_file_system_config.htm">ezApplicationFileSystemConfig</a> m_FileSystemConfig;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <a class="code" href="../../d2/dd8/classez_application_plugin_config.htm">ezApplicationPluginConfig</a> m_PluginConfig;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <a class="code" href="../../d8/d86/classez_hash_table.htm">ezHashTable&lt;ezUuid, ezAssetDocument*&gt;</a> m_DocumentByGuid;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;};</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
-<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="../../da/d5a/classez_editor_engine_connection.htm">  120</a></span>&#160;<span class="keyword">class </span>EZ_EDITORFRAMEWORK_DLL <a class="code" href="../../da/d5a/classez_editor_engine_connection.htm">ezEditorEngineConnection</a></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;{</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <span class="keywordtype">void</span> SendMessage(<a class="code" href="../../d1/dfa/classez_editor_engine_document_msg.htm">ezEditorEngineDocumentMsg</a>* pMessage);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <span class="keywordtype">void</span> SendHighlightObjectMessage(<a class="code" href="../../dd/d35/classez_view_highlight_msg_to_engine.htm">ezViewHighlightMsgToEngine</a>* pMessage);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <a class="code" href="../../d6/dd3/classez_document.htm">ezDocument</a>* GetDocument()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pDocument; }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordtype">void</span> ActivateRemoteProcess(<span class="keyword">const</span> <a class="code" href="../../d2/d47/classez_asset_document.htm">ezAssetDocument</a>* pDocument, ezUInt32 uiViewID);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <a class="code" href="../../d0/d97/classez_process_communication_channel.htm">ezProcessCommunicationChannel</a>&amp; GetCommunicationChannel() { <span class="keywordflow">return</span> m_IPC; }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="../../d5/d75/structez_editor_engine_process_connection_1_1_event.htm">   68</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../d5/d75/structez_editor_engine_process_connection_1_1_event.htm">Event</a></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">enum class</span> Type</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      Invalid,</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      ProcessStarted,</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      ProcessCrashed,</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      ProcessShutdown,</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;      ProcessMessage,</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      ProcessRestarted,</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    };</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="../../d5/d75/structez_editor_engine_process_connection_1_1_event.htm">Event</a>()</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      m_Type = Type::Invalid;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      m_pMsg = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    Type m_Type;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../db/d40/classez_process_message.htm">ezProcessMessage</a>* m_pMsg;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  };</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d0/daf/classez_event.htm">ezEvent&lt;const Event&amp;&gt;</a> s_Events;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keywordtype">void</span> Initialize(<span class="keyword">const</span> <a class="code" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a>* pFirstAllowedMessageType);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keywordtype">void</span> HandleIPCEvent(<span class="keyword">const</span> <a class="code" href="../../d2/d48/structez_process_communication_channel_1_1_event.htm">ezProcessCommunicationChannel::Event</a>&amp; e);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keywordtype">void</span> UIServicesTickEventHandler(<span class="keyword">const</span> <a class="code" href="../../d9/ddb/structez_qt_ui_services_1_1_tick_event.htm">ezQtUiServices::TickEvent</a>&amp; e);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <span class="keywordtype">bool</span> ConnectToRemoteProcess();</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="keywordtype">void</span> ShutdownRemoteProcess();</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keywordtype">bool</span> m_bProcessShouldWaitForDebugger = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keywordtype">bool</span> m_bProcessShouldBeRunning;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="keywordtype">bool</span> m_bProcessCrashed;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keywordtype">bool</span> m_bClientIsConfigured;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  ezEventSubscriptionID m_TickEventSubscriptionID = 0;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  ezUInt32 m_uiRedrawCountSent = 0;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  ezUInt32 m_uiRedrawCountReceived = 0;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sRenderer;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <a class="code" href="../../df/df4/classez_editor_process_communication_channel.htm">ezEditorProcessCommunicationChannel</a> m_IPC;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <a class="code" href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt;ezEditorProcessRemoteCommunicationChannel&gt;</a> m_pRemoteProcess;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <a class="code" href="../../db/d81/classez_application_file_system_config.htm">ezApplicationFileSystemConfig</a> m_FileSystemConfig;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <a class="code" href="../../d2/dd8/classez_application_plugin_config.htm">ezApplicationPluginConfig</a> m_PluginConfig;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <a class="code" href="../../d8/d86/classez_hash_table.htm">ezHashTable&lt;ezUuid, ezAssetDocument*&gt;</a> m_DocumentByGuid;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;};</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="../../da/d5a/classez_editor_engine_connection.htm">  115</a></span>&#160;<span class="keyword">class </span>EZ_EDITORFRAMEWORK_DLL <a class="code" href="../../da/d5a/classez_editor_engine_connection.htm">ezEditorEngineConnection</a></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;{</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <span class="keywordtype">void</span> SendMessage(<a class="code" href="../../d1/dfa/classez_editor_engine_document_msg.htm">ezEditorEngineDocumentMsg</a>* pMessage);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <span class="keywordtype">void</span> SendHighlightObjectMessage(<a class="code" href="../../dd/d35/classez_view_highlight_msg_to_engine.htm">ezViewHighlightMsgToEngine</a>* pMessage);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <a class="code" href="../../d6/dd3/classez_document.htm">ezDocument</a>* GetDocument()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pDocument; }</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d0/db7/classez_editor_engine_process_connection.htm">ezEditorEngineProcessConnection</a>;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <a class="code" href="../../da/d5a/classez_editor_engine_connection.htm">ezEditorEngineConnection</a>(<a class="code" href="../../d6/dd3/classez_document.htm">ezDocument</a>* pDocument) { m_pDocument = pDocument; }</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  ~<a class="code" href="../../da/d5a/classez_editor_engine_connection.htm">ezEditorEngineConnection</a>() {}</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d0/db7/classez_editor_engine_process_connection.htm">ezEditorEngineProcessConnection</a>;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  <a class="code" href="../../da/d5a/classez_editor_engine_connection.htm">ezEditorEngineConnection</a>(<a class="code" href="../../d6/dd3/classez_document.htm">ezDocument</a>* pDocument) { m_pDocument = pDocument; }</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  ~<a class="code" href="../../da/d5a/classez_editor_engine_connection.htm">ezEditorEngineConnection</a>() {}</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  <a class="code" href="../../d6/dd3/classez_document.htm">ezDocument</a>* m_pDocument;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;};</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <a class="code" href="../../d6/dd3/classez_document.htm">ezDocument</a>* m_pDocument;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_document_htm"><div class="ttname"><a href="../../d6/dd3/classez_document.htm">ezDocument</a></div><div class="ttdef"><b>Definition:</b> Document.h:56</div></div>
@@ -222,10 +220,10 @@ $(document).ready(function(){initNavTree('d4/df6/_engine_process_connection_8h_s
 <div class="ttc" id="aclassez_editor_engine_process_connection_htm_aeed88919a50701e7d9b48ec7608292c5"><div class="ttname"><a href="../../d0/db7/classez_editor_engine_process_connection.htm#aeed88919a50701e7d9b48ec7608292c5">ezEditorEngineProcessConnection::SetFileSystemConfig</a></div><div class="ttdeci">void SetFileSystemConfig(const ezApplicationFileSystemConfig &amp;cfg)</div><div class="ttdoc">The given file system configuration will be used by the engine process to setup the runtime data dire...</div><div class="ttdef"><b>Definition:</b> EngineProcessConnection.h:30</div></div>
 <div class="ttc" id="aclassez_process_communication_channel_htm_a20630b6ccf4b16e470fee80d40e29239"><div class="ttname"><a href="../../d0/d97/classez_process_communication_channel.htm#a20630b6ccf4b16e470fee80d40e29239">ezProcessCommunicationChannel::WaitForMessageCallback</a></div><div class="ttdeci">ezDelegate&lt; bool(ezProcessMessage *)&gt; WaitForMessageCallback</div><div class="ttdef"><b>Definition:</b> ProcessCommunicationChannel.h:21</div></div>
 <div class="ttc" id="astructez_hybrid_string_htm"><div class="ttname"><a href="../../d4/d53/structez_hybrid_string.htm">ezHybridString&lt; 32, ezDefaultAllocatorWrapper &gt;</a></div></div>
-<div class="ttc" id="aclassez_view_highlight_msg_to_engine_htm"><div class="ttname"><a href="../../dd/d35/classez_view_highlight_msg_to_engine.htm">ezViewHighlightMsgToEngine</a></div><div class="ttdef"><b>Definition:</b> EngineProcessMessages.h:403</div></div>
+<div class="ttc" id="aclassez_view_highlight_msg_to_engine_htm"><div class="ttname"><a href="../../dd/d35/classez_view_highlight_msg_to_engine.htm">ezViewHighlightMsgToEngine</a></div><div class="ttdef"><b>Definition:</b> EngineProcessMessages.h:392</div></div>
 <div class="ttc" id="astructez_process_communication_channel_1_1_event_htm"><div class="ttname"><a href="../../d2/d48/structez_process_communication_channel_1_1_event.htm">ezProcessCommunicationChannel::Event</a></div><div class="ttdef"><b>Definition:</b> ProcessCommunicationChannel.h:29</div></div>
-<div class="ttc" id="aclassez_editor_engine_connection_htm"><div class="ttname"><a href="../../da/d5a/classez_editor_engine_connection.htm">ezEditorEngineConnection</a></div><div class="ttdef"><b>Definition:</b> EngineProcessConnection.h:120</div></div>
-<div class="ttc" id="aclassez_editor_engine_document_msg_htm"><div class="ttname"><a href="../../d1/dfa/classez_editor_engine_document_msg.htm">ezEditorEngineDocumentMsg</a></div><div class="ttdoc">Base class for all messages that are tied to some document.</div><div class="ttdef"><b>Definition:</b> EngineProcessMessages.h:152</div></div>
+<div class="ttc" id="aclassez_editor_engine_connection_htm"><div class="ttname"><a href="../../da/d5a/classez_editor_engine_connection.htm">ezEditorEngineConnection</a></div><div class="ttdef"><b>Definition:</b> EngineProcessConnection.h:115</div></div>
+<div class="ttc" id="aclassez_editor_engine_document_msg_htm"><div class="ttname"><a href="../../d1/dfa/classez_editor_engine_document_msg.htm">ezEditorEngineDocumentMsg</a></div><div class="ttdoc">Base class for all messages that are tied to some document.</div><div class="ttdef"><b>Definition:</b> EngineProcessMessages.h:140</div></div>
 <div class="ttc" id="aclassez_unique_ptr_htm"><div class="ttname"><a href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt; ezEditorProcessRemoteCommunicationChannel &gt;</a></div></div>
 <div class="ttc" id="aclassez_editor_process_communication_channel_htm"><div class="ttname"><a href="../../df/df4/classez_editor_process_communication_channel.htm">ezEditorProcessCommunicationChannel</a></div><div class="ttdef"><b>Definition:</b> EditorProcessCommunicationChannel.h:12</div></div>
 <div class="ttc" id="astructez_delegate_htm"><div class="ttname"><a href="../../d5/d68/structez_delegate.htm">ezDelegate&lt; bool(ezProcessMessage *)&gt;</a></div></div>
@@ -238,13 +236,13 @@ $(document).ready(function(){initNavTree('d4/df6/_engine_process_connection_8h_s
 <div class="ttc" id="aclassez_application_plugin_config_htm"><div class="ttname"><a href="../../d2/dd8/classez_application_plugin_config.htm">ezApplicationPluginConfig</a></div><div class="ttdef"><b>Definition:</b> PluginConfig.h:8</div></div>
 <div class="ttc" id="aclassez_qt_engine_document_window_htm"><div class="ttname"><a href="../../db/df1/classez_qt_engine_document_window.htm">ezQtEngineDocumentWindow</a></div><div class="ttdoc">Base class for all document windows that need a connection to the engine process, and might want to r...</div><div class="ttdef"><b>Definition:</b> EngineDocumentWindow.moc.h:36</div></div>
 <div class="ttc" id="aclassez_hash_table_htm"><div class="ttname"><a href="../../d8/d86/classez_hash_table.htm">ezHashTable&lt; ezUuid, ezAssetDocument * &gt;</a></div></div>
-<div class="ttc" id="astructez_editor_engine_process_connection_1_1_event_htm"><div class="ttname"><a href="../../d5/d75/structez_editor_engine_process_connection_1_1_event.htm">ezEditorEngineProcessConnection::Event</a></div><div class="ttdef"><b>Definition:</b> EngineProcessConnection.h:73</div></div>
+<div class="ttc" id="astructez_editor_engine_process_connection_1_1_event_htm"><div class="ttname"><a href="../../d5/d75/structez_editor_engine_process_connection_1_1_event.htm">ezEditorEngineProcessConnection::Event</a></div><div class="ttdef"><b>Definition:</b> EngineProcessConnection.h:68</div></div>
 <div class="ttc" id="aclassez_application_file_system_config_htm"><div class="ttname"><a href="../../db/d81/classez_application_file_system_config.htm">ezApplicationFileSystemConfig</a></div><div class="ttdef"><b>Definition:</b> FileSystemConfig.h:7</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_898824d97bbfb864e5ee6bfb2857fc31.htm">Editor</a></li><li class="navelem"><a class="el" href="../../dir_2c11fbcc86473fad6c721ead68acf992.htm">EditorFramework</a></li><li class="navelem"><a class="el" href="../../dir_03b250abacbdfe45e581bd73b524c643.htm">IPC</a></li><li class="navelem"><b>EngineProcessConnection.h</b></li>
-    <li class="footer">Generated on Fri Nov 18 2022 14:47:53 for ezEngine by
+    <li class="footer">Generated on Sat Mar 25 2023 19:21:50 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

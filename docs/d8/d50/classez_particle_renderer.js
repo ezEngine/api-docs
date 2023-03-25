@@ -6,6 +6,6 @@ var classez_particle_renderer =
     [ "BindParticleShader", "d8/d50/classez_particle_renderer.htm#a127d7ab976b052c9c4b1ae9a9ecc1aef", null ],
     [ "CreateParticleDataBuffer", "d8/d50/classez_particle_renderer.htm#ae6349162ac0242c30277056e43269237", null ],
     [ "DestroyParticleDataBuffer", "d8/d50/classez_particle_renderer.htm#a8eb743bcdcfc881189304ffc10820584", null ],
-    [ "GetSupportedRenderDataCategories", "d8/d50/classez_particle_renderer.htm#a259054563459db4f46fe147a4a69eeb0", null ],
+    [ "GetSupportedRenderDataCategories", "d8/d50/classez_particle_renderer.htm#a42f433382e3532c57c683f5b1a5d0b6f", null ],
     [ "m_hShader", "d8/d50/classez_particle_renderer.htm#aa6129f86d2457e126c47d95952ab4cc9", null ]
 ];

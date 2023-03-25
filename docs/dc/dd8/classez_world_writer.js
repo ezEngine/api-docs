@@ -5,7 +5,7 @@ var classez_world_writer =
     [ "GetStream", "dc/dd8/classez_world_writer.htm#a7edcb9609e02c23cb1dc1fddec5e2593", null ],
     [ "WriteComponentHandle", "dc/dd8/classez_world_writer.htm#aa6fbaa6584ed384fe20f79219d335c22", null ],
     [ "WriteGameObjectHandle", "dc/dd8/classez_world_writer.htm#adfe2071547e53313d4fbe82dcb68db37", null ],
-    [ "WriteObjects", "dc/dd8/classez_world_writer.htm#af85ff63eba0c01df3c537330ed913262", null ],
-    [ "WriteObjects", "dc/dd8/classez_world_writer.htm#a57463f89a4fb226ea4c6b7d13c0afb94", null ],
-    [ "WriteWorld", "dc/dd8/classez_world_writer.htm#a38a46388f99effd8eaf457c80a7b2192", null ]
+    [ "WriteObjects", "dc/dd8/classez_world_writer.htm#ac6260f1dec4046eeef2fda379156a952", null ],
+    [ "WriteObjects", "dc/dd8/classez_world_writer.htm#ad9c62ff38ccb0b62a7d81a26fc60318f", null ],
+    [ "WriteWorld", "dc/dd8/classez_world_writer.htm#a4749c00b21d44b124d0d13d0548e4220", null ]
 ];

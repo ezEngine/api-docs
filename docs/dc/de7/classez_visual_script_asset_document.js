@@ -9,7 +9,7 @@ var classez_visual_script_asset_document =
     [ "HandleVsActivityMsg", "dc/de7/classez_visual_script_asset_document.htm#a6bd2404512b103f1e32d7a3a63150888", null ],
     [ "HighlightConnections", "dc/de7/classez_visual_script_asset_document.htm#a5830ed04c0a9d7eb3f772420bad4f136", null ],
     [ "InternalGetMetaDataHash", "dc/de7/classez_visual_script_asset_document.htm#aacc1c121b2fe99d124460c545bb465e3", null ],
-    [ "InternalTransformAsset", "dc/de7/classez_visual_script_asset_document.htm#a8ea2e5f090f8c981522190ab831612dc", null ],
+    [ "InternalTransformAsset", "dc/de7/classez_visual_script_asset_document.htm#ad833afc82276cc2693c892f6467b8a20", null ],
     [ "OnInterDocumentMessage", "dc/de7/classez_visual_script_asset_document.htm#acced33cb411eaf7c2fc7ed8aec4d1f03", null ],
     [ "Paste", "dc/de7/classez_visual_script_asset_document.htm#a3286a54e9714a0edce38e0efc2640288", null ],
     [ "RestoreMetaDataAfterLoading", "dc/de7/classez_visual_script_asset_document.htm#a4b8c58e03966e4c7fac0c15a27b8fedb", null ],

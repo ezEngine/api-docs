@@ -15,7 +15,7 @@ var classez_draw_box_gizmo =
     [ "DoMouseReleaseEvent", "d9/d2f/classez_draw_box_gizmo.htm#aed3be3d46fb13cbed8249008fc548095", null ],
     [ "GetCurrentMode", "d9/d2f/classez_draw_box_gizmo.htm#a1b5d21ebae8b60f01f49930bb16ece33", null ],
     [ "GetDisplayGrid", "d9/d2f/classez_draw_box_gizmo.htm#a5eb1a970bada2b2c451004d8ae835af1", null ],
-    [ "GetResult", "d9/d2f/classez_draw_box_gizmo.htm#a12f0900a5c18c7ed01d7e52e9287f6a7", null ],
+    [ "GetResult", "d9/d2f/classez_draw_box_gizmo.htm#a0f28d79d79b421e8c715a7be84ff5437", null ],
     [ "GetStartPosition", "d9/d2f/classez_draw_box_gizmo.htm#a8acb5b37911b3e5621fdab6b1315dac9", null ],
     [ "OnSetOwner", "d9/d2f/classez_draw_box_gizmo.htm#a82dd753074738e50d2e7ae79c258c3e2", null ],
     [ "OnTransformationChanged", "d9/d2f/classez_draw_box_gizmo.htm#af74595dd77a0b646fff860b20e665647", null ],

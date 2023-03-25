@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 22.11</span>
+   &#160;<span id="projectnumber">Release 23.04</span>
    </div>
   </td>
  </tr>
@@ -85,6 +85,7 @@ $(document).ready(function(){initNavTree('d0/d29/structez_expression_byte_code_1
 <div class="header">
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="../../d5/d08/structez_expression_byte_code_1_1_op_code-members.htm">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">ezExpressionByteCode::OpCode Struct Reference</div>  </div>
@@ -94,50 +95,157 @@ $(document).ready(function(){initNavTree('d0/d29/structez_expression_byte_code_1
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:a9711f28193f9ba219d7357358611b3a6"><td class="memItemLeft" align="right" valign="top"><a id="a9711f28193f9ba219d7357358611b3a6"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>Enum</b> { <br />
-&#160;&#160;<b>FirstUnary</b>, 
-<b>Abs_R</b>, 
-<b>Sqrt_R</b>, 
-<b>Sin_R</b>, 
+&#160;&#160;<b>Nop</b>, 
+<b>FirstUnary</b>, 
+<b>AbsF_R</b>, 
+<b>AbsI_R</b>, 
 <br />
-&#160;&#160;<b>Cos_R</b>, 
-<b>Tan_R</b>, 
-<b>ASin_R</b>, 
-<b>ACos_R</b>, 
+&#160;&#160;<b>SqrtF_R</b>, 
+<b>ExpF_R</b>, 
+<b>LnF_R</b>, 
+<b>Log2F_R</b>, 
 <br />
-&#160;&#160;<b>ATan_R</b>, 
-<b>Mov_R</b>, 
-<b>Mov_C</b>, 
-<b>Load</b>, 
+&#160;&#160;<b>Log2I_R</b>, 
+<b>Log10F_R</b>, 
+<b>Pow2F_R</b>, 
+<b>SinF_R</b>, 
 <br />
-&#160;&#160;<b>Store</b>, 
+&#160;&#160;<b>CosF_R</b>, 
+<b>TanF_R</b>, 
+<b>ASinF_R</b>, 
+<b>ACosF_R</b>, 
+<br />
+&#160;&#160;<b>ATanF_R</b>, 
+<b>RoundF_R</b>, 
+<b>FloorF_R</b>, 
+<b>CeilF_R</b>, 
+<br />
+&#160;&#160;<b>TruncF_R</b>, 
+<b>NotI_R</b>, 
+<b>NotB_R</b>, 
+<b>IToF_R</b>, 
+<br />
+&#160;&#160;<b>FToI_R</b>, 
 <b>LastUnary</b>, 
 <b>FirstBinary</b>, 
-<b>Add_RR</b>, 
+<b>AddF_RR</b>, 
 <br />
-&#160;&#160;<b>Add_CR</b>, 
-<b>Sub_RR</b>, 
-<b>Sub_CR</b>, 
-<b>Mul_RR</b>, 
+&#160;&#160;<b>AddI_RR</b>, 
+<b>SubF_RR</b>, 
+<b>SubI_RR</b>, 
+<b>MulF_RR</b>, 
 <br />
-&#160;&#160;<b>Mul_CR</b>, 
-<b>Div_RR</b>, 
-<b>Div_CR</b>, 
-<b>Min_RR</b>, 
+&#160;&#160;<b>MulI_RR</b>, 
+<b>DivF_RR</b>, 
+<b>DivI_RR</b>, 
+<b>MinF_RR</b>, 
 <br />
-&#160;&#160;<b>Min_CR</b>, 
-<b>Max_RR</b>, 
-<b>Max_CR</b>, 
-<b>LastBinary</b>, 
+&#160;&#160;<b>MinI_RR</b>, 
+<b>MaxF_RR</b>, 
+<b>MaxI_RR</b>, 
+<b>ShlI_RR</b>, 
+<br />
+&#160;&#160;<b>ShrI_RR</b>, 
+<b>AndI_RR</b>, 
+<b>XorI_RR</b>, 
+<b>OrI_RR</b>, 
+<br />
+&#160;&#160;<b>EqF_RR</b>, 
+<b>EqI_RR</b>, 
+<b>EqB_RR</b>, 
+<b>NEqF_RR</b>, 
+<br />
+&#160;&#160;<b>NEqI_RR</b>, 
+<b>NEqB_RR</b>, 
+<b>LtF_RR</b>, 
+<b>LtI_RR</b>, 
+<br />
+&#160;&#160;<b>LEqF_RR</b>, 
+<b>LEqI_RR</b>, 
+<b>GtF_RR</b>, 
+<b>GtI_RR</b>, 
+<br />
+&#160;&#160;<b>GEqF_RR</b>, 
+<b>GEqI_RR</b>, 
+<b>AndB_RR</b>, 
+<b>OrB_RR</b>, 
+<br />
+&#160;&#160;<b>LastBinary</b>, 
+<b>FirstBinaryWithConstant</b>, 
+<b>AddF_RC</b>, 
+<b>AddI_RC</b>, 
+<br />
+&#160;&#160;<b>SubF_RC</b>, 
+<b>SubI_RC</b>, 
+<b>MulF_RC</b>, 
+<b>MulI_RC</b>, 
+<br />
+&#160;&#160;<b>DivF_RC</b>, 
+<b>DivI_RC</b>, 
+<b>MinF_RC</b>, 
+<b>MinI_RC</b>, 
+<br />
+&#160;&#160;<b>MaxF_RC</b>, 
+<b>MaxI_RC</b>, 
+<b>ShlI_RC</b>, 
+<b>ShrI_RC</b>, 
+<br />
+&#160;&#160;<b>AndI_RC</b>, 
+<b>XorI_RC</b>, 
+<b>OrI_RC</b>, 
+<b>EqF_RC</b>, 
+<br />
+&#160;&#160;<b>EqI_RC</b>, 
+<b>EqB_RC</b>, 
+<b>NEqF_RC</b>, 
+<b>NEqI_RC</b>, 
+<br />
+&#160;&#160;<b>NEqB_RC</b>, 
+<b>LtF_RC</b>, 
+<b>LtI_RC</b>, 
+<b>LEqF_RC</b>, 
+<br />
+&#160;&#160;<b>LEqI_RC</b>, 
+<b>GtF_RC</b>, 
+<b>GtI_RC</b>, 
+<b>GEqF_RC</b>, 
+<br />
+&#160;&#160;<b>GEqI_RC</b>, 
+<b>AndB_RC</b>, 
+<b>OrB_RC</b>, 
+<b>LastBinaryWithConstant</b>, 
+<br />
+&#160;&#160;<b>FirstTernary</b>, 
+<b>SelF_RRR</b>, 
+<b>SelI_RRR</b>, 
+<b>SelB_RRR</b>, 
+<br />
+&#160;&#160;<b>LastTernary</b>, 
+<b>FirstSpecial</b>, 
+<b>MovX_R</b>, 
+<b>MovX_C</b>, 
+<br />
+&#160;&#160;<b>LoadF</b>, 
+<b>LoadI</b>, 
+<b>StoreF</b>, 
+<b>StoreI</b>, 
 <br />
 &#160;&#160;<b>Call</b>, 
-<b>Nop</b>, 
+<b>LastSpecial</b>, 
 <b>Count</b>
 <br />
  }</td></tr>
 <tr class="separator:a9711f28193f9ba219d7357358611b3a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a9b85c1d8017e66ebc29091ed17580f84"><td class="memItemLeft" align="right" valign="top"><a id="a9b85c1d8017e66ebc29091ed17580f84"></a>
+static const char *&#160;</td><td class="memItemRight" valign="bottom"><b>GetName</b> (Enum code)</td></tr>
+<tr class="separator:a9b85c1d8017e66ebc29091ed17580f84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following file:<ul>
+<hr/>The documentation for this struct was generated from the following files:<ul>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/CodeUtils/Expression/<a class="el" href="../../db/d8b/_expression_byte_code_8h_source.htm">ExpressionByteCode.h</a></li>
+<li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/CodeUtils/Expression/Implementation/ExpressionByteCode.cpp</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -145,7 +253,7 @@ Public Types</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../da/d22/classez_expression_byte_code.htm">ezExpressionByteCode</a></li><li class="navelem"><a class="el" href="../../d0/d29/structez_expression_byte_code_1_1_op_code.htm">OpCode</a></li>
-    <li class="footer">Generated on Fri Nov 18 2022 14:48:06 for ezEngine by
+    <li class="footer">Generated on Sat Mar 25 2023 19:22:02 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

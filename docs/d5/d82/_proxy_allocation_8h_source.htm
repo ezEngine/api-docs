@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 22.11</span>
+   &#160;<span id="projectnumber">Release 23.04</span>
    </div>
   </td>
  </tr>
@@ -104,14 +104,14 @@ $(document).ready(function(){initNavTree('d5/d82/_proxy_allocation_8h_source.htm
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    EZ_FORCE_INLINE <span class="keywordtype">void</span>* Allocate(<span class="keywordtype">size_t</span> uiSize, <span class="keywordtype">size_t</span> uiAlign) { <span class="keywordflow">return</span> m_pParent-&gt;<a class="code" href="../../d1/d4c/classez_allocator_base.htm#af33e254a20311a5698b10bc62e1fb197">Allocate</a>(uiSize, uiAlign); }</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    EZ_FORCE_INLINE <span class="keywordtype">void</span>* Reallocate(<span class="keywordtype">void</span>* ptr, <span class="keywordtype">size_t</span> uiCurrentSize, <span class="keywordtype">size_t</span> uiNewSize, <span class="keywordtype">size_t</span> uiAlign)</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    EZ_FORCE_INLINE <span class="keywordtype">void</span>* Reallocate(<span class="keywordtype">void</span>* pPtr, <span class="keywordtype">size_t</span> uiCurrentSize, <span class="keywordtype">size_t</span> uiNewSize, <span class="keywordtype">size_t</span> uiAlign)</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;      <span class="keywordflow">return</span> m_pParent-&gt;Reallocate(ptr, uiCurrentSize, uiNewSize, uiAlign);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;      <span class="keywordflow">return</span> m_pParent-&gt;Reallocate(pPtr, uiCurrentSize, uiNewSize, uiAlign);</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    EZ_FORCE_INLINE <span class="keywordtype">void</span> Deallocate(<span class="keywordtype">void</span>* ptr) { m_pParent-&gt;Deallocate(ptr); }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    EZ_FORCE_INLINE <span class="keywordtype">void</span> Deallocate(<span class="keywordtype">void</span>* pPtr) { m_pParent-&gt;Deallocate(pPtr); }</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    EZ_FORCE_INLINE <span class="keywordtype">size_t</span> AllocatedSize(<span class="keyword">const</span> <span class="keywordtype">void</span>* ptr) { <span class="keywordflow">return</span> m_pParent-&gt;<a class="code" href="../../d1/d4c/classez_allocator_base.htm#ad86c7b4959ead0e4d90c581f6fbcc62d">AllocatedSize</a>(ptr); }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    EZ_FORCE_INLINE <span class="keywordtype">size_t</span> AllocatedSize(<span class="keyword">const</span> <span class="keywordtype">void</span>* pPtr) { <span class="keywordflow">return</span> m_pParent-&gt;<a class="code" href="../../d1/d4c/classez_allocator_base.htm#ac161bcba04b37cd8a0a9fb501c681bbb">AllocatedSize</a>(pPtr); }</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    EZ_ALWAYS_INLINE <a class="code" href="../../d1/d4c/classez_allocator_base.htm">ezAllocatorBase</a>* GetParent()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pParent; }</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
@@ -124,12 +124,12 @@ $(document).ready(function(){initNavTree('d5/d82/_proxy_allocation_8h_source.htm
 <div class="ttc" id="aclassez_allocator_base_htm_af33e254a20311a5698b10bc62e1fb197"><div class="ttname"><a href="../../d1/d4c/classez_allocator_base.htm#af33e254a20311a5698b10bc62e1fb197">ezAllocatorBase::Allocate</a></div><div class="ttdeci">virtual void * Allocate(size_t uiSize, size_t uiAlign, ezMemoryUtils::DestructorFunction destructorFunc=nullptr)=0</div><div class="ttdoc">Interface, do not use this directly, always use the new/delete macros below.</div></div>
 <div class="ttc" id="aclassez_memory_policies_1_1ez_proxy_allocation_htm"><div class="ttname"><a href="../../d9/dd1/classez_memory_policies_1_1ez_proxy_allocation.htm">ezMemoryPolicies::ezProxyAllocation</a></div><div class="ttdoc">This Allocation policy redirects all operations to its parent.</div><div class="ttdef"><b>Definition:</b> ProxyAllocation.h:12</div></div>
 <div class="ttc" id="aclassez_allocator_base_htm"><div class="ttname"><a href="../../d1/d4c/classez_allocator_base.htm">ezAllocatorBase</a></div><div class="ttdoc">Base class for all memory allocators.</div><div class="ttdef"><b>Definition:</b> AllocatorBase.h:22</div></div>
-<div class="ttc" id="aclassez_allocator_base_htm_ad86c7b4959ead0e4d90c581f6fbcc62d"><div class="ttname"><a href="../../d1/d4c/classez_allocator_base.htm#ad86c7b4959ead0e4d90c581f6fbcc62d">ezAllocatorBase::AllocatedSize</a></div><div class="ttdeci">virtual size_t AllocatedSize(const void *ptr)=0</div><div class="ttdoc">Returns the number of bytes allocated at this address.</div></div>
+<div class="ttc" id="aclassez_allocator_base_htm_ac161bcba04b37cd8a0a9fb501c681bbb"><div class="ttname"><a href="../../d1/d4c/classez_allocator_base.htm#ac161bcba04b37cd8a0a9fb501c681bbb">ezAllocatorBase::AllocatedSize</a></div><div class="ttdeci">virtual size_t AllocatedSize(const void *pPtr)=0</div><div class="ttdoc">Returns the number of bytes allocated at this address.</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_adb0ac2a169525f5fa05f0527c58e205.htm">Memory</a></li><li class="navelem"><a class="el" href="../../dir_7e8e2491845ec7b2b62df622f0295925.htm">Policies</a></li><li class="navelem"><b>ProxyAllocation.h</b></li>
-    <li class="footer">Generated on Fri Nov 18 2022 14:47:59 for ezEngine by
+    <li class="footer">Generated on Sat Mar 25 2023 19:21:56 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

@@ -20,7 +20,7 @@ var classez_simd_b_sphere =
     [ "Overlaps", "d4/db3/classez_simd_b_sphere.htm#ad71ae5395e3a7642bf2444f571c45600", null ],
     [ "SetFromPoints", "d4/db3/classez_simd_b_sphere.htm#a028b67d2f382f0e7cfbaf567bc89a4cd", null ],
     [ "SetInvalid", "d4/db3/classez_simd_b_sphere.htm#aad104f6b716801a586d04f1706c56d15", null ],
-    [ "Transform", "d4/db3/classez_simd_b_sphere.htm#ade8cac1d06efb4703ac342f86d4c18f8", null ],
+    [ "Transform", "d4/db3/classez_simd_b_sphere.htm#a6ca07efc7012eb851dd6651ce6ced83d", null ],
     [ "Transform", "d4/db3/classez_simd_b_sphere.htm#a63a881e4abae7f7a84cd8959bc1736d6", null ],
     [ "m_CenterAndRadius", "d4/db3/classez_simd_b_sphere.htm#a7e786462ce07198809ee8b19443b4978", null ]
 ];

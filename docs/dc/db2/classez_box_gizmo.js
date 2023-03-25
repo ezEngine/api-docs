@@ -9,5 +9,5 @@ var classez_box_gizmo =
     [ "OnSetOwner", "dc/db2/classez_box_gizmo.htm#ac38d0ef4360b58c6a329d1ad6e55f9bf", null ],
     [ "OnTransformationChanged", "dc/db2/classez_box_gizmo.htm#ac6993167dad7d571ff8a95713eace465", null ],
     [ "OnVisibleChanged", "dc/db2/classez_box_gizmo.htm#a25b45636e413e0beac9bc0845c77e258", null ],
-    [ "SetSize", "dc/db2/classez_box_gizmo.htm#a00ee735d0bab64178ef9ca2477edd10a", null ]
+    [ "SetSize", "dc/db2/classez_box_gizmo.htm#a6b9a6f62e04ead99e6f8fb963101bb23", null ]
 ];

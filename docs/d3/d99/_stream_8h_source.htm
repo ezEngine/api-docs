@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 22.11</span>
+   &#160;<span id="projectnumber">Release 23.04</span>
    </div>
   </td>
  </tr>
@@ -95,154 +95,163 @@ $(document).ready(function(){initNavTree('d3/d99/_stream_8h_source.htm','../../'
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;Foundation/Containers/HashTable.h&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;Foundation/Containers/Map.h&gt;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;Foundation/Containers/Set.h&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;Foundation/Math/Math.h&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;Foundation/Memory/EndianHelper.h&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">typedef</span> ezUInt16 ezTypeVersion;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">template</span> &lt;ezUInt16 Size, <span class="keyword">typename</span> AllocatorWrapper&gt;</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="../../d4/d53/structez_hybrid_string.htm">   15</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezHybridString</a>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">using</span> <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> = <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezHybridString&lt;32, ezDefaultAllocatorWrapper&gt;</a>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="../../d2/d19/classez_stream_reader.htm">   20</a></span>&#160;<span class="keyword">class </span>EZ_FOUNDATION_DLL <a class="code" href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  EZ_DISALLOW_COPY_AND_ASSIGN(<a class="code" href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a>);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <a class="code" href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a>();</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keyword">virtual</span> ~<a class="code" href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a>();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keyword">virtual</span> ezUInt64 ReadBytes(<span class="keywordtype">void</span>* pReadBuffer, ezUInt64 uiBytesToRead) = 0; <span class="comment">// [tested]</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ReadWordValue(T* pWordValue); <span class="comment">// [tested]</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ReadDWordValue(T* pDWordValue); <span class="comment">// [tested]</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ReadQWordValue(T* pQWordValue); <span class="comment">// [tested]</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> ArrayType, <span class="keyword">typename</span> ValueType&gt;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ReadArray(<a class="code" href="../../dc/d59/classez_array_base.htm">ezArrayBase&lt;ValueType, ArrayType&gt;</a>&amp; Array); <span class="comment">// [tested]</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> ValueType, ezUInt32 uiSize&gt;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ReadArray(ValueType (&amp;Array)[uiSize]);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> Comparer&gt;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ReadSet(<a class="code" href="../../dc/d4b/classez_set_base.htm">ezSetBase&lt;KeyType, Comparer&gt;</a>&amp; Set); <span class="comment">// [tested]</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> ValueType, <span class="keyword">typename</span> Comparer&gt;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ReadMap(<a class="code" href="../../d1/d43/classez_map_base.htm">ezMapBase&lt;KeyType, ValueType, Comparer&gt;</a>&amp; Map); <span class="comment">// [tested]</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> ValueType, <span class="keyword">typename</span> Hasher&gt;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ReadHashTable(<a class="code" href="../../de/dc3/classez_hash_table_base.htm">ezHashTableBase&lt;KeyType, ValueType, Hasher&gt;</a>&amp; HashTable); <span class="comment">// [tested]</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ReadString(<a class="code" href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a>&amp; builder); <span class="comment">// [tested]</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ReadString(<a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a>&amp; <span class="keywordtype">string</span>);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="../../d2/d19/classez_stream_reader.htm#a09fe261037e80688b72337b15ee0a616">   75</a></span>&#160;  <span class="keyword">virtual</span> ezUInt64 <a class="code" href="../../d2/d19/classez_stream_reader.htm#a09fe261037e80688b72337b15ee0a616">SkipBytes</a>(ezUInt64 uiBytesToSkip)</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    ezUInt8 uiTempBuffer[1024];</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;Foundation/Containers/SmallArray.h&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;Foundation/Math/Math.h&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;Foundation/Memory/EndianHelper.h&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">typedef</span> ezUInt16 ezTypeVersion;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">template</span> &lt;ezUInt16 Size, <span class="keyword">typename</span> AllocatorWrapper&gt;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="../../d4/d53/structez_hybrid_string.htm">   16</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezHybridString</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">using</span> <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> = <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezHybridString&lt;32, ezDefaultAllocatorWrapper&gt;</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="../../d2/d19/classez_stream_reader.htm">   21</a></span>&#160;<span class="keyword">class </span>EZ_FOUNDATION_DLL <a class="code" href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  EZ_DISALLOW_COPY_AND_ASSIGN(<a class="code" href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a>);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a>();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">virtual</span> ~<a class="code" href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keyword">virtual</span> ezUInt64 ReadBytes(<span class="keywordtype">void</span>* pReadBuffer, ezUInt64 uiBytesToRead) = 0; <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ReadWordValue(T* pWordValue); <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ReadDWordValue(T* pDWordValue); <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ReadQWordValue(T* pQWordValue); <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> ArrayType, <span class="keyword">typename</span> ValueType&gt;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ReadArray(<a class="code" href="../../dc/d59/classez_array_base.htm">ezArrayBase&lt;ValueType, ArrayType&gt;</a>&amp; inout_array); <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> ValueType, ezUInt16 uiSize, <span class="keyword">typename</span> AllocatorWrapper&gt;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ReadArray(<a class="code" href="../../d0/d0c/classez_small_array.htm">ezSmallArray&lt;ValueType, uiSize, AllocatorWrapper&gt;</a>&amp; ref_array);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> ValueType, ezUInt32 uiSize&gt;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ReadArray(ValueType (&amp;array)[uiSize]);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> Comparer&gt;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ReadSet(<a class="code" href="../../dc/d4b/classez_set_base.htm">ezSetBase&lt;KeyType, Comparer&gt;</a>&amp; inout_set); <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> ValueType, <span class="keyword">typename</span> Comparer&gt;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ReadMap(<a class="code" href="../../d1/d43/classez_map_base.htm">ezMapBase&lt;KeyType, ValueType, Comparer&gt;</a>&amp; inout_map); <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> ValueType, <span class="keyword">typename</span> Hasher&gt;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ReadHashTable(<a class="code" href="../../de/dc3/classez_hash_table_base.htm">ezHashTableBase&lt;KeyType, ValueType, Hasher&gt;</a>&amp; inout_hashTable); <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ReadString(<a class="code" href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a>&amp; ref_sBuilder); <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ReadString(<a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a>&amp; ref_sString);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    ezUInt64 uiBytesSkipped = 0;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">while</span> (uiBytesSkipped &lt; uiBytesToSkip)</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      ezUInt64 uiBytesToRead = ezMath::Min&lt;ezUInt64&gt;(uiBytesToSkip - uiBytesSkipped, 1024);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      ezUInt64 uiBytesRead = ReadBytes(uiTempBuffer, uiBytesToRead);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;      uiBytesSkipped += uiBytesRead;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      <span class="comment">// Terminate early if the stream didn&#39;t read as many bytes as we requested (EOF for example)</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      <span class="keywordflow">if</span> (uiBytesRead &lt; uiBytesToRead)</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="../../d2/d19/classez_stream_reader.htm#a09fe261037e80688b72337b15ee0a616">   80</a></span>&#160;  <span class="keyword">virtual</span> ezUInt64 <a class="code" href="../../d2/d19/classez_stream_reader.htm#a09fe261037e80688b72337b15ee0a616">SkipBytes</a>(ezUInt64 uiBytesToSkip)</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    ezUInt8 uiTempBuffer[1024];</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    ezUInt64 uiBytesSkipped = 0;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">while</span> (uiBytesSkipped &lt; uiBytesToSkip)</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      ezUInt64 uiBytesToRead = ezMath::Min&lt;ezUInt64&gt;(uiBytesToSkip - uiBytesSkipped, 1024);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      ezUInt64 uiBytesRead = ReadBytes(uiTempBuffer, uiBytesToRead);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      uiBytesSkipped += uiBytesRead;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">return</span> uiBytesSkipped;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  }</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  EZ_ALWAYS_INLINE ezTypeVersion ReadVersion(ezTypeVersion uiExpectedMaxVersion);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;};</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="../../d6/dcc/classez_stream_writer.htm">  101</a></span>&#160;<span class="keyword">class </span>EZ_FOUNDATION_DLL <a class="code" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;{</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  EZ_DISALLOW_COPY_AND_ASSIGN(<a class="code" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a>);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;      <span class="comment">// Terminate early if the stream didn&#39;t read as many bytes as we requested (EOF for example)</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      <span class="keywordflow">if</span> (uiBytesRead &lt; uiBytesToRead)</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">return</span> uiBytesSkipped;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  }</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  EZ_ALWAYS_INLINE ezTypeVersion ReadVersion(ezTypeVersion expectedMaxVersion);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;};</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <a class="code" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a>();</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <span class="keyword">virtual</span> ~<a class="code" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a>();</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> WriteBytes(<span class="keyword">const</span> <span class="keywordtype">void</span>* pWriteBuffer, ezUInt64 uiBytesToWrite) = 0; <span class="comment">// [tested]</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="../../d6/dcc/classez_stream_writer.htm#ad3bf129d3f9646a5f70214ed4875d0c8">  118</a></span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> <a class="code" href="../../d6/dcc/classez_stream_writer.htm#ad3bf129d3f9646a5f70214ed4875d0c8">Flush</a>() <span class="comment">// [tested]</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  {</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">return</span> EZ_SUCCESS;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  }</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> WriteWordValue(<span class="keyword">const</span> T* pWordValue); <span class="comment">// [tested]</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> WriteDWordValue(<span class="keyword">const</span> T* pDWordValue); <span class="comment">// [tested]</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> WriteQWordValue(<span class="keyword">const</span> T* pQWordValue); <span class="comment">// [tested]</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">void</span> WriteVersion(ezTypeVersion uiVersion);</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> ArrayType, <span class="keyword">typename</span> ValueType&gt;</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> WriteArray(<span class="keyword">const</span> <a class="code" href="../../dc/d59/classez_array_base.htm">ezArrayBase&lt;ValueType, ArrayType&gt;</a>&amp; Array); <span class="comment">// [tested]</span></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> ValueType, ezUInt32 uiSize&gt;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> WriteArray(<span class="keyword">const</span> ValueType (&amp;Array)[uiSize]);</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> Comparer&gt;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> WriteSet(<span class="keyword">const</span> <a class="code" href="../../dc/d4b/classez_set_base.htm">ezSetBase&lt;KeyType, Comparer&gt;</a>&amp; Set); <span class="comment">// [tested]</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> ValueType, <span class="keyword">typename</span> Comparer&gt;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> WriteMap(<span class="keyword">const</span> <a class="code" href="../../d1/d43/classez_map_base.htm">ezMapBase&lt;KeyType, ValueType, Comparer&gt;</a>&amp; Map); <span class="comment">// [tested]</span></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> ValueType, <span class="keyword">typename</span> Hasher&gt;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> WriteHashTable(<span class="keyword">const</span> <a class="code" href="../../de/dc3/classez_hash_table_base.htm">ezHashTableBase&lt;KeyType, ValueType, Hasher&gt;</a>&amp; HashTable); <span class="comment">// [tested]</span></div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> WriteString(<span class="keyword">const</span> <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> szStringView); <span class="comment">// [tested]</span></div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;};</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="comment">// Contains the helper methods of both interfaces</span></div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="preprocessor">#include &lt;Foundation/IO/Implementation/Stream_inl.h&gt;</span></div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="comment">// Standard operators for overloads of common data types</span></div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="preprocessor">#include &lt;Foundation/IO/Implementation/StreamOperations_inl.h&gt;</span></div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="preprocessor">#include &lt;Foundation/IO/Implementation/StreamOperationsMath_inl.h&gt;</span></div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="preprocessor">#include &lt;Foundation/IO/Implementation/StreamOperationsOther_inl.h&gt;</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="../../d6/dcc/classez_stream_writer.htm">  106</a></span>&#160;<span class="keyword">class </span>EZ_FOUNDATION_DLL <a class="code" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;{</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  EZ_DISALLOW_COPY_AND_ASSIGN(<a class="code" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a>);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <a class="code" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a>();</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <span class="keyword">virtual</span> ~<a class="code" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a>();</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> WriteBytes(<span class="keyword">const</span> <span class="keywordtype">void</span>* pWriteBuffer, ezUInt64 uiBytesToWrite) = 0; <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="../../d6/dcc/classez_stream_writer.htm#ad3bf129d3f9646a5f70214ed4875d0c8">  123</a></span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> <a class="code" href="../../d6/dcc/classez_stream_writer.htm#ad3bf129d3f9646a5f70214ed4875d0c8">Flush</a>() <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  {</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">return</span> EZ_SUCCESS;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  }</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> WriteWordValue(<span class="keyword">const</span> T* pWordValue); <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> WriteDWordValue(<span class="keyword">const</span> T* pDWordValue); <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> WriteQWordValue(<span class="keyword">const</span> T* pQWordValue); <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">void</span> WriteVersion(ezTypeVersion version);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> ArrayType, <span class="keyword">typename</span> ValueType&gt;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> WriteArray(<span class="keyword">const</span> <a class="code" href="../../dc/d59/classez_array_base.htm">ezArrayBase&lt;ValueType, ArrayType&gt;</a>&amp; array); <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> ValueType, ezUInt16 uiSize&gt;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> WriteArray(<span class="keyword">const</span> <a class="code" href="../../d4/d0b/classez_small_array_base.htm">ezSmallArrayBase&lt;ValueType, uiSize&gt;</a>&amp; array);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> ValueType, ezUInt32 uiSize&gt;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> WriteArray(<span class="keyword">const</span> ValueType (&amp;array)[uiSize]);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> Comparer&gt;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> WriteSet(<span class="keyword">const</span> <a class="code" href="../../dc/d4b/classez_set_base.htm">ezSetBase&lt;KeyType, Comparer&gt;</a>&amp; set); <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> ValueType, <span class="keyword">typename</span> Comparer&gt;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> WriteMap(<span class="keyword">const</span> <a class="code" href="../../d1/d43/classez_map_base.htm">ezMapBase&lt;KeyType, ValueType, Comparer&gt;</a>&amp; map); <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> ValueType, <span class="keyword">typename</span> Hasher&gt;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> WriteHashTable(<span class="keyword">const</span> <a class="code" href="../../de/dc3/classez_hash_table_base.htm">ezHashTableBase&lt;KeyType, ValueType, Hasher&gt;</a>&amp; hashTable); <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> WriteString(<span class="keyword">const</span> <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sStringView); <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;};</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="comment">// Contains the helper methods of both interfaces</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="preprocessor">#include &lt;Foundation/IO/Implementation/Stream_inl.h&gt;</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="comment">// Standard operators for overloads of common data types</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="preprocessor">#include &lt;Foundation/IO/Implementation/StreamOperations_inl.h&gt;</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="preprocessor">#include &lt;Foundation/IO/Implementation/StreamOperationsMath_inl.h&gt;</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="preprocessor">#include &lt;Foundation/IO/Implementation/StreamOperationsOther_inl.h&gt;</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition:</b> Types.h:50</div></div>
-<div class="ttc" id="aclassez_stream_writer_htm"><div class="ttname"><a href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a></div><div class="ttdoc">Interface for binary out (write) streams.</div><div class="ttdef"><b>Definition:</b> Stream.h:101</div></div>
-<div class="ttc" id="aclassez_stream_reader_htm"><div class="ttname"><a href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a></div><div class="ttdoc">Interface for binary in (read) streams.</div><div class="ttdef"><b>Definition:</b> Stream.h:20</div></div>
+<div class="ttc" id="aclassez_stream_writer_htm"><div class="ttname"><a href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a></div><div class="ttdoc">Interface for binary out (write) streams.</div><div class="ttdef"><b>Definition:</b> Stream.h:106</div></div>
+<div class="ttc" id="aclassez_stream_reader_htm"><div class="ttname"><a href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a></div><div class="ttdoc">Interface for binary in (read) streams.</div><div class="ttdef"><b>Definition:</b> Stream.h:21</div></div>
 <div class="ttc" id="aclassez_map_base_htm"><div class="ttname"><a href="../../d1/d43/classez_map_base.htm">ezMapBase</a></div><div class="ttdoc">An associative container. Similar to STL::map.</div><div class="ttdef"><b>Definition:</b> Map.h:17</div></div>
-<div class="ttc" id="astructez_hybrid_string_htm"><div class="ttname"><a href="../../d4/d53/structez_hybrid_string.htm">ezHybridString</a></div><div class="ttdef"><b>Definition:</b> Stream.h:15</div></div>
-<div class="ttc" id="aclassez_stream_writer_htm_ad3bf129d3f9646a5f70214ed4875d0c8"><div class="ttname"><a href="../../d6/dcc/classez_stream_writer.htm#ad3bf129d3f9646a5f70214ed4875d0c8">ezStreamWriter::Flush</a></div><div class="ttdeci">virtual ezResult Flush()</div><div class="ttdoc">Flushes the stream, may be implemented (not necessary to implement the interface correctly) so that u...</div><div class="ttdef"><b>Definition:</b> Stream.h:118</div></div>
+<div class="ttc" id="astructez_hybrid_string_htm"><div class="ttname"><a href="../../d4/d53/structez_hybrid_string.htm">ezHybridString</a></div><div class="ttdef"><b>Definition:</b> Stream.h:16</div></div>
+<div class="ttc" id="aclassez_stream_writer_htm_ad3bf129d3f9646a5f70214ed4875d0c8"><div class="ttname"><a href="../../d6/dcc/classez_stream_writer.htm#ad3bf129d3f9646a5f70214ed4875d0c8">ezStreamWriter::Flush</a></div><div class="ttdeci">virtual ezResult Flush()</div><div class="ttdoc">Flushes the stream, may be implemented (not necessary to implement the interface correctly) so that u...</div><div class="ttdef"><b>Definition:</b> Stream.h:123</div></div>
 <div class="ttc" id="aclassez_hash_table_base_htm"><div class="ttname"><a href="../../de/dc3/classez_hash_table_base.htm">ezHashTableBase</a></div><div class="ttdoc">Implementation of a hashtable which stores key/value pairs.</div><div class="ttdef"><b>Definition:</b> HashTable.h:18</div></div>
+<div class="ttc" id="aclassez_small_array_base_htm"><div class="ttname"><a href="../../d4/d0b/classez_small_array_base.htm">ezSmallArrayBase</a></div><div class="ttdoc">Implementation of a dynamically growing array with in-place storage and small memory overhead.</div><div class="ttdef"><b>Definition:</b> SmallArray.h:16</div></div>
+<div class="ttc" id="aclassez_small_array_htm"><div class="ttname"><a href="../../d0/d0c/classez_small_array.htm">ezSmallArray</a></div><div class="ttdef"><b>Definition:</b> SmallArray.h:216</div></div>
 <div class="ttc" id="aclassez_array_base_htm"><div class="ttname"><a href="../../dc/d59/classez_array_base.htm">ezArrayBase</a></div><div class="ttdoc">Base class for all array containers. Implements all the basic functionality that only requires a poin...</div><div class="ttdef"><b>Definition:</b> ArrayBase.h:14</div></div>
 <div class="ttc" id="astructez_string_view_htm"><div class="ttname"><a href="../../de/db8/structez_string_view.htm">ezStringView</a></div><div class="ttdoc">ezStringView represent a read-only sub-string of a larger string, as it can store a dedicated string ...</div><div class="ttdef"><b>Definition:</b> StringView.h:23</div></div>
 <div class="ttc" id="aclassez_set_base_htm"><div class="ttname"><a href="../../dc/d4b/classez_set_base.htm">ezSetBase</a></div><div class="ttdoc">A set container that only stores whether an element resides in it or not. Similar to STL::set.</div><div class="ttdef"><b>Definition:</b> Set.h:12</div></div>
-<div class="ttc" id="aclassez_stream_reader_htm_a09fe261037e80688b72337b15ee0a616"><div class="ttname"><a href="../../d2/d19/classez_stream_reader.htm#a09fe261037e80688b72337b15ee0a616">ezStreamReader::SkipBytes</a></div><div class="ttdeci">virtual ezUInt64 SkipBytes(ezUInt64 uiBytesToSkip)</div><div class="ttdoc">Helper method to skip a number of bytes (implementations of the stream reader may implement this more...</div><div class="ttdef"><b>Definition:</b> Stream.h:75</div></div>
+<div class="ttc" id="aclassez_stream_reader_htm_a09fe261037e80688b72337b15ee0a616"><div class="ttname"><a href="../../d2/d19/classez_stream_reader.htm#a09fe261037e80688b72337b15ee0a616">ezStreamReader::SkipBytes</a></div><div class="ttdeci">virtual ezUInt64 SkipBytes(ezUInt64 uiBytesToSkip)</div><div class="ttdoc">Helper method to skip a number of bytes (implementations of the stream reader may implement this more...</div><div class="ttdef"><b>Definition:</b> Stream.h:80</div></div>
 <div class="ttc" id="aclassez_string_builder_htm"><div class="ttname"><a href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a></div><div class="ttdoc">ezStringBuilder is a class that is meant for creating and modifying strings.</div><div class="ttdef"><b>Definition:</b> StringBuilder.h:34</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_64fdcb4094ee5a27b054d4fa23e28e01.htm">IO</a></li><li class="navelem"><b>Stream.h</b></li>
-    <li class="footer">Generated on Fri Nov 18 2022 14:47:59 for ezEngine by
+    <li class="footer">Generated on Sat Mar 25 2023 19:21:55 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

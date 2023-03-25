@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 22.11</span>
+   &#160;<span id="projectnumber">Release 23.04</span>
    </div>
   </td>
  </tr>
@@ -85,6 +85,7 @@ $(document).ready(function(){initNavTree('d5/d50/classez_sound_interface.htm','.
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="../../d1/db9/classez_sound_interface-members.htm">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">ezSoundInterface Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
@@ -102,45 +103,45 @@ Inheritance diagram for ezSoundInterface:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a317ebfbd034d73f09988fd736ec17db5"><td class="memItemLeft" align="right" valign="top"><a id="a317ebfbd034d73f09988fd736ec17db5"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d50/classez_sound_interface.htm#a317ebfbd034d73f09988fd736ec17db5">LoadConfiguration</a> (const char *szFile)=0</td></tr>
-<tr class="memdesc:a317ebfbd034d73f09988fd736ec17db5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Can be called before startup to load the fmod configs from a different file. Otherwise will automatically be loaded by fmod startup with the default path ":project/FmodConfig.ddl". <br /></td></tr>
-<tr class="separator:a317ebfbd034d73f09988fd736ec17db5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acba032863fee066c15156d08cfdb5734"><td class="memItemLeft" align="right" valign="top"><a id="acba032863fee066c15156d08cfdb5734"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d50/classez_sound_interface.htm#acba032863fee066c15156d08cfdb5734">SetOverridePlatform</a> (const char *szPlatform)=0</td></tr>
-<tr class="memdesc:acba032863fee066c15156d08cfdb5734"><td class="mdescLeft">&#160;</td><td class="mdescRight">By default the fmod integration will auto-detect the platform (and thus the config) to use. Calling this before startup allows to override which configuration is used. <br /></td></tr>
-<tr class="separator:acba032863fee066c15156d08cfdb5734"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad280a18c2389a6e1e060bf3ff6bb5c37"><td class="memItemLeft" align="right" valign="top"><a id="ad280a18c2389a6e1e060bf3ff6bb5c37"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d50/classez_sound_interface.htm#ad280a18c2389a6e1e060bf3ff6bb5c37">LoadConfiguration</a> (<a class="el" href="../../de/db8/structez_string_view.htm">ezStringView</a> sFile)=0</td></tr>
+<tr class="memdesc:ad280a18c2389a6e1e060bf3ff6bb5c37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Can be called before startup to load the configs from a different file. Otherwise will automatically be loaded by the sound system startup with the default path. <br /></td></tr>
+<tr class="separator:ad280a18c2389a6e1e060bf3ff6bb5c37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01eadb91bd075fdfa7e6ff89293a911b"><td class="memItemLeft" align="right" valign="top"><a id="a01eadb91bd075fdfa7e6ff89293a911b"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d50/classez_sound_interface.htm#a01eadb91bd075fdfa7e6ff89293a911b">SetOverridePlatform</a> (<a class="el" href="../../de/db8/structez_string_view.htm">ezStringView</a> sPlatform)=0</td></tr>
+<tr class="memdesc:a01eadb91bd075fdfa7e6ff89293a911b"><td class="mdescLeft">&#160;</td><td class="mdescRight">By default the integration should auto-detect the platform (and thus the config) to use. Calling this before startup allows to override which configuration is used. <br /></td></tr>
+<tr class="separator:a01eadb91bd075fdfa7e6ff89293a911b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9ecadcb5e0d3dd9c4fadefe0fbc5590"><td class="memItemLeft" align="right" valign="top"><a id="ac9ecadcb5e0d3dd9c4fadefe0fbc5590"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d50/classez_sound_interface.htm#ac9ecadcb5e0d3dd9c4fadefe0fbc5590">UpdateSound</a> ()=0</td></tr>
 <tr class="memdesc:ac9ecadcb5e0d3dd9c4fadefe0fbc5590"><td class="mdescLeft">&#160;</td><td class="mdescRight">Has to be called once per frame to update all sounds. <br /></td></tr>
 <tr class="separator:ac9ecadcb5e0d3dd9c4fadefe0fbc5590"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a922c48795a7ae9413ddc748772d922"><td class="memItemLeft" align="right" valign="top"><a id="a4a922c48795a7ae9413ddc748772d922"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d50/classez_sound_interface.htm#a4a922c48795a7ae9413ddc748772d922">SetMasterChannelVolume</a> (float volume)=0</td></tr>
-<tr class="memdesc:a4a922c48795a7ae9413ddc748772d922"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjusts the master volume. This affects all sounds, with no exception. Value must be between 0.0f and 1.0f. <br /></td></tr>
-<tr class="separator:a4a922c48795a7ae9413ddc748772d922"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e5ecb04d9f1e37d16cd187652bab856"><td class="memItemLeft" align="right" valign="top"><a id="a2e5ecb04d9f1e37d16cd187652bab856"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d50/classez_sound_interface.htm#a2e5ecb04d9f1e37d16cd187652bab856">SetMasterChannelVolume</a> (float fVolume)=0</td></tr>
+<tr class="memdesc:a2e5ecb04d9f1e37d16cd187652bab856"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjusts the master volume. This affects all sounds, with no exception. Value must be between 0.0f and 1.0f. <br /></td></tr>
+<tr class="separator:a2e5ecb04d9f1e37d16cd187652bab856"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa18822286292e0bb1319c0b4cacfe539"><td class="memItemLeft" align="right" valign="top"><a id="aa18822286292e0bb1319c0b4cacfe539"></a>
 virtual float&#160;</td><td class="memItemRight" valign="bottom"><b>GetMasterChannelVolume</b> () const =0</td></tr>
 <tr class="separator:aa18822286292e0bb1319c0b4cacfe539"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a589998eb714bf5edaf11bb939d13a2ea"><td class="memItemLeft" align="right" valign="top"><a id="a589998eb714bf5edaf11bb939d13a2ea"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d50/classez_sound_interface.htm#a589998eb714bf5edaf11bb939d13a2ea">SetMasterChannelMute</a> (bool mute)=0</td></tr>
-<tr class="memdesc:a589998eb714bf5edaf11bb939d13a2ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows to mute all sounds. Useful for when the application goes to a background state. <br /></td></tr>
-<tr class="separator:a589998eb714bf5edaf11bb939d13a2ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4486f0b9271509c9164c60821f4769a9"><td class="memItemLeft" align="right" valign="top"><a id="a4486f0b9271509c9164c60821f4769a9"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d50/classez_sound_interface.htm#a4486f0b9271509c9164c60821f4769a9">SetMasterChannelMute</a> (bool bMute)=0</td></tr>
+<tr class="memdesc:a4486f0b9271509c9164c60821f4769a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows to mute all sounds. Useful for when the application goes to a background state. <br /></td></tr>
+<tr class="separator:a4486f0b9271509c9164c60821f4769a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c62114d946331300de14baa768f9953"><td class="memItemLeft" align="right" valign="top"><a id="a1c62114d946331300de14baa768f9953"></a>
 virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>GetMasterChannelMute</b> () const =0</td></tr>
 <tr class="separator:a1c62114d946331300de14baa768f9953"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c1f66d3f5cfce74f700749ca754e387"><td class="memItemLeft" align="right" valign="top"><a id="a4c1f66d3f5cfce74f700749ca754e387"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d50/classez_sound_interface.htm#a4c1f66d3f5cfce74f700749ca754e387">SetMasterChannelPaused</a> (bool paused)=0</td></tr>
-<tr class="memdesc:a4c1f66d3f5cfce74f700749ca754e387"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows to pause all sounds. Useful for when the application goes to a background state and you want to pause all sounds, instead of mute them. <br /></td></tr>
-<tr class="separator:a4c1f66d3f5cfce74f700749ca754e387"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec5fb973db2057952e389cd240413b08"><td class="memItemLeft" align="right" valign="top"><a id="aec5fb973db2057952e389cd240413b08"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d50/classez_sound_interface.htm#aec5fb973db2057952e389cd240413b08">SetMasterChannelPaused</a> (bool bPaused)=0</td></tr>
+<tr class="memdesc:aec5fb973db2057952e389cd240413b08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows to pause all sounds. Useful for when the application goes to a background state and you want to pause all sounds, instead of mute them. <br /></td></tr>
+<tr class="separator:aec5fb973db2057952e389cd240413b08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2aea22d412261bbe95782d92b701631a"><td class="memItemLeft" align="right" valign="top"><a id="a2aea22d412261bbe95782d92b701631a"></a>
 virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>GetMasterChannelPaused</b> () const =0</td></tr>
 <tr class="separator:a2aea22d412261bbe95782d92b701631a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af963f10af38fa2c9e6147d258b4f6751"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d50/classez_sound_interface.htm#af963f10af38fa2c9e6147d258b4f6751">SetSoundGroupVolume</a> (const char *szVcaGroupGuid, float volume)=0</td></tr>
-<tr class="memdesc:af963f10af38fa2c9e6147d258b4f6751"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies the volume for a VCA ('Voltage Control Amplifier').  <a href="../../d5/d50/classez_sound_interface.htm#af963f10af38fa2c9e6147d258b4f6751">More...</a><br /></td></tr>
-<tr class="separator:af963f10af38fa2c9e6147d258b4f6751"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a181d2f5f79856e82ecee8132b8f6a61c"><td class="memItemLeft" align="right" valign="top"><a id="a181d2f5f79856e82ecee8132b8f6a61c"></a>
-virtual float&#160;</td><td class="memItemRight" valign="bottom"><b>GetSoundGroupVolume</b> (const char *szVcaGroupGuid) const =0</td></tr>
-<tr class="separator:a181d2f5f79856e82ecee8132b8f6a61c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a925af12746ae95fbc8e056c2b9c233c7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d50/classez_sound_interface.htm#a925af12746ae95fbc8e056c2b9c233c7">SetSoundGroupVolume</a> (<a class="el" href="../../de/db8/structez_string_view.htm">ezStringView</a> sVcaGroupGuid, float fVolume)=0</td></tr>
+<tr class="memdesc:a925af12746ae95fbc8e056c2b9c233c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies the volume for a VCA ('Voltage Control Amplifier').  <a href="../../d5/d50/classez_sound_interface.htm#a925af12746ae95fbc8e056c2b9c233c7">More...</a><br /></td></tr>
+<tr class="separator:a925af12746ae95fbc8e056c2b9c233c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff0ee220d4cf8d5d55ed3a8c7c3a044e"><td class="memItemLeft" align="right" valign="top"><a id="aff0ee220d4cf8d5d55ed3a8c7c3a044e"></a>
+virtual float&#160;</td><td class="memItemRight" valign="bottom"><b>GetSoundGroupVolume</b> (<a class="el" href="../../de/db8/structez_string_view.htm">ezStringView</a> sVcaGroupGuid) const =0</td></tr>
+<tr class="separator:aff0ee220d4cf8d5d55ed3a8c7c3a044e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acbfc406749d7a15ca0b0919b5019cf84"><td class="memItemLeft" align="right" valign="top"><a id="acbfc406749d7a15ca0b0919b5019cf84"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d50/classez_sound_interface.htm#acbfc406749d7a15ca0b0919b5019cf84">SetNumListeners</a> (ezUInt8 uiNumListeners)=0</td></tr>
 <tr class="memdesc:acbfc406749d7a15ca0b0919b5019cf84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default is 1. Allows to set how many virtual listeners the sound is mixed for (split screen game play). <br /></td></tr>
@@ -148,18 +149,88 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <tr class="memitem:a42b338c2fea18a0bab180d7811aebf65"><td class="memItemLeft" align="right" valign="top"><a id="a42b338c2fea18a0bab180d7811aebf65"></a>
 virtual ezUInt8&#160;</td><td class="memItemRight" valign="bottom"><b>GetNumListeners</b> ()=0</td></tr>
 <tr class="separator:a42b338c2fea18a0bab180d7811aebf65"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f8f119da714df128f14f838eed16846"><td class="memItemLeft" align="right" valign="top"><a id="a6f8f119da714df128f14f838eed16846"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d50/classez_sound_interface.htm#a6f8f119da714df128f14f838eed16846">SetListenerOverrideMode</a> (bool enabled)=0</td></tr>
-<tr class="memdesc:a6f8f119da714df128f14f838eed16846"><td class="mdescLeft">&#160;</td><td class="mdescRight">The editor activates this to ignore the listener positions from the listener components, and instead use the editor camera as the listener position. <br /></td></tr>
-<tr class="separator:a6f8f119da714df128f14f838eed16846"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a019531b6239ffe696c358a35f47229fb"><td class="memItemLeft" align="right" valign="top"><a id="a019531b6239ffe696c358a35f47229fb"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d50/classez_sound_interface.htm#a019531b6239ffe696c358a35f47229fb">SetListenerOverrideMode</a> (bool bEnabled)=0</td></tr>
+<tr class="memdesc:a019531b6239ffe696c358a35f47229fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">The editor activates this to ignore the listener positions from the listener components, and instead use the editor camera as the listener position. <br /></td></tr>
+<tr class="separator:a019531b6239ffe696c358a35f47229fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa55641470ebfbf63c0942f4f4d8f0663"><td class="memItemLeft" align="right" valign="top"><a id="aa55641470ebfbf63c0942f4f4d8f0663"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d50/classez_sound_interface.htm#aa55641470ebfbf63c0942f4f4d8f0663">SetListener</a> (ezInt32 iIndex, const <a class="el" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> &amp;vPosition, const <a class="el" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> &amp;vForward, const <a class="el" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> &amp;vUp, const <a class="el" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> &amp;vVelocity)=0</td></tr>
 <tr class="memdesc:aa55641470ebfbf63c0942f4f4d8f0663"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the position for listener N. Index -1 is used for the override mode listener. <br /></td></tr>
 <tr class="separator:aa55641470ebfbf63c0942f4f4d8f0663"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cb6c65d5287881e2b2bd134bd67bc16"><td class="memItemLeft" align="right" valign="top"><a id="a0cb6c65d5287881e2b2bd134bd67bc16"></a>
+virtual <a class="el" href="../../d4/da9/structez_result.htm">ezResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d50/classez_sound_interface.htm#a0cb6c65d5287881e2b2bd134bd67bc16">OneShotSound</a> (<a class="el" href="../../de/db8/structez_string_view.htm">ezStringView</a> sResourceID, const <a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransform</a> &amp;globalPosition, float fPitch=1.0f, float fVolume=1.0f, bool bBlockIfNotLoaded=true)=0</td></tr>
+<tr class="memdesc:a0cb6c65d5287881e2b2bd134bd67bc16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plays a sound once. Callced by <a class="el" href="../../d5/d50/classez_sound_interface.htm#af515974b6ca02172b1f395aefbd4b3ff" title="Plays a sound once.">ezSoundInterface::PlaySound()</a>. <br /></td></tr>
+<tr class="separator:a0cb6c65d5287881e2b2bd134bd67bc16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:af515974b6ca02172b1f395aefbd4b3ff"><td class="memItemLeft" align="right" valign="top">static EZ_CORE_DLL <a class="el" href="../../d4/da9/structez_result.htm">ezResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d50/classez_sound_interface.htm#af515974b6ca02172b1f395aefbd4b3ff">PlaySound</a> (<a class="el" href="../../de/db8/structez_string_view.htm">ezStringView</a> sResourceID, const <a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransform</a> &amp;globalPosition, float fPitch=1.0f, float fVolume=1.0f, bool bBlockIfNotLoaded=true)</td></tr>
+<tr class="memdesc:af515974b6ca02172b1f395aefbd4b3ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plays a sound once.  <a href="../../d5/d50/classez_sound_interface.htm#af515974b6ca02172b1f395aefbd4b3ff">More...</a><br /></td></tr>
+<tr class="separator:af515974b6ca02172b1f395aefbd4b3ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="af963f10af38fa2c9e6147d258b4f6751"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af963f10af38fa2c9e6147d258b4f6751">&#9670;&nbsp;</a></span>SetSoundGroupVolume()</h2>
+<a id="af515974b6ca02172b1f395aefbd4b3ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af515974b6ca02172b1f395aefbd4b3ff">&#9670;&nbsp;</a></span>PlaySound()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/da9/structez_result.htm">ezResult</a> ezSoundInterface::PlaySound </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/db8/structez_string_view.htm">ezStringView</a>&#160;</td>
+          <td class="paramname"><em>sResourceID</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransform</a> &amp;&#160;</td>
+          <td class="paramname"><em>globalPosition</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>fPitch</em> = <code>1.0f</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>fVolume</em> = <code>1.0f</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>bBlockIfNotLoaded</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Plays a sound once. </p>
+<p>Convenience function to call <a class="el" href="../../d5/d50/classez_sound_interface.htm#a0cb6c65d5287881e2b2bd134bd67bc16" title="Plays a sound once. Callced by ezSoundInterface::PlaySound().">OneShotSound()</a> without having to retrieve the <a class="el" href="../../d5/d50/classez_sound_interface.htm">ezSoundInterface</a> first.</p>
+<p>Which sound to play is specified through a resource ID ('Asset GUID'). This is not the most efficient way to load a sound, as there is no way to preload the resource. If preloading is desired, you need to access the implementation-specific resource type directly (e.g. <a class="el" href="../../d0/da5/classez_fmod_sound_event_resource.htm">ezFmodSoundEventResource</a>). Also see <a class="el" href="../../d0/da5/classez_fmod_sound_event_resource.htm#ac993e2fa46d24beddddf164e8cf04ffe" title="Creates an instance of this sound event and plays it.">ezFmodSoundEventResource::PlayOnce()</a>. In practice, though, sounds are typically loaded in bulk from sound-banks, and preloading is not necessary.</p>
+<p>Be aware that this does not allow to adjust volume, pitch or position after creation. Stopping is also not possible. Use a sound component, if that is necessary.</p>
+<p>Also by default a pitch of 1 is always used. If the game speed is not 1 (<a class="el" href="../../da/d3c/classez_world.htm" title="A world encapsulates a scene graph of game objects and various component managers and their component...">ezWorld</a> clock), a custom pitch would need to be provided, if the sound should play at the same speed. </p>
+
+</div>
+</div>
+<a id="a925af12746ae95fbc8e056c2b9c233c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a925af12746ae95fbc8e056c2b9c233c7">&#9670;&nbsp;</a></span>SetSoundGroupVolume()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -170,14 +241,14 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname">virtual void ezSoundInterface::SetSoundGroupVolume </td>
           <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>szVcaGroupGuid</em>, </td>
+          <td class="paramtype"><a class="el" href="../../de/db8/structez_string_view.htm">ezStringView</a>&#160;</td>
+          <td class="paramname"><em>sVcaGroupGuid</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>volume</em>&#160;</td>
+          <td class="paramname"><em>fVolume</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -193,14 +264,15 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </div><div class="memdoc">
 
 <p>Specifies the volume for a VCA ('Voltage Control Amplifier'). </p>
-<p>This is used to control the volume of high level sound groups, such as 'Effects', 'Music', 'Ambiance' or 'Speech'. Note that the fmod strings banks are never loaded, so the given string must be a GUID (fmod Studio -&gt; Copy GUID). </p>
+<p>This is used to control the volume of high level sound groups, such as 'Effects', 'Music', 'Ambiance' or 'Speech'. Note that the Fmod strings banks are never loaded, so the given string must be a GUID (Fmod Studio -&gt; Copy GUID). </p>
 
-<p>Implemented in <a class="el" href="../../d4/d2b/classez_fmod.htm#aeb0edfcb5829d005d834781cb17bf75b">ezFmod</a>.</p>
+<p>Implemented in <a class="el" href="../../d4/d2b/classez_fmod.htm#ac7351a7bb1b4d955659cb106f0d1d162">ezFmod</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Core/Interfaces/<a class="el" href="../../d7/d60/_sound_interface_8h_source.htm">SoundInterface.h</a></li>
+<li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Core/Interfaces/SoundInterface.cpp</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -208,7 +280,7 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d5/d50/classez_sound_interface.htm">ezSoundInterface</a></li>
-    <li class="footer">Generated on Fri Nov 18 2022 14:48:11 for ezEngine by
+    <li class="footer">Generated on Sat Mar 25 2023 19:22:08 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

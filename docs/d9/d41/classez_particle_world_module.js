@@ -10,7 +10,7 @@ var classez_particle_world_module =
     [ "Deinitialize", "d9/d41/classez_particle_world_module.htm#a37cef6ccccf5ae8bd15e2e8059ce82f1", null ],
     [ "DestroyEffectInstance", "d9/d41/classez_particle_world_module.htm#a3d3f0b967c34ea4ef5a81213f8be007f", null ],
     [ "DestroySystemInstance", "d9/d41/classez_particle_world_module.htm#a9d0311cac80e14a875b02ae22bcc19c2", null ],
-    [ "ExtractEffectRenderData", "d9/d41/classez_particle_world_module.htm#a1fb164b9e45b3dce28e2642985b126a4", null ],
+    [ "ExtractEffectRenderData", "d9/d41/classez_particle_world_module.htm#a55d27934cf1482d4d9f8b5f3e2b81e07", null ],
     [ "GetCachedWorldModule", "d9/d41/classez_particle_world_module.htm#a5354f3aeb02c4e98a03b924cb3d004ff", null ],
     [ "Initialize", "d9/d41/classez_particle_world_module.htm#a630a5f742fabd8496f7e4522e55ae556", null ],
     [ "TryGetEffectInstance", "d9/d41/classez_particle_world_module.htm#ad677ca51b1c07469b32979076895adb9", null ],

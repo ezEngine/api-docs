@@ -4,7 +4,7 @@ var structez_typeless_bitflags =
     [ "ezTypelessBitflags", "de/d7a/structez_typeless_bitflags.htm#a37fd23738476748154ba6fc01ac1b3d7", null ],
     [ "ezTypelessBitflags", "de/d7a/structez_typeless_bitflags.htm#a6c7cef78159f219591f878c3aab061ee", null ],
     [ "Add", "de/d7a/structez_typeless_bitflags.htm#a6c901c09526a66202da924bd7b397bf3", null ],
-    [ "AddOrRemove", "de/d7a/structez_typeless_bitflags.htm#a4bfad8e27dfed9c8a82f34c6fe995a0f", null ],
+    [ "AddOrRemove", "de/d7a/structez_typeless_bitflags.htm#acf377c5768cd6d79d23a2d666ce50229", null ],
     [ "AreAllSet", "de/d7a/structez_typeless_bitflags.htm#a9d673cc7b47be8ad0a427a176ff8d1d0", null ],
     [ "AreNoneSet", "de/d7a/structez_typeless_bitflags.htm#a5d9e9dd4f0f9318bbd8761cde579a188", null ],
     [ "Clear", "de/d7a/structez_typeless_bitflags.htm#a09218c17584e5ae46b47a9e500a8fc26", null ],

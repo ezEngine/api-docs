@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 22.11</span>
+   &#160;<span id="projectnumber">Release 23.04</span>
    </div>
   </td>
  </tr>
@@ -142,17 +142,17 @@ $(document).ready(function(){initNavTree('d3/d88/_guarded_allocation__win_8h_sou
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    EZ_ASSERT_DEV(pMemory != <span class="keyword">nullptr</span>, <span class="stringliteral">&quot;Could not reserve memory pages. Error Code &#39;{0}&#39;&quot;</span>, ezArgErrorCode(::GetLastError()));</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// add one page and commit the payload pages</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    pMemory = <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a154a2ccb52b2abdfdbe6d068948bc6b4">ezMemoryUtils::AddByteOffset</a>(pMemory, uiPageSize);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    pMemory = <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a0bedfdd60a93e5a48cd7e412a4aa984b">ezMemoryUtils::AddByteOffset</a>(pMemory, uiPageSize);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">void</span>* ptr = VirtualAlloc(pMemory, uiFullPageSize, MEM_COMMIT, PAGE_READWRITE);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    EZ_ASSERT_DEV(ptr != <span class="keyword">nullptr</span>, <span class="stringliteral">&quot;Could not commit memory pages. Error Code &#39;{0}&#39;&quot;</span>, ezArgErrorCode(::GetLastError()));</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">// store information in meta data</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    AlloctionMetaData* metaData = <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a154a2ccb52b2abdfdbe6d068948bc6b4">ezMemoryUtils::AddByteOffset</a>(<span class="keyword">static_cast&lt;</span>AlloctionMetaData*<span class="keyword">&gt;</span>(ptr), uiFullPageSize - uiTotalSize);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a2944b511c0f4181b4b6a96b472df703f">ezMemoryUtils::Construct</a>(metaData, 1);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    AlloctionMetaData* metaData = <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a0bedfdd60a93e5a48cd7e412a4aa984b">ezMemoryUtils::AddByteOffset</a>(<span class="keyword">static_cast&lt;</span>AlloctionMetaData*<span class="keyword">&gt;</span>(ptr), uiFullPageSize - uiTotalSize);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="../../dc/d4d/classez_memory_utils.htm#ab4c3930b2de5e40c33a2bfca4c5dda1f">ezMemoryUtils::Construct</a>(metaData, 1);</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    metaData-&gt;m_uiSize = uiAlignedSize;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">// finally add offset to the actual payload</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    ptr = <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a154a2ccb52b2abdfdbe6d068948bc6b4">ezMemoryUtils::AddByteOffset</a>(metaData, <span class="keyword">sizeof</span>(AlloctionMetaData));</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    ptr = <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a0bedfdd60a93e5a48cd7e412a4aa984b">ezMemoryUtils::AddByteOffset</a>(metaData, <span class="keyword">sizeof</span>(AlloctionMetaData));</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">return</span> ptr;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  }</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
@@ -160,7 +160,7 @@ $(document).ready(function(){initNavTree('d3/d88/_guarded_allocation__win_8h_sou
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  EZ_MSVC_ANALYSIS_WARNING_PUSH</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  EZ_MSVC_ANALYSIS_WARNING_DISABLE(6250)</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  void ezGuardedAllocation::Deallocate(<span class="keywordtype">void</span>* ptr)</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  void ezGuardedAllocation::Deallocate(<span class="keywordtype">void</span>* pPtr)</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  {</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="../../d9/d4f/classez_lock.htm">ezLock&lt;ezMutex&gt;</a> lock(m_Mutex);</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
@@ -173,22 +173,22 @@ $(document).ready(function(){initNavTree('d3/d88/_guarded_allocation__win_8h_sou
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">// Retrieve info from meta data first.</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    AlloctionMetaData* metaData = <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a154a2ccb52b2abdfdbe6d068948bc6b4">ezMemoryUtils::AddByteOffset</a>(<span class="keyword">static_cast&lt;</span>AlloctionMetaData*<span class="keyword">&gt;</span>(ptr), -((ptrdiff_t)<span class="keyword">sizeof</span>(AlloctionMetaData)));</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    AlloctionMetaData* metaData = <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a0bedfdd60a93e5a48cd7e412a4aa984b">ezMemoryUtils::AddByteOffset</a>(<span class="keyword">static_cast&lt;</span>AlloctionMetaData*<span class="keyword">&gt;</span>(pPtr), -((ptrdiff_t)<span class="keyword">sizeof</span>(AlloctionMetaData)));</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">size_t</span> uiAlignedSize = metaData-&gt;m_uiSize;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <a class="code" href="../../dc/d4d/classez_memory_utils.htm#aea6c4d3ce40c31abd9cc00fd94759c64">ezMemoryUtils::Destruct</a>(metaData, 1);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <a class="code" href="../../dc/d4d/classez_memory_utils.htm#add65b87c39dade4ee7b0671c16b10a39">ezMemoryUtils::Destruct</a>(metaData, 1);</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">// Decommit the pages but do not release the memory yet so use-after-free can be detected.</span></div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">size_t</span> uiPageSize = m_uiPageSize;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">size_t</span> uiTotalSize = uiAlignedSize + <span class="keyword">sizeof</span>(AlloctionMetaData);</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">size_t</span> uiFullPageSize = <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a2583fd48644a0a7b3eb72797c7c65a34">ezMemoryUtils::AlignSize</a>(uiTotalSize, uiPageSize);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    ptr = <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a154a2ccb52b2abdfdbe6d068948bc6b4">ezMemoryUtils::AddByteOffset</a>(ptr, ((ptrdiff_t)uiAlignedSize) - uiFullPageSize);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    pPtr = <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a0bedfdd60a93e5a48cd7e412a4aa984b">ezMemoryUtils::AddByteOffset</a>(pPtr, ((ptrdiff_t)uiAlignedSize) - uiFullPageSize);</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    EZ_VERIFY(</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      ::VirtualFree(ptr, uiFullPageSize, MEM_DECOMMIT), <span class="stringliteral">&quot;Could not decommit memory pages. Error Code &#39;{0}&#39;&quot;</span>, ezArgErrorCode(::GetLastError()));</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      ::VirtualFree(pPtr, uiFullPageSize, MEM_DECOMMIT), <span class="stringliteral">&quot;Could not decommit memory pages. Error Code &#39;{0}&#39;&quot;</span>, ezArgErrorCode(::GetLastError()));</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="comment">// Finally store the allocation so we can release it later</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">void</span>* pMemory = <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a154a2ccb52b2abdfdbe6d068948bc6b4">ezMemoryUtils::AddByteOffset</a>(ptr, -((ptrdiff_t)uiPageSize));</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">void</span>* pMemory = <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a0bedfdd60a93e5a48cd7e412a4aa984b">ezMemoryUtils::AddByteOffset</a>(pPtr, -((ptrdiff_t)uiPageSize));</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    m_AllocationsToFreeLater.PushBack(pMemory);</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  }</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
@@ -196,19 +196,19 @@ $(document).ready(function(){initNavTree('d3/d88/_guarded_allocation__win_8h_sou
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;} <span class="comment">// namespace ezMemoryPolicies</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassez_memory_utils_htm_a154a2ccb52b2abdfdbe6d068948bc6b4"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm#a154a2ccb52b2abdfdbe6d068948bc6b4">ezMemoryUtils::AddByteOffset</a></div><div class="ttdeci">static T * AddByteOffset(T *ptr, ptrdiff_t iOffset)</div><div class="ttdoc">Returns the address stored in ptr plus the given byte offset iOffset, cast to type T.</div></div>
+<div class="ttc" id="aclassez_memory_utils_htm_ab4c3930b2de5e40c33a2bfca4c5dda1f"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm#ab4c3930b2de5e40c33a2bfca4c5dda1f">ezMemoryUtils::Construct</a></div><div class="ttdeci">static void Construct(T *pDestination, size_t uiCount=1)</div><div class="ttdoc">Constructs uiCount objects of type T in a raw buffer at pDestination.</div></div>
 <div class="ttc" id="anamespaceez_math_htm_a194e5582f9a01688fc03e4620e231d29"><div class="ttname"><a href="../../db/d78/namespaceez_math.htm#a194e5582f9a01688fc03e4620e231d29">ezMath::IsPowerOf2</a></div><div class="ttdeci">constexpr EZ_FORCE_INLINE bool IsPowerOf2(ezInt32 value)</div><div class="ttdoc">Returns true, if there exists some x with 2^x == value.</div><div class="ttdef"><b>Definition:</b> Math_inl.h:233</div></div>
-<div class="ttc" id="aclassez_memory_utils_htm_a2944b511c0f4181b4b6a96b472df703f"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm#a2944b511c0f4181b4b6a96b472df703f">ezMemoryUtils::Construct</a></div><div class="ttdeci">static void Construct(T *pDestination, size_t uiCount)</div><div class="ttdoc">Constructs uiCount objects of type T in a raw buffer at pDestination.</div></div>
+<div class="ttc" id="aclassez_memory_utils_htm_a0bedfdd60a93e5a48cd7e412a4aa984b"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm#a0bedfdd60a93e5a48cd7e412a4aa984b">ezMemoryUtils::AddByteOffset</a></div><div class="ttdeci">static T * AddByteOffset(T *pPtr, ptrdiff_t iOffset)</div><div class="ttdoc">Returns the address stored in ptr plus the given byte offset iOffset, cast to type T.</div></div>
 <div class="ttc" id="aclassez_allocator_base_htm"><div class="ttname"><a href="../../d1/d4c/classez_allocator_base.htm">ezAllocatorBase</a></div><div class="ttdoc">Base class for all memory allocators.</div><div class="ttdef"><b>Definition:</b> AllocatorBase.h:22</div></div>
-<div class="ttc" id="aclassez_memory_utils_htm_aea6c4d3ce40c31abd9cc00fd94759c64"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm#aea6c4d3ce40c31abd9cc00fd94759c64">ezMemoryUtils::Destruct</a></div><div class="ttdeci">static void Destruct(T *pDestination, size_t uiCount)</div><div class="ttdoc">Destructs uiCount objects of type T at pDestination.</div></div>
 <div class="ttc" id="aclassez_lock_htm"><div class="ttname"><a href="../../d9/d4f/classez_lock.htm">ezLock</a></div><div class="ttdoc">Manages a lock (e.g. a mutex) and ensures that it is properly released as the lock object goes out of...</div><div class="ttdef"><b>Definition:</b> Lock.h:5</div></div>
 <div class="ttc" id="aclassez_memory_utils_htm_a2583fd48644a0a7b3eb72797c7c65a34"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm#a2583fd48644a0a7b3eb72797c7c65a34">ezMemoryUtils::AlignSize</a></div><div class="ttdeci">static T AlignSize(T uiSize, T uiAlignment)</div><div class="ttdoc">Aligns the given size uiSize by rounding up to the next multiple of the size.</div></div>
+<div class="ttc" id="aclassez_memory_utils_htm_add65b87c39dade4ee7b0671c16b10a39"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm#add65b87c39dade4ee7b0671c16b10a39">ezMemoryUtils::Destruct</a></div><div class="ttdeci">static void Destruct(T *pDestination, size_t uiCount=1)</div><div class="ttdoc">Destructs uiCount objects of type T at pDestination.</div></div>
 <div class="ttc" id="astructez_memory_policies_1_1_alloction_meta_data_htm"><div class="ttname"><a href="../../d9/df4/structez_memory_policies_1_1_alloction_meta_data.htm">ezMemoryPolicies::AlloctionMetaData</a></div><div class="ttdef"><b>Definition:</b> GuardedAllocation_win.h:9</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_adb0ac2a169525f5fa05f0527c58e205.htm">Memory</a></li><li class="navelem"><a class="el" href="../../dir_7e8e2491845ec7b2b62df622f0295925.htm">Policies</a></li><li class="navelem"><a class="el" href="../../dir_473788c967d53a305b6482136f97e4b2.htm">Win</a></li><li class="navelem"><b>GuardedAllocation_win.h</b></li>
-    <li class="footer">Generated on Fri Nov 18 2022 14:47:59 for ezEngine by
+    <li class="footer">Generated on Sat Mar 25 2023 19:21:56 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

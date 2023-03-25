@@ -24,9 +24,9 @@ var classez_processing_stream =
       [ "Count", "d6/d22/classez_processing_stream.htm#a27ae356e114f4668f714bb63dd775f17ae93f994f01c537c4e2f7d8528c3eb5e9", null ]
     ] ],
     [ "ezProcessingStream", "d6/d22/classez_processing_stream.htm#ad5f18a71ff2f6519f150bb402e31b9b8", null ],
-    [ "ezProcessingStream", "d6/d22/classez_processing_stream.htm#a85e13e0f521805e5d7d3265cea3dc239", null ],
-    [ "ezProcessingStream", "d6/d22/classez_processing_stream.htm#a005853f4e960d36067bdba55eda35bfd", null ],
-    [ "ezProcessingStream", "d6/d22/classez_processing_stream.htm#ad4b25e27c52a7cf7d0e4f54c7c4be6e8", null ],
+    [ "ezProcessingStream", "d6/d22/classez_processing_stream.htm#a9e61372128910170b84cecc5df49003a", null ],
+    [ "ezProcessingStream", "d6/d22/classez_processing_stream.htm#ab5d0a9f4930a050b0af2e6ff25053489", null ],
+    [ "ezProcessingStream", "d6/d22/classez_processing_stream.htm#a7bb64eada2db903c53cedaadd667b433", null ],
     [ "~ezProcessingStream", "d6/d22/classez_processing_stream.htm#a411e2d822431605223875a6ae51ecf85", null ],
     [ "FreeData", "d6/d22/classez_processing_stream.htm#a6efe1f07729255895f900a9f2d4f39a7", null ],
     [ "GetAlignment", "d6/d22/classez_processing_stream.htm#ae0809cfbca03bde2f96fc64e855e49b3", null ],

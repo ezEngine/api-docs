@@ -9,7 +9,7 @@ var classez_raw_memory_stream_reader =
     [ "ReadBytes", "da/d34/classez_raw_memory_stream_reader.htm#a2b0d4b96e2df47274389d49e1295fe18", null ],
     [ "Reset", "da/d34/classez_raw_memory_stream_reader.htm#aa35e31696bca3ef894cc15ef9f45b958", null ],
     [ "Reset", "da/d34/classez_raw_memory_stream_reader.htm#a8ef0cb78967906d77faa8ad746499838", null ],
-    [ "SetDebugSourceInformation", "da/d34/classez_raw_memory_stream_reader.htm#ad207e2d534ad95bdfee262a375b59bd4", null ],
+    [ "SetDebugSourceInformation", "da/d34/classez_raw_memory_stream_reader.htm#a79a3392e50a32244c8f3a75ccd0d9bfd", null ],
     [ "SetReadPosition", "da/d34/classez_raw_memory_stream_reader.htm#a3fba7363392bcff2a42dc9b1ed7e9f78", null ],
     [ "SkipBytes", "da/d34/classez_raw_memory_stream_reader.htm#abdbddce0eca5ff54749b027813953a81", null ]
 ];

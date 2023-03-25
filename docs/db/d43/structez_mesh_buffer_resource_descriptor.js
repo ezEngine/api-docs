@@ -3,7 +3,7 @@ var structez_mesh_buffer_resource_descriptor =
     [ "ezMeshBufferResourceDescriptor", "db/d43/structez_mesh_buffer_resource_descriptor.htm#a0133415416aee7ca6f09c2d5b4f5cf41", null ],
     [ "~ezMeshBufferResourceDescriptor", "db/d43/structez_mesh_buffer_resource_descriptor.htm#a571cbbc19482210475422283b0b56414", null ],
     [ "AddCommonStreams", "db/d43/structez_mesh_buffer_resource_descriptor.htm#a95744c1d8a7c58d660683cfe96806736", null ],
-    [ "AddStream", "db/d43/structez_mesh_buffer_resource_descriptor.htm#a2b02d77db34adc5ee64f9ea82a3419fa", null ],
+    [ "AddStream", "db/d43/structez_mesh_buffer_resource_descriptor.htm#acbe8f2ee6a124c2c87b75c8c82556ab5", null ],
     [ "AllocateStreams", "db/d43/structez_mesh_buffer_resource_descriptor.htm#ab78255605765ad956cc48d4385126ec0", null ],
     [ "AllocateStreamsFromGeometry", "db/d43/structez_mesh_buffer_resource_descriptor.htm#ac570d9062cfa93d7c30e22c4e302571e", null ],
     [ "Clear", "db/d43/structez_mesh_buffer_resource_descriptor.htm#a634d9a8c7bc375ecd1aa4daeb9ba8660", null ],

@@ -40,5 +40,5 @@ var classez_standard_input_device =
     [ "SetShowMouseCursor", "dd/d76/classez_standard_input_device.htm#ac2ee0aba89ee8ad5ff1e518699007f7c", null ],
     [ "SetShowMouseCursor", "dd/d76/classez_standard_input_device.htm#ac2ee0aba89ee8ad5ff1e518699007f7c", null ],
     [ "UpdateInputSlotValues", "dd/d76/classez_standard_input_device.htm#a5ace5f49dd821b3d00ba05c69c234f0c", null ],
-    [ "WindowMessage", "dd/d76/classez_standard_input_device.htm#afc3a278a46063ad9075fbf434204091d", null ]
+    [ "WindowMessage", "dd/d76/classez_standard_input_device.htm#a46c39b26a06d637b148a3d7c01a8a1dc", null ]
 ];

@@ -8,7 +8,7 @@ var classez_adobe_c_u_b_e_reader =
     [ "GetLUTIndex", "d5/d74/classez_adobe_c_u_b_e_reader.htm#a214f13f298e6fce838286ca9c252f0e1", null ],
     [ "GetLUTSize", "d5/d74/classez_adobe_c_u_b_e_reader.htm#a56c8f20f913a5d077085df58cbc4060c", null ],
     [ "GetTitle", "d5/d74/classez_adobe_c_u_b_e_reader.htm#a269e5f806df60411fb2ef836ade99b53", null ],
-    [ "ParseFile", "d5/d74/classez_adobe_c_u_b_e_reader.htm#aedcbaf82d29ed4f9c9f048b36f1c8393", null ],
+    [ "ParseFile", "d5/d74/classez_adobe_c_u_b_e_reader.htm#a4e205c652cd79657b197d7594b4916dd", null ],
     [ "m_LUTValues", "d5/d74/classez_adobe_c_u_b_e_reader.htm#a9204deda465bae568b3320ac495cdeec", null ],
     [ "m_sTitle", "d5/d74/classez_adobe_c_u_b_e_reader.htm#a15921f16ee3f25c4c78d121fb1815191", null ],
     [ "m_uiLUTSize", "d5/d74/classez_adobe_c_u_b_e_reader.htm#abc2c46858f34e3939d18b25bc6f99f44", null ],

@@ -24,7 +24,7 @@ var classez_application =
     [ "RequestQuit", "da/d72/classez_application.htm#afb55905454fa279df96f3466e236bd76", null ],
     [ "Run", "da/d72/classez_application.htm#a9a775624db52313a4f79cd39cff3a3b4", null ],
     [ "SetApplicationName", "da/d72/classez_application.htm#a76b912ad4b96dffb8003f452d14868ad", null ],
-    [ "SetCommandLineArguments", "da/d72/classez_application.htm#a4c36b7779c6080cb4a8f9607fa0056d0", null ],
+    [ "SetCommandLineArguments", "da/d72/classez_application.htm#af059e23d38332d2d014191a51121576c", null ],
     [ "SetReturnCode", "da/d72/classez_application.htm#a8e76e01da8cc0f14aea5a3b49c27520d", null ],
     [ "TranslateReturnCode", "da/d72/classez_application.htm#afd33b7ab600517fbf05a3b6a1faab2b9", null ],
     [ "WasQuitRequested", "da/d72/classez_application.htm#aeb6e9c8227c78df6398d1b956eeefaa8", null ],

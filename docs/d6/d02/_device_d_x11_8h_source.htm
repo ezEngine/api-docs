@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 22.11</span>
+   &#160;<span id="projectnumber">Release 23.04</span>
    </div>
   </td>
  </tr>
@@ -118,7 +118,7 @@ $(document).ready(function(){initNavTree('d6/d02/_device_d_x11_8h_source.htm','.
 <div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="../../d3/d78/classez_g_a_l_device_d_x11.htm">   30</a></span>&#160;<span class="keyword">class </span>EZ_RENDERERDX11_DLL <a class="code" href="../../d3/d78/classez_g_a_l_device_d_x11.htm">ezGALDeviceDX11</a> : <span class="keyword">public</span> <a class="code" href="../../d2/d09/classez_g_a_l_device.htm">ezGALDevice</a></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keyword">friend</span> <a class="code" href="../../da/d7c/structez_internal_1_1_new_instance.htm">ezInternal::NewInstance&lt;ezGALDevice&gt;</a> CreateDX11Device(<a class="code" href="../../d1/d4c/classez_allocator_base.htm">ezAllocatorBase</a>* pAllocator, <span class="keyword">const</span> <a class="code" href="../../db/da9/structez_g_a_l_device_creation_description.htm">ezGALDeviceCreationDescription</a>&amp; Description);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keyword">friend</span> <a class="code" href="../../da/d7c/structez_internal_1_1_new_instance.htm">ezInternal::NewInstance&lt;ezGALDevice&gt;</a> CreateDX11Device(<a class="code" href="../../d1/d4c/classez_allocator_base.htm">ezAllocatorBase</a>* pAllocator, <span class="keyword">const</span> <a class="code" href="../../db/da9/structez_g_a_l_device_creation_description.htm">ezGALDeviceCreationDescription</a>&amp; description);</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <a class="code" href="../../d3/d78/classez_g_a_l_device_d_x11.htm">ezGALDeviceDX11</a>(<span class="keyword">const</span> <a class="code" href="../../db/da9/structez_g_a_l_device_creation_description.htm">ezGALDeviceCreationDescription</a>&amp; Description);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">public</span>:</div>
@@ -214,93 +214,95 @@ $(document).ready(function(){initNavTree('d6/d02/_device_d_x11_8h_source.htm','.
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> FillCapabilitiesPlatform() <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> WaitIdlePlatform() <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d3/d58/classez_g_a_l_command_encoder_impl_d_x11.htm">ezGALCommandEncoderImplDX11</a>;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  <span class="keyword">struct </span>TempResourceType</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  {</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keyword">enum</span> Enum</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    {</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;      Buffer,</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;      Texture,</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;      ENUM_COUNT</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    };</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  };</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  ID3D11Query* GetTimestamp(<a class="code" href="../../d2/d87/structez_g_a_l_timestamp_handle.htm">ezGALTimestampHandle</a> hTimestamp);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d3/d58/classez_g_a_l_command_encoder_impl_d_x11.htm">ezGALCommandEncoderImplDX11</a>;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  <span class="keyword">struct </span>TempResourceType</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  {</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keyword">enum</span> Enum</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    {</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;      Buffer,</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;      Texture,</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;      ENUM_COUNT</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    };</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  };</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  ID3D11Resource* FindTempBuffer(ezUInt32 uiSize);</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  ID3D11Resource* FindTempTexture(ezUInt32 uiWidth, ezUInt32 uiHeight, ezUInt32 uiDepth, ezGALResourceFormat::Enum format);</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  <span class="keywordtype">void</span> FreeTempResources(ezUInt64 uiFrame);</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  <span class="keywordtype">void</span> FillFormatLookupTable();</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  ID3D11Query* GetTimestamp(<a class="code" href="../../d2/d87/structez_g_a_l_timestamp_handle.htm">ezGALTimestampHandle</a> hTimestamp);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  ID3D11Resource* FindTempBuffer(ezUInt32 uiSize);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  ID3D11Resource* FindTempTexture(ezUInt32 uiWidth, ezUInt32 uiHeight, ezUInt32 uiDepth, ezGALResourceFormat::Enum format);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  <span class="keywordtype">void</span> FreeTempResources(ezUInt64 uiFrame);</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  <span class="keywordtype">void</span> InsertFencePlatform(ID3D11DeviceContext* pContext, ID3D11Query* pFence);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  <span class="keywordtype">void</span> FillFormatLookupTable();</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  <span class="keywordtype">bool</span> IsFenceReachedPlatform(ID3D11DeviceContext* pContext, ID3D11Query* pFence);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  <span class="keywordtype">void</span> InsertFencePlatform(ID3D11DeviceContext* pContext, ID3D11Query* pFence);</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  <span class="keywordtype">void</span> WaitForFencePlatform(ID3D11DeviceContext* pContext, ID3D11Query* pFence);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  <span class="keywordtype">bool</span> IsFenceReachedPlatform(ID3D11DeviceContext* pContext, ID3D11Query* pFence);</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  ID3D11Device* m_pDevice;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  ID3D11Device3* m_pDevice3;</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  ID3D11DeviceContext* m_pImmediateContext;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  ID3D11Debug* m_pDebug;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  <span class="keywordtype">void</span> WaitForFencePlatform(ID3D11DeviceContext* pContext, ID3D11Query* pFence);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  ID3D11Device* m_pDevice;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  ID3D11Device3* m_pDevice3;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  ID3D11DeviceContext* m_pImmediateContext;</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  IDXGIFactory1* m_pDXGIFactory;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  ID3D11Debug* m_pDebug;</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  IDXGIAdapter1* m_pDXGIAdapter;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  IDXGIFactory1* m_pDXGIFactory;</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;  IDXGIDevice1* m_pDXGIDevice;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;  IDXGIAdapter1* m_pDXGIAdapter;</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  <a class="code" href="../../d6/d54/classez_g_a_l_format_lookup_table.htm">ezGALFormatLookupTableDX11</a> m_FormatLookupTable;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  IDXGIDevice1* m_pDXGIDevice;</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;  ezUInt32 m_uiFeatureLevel; <span class="comment">// D3D_FEATURE_LEVEL can&#39;t be forward declared</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;  <a class="code" href="../../d6/d54/classez_g_a_l_format_lookup_table.htm">ezGALFormatLookupTableDX11</a> m_FormatLookupTable;</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  <a class="code" href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt;ezGALPassDX11&gt;</a> m_pDefaultPass;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  ezUInt32 m_uiFeatureLevel; <span class="comment">// D3D_FEATURE_LEVEL can&#39;t be forward declared</span></div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  <span class="keyword">struct </span>PerFrameData</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  {</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    ID3D11Query* m_pFence = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    ID3D11Query* m_pDisjointTimerQuery = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordtype">double</span> m_fInvTicksPerSecond = -1.0;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    ezUInt64 m_uiFrame = -1;</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  };</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  PerFrameData m_PerFrameData[4];</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  ezUInt8 m_uiCurrentPerFrameData = 0;</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  ezUInt8 m_uiNextPerFrameData = 0;</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  ezUInt64 m_uiFrameCounter = 0;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  <a class="code" href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt;ezGALPassDX11&gt;</a> m_pDefaultPass;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;  <span class="keyword">struct </span>PerFrameData</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  {</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    ID3D11Query* m_pFence = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    ID3D11Query* m_pDisjointTimerQuery = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordtype">double</span> m_fInvTicksPerSecond = -1.0;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    ezUInt64 m_uiFrame = -1;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  };</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  PerFrameData m_PerFrameData[4];</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  ezUInt8 m_uiCurrentPerFrameData = 0;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  ezUInt8 m_uiNextPerFrameData = 0;</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;  <span class="keyword">struct </span>UsedTempResource</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  {</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    EZ_DECLARE_POD_TYPE();</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    ID3D11Resource* m_pResource;</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    ezUInt64 m_uiFrame;</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    ezUInt32 m_uiHash;</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;  };</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;  <a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;ezUInt32, ezDynamicArray&lt;ID3D11Resource*&gt;</a>, <a class="code" href="../../df/d11/structez_compare_helper.htm">ezCompareHelper&lt;ezUInt32&gt;</a>, <a class="code" href="../../dd/dd0/structez_local_allocator_wrapper.htm">ezLocalAllocatorWrapper</a>&gt; m_FreeTempResources[TempResourceType::ENUM_COUNT];</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;  <a class="code" href="../../d9/dfe/classez_deque.htm">ezDeque&lt;UsedTempResource, ezLocalAllocatorWrapper&gt;</a> m_UsedTempResources[TempResourceType::ENUM_COUNT];</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ID3D11Query*, ezLocalAllocatorWrapper&gt;</a> m_Timestamps;</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;  ezUInt32 m_uiCurrentTimestamp = 0;</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;  ezUInt32 m_uiNextTimestamp = 0;</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;  <span class="keyword">struct </span>GPUTimingScope* m_pFrameTimingScope = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;  <span class="keyword">struct </span>GPUTimingScope* m_pPipelineTimingScope = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;  <span class="keyword">struct </span>GPUTimingScope* m_pPassTimingScope = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160; </div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;  <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> m_SyncTimeDiff;</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;  <span class="keywordtype">bool</span> m_bSyncTimeNeeded = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;};</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="preprocessor">#include &lt;RendererDX11/Device/Implementation/DeviceDX11_inl.h&gt;</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;  ezUInt64 m_uiFrameCounter = 0;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  <span class="keyword">struct </span>UsedTempResource</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  {</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    EZ_DECLARE_POD_TYPE();</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    ID3D11Resource* m_pResource;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    ezUInt64 m_uiFrame;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    ezUInt32 m_uiHash;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;  };</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;  <a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;ezUInt32, ezDynamicArray&lt;ID3D11Resource*&gt;</a>, <a class="code" href="../../df/d11/structez_compare_helper.htm">ezCompareHelper&lt;ezUInt32&gt;</a>, <a class="code" href="../../dd/dd0/structez_local_allocator_wrapper.htm">ezLocalAllocatorWrapper</a>&gt; m_FreeTempResources[TempResourceType::ENUM_COUNT];</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;  <a class="code" href="../../d9/dfe/classez_deque.htm">ezDeque&lt;UsedTempResource, ezLocalAllocatorWrapper&gt;</a> m_UsedTempResources[TempResourceType::ENUM_COUNT];</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ID3D11Query*, ezLocalAllocatorWrapper&gt;</a> m_Timestamps;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;  ezUInt32 m_uiCurrentTimestamp = 0;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;  ezUInt32 m_uiNextTimestamp = 0;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;  <span class="keyword">struct </span>GPUTimingScope* m_pFrameTimingScope = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;  <span class="keyword">struct </span>GPUTimingScope* m_pPipelineTimingScope = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;  <span class="keyword">struct </span>GPUTimingScope* m_pPassTimingScope = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;  <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> m_SyncTimeDiff;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;  <span class="keywordtype">bool</span> m_bSyncTimeNeeded = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;};</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160; </div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="preprocessor">#include &lt;RendererDX11/Device/Implementation/DeviceDX11_inl.h&gt;</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astructez_g_a_l_rasterizer_state_creation_description_htm"><div class="ttname"><a href="../../d8/db2/structez_g_a_l_rasterizer_state_creation_description.htm">ezGALRasterizerStateCreationDescription</a></div><div class="ttdoc">Describes the settings for a new rasterizer state. See ezGALDevice::CreateRasterizerState.</div><div class="ttdef"><b>Definition:</b> Descriptors.h:145</div></div>
@@ -309,7 +311,7 @@ $(document).ready(function(){initNavTree('d6/d02/_device_d_x11_8h_source.htm','.
 <div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition:</b> Types.h:50</div></div>
 <div class="ttc" id="aclassez_g_a_l_format_lookup_entry_htm"><div class="ttname"><a href="../../d8/db1/classez_g_a_l_format_lookup_entry.htm">ezGALFormatLookupEntry</a></div><div class="ttdef"><b>Definition:</b> ResourceFormats.h:133</div></div>
 <div class="ttc" id="astructez_time_htm"><div class="ttname"><a href="../../d3/d90/structez_time.htm">ezTime</a></div><div class="ttdoc">The time class encapsulates a double value storing the time in seconds.</div><div class="ttdef"><b>Definition:</b> Time.h:11</div></div>
-<div class="ttc" id="aclassez_g_a_l_swap_chain_htm"><div class="ttname"><a href="../../de/d39/classez_g_a_l_swap_chain.htm">ezGALSwapChain</a></div><div class="ttdef"><b>Definition:</b> SwapChain.h:9</div></div>
+<div class="ttc" id="aclassez_g_a_l_swap_chain_htm"><div class="ttname"><a href="../../de/d39/classez_g_a_l_swap_chain.htm">ezGALSwapChain</a></div><div class="ttdef"><b>Definition:</b> SwapChain.h:10</div></div>
 <div class="ttc" id="aclassez_deque_htm"><div class="ttname"><a href="../../d9/dfe/classez_deque.htm">ezDeque&lt; UsedTempResource, ezLocalAllocatorWrapper &gt;</a></div></div>
 <div class="ttc" id="aclassez_g_a_l_device_htm"><div class="ttname"><a href="../../d2/d09/classez_g_a_l_device.htm">ezGALDevice</a></div><div class="ttdoc">The ezRenderDevice class is the primary interface for interactions with rendering APIs It contains a ...</div><div class="ttdef"><b>Definition:</b> Device.h:18</div></div>
 <div class="ttc" id="astructez_compare_helper_htm"><div class="ttname"><a href="../../df/d11/structez_compare_helper.htm">ezCompareHelper&lt; ezUInt32 &gt;</a></div></div>
@@ -354,7 +356,7 @@ $(document).ready(function(){initNavTree('d6/d02/_device_d_x11_8h_source.htm','.
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_d65d4e101d9462d8504e011e6a07ff24.htm">RendererDX11</a></li><li class="navelem"><a class="el" href="../../dir_48cdc3daadd764e707b4eabf33b1ac80.htm">Device</a></li><li class="navelem"><b>DeviceDX11.h</b></li>
-    <li class="footer">Generated on Fri Nov 18 2022 14:48:02 for ezEngine by
+    <li class="footer">Generated on Sat Mar 25 2023 19:21:59 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

@@ -22,8 +22,8 @@ var classez_id_table_base =
     [ "operator=", "da/d31/classez_id_table_base.htm#a12f12c67dbc228b435139822e7d1af97", null ],
     [ "operator[]", "da/d31/classez_id_table_base.htm#ab6f051545fc2ede5f569441aeca8b2b4", null ],
     [ "operator[]", "da/d31/classez_id_table_base.htm#a12b5ae8a2b42dad8d51df54e3057d9d9", null ],
-    [ "Remove", "da/d31/classez_id_table_base.htm#a7a356ebb209d9b05856296398759e5b0", null ],
-    [ "Reserve", "da/d31/classez_id_table_base.htm#aea6fd704a213fdfd76b5d0401bfe463a", null ],
+    [ "Remove", "da/d31/classez_id_table_base.htm#a69aedf90afa4ee63dcf3f37fd31c50c3", null ],
+    [ "Reserve", "da/d31/classez_id_table_base.htm#afcbeb04501c9d0ce6058daff0581b678", null ],
     [ "TryGetValue", "da/d31/classez_id_table_base.htm#a506c618f4381ebb9072bf144a64d2b5c", null ],
     [ "TryGetValue", "da/d31/classez_id_table_base.htm#af10bedf20751d7fc6f5238a197e39430", null ]
 ];

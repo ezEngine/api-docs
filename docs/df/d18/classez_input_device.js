@@ -1,7 +1,7 @@
 var classez_input_device =
 [
     [ "ezInputDevice", "df/d18/classez_input_device.htm#a7bcaa3d0b3cebf5b099362fc234e2966", null ],
-    [ "GetInputSlotState", "df/d18/classez_input_device.htm#a488142a253444bdc1bd64edbcfc59dd3", null ],
+    [ "GetInputSlotState", "df/d18/classez_input_device.htm#a5f36483138d015ea09521ba6ae9ddf64", null ],
     [ "HasDeviceBeenUsedLastFrame", "df/d18/classez_input_device.htm#a3c62c9e2595a1ff61a1fe6f970ba7592", null ],
     [ "InitializeDevice", "df/d18/classez_input_device.htm#af81b9d83d1cb91e1b84aa6dd75b94ec8", null ],
     [ "RegisterInputSlots", "df/d18/classez_input_device.htm#ad70250d056a9db8e4de9195bc229ecfc", null ],

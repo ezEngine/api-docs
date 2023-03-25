@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 22.11</span>
+   &#160;<span id="projectnumber">Release 23.04</span>
    </div>
   </td>
  </tr>
@@ -104,13 +104,13 @@ $(document).ready(function(){initNavTree('d8/d0a/_type_version_context_8h_source
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <a class="code" href="../../d9/d52/classez_type_version_write_context.htm">ezTypeVersionWriteContext</a>();</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  ~<a class="code" href="../../d9/d52/classez_type_version_write_context.htm">ezTypeVersionWriteContext</a>();</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <a class="code" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a>&amp; Begin(<a class="code" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a>&amp; originalStream);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <a class="code" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a>&amp; Begin(<a class="code" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a>&amp; ref_originalStream);</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> End();</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keywordtype">void</span> AddType(<span class="keyword">const</span> <a class="code" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a>* pRtti);</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordtype">void</span> WriteTypeVersions(<a class="code" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a>&amp; stream) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordtype">void</span> WriteTypeVersions(<a class="code" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a>&amp; inout_stream) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
 <div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="../../d9/d52/classez_type_version_write_context.htm#ab63ea56b67f4e88fe1cdf0cd93a82130">   39</a></span>&#160;  <a class="code" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a>&amp; <a class="code" href="../../d9/d52/classez_type_version_write_context.htm#ab63ea56b67f4e88fe1cdf0cd93a82130">GetOriginalStream</a>() { <span class="keywordflow">return</span> *m_pOriginalStream; }</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
@@ -128,7 +128,7 @@ $(document).ready(function(){initNavTree('d8/d0a/_type_version_context_8h_source
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  EZ_DECLARE_SERIALIZATION_CONTEXT(<a class="code" href="../../d6/d63/classez_type_version_read_context.htm">ezTypeVersionReadContext</a>);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <a class="code" href="../../d6/d63/classez_type_version_read_context.htm">ezTypeVersionReadContext</a>(<a class="code" href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a>&amp; stream);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <a class="code" href="../../d6/d63/classez_type_version_read_context.htm">ezTypeVersionReadContext</a>(<a class="code" href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a>&amp; inout_stream);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  ~<a class="code" href="../../d6/d63/classez_type_version_read_context.htm">ezTypeVersionReadContext</a>();</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  ezUInt32 GetTypeVersion(<span class="keyword">const</span> <a class="code" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a>* pRtti) <span class="keyword">const</span>;</div>
@@ -139,10 +139,10 @@ $(document).ready(function(){initNavTree('d8/d0a/_type_version_context_8h_source
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition:</b> Types.h:50</div></div>
-<div class="ttc" id="aclassez_stream_writer_htm"><div class="ttname"><a href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a></div><div class="ttdoc">Interface for binary out (write) streams.</div><div class="ttdef"><b>Definition:</b> Stream.h:101</div></div>
+<div class="ttc" id="aclassez_stream_writer_htm"><div class="ttname"><a href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a></div><div class="ttdoc">Interface for binary out (write) streams.</div><div class="ttdef"><b>Definition:</b> Stream.h:106</div></div>
 <div class="ttc" id="aclassez_serialization_context_htm"><div class="ttname"><a href="../../d6/ddf/classez_serialization_context.htm">ezSerializationContext</a></div><div class="ttdoc">Base class for serialization contexts. A serialization context can be used to add high level logic to...</div><div class="ttdef"><b>Definition:</b> SerializationContext.h:9</div></div>
 <div class="ttc" id="aclassez_r_t_t_i_htm"><div class="ttname"><a href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a></div><div class="ttdoc">This enumerable class holds information about reflected types. Each instance represents one type that...</div><div class="ttdef"><b>Definition:</b> RTTI.h:30</div></div>
-<div class="ttc" id="aclassez_stream_reader_htm"><div class="ttname"><a href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a></div><div class="ttdoc">Interface for binary in (read) streams.</div><div class="ttdef"><b>Definition:</b> Stream.h:20</div></div>
+<div class="ttc" id="aclassez_stream_reader_htm"><div class="ttname"><a href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a></div><div class="ttdoc">Interface for binary in (read) streams.</div><div class="ttdef"><b>Definition:</b> Stream.h:21</div></div>
 <div class="ttc" id="aclassez_default_memory_stream_storage_htm"><div class="ttname"><a href="../../d3/de8/classez_default_memory_stream_storage.htm">ezDefaultMemoryStreamStorage</a></div><div class="ttdoc">The default implementation for memory stream storage.</div><div class="ttdef"><b>Definition:</b> MemoryStream.h:160</div></div>
 <div class="ttc" id="aclassez_type_version_read_context_htm"><div class="ttname"><a href="../../d6/d63/classez_type_version_read_context.htm">ezTypeVersionReadContext</a></div><div class="ttdoc">Use this class to restore type versions written to a stream using a ezTypeVersionWriteContext.</div><div class="ttdef"><b>Definition:</b> TypeVersionContext.h:51</div></div>
 <div class="ttc" id="aclassez_hash_set_htm"><div class="ttname"><a href="../../d7/dfc/classez_hash_set.htm">ezHashSet&lt; const ezRTTI * &gt;</a></div></div>
@@ -154,7 +154,7 @@ $(document).ready(function(){initNavTree('d8/d0a/_type_version_context_8h_source
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_64fdcb4094ee5a27b054d4fa23e28e01.htm">IO</a></li><li class="navelem"><b>TypeVersionContext.h</b></li>
-    <li class="footer">Generated on Fri Nov 18 2022 14:47:59 for ezEngine by
+    <li class="footer">Generated on Sat Mar 25 2023 19:21:55 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

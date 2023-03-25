@@ -5,7 +5,7 @@ var classez_qt_property_type_widget =
     [ "DoPrepareToDie", "dc/d74/classez_qt_property_type_widget.htm#a7df826b0879243210ba768198f12a23c", null ],
     [ "HasLabel", "dc/d74/classez_qt_property_type_widget.htm#a44d9b3e08309346a78f2506ecfaee3e0", null ],
     [ "OnInit", "dc/d74/classez_qt_property_type_widget.htm#ac834e336a5c37d16abece50ea69adff3", null ],
-    [ "SetIsDefault", "dc/d74/classez_qt_property_type_widget.htm#a6a258a4ff5a00bfedd31717ffa921866", null ],
+    [ "SetIsDefault", "dc/d74/classez_qt_property_type_widget.htm#a474d95c6747deff5859ff2bd5c8a642f", null ],
     [ "SetSelection", "dc/d74/classez_qt_property_type_widget.htm#a47b52549a05fb8acac958ac48eb64f2a", null ],
     [ "m_pGroup", "dc/d74/classez_qt_property_type_widget.htm#ad99970dde724c08327bf944d3a56efde", null ],
     [ "m_pGroupLayout", "dc/d74/classez_qt_property_type_widget.htm#a4396247b923c3e671ace1300c4da6186", null ],

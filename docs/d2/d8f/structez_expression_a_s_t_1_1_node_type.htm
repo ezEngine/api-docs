@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 22.11</span>
+   &#160;<span id="projectnumber">Release 23.04</span>
    </div>
   </td>
  </tr>
@@ -112,42 +112,93 @@ Public Types</h2></td></tr>
 &#160;&#160;<b>Absolute</b>, 
 <b>Saturate</b>, 
 <b>Sqrt</b>, 
-<b>Sin</b>, 
+<b>Exp</b>, 
 <br />
-&#160;&#160;<b>Cos</b>, 
+&#160;&#160;<b>Ln</b>, 
+<b>Log2</b>, 
+<b>Log10</b>, 
+<b>Pow2</b>, 
+<br />
+&#160;&#160;<b>Sin</b>, 
+<b>Cos</b>, 
 <b>Tan</b>, 
 <b>ASin</b>, 
-<b>ACos</b>, 
 <br />
-&#160;&#160;<b>ATan</b>, 
-<b>LastUnary</b>, 
+&#160;&#160;<b>ACos</b>, 
+<b>ATan</b>, 
+<b>RadToDeg</b>, 
+<b>DegToRad</b>, 
+<br />
+&#160;&#160;<b>Round</b>, 
+<b>Floor</b>, 
+<b>Ceil</b>, 
+<b>Trunc</b>, 
+<br />
+&#160;&#160;<b>Frac</b>, 
+<b>Length</b>, 
+<b>Normalize</b>, 
+<b>BitwiseNot</b>, 
+<br />
+&#160;&#160;<b>LogicalNot</b>, 
+<b>All</b>, 
+<b>Any</b>, 
+<b>TypeConversion</b>, 
+<br />
+&#160;&#160;<b>LastUnary</b>, 
 <b>FirstBinary</b>, 
 <b>Add</b>, 
+<b>Subtract</b>, 
 <br />
-&#160;&#160;<b>Subtract</b>, 
-<b>Multiply</b>, 
+&#160;&#160;<b>Multiply</b>, 
 <b>Divide</b>, 
+<b>Modulo</b>, 
+<b>Log</b>, 
+<br />
+&#160;&#160;<b>Pow</b>, 
 <b>Min</b>, 
+<b>Max</b>, 
+<b>Dot</b>, 
 <br />
-&#160;&#160;<b>Max</b>, 
+&#160;&#160;<b>Cross</b>, 
+<b>Reflect</b>, 
+<b>BitshiftLeft</b>, 
+<b>BitshiftRight</b>, 
+<br />
+&#160;&#160;<b>BitwiseAnd</b>, 
+<b>BitwiseXor</b>, 
+<b>BitwiseOr</b>, 
+<b>Equal</b>, 
+<br />
+&#160;&#160;<b>NotEqual</b>, 
+<b>Less</b>, 
+<b>LessEqual</b>, 
+<b>Greater</b>, 
+<br />
+&#160;&#160;<b>GreaterEqual</b>, 
+<b>LogicalAnd</b>, 
+<b>LogicalOr</b>, 
 <b>LastBinary</b>, 
-<b>FirstTernary</b>, 
-<b>Clamp</b>, 
 <br />
-&#160;&#160;<b>Select</b>, 
-<b>LastTernary</b>, 
+&#160;&#160;<b>FirstTernary</b>, 
+<b>Clamp</b>, 
+<b>Select</b>, 
+<b>Lerp</b>, 
+<br />
+&#160;&#160;<b>LastTernary</b>, 
 <b>Constant</b>, 
+<b>Swizzle</b>, 
 <b>Input</b>, 
 <br />
 &#160;&#160;<b>Output</b>, 
 <b>FunctionCall</b>, 
+<b>ConstructorCall</b>, 
 <b>Count</b>
 <br />
  }</td></tr>
 <tr class="separator:a1fbeae9f91dce0cfbe3ea4fba64f06c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59ca81a8ea22bf54a02c26e5f9d66d49"><td class="memItemLeft" align="right" valign="top"><a id="a59ca81a8ea22bf54a02c26e5f9d66d49"></a>
-typedef ezUInt32&#160;</td><td class="memItemRight" valign="bottom"><b>StorageType</b></td></tr>
-<tr class="separator:a59ca81a8ea22bf54a02c26e5f9d66d49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a929446f941ca92705af7f77b30fe5146"><td class="memItemLeft" align="right" valign="top"><a id="a929446f941ca92705af7f77b30fe5146"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>StorageType</b> = ezUInt8</td></tr>
+<tr class="separator:a929446f941ca92705af7f77b30fe5146"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -163,12 +214,27 @@ static bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsTernary</b> 
 <tr class="memitem:aaebeb6e57e7ffb997148b77b3ca6ed33"><td class="memItemLeft" align="right" valign="top"><a id="aaebeb6e57e7ffb997148b77b3ca6ed33"></a>
 static bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsConstant</b> (Enum nodeType)</td></tr>
 <tr class="separator:aaebeb6e57e7ffb997148b77b3ca6ed33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a559106107bf033a2460f545f9939b348"><td class="memItemLeft" align="right" valign="top"><a id="a559106107bf033a2460f545f9939b348"></a>
+static bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsSwizzle</b> (Enum nodeType)</td></tr>
+<tr class="separator:a559106107bf033a2460f545f9939b348"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2204430d312e5904f077dcf87ded840c"><td class="memItemLeft" align="right" valign="top"><a id="a2204430d312e5904f077dcf87ded840c"></a>
 static bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsInput</b> (Enum nodeType)</td></tr>
 <tr class="separator:a2204430d312e5904f077dcf87ded840c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af822cf62235ccd36b2785b5f736b906a"><td class="memItemLeft" align="right" valign="top"><a id="af822cf62235ccd36b2785b5f736b906a"></a>
 static bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsOutput</b> (Enum nodeType)</td></tr>
 <tr class="separator:af822cf62235ccd36b2785b5f736b906a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9312128581475c1130efcec0ed96e863"><td class="memItemLeft" align="right" valign="top"><a id="a9312128581475c1130efcec0ed96e863"></a>
+static bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsFunctionCall</b> (Enum nodeType)</td></tr>
+<tr class="separator:a9312128581475c1130efcec0ed96e863"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f30fb59f07a0c9ce3f9f0239b1609a1"><td class="memItemLeft" align="right" valign="top"><a id="a6f30fb59f07a0c9ce3f9f0239b1609a1"></a>
+static bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsConstructorCall</b> (Enum nodeType)</td></tr>
+<tr class="separator:a6f30fb59f07a0c9ce3f9f0239b1609a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fb62cae198ac5d43e4f5a5a606454b6"><td class="memItemLeft" align="right" valign="top"><a id="a1fb62cae198ac5d43e4f5a5a606454b6"></a>
+static bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsCommutative</b> (Enum nodeType)</td></tr>
+<tr class="separator:a1fb62cae198ac5d43e4f5a5a606454b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab96b0dfcb0e7f1ee788c90a6b2da2aab"><td class="memItemLeft" align="right" valign="top"><a id="ab96b0dfcb0e7f1ee788c90a6b2da2aab"></a>
+static bool&#160;</td><td class="memItemRight" valign="bottom"><b>AlwaysReturnsSingleElement</b> (Enum nodeType)</td></tr>
+<tr class="separator:ab96b0dfcb0e7f1ee788c90a6b2da2aab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a895721e4ffe9356cc0b24c0b3302671a"><td class="memItemLeft" align="right" valign="top"><a id="a895721e4ffe9356cc0b24c0b3302671a"></a>
 static const char *&#160;</td><td class="memItemRight" valign="bottom"><b>GetName</b> (Enum nodeType)</td></tr>
 <tr class="separator:a895721e4ffe9356cc0b24c0b3302671a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -183,7 +249,7 @@ static const char *&#160;</td><td class="memItemRight" valign="bottom"><b>GetNam
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d6/d10/classez_expression_a_s_t.htm">ezExpressionAST</a></li><li class="navelem"><a class="el" href="../../d2/d8f/structez_expression_a_s_t_1_1_node_type.htm">NodeType</a></li>
-    <li class="footer">Generated on Fri Nov 18 2022 14:48:06 for ezEngine by
+    <li class="footer">Generated on Sat Mar 25 2023 19:22:02 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

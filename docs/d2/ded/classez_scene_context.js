@@ -2,10 +2,10 @@ var classez_scene_context =
 [
     [ "ezSceneContext", "d2/ded/classez_scene_context.htm#a133efc57a0b5ce157cf430e3f609b9bd", null ],
     [ "~ezSceneContext", "d2/ded/classez_scene_context.htm#a189bd8df8dc7ab899b46ec778e5af4c6", null ],
-    [ "AddLayerIndexTag", "d2/ded/classez_scene_context.htm#aa304b2036b8a7220eb31306e5ee18cd3", null ],
+    [ "AddLayerIndexTag", "d2/ded/classez_scene_context.htm#a6d6cc72d8c28fde54de7b30488cc1041", null ],
     [ "CreateViewContext", "d2/ded/classez_scene_context.htm#a32d52afa9d6d7832ccff0f9c2a3cf5eb", null ],
     [ "DestroyViewContext", "d2/ded/classez_scene_context.htm#a2d749e34d03eb171c7437cc9b72a41cc", null ],
-    [ "ExportDocument", "d2/ded/classez_scene_context.htm#a4413f2cdd196a779cb7fe1290a76d60f", null ],
+    [ "ExportDocument", "d2/ded/classez_scene_context.htm#a884171516c109c0cad574d032aa28f70", null ],
     [ "ExportExposedParameters", "d2/ded/classez_scene_context.htm#af233a1a954db270c0f820c185d5f4e75", null ],
     [ "GetActiveContext", "d2/ded/classez_scene_context.htm#a523df6e53c01054c604e41b80d4b3f80", null ],
     [ "GetActiveContext", "d2/ded/classez_scene_context.htm#a3c2734688a059529bd497b8aac789da8", null ],

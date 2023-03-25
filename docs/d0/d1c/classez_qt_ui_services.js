@@ -6,5 +6,5 @@ var classez_qt_ui_services =
     [ "Init", "d0/d1c/classez_qt_ui_services.htm#a2c18d23dd7aada5c90d56dfc2b4cf03c", null ],
     [ "LoadState", "d0/d1c/classez_qt_ui_services.htm#aa4cd4e35b026301e040dfa54bc71a4ad", null ],
     [ "SaveState", "d0/d1c/classez_qt_ui_services.htm#a2a5e462ad8a24f8a5f75dbacbf27c689", null ],
-    [ "ShowColorDialog", "d0/d1c/classez_qt_ui_services.htm#afe925462b25245380629ca822bc15b35", null ]
+    [ "ShowColorDialog", "d0/d1c/classez_qt_ui_services.htm#a305285aa9092a7751e43a00160439702", null ]
 ];

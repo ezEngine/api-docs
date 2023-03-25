@@ -1,7 +1,7 @@
 var structez_engine_view_config =
 [
     [ "ezEngineViewConfig", "db/d36/structez_engine_view_config.htm#a6bf67e68087904983753f7b594add448", null ],
-    [ "ApplyPerspectiveSetting", "db/d36/structez_engine_view_config.htm#a2287c63903feab194c35811344d10b2f", null ],
+    [ "ApplyPerspectiveSetting", "db/d36/structez_engine_view_config.htm#adfa1a387edbfdba886e661a8ed6f2fc3", null ],
     [ "m_bUseCameraTransformOnDevice", "db/d36/structez_engine_view_config.htm#a05a814dccfc0ae30f9e786910d0627b5", null ],
     [ "m_Camera", "db/d36/structez_engine_view_config.htm#a58b6e7b8d4ccc6b5f30458b3da855d5f", null ],
     [ "m_CameraUsageHint", "db/d36/structez_engine_view_config.htm#a30d3404f4cd668621b555a55e56fb537", null ],

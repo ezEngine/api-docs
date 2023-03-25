@@ -1,7 +1,7 @@
 var classez_archive_entry =
 [
-    [ "Deserialize", "dd/dd9/classez_archive_entry.htm#a023dceea99099878cbe8066b36dd5b28", null ],
-    [ "Serialize", "dd/dd9/classez_archive_entry.htm#aab2cde569aaa1fb412a7a0707cdd0602", null ],
+    [ "Deserialize", "dd/dd9/classez_archive_entry.htm#ab50fd8af969cfde41870db25b87410ef", null ],
+    [ "Serialize", "dd/dd9/classez_archive_entry.htm#ab17fd69116cd1fa984497990d0f1d05a", null ],
     [ "m_CompressionMode", "dd/dd9/classez_archive_entry.htm#a43e3c893afb3db4e13455fe7484e5b06", null ],
     [ "m_uiDataStartOffset", "dd/dd9/classez_archive_entry.htm#acc0722dac57891ed5b3e758492b26b93", null ],
     [ "m_uiPathStringOffset", "dd/dd9/classez_archive_entry.htm#a920c4a3abdf1d599c1cbf9505439615e", null ],

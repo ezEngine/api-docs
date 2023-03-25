@@ -5,8 +5,8 @@ var classez_asset_file_header =
     [ "GetFileVersion", "de/d83/classez_asset_file_header.htm#ab217a93448d0ee37771514f819d1ee4a", null ],
     [ "GetGenerator", "de/d83/classez_asset_file_header.htm#a39514d0fb75669ac2f1b49e049a78f11", null ],
     [ "IsFileUpToDate", "de/d83/classez_asset_file_header.htm#af6b9cda444f49eaab943500e7afd5190", null ],
-    [ "Read", "de/d83/classez_asset_file_header.htm#a2f2d68993adf0d75a570377e7960ab61", null ],
-    [ "SetFileHashAndVersion", "de/d83/classez_asset_file_header.htm#aecf03ee58dfb95e3324d59c80affd6ac", null ],
-    [ "SetGenerator", "de/d83/classez_asset_file_header.htm#a905f1f27e5271f1556fed33457e38f9f", null ],
-    [ "Write", "de/d83/classez_asset_file_header.htm#ae35c43fb98835ffb51ded49225ac151e", null ]
+    [ "Read", "de/d83/classez_asset_file_header.htm#af935f501ea8fadfb9805b313569a448c", null ],
+    [ "SetFileHashAndVersion", "de/d83/classez_asset_file_header.htm#a0abc25c452380ae851dd1338416e10e4", null ],
+    [ "SetGenerator", "de/d83/classez_asset_file_header.htm#a7d1323a7480354a195727f1b81e7f082", null ],
+    [ "Write", "de/d83/classez_asset_file_header.htm#ae5ab1da330a40c9528b4baf0c23048be", null ]
 ];

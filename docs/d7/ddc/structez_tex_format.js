@@ -1,8 +1,8 @@
 var structez_tex_format =
 [
-    [ "ReadHeader", "d7/ddc/structez_tex_format.htm#a1c5feb95dc15683e6ac7a6545bafc0b9", null ],
-    [ "WriteRenderTargetHeader", "d7/ddc/structez_tex_format.htm#af29f3b2e47781da924eec1be5cae5b14", null ],
-    [ "WriteTextureHeader", "d7/ddc/structez_tex_format.htm#a1def4747d55a32e4dc45cb9891307be5", null ],
+    [ "ReadHeader", "d7/ddc/structez_tex_format.htm#ac5b40f986e9d762584cdae78319e1361", null ],
+    [ "WriteRenderTargetHeader", "d7/ddc/structez_tex_format.htm#a8a1234bef420672456d83da11ed5de75", null ],
+    [ "WriteTextureHeader", "d7/ddc/structez_tex_format.htm#a71d86ee97636b002ac858dcb56fabd6c", null ],
     [ "m_AddressModeU", "d7/ddc/structez_tex_format.htm#a76c5814c70dd500525fb43b205347b01", null ],
     [ "m_AddressModeV", "d7/ddc/structez_tex_format.htm#a60dec9d08be20a4c5886417488920558", null ],
     [ "m_AddressModeW", "d7/ddc/structez_tex_format.htm#aba979664df5eced620226f7ac3bb12b5", null ],

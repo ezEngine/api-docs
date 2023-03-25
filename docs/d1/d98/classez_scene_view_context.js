@@ -9,6 +9,6 @@ var classez_scene_view_context =
     [ "Redraw", "d1/d98/classez_scene_view_context.htm#a671e87ecc062dc244e43c6905a517290", null ],
     [ "SetCamera", "d1/d98/classez_scene_view_context.htm#a3b98378256442429517bd1af43725c12", null ],
     [ "SetInvisibleLayerTags", "d1/d98/classez_scene_view_context.htm#a569aae4483f56420769b00cb170a0714", null ],
-    [ "SetupRenderTarget", "d1/d98/classez_scene_view_context.htm#af816906cfe31de22df1b7a11fb26edeb", null ],
+    [ "SetupRenderTarget", "d1/d98/classez_scene_view_context.htm#ad21ededf210680595e0ef81a4812e2dc", null ],
     [ "UpdateThumbnailCamera", "d1/d98/classez_scene_view_context.htm#aef0ecd65818347902b2b1b9201ccdc82", null ]
 ];

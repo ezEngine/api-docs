@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 22.11</span>
+   &#160;<span id="projectnumber">Release 23.04</span>
    </div>
   </td>
  </tr>
@@ -157,11 +157,11 @@ $(document).ready(function(){initNavTree('df/d04/_o_s_thread__win_8h_source.htm'
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keywordtype">void</span> SetThreadNameViaException(HANDLE hThread, LPCSTR szThreadName)</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keywordtype">void</span> SetThreadNameViaException(HANDLE hThread, LPCSTR pThreadName)</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;{</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  THREADNAME_INFO info;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  info.dwType = 0x1000;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  info.szName = szThreadName;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  info.szName = pThreadName;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  info.dwThreadID = GetThreadId(hThread);</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  info.dwFlags = 0;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
@@ -175,22 +175,22 @@ $(document).ready(function(){initNavTree('df/d04/_o_s_thread__win_8h_source.htm'
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  }</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keywordtype">void</span> SetThreadName(HANDLE hThread, LPCSTR szThreadName)</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keywordtype">void</span> SetThreadName(HANDLE hThread, LPCSTR pThreadName)</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;{</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#if EZ_DISABLED(EZ_PLATFORM_WINDOWS_UWP)</span></div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keyword">static</span> pfnSetThreadDescription s_pSetThreadDescriptionFnPtr = GetSetThreadDescriptionProcAddr();</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keywordflow">if</span> (s_pSetThreadDescriptionFnPtr)</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <a class="code" href="../../df/d6c/classez_string_w_char.htm">ezStringWChar</a> threadName(szThreadName);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <a class="code" href="../../df/d6c/classez_string_w_char.htm">ezStringWChar</a> threadName(pThreadName);</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    s_pSetThreadDescriptionFnPtr(hThread, threadName.GetData());</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  }</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  {</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    SetThreadNameViaException(hThread, szThreadName);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    SetThreadNameViaException(hThread, pThreadName);</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  }</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  SetThreadNameViaException(hThread, szThreadName);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  SetThreadNameViaException(hThread, pThreadName);</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
@@ -200,20 +200,20 @@ $(document).ready(function(){initNavTree('df/d04/_o_s_thread__win_8h_source.htm'
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment">// Windows specific implementation of the thread class</span></div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<a class="code" href="../../dc/dee/classez_o_s_thread.htm#a1a41ac7de1cbbb5fc2376090a80b50d5">ezOSThread::ezOSThread</a>(</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  ezOSThreadEntryPoint pThreadEntryPoint, <span class="keywordtype">void</span>* pUserData <span class="comment">/*= nullptr*/</span>, <span class="keyword">const</span> <span class="keywordtype">char</span>* szName <span class="comment">/*= &quot;ezThread&quot;*/</span>, ezUInt32 uiStackSize <span class="comment">/*= 128 * 1024*/</span>)</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<a class="code" href="../../dc/dee/classez_o_s_thread.htm#a5c0c21eb1c1651d84b47385da07efc52">ezOSThread::ezOSThread</a>(</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  ezOSThreadEntryPoint threadEntryPoint, <span class="keywordtype">void</span>* pUserData <span class="comment">/*= nullptr*/</span>, <span class="keyword">const</span> <span class="keywordtype">char</span>* szName <span class="comment">/*= &quot;ezThread&quot;*/</span>, ezUInt32 uiStackSize <span class="comment">/*= 128 * 1024*/</span>)</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;{</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  s_iThreadCount.<a class="code" href="../../da/d01/classez_atomic_integer.htm#a70ef3cc6d6a3879d990d54be95b62c48">Increment</a>();</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  EZ_ASSERT_ALWAYS(pThreadEntryPoint != <span class="keyword">nullptr</span>, <span class="stringliteral">&quot;Thread entry point is invalid.&quot;</span>);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  EZ_ASSERT_ALWAYS(threadEntryPoint != <span class="keyword">nullptr</span>, <span class="stringliteral">&quot;Thread entry point is invalid.&quot;</span>);</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  m_hHandle = CreateThread(<span class="keyword">nullptr</span>, uiStackSize, pThreadEntryPoint, pUserData, CREATE_SUSPENDED, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  m_hHandle = CreateThread(<span class="keyword">nullptr</span>, uiStackSize, threadEntryPoint, pUserData, CREATE_SUSPENDED, <span class="keyword">nullptr</span>);</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  EZ_ASSERT_RELEASE(m_hHandle != INVALID_HANDLE_VALUE, <span class="stringliteral">&quot;Thread creation failed!&quot;</span>);</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  EZ_ASSERT_RELEASE(m_hHandle != <span class="keyword">nullptr</span>, <span class="stringliteral">&quot;Thread creation failed!&quot;</span>); <span class="comment">// makes the static code analysis happy</span></div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  m_ThreadID = GetThreadId(m_hHandle);</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  m_EntryPoint = pThreadEntryPoint;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  m_EntryPoint = threadEntryPoint;</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  m_pUserData = pUserData;</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  m_szName = szName;</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  m_uiStackSize = uiStackSize;</div>
@@ -243,9 +243,9 @@ $(document).ready(function(){initNavTree('df/d04/_o_s_thread__win_8h_source.htm'
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aclassez_o_s_thread_htm_a5c0c21eb1c1651d84b47385da07efc52"><div class="ttname"><a href="../../dc/dee/classez_o_s_thread.htm#a5c0c21eb1c1651d84b47385da07efc52">ezOSThread::ezOSThread</a></div><div class="ttdeci">ezOSThread(ezOSThreadEntryPoint threadEntryPoint, void *pUserData=nullptr, const char *szName=&quot;ezOSThread&quot;, ezUInt32 uiStackSize=128 *1024)</div><div class="ttdoc">Initializes the thread instance (e.g. thread creation etc.)</div><div class="ttdef"><b>Definition:</b> OSThread_posix.h:8</div></div>
 <div class="ttc" id="aclassez_o_s_thread_htm_a3f9f56cabbd59ede07a6be3e2bc724b5"><div class="ttname"><a href="../../dc/dee/classez_o_s_thread.htm#a3f9f56cabbd59ede07a6be3e2bc724b5">ezOSThread::~ezOSThread</a></div><div class="ttdeci">virtual ~ezOSThread()</div><div class="ttdoc">Destructor.</div><div class="ttdef"><b>Definition:</b> OSThread_posix.h:21</div></div>
 <div class="ttc" id="aclassez_string_w_char_htm"><div class="ttname"><a href="../../df/d6c/classez_string_w_char.htm">ezStringWChar</a></div><div class="ttdoc">A very simple string class that should only be used to temporarily convert text to the OSes native wc...</div><div class="ttdef"><b>Definition:</b> StringConversion.h:19</div></div>
-<div class="ttc" id="aclassez_o_s_thread_htm_a1a41ac7de1cbbb5fc2376090a80b50d5"><div class="ttname"><a href="../../dc/dee/classez_o_s_thread.htm#a1a41ac7de1cbbb5fc2376090a80b50d5">ezOSThread::ezOSThread</a></div><div class="ttdeci">ezOSThread(ezOSThreadEntryPoint pThreadEntryPoint, void *pUserData=nullptr, const char *szName=&quot;ezOSThread&quot;, ezUInt32 uiStackSize=128 *1024)</div><div class="ttdoc">Initializes the thread instance (e.g. thread creation etc.)</div><div class="ttdef"><b>Definition:</b> OSThread_posix.h:8</div></div>
 <div class="ttc" id="aclassez_o_s_thread_htm_a81378a5f2603905a76395b344f0a0c65"><div class="ttname"><a href="../../dc/dee/classez_o_s_thread.htm#a81378a5f2603905a76395b344f0a0c65">ezOSThread::Start</a></div><div class="ttdeci">void Start()</div><div class="ttdoc">Starts the thread.</div><div class="ttdef"><b>Definition:</b> OSThread_posix.h:27</div></div>
 <div class="ttc" id="aclassez_atomic_integer_htm_a70ef3cc6d6a3879d990d54be95b62c48"><div class="ttname"><a href="../../da/d01/classez_atomic_integer.htm#a70ef3cc6d6a3879d990d54be95b62c48">ezAtomicInteger::Increment</a></div><div class="ttdeci">T Increment()</div><div class="ttdoc">Increments the internal value and returns the incremented value.</div><div class="ttdef"><b>Definition:</b> AtomicInteger_inl.h:35</div></div>
 <div class="ttc" id="aclassez_atomic_integer_htm_a8564e051c86ff5ea7f4002d668b7f93b"><div class="ttname"><a href="../../da/d01/classez_atomic_integer.htm#a8564e051c86ff5ea7f4002d668b7f93b">ezAtomicInteger::Decrement</a></div><div class="ttdeci">T Decrement()</div><div class="ttdoc">Decrements the internal value and returns the decremented value.</div><div class="ttdef"><b>Definition:</b> AtomicInteger_inl.h:41</div></div>
@@ -255,7 +255,7 @@ $(document).ready(function(){initNavTree('df/d04/_o_s_thread__win_8h_source.htm'
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_05460f4aa032e23246d68b56847b5fed.htm">Threading</a></li><li class="navelem"><a class="el" href="../../dir_87563d8e459b6b2efd39d0a742560444.htm">Implementation</a></li><li class="navelem"><a class="el" href="../../dir_06ea2611347162e727b538927c98d26b.htm">Win</a></li><li class="navelem"><b>OSThread_win.h</b></li>
-    <li class="footer">Generated on Fri Nov 18 2022 14:48:00 for ezEngine by
+    <li class="footer">Generated on Sat Mar 25 2023 19:21:57 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

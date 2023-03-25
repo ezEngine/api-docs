@@ -2,7 +2,7 @@ var classez_dummy_x_r =
 [
     [ "ezDummyXR", "d2/db4/classez_dummy_x_r.htm#a247e64dc8822d0e6ed675b66ab53f7c1", null ],
     [ "~ezDummyXR", "d2/db4/classez_dummy_x_r.htm#aec61195aa715aa54a4043097d261ce4f", null ],
-    [ "CreateActor", "d2/db4/classez_dummy_x_r.htm#a1d2758fa9866f162b416f151c0e9b4f7", null ],
+    [ "CreateActor", "d2/db4/classez_dummy_x_r.htm#a0267338649b0dda08e9fbd95464a2916", null ],
     [ "Deinitialize", "d2/db4/classez_dummy_x_r.htm#ae08c71f8b9c66738834ee9efd4ccb423", null ],
     [ "GALDeviceEventHandler", "d2/db4/classez_dummy_x_r.htm#ac0cfdd7bf6985c70efafaaf1c5411e44", null ],
     [ "GameApplicationEventHandler", "d2/db4/classez_dummy_x_r.htm#a8a41c1371b4d754bf575af01eb794d6a", null ],

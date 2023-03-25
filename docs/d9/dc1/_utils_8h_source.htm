@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 22.11</span>
+   &#160;<span id="projectnumber">Release 23.04</span>
    </div>
   </td>
  </tr>
@@ -89,26 +89,27 @@ $(document).ready(function(){initNavTree('d9/dc1/_utils_8h_source.htm','../../')
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;Foundation/CodeUtils/Expression/ExpressionFunctions.h&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;Foundation/CodeUtils/Expression/ExpressionDeclarations.h&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">class </span><a class="code" href="../../d8/d71/classez_volume_collection.htm">ezVolumeCollection</a>;</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="../../d1/d47/structez_proc_gen_expression_functions.htm">    7</a></span>&#160;<span class="keyword">struct </span>EZ_PROCGENPLUGIN_DLL <a class="code" href="../../d1/d47/structez_proc_gen_expression_functions.htm">ezProcGenExpressionFunctions</a></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> ApplyVolumes(<a class="code" href="../../dc/dae/classez_array_ptr.htm">ezExpression::Inputs</a> inputs, <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezExpression::Output</a> output, <span class="keyword">const</span> <a class="code" href="../../d8/d86/classez_hash_table.htm">ezExpression::GlobalData</a>&amp; globalData);</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ApplyVolumesValidate(<span class="keyword">const</span> <a class="code" href="../../d8/d86/classez_hash_table.htm">ezExpression::GlobalData</a>&amp; globalData);</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../da/d94/structez_expression_function.htm">ezExpressionFunction</a> s_ApplyVolumesFunc;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../da/d94/structez_expression_function.htm">ezExpressionFunction</a> s_GetInstanceSeedFunc;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;};</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span>ezProcGenInternal</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keywordtype">void</span> ExtractVolumeCollections(<span class="keyword">const</span> <a class="code" href="../../da/d3c/classez_world.htm">ezWorld</a>&amp; world, <span class="keyword">const</span> <a class="code" href="../../d6/d25/classez_bounding_box_template.htm">ezBoundingBox</a>&amp; box, <span class="keyword">const</span> Output&amp; output, <a class="code" href="../../d9/dfe/classez_deque.htm">ezDeque&lt;ezVolumeCollection&gt;</a>&amp; volumeCollections, <a class="code" href="../../d8/d86/classez_hash_table.htm">ezExpression::GlobalData</a>&amp; globalData);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keywordtype">void</span> ExtractVolumeCollections(<span class="keyword">const</span> <a class="code" href="../../da/d3c/classez_world.htm">ezWorld</a>&amp; world, <span class="keyword">const</span> <a class="code" href="../../d6/d25/classez_bounding_box_template.htm">ezBoundingBox</a>&amp; box, <span class="keyword">const</span> Output&amp; output, <a class="code" href="../../d9/dfe/classez_deque.htm">ezDeque&lt;ezVolumeCollection&gt;</a>&amp; ref_volumeCollections, <a class="code" href="../../d8/d86/classez_hash_table.htm">ezExpression::GlobalData</a>&amp; ref_globalData);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="keywordtype">void</span> SetInstanceSeed(ezUInt32 uiSeed, <a class="code" href="../../d8/d86/classez_hash_table.htm">ezExpression::GlobalData</a>&amp; ref_globalData);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;} <span class="comment">// namespace ezProcGenInternal</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition:</b> Types.h:50</div></div>
 <div class="ttc" id="aclassez_deque_htm"><div class="ttname"><a href="../../d9/dfe/classez_deque.htm">ezDeque&lt; ezVolumeCollection &gt;</a></div></div>
 <div class="ttc" id="aclassez_volume_collection_htm"><div class="ttname"><a href="../../d8/d71/classez_volume_collection.htm">ezVolumeCollection</a></div><div class="ttdef"><b>Definition:</b> VolumeCollection.h:10</div></div>
-<div class="ttc" id="aclassez_array_ptr_htm"><div class="ttname"><a href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr</a></div><div class="ttdoc">This class encapsulates an array and it's size. It is recommended to use this class instead of plain ...</div><div class="ttdef"><b>Definition:</b> ArrayPtr.h:36</div></div>
+<div class="ttc" id="astructez_expression_function_htm"><div class="ttname"><a href="../../da/d94/structez_expression_function.htm">ezExpressionFunction</a></div><div class="ttdoc">Describes an external function that can be called in expressions. These functions need to be state-le...</div><div class="ttdef"><b>Definition:</b> ExpressionDeclarations.h:100</div></div>
 <div class="ttc" id="aclassez_bounding_box_template_htm"><div class="ttname"><a href="../../d6/d25/classez_bounding_box_template.htm">ezBoundingBoxTemplate&lt; float &gt;</a></div></div>
 <div class="ttc" id="astructez_proc_gen_expression_functions_htm"><div class="ttname"><a href="../../d1/d47/structez_proc_gen_expression_functions.htm">ezProcGenExpressionFunctions</a></div><div class="ttdef"><b>Definition:</b> Utils.h:7</div></div>
 <div class="ttc" id="aclassez_world_htm"><div class="ttname"><a href="../../da/d3c/classez_world.htm">ezWorld</a></div><div class="ttdoc">A world encapsulates a scene graph of game objects and various component managers and their component...</div><div class="ttdef"><b>Definition:</b> World.h:21</div></div>
@@ -117,7 +118,7 @@ $(document).ready(function(){initNavTree('d9/dc1/_utils_8h_source.htm','../../')
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_103378c88ff4c88de6bfabe12da9ec96.htm">EnginePlugins</a></li><li class="navelem"><a class="el" href="../../dir_2306284ce1d36b761c2a30549c835a44.htm">ProcGenPlugin</a></li><li class="navelem"><a class="el" href="../../dir_6ea777956edac4aacdebe91c2dba71cf.htm">Tasks</a></li><li class="navelem"><b>Utils.h</b></li>
-    <li class="footer">Generated on Fri Nov 18 2022 14:48:03 for ezEngine by
+    <li class="footer">Generated on Sat Mar 25 2023 19:22:00 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

@@ -24,5 +24,5 @@ var classez_angle =
     [ "Pi", "db/d6f/classez_angle.htm#aed96a8db0c05572139ac49ef3bc142a3", null ],
     [ "RadToDeg", "db/d6f/classez_angle.htm#a67295c83428f2e5850188dd37cead6ab", null ],
     [ "RadToDegMultiplier", "db/d6f/classez_angle.htm#a7ff6a28b9e56d0f9cf6ef0015f81db90", null ],
-    [ "SetRadian", "db/d6f/classez_angle.htm#aa5715443d0ab1a9a2eb9ed6740341f93", null ]
+    [ "SetRadian", "db/d6f/classez_angle.htm#a4930fd197855eaebc5878f3af3805c04", null ]
 ];

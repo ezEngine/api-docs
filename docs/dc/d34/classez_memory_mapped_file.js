@@ -16,6 +16,6 @@ var classez_memory_mapped_file =
     [ "GetMode", "dc/d34/classez_memory_mapped_file.htm#a43d3dace6a2341fc2d648b635f45df8d", null ],
     [ "GetReadPointer", "dc/d34/classez_memory_mapped_file.htm#a5d2fa5241ddf02d85fbbe67b7accfd42", null ],
     [ "GetWritePointer", "dc/d34/classez_memory_mapped_file.htm#a0df8a2ae74d16fcb9c6d37ea6b58d34f", null ],
-    [ "Open", "dc/d34/classez_memory_mapped_file.htm#affe892e74410056dc2ac1c2b6d3a4954", null ],
-    [ "OpenShared", "dc/d34/classez_memory_mapped_file.htm#a699decd715e7365bd4dab6cf070393a5", null ]
+    [ "Open", "dc/d34/classez_memory_mapped_file.htm#ae98f35c7cad3b29f30ed0d557f60bf29", null ],
+    [ "OpenShared", "dc/d34/classez_memory_mapped_file.htm#a36f30d783936d4a44495a6dc8b82ccd5", null ]
 ];

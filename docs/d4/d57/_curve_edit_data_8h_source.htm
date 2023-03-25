@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 22.11</span>
+   &#160;<span id="projectnumber">Release 23.04</span>
    </div>
   </td>
  </tr>
@@ -101,12 +101,12 @@ $(document).ready(function(){initNavTree('d4/d57/_curve_edit_data_8h_source.htm'
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;EZ_DECLARE_REFLECTABLE_TYPE(EZ_GUIFOUNDATION_DLL, <a class="code" href="../../d5/d2b/structez_curve_tangent_mode.htm">ezCurveTangentMode</a>);</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keywordtype">void</span> FindNearestControlPoints(<a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;T&gt;</a> cps, ezInt64 iTick, T*&amp; llhs, T*&amp; lhs, T*&amp; rhs, T*&amp; rrhs)</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keywordtype">void</span> FindNearestControlPoints(<a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;T&gt;</a> cps, ezInt64 iTick, T*&amp; ref_pLlhs, T*&amp; lhs, T*&amp; rhs, T*&amp; ref_pRrhs)</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  llhs = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  ref_pLlhs = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  lhs = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  rhs = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  rrhs = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  ref_pRrhs = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  ezInt64 lhsTick = ezMath::MinValue&lt;ezInt64&gt;();</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  ezInt64 llhsTick = ezMath::MinValue&lt;ezInt64&gt;();</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  ezInt64 rhsTick = ezMath::MaxValue&lt;ezInt64&gt;();</div>
@@ -118,7 +118,7 @@ $(document).ready(function(){initNavTree('d4/d57/_curve_edit_data_8h_source.htm'
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    {</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;      <span class="keywordflow">if</span> (cp.m_iTick &gt; lhsTick)</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;      {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        llhs = lhs;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        ref_pLlhs = lhs;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        llhsTick = lhsTick;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        lhs = &amp;cp;</div>
@@ -126,7 +126,7 @@ $(document).ready(function(){initNavTree('d4/d57/_curve_edit_data_8h_source.htm'
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;      }</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cp.m_iTick &gt; llhsTick)</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        llhs = &amp;cp;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        ref_pLlhs = &amp;cp;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        llhsTick = cp.m_iTick;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      }</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
@@ -135,7 +135,7 @@ $(document).ready(function(){initNavTree('d4/d57/_curve_edit_data_8h_source.htm'
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    {</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      <span class="keywordflow">if</span> (cp.m_iTick &lt; rhsTick)</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        rrhs = rhs;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        ref_pRrhs = rhs;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        rrhsTick = rhsTick;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        rhs = &amp;cp;</div>
@@ -143,7 +143,7 @@ $(document).ready(function(){initNavTree('d4/d57/_curve_edit_data_8h_source.htm'
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      }</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cp.m_iTick &lt; rrhsTick)</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        rrhs = &amp;cp;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        ref_pRrhs = &amp;cp;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        rrhsTick = cp.m_iTick;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      }</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
@@ -156,7 +156,7 @@ $(document).ready(function(){initNavTree('d4/d57/_curve_edit_data_8h_source.htm'
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> GetTickAsTime()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="../../d3/d90/structez_time.htm#a89ae1d4e0f52df54c2b2f344939662c2">ezTime::Seconds</a>(m_iTick / 4800.0); }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordtype">void</span> SetTickFromTime(<a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> time, ezInt64 fps);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordtype">void</span> SetTickFromTime(<a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> time, ezInt64 iFps);</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  ezInt64 m_iTick; <span class="comment">// 4800 ticks per second</span></div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordtype">double</span> m_fValue;</div>
@@ -175,8 +175,8 @@ $(document).ready(function(){initNavTree('d4/d57/_curve_edit_data_8h_source.htm'
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <a class="code" href="../../da/d51/classez_color_gamma_u_b.htm">ezColorGammaUB</a> m_CurveColor;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezCurveControlPointData&gt;</a> m_ControlPoints;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keywordtype">void</span> ConvertToRuntimeData(<a class="code" href="../../d8/da1/classez_curve1_d.htm">ezCurve1D</a>&amp; out_Result) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keywordtype">double</span> Evaluate(ezInt64 uiTick) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keywordtype">void</span> ConvertToRuntimeData(<a class="code" href="../../d8/da1/classez_curve1_d.htm">ezCurve1D</a>&amp; out_result) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keywordtype">double</span> Evaluate(ezInt64 iTick) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;};</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
 <div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="../../db/d73/classez_curve_extents_attribute.htm">   93</a></span>&#160;<span class="keyword">class </span>EZ_GUIFOUNDATION_DLL <a class="code" href="../../db/d73/classez_curve_extents_attribute.htm">ezCurveExtentsAttribute</a> : <span class="keyword">public</span> <a class="code" href="../../d7/d48/classez_property_attribute.htm">ezPropertyAttribute</a></div>
@@ -214,7 +214,7 @@ $(document).ready(function(){initNavTree('d4/d57/_curve_edit_data_8h_source.htm'
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  ezInt64 TickFromTime(<a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> time) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <span class="keywordtype">void</span> ConvertToRuntimeData(ezUInt32 uiCurveIdx, <a class="code" href="../../d8/da1/classez_curve1_d.htm">ezCurve1D</a>&amp; out_Result) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <span class="keywordtype">void</span> ConvertToRuntimeData(ezUInt32 uiCurveIdx, <a class="code" href="../../d8/da1/classez_curve1_d.htm">ezCurve1D</a>&amp; out_result) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;};</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
 <div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="../../d6/d67/structez_selected_curve_c_p.htm">  134</a></span>&#160;<span class="keyword">struct </span>EZ_GUIFOUNDATION_DLL <a class="code" href="../../d6/d67/structez_selected_curve_c_p.htm">ezSelectedCurveCP</a></div>
@@ -239,14 +239,14 @@ $(document).ready(function(){initNavTree('d4/d57/_curve_edit_data_8h_source.htm'
 <div class="ttc" id="aclassez_curve_control_point_data_htm"><div class="ttname"><a href="../../d0/d25/classez_curve_control_point_data.htm">ezCurveControlPointData</a></div><div class="ttdef"><b>Definition:</b> CurveEditData.h:64</div></div>
 <div class="ttc" id="aclassez_property_attribute_htm"><div class="ttname"><a href="../../d7/d48/classez_property_attribute.htm">ezPropertyAttribute</a></div><div class="ttdoc">Base class of all attributes can be used to decorate a RTTI property.</div><div class="ttdef"><b>Definition:</b> PropertyAttributes.h:10</div></div>
 <div class="ttc" id="aclassez_curve1_d_htm"><div class="ttname"><a href="../../d8/da1/classez_curve1_d.htm">ezCurve1D</a></div><div class="ttdoc">A 1D curve for animating a single value over time.</div><div class="ttdef"><b>Definition:</b> Curve1D.h:28</div></div>
-<div class="ttc" id="aclassez_reflected_class_htm"><div class="ttname"><a href="../../db/d45/classez_reflected_class.htm">ezReflectedClass</a></div><div class="ttdoc">All classes that should be dynamically reflectable, need to be derived from this base class.</div><div class="ttdef"><b>Definition:</b> DynamicRTTI.h:67</div></div>
+<div class="ttc" id="aclassez_reflected_class_htm"><div class="ttname"><a href="../../db/d45/classez_reflected_class.htm">ezReflectedClass</a></div><div class="ttdoc">All classes that should be dynamically reflectable, need to be derived from this base class.</div><div class="ttdef"><b>Definition:</b> DynamicRTTI.h:77</div></div>
 <div class="ttc" id="astructez_time_htm_a89ae1d4e0f52df54c2b2f344939662c2"><div class="ttname"><a href="../../d3/d90/structez_time.htm#a89ae1d4e0f52df54c2b2f344939662c2">ezTime::Seconds</a></div><div class="ttdeci">constexpr static EZ_ALWAYS_INLINE ezTime Seconds(double fSeconds)</div><div class="ttdoc">Creates an instance of ezTime that was initialized from seconds.</div><div class="ttdef"><b>Definition:</b> Time.h:27</div></div>
 <div class="ttc" id="aclassez_vec2_template_htm"><div class="ttname"><a href="../../d1/df8/classez_vec2_template.htm">ezVec2Template&lt; float &gt;</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_07792d309f5611e62640e8ec1fb96105.htm">Tools</a></li><li class="navelem"><a class="el" href="../../dir_8e80be223102188e67d1ce7cce146de0.htm">Libs</a></li><li class="navelem"><a class="el" href="../../dir_67a151a8658de153dad045cdd2f730f7.htm">GuiFoundation</a></li><li class="navelem"><a class="el" href="../../dir_fe889430e45ae34820f0cbcb0d83e0e4.htm">Widgets</a></li><li class="navelem"><b>CurveEditData.h</b></li>
-    <li class="footer">Generated on Fri Nov 18 2022 14:48:04 for ezEngine by
+    <li class="footer">Generated on Sat Mar 25 2023 19:22:00 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

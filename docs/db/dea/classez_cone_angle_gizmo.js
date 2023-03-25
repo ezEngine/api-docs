@@ -10,5 +10,5 @@ var classez_cone_angle_gizmo =
     [ "OnTransformationChanged", "db/dea/classez_cone_angle_gizmo.htm#aced598262142c16e2d5afb5f112dfa69", null ],
     [ "OnVisibleChanged", "db/dea/classez_cone_angle_gizmo.htm#ab223829b1f7a0773b1dcb3eb33e93405", null ],
     [ "SetAngle", "db/dea/classez_cone_angle_gizmo.htm#a3c25818f6f2b1921dbd43533c6383e79", null ],
-    [ "SetRadius", "db/dea/classez_cone_angle_gizmo.htm#aa29cfbd5221a3fbccd059c978ff2fafa", null ]
+    [ "SetRadius", "db/dea/classez_cone_angle_gizmo.htm#ae343bb944db92839e49bd8d9f72b7201", null ]
 ];

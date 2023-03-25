@@ -11,13 +11,13 @@ var classez_qt_double_spin_box =
     [ "setDefaultValue", "da/d95/classez_qt_double_spin_box.htm#a000a307b777ebb04409d6b2441205c58", null ],
     [ "setDefaultValue", "da/d95/classez_qt_double_spin_box.htm#a11d8062c7637d3e1d2d385cce5e5798a", null ],
     [ "setDisplaySuffix", "da/d95/classez_qt_double_spin_box.htm#a2647c93e1b691194b554b671b0d319c6", null ],
-    [ "SetIntMode", "da/d95/classez_qt_double_spin_box.htm#ac1939d0b4217657a987309024c1de2ba", null ],
+    [ "SetIntMode", "da/d95/classez_qt_double_spin_box.htm#a666684d7db20824bb22a91781ae4f57d", null ],
     [ "setMaximum", "da/d95/classez_qt_double_spin_box.htm#a03ef63310e4345af2e98460fbc402146", null ],
     [ "setMinimum", "da/d95/classez_qt_double_spin_box.htm#ad7ea611082287d90b63a4d695bdb8bf0", null ],
     [ "setValue", "da/d95/classez_qt_double_spin_box.htm#a6373176fffbf0f2fb7ac87ccb01cd57d", null ],
-    [ "setValue", "da/d95/classez_qt_double_spin_box.htm#a9a0e0fe36567c8a719f8a3708cfdad3d", null ],
+    [ "setValue", "da/d95/classez_qt_double_spin_box.htm#ab616e6cc38d0f873014ba38a46cb224f", null ],
     [ "setValueInvalid", "da/d95/classez_qt_double_spin_box.htm#a15dd5a1abc95793d2e61fadd0acf034f", null ],
-    [ "textFromValue", "da/d95/classez_qt_double_spin_box.htm#a7a59f749663459540a399d9745201db6", null ],
+    [ "textFromValue", "da/d95/classez_qt_double_spin_box.htm#a8f0a18e72e4d8561327e6476b15b3815", null ],
     [ "value", "da/d95/classez_qt_double_spin_box.htm#ad02689d35afb2093fdc5ffac74375a0b", null ],
-    [ "valueFromText", "da/d95/classez_qt_double_spin_box.htm#ae0fdb89d2e6025600b181420df24d693", null ]
+    [ "valueFromText", "da/d95/classez_qt_double_spin_box.htm#abf68a43488ac153033dde4e5d5fe0345", null ]
 ];

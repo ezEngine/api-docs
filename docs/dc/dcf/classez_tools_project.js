@@ -7,5 +7,5 @@ var classez_tools_project =
     [ "GetProjectDirectory", "dc/dcf/classez_tools_project.htm#ab54cced67825fd260bd389fba037471f", null ],
     [ "GetProjectFile", "dc/dcf/classez_tools_project.htm#ac8f2ed8d34a4d51359aa43cf1010c277", null ],
     [ "GetProjectName", "dc/dcf/classez_tools_project.htm#acc61358852f52aae00c316a81d61fa1f", null ],
-    [ "IsDocumentInAllowedRoot", "dc/dcf/classez_tools_project.htm#a1ca9b2f1af7ad5672b5b882c16689de3", null ]
+    [ "IsDocumentInAllowedRoot", "dc/dcf/classez_tools_project.htm#a6ce98eb03d96521cad703d2f9867d90e", null ]
 ];

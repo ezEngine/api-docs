@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 22.11</span>
+   &#160;<span id="projectnumber">Release 23.04</span>
    </div>
   </td>
  </tr>
@@ -117,66 +117,72 @@ $(document).ready(function(){initNavTree('d3/dea/_engine_process_view_context_8h
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  ~<a class="code" href="../../d2/d2d/classez_editor_process_view_window.htm">ezEditorProcessViewWindow</a>();</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> UpdateWindow(ezWindowHandle parentWindow, ezUInt16 uiWidth, ezUInt16 uiHeight);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> UpdateWindow(ezWindowHandle hParentWindow, ezUInt16 uiWidth, ezUInt16 uiHeight);</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="comment">// Inherited via ezWindowBase</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d1/d2c/classez_size_template.htm">ezSizeU32</a> GetClientAreaSize()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> <a class="code" href="../../d1/d2c/classez_size_template.htm">ezSizeU32</a>(m_uiWidth, m_uiHeight); }</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keyword">virtual</span> ezWindowHandle GetNativeWindowHandle()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> m_hWnd; }</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> ProcessWindowMessages()<span class="keyword"> override </span>{}</div>
 <div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="../../d2/d2d/classez_editor_process_view_window.htm#a4d0da6537d3f0e23e15a31210ad3bd46">   38</a></span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="../../d2/d2d/classez_editor_process_view_window.htm#a4d0da6537d3f0e23e15a31210ad3bd46">IsFullscreenWindow</a>(<span class="keywordtype">bool</span> bOnlyProperFullscreenMode = <span class="keyword">false</span>)<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  ezUInt16 m_uiWidth;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  ezUInt16 m_uiHeight;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> AddReference()<span class="keyword"> override </span>{ m_iReferenceCount.Increment(); }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> RemoveReference()<span class="keyword"> override </span>{ m_iReferenceCount.Decrement(); }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  ezWindowHandle m_hWnd;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;};</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="../../d3/dad/classez_engine_process_view_context.htm">   48</a></span>&#160;<span class="keyword">class </span>EZ_EDITORENGINEPROCESSFRAMEWORK_DLL <a class="code" href="../../d3/dad/classez_engine_process_view_context.htm">ezEngineProcessViewContext</a></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <a class="code" href="../../d3/dad/classez_engine_process_view_context.htm">ezEngineProcessViewContext</a>(<a class="code" href="../../d3/d26/classez_engine_process_document_context.htm">ezEngineProcessDocumentContext</a>* pContext);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keyword">virtual</span> ~<a class="code" href="../../d3/dad/classez_engine_process_view_context.htm">ezEngineProcessViewContext</a>();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordtype">void</span> SetViewID(ezUInt32 <span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <a class="code" href="../../d3/d26/classez_engine_process_document_context.htm">ezEngineProcessDocumentContext</a>* GetDocumentContext()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pDocumentContext; }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  ezUInt16 m_uiWidth;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  ezUInt16 m_uiHeight;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  ezWindowHandle m_hWnd;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <a class="code" href="../../da/d01/classez_atomic_integer.htm">ezAtomicInteger32</a> m_iReferenceCount = 0;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;};</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="../../d3/dad/classez_engine_process_view_context.htm">   52</a></span>&#160;<span class="keyword">class </span>EZ_EDITORENGINEPROCESSFRAMEWORK_DLL <a class="code" href="../../d3/dad/classez_engine_process_view_context.htm">ezEngineProcessViewContext</a></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <a class="code" href="../../d3/dad/classez_engine_process_view_context.htm">ezEngineProcessViewContext</a>(<a class="code" href="../../d3/d26/classez_engine_process_document_context.htm">ezEngineProcessDocumentContext</a>* pContext);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">virtual</span> ~<a class="code" href="../../d3/dad/classez_engine_process_view_context.htm">ezEngineProcessViewContext</a>();</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> HandleViewMessage(<span class="keyword">const</span> <a class="code" href="../../d0/d21/classez_editor_engine_view_msg.htm">ezEditorEngineViewMsg</a>* pMsg);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetupRenderTarget(<a class="code" href="../../db/dae/classez_g_a_l_swap_chain_handle.htm">ezGALSwapChainHandle</a> hSwapChain, <span class="keyword">const</span> <a class="code" href="../../d2/d2f/structez_g_a_l_render_targets.htm">ezGALRenderTargets</a>* renderTargets, ezUInt16 uiWidth, ezUInt16 uiHeight);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> Redraw(<span class="keywordtype">bool</span> bRenderEditorGizmos);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordtype">void</span> SetViewID(ezUInt32 uiId);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <a class="code" href="../../d3/d26/classez_engine_process_document_context.htm">ezEngineProcessDocumentContext</a>* GetDocumentContext()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pDocumentContext; }</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">bool</span> FocusCameraOnObject(<a class="code" href="../../d8/d90/classez_camera.htm">ezCamera</a>&amp; camera, <span class="keyword">const</span> <a class="code" href="../../dc/d77/classez_bounding_box_sphere_template.htm">ezBoundingBoxSphere</a>&amp; objectBounds, <span class="keywordtype">float</span> fFov, <span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; vViewDir);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <a class="code" href="../../dd/d6d/classez_view_handle.htm">ezViewHandle</a> GetViewHandle()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_hView; }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordtype">void</span> DrawSimpleGrid() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> HandleViewMessage(<span class="keyword">const</span> <a class="code" href="../../d0/d21/classez_editor_engine_view_msg.htm">ezEditorEngineViewMsg</a>* pMsg);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetupRenderTarget(<a class="code" href="../../db/dae/classez_g_a_l_swap_chain_handle.htm">ezGALSwapChainHandle</a> hSwapChain, <span class="keyword">const</span> <a class="code" href="../../d2/d2f/structez_g_a_l_render_targets.htm">ezGALRenderTargets</a>* pRenderTargets, ezUInt16 uiWidth, ezUInt16 uiHeight);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> Redraw(<span class="keywordtype">bool</span> bRenderEditorGizmos);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">bool</span> FocusCameraOnObject(<a class="code" href="../../d8/d90/classez_camera.htm">ezCamera</a>&amp; inout_camera, <span class="keyword">const</span> <a class="code" href="../../dc/d77/classez_bounding_box_sphere_template.htm">ezBoundingBoxSphere</a>&amp; objectBounds, <span class="keywordtype">float</span> fFov, <span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; vViewDir);</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordtype">void</span> SendViewMessage(<a class="code" href="../../d0/d21/classez_editor_engine_view_msg.htm">ezEditorEngineViewMsg</a>* pViewMsg);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordtype">void</span> HandleWindowUpdate(ezWindowHandle hWnd, ezUInt16 uiWidth, ezUInt16 uiHeight);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetCamera(<span class="keyword">const</span> <a class="code" href="../../dd/dfb/classez_view_redraw_msg_to_engine.htm">ezViewRedrawMsgToEngine</a>* pMsg);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d3/dd7/classez_typed_resource_handle.htm">ezRenderPipelineResourceHandle</a> CreateDefaultRenderPipeline();</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d3/dd7/classez_typed_resource_handle.htm">ezRenderPipelineResourceHandle</a> CreateDebugRenderPipeline();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <a class="code" href="../../dd/d6d/classez_view_handle.htm">ezViewHandle</a> GetViewHandle()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_hView; }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordtype">void</span> DrawSimpleGrid() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordtype">void</span> SendViewMessage(<a class="code" href="../../d0/d21/classez_editor_engine_view_msg.htm">ezEditorEngineViewMsg</a>* pViewMsg);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordtype">void</span> HandleWindowUpdate(ezWindowHandle hWnd, ezUInt16 uiWidth, ezUInt16 uiHeight);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordtype">void</span> OnSwapChainChanged(<a class="code" href="../../db/dae/classez_g_a_l_swap_chain_handle.htm">ezGALSwapChainHandle</a> hSwapChain, <a class="code" href="../../d1/d2c/classez_size_template.htm">ezSizeU32</a> size);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetCamera(<span class="keyword">const</span> <a class="code" href="../../dd/dfb/classez_view_redraw_msg_to_engine.htm">ezViewRedrawMsgToEngine</a>* pMsg);</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../dd/d6d/classez_view_handle.htm">ezViewHandle</a> CreateView() = 0;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d3/dd7/classez_typed_resource_handle.htm">ezRenderPipelineResourceHandle</a> CreateDefaultRenderPipeline();</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <a class="code" href="../../d3/d26/classez_engine_process_document_context.htm">ezEngineProcessDocumentContext</a>* m_pDocumentContext;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <a class="code" href="../../d5/df3/classez_actor.htm">ezActor</a>* m_pEditorWndActor = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <a class="code" href="../../d8/d90/classez_camera.htm">ezCamera</a> m_Camera;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <a class="code" href="../../dd/d6d/classez_view_handle.htm">ezViewHandle</a> m_hView;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  ezUInt32 m_uiViewID;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;};</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d3/dd7/classez_typed_resource_handle.htm">ezRenderPipelineResourceHandle</a> CreateDebugRenderPipeline();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../dd/d6d/classez_view_handle.htm">ezViewHandle</a> CreateView() = 0;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <a class="code" href="../../d3/d26/classez_engine_process_document_context.htm">ezEngineProcessDocumentContext</a>* m_pDocumentContext;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <a class="code" href="../../d5/df3/classez_actor.htm">ezActor</a>* m_pEditorWndActor = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <a class="code" href="../../d8/d90/classez_camera.htm">ezCamera</a> m_Camera;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <a class="code" href="../../dd/d6d/classez_view_handle.htm">ezViewHandle</a> m_hView;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  ezUInt32 m_uiViewID;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassez_editor_engine_view_msg_htm"><div class="ttname"><a href="../../d0/d21/classez_editor_engine_view_msg.htm">ezEditorEngineViewMsg</a></div><div class="ttdef"><b>Definition:</b> EngineProcessMessages.h:197</div></div>
+<div class="ttc" id="aclassez_editor_engine_view_msg_htm"><div class="ttname"><a href="../../d0/d21/classez_editor_engine_view_msg.htm">ezEditorEngineViewMsg</a></div><div class="ttdef"><b>Definition:</b> EngineProcessMessages.h:185</div></div>
 <div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition:</b> Types.h:50</div></div>
-<div class="ttc" id="aclassez_view_redraw_msg_to_engine_htm"><div class="ttname"><a href="../../dd/dfb/classez_view_redraw_msg_to_engine.htm">ezViewRedrawMsgToEngine</a></div><div class="ttdef"><b>Definition:</b> EngineProcessMessages.h:253</div></div>
+<div class="ttc" id="aclassez_view_redraw_msg_to_engine_htm"><div class="ttname"><a href="../../dd/dfb/classez_view_redraw_msg_to_engine.htm">ezViewRedrawMsgToEngine</a></div><div class="ttdef"><b>Definition:</b> EngineProcessMessages.h:246</div></div>
 <div class="ttc" id="aclassez_bounding_box_sphere_template_htm"><div class="ttname"><a href="../../dc/d77/classez_bounding_box_sphere_template.htm">ezBoundingBoxSphereTemplate&lt; float &gt;</a></div></div>
 <div class="ttc" id="aclassez_editor_process_view_window_htm"><div class="ttname"><a href="../../d2/d2d/classez_editor_process_view_window.htm">ezEditorProcessViewWindow</a></div><div class="ttdoc">Represents the window inside the editor process, into which the engine process renders.</div><div class="ttdef"><b>Definition:</b> EngineProcessViewContext.h:20</div></div>
 <div class="ttc" id="aclassez_view_handle_htm"><div class="ttname"><a href="../../dd/d6d/classez_view_handle.htm">ezViewHandle</a></div><div class="ttdef"><b>Definition:</b> Declarations.h:63</div></div>
@@ -184,20 +190,21 @@ $(document).ready(function(){initNavTree('d3/dea/_engine_process_view_context_8h
 <div class="ttc" id="aclassez_size_template_htm"><div class="ttname"><a href="../../d1/d2c/classez_size_template.htm">ezSizeTemplate&lt; ezUInt32 &gt;</a></div></div>
 <div class="ttc" id="aclassez_g_a_l_render_target_setup_htm"><div class="ttname"><a href="../../d7/d93/classez_g_a_l_render_target_setup.htm">ezGALRenderTargetSetup</a></div><div class="ttdef"><b>Definition:</b> RenderTargetSetup.h:18</div></div>
 <div class="ttc" id="aclassez_actor_htm"><div class="ttname"><a href="../../d5/df3/classez_actor.htm">ezActor</a></div><div class="ttdef"><b>Definition:</b> Actor.h:8</div></div>
-<div class="ttc" id="aclassez_editor_engine_document_msg_htm"><div class="ttname"><a href="../../d1/dfa/classez_editor_engine_document_msg.htm">ezEditorEngineDocumentMsg</a></div><div class="ttdoc">Base class for all messages that are tied to some document.</div><div class="ttdef"><b>Definition:</b> EngineProcessMessages.h:152</div></div>
+<div class="ttc" id="aclassez_editor_engine_document_msg_htm"><div class="ttname"><a href="../../d1/dfa/classez_editor_engine_document_msg.htm">ezEditorEngineDocumentMsg</a></div><div class="ttdoc">Base class for all messages that are tied to some document.</div><div class="ttdef"><b>Definition:</b> EngineProcessMessages.h:140</div></div>
 <div class="ttc" id="aclassez_g_a_l_swap_chain_handle_htm"><div class="ttname"><a href="../../db/dae/classez_g_a_l_swap_chain_handle.htm">ezGALSwapChainHandle</a></div><div class="ttdef"><b>Definition:</b> RendererFoundationDLL.h:316</div></div>
 <div class="ttc" id="aclassez_engine_process_document_context_htm"><div class="ttname"><a href="../../d3/d26/classez_engine_process_document_context.htm">ezEngineProcessDocumentContext</a></div><div class="ttdoc">A document context is the counter part to an editor document on the engine side.</div><div class="ttdef"><b>Definition:</b> EngineProcessDocumentContext.h:41</div></div>
 <div class="ttc" id="astructez_g_a_l_render_targets_htm"><div class="ttname"><a href="../../d2/d2f/structez_g_a_l_render_targets.htm">ezGALRenderTargets</a></div><div class="ttdef"><b>Definition:</b> RenderTargetSetup.h:8</div></div>
 <div class="ttc" id="aclassez_camera_htm"><div class="ttname"><a href="../../d8/d90/classez_camera.htm">ezCamera</a></div><div class="ttdoc">A camera class that stores the orientation and some basic camera settings.</div><div class="ttdef"><b>Definition:</b> Camera.h:40</div></div>
-<div class="ttc" id="aclassez_window_base_htm"><div class="ttname"><a href="../../d4/d8c/classez_window_base.htm">ezWindowBase</a></div><div class="ttdoc">Base class of all window classes that have a client area and a native window handle.</div><div class="ttdef"><b>Definition:</b> Window.h:109</div></div>
-<div class="ttc" id="aclassez_engine_process_view_context_htm"><div class="ttname"><a href="../../d3/dad/classez_engine_process_view_context.htm">ezEngineProcessViewContext</a></div><div class="ttdoc">Represents the view/window on the engine process side, holds all data necessary for rendering.</div><div class="ttdef"><b>Definition:</b> EngineProcessViewContext.h:48</div></div>
+<div class="ttc" id="aclassez_window_base_htm"><div class="ttname"><a href="../../d4/d8c/classez_window_base.htm">ezWindowBase</a></div><div class="ttdoc">Base class of all window classes that have a client area and a native window handle.</div><div class="ttdef"><b>Definition:</b> Window.h:125</div></div>
+<div class="ttc" id="aclassez_engine_process_view_context_htm"><div class="ttname"><a href="../../d3/dad/classez_engine_process_view_context.htm">ezEngineProcessViewContext</a></div><div class="ttdoc">Represents the view/window on the engine process side, holds all data necessary for rendering.</div><div class="ttdef"><b>Definition:</b> EngineProcessViewContext.h:52</div></div>
 <div class="ttc" id="aclassez_vec3_template_htm"><div class="ttname"><a href="../../da/df1/classez_vec3_template.htm">ezVec3Template&lt; float &gt;</a></div></div>
+<div class="ttc" id="aclassez_atomic_integer_htm"><div class="ttname"><a href="../../da/d01/classez_atomic_integer.htm">ezAtomicInteger&lt; ezInt32 &gt;</a></div></div>
 <div class="ttc" id="aclassez_typed_resource_handle_htm"><div class="ttname"><a href="../../d3/dd7/classez_typed_resource_handle.htm">ezTypedResourceHandle&lt; class ezRenderPipelineResource &gt;</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_898824d97bbfb864e5ee6bfb2857fc31.htm">Editor</a></li><li class="navelem"><a class="el" href="../../dir_58cd665830f691b636779262d22385da.htm">EditorEngineProcessFramework</a></li><li class="navelem"><a class="el" href="../../dir_2191880c6b569b9c9b9d9bd637a2d0d3.htm">EngineProcess</a></li><li class="navelem"><b>EngineProcessViewContext.h</b></li>
-    <li class="footer">Generated on Fri Nov 18 2022 14:47:53 for ezEngine by
+    <li class="footer">Generated on Sat Mar 25 2023 19:21:50 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

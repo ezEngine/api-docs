@@ -12,7 +12,6 @@ var classez_editor_engine_process_connection =
     [ "IsEngineSetup", "d0/db7/classez_editor_engine_process_connection.htm#add78159f621e85405dc3fb03ec676262", null ],
     [ "IsProcessCrashed", "d0/db7/classez_editor_engine_process_connection.htm#a1202f84eb24f694e396262e017c86bf4", null ],
     [ "RestartProcess", "d0/db7/classez_editor_engine_process_connection.htm#a31537650007879a10f52c161da3e9f0e", null ],
-    [ "SendDocumentOpenMessage", "d0/db7/classez_editor_engine_process_connection.htm#a2aecee0a121d985fa77bd4ecb1068a36", null ],
     [ "SendMessage", "d0/db7/classez_editor_engine_process_connection.htm#a3b09b12e205f62f75e6757f04da6c875", null ],
     [ "SetFileSystemConfig", "d0/db7/classez_editor_engine_process_connection.htm#aeed88919a50701e7d9b48ec7608292c5", null ],
     [ "SetPluginConfig", "d0/db7/classez_editor_engine_process_connection.htm#ac320c857e30044c5c3a61be748840002", null ],
@@ -20,6 +19,6 @@ var classez_editor_engine_process_connection =
     [ "SetWaitForDebugger", "d0/db7/classez_editor_engine_process_connection.htm#a8a78d35a3bde777b7c36a706bdf8b947", null ],
     [ "ShutdownProcess", "d0/db7/classez_editor_engine_process_connection.htm#afdd6af900d7e199f5d5bf66e7e1b33eb", null ],
     [ "Update", "d0/db7/classez_editor_engine_process_connection.htm#a0943c22ef1c24de0cd605aba04206d5d", null ],
-    [ "WaitForDocumentMessage", "d0/db7/classez_editor_engine_process_connection.htm#ad9cd467cd9e9a81b3dada0bac79a61ec", null ],
-    [ "WaitForMessage", "d0/db7/classez_editor_engine_process_connection.htm#ac1c021278756c5fac99ec0759fca7904", null ]
+    [ "WaitForDocumentMessage", "d0/db7/classez_editor_engine_process_connection.htm#a3580b5061ef4c866d7fc6fabca2fdd5f", null ],
+    [ "WaitForMessage", "d0/db7/classez_editor_engine_process_connection.htm#a5a74ecb4595baa41ca7ead96e9342b5b", null ]
 ];

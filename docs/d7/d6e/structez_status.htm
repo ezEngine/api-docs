@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 22.11</span>
+   &#160;<span id="projectnumber">Release 23.04</span>
    </div>
   </td>
  </tr>
@@ -120,8 +120,16 @@ EZ_ALWAYS_INLINE bool&#160;</td><td class="memItemRight" valign="bottom"><b>Succ
 <tr class="memitem:a90d565327993a8728ab213209b1c6a26"><td class="memItemLeft" align="right" valign="top"><a id="a90d565327993a8728ab213209b1c6a26"></a>
 EZ_ALWAYS_INLINE bool&#160;</td><td class="memItemRight" valign="bottom"><b>Failed</b> () const</td></tr>
 <tr class="separator:a90d565327993a8728ab213209b1c6a26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2225c1d9c56f0b3f16fe46e4000508e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6e/structez_status.htm#af2225c1d9c56f0b3f16fe46e4000508e">operator bool</a> () const</td></tr>
+<tr class="memdesc:af2225c1d9c56f0b3f16fe46e4000508e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as 'Succeeded()'.  <a href="../../d7/d6e/structez_status.htm#af2225c1d9c56f0b3f16fe46e4000508e">More...</a><br /></td></tr>
+<tr class="separator:af2225c1d9c56f0b3f16fe46e4000508e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05113992b948e93ca900068771ebb057"><td class="memItemLeft" align="right" valign="top"><a id="a05113992b948e93ca900068771ebb057"></a>
+<a class="el" href="../../d4/da9/structez_result.htm">ezResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6e/structez_status.htm#a05113992b948e93ca900068771ebb057">operator!</a> () const</td></tr>
+<tr class="memdesc:a05113992b948e93ca900068771ebb057"><td class="mdescLeft">&#160;</td><td class="mdescRight">Special case to prevent this from working: "bool b = !r". <br /></td></tr>
+<tr class="separator:a05113992b948e93ca900068771ebb057"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79129783bea45bc6d2cdac246a326b52"><td class="memItemLeft" align="right" valign="top"><a id="a79129783bea45bc6d2cdac246a326b52"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>LogFailure</b> (<a class="el" href="../../d2/d9e/classez_log_interface.htm">ezLogInterface</a> *pLog=nullptr)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d6e/structez_status.htm#a79129783bea45bc6d2cdac246a326b52">LogFailure</a> (<a class="el" href="../../d2/d9e/classez_log_interface.htm">ezLogInterface</a> *pLog=nullptr)</td></tr>
+<tr class="memdesc:a79129783bea45bc6d2cdac246a326b52"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the state is EZ_FAILURE, the message is written to the given log (or the currently active thread-local log). <br /></td></tr>
 <tr class="separator:a79129783bea45bc6d2cdac246a326b52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -135,7 +143,47 @@ Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>An <a class="el" href="../../d4/da9/structez_result.htm" title="Default enum for returning failure or success, instead of using a bool.">ezResult</a> with an additional message for the reason of failure. </p>
-</div><hr/>The documentation for this struct was generated from the following files:<ul>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="af2225c1d9c56f0b3f16fe46e4000508e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2225c1d9c56f0b3f16fe46e4000508e">&#9670;&nbsp;</a></span>operator bool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ezStatus::operator bool </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Same as 'Succeeded()'. </p>
+<p>Allows <a class="el" href="../../d7/d6e/structez_status.htm" title="An ezResult with an additional message for the reason of failure.">ezStatus</a> to be used in if statements:</p><ul>
+<li>if (r)</li>
+<li>if (!r)</li>
+<li>if (r1 &amp;&amp; r2)</li>
+<li>if (r1 || r2)</li>
+</ul>
+<p>Disallows anything else implicitly, e.g. all these won't compile:</p><ul>
+<li>if (r == true)</li>
+<li>bool b = r;</li>
+<li>void* p = r;</li>
+<li>return r; // with bool return type </li>
+</ul>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following files:<ul>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/Types/<a class="el" href="../../d3/ddd/_status_8h_source.htm">Status.h</a></li>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/Types/Implementation/Status.cpp</li>
 </ul>
@@ -145,7 +193,7 @@ Public Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d7/d6e/structez_status.htm">ezStatus</a></li>
-    <li class="footer">Generated on Fri Nov 18 2022 14:48:12 for ezEngine by
+    <li class="footer">Generated on Sat Mar 25 2023 19:22:08 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

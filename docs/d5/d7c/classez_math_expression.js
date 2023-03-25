@@ -6,5 +6,5 @@ var classez_math_expression =
     [ "Evaluate", "d5/d7c/classez_math_expression.htm#a86879225eeb3c2c8e370a574d3204fa0", null ],
     [ "GetExpressionString", "d5/d7c/classez_math_expression.htm#a3a3366ca73b5a97ca3297a72e07779ee", null ],
     [ "IsValid", "d5/d7c/classez_math_expression.htm#a6a0dc5c33a212ce73b9c4d1c1f66c0e3", null ],
-    [ "Reset", "d5/d7c/classez_math_expression.htm#ab47296aec29e0e0866c1af1ce8e9e48a", null ]
+    [ "Reset", "d5/d7c/classez_math_expression.htm#adb51f7a2edf1c96d0fb2ae26c64363e0", null ]
 ];

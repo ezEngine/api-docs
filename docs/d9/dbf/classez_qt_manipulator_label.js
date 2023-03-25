@@ -1,7 +1,7 @@
 var classez_qt_manipulator_label =
 [
-    [ "ezQtManipulatorLabel", "d9/dbf/classez_qt_manipulator_label.htm#a6430e8369345ebda50d3887e2dadda64", null ],
-    [ "ezQtManipulatorLabel", "d9/dbf/classez_qt_manipulator_label.htm#a768dd6ed8ea5df14904cf70c88fe9bef", null ],
+    [ "ezQtManipulatorLabel", "d9/dbf/classez_qt_manipulator_label.htm#a4d1a5490e7932ffeb1636e5fcd4bf47f", null ],
+    [ "ezQtManipulatorLabel", "d9/dbf/classez_qt_manipulator_label.htm#a7c842d29bd08d8072c805ce19296af55", null ],
     [ "contextMenuEvent", "d9/dbf/classez_qt_manipulator_label.htm#aed5aa584546dc2293b65724713bcee44", null ],
     [ "enterEvent", "d9/dbf/classez_qt_manipulator_label.htm#a98b774f2a99a372865c890fbe32bed6f", null ],
     [ "GetManipulator", "d9/dbf/classez_qt_manipulator_label.htm#a23e172f82533cbf5a621b8554aa77508", null ],

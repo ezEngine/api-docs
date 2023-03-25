@@ -13,7 +13,7 @@ var classez_document_manager =
     [ "EnsureWindowRequested", "de/dfb/classez_document_manager.htm#ab1eba20e336a000bfa958663e75712af", null ],
     [ "GetAllOpenDocuments", "de/dfb/classez_document_manager.htm#a1af30aed0831f7f738dd0f42da1e8b84", null ],
     [ "GetDocumentByPath", "de/dfb/classez_document_manager.htm#aa4737cfe534a759a4436c39e38cfeeda", null ],
-    [ "GetSupportedDocumentTypes", "de/dfb/classez_document_manager.htm#a220c7e247890f165d9134338ce6c66b9", null ],
+    [ "GetSupportedDocumentTypes", "de/dfb/classez_document_manager.htm#a8c513d3561fd107b5a4eaa9a02d701af", null ],
     [ "InternalCloneDocument", "de/dfb/classez_document_manager.htm#ab3d845fcbdbe60d245171a906a7d3e9d", null ],
     [ "InternalCreateDocument", "de/dfb/classez_document_manager.htm#a583a0d4d55b9e32bf3984cbdf0c55ed9", null ],
     [ "InternalGetSupportedDocumentTypes", "de/dfb/classez_document_manager.htm#a1747242a3b6e318594688b03a4858d3b", null ],

@@ -9,5 +9,5 @@ var classez_cone_length_gizmo =
     [ "OnSetOwner", "d9/de7/classez_cone_length_gizmo.htm#a6089539dabca3686cc619ac5363ba445", null ],
     [ "OnTransformationChanged", "d9/de7/classez_cone_length_gizmo.htm#a39fe84be595eec935ba28f6f9f51a2ec", null ],
     [ "OnVisibleChanged", "d9/de7/classez_cone_length_gizmo.htm#affb76358995d3aee06d6e4867ca861f9", null ],
-    [ "SetRadius", "d9/de7/classez_cone_length_gizmo.htm#a293600738b64a5faeb18b0910cb87261", null ]
+    [ "SetRadius", "d9/de7/classez_cone_length_gizmo.htm#a7386f1716cb197f2fed45e25aab443b8", null ]
 ];

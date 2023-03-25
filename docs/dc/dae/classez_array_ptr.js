@@ -9,7 +9,7 @@ var classez_array_ptr =
     [ "ValueType", "dc/dae/classez_array_ptr.htm#ae92aa05eb8ad57b560af521e471313b1", null ],
     [ "ezArrayPtr", "dc/dae/classez_array_ptr.htm#a7fda1bd42cdec0e38ae46d99c9d0d0e4", null ],
     [ "ezArrayPtr", "dc/dae/classez_array_ptr.htm#aee1fa89ad26b5a256d428fba6ef04d30", null ],
-    [ "ezArrayPtr", "dc/dae/classez_array_ptr.htm#a6bd6ecbb96b5dfdab2e50b79ea3b3070", null ],
+    [ "ezArrayPtr", "dc/dae/classez_array_ptr.htm#ae86bcb67eb6955c4bcb78a0f5296afa5", null ],
     [ "ezArrayPtr", "dc/dae/classez_array_ptr.htm#a72340e400182aa95d15bd67fa8a5e3cd", null ],
     [ "ezArrayPtr", "dc/dae/classez_array_ptr.htm#a2a60e59db75a5101abb471a146c340db", null ],
     [ "Cast", "dc/dae/classez_array_ptr.htm#aa64dde9181bfd8c52aaa82caa85f7707", null ],

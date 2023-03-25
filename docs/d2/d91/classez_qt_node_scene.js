@@ -7,7 +7,7 @@ var classez_qt_node_scene =
       [ "Pin", "d2/d91/classez_qt_node_scene.htm#a309572061d82e05cce3bd64ca3587337a92c9ffbcddf77f6db5fe2375093825ab", null ],
       [ "Connection", "d2/d91/classez_qt_node_scene.htm#a309572061d82e05cce3bd64ca3587337acf3a994578f82264398946acfb13e1fb", null ]
     ] ],
-    [ "ezQtNodeScene", "d2/d91/classez_qt_node_scene.htm#a526bc512977400519c1cb3df0fe239d0", null ],
+    [ "ezQtNodeScene", "d2/d91/classez_qt_node_scene.htm#a964dab7af89a49c50a8f619e11654d1c", null ],
     [ "~ezQtNodeScene", "d2/d91/classez_qt_node_scene.htm#a05bb91247448be7281c98af1e4a00eb6", null ],
     [ "ConnectPinsAction", "d2/d91/classez_qt_node_scene.htm#a3a3394faee67b02aa6d29dc6b9d178d4", null ],
     [ "contextMenuEvent", "d2/d91/classez_qt_node_scene.htm#a7e86ed786b238c3cd9e01cd60d459b83", null ],

@@ -98,7 +98,7 @@ var classez_variant =
     [ "operator==", "de/de6/classez_variant.htm#a1127da6207e83745fadb23bb4038cf7b", null ],
     [ "operator==", "de/de6/classez_variant.htm#a3843189c38f77f67ffce55407c9cd326", null ],
     [ "operator[]", "de/de6/classez_variant.htm#a5ee37913e79fc4e281d3a1cc7bfc6605", null ],
-    [ "operator[]", "de/de6/classez_variant.htm#adfa3754cfa51bb99d84ef5320046993f", null ],
+    [ "operator[]", "de/de6/classez_variant.htm#a9810db7b7547b547154202dbb2e52220", null ],
     [ "CompareFunc", "de/de6/classez_variant.htm#a4c30e09ce4827ae59948f694bbc95495", null ],
     [ "ezVariantHelper", "de/de6/classez_variant.htm#ab0548315265655440ef651e5f3d9854a", null ],
     [ "GetTypeFromVariantFunc", "de/de6/classez_variant.htm#aa3fb9dde7601af1db3639dc733818fff", null ]

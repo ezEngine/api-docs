@@ -5,7 +5,7 @@ var classez_editable_skeleton_joint =
     [ "ClearJoints", "d4/d8e/classez_editable_skeleton_joint.htm#ad2aab9a49c41fef91a287ff484f614d1", null ],
     [ "CopyPropertiesFrom", "d4/d8e/classez_editable_skeleton_joint.htm#ac4ff1885604f30ddbe3f4d6fa99c0f3e", null ],
     [ "GetName", "d4/d8e/classez_editable_skeleton_joint.htm#accd2fcd2cfe4d85f48457625bca08ece", null ],
-    [ "SetName", "d4/d8e/classez_editable_skeleton_joint.htm#a97ebcb8a77b088705607951839479ee2", null ],
+    [ "SetName", "d4/d8e/classez_editable_skeleton_joint.htm#aa7b6a41d6bb8eee88f814b44aa38919b", null ],
     [ "m_bLimitSwing", "d4/d8e/classez_editable_skeleton_joint.htm#a006d244c304d5812d0d845e4e44369e9", null ],
     [ "m_bLimitTwist", "d4/d8e/classez_editable_skeleton_joint.htm#a422f24c0168a7d5fa36d8c573ae44ea0", null ],
     [ "m_BoneShapes", "d4/d8e/classez_editable_skeleton_joint.htm#a51d44d9c72ee92a1de7b5d23a915c53f", null ],

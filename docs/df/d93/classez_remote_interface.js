@@ -26,7 +26,7 @@ var classez_remote_interface =
     [ "ReportDisconnectedFromClient", "df/d93/classez_remote_interface.htm#aed23d9e136f4551aa2e8207b81bf7319", null ],
     [ "ReportDisconnectedFromServer", "df/d93/classez_remote_interface.htm#a9603202ef12b8a44b888a3876d81bff5", null ],
     [ "ReportMessage", "df/d93/classez_remote_interface.htm#a381c3260a66bf4783f44fffb3cc31ff1", null ],
-    [ "Send", "df/d93/classez_remote_interface.htm#ae0882d792013f5dc5426e09303405e6b", null ],
+    [ "Send", "df/d93/classez_remote_interface.htm#a5aa2aecd5de87798b60a21bb8b5f80ec", null ],
     [ "Send", "df/d93/classez_remote_interface.htm#a601ada9b5589d8818ba1357d8fa58f0a", null ],
     [ "Send", "df/d93/classez_remote_interface.htm#a985afd67c08f46df194c01c09f8c794a", null ],
     [ "Send", "df/d93/classez_remote_interface.htm#a1fc4ebec6018198572618680216da0a3", null ],

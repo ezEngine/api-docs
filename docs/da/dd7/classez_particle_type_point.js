@@ -2,7 +2,7 @@ var classez_particle_type_point =
 [
     [ "ezParticleTypePoint", "da/dd7/classez_particle_type_point.htm#a3c1105947789b2c4b06ee18a5159593b", null ],
     [ "CreateRequiredStreams", "da/dd7/classez_particle_type_point.htm#aed6218f8ccdc8f0dbb6cd6dca16619d3", null ],
-    [ "ExtractTypeRenderData", "da/dd7/classez_particle_type_point.htm#a40bcb529fa6f5f9395d8165e8333bcbb", null ],
+    [ "ExtractTypeRenderData", "da/dd7/classez_particle_type_point.htm#a82a3a28d52987f6606eda1c799a15b95", null ],
     [ "GetMaxParticleRadius", "da/dd7/classez_particle_type_point.htm#a926dfc0aecaab709040f3c8b6824d720", null ],
     [ "Process", "da/dd7/classez_particle_type_point.htm#a4f10760d06a6624c2619860d1f556f6a", null ],
     [ "m_BaseParticleData", "da/dd7/classez_particle_type_point.htm#a5b042cc9218ac757fe8dabb1778df349", null ],

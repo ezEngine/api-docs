@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 22.11</span>
+   &#160;<span id="projectnumber">Release 23.04</span>
    </div>
   </td>
  </tr>
@@ -166,7 +166,7 @@ $(document).ready(function(){initNavTree('d1/d98/_stack_allocation_8h_source.htm
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      <span class="keywordflow">return</span> ptr;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    EZ_FORCE_INLINE <span class="keywordtype">void</span> Deallocate(<span class="keywordtype">void</span>* ptr)</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    EZ_FORCE_INLINE <span class="keywordtype">void</span> Deallocate(<span class="keywordtype">void</span>* pPtr)</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    {</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      <span class="comment">// Individual deallocation is not supported by this allocator</span></div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
@@ -177,12 +177,12 @@ $(document).ready(function(){initNavTree('d1/d98/_stack_allocation_8h_source.htm
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;      m_pNextAllocation = !m_Buckets.<a class="code" href="../../dc/d59/classez_array_base.htm#a35630a870ec53cf3b022653232a31c60">IsEmpty</a>() ? m_Buckets[0].GetPtr() : <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    EZ_FORCE_INLINE <span class="keywordtype">void</span> FillStats(<a class="code" href="../../df/df0/structez_allocator_base_1_1_stats.htm">ezAllocatorBase::Stats</a>&amp; stats)</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    EZ_FORCE_INLINE <span class="keywordtype">void</span> FillStats(<a class="code" href="../../df/df0/structez_allocator_base_1_1_stats.htm">ezAllocatorBase::Stats</a>&amp; ref_stats)</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      stats.<a class="code" href="../../df/df0/structez_allocator_base_1_1_stats.htm#a4a1683e74cd8038c281dd9f6d29b088c">m_uiNumAllocations</a> = m_Buckets.<a class="code" href="../../dc/d59/classez_array_base.htm#a51ba61fcbd2350ae8850754a41acbaa1">GetCount</a>();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      ref_stats.<a class="code" href="../../df/df0/structez_allocator_base_1_1_stats.htm#a4a1683e74cd8038c281dd9f6d29b088c">m_uiNumAllocations</a> = m_Buckets.<a class="code" href="../../dc/d59/classez_array_base.htm#a51ba61fcbd2350ae8850754a41acbaa1">GetCount</a>();</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;      <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; bucket : m_Buckets)</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;      {</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        stats.<a class="code" href="../../df/df0/structez_allocator_base_1_1_stats.htm#adc92c105009504b209a27ab697713a71">m_uiAllocationSize</a> += bucket.GetCount();</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        ref_stats.<a class="code" href="../../df/df0/structez_allocator_base_1_1_stats.htm#adc92c105009504b209a27ab697713a71">m_uiAllocationSize</a> += bucket.GetCount();</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;      }</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
@@ -217,7 +217,7 @@ $(document).ready(function(){initNavTree('d1/d98/_stack_allocation_8h_source.htm
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_adb0ac2a169525f5fa05f0527c58e205.htm">Memory</a></li><li class="navelem"><a class="el" href="../../dir_7e8e2491845ec7b2b62df622f0295925.htm">Policies</a></li><li class="navelem"><b>StackAllocation.h</b></li>
-    <li class="footer">Generated on Fri Nov 18 2022 14:47:59 for ezEngine by
+    <li class="footer">Generated on Sat Mar 25 2023 19:21:56 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

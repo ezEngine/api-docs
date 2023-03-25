@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 22.11</span>
+   &#160;<span id="projectnumber">Release 23.04</span>
    </div>
   </td>
  </tr>
@@ -98,8 +98,8 @@ $(document).ready(function(){initNavTree('dc/df3/_allocator__inl_8h_source.htm',
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="comment">// ezAllocatorBase implementation</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>* <a class="code" href="../../d2/d98/classez_internal_1_1ez_allocator_impl.htm#acd0ff1f7054cd195655f12ed5b72cb0d">Allocate</a>(<span class="keywordtype">size_t</span> uiSize, <span class="keywordtype">size_t</span> uiAlign, ezMemoryUtils::DestructorFunction destructorFunc = <span class="keyword">nullptr</span>) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> Deallocate(<span class="keywordtype">void</span>* ptr) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">size_t</span> <a class="code" href="../../d2/d98/classez_internal_1_1ez_allocator_impl.htm#aa76425aac75d252adbfeae6c57ca7bf5">AllocatedSize</a>(<span class="keyword">const</span> <span class="keywordtype">void</span>* ptr) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> Deallocate(<span class="keywordtype">void</span>* pPtr) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">size_t</span> <a class="code" href="../../d2/d98/classez_internal_1_1ez_allocator_impl.htm#a88f19bd0d631633321b14a9d1aa2043c">AllocatedSize</a>(<span class="keyword">const</span> <span class="keywordtype">void</span>* pPtr) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a> GetId() <span class="keyword">const override</span>;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="../../df/df0/structez_allocator_base_1_1_stats.htm">Stats</a> GetStats() <span class="keyword">const override</span>;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
@@ -124,7 +124,7 @@ $(document).ready(function(){initNavTree('dc/df3/_allocator__inl_8h_source.htm',
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  {</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="../../d6/dc9/classez_internal_1_1ez_allocator_mixin_reallocate.htm">ezAllocatorMixinReallocate</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* szName, <a class="code" href="../../d1/d4c/classez_allocator_base.htm">ezAllocatorBase</a>* pParent);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>* Reallocate(<span class="keywordtype">void</span>* ptr, <span class="keywordtype">size_t</span> uiCurrentSize, <span class="keywordtype">size_t</span> uiNewSize, <span class="keywordtype">size_t</span> uiAlign) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>* Reallocate(<span class="keywordtype">void</span>* pPtr, <span class="keywordtype">size_t</span> uiCurrentSize, <span class="keywordtype">size_t</span> uiNewSize, <span class="keywordtype">size_t</span> uiAlign) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  };</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}; <span class="comment">// namespace ezInternal</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
@@ -179,22 +179,22 @@ $(document).ready(function(){initNavTree('dc/df3/_allocator__inl_8h_source.htm',
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> A, ezUInt32 TrackingFlags&gt;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d2/d98/classez_internal_1_1ez_allocator_impl.htm">ezInternal::ezAllocatorImpl&lt;A, TrackingFlags&gt;::Deallocate</a>(<span class="keywordtype">void</span>* ptr)</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d2/d98/classez_internal_1_1ez_allocator_impl.htm">ezInternal::ezAllocatorImpl&lt;A, TrackingFlags&gt;::Deallocate</a>(<span class="keywordtype">void</span>* pPtr)</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;{</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keywordflow">if</span> ((TrackingFlags &amp; <a class="code" href="../../d6/dce/structez_memory_tracking_flags.htm#ae574bce1a09f0b0742cb69e86500fa27a76e52cf3966f310380bb75759c7e37d3">ezMemoryTrackingFlags::EnableAllocationTracking</a>) != 0)</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    ezMemoryTracker::RemoveAllocation(this-&gt;m_Id, ptr);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    ezMemoryTracker::RemoveAllocation(this-&gt;m_Id, pPtr);</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  }</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  m_allocator.Deallocate(ptr);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  m_allocator.Deallocate(pPtr);</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> A, ezUInt32 TrackingFlags&gt;</div>
-<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="../../d2/d98/classez_internal_1_1ez_allocator_impl.htm#aa76425aac75d252adbfeae6c57ca7bf5">  104</a></span>&#160;<span class="keywordtype">size_t</span> <a class="code" href="../../d2/d98/classez_internal_1_1ez_allocator_impl.htm#aa76425aac75d252adbfeae6c57ca7bf5">ezInternal::ezAllocatorImpl&lt;A, TrackingFlags&gt;::AllocatedSize</a>(<span class="keyword">const</span> <span class="keywordtype">void</span>* ptr)</div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="../../d2/d98/classez_internal_1_1ez_allocator_impl.htm#a88f19bd0d631633321b14a9d1aa2043c">  104</a></span>&#160;<span class="keywordtype">size_t</span> <a class="code" href="../../d2/d98/classez_internal_1_1ez_allocator_impl.htm#a88f19bd0d631633321b14a9d1aa2043c">ezInternal::ezAllocatorImpl&lt;A, TrackingFlags&gt;::AllocatedSize</a>(<span class="keyword">const</span> <span class="keywordtype">void</span>* pPtr)</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;{</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="keywordflow">if</span> ((TrackingFlags &amp; <a class="code" href="../../d6/dce/structez_memory_tracking_flags.htm#ae574bce1a09f0b0742cb69e86500fa27a76e52cf3966f310380bb75759c7e37d3">ezMemoryTrackingFlags::EnableAllocationTracking</a>) != 0)</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  {</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">return</span> ezMemoryTracker::GetAllocationInfo(this-&gt;m_Id, ptr).m_uiSize;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">return</span> ezMemoryTracker::GetAllocationInfo(this-&gt;m_Id, pPtr).m_uiSize;</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  }</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="keywordflow">return</span> 0;</div>
@@ -236,16 +236,16 @@ $(document).ready(function(){initNavTree('dc/df3/_allocator__inl_8h_source.htm',
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;}</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> A, ezUInt32 TrackingFlags&gt;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="keywordtype">void</span>* <a class="code" href="../../d6/dc9/classez_internal_1_1ez_allocator_mixin_reallocate.htm">ezInternal::ezAllocatorMixinReallocate&lt;A, TrackingFlags, true&gt;::Reallocate</a>(<span class="keywordtype">void</span>* ptr, <span class="keywordtype">size_t</span> uiCurrentSize, <span class="keywordtype">size_t</span> uiNewSize, <span class="keywordtype">size_t</span> uiAlign)</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="keywordtype">void</span>* <a class="code" href="../../d6/dc9/classez_internal_1_1ez_allocator_mixin_reallocate.htm">ezInternal::ezAllocatorMixinReallocate&lt;A, TrackingFlags, true&gt;::Reallocate</a>(<span class="keywordtype">void</span>* pPtr, <span class="keywordtype">size_t</span> uiCurrentSize, <span class="keywordtype">size_t</span> uiNewSize, <span class="keywordtype">size_t</span> uiAlign)</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;{</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  <span class="keywordflow">if</span> ((TrackingFlags &amp; <a class="code" href="../../d6/dce/structez_memory_tracking_flags.htm#ae574bce1a09f0b0742cb69e86500fa27a76e52cf3966f310380bb75759c7e37d3">ezMemoryTrackingFlags::EnableAllocationTracking</a>) != 0)</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  {</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    ezMemoryTracker::RemoveAllocation(this-&gt;m_Id, ptr);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    ezMemoryTracker::RemoveAllocation(this-&gt;m_Id, pPtr);</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  }</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> fAllocationTime = <a class="code" href="../../d3/d90/structez_time.htm#a577fcb032cde755e39b3880d5ee0dadf">ezTime::Now</a>();</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  <span class="keywordtype">void</span>* pNewMem = this-&gt;m_allocator.Reallocate(ptr, uiCurrentSize, uiNewSize, uiAlign);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  <span class="keywordtype">void</span>* pNewMem = this-&gt;m_allocator.Reallocate(pPtr, uiCurrentSize, uiNewSize, uiAlign);</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  <span class="keywordflow">if</span> ((TrackingFlags &amp; <a class="code" href="../../d6/dce/structez_memory_tracking_flags.htm#ae574bce1a09f0b0742cb69e86500fa27a76e52cf3966f310380bb75759c7e37d3">ezMemoryTrackingFlags::EnableAllocationTracking</a>) != 0)</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  {</div>
@@ -265,8 +265,8 @@ $(document).ready(function(){initNavTree('dc/df3/_allocator__inl_8h_source.htm',
 <div class="ttc" id="anamespaceez_math_htm_a194e5582f9a01688fc03e4620e231d29"><div class="ttname"><a href="../../db/d78/namespaceez_math.htm#a194e5582f9a01688fc03e4620e231d29">ezMath::IsPowerOf2</a></div><div class="ttdeci">constexpr EZ_FORCE_INLINE bool IsPowerOf2(ezInt32 value)</div><div class="ttdoc">Returns true, if there exists some x with 2^x == value.</div><div class="ttdef"><b>Definition:</b> Math_inl.h:233</div></div>
 <div class="ttc" id="aclassez_internal_1_1ez_allocator_impl_htm"><div class="ttname"><a href="../../d2/d98/classez_internal_1_1ez_allocator_impl.htm">ezInternal::ezAllocatorImpl</a></div><div class="ttdef"><b>Definition:</b> Allocator_inl.h:4</div></div>
 <div class="ttc" id="aclassez_allocator_base_htm"><div class="ttname"><a href="../../d1/d4c/classez_allocator_base.htm">ezAllocatorBase</a></div><div class="ttdoc">Base class for all memory allocators.</div><div class="ttdef"><b>Definition:</b> AllocatorBase.h:22</div></div>
+<div class="ttc" id="aclassez_internal_1_1ez_allocator_impl_htm_a88f19bd0d631633321b14a9d1aa2043c"><div class="ttname"><a href="../../d2/d98/classez_internal_1_1ez_allocator_impl.htm#a88f19bd0d631633321b14a9d1aa2043c">ezInternal::ezAllocatorImpl::AllocatedSize</a></div><div class="ttdeci">virtual size_t AllocatedSize(const void *pPtr) override</div><div class="ttdoc">Returns the number of bytes allocated at this address.</div><div class="ttdef"><b>Definition:</b> Allocator_inl.h:104</div></div>
 <div class="ttc" id="astructez_memory_tracking_flags_htm_ae574bce1a09f0b0742cb69e86500fa27a76e52cf3966f310380bb75759c7e37d3"><div class="ttname"><a href="../../d6/dce/structez_memory_tracking_flags.htm#ae574bce1a09f0b0742cb69e86500fa27a76e52cf3966f310380bb75759c7e37d3">ezMemoryTrackingFlags::EnableAllocationTracking</a></div><div class="ttdeci">@ EnableAllocationTracking</div><div class="ttdoc">Enable tracking of individual allocations.</div><div class="ttdef"><b>Definition:</b> MemoryTracker.h:16</div></div>
-<div class="ttc" id="aclassez_internal_1_1ez_allocator_impl_htm_aa76425aac75d252adbfeae6c57ca7bf5"><div class="ttname"><a href="../../d2/d98/classez_internal_1_1ez_allocator_impl.htm#aa76425aac75d252adbfeae6c57ca7bf5">ezInternal::ezAllocatorImpl::AllocatedSize</a></div><div class="ttdeci">virtual size_t AllocatedSize(const void *ptr) override</div><div class="ttdoc">Returns the number of bytes allocated at this address.</div><div class="ttdef"><b>Definition:</b> Allocator_inl.h:104</div></div>
 <div class="ttc" id="aclassez_internal_1_1ez_allocator_mixin_reallocate_htm"><div class="ttname"><a href="../../d6/dc9/classez_internal_1_1ez_allocator_mixin_reallocate.htm">ezInternal::ezAllocatorMixinReallocate</a></div><div class="ttdef"><b>Definition:</b> Allocator_inl.h:27</div></div>
 <div class="ttc" id="astructez_bitflags_htm_aa0fc77271babcf097032c0992533f1a0"><div class="ttname"><a href="../../d1/dec/structez_bitflags.htm#aa0fc77271babcf097032c0992533f1a0">ezBitflags::SetValue</a></div><div class="ttdeci">EZ_ALWAYS_INLINE void SetValue(StorageType value)</div><div class="ttdoc">Overwrites the flags with a new value.</div><div class="ttdef"><b>Definition:</b> Bitflags.h:202</div></div>
 <div class="ttc" id="aclassez_internal_1_1ez_allocator_impl_htm_acd0ff1f7054cd195655f12ed5b72cb0d"><div class="ttname"><a href="../../d2/d98/classez_internal_1_1ez_allocator_impl.htm#acd0ff1f7054cd195655f12ed5b72cb0d">ezInternal::ezAllocatorImpl::Allocate</a></div><div class="ttdeci">virtual void * Allocate(size_t uiSize, size_t uiAlign, ezMemoryUtils::DestructorFunction destructorFunc=nullptr) override</div><div class="ttdoc">Interface, do not use this directly, always use the new/delete macros below.</div><div class="ttdef"><b>Definition:</b> Allocator_inl.h:68</div></div>
@@ -277,7 +277,7 @@ $(document).ready(function(){initNavTree('dc/df3/_allocator__inl_8h_source.htm',
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_adb0ac2a169525f5fa05f0527c58e205.htm">Memory</a></li><li class="navelem"><a class="el" href="../../dir_2b61d82766792ebb24827eac69b772f5.htm">Implementation</a></li><li class="navelem"><b>Allocator_inl.h</b></li>
-    <li class="footer">Generated on Fri Nov 18 2022 14:47:59 for ezEngine by
+    <li class="footer">Generated on Sat Mar 25 2023 19:21:56 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

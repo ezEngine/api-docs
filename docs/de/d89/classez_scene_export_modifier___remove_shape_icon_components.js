@@ -1,4 +1,4 @@
 var classez_scene_export_modifier___remove_shape_icon_components =
 [
-    [ "ModifyWorld", "de/d89/classez_scene_export_modifier___remove_shape_icon_components.htm#a9cd24f62d4ab7059f4aca55c8c343dc6", null ]
+    [ "ModifyWorld", "de/d89/classez_scene_export_modifier___remove_shape_icon_components.htm#a08f7f3b881a1c1904323b5ffed8eb810", null ]
 ];

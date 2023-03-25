@@ -9,6 +9,7 @@ var structez_object_flags_1_1_bits =
     [ "Initialized", "d5/da5/structez_object_flags_1_1_bits.htm#afb65769fb9439884713ce70bdde2832f", null ],
     [ "Initializing", "d5/da5/structez_object_flags_1_1_bits.htm#a33c1798b23faf8af6faad1acfeda368a", null ],
     [ "Padding", "d5/da5/structez_object_flags_1_1_bits.htm#ab792ae1a744f56af7d0cd6794a18921a", null ],
+    [ "ParentChangesNotifications", "d5/da5/structez_object_flags_1_1_bits.htm#a61b0a1e98ad57e6422ad458bfc75dc5d", null ],
     [ "SimulationStarted", "d5/da5/structez_object_flags_1_1_bits.htm#a676563b48e2943f7274a6c0a547ece83", null ],
     [ "SimulationStarting", "d5/da5/structez_object_flags_1_1_bits.htm#ab68a04c04ff70f3144f5d27fd61161da", null ],
     [ "StaticTransformChangesNotifications", "d5/da5/structez_object_flags_1_1_bits.htm#a74a1cc1141e88d2aca4ce35f99edce0d", null ],

@@ -6,7 +6,7 @@ var classez_type_script_transpiler =
     [ "SetModifyTsBeforeTranspilationCallback", "d6/d09/classez_type_script_transpiler.htm#a0fcd887224063537954e4bc95918beb9", null ],
     [ "SetOutputFolder", "d6/d09/classez_type_script_transpiler.htm#a579094135bed5587efc09bcce7249b30", null ],
     [ "StartLoadTranspiler", "d6/d09/classez_type_script_transpiler.htm#adca1b903d2474ce7c61084679482e95d", null ],
-    [ "TranspileFile", "d6/d09/classez_type_script_transpiler.htm#a887b489d4e976325737fa0a68b3f5e24", null ],
-    [ "TranspileFileAndStoreJS", "d6/d09/classez_type_script_transpiler.htm#a4c59bdbc32adcc96d166afe753f01c22", null ],
-    [ "TranspileString", "d6/d09/classez_type_script_transpiler.htm#aa8e52e52bd1391d6439d15e2ef2cd9ff", null ]
+    [ "TranspileFile", "d6/d09/classez_type_script_transpiler.htm#abd36a75e6a6a0d714812e24bc1f920c4", null ],
+    [ "TranspileFileAndStoreJS", "d6/d09/classez_type_script_transpiler.htm#a728f7926f0feebc466dcf5514bb59f73", null ],
+    [ "TranspileString", "d6/d09/classez_type_script_transpiler.htm#a059bc1a96260123ba564e3c9f9a9e26a", null ]
 ];

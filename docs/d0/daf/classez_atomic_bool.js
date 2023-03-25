@@ -8,5 +8,5 @@ var classez_atomic_bool =
     [ "operator=", "d0/daf/classez_atomic_bool.htm#af1ad80eccede19a0bcef7c87a992c70e", null ],
     [ "operator=", "d0/daf/classez_atomic_bool.htm#a66d1f16b8d665b558a49b958b05d9264", null ],
     [ "Set", "d0/daf/classez_atomic_bool.htm#a16dcd9155b0692641b9d860e50f8e596", null ],
-    [ "TestAndSet", "d0/daf/classez_atomic_bool.htm#abe27a39153de10ca03064a47f2a65618", null ]
+    [ "TestAndSet", "d0/daf/classez_atomic_bool.htm#af240caa6cb3253db02df830e1e0d526d", null ]
 ];

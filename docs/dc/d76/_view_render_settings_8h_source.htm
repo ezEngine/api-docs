@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 22.11</span>
+   &#160;<span id="projectnumber">Release 23.04</span>
    </div>
   </td>
  </tr>
@@ -129,7 +129,7 @@ $(document).ready(function(){initNavTree('dc/d76/_view_render_settings_8h_source
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="../../d8/d90/classez_camera.htm">ezCamera</a> m_Camera;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="../../db/d36/structez_engine_view_config.htm">ezEngineViewConfig</a>* m_pLinkedViewConfig; <span class="comment">// used to store which other view config this is linked to, for resetting values when switching views</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordtype">void</span> ApplyPerspectiveSetting(<span class="keywordtype">float</span> fov = 0.0f, <span class="keywordtype">float</span> nearPlane = 0.1f, <span class="keywordtype">float</span> farPlane = 1000.0f);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordtype">void</span> ApplyPerspectiveSetting(<span class="keywordtype">float</span> fFov = 0.0f, <span class="keywordtype">float</span> fNearPlane = 0.1f, <span class="keywordtype">float</span> fFarPlane = 1000.0f);</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;};</div>
 <div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="../../dc/df6/structez_engine_view_light_settings_event.htm">   45</a></span>&#160;<span class="keyword">struct </span>EZ_EDITORENGINEPROCESSFRAMEWORK_DLL <a class="code" href="../../dc/df6/structez_engine_view_light_settings_event.htm">ezEngineViewLightSettingsEvent</a></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
@@ -159,31 +159,31 @@ $(document).ready(function(){initNavTree('dc/d76/_view_render_settings_8h_source
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  ~<a class="code" href="../../dd/d30/classez_engine_view_light_settings.htm">ezEngineViewLightSettings</a>();</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordtype">bool</span> GetSkyBox() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordtype">void</span> SetSkyBox(<span class="keywordtype">bool</span> val);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordtype">void</span> SetSkyBox(<span class="keywordtype">bool</span> bVal);</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordtype">bool</span> GetSkyLight() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordtype">void</span> SetSkyLight(<span class="keywordtype">bool</span> val);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordtype">void</span> SetSkyLight(<span class="keywordtype">bool</span> bVal);</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* GetSkyLightCubeMap() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keywordtype">void</span> SetSkyLightCubeMap(<span class="keyword">const</span> <span class="keywordtype">char</span>* val);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keywordtype">void</span> SetSkyLightCubeMap(<span class="keyword">const</span> <span class="keywordtype">char</span>* szVal);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordtype">float</span> GetSkyLightIntensity() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keywordtype">void</span> SetSkyLightIntensity(<span class="keywordtype">float</span> val);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keywordtype">void</span> SetSkyLightIntensity(<span class="keywordtype">float</span> fVal);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keywordtype">bool</span> GetDirectionalLight() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordtype">void</span> SetDirectionalLight(<span class="keywordtype">bool</span> val);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordtype">void</span> SetDirectionalLight(<span class="keywordtype">bool</span> bVal);</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> GetDirectionalLightAngle() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keywordtype">void</span> SetDirectionalLightAngle(<a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> val);</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keywordtype">bool</span> GetDirectionalLightShadows() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keywordtype">void</span> SetDirectionalLightShadows(<span class="keywordtype">bool</span> val);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keywordtype">void</span> SetDirectionalLightShadows(<span class="keywordtype">bool</span> bVal);</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keywordtype">float</span> GetDirectionalLightIntensity() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keywordtype">void</span> SetDirectionalLightIntensity(<span class="keywordtype">float</span> val);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keywordtype">void</span> SetDirectionalLightIntensity(<span class="keywordtype">float</span> fVal);</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <span class="keywordtype">bool</span> GetFog() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="keywordtype">void</span> SetFog(<span class="keywordtype">bool</span> val);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="keywordtype">void</span> SetFog(<span class="keywordtype">bool</span> bVal);</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keyword">mutable</span> <a class="code" href="../../d0/daf/classez_event.htm">ezEvent&lt;const ezEngineViewLightSettingsEvent&amp;&gt;</a> m_EngineViewLightSettingsEvents;</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
@@ -233,7 +233,7 @@ $(document).ready(function(){initNavTree('dc/d76/_view_render_settings_8h_source
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_898824d97bbfb864e5ee6bfb2857fc31.htm">Editor</a></li><li class="navelem"><a class="el" href="../../dir_58cd665830f691b636779262d22385da.htm">EditorEngineProcessFramework</a></li><li class="navelem"><a class="el" href="../../dir_2191880c6b569b9c9b9d9bd637a2d0d3.htm">EngineProcess</a></li><li class="navelem"><b>ViewRenderSettings.h</b></li>
-    <li class="footer">Generated on Fri Nov 18 2022 14:47:53 for ezEngine by
+    <li class="footer">Generated on Sat Mar 25 2023 19:21:50 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

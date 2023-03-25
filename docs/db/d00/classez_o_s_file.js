@@ -9,11 +9,11 @@ var classez_o_s_file =
     [ "GetFileData", "db/d00/classez_o_s_file.htm#a433c62f8977999dc3c4e861197aa855c", null ],
     [ "GetFilePosition", "db/d00/classez_o_s_file.htm#ad89e424570a089a6df39e461f51649fb", null ],
     [ "GetFileSize", "db/d00/classez_o_s_file.htm#a0f794154671dbff752fe27f3dfacec00", null ],
-    [ "GetOpenFileName", "db/d00/classez_o_s_file.htm#abbb997314773a823409843002f4a4d8a", null ],
+    [ "GetOpenFileName", "db/d00/classez_o_s_file.htm#a6432bf88e9491d9de094ed311f947019", null ],
     [ "IsOpen", "db/d00/classez_o_s_file.htm#a72f69dc8c12416b39857a088ddc62763", null ],
-    [ "Open", "db/d00/classez_o_s_file.htm#aaa4fde1d1b9b7ba7e4708624e450061b", null ],
+    [ "Open", "db/d00/classez_o_s_file.htm#a008a5a9019e619cbb0fceb335a6c5694", null ],
     [ "Read", "db/d00/classez_o_s_file.htm#a2ee1509a51f0f0dcb79e3bc22db4c9b0", null ],
-    [ "ReadAll", "db/d00/classez_o_s_file.htm#ad70d4eb80cd6149ad286486e222ac2c7", null ],
-    [ "SetFilePosition", "db/d00/classez_o_s_file.htm#a51b7b3445ec2fc28717ccdd5d91ae612", null ],
+    [ "ReadAll", "db/d00/classez_o_s_file.htm#a789731f3362a649777337c7427622480", null ],
+    [ "SetFilePosition", "db/d00/classez_o_s_file.htm#acb51802373939773e5bb2678cef83ca0", null ],
     [ "Write", "db/d00/classez_o_s_file.htm#acf50ffa124f6192907d2af7d3699130a", null ]
 ];

@@ -5,6 +5,7 @@ var classez_game_application =
     [ "~ezGameApplication", "db/db6/classez_game_application.htm#a2e9a3d775b496a7a96428d2f3d7284f9", null ],
     [ "Deinit_ShutdownGraphicsDevice", "db/db6/classez_game_application.htm#af906e5c0d635087afb53608ad6620d85", null ],
     [ "FindProjectDirectory", "db/db6/classez_game_application.htm#ac6e9da92ed7b0a70a041ab9c09f94326", null ],
+    [ "GetAppProjectPath", "db/db6/classez_game_application.htm#a4312a7adf24a2e5ca1a0d48b5b01a560", null ],
     [ "Init_ConfigureAssetManagement", "db/db6/classez_game_application.htm#a7d2ba6977f72e70c82673f81a04c7a68", null ],
     [ "Init_ConfigureInput", "db/db6/classez_game_application.htm#a49c32b51548b5a3548c162266828191e", null ],
     [ "Init_LoadRequiredPlugins", "db/db6/classez_game_application.htm#a034e73cdf017cf8f26ad6662ca5eeab0", null ],

@@ -9,8 +9,8 @@ var classez_tree_node =
     [ "GetParent", "d8/d7f/classez_tree_node.htm#adc1bb2b9674ef7cc6ced2896e87082b0", null ],
     [ "GetParent", "d8/d7f/classez_tree_node.htm#af25ff1384ed796d987718e3380f93d89", null ],
     [ "GetParentIndex", "d8/d7f/classez_tree_node.htm#a856b27705a42a057d8017cde0b5f8427", null ],
-    [ "InsertChild", "d8/d7f/classez_tree_node.htm#afa76033e318c6be926d67661c02dfe68", null ],
-    [ "RemoveChild", "d8/d7f/classez_tree_node.htm#ac22189a26300fc41d903cfed69b1599b", null ],
+    [ "InsertChild", "d8/d7f/classez_tree_node.htm#afc637bb6056ac30ccabc1a7ffa92b256", null ],
+    [ "RemoveChild", "d8/d7f/classez_tree_node.htm#aa1f34b79cd7a34a182d5a5e2212022c6", null ],
     [ "m_Data", "d8/d7f/classez_tree_node.htm#ae93776ef5b8d89f7d6d9bbffcaf051c7", null ],
     [ "m_Guid", "d8/d7f/classez_tree_node.htm#afc55025bba089c4f70534ad64aa57ca5", null ]
 ];

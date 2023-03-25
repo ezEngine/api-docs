@@ -1,6 +1,6 @@
 var classez_qt_curve_edit_dlg =
 [
-    [ "ezQtCurveEditDlg", "d7/dd9/classez_qt_curve_edit_dlg.htm#a24c78e7d0de48a2dabd7315e8b54593a", null ],
+    [ "ezQtCurveEditDlg", "d7/dd9/classez_qt_curve_edit_dlg.htm#a850554e0d94edd65d091c15bfc995768", null ],
     [ "~ezQtCurveEditDlg", "d7/dd9/classez_qt_curve_edit_dlg.htm#ace27ad2dc1841fcbe3d13650cd9cdc0f", null ],
     [ "accept", "d7/dd9/classez_qt_curve_edit_dlg.htm#a82c677d31a432f4093a7c0321d4354df", null ],
     [ "cancel", "d7/dd9/classez_qt_curve_edit_dlg.htm#adcb1e29373412da94c685eecb6cda3d8", null ],

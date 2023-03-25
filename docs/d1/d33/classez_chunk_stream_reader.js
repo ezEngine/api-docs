@@ -5,7 +5,7 @@ var classez_chunk_stream_reader =
       [ "SkipToEnd", "d1/d33/classez_chunk_stream_reader.htm#acecac5fb6c4084eb5141c6db8b1ff1e7a83f3b6b9134037da512928be2f543e40", null ],
       [ "JustClose", "d1/d33/classez_chunk_stream_reader.htm#acecac5fb6c4084eb5141c6db8b1ff1e7a80e5f30cc3cfd4028d844e71364853c0", null ]
     ] ],
-    [ "ezChunkStreamReader", "d1/d33/classez_chunk_stream_reader.htm#acdeee496c62acc8d5563f59e54299889", null ],
+    [ "ezChunkStreamReader", "d1/d33/classez_chunk_stream_reader.htm#ade6690666cf3063aaddd3ffaf24fabdd", null ],
     [ "BeginStream", "d1/d33/classez_chunk_stream_reader.htm#aa7015a941e7a3d274da8215e6a874f48", null ],
     [ "EndStream", "d1/d33/classez_chunk_stream_reader.htm#a5cc5f6f11c3f94413f314a4c7e4f13c8", null ],
     [ "GetCurrentChunk", "d1/d33/classez_chunk_stream_reader.htm#a688ba46243572f689596aa5019340c4e", null ],

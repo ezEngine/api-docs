@@ -23,5 +23,5 @@ var classez_qt_delta_transform_dlg =
       [ "LocalSelection", "d4/df9/classez_qt_delta_transform_dlg.htm#a155425a44c6a5b5ce0f97c1dded8b29baf313d83a2e4bfb6f1310340a625d7052", null ],
       [ "LocalEach", "d4/df9/classez_qt_delta_transform_dlg.htm#a155425a44c6a5b5ce0f97c1dded8b29baec4f90d8e07b6347bdc6b36e5013a755", null ]
     ] ],
-    [ "ezQtDeltaTransformDlg", "d4/df9/classez_qt_delta_transform_dlg.htm#acf9f3d07e39ea8db3f977fe5d7f6cdeb", null ]
+    [ "ezQtDeltaTransformDlg", "d4/df9/classez_qt_delta_transform_dlg.htm#a07383c2611da6fd0a739ad59129bfa89", null ]
 ];

@@ -1,9 +1,9 @@
 var structez_plugin_bundle =
 [
     [ "IsStateEqual", "dc/d07/structez_plugin_bundle.htm#a67fdb29d315713af445f8c01e1f93824", null ],
-    [ "ReadBundleFromDDL", "dc/d07/structez_plugin_bundle.htm#ab4bd7edee149d31f9ea91a68834eb7e6", null ],
-    [ "ReadStateFromDDL", "dc/d07/structez_plugin_bundle.htm#a5aed437b91f9c39cdbd61933cb059be6", null ],
-    [ "WriteStateToDDL", "dc/d07/structez_plugin_bundle.htm#a6a126b0b54ec4565863d1fa89a821693", null ],
+    [ "ReadBundleFromDDL", "dc/d07/structez_plugin_bundle.htm#a8d7e1aa55d352452d91ef75b2cf2b4c4", null ],
+    [ "ReadStateFromDDL", "dc/d07/structez_plugin_bundle.htm#ade424d8300d96805da8e5e76db4302d8", null ],
+    [ "WriteStateToDDL", "dc/d07/structez_plugin_bundle.htm#a9f903e8e5027ca54a03be4833bbcf16f", null ],
     [ "m_bLoadCopy", "dc/d07/structez_plugin_bundle.htm#a8fa77c1f235ab80db93c140ae2ca8cc5", null ],
     [ "m_bMandatory", "dc/d07/structez_plugin_bundle.htm#a4c798feba4c7de45b5775870e276df1c", null ],
     [ "m_bMissing", "dc/d07/structez_plugin_bundle.htm#a3b4f5010fffc839d674382566be83680", null ],

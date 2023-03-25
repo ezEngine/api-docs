@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 22.11</span>
+   &#160;<span id="projectnumber">Release 23.04</span>
    </div>
   </td>
  </tr>
@@ -152,7 +152,7 @@ $(document).ready(function(){initNavTree('df/ddd/_stack_tracer__win_8h_source.ht
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    StackTracerImplementation()</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      <a class="code" href="../../dc/d4d/classez_memory_utils.htm#aed226ed6447ce30053c0b5b990b978ff">ezMemoryUtils::ZeroFill</a>(<span class="keyword">this</span>, 1);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a0df3a6403e0c7ab2a65997e1e6f6bc14">ezMemoryUtils::ZeroFill</a>(<span class="keyword">this</span>, 1);</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      kernel32Dll = LoadLibraryW(L<span class="stringliteral">&quot;kernel32.dll&quot;</span>);</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      EZ_ASSERT_DEV(kernel32Dll != <span class="keyword">nullptr</span>, <span class="stringliteral">&quot;StackTracer could not load kernel32.dll&quot;</span>);</div>
@@ -249,7 +249,7 @@ $(document).ready(function(){initNavTree('df/ddd/_stack_tracer__win_8h_source.ht
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    }</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    IMAGEHLP_MODULEW64 moduleInfo;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <a class="code" href="../../dc/d4d/classez_memory_utils.htm#aed226ed6447ce30053c0b5b990b978ff">ezMemoryUtils::ZeroFill</a>(&amp;moduleInfo, 1);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a0df3a6403e0c7ab2a65997e1e6f6bc14">ezMemoryUtils::ZeroFill</a>(&amp;moduleInfo, 1);</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    moduleInfo.SizeOfStruct = <span class="keyword">sizeof</span>(IMAGEHLP_MODULEW64);</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordflow">if</span> (!(*s_pImplementation-&gt;getModuleInfo)(currentProcess, moduleAddress, &amp;moduleInfo))</div>
@@ -270,7 +270,7 @@ $(document).ready(function(){initNavTree('df/ddd/_stack_tracer__win_8h_source.ht
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;}</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="comment">// static</span></div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;ezUInt32 <a class="code" href="../../d3/d42/classez_stack_tracer.htm#a1e72556f123761463cdf6d0297a746a8">ezStackTracer::GetStackTrace</a>(<a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;void*&gt;</a>&amp; trace, <span class="keywordtype">void</span>* pContext)</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;ezUInt32 <a class="code" href="../../d3/d42/classez_stack_tracer.htm#aee255882e5055806075bc3b59b01048c">ezStackTracer::GetStackTrace</a>(<a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;void*&gt;</a>&amp; ref_trace, <span class="keywordtype">void</span>* pContext)</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;{</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  Initialize();</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
@@ -323,12 +323,12 @@ $(document).ready(function(){initNavTree('df/ddd/_stack_tracer__win_8h_source.ht
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    frame.AddrStack.Offset = context.Esp;</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    machine_type = IMAGE_FILE_MACHINE_I386;</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="keywordflow">for</span> (ezInt32 i = 0; i &lt; (ezInt32)trace.<a class="code" href="../../dc/dae/classez_array_ptr.htm#a9f222695f57e4cf200e07135dbbd7edd">GetCount</a>(); i++)</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="keywordflow">for</span> (ezInt32 i = 0; i &lt; (ezInt32)ref_trace.<a class="code" href="../../dc/dae/classez_array_ptr.htm#a9f222695f57e4cf200e07135dbbd7edd">GetCount</a>(); i++)</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    {</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;      <span class="keywordflow">if</span> (s_pImplementation-&gt;stackWalk(machine_type, GetCurrentProcess(), GetCurrentThread(), &amp;frame, &amp;context, NULL,</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;            s_pImplementation-&gt;getFunctionTableAccess, s_pImplementation-&gt;getModuleBase, NULL))</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;      {</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        trace[i] = <span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span>(frame.AddrPC.Offset);</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        ref_trace[i] = <span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span>(frame.AddrPC.Offset);</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;      }</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;      <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;      {</div>
@@ -340,8 +340,8 @@ $(document).ready(function(){initNavTree('df/ddd/_stack_tracer__win_8h_source.ht
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (s_pImplementation-&gt;captureStackBackTrace != <span class="keyword">nullptr</span>)</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;  {</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="keyword">const</span> ezUInt32 uiSkip = 1;</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <span class="keyword">const</span> ezUInt32 uiMaxNumTrace = <a class="code" href="../../db/d78/namespaceez_math.htm#ad8009b4da9cb427658d71e30576f209e">ezMath::Min</a>(62U, trace.<a class="code" href="../../dc/dae/classez_array_ptr.htm#a9f222695f57e4cf200e07135dbbd7edd">GetCount</a>());</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    ezInt32 iNumTraces = (*s_pImplementation-&gt;captureStackBackTrace)(uiSkip, uiMaxNumTrace, trace.<a class="code" href="../../dc/dae/classez_array_ptr.htm#aba4e7585190f337c6428f2fe25828b8a">GetPtr</a>(), <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <span class="keyword">const</span> ezUInt32 uiMaxNumTrace = <a class="code" href="../../db/d78/namespaceez_math.htm#ad8009b4da9cb427658d71e30576f209e">ezMath::Min</a>(62U, ref_trace.<a class="code" href="../../dc/dae/classez_array_ptr.htm#a9f222695f57e4cf200e07135dbbd7edd">GetCount</a>());</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    ezInt32 iNumTraces = (*s_pImplementation-&gt;captureStackBackTrace)(uiSkip, uiMaxNumTrace, ref_trace.<a class="code" href="../../dc/dae/classez_array_ptr.htm#aba4e7585190f337c6428f2fe25828b8a">GetPtr</a>(), <span class="keyword">nullptr</span>);</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160; </div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <span class="comment">// skip the last three stack-frames since they are useless</span></div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../db/d78/namespaceez_math.htm#a6f7ee19d0f8e81ff6ae5f394075e3a56">ezMath::Max</a>(iNumTraces - 3, 0);</div>
@@ -367,7 +367,7 @@ $(document).ready(function(){initNavTree('df/ddd/_stack_tracer__win_8h_source.ht
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;      DWORD64 pSymbolAddress = <span class="keyword">reinterpret_cast&lt;</span>UINT_PTR<span class="keyword">&gt;</span>(trace[i]);</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160; </div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;      _SYMBOL_INFOW&amp; symbolInfo = *(_SYMBOL_INFOW*)buffer;</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;      <a class="code" href="../../dc/d4d/classez_memory_utils.htm#aed226ed6447ce30053c0b5b990b978ff">ezMemoryUtils::ZeroFill</a>(&amp;symbolInfo, 1);</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;      <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a0df3a6403e0c7ab2a65997e1e6f6bc14">ezMemoryUtils::ZeroFill</a>(&amp;symbolInfo, 1);</div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;      symbolInfo.SizeOfStruct = <span class="keyword">sizeof</span>(_SYMBOL_INFOW);</div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;      symbolInfo.MaxNameLen = (EZ_ARRAY_SIZE(buffer) - symbolInfo.SizeOfStruct) / <span class="keyword">sizeof</span>(WCHAR);</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160; </div>
@@ -399,8 +399,8 @@ $(document).ready(function(){initNavTree('df/ddd/_stack_tracer__win_8h_source.ht
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_log_htm_ae5b1ee0c969668bdac113be5f4b15fa3"><div class="ttname"><a href="../../dc/d9e/classez_log.htm#ae5b1ee0c969668bdac113be5f4b15fa3">ezLog::Error</a></div><div class="ttdeci">static void Error(ezLogInterface *pInterface, const ezFormatString &amp;string)</div><div class="ttdoc">An error that needs to be fixed as soon as possible.</div><div class="ttdef"><b>Definition:</b> Log.cpp:362</div></div>
 <div class="ttc" id="aclassez_array_ptr_htm_aba4e7585190f337c6428f2fe25828b8a"><div class="ttname"><a href="../../dc/dae/classez_array_ptr.htm#aba4e7585190f337c6428f2fe25828b8a">ezArrayPtr::GetPtr</a></div><div class="ttdeci">EZ_ALWAYS_INLINE PointerType GetPtr() const</div><div class="ttdoc">Returns the pointer to the array.</div><div class="ttdef"><b>Definition:</b> ArrayPtr.h:118</div></div>
+<div class="ttc" id="aclassez_stack_tracer_htm_aee255882e5055806075bc3b59b01048c"><div class="ttname"><a href="../../d3/d42/classez_stack_tracer.htm#aee255882e5055806075bc3b59b01048c">ezStackTracer::GetStackTrace</a></div><div class="ttdeci">static ezUInt32 GetStackTrace(ezArrayPtr&lt; void * &gt; &amp;ref_trace, void *pContext=nullptr)</div><div class="ttdoc">Captures the current stack trace.</div><div class="ttdef"><b>Definition:</b> StackTracer_android.h:37</div></div>
 <div class="ttc" id="anamespaceez_math_htm_a70fa9a79fb67ea653462d2cdbbfd675d"><div class="ttname"><a href="../../db/d78/namespaceez_math.htm#a70fa9a79fb67ea653462d2cdbbfd675d">ezMath::e</a></div><div class="ttdeci">constexpr TYPE e()</div><div class="ttdoc">Returns the natural constant e.</div><div class="ttdef"><b>Definition:</b> Constants_inl.h:24</div></div>
-<div class="ttc" id="aclassez_stack_tracer_htm_a1e72556f123761463cdf6d0297a746a8"><div class="ttname"><a href="../../d3/d42/classez_stack_tracer.htm#a1e72556f123761463cdf6d0297a746a8">ezStackTracer::GetStackTrace</a></div><div class="ttdeci">static ezUInt32 GetStackTrace(ezArrayPtr&lt; void * &gt; &amp;trace, void *pContext=nullptr)</div><div class="ttdoc">Captures the current stack trace.</div><div class="ttdef"><b>Definition:</b> StackTracer_android.h:37</div></div>
 <div class="ttc" id="astructez_plugin_event_htm_a82391f05eef90af4c7196a447983fc26a73f5344c0850f12d7d844c53fa445a55"><div class="ttname"><a href="../../d4/d72/structez_plugin_event.htm#a82391f05eef90af4c7196a447983fc26a73f5344c0850f12d7d844c53fa445a55">ezPluginEvent::BeforeUnloading</a></div><div class="ttdeci">@ BeforeUnloading</div><div class="ttdoc">Sent before a plugin is going to be unloaded.</div><div class="ttdef"><b>Definition:</b> Plugin.h:17</div></div>
 <div class="ttc" id="aclassez_array_ptr_htm"><div class="ttname"><a href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt; void * &gt;</a></div></div>
 <div class="ttc" id="anamespaceez_math_htm_a6f7ee19d0f8e81ff6ae5f394075e3a56"><div class="ttname"><a href="../../db/d78/namespaceez_math.htm#a6f7ee19d0f8e81ff6ae5f394075e3a56">ezMath::Max</a></div><div class="ttdeci">constexpr EZ_ALWAYS_INLINE T Max(T f1, T f2)</div><div class="ttdoc">Returns the greater value, f1 or f2.</div><div class="ttdef"><b>Definition:</b> Math_inl.h:38</div></div>
@@ -408,14 +408,14 @@ $(document).ready(function(){initNavTree('df/ddd/_stack_tracer__win_8h_source.ht
 <div class="ttc" id="aclassez_log_htm_a8d2e6d4f705b4a0cd78abce74d97f84f"><div class="ttname"><a href="../../dc/d9e/classez_log.htm#a8d2e6d4f705b4a0cd78abce74d97f84f">ezLog::Print</a></div><div class="ttdeci">static void Print(const char *szText)</div><div class="ttdoc">Calls low-level OS functionality to print a string to the typical outputs, e.g. printf and OutputDebu...</div><div class="ttdef"><b>Definition:</b> Log.cpp:235</div></div>
 <div class="ttc" id="aclassez_o_s_file_htm_a0f8f96ff0fa85cf30484262995c0db79"><div class="ttname"><a href="../../db/d00/classez_o_s_file.htm#a0f8f96ff0fa85cf30484262995c0db79">ezOSFile::GetApplicationDirectory</a></div><div class="ttdeci">static const char * GetApplicationDirectory()</div><div class="ttdoc">Returns the path in which the applications binary file is located.</div><div class="ttdef"><b>Definition:</b> OSFile_win.h:522</div></div>
 <div class="ttc" id="aclassez_array_ptr_htm_a9f222695f57e4cf200e07135dbbd7edd"><div class="ttname"><a href="../../dc/dae/classez_array_ptr.htm#a9f222695f57e4cf200e07135dbbd7edd">ezArrayPtr::GetCount</a></div><div class="ttdeci">EZ_ALWAYS_INLINE ezUInt32 GetCount() const</div><div class="ttdoc">Returns the number of elements in the array.</div><div class="ttdef"><b>Definition:</b> ArrayPtr.h:142</div></div>
+<div class="ttc" id="aclassez_memory_utils_htm_a0df3a6403e0c7ab2a65997e1e6f6bc14"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm#a0df3a6403e0c7ab2a65997e1e6f6bc14">ezMemoryUtils::ZeroFill</a></div><div class="ttdeci">static void ZeroFill(T *pDestination, size_t uiCount=1)</div><div class="ttdoc">Zeros every byte in the provided memory buffer.</div></div>
 <div class="ttc" id="anamespaceez_math_htm_ad8009b4da9cb427658d71e30576f209e"><div class="ttname"><a href="../../db/d78/namespaceez_math.htm#ad8009b4da9cb427658d71e30576f209e">ezMath::Min</a></div><div class="ttdeci">constexpr EZ_ALWAYS_INLINE T Min(T f1, T f2)</div><div class="ttdoc">Returns the smaller value, f1 or f2.</div><div class="ttdef"><b>Definition:</b> Math_inl.h:26</div></div>
 <div class="ttc" id="aclassez_stack_tracer_htm_a198faaf655ef637ce094c0dc3d282def"><div class="ttname"><a href="../../d3/d42/classez_stack_tracer.htm#a198faaf655ef637ce094c0dc3d282def">ezStackTracer::ResolveStackTrace</a></div><div class="ttdeci">static void ResolveStackTrace(const ezArrayPtr&lt; void * &gt; &amp;trace, PrintFunc printFunc)</div><div class="ttdoc">Print a stack trace.</div><div class="ttdef"><b>Definition:</b> StackTracer_android.h:46</div></div>
-<div class="ttc" id="aclassez_memory_utils_htm_aed226ed6447ce30053c0b5b990b978ff"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm#aed226ed6447ce30053c0b5b990b978ff">ezMemoryUtils::ZeroFill</a></div><div class="ttdeci">static void ZeroFill(T *pDestination, size_t uiCount)</div><div class="ttdoc">Zeros every byte in the provided memory buffer.</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_755fdcfb6b850fe41cc906fd4ef666a8.htm">System</a></li><li class="navelem"><a class="el" href="../../dir_8580235f0f8f387a258dcf4b47a3ab70.htm">Implementation</a></li><li class="navelem"><a class="el" href="../../dir_10157c49fda0276b550836e7c5b9a31b.htm">Win</a></li><li class="navelem"><b>StackTracer_win.h</b></li>
-    <li class="footer">Generated on Fri Nov 18 2022 14:48:00 for ezEngine by
+    <li class="footer">Generated on Sat Mar 25 2023 19:21:57 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

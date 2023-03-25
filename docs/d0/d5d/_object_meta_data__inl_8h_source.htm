@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 22.11</span>
+   &#160;<span id="projectnumber">Release 23.04</span>
    </div>
   </td>
  </tr>
@@ -101,32 +101,32 @@ $(document).ready(function(){initNavTree('d0/d5d/_object_meta_data__inl_8h_sourc
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KEY, <span class="keyword">typename</span> VALUE&gt;</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="../../d3/d18/classez_object_meta_data.htm#a3e71102d7c41200370d3aa17791a02d0">   15</a></span>&#160;<span class="keyword">const</span> VALUE* <a class="code" href="../../d3/d18/classez_object_meta_data.htm#a3e71102d7c41200370d3aa17791a02d0">ezObjectMetaData&lt;KEY, VALUE&gt;::BeginReadMetaData</a>(<span class="keyword">const</span> KEY ObjectKey)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="../../d3/d18/classez_object_meta_data.htm#a520131c895b990b0669b6e7040c2b2a4">   15</a></span>&#160;<span class="keyword">const</span> VALUE* <a class="code" href="../../d3/d18/classez_object_meta_data.htm#a520131c895b990b0669b6e7040c2b2a4">ezObjectMetaData&lt;KEY, VALUE&gt;::BeginReadMetaData</a>(<span class="keyword">const</span> KEY objectKey)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  m_pMetaStorage-&gt;m_Mutex.Lock();</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  EZ_ASSERT_DEV(m_pMetaStorage-&gt;m_AccessMode == Storage::AccessMode::Nothing, <span class="stringliteral">&quot;Already accessing some data&quot;</span>);</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  m_pMetaStorage-&gt;m_AccessMode = Storage::AccessMode::Read;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  m_pMetaStorage-&gt;m_AcessingKey = ObjectKey;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  m_pMetaStorage-&gt;m_AcessingKey = objectKey;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keyword">const</span> VALUE* pRes = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordflow">if</span> (m_pMetaStorage-&gt;m_MetaData.TryGetValue(ObjectKey, pRes)) <span class="comment">// TryGetValue is not const correct with the second parameter</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordflow">if</span> (m_pMetaStorage-&gt;m_MetaData.TryGetValue(objectKey, pRes)) <span class="comment">// TryGetValue is not const correct with the second parameter</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">return</span> pRes;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keywordflow">return</span> &amp;m_DefaultValue;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KEY, <span class="keyword">typename</span> VALUE&gt;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d3/d18/classez_object_meta_data.htm">ezObjectMetaData&lt;KEY, VALUE&gt;::ClearMetaData</a>(<span class="keyword">const</span> KEY ObjectKey)</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d3/d18/classez_object_meta_data.htm">ezObjectMetaData&lt;KEY, VALUE&gt;::ClearMetaData</a>(<span class="keyword">const</span> KEY objectKey)</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  EZ_LOCK(m_pMetaStorage-&gt;m_Mutex);</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  EZ_ASSERT_DEV(m_pMetaStorage-&gt;m_AccessMode == Storage::AccessMode::Nothing, <span class="stringliteral">&quot;Already accessing some data&quot;</span>);</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordflow">if</span> (HasMetaData(ObjectKey))</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordflow">if</span> (HasMetaData(objectKey))</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    m_pMetaStorage-&gt;m_MetaData.Remove(ObjectKey);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    m_pMetaStorage-&gt;m_MetaData.Remove(objectKey);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    EventData e;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    e.m_ObjectKey = ObjectKey;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    e.m_ObjectKey = objectKey;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    e.m_pValue = &amp;m_DefaultValue;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    m_pMetaStorage-&gt;m_DataModifiedEvent.Broadcast(e);</div>
@@ -134,22 +134,22 @@ $(document).ready(function(){initNavTree('d0/d5d/_object_meta_data__inl_8h_sourc
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KEY, <span class="keyword">typename</span> VALUE&gt;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../d3/d18/classez_object_meta_data.htm">ezObjectMetaData&lt;KEY, VALUE&gt;::HasMetaData</a>(<span class="keyword">const</span> KEY ObjectKey)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../d3/d18/classez_object_meta_data.htm">ezObjectMetaData&lt;KEY, VALUE&gt;::HasMetaData</a>(<span class="keyword">const</span> KEY objectKey)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  EZ_LOCK(m_pMetaStorage-&gt;m_Mutex);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keyword">const</span> VALUE* pValue = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordflow">return</span> m_pMetaStorage-&gt;m_MetaData.TryGetValue(ObjectKey, pValue);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordflow">return</span> m_pMetaStorage-&gt;m_MetaData.TryGetValue(objectKey, pValue);</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KEY, <span class="keyword">typename</span> VALUE&gt;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;VALUE* <a class="code" href="../../d3/d18/classez_object_meta_data.htm">ezObjectMetaData&lt;KEY, VALUE&gt;::BeginModifyMetaData</a>(<span class="keyword">const</span> KEY ObjectKey)</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;VALUE* <a class="code" href="../../d3/d18/classez_object_meta_data.htm">ezObjectMetaData&lt;KEY, VALUE&gt;::BeginModifyMetaData</a>(<span class="keyword">const</span> KEY objectKey)</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  m_pMetaStorage-&gt;m_Mutex.Lock();</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  EZ_ASSERT_DEV(m_pMetaStorage-&gt;m_AccessMode == Storage::AccessMode::Nothing, <span class="stringliteral">&quot;Already accessing some data&quot;</span>);</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  m_pMetaStorage-&gt;m_AccessMode = Storage::AccessMode::Write;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  m_pMetaStorage-&gt;m_AcessingKey = ObjectKey;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  m_pMetaStorage-&gt;m_AcessingKey = objectKey;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordflow">return</span> &amp;m_pMetaStorage-&gt;m_MetaData[ObjectKey];</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordflow">return</span> &amp;m_pMetaStorage-&gt;m_MetaData[objectKey];</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KEY, <span class="keyword">typename</span> VALUE&gt;</div>
@@ -183,9 +183,9 @@ $(document).ready(function(){initNavTree('d0/d5d/_object_meta_data__inl_8h_sourc
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KEY, <span class="keyword">typename</span> VALUE&gt;</div>
-<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="../../d3/d18/classez_object_meta_data.htm#a5556bae7bc9d7bf6056ee7516dcdf64d">   97</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d3/d18/classez_object_meta_data.htm#a5556bae7bc9d7bf6056ee7516dcdf64d">ezObjectMetaData&lt;KEY, VALUE&gt;::AttachMetaDataToAbstractGraph</a>(<a class="code" href="../../d1/d39/classez_abstract_object_graph.htm">ezAbstractObjectGraph</a>&amp; graph)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="../../d3/d18/classez_object_meta_data.htm#ad146273dd8a58a275cc50675765fdbd3">   97</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d3/d18/classez_object_meta_data.htm#ad146273dd8a58a275cc50675765fdbd3">ezObjectMetaData&lt;KEY, VALUE&gt;::AttachMetaDataToAbstractGraph</a>(<a class="code" href="../../d1/d39/classez_abstract_object_graph.htm">ezAbstractObjectGraph</a>&amp; inout_graph)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keyword">auto</span>&amp; AllNodes = graph.GetAllNodes();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keyword">auto</span>&amp; AllNodes = inout_graph.GetAllNodes();</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  EZ_LOCK(m_pMetaStorage-&gt;m_Mutex);</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
@@ -290,12 +290,13 @@ $(document).ready(function(){initNavTree('d0/d5d/_object_meta_data__inl_8h_sourc
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aclassez_object_meta_data_htm_a520131c895b990b0669b6e7040c2b2a4"><div class="ttname"><a href="../../d3/d18/classez_object_meta_data.htm#a520131c895b990b0669b6e7040c2b2a4">ezObjectMetaData::BeginReadMetaData</a></div><div class="ttdeci">const VALUE * BeginReadMetaData(const KEY objectKey) const</div><div class="ttdoc">Will always return a non-null result. May be a default object.</div><div class="ttdef"><b>Definition:</b> ObjectMetaData_inl.h:15</div></div>
 <div class="ttc" id="aclassez_shared_ptr_htm"><div class="ttname"><a href="../../de/dc1/classez_shared_ptr.htm">ezSharedPtr</a></div><div class="ttdoc">A Shared ptr manages a shared object and destroys that object when no one references it anymore....</div><div class="ttdef"><b>Definition:</b> SharedPtr.h:9</div></div>
 <div class="ttc" id="aclassez_abstract_member_property_htm"><div class="ttname"><a href="../../da/d67/classez_abstract_member_property.htm">ezAbstractMemberProperty</a></div><div class="ttdoc">This is the base class for all properties that are members of a class. It provides more information a...</div><div class="ttdef"><b>Definition:</b> AbstractProperty.h:239</div></div>
-<div class="ttc" id="aclassez_object_meta_data_htm_a5556bae7bc9d7bf6056ee7516dcdf64d"><div class="ttname"><a href="../../d3/d18/classez_object_meta_data.htm#a5556bae7bc9d7bf6056ee7516dcdf64d">ezObjectMetaData::AttachMetaDataToAbstractGraph</a></div><div class="ttdeci">void AttachMetaDataToAbstractGraph(ezAbstractObjectGraph &amp;graph) const</div><div class="ttdoc">Uses reflection information from VALUE to store all properties that differ from the default value as ...</div><div class="ttdef"><b>Definition:</b> ObjectMetaData_inl.h:97</div></div>
 <div class="ttc" id="aclassez_array_base_htm_abc514bdf8b2de7b5b220ffdbd862e830"><div class="ttname"><a href="../../dc/d59/classez_array_base.htm#abc514bdf8b2de7b5b220ffdbd862e830">ezArrayBase&lt; T, ezDynamicArrayBase&lt; T &gt; &gt;::PushBack</a></div><div class="ttdeci">void PushBack(const T &amp;value)</div><div class="ttdoc">Pushes value at the end of the array.</div><div class="ttdef"><b>Definition:</b> ArrayBase_inl.h:327</div></div>
 <div class="ttc" id="anamespaceez_math_htm_a70fa9a79fb67ea653462d2cdbbfd675d"><div class="ttname"><a href="../../db/d78/namespaceez_math.htm#a70fa9a79fb67ea653462d2cdbbfd675d">ezMath::e</a></div><div class="ttdeci">constexpr TYPE e()</div><div class="ttdoc">Returns the natural constant e.</div><div class="ttdef"><b>Definition:</b> Constants_inl.h:24</div></div>
 <div class="ttc" id="aclassez_variant_htm_af2f7572448f55313284fd5a3b1495ef0"><div class="ttname"><a href="../../de/de6/classez_variant.htm#af2f7572448f55313284fd5a3b1495ef0">ezVariant::IsValid</a></div><div class="ttdeci">bool IsValid() const</div><div class="ttdoc">Returns whether this variant stores any other type than 'Invalid'.</div><div class="ttdef"><b>Definition:</b> Variant_inl.h:245</div></div>
+<div class="ttc" id="aclassez_object_meta_data_htm_ad146273dd8a58a275cc50675765fdbd3"><div class="ttname"><a href="../../d3/d18/classez_object_meta_data.htm#ad146273dd8a58a275cc50675765fdbd3">ezObjectMetaData::AttachMetaDataToAbstractGraph</a></div><div class="ttdeci">void AttachMetaDataToAbstractGraph(ezAbstractObjectGraph &amp;inout_graph) const</div><div class="ttdoc">Uses reflection information from VALUE to store all properties that differ from the default value as ...</div><div class="ttdef"><b>Definition:</b> ObjectMetaData_inl.h:97</div></div>
 <div class="ttc" id="aclassez_object_meta_data_htm_a1f5f991293773095442590d3ae7f88f0"><div class="ttname"><a href="../../d3/d18/classez_object_meta_data.htm#a1f5f991293773095442590d3ae7f88f0">ezObjectMetaData::RestoreMetaDataFromAbstractGraph</a></div><div class="ttdeci">void RestoreMetaDataFromAbstractGraph(const ezAbstractObjectGraph &amp;graph)</div><div class="ttdoc">Uses reflection information from VALUE to restore all meta data properties from the graph.</div><div class="ttdef"><b>Definition:</b> ObjectMetaData_inl.h:150</div></div>
 <div class="ttc" id="aclassez_object_meta_data_1_1_storage_htm"><div class="ttname"><a href="../../d0/dbf/classez_object_meta_data_1_1_storage.htm">ezObjectMetaData::Storage</a></div><div class="ttdef"><b>Definition:</b> ObjectMetaData.h:28</div></div>
 <div class="ttc" id="astructez_property_category_htm_a6900b9049e7887fa4b00d16d5eace8cfae8a16ea65b820b392e7480a87375f651"><div class="ttname"><a href="../../d5/d49/structez_property_category.htm#a6900b9049e7887fa4b00d16d5eace8cfae8a16ea65b820b392e7480a87375f651">ezPropertyCategory::Member</a></div><div class="ttdeci">@ Member</div><div class="ttdoc">The property is a 'member property', i.e. it represents some accessible value. Cast to ezAbstractMemb...</div><div class="ttdef"><b>Definition:</b> AbstractProperty.h:141</div></div>
@@ -305,13 +306,12 @@ $(document).ready(function(){initNavTree('d0/d5d/_object_meta_data__inl_8h_sourc
 <div class="ttc" id="aclassez_abstract_object_graph_htm"><div class="ttname"><a href="../../d1/d39/classez_abstract_object_graph.htm">ezAbstractObjectGraph</a></div><div class="ttdef"><b>Definition:</b> AbstractObjectGraph.h:120</div></div>
 <div class="ttc" id="aclassez_uuid_htm"><div class="ttname"><a href="../../da/d89/classez_uuid.htm">ezUuid</a></div><div class="ttdoc">This data type is the abstraction for 128-bit Uuid (also known as GUID) instances.</div><div class="ttdef"><b>Definition:</b> Uuid.h:10</div></div>
 <div class="ttc" id="aclassez_hybrid_array_htm"><div class="ttname"><a href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray</a></div><div class="ttdoc">A hybrid array uses in-place storage to handle the first few elements without any allocation....</div><div class="ttdef"><b>Definition:</b> HybridArray.h:11</div></div>
-<div class="ttc" id="aclassez_object_meta_data_htm_a3e71102d7c41200370d3aa17791a02d0"><div class="ttname"><a href="../../d3/d18/classez_object_meta_data.htm#a3e71102d7c41200370d3aa17791a02d0">ezObjectMetaData::BeginReadMetaData</a></div><div class="ttdeci">const VALUE * BeginReadMetaData(const KEY ObjectKey) const</div><div class="ttdoc">Will always return a non-null result. May be a default object.</div><div class="ttdef"><b>Definition:</b> ObjectMetaData_inl.h:15</div></div>
 <div class="ttc" id="aclassez_hash_table_htm"><div class="ttname"><a href="../../d8/d86/classez_hash_table.htm">ezHashTable</a></div><div class="ttdef"><b>Definition:</b> HashTable.h:264</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_07792d309f5611e62640e8ec1fb96105.htm">Tools</a></li><li class="navelem"><a class="el" href="../../dir_8e80be223102188e67d1ce7cce146de0.htm">Libs</a></li><li class="navelem"><a class="el" href="../../dir_2c504b9267ae5782c5ed966d1eebd572.htm">ToolsFoundation</a></li><li class="navelem"><a class="el" href="../../dir_7f7376eb1b14efac1a397ce6880025a2.htm">Object</a></li><li class="navelem"><a class="el" href="../../dir_5a303afd593024be56ee46bd26753a65.htm">Implementation</a></li><li class="navelem"><b>ObjectMetaData_inl.h</b></li>
-    <li class="footer">Generated on Fri Nov 18 2022 14:48:04 for ezEngine by
+    <li class="footer">Generated on Sat Mar 25 2023 19:22:00 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

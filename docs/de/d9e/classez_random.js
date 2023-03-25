@@ -18,8 +18,8 @@ var classez_random =
     [ "InitializeFromCurrentTime", "de/d9e/classez_random.htm#aa8ca3c60338457c2975a41ab700605da", null ],
     [ "IntInRange", "de/d9e/classez_random.htm#aeea80c41a1cc2b9352ed2e7a9bb27a4c", null ],
     [ "IntMinMax", "de/d9e/classez_random.htm#a26ef7ad504c6cf6b635c005127440aac", null ],
-    [ "Load", "de/d9e/classez_random.htm#a208cc97022ecc4750b93b5c34222bfbf", null ],
-    [ "Save", "de/d9e/classez_random.htm#a34d66042532ffb3ad8bca0de5cd12e26", null ],
+    [ "Load", "de/d9e/classez_random.htm#ab921dbd0368827c00a18266d840aa676", null ],
+    [ "Save", "de/d9e/classez_random.htm#a005528dceedece68a99a7c787d68eae5", null ],
     [ "UInt", "de/d9e/classez_random.htm#af5fc53ef186d091a6840808c9e9a870c", null ],
     [ "UIntInRange", "de/d9e/classez_random.htm#a10a08ab9c694e4eaaa3705bf8e5c7c33", null ]
 ];

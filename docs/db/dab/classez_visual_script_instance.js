@@ -10,8 +10,8 @@ var classez_visual_script_instance =
     [ "GetOwner", "db/dab/classez_visual_script_instance.htm#a7b54ca6f4775ae682b200d42e956d553", null ],
     [ "GetOwnerComponent", "db/dab/classez_visual_script_instance.htm#a72908da7a224bbafb52c3b9e24a5ea49", null ],
     [ "GetWorld", "db/dab/classez_visual_script_instance.htm#acc30570ec253b7a3c1e19c81e58b0451", null ],
-    [ "HandleMessage", "db/dab/classez_visual_script_instance.htm#acf8205f45fb9f844d214f605c64f8cf4", null ],
-    [ "HandlesEventMessage", "db/dab/classez_visual_script_instance.htm#ab2c992041bb1653e792469eb0a2d9004", null ],
+    [ "HandleMessage", "db/dab/classez_visual_script_instance.htm#ac437793f0c53199cf11ad3a6ddb5e287", null ],
+    [ "HandlesMessage", "db/dab/classez_visual_script_instance.htm#abf2335cac0cda92a1755a0dff46f5f47", null ],
     [ "SetOutputPinValue", "db/dab/classez_visual_script_instance.htm#a5d284f5b59232cfcd98bd7ddeb6baca7", null ],
     [ "ezVisualScriptNode", "db/dab/classez_visual_script_instance.htm#a9bdc98874883ba17658d153aa0ba6219", null ]
 ];

@@ -1,13 +1,13 @@
 var classez_color_animation_component =
 [
     [ "ezColorAnimationComponent", "d7/d16/classez_color_animation_component.htm#aaa0ce8f14696ae7a3fcf8b0cd2e42317", null ],
-    [ "DeserializeComponent", "d7/d16/classez_color_animation_component.htm#a33d97dc7540054faafc6aa6730b69ac1", null ],
+    [ "DeserializeComponent", "d7/d16/classez_color_animation_component.htm#aa0cb3d896420b04187a25426a8b8b8a1", null ],
     [ "GetApplyRecursive", "d7/d16/classez_color_animation_component.htm#a708da8d0449336060d300979b8603875", null ],
     [ "GetColorGradient", "d7/d16/classez_color_animation_component.htm#acc25b298b9b17e354b3d1f0f25a374e1", null ],
     [ "GetColorGradientFile", "d7/d16/classez_color_animation_component.htm#ae2980f8a6d0ba628d4310e17504079f3", null ],
     [ "GetRandomStartOffset", "d7/d16/classez_color_animation_component.htm#a1fe9778dae9415c3fa71225d8f0d1d88", null ],
     [ "OnSimulationStarted", "d7/d16/classez_color_animation_component.htm#ae192e8442a2a392ceb5d525701218fd4", null ],
-    [ "SerializeComponent", "d7/d16/classez_color_animation_component.htm#a352ca550c6fbbe0c1dafc9048ccbed68", null ],
+    [ "SerializeComponent", "d7/d16/classez_color_animation_component.htm#a4b2db893bfa8105168ebcf2c17cfac0c", null ],
     [ "SetApplyRecursive", "d7/d16/classez_color_animation_component.htm#a99cbdf2f4aa04ec6c32193fddd034cb9", null ],
     [ "SetColorGradient", "d7/d16/classez_color_animation_component.htm#a11b244be38615a8ae629d09d091dbded", null ],
     [ "SetColorGradientFile", "d7/d16/classez_color_animation_component.htm#a94fb99e6125a2faeb0f7cab5f170b0a2", null ],

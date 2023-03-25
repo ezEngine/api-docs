@@ -4,12 +4,12 @@ var classez_asset_document_generator =
     [ "Info", "dc/dbe/structez_asset_document_generator_1_1_info.htm", "dc/dbe/structez_asset_document_generator_1_1_info" ],
     [ "ezAssetDocumentGenerator", "d5/dab/classez_asset_document_generator.htm#ae846e453f92f328837fd1382fca051dc", null ],
     [ "~ezAssetDocumentGenerator", "d5/dab/classez_asset_document_generator.htm#a10df52f14862b189fc76059e2aa46e12", null ],
-    [ "AddSupportedFileType", "d5/dab/classez_asset_document_generator.htm#ab7fdbe3fcfc2c1952778a397b8879aed", null ],
-    [ "AppendFileFilterStrings", "d5/dab/classez_asset_document_generator.htm#addf88d23d6447d73739d026fe15d9326", null ],
-    [ "BuildFileDialogFilterString", "d5/dab/classez_asset_document_generator.htm#add15ebf236feaf4e665f9f737a37ae4a", null ],
-    [ "Generate", "d5/dab/classez_asset_document_generator.htm#ab02120411cbf0c0e4d1ee5f4b2a1b3b5", null ],
-    [ "GetDocumentExtension", "d5/dab/classez_asset_document_generator.htm#a02137cf380812a1c23084f869e01377f", null ],
-    [ "GetGeneratorGroup", "d5/dab/classez_asset_document_generator.htm#add68583fd70db7a75ebd92328a82bb63", null ],
-    [ "GetImportModes", "d5/dab/classez_asset_document_generator.htm#a9480a3f167e5a303d827f3f2e6ead8a6", null ],
-    [ "SupportsFileType", "d5/dab/classez_asset_document_generator.htm#a070868e59f12d7dd6387f78d16b0d5eb", null ]
+    [ "AddSupportedFileType", "d5/dab/classez_asset_document_generator.htm#a37d6eb89363f6a5ad260e72b2f87eec2", null ],
+    [ "AppendFileFilterStrings", "d5/dab/classez_asset_document_generator.htm#a26d219b4772e8a37403b33008c876171", null ],
+    [ "BuildFileDialogFilterString", "d5/dab/classez_asset_document_generator.htm#ace193f0e89bea9ca5557218eb471a32a", null ],
+    [ "Generate", "d5/dab/classez_asset_document_generator.htm#adb381ccd624a0393c51c5a007ba29a6c", null ],
+    [ "GetDocumentExtension", "d5/dab/classez_asset_document_generator.htm#aedace93098725f56caf008d4c4b1e086", null ],
+    [ "GetGeneratorGroup", "d5/dab/classez_asset_document_generator.htm#acb060ce8d2d3e58033e1d93f11b75a34", null ],
+    [ "GetImportModes", "d5/dab/classez_asset_document_generator.htm#ab6792e12c86f0702944bab6123aecc1f", null ],
+    [ "SupportsFileType", "d5/dab/classez_asset_document_generator.htm#aeb50f40a35e87c16a513ffe20ef84e97", null ]
 ];

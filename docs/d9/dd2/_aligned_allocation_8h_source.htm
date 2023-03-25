@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 22.11</span>
+   &#160;<span id="projectnumber">Release 23.04</span>
    </div>
   </td>
  </tr>
@@ -111,7 +111,7 @@ $(document).ready(function(){initNavTree('d9/dd2/_aligned_allocation_8h_source.h
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;      ezUInt8* pMemory = (ezUInt8*)m_allocator.Allocate(uiAlignedSize, EZ_ALIGNMENT_MINIMUM);</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;      ezUInt8* pAlignedMemory = <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a7f5327cc82286e4d378b8101478c0eab">ezMemoryUtils::AlignBackwards</a>(pMemory + uiPadding, uiAlign);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;      ezUInt8* pAlignedMemory = <a class="code" href="../../dc/d4d/classez_memory_utils.htm#a1326a85e9177e3a18bd88938ad46048e">ezMemoryUtils::AlignBackwards</a>(pMemory + uiPadding, uiAlign);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;      ezUInt32* pMetadata = GetMetadataPtr(pAlignedMemory);</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;      *pMetadata = PackMetadata((ezUInt32)(pAlignedMemory - pMemory), (ezUInt32)uiAlign);</div>
@@ -119,28 +119,28 @@ $(document).ready(function(){initNavTree('d9/dd2/_aligned_allocation_8h_source.h
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;      <span class="keywordflow">return</span> pAlignedMemory;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> Deallocate(<span class="keywordtype">void</span>* ptr)</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> Deallocate(<span class="keywordtype">void</span>* pPtr)</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;      <span class="keyword">const</span> ezUInt32 uiOffset = UnpackOffset(GetMetadata(ptr));</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      ezUInt8* pMemory = <span class="keyword">static_cast&lt;</span>ezUInt8*<span class="keyword">&gt;</span>(ptr) - uiOffset;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;      <span class="keyword">const</span> ezUInt32 uiOffset = UnpackOffset(GetMetadata(pPtr));</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      ezUInt8* pMemory = <span class="keyword">static_cast&lt;</span>ezUInt8*<span class="keyword">&gt;</span>(pPtr) - uiOffset;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;      m_allocator.Deallocate(pMemory);</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">size_t</span> AllocatedSize(<span class="keyword">const</span> <span class="keywordtype">void</span>* ptr)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">size_t</span> AllocatedSize(<span class="keyword">const</span> <span class="keywordtype">void</span>* pPtr)</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      <span class="keyword">const</span> ezUInt32 uiMetadata = GetMetadata(ptr);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      <span class="keyword">const</span> ezUInt32 uiMetadata = GetMetadata(pPtr);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      <span class="keyword">const</span> ezUInt32 uiOffset = UnpackOffset(uiMetadata);</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      <span class="keyword">const</span> ezUInt32 uiAlign = UnpackAlignment(uiMetadata);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      <span class="keyword">const</span> ezUInt32 uiPadding = uiAlign - 1 + MetadataSize;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      <span class="keyword">const</span> ezUInt8* pMemory = <span class="keyword">static_cast&lt;</span><span class="keyword">const </span>ezUInt8*<span class="keyword">&gt;</span>(ptr) - uiOffset;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      <span class="keyword">const</span> ezUInt8* pMemory = <span class="keyword">static_cast&lt;</span><span class="keyword">const </span>ezUInt8*<span class="keyword">&gt;</span>(pPtr) - uiOffset;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      <span class="keywordflow">return</span> m_allocator.AllocatedSize(pMemory) - uiPadding;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">size_t</span> UsedMemorySize(<span class="keyword">const</span> <span class="keywordtype">void</span>* ptr)</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">size_t</span> UsedMemorySize(<span class="keyword">const</span> <span class="keywordtype">void</span>* pPtr)</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      <span class="keyword">const</span> ezUInt32 uiOffset = UnpackOffset(GetMetadata(ptr));</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      <span class="keyword">const</span> ezUInt8* pMemory = <span class="keyword">static_cast&lt;</span><span class="keyword">const </span>ezUInt8*<span class="keyword">&gt;</span>(ptr) - uiOffset;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      <span class="keyword">const</span> ezUInt32 uiOffset = UnpackOffset(GetMetadata(pPtr));</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      <span class="keyword">const</span> ezUInt8* pMemory = <span class="keyword">static_cast&lt;</span><span class="keyword">const </span>ezUInt8*<span class="keyword">&gt;</span>(pPtr) - uiOffset;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      <span class="keywordflow">return</span> m_allocator.UsedMemorySize(pMemory);</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
@@ -155,17 +155,17 @@ $(document).ready(function(){initNavTree('d9/dd2/_aligned_allocation_8h_source.h
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// Meta-data is stored 4 bytes before the aligned memory</span></div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">inline</span> ezUInt32* GetMetadataPtr(<span class="keywordtype">void</span>* pAlignedMemory)</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>ezUInt32*<span class="keyword">&gt;</span>(<a class="code" href="../../dc/d4d/classez_memory_utils.htm#a154a2ccb52b2abdfdbe6d068948bc6b4">ezMemoryUtils::AddByteOffset</a>(pAlignedMemory, -MetadataSize));</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>ezUInt32*<span class="keyword">&gt;</span>(<a class="code" href="../../dc/d4d/classez_memory_utils.htm#a0bedfdd60a93e5a48cd7e412a4aa984b">ezMemoryUtils::AddByteOffset</a>(pAlignedMemory, -MetadataSize));</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keyword">inline</span> ezUInt32 GetMetadata(<span class="keyword">const</span> <span class="keywordtype">void</span>* pAlignedMemory)</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      <span class="keywordflow">return</span> *<span class="keyword">static_cast&lt;</span><span class="keyword">const </span>ezUInt32*<span class="keyword">&gt;</span>(<a class="code" href="../../dc/d4d/classez_memory_utils.htm#a154a2ccb52b2abdfdbe6d068948bc6b4">ezMemoryUtils::AddByteOffset</a>(pAlignedMemory, -MetadataSize));</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      <span class="keywordflow">return</span> *<span class="keyword">static_cast&lt;</span><span class="keyword">const </span>ezUInt32*<span class="keyword">&gt;</span>(<a class="code" href="../../dc/d4d/classez_memory_utils.htm#a0bedfdd60a93e5a48cd7e412a4aa984b">ezMemoryUtils::AddByteOffset</a>(pAlignedMemory, -MetadataSize));</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">// Store offset between pMemory and pAlignedMemory in the lower 24 bit of meta-data.</span></div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">// The upper 8 bit are used to store the Log2 of the alignment.</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    EZ_ALWAYS_INLINE ezUInt32 PackMetadata(ezUInt32 uiOffset, ezUInt32 uiAlignment) { <span class="keywordflow">return</span> uiOffset | (<a class="code" href="../../db/d78/namespaceez_math.htm#af2276d5c18bec732b74e719c2f93d4ca">ezMath::Log2i</a>(uiAlignment) &lt;&lt; 24); }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    EZ_ALWAYS_INLINE ezUInt32 PackMetadata(ezUInt32 uiOffset, ezUInt32 uiAlignment) { <span class="keywordflow">return</span> uiOffset | (<a class="code" href="../../db/d78/namespaceez_math.htm#a83324fcba89f4cb6ed5d1612bfaa0244">ezMath::Log2i</a>(uiAlignment) &lt;&lt; 24); }</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    EZ_ALWAYS_INLINE ezUInt32 UnpackOffset(ezUInt32 uiMetadata) { <span class="keywordflow">return</span> uiMetadata &amp; 0x00FFFFFF; }</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
@@ -177,15 +177,15 @@ $(document).ready(function(){initNavTree('d9/dd2/_aligned_allocation_8h_source.h
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_memory_policies_1_1ez_aligned_allocation_htm"><div class="ttname"><a href="../../d0/da4/classez_memory_policies_1_1ez_aligned_allocation.htm">ezMemoryPolicies::ezAlignedAllocation</a></div><div class="ttdoc">Allocation policy to support custom alignment per allocation.</div><div class="ttdef"><b>Definition:</b> AlignedAllocation.h:11</div></div>
-<div class="ttc" id="aclassez_memory_utils_htm_a154a2ccb52b2abdfdbe6d068948bc6b4"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm#a154a2ccb52b2abdfdbe6d068948bc6b4">ezMemoryUtils::AddByteOffset</a></div><div class="ttdeci">static T * AddByteOffset(T *ptr, ptrdiff_t iOffset)</div><div class="ttdoc">Returns the address stored in ptr plus the given byte offset iOffset, cast to type T.</div></div>
-<div class="ttc" id="aclassez_memory_utils_htm_a7f5327cc82286e4d378b8101478c0eab"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm#a7f5327cc82286e4d378b8101478c0eab">ezMemoryUtils::AlignBackwards</a></div><div class="ttdeci">static T * AlignBackwards(T *ptr, size_t uiAlignment)</div><div class="ttdoc">Aligns the pointer ptr by moving its address backwards to the previous multiple of uiAlignment.</div></div>
+<div class="ttc" id="aclassez_memory_utils_htm_a0bedfdd60a93e5a48cd7e412a4aa984b"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm#a0bedfdd60a93e5a48cd7e412a4aa984b">ezMemoryUtils::AddByteOffset</a></div><div class="ttdeci">static T * AddByteOffset(T *pPtr, ptrdiff_t iOffset)</div><div class="ttdoc">Returns the address stored in ptr plus the given byte offset iOffset, cast to type T.</div></div>
+<div class="ttc" id="anamespaceez_math_htm_a83324fcba89f4cb6ed5d1612bfaa0244"><div class="ttname"><a href="../../db/d78/namespaceez_math.htm#a83324fcba89f4cb6ed5d1612bfaa0244">ezMath::Log2i</a></div><div class="ttdeci">EZ_ALWAYS_INLINE ezUInt32 Log2i(ezUInt32 uiVal)</div><div class="ttdoc">Returns the integral logarithm to the base 2, that comes closest to the given integer.</div><div class="ttdef"><b>Definition:</b> MathInt32_inl.h:41</div></div>
 <div class="ttc" id="aclassez_allocator_base_htm"><div class="ttname"><a href="../../d1/d4c/classez_allocator_base.htm">ezAllocatorBase</a></div><div class="ttdoc">Base class for all memory allocators.</div><div class="ttdef"><b>Definition:</b> AllocatorBase.h:22</div></div>
-<div class="ttc" id="anamespaceez_math_htm_af2276d5c18bec732b74e719c2f93d4ca"><div class="ttname"><a href="../../db/d78/namespaceez_math.htm#af2276d5c18bec732b74e719c2f93d4ca">ezMath::Log2i</a></div><div class="ttdeci">ezUInt32 Log2i(ezUInt32 val)</div><div class="ttdoc">Returns the integral logarithm to the base 2, that comes closest to the given integer.</div><div class="ttdef"><b>Definition:</b> MathInt32_inl.h:41</div></div>
+<div class="ttc" id="aclassez_memory_utils_htm_a1326a85e9177e3a18bd88938ad46048e"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm#a1326a85e9177e3a18bd88938ad46048e">ezMemoryUtils::AlignBackwards</a></div><div class="ttdeci">static T * AlignBackwards(T *pPtr, size_t uiAlignment)</div><div class="ttdoc">Aligns the pointer ptr by moving its address backwards to the previous multiple of uiAlignment.</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_adb0ac2a169525f5fa05f0527c58e205.htm">Memory</a></li><li class="navelem"><a class="el" href="../../dir_7e8e2491845ec7b2b62df622f0295925.htm">Policies</a></li><li class="navelem"><b>AlignedAllocation.h</b></li>
-    <li class="footer">Generated on Fri Nov 18 2022 14:47:59 for ezEngine by
+    <li class="footer">Generated on Sat Mar 25 2023 19:21:56 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

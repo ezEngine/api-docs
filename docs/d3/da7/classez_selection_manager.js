@@ -15,7 +15,7 @@ var classez_selection_manager =
     [ "IsSelected", "d3/da7/classez_selection_manager.htm#a1a17a2649b08e51765d6161bcaea5595", null ],
     [ "IsSelectionEmpty", "d3/da7/classez_selection_manager.htm#ac1162d00635e415b298f9786a5976c57", null ],
     [ "RemoveObject", "d3/da7/classez_selection_manager.htm#ad44305b71c8c39dd1a9462eff5719d83", null ],
-    [ "SetSelection", "d3/da7/classez_selection_manager.htm#a11615bf1973e02ed6a6aa3124b7a1926", null ],
+    [ "SetSelection", "d3/da7/classez_selection_manager.htm#abcf915ac086fb32afdc2b370e62b6abe", null ],
     [ "SetSelection", "d3/da7/classez_selection_manager.htm#ab0501f781334b06066dd42bf1df33b6e", null ],
     [ "SwapStorage", "d3/da7/classez_selection_manager.htm#a121cb618eb013869b2dfa92799f013f5", null ],
     [ "ToggleObject", "d3/da7/classez_selection_manager.htm#af269941e530cdf03257aae4a21fb9d32", null ],

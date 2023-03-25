@@ -3,9 +3,10 @@ var classez_sound_bank_asset_document_manager =
     [ "ezSoundBankAssetDocumentManager", "d4/ddc/classez_sound_bank_asset_document_manager.htm#ab36dfc5a5ec9a8778b18193cb13d2113", null ],
     [ "~ezSoundBankAssetDocumentManager", "d4/ddc/classez_sound_bank_asset_document_manager.htm#a44740fc2ea83cafdbe9b438f374e85e5", null ],
     [ "ComputeAssetProfileHashImpl", "d4/ddc/classez_sound_bank_asset_document_manager.htm#a3587637f5e548d7ad36b5b1d3b530a33", null ],
-    [ "FillOutSubAssetList", "d4/ddc/classez_sound_bank_asset_document_manager.htm#a36be28eac38e07fbd32b7ca1b1279d7f", null ],
+    [ "FillOutSubAssetList", "d4/ddc/classez_sound_bank_asset_document_manager.htm#a003d70a1ce1375c5aaf8a47820c2946a", null ],
     [ "GeneratesProfileSpecificAssets", "d4/ddc/classez_sound_bank_asset_document_manager.htm#aacdc31cbfd22a3eb788ab3bd054353e8", null ],
     [ "GetAssetTableEntry", "d4/ddc/classez_sound_bank_asset_document_manager.htm#a260841ed3448ccb3119b27fbecc4583d", null ],
+    [ "GetAssetTypeOutputReliability", "d4/ddc/classez_sound_bank_asset_document_manager.htm#ac72d8d3cd54357000e7feb3f8ecb3df4", null ],
     [ "InternalCreateDocument", "d4/ddc/classez_sound_bank_asset_document_manager.htm#aa09af4f76f1d8facad1b78cf040c39ec", null ],
     [ "InternalGetSupportedDocumentTypes", "d4/ddc/classez_sound_bank_asset_document_manager.htm#a278335e216d23996df7525f9bacc664e", null ]
 ];

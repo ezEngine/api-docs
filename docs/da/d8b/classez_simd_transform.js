@@ -1,8 +1,8 @@
 var classez_simd_transform =
 [
     [ "ezSimdTransform", "da/d8b/classez_simd_transform.htm#a682e25e8392ad04bb5ccb0d14241982e", null ],
-    [ "ezSimdTransform", "da/d8b/classez_simd_transform.htm#ad130d211ddff272775951485e7835a54", null ],
-    [ "ezSimdTransform", "da/d8b/classez_simd_transform.htm#abd0ea65c2db725d577b2916d947bf4af", null ],
+    [ "ezSimdTransform", "da/d8b/classez_simd_transform.htm#aacd61d0c42b07107dc5c816b614beb00", null ],
+    [ "ezSimdTransform", "da/d8b/classez_simd_transform.htm#a27836230ded18e3a8095b38823e62fef", null ],
     [ "ContainsNegativeScale", "da/d8b/classez_simd_transform.htm#a6730760ba0bb188d4018fa223b117020", null ],
     [ "ContainsUniformScale", "da/d8b/classez_simd_transform.htm#a7b4e0dfa35e7d1b06b7028409d75776e", null ],
     [ "EZ_DECLARE_POD_TYPE", "da/d8b/classez_simd_transform.htm#a6da8883821fb5776ccdb5b6d83c02340", null ],
@@ -15,9 +15,9 @@ var classez_simd_transform =
     [ "operator*=", "da/d8b/classez_simd_transform.htm#abcc373db15f7e29f6848056850bfae56", null ],
     [ "operator+=", "da/d8b/classez_simd_transform.htm#a2ee95d59b2a50026c6c57c77bb3bf011", null ],
     [ "operator-=", "da/d8b/classez_simd_transform.htm#a39c926c26fe2233c0eee834232ccc71c", null ],
-    [ "SetGlobalTransform", "da/d8b/classez_simd_transform.htm#ac6ca2b64d0667b66061f35a964deabfa", null ],
+    [ "SetGlobalTransform", "da/d8b/classez_simd_transform.htm#a0299abbf3e74f6e2e2900c324a442ac0", null ],
     [ "SetIdentity", "da/d8b/classez_simd_transform.htm#a48535fc7dd4d78a43b22e1e95194cfbc", null ],
-    [ "SetLocalTransform", "da/d8b/classez_simd_transform.htm#a6c935186886b251a42b01eee85894c3b", null ],
+    [ "SetLocalTransform", "da/d8b/classez_simd_transform.htm#aa3d115940faf77d0412f4a531f4cea62", null ],
     [ "TransformDirection", "da/d8b/classez_simd_transform.htm#a5b0ed25e276836c9bc4fdb055d1fa9c4", null ],
     [ "TransformPosition", "da/d8b/classez_simd_transform.htm#ae7f7efddd0e1654dd04ad4070eb753f0", null ],
     [ "m_Position", "da/d8b/classez_simd_transform.htm#a662512b36df5613f42faff97a4f53bac", null ],

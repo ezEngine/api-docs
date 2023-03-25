@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 22.11</span>
+   &#160;<span id="projectnumber">Release 23.04</span>
    </div>
   </td>
  </tr>
@@ -124,7 +124,7 @@ $(document).ready(function(){initNavTree('d7/d3a/_state_machine_instance_data_8h
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> Destruct(<span class="keyword">const</span> <a class="code" href="../../d3/da7/classez_blob_ptr.htm">ezByteBlobPtr</a>&amp; blobPtr) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="../../dd/db8/classez_blob.htm">ezBlob</a> AllocateAndConstruct() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span> DestructAndDeallocate(<a class="code" href="../../dd/db8/classez_blob.htm">ezBlob</a>&amp; blob) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span> DestructAndDeallocate(<a class="code" href="../../dd/db8/classez_blob.htm">ezBlob</a>&amp; ref_blob) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    ezUInt32 GetTotalDataSize()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_uiTotalDataSize; }</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
@@ -160,13 +160,13 @@ $(document).ready(function(){initNavTree('d7/d3a/_state_machine_instance_data_8h
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      EZ_ALWAYS_INLINE <a class="code" href="../../d3/da7/classez_blob_ptr.htm">ezByteBlobPtr</a> GetBlobPtr()</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d3/da7/classez_blob_ptr.htm">ezByteBlobPtr</a>(<a class="code" href="../../dc/d4d/classez_memory_utils.htm#a154a2ccb52b2abdfdbe6d068948bc6b4">ezMemoryUtils::AddByteOffset</a>(<span class="keyword">reinterpret_cast&lt;</span>ezUInt8*<span class="keyword">&gt;</span>(<span class="keyword">this</span>), m_pOwner-&gt;GetBaseOffset()), m_pOwner-&gt;GetDataSize());</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d3/da7/classez_blob_ptr.htm">ezByteBlobPtr</a>(<a class="code" href="../../dc/d4d/classez_memory_utils.htm#a0bedfdd60a93e5a48cd7e412a4aa984b">ezMemoryUtils::AddByteOffset</a>(<span class="keyword">reinterpret_cast&lt;</span>ezUInt8*<span class="keyword">&gt;</span>(<span class="keyword">this</span>), m_pOwner-&gt;GetBaseOffset()), m_pOwner-&gt;GetDataSize());</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      }</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    };</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    EZ_ALWAYS_INLINE <span class="keywordtype">void</span>* GetSubInstanceData(<a class="code" href="../../dc/de9/structez_state_machine_internal_1_1_compound_1_1_instance_data.htm">InstanceData</a>* pData, ezUInt32 index)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    EZ_ALWAYS_INLINE <span class="keywordtype">void</span>* GetSubInstanceData(<a class="code" href="../../dc/de9/structez_state_machine_internal_1_1_compound_1_1_instance_data.htm">InstanceData</a>* pData, ezUInt32 uiIndex)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      <span class="keywordflow">return</span> pData != <span class="keyword">nullptr</span> ? m_InstanceDataAllocator.GetInstanceData(pData-&gt;GetBlobPtr(), m_InstanceDataOffsets[index]) : <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      <span class="keywordflow">return</span> pData != <span class="keyword">nullptr</span> ? m_InstanceDataAllocator.GetInstanceData(pData-&gt;GetBlobPtr(), m_InstanceDataOffsets[uiIndex]) : <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    EZ_FORCE_INLINE <span class="keywordtype">void</span> Initialize(InstanceData* pData)<span class="keyword"> const</span></div>
@@ -219,11 +219,11 @@ $(document).ready(function(){initNavTree('d7/d3a/_state_machine_instance_data_8h
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_blob_ptr_htm_a183e45d443a6494e7a3c2ddea826b354"><div class="ttname"><a href="../../d3/da7/classez_blob_ptr.htm#a183e45d443a6494e7a3c2ddea826b354">ezBlobPtr::GetPtr</a></div><div class="ttdeci">EZ_ALWAYS_INLINE PointerType GetPtr() const</div><div class="ttdoc">Returns the pointer to the array.</div><div class="ttdef"><b>Definition:</b> Blob.h:83</div></div>
-<div class="ttc" id="aclassez_memory_utils_htm_a154a2ccb52b2abdfdbe6d068948bc6b4"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm#a154a2ccb52b2abdfdbe6d068948bc6b4">ezMemoryUtils::AddByteOffset</a></div><div class="ttdeci">static T * AddByteOffset(T *ptr, ptrdiff_t iOffset)</div><div class="ttdoc">Returns the address stored in ptr plus the given byte offset iOffset, cast to type T.</div></div>
 <div class="ttc" id="aclassez_state_machine_internal_1_1_instance_data_allocator_htm"><div class="ttname"><a href="../../d8/d77/classez_state_machine_internal_1_1_instance_data_allocator.htm">ezStateMachineInternal::InstanceDataAllocator</a></div><div class="ttdoc">Helper class to manager instance data allocation, construction and destruction.</div><div class="ttdef"><b>Definition:</b> StateMachineInstanceData.h:35</div></div>
 <div class="ttc" id="aclassez_blob_ptr_htm"><div class="ttname"><a href="../../d3/da7/classez_blob_ptr.htm">ezBlobPtr&lt; ezUInt8 &gt;</a></div></div>
 <div class="ttc" id="aclassez_array_ptr_htm"><div class="ttname"><a href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr</a></div><div class="ttdoc">This class encapsulates an array and it's size. It is recommended to use this class instead of plain ...</div><div class="ttdef"><b>Definition:</b> ArrayPtr.h:36</div></div>
 <div class="ttc" id="anamespaceez_math_htm_a6f7ee19d0f8e81ff6ae5f394075e3a56"><div class="ttname"><a href="../../db/d78/namespaceez_math.htm#a6f7ee19d0f8e81ff6ae5f394075e3a56">ezMath::Max</a></div><div class="ttdeci">constexpr EZ_ALWAYS_INLINE T Max(T f1, T f2)</div><div class="ttdoc">Returns the greater value, f1 or f2.</div><div class="ttdef"><b>Definition:</b> Math_inl.h:38</div></div>
+<div class="ttc" id="aclassez_memory_utils_htm_a0bedfdd60a93e5a48cd7e412a4aa984b"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm#a0bedfdd60a93e5a48cd7e412a4aa984b">ezMemoryUtils::AddByteOffset</a></div><div class="ttdeci">static T * AddByteOffset(T *pPtr, ptrdiff_t iOffset)</div><div class="ttdoc">Returns the address stored in ptr plus the given byte offset iOffset, cast to type T.</div></div>
 <div class="ttc" id="aclassez_blob_htm"><div class="ttname"><a href="../../dd/db8/classez_blob.htm">ezBlob</a></div><div class="ttdoc">ezBlob allows to store simple binary data larger than 4GB. This storage class is used by ezImage to a...</div><div class="ttdef"><b>Definition:</b> Blob.h:321</div></div>
 <div class="ttc" id="aclassez_state_machine_internal_1_1_instance_data_allocator_htm_a56ecf1c5a212959d026e18d7424d91fa"><div class="ttname"><a href="../../d8/d77/classez_state_machine_internal_1_1_instance_data_allocator.htm#a56ecf1c5a212959d026e18d7424d91fa">ezStateMachineInternal::InstanceDataAllocator::AddDesc</a></div><div class="ttdeci">ezUInt32 AddDesc(const ezStateMachineInstanceDataDesc &amp;desc)</div><div class="ttdoc">Adds the given desc to internal list of data that needs to be allocated and returns the byte offset.</div><div class="ttdef"><b>Definition:</b> StateMachineInstanceData.cpp:7</div></div>
 <div class="ttc" id="aclassez_dynamic_array_htm"><div class="ttname"><a href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt; ezStateMachineInstanceDataDesc &gt;</a></div></div>
@@ -237,7 +237,7 @@ $(document).ready(function(){initNavTree('d7/d3a/_state_machine_instance_data_8h
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_fe4f349dd73c6459187bb04ae7deb06f.htm">GameEngine</a></li><li class="navelem"><a class="el" href="../../dir_b5acae571bcde48717a6d5892341cf6b.htm">StateMachine</a></li><li class="navelem"><a class="el" href="../../dir_3838f1c091559355365a9cca6ef0a25d.htm">Implementation</a></li><li class="navelem"><b>StateMachineInstanceData.h</b></li>
-    <li class="footer">Generated on Fri Nov 18 2022 14:48:01 for ezEngine by
+    <li class="footer">Generated on Sat Mar 25 2023 19:21:58 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

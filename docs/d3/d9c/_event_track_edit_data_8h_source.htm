@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 22.11</span>
+   &#160;<span id="projectnumber">Release 23.04</span>
    </div>
   </td>
  </tr>
@@ -102,9 +102,9 @@ $(document).ready(function(){initNavTree('d3/d9c/_event_track_edit_data_8h_sourc
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> GetTickAsTime()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="../../d3/d90/structez_time.htm#a89ae1d4e0f52df54c2b2f344939662c2">ezTime::Seconds</a>(m_iTick / 4800.0); }</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keywordtype">void</span> SetTickFromTime(<a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> time, ezInt64 fps);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keywordtype">void</span> SetTickFromTime(<a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> time, ezInt64 iFps);</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* GetEventName()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_sEvent.GetData(); }</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keywordtype">void</span> SetEventName(<span class="keyword">const</span> <span class="keywordtype">char</span>* sz) { m_sEvent.Assign(sz); }</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keywordtype">void</span> SetEventName(<span class="keyword">const</span> <span class="keywordtype">char</span>* szSz) { m_sEvent.Assign(szSz); }</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  ezInt64 m_iTick; <span class="comment">// 4800 ticks per second</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <a class="code" href="../../de/dce/classez_hashed_string.htm">ezHashedString</a> m_sEvent;</div>
@@ -116,7 +116,7 @@ $(document).ready(function(){initNavTree('d3/d9c/_event_track_edit_data_8h_sourc
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  ezInt64 TickFromTime(<a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> time) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordtype">void</span> ConvertToRuntimeData(<a class="code" href="../../d7/d57/classez_event_track.htm">ezEventTrack</a>&amp; out_Result) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordtype">void</span> ConvertToRuntimeData(<a class="code" href="../../d7/d57/classez_event_track.htm">ezEventTrack</a>&amp; out_result) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  ezUInt16 m_uiFramesPerSecond = 60;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezEventTrackControlPointData&gt;</a> m_ControlPoints;</div>
@@ -149,13 +149,13 @@ $(document).ready(function(){initNavTree('d3/d9c/_event_track_edit_data_8h_sourc
 <div class="ttc" id="aclassez_event_track_data_htm"><div class="ttname"><a href="../../d8/daf/classez_event_track_data.htm">ezEventTrackData</a></div><div class="ttdef"><b>Definition:</b> EventTrackEditData.h:24</div></div>
 <div class="ttc" id="aclassez_event_track_htm"><div class="ttname"><a href="../../d7/d57/classez_event_track.htm">ezEventTrack</a></div><div class="ttdoc">An event track is a time line that contains named events.</div><div class="ttdef"><b>Definition:</b> EventTrack.h:14</div></div>
 <div class="ttc" id="aclassez_hashed_string_htm"><div class="ttname"><a href="../../de/dce/classez_hashed_string.htm">ezHashedString</a></div><div class="ttdoc">This class is optimized to take nearly no memory (sizeof(void*)) and to allow very fast checks whethe...</div><div class="ttdef"><b>Definition:</b> HashedString.h:24</div></div>
-<div class="ttc" id="aclassez_reflected_class_htm"><div class="ttname"><a href="../../db/d45/classez_reflected_class.htm">ezReflectedClass</a></div><div class="ttdoc">All classes that should be dynamically reflectable, need to be derived from this base class.</div><div class="ttdef"><b>Definition:</b> DynamicRTTI.h:67</div></div>
+<div class="ttc" id="aclassez_reflected_class_htm"><div class="ttname"><a href="../../db/d45/classez_reflected_class.htm">ezReflectedClass</a></div><div class="ttdoc">All classes that should be dynamically reflectable, need to be derived from this base class.</div><div class="ttdef"><b>Definition:</b> DynamicRTTI.h:77</div></div>
 <div class="ttc" id="astructez_time_htm_a89ae1d4e0f52df54c2b2f344939662c2"><div class="ttname"><a href="../../d3/d90/structez_time.htm#a89ae1d4e0f52df54c2b2f344939662c2">ezTime::Seconds</a></div><div class="ttdeci">constexpr static EZ_ALWAYS_INLINE ezTime Seconds(double fSeconds)</div><div class="ttdoc">Creates an instance of ezTime that was initialized from seconds.</div><div class="ttdef"><b>Definition:</b> Time.h:27</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_07792d309f5611e62640e8ec1fb96105.htm">Tools</a></li><li class="navelem"><a class="el" href="../../dir_8e80be223102188e67d1ce7cce146de0.htm">Libs</a></li><li class="navelem"><a class="el" href="../../dir_67a151a8658de153dad045cdd2f730f7.htm">GuiFoundation</a></li><li class="navelem"><a class="el" href="../../dir_fe889430e45ae34820f0cbcb0d83e0e4.htm">Widgets</a></li><li class="navelem"><b>EventTrackEditData.h</b></li>
-    <li class="footer">Generated on Fri Nov 18 2022 14:48:04 for ezEngine by
+    <li class="footer">Generated on Sat Mar 25 2023 19:22:00 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

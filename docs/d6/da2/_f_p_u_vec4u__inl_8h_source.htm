@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 22.11</span>
+   &#160;<span id="projectnumber">Release 23.04</span>
    </div>
   </td>
  </tr>
@@ -352,13 +352,13 @@ $(document).ready(function(){initNavTree('d6/da2/_f_p_u_vec4u__inl_8h_source.htm
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160; </div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;EZ_ALWAYS_INLINE <a class="code" href="../../de/daa/classez_simd_vec4b.htm">ezSimdVec4b</a> ezSimdVec4u::operator==(<span class="keyword">const</span> <a class="code" href="../../d5/de5/classez_simd_vec4u.htm">ezSimdVec4u</a>&amp; v)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;  <a class="code" href="../../de/daa/classez_simd_vec4b.htm">ezSimdVec4b</a> result;</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;  result.m_v.x = m_v.x == v.m_v.x;</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;  result.m_v.y = m_v.y == v.m_v.y;</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;  result.m_v.z = m_v.z == v.m_v.z;</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;  result.m_v.w = m_v.w == v.m_v.w;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;  <span class="keywordtype">bool</span> result[4];</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;  result[0] = m_v.x == v.m_v.x;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;  result[1] = m_v.y == v.m_v.y;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;  result[2] = m_v.z == v.m_v.z;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;  result[3] = m_v.w == v.m_v.w;</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160; </div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;  <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../de/daa/classez_simd_vec4b.htm">ezSimdVec4b</a>(result[0], result[1], result[2], result[3]);</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;}</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;EZ_ALWAYS_INLINE <a class="code" href="../../de/daa/classez_simd_vec4b.htm">ezSimdVec4b</a> ezSimdVec4u::operator!=(<span class="keyword">const</span> <a class="code" href="../../d5/de5/classez_simd_vec4u.htm">ezSimdVec4u</a>&amp; v)<span class="keyword"> const</span></div>
@@ -373,13 +373,13 @@ $(document).ready(function(){initNavTree('d6/da2/_f_p_u_vec4u__inl_8h_source.htm
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160; </div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;EZ_ALWAYS_INLINE <a class="code" href="../../de/daa/classez_simd_vec4b.htm">ezSimdVec4b</a> ezSimdVec4u::operator&lt;(<span class="keyword">const</span> <a class="code" href="../../d5/de5/classez_simd_vec4u.htm">ezSimdVec4u</a>&amp; v)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;  <a class="code" href="../../de/daa/classez_simd_vec4b.htm">ezSimdVec4b</a> result;</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;  result.m_v.x = m_v.x &lt; v.m_v.x;</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;  result.m_v.y = m_v.y &lt; v.m_v.y;</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;  result.m_v.z = m_v.z &lt; v.m_v.z;</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;  result.m_v.w = m_v.w &lt; v.m_v.w;</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;  <span class="keywordtype">bool</span> result[4];</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;  result[0] = m_v.x &lt; v.m_v.x;</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;  result[1] = m_v.y &lt; v.m_v.y;</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;  result[2] = m_v.z &lt; v.m_v.z;</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;  result[3] = m_v.w &lt; v.m_v.w;</div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160; </div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;  <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../de/daa/classez_simd_vec4b.htm">ezSimdVec4b</a>(result[0], result[1], result[2], result[3]);</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;}</div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160; </div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;EZ_ALWAYS_INLINE <a class="code" href="../../de/daa/classez_simd_vec4b.htm">ezSimdVec4b</a> ezSimdVec4u::operator&gt;=(<span class="keyword">const</span> <a class="code" href="../../d5/de5/classez_simd_vec4u.htm">ezSimdVec4u</a>&amp; v)<span class="keyword"> const</span></div>
@@ -389,13 +389,13 @@ $(document).ready(function(){initNavTree('d6/da2/_f_p_u_vec4u__inl_8h_source.htm
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;EZ_ALWAYS_INLINE <a class="code" href="../../de/daa/classez_simd_vec4b.htm">ezSimdVec4b</a> ezSimdVec4u::operator&gt;(<span class="keyword">const</span> <a class="code" href="../../d5/de5/classez_simd_vec4u.htm">ezSimdVec4u</a>&amp; v)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;  <a class="code" href="../../de/daa/classez_simd_vec4b.htm">ezSimdVec4b</a> result;</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;  result.m_v.x = m_v.x &gt; v.m_v.x;</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;  result.m_v.y = m_v.y &gt; v.m_v.y;</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;  result.m_v.z = m_v.z &gt; v.m_v.z;</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;  result.m_v.w = m_v.w &gt; v.m_v.w;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;  <span class="keywordtype">bool</span> result[4];</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;  result[0] = m_v.x &gt; v.m_v.x;</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;  result[1] = m_v.y &gt; v.m_v.y;</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;  result[2] = m_v.z &gt; v.m_v.z;</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;  result[3] = m_v.w &gt; v.m_v.w;</div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160; </div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;  <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../de/daa/classez_simd_vec4b.htm">ezSimdVec4b</a>(result[0], result[1], result[2], result[3]);</div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;}</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160; </div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;<span class="comment">// static</span></div>
@@ -420,7 +420,7 @@ $(document).ready(function(){initNavTree('d6/da2/_f_p_u_vec4u__inl_8h_source.htm
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_6b9381ed4ec7e78ad4ad9509acce36a5.htm">SimdMath</a></li><li class="navelem"><a class="el" href="../../dir_3d955f3f3e7fff9f34f1ed045c0694e5.htm">Implementation</a></li><li class="navelem"><a class="el" href="../../dir_b6f97751084dc3f6b39ce63710c8adc0.htm">FPU</a></li><li class="navelem"><b>FPUVec4u_inl.h</b></li>
-    <li class="footer">Generated on Fri Nov 18 2022 14:48:00 for ezEngine by
+    <li class="footer">Generated on Sat Mar 25 2023 19:21:56 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

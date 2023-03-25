@@ -2,7 +2,7 @@ var classez_px_settings_component =
 [
     [ "ezPxSettingsComponent", "d8/d6a/classez_px_settings_component.htm#ad29bdb6b2c911a65b929dbc389e86bf8", null ],
     [ "~ezPxSettingsComponent", "d8/d6a/classez_px_settings_component.htm#af60d3f74047942fee4f6f020c3855ae3", null ],
-    [ "DeserializeComponent", "d8/d6a/classez_px_settings_component.htm#a97c9b4ac0a98ccd5c4017d8c2b093aca", null ],
+    [ "DeserializeComponent", "d8/d6a/classez_px_settings_component.htm#af7a8ec0592d111343782d6ed5f188dc4", null ],
     [ "GetCharacterGravity", "d8/d6a/classez_px_settings_component.htm#ace6acf53ef25d326da2219ab719cbc87", null ],
     [ "GetFixedFrameRate", "d8/d6a/classez_px_settings_component.htm#ab43914b105448523cb1013cf337be993", null ],
     [ "GetMaxDepenetrationVelocity", "d8/d6a/classez_px_settings_component.htm#ab7ec6a51c2e3e6402ccf5023305021df", null ],
@@ -10,7 +10,7 @@ var classez_px_settings_component =
     [ "GetObjectGravity", "d8/d6a/classez_px_settings_component.htm#a60d7d510f9200feaa6535e91662f2edc", null ],
     [ "GetSettings", "d8/d6a/classez_px_settings_component.htm#a854add67aa513a5fcbf9853c29cf245a", null ],
     [ "GetSteppingMode", "d8/d6a/classez_px_settings_component.htm#af895e18a6a40db93b8929f44e8cbd5b4", null ],
-    [ "SerializeComponent", "d8/d6a/classez_px_settings_component.htm#a70798246ef90b353ed526731d1f4e99c", null ],
+    [ "SerializeComponent", "d8/d6a/classez_px_settings_component.htm#a484acc2d22aa827dbcd47839faf40dd2", null ],
     [ "SetCharacterGravity", "d8/d6a/classez_px_settings_component.htm#a63484f5786245f3672ac064280186880", null ],
     [ "SetFixedFrameRate", "d8/d6a/classez_px_settings_component.htm#a3af556abf01aa34d8ad53bc9171ed4bf", null ],
     [ "SetMaxDepenetrationVelocity", "d8/d6a/classez_px_settings_component.htm#a2927db0488b465a17015c03111f8af5f", null ],

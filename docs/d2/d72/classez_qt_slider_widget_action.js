@@ -1,6 +1,6 @@
 var classez_qt_slider_widget_action =
 [
-    [ "ezQtSliderWidgetAction", "d2/d72/classez_qt_slider_widget_action.htm#a6d782acbec73ddda28b2c0369254b0ee", null ],
+    [ "ezQtSliderWidgetAction", "d2/d72/classez_qt_slider_widget_action.htm#acf57a7292ce5f69f4d5deed65192f7b1", null ],
     [ "createWidget", "d2/d72/classez_qt_slider_widget_action.htm#a542fa1c5342a62db6f61c25b52c7deab", null ],
     [ "eventFilter", "d2/d72/classez_qt_slider_widget_action.htm#a17f75ecf07ecc6c27f09a8aa61b92fdc", null ],
     [ "setMaximum", "d2/d72/classez_qt_slider_widget_action.htm#a7e003c8a3219d9a1d5c95a26f22f39ff", null ],

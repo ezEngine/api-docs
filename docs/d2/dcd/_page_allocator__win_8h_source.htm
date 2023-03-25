@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 22.11</span>
+   &#160;<span id="projectnumber">Release 23.04</span>
    </div>
   </td>
  </tr>
@@ -113,14 +113,14 @@ $(document).ready(function(){initNavTree('d2/dcd/_page_allocator__win_8h_source.
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// static</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keywordtype">void</span> ezPageAllocator::DeallocatePage(<span class="keywordtype">void</span>* ptr)</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keywordtype">void</span> ezPageAllocator::DeallocatePage(<span class="keywordtype">void</span>* pPtr)</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordflow">if</span> ((ezMemoryTrackingFlags::Default &amp; <a class="code" href="../../d6/dce/structez_memory_tracking_flags.htm#ae574bce1a09f0b0742cb69e86500fa27a76e52cf3966f310380bb75759c7e37d3">ezMemoryTrackingFlags::EnableAllocationTracking</a>) != 0)</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    ezMemoryTracker::RemoveAllocation(GetPageAllocatorId(), ptr);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    ezMemoryTracker::RemoveAllocation(GetPageAllocatorId(), pPtr);</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  }</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  EZ_VERIFY(::VirtualFree(ptr, 0, MEM_RELEASE), <span class="stringliteral">&quot;Could not free memory pages. Error Code &#39;{0}&#39;&quot;</span>, ezArgErrorCode(::GetLastError()));</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  EZ_VERIFY(::VirtualFree(pPtr, 0, MEM_RELEASE), <span class="stringliteral">&quot;Could not free memory pages. Error Code &#39;{0}&#39;&quot;</span>, ezArgErrorCode(::GetLastError()));</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -133,7 +133,7 @@ $(document).ready(function(){initNavTree('d2/dcd/_page_allocator__win_8h_source.
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_adb0ac2a169525f5fa05f0527c58e205.htm">Memory</a></li><li class="navelem"><a class="el" href="../../dir_2b61d82766792ebb24827eac69b772f5.htm">Implementation</a></li><li class="navelem"><a class="el" href="../../dir_fe4526d4bfbee9e644159b502abca620.htm">Win</a></li><li class="navelem"><b>PageAllocator_win.h</b></li>
-    <li class="footer">Generated on Fri Nov 18 2022 14:47:59 for ezEngine by
+    <li class="footer">Generated on Sat Mar 25 2023 19:21:56 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

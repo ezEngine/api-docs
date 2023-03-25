@@ -7,7 +7,7 @@ var classez_slider_action =
     [ "IsVisible", "d9/dda/classez_slider_action.htm#a83d976cfc3951c66f277e4c69e1f3779", null ],
     [ "SetEnabled", "d9/dda/classez_slider_action.htm#ab185c02766bb6308a3856c9ee7247ecc", null ],
     [ "SetRange", "d9/dda/classez_slider_action.htm#a843665e23b1b64f6962e21082639ce99", null ],
-    [ "SetValue", "d9/dda/classez_slider_action.htm#ad063873823b5e040375e346016924ad4", null ],
+    [ "SetValue", "d9/dda/classez_slider_action.htm#a5ad7d0c4c08bad4f50d373e946ba5ff8", null ],
     [ "SetVisible", "d9/dda/classez_slider_action.htm#a8aea1385a8b93f766289056a14c3577d", null ],
     [ "m_bEnabled", "d9/dda/classez_slider_action.htm#a40afac1e2232885c45e041d7a836b50b", null ],
     [ "m_bVisible", "d9/dda/classez_slider_action.htm#a7aa21d0bbdae6363357f6d80ecb3bc41", null ],

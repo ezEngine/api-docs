@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 22.11</span>
+   &#160;<span id="projectnumber">Release 23.04</span>
    </div>
   </td>
  </tr>
@@ -131,7 +131,7 @@ $(document).ready(function(){initNavTree('d6/d8e/_event__inl_8h_source.htm','../
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> EventData, <span class="keyword">typename</span> MutexType, ezEventType EventType&gt;</div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="../../dd/de2/classez_event_base.htm#a0ee2c3dbf611300d5805539e294d6313">   47</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/de2/classez_event_base.htm#ab46b4d55704bf9f41af5be830ac46cf9">ezEventBase&lt;EventData, MutexType, EventType&gt;::AddEventHandler</a>(<a class="code" href="../../d5/d68/structez_delegate.htm">Handler</a> handler, Unsubscriber&amp; unsubscriber)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="../../dd/de2/classez_event_base.htm#a07fdb25581967df8f384bdbcc1bf6fa7">   47</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/de2/classez_event_base.htm#ab46b4d55704bf9f41af5be830ac46cf9">ezEventBase&lt;EventData, MutexType, EventType&gt;::AddEventHandler</a>(<a class="code" href="../../d5/d68/structez_delegate.htm">Handler</a> handler, Unsubscriber&amp; inout_unsubscriber)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  EZ_LOCK(m_Mutex);</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
@@ -143,9 +143,9 @@ $(document).ready(function(){initNavTree('d6/d8e/_event__inl_8h_source.htm','../
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  }</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  unsubscriber.Unsubscribe();</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  unsubscriber.m_pEvent = <span class="keyword">this</span>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  unsubscriber.m_SubscriptionID = AddEventHandler(std::move(handler));</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  inout_unsubscriber.Unsubscribe();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  inout_unsubscriber.m_pEvent = <span class="keyword">this</span>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  inout_unsubscriber.m_SubscriptionID = AddEventHandler(std::move(handler));</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
@@ -192,13 +192,13 @@ $(document).ready(function(){initNavTree('d6/d8e/_event__inl_8h_source.htm','../
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> EventData, <span class="keyword">typename</span> MutexType, ezEventType EventType&gt;</div>
-<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="../../dd/de2/classez_event_base.htm#af7897d06330dc01900e0f15d76766ed8">  110</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/de2/classez_event_base.htm#a0be39de527a1a143849442573c074c20">ezEventBase&lt;EventData, MutexType, EventType&gt;::RemoveEventHandler</a>(ezEventSubscriptionID&amp; <span class="keywordtype">id</span>)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="../../dd/de2/classez_event_base.htm#a2961d9089af776759ce8e83e98ed5431">  110</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/de2/classez_event_base.htm#a0be39de527a1a143849442573c074c20">ezEventBase&lt;EventData, MutexType, EventType&gt;::RemoveEventHandler</a>(ezEventSubscriptionID&amp; inout_id)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <span class="keywordflow">if</span> (<span class="keywordtype">id</span> == 0)</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <span class="keywordflow">if</span> (inout_id == 0)</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <span class="keyword">const</span> ezEventSubscriptionID subId = id;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <span class="keywordtype">id</span> = 0;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <span class="keyword">const</span> ezEventSubscriptionID subId = inout_id;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  inout_id = 0;</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  EZ_LOCK(m_Mutex);</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
@@ -384,7 +384,7 @@ $(document).ready(function(){initNavTree('d6/d8e/_event__inl_8h_source.htm','../
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_6842fd92e2bb67127825eb6bd43440c7.htm">Communication</a></li><li class="navelem"><a class="el" href="../../dir_d3382816f6d65c06a1f9ee25730eaa5d.htm">Implementation</a></li><li class="navelem"><b>Event_inl.h</b></li>
-    <li class="footer">Generated on Fri Nov 18 2022 14:47:55 for ezEngine by
+    <li class="footer">Generated on Sat Mar 25 2023 19:21:51 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

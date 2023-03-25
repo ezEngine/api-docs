@@ -1,7 +1,7 @@
 var structez_arg_human_readable =
 [
-    [ "ezArgHumanReadable", "de/d56/structez_arg_human_readable.htm#ab83c2e8dc3c6364125f73d8e07b1cbe8", null ],
-    [ "ezArgHumanReadable", "de/d56/structez_arg_human_readable.htm#a739dc0d18f67a983b5668b3bff59722c", null ],
+    [ "ezArgHumanReadable", "de/d56/structez_arg_human_readable.htm#a0273c84071b66e301c4c71bfb0bde0b8", null ],
+    [ "ezArgHumanReadable", "de/d56/structez_arg_human_readable.htm#aec0ca021727383d243dc591ec178fda0", null ],
     [ "ezArgHumanReadable", "de/d56/structez_arg_human_readable.htm#a707c3bd6697f9fe57f421af5b1e4a0cd", null ],
     [ "ezArgHumanReadable", "de/d56/structez_arg_human_readable.htm#a419663c17d9a3a21b3a46c638a0b632f", null ],
     [ "m_Base", "de/d56/structez_arg_human_readable.htm#a20e34125ed11260323c2d2bc77231ecc", null ],

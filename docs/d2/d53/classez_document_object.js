@@ -2,7 +2,7 @@ var classez_document_object =
 [
     [ "ezDocumentObject", "d2/d53/classez_document_object.htm#a81f9da16f3a1030f85ce6c9afc383104", null ],
     [ "~ezDocumentObject", "d2/d53/classez_document_object.htm#ad0bd2522cae39086f02600acbbec0270", null ],
-    [ "ComputeObjectHash", "d2/d53/classez_document_object.htm#a4e455dafbec9a25a7b5a071fa480f2c8", null ],
+    [ "ComputeObjectHash", "d2/d53/classez_document_object.htm#a03d2691134406aa94748f2f2a7d77c2d", null ],
     [ "GetChild", "d2/d53/classez_document_object.htm#a78d257e4ac97b0f09a2d665bcb487495", null ],
     [ "GetChild", "d2/d53/classez_document_object.htm#abc410a70a68c6f099e4d326fadeb958e", null ],
     [ "GetChildIndex", "d2/d53/classez_document_object.htm#ab3b01837e4800e7390c591a1ab28c9da", null ],

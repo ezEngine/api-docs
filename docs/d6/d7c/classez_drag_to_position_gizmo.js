@@ -14,7 +14,6 @@ var classez_drag_to_position_gizmo =
     [ "OnVisibleChanged", "d6/d7c/classez_drag_to_position_gizmo.htm#a519fe19b7c79dba3c2a73f7ab78bbecf", null ],
     [ "UpdateStatusBarText", "d6/d7c/classez_drag_to_position_gizmo.htm#aed0ff92b7417d905f3d4932908d69496", null ],
     [ "m_bModifiesRotation", "d6/d7c/classez_drag_to_position_gizmo.htm#ac2531a1dd30715020b7b0f54b169a7f3", null ],
-    [ "m_bUseExperimentalGizmo", "d6/d7c/classez_drag_to_position_gizmo.htm#ad49bf0497e8a6e2c5f0acd2aa8162c29", null ],
     [ "m_hAlignNX", "d6/d7c/classez_drag_to_position_gizmo.htm#a9fc0c2adb53ad4d6f0560a6c05c4e857", null ],
     [ "m_hAlignNY", "d6/d7c/classez_drag_to_position_gizmo.htm#a4d8a589e0affccefe72033af24a00dc0", null ],
     [ "m_hAlignNZ", "d6/d7c/classez_drag_to_position_gizmo.htm#a046a27b4508899ac9cc65f5b0f60afc1", null ],

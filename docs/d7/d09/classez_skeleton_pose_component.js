@@ -2,7 +2,7 @@ var classez_skeleton_pose_component =
 [
     [ "ezSkeletonPoseComponent", "d7/d09/classez_skeleton_pose_component.htm#ace831c75aca70a31ed2dd82087a91674", null ],
     [ "~ezSkeletonPoseComponent", "d7/d09/classez_skeleton_pose_component.htm#a44a7ebe3d8f258daf3cc5da6bd5137e8", null ],
-    [ "DeserializeComponent", "d7/d09/classez_skeleton_pose_component.htm#acec77ec9c78658e301f3e83492e46038", null ],
+    [ "DeserializeComponent", "d7/d09/classez_skeleton_pose_component.htm#afd12b63a18c35744ea5165656dd92b0e", null ],
     [ "GetBone", "d7/d09/classez_skeleton_pose_component.htm#affb3e4d210ae78f7b7dce90a9e9ed0e7", null ],
     [ "GetBones", "d7/d09/classez_skeleton_pose_component.htm#ada78e88f856c18bb740382efa1359128", null ],
     [ "GetPoseMode", "d7/d09/classez_skeleton_pose_component.htm#a5030ab9eff2e90cc4e0c75e591f5bfc5", null ],
@@ -14,7 +14,7 @@ var classez_skeleton_pose_component =
     [ "ResendPose", "d7/d09/classez_skeleton_pose_component.htm#a72c58d1e00e5c376300c10d49be42769", null ],
     [ "SendCustomPose", "d7/d09/classez_skeleton_pose_component.htm#aca8ff5f75a86a8bfb9ad87826c18d44d", null ],
     [ "SendRestPose", "d7/d09/classez_skeleton_pose_component.htm#af6cdbffc3b669845381b2b76cda28524", null ],
-    [ "SerializeComponent", "d7/d09/classez_skeleton_pose_component.htm#a62e794c94538fde14775c9cbfab652cf", null ],
+    [ "SerializeComponent", "d7/d09/classez_skeleton_pose_component.htm#a5caad249d0e797a95027caa98c99eb4a", null ],
     [ "SetBone", "d7/d09/classez_skeleton_pose_component.htm#a7d3babe27d90766a8140a3e955c433f5", null ],
     [ "SetPoseMode", "d7/d09/classez_skeleton_pose_component.htm#a3718c9d1c77e87be3317549aff03e52f", null ],
     [ "SetSkeleton", "d7/d09/classez_skeleton_pose_component.htm#a99907f9f396bb13a548ffe5cc8e0a290", null ],

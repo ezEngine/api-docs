@@ -1,9 +1,9 @@
 var classez_progress_range =
 [
-    [ "ezProgressRange", "de/d9b/classez_progress_range.htm#a07a521992d8ae13aca7078d9e93bf59c", null ],
-    [ "ezProgressRange", "de/d9b/classez_progress_range.htm#ac6a40fe8f21c73539220c53a56744dc7", null ],
+    [ "ezProgressRange", "de/d9b/classez_progress_range.htm#a688d1b59e61da071ec5e22f527d91362", null ],
+    [ "ezProgressRange", "de/d9b/classez_progress_range.htm#abe8eea5e74542d25a1683ab08f4421f0", null ],
     [ "~ezProgressRange", "de/d9b/classez_progress_range.htm#ae9ae6f46e5d562f360438565efd80f09", null ],
-    [ "BeginNextStep", "de/d9b/classez_progress_range.htm#af366e92c05a04f07e2533eeaef915feb", null ],
+    [ "BeginNextStep", "de/d9b/classez_progress_range.htm#a4c4512d180551bb25f6b8bfe8b0fe40f", null ],
     [ "GetProgressbar", "de/d9b/classez_progress_range.htm#a08b4f730ce1f884e8bfe6ca8c48bd201", null ],
     [ "SetCompletion", "de/d9b/classez_progress_range.htm#ae3062e8f346e03a0af6753488b6231d0", null ],
     [ "SetStepWeighting", "de/d9b/classez_progress_range.htm#ae6bd569dcb0a59f4d9e36fe1ea352985", null ],

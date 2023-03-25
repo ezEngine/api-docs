@@ -8,7 +8,7 @@ var classez_animation_controller_asset_document =
     [ "CreateOutputGraphNodes", "d2/d07/classez_animation_controller_asset_document.htm#ac126f7aa2cae5a833cc3277bc202fcf0", null ],
     [ "GetSupportedMimeTypesForPasting", "d2/d07/classez_animation_controller_asset_document.htm#a27da96364016dead7f926b481b23b11e", null ],
     [ "InternalGetMetaDataHash", "d2/d07/classez_animation_controller_asset_document.htm#a1588bbd767502f54bf755aaf6d59d2d6", null ],
-    [ "InternalTransformAsset", "d2/d07/classez_animation_controller_asset_document.htm#aa9297d7d5e2f1d466c50dbb40c72d497", null ],
+    [ "InternalTransformAsset", "d2/d07/classez_animation_controller_asset_document.htm#a6715bd56b05a06997ce2e1006283a48e", null ],
     [ "Paste", "d2/d07/classez_animation_controller_asset_document.htm#a4d5a2e89af8055f0a42a95cf47836057", null ],
     [ "RestoreMetaDataAfterLoading", "d2/d07/classez_animation_controller_asset_document.htm#a52931161a68222a729eef415b978dc92", null ],
     [ "SetInputPinIndices", "d2/d07/classez_animation_controller_asset_document.htm#a8148cfad25f15f8184cbd835ac6a0693", null ],

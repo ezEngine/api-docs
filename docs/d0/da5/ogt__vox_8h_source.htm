@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 22.11</span>
+   &#160;<span id="projectnumber">Release 23.04</span>
    </div>
   </td>
  </tr>
@@ -319,28 +319,28 @@ $(document).ready(function(){initNavTree('d0/da5/ogt__vox_8h_source.htm','../../
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="comment">// override the default scene memory allocator if you need to control memory precisely.</span></div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="keywordtype">void</span> ogt_vox_set_memory_allocator(ogt_vox_alloc_func alloc_func, ogt_vox_free_func free_func);</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="keywordtype">void</span>* ogt_vox_malloc(<span class="keywordtype">size_t</span> size);</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="keywordtype">void</span> ogt_vox_free(<span class="keywordtype">void</span>* mem);</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="keywordtype">void</span>* ogt_vox_malloc(<span class="keywordtype">size_t</span> uiSize);</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="keywordtype">void</span> ogt_vox_free(<span class="keywordtype">void</span>* pMem);</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160; </div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;<span class="comment">// flags for ogt_vox_read_scene_with_flags</span></div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> uint32_t k_read_scene_flags_groups = 1 &lt;&lt; 0; <span class="comment">// if not specified, all instance transforms will be flattened into world space. If specified, will read group information and keep all transforms as local transform relative to the group they are in.</span></div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="comment">// creates a scene from a vox file within a memory buffer of a given size.</span></div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="comment">// you can destroy the input buffer once you have the scene as this function will allocate separate memory for the scene objecvt.</span></div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="keyword">const</span> <a class="code" href="../../dd/dff/structogt__vox__scene.htm">ogt_vox_scene</a>* ogt_vox_read_scene(<span class="keyword">const</span> uint8_t* buffer, uint32_t buffer_size);</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="keyword">const</span> <a class="code" href="../../dd/dff/structogt__vox__scene.htm">ogt_vox_scene</a>* ogt_vox_read_scene(<span class="keyword">const</span> uint8_t* pBuffer, uint32_t buffer_size);</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; </div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;<span class="comment">// just like ogt_vox_read_scene, but you can additionally pass a union of k_read_scene_flags</span></div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;<span class="keyword">const</span> <a class="code" href="../../dd/dff/structogt__vox__scene.htm">ogt_vox_scene</a>* ogt_vox_read_scene_with_flags(<span class="keyword">const</span> uint8_t* buffer, uint32_t buffer_size, uint32_t read_flags);</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;<span class="keyword">const</span> <a class="code" href="../../dd/dff/structogt__vox__scene.htm">ogt_vox_scene</a>* ogt_vox_read_scene_with_flags(<span class="keyword">const</span> uint8_t* pBuffer, uint32_t buffer_size, uint32_t read_flags);</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="comment">// destroys a scene object to release its memory.</span></div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;<span class="keywordtype">void</span> ogt_vox_destroy_scene(<span class="keyword">const</span> <a class="code" href="../../dd/dff/structogt__vox__scene.htm">ogt_vox_scene</a>* scene);</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;<span class="keywordtype">void</span> ogt_vox_destroy_scene(<span class="keyword">const</span> <a class="code" href="../../dd/dff/structogt__vox__scene.htm">ogt_vox_scene</a>* pScene);</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;<span class="comment">// writes the scene to a new buffer and returns the buffer size. free the buffer with ogt_vox_free</span></div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;uint8_t* ogt_vox_write_scene(<span class="keyword">const</span> <a class="code" href="../../dd/dff/structogt__vox__scene.htm">ogt_vox_scene</a>* scene, uint32_t* buffer_size);</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;uint8_t* ogt_vox_write_scene(<span class="keyword">const</span> <a class="code" href="../../dd/dff/structogt__vox__scene.htm">ogt_vox_scene</a>* pScene, uint32_t* pBuffer_size);</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160; </div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;<span class="comment">// merges the specified scenes together to create a bigger scene. Merged scene can be destroyed using ogt_vox_destroy_scene</span></div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;<span class="comment">// If you require specific colors in the merged scene palette, provide up to and including 255 of them via required_colors/required_color_count.</span></div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;<a class="code" href="../../dd/dff/structogt__vox__scene.htm">ogt_vox_scene</a>* ogt_vox_merge_scenes(<span class="keyword">const</span> <a class="code" href="../../dd/dff/structogt__vox__scene.htm">ogt_vox_scene</a>** scenes, uint32_t scene_count, <span class="keyword">const</span> <a class="code" href="../../d1/d02/structogt__vox__rgba.htm">ogt_vox_rgba</a>* required_colors, <span class="keyword">const</span> uint32_t required_color_count);</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;<a class="code" href="../../dd/dff/structogt__vox__scene.htm">ogt_vox_scene</a>* ogt_vox_merge_scenes(<span class="keyword">const</span> <a class="code" href="../../dd/dff/structogt__vox__scene.htm">ogt_vox_scene</a>** pScenes, uint32_t scene_count, <span class="keyword">const</span> <a class="code" href="../../d1/d02/structogt__vox__rgba.htm">ogt_vox_rgba</a>* pRequired_colors, <span class="keyword">const</span> uint32_t required_color_count);</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;<span class="preprocessor">#endif // OGT_VOX_H__</span></div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160; </div>
@@ -1458,46 +1458,46 @@ $(document).ready(function(){initNavTree('d0/da5/ogt__vox_8h_source.htm','../../
 <div class="line"><a name="l01369"></a><span class="lineno"> 1369</span>&#160;  uint32_t offset;            <span class="comment">// current offset in the buffer data.</span></div>
 <div class="line"><a name="l01370"></a><span class="lineno"> 1370</span>&#160;};</div>
 <div class="line"><a name="l01371"></a><span class="lineno"> 1371</span>&#160; </div>
-<div class="line"><a name="l01372"></a><span class="lineno"> 1372</span>&#160;<span class="keyword">static</span> <span class="keywordtype">bool</span> _vox_file_read(_vox_file* fp, <span class="keywordtype">void</span>* data, uint32_t data_size)</div>
+<div class="line"><a name="l01372"></a><span class="lineno"> 1372</span>&#160;<span class="keyword">static</span> <span class="keywordtype">bool</span> _vox_file_read(_vox_file* pFp, <span class="keywordtype">void</span>* pData, uint32_t data_size)</div>
 <div class="line"><a name="l01373"></a><span class="lineno"> 1373</span>&#160;{</div>
-<div class="line"><a name="l01374"></a><span class="lineno"> 1374</span>&#160;  <span class="keywordtype">size_t</span> data_to_read = _vox_min(fp-&gt;buffer_size - fp-&gt;offset, data_size);</div>
-<div class="line"><a name="l01375"></a><span class="lineno"> 1375</span>&#160;  memcpy(data, &amp;fp-&gt;buffer[fp-&gt;offset], data_to_read);</div>
-<div class="line"><a name="l01376"></a><span class="lineno"> 1376</span>&#160;  fp-&gt;offset += data_size;</div>
+<div class="line"><a name="l01374"></a><span class="lineno"> 1374</span>&#160;  <span class="keywordtype">size_t</span> data_to_read = _vox_min(pFp-&gt;buffer_size - pFp-&gt;offset, data_size);</div>
+<div class="line"><a name="l01375"></a><span class="lineno"> 1375</span>&#160;  memcpy(pData, &amp;pFp-&gt;buffer[pFp-&gt;offset], data_to_read);</div>
+<div class="line"><a name="l01376"></a><span class="lineno"> 1376</span>&#160;  pFp-&gt;offset += data_size;</div>
 <div class="line"><a name="l01377"></a><span class="lineno"> 1377</span>&#160;  <span class="keywordflow">return</span> data_to_read == data_size;</div>
 <div class="line"><a name="l01378"></a><span class="lineno"> 1378</span>&#160;}</div>
 <div class="line"><a name="l01379"></a><span class="lineno"> 1379</span>&#160; </div>
-<div class="line"><a name="l01380"></a><span class="lineno"> 1380</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> _vox_file_seek_forwards(_vox_file* fp, uint32_t offset)</div>
+<div class="line"><a name="l01380"></a><span class="lineno"> 1380</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> _vox_file_seek_forwards(_vox_file* pFp, uint32_t offset)</div>
 <div class="line"><a name="l01381"></a><span class="lineno"> 1381</span>&#160;{</div>
-<div class="line"><a name="l01382"></a><span class="lineno"> 1382</span>&#160;  fp-&gt;offset += offset;</div>
+<div class="line"><a name="l01382"></a><span class="lineno"> 1382</span>&#160;  pFp-&gt;offset += offset;</div>
 <div class="line"><a name="l01383"></a><span class="lineno"> 1383</span>&#160;}</div>
 <div class="line"><a name="l01384"></a><span class="lineno"> 1384</span>&#160; </div>
-<div class="line"><a name="l01385"></a><span class="lineno"> 1385</span>&#160;<span class="keyword">static</span> <span class="keywordtype">bool</span> _vox_file_eof(<span class="keyword">const</span> _vox_file* fp)</div>
+<div class="line"><a name="l01385"></a><span class="lineno"> 1385</span>&#160;<span class="keyword">static</span> <span class="keywordtype">bool</span> _vox_file_eof(<span class="keyword">const</span> _vox_file* pFp)</div>
 <div class="line"><a name="l01386"></a><span class="lineno"> 1386</span>&#160;{</div>
-<div class="line"><a name="l01387"></a><span class="lineno"> 1387</span>&#160;  <span class="keywordflow">return</span> fp-&gt;offset &gt;= fp-&gt;buffer_size;</div>
+<div class="line"><a name="l01387"></a><span class="lineno"> 1387</span>&#160;  <span class="keywordflow">return</span> pFp-&gt;offset &gt;= pFp-&gt;buffer_size;</div>
 <div class="line"><a name="l01388"></a><span class="lineno"> 1388</span>&#160;}</div>
 <div class="line"><a name="l01389"></a><span class="lineno"> 1389</span>&#160; </div>
-<div class="line"><a name="l01390"></a><span class="lineno"> 1390</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">void</span>* _vox_file_data_pointer(<span class="keyword">const</span> _vox_file* fp)</div>
+<div class="line"><a name="l01390"></a><span class="lineno"> 1390</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">void</span>* _vox_file_data_pointer(<span class="keyword">const</span> _vox_file* pFp)</div>
 <div class="line"><a name="l01391"></a><span class="lineno"> 1391</span>&#160;{</div>
-<div class="line"><a name="l01392"></a><span class="lineno"> 1392</span>&#160;  <span class="keywordflow">return</span> &amp;fp-&gt;buffer[fp-&gt;offset];</div>
+<div class="line"><a name="l01392"></a><span class="lineno"> 1392</span>&#160;  <span class="keywordflow">return</span> &amp;pFp-&gt;buffer[pFp-&gt;offset];</div>
 <div class="line"><a name="l01393"></a><span class="lineno"> 1393</span>&#160;}</div>
 <div class="line"><a name="l01394"></a><span class="lineno"> 1394</span>&#160; </div>
 <div class="line"><a name="l01395"></a><span class="lineno"> 1395</span>&#160;<span class="comment">// hash utilities</span></div>
-<div class="line"><a name="l01396"></a><span class="lineno"> 1396</span>&#160;<span class="keyword">static</span> uint32_t _vox_hash(<span class="keyword">const</span> uint8_t* data, uint32_t data_size)</div>
+<div class="line"><a name="l01396"></a><span class="lineno"> 1396</span>&#160;<span class="keyword">static</span> uint32_t _vox_hash(<span class="keyword">const</span> uint8_t* pData, uint32_t data_size)</div>
 <div class="line"><a name="l01397"></a><span class="lineno"> 1397</span>&#160;{</div>
 <div class="line"><a name="l01398"></a><span class="lineno"> 1398</span>&#160;  uint32_t hash = 0;</div>
 <div class="line"><a name="l01399"></a><span class="lineno"> 1399</span>&#160;  <span class="keywordflow">for</span> (uint32_t i = 0; i &lt; data_size; i++)</div>
-<div class="line"><a name="l01400"></a><span class="lineno"> 1400</span>&#160;    hash = data[i] + (hash * 65559);</div>
+<div class="line"><a name="l01400"></a><span class="lineno"> 1400</span>&#160;    hash = pData[i] + (hash * 65559);</div>
 <div class="line"><a name="l01401"></a><span class="lineno"> 1401</span>&#160;  <span class="keywordflow">return</span> hash;</div>
 <div class="line"><a name="l01402"></a><span class="lineno"> 1402</span>&#160;}</div>
 <div class="line"><a name="l01403"></a><span class="lineno"> 1403</span>&#160; </div>
 <div class="line"><a name="l01404"></a><span class="lineno"> 1404</span>&#160;<span class="comment">// memory allocation utils.</span></div>
-<div class="line"><a name="l01405"></a><span class="lineno"> 1405</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span>* _ogt_priv_alloc_default(<span class="keywordtype">size_t</span> size)</div>
+<div class="line"><a name="l01405"></a><span class="lineno"> 1405</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span>* _ogt_priv_alloc_default(<span class="keywordtype">size_t</span> uiSize)</div>
 <div class="line"><a name="l01406"></a><span class="lineno"> 1406</span>&#160;{</div>
-<div class="line"><a name="l01407"></a><span class="lineno"> 1407</span>&#160;  <span class="keywordflow">return</span> malloc(size);</div>
+<div class="line"><a name="l01407"></a><span class="lineno"> 1407</span>&#160;  <span class="keywordflow">return</span> malloc(uiSize);</div>
 <div class="line"><a name="l01408"></a><span class="lineno"> 1408</span>&#160;}</div>
-<div class="line"><a name="l01409"></a><span class="lineno"> 1409</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> _ogt_priv_free_default(<span class="keywordtype">void</span>* ptr)</div>
+<div class="line"><a name="l01409"></a><span class="lineno"> 1409</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> _ogt_priv_free_default(<span class="keywordtype">void</span>* pPtr)</div>
 <div class="line"><a name="l01410"></a><span class="lineno"> 1410</span>&#160;{</div>
-<div class="line"><a name="l01411"></a><span class="lineno"> 1411</span>&#160;  free(ptr);</div>
+<div class="line"><a name="l01411"></a><span class="lineno"> 1411</span>&#160;  free(pPtr);</div>
 <div class="line"><a name="l01412"></a><span class="lineno"> 1412</span>&#160;}</div>
 <div class="line"><a name="l01413"></a><span class="lineno"> 1413</span>&#160;<span class="keyword">static</span> ogt_vox_alloc_func g_alloc_func = _ogt_priv_alloc_default; <span class="comment">// default function for allocating</span></div>
 <div class="line"><a name="l01414"></a><span class="lineno"> 1414</span>&#160;<span class="keyword">static</span> ogt_vox_free_func g_free_func = _ogt_priv_free_default;    <span class="comment">// default  function for freeing.</span></div>
@@ -1520,45 +1520,45 @@ $(document).ready(function(){initNavTree('d0/da5/ogt__vox_8h_source.htm','../../
 <div class="line"><a name="l01431"></a><span class="lineno"> 1431</span>&#160;  }</div>
 <div class="line"><a name="l01432"></a><span class="lineno"> 1432</span>&#160;}</div>
 <div class="line"><a name="l01433"></a><span class="lineno"> 1433</span>&#160; </div>
-<div class="line"><a name="l01434"></a><span class="lineno"> 1434</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span>* _vox_malloc(<span class="keywordtype">size_t</span> size)</div>
+<div class="line"><a name="l01434"></a><span class="lineno"> 1434</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span>* _vox_malloc(<span class="keywordtype">size_t</span> uiSize)</div>
 <div class="line"><a name="l01435"></a><span class="lineno"> 1435</span>&#160;{</div>
-<div class="line"><a name="l01436"></a><span class="lineno"> 1436</span>&#160;  <span class="keywordflow">return</span> size ? g_alloc_func(size) : NULL;</div>
+<div class="line"><a name="l01436"></a><span class="lineno"> 1436</span>&#160;  <span class="keywordflow">return</span> uiSize ? g_alloc_func(uiSize) : NULL;</div>
 <div class="line"><a name="l01437"></a><span class="lineno"> 1437</span>&#160;}</div>
 <div class="line"><a name="l01438"></a><span class="lineno"> 1438</span>&#160; </div>
-<div class="line"><a name="l01439"></a><span class="lineno"> 1439</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span>* _vox_calloc(<span class="keywordtype">size_t</span> size)</div>
+<div class="line"><a name="l01439"></a><span class="lineno"> 1439</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span>* _vox_calloc(<span class="keywordtype">size_t</span> uiSize)</div>
 <div class="line"><a name="l01440"></a><span class="lineno"> 1440</span>&#160;{</div>
-<div class="line"><a name="l01441"></a><span class="lineno"> 1441</span>&#160;  <span class="keywordtype">void</span>* pMem = _vox_malloc(size);</div>
+<div class="line"><a name="l01441"></a><span class="lineno"> 1441</span>&#160;  <span class="keywordtype">void</span>* pMem = _vox_malloc(uiSize);</div>
 <div class="line"><a name="l01442"></a><span class="lineno"> 1442</span>&#160;  <span class="keywordflow">if</span> (pMem)</div>
-<div class="line"><a name="l01443"></a><span class="lineno"> 1443</span>&#160;    memset(pMem, 0, size);</div>
+<div class="line"><a name="l01443"></a><span class="lineno"> 1443</span>&#160;    memset(pMem, 0, uiSize);</div>
 <div class="line"><a name="l01444"></a><span class="lineno"> 1444</span>&#160;  <span class="keywordflow">return</span> pMem;</div>
 <div class="line"><a name="l01445"></a><span class="lineno"> 1445</span>&#160;}</div>
 <div class="line"><a name="l01446"></a><span class="lineno"> 1446</span>&#160; </div>
-<div class="line"><a name="l01447"></a><span class="lineno"> 1447</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> _vox_free(<span class="keywordtype">void</span>* old_ptr)</div>
+<div class="line"><a name="l01447"></a><span class="lineno"> 1447</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> _vox_free(<span class="keywordtype">void</span>* pOld_ptr)</div>
 <div class="line"><a name="l01448"></a><span class="lineno"> 1448</span>&#160;{</div>
-<div class="line"><a name="l01449"></a><span class="lineno"> 1449</span>&#160;  <span class="keywordflow">if</span> (old_ptr)</div>
-<div class="line"><a name="l01450"></a><span class="lineno"> 1450</span>&#160;    g_free_func(old_ptr);</div>
+<div class="line"><a name="l01449"></a><span class="lineno"> 1449</span>&#160;  <span class="keywordflow">if</span> (pOld_ptr)</div>
+<div class="line"><a name="l01450"></a><span class="lineno"> 1450</span>&#160;    g_free_func(pOld_ptr);</div>
 <div class="line"><a name="l01451"></a><span class="lineno"> 1451</span>&#160;}</div>
 <div class="line"><a name="l01452"></a><span class="lineno"> 1452</span>&#160; </div>
-<div class="line"><a name="l01453"></a><span class="lineno"> 1453</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span>* _vox_realloc(<span class="keywordtype">void</span>* old_ptr, <span class="keywordtype">size_t</span> old_size, <span class="keywordtype">size_t</span> new_size)</div>
+<div class="line"><a name="l01453"></a><span class="lineno"> 1453</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span>* _vox_realloc(<span class="keywordtype">void</span>* pOld_ptr, <span class="keywordtype">size_t</span> uiOld_size, <span class="keywordtype">size_t</span> uiNew_size)</div>
 <div class="line"><a name="l01454"></a><span class="lineno"> 1454</span>&#160;{</div>
 <div class="line"><a name="l01455"></a><span class="lineno"> 1455</span>&#160;  <span class="comment">// early out if new size is non-zero and no resize is required.</span></div>
-<div class="line"><a name="l01456"></a><span class="lineno"> 1456</span>&#160;  <span class="keywordflow">if</span> (new_size &amp;&amp; old_size &gt;= new_size)</div>
-<div class="line"><a name="l01457"></a><span class="lineno"> 1457</span>&#160;    <span class="keywordflow">return</span> old_ptr;</div>
+<div class="line"><a name="l01456"></a><span class="lineno"> 1456</span>&#160;  <span class="keywordflow">if</span> (uiNew_size &amp;&amp; uiOld_size &gt;= uiNew_size)</div>
+<div class="line"><a name="l01457"></a><span class="lineno"> 1457</span>&#160;    <span class="keywordflow">return</span> pOld_ptr;</div>
 <div class="line"><a name="l01458"></a><span class="lineno"> 1458</span>&#160; </div>
 <div class="line"><a name="l01459"></a><span class="lineno"> 1459</span>&#160;  <span class="comment">// memcpy from the old ptr only if both sides are valid.</span></div>
-<div class="line"><a name="l01460"></a><span class="lineno"> 1460</span>&#160;  <span class="keywordtype">void</span>* new_ptr = _vox_malloc(new_size);</div>
+<div class="line"><a name="l01460"></a><span class="lineno"> 1460</span>&#160;  <span class="keywordtype">void</span>* new_ptr = _vox_malloc(uiNew_size);</div>
 <div class="line"><a name="l01461"></a><span class="lineno"> 1461</span>&#160;  <span class="keywordflow">if</span> (new_ptr)</div>
 <div class="line"><a name="l01462"></a><span class="lineno"> 1462</span>&#160;  {</div>
 <div class="line"><a name="l01463"></a><span class="lineno"> 1463</span>&#160;    <span class="comment">// copy any existing elements over</span></div>
-<div class="line"><a name="l01464"></a><span class="lineno"> 1464</span>&#160;    <span class="keywordflow">if</span> (old_ptr &amp;&amp; old_size)</div>
-<div class="line"><a name="l01465"></a><span class="lineno"> 1465</span>&#160;      memcpy(new_ptr, old_ptr, old_size);</div>
+<div class="line"><a name="l01464"></a><span class="lineno"> 1464</span>&#160;    <span class="keywordflow">if</span> (pOld_ptr &amp;&amp; uiOld_size)</div>
+<div class="line"><a name="l01465"></a><span class="lineno"> 1465</span>&#160;      memcpy(new_ptr, pOld_ptr, uiOld_size);</div>
 <div class="line"><a name="l01466"></a><span class="lineno"> 1466</span>&#160;    <span class="comment">// zero out any new tail elements</span></div>
-<div class="line"><a name="l01467"></a><span class="lineno"> 1467</span>&#160;    assert(new_size &gt; old_size); <span class="comment">// this should be guaranteed by the _vox_realloc early out case above.</span></div>
-<div class="line"><a name="l01468"></a><span class="lineno"> 1468</span>&#160;    uintptr_t new_tail_ptr = (uintptr_t)new_ptr + old_size;</div>
-<div class="line"><a name="l01469"></a><span class="lineno"> 1469</span>&#160;    memset((<span class="keywordtype">void</span>*)new_tail_ptr, 0, new_size - old_size);</div>
+<div class="line"><a name="l01467"></a><span class="lineno"> 1467</span>&#160;    assert(uiNew_size &gt; uiOld_size); <span class="comment">// this should be guaranteed by the _vox_realloc early out case above.</span></div>
+<div class="line"><a name="l01468"></a><span class="lineno"> 1468</span>&#160;    uintptr_t new_tail_ptr = (uintptr_t)new_ptr + uiOld_size;</div>
+<div class="line"><a name="l01469"></a><span class="lineno"> 1469</span>&#160;    memset((<span class="keywordtype">void</span>*)new_tail_ptr, 0, uiNew_size - uiOld_size);</div>
 <div class="line"><a name="l01470"></a><span class="lineno"> 1470</span>&#160;  }</div>
-<div class="line"><a name="l01471"></a><span class="lineno"> 1471</span>&#160;  <span class="keywordflow">if</span> (old_ptr)</div>
-<div class="line"><a name="l01472"></a><span class="lineno"> 1472</span>&#160;    _vox_free(old_ptr);</div>
+<div class="line"><a name="l01471"></a><span class="lineno"> 1471</span>&#160;  <span class="keywordflow">if</span> (pOld_ptr)</div>
+<div class="line"><a name="l01472"></a><span class="lineno"> 1472</span>&#160;    _vox_free(pOld_ptr);</div>
 <div class="line"><a name="l01473"></a><span class="lineno"> 1473</span>&#160;  <span class="keywordflow">return</span> new_ptr;</div>
 <div class="line"><a name="l01474"></a><span class="lineno"> 1474</span>&#160;}</div>
 <div class="line"><a name="l01475"></a><span class="lineno"> 1475</span>&#160; </div>
@@ -1579,21 +1579,21 @@ $(document).ready(function(){initNavTree('d0/da5/ogt__vox_8h_source.htm','../../
 <div class="line"><a name="l01490"></a><span class="lineno"> 1490</span>&#160;    count = 0;</div>
 <div class="line"><a name="l01491"></a><span class="lineno"> 1491</span>&#160;    capacity = 0;</div>
 <div class="line"><a name="l01492"></a><span class="lineno"> 1492</span>&#160;  }</div>
-<div class="line"><a name="l01493"></a><span class="lineno"> 1493</span>&#160;  <span class="keywordtype">void</span> reserve(<span class="keywordtype">size_t</span> new_capacity)</div>
+<div class="line"><a name="l01493"></a><span class="lineno"> 1493</span>&#160;  <span class="keywordtype">void</span> reserve(<span class="keywordtype">size_t</span> uiNew_capacity)</div>
 <div class="line"><a name="l01494"></a><span class="lineno"> 1494</span>&#160;  {</div>
-<div class="line"><a name="l01495"></a><span class="lineno"> 1495</span>&#160;    data = (T*)_vox_realloc(data, capacity * <span class="keyword">sizeof</span>(T), new_capacity * <span class="keyword">sizeof</span>(T));</div>
-<div class="line"><a name="l01496"></a><span class="lineno"> 1496</span>&#160;    capacity = new_capacity;</div>
+<div class="line"><a name="l01495"></a><span class="lineno"> 1495</span>&#160;    data = (T*)_vox_realloc(data, capacity * <span class="keyword">sizeof</span>(T), uiNew_capacity * <span class="keyword">sizeof</span>(T));</div>
+<div class="line"><a name="l01496"></a><span class="lineno"> 1496</span>&#160;    capacity = uiNew_capacity;</div>
 <div class="line"><a name="l01497"></a><span class="lineno"> 1497</span>&#160;  }</div>
-<div class="line"><a name="l01498"></a><span class="lineno"> 1498</span>&#160;  <span class="keywordtype">void</span> grow_to_fit_index(<span class="keywordtype">size_t</span> index)</div>
+<div class="line"><a name="l01498"></a><span class="lineno"> 1498</span>&#160;  <span class="keywordtype">void</span> grow_to_fit_index(<span class="keywordtype">size_t</span> uiIndex)</div>
 <div class="line"><a name="l01499"></a><span class="lineno"> 1499</span>&#160;  {</div>
-<div class="line"><a name="l01500"></a><span class="lineno"> 1500</span>&#160;    <span class="keywordflow">if</span> (index &gt;= count)</div>
-<div class="line"><a name="l01501"></a><span class="lineno"> 1501</span>&#160;      resize(index + 1);</div>
+<div class="line"><a name="l01500"></a><span class="lineno"> 1500</span>&#160;    <span class="keywordflow">if</span> (uiIndex &gt;= count)</div>
+<div class="line"><a name="l01501"></a><span class="lineno"> 1501</span>&#160;      resize(uiIndex + 1);</div>
 <div class="line"><a name="l01502"></a><span class="lineno"> 1502</span>&#160;  }</div>
-<div class="line"><a name="l01503"></a><span class="lineno"> 1503</span>&#160;  <span class="keywordtype">void</span> resize(<span class="keywordtype">size_t</span> new_count)</div>
+<div class="line"><a name="l01503"></a><span class="lineno"> 1503</span>&#160;  <span class="keywordtype">void</span> resize(<span class="keywordtype">size_t</span> uiNew_count)</div>
 <div class="line"><a name="l01504"></a><span class="lineno"> 1504</span>&#160;  {</div>
-<div class="line"><a name="l01505"></a><span class="lineno"> 1505</span>&#160;    <span class="keywordflow">if</span> (new_count &gt; capacity)</div>
-<div class="line"><a name="l01506"></a><span class="lineno"> 1506</span>&#160;      reserve(new_count);</div>
-<div class="line"><a name="l01507"></a><span class="lineno"> 1507</span>&#160;    count = new_count;</div>
+<div class="line"><a name="l01505"></a><span class="lineno"> 1505</span>&#160;    <span class="keywordflow">if</span> (uiNew_count &gt; capacity)</div>
+<div class="line"><a name="l01506"></a><span class="lineno"> 1506</span>&#160;      reserve(uiNew_count);</div>
+<div class="line"><a name="l01507"></a><span class="lineno"> 1507</span>&#160;    count = uiNew_count;</div>
 <div class="line"><a name="l01508"></a><span class="lineno"> 1508</span>&#160;  }</div>
 <div class="line"><a name="l01509"></a><span class="lineno"> 1509</span>&#160;  <span class="keywordtype">void</span> push_back(<span class="keyword">const</span> T&amp; new_element)</div>
 <div class="line"><a name="l01510"></a><span class="lineno"> 1510</span>&#160;  {</div>
@@ -1605,32 +1605,32 @@ $(document).ready(function(){initNavTree('d0/da5/ogt__vox_8h_source.htm','../../
 <div class="line"><a name="l01516"></a><span class="lineno"> 1516</span>&#160;    }</div>
 <div class="line"><a name="l01517"></a><span class="lineno"> 1517</span>&#160;    data[count++] = new_element;</div>
 <div class="line"><a name="l01518"></a><span class="lineno"> 1518</span>&#160;  }</div>
-<div class="line"><a name="l01519"></a><span class="lineno"> 1519</span>&#160;  <span class="keywordtype">void</span> push_back_many(<span class="keyword">const</span> T* new_elements, <span class="keywordtype">size_t</span> num_elements)</div>
+<div class="line"><a name="l01519"></a><span class="lineno"> 1519</span>&#160;  <span class="keywordtype">void</span> push_back_many(<span class="keyword">const</span> T* pNew_elements, <span class="keywordtype">size_t</span> uiNum_elements)</div>
 <div class="line"><a name="l01520"></a><span class="lineno"> 1520</span>&#160;  {</div>
-<div class="line"><a name="l01521"></a><span class="lineno"> 1521</span>&#160;    <span class="keywordflow">if</span> (count + num_elements &gt; capacity)</div>
+<div class="line"><a name="l01521"></a><span class="lineno"> 1521</span>&#160;    <span class="keywordflow">if</span> (count + uiNum_elements &gt; capacity)</div>
 <div class="line"><a name="l01522"></a><span class="lineno"> 1522</span>&#160;    {</div>
-<div class="line"><a name="l01523"></a><span class="lineno"> 1523</span>&#160;      <span class="keywordtype">size_t</span> new_capacity = capacity + num_elements;</div>
+<div class="line"><a name="l01523"></a><span class="lineno"> 1523</span>&#160;      <span class="keywordtype">size_t</span> new_capacity = capacity + uiNum_elements;</div>
 <div class="line"><a name="l01524"></a><span class="lineno"> 1524</span>&#160;      new_capacity = new_capacity ? (new_capacity * 3) &gt;&gt; 1 : 2; <span class="comment">// grow by 50% each time, otherwise start at 2 elements.</span></div>
 <div class="line"><a name="l01525"></a><span class="lineno"> 1525</span>&#160;      reserve(new_capacity);</div>
-<div class="line"><a name="l01526"></a><span class="lineno"> 1526</span>&#160;      assert(capacity &gt;= (count + num_elements));</div>
+<div class="line"><a name="l01526"></a><span class="lineno"> 1526</span>&#160;      assert(capacity &gt;= (count + uiNum_elements));</div>
 <div class="line"><a name="l01527"></a><span class="lineno"> 1527</span>&#160;    }</div>
-<div class="line"><a name="l01528"></a><span class="lineno"> 1528</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; num_elements; i++)</div>
-<div class="line"><a name="l01529"></a><span class="lineno"> 1529</span>&#160;      data[count + i] = new_elements[i];</div>
-<div class="line"><a name="l01530"></a><span class="lineno"> 1530</span>&#160;    count += num_elements;</div>
+<div class="line"><a name="l01528"></a><span class="lineno"> 1528</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; uiNum_elements; i++)</div>
+<div class="line"><a name="l01529"></a><span class="lineno"> 1529</span>&#160;      data[count + i] = pNew_elements[i];</div>
+<div class="line"><a name="l01530"></a><span class="lineno"> 1530</span>&#160;    count += uiNum_elements;</div>
 <div class="line"><a name="l01531"></a><span class="lineno"> 1531</span>&#160;  }</div>
 <div class="line"><a name="l01532"></a><span class="lineno"> 1532</span>&#160;  <span class="keywordtype">size_t</span> size()<span class="keyword"> const</span></div>
 <div class="line"><a name="l01533"></a><span class="lineno"> 1533</span>&#160;<span class="keyword">  </span>{</div>
 <div class="line"><a name="l01534"></a><span class="lineno"> 1534</span>&#160;    <span class="keywordflow">return</span> count;</div>
 <div class="line"><a name="l01535"></a><span class="lineno"> 1535</span>&#160;  }</div>
-<div class="line"><a name="l01536"></a><span class="lineno"> 1536</span>&#160;  T&amp; operator[](<span class="keywordtype">size_t</span> index)</div>
+<div class="line"><a name="l01536"></a><span class="lineno"> 1536</span>&#160;  T&amp; operator[](<span class="keywordtype">size_t</span> uiIndex)</div>
 <div class="line"><a name="l01537"></a><span class="lineno"> 1537</span>&#160;  {</div>
-<div class="line"><a name="l01538"></a><span class="lineno"> 1538</span>&#160;    assert(index &lt; count);</div>
-<div class="line"><a name="l01539"></a><span class="lineno"> 1539</span>&#160;    <span class="keywordflow">return</span> data[index];</div>
+<div class="line"><a name="l01538"></a><span class="lineno"> 1538</span>&#160;    assert(uiIndex &lt; count);</div>
+<div class="line"><a name="l01539"></a><span class="lineno"> 1539</span>&#160;    <span class="keywordflow">return</span> data[uiIndex];</div>
 <div class="line"><a name="l01540"></a><span class="lineno"> 1540</span>&#160;  }</div>
-<div class="line"><a name="l01541"></a><span class="lineno"> 1541</span>&#160;  <span class="keyword">const</span> T&amp; operator[](<span class="keywordtype">size_t</span> index)<span class="keyword"> const</span></div>
+<div class="line"><a name="l01541"></a><span class="lineno"> 1541</span>&#160;  <span class="keyword">const</span> T&amp; operator[](<span class="keywordtype">size_t</span> uiIndex)<span class="keyword"> const</span></div>
 <div class="line"><a name="l01542"></a><span class="lineno"> 1542</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l01543"></a><span class="lineno"> 1543</span>&#160;    assert(index &lt; count);</div>
-<div class="line"><a name="l01544"></a><span class="lineno"> 1544</span>&#160;    <span class="keywordflow">return</span> data[index];</div>
+<div class="line"><a name="l01543"></a><span class="lineno"> 1543</span>&#160;    assert(uiIndex &lt; count);</div>
+<div class="line"><a name="l01544"></a><span class="lineno"> 1544</span>&#160;    <span class="keywordflow">return</span> data[uiIndex];</div>
 <div class="line"><a name="l01545"></a><span class="lineno"> 1545</span>&#160;  }</div>
 <div class="line"><a name="l01546"></a><span class="lineno"> 1546</span>&#160;  T* data;         <span class="comment">// data for the array</span></div>
 <div class="line"><a name="l01547"></a><span class="lineno"> 1547</span>&#160;  <span class="keywordtype">size_t</span> capacity; <span class="comment">// capacity of the array</span></div>
@@ -1694,55 +1694,55 @@ $(document).ready(function(){initNavTree('d0/da5/ogt__vox_8h_source.htm','../../
 <div class="line"><a name="l01605"></a><span class="lineno"> 1605</span>&#160;  uint32_t buffer_mem_used;</div>
 <div class="line"><a name="l01606"></a><span class="lineno"> 1606</span>&#160;};</div>
 <div class="line"><a name="l01607"></a><span class="lineno"> 1607</span>&#160; </div>
-<div class="line"><a name="l01608"></a><span class="lineno"> 1608</span>&#160;<span class="keyword">static</span> <span class="keywordtype">bool</span> _vox_file_read_dict(_vox_dictionary* dict, _vox_file* fp)</div>
+<div class="line"><a name="l01608"></a><span class="lineno"> 1608</span>&#160;<span class="keyword">static</span> <span class="keywordtype">bool</span> _vox_file_read_dict(_vox_dictionary* pDict, _vox_file* pFp)</div>
 <div class="line"><a name="l01609"></a><span class="lineno"> 1609</span>&#160;{</div>
 <div class="line"><a name="l01610"></a><span class="lineno"> 1610</span>&#160;  uint32_t num_pairs_to_read = 0;</div>
-<div class="line"><a name="l01611"></a><span class="lineno"> 1611</span>&#160;  _vox_file_read(fp, &amp;num_pairs_to_read, <span class="keyword">sizeof</span>(uint32_t));</div>
+<div class="line"><a name="l01611"></a><span class="lineno"> 1611</span>&#160;  _vox_file_read(pFp, &amp;num_pairs_to_read, <span class="keyword">sizeof</span>(uint32_t));</div>
 <div class="line"><a name="l01612"></a><span class="lineno"> 1612</span>&#160;  assert(num_pairs_to_read &lt;= k_vox_max_dict_key_value_pairs);</div>
 <div class="line"><a name="l01613"></a><span class="lineno"> 1613</span>&#160; </div>
-<div class="line"><a name="l01614"></a><span class="lineno"> 1614</span>&#160;  dict-&gt;buffer_mem_used = 0;</div>
-<div class="line"><a name="l01615"></a><span class="lineno"> 1615</span>&#160;  dict-&gt;num_key_value_pairs = 0;</div>
+<div class="line"><a name="l01614"></a><span class="lineno"> 1614</span>&#160;  pDict-&gt;buffer_mem_used = 0;</div>
+<div class="line"><a name="l01615"></a><span class="lineno"> 1615</span>&#160;  pDict-&gt;num_key_value_pairs = 0;</div>
 <div class="line"><a name="l01616"></a><span class="lineno"> 1616</span>&#160;  <span class="keywordflow">for</span> (uint32_t i = 0; i &lt; num_pairs_to_read; i++)</div>
 <div class="line"><a name="l01617"></a><span class="lineno"> 1617</span>&#160;  {</div>
 <div class="line"><a name="l01618"></a><span class="lineno"> 1618</span>&#160;    <span class="comment">// get the size of the key string</span></div>
 <div class="line"><a name="l01619"></a><span class="lineno"> 1619</span>&#160;    uint32_t key_string_size = 0;</div>
-<div class="line"><a name="l01620"></a><span class="lineno"> 1620</span>&#160;    _vox_file_read(fp, &amp;key_string_size, <span class="keyword">sizeof</span>(uint32_t));</div>
+<div class="line"><a name="l01620"></a><span class="lineno"> 1620</span>&#160;    _vox_file_read(pFp, &amp;key_string_size, <span class="keyword">sizeof</span>(uint32_t));</div>
 <div class="line"><a name="l01621"></a><span class="lineno"> 1621</span>&#160;    <span class="comment">// allocate space for the key, and read it in.</span></div>
-<div class="line"><a name="l01622"></a><span class="lineno"> 1622</span>&#160;    <span class="keywordflow">if</span> (dict-&gt;buffer_mem_used + key_string_size &gt; k_vox_max_dict_buffer_size)</div>
+<div class="line"><a name="l01622"></a><span class="lineno"> 1622</span>&#160;    <span class="keywordflow">if</span> (pDict-&gt;buffer_mem_used + key_string_size &gt; k_vox_max_dict_buffer_size)</div>
 <div class="line"><a name="l01623"></a><span class="lineno"> 1623</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l01624"></a><span class="lineno"> 1624</span>&#160;    <span class="keywordtype">char</span>* key = &amp;dict-&gt;buffer[dict-&gt;buffer_mem_used];</div>
-<div class="line"><a name="l01625"></a><span class="lineno"> 1625</span>&#160;    dict-&gt;buffer_mem_used += key_string_size + 1; <span class="comment">// + 1 for zero terminator</span></div>
-<div class="line"><a name="l01626"></a><span class="lineno"> 1626</span>&#160;    _vox_file_read(fp, key, key_string_size);</div>
+<div class="line"><a name="l01624"></a><span class="lineno"> 1624</span>&#160;    <span class="keywordtype">char</span>* key = &amp;pDict-&gt;buffer[pDict-&gt;buffer_mem_used];</div>
+<div class="line"><a name="l01625"></a><span class="lineno"> 1625</span>&#160;    pDict-&gt;buffer_mem_used += key_string_size + 1; <span class="comment">// + 1 for zero terminator</span></div>
+<div class="line"><a name="l01626"></a><span class="lineno"> 1626</span>&#160;    _vox_file_read(pFp, key, key_string_size);</div>
 <div class="line"><a name="l01627"></a><span class="lineno"> 1627</span>&#160;    key[key_string_size] = 0;                    <span class="comment">// zero-terminate</span></div>
 <div class="line"><a name="l01628"></a><span class="lineno"> 1628</span>&#160;    assert(_vox_strlen(key) == key_string_size); <span class="comment">// sanity check</span></div>
 <div class="line"><a name="l01629"></a><span class="lineno"> 1629</span>&#160; </div>
 <div class="line"><a name="l01630"></a><span class="lineno"> 1630</span>&#160;    <span class="comment">// get the size of the value string</span></div>
 <div class="line"><a name="l01631"></a><span class="lineno"> 1631</span>&#160;    uint32_t value_string_size = 0;</div>
-<div class="line"><a name="l01632"></a><span class="lineno"> 1632</span>&#160;    _vox_file_read(fp, &amp;value_string_size, <span class="keyword">sizeof</span>(uint32_t));</div>
+<div class="line"><a name="l01632"></a><span class="lineno"> 1632</span>&#160;    _vox_file_read(pFp, &amp;value_string_size, <span class="keyword">sizeof</span>(uint32_t));</div>
 <div class="line"><a name="l01633"></a><span class="lineno"> 1633</span>&#160;    <span class="comment">// allocate space for the value, and read it in.</span></div>
-<div class="line"><a name="l01634"></a><span class="lineno"> 1634</span>&#160;    <span class="keywordflow">if</span> (dict-&gt;buffer_mem_used + value_string_size &gt; k_vox_max_dict_buffer_size)</div>
+<div class="line"><a name="l01634"></a><span class="lineno"> 1634</span>&#160;    <span class="keywordflow">if</span> (pDict-&gt;buffer_mem_used + value_string_size &gt; k_vox_max_dict_buffer_size)</div>
 <div class="line"><a name="l01635"></a><span class="lineno"> 1635</span>&#160;      <span class="keywordflow">return</span> (<span class="keyword">false</span>);</div>
-<div class="line"><a name="l01636"></a><span class="lineno"> 1636</span>&#160;    <span class="keywordtype">char</span>* value = &amp;dict-&gt;buffer[dict-&gt;buffer_mem_used];</div>
-<div class="line"><a name="l01637"></a><span class="lineno"> 1637</span>&#160;    dict-&gt;buffer_mem_used += value_string_size + 1; <span class="comment">// + 1 for zero terminator</span></div>
-<div class="line"><a name="l01638"></a><span class="lineno"> 1638</span>&#160;    _vox_file_read(fp, value, value_string_size);</div>
+<div class="line"><a name="l01636"></a><span class="lineno"> 1636</span>&#160;    <span class="keywordtype">char</span>* value = &amp;pDict-&gt;buffer[pDict-&gt;buffer_mem_used];</div>
+<div class="line"><a name="l01637"></a><span class="lineno"> 1637</span>&#160;    pDict-&gt;buffer_mem_used += value_string_size + 1; <span class="comment">// + 1 for zero terminator</span></div>
+<div class="line"><a name="l01638"></a><span class="lineno"> 1638</span>&#160;    _vox_file_read(pFp, value, value_string_size);</div>
 <div class="line"><a name="l01639"></a><span class="lineno"> 1639</span>&#160;    value[value_string_size] = 0;                    <span class="comment">// zero-terminate</span></div>
 <div class="line"><a name="l01640"></a><span class="lineno"> 1640</span>&#160;    assert(_vox_strlen(value) == value_string_size); <span class="comment">// sanity check</span></div>
 <div class="line"><a name="l01641"></a><span class="lineno"> 1641</span>&#160;    <span class="comment">// now assign it in the dictionary</span></div>
-<div class="line"><a name="l01642"></a><span class="lineno"> 1642</span>&#160;    dict-&gt;keys[dict-&gt;num_key_value_pairs] = key;</div>
-<div class="line"><a name="l01643"></a><span class="lineno"> 1643</span>&#160;    dict-&gt;values[dict-&gt;num_key_value_pairs] = value;</div>
-<div class="line"><a name="l01644"></a><span class="lineno"> 1644</span>&#160;    dict-&gt;num_key_value_pairs++;</div>
+<div class="line"><a name="l01642"></a><span class="lineno"> 1642</span>&#160;    pDict-&gt;keys[pDict-&gt;num_key_value_pairs] = key;</div>
+<div class="line"><a name="l01643"></a><span class="lineno"> 1643</span>&#160;    pDict-&gt;values[pDict-&gt;num_key_value_pairs] = value;</div>
+<div class="line"><a name="l01644"></a><span class="lineno"> 1644</span>&#160;    pDict-&gt;num_key_value_pairs++;</div>
 <div class="line"><a name="l01645"></a><span class="lineno"> 1645</span>&#160;  }</div>
 <div class="line"><a name="l01646"></a><span class="lineno"> 1646</span>&#160; </div>
 <div class="line"><a name="l01647"></a><span class="lineno"> 1647</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l01648"></a><span class="lineno"> 1648</span>&#160;}</div>
 <div class="line"><a name="l01649"></a><span class="lineno"> 1649</span>&#160; </div>
 <div class="line"><a name="l01650"></a><span class="lineno"> 1650</span>&#160;<span class="comment">// helper for looking up in the dictionary</span></div>
-<div class="line"><a name="l01651"></a><span class="lineno"> 1651</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* _vox_dict_get_value_as_string(<span class="keyword">const</span> _vox_dictionary* dict, <span class="keyword">const</span> <span class="keywordtype">char</span>* key_to_find, <span class="keyword">const</span> <span class="keywordtype">char</span>* default_value = NULL)</div>
+<div class="line"><a name="l01651"></a><span class="lineno"> 1651</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* _vox_dict_get_value_as_string(<span class="keyword">const</span> _vox_dictionary* pDict, <span class="keyword">const</span> <span class="keywordtype">char</span>* szKey_to_find, <span class="keyword">const</span> <span class="keywordtype">char</span>* szDefault_value = NULL)</div>
 <div class="line"><a name="l01652"></a><span class="lineno"> 1652</span>&#160;{</div>
-<div class="line"><a name="l01653"></a><span class="lineno"> 1653</span>&#160;  <span class="keywordflow">for</span> (uint32_t i = 0; i &lt; dict-&gt;num_key_value_pairs; i++)</div>
-<div class="line"><a name="l01654"></a><span class="lineno"> 1654</span>&#160;    <span class="keywordflow">if</span> (_vox_strcasecmp(dict-&gt;keys[i], key_to_find) == 0)</div>
-<div class="line"><a name="l01655"></a><span class="lineno"> 1655</span>&#160;      <span class="keywordflow">return</span> dict-&gt;values[i];</div>
-<div class="line"><a name="l01656"></a><span class="lineno"> 1656</span>&#160;  <span class="keywordflow">return</span> default_value;</div>
+<div class="line"><a name="l01653"></a><span class="lineno"> 1653</span>&#160;  <span class="keywordflow">for</span> (uint32_t i = 0; i &lt; pDict-&gt;num_key_value_pairs; i++)</div>
+<div class="line"><a name="l01654"></a><span class="lineno"> 1654</span>&#160;    <span class="keywordflow">if</span> (_vox_strcasecmp(pDict-&gt;keys[i], szKey_to_find) == 0)</div>
+<div class="line"><a name="l01655"></a><span class="lineno"> 1655</span>&#160;      <span class="keywordflow">return</span> pDict-&gt;values[i];</div>
+<div class="line"><a name="l01656"></a><span class="lineno"> 1656</span>&#160;  <span class="keywordflow">return</span> szDefault_value;</div>
 <div class="line"><a name="l01657"></a><span class="lineno"> 1657</span>&#160;}</div>
 <div class="line"><a name="l01658"></a><span class="lineno"> 1658</span>&#160; </div>
 <div class="line"><a name="l01659"></a><span class="lineno"> 1659</span>&#160;<span class="comment">// lookup table for _vox_make_transform_from_dict_strings</span></div>
@@ -1757,18 +1757,18 @@ $(document).ready(function(){initNavTree('d0/da5/ogt__vox_8h_source.htm','../../
 <div class="line"><a name="l01668"></a><span class="lineno"> 1668</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> uint32_t k_row2_index[] = {UINT32_MAX, UINT32_MAX, UINT32_MAX, 2, UINT32_MAX, 1, 0, UINT32_MAX};</div>
 <div class="line"><a name="l01669"></a><span class="lineno"> 1669</span>&#160; </div>
 <div class="line"><a name="l01670"></a><span class="lineno"> 1670</span>&#160; </div>
-<div class="line"><a name="l01671"></a><span class="lineno"> 1671</span>&#160;<span class="keyword">static</span> <a class="code" href="../../d7/d30/structogt__vox__transform.htm">ogt_vox_transform</a> _vox_make_transform_from_dict_strings(<span class="keyword">const</span> <span class="keywordtype">char</span>* rotation_string, <span class="keyword">const</span> <span class="keywordtype">char</span>* translation_string)</div>
+<div class="line"><a name="l01671"></a><span class="lineno"> 1671</span>&#160;<span class="keyword">static</span> <a class="code" href="../../d7/d30/structogt__vox__transform.htm">ogt_vox_transform</a> _vox_make_transform_from_dict_strings(<span class="keyword">const</span> <span class="keywordtype">char</span>* szRotation_string, <span class="keyword">const</span> <span class="keywordtype">char</span>* szTranslation_string)</div>
 <div class="line"><a name="l01672"></a><span class="lineno"> 1672</span>&#160;{</div>
 <div class="line"><a name="l01673"></a><span class="lineno"> 1673</span>&#160;  <a class="code" href="../../d7/d30/structogt__vox__transform.htm">ogt_vox_transform</a> transform = _vox_transform_identity();</div>
 <div class="line"><a name="l01674"></a><span class="lineno"> 1674</span>&#160; </div>
-<div class="line"><a name="l01675"></a><span class="lineno"> 1675</span>&#160;  <span class="keywordflow">if</span> (rotation_string != NULL)</div>
+<div class="line"><a name="l01675"></a><span class="lineno"> 1675</span>&#160;  <span class="keywordflow">if</span> (szRotation_string != NULL)</div>
 <div class="line"><a name="l01676"></a><span class="lineno"> 1676</span>&#160;  {</div>
 <div class="line"><a name="l01677"></a><span class="lineno"> 1677</span>&#160;    <span class="comment">// compute the per-row indexes into k_vectors[] array.</span></div>
 <div class="line"><a name="l01678"></a><span class="lineno"> 1678</span>&#160;    <span class="comment">// unpack rotation bits.</span></div>
 <div class="line"><a name="l01679"></a><span class="lineno"> 1679</span>&#160;    <span class="comment">//  bits  : meaning</span></div>
 <div class="line"><a name="l01680"></a><span class="lineno"> 1680</span>&#160;    <span class="comment">//  0 - 1 : index of the non-zero entry in the first row</span></div>
 <div class="line"><a name="l01681"></a><span class="lineno"> 1681</span>&#160;    <span class="comment">//  2 - 3 : index of the non-zero entry in the second row</span></div>
-<div class="line"><a name="l01682"></a><span class="lineno"> 1682</span>&#160;    uint32_t packed_rotation_bits = atoi(rotation_string);</div>
+<div class="line"><a name="l01682"></a><span class="lineno"> 1682</span>&#160;    uint32_t packed_rotation_bits = atoi(szRotation_string);</div>
 <div class="line"><a name="l01683"></a><span class="lineno"> 1683</span>&#160;    uint32_t row0_vec_index = (packed_rotation_bits &gt;&gt; 0) &amp; 3;</div>
 <div class="line"><a name="l01684"></a><span class="lineno"> 1684</span>&#160;    uint32_t row1_vec_index = (packed_rotation_bits &gt;&gt; 2) &amp; 3;</div>
 <div class="line"><a name="l01685"></a><span class="lineno"> 1685</span>&#160;    uint32_t row2_vec_index = k_row2_index[(1 &lt;&lt; row0_vec_index) | (1 &lt;&lt; row1_vec_index)]; <span class="comment">// process of elimination to determine row 2 index based on row0/row1 being one of {0,1,2} choose 2.</span></div>
@@ -1801,12 +1801,12 @@ $(document).ready(function(){initNavTree('d0/da5/ogt__vox_8h_source.htm','../../
 <div class="line"><a name="l01712"></a><span class="lineno"> 1712</span>&#160;    transform.m22 = row2.z;</div>
 <div class="line"><a name="l01713"></a><span class="lineno"> 1713</span>&#160;  }</div>
 <div class="line"><a name="l01714"></a><span class="lineno"> 1714</span>&#160; </div>
-<div class="line"><a name="l01715"></a><span class="lineno"> 1715</span>&#160;  <span class="keywordflow">if</span> (translation_string != NULL)</div>
+<div class="line"><a name="l01715"></a><span class="lineno"> 1715</span>&#160;  <span class="keywordflow">if</span> (szTranslation_string != NULL)</div>
 <div class="line"><a name="l01716"></a><span class="lineno"> 1716</span>&#160;  {</div>
 <div class="line"><a name="l01717"></a><span class="lineno"> 1717</span>&#160;    int32_t x = 0;</div>
 <div class="line"><a name="l01718"></a><span class="lineno"> 1718</span>&#160;    int32_t y = 0;</div>
 <div class="line"><a name="l01719"></a><span class="lineno"> 1719</span>&#160;    int32_t z = 0;</div>
-<div class="line"><a name="l01720"></a><span class="lineno"> 1720</span>&#160;    _vox_str_scanf(translation_string, <span class="stringliteral">&quot;%i %i %i&quot;</span>, &amp;x, &amp;y, &amp;z);</div>
+<div class="line"><a name="l01720"></a><span class="lineno"> 1720</span>&#160;    _vox_str_scanf(szTranslation_string, <span class="stringliteral">&quot;%i %i %i&quot;</span>, &amp;x, &amp;y, &amp;z);</div>
 <div class="line"><a name="l01721"></a><span class="lineno"> 1721</span>&#160;    transform.m30 = (float)x;</div>
 <div class="line"><a name="l01722"></a><span class="lineno"> 1722</span>&#160;    transform.m31 = (float)y;</div>
 <div class="line"><a name="l01723"></a><span class="lineno"> 1723</span>&#160;    transform.m32 = (float)z;</div>
@@ -1852,8 +1852,8 @@ $(document).ready(function(){initNavTree('d0/da5/ogt__vox_8h_source.htm','../../
 <div class="line"><a name="l01763"></a><span class="lineno"> 1763</span>&#160; </div>
 <div class="line"><a name="l01764"></a><span class="lineno"> 1764</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> generate_instances_for_node(</div>
 <div class="line"><a name="l01765"></a><span class="lineno"> 1765</span>&#160;  <span class="keyword">const</span> _vox_array&lt;_vox_scene_node_&gt;&amp; nodes, uint32_t node_index, <span class="keyword">const</span> _vox_array&lt;uint32_t&gt;&amp; child_id_array, uint32_t layer_index,</div>
-<div class="line"><a name="l01766"></a><span class="lineno"> 1766</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d7/d30/structogt__vox__transform.htm">ogt_vox_transform</a>&amp; transform, <span class="keyword">const</span> _vox_array&lt;ogt_vox_model*&gt;&amp; model_ptrs, <span class="keyword">const</span> <span class="keywordtype">char</span>* transform_last_name, <span class="keywordtype">bool</span> transform_last_hidden,</div>
-<div class="line"><a name="l01767"></a><span class="lineno"> 1767</span>&#160;  _vox_array&lt;ogt_vox_instance&gt;&amp; instances, _vox_array&lt;char&gt;&amp; string_data, _vox_array&lt;ogt_vox_group&gt;&amp; groups, uint32_t group_index, <span class="keywordtype">bool</span> generate_groups)</div>
+<div class="line"><a name="l01766"></a><span class="lineno"> 1766</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d7/d30/structogt__vox__transform.htm">ogt_vox_transform</a>&amp; transform, <span class="keyword">const</span> _vox_array&lt;ogt_vox_model*&gt;&amp; model_ptrs, <span class="keyword">const</span> <span class="keywordtype">char</span>* szTransform_last_name, <span class="keywordtype">bool</span> bTransform_last_hidden,</div>
+<div class="line"><a name="l01767"></a><span class="lineno"> 1767</span>&#160;  _vox_array&lt;ogt_vox_instance&gt;&amp; ref_instances, _vox_array&lt;char&gt;&amp; ref_string_data, _vox_array&lt;ogt_vox_group&gt;&amp; ref_groups, uint32_t group_index, <span class="keywordtype">bool</span> bGenerate_groups)</div>
 <div class="line"><a name="l01768"></a><span class="lineno"> 1768</span>&#160;{</div>
 <div class="line"><a name="l01769"></a><span class="lineno"> 1769</span>&#160;  <span class="keyword">const</span> _vox_scene_node_* node = &amp;nodes[node_index];</div>
 <div class="line"><a name="l01770"></a><span class="lineno"> 1770</span>&#160;  assert(node);</div>
@@ -1861,34 +1861,34 @@ $(document).ready(function(){initNavTree('d0/da5/ogt__vox_8h_source.htm','../../
 <div class="line"><a name="l01772"></a><span class="lineno"> 1772</span>&#160;  {</div>
 <div class="line"><a name="l01773"></a><span class="lineno"> 1773</span>&#160;    <span class="keywordflow">case</span> k_nodetype_transform:</div>
 <div class="line"><a name="l01774"></a><span class="lineno"> 1774</span>&#160;    {</div>
-<div class="line"><a name="l01775"></a><span class="lineno"> 1775</span>&#160;      <a class="code" href="../../d7/d30/structogt__vox__transform.htm">ogt_vox_transform</a> new_transform = (generate_groups) ? node-&gt;u.transform.transform                                      <span class="comment">// don&#39;t multiply by the parent transform. caller wants the group-relative transform</span></div>
-<div class="line"><a name="l01776"></a><span class="lineno"> 1776</span>&#160;                                                          : _vox_transform_multiply(node-&gt;u.transform.transform, transform); <span class="comment">// flatten the transform if we&#39;re not generating groups: child transform * parent transform</span></div>
+<div class="line"><a name="l01775"></a><span class="lineno"> 1775</span>&#160;      <a class="code" href="../../d7/d30/structogt__vox__transform.htm">ogt_vox_transform</a> new_transform = (bGenerate_groups) ? node-&gt;u.transform.transform                                      <span class="comment">// don&#39;t multiply by the parent transform. caller wants the group-relative transform</span></div>
+<div class="line"><a name="l01776"></a><span class="lineno"> 1776</span>&#160;                                                           : _vox_transform_multiply(node-&gt;u.transform.transform, transform); <span class="comment">// flatten the transform if we&#39;re not generating groups: child transform * parent transform</span></div>
 <div class="line"><a name="l01777"></a><span class="lineno"> 1777</span>&#160;      <span class="keyword">const</span> <span class="keywordtype">char</span>* new_transform_name = node-&gt;u.transform.name[0] ? node-&gt;u.transform.name : NULL;</div>
-<div class="line"><a name="l01778"></a><span class="lineno"> 1778</span>&#160;      transform_last_name = new_transform_name ? new_transform_name : transform_last_name; <span class="comment">// if this node has a name, use it instead of our parent name</span></div>
-<div class="line"><a name="l01779"></a><span class="lineno"> 1779</span>&#160;      generate_instances_for_node(nodes, node-&gt;u.transform.child_node_id, child_id_array, node-&gt;u.transform.layer_id, new_transform, model_ptrs, transform_last_name, node-&gt;u.transform.hidden, instances, string_data, groups, group_index, generate_groups);</div>
+<div class="line"><a name="l01778"></a><span class="lineno"> 1778</span>&#160;      szTransform_last_name = new_transform_name ? new_transform_name : szTransform_last_name; <span class="comment">// if this node has a name, use it instead of our parent name</span></div>
+<div class="line"><a name="l01779"></a><span class="lineno"> 1779</span>&#160;      generate_instances_for_node(nodes, node-&gt;u.transform.child_node_id, child_id_array, node-&gt;u.transform.layer_id, new_transform, model_ptrs, szTransform_last_name, node-&gt;u.transform.hidden, ref_instances, ref_string_data, ref_groups, group_index, bGenerate_groups);</div>
 <div class="line"><a name="l01780"></a><span class="lineno"> 1780</span>&#160;      <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l01781"></a><span class="lineno"> 1781</span>&#160;    }</div>
 <div class="line"><a name="l01782"></a><span class="lineno"> 1782</span>&#160;    <span class="keywordflow">case</span> k_nodetype_group:</div>
 <div class="line"><a name="l01783"></a><span class="lineno"> 1783</span>&#160;    {</div>
 <div class="line"><a name="l01784"></a><span class="lineno"> 1784</span>&#160;      <span class="comment">// create a new group only if we&#39;re generating groups.</span></div>
 <div class="line"><a name="l01785"></a><span class="lineno"> 1785</span>&#160;      uint32_t next_group_index = 0;</div>
-<div class="line"><a name="l01786"></a><span class="lineno"> 1786</span>&#160;      <span class="keywordflow">if</span> (generate_groups)</div>
+<div class="line"><a name="l01786"></a><span class="lineno"> 1786</span>&#160;      <span class="keywordflow">if</span> (bGenerate_groups)</div>
 <div class="line"><a name="l01787"></a><span class="lineno"> 1787</span>&#160;      {</div>
-<div class="line"><a name="l01788"></a><span class="lineno"> 1788</span>&#160;        next_group_index = (uint32_t)groups.size();</div>
+<div class="line"><a name="l01788"></a><span class="lineno"> 1788</span>&#160;        next_group_index = (uint32_t)ref_groups.size();</div>
 <div class="line"><a name="l01789"></a><span class="lineno"> 1789</span>&#160;        <a class="code" href="../../d4/dc2/structogt__vox__group.htm">ogt_vox_group</a> group;</div>
 <div class="line"><a name="l01790"></a><span class="lineno"> 1790</span>&#160;        group.parent_group_index = group_index;</div>
 <div class="line"><a name="l01791"></a><span class="lineno"> 1791</span>&#160;        group.transform = transform;</div>
-<div class="line"><a name="l01792"></a><span class="lineno"> 1792</span>&#160;        group.hidden = transform_last_hidden;</div>
+<div class="line"><a name="l01792"></a><span class="lineno"> 1792</span>&#160;        group.hidden = bTransform_last_hidden;</div>
 <div class="line"><a name="l01793"></a><span class="lineno"> 1793</span>&#160;        group.layer_index = layer_index;</div>
-<div class="line"><a name="l01794"></a><span class="lineno"> 1794</span>&#160;        groups.push_back(group);</div>
+<div class="line"><a name="l01794"></a><span class="lineno"> 1794</span>&#160;        ref_groups.push_back(group);</div>
 <div class="line"><a name="l01795"></a><span class="lineno"> 1795</span>&#160;      }</div>
 <div class="line"><a name="l01796"></a><span class="lineno"> 1796</span>&#160;      <span class="comment">// child nodes will only be hidden if their immediate transform is hidden.</span></div>
-<div class="line"><a name="l01797"></a><span class="lineno"> 1797</span>&#160;      transform_last_hidden = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l01797"></a><span class="lineno"> 1797</span>&#160;      bTransform_last_hidden = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l01798"></a><span class="lineno"> 1798</span>&#160; </div>
 <div class="line"><a name="l01799"></a><span class="lineno"> 1799</span>&#160;      <span class="keyword">const</span> uint32_t* child_node_ids = (<span class="keyword">const</span> uint32_t*)&amp;child_id_array[node-&gt;u.group.first_child_node_id_index];</div>
 <div class="line"><a name="l01800"></a><span class="lineno"> 1800</span>&#160;      for (uint32_t i = 0; i &lt; node-&gt;u.group.num_child_nodes; i++)</div>
 <div class="line"><a name="l01801"></a><span class="lineno"> 1801</span>&#160;      {</div>
-<div class="line"><a name="l01802"></a><span class="lineno"> 1802</span>&#160;        generate_instances_for_node(nodes, child_node_ids[i], child_id_array, layer_index, transform, model_ptrs, transform_last_name, transform_last_hidden, instances, string_data, groups, next_group_index, generate_groups);</div>
+<div class="line"><a name="l01802"></a><span class="lineno"> 1802</span>&#160;        generate_instances_for_node(nodes, child_node_ids[i], child_id_array, layer_index, transform, model_ptrs, szTransform_last_name, bTransform_last_hidden, ref_instances, ref_string_data, ref_groups, next_group_index, bGenerate_groups);</div>
 <div class="line"><a name="l01803"></a><span class="lineno"> 1803</span>&#160;      }</div>
 <div class="line"><a name="l01804"></a><span class="lineno"> 1804</span>&#160;      <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l01805"></a><span class="lineno"> 1805</span>&#160;    }</div>
@@ -1898,24 +1898,24 @@ $(document).ready(function(){initNavTree('d0/da5/ogt__vox_8h_source.htm','../../
 <div class="line"><a name="l01809"></a><span class="lineno"> 1809</span>&#160;      <span class="keywordflow">if</span> (node-&gt;u.shape.model_id &lt; model_ptrs.size() &amp;&amp; <span class="comment">// model ID is valid</span></div>
 <div class="line"><a name="l01810"></a><span class="lineno"> 1810</span>&#160;          model_ptrs[node-&gt;u.shape.model_id] != NULL)   <span class="comment">// model is non-NULL.</span></div>
 <div class="line"><a name="l01811"></a><span class="lineno"> 1811</span>&#160;      {</div>
-<div class="line"><a name="l01812"></a><span class="lineno"> 1812</span>&#160;        assert(generate_groups || group_index == 0); <span class="comment">// if we&#39;re not generating groups, group_index should be zero to map to the root group.</span></div>
+<div class="line"><a name="l01812"></a><span class="lineno"> 1812</span>&#160;        assert(bGenerate_groups || group_index == 0); <span class="comment">// if we&#39;re not generating groups, group_index should be zero to map to the root group.</span></div>
 <div class="line"><a name="l01813"></a><span class="lineno"> 1813</span>&#160;        <a class="code" href="../../da/d65/structogt__vox__instance.htm">ogt_vox_instance</a> new_instance;</div>
 <div class="line"><a name="l01814"></a><span class="lineno"> 1814</span>&#160;        new_instance.model_index = node-&gt;u.shape.model_id;</div>
 <div class="line"><a name="l01815"></a><span class="lineno"> 1815</span>&#160;        new_instance.transform = transform;</div>
 <div class="line"><a name="l01816"></a><span class="lineno"> 1816</span>&#160;        new_instance.layer_index = layer_index;</div>
 <div class="line"><a name="l01817"></a><span class="lineno"> 1817</span>&#160;        new_instance.group_index = group_index;</div>
-<div class="line"><a name="l01818"></a><span class="lineno"> 1818</span>&#160;        new_instance.hidden = transform_last_hidden;</div>
+<div class="line"><a name="l01818"></a><span class="lineno"> 1818</span>&#160;        new_instance.hidden = bTransform_last_hidden;</div>
 <div class="line"><a name="l01819"></a><span class="lineno"> 1819</span>&#160;        <span class="comment">// if we got a transform name, allocate space in string_data for it and keep track of the index</span></div>
 <div class="line"><a name="l01820"></a><span class="lineno"> 1820</span>&#160;        <span class="comment">// within string data. This will be patched to a real pointer at the very end.</span></div>
 <div class="line"><a name="l01821"></a><span class="lineno"> 1821</span>&#160;        new_instance.name = 0;</div>
-<div class="line"><a name="l01822"></a><span class="lineno"> 1822</span>&#160;        <span class="keywordflow">if</span> (transform_last_name &amp;&amp; transform_last_name[0])</div>
+<div class="line"><a name="l01822"></a><span class="lineno"> 1822</span>&#160;        <span class="keywordflow">if</span> (szTransform_last_name &amp;&amp; szTransform_last_name[0])</div>
 <div class="line"><a name="l01823"></a><span class="lineno"> 1823</span>&#160;        {</div>
-<div class="line"><a name="l01824"></a><span class="lineno"> 1824</span>&#160;          new_instance.name = (<span class="keyword">const</span> <span class="keywordtype">char</span>*)(string_data.size());</div>
-<div class="line"><a name="l01825"></a><span class="lineno"> 1825</span>&#160;          <span class="keywordtype">size_t</span> name_size = _vox_strlen(transform_last_name) + 1; <span class="comment">// +1 for terminator</span></div>
-<div class="line"><a name="l01826"></a><span class="lineno"> 1826</span>&#160;          string_data.push_back_many(transform_last_name, name_size);</div>
+<div class="line"><a name="l01824"></a><span class="lineno"> 1824</span>&#160;          new_instance.name = (<span class="keyword">const</span> <span class="keywordtype">char</span>*)(ref_string_data.size());</div>
+<div class="line"><a name="l01825"></a><span class="lineno"> 1825</span>&#160;          <span class="keywordtype">size_t</span> name_size = _vox_strlen(szTransform_last_name) + 1; <span class="comment">// +1 for terminator</span></div>
+<div class="line"><a name="l01826"></a><span class="lineno"> 1826</span>&#160;          ref_string_data.push_back_many(szTransform_last_name, name_size);</div>
 <div class="line"><a name="l01827"></a><span class="lineno"> 1827</span>&#160;        }</div>
 <div class="line"><a name="l01828"></a><span class="lineno"> 1828</span>&#160;        <span class="comment">// create the instance</span></div>
-<div class="line"><a name="l01829"></a><span class="lineno"> 1829</span>&#160;        instances.push_back(new_instance);</div>
+<div class="line"><a name="l01829"></a><span class="lineno"> 1829</span>&#160;        ref_instances.push_back(new_instance);</div>
 <div class="line"><a name="l01830"></a><span class="lineno"> 1830</span>&#160;      }</div>
 <div class="line"><a name="l01831"></a><span class="lineno"> 1831</span>&#160;      <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l01832"></a><span class="lineno"> 1832</span>&#160;    }</div>
@@ -1927,10 +1927,10 @@ $(document).ready(function(){initNavTree('d0/da5/ogt__vox_8h_source.htm','../../
 <div class="line"><a name="l01838"></a><span class="lineno"> 1838</span>&#160;}</div>
 <div class="line"><a name="l01839"></a><span class="lineno"> 1839</span>&#160; </div>
 <div class="line"><a name="l01840"></a><span class="lineno"> 1840</span>&#160;<span class="comment">// ensure instances are ordered in order of increasing model_index</span></div>
-<div class="line"><a name="l01841"></a><span class="lineno"> 1841</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> _vox_ordered_compare_instance(<span class="keyword">const</span> <span class="keywordtype">void</span>* _lhs, <span class="keyword">const</span> <span class="keywordtype">void</span>* _rhs)</div>
+<div class="line"><a name="l01841"></a><span class="lineno"> 1841</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> _vox_ordered_compare_instance(<span class="keyword">const</span> <span class="keywordtype">void</span>* p_lhs, <span class="keyword">const</span> <span class="keywordtype">void</span>* p_rhs)</div>
 <div class="line"><a name="l01842"></a><span class="lineno"> 1842</span>&#160;{</div>
-<div class="line"><a name="l01843"></a><span class="lineno"> 1843</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../da/d65/structogt__vox__instance.htm">ogt_vox_instance</a>* lhs = (<span class="keyword">const</span> <a class="code" href="../../da/d65/structogt__vox__instance.htm">ogt_vox_instance</a>*)_lhs;</div>
-<div class="line"><a name="l01844"></a><span class="lineno"> 1844</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../da/d65/structogt__vox__instance.htm">ogt_vox_instance</a>* rhs = (<span class="keyword">const</span> <a class="code" href="../../da/d65/structogt__vox__instance.htm">ogt_vox_instance</a>*)_rhs;</div>
+<div class="line"><a name="l01843"></a><span class="lineno"> 1843</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../da/d65/structogt__vox__instance.htm">ogt_vox_instance</a>* lhs = (<span class="keyword">const</span> <a class="code" href="../../da/d65/structogt__vox__instance.htm">ogt_vox_instance</a>*)p_lhs;</div>
+<div class="line"><a name="l01844"></a><span class="lineno"> 1844</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../da/d65/structogt__vox__instance.htm">ogt_vox_instance</a>* rhs = (<span class="keyword">const</span> <a class="code" href="../../da/d65/structogt__vox__instance.htm">ogt_vox_instance</a>*)p_rhs;</div>
 <div class="line"><a name="l01845"></a><span class="lineno"> 1845</span>&#160;  <span class="keywordflow">return</span> lhs-&gt;model_index &lt; rhs-&gt;model_index ? -1 : lhs-&gt;model_index &gt; rhs-&gt;model_index ? 1</div>
 <div class="line"><a name="l01846"></a><span class="lineno"> 1846</span>&#160;                                                                                        : 0;</div>
 <div class="line"><a name="l01847"></a><span class="lineno"> 1847</span>&#160;}</div>
@@ -1952,9 +1952,9 @@ $(document).ready(function(){initNavTree('d0/da5/ogt__vox_8h_source.htm','../../
 <div class="line"><a name="l01863"></a><span class="lineno"> 1863</span>&#160;  <span class="keywordflow">return</span> memcmp(lhs-&gt;voxel_data, rhs-&gt;voxel_data, num_voxels_lhs) == 0 ? true : <span class="keyword">false</span>;</div>
 <div class="line"><a name="l01864"></a><span class="lineno"> 1864</span>&#160;}</div>
 <div class="line"><a name="l01865"></a><span class="lineno"> 1865</span>&#160; </div>
-<div class="line"><a name="l01866"></a><span class="lineno"> 1866</span>&#160;<span class="keyword">const</span> <a class="code" href="../../dd/dff/structogt__vox__scene.htm">ogt_vox_scene</a>* ogt_vox_read_scene_with_flags(<span class="keyword">const</span> uint8_t* buffer, uint32_t buffer_size, uint32_t read_flags)</div>
+<div class="line"><a name="l01866"></a><span class="lineno"> 1866</span>&#160;<span class="keyword">const</span> <a class="code" href="../../dd/dff/structogt__vox__scene.htm">ogt_vox_scene</a>* ogt_vox_read_scene_with_flags(<span class="keyword">const</span> uint8_t* pBuffer, uint32_t buffer_size, uint32_t read_flags)</div>
 <div class="line"><a name="l01867"></a><span class="lineno"> 1867</span>&#160;{</div>
-<div class="line"><a name="l01868"></a><span class="lineno"> 1868</span>&#160;  _vox_file file = {buffer, buffer_size, 0};</div>
+<div class="line"><a name="l01868"></a><span class="lineno"> 1868</span>&#160;  _vox_file file = {pBuffer, buffer_size, 0};</div>
 <div class="line"><a name="l01869"></a><span class="lineno"> 1869</span>&#160;  _vox_file* fp = &amp;file;</div>
 <div class="line"><a name="l01870"></a><span class="lineno"> 1870</span>&#160; </div>
 <div class="line"><a name="l01871"></a><span class="lineno"> 1871</span>&#160;  <span class="comment">// parsing state/context</span></div>
@@ -2464,14 +2464,14 @@ $(document).ready(function(){initNavTree('d0/da5/ogt__vox_8h_source.htm','../../
 <div class="line"><a name="l02375"></a><span class="lineno"> 2375</span>&#160;  <span class="keywordflow">return</span> scene;</div>
 <div class="line"><a name="l02376"></a><span class="lineno"> 2376</span>&#160;}</div>
 <div class="line"><a name="l02377"></a><span class="lineno"> 2377</span>&#160; </div>
-<div class="line"><a name="l02378"></a><span class="lineno"> 2378</span>&#160;<span class="keyword">const</span> <a class="code" href="../../dd/dff/structogt__vox__scene.htm">ogt_vox_scene</a>* ogt_vox_read_scene(<span class="keyword">const</span> uint8_t* buffer, uint32_t buffer_size)</div>
+<div class="line"><a name="l02378"></a><span class="lineno"> 2378</span>&#160;<span class="keyword">const</span> <a class="code" href="../../dd/dff/structogt__vox__scene.htm">ogt_vox_scene</a>* ogt_vox_read_scene(<span class="keyword">const</span> uint8_t* pBuffer, uint32_t buffer_size)</div>
 <div class="line"><a name="l02379"></a><span class="lineno"> 2379</span>&#160;{</div>
-<div class="line"><a name="l02380"></a><span class="lineno"> 2380</span>&#160;  <span class="keywordflow">return</span> ogt_vox_read_scene_with_flags(buffer, buffer_size, 0);</div>
+<div class="line"><a name="l02380"></a><span class="lineno"> 2380</span>&#160;  <span class="keywordflow">return</span> ogt_vox_read_scene_with_flags(pBuffer, buffer_size, 0);</div>
 <div class="line"><a name="l02381"></a><span class="lineno"> 2381</span>&#160;}</div>
 <div class="line"><a name="l02382"></a><span class="lineno"> 2382</span>&#160; </div>
-<div class="line"><a name="l02383"></a><span class="lineno"> 2383</span>&#160;<span class="keywordtype">void</span> ogt_vox_destroy_scene(<span class="keyword">const</span> <a class="code" href="../../dd/dff/structogt__vox__scene.htm">ogt_vox_scene</a>* _scene)</div>
+<div class="line"><a name="l02383"></a><span class="lineno"> 2383</span>&#160;<span class="keywordtype">void</span> ogt_vox_destroy_scene(<span class="keyword">const</span> <a class="code" href="../../dd/dff/structogt__vox__scene.htm">ogt_vox_scene</a>* p_scene)</div>
 <div class="line"><a name="l02384"></a><span class="lineno"> 2384</span>&#160;{</div>
-<div class="line"><a name="l02385"></a><span class="lineno"> 2385</span>&#160;  <a class="code" href="../../dd/dff/structogt__vox__scene.htm">ogt_vox_scene</a>* scene = <span class="keyword">const_cast&lt;</span><a class="code" href="../../dd/dff/structogt__vox__scene.htm">ogt_vox_scene</a>*<span class="keyword">&gt;</span>(_scene);</div>
+<div class="line"><a name="l02385"></a><span class="lineno"> 2385</span>&#160;  <a class="code" href="../../dd/dff/structogt__vox__scene.htm">ogt_vox_scene</a>* scene = <span class="keyword">const_cast&lt;</span><a class="code" href="../../dd/dff/structogt__vox__scene.htm">ogt_vox_scene</a>*<span class="keyword">&gt;</span>(p_scene);</div>
 <div class="line"><a name="l02386"></a><span class="lineno"> 2386</span>&#160;  <span class="comment">// free models from model array</span></div>
 <div class="line"><a name="l02387"></a><span class="lineno"> 2387</span>&#160;  <span class="keywordflow">for</span> (uint32_t i = 0; i &lt; scene-&gt;num_models; i++)</div>
 <div class="line"><a name="l02388"></a><span class="lineno"> 2388</span>&#160;    _vox_free((<span class="keywordtype">void</span>*)scene-&gt;models[i]);</div>
@@ -2526,12 +2526,12 @@ $(document).ready(function(){initNavTree('d0/da5/ogt__vox_8h_source.htm','../../
 <div class="line"><a name="l02437"></a><span class="lineno"> 2437</span>&#160;  <span class="keywordflow">return</span> is_negative;</div>
 <div class="line"><a name="l02438"></a><span class="lineno"> 2438</span>&#160;}</div>
 <div class="line"><a name="l02439"></a><span class="lineno"> 2439</span>&#160; </div>
-<div class="line"><a name="l02440"></a><span class="lineno"> 2440</span>&#160;<span class="keyword">static</span> uint8_t _vox_make_packed_rotation_from_transform(<span class="keyword">const</span> <a class="code" href="../../d7/d30/structogt__vox__transform.htm">ogt_vox_transform</a>* transform)</div>
+<div class="line"><a name="l02440"></a><span class="lineno"> 2440</span>&#160;<span class="keyword">static</span> uint8_t _vox_make_packed_rotation_from_transform(<span class="keyword">const</span> <a class="code" href="../../d7/d30/structogt__vox__transform.htm">ogt_vox_transform</a>* pTransform)</div>
 <div class="line"><a name="l02441"></a><span class="lineno"> 2441</span>&#160;{</div>
 <div class="line"><a name="l02442"></a><span class="lineno"> 2442</span>&#160;  <span class="comment">// magicavoxel stores rows, and we have columns, so we do the swizzle here into rows</span></div>
-<div class="line"><a name="l02443"></a><span class="lineno"> 2443</span>&#160;  vec3 row0 = vec3_make(transform-&gt;m00, transform-&gt;m10, transform-&gt;m20);</div>
-<div class="line"><a name="l02444"></a><span class="lineno"> 2444</span>&#160;  vec3 row1 = vec3_make(transform-&gt;m01, transform-&gt;m11, transform-&gt;m21);</div>
-<div class="line"><a name="l02445"></a><span class="lineno"> 2445</span>&#160;  vec3 row2 = vec3_make(transform-&gt;m02, transform-&gt;m12, transform-&gt;m22);</div>
+<div class="line"><a name="l02443"></a><span class="lineno"> 2443</span>&#160;  vec3 row0 = vec3_make(pTransform-&gt;m00, pTransform-&gt;m10, pTransform-&gt;m20);</div>
+<div class="line"><a name="l02444"></a><span class="lineno"> 2444</span>&#160;  vec3 row1 = vec3_make(pTransform-&gt;m01, pTransform-&gt;m11, pTransform-&gt;m21);</div>
+<div class="line"><a name="l02445"></a><span class="lineno"> 2445</span>&#160;  vec3 row2 = vec3_make(pTransform-&gt;m02, pTransform-&gt;m12, pTransform-&gt;m22);</div>
 <div class="line"><a name="l02446"></a><span class="lineno"> 2446</span>&#160;  uint32_t row0_index = 3, row1_index = 3, row2_index = 3;</div>
 <div class="line"><a name="l02447"></a><span class="lineno"> 2447</span>&#160;  <span class="keywordtype">bool</span> row0_negative = _vox_get_vec3_rotation_bits(row0, row0_index);</div>
 <div class="line"><a name="l02448"></a><span class="lineno"> 2448</span>&#160;  <span class="keywordtype">bool</span> row1_negative = _vox_get_vec3_rotation_bits(row1, row1_index);</div>
@@ -2545,64 +2545,64 @@ $(document).ready(function(){initNavTree('d0/da5/ogt__vox_8h_source.htm','../../
 <div class="line"><a name="l02456"></a><span class="lineno"> 2456</span>&#160;  _vox_array&lt;uint8_t&gt; data;</div>
 <div class="line"><a name="l02457"></a><span class="lineno"> 2457</span>&#160;};</div>
 <div class="line"><a name="l02458"></a><span class="lineno"> 2458</span>&#160; </div>
-<div class="line"><a name="l02459"></a><span class="lineno"> 2459</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> _vox_file_writeable_init(_vox_file_writeable* fp)</div>
+<div class="line"><a name="l02459"></a><span class="lineno"> 2459</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> _vox_file_writeable_init(_vox_file_writeable* pFp)</div>
 <div class="line"><a name="l02460"></a><span class="lineno"> 2460</span>&#160;{</div>
-<div class="line"><a name="l02461"></a><span class="lineno"> 2461</span>&#160;  fp-&gt;data.reserve(1024);</div>
+<div class="line"><a name="l02461"></a><span class="lineno"> 2461</span>&#160;  pFp-&gt;data.reserve(1024);</div>
 <div class="line"><a name="l02462"></a><span class="lineno"> 2462</span>&#160;}</div>
-<div class="line"><a name="l02463"></a><span class="lineno"> 2463</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> _vox_file_write(_vox_file_writeable* fp, <span class="keyword">const</span> <span class="keywordtype">void</span>* data, uint32_t data_size)</div>
+<div class="line"><a name="l02463"></a><span class="lineno"> 2463</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> _vox_file_write(_vox_file_writeable* pFp, <span class="keyword">const</span> <span class="keywordtype">void</span>* pData, uint32_t data_size)</div>
 <div class="line"><a name="l02464"></a><span class="lineno"> 2464</span>&#160;{</div>
-<div class="line"><a name="l02465"></a><span class="lineno"> 2465</span>&#160;  fp-&gt;data.push_back_many((<span class="keyword">const</span> uint8_t*)data, data_size);</div>
+<div class="line"><a name="l02465"></a><span class="lineno"> 2465</span>&#160;  pFp-&gt;data.push_back_many((<span class="keyword">const</span> uint8_t*)pData, data_size);</div>
 <div class="line"><a name="l02466"></a><span class="lineno"> 2466</span>&#160;}</div>
-<div class="line"><a name="l02467"></a><span class="lineno"> 2467</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> _vox_file_write_uint32(_vox_file_writeable* fp, uint32_t data)</div>
+<div class="line"><a name="l02467"></a><span class="lineno"> 2467</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> _vox_file_write_uint32(_vox_file_writeable* pFp, uint32_t data)</div>
 <div class="line"><a name="l02468"></a><span class="lineno"> 2468</span>&#160;{</div>
-<div class="line"><a name="l02469"></a><span class="lineno"> 2469</span>&#160;  fp-&gt;data.push_back_many((<span class="keyword">const</span> uint8_t*)&amp;data, <span class="keyword">sizeof</span>(uint32_t));</div>
+<div class="line"><a name="l02469"></a><span class="lineno"> 2469</span>&#160;  pFp-&gt;data.push_back_many((<span class="keyword">const</span> uint8_t*)&amp;data, <span class="keyword">sizeof</span>(uint32_t));</div>
 <div class="line"><a name="l02470"></a><span class="lineno"> 2470</span>&#160;}</div>
-<div class="line"><a name="l02471"></a><span class="lineno"> 2471</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> _vox_file_write_uint8(_vox_file_writeable* fp, uint8_t data)</div>
+<div class="line"><a name="l02471"></a><span class="lineno"> 2471</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> _vox_file_write_uint8(_vox_file_writeable* pFp, uint8_t data)</div>
 <div class="line"><a name="l02472"></a><span class="lineno"> 2472</span>&#160;{</div>
-<div class="line"><a name="l02473"></a><span class="lineno"> 2473</span>&#160;  fp-&gt;data.push_back_many((<span class="keyword">const</span> uint8_t*)&amp;data, <span class="keyword">sizeof</span>(uint8_t));</div>
+<div class="line"><a name="l02473"></a><span class="lineno"> 2473</span>&#160;  pFp-&gt;data.push_back_many((<span class="keyword">const</span> uint8_t*)&amp;data, <span class="keyword">sizeof</span>(uint8_t));</div>
 <div class="line"><a name="l02474"></a><span class="lineno"> 2474</span>&#160;}</div>
-<div class="line"><a name="l02475"></a><span class="lineno"> 2475</span>&#160;<span class="keyword">static</span> uint32_t _vox_file_get_offset(<span class="keyword">const</span> _vox_file_writeable* fp)</div>
+<div class="line"><a name="l02475"></a><span class="lineno"> 2475</span>&#160;<span class="keyword">static</span> uint32_t _vox_file_get_offset(<span class="keyword">const</span> _vox_file_writeable* pFp)</div>
 <div class="line"><a name="l02476"></a><span class="lineno"> 2476</span>&#160;{</div>
-<div class="line"><a name="l02477"></a><span class="lineno"> 2477</span>&#160;  <span class="keywordflow">return</span> (uint32_t)fp-&gt;data.count;</div>
+<div class="line"><a name="l02477"></a><span class="lineno"> 2477</span>&#160;  <span class="keywordflow">return</span> (uint32_t)pFp-&gt;data.count;</div>
 <div class="line"><a name="l02478"></a><span class="lineno"> 2478</span>&#160;}</div>
-<div class="line"><a name="l02479"></a><span class="lineno"> 2479</span>&#160;<span class="keyword">static</span> uint8_t* _vox_file_get_data(_vox_file_writeable* fp)</div>
+<div class="line"><a name="l02479"></a><span class="lineno"> 2479</span>&#160;<span class="keyword">static</span> uint8_t* _vox_file_get_data(_vox_file_writeable* pFp)</div>
 <div class="line"><a name="l02480"></a><span class="lineno"> 2480</span>&#160;{</div>
-<div class="line"><a name="l02481"></a><span class="lineno"> 2481</span>&#160;  <span class="keywordflow">return</span> &amp;fp-&gt;data[0];</div>
+<div class="line"><a name="l02481"></a><span class="lineno"> 2481</span>&#160;  <span class="keywordflow">return</span> &amp;pFp-&gt;data[0];</div>
 <div class="line"><a name="l02482"></a><span class="lineno"> 2482</span>&#160;}</div>
-<div class="line"><a name="l02483"></a><span class="lineno"> 2483</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> _vox_file_write_dict_key_value(_vox_file_writeable* fp, <span class="keyword">const</span> <span class="keywordtype">char</span>* key, <span class="keyword">const</span> <span class="keywordtype">char</span>* value)</div>
+<div class="line"><a name="l02483"></a><span class="lineno"> 2483</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> _vox_file_write_dict_key_value(_vox_file_writeable* pFp, <span class="keyword">const</span> <span class="keywordtype">char</span>* szKey, <span class="keyword">const</span> <span class="keywordtype">char</span>* value)</div>
 <div class="line"><a name="l02484"></a><span class="lineno"> 2484</span>&#160;{</div>
-<div class="line"><a name="l02485"></a><span class="lineno"> 2485</span>&#160;  <span class="keywordflow">if</span> (key == NULL || value == NULL)</div>
+<div class="line"><a name="l02485"></a><span class="lineno"> 2485</span>&#160;  <span class="keywordflow">if</span> (szKey == NULL || value == NULL)</div>
 <div class="line"><a name="l02486"></a><span class="lineno"> 2486</span>&#160;    <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l02487"></a><span class="lineno"> 2487</span>&#160;  uint32_t key_len = (uint32_t)_vox_strlen(key);</div>
+<div class="line"><a name="l02487"></a><span class="lineno"> 2487</span>&#160;  uint32_t key_len = (uint32_t)_vox_strlen(szKey);</div>
 <div class="line"><a name="l02488"></a><span class="lineno"> 2488</span>&#160;  uint32_t value_len = (uint32_t)_vox_strlen(value);</div>
-<div class="line"><a name="l02489"></a><span class="lineno"> 2489</span>&#160;  _vox_file_write_uint32(fp, key_len);</div>
-<div class="line"><a name="l02490"></a><span class="lineno"> 2490</span>&#160;  _vox_file_write(fp, key, key_len);</div>
-<div class="line"><a name="l02491"></a><span class="lineno"> 2491</span>&#160;  _vox_file_write_uint32(fp, value_len);</div>
-<div class="line"><a name="l02492"></a><span class="lineno"> 2492</span>&#160;  _vox_file_write(fp, value, value_len);</div>
+<div class="line"><a name="l02489"></a><span class="lineno"> 2489</span>&#160;  _vox_file_write_uint32(pFp, key_len);</div>
+<div class="line"><a name="l02490"></a><span class="lineno"> 2490</span>&#160;  _vox_file_write(pFp, szKey, key_len);</div>
+<div class="line"><a name="l02491"></a><span class="lineno"> 2491</span>&#160;  _vox_file_write_uint32(pFp, value_len);</div>
+<div class="line"><a name="l02492"></a><span class="lineno"> 2492</span>&#160;  _vox_file_write(pFp, value, value_len);</div>
 <div class="line"><a name="l02493"></a><span class="lineno"> 2493</span>&#160;}</div>
 <div class="line"><a name="l02494"></a><span class="lineno"> 2494</span>&#160; </div>
-<div class="line"><a name="l02495"></a><span class="lineno"> 2495</span>&#160;<span class="keyword">static</span> uint32_t _vox_dict_key_value_size(<span class="keyword">const</span> <span class="keywordtype">char</span>* key, <span class="keyword">const</span> <span class="keywordtype">char</span>* value)</div>
+<div class="line"><a name="l02495"></a><span class="lineno"> 2495</span>&#160;<span class="keyword">static</span> uint32_t _vox_dict_key_value_size(<span class="keyword">const</span> <span class="keywordtype">char</span>* szKey, <span class="keyword">const</span> <span class="keywordtype">char</span>* value)</div>
 <div class="line"><a name="l02496"></a><span class="lineno"> 2496</span>&#160;{</div>
-<div class="line"><a name="l02497"></a><span class="lineno"> 2497</span>&#160;  <span class="keywordflow">if</span> (key == NULL || value == NULL)</div>
+<div class="line"><a name="l02497"></a><span class="lineno"> 2497</span>&#160;  <span class="keywordflow">if</span> (szKey == NULL || value == NULL)</div>
 <div class="line"><a name="l02498"></a><span class="lineno"> 2498</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l02499"></a><span class="lineno"> 2499</span>&#160;  <span class="keywordtype">size_t</span> size = <span class="keyword">sizeof</span>(uint32_t) + _vox_strlen(key) + <span class="keyword">sizeof</span>(uint32_t) + _vox_strlen(value);</div>
+<div class="line"><a name="l02499"></a><span class="lineno"> 2499</span>&#160;  <span class="keywordtype">size_t</span> size = <span class="keyword">sizeof</span>(uint32_t) + _vox_strlen(szKey) + <span class="keyword">sizeof</span>(uint32_t) + _vox_strlen(value);</div>
 <div class="line"><a name="l02500"></a><span class="lineno"> 2500</span>&#160;  <span class="keywordflow">return</span> (uint32_t)size;</div>
 <div class="line"><a name="l02501"></a><span class="lineno"> 2501</span>&#160;}</div>
 <div class="line"><a name="l02502"></a><span class="lineno"> 2502</span>&#160; </div>
-<div class="line"><a name="l02503"></a><span class="lineno"> 2503</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> _vox_file_write_chunk_nTRN(_vox_file_writeable* fp, uint32_t node_id, uint32_t child_node_id, <span class="keyword">const</span> <span class="keywordtype">char</span>* name, <span class="keywordtype">bool</span> hidden, <span class="keyword">const</span> <a class="code" href="../../d7/d30/structogt__vox__transform.htm">ogt_vox_transform</a>* transform, uint32_t layer_id)</div>
+<div class="line"><a name="l02503"></a><span class="lineno"> 2503</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> _vox_file_write_chunk_nTRN(_vox_file_writeable* pFp, uint32_t node_id, uint32_t child_node_id, <span class="keyword">const</span> <span class="keywordtype">char</span>* szName, <span class="keywordtype">bool</span> bHidden, <span class="keyword">const</span> <a class="code" href="../../d7/d30/structogt__vox__transform.htm">ogt_vox_transform</a>* pTransform, uint32_t layer_id)</div>
 <div class="line"><a name="l02504"></a><span class="lineno"> 2504</span>&#160;{</div>
 <div class="line"><a name="l02505"></a><span class="lineno"> 2505</span>&#160;  <span class="comment">// obtain dictionary string pointers</span></div>
-<div class="line"><a name="l02506"></a><span class="lineno"> 2506</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* hidden_string = hidden ? <span class="stringliteral">&quot;1&quot;</span> : NULL;</div>
+<div class="line"><a name="l02506"></a><span class="lineno"> 2506</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* hidden_string = bHidden ? <span class="stringliteral">&quot;1&quot;</span> : NULL;</div>
 <div class="line"><a name="l02507"></a><span class="lineno"> 2507</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* t_string = NULL;</div>
 <div class="line"><a name="l02508"></a><span class="lineno"> 2508</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* r_string = NULL;</div>
 <div class="line"><a name="l02509"></a><span class="lineno"> 2509</span>&#160;  <span class="keywordtype">char</span> t_string_buf[64];</div>
 <div class="line"><a name="l02510"></a><span class="lineno"> 2510</span>&#160;  <span class="keywordtype">char</span> r_string_buf[64];</div>
 <div class="line"><a name="l02511"></a><span class="lineno"> 2511</span>&#160;  t_string_buf[0] = 0;</div>
 <div class="line"><a name="l02512"></a><span class="lineno"> 2512</span>&#160;  r_string_buf[0] = 0;</div>
-<div class="line"><a name="l02513"></a><span class="lineno"> 2513</span>&#160;  <span class="keywordflow">if</span> (transform != NULL)</div>
+<div class="line"><a name="l02513"></a><span class="lineno"> 2513</span>&#160;  <span class="keywordflow">if</span> (pTransform != NULL)</div>
 <div class="line"><a name="l02514"></a><span class="lineno"> 2514</span>&#160;  {</div>
-<div class="line"><a name="l02515"></a><span class="lineno"> 2515</span>&#160;    uint8_t packed_rotation_bits = _vox_make_packed_rotation_from_transform(transform);</div>
-<div class="line"><a name="l02516"></a><span class="lineno"> 2516</span>&#160;    _vox_sprintf(t_string_buf, <span class="keyword">sizeof</span>(t_string_buf), <span class="stringliteral">&quot;%i %i %i&quot;</span>, (int32_t)transform-&gt;m30, (int32_t)transform-&gt;m31, (int32_t)transform-&gt;m32);</div>
+<div class="line"><a name="l02515"></a><span class="lineno"> 2515</span>&#160;    uint8_t packed_rotation_bits = _vox_make_packed_rotation_from_transform(pTransform);</div>
+<div class="line"><a name="l02516"></a><span class="lineno"> 2516</span>&#160;    _vox_sprintf(t_string_buf, <span class="keyword">sizeof</span>(t_string_buf), <span class="stringliteral">&quot;%i %i %i&quot;</span>, (int32_t)pTransform-&gt;m30, (int32_t)pTransform-&gt;m31, (int32_t)pTransform-&gt;m32);</div>
 <div class="line"><a name="l02517"></a><span class="lineno"> 2517</span>&#160;    _vox_sprintf(r_string_buf, <span class="keyword">sizeof</span>(r_string_buf), <span class="stringliteral">&quot;%u&quot;</span>, packed_rotation_bits);</div>
 <div class="line"><a name="l02518"></a><span class="lineno"> 2518</span>&#160;    t_string = t_string_buf;</div>
 <div class="line"><a name="l02519"></a><span class="lineno"> 2519</span>&#160;    r_string = r_string_buf;</div>
@@ -2610,7 +2610,7 @@ $(document).ready(function(){initNavTree('d0/da5/ogt__vox_8h_source.htm','../../
 <div class="line"><a name="l02521"></a><span class="lineno"> 2521</span>&#160; </div>
 <div class="line"><a name="l02522"></a><span class="lineno"> 2522</span>&#160;  uint32_t node_dict_size =</div>
 <div class="line"><a name="l02523"></a><span class="lineno"> 2523</span>&#160;    <span class="keyword">sizeof</span>(uint32_t) + <span class="comment">// num key value pairs</span></div>
-<div class="line"><a name="l02524"></a><span class="lineno"> 2524</span>&#160;    _vox_dict_key_value_size(<span class="stringliteral">&quot;_name&quot;</span>, name) +</div>
+<div class="line"><a name="l02524"></a><span class="lineno"> 2524</span>&#160;    _vox_dict_key_value_size(<span class="stringliteral">&quot;_name&quot;</span>, szName) +</div>
 <div class="line"><a name="l02525"></a><span class="lineno"> 2525</span>&#160;    _vox_dict_key_value_size(<span class="stringliteral">&quot;_hidden&quot;</span>, hidden_string);</div>
 <div class="line"><a name="l02526"></a><span class="lineno"> 2526</span>&#160; </div>
 <div class="line"><a name="l02527"></a><span class="lineno"> 2527</span>&#160;  uint32_t frame_dict_size =</div>
@@ -2625,33 +2625,33 @@ $(document).ready(function(){initNavTree('d0/da5/ogt__vox_8h_source.htm','../../
 <div class="line"><a name="l02536"></a><span class="lineno"> 2536</span>&#160;    frame_dict_size;</div>
 <div class="line"><a name="l02537"></a><span class="lineno"> 2537</span>&#160; </div>
 <div class="line"><a name="l02538"></a><span class="lineno"> 2538</span>&#160;  <span class="comment">// write the nTRN header</span></div>
-<div class="line"><a name="l02539"></a><span class="lineno"> 2539</span>&#160;  _vox_file_write_uint32(fp, CHUNK_ID_nTRN);</div>
-<div class="line"><a name="l02540"></a><span class="lineno"> 2540</span>&#160;  _vox_file_write_uint32(fp, chunk_size_ntrn);</div>
-<div class="line"><a name="l02541"></a><span class="lineno"> 2541</span>&#160;  _vox_file_write_uint32(fp, 0);</div>
+<div class="line"><a name="l02539"></a><span class="lineno"> 2539</span>&#160;  _vox_file_write_uint32(pFp, CHUNK_ID_nTRN);</div>
+<div class="line"><a name="l02540"></a><span class="lineno"> 2540</span>&#160;  _vox_file_write_uint32(pFp, chunk_size_ntrn);</div>
+<div class="line"><a name="l02541"></a><span class="lineno"> 2541</span>&#160;  _vox_file_write_uint32(pFp, 0);</div>
 <div class="line"><a name="l02542"></a><span class="lineno"> 2542</span>&#160; </div>
 <div class="line"><a name="l02543"></a><span class="lineno"> 2543</span>&#160;  <span class="comment">// write the nTRN payload</span></div>
-<div class="line"><a name="l02544"></a><span class="lineno"> 2544</span>&#160;  _vox_file_write_uint32(fp, node_id);</div>
+<div class="line"><a name="l02544"></a><span class="lineno"> 2544</span>&#160;  _vox_file_write_uint32(pFp, node_id);</div>
 <div class="line"><a name="l02545"></a><span class="lineno"> 2545</span>&#160; </div>
 <div class="line"><a name="l02546"></a><span class="lineno"> 2546</span>&#160;  <span class="comment">// write the node dictionary</span></div>
-<div class="line"><a name="l02547"></a><span class="lineno"> 2547</span>&#160;  uint32_t node_dict_keyvalue_count = (name ? 1 : 0) + (hidden_string ? 1 : 0);</div>
-<div class="line"><a name="l02548"></a><span class="lineno"> 2548</span>&#160;  _vox_file_write_uint32(fp, node_dict_keyvalue_count); <span class="comment">// num key values</span></div>
-<div class="line"><a name="l02549"></a><span class="lineno"> 2549</span>&#160;  _vox_file_write_dict_key_value(fp, <span class="stringliteral">&quot;_name&quot;</span>, name);</div>
-<div class="line"><a name="l02550"></a><span class="lineno"> 2550</span>&#160;  _vox_file_write_dict_key_value(fp, <span class="stringliteral">&quot;_hidden&quot;</span>, hidden_string);</div>
+<div class="line"><a name="l02547"></a><span class="lineno"> 2547</span>&#160;  uint32_t node_dict_keyvalue_count = (szName ? 1 : 0) + (hidden_string ? 1 : 0);</div>
+<div class="line"><a name="l02548"></a><span class="lineno"> 2548</span>&#160;  _vox_file_write_uint32(pFp, node_dict_keyvalue_count); <span class="comment">// num key values</span></div>
+<div class="line"><a name="l02549"></a><span class="lineno"> 2549</span>&#160;  _vox_file_write_dict_key_value(pFp, <span class="stringliteral">&quot;_name&quot;</span>, szName);</div>
+<div class="line"><a name="l02550"></a><span class="lineno"> 2550</span>&#160;  _vox_file_write_dict_key_value(pFp, <span class="stringliteral">&quot;_hidden&quot;</span>, hidden_string);</div>
 <div class="line"><a name="l02551"></a><span class="lineno"> 2551</span>&#160; </div>
 <div class="line"><a name="l02552"></a><span class="lineno"> 2552</span>&#160;  <span class="comment">// get other properties.</span></div>
-<div class="line"><a name="l02553"></a><span class="lineno"> 2553</span>&#160;  _vox_file_write_uint32(fp, child_node_id);</div>
-<div class="line"><a name="l02554"></a><span class="lineno"> 2554</span>&#160;  _vox_file_write_uint32(fp, UINT32_MAX); <span class="comment">// reserved_id must have all bits set.</span></div>
-<div class="line"><a name="l02555"></a><span class="lineno"> 2555</span>&#160;  _vox_file_write_uint32(fp, layer_id);</div>
-<div class="line"><a name="l02556"></a><span class="lineno"> 2556</span>&#160;  _vox_file_write_uint32(fp, 1); <span class="comment">// num_frames must be 1</span></div>
+<div class="line"><a name="l02553"></a><span class="lineno"> 2553</span>&#160;  _vox_file_write_uint32(pFp, child_node_id);</div>
+<div class="line"><a name="l02554"></a><span class="lineno"> 2554</span>&#160;  _vox_file_write_uint32(pFp, UINT32_MAX); <span class="comment">// reserved_id must have all bits set.</span></div>
+<div class="line"><a name="l02555"></a><span class="lineno"> 2555</span>&#160;  _vox_file_write_uint32(pFp, layer_id);</div>
+<div class="line"><a name="l02556"></a><span class="lineno"> 2556</span>&#160;  _vox_file_write_uint32(pFp, 1); <span class="comment">// num_frames must be 1</span></div>
 <div class="line"><a name="l02557"></a><span class="lineno"> 2557</span>&#160; </div>
 <div class="line"><a name="l02558"></a><span class="lineno"> 2558</span>&#160;  <span class="comment">// write the frame dictionary</span></div>
-<div class="line"><a name="l02559"></a><span class="lineno"> 2559</span>&#160;  _vox_file_write_uint32(fp, (r_string ? 1 : 0) + (t_string ? 1 : 0)); <span class="comment">// num key values</span></div>
-<div class="line"><a name="l02560"></a><span class="lineno"> 2560</span>&#160;  _vox_file_write_dict_key_value(fp, <span class="stringliteral">&quot;_r&quot;</span>, r_string);</div>
-<div class="line"><a name="l02561"></a><span class="lineno"> 2561</span>&#160;  _vox_file_write_dict_key_value(fp, <span class="stringliteral">&quot;_t&quot;</span>, t_string);</div>
+<div class="line"><a name="l02559"></a><span class="lineno"> 2559</span>&#160;  _vox_file_write_uint32(pFp, (r_string ? 1 : 0) + (t_string ? 1 : 0)); <span class="comment">// num key values</span></div>
+<div class="line"><a name="l02560"></a><span class="lineno"> 2560</span>&#160;  _vox_file_write_dict_key_value(pFp, <span class="stringliteral">&quot;_r&quot;</span>, r_string);</div>
+<div class="line"><a name="l02561"></a><span class="lineno"> 2561</span>&#160;  _vox_file_write_dict_key_value(pFp, <span class="stringliteral">&quot;_t&quot;</span>, t_string);</div>
 <div class="line"><a name="l02562"></a><span class="lineno"> 2562</span>&#160;}</div>
 <div class="line"><a name="l02563"></a><span class="lineno"> 2563</span>&#160; </div>
 <div class="line"><a name="l02564"></a><span class="lineno"> 2564</span>&#160;<span class="comment">// saves the scene out to a buffer that when saved as a .vox file can be loaded with magicavoxel.</span></div>
-<div class="line"><a name="l02565"></a><span class="lineno"> 2565</span>&#160;uint8_t* ogt_vox_write_scene(<span class="keyword">const</span> <a class="code" href="../../dd/dff/structogt__vox__scene.htm">ogt_vox_scene</a>* scene, uint32_t* buffer_size)</div>
+<div class="line"><a name="l02565"></a><span class="lineno"> 2565</span>&#160;uint8_t* ogt_vox_write_scene(<span class="keyword">const</span> <a class="code" href="../../dd/dff/structogt__vox__scene.htm">ogt_vox_scene</a>* pScene, uint32_t* pBuffer_size)</div>
 <div class="line"><a name="l02566"></a><span class="lineno"> 2566</span>&#160;{</div>
 <div class="line"><a name="l02567"></a><span class="lineno"> 2567</span>&#160;  _vox_file_writeable file;</div>
 <div class="line"><a name="l02568"></a><span class="lineno"> 2568</span>&#160;  _vox_file_writeable_init(&amp;file);</div>
@@ -2670,9 +2670,9 @@ $(document).ready(function(){initNavTree('d0/da5/ogt__vox_8h_source.htm','../../
 <div class="line"><a name="l02581"></a><span class="lineno"> 2581</span>&#160;  <span class="keyword">const</span> uint32_t offset_post_main_chunk = _vox_file_get_offset(fp);</div>
 <div class="line"><a name="l02582"></a><span class="lineno"> 2582</span>&#160; </div>
 <div class="line"><a name="l02583"></a><span class="lineno"> 2583</span>&#160;  <span class="comment">// write out all model chunks</span></div>
-<div class="line"><a name="l02584"></a><span class="lineno"> 2584</span>&#160;  <span class="keywordflow">for</span> (uint32_t i = 0; i &lt; scene-&gt;num_models; i++)</div>
+<div class="line"><a name="l02584"></a><span class="lineno"> 2584</span>&#160;  <span class="keywordflow">for</span> (uint32_t i = 0; i &lt; pScene-&gt;num_models; i++)</div>
 <div class="line"><a name="l02585"></a><span class="lineno"> 2585</span>&#160;  {</div>
-<div class="line"><a name="l02586"></a><span class="lineno"> 2586</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../de/dc4/structogt__vox__model.htm">ogt_vox_model</a>* model = scene-&gt;models[i];</div>
+<div class="line"><a name="l02586"></a><span class="lineno"> 2586</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../de/dc4/structogt__vox__model.htm">ogt_vox_model</a>* model = pScene-&gt;models[i];</div>
 <div class="line"><a name="l02587"></a><span class="lineno"> 2587</span>&#160;    assert(model-&gt;size_x &lt;= 126 &amp;&amp; model-&gt;size_y &lt;= 126 &amp;&amp; model-&gt;size_z &lt;= 126);</div>
 <div class="line"><a name="l02588"></a><span class="lineno"> 2588</span>&#160;    <span class="comment">// count the number of solid voxels in the grid</span></div>
 <div class="line"><a name="l02589"></a><span class="lineno"> 2589</span>&#160;    uint32_t num_voxels_in_grid = model-&gt;size_x * model-&gt;size_y * model-&gt;size_z;</div>
@@ -2720,33 +2720,33 @@ $(document).ready(function(){initNavTree('d0/da5/ogt__vox_8h_source.htm','../../
 <div class="line"><a name="l02631"></a><span class="lineno"> 2631</span>&#160;  }</div>
 <div class="line"><a name="l02632"></a><span class="lineno"> 2632</span>&#160; </div>
 <div class="line"><a name="l02633"></a><span class="lineno"> 2633</span>&#160;  <span class="comment">// define our node_id ranges.</span></div>
-<div class="line"><a name="l02634"></a><span class="lineno"> 2634</span>&#160;  assert(scene-&gt;num_groups);</div>
+<div class="line"><a name="l02634"></a><span class="lineno"> 2634</span>&#160;  assert(pScene-&gt;num_groups);</div>
 <div class="line"><a name="l02635"></a><span class="lineno"> 2635</span>&#160;  uint32_t first_group_transform_node_id = 0;</div>
-<div class="line"><a name="l02636"></a><span class="lineno"> 2636</span>&#160;  uint32_t first_group_node_id = first_group_transform_node_id + scene-&gt;num_groups;</div>
-<div class="line"><a name="l02637"></a><span class="lineno"> 2637</span>&#160;  uint32_t first_shape_node_id = first_group_node_id + scene-&gt;num_groups;</div>
-<div class="line"><a name="l02638"></a><span class="lineno"> 2638</span>&#160;  uint32_t first_instance_transform_node_id = first_shape_node_id + scene-&gt;num_models;</div>
+<div class="line"><a name="l02636"></a><span class="lineno"> 2636</span>&#160;  uint32_t first_group_node_id = first_group_transform_node_id + pScene-&gt;num_groups;</div>
+<div class="line"><a name="l02637"></a><span class="lineno"> 2637</span>&#160;  uint32_t first_shape_node_id = first_group_node_id + pScene-&gt;num_groups;</div>
+<div class="line"><a name="l02638"></a><span class="lineno"> 2638</span>&#160;  uint32_t first_instance_transform_node_id = first_shape_node_id + pScene-&gt;num_models;</div>
 <div class="line"><a name="l02639"></a><span class="lineno"> 2639</span>&#160; </div>
 <div class="line"><a name="l02640"></a><span class="lineno"> 2640</span>&#160;  <span class="comment">// write the nTRN nodes for each of the groups in the scene.</span></div>
-<div class="line"><a name="l02641"></a><span class="lineno"> 2641</span>&#160;  <span class="keywordflow">for</span> (uint32_t group_index = 0; group_index &lt; scene-&gt;num_groups; group_index++)</div>
+<div class="line"><a name="l02641"></a><span class="lineno"> 2641</span>&#160;  <span class="keywordflow">for</span> (uint32_t group_index = 0; group_index &lt; pScene-&gt;num_groups; group_index++)</div>
 <div class="line"><a name="l02642"></a><span class="lineno"> 2642</span>&#160;  {</div>
-<div class="line"><a name="l02643"></a><span class="lineno"> 2643</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d4/dc2/structogt__vox__group.htm">ogt_vox_group</a>* group = &amp;scene-&gt;groups[group_index];</div>
+<div class="line"><a name="l02643"></a><span class="lineno"> 2643</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d4/dc2/structogt__vox__group.htm">ogt_vox_group</a>* group = &amp;pScene-&gt;groups[group_index];</div>
 <div class="line"><a name="l02644"></a><span class="lineno"> 2644</span>&#160;    _vox_file_write_chunk_nTRN(fp, first_group_transform_node_id + group_index, first_group_node_id + group_index, NULL, group-&gt;hidden, &amp;group-&gt;transform, group-&gt;layer_index);</div>
 <div class="line"><a name="l02645"></a><span class="lineno"> 2645</span>&#160;  }</div>
 <div class="line"><a name="l02646"></a><span class="lineno"> 2646</span>&#160;  <span class="comment">// write the group nodes for each of the groups in the scene</span></div>
-<div class="line"><a name="l02647"></a><span class="lineno"> 2647</span>&#160;  <span class="keywordflow">for</span> (uint32_t group_index = 0; group_index &lt; scene-&gt;num_groups; group_index++)</div>
+<div class="line"><a name="l02647"></a><span class="lineno"> 2647</span>&#160;  <span class="keywordflow">for</span> (uint32_t group_index = 0; group_index &lt; pScene-&gt;num_groups; group_index++)</div>
 <div class="line"><a name="l02648"></a><span class="lineno"> 2648</span>&#160;  {</div>
 <div class="line"><a name="l02649"></a><span class="lineno"> 2649</span>&#160;    <span class="comment">// count how many childnodes  there are. This is simply the sum of all</span></div>
 <div class="line"><a name="l02650"></a><span class="lineno"> 2650</span>&#160;    <span class="comment">// groups and instances that have this group as its parent</span></div>
 <div class="line"><a name="l02651"></a><span class="lineno"> 2651</span>&#160;    uint32_t num_child_nodes = 0;</div>
-<div class="line"><a name="l02652"></a><span class="lineno"> 2652</span>&#160;    <span class="keywordflow">for</span> (uint32_t child_group_index = 0; child_group_index &lt; scene-&gt;num_groups; child_group_index++)</div>
-<div class="line"><a name="l02653"></a><span class="lineno"> 2653</span>&#160;      <span class="keywordflow">if</span> (scene-&gt;groups[child_group_index].parent_group_index == group_index)</div>
+<div class="line"><a name="l02652"></a><span class="lineno"> 2652</span>&#160;    <span class="keywordflow">for</span> (uint32_t child_group_index = 0; child_group_index &lt; pScene-&gt;num_groups; child_group_index++)</div>
+<div class="line"><a name="l02653"></a><span class="lineno"> 2653</span>&#160;      <span class="keywordflow">if</span> (pScene-&gt;groups[child_group_index].parent_group_index == group_index)</div>
 <div class="line"><a name="l02654"></a><span class="lineno"> 2654</span>&#160;        num_child_nodes++;</div>
-<div class="line"><a name="l02655"></a><span class="lineno"> 2655</span>&#160;    <span class="keywordflow">for</span> (uint32_t child_instance_index = 0; child_instance_index &lt; scene-&gt;num_instances; child_instance_index++)</div>
-<div class="line"><a name="l02656"></a><span class="lineno"> 2656</span>&#160;      <span class="keywordflow">if</span> (scene-&gt;instances[child_instance_index].group_index == group_index)</div>
+<div class="line"><a name="l02655"></a><span class="lineno"> 2655</span>&#160;    <span class="keywordflow">for</span> (uint32_t child_instance_index = 0; child_instance_index &lt; pScene-&gt;num_instances; child_instance_index++)</div>
+<div class="line"><a name="l02656"></a><span class="lineno"> 2656</span>&#160;      <span class="keywordflow">if</span> (pScene-&gt;instances[child_instance_index].group_index == group_index)</div>
 <div class="line"><a name="l02657"></a><span class="lineno"> 2657</span>&#160;        num_child_nodes++;</div>
 <div class="line"><a name="l02658"></a><span class="lineno"> 2658</span>&#160; </div>
 <div class="line"><a name="l02659"></a><span class="lineno"> 2659</span>&#160;    <span class="comment">// count number of dictionary items</span></div>
-<div class="line"><a name="l02660"></a><span class="lineno"> 2660</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* hidden_string = scene-&gt;groups[group_index].hidden ? <span class="stringliteral">&quot;1&quot;</span> : NULL;</div>
+<div class="line"><a name="l02660"></a><span class="lineno"> 2660</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* hidden_string = pScene-&gt;groups[group_index].hidden ? <span class="stringliteral">&quot;1&quot;</span> : NULL;</div>
 <div class="line"><a name="l02661"></a><span class="lineno"> 2661</span>&#160;    uint32_t group_dict_keyvalue_count = (hidden_string ? 1 : 0);</div>
 <div class="line"><a name="l02662"></a><span class="lineno"> 2662</span>&#160; </div>
 <div class="line"><a name="l02663"></a><span class="lineno"> 2663</span>&#160;    <span class="comment">// compute the chunk size.</span></div>
@@ -2767,17 +2767,17 @@ $(document).ready(function(){initNavTree('d0/da5/ogt__vox_8h_source.htm','../../
 <div class="line"><a name="l02678"></a><span class="lineno"> 2678</span>&#160;    _vox_file_write_dict_key_value(fp, <span class="stringliteral">&quot;_hidden&quot;</span>, hidden_string);</div>
 <div class="line"><a name="l02679"></a><span class="lineno"> 2679</span>&#160;    _vox_file_write_uint32(fp, num_child_nodes);</div>
 <div class="line"><a name="l02680"></a><span class="lineno"> 2680</span>&#160;    <span class="comment">// write the child group transform nodes</span></div>
-<div class="line"><a name="l02681"></a><span class="lineno"> 2681</span>&#160;    <span class="keywordflow">for</span> (uint32_t child_group_index = 0; child_group_index &lt; scene-&gt;num_groups; child_group_index++)</div>
-<div class="line"><a name="l02682"></a><span class="lineno"> 2682</span>&#160;      <span class="keywordflow">if</span> (scene-&gt;groups[child_group_index].parent_group_index == group_index)</div>
+<div class="line"><a name="l02681"></a><span class="lineno"> 2681</span>&#160;    <span class="keywordflow">for</span> (uint32_t child_group_index = 0; child_group_index &lt; pScene-&gt;num_groups; child_group_index++)</div>
+<div class="line"><a name="l02682"></a><span class="lineno"> 2682</span>&#160;      <span class="keywordflow">if</span> (pScene-&gt;groups[child_group_index].parent_group_index == group_index)</div>
 <div class="line"><a name="l02683"></a><span class="lineno"> 2683</span>&#160;        _vox_file_write_uint32(fp, first_group_transform_node_id + child_group_index);</div>
 <div class="line"><a name="l02684"></a><span class="lineno"> 2684</span>&#160;    <span class="comment">// write the child instance transform nodes</span></div>
-<div class="line"><a name="l02685"></a><span class="lineno"> 2685</span>&#160;    <span class="keywordflow">for</span> (uint32_t child_instance_index = 0; child_instance_index &lt; scene-&gt;num_instances; child_instance_index++)</div>
-<div class="line"><a name="l02686"></a><span class="lineno"> 2686</span>&#160;      <span class="keywordflow">if</span> (scene-&gt;instances[child_instance_index].group_index == group_index)</div>
+<div class="line"><a name="l02685"></a><span class="lineno"> 2685</span>&#160;    <span class="keywordflow">for</span> (uint32_t child_instance_index = 0; child_instance_index &lt; pScene-&gt;num_instances; child_instance_index++)</div>
+<div class="line"><a name="l02686"></a><span class="lineno"> 2686</span>&#160;      <span class="keywordflow">if</span> (pScene-&gt;instances[child_instance_index].group_index == group_index)</div>
 <div class="line"><a name="l02687"></a><span class="lineno"> 2687</span>&#160;        _vox_file_write_uint32(fp, first_instance_transform_node_id + child_instance_index);</div>
 <div class="line"><a name="l02688"></a><span class="lineno"> 2688</span>&#160;  }</div>
 <div class="line"><a name="l02689"></a><span class="lineno"> 2689</span>&#160; </div>
 <div class="line"><a name="l02690"></a><span class="lineno"> 2690</span>&#160;  <span class="comment">// write out an nSHP chunk for each of the models</span></div>
-<div class="line"><a name="l02691"></a><span class="lineno"> 2691</span>&#160;  <span class="keywordflow">for</span> (uint32_t i = 0; i &lt; scene-&gt;num_models; i++)</div>
+<div class="line"><a name="l02691"></a><span class="lineno"> 2691</span>&#160;  <span class="keywordflow">for</span> (uint32_t i = 0; i &lt; pScene-&gt;num_models; i++)</div>
 <div class="line"><a name="l02692"></a><span class="lineno"> 2692</span>&#160;  {</div>
 <div class="line"><a name="l02693"></a><span class="lineno"> 2693</span>&#160;    <span class="comment">// compute the size of the nSHP chunk</span></div>
 <div class="line"><a name="l02694"></a><span class="lineno"> 2694</span>&#160;    uint32_t chunk_size_nshp =</div>
@@ -2798,9 +2798,9 @@ $(document).ready(function(){initNavTree('d0/da5/ogt__vox_8h_source.htm','../../
 <div class="line"><a name="l02709"></a><span class="lineno"> 2709</span>&#160;    _vox_file_write_uint32(fp, 0);                       <span class="comment">// num keyvalue pairs in model dictionary</span></div>
 <div class="line"><a name="l02710"></a><span class="lineno"> 2710</span>&#160;  }</div>
 <div class="line"><a name="l02711"></a><span class="lineno"> 2711</span>&#160;  <span class="comment">// write out an nTRN chunk for all instances - and make them point to the relevant nSHP chunk</span></div>
-<div class="line"><a name="l02712"></a><span class="lineno"> 2712</span>&#160;  <span class="keywordflow">for</span> (uint32_t i = 0; i &lt; scene-&gt;num_instances; i++)</div>
+<div class="line"><a name="l02712"></a><span class="lineno"> 2712</span>&#160;  <span class="keywordflow">for</span> (uint32_t i = 0; i &lt; pScene-&gt;num_instances; i++)</div>
 <div class="line"><a name="l02713"></a><span class="lineno"> 2713</span>&#160;  {</div>
-<div class="line"><a name="l02714"></a><span class="lineno"> 2714</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../da/d65/structogt__vox__instance.htm">ogt_vox_instance</a>* instance = &amp;scene-&gt;instances[i];</div>
+<div class="line"><a name="l02714"></a><span class="lineno"> 2714</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../da/d65/structogt__vox__instance.htm">ogt_vox_instance</a>* instance = &amp;pScene-&gt;instances[i];</div>
 <div class="line"><a name="l02715"></a><span class="lineno"> 2715</span>&#160;    uint32_t node_id = first_instance_transform_node_id + i;</div>
 <div class="line"><a name="l02716"></a><span class="lineno"> 2716</span>&#160;    uint32_t child_node_id = first_shape_node_id + instance-&gt;model_index;</div>
 <div class="line"><a name="l02717"></a><span class="lineno"> 2717</span>&#160;    _vox_file_write_chunk_nTRN(fp, node_id, child_node_id, instance-&gt;name, instance-&gt;hidden, &amp;instance-&gt;transform, instance-&gt;layer_index);</div>
@@ -2811,7 +2811,7 @@ $(document).ready(function(){initNavTree('d0/da5/ogt__vox_8h_source.htm','../../
 <div class="line"><a name="l02722"></a><span class="lineno"> 2722</span>&#160;    <span class="comment">// .vox stores palette rotated by 1 color index, so do that now.</span></div>
 <div class="line"><a name="l02723"></a><span class="lineno"> 2723</span>&#160;    <a class="code" href="../../db/dca/structogt__vox__palette.htm">ogt_vox_palette</a> rotated_palette;</div>
 <div class="line"><a name="l02724"></a><span class="lineno"> 2724</span>&#160;    <span class="keywordflow">for</span> (uint32_t i = 0; i &lt; 256; i++)</div>
-<div class="line"><a name="l02725"></a><span class="lineno"> 2725</span>&#160;      rotated_palette.color[i] = scene-&gt;palette.color[(i + 1) &amp; 255];</div>
+<div class="line"><a name="l02725"></a><span class="lineno"> 2725</span>&#160;      rotated_palette.color[i] = pScene-&gt;palette.color[(i + 1) &amp; 255];</div>
 <div class="line"><a name="l02726"></a><span class="lineno"> 2726</span>&#160; </div>
 <div class="line"><a name="l02727"></a><span class="lineno"> 2727</span>&#160;    <span class="comment">// write the palette chunk header</span></div>
 <div class="line"><a name="l02728"></a><span class="lineno"> 2728</span>&#160;    _vox_file_write_uint32(fp, CHUNK_ID_RGBA);</div>
@@ -2822,10 +2822,10 @@ $(document).ready(function(){initNavTree('d0/da5/ogt__vox_8h_source.htm','../../
 <div class="line"><a name="l02733"></a><span class="lineno"> 2733</span>&#160;  }</div>
 <div class="line"><a name="l02734"></a><span class="lineno"> 2734</span>&#160; </div>
 <div class="line"><a name="l02735"></a><span class="lineno"> 2735</span>&#160;  <span class="comment">// write all layer chunks out.</span></div>
-<div class="line"><a name="l02736"></a><span class="lineno"> 2736</span>&#160;  <span class="keywordflow">for</span> (uint32_t i = 0; i &lt; scene-&gt;num_layers; i++)</div>
+<div class="line"><a name="l02736"></a><span class="lineno"> 2736</span>&#160;  <span class="keywordflow">for</span> (uint32_t i = 0; i &lt; pScene-&gt;num_layers; i++)</div>
 <div class="line"><a name="l02737"></a><span class="lineno"> 2737</span>&#160;  {</div>
-<div class="line"><a name="l02738"></a><span class="lineno"> 2738</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* layer_name_string = scene-&gt;layers[i].name;</div>
-<div class="line"><a name="l02739"></a><span class="lineno"> 2739</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* hidden_string = scene-&gt;layers[i].hidden ? <span class="stringliteral">&quot;1&quot;</span> : NULL;</div>
+<div class="line"><a name="l02738"></a><span class="lineno"> 2738</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* layer_name_string = pScene-&gt;layers[i].name;</div>
+<div class="line"><a name="l02739"></a><span class="lineno"> 2739</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* hidden_string = pScene-&gt;layers[i].hidden ? <span class="stringliteral">&quot;1&quot;</span> : NULL;</div>
 <div class="line"><a name="l02740"></a><span class="lineno"> 2740</span>&#160;    uint32_t layer_chunk_size =</div>
 <div class="line"><a name="l02741"></a><span class="lineno"> 2741</span>&#160;      <span class="keyword">sizeof</span>(int32_t) +  <span class="comment">// layer_id</span></div>
 <div class="line"><a name="l02742"></a><span class="lineno"> 2742</span>&#160;      <span class="keyword">sizeof</span>(uint32_t) + <span class="comment">// num key value pairs</span></div>
@@ -2846,7 +2846,7 @@ $(document).ready(function(){initNavTree('d0/da5/ogt__vox_8h_source.htm','../../
 <div class="line"><a name="l02757"></a><span class="lineno"> 2757</span>&#160;  }</div>
 <div class="line"><a name="l02758"></a><span class="lineno"> 2758</span>&#160; </div>
 <div class="line"><a name="l02759"></a><span class="lineno"> 2759</span>&#160;  <span class="comment">// we deliberately don&#39;t free the fp-&gt;data field, just pass the buffer pointer and size out to the caller</span></div>
-<div class="line"><a name="l02760"></a><span class="lineno"> 2760</span>&#160;  *buffer_size = (uint32_t)fp-&gt;data.count;</div>
+<div class="line"><a name="l02760"></a><span class="lineno"> 2760</span>&#160;  *pBuffer_size = (uint32_t)fp-&gt;data.count;</div>
 <div class="line"><a name="l02761"></a><span class="lineno"> 2761</span>&#160;  uint8_t* buffer_data = _vox_file_get_data(fp);</div>
 <div class="line"><a name="l02762"></a><span class="lineno"> 2762</span>&#160;  <span class="comment">// we deliberately clear this pointer so it doesn&#39;t get auto-freed on exiting. The caller will own the memory hereafter.</span></div>
 <div class="line"><a name="l02763"></a><span class="lineno"> 2763</span>&#160;  fp-&gt;data.data = NULL;</div>
@@ -2854,45 +2854,45 @@ $(document).ready(function(){initNavTree('d0/da5/ogt__vox_8h_source.htm','../../
 <div class="line"><a name="l02765"></a><span class="lineno"> 2765</span>&#160;  <span class="comment">// patch up the main chunk&#39;s child chunk size now that we&#39;ve written everything we&#39;re going to write.</span></div>
 <div class="line"><a name="l02766"></a><span class="lineno"> 2766</span>&#160;  {</div>
 <div class="line"><a name="l02767"></a><span class="lineno"> 2767</span>&#160;    uint32_t* main_chunk_child_size = (uint32_t*)&amp;buffer_data[offset_post_main_chunk - <span class="keyword">sizeof</span>(uint32_t)];</div>
-<div class="line"><a name="l02768"></a><span class="lineno"> 2768</span>&#160;    *main_chunk_child_size = *buffer_size - offset_post_main_chunk;</div>
+<div class="line"><a name="l02768"></a><span class="lineno"> 2768</span>&#160;    *main_chunk_child_size = *pBuffer_size - offset_post_main_chunk;</div>
 <div class="line"><a name="l02769"></a><span class="lineno"> 2769</span>&#160;  }</div>
 <div class="line"><a name="l02770"></a><span class="lineno"> 2770</span>&#160; </div>
 <div class="line"><a name="l02771"></a><span class="lineno"> 2771</span>&#160;  <span class="keywordflow">return</span> buffer_data;</div>
 <div class="line"><a name="l02772"></a><span class="lineno"> 2772</span>&#160;}</div>
 <div class="line"><a name="l02773"></a><span class="lineno"> 2773</span>&#160; </div>
-<div class="line"><a name="l02774"></a><span class="lineno"> 2774</span>&#160;<span class="keywordtype">void</span>* ogt_vox_malloc(<span class="keywordtype">size_t</span> size)</div>
+<div class="line"><a name="l02774"></a><span class="lineno"> 2774</span>&#160;<span class="keywordtype">void</span>* ogt_vox_malloc(<span class="keywordtype">size_t</span> uiSize)</div>
 <div class="line"><a name="l02775"></a><span class="lineno"> 2775</span>&#160;{</div>
-<div class="line"><a name="l02776"></a><span class="lineno"> 2776</span>&#160;  <span class="keywordflow">return</span> _vox_malloc(size);</div>
+<div class="line"><a name="l02776"></a><span class="lineno"> 2776</span>&#160;  <span class="keywordflow">return</span> _vox_malloc(uiSize);</div>
 <div class="line"><a name="l02777"></a><span class="lineno"> 2777</span>&#160;}</div>
 <div class="line"><a name="l02778"></a><span class="lineno"> 2778</span>&#160; </div>
-<div class="line"><a name="l02779"></a><span class="lineno"> 2779</span>&#160;<span class="keywordtype">void</span> ogt_vox_free(<span class="keywordtype">void</span>* mem)</div>
+<div class="line"><a name="l02779"></a><span class="lineno"> 2779</span>&#160;<span class="keywordtype">void</span> ogt_vox_free(<span class="keywordtype">void</span>* pMem)</div>
 <div class="line"><a name="l02780"></a><span class="lineno"> 2780</span>&#160;{</div>
-<div class="line"><a name="l02781"></a><span class="lineno"> 2781</span>&#160;  _vox_free(mem);</div>
+<div class="line"><a name="l02781"></a><span class="lineno"> 2781</span>&#160;  _vox_free(pMem);</div>
 <div class="line"><a name="l02782"></a><span class="lineno"> 2782</span>&#160;}</div>
 <div class="line"><a name="l02783"></a><span class="lineno"> 2783</span>&#160; </div>
 <div class="line"><a name="l02784"></a><span class="lineno"> 2784</span>&#160;<span class="comment">// compute the minimum and maximum x coordinate within the scene.</span></div>
-<div class="line"><a name="l02785"></a><span class="lineno"> 2785</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> compute_scene_bounding_box_x(<span class="keyword">const</span> <a class="code" href="../../dd/dff/structogt__vox__scene.htm">ogt_vox_scene</a>* scene, int32_t&amp; out_min_x, int32_t&amp; out_max_x)</div>
+<div class="line"><a name="l02785"></a><span class="lineno"> 2785</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> compute_scene_bounding_box_x(<span class="keyword">const</span> <a class="code" href="../../dd/dff/structogt__vox__scene.htm">ogt_vox_scene</a>* pScene, int32_t&amp; out_min_x, int32_t&amp; out_max_x)</div>
 <div class="line"><a name="l02786"></a><span class="lineno"> 2786</span>&#160;{</div>
-<div class="line"><a name="l02787"></a><span class="lineno"> 2787</span>&#160;  <span class="keywordflow">if</span> (scene-&gt;num_instances &amp;&amp; scene-&gt;num_models)</div>
+<div class="line"><a name="l02787"></a><span class="lineno"> 2787</span>&#160;  <span class="keywordflow">if</span> (pScene-&gt;num_instances &amp;&amp; pScene-&gt;num_models)</div>
 <div class="line"><a name="l02788"></a><span class="lineno"> 2788</span>&#160;  {</div>
 <div class="line"><a name="l02789"></a><span class="lineno"> 2789</span>&#160;    <span class="comment">// We don&#39;t apply orientation to the model dimensions and compute the exact min/max.</span></div>
 <div class="line"><a name="l02790"></a><span class="lineno"> 2790</span>&#160;    <span class="comment">// Instead we just conservatively use the maximum dimension of the model.</span></div>
 <div class="line"><a name="l02791"></a><span class="lineno"> 2791</span>&#160;    int32_t scene_min_x = 0x7ffffff;</div>
 <div class="line"><a name="l02792"></a><span class="lineno"> 2792</span>&#160;    int32_t scene_max_x = -0x7ffffff;</div>
-<div class="line"><a name="l02793"></a><span class="lineno"> 2793</span>&#160;    <span class="keywordflow">for</span> (uint32_t instance_index = 0; instance_index &lt; scene-&gt;num_instances; instance_index++)</div>
+<div class="line"><a name="l02793"></a><span class="lineno"> 2793</span>&#160;    <span class="keywordflow">for</span> (uint32_t instance_index = 0; instance_index &lt; pScene-&gt;num_instances; instance_index++)</div>
 <div class="line"><a name="l02794"></a><span class="lineno"> 2794</span>&#160;    {</div>
-<div class="line"><a name="l02795"></a><span class="lineno"> 2795</span>&#160;      <span class="keyword">const</span> <a class="code" href="../../da/d65/structogt__vox__instance.htm">ogt_vox_instance</a>* instance = &amp;scene-&gt;instances[instance_index];</div>
+<div class="line"><a name="l02795"></a><span class="lineno"> 2795</span>&#160;      <span class="keyword">const</span> <a class="code" href="../../da/d65/structogt__vox__instance.htm">ogt_vox_instance</a>* instance = &amp;pScene-&gt;instances[instance_index];</div>
 <div class="line"><a name="l02796"></a><span class="lineno"> 2796</span>&#160;      <span class="comment">// compute the instance transform, taking into account the group hierarchy.</span></div>
 <div class="line"><a name="l02797"></a><span class="lineno"> 2797</span>&#160;      <a class="code" href="../../d7/d30/structogt__vox__transform.htm">ogt_vox_transform</a> instance_transform = instance-&gt;transform;</div>
 <div class="line"><a name="l02798"></a><span class="lineno"> 2798</span>&#160;      uint32_t parent_group_index = instance-&gt;group_index;</div>
 <div class="line"><a name="l02799"></a><span class="lineno"> 2799</span>&#160;      <span class="keywordflow">while</span> (parent_group_index != k_invalid_group_index)</div>
 <div class="line"><a name="l02800"></a><span class="lineno"> 2800</span>&#160;      {</div>
-<div class="line"><a name="l02801"></a><span class="lineno"> 2801</span>&#160;        <span class="keyword">const</span> <a class="code" href="../../d4/dc2/structogt__vox__group.htm">ogt_vox_group</a>* group = &amp;scene-&gt;groups[parent_group_index];</div>
+<div class="line"><a name="l02801"></a><span class="lineno"> 2801</span>&#160;        <span class="keyword">const</span> <a class="code" href="../../d4/dc2/structogt__vox__group.htm">ogt_vox_group</a>* group = &amp;pScene-&gt;groups[parent_group_index];</div>
 <div class="line"><a name="l02802"></a><span class="lineno"> 2802</span>&#160;        instance_transform = _vox_transform_multiply(instance_transform, group-&gt;transform);</div>
 <div class="line"><a name="l02803"></a><span class="lineno"> 2803</span>&#160;        parent_group_index = group-&gt;parent_group_index;</div>
 <div class="line"><a name="l02804"></a><span class="lineno"> 2804</span>&#160;      }</div>
 <div class="line"><a name="l02805"></a><span class="lineno"> 2805</span>&#160; </div>
-<div class="line"><a name="l02806"></a><span class="lineno"> 2806</span>&#160;      <span class="keyword">const</span> <a class="code" href="../../de/dc4/structogt__vox__model.htm">ogt_vox_model</a>* model = scene-&gt;models[instance-&gt;model_index];</div>
+<div class="line"><a name="l02806"></a><span class="lineno"> 2806</span>&#160;      <span class="keyword">const</span> <a class="code" href="../../de/dc4/structogt__vox__model.htm">ogt_vox_model</a>* model = pScene-&gt;models[instance-&gt;model_index];</div>
 <div class="line"><a name="l02807"></a><span class="lineno"> 2807</span>&#160;      <span class="comment">// the instance_transform can be rotated, so we try to figure out whether the</span></div>
 <div class="line"><a name="l02808"></a><span class="lineno"> 2808</span>&#160;      <span class="comment">// model&#39;s local x, y or z size is aligned along the world x axis.</span></div>
 <div class="line"><a name="l02809"></a><span class="lineno"> 2809</span>&#160;      <span class="comment">// One of the column vectors of the transform must have a non-zero in its</span></div>
@@ -2920,27 +2920,27 @@ $(document).ready(function(){initNavTree('d0/da5/ogt__vox_8h_source.htm','../../
 <div class="line"><a name="l02831"></a><span class="lineno"> 2831</span>&#160;<span class="comment">// returns a mask of which color indices are used by the specified scene.</span></div>
 <div class="line"><a name="l02832"></a><span class="lineno"> 2832</span>&#160;<span class="comment">// used_mask[0] can be false at the end of this if all models 100% fill their voxel grid with solid voxels, so callers</span></div>
 <div class="line"><a name="l02833"></a><span class="lineno"> 2833</span>&#160;<span class="comment">// should handle that case properly.</span></div>
-<div class="line"><a name="l02834"></a><span class="lineno"> 2834</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> compute_scene_used_color_index_mask(<span class="keywordtype">bool</span>* used_mask, <span class="keyword">const</span> <a class="code" href="../../dd/dff/structogt__vox__scene.htm">ogt_vox_scene</a>* scene)</div>
+<div class="line"><a name="l02834"></a><span class="lineno"> 2834</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> compute_scene_used_color_index_mask(<span class="keywordtype">bool</span>* pUsed_mask, <span class="keyword">const</span> <a class="code" href="../../dd/dff/structogt__vox__scene.htm">ogt_vox_scene</a>* pScene)</div>
 <div class="line"><a name="l02835"></a><span class="lineno"> 2835</span>&#160;{</div>
-<div class="line"><a name="l02836"></a><span class="lineno"> 2836</span>&#160;  memset(used_mask, 0, 256);</div>
-<div class="line"><a name="l02837"></a><span class="lineno"> 2837</span>&#160;  <span class="keywordflow">for</span> (uint32_t model_index = 0; model_index &lt; scene-&gt;num_models; model_index++)</div>
+<div class="line"><a name="l02836"></a><span class="lineno"> 2836</span>&#160;  memset(pUsed_mask, 0, 256);</div>
+<div class="line"><a name="l02837"></a><span class="lineno"> 2837</span>&#160;  <span class="keywordflow">for</span> (uint32_t model_index = 0; model_index &lt; pScene-&gt;num_models; model_index++)</div>
 <div class="line"><a name="l02838"></a><span class="lineno"> 2838</span>&#160;  {</div>
-<div class="line"><a name="l02839"></a><span class="lineno"> 2839</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../de/dc4/structogt__vox__model.htm">ogt_vox_model</a>* model = scene-&gt;models[model_index];</div>
+<div class="line"><a name="l02839"></a><span class="lineno"> 2839</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../de/dc4/structogt__vox__model.htm">ogt_vox_model</a>* model = pScene-&gt;models[model_index];</div>
 <div class="line"><a name="l02840"></a><span class="lineno"> 2840</span>&#160;    uint32_t voxel_count = model-&gt;size_x * model-&gt;size_y * model-&gt;size_z;</div>
 <div class="line"><a name="l02841"></a><span class="lineno"> 2841</span>&#160;    <span class="keywordflow">for</span> (uint32_t voxel_index = 0; voxel_index &lt; voxel_count; voxel_index++)</div>
 <div class="line"><a name="l02842"></a><span class="lineno"> 2842</span>&#160;    {</div>
 <div class="line"><a name="l02843"></a><span class="lineno"> 2843</span>&#160;      uint8_t color_index = model-&gt;voxel_data[voxel_index];</div>
-<div class="line"><a name="l02844"></a><span class="lineno"> 2844</span>&#160;      used_mask[color_index] = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l02844"></a><span class="lineno"> 2844</span>&#160;      pUsed_mask[color_index] = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l02845"></a><span class="lineno"> 2845</span>&#160;    }</div>
 <div class="line"><a name="l02846"></a><span class="lineno"> 2846</span>&#160;  }</div>
 <div class="line"><a name="l02847"></a><span class="lineno"> 2847</span>&#160;}</div>
 <div class="line"><a name="l02848"></a><span class="lineno"> 2848</span>&#160; </div>
 <div class="line"><a name="l02849"></a><span class="lineno"> 2849</span>&#160;<span class="comment">// finds an exact color in the specified palette if it exists, and UINT32_MAX otherwise</span></div>
-<div class="line"><a name="l02850"></a><span class="lineno"> 2850</span>&#160;<span class="keyword">static</span> uint32_t find_exact_color_in_palette(<span class="keyword">const</span> <a class="code" href="../../d1/d02/structogt__vox__rgba.htm">ogt_vox_rgba</a>* palette, uint32_t palette_count, <span class="keyword">const</span> <a class="code" href="../../d1/d02/structogt__vox__rgba.htm">ogt_vox_rgba</a> color_to_find)</div>
+<div class="line"><a name="l02850"></a><span class="lineno"> 2850</span>&#160;<span class="keyword">static</span> uint32_t find_exact_color_in_palette(<span class="keyword">const</span> <a class="code" href="../../d1/d02/structogt__vox__rgba.htm">ogt_vox_rgba</a>* pPalette, uint32_t palette_count, <span class="keyword">const</span> <a class="code" href="../../d1/d02/structogt__vox__rgba.htm">ogt_vox_rgba</a> color_to_find)</div>
 <div class="line"><a name="l02851"></a><span class="lineno"> 2851</span>&#160;{</div>
 <div class="line"><a name="l02852"></a><span class="lineno"> 2852</span>&#160;  <span class="keywordflow">for</span> (uint32_t color_index = 1; color_index &lt; palette_count; color_index++)</div>
 <div class="line"><a name="l02853"></a><span class="lineno"> 2853</span>&#160;  {</div>
-<div class="line"><a name="l02854"></a><span class="lineno"> 2854</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d1/d02/structogt__vox__rgba.htm">ogt_vox_rgba</a> color_to_match = palette[color_index];</div>
+<div class="line"><a name="l02854"></a><span class="lineno"> 2854</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d1/d02/structogt__vox__rgba.htm">ogt_vox_rgba</a> color_to_match = pPalette[color_index];</div>
 <div class="line"><a name="l02855"></a><span class="lineno"> 2855</span>&#160;    <span class="comment">// we only try to match r,g,b components exactly.</span></div>
 <div class="line"><a name="l02856"></a><span class="lineno"> 2856</span>&#160;    <span class="keywordflow">if</span> (color_to_match.r == color_to_find.r &amp;&amp; color_to_match.g == color_to_find.g &amp;&amp; color_to_match.b == color_to_find.b)</div>
 <div class="line"><a name="l02857"></a><span class="lineno"> 2857</span>&#160;      <span class="keywordflow">return</span> color_index;</div>
@@ -2950,7 +2950,7 @@ $(document).ready(function(){initNavTree('d0/da5/ogt__vox_8h_source.htm','../../
 <div class="line"><a name="l02861"></a><span class="lineno"> 2861</span>&#160;}</div>
 <div class="line"><a name="l02862"></a><span class="lineno"> 2862</span>&#160; </div>
 <div class="line"><a name="l02863"></a><span class="lineno"> 2863</span>&#160;<span class="comment">// finds the index within the specified palette that is closest to the color we want to find</span></div>
-<div class="line"><a name="l02864"></a><span class="lineno"> 2864</span>&#160;<span class="keyword">static</span> uint32_t find_closest_color_in_palette(<span class="keyword">const</span> <a class="code" href="../../d1/d02/structogt__vox__rgba.htm">ogt_vox_rgba</a>* palette, uint32_t palette_count, <span class="keyword">const</span> <a class="code" href="../../d1/d02/structogt__vox__rgba.htm">ogt_vox_rgba</a> color_to_find)</div>
+<div class="line"><a name="l02864"></a><span class="lineno"> 2864</span>&#160;<span class="keyword">static</span> uint32_t find_closest_color_in_palette(<span class="keyword">const</span> <a class="code" href="../../d1/d02/structogt__vox__rgba.htm">ogt_vox_rgba</a>* pPalette, uint32_t palette_count, <span class="keyword">const</span> <a class="code" href="../../d1/d02/structogt__vox__rgba.htm">ogt_vox_rgba</a> color_to_find)</div>
 <div class="line"><a name="l02865"></a><span class="lineno"> 2865</span>&#160;{</div>
 <div class="line"><a name="l02866"></a><span class="lineno"> 2866</span>&#160;  <span class="comment">// the lower the score the better, so initialize this to the maximum possible score</span></div>
 <div class="line"><a name="l02867"></a><span class="lineno"> 2867</span>&#160;  int32_t best_score = INT32_MAX;</div>
@@ -2959,9 +2959,9 @@ $(document).ready(function(){initNavTree('d0/da5/ogt__vox_8h_source.htm','../../
 <div class="line"><a name="l02870"></a><span class="lineno"> 2870</span>&#160;  <span class="comment">// The distance is in R,G,B space, and we choose the color with the lowest score.</span></div>
 <div class="line"><a name="l02871"></a><span class="lineno"> 2871</span>&#160;  <span class="keywordflow">for</span> (uint32_t color_index = 1; color_index &lt; palette_count; color_index++)</div>
 <div class="line"><a name="l02872"></a><span class="lineno"> 2872</span>&#160;  {</div>
-<div class="line"><a name="l02873"></a><span class="lineno"> 2873</span>&#160;    int32_t r_diff = (int32_t)color_to_find.r - (int32_t)palette[color_index].r;</div>
-<div class="line"><a name="l02874"></a><span class="lineno"> 2874</span>&#160;    int32_t g_diff = (int32_t)color_to_find.g - (int32_t)palette[color_index].g;</div>
-<div class="line"><a name="l02875"></a><span class="lineno"> 2875</span>&#160;    int32_t b_diff = (int32_t)color_to_find.b - (int32_t)palette[color_index].b;</div>
+<div class="line"><a name="l02873"></a><span class="lineno"> 2873</span>&#160;    int32_t r_diff = (int32_t)color_to_find.r - (int32_t)pPalette[color_index].r;</div>
+<div class="line"><a name="l02874"></a><span class="lineno"> 2874</span>&#160;    int32_t g_diff = (int32_t)color_to_find.g - (int32_t)pPalette[color_index].g;</div>
+<div class="line"><a name="l02875"></a><span class="lineno"> 2875</span>&#160;    int32_t b_diff = (int32_t)color_to_find.b - (int32_t)pPalette[color_index].b;</div>
 <div class="line"><a name="l02876"></a><span class="lineno"> 2876</span>&#160;    <span class="comment">// There are 2 aspects of our treatment of color here you may want to experiment with:</span></div>
 <div class="line"><a name="l02877"></a><span class="lineno"> 2877</span>&#160;    <span class="comment">// 1. differences in R, differences in G, differences in B are weighted the same rather than perceptually. Different weightings may be better for you.</span></div>
 <div class="line"><a name="l02878"></a><span class="lineno"> 2878</span>&#160;    <span class="comment">// 2. We treat R,G,B as if they are in a perceptually linear within each channel. eg. the differences between</span></div>
@@ -2977,32 +2977,32 @@ $(document).ready(function(){initNavTree('d0/da5/ogt__vox_8h_source.htm','../../
 <div class="line"><a name="l02888"></a><span class="lineno"> 2888</span>&#160;  <span class="keywordflow">return</span> best_index;</div>
 <div class="line"><a name="l02889"></a><span class="lineno"> 2889</span>&#160;}</div>
 <div class="line"><a name="l02890"></a><span class="lineno"> 2890</span>&#160; </div>
-<div class="line"><a name="l02891"></a><span class="lineno"> 2891</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> update_master_palette_from_scene(<a class="code" href="../../d1/d02/structogt__vox__rgba.htm">ogt_vox_rgba</a>* master_palette, uint32_t&amp; master_palette_count, <span class="keyword">const</span> <a class="code" href="../../dd/dff/structogt__vox__scene.htm">ogt_vox_scene</a>* scene, uint32_t* scene_to_master_map)</div>
+<div class="line"><a name="l02891"></a><span class="lineno"> 2891</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> update_master_palette_from_scene(<a class="code" href="../../d1/d02/structogt__vox__rgba.htm">ogt_vox_rgba</a>* pMaster_palette, uint32_t&amp; ref_master_palette_count, <span class="keyword">const</span> <a class="code" href="../../dd/dff/structogt__vox__scene.htm">ogt_vox_scene</a>* pScene, uint32_t* pScene_to_master_map)</div>
 <div class="line"><a name="l02892"></a><span class="lineno"> 2892</span>&#160;{</div>
 <div class="line"><a name="l02893"></a><span class="lineno"> 2893</span>&#160;  <span class="comment">// compute the mask of used colors in the scene.</span></div>
 <div class="line"><a name="l02894"></a><span class="lineno"> 2894</span>&#160;  <span class="keywordtype">bool</span> scene_used_mask[256];</div>
-<div class="line"><a name="l02895"></a><span class="lineno"> 2895</span>&#160;  compute_scene_used_color_index_mask(scene_used_mask, scene);</div>
+<div class="line"><a name="l02895"></a><span class="lineno"> 2895</span>&#160;  compute_scene_used_color_index_mask(scene_used_mask, pScene);</div>
 <div class="line"><a name="l02896"></a><span class="lineno"> 2896</span>&#160; </div>
 <div class="line"><a name="l02897"></a><span class="lineno"> 2897</span>&#160;  <span class="comment">// initialize the map that converts from scene color_index to master color_index</span></div>
-<div class="line"><a name="l02898"></a><span class="lineno"> 2898</span>&#160;  scene_to_master_map[0] = 0; <span class="comment">// zero/empty always maps to zero/empty in the master palette</span></div>
+<div class="line"><a name="l02898"></a><span class="lineno"> 2898</span>&#160;  pScene_to_master_map[0] = 0; <span class="comment">// zero/empty always maps to zero/empty in the master palette</span></div>
 <div class="line"><a name="l02899"></a><span class="lineno"> 2899</span>&#160;  <span class="keywordflow">for</span> (uint32_t i = 1; i &lt; 256; i++)</div>
-<div class="line"><a name="l02900"></a><span class="lineno"> 2900</span>&#160;    scene_to_master_map[i] = UINT32_MAX; <span class="comment">// UINT32_MAX means unassigned</span></div>
+<div class="line"><a name="l02900"></a><span class="lineno"> 2900</span>&#160;    pScene_to_master_map[i] = UINT32_MAX; <span class="comment">// UINT32_MAX means unassigned</span></div>
 <div class="line"><a name="l02901"></a><span class="lineno"> 2901</span>&#160; </div>
 <div class="line"><a name="l02902"></a><span class="lineno"> 2902</span>&#160;  <span class="comment">// for each used color in the scene, now allocate it into the master palette.</span></div>
 <div class="line"><a name="l02903"></a><span class="lineno"> 2903</span>&#160;  <span class="keywordflow">for</span> (uint32_t color_index = 1; color_index &lt; 256; color_index++)</div>
 <div class="line"><a name="l02904"></a><span class="lineno"> 2904</span>&#160;  {</div>
 <div class="line"><a name="l02905"></a><span class="lineno"> 2905</span>&#160;    <span class="keywordflow">if</span> (scene_used_mask[color_index])</div>
 <div class="line"><a name="l02906"></a><span class="lineno"> 2906</span>&#160;    {</div>
-<div class="line"><a name="l02907"></a><span class="lineno"> 2907</span>&#160;      <span class="keyword">const</span> <a class="code" href="../../d1/d02/structogt__vox__rgba.htm">ogt_vox_rgba</a> color = scene-&gt;palette.color[color_index];</div>
+<div class="line"><a name="l02907"></a><span class="lineno"> 2907</span>&#160;      <span class="keyword">const</span> <a class="code" href="../../d1/d02/structogt__vox__rgba.htm">ogt_vox_rgba</a> color = pScene-&gt;palette.color[color_index];</div>
 <div class="line"><a name="l02908"></a><span class="lineno"> 2908</span>&#160;      <span class="comment">// find the exact color in the master palette. Will be UINT32_MAX if the color doesn&#39;t already exist</span></div>
-<div class="line"><a name="l02909"></a><span class="lineno"> 2909</span>&#160;      uint32_t master_index = find_exact_color_in_palette(master_palette, master_palette_count, color);</div>
+<div class="line"><a name="l02909"></a><span class="lineno"> 2909</span>&#160;      uint32_t master_index = find_exact_color_in_palette(pMaster_palette, ref_master_palette_count, color);</div>
 <div class="line"><a name="l02910"></a><span class="lineno"> 2910</span>&#160;      <span class="keywordflow">if</span> (master_index == UINT32_MAX)</div>
 <div class="line"><a name="l02911"></a><span class="lineno"> 2911</span>&#160;      {</div>
-<div class="line"><a name="l02912"></a><span class="lineno"> 2912</span>&#160;        <span class="keywordflow">if</span> (master_palette_count &lt; 256)</div>
+<div class="line"><a name="l02912"></a><span class="lineno"> 2912</span>&#160;        <span class="keywordflow">if</span> (ref_master_palette_count &lt; 256)</div>
 <div class="line"><a name="l02913"></a><span class="lineno"> 2913</span>&#160;        {</div>
 <div class="line"><a name="l02914"></a><span class="lineno"> 2914</span>&#160;          <span class="comment">// master palette capacity hasn&#39;t been exceeded so far, allocate the color to it.</span></div>
-<div class="line"><a name="l02915"></a><span class="lineno"> 2915</span>&#160;          master_palette[master_palette_count] = color;</div>
-<div class="line"><a name="l02916"></a><span class="lineno"> 2916</span>&#160;          master_index = master_palette_count++;</div>
+<div class="line"><a name="l02915"></a><span class="lineno"> 2915</span>&#160;          pMaster_palette[ref_master_palette_count] = color;</div>
+<div class="line"><a name="l02916"></a><span class="lineno"> 2916</span>&#160;          master_index = ref_master_palette_count++;</div>
 <div class="line"><a name="l02917"></a><span class="lineno"> 2917</span>&#160;        }</div>
 <div class="line"><a name="l02918"></a><span class="lineno"> 2918</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l02919"></a><span class="lineno"> 2919</span>&#160;        {</div>
@@ -3017,16 +3017,16 @@ $(document).ready(function(){initNavTree('d0/da5/ogt__vox_8h_source.htm','../../
 <div class="line"><a name="l02928"></a><span class="lineno"> 2928</span>&#160;          <span class="comment">// similarity/frequency metrics to reduce the palette from that down to 256 entries. This</span></div>
 <div class="line"><a name="l02929"></a><span class="lineno"> 2929</span>&#160;          <span class="comment">// will mean all scenes will have be equally important if they have a high-frequency</span></div>
 <div class="line"><a name="l02930"></a><span class="lineno"> 2930</span>&#160;          <span class="comment">// usage of a color.</span></div>
-<div class="line"><a name="l02931"></a><span class="lineno"> 2931</span>&#160;          master_index = find_closest_color_in_palette(master_palette, master_palette_count, color);</div>
+<div class="line"><a name="l02931"></a><span class="lineno"> 2931</span>&#160;          master_index = find_closest_color_in_palette(pMaster_palette, ref_master_palette_count, color);</div>
 <div class="line"><a name="l02932"></a><span class="lineno"> 2932</span>&#160;        }</div>
 <div class="line"><a name="l02933"></a><span class="lineno"> 2933</span>&#160;      }</div>
 <div class="line"><a name="l02934"></a><span class="lineno"> 2934</span>&#160;      <span class="comment">// caller needs to know how to map its original color index into the master palette</span></div>
-<div class="line"><a name="l02935"></a><span class="lineno"> 2935</span>&#160;      scene_to_master_map[color_index] = master_index;</div>
+<div class="line"><a name="l02935"></a><span class="lineno"> 2935</span>&#160;      pScene_to_master_map[color_index] = master_index;</div>
 <div class="line"><a name="l02936"></a><span class="lineno"> 2936</span>&#160;    }</div>
 <div class="line"><a name="l02937"></a><span class="lineno"> 2937</span>&#160;  }</div>
 <div class="line"><a name="l02938"></a><span class="lineno"> 2938</span>&#160;}</div>
 <div class="line"><a name="l02939"></a><span class="lineno"> 2939</span>&#160; </div>
-<div class="line"><a name="l02940"></a><span class="lineno"> 2940</span>&#160;<a class="code" href="../../dd/dff/structogt__vox__scene.htm">ogt_vox_scene</a>* ogt_vox_merge_scenes(<span class="keyword">const</span> <a class="code" href="../../dd/dff/structogt__vox__scene.htm">ogt_vox_scene</a>** scenes, uint32_t scene_count, <span class="keyword">const</span> <a class="code" href="../../d1/d02/structogt__vox__rgba.htm">ogt_vox_rgba</a>* required_colors, <span class="keyword">const</span> uint32_t required_color_count)</div>
+<div class="line"><a name="l02940"></a><span class="lineno"> 2940</span>&#160;<a class="code" href="../../dd/dff/structogt__vox__scene.htm">ogt_vox_scene</a>* ogt_vox_merge_scenes(<span class="keyword">const</span> <a class="code" href="../../dd/dff/structogt__vox__scene.htm">ogt_vox_scene</a>** pScenes, uint32_t scene_count, <span class="keyword">const</span> <a class="code" href="../../d1/d02/structogt__vox__rgba.htm">ogt_vox_rgba</a>* pRequired_colors, <span class="keyword">const</span> uint32_t required_color_count)</div>
 <div class="line"><a name="l02941"></a><span class="lineno"> 2941</span>&#160;{</div>
 <div class="line"><a name="l02942"></a><span class="lineno"> 2942</span>&#160;  assert(required_color_count &lt;= 255); <span class="comment">// can&#39;t exceed the maximum colors in the master palette plus the empty slot.</span></div>
 <div class="line"><a name="l02943"></a><span class="lineno"> 2943</span>&#160; </div>
@@ -3035,7 +3035,7 @@ $(document).ready(function(){initNavTree('d0/da5/ogt__vox_8h_source.htm','../../
 <div class="line"><a name="l02946"></a><span class="lineno"> 2946</span>&#160;  uint32_t master_palette_count = 1; <span class="comment">// color_index 0 is reserved for empty color!</span></div>
 <div class="line"><a name="l02947"></a><span class="lineno"> 2947</span>&#160;  memset(&amp;master_palette, 0, <span class="keyword">sizeof</span>(master_palette));</div>
 <div class="line"><a name="l02948"></a><span class="lineno"> 2948</span>&#160;  <span class="keywordflow">for</span> (uint32_t required_index = 0; required_index &lt; required_color_count; required_index++)</div>
-<div class="line"><a name="l02949"></a><span class="lineno"> 2949</span>&#160;    master_palette[master_palette_count++] = required_colors[required_index];</div>
+<div class="line"><a name="l02949"></a><span class="lineno"> 2949</span>&#160;    master_palette[master_palette_count++] = pRequired_colors[required_index];</div>
 <div class="line"><a name="l02950"></a><span class="lineno"> 2950</span>&#160; </div>
 <div class="line"><a name="l02951"></a><span class="lineno"> 2951</span>&#160;  <span class="comment">// count the number of required models, instances in the master scene</span></div>
 <div class="line"><a name="l02952"></a><span class="lineno"> 2952</span>&#160;  uint32_t max_layers = 1; <span class="comment">// we don&#39;t actually merge layers. Every instance will be in layer 0.</span></div>
@@ -3044,11 +3044,11 @@ $(document).ready(function(){initNavTree('d0/da5/ogt__vox_8h_source.htm','../../
 <div class="line"><a name="l02955"></a><span class="lineno"> 2955</span>&#160;  uint32_t max_groups = 1; <span class="comment">// we add 1 root global group that everything will ultimately be parented to.</span></div>
 <div class="line"><a name="l02956"></a><span class="lineno"> 2956</span>&#160;  <span class="keywordflow">for</span> (uint32_t scene_index = 0; scene_index &lt; scene_count; scene_index++)</div>
 <div class="line"><a name="l02957"></a><span class="lineno"> 2957</span>&#160;  {</div>
-<div class="line"><a name="l02958"></a><span class="lineno"> 2958</span>&#160;    <span class="keywordflow">if</span> (!scenes[scene_index])</div>
+<div class="line"><a name="l02958"></a><span class="lineno"> 2958</span>&#160;    <span class="keywordflow">if</span> (!pScenes[scene_index])</div>
 <div class="line"><a name="l02959"></a><span class="lineno"> 2959</span>&#160;      <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l02960"></a><span class="lineno"> 2960</span>&#160;    max_instances += scenes[scene_index]-&gt;num_instances;</div>
-<div class="line"><a name="l02961"></a><span class="lineno"> 2961</span>&#160;    max_models += scenes[scene_index]-&gt;num_models;</div>
-<div class="line"><a name="l02962"></a><span class="lineno"> 2962</span>&#160;    max_groups += scenes[scene_index]-&gt;num_groups;</div>
+<div class="line"><a name="l02960"></a><span class="lineno"> 2960</span>&#160;    max_instances += pScenes[scene_index]-&gt;num_instances;</div>
+<div class="line"><a name="l02961"></a><span class="lineno"> 2961</span>&#160;    max_models += pScenes[scene_index]-&gt;num_models;</div>
+<div class="line"><a name="l02962"></a><span class="lineno"> 2962</span>&#160;    max_groups += pScenes[scene_index]-&gt;num_groups;</div>
 <div class="line"><a name="l02963"></a><span class="lineno"> 2963</span>&#160;  }</div>
 <div class="line"><a name="l02964"></a><span class="lineno"> 2964</span>&#160; </div>
 <div class="line"><a name="l02965"></a><span class="lineno"> 2965</span>&#160;  <span class="comment">// allocate the master instances array</span></div>
@@ -3085,7 +3085,7 @@ $(document).ready(function(){initNavTree('d0/da5/ogt__vox_8h_source.htm','../../
 <div class="line"><a name="l02996"></a><span class="lineno"> 2996</span>&#160;  int32_t offset_x = 0;</div>
 <div class="line"><a name="l02997"></a><span class="lineno"> 2997</span>&#160;  <span class="keywordflow">for</span> (uint32_t scene_index = 0; scene_index &lt; scene_count; scene_index++)</div>
 <div class="line"><a name="l02998"></a><span class="lineno"> 2998</span>&#160;  {</div>
-<div class="line"><a name="l02999"></a><span class="lineno"> 2999</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../dd/dff/structogt__vox__scene.htm">ogt_vox_scene</a>* scene = scenes[scene_index];</div>
+<div class="line"><a name="l02999"></a><span class="lineno"> 2999</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../dd/dff/structogt__vox__scene.htm">ogt_vox_scene</a>* scene = pScenes[scene_index];</div>
 <div class="line"><a name="l03000"></a><span class="lineno"> 3000</span>&#160;    <span class="keywordflow">if</span> (!scene)</div>
 <div class="line"><a name="l03001"></a><span class="lineno"> 3001</span>&#160;      <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l03002"></a><span class="lineno"> 3002</span>&#160; </div>
@@ -3241,7 +3241,7 @@ $(document).ready(function(){initNavTree('d0/da5/ogt__vox_8h_source.htm','../../
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_07792d309f5611e62640e8ec1fb96105.htm">Tools</a></li><li class="navelem"><a class="el" href="../../dir_8e80be223102188e67d1ce7cce146de0.htm">Libs</a></li><li class="navelem"><a class="el" href="../../dir_9a22f53500ad7dc6bb404786c71cf46f.htm">ModelImporter2</a></li><li class="navelem"><a class="el" href="../../dir_cb4584dd146d64f7b6e8fa31e07a7a33.htm">ImporterMagicaVoxel</a></li><li class="navelem"><b>ogt_vox.h</b></li>
-    <li class="footer">Generated on Fri Nov 18 2022 14:48:04 for ezEngine by
+    <li class="footer">Generated on Sat Mar 25 2023 19:22:00 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

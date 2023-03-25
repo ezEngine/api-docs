@@ -3,7 +3,7 @@ var classez_jolt_shape_component =
     [ "ezJoltShapeComponent", "d7/d33/classez_jolt_shape_component.htm#aba0c561019d060c59d64225196a41c64", null ],
     [ "~ezJoltShapeComponent", "d7/d33/classez_jolt_shape_component.htm#a2e6452b84fb867d6c70f4497cb5a2029", null ],
     [ "CreateShapes", "d7/d33/classez_jolt_shape_component.htm#a40afe503cbcdbf4aa012b8fd4d10d03d", null ],
-    [ "ExtractGeometry", "d7/d33/classez_jolt_shape_component.htm#ae0296823cfc266ceacea5979814c5e44", null ],
+    [ "ExtractGeometry", "d7/d33/classez_jolt_shape_component.htm#a919cf96ba983906460d16b5687fcafbe", null ],
     [ "GetUserData", "d7/d33/classez_jolt_shape_component.htm#a7c2a0efe4989878a136ec6cb14bd69bf", null ],
     [ "GetUserDataIndex", "d7/d33/classez_jolt_shape_component.htm#a7254292a46d4d3bf41d28cc84d2a23d9", null ],
     [ "Initialize", "d7/d33/classez_jolt_shape_component.htm#a17019310e26434b30d60fa34d86a1374", null ],

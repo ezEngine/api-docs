@@ -3,7 +3,7 @@ var classez_render_component =
     [ "ezRenderComponent", "d3/d8e/classez_render_component.htm#a928992e93f7151d9fe96741fb93f1ac2", null ],
     [ "~ezRenderComponent", "d3/d8e/classez_render_component.htm#ab239a0a0b2dc1b30bbc5e70930aba92a", null ],
     [ "Deinitialize", "d3/d8e/classez_render_component.htm#a62f8701eab46745cabf09a9d4948d05c", null ],
-    [ "GetLocalBounds", "d3/d8e/classez_render_component.htm#ace2ad4518e4c6c72d0f932f971c0b032", null ],
+    [ "GetLocalBounds", "d3/d8e/classez_render_component.htm#a4063d62ee2c2d8874440ea81eaf8cabc", null ],
     [ "GetUniqueIdForRendering", "d3/d8e/classez_render_component.htm#a9a3235a2dd0a592eaa3c281f8fc442e0", null ],
     [ "InvalidateCachedRenderData", "d3/d8e/classez_render_component.htm#a0d4e7fd8b10b994ee5b2a40129970b85", null ],
     [ "OnActivated", "d3/d8e/classez_render_component.htm#a29e50cf148be01cc49a21f7d1692de6a", null ],

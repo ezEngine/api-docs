@@ -2,9 +2,9 @@ var classez_particle_type_quad_factory =
 [
     [ "CopyTypeProperties", "d0/d1e/classez_particle_type_quad_factory.htm#a657379b1f7efc93ec18da4dc20323a4f", null ],
     [ "GetTypeType", "d0/d1e/classez_particle_type_quad_factory.htm#ab2b64717954b6d4bb64863cebe17e158", null ],
-    [ "Load", "d0/d1e/classez_particle_type_quad_factory.htm#a70bc12e617e58ffffd7a2840dabf8541", null ],
-    [ "QueryFinalizerDependencies", "d0/d1e/classez_particle_type_quad_factory.htm#a13152dc45bbe1fa25b17481df8806697", null ],
-    [ "Save", "d0/d1e/classez_particle_type_quad_factory.htm#a16350e84cd84bae3f55efe9cd60eacd3", null ],
+    [ "Load", "d0/d1e/classez_particle_type_quad_factory.htm#a1f194b2e12cec2d40e7fb97d6bebac2e", null ],
+    [ "QueryFinalizerDependencies", "d0/d1e/classez_particle_type_quad_factory.htm#a621a4754fcd9fff7d3c2e5df889fca70", null ],
+    [ "Save", "d0/d1e/classez_particle_type_quad_factory.htm#a2595dc6fb65b14ff9b69d5df8f7db0e0", null ],
     [ "m_fDistortionStrength", "d0/d1e/classez_particle_type_quad_factory.htm#a053409cc9c0608b42a87f9f73ed16513", null ],
     [ "m_fStretch", "d0/d1e/classez_particle_type_quad_factory.htm#aa28d4ba68ad59000ebcd7c8c467db6dc", null ],
     [ "m_MaxDeviation", "d0/d1e/classez_particle_type_quad_factory.htm#adc0593bdd0988bdc0853679c4cda8c86", null ],

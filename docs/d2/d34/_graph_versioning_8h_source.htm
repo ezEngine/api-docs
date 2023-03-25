@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 22.11</span>
+   &#160;<span id="projectnumber">Release 23.04</span>
    </div>
   </td>
  </tr>
@@ -111,7 +111,7 @@ $(document).ready(function(){initNavTree('d2/d34/_graph_versioning_8h_source.htm
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <a class="code" href="../../d5/dee/structez_version_key.htm">ezVersionKey</a>() {}</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <a class="code" href="../../d5/dee/structez_version_key.htm">ezVersionKey</a>(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sType, ezUInt32 uiTypeVersion)</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    m_sType.<a class="code" href="../../de/dce/classez_hashed_string.htm#a98b45f1241d1e37de8045d4089a86992">Assign</a>(sType);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    m_sType.<a class="code" href="../../de/dce/classez_hashed_string.htm#af53e55cc90fcd4abc1bbc5a777112b85">Assign</a>(sType);</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    m_uiTypeVersion = uiTypeVersion;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  }</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  EZ_DECLARE_POD_TYPE();</div>
@@ -155,7 +155,7 @@ $(document).ready(function(){initNavTree('d2/d34/_graph_versioning_8h_source.htm
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keywordtype">void</span> RenameClass(<span class="keyword">const</span> <span class="keywordtype">char</span>* szTypeName); <span class="comment">// [tested]</span></div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordtype">void</span> RenameClass(<span class="keyword">const</span> <span class="keywordtype">char</span>* szTypeName, ezUInt32 version);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordtype">void</span> RenameClass(<span class="keyword">const</span> <span class="keywordtype">char</span>* szTypeName, ezUInt32 uiVersion);</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keywordtype">void</span> ChangeBaseClass(<a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;ezVersionKey&gt;</a> baseClasses); <span class="comment">// [tested]</span></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
@@ -200,7 +200,6 @@ $(document).ready(function(){initNavTree('d2/d34/_graph_versioning_8h_source.htm
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassez_hashed_string_htm_a98b45f1241d1e37de8045d4089a86992"><div class="ttname"><a href="../../de/dce/classez_hashed_string.htm#a98b45f1241d1e37de8045d4089a86992">ezHashedString::Assign</a></div><div class="ttdeci">void Assign(const char(&amp;szString)[N])</div><div class="ttdoc">Assigning a new string from a string constant is a slow operation, but the hash computation can happe...</div></div>
 <div class="ttc" id="aclassez_r_t_t_i_htm"><div class="ttname"><a href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a></div><div class="ttdoc">This enumerable class holds information about reflected types. Each instance represents one type that...</div><div class="ttdef"><b>Definition:</b> RTTI.h:30</div></div>
 <div class="ttc" id="astructez_version_key_htm"><div class="ttname"><a href="../../d5/dee/structez_version_key.htm">ezVersionKey</a></div><div class="ttdoc">Tuple used for identifying patches and tracking patch progression.</div><div class="ttdef"><b>Definition:</b> GraphVersioning.h:22</div></div>
 <div class="ttc" id="aclassez_graph_patch_context_htm"><div class="ttname"><a href="../../d0/d82/classez_graph_patch_context.htm">ezGraphPatchContext</a></div><div class="ttdoc">Handles the patching of a node. Is passed into the patch classes to provide utility functions and tra...</div><div class="ttdef"><b>Definition:</b> GraphVersioning.h:68</div></div>
@@ -210,6 +209,7 @@ $(document).ready(function(){initNavTree('d2/d34/_graph_versioning_8h_source.htm
 <div class="ttc" id="astructez_plugin_event_htm"><div class="ttname"><a href="../../d4/d72/structez_plugin_event.htm">ezPluginEvent</a></div><div class="ttdoc">The data that is broadcast whenever a plugin is (un-) loaded.</div><div class="ttdef"><b>Definition:</b> Plugin.h:10</div></div>
 <div class="ttc" id="aclassez_graph_patch_htm"><div class="ttname"><a href="../../d9/dfd/classez_graph_patch.htm">ezGraphPatch</a></div><div class="ttdoc">Patch base class for ezAbstractObjectGraph patches.</div><div class="ttdef"><b>Definition:</b> GraphPatch.h:19</div></div>
 <div class="ttc" id="astructez_type_version_info_htm"><div class="ttname"><a href="../../d7/d01/structez_type_version_info.htm">ezTypeVersionInfo</a></div><div class="ttdoc">A class that overlaps ezReflectedTypeDescriptor with the properties needed for patching.</div><div class="ttdef"><b>Definition:</b> GraphVersioning.h:53</div></div>
+<div class="ttc" id="aclassez_hashed_string_htm_af53e55cc90fcd4abc1bbc5a777112b85"><div class="ttname"><a href="../../de/dce/classez_hashed_string.htm#af53e55cc90fcd4abc1bbc5a777112b85">ezHashedString::Assign</a></div><div class="ttdeci">void Assign(const char(&amp;string)[N])</div><div class="ttdoc">Assigning a new string from a string constant is a slow operation, but the hash computation can happe...</div></div>
 <div class="ttc" id="aclassez_graph_versioning_htm"><div class="ttname"><a href="../../df/d10/classez_graph_versioning.htm">ezGraphVersioning</a></div><div class="ttdoc">Singleton that allows version patching of ezAbstractObjectGraph.</div><div class="ttdef"><b>Definition:</b> GraphVersioning.h:105</div></div>
 <div class="ttc" id="aclassez_dynamic_array_htm"><div class="ttname"><a href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt; ezVersionKey &gt;</a></div></div>
 <div class="ttc" id="aclassez_abstract_object_graph_htm"><div class="ttname"><a href="../../d1/d39/classez_abstract_object_graph.htm">ezAbstractObjectGraph</a></div><div class="ttdef"><b>Definition:</b> AbstractObjectGraph.h:120</div></div>
@@ -222,7 +222,7 @@ $(document).ready(function(){initNavTree('d2/d34/_graph_versioning_8h_source.htm
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_ca76d0c6570b9e8a3a0dc6b51850235c.htm">Serialization</a></li><li class="navelem"><b>GraphVersioning.h</b></li>
-    <li class="footer">Generated on Fri Nov 18 2022 14:47:59 for ezEngine by
+    <li class="footer">Generated on Sat Mar 25 2023 19:21:56 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

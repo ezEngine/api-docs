@@ -1,10 +1,10 @@
 var structez_window_creation_desc =
 [
     [ "AdjustWindowSizeAndPosition", "dd/d3b/structez_window_creation_desc.htm#a5bf5fe86f04764fe87af8369e0a56d80", null ],
-    [ "LoadFromDDL", "dd/d3b/structez_window_creation_desc.htm#afcccd0f07a3c49e2d49862aec37c04af", null ],
     [ "LoadFromDDL", "dd/d3b/structez_window_creation_desc.htm#a89068cfe707d533a7bee46a72b0f0828", null ],
-    [ "SaveToDDL", "dd/d3b/structez_window_creation_desc.htm#a0089d8cb64c2fe6da4b5679f4dea4564", null ],
-    [ "SaveToDDL", "dd/d3b/structez_window_creation_desc.htm#a8e441c504e55f7711127766308ba8f0e", null ],
+    [ "LoadFromDDL", "dd/d3b/structez_window_creation_desc.htm#a8fcd2310b0b08637a7181fe86c950bcf", null ],
+    [ "SaveToDDL", "dd/d3b/structez_window_creation_desc.htm#a53bd03412a536b68651314a169002c9f", null ],
+    [ "SaveToDDL", "dd/d3b/structez_window_creation_desc.htm#a08e54f23ceb51c379de2f4a3ec2dbbf3", null ],
     [ "m_bClipMouseCursor", "dd/d3b/structez_window_creation_desc.htm#a6acf4ad9c75d5de18753eafa6b807263", null ],
     [ "m_bSetForegroundOnInit", "dd/d3b/structez_window_creation_desc.htm#af348ff68586d6307997d95867aebf11e", null ],
     [ "m_bShowMouseCursor", "dd/d3b/structez_window_creation_desc.htm#a41b03cf3d067079dca47699ad5a32bdf", null ],

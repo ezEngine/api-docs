@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 22.11</span>
+   &#160;<span id="projectnumber">Release 23.04</span>
    </div>
   </td>
  </tr>
@@ -98,7 +98,7 @@ $(document).ready(function(){initNavTree('d2/db7/_engine_2_core_2_world_2_declar
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;Core/CoreDLL.h&gt;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#ifndef EZ_WORLD_INDEX_BITS</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#define EZ_WORLD_INDEX_BITS 8</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#  define EZ_WORLD_INDEX_BITS 8</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#define EZ_MAX_WORLDS (1 &lt;&lt; EZ_WORLD_INDEX_BITS)</span></div>
@@ -135,12 +135,12 @@ $(document).ready(function(){initNavTree('d2/db7/_engine_2_core_2_world_2_declar
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  static_assert(EZ_WORLD_INDEX_BITS &gt; 0 &amp;&amp; EZ_WORLD_INDEX_BITS &lt;= 24);</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  EZ_FORCE_INLINE <a class="code" href="../../dd/dee/structez_game_object_id.htm">ezGameObjectId</a>(StorageType instanceIndex, ezUInt8 generation, ezUInt8 worldIndex = 0)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  EZ_FORCE_INLINE <a class="code" href="../../dd/dee/structez_game_object_id.htm">ezGameObjectId</a>(StorageType instanceIndex, ezUInt8 uiGeneration, ezUInt8 uiWorldIndex = 0)</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  {</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    m_Data = 0;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    m_InstanceIndex = <span class="keyword">static_cast&lt;</span>ezUInt32<span class="keyword">&gt;</span>(instanceIndex);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    m_Generation = generation;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    m_WorldIndex = worldIndex;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    m_Generation = uiGeneration;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    m_WorldIndex = uiWorldIndex;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  }</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keyword">union</span></div>
@@ -171,8 +171,8 @@ $(document).ready(function(){initNavTree('d2/db7/_engine_2_core_2_world_2_declar
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  EZ_ALWAYS_INLINE <span class="keyword">static</span> <span class="keywordtype">bool</span> Equal(<a class="code" href="../../d6/d5c/structez_game_object_handle.htm">ezGameObjectHandle</a> a, <a class="code" href="../../d6/d5c/structez_game_object_handle.htm">ezGameObjectHandle</a> b) { <span class="keywordflow">return</span> a == b; }</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;};</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;EZ_CORE_DLL <span class="keywordtype">void</span> operator&lt;&lt;(<a class="code" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a>&amp; Stream, <span class="keyword">const</span> <a class="code" href="../../d6/d5c/structez_game_object_handle.htm">ezGameObjectHandle</a>&amp; Value);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;EZ_CORE_DLL <span class="keywordtype">void</span> operator&gt;&gt;(<a class="code" href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a>&amp; Stream, <a class="code" href="../../d6/d5c/structez_game_object_handle.htm">ezGameObjectHandle</a>&amp; Value);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;EZ_CORE_DLL <span class="keywordtype">void</span> operator&lt;&lt;(<a class="code" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a>&amp; inout_stream, <span class="keyword">const</span> <a class="code" href="../../d6/d5c/structez_game_object_handle.htm">ezGameObjectHandle</a>&amp; hValue);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;EZ_CORE_DLL <span class="keywordtype">void</span> operator&gt;&gt;(<a class="code" href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a>&amp; inout_stream, <a class="code" href="../../d6/d5c/structez_game_object_handle.htm">ezGameObjectHandle</a>&amp; ref_hValue);</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;EZ_DECLARE_REFLECTABLE_TYPE(EZ_CORE_DLL, <a class="code" href="../../d6/d5c/structez_game_object_handle.htm">ezGameObjectHandle</a>);</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;EZ_DECLARE_CUSTOM_VARIANT_TYPE(<a class="code" href="../../d6/d5c/structez_game_object_handle.htm">ezGameObjectHandle</a>);</div>
@@ -187,13 +187,13 @@ $(document).ready(function(){initNavTree('d2/db7/_engine_2_core_2_world_2_declar
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  static_assert(EZ_COMPONENT_TYPE_INDEX_BITS &gt; 0 &amp;&amp; EZ_COMPONENT_TYPE_INDEX_BITS &lt;= 16);</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  EZ_ALWAYS_INLINE <a class="code" href="../../d7/dd8/structez_component_id.htm">ezComponentId</a>(StorageType instanceIndex, ezUInt8 generation, ezUInt16 typeId = 0, ezUInt8 worldIndex = 0)</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  EZ_ALWAYS_INLINE <a class="code" href="../../d7/dd8/structez_component_id.htm">ezComponentId</a>(StorageType instanceIndex, ezUInt8 uiGeneration, ezUInt16 uiTypeId = 0, ezUInt8 uiWorldIndex = 0)</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  {</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    m_Data = 0;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    m_InstanceIndex = <span class="keyword">static_cast&lt;</span>ezUInt32<span class="keyword">&gt;</span>(instanceIndex);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    m_Generation = generation;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    m_TypeId = typeId;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    m_WorldIndex = worldIndex;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    m_Generation = uiGeneration;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    m_TypeId = uiTypeId;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    m_WorldIndex = uiWorldIndex;</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  }</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <span class="keyword">union</span></div>
@@ -231,8 +231,8 @@ $(document).ready(function(){initNavTree('d2/db7/_engine_2_core_2_world_2_declar
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  EZ_ALWAYS_INLINE <span class="keyword">static</span> <span class="keywordtype">bool</span> Equal(<a class="code" href="../../df/d34/structez_component_handle.htm">ezComponentHandle</a> a, <a class="code" href="../../df/d34/structez_component_handle.htm">ezComponentHandle</a> b) { <span class="keywordflow">return</span> a == b; }</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;};</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;EZ_CORE_DLL <span class="keywordtype">void</span> operator&lt;&lt;(<a class="code" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a>&amp; Stream, <span class="keyword">const</span> <a class="code" href="../../df/d34/structez_component_handle.htm">ezComponentHandle</a>&amp; Value);</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;EZ_CORE_DLL <span class="keywordtype">void</span> operator&gt;&gt;(<a class="code" href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a>&amp; Stream, <a class="code" href="../../df/d34/structez_component_handle.htm">ezComponentHandle</a>&amp; Value);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;EZ_CORE_DLL <span class="keywordtype">void</span> operator&lt;&lt;(<a class="code" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a>&amp; inout_stream, <span class="keyword">const</span> <a class="code" href="../../df/d34/structez_component_handle.htm">ezComponentHandle</a>&amp; hValue);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;EZ_CORE_DLL <span class="keywordtype">void</span> operator&gt;&gt;(<a class="code" href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a>&amp; inout_stream, <a class="code" href="../../df/d34/structez_component_handle.htm">ezComponentHandle</a>&amp; ref_hValue);</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;EZ_DECLARE_REFLECTABLE_TYPE(EZ_CORE_DLL, <a class="code" href="../../df/d34/structez_component_handle.htm">ezComponentHandle</a>);</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;EZ_DECLARE_CUSTOM_VARIANT_TYPE(<a class="code" href="../../df/d34/structez_component_handle.htm">ezComponentHandle</a>);</div>
@@ -257,193 +257,196 @@ $(document).ready(function(){initNavTree('d2/db7/_engine_2_core_2_world_2_declar
 <div class="line"><a name="l00186"></a><span class="lineno"><a class="line" href="../../da/db9/structez_object_flags.htm#a1359c6c47ec8b5f9f4c2f62d408811e0a8af4cd63f17bed7f78ab422a40eff171">  186</a></span>&#160;    <a class="code" href="../../da/db9/structez_object_flags.htm#a1359c6c47ec8b5f9f4c2f62d408811e0a8af4cd63f17bed7f78ab422a40eff171">ChildChangesNotifications</a> = EZ_BIT(9),            </div>
 <div class="line"><a name="l00187"></a><span class="lineno"><a class="line" href="../../da/db9/structez_object_flags.htm#a1359c6c47ec8b5f9f4c2f62d408811e0a84eb6f1c59e4c7ec023d8a1057b8650f">  187</a></span>&#160;    <a class="code" href="../../da/db9/structez_object_flags.htm#a1359c6c47ec8b5f9f4c2f62d408811e0a84eb6f1c59e4c7ec023d8a1057b8650f">ComponentChangesNotifications</a> = EZ_BIT(10),       </div>
 <div class="line"><a name="l00188"></a><span class="lineno"><a class="line" href="../../da/db9/structez_object_flags.htm#a1359c6c47ec8b5f9f4c2f62d408811e0a97d873afad6a512e6f51f7ae3814dd80">  188</a></span>&#160;    <a class="code" href="../../da/db9/structez_object_flags.htm#a1359c6c47ec8b5f9f4c2f62d408811e0a97d873afad6a512e6f51f7ae3814dd80">StaticTransformChangesNotifications</a> = EZ_BIT(11), </div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    UserFlag0 = EZ_BIT(24),</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    UserFlag1 = EZ_BIT(25),</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    UserFlag2 = EZ_BIT(26),</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    UserFlag3 = EZ_BIT(27),</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    UserFlag4 = EZ_BIT(28),</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    UserFlag5 = EZ_BIT(29),</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    UserFlag6 = EZ_BIT(30),</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    UserFlag7 = EZ_BIT(31),</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    Default = None</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;  };</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
-<div class="line"><a name="l00202"></a><span class="lineno"><a class="line" href="../../d5/da5/structez_object_flags_1_1_bits.htm">  202</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../d5/da5/structez_object_flags_1_1_bits.htm">Bits</a></div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;  {</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    StorageType Dynamic : 1;                             <span class="comment">//&lt; 0</span></div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    StorageType ForceDynamic : 1;                        <span class="comment">//&lt; 1</span></div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    StorageType ActiveFlag : 1;                          <span class="comment">//&lt; 2</span></div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    StorageType ActiveState : 1;                         <span class="comment">//&lt; 3</span></div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    StorageType Initialized : 1;                         <span class="comment">//&lt; 4</span></div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    StorageType Initializing : 1;                        <span class="comment">//&lt; 5</span></div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    StorageType SimulationStarted : 1;                   <span class="comment">//&lt; 6</span></div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    StorageType SimulationStarting : 1;                  <span class="comment">//&lt; 7</span></div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    StorageType UnhandledMessageHandler : 1;             <span class="comment">//&lt; 8</span></div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    StorageType ChildChangesNotifications : 1;           <span class="comment">//&lt; 9</span></div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    StorageType ComponentChangesNotifications : 1;       <span class="comment">//&lt; 10</span></div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    StorageType StaticTransformChangesNotifications : 1; <span class="comment">//&lt; 11</span></div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    StorageType Padding : 12; <span class="comment">// 12 - 23</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno"><a class="line" href="../../da/db9/structez_object_flags.htm#a1359c6c47ec8b5f9f4c2f62d408811e0a0d9239d620882f24b058be99fb5a8daf">  189</a></span>&#160;    <a class="code" href="../../da/db9/structez_object_flags.htm#a1359c6c47ec8b5f9f4c2f62d408811e0a0d9239d620882f24b058be99fb5a8daf">ParentChangesNotifications</a> = EZ_BIT(12),          </div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    UserFlag0 = EZ_BIT(24),</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    UserFlag1 = EZ_BIT(25),</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    UserFlag2 = EZ_BIT(26),</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    UserFlag3 = EZ_BIT(27),</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    UserFlag4 = EZ_BIT(28),</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    UserFlag5 = EZ_BIT(29),</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    UserFlag6 = EZ_BIT(30),</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    UserFlag7 = EZ_BIT(31),</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    Default = None</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;  };</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
+<div class="line"><a name="l00203"></a><span class="lineno"><a class="line" href="../../d5/da5/structez_object_flags_1_1_bits.htm">  203</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../d5/da5/structez_object_flags_1_1_bits.htm">Bits</a></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;  {</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    StorageType Dynamic : 1;                             <span class="comment">//&lt; 0</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    StorageType ForceDynamic : 1;                        <span class="comment">//&lt; 1</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    StorageType ActiveFlag : 1;                          <span class="comment">//&lt; 2</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    StorageType ActiveState : 1;                         <span class="comment">//&lt; 3</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    StorageType Initialized : 1;                         <span class="comment">//&lt; 4</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    StorageType Initializing : 1;                        <span class="comment">//&lt; 5</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    StorageType SimulationStarted : 1;                   <span class="comment">//&lt; 6</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    StorageType SimulationStarting : 1;                  <span class="comment">//&lt; 7</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    StorageType UnhandledMessageHandler : 1;             <span class="comment">//&lt; 8</span></div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    StorageType ChildChangesNotifications : 1;           <span class="comment">//&lt; 9</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    StorageType ComponentChangesNotifications : 1;       <span class="comment">//&lt; 10</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    StorageType StaticTransformChangesNotifications : 1; <span class="comment">//&lt; 11</span></div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    StorageType ParentChangesNotifications : 1;          <span class="comment">//&lt; 12</span></div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    StorageType UserFlag0 : 1; <span class="comment">//&lt; 24</span></div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    StorageType UserFlag1 : 1; <span class="comment">//&lt; 25</span></div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    StorageType UserFlag2 : 1; <span class="comment">//&lt; 26</span></div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    StorageType UserFlag3 : 1; <span class="comment">//&lt; 27</span></div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    StorageType UserFlag4 : 1; <span class="comment">//&lt; 28</span></div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    StorageType UserFlag5 : 1; <span class="comment">//&lt; 29</span></div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    StorageType UserFlag6 : 1; <span class="comment">//&lt; 30</span></div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    StorageType UserFlag7 : 1; <span class="comment">//&lt; 31</span></div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;  };</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;};</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;EZ_DECLARE_FLAGS_OPERATORS(<a class="code" href="../../da/db9/structez_object_flags.htm">ezObjectFlags</a>);</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    StorageType Padding : 11; <span class="comment">// 13 - 23</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    StorageType UserFlag0 : 1; <span class="comment">//&lt; 24</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    StorageType UserFlag1 : 1; <span class="comment">//&lt; 25</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    StorageType UserFlag2 : 1; <span class="comment">//&lt; 26</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    StorageType UserFlag3 : 1; <span class="comment">//&lt; 27</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    StorageType UserFlag4 : 1; <span class="comment">//&lt; 28</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    StorageType UserFlag5 : 1; <span class="comment">//&lt; 29</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    StorageType UserFlag6 : 1; <span class="comment">//&lt; 30</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    StorageType UserFlag7 : 1; <span class="comment">//&lt; 31</span></div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;  };</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;};</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
-<div class="line"><a name="l00235"></a><span class="lineno"><a class="line" href="../../de/dcc/structez_object_mode.htm">  235</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../de/dcc/structez_object_mode.htm">ezObjectMode</a></div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;{</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;  <span class="keyword">typedef</span> ezUInt8 StorageType;</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;  <span class="keyword">enum</span> Enum : ezUInt8</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;  {</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    Automatic,</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    ForceDynamic,</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    Default = Automatic</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;  };</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;};</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;EZ_DECLARE_REFLECTABLE_TYPE(EZ_CORE_DLL, <a class="code" href="../../de/dcc/structez_object_mode.htm">ezObjectMode</a>);</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;EZ_DECLARE_FLAGS_OPERATORS(<a class="code" href="../../da/db9/structez_object_flags.htm">ezObjectFlags</a>);</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
+<div class="line"><a name="l00237"></a><span class="lineno"><a class="line" href="../../de/dcc/structez_object_mode.htm">  237</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../de/dcc/structez_object_mode.htm">ezObjectMode</a></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;{</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;  <span class="keyword">typedef</span> ezUInt8 StorageType;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; </div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;  <span class="keyword">enum</span> Enum : ezUInt8</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;  {</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    Automatic,</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    ForceDynamic,</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    Default = Automatic</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;  };</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;};</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160; </div>
-<div class="line"><a name="l00253"></a><span class="lineno"><a class="line" href="../../d5/d2a/structez_component_mode.htm">  253</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../d5/d2a/structez_component_mode.htm">ezComponentMode</a></div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;{</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;  <span class="keyword">enum</span> Enum</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;  {</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    Static,</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    Dynamic</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;  };</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;};</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160; </div>
-<div class="line"><a name="l00263"></a><span class="lineno"><a class="line" href="../../d0/d79/structez_object_msg_queue_type.htm">  263</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../d0/d79/structez_object_msg_queue_type.htm">ezObjectMsgQueueType</a></div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;{</div>
-<div class="line"><a name="l00265"></a><span class="lineno"><a class="line" href="../../d0/d79/structez_object_msg_queue_type.htm#aafc8d4dc0bc3cb8431f8ed0dcfa1923e">  265</a></span>&#160;  <span class="keyword">enum</span> <a class="code" href="../../d0/d79/structez_object_msg_queue_type.htm#aafc8d4dc0bc3cb8431f8ed0dcfa1923e">Enum</a></div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;  {</div>
-<div class="line"><a name="l00267"></a><span class="lineno"><a class="line" href="../../d0/d79/structez_object_msg_queue_type.htm#aafc8d4dc0bc3cb8431f8ed0dcfa1923ea5a0caa1e6de6cb986afbc6d87b660b41">  267</a></span>&#160;    <a class="code" href="../../d0/d79/structez_object_msg_queue_type.htm#aafc8d4dc0bc3cb8431f8ed0dcfa1923ea5a0caa1e6de6cb986afbc6d87b660b41">PostAsync</a>,        </div>
-<div class="line"><a name="l00268"></a><span class="lineno"><a class="line" href="../../d0/d79/structez_object_msg_queue_type.htm#aafc8d4dc0bc3cb8431f8ed0dcfa1923ea00796cc1bfc317c25eda46fc9fe560e8">  268</a></span>&#160;    <a class="code" href="../../d0/d79/structez_object_msg_queue_type.htm#aafc8d4dc0bc3cb8431f8ed0dcfa1923ea00796cc1bfc317c25eda46fc9fe560e8">PostTransform</a>,    </div>
-<div class="line"><a name="l00269"></a><span class="lineno"><a class="line" href="../../d0/d79/structez_object_msg_queue_type.htm#aafc8d4dc0bc3cb8431f8ed0dcfa1923ea82b705acdaa1a177333f4db4611dc2c9">  269</a></span>&#160;    <a class="code" href="../../d0/d79/structez_object_msg_queue_type.htm#aafc8d4dc0bc3cb8431f8ed0dcfa1923ea82b705acdaa1a177333f4db4611dc2c9">NextFrame</a>,        </div>
-<div class="line"><a name="l00270"></a><span class="lineno"><a class="line" href="../../d0/d79/structez_object_msg_queue_type.htm#aafc8d4dc0bc3cb8431f8ed0dcfa1923ea1783f70d23d0487133a4cfefe619a7d2">  270</a></span>&#160;    <a class="code" href="../../d0/d79/structez_object_msg_queue_type.htm#aafc8d4dc0bc3cb8431f8ed0dcfa1923ea1783f70d23d0487133a4cfefe619a7d2">AfterInitialized</a>, </div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    COUNT</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;  };</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;};</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
-<div class="line"><a name="l00276"></a><span class="lineno"><a class="line" href="../../d5/d63/structez_on_component_finished_action.htm">  276</a></span>&#160;<span class="keyword">struct </span>EZ_CORE_DLL <a class="code" href="../../d5/d63/structez_on_component_finished_action.htm">ezOnComponentFinishedAction</a></div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;{</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;  <span class="keyword">using</span> StorageType = ezUInt8;</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160; </div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;  <span class="keyword">enum</span> Enum : StorageType</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;  {</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    None,</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    DeleteComponent,</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    DeleteGameObject,</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160; </div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    Default = None</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;  };</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160; </div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> HandleFinishedAction(<a class="code" href="../../d6/d30/classez_component.htm">ezComponent</a>* pComponent, ezOnComponentFinishedAction::Enum action);</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> HandleDeleteObjectMsg(<a class="code" href="../../d4/d88/structez_msg_delete_game_object.htm">ezMsgDeleteGameObject</a>&amp; msg, <a class="code" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezOnComponentFinishedAction&gt;</a>&amp; action);</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;};</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;EZ_DECLARE_REFLECTABLE_TYPE(EZ_CORE_DLL, <a class="code" href="../../d5/d63/structez_on_component_finished_action.htm">ezOnComponentFinishedAction</a>);</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;EZ_DECLARE_REFLECTABLE_TYPE(EZ_CORE_DLL, <a class="code" href="../../de/dcc/structez_object_mode.htm">ezObjectMode</a>);</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160; </div>
+<div class="line"><a name="l00255"></a><span class="lineno"><a class="line" href="../../d5/d2a/structez_component_mode.htm">  255</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../d5/d2a/structez_component_mode.htm">ezComponentMode</a></div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;{</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;  <span class="keyword">enum</span> Enum</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;  {</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    Static,</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    Dynamic</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;  };</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;};</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160; </div>
+<div class="line"><a name="l00265"></a><span class="lineno"><a class="line" href="../../d0/d79/structez_object_msg_queue_type.htm">  265</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../d0/d79/structez_object_msg_queue_type.htm">ezObjectMsgQueueType</a></div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;{</div>
+<div class="line"><a name="l00267"></a><span class="lineno"><a class="line" href="../../d0/d79/structez_object_msg_queue_type.htm#aafc8d4dc0bc3cb8431f8ed0dcfa1923e">  267</a></span>&#160;  <span class="keyword">enum</span> <a class="code" href="../../d0/d79/structez_object_msg_queue_type.htm#aafc8d4dc0bc3cb8431f8ed0dcfa1923e">Enum</a></div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;  {</div>
+<div class="line"><a name="l00269"></a><span class="lineno"><a class="line" href="../../d0/d79/structez_object_msg_queue_type.htm#aafc8d4dc0bc3cb8431f8ed0dcfa1923ea5a0caa1e6de6cb986afbc6d87b660b41">  269</a></span>&#160;    <a class="code" href="../../d0/d79/structez_object_msg_queue_type.htm#aafc8d4dc0bc3cb8431f8ed0dcfa1923ea5a0caa1e6de6cb986afbc6d87b660b41">PostAsync</a>,        </div>
+<div class="line"><a name="l00270"></a><span class="lineno"><a class="line" href="../../d0/d79/structez_object_msg_queue_type.htm#aafc8d4dc0bc3cb8431f8ed0dcfa1923ea00796cc1bfc317c25eda46fc9fe560e8">  270</a></span>&#160;    <a class="code" href="../../d0/d79/structez_object_msg_queue_type.htm#aafc8d4dc0bc3cb8431f8ed0dcfa1923ea00796cc1bfc317c25eda46fc9fe560e8">PostTransform</a>,    </div>
+<div class="line"><a name="l00271"></a><span class="lineno"><a class="line" href="../../d0/d79/structez_object_msg_queue_type.htm#aafc8d4dc0bc3cb8431f8ed0dcfa1923ea82b705acdaa1a177333f4db4611dc2c9">  271</a></span>&#160;    <a class="code" href="../../d0/d79/structez_object_msg_queue_type.htm#aafc8d4dc0bc3cb8431f8ed0dcfa1923ea82b705acdaa1a177333f4db4611dc2c9">NextFrame</a>,        </div>
+<div class="line"><a name="l00272"></a><span class="lineno"><a class="line" href="../../d0/d79/structez_object_msg_queue_type.htm#aafc8d4dc0bc3cb8431f8ed0dcfa1923ea1783f70d23d0487133a4cfefe619a7d2">  272</a></span>&#160;    <a class="code" href="../../d0/d79/structez_object_msg_queue_type.htm#aafc8d4dc0bc3cb8431f8ed0dcfa1923ea1783f70d23d0487133a4cfefe619a7d2">AfterInitialized</a>, </div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    COUNT</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;  };</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;};</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
+<div class="line"><a name="l00278"></a><span class="lineno"><a class="line" href="../../d5/d63/structez_on_component_finished_action.htm">  278</a></span>&#160;<span class="keyword">struct </span>EZ_CORE_DLL <a class="code" href="../../d5/d63/structez_on_component_finished_action.htm">ezOnComponentFinishedAction</a></div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;{</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;  <span class="keyword">using</span> StorageType = ezUInt8;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160; </div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;  <span class="keyword">enum</span> Enum : StorageType</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;  {</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    None,</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    DeleteComponent,</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    DeleteGameObject,</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    Default = None</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;  };</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160; </div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> HandleFinishedAction(<a class="code" href="../../d6/d30/classez_component.htm">ezComponent</a>* pComponent, ezOnComponentFinishedAction::Enum action);</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160; </div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> HandleDeleteObjectMsg(<a class="code" href="../../d4/d88/structez_msg_delete_game_object.htm">ezMsgDeleteGameObject</a>&amp; ref_msg, <a class="code" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezOnComponentFinishedAction&gt;</a>&amp; ref_action);</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;};</div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
-<div class="line"><a name="l00309"></a><span class="lineno"><a class="line" href="../../d2/dca/structez_on_component_finished_action2.htm">  309</a></span>&#160;<span class="keyword">struct </span>EZ_CORE_DLL <a class="code" href="../../d2/dca/structez_on_component_finished_action2.htm">ezOnComponentFinishedAction2</a></div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;{</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;  <span class="keyword">typedef</span> ezUInt8 StorageType;</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160; </div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;  <span class="keyword">enum</span> Enum</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;  {</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    None,</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    DeleteComponent,</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    DeleteGameObject,</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    Restart,</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160; </div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    Default = None</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;  };</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160; </div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> HandleFinishedAction(<a class="code" href="../../d6/d30/classez_component.htm">ezComponent</a>* pComponent, ezOnComponentFinishedAction2::Enum action);</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160; </div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> HandleDeleteObjectMsg(<a class="code" href="../../d4/d88/structez_msg_delete_game_object.htm">ezMsgDeleteGameObject</a>&amp; msg, <a class="code" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezOnComponentFinishedAction2&gt;</a>&amp; action);</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;};</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160; </div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;EZ_DECLARE_REFLECTABLE_TYPE(EZ_CORE_DLL, <a class="code" href="../../d2/dca/structez_on_component_finished_action2.htm">ezOnComponentFinishedAction2</a>);</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;EZ_DECLARE_REFLECTABLE_TYPE(EZ_CORE_DLL, <a class="code" href="../../d5/d63/structez_on_component_finished_action.htm">ezOnComponentFinishedAction</a>);</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
+<div class="line"><a name="l00311"></a><span class="lineno"><a class="line" href="../../d2/dca/structez_on_component_finished_action2.htm">  311</a></span>&#160;<span class="keyword">struct </span>EZ_CORE_DLL <a class="code" href="../../d2/dca/structez_on_component_finished_action2.htm">ezOnComponentFinishedAction2</a></div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;{</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;  <span class="keyword">typedef</span> ezUInt8 StorageType;</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; </div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;  <span class="keyword">enum</span> Enum</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;  {</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    None,</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    DeleteComponent,</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    DeleteGameObject,</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    Restart,</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160; </div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    Default = None</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;  };</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160; </div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> HandleFinishedAction(<a class="code" href="../../d6/d30/classez_component.htm">ezComponent</a>* pComponent, ezOnComponentFinishedAction2::Enum action);</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160; </div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> HandleDeleteObjectMsg(<a class="code" href="../../d4/d88/structez_msg_delete_game_object.htm">ezMsgDeleteGameObject</a>&amp; ref_msg, <a class="code" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezOnComponentFinishedAction2&gt;</a>&amp; ref_action);</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;};</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160; </div>
-<div class="line"><a name="l00333"></a><span class="lineno"><a class="line" href="../../d6/d5e/structez_visitor_execution.htm">  333</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../d6/d5e/structez_visitor_execution.htm">ezVisitorExecution</a></div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;{</div>
-<div class="line"><a name="l00335"></a><span class="lineno"><a class="line" href="../../d6/d5e/structez_visitor_execution.htm#a4e76f4821e1b79df92f916823d5d51e8">  335</a></span>&#160;  <span class="keyword">enum</span> <a class="code" href="../../d6/d5e/structez_visitor_execution.htm#a4e76f4821e1b79df92f916823d5d51e8">Enum</a></div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;  {</div>
-<div class="line"><a name="l00337"></a><span class="lineno"><a class="line" href="../../d6/d5e/structez_visitor_execution.htm#a4e76f4821e1b79df92f916823d5d51e8a6993ade24cffb47d913e84e5fab18560">  337</a></span>&#160;    <a class="code" href="../../d6/d5e/structez_visitor_execution.htm#a4e76f4821e1b79df92f916823d5d51e8a6993ade24cffb47d913e84e5fab18560">Continue</a>, </div>
-<div class="line"><a name="l00338"></a><span class="lineno"><a class="line" href="../../d6/d5e/structez_visitor_execution.htm#a4e76f4821e1b79df92f916823d5d51e8a351a5e0c25852faa4067b8badd7f50af">  338</a></span>&#160;    <a class="code" href="../../d6/d5e/structez_visitor_execution.htm#a4e76f4821e1b79df92f916823d5d51e8a351a5e0c25852faa4067b8badd7f50af">Skip</a>,     </div>
-<div class="line"><a name="l00339"></a><span class="lineno"><a class="line" href="../../d6/d5e/structez_visitor_execution.htm#a4e76f4821e1b79df92f916823d5d51e8a14790206a8b49e99a3f2bf34d8b0a3b3">  339</a></span>&#160;    <a class="code" href="../../d6/d5e/structez_visitor_execution.htm#a4e76f4821e1b79df92f916823d5d51e8a14790206a8b49e99a3f2bf34d8b0a3b3">Stop</a>      </div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;  };</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;};</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160; </div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;<span class="keyword">typedef</span> <a class="code" href="../../dd/d2a/structez_generic_id.htm">ezGenericId&lt;24, 8&gt;</a> <a class="code" href="../../dd/d2a/structez_generic_id.htm">ezSpatialDataId</a>;</div>
-<div class="line"><a name="l00344"></a><span class="lineno"><a class="line" href="../../db/d2f/classez_spatial_data_handle.htm">  344</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../db/d2f/classez_spatial_data_handle.htm">ezSpatialDataHandle</a></div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;{</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;  EZ_DECLARE_HANDLE_TYPE(<a class="code" href="../../db/d2f/classez_spatial_data_handle.htm">ezSpatialDataHandle</a>, <a class="code" href="../../dd/d2a/structez_generic_id.htm">ezSpatialDataId</a>);</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;};</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160; </div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;<span class="preprocessor">#define EZ_MAX_WORLD_MODULE_TYPES EZ_MAX_COMPONENT_TYPES</span></div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;<span class="keyword">typedef</span> ezUInt16 ezWorldModuleTypeId;</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;static_assert(ezMath::MaxValue&lt;ezWorldModuleTypeId&gt;() &gt;= EZ_MAX_WORLD_MODULE_TYPES - 1);</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160; </div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;<span class="keyword">typedef</span> <a class="code" href="../../dd/d2a/structez_generic_id.htm">ezGenericId&lt;24, 8&gt;</a> <a class="code" href="../../dd/d2a/structez_generic_id.htm">ezComponentInitBatchId</a>;</div>
-<div class="line"><a name="l00354"></a><span class="lineno"><a class="line" href="../../d7/d7c/classez_component_init_batch_handle.htm">  354</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d7/d7c/classez_component_init_batch_handle.htm">ezComponentInitBatchHandle</a></div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;{</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;  EZ_DECLARE_HANDLE_TYPE(<a class="code" href="../../d7/d7c/classez_component_init_batch_handle.htm">ezComponentInitBatchHandle</a>, <a class="code" href="../../dd/d2a/structez_generic_id.htm">ezComponentInitBatchId</a>);</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;};</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;EZ_DECLARE_REFLECTABLE_TYPE(EZ_CORE_DLL, <a class="code" href="../../d2/dca/structez_on_component_finished_action2.htm">ezOnComponentFinishedAction2</a>);</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
+<div class="line"><a name="l00335"></a><span class="lineno"><a class="line" href="../../d6/d5e/structez_visitor_execution.htm">  335</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../d6/d5e/structez_visitor_execution.htm">ezVisitorExecution</a></div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;{</div>
+<div class="line"><a name="l00337"></a><span class="lineno"><a class="line" href="../../d6/d5e/structez_visitor_execution.htm#a4e76f4821e1b79df92f916823d5d51e8">  337</a></span>&#160;  <span class="keyword">enum</span> <a class="code" href="../../d6/d5e/structez_visitor_execution.htm#a4e76f4821e1b79df92f916823d5d51e8">Enum</a></div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;  {</div>
+<div class="line"><a name="l00339"></a><span class="lineno"><a class="line" href="../../d6/d5e/structez_visitor_execution.htm#a4e76f4821e1b79df92f916823d5d51e8a6993ade24cffb47d913e84e5fab18560">  339</a></span>&#160;    <a class="code" href="../../d6/d5e/structez_visitor_execution.htm#a4e76f4821e1b79df92f916823d5d51e8a6993ade24cffb47d913e84e5fab18560">Continue</a>, </div>
+<div class="line"><a name="l00340"></a><span class="lineno"><a class="line" href="../../d6/d5e/structez_visitor_execution.htm#a4e76f4821e1b79df92f916823d5d51e8a351a5e0c25852faa4067b8badd7f50af">  340</a></span>&#160;    <a class="code" href="../../d6/d5e/structez_visitor_execution.htm#a4e76f4821e1b79df92f916823d5d51e8a351a5e0c25852faa4067b8badd7f50af">Skip</a>,     </div>
+<div class="line"><a name="l00341"></a><span class="lineno"><a class="line" href="../../d6/d5e/structez_visitor_execution.htm#a4e76f4821e1b79df92f916823d5d51e8a14790206a8b49e99a3f2bf34d8b0a3b3">  341</a></span>&#160;    <a class="code" href="../../d6/d5e/structez_visitor_execution.htm#a4e76f4821e1b79df92f916823d5d51e8a14790206a8b49e99a3f2bf34d8b0a3b3">Stop</a>      </div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;  };</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;};</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160; </div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;<span class="keyword">typedef</span> <a class="code" href="../../dd/d2a/structez_generic_id.htm">ezGenericId&lt;24, 8&gt;</a> <a class="code" href="../../dd/d2a/structez_generic_id.htm">ezSpatialDataId</a>;</div>
+<div class="line"><a name="l00346"></a><span class="lineno"><a class="line" href="../../db/d2f/classez_spatial_data_handle.htm">  346</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../db/d2f/classez_spatial_data_handle.htm">ezSpatialDataHandle</a></div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;{</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;  EZ_DECLARE_HANDLE_TYPE(<a class="code" href="../../db/d2f/classez_spatial_data_handle.htm">ezSpatialDataHandle</a>, <a class="code" href="../../dd/d2a/structez_generic_id.htm">ezSpatialDataId</a>);</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;};</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160; </div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;<span class="preprocessor">#define EZ_MAX_WORLD_MODULE_TYPES EZ_MAX_COMPONENT_TYPES</span></div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;<span class="keyword">typedef</span> ezUInt16 ezWorldModuleTypeId;</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;static_assert(ezMath::MaxValue&lt;ezWorldModuleTypeId&gt;() &gt;= EZ_MAX_WORLD_MODULE_TYPES - 1);</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160; </div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;<span class="keyword">typedef</span> <a class="code" href="../../dd/d2a/structez_generic_id.htm">ezGenericId&lt;24, 8&gt;</a> <a class="code" href="../../dd/d2a/structez_generic_id.htm">ezComponentInitBatchId</a>;</div>
+<div class="line"><a name="l00356"></a><span class="lineno"><a class="line" href="../../d7/d7c/classez_component_init_batch_handle.htm">  356</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d7/d7c/classez_component_init_batch_handle.htm">ezComponentInitBatchHandle</a></div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;{</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;  EZ_DECLARE_HANDLE_TYPE(<a class="code" href="../../d7/d7c/classez_component_init_batch_handle.htm">ezComponentInitBatchHandle</a>, <a class="code" href="../../dd/d2a/structez_generic_id.htm">ezComponentInitBatchId</a>);</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="astructez_object_msg_queue_type_htm_aafc8d4dc0bc3cb8431f8ed0dcfa1923ea82b705acdaa1a177333f4db4611dc2c9"><div class="ttname"><a href="../../d0/d79/structez_object_msg_queue_type.htm#aafc8d4dc0bc3cb8431f8ed0dcfa1923ea82b705acdaa1a177333f4db4611dc2c9">ezObjectMsgQueueType::NextFrame</a></div><div class="ttdeci">@ NextFrame</div><div class="ttdoc">Process the message in the PreAsync phase of the next frame.</div><div class="ttdef"><b>Definition:</b> Declarations.h:269</div></div>
-<div class="ttc" id="astructez_visitor_execution_htm_a4e76f4821e1b79df92f916823d5d51e8a351a5e0c25852faa4067b8badd7f50af"><div class="ttname"><a href="../../d6/d5e/structez_visitor_execution.htm#a4e76f4821e1b79df92f916823d5d51e8a351a5e0c25852faa4067b8badd7f50af">ezVisitorExecution::Skip</a></div><div class="ttdeci">@ Skip</div><div class="ttdoc">In a depth-first iteration mode this will skip the entire sub-tree below the current object.</div><div class="ttdef"><b>Definition:</b> Declarations.h:338</div></div>
+<div class="ttc" id="astructez_object_msg_queue_type_htm_aafc8d4dc0bc3cb8431f8ed0dcfa1923ea82b705acdaa1a177333f4db4611dc2c9"><div class="ttname"><a href="../../d0/d79/structez_object_msg_queue_type.htm#aafc8d4dc0bc3cb8431f8ed0dcfa1923ea82b705acdaa1a177333f4db4611dc2c9">ezObjectMsgQueueType::NextFrame</a></div><div class="ttdeci">@ NextFrame</div><div class="ttdoc">Process the message in the PreAsync phase of the next frame.</div><div class="ttdef"><b>Definition:</b> Declarations.h:271</div></div>
+<div class="ttc" id="astructez_visitor_execution_htm_a4e76f4821e1b79df92f916823d5d51e8a351a5e0c25852faa4067b8badd7f50af"><div class="ttname"><a href="../../d6/d5e/structez_visitor_execution.htm#a4e76f4821e1b79df92f916823d5d51e8a351a5e0c25852faa4067b8badd7f50af">ezVisitorExecution::Skip</a></div><div class="ttdeci">@ Skip</div><div class="ttdoc">In a depth-first iteration mode this will skip the entire sub-tree below the current object.</div><div class="ttdef"><b>Definition:</b> Declarations.h:340</div></div>
 <div class="ttc" id="aclassez_spatial_system_htm"><div class="ttname"><a href="../../d1/dc1/classez_spatial_system.htm">ezSpatialSystem</a></div><div class="ttdef"><b>Definition:</b> SpatialSystem.h:9</div></div>
 <div class="ttc" id="aclassez_component_manager_base_htm"><div class="ttname"><a href="../../d8/d7d/classez_component_manager_base.htm">ezComponentManagerBase</a></div><div class="ttdoc">Base class for all component managers. Do not derive directly from this class, but derive from ezComp...</div><div class="ttdef"><b>Definition:</b> ComponentManager.h:20</div></div>
 <div class="ttc" id="aclassez_coordinate_system_provider_htm"><div class="ttname"><a href="../../df/d57/classez_coordinate_system_provider.htm">ezCoordinateSystemProvider</a></div><div class="ttdef"><b>Definition:</b> CoordinateSystem.h:17</div></div>
 <div class="ttc" id="aclassez_large_block_allocator_htm"><div class="ttname"><a href="../../d1/d52/classez_large_block_allocator.htm">ezLargeBlockAllocator&lt; DEFAULT_BLOCK_SIZE &gt;</a></div></div>
-<div class="ttc" id="astructez_on_component_finished_action_htm"><div class="ttname"><a href="../../d5/d63/structez_on_component_finished_action.htm">ezOnComponentFinishedAction</a></div><div class="ttdoc">Certain components may delete themselves or their owner when they are finished with their main purpos...</div><div class="ttdef"><b>Definition:</b> Declarations.h:276</div></div>
-<div class="ttc" id="aclassez_stream_writer_htm"><div class="ttname"><a href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a></div><div class="ttdoc">Interface for binary out (write) streams.</div><div class="ttdef"><b>Definition:</b> Stream.h:101</div></div>
+<div class="ttc" id="astructez_on_component_finished_action_htm"><div class="ttname"><a href="../../d5/d63/structez_on_component_finished_action.htm">ezOnComponentFinishedAction</a></div><div class="ttdoc">Certain components may delete themselves or their owner when they are finished with their main purpos...</div><div class="ttdef"><b>Definition:</b> Declarations.h:278</div></div>
+<div class="ttc" id="aclassez_stream_writer_htm"><div class="ttname"><a href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a></div><div class="ttdoc">Interface for binary out (write) streams.</div><div class="ttdef"><b>Definition:</b> Stream.h:106</div></div>
 <div class="ttc" id="astructez_game_object_desc_htm"><div class="ttname"><a href="../../d7/d35/structez_game_object_desc.htm">ezGameObjectDesc</a></div><div class="ttdoc">Describes the initial state of a game object.</div><div class="ttdef"><b>Definition:</b> GameObjectDesc.h:10</div></div>
 <div class="ttc" id="astructez_object_flags_htm_a1359c6c47ec8b5f9f4c2f62d408811e0ae5bd1b1a805d545c2685de1ac52b969e"><div class="ttname"><a href="../../da/db9/structez_object_flags.htm#a1359c6c47ec8b5f9f4c2f62d408811e0ae5bd1b1a805d545c2685de1ac52b969e">ezObjectFlags::SimulationStarting</a></div><div class="ttdeci">@ SimulationStarting</div><div class="ttdoc">Used to prevent recursion during OnSimulationStarted()</div><div class="ttdef"><b>Definition:</b> Declarations.h:183</div></div>
 <div class="ttc" id="astructez_object_flags_htm_a1359c6c47ec8b5f9f4c2f62d408811e0a60ee0a5fdf47fda94abc46020039569a"><div class="ttname"><a href="../../da/db9/structez_object_flags.htm#a1359c6c47ec8b5f9f4c2f62d408811e0a60ee0a5fdf47fda94abc46020039569a">ezObjectFlags::Initializing</a></div><div class="ttdeci">@ Initializing</div><div class="ttdoc">The object/component is currently initializing. Used to prevent recursions during initialization.</div><div class="ttdef"><b>Definition:</b> Declarations.h:181</div></div>
-<div class="ttc" id="aclassez_stream_reader_htm"><div class="ttname"><a href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a></div><div class="ttdoc">Interface for binary in (read) streams.</div><div class="ttdef"><b>Definition:</b> Stream.h:20</div></div>
+<div class="ttc" id="aclassez_stream_reader_htm"><div class="ttname"><a href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a></div><div class="ttdoc">Interface for binary in (read) streams.</div><div class="ttdef"><b>Definition:</b> Stream.h:21</div></div>
 <div class="ttc" id="astructez_game_object_id_htm"><div class="ttname"><a href="../../dd/dee/structez_game_object_id.htm">ezGameObjectId</a></div><div class="ttdoc">Internal game object id used by ezGameObjectHandle.</div><div class="ttdef"><b>Definition:</b> Declarations.h:42</div></div>
-<div class="ttc" id="astructez_object_flags_1_1_bits_htm"><div class="ttname"><a href="../../d5/da5/structez_object_flags_1_1_bits.htm">ezObjectFlags::Bits</a></div><div class="ttdef"><b>Definition:</b> Declarations.h:202</div></div>
-<div class="ttc" id="astructez_visitor_execution_htm"><div class="ttname"><a href="../../d6/d5e/structez_visitor_execution.htm">ezVisitorExecution</a></div><div class="ttdoc">Used as return value of visitor functions to define whether calling function should stop or continue ...</div><div class="ttdef"><b>Definition:</b> Declarations.h:333</div></div>
+<div class="ttc" id="astructez_object_flags_1_1_bits_htm"><div class="ttname"><a href="../../d5/da5/structez_object_flags_1_1_bits.htm">ezObjectFlags::Bits</a></div><div class="ttdef"><b>Definition:</b> Declarations.h:203</div></div>
+<div class="ttc" id="astructez_visitor_execution_htm"><div class="ttname"><a href="../../d6/d5e/structez_visitor_execution.htm">ezVisitorExecution</a></div><div class="ttdoc">Used as return value of visitor functions to define whether calling function should stop or continue ...</div><div class="ttdef"><b>Definition:</b> Declarations.h:335</div></div>
 <div class="ttc" id="astructez_object_flags_htm_a1359c6c47ec8b5f9f4c2f62d408811e0a093bf56b5fe26ebaaa2a8705d9ab8656"><div class="ttname"><a href="../../da/db9/structez_object_flags.htm#a1359c6c47ec8b5f9f4c2f62d408811e0a093bf56b5fe26ebaaa2a8705d9ab8656">ezObjectFlags::ActiveState</a></div><div class="ttdeci">@ ActiveState</div><div class="ttdoc">The object/component and all its parents have the active flag.</div><div class="ttdef"><b>Definition:</b> Declarations.h:179</div></div>
 <div class="ttc" id="aclassez_component_htm"><div class="ttname"><a href="../../d6/d30/classez_component.htm">ezComponent</a></div><div class="ttdoc">Base class of all component types.</div><div class="ttdef"><b>Definition:</b> Component.h:24</div></div>
-<div class="ttc" id="astructez_object_msg_queue_type_htm_aafc8d4dc0bc3cb8431f8ed0dcfa1923ea1783f70d23d0487133a4cfefe619a7d2"><div class="ttname"><a href="../../d0/d79/structez_object_msg_queue_type.htm#aafc8d4dc0bc3cb8431f8ed0dcfa1923ea1783f70d23d0487133a4cfefe619a7d2">ezObjectMsgQueueType::AfterInitialized</a></div><div class="ttdeci">@ AfterInitialized</div><div class="ttdoc">Process the message after new components have been initialized.</div><div class="ttdef"><b>Definition:</b> Declarations.h:270</div></div>
+<div class="ttc" id="astructez_object_msg_queue_type_htm_aafc8d4dc0bc3cb8431f8ed0dcfa1923ea1783f70d23d0487133a4cfefe619a7d2"><div class="ttname"><a href="../../d0/d79/structez_object_msg_queue_type.htm#aafc8d4dc0bc3cb8431f8ed0dcfa1923ea1783f70d23d0487133a4cfefe619a7d2">ezObjectMsgQueueType::AfterInitialized</a></div><div class="ttdeci">@ AfterInitialized</div><div class="ttdoc">Process the message after new components have been initialized.</div><div class="ttdef"><b>Definition:</b> Declarations.h:272</div></div>
 <div class="ttc" id="astructez_object_flags_htm_a1359c6c47ec8b5f9f4c2f62d408811e0a76a71a77296f210ff8446e96be8efb8f"><div class="ttname"><a href="../../da/db9/structez_object_flags.htm#a1359c6c47ec8b5f9f4c2f62d408811e0a76a71a77296f210ff8446e96be8efb8f">ezObjectFlags::ForceDynamic</a></div><div class="ttdeci">@ ForceDynamic</div><div class="ttdef"><b>Definition:</b> Declarations.h:176</div></div>
 <div class="ttc" id="astructez_object_flags_htm_a1359c6c47ec8b5f9f4c2f62d408811e0a8af4cd63f17bed7f78ab422a40eff171"><div class="ttname"><a href="../../da/db9/structez_object_flags.htm#a1359c6c47ec8b5f9f4c2f62d408811e0a8af4cd63f17bed7f78ab422a40eff171">ezObjectFlags::ChildChangesNotifications</a></div><div class="ttdeci">@ ChildChangesNotifications</div><div class="ttdoc">The object should send a notification message when children are added or removed.</div><div class="ttdef"><b>Definition:</b> Declarations.h:186</div></div>
 <div class="ttc" id="astructez_hash_helper_htm"><div class="ttname"><a href="../../dc/d65/structez_hash_helper.htm">ezHashHelper</a></div><div class="ttdoc">Helper struct to calculate the Hash of different types.</div><div class="ttdef"><b>Definition:</b> HashingUtils.h:74</div></div>
-<div class="ttc" id="astructez_object_msg_queue_type_htm"><div class="ttname"><a href="../../d0/d79/structez_object_msg_queue_type.htm">ezObjectMsgQueueType</a></div><div class="ttdoc">Specifies at which phase the queued message should be processed.</div><div class="ttdef"><b>Definition:</b> Declarations.h:263</div></div>
-<div class="ttc" id="astructez_object_msg_queue_type_htm_aafc8d4dc0bc3cb8431f8ed0dcfa1923ea5a0caa1e6de6cb986afbc6d87b660b41"><div class="ttname"><a href="../../d0/d79/structez_object_msg_queue_type.htm#aafc8d4dc0bc3cb8431f8ed0dcfa1923ea5a0caa1e6de6cb986afbc6d87b660b41">ezObjectMsgQueueType::PostAsync</a></div><div class="ttdeci">@ PostAsync</div><div class="ttdoc">Process the message in the PostAsync phase.</div><div class="ttdef"><b>Definition:</b> Declarations.h:267</div></div>
-<div class="ttc" id="aclassez_component_init_batch_handle_htm"><div class="ttname"><a href="../../d7/d7c/classez_component_init_batch_handle.htm">ezComponentInitBatchHandle</a></div><div class="ttdef"><b>Definition:</b> Declarations.h:354</div></div>
-<div class="ttc" id="astructez_component_mode_htm"><div class="ttname"><a href="../../d5/d2a/structez_component_mode.htm">ezComponentMode</a></div><div class="ttdoc">Specifies the mode of a component. Dynamic components may change an object's transform,...</div><div class="ttdef"><b>Definition:</b> Declarations.h:253</div></div>
+<div class="ttc" id="astructez_object_msg_queue_type_htm"><div class="ttname"><a href="../../d0/d79/structez_object_msg_queue_type.htm">ezObjectMsgQueueType</a></div><div class="ttdoc">Specifies at which phase the queued message should be processed.</div><div class="ttdef"><b>Definition:</b> Declarations.h:265</div></div>
+<div class="ttc" id="astructez_object_msg_queue_type_htm_aafc8d4dc0bc3cb8431f8ed0dcfa1923ea5a0caa1e6de6cb986afbc6d87b660b41"><div class="ttname"><a href="../../d0/d79/structez_object_msg_queue_type.htm#aafc8d4dc0bc3cb8431f8ed0dcfa1923ea5a0caa1e6de6cb986afbc6d87b660b41">ezObjectMsgQueueType::PostAsync</a></div><div class="ttdeci">@ PostAsync</div><div class="ttdoc">Process the message in the PostAsync phase.</div><div class="ttdef"><b>Definition:</b> Declarations.h:269</div></div>
+<div class="ttc" id="aclassez_component_init_batch_handle_htm"><div class="ttname"><a href="../../d7/d7c/classez_component_init_batch_handle.htm">ezComponentInitBatchHandle</a></div><div class="ttdef"><b>Definition:</b> Declarations.h:356</div></div>
+<div class="ttc" id="astructez_component_mode_htm"><div class="ttname"><a href="../../d5/d2a/structez_component_mode.htm">ezComponentMode</a></div><div class="ttdoc">Specifies the mode of a component. Dynamic components may change an object's transform,...</div><div class="ttdef"><b>Definition:</b> Declarations.h:255</div></div>
 <div class="ttc" id="astructez_object_flags_htm_a1359c6c47ec8b5f9f4c2f62d408811e0a84eb6f1c59e4c7ec023d8a1057b8650f"><div class="ttname"><a href="../../da/db9/structez_object_flags.htm#a1359c6c47ec8b5f9f4c2f62d408811e0a84eb6f1c59e4c7ec023d8a1057b8650f">ezObjectFlags::ComponentChangesNotifications</a></div><div class="ttdeci">@ ComponentChangesNotifications</div><div class="ttdoc">The object should send a notification message when components are added or removed.</div><div class="ttdef"><b>Definition:</b> Declarations.h:187</div></div>
 <div class="ttc" id="astructez_msg_delete_game_object_htm"><div class="ttname"><a href="../../d4/d88/structez_msg_delete_game_object.htm">ezMsgDeleteGameObject</a></div><div class="ttdef"><b>Definition:</b> DeleteObjectMessage.h:6</div></div>
-<div class="ttc" id="astructez_visitor_execution_htm_a4e76f4821e1b79df92f916823d5d51e8a14790206a8b49e99a3f2bf34d8b0a3b3"><div class="ttname"><a href="../../d6/d5e/structez_visitor_execution.htm#a4e76f4821e1b79df92f916823d5d51e8a14790206a8b49e99a3f2bf34d8b0a3b3">ezVisitorExecution::Stop</a></div><div class="ttdeci">@ Stop</div><div class="ttdoc">Stop the entire iteration.</div><div class="ttdef"><b>Definition:</b> Declarations.h:339</div></div>
-<div class="ttc" id="astructez_object_msg_queue_type_htm_aafc8d4dc0bc3cb8431f8ed0dcfa1923e"><div class="ttname"><a href="../../d0/d79/structez_object_msg_queue_type.htm#aafc8d4dc0bc3cb8431f8ed0dcfa1923e">ezObjectMsgQueueType::Enum</a></div><div class="ttdeci">Enum</div><div class="ttdef"><b>Definition:</b> Declarations.h:265</div></div>
+<div class="ttc" id="astructez_visitor_execution_htm_a4e76f4821e1b79df92f916823d5d51e8a14790206a8b49e99a3f2bf34d8b0a3b3"><div class="ttname"><a href="../../d6/d5e/structez_visitor_execution.htm#a4e76f4821e1b79df92f916823d5d51e8a14790206a8b49e99a3f2bf34d8b0a3b3">ezVisitorExecution::Stop</a></div><div class="ttdeci">@ Stop</div><div class="ttdoc">Stop the entire iteration.</div><div class="ttdef"><b>Definition:</b> Declarations.h:341</div></div>
+<div class="ttc" id="astructez_object_msg_queue_type_htm_aafc8d4dc0bc3cb8431f8ed0dcfa1923e"><div class="ttname"><a href="../../d0/d79/structez_object_msg_queue_type.htm#aafc8d4dc0bc3cb8431f8ed0dcfa1923e">ezObjectMsgQueueType::Enum</a></div><div class="ttdeci">Enum</div><div class="ttdef"><b>Definition:</b> Declarations.h:267</div></div>
 <div class="ttc" id="astructez_object_flags_htm_a1359c6c47ec8b5f9f4c2f62d408811e0"><div class="ttname"><a href="../../da/db9/structez_object_flags.htm#a1359c6c47ec8b5f9f4c2f62d408811e0">ezObjectFlags::Enum</a></div><div class="ttdeci">Enum</div><div class="ttdef"><b>Definition:</b> Declarations.h:172</div></div>
-<div class="ttc" id="astructez_on_component_finished_action2_htm"><div class="ttname"><a href="../../d2/dca/structez_on_component_finished_action2.htm">ezOnComponentFinishedAction2</a></div><div class="ttdoc">Same as ezOnComponentFinishedAction, but additionally includes 'Restart'.</div><div class="ttdef"><b>Definition:</b> Declarations.h:309</div></div>
-<div class="ttc" id="astructez_object_msg_queue_type_htm_aafc8d4dc0bc3cb8431f8ed0dcfa1923ea00796cc1bfc317c25eda46fc9fe560e8"><div class="ttname"><a href="../../d0/d79/structez_object_msg_queue_type.htm#aafc8d4dc0bc3cb8431f8ed0dcfa1923ea00796cc1bfc317c25eda46fc9fe560e8">ezObjectMsgQueueType::PostTransform</a></div><div class="ttdeci">@ PostTransform</div><div class="ttdoc">Process the message in the PostTransform phase.</div><div class="ttdef"><b>Definition:</b> Declarations.h:268</div></div>
+<div class="ttc" id="astructez_on_component_finished_action2_htm"><div class="ttname"><a href="../../d2/dca/structez_on_component_finished_action2.htm">ezOnComponentFinishedAction2</a></div><div class="ttdoc">Same as ezOnComponentFinishedAction, but additionally includes 'Restart'.</div><div class="ttdef"><b>Definition:</b> Declarations.h:311</div></div>
+<div class="ttc" id="astructez_object_msg_queue_type_htm_aafc8d4dc0bc3cb8431f8ed0dcfa1923ea00796cc1bfc317c25eda46fc9fe560e8"><div class="ttname"><a href="../../d0/d79/structez_object_msg_queue_type.htm#aafc8d4dc0bc3cb8431f8ed0dcfa1923ea00796cc1bfc317c25eda46fc9fe560e8">ezObjectMsgQueueType::PostTransform</a></div><div class="ttdeci">@ PostTransform</div><div class="ttdoc">Process the message in the PostTransform phase.</div><div class="ttdef"><b>Definition:</b> Declarations.h:270</div></div>
 <div class="ttc" id="astructez_enum_htm"><div class="ttname"><a href="../../d6/dd9/structez_enum.htm">ezEnum&lt; ezOnComponentFinishedAction &gt;</a></div></div>
-<div class="ttc" id="astructez_visitor_execution_htm_a4e76f4821e1b79df92f916823d5d51e8a6993ade24cffb47d913e84e5fab18560"><div class="ttname"><a href="../../d6/d5e/structez_visitor_execution.htm#a4e76f4821e1b79df92f916823d5d51e8a6993ade24cffb47d913e84e5fab18560">ezVisitorExecution::Continue</a></div><div class="ttdeci">@ Continue</div><div class="ttdoc">Continue regular iteration.</div><div class="ttdef"><b>Definition:</b> Declarations.h:337</div></div>
-<div class="ttc" id="aclassez_game_object_htm"><div class="ttname"><a href="../../d6/d61/classez_game_object.htm">ezGameObject</a></div><div class="ttdoc">This class represents an object inside the world.</div><div class="ttdef"><b>Definition:</b> GameObject.h:31</div></div>
+<div class="ttc" id="astructez_visitor_execution_htm_a4e76f4821e1b79df92f916823d5d51e8a6993ade24cffb47d913e84e5fab18560"><div class="ttname"><a href="../../d6/d5e/structez_visitor_execution.htm#a4e76f4821e1b79df92f916823d5d51e8a6993ade24cffb47d913e84e5fab18560">ezVisitorExecution::Continue</a></div><div class="ttdeci">@ Continue</div><div class="ttdoc">Continue regular iteration.</div><div class="ttdef"><b>Definition:</b> Declarations.h:339</div></div>
+<div class="ttc" id="astructez_object_flags_htm_a1359c6c47ec8b5f9f4c2f62d408811e0a0d9239d620882f24b058be99fb5a8daf"><div class="ttname"><a href="../../da/db9/structez_object_flags.htm#a1359c6c47ec8b5f9f4c2f62d408811e0a0d9239d620882f24b058be99fb5a8daf">ezObjectFlags::ParentChangesNotifications</a></div><div class="ttdeci">@ ParentChangesNotifications</div><div class="ttdoc">The object should send a notification message when the parent is changes.</div><div class="ttdef"><b>Definition:</b> Declarations.h:189</div></div>
+<div class="ttc" id="aclassez_game_object_htm"><div class="ttname"><a href="../../d6/d61/classez_game_object.htm">ezGameObject</a></div><div class="ttdoc">This class represents an object inside the world.</div><div class="ttdef"><b>Definition:</b> GameObject.h:29</div></div>
 <div class="ttc" id="astructez_object_flags_htm_a1359c6c47ec8b5f9f4c2f62d408811e0ad73d888b0323cc4ab374d673bc78cea3"><div class="ttname"><a href="../../da/db9/structez_object_flags.htm#a1359c6c47ec8b5f9f4c2f62d408811e0ad73d888b0323cc4ab374d673bc78cea3">ezObjectFlags::Initialized</a></div><div class="ttdeci">@ Initialized</div><div class="ttdoc">The object/component has been initialized.</div><div class="ttdef"><b>Definition:</b> Declarations.h:180</div></div>
-<div class="ttc" id="astructez_object_mode_htm"><div class="ttname"><a href="../../de/dcc/structez_object_mode.htm">ezObjectMode</a></div><div class="ttdoc">Specifies the mode of an object. This enum is only used in the editor.</div><div class="ttdef"><b>Definition:</b> Declarations.h:235</div></div>
+<div class="ttc" id="astructez_object_mode_htm"><div class="ttname"><a href="../../de/dcc/structez_object_mode.htm">ezObjectMode</a></div><div class="ttdoc">Specifies the mode of an object. This enum is only used in the editor.</div><div class="ttdef"><b>Definition:</b> Declarations.h:237</div></div>
 <div class="ttc" id="astructez_object_flags_htm_a1359c6c47ec8b5f9f4c2f62d408811e0a71d7fc4ad74d0a38abbb5a7ee772c8ca"><div class="ttname"><a href="../../da/db9/structez_object_flags.htm#a1359c6c47ec8b5f9f4c2f62d408811e0a71d7fc4ad74d0a38abbb5a7ee772c8ca">ezObjectFlags::ActiveFlag</a></div><div class="ttdeci">@ ActiveFlag</div><div class="ttdoc">The object/component has the 'active flag' set.</div><div class="ttdef"><b>Definition:</b> Declarations.h:178</div></div>
-<div class="ttc" id="aclassez_spatial_data_handle_htm"><div class="ttname"><a href="../../db/d2f/classez_spatial_data_handle.htm">ezSpatialDataHandle</a></div><div class="ttdef"><b>Definition:</b> Declarations.h:344</div></div>
-<div class="ttc" id="astructez_visitor_execution_htm_a4e76f4821e1b79df92f916823d5d51e8"><div class="ttname"><a href="../../d6/d5e/structez_visitor_execution.htm#a4e76f4821e1b79df92f916823d5d51e8">ezVisitorExecution::Enum</a></div><div class="ttdeci">Enum</div><div class="ttdef"><b>Definition:</b> Declarations.h:335</div></div>
+<div class="ttc" id="aclassez_spatial_data_handle_htm"><div class="ttname"><a href="../../db/d2f/classez_spatial_data_handle.htm">ezSpatialDataHandle</a></div><div class="ttdef"><b>Definition:</b> Declarations.h:346</div></div>
+<div class="ttc" id="astructez_visitor_execution_htm_a4e76f4821e1b79df92f916823d5d51e8"><div class="ttname"><a href="../../d6/d5e/structez_visitor_execution.htm#a4e76f4821e1b79df92f916823d5d51e8">ezVisitorExecution::Enum</a></div><div class="ttdeci">Enum</div><div class="ttdef"><b>Definition:</b> Declarations.h:337</div></div>
 <div class="ttc" id="astructez_component_id_htm"><div class="ttname"><a href="../../d7/dd8/structez_component_id.htm">ezComponentId</a></div><div class="ttdoc">Internal component id used by ezComponentHandle.</div><div class="ttdef"><b>Definition:</b> Declarations.h:102</div></div>
 <div class="ttc" id="astructez_component_handle_htm"><div class="ttname"><a href="../../df/d34/structez_component_handle.htm">ezComponentHandle</a></div><div class="ttdoc">A handle to a component.</div><div class="ttdef"><b>Definition:</b> Declarations.h:137</div></div>
 <div class="ttc" id="astructez_object_flags_htm"><div class="ttname"><a href="../../da/db9/structez_object_flags.htm">ezObjectFlags</a></div><div class="ttdoc">Internal flags of game objects or components.</div><div class="ttdef"><b>Definition:</b> Declarations.h:168</div></div>
@@ -458,7 +461,7 @@ $(document).ready(function(){initNavTree('d2/db7/_engine_2_core_2_world_2_declar
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_ac029bbb8a17b4d550e2f9d55d89a029.htm">Core</a></li><li class="navelem"><a class="el" href="../../dir_89e289b549b3db86cc2bc4f6ebaf52c6.htm">World</a></li><li class="navelem"><b>Declarations.h</b></li>
-    <li class="footer">Generated on Fri Nov 18 2022 14:47:53 for ezEngine by
+    <li class="footer">Generated on Sat Mar 25 2023 19:21:50 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

@@ -46,6 +46,7 @@ var classez_g_a_l_device_d_x11 =
     [ "PresentPlatform", "d3/d78/classez_g_a_l_device_d_x11.htm#a9cf5fd2ce3e97fc7bbe1e642816f1381", null ],
     [ "ReportLiveGpuObjects", "d3/d78/classez_g_a_l_device_d_x11.htm#ad27a47579cfb1f29fbb45b0ef71b0156", null ],
     [ "ShutdownPlatform", "d3/d78/classez_g_a_l_device_d_x11.htm#abb0c3fb00c32740f51227c6b0ba1c3bd", null ],
-    [ "CreateDX11Device", "d3/d78/classez_g_a_l_device_d_x11.htm#a20189aefb574e4390f4928074718de1b", null ],
+    [ "WaitIdlePlatform", "d3/d78/classez_g_a_l_device_d_x11.htm#aa24367d5ab67cba28e4609025f241b63", null ],
+    [ "CreateDX11Device", "d3/d78/classez_g_a_l_device_d_x11.htm#a8f80a30d0de0196cc658f8984d1f0831", null ],
     [ "ezGALCommandEncoderImplDX11", "d3/d78/classez_g_a_l_device_d_x11.htm#a95efbea96e316f9d27e2bc5e93baaf06", null ]
 ];

@@ -16,6 +16,7 @@ var structez_object_flags =
       [ "ChildChangesNotifications", "da/db9/structez_object_flags.htm#a1359c6c47ec8b5f9f4c2f62d408811e0a8af4cd63f17bed7f78ab422a40eff171", null ],
       [ "ComponentChangesNotifications", "da/db9/structez_object_flags.htm#a1359c6c47ec8b5f9f4c2f62d408811e0a84eb6f1c59e4c7ec023d8a1057b8650f", null ],
       [ "StaticTransformChangesNotifications", "da/db9/structez_object_flags.htm#a1359c6c47ec8b5f9f4c2f62d408811e0a97d873afad6a512e6f51f7ae3814dd80", null ],
+      [ "ParentChangesNotifications", "da/db9/structez_object_flags.htm#a1359c6c47ec8b5f9f4c2f62d408811e0a0d9239d620882f24b058be99fb5a8daf", null ],
       [ "UserFlag0", "da/db9/structez_object_flags.htm#a1359c6c47ec8b5f9f4c2f62d408811e0a02e5221b507d9eb719e7cf962ff7cfb7", null ],
       [ "UserFlag1", "da/db9/structez_object_flags.htm#a1359c6c47ec8b5f9f4c2f62d408811e0a046e2f5d71412d1dd3c55bf7a06cdcdb", null ],
       [ "UserFlag2", "da/db9/structez_object_flags.htm#a1359c6c47ec8b5f9f4c2f62d408811e0a56bee7436e517171f171489a1a9dcd1d", null ],

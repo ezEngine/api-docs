@@ -1,7 +1,7 @@
 var structez_dynamic_mesh_vertex =
 [
-    [ "EncodeNormal", "de/dae/structez_dynamic_mesh_vertex.htm#a8ef8599f195d9e9a92915fd94e88d63e", null ],
-    [ "EncodeTangent", "de/dae/structez_dynamic_mesh_vertex.htm#abd13c5a6f2364aef3029dd9eefc2d363", null ],
+    [ "EncodeNormal", "de/dae/structez_dynamic_mesh_vertex.htm#a61b07bde01b79c829529c3f7e53aba30", null ],
+    [ "EncodeTangent", "de/dae/structez_dynamic_mesh_vertex.htm#a52ece0f553154829d42c878ceac7a1d3", null ],
     [ "EZ_DECLARE_POD_TYPE", "de/dae/structez_dynamic_mesh_vertex.htm#a5e21d37998d49f292f1bce68d7e24fef", null ],
     [ "m_vEncodedNormal", "de/dae/structez_dynamic_mesh_vertex.htm#ad73399075c3aeb2688d45b7535c92056", null ],
     [ "m_vEncodedTangent", "de/dae/structez_dynamic_mesh_vertex.htm#aa6da65877911c68c0369d8bfb419534f", null ],

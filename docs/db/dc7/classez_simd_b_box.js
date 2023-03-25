@@ -26,7 +26,7 @@ var classez_simd_b_box =
     [ "SetCenterAndHalfExtents", "db/dc7/classez_simd_b_box.htm#a5f2c05587fd3f036ff91b0aab1e1e1f5", null ],
     [ "SetFromPoints", "db/dc7/classez_simd_b_box.htm#a51e761fa518e4ce3eb8737db301597f0", null ],
     [ "SetInvalid", "db/dc7/classez_simd_b_box.htm#ae429487c9d276f86fe7e89ed56d38ff0", null ],
-    [ "Transform", "db/dc7/classez_simd_b_box.htm#a2bc4b91045ee2d4180d07693fbb9834c", null ],
+    [ "Transform", "db/dc7/classez_simd_b_box.htm#adeeaad2f9f0d7b5c84896f4c095f79a0", null ],
     [ "Transform", "db/dc7/classez_simd_b_box.htm#aea7fd693d474236b14f7a88f47fa1730", null ],
     [ "Translate", "db/dc7/classez_simd_b_box.htm#a6eecd0401402ca33462993f4f60d3834", null ],
     [ "m_Max", "db/dc7/classez_simd_b_box.htm#aac599ef38255e00c974d0a12a562bb19", null ],

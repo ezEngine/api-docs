@@ -5,6 +5,6 @@ var classez_profiling_system =
     [ "GPUScope", "db/dc6/structez_profiling_system_1_1_g_p_u_scope.htm", "db/dc6/structez_profiling_system_1_1_g_p_u_scope" ],
     [ "ProfilingData", "d8/d0a/structez_profiling_system_1_1_profiling_data.htm", "d8/d0a/structez_profiling_system_1_1_profiling_data" ],
     [ "ThreadInfo", "d1/d1c/structez_profiling_system_1_1_thread_info.htm", "d1/d1c/structez_profiling_system_1_1_thread_info" ],
-    [ "ScopeTimeoutDelegate", "d1/dba/classez_profiling_system.htm#a459b29d490127b40beee2bf7a2ea6efc", null ],
+    [ "ScopeTimeoutDelegate", "d1/dba/classez_profiling_system.htm#ab746ad6a8a92b0c9bb16c10a75df8c06", null ],
     [ "RunThread", "d1/dba/classez_profiling_system.htm#ab9ac3242b6d18623b100430be2bfdfe3", null ]
 ];

@@ -5,6 +5,6 @@ var class_rasterizer =
     [ "query2D", "d7/d18/class_rasterizer.htm#a825858714542dcba861ea6d69bfc702d", null ],
     [ "queryVisibility", "d7/d18/class_rasterizer.htm#acd94a32103128a9bb543bf7d88b96cae", null ],
     [ "rasterize", "d7/d18/class_rasterizer.htm#adbfc95afed6c9730d1ff02d85af4fba0", null ],
-    [ "readBackDepth", "d7/d18/class_rasterizer.htm#add8f2e9ce98117cec5794f5aca231d81", null ],
-    [ "setModelViewProjection", "d7/d18/class_rasterizer.htm#a96163c7511c856a1636ab689f8292819", null ]
+    [ "readBackDepth", "d7/d18/class_rasterizer.htm#ad2a8d5eaef68befb35fabe5c1933796f", null ],
+    [ "setModelViewProjection", "d7/d18/class_rasterizer.htm#ab3006c65d0f7bf682d826f2670e82b2b", null ]
 ];

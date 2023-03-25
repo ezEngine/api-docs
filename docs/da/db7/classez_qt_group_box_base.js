@@ -6,7 +6,7 @@ var classez_qt_group_box_base =
     ] ],
     [ "ezQtGroupBoxBase", "da/db7/classez_qt_group_box_base.htm#a56f8df087b2ab5a1d653cd3ac9f7530b", null ],
     [ "CollapseStateChanged", "da/db7/classez_qt_group_box_base.htm#ae36b846b1197bfcb46ab1d71d79e4761", null ],
-    [ "DragStarted", "da/db7/classez_qt_group_box_base.htm#aa15647d7df958b736386cd9d82bb8c8e", null ],
+    [ "DragStarted", "da/db7/classez_qt_group_box_base.htm#ae73d8f500034fdb9bd94ab258dd68ce2", null ],
     [ "DrawHeader", "da/db7/classez_qt_group_box_base.htm#a1f808cbfcbad1efc9d99080e2a067c9b", null ],
     [ "GetBoldTitle", "da/db7/classez_qt_group_box_base.htm#a93206707a1ac26af43d168dbd8d47fd7", null ],
     [ "GetCollapseState", "da/db7/classez_qt_group_box_base.htm#aff21a6c00f73dba1d9c1a9b8aefe0738", null ],

@@ -22,9 +22,12 @@ var classez_project_action =
       [ "ImportAsset", "db/d4f/classez_project_action.htm#a12569298179c0c333514ad6a5c8e3bcca9b07d2c9a390cf91dc877c44844bb8ee", null ],
       [ "AssetProfiles", "db/d4f/classez_project_action.htm#a12569298179c0c333514ad6a5c8e3bccad79d0e186ebc8656555e6a1270c1bfce", null ],
       [ "SetupCppProject", "db/d4f/classez_project_action.htm#a12569298179c0c333514ad6a5c8e3bcca447e967c783155c70fbdae4288e6943f", null ],
+      [ "OpenCppProject", "db/d4f/classez_project_action.htm#a12569298179c0c333514ad6a5c8e3bcca7296567da0107e21c64a4b2a4249815d", null ],
+      [ "CompileCppProject", "db/d4f/classez_project_action.htm#a12569298179c0c333514ad6a5c8e3bcca4974815c0139bd10a9fe379f967148f0", null ],
       [ "ShowDocsAndCommunity", "db/d4f/classez_project_action.htm#a12569298179c0c333514ad6a5c8e3bcca47a34af8c11617b12899ffe04a6da551", null ],
       [ "ExportProject", "db/d4f/classez_project_action.htm#a12569298179c0c333514ad6a5c8e3bcca3598233290d60081ea5a20513f4cb769", null ],
-      [ "PluginSelection", "db/d4f/classez_project_action.htm#a12569298179c0c333514ad6a5c8e3bccabdb07ed35c2e76faf736fe95a6f32488", null ]
+      [ "PluginSelection", "db/d4f/classez_project_action.htm#a12569298179c0c333514ad6a5c8e3bccabdb07ed35c2e76faf736fe95a6f32488", null ],
+      [ "ClearAssetCaches", "db/d4f/classez_project_action.htm#a12569298179c0c333514ad6a5c8e3bccadac331d41f6660617281a9401f506d94", null ]
     ] ],
     [ "ezProjectAction", "db/d4f/classez_project_action.htm#a4db767678d50b9216407dacfa8cc20ee", null ],
     [ "~ezProjectAction", "db/d4f/classez_project_action.htm#a27e365554ec2eeaafca50f65f3b35ec8", null ],

@@ -1,7 +1,7 @@
 var classez_gizmo =
 [
     [ "ezGizmo", "d4/d05/classez_gizmo.htm#a32299a2f2bc716ecf4e8858c03ea13a4", null ],
-    [ "ConfigureInteraction", "d4/d05/classez_gizmo.htm#a38efda48d08ab8a67fe9c578a89a2174", null ],
+    [ "ConfigureInteraction", "d4/d05/classez_gizmo.htm#a2c700c94e2e4229ac54276e0707cf66e", null ],
     [ "GetTransformation", "d4/d05/classez_gizmo.htm#a468d6438c2ee4ccfb450691ecb5d4d49", null ],
     [ "IsVisible", "d4/d05/classez_gizmo.htm#a6f02c70884dd8ef8050fdbebf80e7955", null ],
     [ "OnTransformationChanged", "d4/d05/classez_gizmo.htm#ac3ca29690bec746cbf5916c21b8ee57d", null ],

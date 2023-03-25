@@ -11,7 +11,7 @@ var classez_document_object_manager =
     [ "CreateObject", "d9/d4e/classez_document_object_manager.htm#a8b7cd42dc2def977569f016ba12cdf15", null ],
     [ "DestroyAllObjects", "d9/d4e/classez_document_object_manager.htm#af2df6b2c4386512a7d52102cb6b6a9d8", null ],
     [ "DestroyObject", "d9/d4e/classez_document_object_manager.htm#ad24c8eb4dbe9047df24115c4e9e488b6", null ],
-    [ "GetCreateableTypes", "d9/d4e/classez_document_object_manager.htm#a7e4eb5eefde875dcd96b5cd2346f288e", null ],
+    [ "GetCreateableTypes", "d9/d4e/classez_document_object_manager.htm#a3489625f0296cc1f179c31baf25ba635", null ],
     [ "GetDocument", "d9/d4e/classez_document_object_manager.htm#aaaa77154a92912881fd919e466ea1654", null ],
     [ "GetDocument", "d9/d4e/classez_document_object_manager.htm#a05e64e61d984b42aae1a243433629249", null ],
     [ "GetObject", "d9/d4e/classez_document_object_manager.htm#a6e579752a5f606effa1f237be26f0274", null ],

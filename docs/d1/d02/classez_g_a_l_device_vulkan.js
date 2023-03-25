@@ -26,6 +26,7 @@ var classez_g_a_l_device_vulkan =
     [ "DeleteLater", "d1/d02/classez_g_a_l_device_vulkan.htm#af9d66d3c8fd954582572a9408c00b1e7", null ],
     [ "DeleteLater", "d1/d02/classez_g_a_l_device_vulkan.htm#ab31316ea95bc7a542ecdb1f8b3199f76", null ],
     [ "DeleteLater", "d1/d02/classez_g_a_l_device_vulkan.htm#a97745928cde674fc249a4b302676444c", null ],
+    [ "DeleteLater", "d1/d02/classez_g_a_l_device_vulkan.htm#a200c9c1fa1c59956dd0ded80f8564bd0", null ],
     [ "DestroyBlendStatePlatform", "d1/d02/classez_g_a_l_device_vulkan.htm#a799c60a456ccd45930d16d2335908d1e", null ],
     [ "DestroyBufferPlatform", "d1/d02/classez_g_a_l_device_vulkan.htm#af6d7f4b0df132d4cc78cdea34ad30df1", null ],
     [ "DestroyDepthStencilStatePlatform", "d1/d02/classez_g_a_l_device_vulkan.htm#a1ec46d629ab2bdae1a0b24f9891dfbec", null ],
@@ -72,6 +73,7 @@ var classez_g_a_l_device_vulkan =
     [ "SetDebugName", "d1/d02/classez_g_a_l_device_vulkan.htm#ae6d44b977c1cf96313a265f4551f6e88", null ],
     [ "ShutdownPlatform", "d1/d02/classez_g_a_l_device_vulkan.htm#a9fe171adbacb0ac810d1c238513af289", null ],
     [ "Submit", "d1/d02/classez_g_a_l_device_vulkan.htm#a39cb1ea9d1ae989752fd75233b1e876a", null ],
+    [ "WaitIdlePlatform", "d1/d02/classez_g_a_l_device_vulkan.htm#a8c1a26d36b78d696f2e4484496c2df03", null ],
     [ "CreateVulkanDevice", "d1/d02/classez_g_a_l_device_vulkan.htm#a21a98fcc13cb23056e66a548094589c2", null ],
     [ "OnBeforeImageDestroyed", "d1/d02/classez_g_a_l_device_vulkan.htm#a82c7f464706b82d315b0aa97165e0ffb", null ]
 ];

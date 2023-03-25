@@ -4,7 +4,7 @@ var classez_particle_type_trail =
     [ "ezParticleTypeTrail", "d5/d22/classez_particle_type_trail.htm#acd98e6032e51f6946bf650cce8bc7f05", null ],
     [ "~ezParticleTypeTrail", "d5/d22/classez_particle_type_trail.htm#a6474f0d8d758789e40c3dd5f9cedce97", null ],
     [ "CreateRequiredStreams", "d5/d22/classez_particle_type_trail.htm#a2a9cc39b7ac5ba7a94f5d27d900fc301", null ],
-    [ "ExtractTypeRenderData", "d5/d22/classez_particle_type_trail.htm#a4a408f0e7062cb0c6d7f6bf0cafc7519", null ],
+    [ "ExtractTypeRenderData", "d5/d22/classez_particle_type_trail.htm#a110427ba7b3e578781a6119f73c6e8e4", null ],
     [ "GetIndexForTrailPoints", "d5/d22/classez_particle_type_trail.htm#aae71d42c29ceab201eb442647b14ef34", null ],
     [ "GetMaxParticleRadius", "d5/d22/classez_particle_type_trail.htm#af58e91e207a4e59e0d9e8e06f2a33f24", null ],
     [ "GetTrailPointsPositions", "d5/d22/classez_particle_type_trail.htm#aa22a86366ef29a1ccce3c1ba7a310ecd", null ],

@@ -23,9 +23,9 @@ var classez_frustum =
     [ "ezFrustum", "d0/db8/classez_frustum.htm#a3d667d8762089da295b9fb375d2ff8a3", null ],
     [ "~ezFrustum", "d0/db8/classez_frustum.htm#aa154e9f7aab666e89eee09d210543805", null ],
     [ "AccessPlane", "d0/db8/classez_frustum.htm#add4a375ecdcf83e5072ef0bdf7f0ffd1", null ],
-    [ "ComputeCornerPoints", "d0/db8/classez_frustum.htm#a46e9a6328a46a64bbb069006a75a60f2", null ],
-    [ "GetObjectPosition", "d0/db8/classez_frustum.htm#af7a94ae1ece850d532b6259f0f0f51d8", null ],
-    [ "GetObjectPosition", "d0/db8/classez_frustum.htm#a1330216a6d2d0a2db15eabda2f2935f9", null ],
+    [ "ComputeCornerPoints", "d0/db8/classez_frustum.htm#a3b1f459bdb7a0f6b73d32542e18cedf7", null ],
+    [ "GetObjectPosition", "d0/db8/classez_frustum.htm#a55e31300f3cec31e067cfc08c2ab0fdd", null ],
+    [ "GetObjectPosition", "d0/db8/classez_frustum.htm#a65c8726fb49070ba92a5dc7e9bbe5830", null ],
     [ "GetObjectPosition", "d0/db8/classez_frustum.htm#a7bc36f8174d073c02ef55b7508b467d3", null ],
     [ "GetObjectPosition", "d0/db8/classez_frustum.htm#ab75c7caa7aed0c4cd2a25a71fe2a849d", null ],
     [ "GetPlane", "d0/db8/classez_frustum.htm#a3897c33a4a8eb2c91fef6df045772a94", null ],
@@ -33,8 +33,8 @@ var classez_frustum =
     [ "IsValid", "d0/db8/classez_frustum.htm#a28cb5adf9ed54ce3678fcb166da8ef8d", null ],
     [ "Overlaps", "d0/db8/classez_frustum.htm#afca2d8abfd1533d6484aa4609a345e4e", null ],
     [ "Overlaps", "d0/db8/classez_frustum.htm#afc97a25345878f18956161a3fde0fe14", null ],
-    [ "SetFrustum", "d0/db8/classez_frustum.htm#a3089a062dab9d5e28b52d888a9a23b18", null ],
+    [ "SetFrustum", "d0/db8/classez_frustum.htm#ac8e314fb522b5fe0f142310eef57093f", null ],
     [ "SetFrustum", "d0/db8/classez_frustum.htm#a538e7cf74b4b662fdd6b50cdd1f4b36d", null ],
-    [ "SetFrustum", "d0/db8/classez_frustum.htm#a79ab6220db2de69b48ae3c9a6058a2f7", null ],
+    [ "SetFrustum", "d0/db8/classez_frustum.htm#adbb3bbb0e0b28a065b795fd04bfd23f5", null ],
     [ "TransformFrustum", "d0/db8/classez_frustum.htm#aff642f9f70d761a67a8d2b010da3bf2a", null ]
 ];

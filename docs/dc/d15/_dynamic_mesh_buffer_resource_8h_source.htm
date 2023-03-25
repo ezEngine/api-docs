@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 22.11</span>
+   &#160;<span id="projectnumber">Release 23.04</span>
    </div>
   </td>
  </tr>
@@ -115,22 +115,22 @@ $(document).ready(function(){initNavTree('dc/d15/_dynamic_mesh_buffer_resource_8
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <a class="code" href="../../da/dd2/classez_vec4_template.htm">ezVec4</a> m_vEncodedTangent;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="comment">//ezColorLinearUB m_Color;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">void</span> EncodeNormal(<span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; normal)</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">void</span> EncodeNormal(<span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; vNormal)</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  {</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">// store in [0; 1] range</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    m_vEncodedNormal = normal * 0.5f + <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>(0.5f);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    m_vEncodedNormal = vNormal * 0.5f + <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>(0.5f);</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// this is the same</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">//ezMeshBufferUtils::EncodeNormal(normal, ezByteArrayPtr(reinterpret_cast&lt;ezUInt8*&gt;(&amp;m_vEncodedNormal), sizeof(ezVec3)), ezMeshNormalPrecision::_32Bit).IgnoreResult();</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  }</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">void</span> EncodeTangent(<span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; tangent, <span class="keywordtype">float</span> bitangentSign)</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">void</span> EncodeTangent(<span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; vTangent, <span class="keywordtype">float</span> fBitangentSign)</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  {</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">// store in [0; 1] range</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    m_vEncodedTangent.x = tangent.x * 0.5f + 0.5f;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    m_vEncodedTangent.y = tangent.y * 0.5f + 0.5f;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    m_vEncodedTangent.z = tangent.z * 0.5f + 0.5f;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    m_vEncodedTangent.w = bitangentSign &lt; 0.0f ? 0.0f : 1.0f;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    m_vEncodedTangent.x = vTangent.x * 0.5f + 0.5f;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    m_vEncodedTangent.y = vTangent.y * 0.5f + 0.5f;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    m_vEncodedTangent.z = vTangent.z * 0.5f + 0.5f;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    m_vEncodedTangent.w = fBitangentSign &lt; 0.0f ? 0.0f : 1.0f;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">// this is the same</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">//ezMeshBufferUtils::EncodeTangent(tangent, bitangentSign, ezByteArrayPtr(reinterpret_cast&lt;ezUInt8*&gt;(&amp;m_vEncodedTangent), sizeof(ezVec4)), ezMeshNormalPrecision::_32Bit).IgnoreResult();</span></div>
@@ -207,7 +207,7 @@ $(document).ready(function(){initNavTree('dc/d15/_dynamic_mesh_buffer_resource_8
 <div class="ttc" id="aclassez_g_a_l_buffer_handle_htm"><div class="ttname"><a href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a></div><div class="ttdef"><b>Definition:</b> RendererFoundationDLL.h:337</div></div>
 <div class="ttc" id="aclassez_resource_htm_aafc6ffb811439fcdf0ca0b2363606e69"><div class="ttname"><a href="../../d3/d0a/classez_resource.htm#aafc6ffb811439fcdf0ca0b2363606e69">ezResource::UnloadData</a></div><div class="ttdeci">virtual ezResourceLoadDesc UnloadData(Unload WhatToUnload)=0</div><div class="ttdoc">Requests the resource to unload another quality level. If bFullUnload is true, the resource should un...</div></div>
 <div class="ttc" id="aclassez_g_a_l_command_encoder_htm"><div class="ttname"><a href="../../de/d3d/classez_g_a_l_command_encoder.htm">ezGALCommandEncoder</a></div><div class="ttdef"><b>Definition:</b> CommandEncoder.h:8</div></div>
-<div class="ttc" id="aclassez_stream_reader_htm"><div class="ttname"><a href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a></div><div class="ttdoc">Interface for binary in (read) streams.</div><div class="ttdef"><b>Definition:</b> Stream.h:20</div></div>
+<div class="ttc" id="aclassez_stream_reader_htm"><div class="ttname"><a href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a></div><div class="ttdoc">Interface for binary in (read) streams.</div><div class="ttdef"><b>Definition:</b> Stream.h:21</div></div>
 <div class="ttc" id="aclassez_array_ptr_htm"><div class="ttname"><a href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr</a></div><div class="ttdoc">This class encapsulates an array and it's size. It is recommended to use this class instead of plain ...</div><div class="ttdef"><b>Definition:</b> ArrayPtr.h:36</div></div>
 <div class="ttc" id="aclassez_resource_htm_acadf91c5f483db8c9777467552a14149"><div class="ttname"><a href="../../d3/d0a/classez_resource.htm#acadf91c5f483db8c9777467552a14149">ezResource::UpdateContent</a></div><div class="ttdeci">virtual ezResourceLoadDesc UpdateContent(ezStreamReader *pStream)=0</div><div class="ttdoc">Called whenever more data for the resource is available. The resource must read the stream to update ...</div></div>
 <div class="ttc" id="astructez_dynamic_mesh_vertex_htm"><div class="ttname"><a href="../../de/dae/structez_dynamic_mesh_vertex.htm">ezDynamicMeshVertex</a></div><div class="ttdef"><b>Definition:</b> DynamicMeshBufferResource.h:19</div></div>
@@ -228,7 +228,7 @@ $(document).ready(function(){initNavTree('dc/d15/_dynamic_mesh_buffer_resource_8
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_9b39d7517b28e8ee3dee1b9d862ddabb.htm">RendererCore</a></li><li class="navelem"><a class="el" href="../../dir_86dbb1b2e83b0d7392768ac2411967d1.htm">Meshes</a></li><li class="navelem"><b>DynamicMeshBufferResource.h</b></li>
-    <li class="footer">Generated on Fri Nov 18 2022 14:48:02 for ezEngine by
+    <li class="footer">Generated on Sat Mar 25 2023 19:21:58 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

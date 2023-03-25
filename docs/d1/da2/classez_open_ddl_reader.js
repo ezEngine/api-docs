@@ -25,7 +25,7 @@ var classez_open_ddl_reader =
     [ "OnPrimitiveUInt32", "d1/da2/classez_open_ddl_reader.htm#a8c14d0a01e848c3ce14dc4def97d786d", null ],
     [ "OnPrimitiveUInt64", "d1/da2/classez_open_ddl_reader.htm#ac9d442da8374b0702c56ab6086c2561c", null ],
     [ "OnPrimitiveUInt8", "d1/da2/classez_open_ddl_reader.htm#a356907d26cef2e457b4fd4dab905fa65", null ],
-    [ "ParseDocument", "d1/da2/classez_open_ddl_reader.htm#a3d3751013148e30bc83b1a040e14a9af", null ],
+    [ "ParseDocument", "d1/da2/classez_open_ddl_reader.htm#aab9c4e7b3e45c5cd4f2d6d51d997680d", null ],
     [ "StorePrimitiveData", "d1/da2/classez_open_ddl_reader.htm#a98f9fcc8987a0e0c0ffc813a7503d532", null ],
     [ "m_DataChunks", "d1/da2/classez_open_ddl_reader.htm#a8d3be7f3db0cc5c28ca05e828e88dbf1", null ],
     [ "m_Elements", "d1/da2/classez_open_ddl_reader.htm#aebe2f66564876b76da6a5570a4b828d4", null ],

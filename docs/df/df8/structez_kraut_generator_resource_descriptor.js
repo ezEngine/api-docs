@@ -1,7 +1,7 @@
 var structez_kraut_generator_resource_descriptor =
 [
-    [ "Deserialize", "df/df8/structez_kraut_generator_resource_descriptor.htm#ad5528a9de02f9d07267da149401c77c0", null ],
-    [ "Serialize", "df/df8/structez_kraut_generator_resource_descriptor.htm#a65c7681925691f18b9144e99669e906c", null ],
+    [ "Deserialize", "df/df8/structez_kraut_generator_resource_descriptor.htm#a50783f9ba83795d8b8259194346402ef", null ],
+    [ "Serialize", "df/df8/structez_kraut_generator_resource_descriptor.htm#aaf7ab02b54e2f663fa45fc0fb0b1c17d", null ],
     [ "m_fLodDistanceScale", "df/df8/structez_kraut_generator_resource_descriptor.htm#a462e5911b16590d55b1d116231017919", null ],
     [ "m_fStaticColliderRadius", "df/df8/structez_kraut_generator_resource_descriptor.htm#a814ad98e18175e70d55a26739e390b9b", null ],
     [ "m_fTreeStiffness", "df/df8/structez_kraut_generator_resource_descriptor.htm#a02e754ef43dff0186a980b39560e160e", null ],

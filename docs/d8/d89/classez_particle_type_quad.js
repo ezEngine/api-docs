@@ -7,7 +7,7 @@ var classez_particle_type_quad =
     [ "AllocateParticleData", "d8/d89/classez_particle_type_quad.htm#a6492b80272e40d120a0dbdc2591c33f6", null ],
     [ "CreateExtractedData", "d8/d89/classez_particle_type_quad.htm#a79492b31678b16f67f7971ecb986c22c", null ],
     [ "CreateRequiredStreams", "d8/d89/classez_particle_type_quad.htm#a175410a59e45c5fc111aaec7e0c28ff1", null ],
-    [ "ExtractTypeRenderData", "d8/d89/classez_particle_type_quad.htm#af8a42fde6848227048176c0831f5248e", null ],
+    [ "ExtractTypeRenderData", "d8/d89/classez_particle_type_quad.htm#ac0d08360995a55f83a332eb000fb6266", null ],
     [ "InitializeElements", "d8/d89/classez_particle_type_quad.htm#a5fc79edccfddbdf6f22d13bc7f0f9524", null ],
     [ "Process", "d8/d89/classez_particle_type_quad.htm#a27ef42a3578d9e831bd160ebae0dccf8", null ],
     [ "m_BaseParticleData", "d8/d89/classez_particle_type_quad.htm#ac80a599b8020581e19235478892567d2", null ],

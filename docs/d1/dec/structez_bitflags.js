@@ -3,7 +3,7 @@ var structez_bitflags =
     [ "ezBitflags", "d1/dec/structez_bitflags.htm#a534f0018f017f682e03fc7467dc972b3", null ],
     [ "ezBitflags", "d1/dec/structez_bitflags.htm#ae7c6c0231ec87cdae8d7a5df84554f83", null ],
     [ "Add", "d1/dec/structez_bitflags.htm#aaa83c1e77b70d0b549604a64c20f8a83", null ],
-    [ "AddOrRemove", "d1/dec/structez_bitflags.htm#a70f5156f142920018d172532cb103baa", null ],
+    [ "AddOrRemove", "d1/dec/structez_bitflags.htm#a8e0f0af6eb812b75214d919b4707121b", null ],
     [ "AreAllSet", "d1/dec/structez_bitflags.htm#a40e906628358d1029f5645c13410bd56", null ],
     [ "AreNoneSet", "d1/dec/structez_bitflags.htm#a45db2d923c911f433c8349ac99ce464a", null ],
     [ "Clear", "d1/dec/structez_bitflags.htm#a2864c50a58574d58cf243b6ed1f6a95d", null ],

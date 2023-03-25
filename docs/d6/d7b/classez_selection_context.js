@@ -7,6 +7,7 @@ var classez_selection_context =
       [ "MarqueeRemove", "d6/d7b/classez_selection_context.htm#a96dc5b6f83aecd3ab81a2304de774297a3657d9124b8d3ad43be5345b69cd74af", null ]
     ] ],
     [ "ezSelectionContext", "d6/d7b/classez_selection_context.htm#ac102b8c2f55dc56e18ab024b15e539b5", null ],
+    [ "~ezSelectionContext", "d6/d7b/classez_selection_context.htm#a9c80096d3b10f07fbe024266006eade9", null ],
     [ "determineObjectToSelect", "d6/d7b/classez_selection_context.htm#a8b7f873e84daecaf2cc47698218db2d6", null ],
     [ "DoFocusLost", "d6/d7b/classez_selection_context.htm#a7f1ccc956dd864b2e591edd2fc83c879", null ],
     [ "DoKeyPressEvent", "d6/d7b/classez_selection_context.htm#a89098d8c3560ae034784c2803e17dc68", null ],
@@ -20,7 +21,7 @@ var classez_selection_context =
     [ "SelectPickedObject", "d6/d7b/classez_selection_context.htm#a247d6eaf547bce576fd1ddd78f0ca7dd", null ],
     [ "SendMarqueeMsg", "d6/d7b/classez_selection_context.htm#ab49adce66a0334151b4387f3a1e2ae95", null ],
     [ "SetPickObjectOverride", "d6/d7b/classez_selection_context.htm#ab8ce9c348d97436fdb24f42e9b9e13ee", null ],
-    [ "SetWindowConfig", "d6/d7b/classez_selection_context.htm#ac73c5d02d05d48c79df39efac11763b8", null ],
+    [ "SetWindowConfig", "d6/d7b/classez_selection_context.htm#a0671ef9fc389b6cfd8795663e2544d04", null ],
     [ "m_bPressedSpace", "d6/d7b/classez_selection_context.htm#a279bedb3180a213246040f6406951fe0", null ],
     [ "m_hMarqueeGizmo", "d6/d7b/classez_selection_context.htm#a3abe052ca64c1a45a88a055314508fc4", null ],
     [ "m_Mode", "d6/d7b/classez_selection_context.htm#a2945101738aa6f05bf1973b7fd869f04", null ],
