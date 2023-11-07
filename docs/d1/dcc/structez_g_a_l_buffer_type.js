@@ -1,6 +1,6 @@
 var structez_g_a_l_buffer_type =
 [
-    [ "StorageType", "d1/dcc/structez_g_a_l_buffer_type.htm#a9652f36a62ebbcd90b6e0bac977d7415", null ],
+    [ "StorageType", "d1/dcc/structez_g_a_l_buffer_type.htm#abfad234a58bdfbdfe3b93b7a3e411984", null ],
     [ "Enum", "d1/dcc/structez_g_a_l_buffer_type.htm#aac7e7b66992ede05a80543cd69d58372", [
       [ "Generic", "d1/dcc/structez_g_a_l_buffer_type.htm#aac7e7b66992ede05a80543cd69d58372a9c9e16fda28ee00aadecfd20f93c76c8", null ],
       [ "VertexBuffer", "d1/dcc/structez_g_a_l_buffer_type.htm#aac7e7b66992ede05a80543cd69d58372a32d69497daf75c6f8dad209070798ac3", null ],

@@ -1,6 +1,6 @@
 var structez_property_anim_mode =
 [
-    [ "StorageType", "df/dfc/structez_property_anim_mode.htm#a03eaa4f6dee55caef8d56b96abbea5ff", null ],
+    [ "StorageType", "df/dfc/structez_property_anim_mode.htm#a61327e0373ab2816031d6a88c0fc29e3", null ],
     [ "Enum", "df/dfc/structez_property_anim_mode.htm#ab78fb6d2598723b7d395cd788e619d8b", [
       [ "Once", "df/dfc/structez_property_anim_mode.htm#ab78fb6d2598723b7d395cd788e619d8ba4683068eb4d145d4e7a576a0aef5a949", null ],
       [ "Loop", "df/dfc/structez_property_anim_mode.htm#ab78fb6d2598723b7d395cd788e619d8ba01adb85276abc093db7705f8ef9445fc", null ],

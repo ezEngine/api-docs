@@ -1,8 +1,8 @@
 var classez_telemetry =
 [
     [ "TelemetryEventData", "d3/dfb/structez_telemetry_1_1_telemetry_event_data.htm", "d3/dfb/structez_telemetry_1_1_telemetry_event_data" ],
-    [ "ezEventTelemetry", "dd/daf/classez_telemetry.htm#ac3a82ecb7d51fd1bfe4bee18271f52b2", null ],
-    [ "ProcessMessagesCallback", "dd/daf/classez_telemetry.htm#a21b1aa864fd4a1f1a8ed7442089fb671", null ],
+    [ "ezEventTelemetry", "dd/daf/classez_telemetry.htm#ad0033a9192e1da9291f9a338f48cb670", null ],
+    [ "ProcessMessagesCallback", "dd/daf/classez_telemetry.htm#a100b2746add15b52371c9ed122de7447", null ],
     [ "ConnectionMode", "dd/daf/classez_telemetry.htm#aff3bdff151a5cdcc6975520b6a60f8b3", [
       [ "None", "dd/daf/classez_telemetry.htm#aff3bdff151a5cdcc6975520b6a60f8b3acb713387a0db5acb3b8e5b2b5f93a967", null ],
       [ "Server", "dd/daf/classez_telemetry.htm#aff3bdff151a5cdcc6975520b6a60f8b3ae59d8385cce614839cc457df24998b94", null ],

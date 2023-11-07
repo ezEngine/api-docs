@@ -6,5 +6,6 @@ var structez_standard_menu_types_1_1_bits =
     [ "Panels", "d8/d64/structez_standard_menu_types_1_1_bits.htm#aeccb9ef7dbed3bda4f359310311f5e07", null ],
     [ "Project", "d8/d64/structez_standard_menu_types_1_1_bits.htm#a18d7b7e35cdaaa2eeeb1cf0787edd00a", null ],
     [ "Scene", "d8/d64/structez_standard_menu_types_1_1_bits.htm#a7c59c1fdc027581a755783e623e97066", null ],
+    [ "Tools", "d8/d64/structez_standard_menu_types_1_1_bits.htm#a77d4fd221b6800112dcd880b938620f2", null ],
     [ "View", "d8/d64/structez_standard_menu_types_1_1_bits.htm#a149b8b49d66513df3add438fd5f23257", null ]
 ];

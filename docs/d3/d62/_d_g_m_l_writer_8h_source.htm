@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -127,9 +127,9 @@ $(document).ready(function(){initNavTree('d3/d62/_d_g_m_l_writer_8h_source.htm',
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    Collapsed,</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  };</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">typedef</span> ezUInt32 NodeId;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keyword">typedef</span> ezUInt32 PropertyId;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keyword">typedef</span> ezUInt32 ConnectionId;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">using</span> NodeId = ezUInt32;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keyword">using</span> PropertyId = ezUInt32;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keyword">using</span> ConnectionId = ezUInt32;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
 <div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="../../d6/de5/structez_d_g_m_l_graph_1_1_node_desc.htm">   46</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../d6/de5/structez_d_g_m_l_graph_1_1_node_desc.htm">NodeDesc</a></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  {</div>
@@ -139,15 +139,15 @@ $(document).ready(function(){initNavTree('d3/d62/_d_g_m_l_writer_8h_source.htm',
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="../../d1/dd8/classez_d_g_m_l_graph.htm">ezDGMLGraph</a>(Direction graphDirection = Direction::LeftToRight, Layout graphLayout = Layout::Tree);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  NodeId AddNode(<span class="keyword">const</span> <span class="keywordtype">char</span>* szTitle, <span class="keyword">const</span> <a class="code" href="../../d6/de5/structez_d_g_m_l_graph_1_1_node_desc.htm">NodeDesc</a>* pDesc = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  NodeId AddNode(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sTitle, <span class="keyword">const</span> <a class="code" href="../../d6/de5/structez_d_g_m_l_graph_1_1_node_desc.htm">NodeDesc</a>* pDesc = <span class="keyword">nullptr</span>);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  NodeId AddGroup(<span class="keyword">const</span> <span class="keywordtype">char</span>* szTitle, GroupType type, <span class="keyword">const</span> <a class="code" href="../../d6/de5/structez_d_g_m_l_graph_1_1_node_desc.htm">NodeDesc</a>* pDesc = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  NodeId AddGroup(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sTitle, GroupType type, <span class="keyword">const</span> <a class="code" href="../../d6/de5/structez_d_g_m_l_graph_1_1_node_desc.htm">NodeDesc</a>* pDesc = <span class="keyword">nullptr</span>);</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordtype">void</span> AddNodeToGroup(NodeId node, NodeId group);</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  ConnectionId AddConnection(NodeId source, NodeId target, <span class="keyword">const</span> <span class="keywordtype">char</span>* szLabel = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  ConnectionId AddConnection(NodeId source, NodeId target, <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sLabel = {});</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  PropertyId AddPropertyType(<span class="keyword">const</span> <span class="keywordtype">char</span>* szName);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  PropertyId AddPropertyType(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sName);</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordtype">void</span> AddNodeProperty(NodeId node, PropertyId property, <span class="keyword">const</span> <a class="code" href="../../d4/d2e/classez_format_string.htm">ezFormatString</a>&amp; fmt);</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
@@ -221,7 +221,7 @@ $(document).ready(function(){initNavTree('d3/d62/_d_g_m_l_writer_8h_source.htm',
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_c39aeafa2a8d6fb642c09d4b1ea1a476.htm">Utilities</a></li><li class="navelem"><b>DGMLWriter.h</b></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:21:58 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:19 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

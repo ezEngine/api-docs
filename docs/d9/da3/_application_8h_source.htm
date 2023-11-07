@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -114,11 +114,11 @@ $(document).ready(function(){initNavTree('d9/da3/_application_8h_source.htm','..
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    Quit,     </div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  };</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <a class="code" href="../../da/d72/classez_application.htm">ezApplication</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* szAppName);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <a class="code" href="../../da/d72/classez_application.htm">ezApplication</a>(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sAppName);</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keyword">virtual</span> ~<a class="code" href="../../da/d72/classez_application.htm">ezApplication</a>();</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keywordtype">void</span> SetApplicationName(<span class="keyword">const</span> <span class="keywordtype">char</span>* szAppName);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keywordtype">void</span> SetApplicationName(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sAppName);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
 <div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="../../da/d72/classez_application.htm#aac1c40aad7df35f0e9266e1e2e945841">   85</a></span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a>&amp; <a class="code" href="../../da/d72/classez_application.htm#aac1c40aad7df35f0e9266e1e2e945841">GetApplicationName</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_sAppName; }</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
@@ -168,13 +168,13 @@ $(document).ready(function(){initNavTree('d9/da3/_application_8h_source.htm','..
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  <span class="keywordtype">bool</span> m_bWasQuitRequested = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  ezInt32 m_iReturnCode;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  ezInt32 m_iReturnCode = 0;</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;  ezUInt32 m_uiArgumentCount;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;  ezUInt32 m_uiArgumentCount = 0;</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>** m_pArguments;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>** m_pArguments = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  <span class="keywordtype">bool</span> m_bReportMemoryLeaks;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  <span class="keywordtype">bool</span> m_bReportMemoryLeaks = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sAppName;</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
@@ -203,6 +203,7 @@ $(document).ready(function(){initNavTree('d9/da3/_application_8h_source.htm','..
 <div class="ttc" id="aclassez_application_htm_ab626087d1b25b1f8d24872245f0d0ef9"><div class="ttname"><a href="../../da/d72/classez_application.htm#ab626087d1b25b1f8d24872245f0d0ef9">ezApplication::AfterCoreSystemsStartup</a></div><div class="ttdeci">virtual void AfterCoreSystemsStartup()</div><div class="ttdoc">This function is called after basic engine initialization has been done.</div><div class="ttdef"><b>Definition:</b> Application.h:99</div></div>
 <div class="ttc" id="aclassez_application_htm_a277db8ceeee768cbf4add2c6c3439822"><div class="ttname"><a href="../../da/d72/classez_application.htm#a277db8ceeee768cbf4add2c6c3439822">ezApplication::GetApplicationInstance</a></div><div class="ttdeci">static ezApplication * GetApplicationInstance()</div><div class="ttdoc">Returns the one instance of ezApplication that is available.</div><div class="ttdef"><b>Definition:</b> Application.h:161</div></div>
 <div class="ttc" id="aclassez_application_htm_a750e383a756bfbc534ee4b7015648684"><div class="ttname"><a href="../../da/d72/classez_application.htm#a750e383a756bfbc534ee4b7015648684">ezApplication::ezRun_MainLoop</a></div><div class="ttdeci">friend EZ_FOUNDATION_DLL_FRIEND void ezRun_MainLoop(ezApplication *pApplicationInstance)</div><div class="ttdoc">[internal] Called by ezRun()</div><div class="ttdef"><b>Definition:</b> MainLoop.cpp:25</div></div>
+<div class="ttc" id="astructez_string_view_htm"><div class="ttname"><a href="../../de/db8/structez_string_view.htm">ezStringView</a></div><div class="ttdoc">ezStringView represent a read-only sub-string of a larger string, as it can store a dedicated string ...</div><div class="ttdef"><b>Definition:</b> StringView.h:23</div></div>
 <div class="ttc" id="aclassez_application_htm_a999a6bab7d213759adff1d6ef1566572"><div class="ttname"><a href="../../da/d72/classez_application.htm#a999a6bab7d213759adff1d6ef1566572">ezApplication::BeforeHighLevelSystemsShutdown</a></div><div class="ttdeci">virtual void BeforeHighLevelSystemsShutdown()</div><div class="ttdoc">This function is called after the application main loop has run for the last time,...</div><div class="ttdef"><b>Definition:</b> Application.h:108</div></div>
 <div class="ttc" id="aclassez_application_htm_aeb6e9c8227c78df6398d1b956eeefaa8"><div class="ttname"><a href="../../da/d72/classez_application.htm#aeb6e9c8227c78df6398d1b956eeefaa8">ezApplication::WasQuitRequested</a></div><div class="ttdeci">EZ_ALWAYS_INLINE bool WasQuitRequested() const</div><div class="ttdoc">Returns whether RequestQuit() was called.</div><div class="ttdef"><b>Definition:</b> Application.h:187</div></div>
 <div class="ttc" id="aclassez_application_htm_a22f3640b724cb0ce3f4ad9742bfc5028"><div class="ttname"><a href="../../da/d72/classez_application.htm#a22f3640b724cb0ce3f4ad9742bfc5028">ezApplication::GetReturnCode</a></div><div class="ttdeci">ezInt32 GetReturnCode() const</div><div class="ttdoc">Returns the currently set value that the application will return to the OS.</div><div class="ttdef"><b>Definition:</b> Application.h:151</div></div>
@@ -214,7 +215,7 @@ $(document).ready(function(){initNavTree('d9/da3/_application_8h_source.htm','..
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_eae87a02f723c2a298fc925f987f7e77.htm">Application</a></li><li class="navelem"><b>Application.h</b></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:21:51 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:13 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

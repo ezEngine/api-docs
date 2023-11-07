@@ -1,6 +1,6 @@
 var classez_qt_quad_view_widget =
 [
-    [ "ViewFactory", "d8/d7e/classez_qt_quad_view_widget.htm#af92bed12e249c98a6558c6040d646708", null ],
+    [ "ViewFactory", "d8/d7e/classez_qt_quad_view_widget.htm#a2ead4ba995a396993eb75c1e5db011d0", null ],
     [ "ezQtQuadViewWidget", "d8/d7e/classez_qt_quad_view_widget.htm#ab37c5c0dc53777dabbc74c623eb9d5a4", null ],
     [ "~ezQtQuadViewWidget", "d8/d7e/classez_qt_quad_view_widget.htm#aacb0f18e6a7927a29982f191349c13b3", null ],
     [ "CreateViews", "d8/d7e/classez_qt_quad_view_widget.htm#a79b1bf8c4f4eed006ec5d251ed465a0f", null ],

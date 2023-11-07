@@ -3,6 +3,8 @@ var classez_rope_simulator =
     [ "Node", "d2/d55/structez_rope_simulator_1_1_node.htm", "d2/d55/structez_rope_simulator_1_1_node" ],
     [ "ezRopeSimulator", "d0/dec/classez_rope_simulator.htm#a0b2e02b720cdf371181d29be61ce94e9", null ],
     [ "~ezRopeSimulator", "d0/dec/classez_rope_simulator.htm#a794f7f1c82d8323f2ecaddce936dda4a", null ],
+    [ "GetPositionAtLength", "d0/dec/classez_rope_simulator.htm#a916e0c180399cc8f73e888b88821050b", null ],
+    [ "GetTotalLength", "d0/dec/classez_rope_simulator.htm#a42dea8efebc0d052c8908d5fcaaffc3c", null ],
     [ "HasEquilibrium", "d0/dec/classez_rope_simulator.htm#aecfefb8af3b64f7811ab42806540cc17", null ],
     [ "SimulateRope", "d0/dec/classez_rope_simulator.htm#a10100da146cfb021361227f3fb992e95", null ],
     [ "SimulateStep", "d0/dec/classez_rope_simulator.htm#a3f9b3361b8c2f673404caaa4663951be", null ],

@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -95,7 +95,7 @@ $(document).ready(function(){initNavTree('dd/d00/_memory_tracker_8h_source.htm',
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="../../d6/dce/structez_memory_tracking_flags.htm">    7</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../d6/dce/structez_memory_tracking_flags.htm">ezMemoryTrackingFlags</a></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  <span class="keyword">typedef</span> ezUInt32 StorageType;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  <span class="keyword">using</span> StorageType = ezUInt32;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="../../d6/dce/structez_memory_tracking_flags.htm#ae574bce1a09f0b0742cb69e86500fa27">   11</a></span>&#160;  <span class="keyword">enum</span> <a class="code" href="../../d6/dce/structez_memory_tracking_flags.htm#ae574bce1a09f0b0742cb69e86500fa27">Enum</a></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  {</div>
@@ -135,76 +135,72 @@ $(document).ready(function(){initNavTree('dd/d00/_memory_tracker_8h_source.htm',
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    EZ_DECLARE_POD_TYPE();</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    EZ_FORCE_INLINE <a class="code" href="../../d2/d79/structez_memory_tracker_1_1_allocation_info.htm">AllocationInfo</a>()</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      : m_pStackTrace(<span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      , m_uiSize(0)</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      , m_uiAlignment(0)</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      , m_uiStackTraceLength(0)</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">void</span>** m_pStackTrace;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">size_t</span> m_uiSize;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    ezUInt16 m_uiAlignment;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    ezUInt16 m_uiStackTraceLength;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span>** m_pStackTrace = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">size_t</span> m_uiSize = 0;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    ezUInt16 m_uiAlignment = 0;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    ezUInt16 m_uiStackTraceLength = 0;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    EZ_ALWAYS_INLINE <span class="keyword">const</span> <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;void*&gt;</a> GetStackTrace()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;void*&gt;</a>(m_pStackTrace, (ezUInt32)m_uiStackTraceLength); }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    EZ_ALWAYS_INLINE <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;void*&gt;</a> GetStackTrace() { <span class="keywordflow">return</span> <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;void*&gt;</a>(m_pStackTrace, (ezUInt32)m_uiStackTraceLength); }</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    EZ_ALWAYS_INLINE <span class="keyword">const</span> <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;void*&gt;</a> GetStackTrace()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;void*&gt;</a>(m_pStackTrace, (ezUInt32)m_uiStackTraceLength); }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    EZ_ALWAYS_INLINE <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;void*&gt;</a> GetStackTrace() { <span class="keywordflow">return</span> <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;void*&gt;</a>(m_pStackTrace, (ezUInt32)m_uiStackTraceLength); }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    EZ_FORCE_INLINE <span class="keywordtype">void</span> SetStackTrace(<a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;void*&gt;</a> stackTrace)</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      m_pStackTrace = stackTrace.<a class="code" href="../../dc/dae/classez_array_ptr.htm#aba4e7585190f337c6428f2fe25828b8a">GetPtr</a>();</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      EZ_ASSERT_DEV(stackTrace.<a class="code" href="../../dc/dae/classez_array_ptr.htm#a9f222695f57e4cf200e07135dbbd7edd">GetCount</a>() &lt; 0xFFFF, <span class="stringliteral">&quot;stack trace too long&quot;</span>);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      m_uiStackTraceLength = (ezUInt16)stackTrace.<a class="code" href="../../dc/dae/classez_array_ptr.htm#a9f222695f57e4cf200e07135dbbd7edd">GetCount</a>();</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  };</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="../../d2/d83/classez_memory_tracker_1_1_iterator.htm">   75</a></span>&#160;  <span class="keyword">class </span>EZ_FOUNDATION_DLL <a class="code" href="../../d2/d83/classez_memory_tracker_1_1_iterator.htm">Iterator</a></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    ~<a class="code" href="../../d2/d83/classez_memory_tracker_1_1_iterator.htm">Iterator</a>();</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a> Id() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* Name() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a> ParentId() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../df/df0/structez_allocator_base_1_1_stats.htm">ezAllocatorBase::Stats</a>&amp; Stats() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">void</span> Next();</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">bool</span> IsValid() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    EZ_ALWAYS_INLINE <span class="keywordtype">void</span> operator++() { Next(); }</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d2/d90/classez_memory_tracker.htm">ezMemoryTracker</a>;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    EZ_ALWAYS_INLINE <a class="code" href="../../d2/d83/classez_memory_tracker_1_1_iterator.htm">Iterator</a>(<span class="keywordtype">void</span>* pData)</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;      : m_pData(pData)</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">void</span>* m_pData;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  };</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a> RegisterAllocator(<span class="keyword">const</span> <span class="keywordtype">char</span>* szName, <a class="code" href="../../d1/dec/structez_bitflags.htm">ezBitflags&lt;ezMemoryTrackingFlags&gt;</a> flags, <a class="code" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a> parentId);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> DeregisterAllocator(<a class="code" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a> allocatorId);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> AddAllocation(</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <a class="code" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a> allocatorId, <a class="code" href="../../d1/dec/structez_bitflags.htm">ezBitflags&lt;ezMemoryTrackingFlags&gt;</a> flags, <span class="keyword">const</span> <span class="keywordtype">void</span>* pPtr, <span class="keywordtype">size_t</span> uiSize, <span class="keywordtype">size_t</span> uiAlign, <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> allocationTime);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> RemoveAllocation(<a class="code" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a> allocatorId, <span class="keyword">const</span> <span class="keywordtype">void</span>* pPtr);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> RemoveAllAllocations(<a class="code" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a> allocatorId);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> SetAllocatorStats(<a class="code" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a> allocatorId, <span class="keyword">const</span> <a class="code" href="../../df/df0/structez_allocator_base_1_1_stats.htm">ezAllocatorBase::Stats</a>&amp; stats);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> ResetPerFrameAllocatorStats();</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* GetAllocatorName(<a class="code" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a> allocatorId);</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="../../df/df0/structez_allocator_base_1_1_stats.htm">ezAllocatorBase::Stats</a>&amp; GetAllocatorStats(<a class="code" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a> allocatorId);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a> GetAllocatorParentId(<a class="code" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a> allocatorId);</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="../../d2/d79/structez_memory_tracker_1_1_allocation_info.htm">AllocationInfo</a>&amp; GetAllocationInfo(<a class="code" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a> allocatorId, <span class="keyword">const</span> <span class="keywordtype">void</span>* pPtr);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> DumpMemoryLeaks();</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d2/d83/classez_memory_tracker_1_1_iterator.htm">Iterator</a> GetIterator();</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;};</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    EZ_FORCE_INLINE <span class="keywordtype">void</span> SetStackTrace(<a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;void*&gt;</a> stackTrace)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      m_pStackTrace = stackTrace.<a class="code" href="../../dc/dae/classez_array_ptr.htm#aba4e7585190f337c6428f2fe25828b8a">GetPtr</a>();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      EZ_ASSERT_DEV(stackTrace.<a class="code" href="../../dc/dae/classez_array_ptr.htm#a9f222695f57e4cf200e07135dbbd7edd">GetCount</a>() &lt; 0xFFFF, <span class="stringliteral">&quot;stack trace too long&quot;</span>);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      m_uiStackTraceLength = (ezUInt16)stackTrace.<a class="code" href="../../dc/dae/classez_array_ptr.htm#a9f222695f57e4cf200e07135dbbd7edd">GetCount</a>();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  };</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="../../d2/d83/classez_memory_tracker_1_1_iterator.htm">   71</a></span>&#160;  <span class="keyword">class </span>EZ_FOUNDATION_DLL <a class="code" href="../../d2/d83/classez_memory_tracker_1_1_iterator.htm">Iterator</a></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    ~<a class="code" href="../../d2/d83/classez_memory_tracker_1_1_iterator.htm">Iterator</a>();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a> Id() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> Name() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <a class="code" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a> ParentId() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../df/df0/structez_allocator_base_1_1_stats.htm">ezAllocatorBase::Stats</a>&amp; Stats() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">void</span> Next();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">bool</span> IsValid() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    EZ_ALWAYS_INLINE <span class="keywordtype">void</span> operator++() { Next(); }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d2/d90/classez_memory_tracker.htm">ezMemoryTracker</a>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    EZ_ALWAYS_INLINE <a class="code" href="../../d2/d83/classez_memory_tracker_1_1_iterator.htm">Iterator</a>(<span class="keywordtype">void</span>* pData)</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      : m_pData(pData)</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">void</span>* m_pData;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  };</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a> RegisterAllocator(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sName, <a class="code" href="../../d1/dec/structez_bitflags.htm">ezBitflags&lt;ezMemoryTrackingFlags&gt;</a> flags, <a class="code" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a> parentId);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> DeregisterAllocator(<a class="code" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a> allocatorId);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> AddAllocation(</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <a class="code" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a> allocatorId, <a class="code" href="../../d1/dec/structez_bitflags.htm">ezBitflags&lt;ezMemoryTrackingFlags&gt;</a> flags, <span class="keyword">const</span> <span class="keywordtype">void</span>* pPtr, <span class="keywordtype">size_t</span> uiSize, <span class="keywordtype">size_t</span> uiAlign, <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> allocationTime);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> RemoveAllocation(<a class="code" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a> allocatorId, <span class="keyword">const</span> <span class="keywordtype">void</span>* pPtr);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> RemoveAllAllocations(<a class="code" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a> allocatorId);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> SetAllocatorStats(<a class="code" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a> allocatorId, <span class="keyword">const</span> <a class="code" href="../../df/df0/structez_allocator_base_1_1_stats.htm">ezAllocatorBase::Stats</a>&amp; stats);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> ResetPerFrameAllocatorStats();</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> GetAllocatorName(<a class="code" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a> allocatorId);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="../../df/df0/structez_allocator_base_1_1_stats.htm">ezAllocatorBase::Stats</a>&amp; GetAllocatorStats(<a class="code" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a> allocatorId);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a> GetAllocatorParentId(<a class="code" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a> allocatorId);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="../../d2/d79/structez_memory_tracker_1_1_allocation_info.htm">AllocationInfo</a>&amp; GetAllocationInfo(<a class="code" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a> allocatorId, <span class="keyword">const</span> <span class="keywordtype">void</span>* pPtr);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> DumpMemoryLeaks();</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d2/d83/classez_memory_tracker_1_1_iterator.htm">Iterator</a> GetIterator();</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astructez_memory_tracking_flags_1_1_bits_htm"><div class="ttname"><a href="../../d8/dab/structez_memory_tracking_flags_1_1_bits.htm">ezMemoryTrackingFlags::Bits</a></div><div class="ttdef"><b>Definition:</b> MemoryTracker.h:30</div></div>
@@ -220,14 +216,15 @@ $(document).ready(function(){initNavTree('dd/d00/_memory_tracker_8h_source.htm',
 <div class="ttc" id="astructez_memory_tracking_flags_htm_ae574bce1a09f0b0742cb69e86500fa27a76e52cf3966f310380bb75759c7e37d3"><div class="ttname"><a href="../../d6/dce/structez_memory_tracking_flags.htm#ae574bce1a09f0b0742cb69e86500fa27a76e52cf3966f310380bb75759c7e37d3">ezMemoryTrackingFlags::EnableAllocationTracking</a></div><div class="ttdeci">@ EnableAllocationTracking</div><div class="ttdoc">Enable tracking of individual allocations.</div><div class="ttdef"><b>Definition:</b> MemoryTracker.h:16</div></div>
 <div class="ttc" id="astructez_memory_tracking_flags_htm_ae574bce1a09f0b0742cb69e86500fa27a596d9cefda2c422e93173330b48de186"><div class="ttname"><a href="../../d6/dce/structez_memory_tracking_flags.htm#ae574bce1a09f0b0742cb69e86500fa27a596d9cefda2c422e93173330b48de186">ezMemoryTrackingFlags::EnableStackTrace</a></div><div class="ttdeci">@ EnableStackTrace</div><div class="ttdoc">Enable stack traces for each allocation.</div><div class="ttdef"><b>Definition:</b> MemoryTracker.h:17</div></div>
 <div class="ttc" id="astructez_memory_tracker_1_1_allocation_info_htm"><div class="ttname"><a href="../../d2/d79/structez_memory_tracker_1_1_allocation_info.htm">ezMemoryTracker::AllocationInfo</a></div><div class="ttdef"><b>Definition:</b> MemoryTracker.h:46</div></div>
-<div class="ttc" id="aclassez_memory_tracker_1_1_iterator_htm"><div class="ttname"><a href="../../d2/d83/classez_memory_tracker_1_1_iterator.htm">ezMemoryTracker::Iterator</a></div><div class="ttdef"><b>Definition:</b> MemoryTracker.h:75</div></div>
+<div class="ttc" id="astructez_string_view_htm"><div class="ttname"><a href="../../de/db8/structez_string_view.htm">ezStringView</a></div><div class="ttdoc">ezStringView represent a read-only sub-string of a larger string, as it can store a dedicated string ...</div><div class="ttdef"><b>Definition:</b> StringView.h:23</div></div>
+<div class="ttc" id="aclassez_memory_tracker_1_1_iterator_htm"><div class="ttname"><a href="../../d2/d83/classez_memory_tracker_1_1_iterator.htm">ezMemoryTracker::Iterator</a></div><div class="ttdef"><b>Definition:</b> MemoryTracker.h:71</div></div>
 <div class="ttc" id="astructez_memory_tracking_flags_htm_ae574bce1a09f0b0742cb69e86500fa27a4ee4d73546e1b91b6bd414b1fe92e729"><div class="ttname"><a href="../../d6/dce/structez_memory_tracking_flags.htm#ae574bce1a09f0b0742cb69e86500fa27a4ee4d73546e1b91b6bd414b1fe92e729">ezMemoryTrackingFlags::RegisterAllocator</a></div><div class="ttdeci">@ RegisterAllocator</div><div class="ttdef"><b>Definition:</b> MemoryTracker.h:14</div></div>
 <div class="ttc" id="astructez_generic_id_htm"><div class="ttname"><a href="../../dd/d2a/structez_generic_id.htm">ezGenericId&lt; 24, 8 &gt;</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_adb0ac2a169525f5fa05f0527c58e205.htm">Memory</a></li><li class="navelem"><b>MemoryTracker.h</b></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:21:56 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:17 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

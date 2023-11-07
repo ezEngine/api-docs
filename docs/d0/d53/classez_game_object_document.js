@@ -1,7 +1,7 @@
 var classez_game_object_document =
 [
     [ "GameModeData", "d9/d36/structez_game_object_document_1_1_game_mode_data.htm", "d9/d36/structez_game_object_document_1_1_game_mode_data" ],
-    [ "ezGameObjectDocument", "d0/d53/classez_game_object_document.htm#a88d1e95491bc79ffab5051bc8b69d23a", null ],
+    [ "ezGameObjectDocument", "d0/d53/classez_game_object_document.htm#a28ca4730b5fce1758d2ae4985470b316", null ],
     [ "~ezGameObjectDocument", "d0/d53/classez_game_object_document.htm#a8b1b6625330785fdd21e7e5e700ef79d", null ],
     [ "AttachMetaDataBeforeSaving", "d0/d53/classez_game_object_document.htm#a9c53f474cdd5264f0dfc1b729daeba22", null ],
     [ "ComputeGlobalTransform", "d0/d53/classez_game_object_document.htm#ac0fa94618a10da7258986a2f60336030", null ],

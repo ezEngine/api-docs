@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -93,59 +93,63 @@ $(document).ready(function(){initNavTree('d5/d13/_process_communication_channel_
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;Foundation/Communication/Event.h&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;Foundation/Time/Time.h&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;Foundation/Types/Delegate.h&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">class </span><a class="code" href="../../d0/d61/classez_ipc_channel.htm">ezIpcChannel</a>;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">class </span><a class="code" href="../../db/d40/classez_process_message.htm">ezProcessMessage</a>;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="../../d0/d97/classez_process_communication_channel.htm">   11</a></span>&#160;<span class="keyword">class </span>EZ_EDITORENGINEPROCESSFRAMEWORK_DLL <a class="code" href="../../d0/d97/classez_process_communication_channel.htm">ezProcessCommunicationChannel</a></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <a class="code" href="../../d0/d97/classez_process_communication_channel.htm">ezProcessCommunicationChannel</a>();</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  ~<a class="code" href="../../d0/d97/classez_process_communication_channel.htm">ezProcessCommunicationChannel</a>();</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="keywordtype">void</span> SendMessage(<a class="code" href="../../db/d40/classez_process_message.htm">ezProcessMessage</a>* pMessage);</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;Foundation/Types/UniquePtr.h&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">class </span><a class="code" href="../../d0/d61/classez_ipc_channel.htm">ezIpcChannel</a>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">class </span><a class="code" href="../../db/d40/classez_process_message.htm">ezProcessMessage</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">class </span><a class="code" href="../../dd/d33/classez_ipc_process_message_protocol.htm">ezIpcProcessMessageProtocol</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="../../d0/d97/classez_process_communication_channel.htm">   13</a></span>&#160;<span class="keyword">class </span>EZ_EDITORENGINEPROCESSFRAMEWORK_DLL <a class="code" href="../../d0/d97/classez_process_communication_channel.htm">ezProcessCommunicationChannel</a></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <a class="code" href="../../d0/d97/classez_process_communication_channel.htm">ezProcessCommunicationChannel</a>();</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  ~<a class="code" href="../../d0/d97/classez_process_communication_channel.htm">ezProcessCommunicationChannel</a>();</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="../../d0/d97/classez_process_communication_channel.htm#a20630b6ccf4b16e470fee80d40e29239">   21</a></span>&#160;  <span class="keyword">typedef</span> <a class="code" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>&lt;bool(<a class="code" href="../../db/d40/classez_process_message.htm">ezProcessMessage</a>*)&gt; <a class="code" href="../../d0/d97/classez_process_communication_channel.htm#a20630b6ccf4b16e470fee80d40e29239">WaitForMessageCallback</a>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> WaitForMessage(<span class="keyword">const</span> <a class="code" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a>* pMessageType, <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> timeout, <a class="code" href="../../d5/d68/structez_delegate.htm">WaitForMessageCallback</a>* pMessageCallack = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> WaitForConnection(<a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> timeout);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keywordtype">bool</span> ProcessMessages();</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordtype">void</span> WaitForMessages();</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="../../d2/d48/structez_process_communication_channel_1_1_event.htm">   29</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../d2/d48/structez_process_communication_channel_1_1_event.htm">Event</a></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../db/d40/classez_process_message.htm">ezProcessMessage</a>* m_pMessage;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  };</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <a class="code" href="../../d0/daf/classez_event.htm">ezEvent&lt;const Event&amp;&gt;</a> m_Events;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keywordtype">bool</span> SendMessage(<a class="code" href="../../db/d40/classez_process_message.htm">ezProcessMessage</a>* pMessage);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="../../d0/d97/classez_process_communication_channel.htm#a9ea559d26af3e1b0debe17d89dcf21e3">   23</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="../../d5/d68/structez_delegate.htm">WaitForMessageCallback</a> = <a class="code" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>&lt;bool(<a class="code" href="../../db/d40/classez_process_message.htm">ezProcessMessage</a>*)&gt;;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> WaitForMessage(<span class="keyword">const</span> <a class="code" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a>* pMessageType, <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> timeout, <a class="code" href="../../d5/d68/structez_delegate.htm">WaitForMessageCallback</a>* pMessageCallack = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> WaitForConnection(<a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> timeout);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keywordtype">bool</span> ProcessMessages();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordtype">void</span> WaitForMessages();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="../../d2/d48/structez_process_communication_channel_1_1_event.htm">   31</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../d2/d48/structez_process_communication_channel_1_1_event.htm">Event</a></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../db/d40/classez_process_message.htm">ezProcessMessage</a>* m_pMessage;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  };</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordtype">void</span> MessageFunc(<span class="keyword">const</span> <a class="code" href="../../db/d40/classez_process_message.htm">ezProcessMessage</a>* pMsg);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <a class="code" href="../../d0/daf/classez_event.htm">ezEvent&lt;const Event&amp;&gt;</a> m_Events;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <a class="code" href="../../d0/d61/classez_ipc_channel.htm">ezIpcChannel</a>* m_pChannel = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a>* m_pFirstAllowedMessageType = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <a class="code" href="../../d5/d68/structez_delegate.htm">WaitForMessageCallback</a> m_WaitForMessageCallback;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a>* m_pWaitForMessageType = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;};</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordtype">void</span> MessageFunc(<span class="keyword">const</span> <a class="code" href="../../db/d40/classez_process_message.htm">ezProcessMessage</a>* pMsg);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt;ezIpcProcessMessageProtocol&gt;</a> m_pProtocol;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt;ezIpcChannel&gt;</a> m_pChannel;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a>* m_pFirstAllowedMessageType = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <a class="code" href="../../d5/d68/structez_delegate.htm">WaitForMessageCallback</a> m_WaitForMessageCallback;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a>* m_pWaitForMessageType = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition:</b> Types.h:50</div></div>
-<div class="ttc" id="aclassez_r_t_t_i_htm"><div class="ttname"><a href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a></div><div class="ttdoc">This enumerable class holds information about reflected types. Each instance represents one type that...</div><div class="ttdef"><b>Definition:</b> RTTI.h:30</div></div>
+<div class="ttc" id="aclassez_r_t_t_i_htm"><div class="ttname"><a href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a></div><div class="ttdoc">This class holds information about reflected types. Each instance represents one type that is known t...</div><div class="ttdef"><b>Definition:</b> RTTI.h:28</div></div>
 <div class="ttc" id="astructez_time_htm"><div class="ttname"><a href="../../d3/d90/structez_time.htm">ezTime</a></div><div class="ttdoc">The time class encapsulates a double value storing the time in seconds.</div><div class="ttdef"><b>Definition:</b> Time.h:11</div></div>
 <div class="ttc" id="aclassez_process_message_htm"><div class="ttname"><a href="../../db/d40/classez_process_message.htm">ezProcessMessage</a></div><div class="ttdoc">Base class for IPC messages transmitted by ezIpcChannel.</div><div class="ttdef"><b>Definition:</b> RemoteMessage.h:63</div></div>
-<div class="ttc" id="aclassez_process_communication_channel_htm"><div class="ttname"><a href="../../d0/d97/classez_process_communication_channel.htm">ezProcessCommunicationChannel</a></div><div class="ttdef"><b>Definition:</b> ProcessCommunicationChannel.h:11</div></div>
-<div class="ttc" id="aclassez_process_communication_channel_htm_a20630b6ccf4b16e470fee80d40e29239"><div class="ttname"><a href="../../d0/d97/classez_process_communication_channel.htm#a20630b6ccf4b16e470fee80d40e29239">ezProcessCommunicationChannel::WaitForMessageCallback</a></div><div class="ttdeci">ezDelegate&lt; bool(ezProcessMessage *)&gt; WaitForMessageCallback</div><div class="ttdef"><b>Definition:</b> ProcessCommunicationChannel.h:21</div></div>
-<div class="ttc" id="astructez_process_communication_channel_1_1_event_htm"><div class="ttname"><a href="../../d2/d48/structez_process_communication_channel_1_1_event.htm">ezProcessCommunicationChannel::Event</a></div><div class="ttdef"><b>Definition:</b> ProcessCommunicationChannel.h:29</div></div>
-<div class="ttc" id="astructez_delegate_htm"><div class="ttname"><a href="../../d5/d68/structez_delegate.htm">ezDelegate</a></div><div class="ttdoc">A generic delegate class which supports static functions and member functions.</div><div class="ttdef"><b>Definition:</b> Delegate.h:75</div></div>
-<div class="ttc" id="aclassez_event_htm"><div class="ttname"><a href="../../d0/daf/classez_event.htm">ezEvent</a></div><div class="ttdef"><b>Definition:</b> Event.h:174</div></div>
-<div class="ttc" id="aclassez_ipc_channel_htm"><div class="ttname"><a href="../../d0/d61/classez_ipc_channel.htm">ezIpcChannel</a></div><div class="ttdoc">Base class for a communication channel between processes.</div><div class="ttdef"><b>Definition:</b> IpcChannel.h:37</div></div>
+<div class="ttc" id="aclassez_process_communication_channel_htm"><div class="ttname"><a href="../../d0/d97/classez_process_communication_channel.htm">ezProcessCommunicationChannel</a></div><div class="ttdef"><b>Definition:</b> ProcessCommunicationChannel.h:13</div></div>
+<div class="ttc" id="astructez_process_communication_channel_1_1_event_htm"><div class="ttname"><a href="../../d2/d48/structez_process_communication_channel_1_1_event.htm">ezProcessCommunicationChannel::Event</a></div><div class="ttdef"><b>Definition:</b> ProcessCommunicationChannel.h:31</div></div>
+<div class="ttc" id="aclassez_unique_ptr_htm"><div class="ttname"><a href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt; ezIpcProcessMessageProtocol &gt;</a></div></div>
+<div class="ttc" id="astructez_delegate_htm"><div class="ttname"><a href="../../d5/d68/structez_delegate.htm">ezDelegate&lt; bool(ezProcessMessage *)&gt;</a></div></div>
+<div class="ttc" id="aclassez_event_htm"><div class="ttname"><a href="../../d0/daf/classez_event.htm">ezEvent</a></div><div class="ttdef"><b>Definition:</b> Event.h:176</div></div>
+<div class="ttc" id="aclassez_ipc_channel_htm"><div class="ttname"><a href="../../d0/d61/classez_ipc_channel.htm">ezIpcChannel</a></div><div class="ttdoc">Base class for a communication channel between processes.</div><div class="ttdef"><b>Definition:</b> IpcChannel.h:43</div></div>
+<div class="ttc" id="aclassez_ipc_process_message_protocol_htm"><div class="ttname"><a href="../../dd/d33/classez_ipc_process_message_protocol.htm">ezIpcProcessMessageProtocol</a></div><div class="ttdoc">A protocol around ezIpcChannel to send reflected messages instead of byte array messages between clie...</div><div class="ttdef"><b>Definition:</b> IpcProcessMessageProtocol.h:17</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_898824d97bbfb864e5ee6bfb2857fc31.htm">Editor</a></li><li class="navelem"><a class="el" href="../../dir_58cd665830f691b636779262d22385da.htm">EditorEngineProcessFramework</a></li><li class="navelem"><a class="el" href="../../dir_d6feeb51c29052e9eab7d6b8049d05a5.htm">IPC</a></li><li class="navelem"><b>ProcessCommunicationChannel.h</b></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:21:50 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:12 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

@@ -1,7 +1,7 @@
 var classez_message_loop =
 [
     [ "ezMessageLoop", "de/d68/classez_message_loop.htm#a2e9adf8c7a6546c7c7416cbc5eb9bf9d", null ],
-    [ "~ezMessageLoop", "de/d68/classez_message_loop.htm#a272ddbc90e82e29efdf5b245171a28c2", null ],
+    [ "~ezMessageLoop", "de/d68/classez_message_loop.htm#a9dd19e929d207af03fe24ad2b4105f21", null ],
     [ "AddChannel", "de/d68/classez_message_loop.htm#aa43e2eb69619e82f7952d6af65da09ab", null ],
     [ "EZ_MAKE_SUBSYSTEM_STARTUP_FRIEND", "de/d68/classez_message_loop.htm#ae3930285f4a2b2d4b185d97dca7f9eca", null ],
     [ "ProcessTasks", "de/d68/classez_message_loop.htm#aee3c3c7ce86e74dfa57f880cd44dda09", null ],

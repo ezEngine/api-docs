@@ -1,8 +1,8 @@
 var classez_cylinder_visualizer_attribute =
 [
     [ "ezCylinderVisualizerAttribute", "d7/d61/classez_cylinder_visualizer_attribute.htm#ad874ee6bf55cea2a8233d4ae2572a2fb", null ],
-    [ "ezCylinderVisualizerAttribute", "d7/d61/classez_cylinder_visualizer_attribute.htm#ae7734743eacb057bbed5cc3b6a4f5881", null ],
-    [ "ezCylinderVisualizerAttribute", "d7/d61/classez_cylinder_visualizer_attribute.htm#a4eede0f7be1041f2ea5f74559d175095", null ],
+    [ "ezCylinderVisualizerAttribute", "d7/d61/classez_cylinder_visualizer_attribute.htm#acbe6b320cea7481379457b5ad8ccfe01", null ],
+    [ "ezCylinderVisualizerAttribute", "d7/d61/classez_cylinder_visualizer_attribute.htm#ab2b1a88d0e474ff0f9e77daa2821cde3", null ],
     [ "GetAxisProperty", "d7/d61/classez_cylinder_visualizer_attribute.htm#aac55adadb92b0b0593d17fc17f82e1e5", null ],
     [ "GetColorProperty", "d7/d61/classez_cylinder_visualizer_attribute.htm#a73fe020988243ac751744cda8f44b6cd", null ],
     [ "GetHeightProperty", "d7/d61/classez_cylinder_visualizer_attribute.htm#adc2c33606f9faad4e58379455954ce7e", null ],

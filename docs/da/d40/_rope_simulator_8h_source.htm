@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -100,8 +100,8 @@ $(document).ready(function(){initNavTree('da/d40/_rope_simulator_8h_source.htm',
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="../../d2/d55/structez_rope_simulator_1_1_node.htm">   19</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../d2/d55/structez_rope_simulator_1_1_node.htm">Node</a></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a> m_vPosition = ezSimdVec4f::ZeroVector();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a> m_vPreviousPosition = ezSimdVec4f::ZeroVector();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a> m_vPosition = <a class="code" href="../../db/d0d/classez_simd_vec4f.htm#a1bbdedd947e594b431539062a2b50b95">ezSimdVec4f::MakeZero</a>();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a> m_vPreviousPosition = <a class="code" href="../../db/d0d/classez_simd_vec4f.htm#a1bbdedd947e594b431539062a2b50b95">ezSimdVec4f::MakeZero</a>();</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment">// could add per node acceleration</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">// could add per node mass</span></div>
@@ -126,14 +126,16 @@ $(document).ready(function(){initNavTree('da/d40/_rope_simulator_8h_source.htm',
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordtype">void</span> SimulateStep(<span class="keyword">const</span> <a class="code" href="../../d2/d0c/classez_simd_float.htm">ezSimdFloat</a> fDiffSqr, ezUInt32 uiMaxIterations, <a class="code" href="../../d2/d0c/classez_simd_float.htm">ezSimdFloat</a> fAllowedError);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordtype">void</span> SimulateTillEquilibrium(<a class="code" href="../../d2/d0c/classez_simd_float.htm">ezSimdFloat</a> fAllowedMovement = 0.005f, ezUInt32 uiMaxIterations = 1000);</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordtype">bool</span> HasEquilibrium(<a class="code" href="../../d2/d0c/classez_simd_float.htm">ezSimdFloat</a> fAllowedMovement) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <a class="code" href="../../d2/d0c/classez_simd_float.htm">ezSimdFloat</a> EnforceDistanceConstraint();</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordtype">void</span> UpdateNodePositions(<span class="keyword">const</span> <a class="code" href="../../d2/d0c/classez_simd_float.htm">ezSimdFloat</a> tDiffSqr);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <a class="code" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a> MoveTowards(<span class="keyword">const</span> <a class="code" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a> posThis, <span class="keyword">const</span> <a class="code" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a> posNext, <a class="code" href="../../d2/d0c/classez_simd_float.htm">ezSimdFloat</a> factor, <span class="keyword">const</span> <a class="code" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a> fallbackDir, <a class="code" href="../../d2/d0c/classez_simd_float.htm">ezSimdFloat</a>&amp; inout_fError);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> m_LeftOverTimeStep;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;};</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordtype">float</span> GetTotalLength() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <a class="code" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a> GetPositionAtLength(<span class="keywordtype">float</span> fLength) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <a class="code" href="../../d2/d0c/classez_simd_float.htm">ezSimdFloat</a> EnforceDistanceConstraint();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordtype">void</span> UpdateNodePositions(<span class="keyword">const</span> <a class="code" href="../../d2/d0c/classez_simd_float.htm">ezSimdFloat</a> tDiffSqr);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <a class="code" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a> MoveTowards(<span class="keyword">const</span> <a class="code" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a> posThis, <span class="keyword">const</span> <a class="code" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a> posNext, <a class="code" href="../../d2/d0c/classez_simd_float.htm">ezSimdFloat</a> factor, <span class="keyword">const</span> <a class="code" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a> fallbackDir, <a class="code" href="../../d2/d0c/classez_simd_float.htm">ezSimdFloat</a>&amp; inout_fError);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> m_LeftOverTimeStep;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_rope_simulator_htm"><div class="ttname"><a href="../../d0/dec/classez_rope_simulator.htm">ezRopeSimulator</a></div><div class="ttdoc">A simple simulator for swinging and hanging ropes.</div><div class="ttdef"><b>Definition:</b> RopeSimulator.h:16</div></div>
@@ -141,6 +143,7 @@ $(document).ready(function(){initNavTree('da/d40/_rope_simulator_8h_source.htm',
 <div class="ttc" id="aclassez_simd_float_htm"><div class="ttname"><a href="../../d2/d0c/classez_simd_float.htm">ezSimdFloat</a></div><div class="ttdef"><b>Definition:</b> SimdFloat.h:6</div></div>
 <div class="ttc" id="aclassez_dynamic_array_htm"><div class="ttname"><a href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray</a></div><div class="ttdef"><b>Definition:</b> DynamicArray.h:80</div></div>
 <div class="ttc" id="aclassez_rope_simulator_htm_a645bed70b34d082a9efe7d24a13cf863"><div class="ttname"><a href="../../d0/dec/classez_rope_simulator.htm#a645bed70b34d082a9efe7d24a13cf863">ezRopeSimulator::m_Nodes</a></div><div class="ttdeci">ezDynamicArray&lt; Node, ezAlignedAllocatorWrapper &gt; m_Nodes</div><div class="ttdoc">All the nodes in the rope.</div><div class="ttdef"><b>Definition:</b> RopeSimulator.h:37</div></div>
+<div class="ttc" id="aclassez_simd_vec4f_htm_a1bbdedd947e594b431539062a2b50b95"><div class="ttname"><a href="../../db/d0d/classez_simd_vec4f.htm#a1bbdedd947e594b431539062a2b50b95">ezSimdVec4f::MakeZero</a></div><div class="ttdeci">static ezSimdVec4f MakeZero()</div><div class="ttdoc">Creates an ezSimdVec4f that is initialized to zero.</div><div class="ttdef"><b>Definition:</b> SimdVec4f_inl.h:8</div></div>
 <div class="ttc" id="astructez_rope_simulator_1_1_node_htm"><div class="ttname"><a href="../../d2/d55/structez_rope_simulator_1_1_node.htm">ezRopeSimulator::Node</a></div><div class="ttdef"><b>Definition:</b> RopeSimulator.h:19</div></div>
 <div class="ttc" id="aclassez_simd_vec4f_htm"><div class="ttname"><a href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a></div><div class="ttdoc">A 4-component SIMD vector class.</div><div class="ttdef"><b>Definition:</b> SimdVec4f.h:7</div></div>
 <div class="ttc" id="aclassez_vec3_template_htm"><div class="ttname"><a href="../../da/df1/classez_vec3_template.htm">ezVec3Template&lt; float &gt;</a></div></div>
@@ -148,7 +151,7 @@ $(document).ready(function(){initNavTree('da/d40/_rope_simulator_8h_source.htm',
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_fe4f349dd73c6459187bb04ae7deb06f.htm">GameEngine</a></li><li class="navelem"><a class="el" href="../../dir_826586cfc9755dba8e6ba6e0e43205f3.htm">Physics</a></li><li class="navelem"><b>RopeSimulator.h</b></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:21:58 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:19 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

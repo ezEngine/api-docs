@@ -2,7 +2,6 @@ var classez_bounding_sphere_template =
 [
     [ "ComponentType", "d2/d50/classez_bounding_sphere_template.htm#a07eb5fc02daef1589d54829a460f01ee", null ],
     [ "ezBoundingSphereTemplate", "d2/d50/classez_bounding_sphere_template.htm#a59188cb1203103214a62d9999a39ba37", null ],
-    [ "ezBoundingSphereTemplate", "d2/d50/classez_bounding_sphere_template.htm#a29889c653716a567ff38b89760376d06", null ],
     [ "Contains", "d2/d50/classez_bounding_sphere_template.htm#ad2aecda1cdf9eec78e6aa92c2dca24c3", null ],
     [ "Contains", "d2/d50/classez_bounding_sphere_template.htm#a0d07309c47daaf5276e20faed302f4f2", null ],
     [ "Contains", "d2/d50/classez_bounding_sphere_template.htm#abbdb7cf5923634895845c419eabea57f", null ],
@@ -31,10 +30,6 @@ var classez_bounding_sphere_template =
     [ "Overlaps", "d2/d50/classez_bounding_sphere_template.htm#a053a860bf2c3e8f708532e1084e842ea", null ],
     [ "ScaleFromCenter", "d2/d50/classez_bounding_sphere_template.htm#a74df7dcf23ef0592c7d90d26bd3a54ae", null ],
     [ "ScaleFromOrigin", "d2/d50/classez_bounding_sphere_template.htm#af840875b53da0b9aee250d5d83573a2b", null ],
-    [ "SetElements", "d2/d50/classez_bounding_sphere_template.htm#aed20020b5a1e98c58eb00a1db5d2471f", null ],
-    [ "SetFromPoints", "d2/d50/classez_bounding_sphere_template.htm#aec081e6f51ee40d0689c7d970d0ab60a", null ],
-    [ "SetInvalid", "d2/d50/classez_bounding_sphere_template.htm#a19f765847f8346dc18700394b0340a39", null ],
-    [ "SetZero", "d2/d50/classez_bounding_sphere_template.htm#a77ede8fb202660e9f6feb301f807860f", null ],
     [ "TransformFromCenter", "d2/d50/classez_bounding_sphere_template.htm#a8b38a976b812811631b9f192608982aa", null ],
     [ "TransformFromOrigin", "d2/d50/classez_bounding_sphere_template.htm#a1da79c5b6e6501b02730b74fe9b1b06e", null ],
     [ "Translate", "d2/d50/classez_bounding_sphere_template.htm#acdd5e71e47085b62293239b91dbbc3c3", null ],

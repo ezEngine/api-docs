@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -92,8 +92,8 @@ $(document).ready(function(){initNavTree('dd/dba/_clock_8h_source.htm','../../')
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;Foundation/Basics.h&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;Foundation/Communication/Event.h&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;Foundation/Containers/DynamicArray.h&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;Foundation/IO/Stream.h&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;Foundation/IO/Stream.h&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;Foundation/Reflection/Reflection.h&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;Foundation/Time/Time.h&gt;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">class </span><a class="code" href="../../d1/db8/classez_time_step_smoothing.htm">ezTimeStepSmoothing</a>;</div>
@@ -104,7 +104,7 @@ $(document).ready(function(){initNavTree('dd/dba/_clock_8h_source.htm','../../')
 <div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="../../d6/dc5/classez_clock.htm#a824a9035aa24b04dfe386ac072864d28">   18</a></span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d6/dc5/classez_clock.htm">ezClock</a>* <a class="code" href="../../d6/dc5/classez_clock.htm#a824a9035aa24b04dfe386ac072864d28">GetGlobalClock</a>() { <span class="keywordflow">return</span> s_pGlobalClock; }</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <a class="code" href="../../d6/dc5/classez_clock.htm">ezClock</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* szName); <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <a class="code" href="../../d6/dc5/classez_clock.htm">ezClock</a>(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sName); <span class="comment">// [tested]</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keywordtype">void</span> Reset(<span class="keywordtype">bool</span> bEverything); <span class="comment">// [tested]</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
@@ -144,21 +144,21 @@ $(document).ready(function(){initNavTree('dd/dba/_clock_8h_source.htm','../../')
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <span class="keywordtype">void</span> Load(<a class="code" href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a>&amp; inout_stream);</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <span class="keywordtype">void</span> SetClockName(<span class="keyword">const</span> <span class="keywordtype">char</span>* szName);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <span class="keywordtype">void</span> SetClockName(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sName);</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* GetClockName() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> GetClockName() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="../../d5/d1a/structez_clock_1_1_event_data.htm">  131</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../d5/d1a/structez_clock_1_1_event_data.htm">EventData</a></div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  {</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* m_szClockName;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> m_sClockName;</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> m_RawTimeStep;</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> m_SmoothedTimeStep;</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  };</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  <span class="keyword">typedef</span> <a class="code" href="../../d0/daf/classez_event.htm">ezEvent&lt;const EventData&amp;, ezMutex&gt;</a> <a class="code" href="../../d0/daf/classez_event.htm">Event</a>;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  <span class="keyword">using</span> <a class="code" href="../../d0/daf/classez_event.htm">Event</a> = <a class="code" href="../../d0/daf/classez_event.htm">ezEvent&lt;const EventData&amp;, ezMutex&gt;</a>;</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
 <div class="line"><a name="l00142"></a><span class="lineno"><a class="line" href="../../d6/dc5/classez_clock.htm#afd0b5b0729a158b0bee6661290d883b7">  142</a></span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="../../d6/dc5/classez_clock.htm#afd0b5b0729a158b0bee6661290d883b7">AddEventHandler</a>(<a class="code" href="../../d5/d68/structez_delegate.htm">Event::Handler</a> handler) { s_TimeEvents.AddEventHandler(handler); }</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
@@ -190,14 +190,14 @@ $(document).ready(function(){initNavTree('dd/dba/_clock_8h_source.htm','../../')
 <div class="line"><a name="l00174"></a><span class="lineno"><a class="line" href="../../d1/db8/classez_time_step_smoothing.htm">  174</a></span>&#160;<span class="keyword">class </span>EZ_FOUNDATION_DLL <a class="code" href="../../d1/db8/classez_time_step_smoothing.htm">ezTimeStepSmoothing</a></div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;{</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  <span class="keyword">virtual</span> ~<a class="code" href="../../d1/db8/classez_time_step_smoothing.htm">ezTimeStepSmoothing</a>() {}</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  <span class="keyword">virtual</span> ~<a class="code" href="../../d1/db8/classez_time_step_smoothing.htm">ezTimeStepSmoothing</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> GetSmoothedTimeStep(<a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> rawTimeStep, <span class="keyword">const</span> <a class="code" href="../../d6/dc5/classez_clock.htm">ezClock</a>* pClock) = 0;</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> Reset(<span class="keyword">const</span> <a class="code" href="../../d6/dc5/classez_clock.htm">ezClock</a>* pClock) = 0;</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;};</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;EZ_DECLARE_REFLECTABLE_TYPE(EZ_FOUNDATION_DLL, <a class="code" href="../../d6/dc5/classez_clock.htm">ezClock</a>);</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="preprocessor">#include &lt;Foundation/Time/Implementation/Clock_inl.h&gt;</span></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -209,8 +209,9 @@ $(document).ready(function(){initNavTree('dd/dba/_clock_8h_source.htm','../../')
 <div class="ttc" id="aclassez_clock_htm_a824a9035aa24b04dfe386ac072864d28"><div class="ttname"><a href="../../d6/dc5/classez_clock.htm#a824a9035aa24b04dfe386ac072864d28">ezClock::GetGlobalClock</a></div><div class="ttdeci">static ezClock * GetGlobalClock()</div><div class="ttdoc">Returns the global clock.</div><div class="ttdef"><b>Definition:</b> Clock.h:18</div></div>
 <div class="ttc" id="astructez_hybrid_string_htm"><div class="ttname"><a href="../../d4/d53/structez_hybrid_string.htm">ezHybridString</a></div><div class="ttdef"><b>Definition:</b> Stream.h:16</div></div>
 <div class="ttc" id="astructez_delegate_htm"><div class="ttname"><a href="../../d5/d68/structez_delegate.htm">ezDelegate&lt; void(EventData)&gt;</a></div></div>
-<div class="ttc" id="aclassez_event_htm"><div class="ttname"><a href="../../d0/daf/classez_event.htm">ezEvent</a></div><div class="ttdef"><b>Definition:</b> Event.h:174</div></div>
+<div class="ttc" id="aclassez_event_htm"><div class="ttname"><a href="../../d0/daf/classez_event.htm">ezEvent</a></div><div class="ttdef"><b>Definition:</b> Event.h:176</div></div>
 <div class="ttc" id="aclassez_clock_htm_afd0b5b0729a158b0bee6661290d883b7"><div class="ttname"><a href="../../d6/dc5/classez_clock.htm#afd0b5b0729a158b0bee6661290d883b7">ezClock::AddEventHandler</a></div><div class="ttdeci">static void AddEventHandler(Event::Handler handler)</div><div class="ttdoc">Allows to register a function as an event receiver. All receivers will be notified in the order that ...</div><div class="ttdef"><b>Definition:</b> Clock.h:142</div></div>
+<div class="ttc" id="astructez_string_view_htm"><div class="ttname"><a href="../../de/db8/structez_string_view.htm">ezStringView</a></div><div class="ttdoc">ezStringView represent a read-only sub-string of a larger string, as it can store a dedicated string ...</div><div class="ttdef"><b>Definition:</b> StringView.h:23</div></div>
 <div class="ttc" id="aclassez_clock_htm"><div class="ttname"><a href="../../d6/dc5/classez_clock.htm">ezClock</a></div><div class="ttdoc">A clock that can be speed up, slowed down, paused, etc. Useful for updating game logic,...</div><div class="ttdef"><b>Definition:</b> Clock.h:14</div></div>
 <div class="ttc" id="aclassez_time_step_smoothing_htm"><div class="ttname"><a href="../../d1/db8/classez_time_step_smoothing.htm">ezTimeStepSmoothing</a></div><div class="ttdoc">Base class for all time step smoothing algorithms.</div><div class="ttdef"><b>Definition:</b> Clock.h:174</div></div>
 <div class="ttc" id="aclassez_clock_htm_aec60a3ece52c8a9a1b836a09aae15e0f"><div class="ttname"><a href="../../d6/dc5/classez_clock.htm#aec60a3ece52c8a9a1b836a09aae15e0f">ezClock::RemoveEventHandler</a></div><div class="ttdeci">static void RemoveEventHandler(Event::Handler handler)</div><div class="ttdoc">Unregisters a previously registered receiver. It is an error to unregister a receiver that was not re...</div><div class="ttdef"><b>Definition:</b> Clock.h:145</div></div>
@@ -218,7 +219,7 @@ $(document).ready(function(){initNavTree('dd/dba/_clock_8h_source.htm','../../')
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_2ca30144367a1d3c7745a014e5802100.htm">Time</a></li><li class="navelem"><b>Clock.h</b></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:21:57 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:18 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

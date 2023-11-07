@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -95,10 +95,10 @@ $(document).ready(function(){initNavTree('d9/dca/_range_view_8h_source.htm','../
 <div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="../../d4/daf/classez_range_view.htm">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d4/daf/classez_range_view.htm">ezRangeView</a></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keyword">typedef</span> <a class="code" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>&lt;IteratorType()&gt; <a class="code" href="../../d5/d68/structez_delegate.htm">BeginCallback</a>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keyword">typedef</span> <a class="code" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>&lt;IteratorType()&gt; <a class="code" href="../../d5/d68/structez_delegate.htm">EndCallback</a>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keyword">typedef</span> <a class="code" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>&lt;void(IteratorType&amp;)&gt; <a class="code" href="../../d5/d68/structez_delegate.htm">NextCallback</a>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keyword">typedef</span> <a class="code" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>&lt;ValueType(<span class="keyword">const</span> IteratorType&amp;)&gt; <a class="code" href="../../d5/d68/structez_delegate.htm">ValueCallback</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keyword">using</span> <a class="code" href="../../d5/d68/structez_delegate.htm">BeginCallback</a> = <a class="code" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>&lt;IteratorType()&gt;;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keyword">using</span> <a class="code" href="../../d5/d68/structez_delegate.htm">EndCallback</a> = <a class="code" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>&lt;IteratorType()&gt;;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keyword">using</span> <a class="code" href="../../d5/d68/structez_delegate.htm">NextCallback</a> = <a class="code" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>&lt;void(IteratorType&amp;)&gt;;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keyword">using</span> <a class="code" href="../../d5/d68/structez_delegate.htm">ValueCallback</a> = <a class="code" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>&lt;ValueType(<span class="keyword">const</span> IteratorType&amp;)&gt;;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  EZ_ALWAYS_INLINE <a class="code" href="../../d4/daf/classez_range_view.htm#a8580a6ba9a4d286cb86e37ca8549838f">ezRangeView</a>(<a class="code" href="../../d5/d68/structez_delegate.htm">BeginCallback</a> begin, <a class="code" href="../../d5/d68/structez_delegate.htm">EndCallback</a> end, <a class="code" href="../../d5/d68/structez_delegate.htm">NextCallback</a> next, <a class="code" href="../../d5/d68/structez_delegate.htm">ValueCallback</a> value);</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
@@ -106,10 +106,10 @@ $(document).ready(function(){initNavTree('d9/dca/_range_view_8h_source.htm','../
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  {</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    EZ_DECLARE_POD_TYPE();</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">typedef</span> std::forward_iterator_tag iterator_category;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="../../d9/dd1/structez_range_view_1_1_const_iterator.htm">ConstIterator</a> <a class="code" href="../../d9/dd1/structez_range_view_1_1_const_iterator.htm">value_type</a>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="../../d9/dd1/structez_range_view_1_1_const_iterator.htm">ConstIterator</a>* <a class="code" href="../../d9/dd1/structez_range_view_1_1_const_iterator.htm">pointer</a>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="../../d9/dd1/structez_range_view_1_1_const_iterator.htm">ConstIterator</a>&amp; <a class="code" href="../../d9/dd1/structez_range_view_1_1_const_iterator.htm">reference</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">using</span> iterator_category = std::forward_iterator_tag;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">using</span> <a class="code" href="../../d9/dd1/structez_range_view_1_1_const_iterator.htm">value_type</a> = <a class="code" href="../../d9/dd1/structez_range_view_1_1_const_iterator.htm">ConstIterator</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">using</span> <a class="code" href="../../d9/dd1/structez_range_view_1_1_const_iterator.htm">pointer</a> = <a class="code" href="../../d9/dd1/structez_range_view_1_1_const_iterator.htm">ConstIterator</a>*;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">using</span> <a class="code" href="../../d9/dd1/structez_range_view_1_1_const_iterator.htm">reference</a> = <a class="code" href="../../d9/dd1/structez_range_view_1_1_const_iterator.htm">ConstIterator</a>&amp;;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    EZ_ALWAYS_INLINE <a class="code" href="../../d9/dd1/structez_range_view_1_1_const_iterator.htm">ConstIterator</a>(<span class="keyword">const</span> <a class="code" href="../../d9/dd1/structez_range_view_1_1_const_iterator.htm">ConstIterator</a>&amp; rhs) = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    EZ_FORCE_INLINE <span class="keywordtype">void</span> Next();</div>
@@ -131,10 +131,10 @@ $(document).ready(function(){initNavTree('d9/dca/_range_view_8h_source.htm','../
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  {</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    EZ_DECLARE_POD_TYPE();</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">typedef</span> std::forward_iterator_tag iterator_category;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="../../da/d51/structez_range_view_1_1_iterator.htm">Iterator</a> <a class="code" href="../../d9/dd1/structez_range_view_1_1_const_iterator.htm">value_type</a>;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="../../da/d51/structez_range_view_1_1_iterator.htm">Iterator</a>* <a class="code" href="../../d9/dd1/structez_range_view_1_1_const_iterator.htm">pointer</a>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="../../da/d51/structez_range_view_1_1_iterator.htm">Iterator</a>&amp; <a class="code" href="../../d9/dd1/structez_range_view_1_1_const_iterator.htm">reference</a>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">using</span> iterator_category = std::forward_iterator_tag;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">using</span> <a class="code" href="../../d9/dd1/structez_range_view_1_1_const_iterator.htm">value_type</a> = <a class="code" href="../../da/d51/structez_range_view_1_1_iterator.htm">Iterator</a>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">using</span> <a class="code" href="../../d9/dd1/structez_range_view_1_1_const_iterator.htm">pointer</a> = <a class="code" href="../../da/d51/structez_range_view_1_1_iterator.htm">Iterator</a>*;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">using</span> <a class="code" href="../../d9/dd1/structez_range_view_1_1_const_iterator.htm">reference</a> = <a class="code" href="../../da/d51/structez_range_view_1_1_iterator.htm">Iterator</a>&amp;;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">using</span> ConstIterator::Value;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    EZ_ALWAYS_INLINE <a class="code" href="../../da/d51/structez_range_view_1_1_iterator.htm">Iterator</a>(<span class="keyword">const</span> <a class="code" href="../../da/d51/structez_range_view_1_1_iterator.htm">Iterator</a>&amp; rhs) = <span class="keywordflow">default</span>;</div>
@@ -202,7 +202,7 @@ $(document).ready(function(){initNavTree('d9/dca/_range_view_8h_source.htm','../
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astructez_range_view_1_1_const_iterator_htm"><div class="ttname"><a href="../../d9/dd1/structez_range_view_1_1_const_iterator.htm">ezRangeView::ConstIterator</a></div><div class="ttdoc">Const iterator, don't use directly, use ranged based for loops or call begin() end().</div><div class="ttdef"><b>Definition:</b> RangeView.h:35</div></div>
-<div class="ttc" id="astructez_delegate_htm"><div class="ttname"><a href="../../d5/d68/structez_delegate.htm">ezDelegate</a></div><div class="ttdoc">A generic delegate class which supports static functions and member functions.</div><div class="ttdef"><b>Definition:</b> Delegate.h:75</div></div>
+<div class="ttc" id="astructez_delegate_htm"><div class="ttname"><a href="../../d5/d68/structez_delegate.htm">ezDelegate&lt; IteratorType()&gt;</a></div></div>
 <div class="ttc" id="aclassez_range_view_htm"><div class="ttname"><a href="../../d4/daf/classez_range_view.htm">ezRangeView</a></div><div class="ttdoc">This class uses delegates to define a range of values that can be enumerated using a forward iterator...</div><div class="ttdef"><b>Definition:</b> RangeView.h:23</div></div>
 <div class="ttc" id="astructez_range_view_1_1_iterator_htm"><div class="ttname"><a href="../../da/d51/structez_range_view_1_1_iterator.htm">ezRangeView::Iterator</a></div><div class="ttdoc">Iterator, don't use directly, use ranged based for loops or call begin() end().</div><div class="ttdef"><b>Definition:</b> RangeView.h:61</div></div>
 <div class="ttc" id="aclassez_range_view_htm_a8580a6ba9a4d286cb86e37ca8549838f"><div class="ttname"><a href="../../d4/daf/classez_range_view.htm#a8580a6ba9a4d286cb86e37ca8549838f">ezRangeView::ezRangeView</a></div><div class="ttdeci">EZ_ALWAYS_INLINE ezRangeView(BeginCallback begin, EndCallback end, NextCallback next, ValueCallback value)</div><div class="ttdoc">Initializes the ezRangeView with the delegates used to enumerate the range.</div><div class="ttdef"><b>Definition:</b> RangeView_inl.h:3</div></div>
@@ -210,7 +210,7 @@ $(document).ready(function(){initNavTree('d9/dca/_range_view_8h_source.htm','../
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_f95f7c440efc771b227d40e9293549bd.htm">Types</a></li><li class="navelem"><b>RangeView.h</b></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:21:57 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:19 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -101,9 +101,9 @@ $(document).ready(function(){initNavTree('d0/d2e/_unicode_utils_8h_source.htm','
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keyword">static</span> constexpr T* GetMaxStringEnd();</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="../../d9/d32/classez_unicode_utils.htm#ab4577c154bb2c133203d2b23ca486172">   18</a></span>&#160;  <span class="keyword">static</span> constexpr ezUInt16 Utf16BomLE = 0xfffe;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="../../d9/d32/classez_unicode_utils.htm#ab4577c154bb2c133203d2b23ca486172">   18</a></span>&#160;  <span class="keyword">static</span> constexpr ezUInt16 Utf16BomLE = 0xfeff;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="../../d9/d32/classez_unicode_utils.htm#a9a4078cb0ffb999aea8f9816dd30b0f6">   21</a></span>&#160;  <span class="keyword">static</span> constexpr ezUInt16 Utf16BomBE = 0xfeff;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="../../d9/d32/classez_unicode_utils.htm#a9a4078cb0ffb999aea8f9816dd30b0f6">   21</a></span>&#160;  <span class="keyword">static</span> constexpr ezUInt16 Utf16BomBE = 0xfffe;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">bool</span> IsASCII(ezUInt32 uiChar); <span class="comment">// [tested]</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
@@ -165,10 +165,12 @@ $(document).ready(function(){initNavTree('d0/d2e/_unicode_utils_8h_source.htm','
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    Container* m_pContainer;</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  };</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;};</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="preprocessor">#include &lt;Foundation/Strings/Implementation/UnicodeUtils_inl.h&gt;</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Container&gt;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">bool</span> RepairNonUtf8Text(<span class="keyword">const</span> <span class="keywordtype">char</span>* pStartData, <span class="keyword">const</span> <span class="keywordtype">char</span>* pEndData, Container&amp; out_result);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;};</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="preprocessor">#include &lt;Foundation/Strings/Implementation/UnicodeUtils_inl.h&gt;</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astructez_unicode_utils_1_1_utf_inserter_htm"><div class="ttname"><a href="../../da/d97/structez_unicode_utils_1_1_utf_inserter.htm">ezUnicodeUtils::UtfInserter</a></div><div class="ttdoc">[internal] Small helper class to append bytes to some arbitrary container. Used for Utf8 string build...</div><div class="ttdef"><b>Definition:</b> UnicodeUtils.h:109</div></div>
@@ -177,7 +179,7 @@ $(document).ready(function(){initNavTree('d0/d2e/_unicode_utils_8h_source.htm','
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_b52479c911fe9a42767226b3387b3a02.htm">Strings</a></li><li class="navelem"><b>UnicodeUtils.h</b></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:21:57 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:18 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

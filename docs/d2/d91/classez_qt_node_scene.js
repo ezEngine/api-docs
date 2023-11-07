@@ -17,6 +17,7 @@ var classez_qt_node_scene =
     [ "GetConnectionStyle", "d2/d91/classez_qt_node_scene.htm#a7f3b9e95df9e7e1d9ace9ab36ab1f691", null ],
     [ "GetDocument", "d2/d91/classez_qt_node_scene.htm#a3c8e767f2a2d0c6724179329b14e04d8", null ],
     [ "GetDocumentNodeManager", "d2/d91/classez_qt_node_scene.htm#a8a59febaa0359ec08ac5e9a3407a8173", null ],
+    [ "InitScene", "d2/d91/classez_qt_node_scene.htm#ae43d1c719e1db829fc0e149001cd3aec", null ],
     [ "keyPressEvent", "d2/d91/classez_qt_node_scene.htm#a061e933a703573b0610dc9e85ff8d512", null ],
     [ "mouseMoveEvent", "d2/d91/classez_qt_node_scene.htm#a83ced752292f5b303d3eb18926dccad1", null ],
     [ "mousePressEvent", "d2/d91/classez_qt_node_scene.htm#a64686e20ab581739e49c3facebdb5ca3", null ],
@@ -25,7 +26,6 @@ var classez_qt_node_scene =
     [ "RemoveSelectedNodesAction", "d2/d91/classez_qt_node_scene.htm#afb1fc76d007e7b005bffbbadb1e59c2b", null ],
     [ "SetConnectionDecorationFlags", "d2/d91/classez_qt_node_scene.htm#a2f178ffc01ef02cc9aa9be55bf48ee82", null ],
     [ "SetConnectionStyle", "d2/d91/classez_qt_node_scene.htm#aafd62fb2efa58ba2de06bc81fb765029", null ],
-    [ "SetDocumentNodeManager", "d2/d91/classez_qt_node_scene.htm#a32b033889c4982915e2424bca764a6ad", null ],
     [ "m_Connections", "d2/d91/classez_qt_node_scene.htm#ae571d3944eb9bb59e52db9b65bcbc320", null ],
     [ "m_Nodes", "d2/d91/classez_qt_node_scene.htm#a3a7bd619533a1f991526a971a00d7ca4", null ],
     [ "m_pManager", "d2/d91/classez_qt_node_scene.htm#ac63b507c19d8de6bd33fa0149592120f", null ]

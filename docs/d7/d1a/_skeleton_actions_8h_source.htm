@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -102,7 +102,7 @@ $(document).ready(function(){initNavTree('d7/d1a/_skeleton_actions_8h_source.htm
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> RegisterActions();</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> UnregisterActions();</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> MapActions(<span class="keyword">const</span> <span class="keywordtype">char</span>* szMapping, <span class="keyword">const</span> <span class="keywordtype">char</span>* szPath);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> MapActions(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sMapping);</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d6/da8/classez_action_descriptor_handle.htm">ezActionDescriptorHandle</a> s_hCategory;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d6/da8/classez_action_descriptor_handle.htm">ezActionDescriptorHandle</a> s_hRenderBones;</div>
@@ -110,34 +110,36 @@ $(document).ready(function(){initNavTree('d7/d1a/_skeleton_actions_8h_source.htm
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d6/da8/classez_action_descriptor_handle.htm">ezActionDescriptorHandle</a> s_hRenderJoints;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d6/da8/classez_action_descriptor_handle.htm">ezActionDescriptorHandle</a> s_hRenderSwingLimits;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d6/da8/classez_action_descriptor_handle.htm">ezActionDescriptorHandle</a> s_hRenderTwistLimits;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;};</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../dc/dd5/classez_skeleton_action.htm">   26</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../dc/dd5/classez_skeleton_action.htm">ezSkeletonAction</a> : <span class="keyword">public</span> <a class="code" href="../../d2/ddd/classez_button_action.htm">ezButtonAction</a></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  EZ_ADD_DYNAMIC_REFLECTION(<a class="code" href="../../dc/dd5/classez_skeleton_action.htm">ezSkeletonAction</a>, <a class="code" href="../../d2/ddd/classez_button_action.htm">ezButtonAction</a>);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">enum class</span> ActionType</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    RenderBones,</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    RenderColliders,</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    RenderJoints,</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    RenderSwingLimits,</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    RenderTwistLimits,</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  };</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="../../dc/dd5/classez_skeleton_action.htm">ezSkeletonAction</a>(<span class="keyword">const</span> <a class="code" href="../../dc/dcc/structez_action_context.htm">ezActionContext</a>&amp; context, <span class="keyword">const</span> <span class="keywordtype">char</span>* szName, ActionType type);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  ~<a class="code" href="../../dc/dd5/classez_skeleton_action.htm">ezSkeletonAction</a>();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> Execute(<span class="keyword">const</span> <a class="code" href="../../de/de6/classez_variant.htm">ezVariant</a>&amp; value) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d6/da8/classez_action_descriptor_handle.htm">ezActionDescriptorHandle</a> s_hRenderPreviewMesh;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;};</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="../../dc/dd5/classez_skeleton_action.htm">   27</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../dc/dd5/classez_skeleton_action.htm">ezSkeletonAction</a> : <span class="keyword">public</span> <a class="code" href="../../d2/ddd/classez_button_action.htm">ezButtonAction</a></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  EZ_ADD_DYNAMIC_REFLECTION(<a class="code" href="../../dc/dd5/classez_skeleton_action.htm">ezSkeletonAction</a>, <a class="code" href="../../d2/ddd/classez_button_action.htm">ezButtonAction</a>);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">enum class</span> ActionType</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    RenderBones,</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    RenderColliders,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    RenderJoints,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    RenderSwingLimits,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    RenderTwistLimits,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    RenderPreviewMesh,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  };</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="../../dc/dd5/classez_skeleton_action.htm">ezSkeletonAction</a>(<span class="keyword">const</span> <a class="code" href="../../dc/dcc/structez_action_context.htm">ezActionContext</a>&amp; context, <span class="keyword">const</span> <span class="keywordtype">char</span>* szName, ActionType type);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  ~<a class="code" href="../../dc/dd5/classez_skeleton_action.htm">ezSkeletonAction</a>();</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordtype">void</span> AssetEventHandler(<span class="keyword">const</span> <a class="code" href="../../d2/de3/structez_skeleton_asset_event.htm">ezSkeletonAssetEvent</a>&amp; e);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordtype">void</span> UpdateState();</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <a class="code" href="../../d2/d34/classez_skeleton_asset_document.htm">ezSkeletonAssetDocument</a>* m_pSkeletonpDocument = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  ActionType m_Type;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;};</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> Execute(<span class="keyword">const</span> <a class="code" href="../../de/de6/classez_variant.htm">ezVariant</a>&amp; value) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordtype">void</span> AssetEventHandler(<span class="keyword">const</span> <a class="code" href="../../d2/de3/structez_skeleton_asset_event.htm">ezSkeletonAssetEvent</a>&amp; e);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordtype">void</span> UpdateState();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <a class="code" href="../../d2/d34/classez_skeleton_asset_document.htm">ezSkeletonAssetDocument</a>* m_pSkeletonpDocument = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  ActionType m_Type;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_skeleton_asset_document_htm"><div class="ttname"><a href="../../d2/d34/classez_skeleton_asset_document.htm">ezSkeletonAssetDocument</a></div><div class="ttdef"><b>Definition:</b> SkeletonAsset.h:24</div></div>
@@ -145,14 +147,15 @@ $(document).ready(function(){initNavTree('d7/d1a/_skeleton_actions_8h_source.htm
 <div class="ttc" id="aclassez_button_action_htm"><div class="ttname"><a href="../../d2/ddd/classez_button_action.htm">ezButtonAction</a></div><div class="ttdef"><b>Definition:</b> BaseActions.h:158</div></div>
 <div class="ttc" id="aclassez_action_descriptor_handle_htm"><div class="ttname"><a href="../../d6/da8/classez_action_descriptor_handle.htm">ezActionDescriptorHandle</a></div><div class="ttdoc">Handle for a ezAction.</div><div class="ttdef"><b>Definition:</b> Action.h:26</div></div>
 <div class="ttc" id="astructez_skeleton_asset_event_htm"><div class="ttname"><a href="../../d2/de3/structez_skeleton_asset_event.htm">ezSkeletonAssetEvent</a></div><div class="ttdef"><b>Definition:</b> SkeletonAsset.h:12</div></div>
-<div class="ttc" id="astructez_action_context_htm"><div class="ttname"><a href="../../dc/dcc/structez_action_context.htm">ezActionContext</a></div><div class="ttdef"><b>Definition:</b> Action.h:65</div></div>
-<div class="ttc" id="aclassez_variant_htm"><div class="ttname"><a href="../../de/de6/classez_variant.htm">ezVariant</a></div><div class="ttdoc">ezVariant is a class that can store different types of variables, which is useful in situations where...</div><div class="ttdef"><b>Definition:</b> Variant.h:45</div></div>
-<div class="ttc" id="aclassez_skeleton_action_htm"><div class="ttname"><a href="../../dc/dd5/classez_skeleton_action.htm">ezSkeletonAction</a></div><div class="ttdef"><b>Definition:</b> SkeletonActions.h:26</div></div>
+<div class="ttc" id="astructez_action_context_htm"><div class="ttname"><a href="../../dc/dcc/structez_action_context.htm">ezActionContext</a></div><div class="ttdef"><b>Definition:</b> Action.h:66</div></div>
+<div class="ttc" id="aclassez_variant_htm"><div class="ttname"><a href="../../de/de6/classez_variant.htm">ezVariant</a></div><div class="ttdoc">ezVariant is a class that can store different types of variables, which is useful in situations where...</div><div class="ttdef"><b>Definition:</b> Variant.h:46</div></div>
+<div class="ttc" id="aclassez_skeleton_action_htm"><div class="ttname"><a href="../../dc/dd5/classez_skeleton_action.htm">ezSkeletonAction</a></div><div class="ttdef"><b>Definition:</b> SkeletonActions.h:27</div></div>
+<div class="ttc" id="astructez_string_view_htm"><div class="ttname"><a href="../../de/db8/structez_string_view.htm">ezStringView</a></div><div class="ttdoc">ezStringView represent a read-only sub-string of a larger string, as it can store a dedicated string ...</div><div class="ttdef"><b>Definition:</b> StringView.h:23</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_c3dd6abea2527457e93dbb576186601d.htm">EditorPlugins</a></li><li class="navelem"><a class="el" href="../../dir_f73160fc1de82bd0c489b7d6957db993.htm">Assets</a></li><li class="navelem"><a class="el" href="../../dir_36797f34b63cd6b13411dd97d5ce0a9f.htm">EditorPluginAssets</a></li><li class="navelem"><a class="el" href="../../dir_f15f85e4050af7c92e234d8b2d9c20bf.htm">SkeletonAsset</a></li><li class="navelem"><b>SkeletonActions.h</b></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:21:50 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:12 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

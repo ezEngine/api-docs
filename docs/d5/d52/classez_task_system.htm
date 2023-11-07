@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -216,9 +216,9 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
 Misc</h2></td></tr>
-<tr class="memitem:a25dfa3ed1cd2ed8ad6f988ab8670ba01"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d52/classez_task_system.htm#a25dfa3ed1cd2ed8ad6f988ab8670ba01">SetTargetFrameTime</a> (<a class="el" href="../../d3/d90/structez_time.htm">ezTime</a> targetFrameTime=<a class="el" href="../../d3/d90/structez_time.htm#a89ae1d4e0f52df54c2b2f344939662c2">ezTime::Seconds</a>(1.0/40.0))</td></tr>
-<tr class="memdesc:a25dfa3ed1cd2ed8ad6f988ab8670ba01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the target frame time that is supposed to not be exceeded.  <a href="../../d5/d52/classez_task_system.htm#a25dfa3ed1cd2ed8ad6f988ab8670ba01">More...</a><br /></td></tr>
-<tr class="separator:a25dfa3ed1cd2ed8ad6f988ab8670ba01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e8d9822680e238e59c4754b94e991ba"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d52/classez_task_system.htm#a6e8d9822680e238e59c4754b94e991ba">SetTargetFrameTime</a> (<a class="el" href="../../d3/d90/structez_time.htm">ezTime</a> targetFrameTime=<a class="el" href="../../d3/d90/structez_time.htm#a7810d213329178ba8332dedc36d0166d">ezTime::MakeFromSeconds</a>(1.0/40.0))</td></tr>
+<tr class="memdesc:a6e8d9822680e238e59c4754b94e991ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the target frame time that is supposed to not be exceeded.  <a href="../../d5/d52/classez_task_system.htm#a6e8d9822680e238e59c4754b94e991ba">More...</a><br /></td></tr>
+<tr class="separator:a6e8d9822680e238e59c4754b94e991ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This system allows to automatically distribute tasks onto a number of worker threads. </p>
@@ -410,7 +410,7 @@ Misc</h2></td></tr>
 
 <p>Call this function once at the end of a frame. It will ensure that all tasks for 'this frame' get finished properly. </p>
 <p>Calling this function is crucial for several reasons. It is the central function to execute 'main thread' tasks. Otherwise these tasks might never get executed. It also changes the priority of all 'next frame' tasks to 'this frame', so that those tasks are guaranteed to get finished when 'FinishFrameTasks' is called the next time.</p>
-<p>Finally this function executes tasks with the priority 'SomeFrameMainThread' as long as the target frame time is not exceeded. You can configure this with <a class="el" href="../../d5/d52/classez_task_system.htm#a25dfa3ed1cd2ed8ad6f988ab8670ba01" title="Sets the target frame time that is supposed to not be exceeded.">SetTargetFrameTime()</a>, which defines how long (in milliseconds) the frame is allowed to be. As long as that time is not exceeded, additional 'SomeFrameMainThread' tasks will be executed. If the frame time spikes for a few frames, no such tasks will be executed, to prevent making it worse. However, if the frame time stays high over a longer period, 'FinishFrameTasks' will execute 'SomeFrameMainThread' tasks every once in a while, to guarantee some progress.</p>
+<p>Finally this function executes tasks with the priority 'SomeFrameMainThread' as long as the target frame time is not exceeded. You can configure this with <a class="el" href="../../d5/d52/classez_task_system.htm#a6e8d9822680e238e59c4754b94e991ba" title="Sets the target frame time that is supposed to not be exceeded.">SetTargetFrameTime()</a>, which defines how long (in milliseconds) the frame is allowed to be. As long as that time is not exceeded, additional 'SomeFrameMainThread' tasks will be executed. If the frame time spikes for a few frames, no such tasks will be executed, to prevent making it worse. However, if the frame time stays high over a longer period, 'FinishFrameTasks' will execute 'SomeFrameMainThread' tasks every once in a while, to guarantee some progress.</p>
 <dl class="section note"><dt>Note</dt><dd>After this function returns all tasks of priority 'ThisFrameMainThread' are finished. All tasks of priority 'EarlyThisFrame' up to 'LateThisFrame' are either finished or currently running on some thread, so they will be finished soon. There is however no guarantee that they are indeed all finished, as that would introduce unnecessary stalls. </dd></dl>
 
 </div>
@@ -681,8 +681,8 @@ template&lt;typename ElemType , typename Callback &gt; </div>
 
 </div>
 </div>
-<a id="a25dfa3ed1cd2ed8ad6f988ab8670ba01"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a25dfa3ed1cd2ed8ad6f988ab8670ba01">&#9670;&nbsp;</a></span>SetTargetFrameTime()</h2>
+<a id="a6e8d9822680e238e59c4754b94e991ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e8d9822680e238e59c4754b94e991ba">&#9670;&nbsp;</a></span>SetTargetFrameTime()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -694,7 +694,7 @@ template&lt;typename ElemType , typename Callback &gt; </div>
           <td class="memname">void ezTaskSystem::SetTargetFrameTime </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="../../d3/d90/structez_time.htm">ezTime</a>&#160;</td>
-          <td class="paramname"><em>targetFrameTime</em> = <code><a class="el" href="../../d3/d90/structez_time.htm#a89ae1d4e0f52df54c2b2f344939662c2">ezTime::Seconds</a>(1.0&#160;/&#160;40.0)</code></td><td>)</td>
+          <td class="paramname"><em>targetFrameTime</em> = <code><a class="el" href="../../d3/d90/structez_time.htm#a7810d213329178ba8332dedc36d0166d">ezTime::MakeFromSeconds</a>(1.0&#160;/&#160;40.0)</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -824,7 +824,7 @@ template&lt;typename ElemType , typename Callback &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d5/d52/classez_task_system.htm">ezTaskSystem</a></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:22:08 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:28 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

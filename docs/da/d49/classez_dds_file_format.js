@@ -1,8 +1,8 @@
 var classez_dds_file_format =
 [
-    [ "CanReadFileType", "da/d49/classez_dds_file_format.htm#a0b07e2b74f28e1db2736d05e5df9eeaf", null ],
-    [ "CanWriteFileType", "da/d49/classez_dds_file_format.htm#aba5081dfb774341f8cf80243e2d44174", null ],
-    [ "ReadImage", "da/d49/classez_dds_file_format.htm#a656b7495cf6298cf0437aef9be5674a1", null ],
-    [ "ReadImageHeader", "da/d49/classez_dds_file_format.htm#a92bf7d59dad26c4467e836c77fc5a684", null ],
-    [ "WriteImage", "da/d49/classez_dds_file_format.htm#a53ce3173e6d6d93c0116cdb9e8465879", null ]
+    [ "CanReadFileType", "da/d49/classez_dds_file_format.htm#af84b100cc231358ee4c71b22927f5ca9", null ],
+    [ "CanWriteFileType", "da/d49/classez_dds_file_format.htm#ab0a297548779f540c755ccc9c7162ab2", null ],
+    [ "ReadImage", "da/d49/classez_dds_file_format.htm#ad9dc9610a714e63eed34c3bc8d429112", null ],
+    [ "ReadImageHeader", "da/d49/classez_dds_file_format.htm#a6ee11f580dc43faad14a161286960759", null ],
+    [ "WriteImage", "da/d49/classez_dds_file_format.htm#ab7cb8746876e449268c8d9ad9a0af90b", null ]
 ];

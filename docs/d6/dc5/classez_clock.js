@@ -1,10 +1,10 @@
 var classez_clock =
 [
     [ "EventData", "d5/d1a/structez_clock_1_1_event_data.htm", "d5/d1a/structez_clock_1_1_event_data" ],
-    [ "Event", "d6/dc5/classez_clock.htm#a6e36c2f7209acac6f42b6df3a5d58323", null ],
-    [ "ezClock", "d6/dc5/classez_clock.htm#a5ca8b8a7af1cf5430adc7ab470643fa0", null ],
+    [ "Event", "d6/dc5/classez_clock.htm#aa4e7b3dbe3a620e90dbff7d80ab749da", null ],
+    [ "ezClock", "d6/dc5/classez_clock.htm#ac677b037ede104b07a94934fef85231a", null ],
     [ "GetAccumulatedTime", "d6/dc5/classez_clock.htm#a8f5e2055f7b140728fc7d5a1493d8934", null ],
-    [ "GetClockName", "d6/dc5/classez_clock.htm#af2dd73760e25079c0dc9785f6df6468f", null ],
+    [ "GetClockName", "d6/dc5/classez_clock.htm#aaba19abb38d8420f5fe815328cdc0f60", null ],
     [ "GetFixedTimeStep", "d6/dc5/classez_clock.htm#a19efa13954604bf7d7230e390d71bbb7", null ],
     [ "GetMaximumTimeStep", "d6/dc5/classez_clock.htm#ad36530f127b040fa60377c94950b73f1", null ],
     [ "GetMinimumTimeStep", "d6/dc5/classez_clock.htm#a4f4637cfab7e1c26632ff06670ddc943", null ],
@@ -16,7 +16,7 @@ var classez_clock =
     [ "Reset", "d6/dc5/classez_clock.htm#a973bf6b541313218411bb85e0a75a603", null ],
     [ "Save", "d6/dc5/classez_clock.htm#a0bcdfe934e6804c1f7ccbdca82a10133", null ],
     [ "SetAccumulatedTime", "d6/dc5/classez_clock.htm#acc67d87b1cb930701a6cd882efa7ae51", null ],
-    [ "SetClockName", "d6/dc5/classez_clock.htm#af9f5a40644c0f689f3bacb655dd9767f", null ],
+    [ "SetClockName", "d6/dc5/classez_clock.htm#ae336886e5e66d181a4e6b07b6e655ed6", null ],
     [ "SetFixedTimeStep", "d6/dc5/classez_clock.htm#a5819d7bd9a6dc8e155d02a49b990ebc8", null ],
     [ "SetMaximumTimeStep", "d6/dc5/classez_clock.htm#af8e9294bb143b2f3e7287f69852ddc68", null ],
     [ "SetMinimumTimeStep", "d6/dc5/classez_clock.htm#ad5dd7f9c293f055ba3874e0052bf8563", null ],

@@ -36,6 +36,8 @@ var structez_variant_type =
       [ "Uuid", "da/d6c/structez_variant_type.htm#a91ecf53decb31d57981c71043fa30299af6d5254d858a4202515486a4917b3a1b", null ],
       [ "Angle", "da/d6c/structez_variant_type.htm#a91ecf53decb31d57981c71043fa30299ab023cd04e8fa6cf088c564fb64ca3b2d", null ],
       [ "ColorGamma", "da/d6c/structez_variant_type.htm#a91ecf53decb31d57981c71043fa30299acf0face2f7294e78788cedd137e7acc5", null ],
+      [ "HashedString", "da/d6c/structez_variant_type.htm#a91ecf53decb31d57981c71043fa30299a4f2c3b6f7fa7ed4b569becf000c50a10", null ],
+      [ "TempHashedString", "da/d6c/structez_variant_type.htm#a91ecf53decb31d57981c71043fa30299a9e2d0b789ad6dddf2345ae1b5ae982c4", null ],
       [ "LastStandardType", "da/d6c/structez_variant_type.htm#a91ecf53decb31d57981c71043fa30299a65f1065c5b4b6eb79c9de3d103a644d2", null ],
       [ "FirstExtendedType", "da/d6c/structez_variant_type.htm#a91ecf53decb31d57981c71043fa30299a2c4594b4e76d5711d69d9d6a3ec16895", null ],
       [ "VariantArray", "da/d6c/structez_variant_type.htm#a91ecf53decb31d57981c71043fa30299ad690061d3f7ef191a17c093b2bf19836", null ],

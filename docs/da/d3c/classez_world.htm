@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -101,9 +101,15 @@ $(document).ready(function(){initNavTree('da/d3c/classez_world.htm','../../'); i
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:ace11c57b9f4c0615ea87871def0a2f53"><td class="memItemLeft" align="right" valign="top"><a id="ace11c57b9f4c0615ea87871def0a2f53"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>ReferenceResolver</b> = <a class="el" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>&lt; <a class="el" href="../../d6/d5c/structez_game_object_handle.htm">ezGameObjectHandle</a>(const void *, <a class="el" href="../../df/d34/structez_component_handle.htm">ezComponentHandle</a> hThis, const char *szProperty)&gt;</td></tr>
-<tr class="separator:ace11c57b9f4c0615ea87871def0a2f53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85fab0ebd84cc9b76ec29b1196750f97"><td class="memItemLeft" align="right" valign="top"><a id="a85fab0ebd84cc9b76ec29b1196750f97"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>ReferenceResolver</b> = <a class="el" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>&lt; <a class="el" href="../../d6/d5c/structez_game_object_handle.htm">ezGameObjectHandle</a>(const void *, <a class="el" href="../../df/d34/structez_component_handle.htm">ezComponentHandle</a> hThis, <a class="el" href="../../de/db8/structez_string_view.htm">ezStringView</a> sProperty)&gt;</td></tr>
+<tr class="separator:a85fab0ebd84cc9b76ec29b1196750f97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac90980ce5e28b4134e0caffb7ce3bac0"><td class="memItemLeft" align="right" valign="top"><a id="ac90980ce5e28b4134e0caffb7ce3bac0"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>ResourceReloadContext</b> = ezInternal::WorldData::ResourceReloadContext</td></tr>
+<tr class="separator:ac90980ce5e28b4134e0caffb7ce3bac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6705258c067fe923ed228495ffd9f5d2"><td class="memItemLeft" align="right" valign="top"><a id="a6705258c067fe923ed228495ffd9f5d2"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>ResourceReloadFunc</b> = <a class="el" href="../../d5/d68/structez_delegate.htm">ezInternal::WorldData::ResourceReloadFunc</a></td></tr>
+<tr class="separator:a6705258c067fe923ed228495ffd9f5d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -139,6 +145,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 const <a class="el" href="../../de/dc1/classez_shared_ptr.htm">ezSharedPtr</a>&lt; <a class="el" href="../../dd/d2b/classez_task.htm">ezTask</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d3c/classez_world.htm#a4a70683d477003530ef84419914d47b3">GetUpdateTask</a> ()</td></tr>
 <tr class="memdesc:a4a70683d477003530ef84419914d47b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a task implementation that calls Update on this world. <br /></td></tr>
 <tr class="separator:a4a70683d477003530ef84419914d47b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af35337ba3e24226ef36670cb9ad61916"><td class="memItemLeft" align="right" valign="top"><a id="af35337ba3e24226ef36670cb9ad61916"></a>
+ezUInt32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d3c/classez_world.htm#af35337ba3e24226ef36670cb9ad61916">GetUpdateCounter</a> () const</td></tr>
+<tr class="memdesc:af35337ba3e24226ef36670cb9ad61916"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of update calls. Can be used to determine whether an operation has already been done during a frame. <br /></td></tr>
+<tr class="separator:af35337ba3e24226ef36670cb9ad61916"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a321b3e22434766cb4389d4e3957d8524"><td class="memItemLeft" align="right" valign="top"><a id="a321b3e22434766cb4389d4e3957d8524"></a>
 <a class="el" href="../../d1/dc1/classez_spatial_system.htm">ezSpatialSystem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d3c/classez_world.htm#a321b3e22434766cb4389d4e3957d8524">GetSpatialSystem</a> ()</td></tr>
 <tr class="memdesc:a321b3e22434766cb4389d4e3957d8524"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the spatial system that is associated with this world. <br /></td></tr>
@@ -212,6 +222,13 @@ void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="..
 <tr class="separator:a9b24464159d50dfa8e27299795b5ad3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1d4233230717e6d98eaf0888780d5ab"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d5/d68/structez_delegate.htm">ReferenceResolver</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d3c/classez_world.htm#aa1d4233230717e6d98eaf0888780d5ab">GetGameObjectReferenceResolver</a> () const</td></tr>
 <tr class="separator:aa1d4233230717e6d98eaf0888780d5ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2faaa52ae9301f4b834d6bf3f5f853b6"><td class="memItemLeft" align="right" valign="top"><a id="a2faaa52ae9301f4b834d6bf3f5f853b6"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d3c/classez_world.htm#a2faaa52ae9301f4b834d6bf3f5f853b6">AddResourceReloadFunction</a> (<a class="el" href="../../d8/dac/classez_typeless_resource_handle.htm">ezTypelessResourceHandle</a> hResource, <a class="el" href="../../df/d34/structez_component_handle.htm">ezComponentHandle</a> hComponent, void *pUserData, <a class="el" href="../../d5/d68/structez_delegate.htm">ResourceReloadFunc</a> function)</td></tr>
+<tr class="memdesc:a2faaa52ae9301f4b834d6bf3f5f853b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a function that is called when the given resource has been reloaded. <br /></td></tr>
+<tr class="separator:a2faaa52ae9301f4b834d6bf3f5f853b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a312259aa783df40895af5dfee9bedc33"><td class="memItemLeft" align="right" valign="top"><a id="a312259aa783df40895af5dfee9bedc33"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>RemoveResourceReloadFunction</b> (<a class="el" href="../../d8/dac/classez_typeless_resource_handle.htm">ezTypelessResourceHandle</a> hResource, <a class="el" href="../../df/d34/structez_component_handle.htm">ezComponentHandle</a> hComponent, void *pUserData)</td></tr>
+<tr class="separator:a312259aa783df40895af5dfee9bedc33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2e305411c8f872e7bd22d0fcf1f7280"><td class="memTemplParams" colspan="2"><a id="ae2e305411c8f872e7bd22d0fcf1f7280"></a>
 template&lt;typename ModuleType &gt; </td></tr>
 <tr class="memitem:ae2e305411c8f872e7bd22d0fcf1f7280"><td class="memTemplItemLeft" align="right" valign="top">EZ_ALWAYS_INLINE ModuleType *&#160;</td><td class="memTemplItemRight" valign="bottom"><b>GetOrCreateModule</b> ()</td></tr>
@@ -367,11 +384,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 <tr class="memdesc:a4966f847ef6e4dbdd4721ea67379af4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a message to all components of the receiverObject and all its children. <br /></td></tr>
 <tr class="separator:a4966f847ef6e4dbdd4721ea67379af4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad80708cbaa493ecf3a8afdd70271a4a0"><td class="memItemLeft" align="right" valign="top"><a id="ad80708cbaa493ecf3a8afdd70271a4a0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d3c/classez_world.htm#ad80708cbaa493ecf3a8afdd70271a4a0">PostMessage</a> (const <a class="el" href="../../d6/d5c/structez_game_object_handle.htm">ezGameObjectHandle</a> &amp;hReceiverObject, const <a class="el" href="../../dd/d22/classez_message.htm">ezMessage</a> &amp;msg, <a class="el" href="../../d3/d90/structez_time.htm">ezTime</a> delay, <a class="el" href="../../d0/d79/structez_object_msg_queue_type.htm#aafc8d4dc0bc3cb8431f8ed0dcfa1923e">ezObjectMsgQueueType::Enum</a> queueType=<a class="el" href="../../d0/d79/structez_object_msg_queue_type.htm#aafc8d4dc0bc3cb8431f8ed0dcfa1923ea82b705acdaa1a177333f4db4611dc2c9">ezObjectMsgQueueType::NextFrame</a>) const</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d3c/classez_world.htm#ad80708cbaa493ecf3a8afdd70271a4a0">PostMessage</a> (const <a class="el" href="../../d6/d5c/structez_game_object_handle.htm">ezGameObjectHandle</a> &amp;hReceiverObject, const <a class="el" href="../../dd/d22/classez_message.htm">ezMessage</a> &amp;msg, <a class="el" href="../../d3/d90/structez_time.htm">ezTime</a> delay, <a class="el" href="../../d0/d79/structez_object_msg_queue_type.htm#a5a1ec7fe76505087ad0d015b4ff3cea3">ezObjectMsgQueueType::Enum</a> queueType=<a class="el" href="../../d0/d79/structez_object_msg_queue_type.htm#a5a1ec7fe76505087ad0d015b4ff3cea3a82b705acdaa1a177333f4db4611dc2c9">ezObjectMsgQueueType::NextFrame</a>) const</td></tr>
 <tr class="memdesc:ad80708cbaa493ecf3a8afdd70271a4a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queues the message for the given phase. The message is send to the receiverObject after the given delay in the corresponding phase. <br /></td></tr>
 <tr class="separator:ad80708cbaa493ecf3a8afdd70271a4a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ec24fbe69348d416f4419f5de5c26fc"><td class="memItemLeft" align="right" valign="top"><a id="a5ec24fbe69348d416f4419f5de5c26fc"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d3c/classez_world.htm#a5ec24fbe69348d416f4419f5de5c26fc">PostMessageRecursive</a> (const <a class="el" href="../../d6/d5c/structez_game_object_handle.htm">ezGameObjectHandle</a> &amp;hReceiverObject, const <a class="el" href="../../dd/d22/classez_message.htm">ezMessage</a> &amp;msg, <a class="el" href="../../d3/d90/structez_time.htm">ezTime</a> delay, <a class="el" href="../../d0/d79/structez_object_msg_queue_type.htm#aafc8d4dc0bc3cb8431f8ed0dcfa1923e">ezObjectMsgQueueType::Enum</a> queueType=<a class="el" href="../../d0/d79/structez_object_msg_queue_type.htm#aafc8d4dc0bc3cb8431f8ed0dcfa1923ea82b705acdaa1a177333f4db4611dc2c9">ezObjectMsgQueueType::NextFrame</a>) const</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d3c/classez_world.htm#a5ec24fbe69348d416f4419f5de5c26fc">PostMessageRecursive</a> (const <a class="el" href="../../d6/d5c/structez_game_object_handle.htm">ezGameObjectHandle</a> &amp;hReceiverObject, const <a class="el" href="../../dd/d22/classez_message.htm">ezMessage</a> &amp;msg, <a class="el" href="../../d3/d90/structez_time.htm">ezTime</a> delay, <a class="el" href="../../d0/d79/structez_object_msg_queue_type.htm#a5a1ec7fe76505087ad0d015b4ff3cea3">ezObjectMsgQueueType::Enum</a> queueType=<a class="el" href="../../d0/d79/structez_object_msg_queue_type.htm#a5a1ec7fe76505087ad0d015b4ff3cea3a82b705acdaa1a177333f4db4611dc2c9">ezObjectMsgQueueType::NextFrame</a>) const</td></tr>
 <tr class="memdesc:a5ec24fbe69348d416f4419f5de5c26fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queues the message for the given phase. The message is send to the receiverObject and all its children after the given delay in the corresponding phase. <br /></td></tr>
 <tr class="separator:a5ec24fbe69348d416f4419f5de5c26fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6eda3793e41cfe714e6e982154f1a62f"><td class="memItemLeft" align="right" valign="top"><a id="a6eda3793e41cfe714e6e982154f1a62f"></a>
@@ -379,7 +396,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 <tr class="memdesc:a6eda3793e41cfe714e6e982154f1a62f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a message to the component. <br /></td></tr>
 <tr class="separator:a6eda3793e41cfe714e6e982154f1a62f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab66e471ca6672a5128962a8099a52502"><td class="memItemLeft" align="right" valign="top"><a id="ab66e471ca6672a5128962a8099a52502"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d3c/classez_world.htm#ab66e471ca6672a5128962a8099a52502">PostMessage</a> (const <a class="el" href="../../df/d34/structez_component_handle.htm">ezComponentHandle</a> &amp;hReceiverComponent, const <a class="el" href="../../dd/d22/classez_message.htm">ezMessage</a> &amp;msg, <a class="el" href="../../d3/d90/structez_time.htm">ezTime</a> delay, <a class="el" href="../../d0/d79/structez_object_msg_queue_type.htm#aafc8d4dc0bc3cb8431f8ed0dcfa1923e">ezObjectMsgQueueType::Enum</a> queueType=<a class="el" href="../../d0/d79/structez_object_msg_queue_type.htm#aafc8d4dc0bc3cb8431f8ed0dcfa1923ea82b705acdaa1a177333f4db4611dc2c9">ezObjectMsgQueueType::NextFrame</a>) const</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d3c/classez_world.htm#ab66e471ca6672a5128962a8099a52502">PostMessage</a> (const <a class="el" href="../../df/d34/structez_component_handle.htm">ezComponentHandle</a> &amp;hReceiverComponent, const <a class="el" href="../../dd/d22/classez_message.htm">ezMessage</a> &amp;msg, <a class="el" href="../../d3/d90/structez_time.htm">ezTime</a> delay, <a class="el" href="../../d0/d79/structez_object_msg_queue_type.htm#a5a1ec7fe76505087ad0d015b4ff3cea3">ezObjectMsgQueueType::Enum</a> queueType=<a class="el" href="../../d0/d79/structez_object_msg_queue_type.htm#a5a1ec7fe76505087ad0d015b4ff3cea3a82b705acdaa1a177333f4db4611dc2c9">ezObjectMsgQueueType::NextFrame</a>) const</td></tr>
 <tr class="memdesc:ab66e471ca6672a5128962a8099a52502"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queues the message for the given phase. The message is send to the receiverComponent after the given delay in the corresponding phase. <br /></td></tr>
 <tr class="separator:ab66e471ca6672a5128962a8099a52502"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf20d3920e8e27c0da71999e9ee2edac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d3c/classez_world.htm#aaf20d3920e8e27c0da71999e9ee2edac">FindEventMsgHandlers</a> (const <a class="el" href="../../dd/d22/classez_message.htm">ezMessage</a> &amp;msg, <a class="el" href="../../d6/d61/classez_game_object.htm">ezGameObject</a> *pSearchObject, <a class="el" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray</a>&lt; <a class="el" href="../../d6/d30/classez_component.htm">ezComponent</a> * &gt; &amp;out_components)</td></tr>
@@ -448,10 +465,10 @@ Object Functions</h2></td></tr>
 <b>DepthFirst</b>
  }</td></tr>
 <tr class="separator:a6a45d1beef585d6f4ca37177a5538ab6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3741bedbea111dc6178cbb37d225ad45"><td class="memItemLeft" align="right" valign="top"><a id="a3741bedbea111dc6178cbb37d225ad45"></a>
-typedef <a class="el" href="../../d5/d68/structez_delegate.htm">ezInternal::WorldData::VisitorFunc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d3c/classez_world.htm#a3741bedbea111dc6178cbb37d225ad45">VisitorFunc</a></td></tr>
-<tr class="memdesc:a3741bedbea111dc6178cbb37d225ad45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines a visitor function that is called for every game-object when using the traverse method. The function takes a pointer to the game object as argument and returns a bool which indicates whether to continue (true) or abort (false) traversal. <br /></td></tr>
-<tr class="separator:a3741bedbea111dc6178cbb37d225ad45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6373b821cee463ac991cbccee4d9e9d3"><td class="memItemLeft" align="right" valign="top"><a id="a6373b821cee463ac991cbccee4d9e9d3"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d3c/classez_world.htm#a6373b821cee463ac991cbccee4d9e9d3">VisitorFunc</a> = <a class="el" href="../../d5/d68/structez_delegate.htm">ezInternal::WorldData::VisitorFunc</a></td></tr>
+<tr class="memdesc:a6373b821cee463ac991cbccee4d9e9d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines a visitor function that is called for every game-object when using the traverse method. The function takes a pointer to the game object as argument and returns a bool which indicates whether to continue (true) or abort (false) traversal. <br /></td></tr>
+<tr class="separator:a6373b821cee463ac991cbccee4d9e9d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99176e7d370e4ca9ea01c59493b5643d"><td class="memItemLeft" align="right" valign="top"><a id="a99176e7d370e4ca9ea01c59493b5643d"></a>
 <a class="el" href="../../d6/d5c/structez_game_object_handle.htm">ezGameObjectHandle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d3c/classez_world.htm#a99176e7d370e4ca9ea01c59493b5643d">CreateObject</a> (const <a class="el" href="../../d7/d35/structez_game_object_desc.htm">ezGameObjectDesc</a> &amp;desc)</td></tr>
 <tr class="memdesc:a99176e7d370e4ca9ea01c59493b5643d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new game object from the given description and returns a handle to it. <br /></td></tr>
@@ -503,7 +520,7 @@ ezUInt32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 <tr class="memdesc:aa7837013a2a4b814afbf996efefcc31b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator over all objects in this world in no specific order. <br /></td></tr>
 <tr class="separator:aa7837013a2a4b814afbf996efefcc31b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9a5fb0d4ecdcd46916e2f123edb750f"><td class="memItemLeft" align="right" valign="top"><a id="ad9a5fb0d4ecdcd46916e2f123edb750f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d3c/classez_world.htm#ad9a5fb0d4ecdcd46916e2f123edb750f">Traverse</a> (<a class="el" href="../../da/d3c/classez_world.htm#a3741bedbea111dc6178cbb37d225ad45">VisitorFunc</a> visitorFunc, TraversalMethod method=DepthFirst)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d3c/classez_world.htm#ad9a5fb0d4ecdcd46916e2f123edb750f">Traverse</a> (<a class="el" href="../../da/d3c/classez_world.htm#a6373b821cee463ac991cbccee4d9e9d3">VisitorFunc</a> visitorFunc, TraversalMethod method=DepthFirst)</td></tr>
 <tr class="memdesc:ad9a5fb0d4ecdcd46916e2f123edb750f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Traverses the game object tree starting at the top level objects and then recursively all children. The given callback function is called for every object. <br /></td></tr>
 <tr class="separator:ad9a5fb0d4ecdcd46916e2f123edb750f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -707,7 +724,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../da/d3c/classez_world.htm">ezWorld</a></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:22:09 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:29 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

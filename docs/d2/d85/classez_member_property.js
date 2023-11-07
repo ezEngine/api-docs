@@ -6,5 +6,5 @@ var classez_member_property =
     [ "ezMemberProperty", "d2/d85/classez_member_property.htm#aba89efe814694fac215598bbf8f1cf0e", null ],
     [ "GetPropertyPointer", "d2/d85/classez_member_property.htm#a5562ee3597b158539f899440c451a24b", null ],
     [ "GetValue", "d2/d85/classez_member_property.htm#a65147fc1ee37b0dcc456d69679f606f5", null ],
-    [ "SetValue", "d2/d85/classez_member_property.htm#a2b6495f561ed67de542f9a3d49a7a4c3", null ]
+    [ "SetValue", "d2/d85/classez_member_property.htm#aa76929b005fa086417b22caf396c0b87", null ]
 ];

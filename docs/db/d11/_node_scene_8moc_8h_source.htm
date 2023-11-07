@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -115,7 +115,7 @@ $(document).ready(function(){initNavTree('db/d11/_node_scene_8moc_8h_source.htm'
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keyword">explicit</span> <a class="code" href="../../d2/d91/classez_qt_node_scene.htm">ezQtNodeScene</a>(QObject* pParent = <span class="keyword">nullptr</span>);</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  ~<a class="code" href="../../d2/d91/classez_qt_node_scene.htm">ezQtNodeScene</a>();</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordtype">void</span> SetDocumentNodeManager(<span class="keyword">const</span> <a class="code" href="../../df/d86/classez_document_node_manager.htm">ezDocumentNodeManager</a>* pManager);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> InitScene(<span class="keyword">const</span> <a class="code" href="../../df/d86/classez_document_node_manager.htm">ezDocumentNodeManager</a>* pManager);</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../df/d86/classez_document_node_manager.htm">ezDocumentNodeManager</a>* GetDocumentNodeManager() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d6/dd3/classez_document.htm">ezDocument</a>* GetDocument() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
@@ -173,62 +173,64 @@ $(document).ready(function(){initNavTree('db/d11/_node_scene_8moc_8h_source.htm'
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keywordtype">void</span> DeleteQtNode(<span class="keyword">const</span> <a class="code" href="../../d2/d53/classez_document_object.htm">ezDocumentObject</a>* pObject);</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordtype">void</span> CreateQtConnection(<span class="keyword">const</span> <a class="code" href="../../d2/d53/classez_document_object.htm">ezDocumentObject</a>* pObject);</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keywordtype">void</span> DeleteQtConnection(<span class="keyword">const</span> <a class="code" href="../../d2/d53/classez_document_object.htm">ezDocumentObject</a>* pObject);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keywordtype">void</span> CreateNodeObject(<span class="keyword">const</span> <a class="code" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a>* pRtti);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keywordtype">void</span> NodeEventsHandler(<span class="keyword">const</span> <a class="code" href="../../d6/dc8/structez_document_node_manager_event.htm">ezDocumentNodeManagerEvent</a>&amp; e);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keywordtype">void</span> PropertyEventsHandler(<span class="keyword">const</span> <a class="code" href="../../da/d58/structez_document_object_property_event.htm">ezDocumentObjectPropertyEvent</a>&amp; e);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keywordtype">void</span> SelectionEventsHandler(<span class="keyword">const</span> <a class="code" href="../../da/df9/structez_selection_manager_event.htm">ezSelectionManagerEvent</a>&amp; e);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keywordtype">void</span> GetSelectedNodes(<a class="code" href="../../d9/dfe/classez_deque.htm">ezDeque&lt;ezQtNode*&gt;</a>&amp; selection) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keywordtype">void</span> MarkupConnectablePins(<a class="code" href="../../d2/d94/classez_qt_pin.htm">ezQtPin</a>* pSourcePin);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keywordtype">void</span> ResetConnectablePinMarkup();</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keywordtype">void</span> OpenSearchMenu(QPoint screenPos);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d7/d6e/structez_status.htm">ezStatus</a> RemoveNode(<a class="code" href="../../d7/dcc/classez_qt_node.htm">ezQtNode</a>* pNode);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> RemoveSelectedNodesAction();</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> ConnectPinsAction(<span class="keyword">const</span> <a class="code" href="../../d7/d84/classez_pin.htm">ezPin</a>&amp; sourcePin, <span class="keyword">const</span> <a class="code" href="../../d7/d84/classez_pin.htm">ezPin</a>&amp; targetPin);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> DisconnectPinsAction(<a class="code" href="../../dc/d94/classez_qt_connection.htm">ezQtConnection</a>* pConnection);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> DisconnectPinsAction(<a class="code" href="../../d2/d94/classez_qt_pin.htm">ezQtPin</a>* pPin);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keyword">private</span> Q_SLOTS:</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="keywordtype">void</span> OnMenuItemTriggered(<span class="keyword">const</span> QString&amp; sName, <span class="keyword">const</span> QVariant&amp; variant);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <span class="keywordtype">void</span> OnSelectionChanged();</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d8/d28/classez_rtti_mapped_object_factory.htm">ezRttiMappedObjectFactory&lt;ezQtNode&gt;</a> s_NodeFactory;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d8/d28/classez_rtti_mapped_object_factory.htm">ezRttiMappedObjectFactory&lt;ezQtPin&gt;</a> s_PinFactory;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d8/d28/classez_rtti_mapped_object_factory.htm">ezRttiMappedObjectFactory&lt;ezQtConnection&gt;</a> s_ConnectionFactory;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../df/d86/classez_document_node_manager.htm">ezDocumentNodeManager</a>* m_pManager = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;const ezDocumentObject*, ezQtNode*&gt;</a> m_Nodes;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;const ezDocumentObject*, ezQtConnection*&gt;</a> m_Connections;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <span class="keywordtype">bool</span> m_bIgnoreSelectionChange = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <a class="code" href="../../d2/d94/classez_qt_pin.htm">ezQtPin</a>* m_pStartPin = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <a class="code" href="../../dc/d94/classez_qt_connection.htm">ezQtConnection</a>* m_pTempConnection = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <a class="code" href="../../d9/dfe/classez_deque.htm">ezDeque&lt;const ezDocumentObject*&gt;</a> m_Selection;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <a class="code" href="../../d1/df8/classez_vec2_template.htm">ezVec2</a> m_vMousePos = <a class="code" href="../../d1/df8/classez_vec2_template.htm#a5bfb330b990eae4ee79bf01f972d852d">ezVec2::ZeroVector</a>();</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  QString m_sContextMenuSearchText;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;const ezQtPin*&gt;</a> m_ConnectablePins;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <a class="code" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ConnectionStyle&gt;</a> m_ConnectionStyle;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <a class="code" href="../../d1/dec/structez_bitflags.htm">ezBitflags&lt;ConnectionDecorationFlags&gt;</a> m_ConnectionDecorationFlags;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d1/df8/classez_vec2_template.htm">ezVec2</a> s_vLastMouseInteraction;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;};</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;EZ_DECLARE_FLAGS_OPERATORS(<a class="code" href="../../d8/df7/structez_qt_node_scene_1_1_connection_decoration_flags.htm">ezQtNodeScene::ConnectionDecorationFlags</a>);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keywordtype">void</span> RecreateQtPins(<span class="keyword">const</span> <a class="code" href="../../d2/d53/classez_document_object.htm">ezDocumentObject</a>* pObject);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keywordtype">void</span> CreateNodeObject(<span class="keyword">const</span> <a class="code" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a>* pRtti);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keywordtype">void</span> NodeEventsHandler(<span class="keyword">const</span> <a class="code" href="../../d6/dc8/structez_document_node_manager_event.htm">ezDocumentNodeManagerEvent</a>&amp; e);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keywordtype">void</span> PropertyEventsHandler(<span class="keyword">const</span> <a class="code" href="../../da/d58/structez_document_object_property_event.htm">ezDocumentObjectPropertyEvent</a>&amp; e);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keywordtype">void</span> SelectionEventsHandler(<span class="keyword">const</span> <a class="code" href="../../da/df9/structez_selection_manager_event.htm">ezSelectionManagerEvent</a>&amp; e);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keywordtype">void</span> GetSelectedNodes(<a class="code" href="../../d9/dfe/classez_deque.htm">ezDeque&lt;ezQtNode*&gt;</a>&amp; selection) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keywordtype">void</span> MarkupConnectablePins(<a class="code" href="../../d2/d94/classez_qt_pin.htm">ezQtPin</a>* pSourcePin);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keywordtype">void</span> ResetConnectablePinMarkup();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keywordtype">void</span> OpenSearchMenu(QPoint screenPos);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d7/d6e/structez_status.htm">ezStatus</a> RemoveNode(<a class="code" href="../../d7/dcc/classez_qt_node.htm">ezQtNode</a>* pNode);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> RemoveSelectedNodesAction();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> ConnectPinsAction(<span class="keyword">const</span> <a class="code" href="../../d7/d84/classez_pin.htm">ezPin</a>&amp; sourcePin, <span class="keyword">const</span> <a class="code" href="../../d7/d84/classez_pin.htm">ezPin</a>&amp; targetPin);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> DisconnectPinsAction(<a class="code" href="../../dc/d94/classez_qt_connection.htm">ezQtConnection</a>* pConnection);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> DisconnectPinsAction(<a class="code" href="../../d2/d94/classez_qt_pin.htm">ezQtPin</a>* pPin);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="keyword">private</span> Q_SLOTS:</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <span class="keywordtype">void</span> OnMenuItemTriggered(<span class="keyword">const</span> QString&amp; sName, <span class="keyword">const</span> QVariant&amp; variant);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="keywordtype">void</span> OnSelectionChanged();</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d8/d28/classez_rtti_mapped_object_factory.htm">ezRttiMappedObjectFactory&lt;ezQtNode&gt;</a> s_NodeFactory;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d8/d28/classez_rtti_mapped_object_factory.htm">ezRttiMappedObjectFactory&lt;ezQtPin&gt;</a> s_PinFactory;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d8/d28/classez_rtti_mapped_object_factory.htm">ezRttiMappedObjectFactory&lt;ezQtConnection&gt;</a> s_ConnectionFactory;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../df/d86/classez_document_node_manager.htm">ezDocumentNodeManager</a>* m_pManager = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;const ezDocumentObject*, ezQtNode*&gt;</a> m_Nodes;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;const ezDocumentObject*, ezQtConnection*&gt;</a> m_Connections;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <span class="keywordtype">bool</span> m_bIgnoreSelectionChange = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <a class="code" href="../../d2/d94/classez_qt_pin.htm">ezQtPin</a>* m_pStartPin = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <a class="code" href="../../dc/d94/classez_qt_connection.htm">ezQtConnection</a>* m_pTempConnection = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <a class="code" href="../../d9/dfe/classez_deque.htm">ezDeque&lt;const ezDocumentObject*&gt;</a> m_Selection;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <a class="code" href="../../d1/df8/classez_vec2_template.htm">ezVec2</a> m_vMousePos = <a class="code" href="../../d1/df8/classez_vec2_template.htm#a4639cf59c5b355602dce579e9d430c34">ezVec2::MakeZero</a>();</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  QString m_sContextMenuSearchText;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;const ezQtPin*&gt;</a> m_ConnectablePins;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <a class="code" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ConnectionStyle&gt;</a> m_ConnectionStyle;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <a class="code" href="../../d1/dec/structez_bitflags.htm">ezBitflags&lt;ConnectionDecorationFlags&gt;</a> m_ConnectionDecorationFlags;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d1/df8/classez_vec2_template.htm">ezVec2</a> s_vLastMouseInteraction;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;};</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;EZ_DECLARE_FLAGS_OPERATORS(<a class="code" href="../../d8/df7/structez_qt_node_scene_1_1_connection_decoration_flags.htm">ezQtNodeScene::ConnectionDecorationFlags</a>);</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_document_htm"><div class="ttname"><a href="../../d6/dd3/classez_document.htm">ezDocument</a></div><div class="ttdef"><b>Definition:</b> Document.h:56</div></div>
 <div class="ttc" id="astructez_bitflags_htm"><div class="ttname"><a href="../../d1/dec/structez_bitflags.htm">ezBitflags</a></div><div class="ttdoc">The ezBitflags class allows you to work with type-safe bitflags.</div><div class="ttdef"><b>Definition:</b> Bitflags.h:80</div></div>
+<div class="ttc" id="aclassez_vec2_template_htm_a4639cf59c5b355602dce579e9d430c34"><div class="ttname"><a href="../../d1/df8/classez_vec2_template.htm#a4639cf59c5b355602dce579e9d430c34">ezVec2Template::MakeZero</a></div><div class="ttdeci">static const ezVec2Template&lt; Type &gt; MakeZero()</div><div class="ttdoc">Static function that returns a zero-vector.</div><div class="ttdef"><b>Definition:</b> Vec2.h:44</div></div>
 <div class="ttc" id="astructez_qt_node_scene_1_1_connection_decoration_flags_htm_a8873454846d5ebd2ecb086781d3f388c"><div class="ttname"><a href="../../d8/df7/structez_qt_node_scene_1_1_connection_decoration_flags.htm#a8873454846d5ebd2ecb086781d3f388c">ezQtNodeScene::ConnectionDecorationFlags::Enum</a></div><div class="ttdeci">Enum</div><div class="ttdef"><b>Definition:</b> NodeScene.moc.h:58</div></div>
-<div class="ttc" id="aclassez_r_t_t_i_htm"><div class="ttname"><a href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a></div><div class="ttdoc">This enumerable class holds information about reflected types. Each instance represents one type that...</div><div class="ttdef"><b>Definition:</b> RTTI.h:30</div></div>
+<div class="ttc" id="aclassez_r_t_t_i_htm"><div class="ttname"><a href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a></div><div class="ttdoc">This class holds information about reflected types. Each instance represents one type that is known t...</div><div class="ttdef"><b>Definition:</b> RTTI.h:28</div></div>
 <div class="ttc" id="aclassez_deque_htm"><div class="ttname"><a href="../../d9/dfe/classez_deque.htm">ezDeque</a></div><div class="ttdef"><b>Definition:</b> Deque.h:269</div></div>
 <div class="ttc" id="aclassez_qt_node_htm"><div class="ttname"><a href="../../d7/dcc/classez_qt_node.htm">ezQtNode</a></div><div class="ttdef"><b>Definition:</b> Node.h:40</div></div>
 <div class="ttc" id="astructez_qt_node_scene_1_1_connection_style_htm"><div class="ttname"><a href="../../df/d15/structez_qt_node_scene_1_1_connection_style.htm">ezQtNodeScene::ConnectionStyle</a></div><div class="ttdef"><b>Definition:</b> NodeScene.moc.h:38</div></div>
-<div class="ttc" id="aclassez_document_node_manager_htm"><div class="ttname"><a href="../../df/d86/classez_document_node_manager.htm">ezDocumentNodeManager</a></div><div class="ttdef"><b>Definition:</b> DocumentNodeManager.h:101</div></div>
+<div class="ttc" id="aclassez_document_node_manager_htm"><div class="ttname"><a href="../../df/d86/classez_document_node_manager.htm">ezDocumentNodeManager</a></div><div class="ttdef"><b>Definition:</b> DocumentNodeManager.h:102</div></div>
 <div class="ttc" id="astructez_qt_node_scene_1_1_connection_decoration_flags_htm"><div class="ttname"><a href="../../d8/df7/structez_qt_node_scene_1_1_connection_decoration_flags.htm">ezQtNodeScene::ConnectionDecorationFlags</a></div><div class="ttdef"><b>Definition:</b> NodeScene.moc.h:54</div></div>
 <div class="ttc" id="aclassez_rtti_mapped_object_factory_htm"><div class="ttname"><a href="../../d8/d28/classez_rtti_mapped_object_factory.htm">ezRttiMappedObjectFactory&lt; ezQtNode &gt;</a></div></div>
 <div class="ttc" id="aclassez_qt_connection_htm"><div class="ttname"><a href="../../dc/d94/classez_qt_connection.htm">ezQtConnection</a></div><div class="ttdef"><b>Definition:</b> Connection.h:9</div></div>
@@ -238,19 +240,18 @@ $(document).ready(function(){initNavTree('db/d11/_node_scene_8moc_8h_source.htm'
 <div class="ttc" id="aclassez_pin_htm"><div class="ttname"><a href="../../d7/d84/classez_pin.htm">ezPin</a></div><div class="ttdef"><b>Definition:</b> DocumentNodeManager.h:58</div></div>
 <div class="ttc" id="astructez_qt_node_scene_1_1_connection_decoration_flags_1_1_bits_htm"><div class="ttname"><a href="../../d0/dbe/structez_qt_node_scene_1_1_connection_decoration_flags_1_1_bits.htm">ezQtNodeScene::ConnectionDecorationFlags::Bits</a></div><div class="ttdef"><b>Definition:</b> NodeScene.moc.h:65</div></div>
 <div class="ttc" id="aclassez_dynamic_array_htm"><div class="ttname"><a href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt; const ezQtPin * &gt;</a></div></div>
-<div class="ttc" id="aclassez_vec2_template_htm_a5bfb330b990eae4ee79bf01f972d852d"><div class="ttname"><a href="../../d1/df8/classez_vec2_template.htm#a5bfb330b990eae4ee79bf01f972d852d">ezVec2Template&lt; float &gt;::ZeroVector</a></div><div class="ttdeci">static const ezVec2Template&lt; float &gt; ZeroVector()</div><div class="ttdoc">Static function that returns a zero-vector.</div><div class="ttdef"><b>Definition:</b> Vec2.h:41</div></div>
 <div class="ttc" id="aclassez_map_htm"><div class="ttname"><a href="../../d1/d79/classez_map.htm">ezMap&lt; const ezDocumentObject *, ezQtNode * &gt;</a></div></div>
 <div class="ttc" id="astructez_enum_htm"><div class="ttname"><a href="../../d6/dd9/structez_enum.htm">ezEnum</a></div><div class="ttdoc">A custom enum implementation that allows to define the underlying storage type to control its memory ...</div><div class="ttdef"><b>Definition:</b> Enum.h:36</div></div>
 <div class="ttc" id="aclassez_qt_pin_htm"><div class="ttname"><a href="../../d2/d94/classez_qt_pin.htm">ezQtPin</a></div><div class="ttdef"><b>Definition:</b> Pin.h:19</div></div>
 <div class="ttc" id="aclassez_document_object_htm"><div class="ttname"><a href="../../d2/d53/classez_document_object.htm">ezDocumentObject</a></div><div class="ttdef"><b>Definition:</b> DocumentObjectBase.h:10</div></div>
-<div class="ttc" id="astructez_document_object_property_event_htm"><div class="ttname"><a href="../../da/d58/structez_document_object_property_event.htm">ezDocumentObjectPropertyEvent</a></div><div class="ttdoc">Used by ezDocumentObjectManager::m_PropertyEvents.</div><div class="ttdef"><b>Definition:</b> DocumentObjectManager.h:79</div></div>
+<div class="ttc" id="astructez_document_object_property_event_htm"><div class="ttname"><a href="../../da/d58/structez_document_object_property_event.htm">ezDocumentObjectPropertyEvent</a></div><div class="ttdoc">Used by ezDocumentObjectManager::m_PropertyEvents.</div><div class="ttdef"><b>Definition:</b> DocumentObjectManager.h:76</div></div>
 <div class="ttc" id="aclassez_vec2_template_htm"><div class="ttname"><a href="../../d1/df8/classez_vec2_template.htm">ezVec2Template&lt; float &gt;</a></div></div>
 <div class="ttc" id="aclassez_qt_node_scene_htm"><div class="ttname"><a href="../../d2/d91/classez_qt_node_scene.htm">ezQtNodeScene</a></div><div class="ttdef"><b>Definition:</b> NodeScene.moc.h:15</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_07792d309f5611e62640e8ec1fb96105.htm">Tools</a></li><li class="navelem"><a class="el" href="../../dir_8e80be223102188e67d1ce7cce146de0.htm">Libs</a></li><li class="navelem"><a class="el" href="../../dir_67a151a8658de153dad045cdd2f730f7.htm">GuiFoundation</a></li><li class="navelem"><a class="el" href="../../dir_b994b6f91e1c65caadcf5721b7ac46ed.htm">NodeEditor</a></li><li class="navelem"><b>NodeScene.moc.h</b></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:22:00 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:21 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

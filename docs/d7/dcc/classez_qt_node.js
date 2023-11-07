@@ -21,5 +21,7 @@ var classez_qt_node =
     [ "UpdateState", "d7/dcc/classez_qt_node.htm#aaed8771901dd8a4b0d84ce10b8405e7d", null ],
     [ "m_HeaderColor", "d7/dcc/classez_qt_node.htm#ad162fd0d0e70c5f84a7e614fe52fbb0b", null ],
     [ "m_HeaderRect", "d7/dcc/classez_qt_node.htm#a2b62ca0eb54f6404fae66e878b026536", null ],
-    [ "m_pLabel", "d7/dcc/classez_qt_node.htm#aab60a1d82c8cdfbc6628007044b8c93b", null ]
+    [ "m_pIcon", "d7/dcc/classez_qt_node.htm#a038ba645c75a787ad6e0e224fee643af", null ],
+    [ "m_pSubtitleLabel", "d7/dcc/classez_qt_node.htm#ac057e46b0ec9740b09becdfe074a4942", null ],
+    [ "m_pTitleLabel", "d7/dcc/classez_qt_node.htm#ab8f85838a2200a5b7229f286911bb3fc", null ]
 ];

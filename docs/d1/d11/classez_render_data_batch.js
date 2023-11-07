@@ -1,8 +1,7 @@
 var classez_render_data_batch =
 [
     [ "Iterator", "d3/ddf/classez_render_data_batch_1_1_iterator.htm", "d3/ddf/classez_render_data_batch_1_1_iterator" ],
-    [ "Filter", "d1/d11/classez_render_data_batch.htm#a3ec86c6571836c84580aec73739fcfb7", null ],
-    [ "EZ_DECLARE_POD_TYPE", "d1/d11/classez_render_data_batch.htm#ab6b62dcb5473442ee3b882ed7789e33f", null ],
+    [ "Filter", "d1/d11/classez_render_data_batch.htm#a087f38efdb94ed5f585ae553330597b3", null ],
     [ "GetCount", "d1/d11/classez_render_data_batch.htm#a16d8d56a1e5cec565c2a607b772a5be7", null ],
     [ "GetFirstData", "d1/d11/classez_render_data_batch.htm#a2f48268469b8b09321db5fde086bc51f", null ],
     [ "GetFirstData", "d1/d11/classez_render_data_batch.htm#a0a2237fc390c0d62fc46fb8819312e96", null ],

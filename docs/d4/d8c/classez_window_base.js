@@ -1,6 +1,6 @@
 var classez_window_base =
 [
-    [ "~ezWindowBase", "d4/d8c/classez_window_base.htm#a6d4b8c7b35786d38bf33897307484142", null ],
+    [ "~ezWindowBase", "d4/d8c/classez_window_base.htm#ae680bc7d916e23b35e7be1d6e5588d6e", null ],
     [ "AddReference", "d4/d8c/classez_window_base.htm#ad2ce25c4bd29a1fa045cc0d76f4cf8df", null ],
     [ "GetClientAreaSize", "d4/d8c/classez_window_base.htm#a5d944424b7f1b9285f9077f958ddb0f8", null ],
     [ "GetNativeWindowHandle", "d4/d8c/classez_window_base.htm#a451e8408115c8efa7d4e41e0baf82b07", null ],

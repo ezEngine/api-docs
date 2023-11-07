@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -100,45 +100,43 @@ $(document).ready(function(){initNavTree('df/da3/_format_string_8h_source.htm','
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  EZ_DISALLOW_COPY_AND_ASSIGN(<a class="code" href="../../d4/d2e/classez_format_string.htm">ezFormatString</a>); <span class="comment">// pass by reference, never pass by value</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  EZ_ALWAYS_INLINE <a class="code" href="../../d4/d2e/classez_format_string.htm">ezFormatString</a>() { m_szString = <span class="keyword">nullptr</span>; }</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  EZ_ALWAYS_INLINE <a class="code" href="../../d4/d2e/classez_format_string.htm">ezFormatString</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* szString) { m_szString = szString; }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <a class="code" href="../../d4/d2e/classez_format_string.htm">ezFormatString</a>(<span class="keyword">const</span> <a class="code" href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a>&amp; s);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keyword">virtual</span> ~<a class="code" href="../../d4/d2e/classez_format_string.htm">ezFormatString</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="../../d4/d2e/classez_format_string.htm#ae69b97b52740df45adcca6725933be98">   71</a></span>&#160;  [[nodiscard]] <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="../../d4/d2e/classez_format_string.htm#ae69b97b52740df45adcca6725933be98">GetText</a>(<a class="code" href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a>&amp;)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_szString; }</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordtype">bool</span> IsEmpty()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="../../de/df8/classez_string_utils.htm#a26f868ce8249b864f448837638ffde33">ezStringUtils::IsNullOrEmpty</a>(m_szString); }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="comment">// out of line function so that we don&#39;t need to include ezStringBuilder here, to break include dependency cycle</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> SBAppendView(<a class="code" href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a>&amp; sb, <span class="keyword">const</span> <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a>&amp; sub);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> SBClear(<a class="code" href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a>&amp; sb);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> SBAppendChar(<a class="code" href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a>&amp; sb, ezUInt32 uiChar);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* SBReturn(<a class="code" href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a>&amp; sb);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* m_szString;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;};</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  EZ_ALWAYS_INLINE <a class="code" href="../../d4/d2e/classez_format_string.htm">ezFormatString</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  EZ_ALWAYS_INLINE <a class="code" href="../../d4/d2e/classez_format_string.htm">ezFormatString</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* szString) { m_sString = szString; }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  EZ_ALWAYS_INLINE <a class="code" href="../../d4/d2e/classez_format_string.htm">ezFormatString</a>(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sString) { m_sString = sString; }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <a class="code" href="../../d4/d2e/classez_format_string.htm">ezFormatString</a>(<span class="keyword">const</span> <a class="code" href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a>&amp; s);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keyword">virtual</span> ~<a class="code" href="../../d4/d2e/classez_format_string.htm">ezFormatString</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="../../d4/d2e/classez_format_string.htm#aa57a354d3be56d9eb3ee240df79a6d2e">   72</a></span>&#160;  [[nodiscard]] <span class="keyword">virtual</span> <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> <a class="code" href="../../d4/d2e/classez_format_string.htm#aa57a354d3be56d9eb3ee240df79a6d2e">GetText</a>(<a class="code" href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a>&amp;)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_sString; }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* GetTextCStr(<a class="code" href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a>&amp; out_sString) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keywordtype">bool</span> IsEmpty()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_sString.IsEmpty(); }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> BuildFormattedText(<a class="code" href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a>&amp; ref_sStorage, <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a>* pArgs, ezUInt32 uiNumArgs) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#include &lt;Foundation/Strings/Implementation/FormatStringImpl.h&gt;</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span>... ARGS&gt;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;EZ_ALWAYS_INLINE <a class="code" href="../../df/d42/classez_format_string_impl.htm">ezFormatStringImpl</a>&lt;ARGS...&gt; ezFmt(<span class="keyword">const</span> <span class="keywordtype">char</span>* szFormat, ARGS&amp;&amp;... args)</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;{</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../df/d42/classez_format_string_impl.htm">ezFormatStringImpl</a>&lt;ARGS...&gt;(szFormat, std::forward&lt;ARGS&gt;(args)...);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> m_sString;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;};</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#include &lt;Foundation/Strings/Implementation/FormatStringImpl.h&gt;</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span>... ARGS&gt;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;EZ_ALWAYS_INLINE <a class="code" href="../../df/d42/classez_format_string_impl.htm">ezFormatStringImpl</a>&lt;ARGS...&gt; ezFmt(<span class="keyword">const</span> <span class="keywordtype">char</span>* szFormat, ARGS&amp;&amp;... args)</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;{</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../df/d42/classez_format_string_impl.htm">ezFormatStringImpl</a>&lt;ARGS...&gt;(szFormat, std::forward&lt;ARGS&gt;(args)...);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_format_string_htm"><div class="ttname"><a href="../../d4/d2e/classez_format_string.htm">ezFormatString</a></div><div class="ttdoc">Implements formating of strings with placeholders and formatting options.</div><div class="ttdef"><b>Definition:</b> FormatString.h:54</div></div>
 <div class="ttc" id="aclassez_format_string_impl_htm"><div class="ttname"><a href="../../df/d42/classez_format_string_impl.htm">ezFormatStringImpl</a></div><div class="ttdef"><b>Definition:</b> FormatStringImpl.h:8</div></div>
-<div class="ttc" id="aclassez_format_string_htm_ae69b97b52740df45adcca6725933be98"><div class="ttname"><a href="../../d4/d2e/classez_format_string.htm#ae69b97b52740df45adcca6725933be98">ezFormatString::GetText</a></div><div class="ttdeci">virtual const char * GetText(ezStringBuilder &amp;) const</div><div class="ttdoc">Generates the formatted text. Make sure to only call this function once and only when the formatted s...</div><div class="ttdef"><b>Definition:</b> FormatString.h:71</div></div>
+<div class="ttc" id="aclassez_format_string_htm_aa57a354d3be56d9eb3ee240df79a6d2e"><div class="ttname"><a href="../../d4/d2e/classez_format_string.htm#aa57a354d3be56d9eb3ee240df79a6d2e">ezFormatString::GetText</a></div><div class="ttdeci">virtual ezStringView GetText(ezStringBuilder &amp;) const</div><div class="ttdoc">Generates the formatted text. Make sure to only call this function once and only when the formatted s...</div><div class="ttdef"><b>Definition:</b> FormatString.h:72</div></div>
 <div class="ttc" id="astructez_string_view_htm"><div class="ttname"><a href="../../de/db8/structez_string_view.htm">ezStringView</a></div><div class="ttdoc">ezStringView represent a read-only sub-string of a larger string, as it can store a dedicated string ...</div><div class="ttdef"><b>Definition:</b> StringView.h:23</div></div>
 <div class="ttc" id="aclassez_string_builder_htm"><div class="ttname"><a href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a></div><div class="ttdoc">ezStringBuilder is a class that is meant for creating and modifying strings.</div><div class="ttdef"><b>Definition:</b> StringBuilder.h:34</div></div>
-<div class="ttc" id="aclassez_string_utils_htm_a26f868ce8249b864f448837638ffde33"><div class="ttname"><a href="../../de/df8/classez_string_utils.htm#a26f868ce8249b864f448837638ffde33">ezStringUtils::IsNullOrEmpty</a></div><div class="ttdeci">static constexpr bool IsNullOrEmpty(const T *pString)</div><div class="ttdoc">Returns true, if the given string is a nullptr pointer or a string that immediately terminates with a...</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_b52479c911fe9a42767226b3387b3a02.htm">Strings</a></li><li class="navelem"><b>FormatString.h</b></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:21:56 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:18 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

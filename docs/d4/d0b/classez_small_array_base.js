@@ -4,7 +4,7 @@ var classez_small_array_base =
     [ "const_reverse_iterator", "d4/d0b/classez_small_array_base.htm#ad2cae9067becfd6dd68f0ffa8f58380c", null ],
     [ "iterator", "d4/d0b/classez_small_array_base.htm#a7e661231bc2d79e5d2fdd90283bfb31d", null ],
     [ "reverse_iterator", "d4/d0b/classez_small_array_base.htm#afa5bad425e1071f47aaf0248652ab07b", null ],
-    [ "CAPACITY_ALIGNMENT", "d4/d0b/classez_small_array_base.htm#a111564cb6f6431f9ded4cce5e825b008a41c5785ef6fe784449234674278e66c2", null ],
+    [ "CAPACITY_ALIGNMENT", "d4/d0b/classez_small_array_base.htm#a64a24d7e9beac24626b66e6967d2b96ba41c5785ef6fe784449234674278e66c2", null ],
     [ "ezSmallArrayBase", "d4/d0b/classez_small_array_base.htm#a0229323dafc28e211e5cfcce2b826aaa", null ],
     [ "ezSmallArrayBase", "d4/d0b/classez_small_array_base.htm#a08ffd89ba59bd2bbb94ea466308363a6", null ],
     [ "ezSmallArrayBase", "d4/d0b/classez_small_array_base.htm#a55a22dc0e49a48d7befe3ec27f490dbd", null ],

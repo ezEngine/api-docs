@@ -77,7 +77,7 @@ var classez_string_builder =
     [ "ToUpper", "d3/d88/classez_string_builder.htm#a8beb183188db5f5ddacca112fe279e3c", null ],
     [ "Trim", "d3/d88/classez_string_builder.htm#a873bef1677465559bfebeccda3ab4493", null ],
     [ "Trim", "d3/d88/classez_string_builder.htm#a57730d24b21287cd1b04b09de1a0f6cd", null ],
-    [ "TrimWordEnd", "d3/d88/classez_string_builder.htm#af66f405ed051a3239bcd1512ce610e49", null ],
-    [ "TrimWordStart", "d3/d88/classez_string_builder.htm#a6843bb280feabb443f7659e085b3811b", null ],
+    [ "TrimWordEnd", "d3/d88/classez_string_builder.htm#aa5af41d0eecea261dde9e8e2ffc266e4", null ],
+    [ "TrimWordStart", "d3/d88/classez_string_builder.htm#ad068c80ae201219b2288a53888895d82", null ],
     [ "ezHybridStringBase", "d3/d88/classez_string_builder.htm#afcc265e5360a53cfe7ae05cadefeedbd", null ]
 ];

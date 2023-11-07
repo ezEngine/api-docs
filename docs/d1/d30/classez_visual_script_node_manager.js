@@ -1,9 +1,25 @@
 var classez_visual_script_node_manager =
 [
-    [ "GetConnectionType", "d1/d30/classez_visual_script_node_manager.htm#a18e80124f76c4c398425c07b412858f9", null ],
-    [ "GetCreateableTypes", "d1/d30/classez_visual_script_node_manager.htm#ade9ff36fd302b62e5597358e7711030e", null ],
-    [ "GetTypeCategory", "d1/d30/classez_visual_script_node_manager.htm#a04b22e047a887e110e6ed594bd33c7cb", null ],
-    [ "InternalCanConnect", "d1/d30/classez_visual_script_node_manager.htm#ae9ada050b5fa3e64e2c01e5e8605995d", null ],
-    [ "InternalCreatePins", "d1/d30/classez_visual_script_node_manager.htm#ac2f5f64b7daae2a844f3add7c20ff8ac", null ],
-    [ "InternalIsNode", "d1/d30/classez_visual_script_node_manager.htm#a891dcdcb8e25337ce53dd6c204154e3e", null ]
+    [ "ezVisualScriptNodeManager", "d1/d30/classez_visual_script_node_manager.htm#a7ac14212f4ed8255dfe76a4e7c7d75f4", null ],
+    [ "~ezVisualScriptNodeManager", "d1/d30/classez_visual_script_node_manager.htm#a79d5d0216f122e91c785e589cd8e73cb", null ],
+    [ "GetCreateableTypes", "d1/d30/classez_visual_script_node_manager.htm#a0fae5087ba0af79c7cf2e525e1808b48", null ],
+    [ "GetDeductedType", "d1/d30/classez_visual_script_node_manager.htm#aa026d2d0d15653ba58261a902a41216f", null ],
+    [ "GetDeductedType", "d1/d30/classez_visual_script_node_manager.htm#aa97770859b449fc557f1e3f8ca8fff5c", null ],
+    [ "GetEntryNodes", "d1/d30/classez_visual_script_node_manager.htm#ad6c2c608886c9e3bc63a457b2e5a65c4", null ],
+    [ "GetInputDataPins", "d1/d30/classez_visual_script_node_manager.htm#ae19a7cdb674259c7617b9df8b9677c2d", null ],
+    [ "GetInputExecutionPins", "d1/d30/classez_visual_script_node_manager.htm#a2ff6109c00457a8c4eddec6e10e09842", null ],
+    [ "GetOutputDataPins", "d1/d30/classez_visual_script_node_manager.htm#aa4625ba94e693407977dad89e267d3b1", null ],
+    [ "GetOutputExecutionPins", "d1/d30/classez_visual_script_node_manager.htm#a599a2b33a5d2c649b08032d36f64234a", null ],
+    [ "GetScriptBaseClass", "d1/d30/classez_visual_script_node_manager.htm#a93a5a718176f2595fea863d40ba10c79", null ],
+    [ "GetVariableDefaultValue", "d1/d30/classez_visual_script_node_manager.htm#ab25db67714e68b450939a3bda70c4cea", null ],
+    [ "GetVariableType", "d1/d30/classez_visual_script_node_manager.htm#ac6e99b76eea053cefc7eb74d0a24f33b", null ],
+    [ "InternalCanConnect", "d1/d30/classez_visual_script_node_manager.htm#a881f3954e2050fda97cfcf7331b3ce13", null ],
+    [ "InternalCreatePins", "d1/d30/classez_visual_script_node_manager.htm#a17d98342ba59d4a086d6aa8969edef1c", null ],
+    [ "InternalIsDynamicPinProperty", "d1/d30/classez_visual_script_node_manager.htm#abc35d38a3ba3cb3e64647fed9c45aef6", null ],
+    [ "InternalIsNode", "d1/d30/classez_visual_script_node_manager.htm#a891dcdcb8e25337ce53dd6c204154e3e", null ],
+    [ "IsCoroutine", "d1/d30/classez_visual_script_node_manager.htm#a45ad46c8fd293ee58ace9a57171bdbee", null ],
+    [ "IsFilteredByBaseClass", "d1/d30/classez_visual_script_node_manager.htm#a030f755294bebff0ba6a8b1a14e8d919", null ],
+    [ "IsLoop", "d1/d30/classez_visual_script_node_manager.htm#acc1698c5d9e109161e33a73b536babcf", null ],
+    [ "ezVisualScriptPin", "d1/d30/classez_visual_script_node_manager.htm#aa217d525268cbd37ff84144897f82bdc", null ],
+    [ "m_NodeChangedEvent", "d1/d30/classez_visual_script_node_manager.htm#ae784e19bff1fc397ba7bbc0634e8acff", null ]
 ];

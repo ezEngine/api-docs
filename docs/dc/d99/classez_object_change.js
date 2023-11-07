@@ -1,6 +1,6 @@
 var classez_object_change =
 [
-    [ "ezObjectChange", "dc/d99/classez_object_change.htm#a730f72891061c8099d401e7c8c6a819b", null ],
+    [ "ezObjectChange", "dc/d99/classez_object_change.htm#a84a2e24f0a095a702a0b14fb498c94be", null ],
     [ "ezObjectChange", "dc/d99/classez_object_change.htm#a001a37ec01c015cec8c2c6ac5f94fed2", null ],
     [ "ezObjectChange", "dc/d99/classez_object_change.htm#a81da0126d7c84808d35e166c4b571bd4", null ],
     [ "GetGraph", "dc/d99/classez_object_change.htm#a38ec8414da7eccbaa1296d703dfea3bd", null ],

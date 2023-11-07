@@ -1,7 +1,7 @@
 var structez_spawn_component_flags =
 [
     [ "Bits", "de/dc4/structez_spawn_component_flags_1_1_bits.htm", "de/dc4/structez_spawn_component_flags_1_1_bits" ],
-    [ "StorageType", "d3/d29/structez_spawn_component_flags.htm#a8b5355353cf8171bd6dc630b8c9e58f3", null ],
+    [ "StorageType", "d3/d29/structez_spawn_component_flags.htm#a8910d8df33deef24954d06f66b44afcc", null ],
     [ "Enum", "d3/d29/structez_spawn_component_flags.htm#a52a9cfadbbddff52de4d72f68b4b5c46", [
       [ "None", "d3/d29/structez_spawn_component_flags.htm#a52a9cfadbbddff52de4d72f68b4b5c46adb51b7f628ae172caf3bbf03c37ffb27", null ],
       [ "SpawnAtStart", "d3/d29/structez_spawn_component_flags.htm#a52a9cfadbbddff52de4d72f68b4b5c46a96e0f9468ffe5c5c1ac075b012945000", null ],

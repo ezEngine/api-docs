@@ -3,6 +3,7 @@ var classez_qt_search_widget =
     [ "ezQtSearchWidget", "d7/d09/classez_qt_search_widget.htm#a12fb683355885d3e5a6384c12558bcfe", null ],
     [ "enterPressed", "d7/d09/classez_qt_search_widget.htm#a5a6302e38413ec3dd912fd637914a543", null ],
     [ "eventFilter", "d7/d09/classez_qt_search_widget.htm#a0c1409873d5bfeeac90671e9989390d9", null ],
+    [ "selectAll", "d7/d09/classez_qt_search_widget.htm#aebb01e4c014128e273ec06d7380de35c", null ],
     [ "setPlaceholderText", "d7/d09/classez_qt_search_widget.htm#a28a8f0da71eac644a6263c8642b4f687", null ],
     [ "setText", "d7/d09/classez_qt_search_widget.htm#a4733f98e083b6f3623800a5d30e67f49", null ],
     [ "showEvent", "d7/d09/classez_qt_search_widget.htm#afdcb63c3085fd6ed047fc4071e680c7c", null ],

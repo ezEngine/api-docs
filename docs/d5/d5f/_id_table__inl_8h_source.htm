@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -379,169 +379,166 @@ $(document).ready(function(){initNavTree('d5/d5f/_id_table__inl_8h_source.htm','
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> IdType, <span class="keyword">typename</span> ValueType&gt;</div>
 <div class="line"><a name="l00291"></a><span class="lineno"><a class="line" href="../../da/d31/classez_id_table_base.htm#a12b5ae8a2b42dad8d51df54e3057d9d9">  291</a></span>&#160;EZ_FORCE_INLINE <span class="keyword">const</span> ValueType&amp; <a class="code" href="../../da/d31/classez_id_table_base.htm#a12b5ae8a2b42dad8d51df54e3057d9d9">ezIdTableBase&lt;IdType, ValueType&gt;::operator[]</a>(<span class="keyword">const</span> IdType <span class="keywordtype">id</span>)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;  EZ_ASSERT_DEV(<span class="keywordtype">id</span>.m_InstanceIndex &lt; m_Capacity, <span class="stringliteral">&quot;Out of bounds access. Table has {0} elements, trying to access element at index {1}.&quot;</span>,</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;  EZ_ASSERT_DEBUG(<span class="keywordtype">id</span>.m_InstanceIndex &lt; m_Capacity, <span class="stringliteral">&quot;Out of bounds access. Table has {0} elements, trying to access element at index {1}.&quot;</span>,</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    m_Capacity, <span class="keywordtype">id</span>.m_InstanceIndex);</div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;  <span class="keyword">const</span> Entry&amp; entry = m_pEntries[<span class="keywordtype">id</span>.m_InstanceIndex];</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;  EZ_ASSERT_DEV(entry.id.IsIndexAndGenerationEqual(<span class="keywordtype">id</span>),</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <span class="stringliteral">&quot;Stale access. Trying to access a value (generation: {0}) that has been removed and replaced by a new value (generation: {1})&quot;</span>,</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    entry.id.m_Generation, <span class="keywordtype">id</span>.m_Generation);</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160; </div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;  <span class="keywordflow">return</span> entry.value;</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;}</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160; </div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> IdType, <span class="keyword">typename</span> ValueType&gt;</div>
-<div class="line"><a name="l00304"></a><span class="lineno"><a class="line" href="../../da/d31/classez_id_table_base.htm#ab6f051545fc2ede5f569441aeca8b2b4">  304</a></span>&#160;EZ_FORCE_INLINE ValueType&amp; <a class="code" href="../../da/d31/classez_id_table_base.htm#a12b5ae8a2b42dad8d51df54e3057d9d9">ezIdTableBase&lt;IdType, ValueType&gt;::operator[]</a>(<span class="keyword">const</span> IdType <span class="keywordtype">id</span>)</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;{</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;  EZ_ASSERT_DEV(<span class="keywordtype">id</span>.m_InstanceIndex &lt; m_Capacity, <span class="stringliteral">&quot;Out of bounds access. Table has {0} elements, trying to access element at index {1}.&quot;</span>,</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    m_Capacity, <span class="keywordtype">id</span>.m_InstanceIndex);</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;  Entry&amp; entry = m_pEntries[<span class="keywordtype">id</span>.m_InstanceIndex];</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;  EZ_ASSERT_DEV(entry.id.IsIndexAndGenerationEqual(<span class="keywordtype">id</span>),</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="stringliteral">&quot;Stale access. Trying to access a value (generation: {0}) that has been removed and replaced by a new value (generation: {1})&quot;</span>,</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(entry.id.m_Generation), <span class="keywordtype">id</span>.m_Generation);</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;  EZ_ASSERT_DEBUG(entry.id.IsIndexAndGenerationEqual(<span class="keywordtype">id</span>), <span class="stringliteral">&quot;Stale access. Trying to access a value (generation: {0}) that has been removed and replaced by a new value (generation: {1})&quot;</span>, entry.id.m_Generation, <span class="keywordtype">id</span>.m_Generation);</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;  <span class="keywordflow">return</span> entry.value;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;}</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> IdType, <span class="keyword">typename</span> ValueType&gt;</div>
+<div class="line"><a name="l00302"></a><span class="lineno"><a class="line" href="../../da/d31/classez_id_table_base.htm#ab6f051545fc2ede5f569441aeca8b2b4">  302</a></span>&#160;EZ_FORCE_INLINE ValueType&amp; <a class="code" href="../../da/d31/classez_id_table_base.htm#a12b5ae8a2b42dad8d51df54e3057d9d9">ezIdTableBase&lt;IdType, ValueType&gt;::operator[]</a>(<span class="keyword">const</span> IdType <span class="keywordtype">id</span>)</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;{</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;  EZ_ASSERT_DEBUG(<span class="keywordtype">id</span>.m_InstanceIndex &lt; m_Capacity, <span class="stringliteral">&quot;Out of bounds access. Table has {0} elements, trying to access element at index {1}.&quot;</span>, m_Capacity, <span class="keywordtype">id</span>.m_InstanceIndex);</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;  Entry&amp; entry = m_pEntries[<span class="keywordtype">id</span>.m_InstanceIndex];</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;  EZ_ASSERT_DEBUG(entry.id.IsIndexAndGenerationEqual(<span class="keywordtype">id</span>), <span class="stringliteral">&quot;Stale access. Trying to access a value (generation: {0}) that has been removed and replaced by a new value (generation: {1})&quot;</span>, <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(entry.id.m_Generation), <span class="keywordtype">id</span>.m_Generation);</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;  <span class="keywordflow">return</span> entry.value;</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;}</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160; </div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;  <span class="keywordflow">return</span> entry.value;</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;}</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160; </div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> IdType, <span class="keyword">typename</span> ValueType&gt;</div>
-<div class="line"><a name="l00317"></a><span class="lineno"><a class="line" href="../../da/d31/classez_id_table_base.htm#a1180d6e2020092f74a4221aab823d66e">  317</a></span>&#160;EZ_FORCE_INLINE <span class="keyword">const</span> ValueType&amp; <a class="code" href="../../da/d31/classez_id_table_base.htm#a1180d6e2020092f74a4221aab823d66e">ezIdTableBase&lt;IdType, ValueType&gt;::GetValueUnchecked</a>(<span class="keyword">const</span> IndexType index)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;  EZ_ASSERT_DEV(index &lt; m_Capacity, <span class="stringliteral">&quot;Out of bounds access. Table has {0} elements, trying to access element at index {1}.&quot;</span>, m_Capacity, index);</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;  <span class="keywordflow">return</span> m_pEntries[index].value;</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;}</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160; </div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> IdType, <span class="keyword">typename</span> ValueType&gt;</div>
-<div class="line"><a name="l00324"></a><span class="lineno"><a class="line" href="../../da/d31/classez_id_table_base.htm#aa31bbb9a3b8a41e06ec5cfb9a576e7fe">  324</a></span>&#160;EZ_FORCE_INLINE ValueType&amp; <a class="code" href="../../da/d31/classez_id_table_base.htm#a1180d6e2020092f74a4221aab823d66e">ezIdTableBase&lt;IdType, ValueType&gt;::GetValueUnchecked</a>(<span class="keyword">const</span> IndexType index)</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;{</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;  EZ_ASSERT_DEV(index &lt; m_Capacity, <span class="stringliteral">&quot;Out of bounds access. Table has {0} elements, trying to access element at index {1}.&quot;</span>, m_Capacity, index);</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;  <span class="keywordflow">return</span> m_pEntries[index].value;</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;}</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160; </div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> IdType, <span class="keyword">typename</span> ValueType&gt;</div>
-<div class="line"><a name="l00331"></a><span class="lineno"><a class="line" href="../../da/d31/classez_id_table_base.htm#a10645a54b5b48cdf7952a1be5c276095">  331</a></span>&#160;EZ_FORCE_INLINE <span class="keywordtype">bool</span> <a class="code" href="../../da/d31/classez_id_table_base.htm#a10645a54b5b48cdf7952a1be5c276095">ezIdTableBase&lt;IdType, ValueType&gt;::Contains</a>(<span class="keyword">const</span> IdType <span class="keywordtype">id</span>)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;  <span class="keyword">const</span> IndexType index = <span class="keywordtype">id</span>.m_InstanceIndex;</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;  <span class="keywordflow">return</span> index &lt; m_Capacity &amp;&amp; m_pEntries[index].id.IsIndexAndGenerationEqual(<span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;}</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160; </div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> IdType, <span class="keyword">typename</span> ValueType&gt;</div>
-<div class="line"><a name="l00338"></a><span class="lineno"><a class="line" href="../../da/d31/classez_id_table_base.htm#a5608309445e42f2d906df22168653034">  338</a></span>&#160;EZ_ALWAYS_INLINE <span class="keyword">typename</span> <a class="code" href="../../d7/d1b/structez_id_table_base_1_1_iterator.htm">ezIdTableBase&lt;IdType, ValueType&gt;::Iterator</a> <a class="code" href="../../da/d31/classez_id_table_base.htm#a5608309445e42f2d906df22168653034">ezIdTableBase&lt;IdType, ValueType&gt;::GetIterator</a>()</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;{</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;  <span class="keywordflow">return</span> Iterator(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;}</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160; </div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> IdType, <span class="keyword">typename</span> ValueType&gt;</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;EZ_ALWAYS_INLINE <span class="keyword">typename</span> <a class="code" href="../../d8/d3d/classez_id_table_base_1_1_const_iterator.htm">ezIdTableBase&lt;IdType, ValueType&gt;::ConstIterator</a> <a class="code" href="../../da/d31/classez_id_table_base.htm#a5608309445e42f2d906df22168653034">ezIdTableBase&lt;IdType, ValueType&gt;::GetIterator</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;  <span class="keywordflow">return</span> ConstIterator(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;}</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160; </div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> IdType, <span class="keyword">typename</span> ValueType&gt;</div>
-<div class="line"><a name="l00350"></a><span class="lineno"><a class="line" href="../../da/d31/classez_id_table_base.htm#ae7f4e2aabb439e28afdaee3198256572">  350</a></span>&#160;EZ_ALWAYS_INLINE <a class="code" href="../../d1/d4c/classez_allocator_base.htm">ezAllocatorBase</a>* <a class="code" href="../../da/d31/classez_id_table_base.htm#ae7f4e2aabb439e28afdaee3198256572">ezIdTableBase&lt;IdType, ValueType&gt;::GetAllocator</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;  <span class="keywordflow">return</span> m_pAllocator;</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;}</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160; </div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> IdType, <span class="keyword">typename</span> ValueType&gt;</div>
-<div class="line"><a name="l00356"></a><span class="lineno"><a class="line" href="../../da/d31/classez_id_table_base.htm#a34ed0500452f2ca15fb18a45a8071d04">  356</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../da/d31/classez_id_table_base.htm#a34ed0500452f2ca15fb18a45a8071d04">ezIdTableBase&lt;IdType, ValueType&gt;::IsFreelistValid</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;  <span class="keywordflow">if</span> (m_pEntries == <span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> IdType, <span class="keyword">typename</span> ValueType&gt;</div>
+<div class="line"><a name="l00314"></a><span class="lineno"><a class="line" href="../../da/d31/classez_id_table_base.htm#a1180d6e2020092f74a4221aab823d66e">  314</a></span>&#160;EZ_FORCE_INLINE <span class="keyword">const</span> ValueType&amp; <a class="code" href="../../da/d31/classez_id_table_base.htm#a1180d6e2020092f74a4221aab823d66e">ezIdTableBase&lt;IdType, ValueType&gt;::GetValueUnchecked</a>(<span class="keyword">const</span> IndexType index)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;  EZ_ASSERT_DEBUG(index &lt; m_Capacity, <span class="stringliteral">&quot;Out of bounds access. Table has {0} elements, trying to access element at index {1}.&quot;</span>, m_Capacity, index);</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;  <span class="keywordflow">return</span> m_pEntries[index].value;</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;}</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160; </div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> IdType, <span class="keyword">typename</span> ValueType&gt;</div>
+<div class="line"><a name="l00321"></a><span class="lineno"><a class="line" href="../../da/d31/classez_id_table_base.htm#aa31bbb9a3b8a41e06ec5cfb9a576e7fe">  321</a></span>&#160;EZ_FORCE_INLINE ValueType&amp; <a class="code" href="../../da/d31/classez_id_table_base.htm#a1180d6e2020092f74a4221aab823d66e">ezIdTableBase&lt;IdType, ValueType&gt;::GetValueUnchecked</a>(<span class="keyword">const</span> IndexType index)</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;{</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;  EZ_ASSERT_DEBUG(index &lt; m_Capacity, <span class="stringliteral">&quot;Out of bounds access. Table has {0} elements, trying to access element at index {1}.&quot;</span>, m_Capacity, index);</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;  <span class="keywordflow">return</span> m_pEntries[index].value;</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;}</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160; </div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> IdType, <span class="keyword">typename</span> ValueType&gt;</div>
+<div class="line"><a name="l00328"></a><span class="lineno"><a class="line" href="../../da/d31/classez_id_table_base.htm#a10645a54b5b48cdf7952a1be5c276095">  328</a></span>&#160;EZ_FORCE_INLINE <span class="keywordtype">bool</span> <a class="code" href="../../da/d31/classez_id_table_base.htm#a10645a54b5b48cdf7952a1be5c276095">ezIdTableBase&lt;IdType, ValueType&gt;::Contains</a>(<span class="keyword">const</span> IdType <span class="keywordtype">id</span>)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;  <span class="keyword">const</span> IndexType index = <span class="keywordtype">id</span>.m_InstanceIndex;</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;  <span class="keywordflow">return</span> index &lt; m_Capacity &amp;&amp; m_pEntries[index].id.IsIndexAndGenerationEqual(<span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;}</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> IdType, <span class="keyword">typename</span> ValueType&gt;</div>
+<div class="line"><a name="l00335"></a><span class="lineno"><a class="line" href="../../da/d31/classez_id_table_base.htm#a5608309445e42f2d906df22168653034">  335</a></span>&#160;EZ_ALWAYS_INLINE <span class="keyword">typename</span> <a class="code" href="../../d7/d1b/structez_id_table_base_1_1_iterator.htm">ezIdTableBase&lt;IdType, ValueType&gt;::Iterator</a> <a class="code" href="../../da/d31/classez_id_table_base.htm#a5608309445e42f2d906df22168653034">ezIdTableBase&lt;IdType, ValueType&gt;::GetIterator</a>()</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;{</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;  <span class="keywordflow">return</span> Iterator(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;}</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160; </div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> IdType, <span class="keyword">typename</span> ValueType&gt;</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;EZ_ALWAYS_INLINE <span class="keyword">typename</span> <a class="code" href="../../d8/d3d/classez_id_table_base_1_1_const_iterator.htm">ezIdTableBase&lt;IdType, ValueType&gt;::ConstIterator</a> <a class="code" href="../../da/d31/classez_id_table_base.htm#a5608309445e42f2d906df22168653034">ezIdTableBase&lt;IdType, ValueType&gt;::GetIterator</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;  <span class="keywordflow">return</span> ConstIterator(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;}</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160; </div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> IdType, <span class="keyword">typename</span> ValueType&gt;</div>
+<div class="line"><a name="l00347"></a><span class="lineno"><a class="line" href="../../da/d31/classez_id_table_base.htm#ae7f4e2aabb439e28afdaee3198256572">  347</a></span>&#160;EZ_ALWAYS_INLINE <a class="code" href="../../d1/d4c/classez_allocator_base.htm">ezAllocatorBase</a>* <a class="code" href="../../da/d31/classez_id_table_base.htm#ae7f4e2aabb439e28afdaee3198256572">ezIdTableBase&lt;IdType, ValueType&gt;::GetAllocator</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;  <span class="keywordflow">return</span> m_pAllocator;</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;}</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160; </div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> IdType, <span class="keyword">typename</span> ValueType&gt;</div>
+<div class="line"><a name="l00353"></a><span class="lineno"><a class="line" href="../../da/d31/classez_id_table_base.htm#a34ed0500452f2ca15fb18a45a8071d04">  353</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../da/d31/classez_id_table_base.htm#a34ed0500452f2ca15fb18a45a8071d04">ezIdTableBase&lt;IdType, ValueType&gt;::IsFreelistValid</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;  <span class="keywordflow">if</span> (m_pEntries == <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160; </div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;  IndexType uiIndex = m_FreelistDequeue;</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;  <span class="keyword">const</span> Entry* pEntry = m_pEntries + uiIndex;</div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160; </div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;  IndexType uiIndex = m_FreelistDequeue;</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;  <span class="keyword">const</span> Entry* pEntry = m_pEntries + uiIndex;</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160; </div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;  <span class="keywordflow">while</span> (pEntry-&gt;id.m_InstanceIndex &lt; m_Capacity)</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;  {</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    uiIndex = pEntry-&gt;id.m_InstanceIndex;</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    pEntry = m_pEntries + uiIndex;</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;  }</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;  <span class="keywordflow">while</span> (pEntry-&gt;id.m_InstanceIndex &lt; m_Capacity)</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;  {</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    uiIndex = pEntry-&gt;id.m_InstanceIndex;</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    pEntry = m_pEntries + uiIndex;</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;  }</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160; </div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;  <span class="keywordflow">return</span> uiIndex == m_FreelistEnqueue;</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;}</div>
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160; </div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;  <span class="keywordflow">return</span> uiIndex == m_FreelistEnqueue;</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;}</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160; </div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160; </div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;<span class="comment">// private methods</span></div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> IdType, <span class="keyword">typename</span> ValueType&gt;</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../da/d31/classez_id_table_base.htm">ezIdTableBase&lt;IdType, ValueType&gt;::SetCapacity</a>(IndexType uiCapacity)</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;{</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;  Entry* pNewEntries = EZ_NEW_RAW_BUFFER(m_pAllocator, Entry, (<span class="keywordtype">size_t</span>)uiCapacity);</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160; </div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;  <span class="keywordflow">for</span> (IndexType i = 0; i &lt; m_Capacity; ++i)</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;  {</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    pNewEntries[i].id = m_pEntries[i].id;</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160; </div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    <span class="keywordflow">if</span> (m_pEntries[i].<span class="keywordtype">id</span>.m_InstanceIndex == i)</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    {</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;      <a class="code" href="../../dc/d4d/classez_memory_utils.htm#ae016ea37ee5fc0eb1d922d02f042746c">ezMemoryUtils::RelocateConstruct</a>(&amp;pNewEntries[i].value, &amp;m_pEntries[i].value, 1);</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    }</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;  }</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160; </div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;<span class="comment">// private methods</span></div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> IdType, <span class="keyword">typename</span> ValueType&gt;</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../da/d31/classez_id_table_base.htm">ezIdTableBase&lt;IdType, ValueType&gt;::SetCapacity</a>(IndexType uiCapacity)</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;{</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;  Entry* pNewEntries = EZ_NEW_RAW_BUFFER(m_pAllocator, Entry, (<span class="keywordtype">size_t</span>)uiCapacity);</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160; </div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;  <span class="keywordflow">for</span> (IndexType i = 0; i &lt; m_Capacity; ++i)</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;  {</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    pNewEntries[i].id = m_pEntries[i].id;</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160; </div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    <span class="keywordflow">if</span> (m_pEntries[i].<span class="keywordtype">id</span>.m_InstanceIndex == i)</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    {</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;      <a class="code" href="../../dc/d4d/classez_memory_utils.htm#ae016ea37ee5fc0eb1d922d02f042746c">ezMemoryUtils::RelocateConstruct</a>(&amp;pNewEntries[i].value, &amp;m_pEntries[i].value, 1);</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    }</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;  }</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160; </div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;  EZ_DELETE_RAW_BUFFER(m_pAllocator, m_pEntries);</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;  m_pEntries = pNewEntries;</div>
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160; </div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;  EZ_DELETE_RAW_BUFFER(m_pAllocator, m_pEntries);</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;  m_pEntries = pNewEntries;</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160; </div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;  InitializeFreelist(m_Capacity, uiCapacity);</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;  m_Capacity = uiCapacity;</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;}</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160; </div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> IdType, <span class="keyword">typename</span> ValueType&gt;</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="../../da/d31/classez_id_table_base.htm">ezIdTableBase&lt;IdType, ValueType&gt;::InitializeFreelist</a>(IndexType uiStart, IndexType uiEnd)</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;{</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;  <span class="keywordflow">for</span> (IndexType i = uiStart; i &lt; uiEnd; ++i)</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;  {</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    IdType&amp; <span class="keywordtype">id</span> = m_pEntries[i].id;</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    <span class="keywordtype">id</span> = IdType(i + 1, 1); <span class="comment">// initialize generation with 1, to prevent 0 from being a valid ID</span></div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;  }</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;  InitializeFreelist(m_Capacity, uiCapacity);</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;  m_Capacity = uiCapacity;</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;}</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160; </div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> IdType, <span class="keyword">typename</span> ValueType&gt;</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="../../da/d31/classez_id_table_base.htm">ezIdTableBase&lt;IdType, ValueType&gt;::InitializeFreelist</a>(IndexType uiStart, IndexType uiEnd)</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;{</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;  <span class="keywordflow">for</span> (IndexType i = uiStart; i &lt; uiEnd; ++i)</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;  {</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    IdType&amp; <span class="keywordtype">id</span> = m_pEntries[i].id;</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    <span class="keywordtype">id</span> = IdType(i + 1, 1); <span class="comment">// initialize generation with 1, to prevent 0 from being a valid ID</span></div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;  }</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160; </div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;  m_FreelistEnqueue = uiEnd - 1;</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;}</div>
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160; </div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;  m_FreelistEnqueue = uiEnd - 1;</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;}</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160; </div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160; </div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> IdType, <span class="keyword">typename</span> V, <span class="keyword">typename</span> A&gt;</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;<a class="code" href="../../d8/ddb/classez_id_table.htm">ezIdTable&lt;IdType, V, A&gt;::ezIdTable</a>()</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;  : <a class="code" href="../../da/d31/classez_id_table_base.htm">ezIdTableBase</a>&lt;IdType, V&gt;(A::<a class="code" href="../../da/d31/classez_id_table_base.htm#ae7f4e2aabb439e28afdaee3198256572">GetAllocator</a>())</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;{</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;}</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160; </div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> IdType, <span class="keyword">typename</span> V, <span class="keyword">typename</span> A&gt;</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;<a class="code" href="../../d8/ddb/classez_id_table.htm">ezIdTable&lt;IdType, V, A&gt;::ezIdTable</a>(<a class="code" href="../../d1/d4c/classez_allocator_base.htm">ezAllocatorBase</a>* pAllocator)</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;  : <a class="code" href="../../da/d31/classez_id_table_base.htm">ezIdTableBase</a>&lt;IdType, V&gt;(pAllocator)</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;{</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;}</div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160; </div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> IdType, <span class="keyword">typename</span> V, <span class="keyword">typename</span> A&gt;</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;<a class="code" href="../../d8/ddb/classez_id_table.htm">ezIdTable&lt;IdType, V, A&gt;::ezIdTable</a>(<span class="keyword">const</span> <a class="code" href="../../d8/ddb/classez_id_table.htm">ezIdTable&lt;IdType, V, A&gt;</a>&amp; other)</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;  : <a class="code" href="../../da/d31/classez_id_table_base.htm">ezIdTableBase</a>&lt;IdType, V&gt;(other, A::GetAllocator())</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;{</div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;}</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160; </div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> IdType, <span class="keyword">typename</span> V, <span class="keyword">typename</span> A&gt;</div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;<a class="code" href="../../d8/ddb/classez_id_table.htm">ezIdTable&lt;IdType, V, A&gt;::ezIdTable</a>(<span class="keyword">const</span> <a class="code" href="../../da/d31/classez_id_table_base.htm">ezIdTableBase&lt;IdType, V&gt;</a>&amp; other)</div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;  : <a class="code" href="../../da/d31/classez_id_table_base.htm">ezIdTableBase</a>&lt;IdType, V&gt;(other, A::GetAllocator())</div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;{</div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;}</div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160; </div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> IdType, <span class="keyword">typename</span> V, <span class="keyword">typename</span> A&gt;</div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d8/ddb/classez_id_table.htm">ezIdTable&lt;IdType, V, A&gt;::operator=</a>(<span class="keyword">const</span> <a class="code" href="../../d8/ddb/classez_id_table.htm">ezIdTable&lt;IdType, V, A&gt;</a>&amp; rhs)</div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;{</div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;  <a class="code" href="../../da/d31/classez_id_table_base.htm#a12f12c67dbc228b435139822e7d1af97">ezIdTableBase&lt;IdType, V&gt;::operator=</a>(rhs);</div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;}</div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160; </div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> IdType, <span class="keyword">typename</span> V, <span class="keyword">typename</span> A&gt;</div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d8/ddb/classez_id_table.htm">ezIdTable&lt;IdType, V, A&gt;::operator=</a>(<span class="keyword">const</span> <a class="code" href="../../da/d31/classez_id_table_base.htm">ezIdTableBase&lt;IdType, V&gt;</a>&amp; rhs)</div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;{</div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;  <a class="code" href="../../da/d31/classez_id_table_base.htm#a12f12c67dbc228b435139822e7d1af97">ezIdTableBase&lt;IdType, V&gt;::operator=</a>(rhs);</div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;}</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160; </div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> IdType, <span class="keyword">typename</span> V, <span class="keyword">typename</span> A&gt;</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;<a class="code" href="../../d8/ddb/classez_id_table.htm">ezIdTable&lt;IdType, V, A&gt;::ezIdTable</a>()</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;  : <a class="code" href="../../da/d31/classez_id_table_base.htm">ezIdTableBase</a>&lt;IdType, V&gt;(A::<a class="code" href="../../da/d31/classez_id_table_base.htm#ae7f4e2aabb439e28afdaee3198256572">GetAllocator</a>())</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;{</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;}</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160; </div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> IdType, <span class="keyword">typename</span> V, <span class="keyword">typename</span> A&gt;</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;<a class="code" href="../../d8/ddb/classez_id_table.htm">ezIdTable&lt;IdType, V, A&gt;::ezIdTable</a>(<a class="code" href="../../d1/d4c/classez_allocator_base.htm">ezAllocatorBase</a>* pAllocator)</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;  : <a class="code" href="../../da/d31/classez_id_table_base.htm">ezIdTableBase</a>&lt;IdType, V&gt;(pAllocator)</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;{</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;}</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160; </div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> IdType, <span class="keyword">typename</span> V, <span class="keyword">typename</span> A&gt;</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;<a class="code" href="../../d8/ddb/classez_id_table.htm">ezIdTable&lt;IdType, V, A&gt;::ezIdTable</a>(<span class="keyword">const</span> <a class="code" href="../../d8/ddb/classez_id_table.htm">ezIdTable&lt;IdType, V, A&gt;</a>&amp; other)</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;  : <a class="code" href="../../da/d31/classez_id_table_base.htm">ezIdTableBase</a>&lt;IdType, V&gt;(other, A::GetAllocator())</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;{</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;}</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160; </div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> IdType, <span class="keyword">typename</span> V, <span class="keyword">typename</span> A&gt;</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;<a class="code" href="../../d8/ddb/classez_id_table.htm">ezIdTable&lt;IdType, V, A&gt;::ezIdTable</a>(<span class="keyword">const</span> <a class="code" href="../../da/d31/classez_id_table_base.htm">ezIdTableBase&lt;IdType, V&gt;</a>&amp; other)</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;  : <a class="code" href="../../da/d31/classez_id_table_base.htm">ezIdTableBase</a>&lt;IdType, V&gt;(other, A::GetAllocator())</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;{</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;}</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160; </div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> IdType, <span class="keyword">typename</span> V, <span class="keyword">typename</span> A&gt;</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d8/ddb/classez_id_table.htm">ezIdTable&lt;IdType, V, A&gt;::operator=</a>(<span class="keyword">const</span> <a class="code" href="../../d8/ddb/classez_id_table.htm">ezIdTable&lt;IdType, V, A&gt;</a>&amp; rhs)</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;{</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;  <a class="code" href="../../da/d31/classez_id_table_base.htm#a12f12c67dbc228b435139822e7d1af97">ezIdTableBase&lt;IdType, V&gt;::operator=</a>(rhs);</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;}</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160; </div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> IdType, <span class="keyword">typename</span> V, <span class="keyword">typename</span> A&gt;</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d8/ddb/classez_id_table.htm">ezIdTable&lt;IdType, V, A&gt;::operator=</a>(<span class="keyword">const</span> <a class="code" href="../../da/d31/classez_id_table_base.htm">ezIdTableBase&lt;IdType, V&gt;</a>&amp; rhs)</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;{</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;  <a class="code" href="../../da/d31/classez_id_table_base.htm#a12f12c67dbc228b435139822e7d1af97">ezIdTableBase&lt;IdType, V&gt;::operator=</a>(rhs);</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassez_id_table_base_htm_ae7f4e2aabb439e28afdaee3198256572"><div class="ttname"><a href="../../da/d31/classez_id_table_base.htm#ae7f4e2aabb439e28afdaee3198256572">ezIdTableBase::GetAllocator</a></div><div class="ttdeci">ezAllocatorBase * GetAllocator() const</div><div class="ttdoc">Returns the allocator that is used by this instance.</div><div class="ttdef"><b>Definition:</b> IdTable_inl.h:350</div></div>
+<div class="ttc" id="aclassez_id_table_base_htm_ae7f4e2aabb439e28afdaee3198256572"><div class="ttname"><a href="../../da/d31/classez_id_table_base.htm#ae7f4e2aabb439e28afdaee3198256572">ezIdTableBase::GetAllocator</a></div><div class="ttdeci">ezAllocatorBase * GetAllocator() const</div><div class="ttdoc">Returns the allocator that is used by this instance.</div><div class="ttdef"><b>Definition:</b> IdTable_inl.h:347</div></div>
 <div class="ttc" id="aclassez_id_table_base_1_1_const_iterator_htm_a8a021d7a095d9ce1bdab46a1faf97e39"><div class="ttname"><a href="../../d8/d3d/classez_id_table_base_1_1_const_iterator.htm#a8a021d7a095d9ce1bdab46a1faf97e39">ezIdTableBase::ConstIterator::operator==</a></div><div class="ttdeci">bool operator==(const typename ezIdTableBase&lt; IdType, ValueType &gt;::ConstIterator &amp;it2) const</div><div class="ttdoc">Checks whether the two iterators point to the same element.</div><div class="ttdef"><b>Definition:</b> IdTable_inl.h:26</div></div>
 <div class="ttc" id="aclassez_id_table_base_htm_af00fe7c45f08585d3e4d8a60d887f2d4"><div class="ttname"><a href="../../da/d31/classez_id_table_base.htm#af00fe7c45f08585d3e4d8a60d887f2d4">ezIdTableBase::ezIdTableBase</a></div><div class="ttdeci">ezIdTableBase(ezAllocatorBase *pAllocator)</div><div class="ttdoc">Creates an empty id-table. Does not allocate any data yet.</div><div class="ttdef"><b>Definition:</b> IdTable_inl.h:89</div></div>
 <div class="ttc" id="aclassez_id_table_base_htm_a4f3ebb3269b4fea7dd24342df3cd5bc8"><div class="ttname"><a href="../../da/d31/classez_id_table_base.htm#a4f3ebb3269b4fea7dd24342df3cd5bc8">ezIdTableBase::GetCount</a></div><div class="ttdeci">IndexType GetCount() const</div><div class="ttdoc">Returns the number of active entries in the table.</div><div class="ttdef"><b>Definition:</b> IdTable_inl.h:168</div></div>
 <div class="ttc" id="aclassez_id_table_base_htm_af5190eea7e07b8b1e053f39b731ffdf9"><div class="ttname"><a href="../../da/d31/classez_id_table_base.htm#af5190eea7e07b8b1e053f39b731ffdf9">ezIdTableBase::IsEmpty</a></div><div class="ttdeci">bool IsEmpty() const</div><div class="ttdoc">Returns true, if the table does not contain any elements.</div><div class="ttdef"><b>Definition:</b> IdTable_inl.h:174</div></div>
-<div class="ttc" id="aclassez_id_table_base_htm_a10645a54b5b48cdf7952a1be5c276095"><div class="ttname"><a href="../../da/d31/classez_id_table_base.htm#a10645a54b5b48cdf7952a1be5c276095">ezIdTableBase::Contains</a></div><div class="ttdeci">bool Contains(const IdType id) const</div><div class="ttdoc">Returns if the table contains an entry corresponding to the given id.</div><div class="ttdef"><b>Definition:</b> IdTable_inl.h:331</div></div>
+<div class="ttc" id="aclassez_id_table_base_htm_a10645a54b5b48cdf7952a1be5c276095"><div class="ttname"><a href="../../da/d31/classez_id_table_base.htm#a10645a54b5b48cdf7952a1be5c276095">ezIdTableBase::Contains</a></div><div class="ttdeci">bool Contains(const IdType id) const</div><div class="ttdoc">Returns if the table contains an entry corresponding to the given id.</div><div class="ttdef"><b>Definition:</b> IdTable_inl.h:328</div></div>
 <div class="ttc" id="aclassez_id_table_base_htm_a69aedf90afa4ee63dcf3f37fd31c50c3"><div class="ttname"><a href="../../da/d31/classez_id_table_base.htm#a69aedf90afa4ee63dcf3f37fd31c50c3">ezIdTableBase::Remove</a></div><div class="ttdeci">bool Remove(const IdType id, ValueType *out_pOldValue=nullptr)</div><div class="ttdoc">Removes the entry with the given id. Returns if an entry was removed and optionally writes out the ol...</div><div class="ttdef"><b>Definition:</b> IdTable_inl.h:237</div></div>
-<div class="ttc" id="aclassez_id_table_base_htm_a34ed0500452f2ca15fb18a45a8071d04"><div class="ttname"><a href="../../da/d31/classez_id_table_base.htm#a34ed0500452f2ca15fb18a45a8071d04">ezIdTableBase::IsFreelistValid</a></div><div class="ttdeci">bool IsFreelistValid() const</div><div class="ttdoc">Returns whether the internal free-list is valid. For testing purpose only.</div><div class="ttdef"><b>Definition:</b> IdTable_inl.h:356</div></div>
-<div class="ttc" id="aclassez_id_table_base_htm_a1180d6e2020092f74a4221aab823d66e"><div class="ttname"><a href="../../da/d31/classez_id_table_base.htm#a1180d6e2020092f74a4221aab823d66e">ezIdTableBase::GetValueUnchecked</a></div><div class="ttdeci">const ValueType &amp; GetValueUnchecked(const IndexType index) const</div><div class="ttdoc">Returns the value at the given index. Does bounds checks in debug builds but does not check for stale...</div><div class="ttdef"><b>Definition:</b> IdTable_inl.h:317</div></div>
+<div class="ttc" id="aclassez_id_table_base_htm_a34ed0500452f2ca15fb18a45a8071d04"><div class="ttname"><a href="../../da/d31/classez_id_table_base.htm#a34ed0500452f2ca15fb18a45a8071d04">ezIdTableBase::IsFreelistValid</a></div><div class="ttdeci">bool IsFreelistValid() const</div><div class="ttdoc">Returns whether the internal free-list is valid. For testing purpose only.</div><div class="ttdef"><b>Definition:</b> IdTable_inl.h:353</div></div>
+<div class="ttc" id="aclassez_id_table_base_htm_a1180d6e2020092f74a4221aab823d66e"><div class="ttname"><a href="../../da/d31/classez_id_table_base.htm#a1180d6e2020092f74a4221aab823d66e">ezIdTableBase::GetValueUnchecked</a></div><div class="ttdeci">const ValueType &amp; GetValueUnchecked(const IndexType index) const</div><div class="ttdoc">Returns the value at the given index. Does bounds checks in debug builds but does not check for stale...</div><div class="ttdef"><b>Definition:</b> IdTable_inl.h:314</div></div>
 <div class="ttc" id="aclassez_id_table_base_htm_a12b5ae8a2b42dad8d51df54e3057d9d9"><div class="ttname"><a href="../../da/d31/classez_id_table_base.htm#a12b5ae8a2b42dad8d51df54e3057d9d9">ezIdTableBase::operator[]</a></div><div class="ttdeci">const ValueType &amp; operator[](const IdType id) const</div><div class="ttdoc">Returns the value to the given id. Does bounds checks in debug builds.</div><div class="ttdef"><b>Definition:</b> IdTable_inl.h:291</div></div>
 <div class="ttc" id="astructez_id_table_base_1_1_iterator_htm"><div class="ttname"><a href="../../d7/d1b/structez_id_table_base_1_1_iterator.htm">ezIdTableBase::Iterator</a></div><div class="ttdoc">Iterator with write access.</div><div class="ttdef"><b>Definition:</b> IdTable.h:59</div></div>
 <div class="ttc" id="aclassez_id_table_base_1_1_const_iterator_htm"><div class="ttname"><a href="../../d8/d3d/classez_id_table_base_1_1_const_iterator.htm">ezIdTableBase::ConstIterator</a></div><div class="ttdoc">Const iterator.</div><div class="ttdef"><b>Definition:</b> IdTable.h:24</div></div>
@@ -552,7 +549,7 @@ $(document).ready(function(){initNavTree('d5/d5f/_id_table__inl_8h_source.htm','
 <div class="ttc" id="aclassez_id_table_htm"><div class="ttname"><a href="../../d8/ddb/classez_id_table.htm">ezIdTable</a></div><div class="ttdef"><b>Definition:</b> IdTable.h:170</div></div>
 <div class="ttc" id="aclassez_id_table_base_1_1_const_iterator_htm_a386382e8489925828ddc17deffff39fc"><div class="ttname"><a href="../../d8/d3d/classez_id_table_base_1_1_const_iterator.htm#a386382e8489925828ddc17deffff39fc">ezIdTableBase::ConstIterator::Value</a></div><div class="ttdeci">const ValueType &amp; Value() const</div><div class="ttdoc">Returns the 'value' of the element that this iterator points to.</div><div class="ttdef"><b>Definition:</b> IdTable_inl.h:46</div></div>
 <div class="ttc" id="aclassez_id_table_base_htm"><div class="ttname"><a href="../../da/d31/classez_id_table_base.htm">ezIdTableBase</a></div><div class="ttdoc">Implementation of an id mapping table which stores id/value pairs.</div><div class="ttdef"><b>Definition:</b> IdTable.h:17</div></div>
-<div class="ttc" id="aclassez_id_table_base_htm_a5608309445e42f2d906df22168653034"><div class="ttname"><a href="../../da/d31/classez_id_table_base.htm#a5608309445e42f2d906df22168653034">ezIdTableBase::GetIterator</a></div><div class="ttdeci">Iterator GetIterator()</div><div class="ttdoc">Returns an Iterator to the very first element.</div><div class="ttdef"><b>Definition:</b> IdTable_inl.h:338</div></div>
+<div class="ttc" id="aclassez_id_table_base_htm_a5608309445e42f2d906df22168653034"><div class="ttname"><a href="../../da/d31/classez_id_table_base.htm#a5608309445e42f2d906df22168653034">ezIdTableBase::GetIterator</a></div><div class="ttdeci">Iterator GetIterator()</div><div class="ttdoc">Returns an Iterator to the very first element.</div><div class="ttdef"><b>Definition:</b> IdTable_inl.h:335</div></div>
 <div class="ttc" id="aclassez_allocator_base_htm"><div class="ttname"><a href="../../d1/d4c/classez_allocator_base.htm">ezAllocatorBase</a></div><div class="ttdoc">Base class for all memory allocators.</div><div class="ttdef"><b>Definition:</b> AllocatorBase.h:22</div></div>
 <div class="ttc" id="aclassez_id_table_base_1_1_const_iterator_htm_a7460b6edb9271cc571d784748a0e4cf0"><div class="ttname"><a href="../../d8/d3d/classez_id_table_base_1_1_const_iterator.htm#a7460b6edb9271cc571d784748a0e4cf0">ezIdTableBase::ConstIterator::Id</a></div><div class="ttdeci">IdType Id() const</div><div class="ttdoc">Returns the 'id' of the element that this iterator points to.</div><div class="ttdef"><b>Definition:</b> IdTable_inl.h:40</div></div>
 <div class="ttc" id="aclassez_id_table_base_1_1_const_iterator_htm_adbb139112ee45ffd15cc26060dffbb39"><div class="ttname"><a href="../../d8/d3d/classez_id_table_base_1_1_const_iterator.htm#adbb139112ee45ffd15cc26060dffbb39">ezIdTableBase::ConstIterator::operator!=</a></div><div class="ttdeci">bool operator!=(const typename ezIdTableBase&lt; IdType, ValueType &gt;::ConstIterator &amp;it2) const</div><div class="ttdoc">Checks whether the two iterators point to the same element.</div><div class="ttdef"><b>Definition:</b> IdTable_inl.h:33</div></div>
@@ -569,7 +566,7 @@ $(document).ready(function(){initNavTree('d5/d5f/_id_table__inl_8h_source.htm','
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_6b567e6755824bd0b8ffd754b9d67ac0.htm">Containers</a></li><li class="navelem"><a class="el" href="../../dir_ab7c7fd106dde24a64865a60f78fe0d2.htm">Implementation</a></li><li class="navelem"><b>IdTable_inl.h</b></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:21:54 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:16 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

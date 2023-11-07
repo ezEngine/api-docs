@@ -1,6 +1,6 @@
 var structez_effect_invisible_update_rate =
 [
-    [ "StorageType", "dd/dc1/structez_effect_invisible_update_rate.htm#a4096e425faff7e97a729d539bed6db36", null ],
+    [ "StorageType", "dd/dc1/structez_effect_invisible_update_rate.htm#a8826be04023a58805422831aeb6d9a9e", null ],
     [ "Enum", "dd/dc1/structez_effect_invisible_update_rate.htm#aa894db60b52836874feab5ae233793af", [
       [ "FullUpdate", "dd/dc1/structez_effect_invisible_update_rate.htm#aa894db60b52836874feab5ae233793afa86e188ce49888ff567e59a2ad95a7c2b", null ],
       [ "Max20fps", "dd/dc1/structez_effect_invisible_update_rate.htm#aa894db60b52836874feab5ae233793afa60737dde0c0bfcca73947879febc701b", null ],

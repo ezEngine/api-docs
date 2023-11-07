@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -102,9 +102,12 @@ Inheritance diagram for ezAbstractMessageHandler:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../da/d4d/classez_abstract_message_handler__inherit__graph.png" border="0" usemap="#ez_abstract_message_handler_inherit__map" alt="Inheritance graph"/></div>
 <map name="ez_abstract_message_handler_inherit__map" id="ez_abstract_message_handler_inherit__map">
-<area shape="rect" title="The base class for all message handlers that a type provides." alt="" coords="5,57,205,84"/>
+<area shape="rect" title="The base class for all message handlers that a type provides." alt="" coords="5,93,205,120"/>
 <area shape="rect" href="../../de/db6/classez_internal_1_1_message_handler_1_1_impl.htm" title=" " alt="" coords="253,5,457,61"/>
 <area shape="rect" href="../../d0/d45/classez_internal_1_1_message_handler_3_01true_01_4_1_1_impl.htm" title=" " alt="" coords="253,86,457,127"/>
+<area shape="rect" href="../../d2/d27/classez_script_message_handler.htm" title=" " alt="" coords="264,152,447,179"/>
+<area shape="rect" href="../../df/dad/classez_script_coroutine_message_handler.htm" title="A message handler that creates an instance of the given coroutine type and starts it immediately." alt="" coords="519,115,714,157"/>
+<area shape="rect" href="../../d7/d30/classez_visual_script_message_handler.htm" title=" " alt="" coords="505,181,728,208"/>
 </map>
 <center><span class="legend">[<a target="top" href="../../graph_legend.htm">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -125,30 +128,30 @@ EZ_ALWAYS_INLINE bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsCo
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-types"></a>
 Protected Types</h2></td></tr>
-<tr class="memitem:a3518601a040c064a7fb51a0fbe107714"><td class="memItemLeft" align="right" valign="top"><a id="a3518601a040c064a7fb51a0fbe107714"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>DispatchFunc</b> = void(*)(void *, <a class="el" href="../../dd/d22/classez_message.htm">ezMessage</a> &amp;)</td></tr>
-<tr class="separator:a3518601a040c064a7fb51a0fbe107714"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53ae09b5ec7820659af76ef1be6f35ea"><td class="memItemLeft" align="right" valign="top"><a id="a53ae09b5ec7820659af76ef1be6f35ea"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>ConstDispatchFunc</b> = void(*)(const void *, <a class="el" href="../../dd/d22/classez_message.htm">ezMessage</a> &amp;)</td></tr>
-<tr class="separator:a53ae09b5ec7820659af76ef1be6f35ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae81e54d94d820db98253449ad864b7e3"><td class="memItemLeft" align="right" valign="top"><a id="ae81e54d94d820db98253449ad864b7e3"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>DispatchFunc</b> = void(*)(<a class="el" href="../../d5/d1b/classez_abstract_message_handler.htm">ezAbstractMessageHandler</a> *pSelf, void *pInstance, <a class="el" href="../../dd/d22/classez_message.htm">ezMessage</a> &amp;)</td></tr>
+<tr class="separator:ae81e54d94d820db98253449ad864b7e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e9bac7c2ede738779ec87b24f457fdb"><td class="memItemLeft" align="right" valign="top"><a id="a7e9bac7c2ede738779ec87b24f457fdb"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>ConstDispatchFunc</b> = void(*)(<a class="el" href="../../d5/d1b/classez_abstract_message_handler.htm">ezAbstractMessageHandler</a> *pSelf, const void *pInstance, <a class="el" href="../../dd/d22/classez_message.htm">ezMessage</a> &amp;)</td></tr>
+<tr class="separator:a7e9bac7c2ede738779ec87b24f457fdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:aa2323bcb6af7f8a6602b669dd86e0b16"><td class="memItemLeft" ><a id="aa2323bcb6af7f8a6602b669dd86e0b16"></a>
+<tr class="memitem:ad2f725d99e72b466e58b24deb6f6c2be"><td class="memItemLeft" ><a id="ad2f725d99e72b466e58b24deb6f6c2be"></a>
 union {</td></tr>
-<tr class="memitem:ae97665dae006915a7b9a3cdcd6ea62d7"><td class="memItemLeft" >
-&#160;&#160;&#160;DispatchFunc&#160;&#160;&#160;<b>m_DispatchFunc</b></td></tr>
-<tr class="separator:ae97665dae006915a7b9a3cdcd6ea62d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f4ef8bf1fcdb0b72e108ae367ec456d"><td class="memItemLeft" >
+<tr class="memitem:ae1b50d07312f9631bf431b0b7b8f2fd3"><td class="memItemLeft" >
+&#160;&#160;&#160;DispatchFunc&#160;&#160;&#160;<b>m_DispatchFunc</b> = nullptr</td></tr>
+<tr class="separator:ae1b50d07312f9631bf431b0b7b8f2fd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada660f2d98a8ca4a857319cde223fa4e"><td class="memItemLeft" >
 &#160;&#160;&#160;ConstDispatchFunc&#160;&#160;&#160;<b>m_ConstDispatchFunc</b></td></tr>
-<tr class="separator:a2f4ef8bf1fcdb0b72e108ae367ec456d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2323bcb6af7f8a6602b669dd86e0b16"><td class="memItemLeft" valign="top">};&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
-<tr class="separator:aa2323bcb6af7f8a6602b669dd86e0b16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:ada660f2d98a8ca4a857319cde223fa4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2f725d99e72b466e58b24deb6f6c2be"><td class="memItemLeft" valign="top">};&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:ad2f725d99e72b466e58b24deb6f6c2be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42aa056eab6502fa8ec168b65d586d7d"><td class="memItemLeft" align="right" valign="top"><a id="a42aa056eab6502fa8ec168b65d586d7d"></a>
-ezMessageId&#160;</td><td class="memItemRight" valign="bottom"><b>m_Id</b></td></tr>
+ezMessageId&#160;</td><td class="memItemRight" valign="bottom"><b>m_Id</b> = ezSmallInvalidIndex</td></tr>
 <tr class="separator:a42aa056eab6502fa8ec168b65d586d7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a203799fbfdc31b8e9e016b86090e8375"><td class="memItemLeft" align="right" valign="top"><a id="a203799fbfdc31b8e9e016b86090e8375"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_bIsConst</b></td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_bIsConst</b> = false</td></tr>
 <tr class="separator:a203799fbfdc31b8e9e016b86090e8375"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -162,7 +165,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_bIsConst</b></td></
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d5/d1b/classez_abstract_message_handler.htm">ezAbstractMessageHandler</a></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:22:01 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:22 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

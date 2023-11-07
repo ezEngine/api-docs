@@ -2,9 +2,11 @@ var classez_forward_render_pass =
 [
     [ "ezForwardRenderPass", "df/da0/classez_forward_render_pass.htm#a2c47db3aaccf0ee9d2db88fd73c7e562", null ],
     [ "~ezForwardRenderPass", "df/da0/classez_forward_render_pass.htm#aef69c2ee6cae6dca006a17bef5930d56", null ],
+    [ "Deserialize", "df/da0/classez_forward_render_pass.htm#a081dabb4ee05589a9ecf3b7db711967d", null ],
     [ "Execute", "df/da0/classez_forward_render_pass.htm#a47827d6738541803045f75984cab5336", null ],
     [ "GetRenderTargetDescriptions", "df/da0/classez_forward_render_pass.htm#aeb5bae71c696469402544798c92e738c", null ],
     [ "RenderObjects", "df/da0/classez_forward_render_pass.htm#ade72ffea4b5ac6727e13df7c27faa917", null ],
+    [ "Serialize", "df/da0/classez_forward_render_pass.htm#ae90a04556ee521c43b428f2b46fc4d00", null ],
     [ "SetupLighting", "df/da0/classez_forward_render_pass.htm#ac426f5615b9d2543cdacaac46608b30f", null ],
     [ "SetupPermutationVars", "df/da0/classez_forward_render_pass.htm#a91f34e87f00b9bf73349091dca42fb2d", null ],
     [ "SetupResources", "df/da0/classez_forward_render_pass.htm#a81849f55e87894bafb47e72217e4074a", null ],

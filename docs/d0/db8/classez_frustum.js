@@ -33,8 +33,5 @@ var classez_frustum =
     [ "IsValid", "d0/db8/classez_frustum.htm#a28cb5adf9ed54ce3678fcb166da8ef8d", null ],
     [ "Overlaps", "d0/db8/classez_frustum.htm#afca2d8abfd1533d6484aa4609a345e4e", null ],
     [ "Overlaps", "d0/db8/classez_frustum.htm#afc97a25345878f18956161a3fde0fe14", null ],
-    [ "SetFrustum", "d0/db8/classez_frustum.htm#ac8e314fb522b5fe0f142310eef57093f", null ],
-    [ "SetFrustum", "d0/db8/classez_frustum.htm#a538e7cf74b4b662fdd6b50cdd1f4b36d", null ],
-    [ "SetFrustum", "d0/db8/classez_frustum.htm#adbb3bbb0e0b28a065b795fd04bfd23f5", null ],
     [ "TransformFrustum", "d0/db8/classez_frustum.htm#aff642f9f70d761a67a8d2b010da3bf2a", null ]
 ];

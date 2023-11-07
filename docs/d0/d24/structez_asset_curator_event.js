@@ -3,6 +3,7 @@ var structez_asset_curator_event =
     [ "Type", "d0/d24/structez_asset_curator_event.htm#a1e00db5b101f0d713ebc8ac04d76c3dd", [
       [ "AssetAdded", "d0/d24/structez_asset_curator_event.htm#a1e00db5b101f0d713ebc8ac04d76c3ddaaa8caaedfad836dab7f40e322860c5e7", null ],
       [ "AssetRemoved", "d0/d24/structez_asset_curator_event.htm#a1e00db5b101f0d713ebc8ac04d76c3ddac1781c526332ed54e3b3ab2d3600a2c1", null ],
+      [ "AssetMoved", "d0/d24/structez_asset_curator_event.htm#a1e00db5b101f0d713ebc8ac04d76c3dda639d29b463fe61ab0523fbf00d634412", null ],
       [ "AssetUpdated", "d0/d24/structez_asset_curator_event.htm#a1e00db5b101f0d713ebc8ac04d76c3dda3252a0aa47fd471a62a3f7ea0ff4b09b", null ],
       [ "AssetListReset", "d0/d24/structez_asset_curator_event.htm#a1e00db5b101f0d713ebc8ac04d76c3dda43f5de3c2acc9fa5be2eb8b0df8b47ce", null ],
       [ "ActivePlatformChanged", "d0/d24/structez_asset_curator_event.htm#a1e00db5b101f0d713ebc8ac04d76c3dda557f6fb634418bb83d42122f0b917ad5", null ]

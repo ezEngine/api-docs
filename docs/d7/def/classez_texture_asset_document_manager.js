@@ -5,7 +5,7 @@ var classez_texture_asset_document_manager =
     [ "ComputeAssetProfileHashImpl", "d7/def/classez_texture_asset_document_manager.htm#aa03f91a986ea2b6c627b608512d9f0af", null ],
     [ "GeneratesProfileSpecificAssets", "d7/def/classez_texture_asset_document_manager.htm#a1a1e6b4d904dc9935c4d9a53423ba6f6", null ],
     [ "GetAssetTypeOutputReliability", "d7/def/classez_texture_asset_document_manager.htm#a5406852cf3b8c252f611fcacb23bd1b6", null ],
-    [ "GetRelativeOutputFileName", "d7/def/classez_texture_asset_document_manager.htm#acbd415e50524335d2094ceba23cba8c5", null ],
-    [ "InternalCreateDocument", "d7/def/classez_texture_asset_document_manager.htm#acd8260c85280d94af9bfc51af661a94f", null ],
+    [ "GetRelativeOutputFileName", "d7/def/classez_texture_asset_document_manager.htm#ac49f5677531221261db3b0bcb68e1266", null ],
+    [ "InternalCreateDocument", "d7/def/classez_texture_asset_document_manager.htm#a27e9d7f899c27079db776ec162f85f53", null ],
     [ "InternalGetSupportedDocumentTypes", "d7/def/classez_texture_asset_document_manager.htm#a0aab068a3079c79c4bf344a2f6c8094d", null ]
 ];

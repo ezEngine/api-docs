@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -134,208 +134,201 @@ $(document).ready(function(){initNavTree('dd/de8/_color__inl_8h_source.htm','../
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  a = fLinearAlpha;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="../../dd/d01/classez_color.htm#ae31963ffb06d62fa7c282f8865dde508">   48</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="../../dd/d01/classez_color.htm#ae31963ffb06d62fa7c282f8865dde508">ezColor::SetZero</a>()</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  *<span class="keyword">this</span> = <a class="code" href="../../dd/d01/classez_color.htm#a43f8bfe44e9ee120e97d3c5a64611125">ZeroColor</a>();</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">// http://en.wikipedia.org/wiki/Luminance_%28relative%29</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="../../dd/d01/classez_color.htm#a2dfa20c3c2d69a30846502a83c71c3d1">   54</a></span>&#160;EZ_FORCE_INLINE <span class="keywordtype">float</span> <a class="code" href="../../dd/d01/classez_color.htm#a2dfa20c3c2d69a30846502a83c71c3d1">ezColor::GetLuminance</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">// http://en.wikipedia.org/wiki/Luminance_%28relative%29</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="../../dd/d01/classez_color.htm#a2dfa20c3c2d69a30846502a83c71c3d1">   49</a></span>&#160;EZ_FORCE_INLINE <span class="keywordtype">float</span> <a class="code" href="../../dd/d01/classez_color.htm#a2dfa20c3c2d69a30846502a83c71c3d1">ezColor::GetLuminance</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordflow">return</span> 0.2126f * r + 0.7152f * g + 0.0722f * b;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="../../dd/d01/classez_color.htm#a26447982a5c0afdfd784aa1e0035ac4b">   54</a></span>&#160;<span class="keyword">inline</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a> <a class="code" href="../../dd/d01/classez_color.htm#a26447982a5c0afdfd784aa1e0035ac4b">ezColor::GetInvertedColor</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordflow">return</span> 0.2126f * r + 0.7152f * g + 0.0722f * b;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  EZ_NAN_ASSERT(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  EZ_ASSERT_DEBUG(<a class="code" href="../../dd/d01/classez_color.htm#abd431fed6c9b1842d7a670012e19d98a">IsNormalized</a>(), <span class="stringliteral">&quot;Cannot invert a color that has values outside the [0; 1] range&quot;</span>);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="../../dd/d01/classez_color.htm#a26447982a5c0afdfd784aa1e0035ac4b">   59</a></span>&#160;<span class="keyword">inline</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a> <a class="code" href="../../dd/d01/classez_color.htm#a26447982a5c0afdfd784aa1e0035ac4b">ezColor::GetInvertedColor</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  EZ_NAN_ASSERT(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  EZ_ASSERT_DEBUG(<a class="code" href="../../dd/d01/classez_color.htm#abd431fed6c9b1842d7a670012e19d98a">IsNormalized</a>(), <span class="stringliteral">&quot;Cannot invert a color that has values outside the [0; 1] range&quot;</span>);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../dd/d01/classez_color.htm#a6d241057cc50e7000ab9b18c476a42ff">ezColor</a>(1.0f - r, 1.0f - g, 1.0f - b, 1.0f - a);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="../../dd/d01/classez_color.htm#a516e5323ce7abfa57f772918318c42bf">   67</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="../../dd/d01/classez_color.htm#a516e5323ce7abfa57f772918318c42bf">ezColor::IsNaN</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordflow">if</span> (ezMath::IsNaN(r))</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordflow">if</span> (ezMath::IsNaN(g))</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordflow">if</span> (ezMath::IsNaN(b))</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordflow">if</span> (ezMath::IsNaN(a))</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../dd/d01/classez_color.htm#a6d241057cc50e7000ab9b18c476a42ff">ezColor</a>(1.0f - r, 1.0f - g, 1.0f - b, 1.0f - a);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="../../dd/d01/classez_color.htm#a516e5323ce7abfa57f772918318c42bf">   62</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="../../dd/d01/classez_color.htm#a516e5323ce7abfa57f772918318c42bf">ezColor::IsNaN</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordflow">if</span> (ezMath::IsNaN(r))</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordflow">if</span> (ezMath::IsNaN(g))</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordflow">if</span> (ezMath::IsNaN(b))</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordflow">if</span> (ezMath::IsNaN(a))</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="../../dd/d01/classez_color.htm#ae8ffd8f5af70c717a5ea19fbf7dcc281">   76</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="../../dd/d01/classez_color.htm#ae8ffd8f5af70c717a5ea19fbf7dcc281">ezColor::operator+=</a>(<span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; rhs)</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;{</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  EZ_NAN_ASSERT(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  EZ_NAN_ASSERT(&amp;rhs);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="../../dd/d01/classez_color.htm#ae8ffd8f5af70c717a5ea19fbf7dcc281">   81</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="../../dd/d01/classez_color.htm#ae8ffd8f5af70c717a5ea19fbf7dcc281">ezColor::operator+=</a>(<span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; rhs)</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;{</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  EZ_NAN_ASSERT(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  EZ_NAN_ASSERT(&amp;rhs);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  r += rhs.r;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  g += rhs.g;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  b += rhs.b;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  a += rhs.a;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  r += rhs.r;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  g += rhs.g;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  b += rhs.b;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  a += rhs.a;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="../../dd/d01/classez_color.htm#a54d3d28ffa3e814ba0db7b158cbc30f7">   87</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="../../dd/d01/classez_color.htm#a54d3d28ffa3e814ba0db7b158cbc30f7">ezColor::operator-=</a>(<span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; rhs)</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;{</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  EZ_NAN_ASSERT(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  EZ_NAN_ASSERT(&amp;rhs);</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="../../dd/d01/classez_color.htm#a54d3d28ffa3e814ba0db7b158cbc30f7">   92</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="../../dd/d01/classez_color.htm#a54d3d28ffa3e814ba0db7b158cbc30f7">ezColor::operator-=</a>(<span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; rhs)</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;{</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  EZ_NAN_ASSERT(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  EZ_NAN_ASSERT(&amp;rhs);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  r -= rhs.r;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  g -= rhs.g;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  b -= rhs.b;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  a -= rhs.a;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  r -= rhs.r;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  g -= rhs.g;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  b -= rhs.b;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  a -= rhs.a;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="../../dd/d01/classez_color.htm#a7eb7cd1bf841318fb026253d9b401a7a">   98</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="../../dd/d01/classez_color.htm#a7eb7cd1bf841318fb026253d9b401a7a">ezColor::operator*=</a>(<span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; rhs)</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;{</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  EZ_NAN_ASSERT(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  EZ_NAN_ASSERT(&amp;rhs);</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="../../dd/d01/classez_color.htm#a7eb7cd1bf841318fb026253d9b401a7a">  103</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="../../dd/d01/classez_color.htm#a7eb7cd1bf841318fb026253d9b401a7a">ezColor::operator*=</a>(<span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; rhs)</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;{</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  EZ_NAN_ASSERT(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  EZ_NAN_ASSERT(&amp;rhs);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  r *= rhs.r;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  g *= rhs.g;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  b *= rhs.b;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  a *= rhs.a;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
-<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="../../dd/d01/classez_color.htm#ab46bf6c54a6c1ae397a2f33e011d6597">  113</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="../../dd/d01/classez_color.htm#a7eb7cd1bf841318fb026253d9b401a7a">ezColor::operator*=</a>(<span class="keywordtype">float</span> f)</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;{</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  r *= f;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  g *= f;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  b *= f;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  a *= f;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  r *= rhs.r;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  g *= rhs.g;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  b *= rhs.b;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  a *= rhs.a;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="../../dd/d01/classez_color.htm#ab46bf6c54a6c1ae397a2f33e011d6597">  108</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="../../dd/d01/classez_color.htm#a7eb7cd1bf841318fb026253d9b401a7a">ezColor::operator*=</a>(<span class="keywordtype">float</span> f)</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;{</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  r *= f;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  g *= f;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  b *= f;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  a *= f;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  EZ_NAN_ASSERT(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="../../dd/d01/classez_color.htm#af35995e702d895714776d2f45b9efbf0">  118</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="../../dd/d01/classez_color.htm#af35995e702d895714776d2f45b9efbf0">ezColor::IsIdenticalRGB</a>(<span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; rhs)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  EZ_NAN_ASSERT(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  EZ_NAN_ASSERT(&amp;rhs);</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
-<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="../../dd/d01/classez_color.htm#af35995e702d895714776d2f45b9efbf0">  123</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="../../dd/d01/classez_color.htm#af35995e702d895714776d2f45b9efbf0">ezColor::IsIdenticalRGB</a>(<span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; rhs)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  EZ_NAN_ASSERT(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  EZ_NAN_ASSERT(&amp;rhs);</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <span class="keywordflow">return</span> r == rhs.r &amp;&amp; g == rhs.g &amp;&amp; b == rhs.b;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;}</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <span class="keywordflow">return</span> r == rhs.r &amp;&amp; g == rhs.g &amp;&amp; b == rhs.b;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;}</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="../../dd/d01/classez_color.htm#ad8c8b9aa4efc6d758a323246a6612f18">  126</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="../../dd/d01/classez_color.htm#ad8c8b9aa4efc6d758a323246a6612f18">ezColor::IsIdenticalRGBA</a>(<span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; rhs)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  EZ_NAN_ASSERT(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  EZ_NAN_ASSERT(&amp;rhs);</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
-<div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="../../dd/d01/classez_color.htm#ad8c8b9aa4efc6d758a323246a6612f18">  131</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="../../dd/d01/classez_color.htm#ad8c8b9aa4efc6d758a323246a6612f18">ezColor::IsIdenticalRGBA</a>(<span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; rhs)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  EZ_NAN_ASSERT(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  EZ_NAN_ASSERT(&amp;rhs);</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <span class="keywordflow">return</span> r == rhs.r &amp;&amp; g == rhs.g &amp;&amp; b == rhs.b &amp;&amp; a == rhs.a;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <span class="keywordflow">return</span> r == rhs.r &amp;&amp; g == rhs.g &amp;&amp; b == rhs.b &amp;&amp; a == rhs.a;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;}</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="../../dd/d01/classez_color.htm#a7663d269f1a48ccbd1bb162ba2d8f33a">  134</a></span>&#160;<span class="keyword">inline</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a> <a class="code" href="../../dd/d01/classez_color.htm#a7663d269f1a48ccbd1bb162ba2d8f33a">ezColor::WithAlpha</a>(<span class="keywordtype">float</span> fAlpha)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../dd/d01/classez_color.htm#a6d241057cc50e7000ab9b18c476a42ff">ezColor</a>(r, g, b, fAlpha);</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
-<div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="../../dd/d01/classez_color.htm#a7663d269f1a48ccbd1bb162ba2d8f33a">  139</a></span>&#160;<span class="keyword">inline</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a> <a class="code" href="../../dd/d01/classez_color.htm#a7663d269f1a48ccbd1bb162ba2d8f33a">ezColor::WithAlpha</a>(<span class="keywordtype">float</span> fAlpha)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../dd/d01/classez_color.htm#a6d241057cc50e7000ab9b18c476a42ff">ezColor</a>(r, g, b, fAlpha);</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;}</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="keyword">inline</span> <span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a> operator+(<span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; c1, <span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; c2)</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;{</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  EZ_NAN_ASSERT(&amp;c1);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  EZ_NAN_ASSERT(&amp;c2);</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="keyword">inline</span> <span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a> operator+(<span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; c1, <span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; c2)</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;{</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  EZ_NAN_ASSERT(&amp;c1);</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  EZ_NAN_ASSERT(&amp;c2);</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>(c1.r + c2.r, c1.g + c2.g, c1.b + c2.b, c1.a + c2.a);</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;}</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>(c1.r + c2.r, c1.g + c2.g, c1.b + c2.b, c1.a + c2.a);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;}</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="keyword">inline</span> <span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a> operator-(<span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; c1, <span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; c2)</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;{</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  EZ_NAN_ASSERT(&amp;c1);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  EZ_NAN_ASSERT(&amp;c2);</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="keyword">inline</span> <span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a> operator-(<span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; c1, <span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; c2)</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;{</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  EZ_NAN_ASSERT(&amp;c1);</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  EZ_NAN_ASSERT(&amp;c2);</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>(c1.r - c2.r, c1.g - c2.g, c1.b - c2.b, c1.a - c2.a);</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;}</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>(c1.r - c2.r, c1.g - c2.g, c1.b - c2.b, c1.a - c2.a);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;}</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="keyword">inline</span> <span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a> operator*(<span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; c1, <span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; c2)</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;{</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  EZ_NAN_ASSERT(&amp;c1);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  EZ_NAN_ASSERT(&amp;c2);</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="keyword">inline</span> <span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a> operator*(<span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; c1, <span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; c2)</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;{</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  EZ_NAN_ASSERT(&amp;c1);</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  EZ_NAN_ASSERT(&amp;c2);</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>(c1.r * c2.r, c1.g * c2.g, c1.b * c2.b, c1.a * c2.a);</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;}</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="keyword">inline</span> <span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a> operator*(<span class="keywordtype">float</span> f, <span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; c)</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;{</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  EZ_NAN_ASSERT(&amp;c);</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>(c.r * f, c.g * f, c.b * f, c.a * f);</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;}</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="keyword">inline</span> <span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a> operator*(<span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; c, <span class="keywordtype">float</span> f)</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;{</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  EZ_NAN_ASSERT(&amp;c);</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>(c.r * f, c.g * f, c.b * f, c.a * f);</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;}</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="keyword">inline</span> <span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a> operator*(<span class="keyword">const</span> <a class="code" href="../../d7/d9b/classez_mat4_template.htm">ezMat4</a>&amp; lhs, <span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; rhs)</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;{</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;  <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a> r = rhs;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  r *= lhs;</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  <span class="keywordflow">return</span> r;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;}</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="keyword">inline</span> <span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a> operator/(<span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; c, <span class="keywordtype">float</span> f)</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;{</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  EZ_NAN_ASSERT(&amp;c);</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  <span class="keywordtype">float</span> f_inv = 1.0f / f;</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>(c.r * f_inv, c.g * f_inv, c.b * f_inv, c.a * f_inv);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>(c1.r * c2.r, c1.g * c2.g, c1.b * c2.b, c1.a * c2.a);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;}</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="keyword">inline</span> <span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a> operator*(<span class="keywordtype">float</span> f, <span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; c)</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;{</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  EZ_NAN_ASSERT(&amp;c);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>(c.r * f, c.g * f, c.b * f, c.a * f);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;}</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="keyword">inline</span> <span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a> operator*(<span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; c, <span class="keywordtype">float</span> f)</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;{</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  EZ_NAN_ASSERT(&amp;c);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>(c.r * f, c.g * f, c.b * f, c.a * f);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;}</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="keyword">inline</span> <span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a> operator*(<span class="keyword">const</span> <a class="code" href="../../d7/d9b/classez_mat4_template.htm">ezMat4</a>&amp; lhs, <span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; rhs)</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;{</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;  <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a> r = rhs;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  r *= lhs;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;  <span class="keywordflow">return</span> r;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;}</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="keyword">inline</span> <span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a> operator/(<span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; c, <span class="keywordtype">float</span> f)</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;{</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  EZ_NAN_ASSERT(&amp;c);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  <span class="keywordtype">float</span> f_inv = 1.0f / f;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>(c.r * f_inv, c.g * f_inv, c.b * f_inv, c.a * f_inv);</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;}</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; c1, <span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; c2)</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;{</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  <span class="keywordflow">return</span> c1.<a class="code" href="../../dd/d01/classez_color.htm#ad8c8b9aa4efc6d758a323246a6612f18">IsIdenticalRGBA</a>(c2);</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;}</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; c1, <span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; c2)</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; c1, <span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; c2)</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;{</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  <span class="keywordflow">return</span> c1.<a class="code" href="../../dd/d01/classez_color.htm#ad8c8b9aa4efc6d758a323246a6612f18">IsIdenticalRGBA</a>(c2);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  <span class="keywordflow">return</span> !c1.<a class="code" href="../../dd/d01/classez_color.htm#ad8c8b9aa4efc6d758a323246a6612f18">IsIdenticalRGBA</a>(c2);</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;}</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; c1, <span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; c2)</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;EZ_FORCE_INLINE <span class="keywordtype">bool</span> operator&lt;(<span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; c1, <span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; c2)</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;{</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;  <span class="keywordflow">return</span> !c1.<a class="code" href="../../dd/d01/classez_color.htm#ad8c8b9aa4efc6d758a323246a6612f18">IsIdenticalRGBA</a>(c2);</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;}</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;EZ_FORCE_INLINE <span class="keywordtype">bool</span> operator&lt;(<span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; c1, <span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; c2)</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;{</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;  <span class="keywordflow">if</span> (c1.r &lt; c2.r)</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;  <span class="keywordflow">if</span> (c1.r &gt; c2.r)</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;  <span class="keywordflow">if</span> (c1.g &lt; c2.g)</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;  <span class="keywordflow">if</span> (c1.g &gt; c2.g)</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;  <span class="keywordflow">if</span> (c1.b &lt; c2.b)</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;  <span class="keywordflow">if</span> (c1.b &gt; c2.b)</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160; </div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;  <span class="keywordflow">return</span> (c1.a &lt; c2.a);</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;}</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;  <span class="keywordflow">if</span> (c1.r &lt; c2.r)</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;  <span class="keywordflow">if</span> (c1.r &gt; c2.r)</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;  <span class="keywordflow">if</span> (c1.g &lt; c2.g)</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;  <span class="keywordflow">if</span> (c1.g &gt; c2.g)</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;  <span class="keywordflow">if</span> (c1.b &lt; c2.b)</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;  <span class="keywordflow">if</span> (c1.b &gt; c2.b)</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;  <span class="keywordflow">return</span> (c1.a &lt; c2.a);</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_color_htm"><div class="ttname"><a href="../../dd/d01/classez_color.htm">ezColor</a></div><div class="ttdoc">ezColor represents and RGBA color in linear color space. Values are stored as float,...</div><div class="ttdef"><b>Definition:</b> Color.h:43</div></div>
 <div class="ttc" id="aclassez_color_htm_a6d241057cc50e7000ab9b18c476a42ff"><div class="ttname"><a href="../../dd/d01/classez_color.htm#a6d241057cc50e7000ab9b18c476a42ff">ezColor::ezColor</a></div><div class="ttdeci">ezColor()</div><div class="ttdoc">default-constructed color is uninitialized (for speed)</div><div class="ttdef"><b>Definition:</b> Color_inl.h:3</div></div>
-<div class="ttc" id="aclassez_color_htm_ae31963ffb06d62fa7c282f8865dde508"><div class="ttname"><a href="../../dd/d01/classez_color.htm#ae31963ffb06d62fa7c282f8865dde508">ezColor::SetZero</a></div><div class="ttdeci">void SetZero()</div><div class="ttdoc">Sets all four RGBA components to zero.</div><div class="ttdef"><b>Definition:</b> Color_inl.h:48</div></div>
 <div class="ttc" id="aclassez_color_gamma_u_b_htm"><div class="ttname"><a href="../../da/d51/classez_color_gamma_u_b.htm">ezColorGammaUB</a></div><div class="ttdoc">A 8bit per channel unsigned normalized (values interpreted as 0-1) color storage format that represen...</div><div class="ttdef"><b>Definition:</b> Color8UNorm.h:69</div></div>
 <div class="ttc" id="aclassez_color_htm_a26e72d2b4e23e8d5cbee82f629f73cd8"><div class="ttname"><a href="../../dd/d01/classez_color.htm#a26e72d2b4e23e8d5cbee82f629f73cd8">ezColor::SetRGB</a></div><div class="ttdeci">void SetRGB(float fLinearRed, float fLinearGreen, float fLinearBlue)</div><div class="ttdoc">Sets the RGB components, ignores alpha.</div><div class="ttdef"><b>Definition:</b> Color_inl.h:33</div></div>
-<div class="ttc" id="aclassez_color_htm_af35995e702d895714776d2f45b9efbf0"><div class="ttname"><a href="../../dd/d01/classez_color.htm#af35995e702d895714776d2f45b9efbf0">ezColor::IsIdenticalRGB</a></div><div class="ttdeci">bool IsIdenticalRGB(const ezColor &amp;rhs) const</div><div class="ttdoc">Equality Check (bitwise). Only compares RGB, ignores Alpha.</div><div class="ttdef"><b>Definition:</b> Color_inl.h:123</div></div>
-<div class="ttc" id="aclassez_color_htm_a516e5323ce7abfa57f772918318c42bf"><div class="ttname"><a href="../../dd/d01/classez_color.htm#a516e5323ce7abfa57f772918318c42bf">ezColor::IsNaN</a></div><div class="ttdeci">bool IsNaN() const</div><div class="ttdoc">Returns true, if any of r, g, b or a is NaN.</div><div class="ttdef"><b>Definition:</b> Color_inl.h:67</div></div>
-<div class="ttc" id="aclassez_color_htm_a26447982a5c0afdfd784aa1e0035ac4b"><div class="ttname"><a href="../../dd/d01/classez_color.htm#a26447982a5c0afdfd784aa1e0035ac4b">ezColor::GetInvertedColor</a></div><div class="ttdeci">ezColor GetInvertedColor() const</div><div class="ttdoc">[tested]</div><div class="ttdef"><b>Definition:</b> Color_inl.h:59</div></div>
+<div class="ttc" id="aclassez_color_htm_af35995e702d895714776d2f45b9efbf0"><div class="ttname"><a href="../../dd/d01/classez_color.htm#af35995e702d895714776d2f45b9efbf0">ezColor::IsIdenticalRGB</a></div><div class="ttdeci">bool IsIdenticalRGB(const ezColor &amp;rhs) const</div><div class="ttdoc">Equality Check (bitwise). Only compares RGB, ignores Alpha.</div><div class="ttdef"><b>Definition:</b> Color_inl.h:118</div></div>
+<div class="ttc" id="aclassez_color_htm_a516e5323ce7abfa57f772918318c42bf"><div class="ttname"><a href="../../dd/d01/classez_color.htm#a516e5323ce7abfa57f772918318c42bf">ezColor::IsNaN</a></div><div class="ttdeci">bool IsNaN() const</div><div class="ttdoc">Returns true, if any of r, g, b or a is NaN.</div><div class="ttdef"><b>Definition:</b> Color_inl.h:62</div></div>
+<div class="ttc" id="aclassez_color_htm_a26447982a5c0afdfd784aa1e0035ac4b"><div class="ttname"><a href="../../dd/d01/classez_color.htm#a26447982a5c0afdfd784aa1e0035ac4b">ezColor::GetInvertedColor</a></div><div class="ttdeci">ezColor GetInvertedColor() const</div><div class="ttdoc">[tested]</div><div class="ttdef"><b>Definition:</b> Color_inl.h:54</div></div>
 <div class="ttc" id="aclassez_color_linear_u_b_htm"><div class="ttname"><a href="../../de/d68/classez_color_linear_u_b.htm">ezColorLinearUB</a></div><div class="ttdoc">A 8bit per channel unsigned normalized (values interpreted as 0-1) color storage format that represen...</div><div class="ttdef"><b>Definition:</b> Color8UNorm.h:40</div></div>
 <div class="ttc" id="aclassez_color_htm_aeac0109af46bd2ef667e84c962a9d2ed"><div class="ttname"><a href="../../dd/d01/classez_color.htm#aeac0109af46bd2ef667e84c962a9d2ed">ezColor::SetRGBA</a></div><div class="ttdeci">void SetRGBA(float fLinearRed, float fLinearGreen, float fLinearBlue, float fLinearAlpha=1.0f)</div><div class="ttdoc">Sets all four RGBA components.</div><div class="ttdef"><b>Definition:</b> Color_inl.h:40</div></div>
-<div class="ttc" id="aclassez_color_htm_a43f8bfe44e9ee120e97d3c5a64611125"><div class="ttname"><a href="../../dd/d01/classez_color.htm#a43f8bfe44e9ee120e97d3c5a64611125">ezColor::ZeroColor</a></div><div class="ttdeci">static ezColor ZeroColor()</div><div class="ttdoc">Returns a color with all four RGBA components set to zero. This is different to ezColor::Black,...</div><div class="ttdef"><b>Definition:</b> Color.cpp:423</div></div>
-<div class="ttc" id="aclassez_color_htm_a2dfa20c3c2d69a30846502a83c71c3d1"><div class="ttname"><a href="../../dd/d01/classez_color.htm#a2dfa20c3c2d69a30846502a83c71c3d1">ezColor::GetLuminance</a></div><div class="ttdeci">float GetLuminance() const</div><div class="ttdoc">Computes the perceived luminance. Assumes linear color space (http://en.wikipedia....</div><div class="ttdef"><b>Definition:</b> Color_inl.h:54</div></div>
+<div class="ttc" id="aclassez_color_htm_a2dfa20c3c2d69a30846502a83c71c3d1"><div class="ttname"><a href="../../dd/d01/classez_color.htm#a2dfa20c3c2d69a30846502a83c71c3d1">ezColor::GetLuminance</a></div><div class="ttdeci">float GetLuminance() const</div><div class="ttdoc">Computes the perceived luminance. Assumes linear color space (http://en.wikipedia....</div><div class="ttdef"><b>Definition:</b> Color_inl.h:49</div></div>
 <div class="ttc" id="aclassez_mat4_template_htm"><div class="ttname"><a href="../../d7/d9b/classez_mat4_template.htm">ezMat4Template&lt; float &gt;</a></div></div>
-<div class="ttc" id="aclassez_color_htm_a7eb7cd1bf841318fb026253d9b401a7a"><div class="ttname"><a href="../../dd/d01/classez_color.htm#a7eb7cd1bf841318fb026253d9b401a7a">ezColor::operator*=</a></div><div class="ttdeci">void operator*=(const ezColor &amp;rhs)</div><div class="ttdoc">Multiplies rhs component-wise with this color.</div><div class="ttdef"><b>Definition:</b> Color_inl.h:103</div></div>
-<div class="ttc" id="aclassez_color_htm_ad8c8b9aa4efc6d758a323246a6612f18"><div class="ttname"><a href="../../dd/d01/classez_color.htm#ad8c8b9aa4efc6d758a323246a6612f18">ezColor::IsIdenticalRGBA</a></div><div class="ttdeci">bool IsIdenticalRGBA(const ezColor &amp;rhs) const</div><div class="ttdoc">Equality Check (bitwise). Compares all four components.</div><div class="ttdef"><b>Definition:</b> Color_inl.h:131</div></div>
-<div class="ttc" id="aclassez_color_htm_a7663d269f1a48ccbd1bb162ba2d8f33a"><div class="ttname"><a href="../../dd/d01/classez_color.htm#a7663d269f1a48ccbd1bb162ba2d8f33a">ezColor::WithAlpha</a></div><div class="ttdeci">ezColor WithAlpha(float fAlpha) const</div><div class="ttdoc">Returns the current color but with changes the alpha value to the given value.</div><div class="ttdef"><b>Definition:</b> Color_inl.h:139</div></div>
+<div class="ttc" id="aclassez_color_htm_a7eb7cd1bf841318fb026253d9b401a7a"><div class="ttname"><a href="../../dd/d01/classez_color.htm#a7eb7cd1bf841318fb026253d9b401a7a">ezColor::operator*=</a></div><div class="ttdeci">void operator*=(const ezColor &amp;rhs)</div><div class="ttdoc">Multiplies rhs component-wise with this color.</div><div class="ttdef"><b>Definition:</b> Color_inl.h:98</div></div>
+<div class="ttc" id="aclassez_color_htm_ad8c8b9aa4efc6d758a323246a6612f18"><div class="ttname"><a href="../../dd/d01/classez_color.htm#ad8c8b9aa4efc6d758a323246a6612f18">ezColor::IsIdenticalRGBA</a></div><div class="ttdeci">bool IsIdenticalRGBA(const ezColor &amp;rhs) const</div><div class="ttdoc">Equality Check (bitwise). Compares all four components.</div><div class="ttdef"><b>Definition:</b> Color_inl.h:126</div></div>
+<div class="ttc" id="aclassez_color_htm_a7663d269f1a48ccbd1bb162ba2d8f33a"><div class="ttname"><a href="../../dd/d01/classez_color.htm#a7663d269f1a48ccbd1bb162ba2d8f33a">ezColor::WithAlpha</a></div><div class="ttdeci">ezColor WithAlpha(float fAlpha) const</div><div class="ttdoc">Returns the current color but with changes the alpha value to the given value.</div><div class="ttdef"><b>Definition:</b> Color_inl.h:134</div></div>
 <div class="ttc" id="aclassez_color_htm_abd431fed6c9b1842d7a670012e19d98a"><div class="ttname"><a href="../../dd/d01/classez_color.htm#abd431fed6c9b1842d7a670012e19d98a">ezColor::IsNormalized</a></div><div class="ttdeci">bool IsNormalized() const</div><div class="ttdoc">Returns if the color is in the Range [0; 1] on all 4 channels.</div><div class="ttdef"><b>Definition:</b> Color.cpp:18</div></div>
-<div class="ttc" id="aclassez_color_htm_ae8ffd8f5af70c717a5ea19fbf7dcc281"><div class="ttname"><a href="../../dd/d01/classez_color.htm#ae8ffd8f5af70c717a5ea19fbf7dcc281">ezColor::operator+=</a></div><div class="ttdeci">void operator+=(const ezColor &amp;rhs)</div><div class="ttdoc">Adds rhs component-wise to this color.</div><div class="ttdef"><b>Definition:</b> Color_inl.h:81</div></div>
-<div class="ttc" id="aclassez_color_htm_a54d3d28ffa3e814ba0db7b158cbc30f7"><div class="ttname"><a href="../../dd/d01/classez_color.htm#a54d3d28ffa3e814ba0db7b158cbc30f7">ezColor::operator-=</a></div><div class="ttdeci">void operator-=(const ezColor &amp;rhs)</div><div class="ttdoc">Subtracts rhs component-wise from this vector.</div><div class="ttdef"><b>Definition:</b> Color_inl.h:92</div></div>
+<div class="ttc" id="aclassez_color_htm_ae8ffd8f5af70c717a5ea19fbf7dcc281"><div class="ttname"><a href="../../dd/d01/classez_color.htm#ae8ffd8f5af70c717a5ea19fbf7dcc281">ezColor::operator+=</a></div><div class="ttdeci">void operator+=(const ezColor &amp;rhs)</div><div class="ttdoc">Adds rhs component-wise to this color.</div><div class="ttdef"><b>Definition:</b> Color_inl.h:76</div></div>
+<div class="ttc" id="aclassez_color_htm_a54d3d28ffa3e814ba0db7b158cbc30f7"><div class="ttname"><a href="../../dd/d01/classez_color.htm#a54d3d28ffa3e814ba0db7b158cbc30f7">ezColor::operator-=</a></div><div class="ttdeci">void operator-=(const ezColor &amp;rhs)</div><div class="ttdoc">Subtracts rhs component-wise from this vector.</div><div class="ttdef"><b>Definition:</b> Color_inl.h:87</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_4ad0f5fbee83b30173e7fecedeea26f0.htm">Math</a></li><li class="navelem"><a class="el" href="../../dir_89ec743f7412cd7cb287fad7b6649245.htm">Implementation</a></li><li class="navelem"><b>Color_inl.h</b></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:21:55 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:17 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

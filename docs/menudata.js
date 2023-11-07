@@ -120,6 +120,7 @@ var menudata={children:[
 {text:"m",url:"functions_enum.htm#index_m"},
 {text:"o",url:"functions_enum.htm#index_o"},
 {text:"p",url:"functions_enum.htm#index_p"},
+{text:"r",url:"functions_enum.htm#index_r"},
 {text:"s",url:"functions_enum.htm#index_s"},
 {text:"t",url:"functions_enum.htm#index_t"},
 {text:"u",url:"functions_enum.htm#index_u"},

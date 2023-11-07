@@ -1,6 +1,6 @@
 var structez_texture_channel_mode =
 [
-    [ "StorageType", "d9/d95/structez_texture_channel_mode.htm#a1ae90347bef438515bd12c0f46c7a753", null ],
+    [ "StorageType", "d9/d95/structez_texture_channel_mode.htm#a359882f2f6f5aeb83da406c1ead20adc", null ],
     [ "Enum", "d9/d95/structez_texture_channel_mode.htm#ab15a15ade1c7de6a6720aaad65f52df7", [
       [ "RGBA", "d9/d95/structez_texture_channel_mode.htm#ab15a15ade1c7de6a6720aaad65f52df7ae3f215754a8c699137915678df3149b4", null ],
       [ "RGB", "d9/d95/structez_texture_channel_mode.htm#ab15a15ade1c7de6a6720aaad65f52df7acf5d1931af06fabf21a2bcbeed6ca000", null ],

@@ -1,6 +1,6 @@
 var structez_mesh_primitive =
 [
-    [ "StorageType", "d0/dd8/structez_mesh_primitive.htm#a58df475db9fd4065dae6f90d44438816", null ],
+    [ "StorageType", "d0/dd8/structez_mesh_primitive.htm#adccb3d704a18be780fe2b3c77e942549", null ],
     [ "Enum", "d0/dd8/structez_mesh_primitive.htm#a5e15c3b807cf5aab5b70f20f9ba68f60", [
       [ "File", "d0/dd8/structez_mesh_primitive.htm#a5e15c3b807cf5aab5b70f20f9ba68f60a2ba92072b701cb7a0b5dfd0b80fd1039", null ],
       [ "Box", "d0/dd8/structez_mesh_primitive.htm#a5e15c3b807cf5aab5b70f20f9ba68f60ae3a842d8b9ceded8ba74748c0ab26c40", null ],

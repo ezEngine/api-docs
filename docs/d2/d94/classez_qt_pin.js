@@ -3,7 +3,6 @@ var classez_qt_pin =
     [ "ezQtPin", "d2/d94/classez_qt_pin.htm#a9f539c21a510dded7c2f925d586cd438", null ],
     [ "~ezQtPin", "d2/d94/classez_qt_pin.htm#a451acbe74e27c9401e807dac20bc6578", null ],
     [ "AddConnection", "d2/d94/classez_qt_pin.htm#a9a08757e43f0021707ce5181a68d9a50", null ],
-    [ "AdjustRenderingForHighlight", "d2/d94/classez_qt_pin.htm#ab9c8e3c9988f7ed6662a98702a35f3fc", null ],
     [ "ConnectedStateChanged", "d2/d94/classez_qt_pin.htm#a90b3d0c8aa351b395ed99a7a088a7372", null ],
     [ "ExtendContextMenu", "d2/d94/classez_qt_pin.htm#ae790308b639b81eaa9799d245a84afac", null ],
     [ "GetConnections", "d2/d94/classez_qt_pin.htm#afbaead59b897e5cd1e7d261884e44960", null ],
@@ -20,6 +19,8 @@ var classez_qt_pin =
     [ "SetPin", "d2/d94/classez_qt_pin.htm#a030526b75718f7c35722ccc15b7bb2c3", null ],
     [ "type", "d2/d94/classez_qt_pin.htm#ae6abfef45cf2d1727557828d0f2a0fa2", null ],
     [ "UpdateConnections", "d2/d94/classez_qt_pin.htm#a87a54842db8dbc4bb601380c65b9238a", null ],
+    [ "UpdatePinColors", "d2/d94/classez_qt_pin.htm#a483255c7692d4ba2aa742cd8ddfcc5d9", null ],
+    [ "m_bTranslatePinName", "d2/d94/classez_qt_pin.htm#aee4f5002c36a216eaf16c0245b725224", null ],
     [ "m_HighlightState", "d2/d94/classez_qt_pin.htm#a04d5d14cfbf8408ac041f492f940c051", null ],
     [ "m_PinCenter", "d2/d94/classez_qt_pin.htm#a68fe5c25b1d38b59390b38be17e23b75", null ],
     [ "m_pLabel", "d2/d94/classez_qt_pin.htm#a98a0f41684b5852313dc824b0cf825a3", null ]

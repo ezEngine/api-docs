@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -95,154 +95,203 @@ $(document).ready(function(){initNavTree('df/dcf/_state_machine_8h_source.htm','
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;Foundation/Strings/HashedString.h&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;Foundation/Types/SharedPtr.h&gt;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">class </span><a class="code" href="../../d3/d82/classez_blackboard.htm">ezBlackboard</a>;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">class </span><a class="code" href="../../d7/d08/classez_state_machine_instance.htm">ezStateMachineInstance</a>;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="../../dd/d2e/classez_state_machine_state.htm">   17</a></span>&#160;<span class="keyword">class </span>EZ_GAMEENGINE_DLL <a class="code" href="../../dd/d2e/classez_state_machine_state.htm">ezStateMachineState</a> : <span class="keyword">public</span> <a class="code" href="../../db/d45/classez_reflected_class.htm">ezReflectedClass</a></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  EZ_ADD_DYNAMIC_REFLECTION(<a class="code" href="../../dd/d2e/classez_state_machine_state.htm">ezStateMachineState</a>, <a class="code" href="../../db/d45/classez_reflected_class.htm">ezReflectedClass</a>);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <a class="code" href="../../dd/d2e/classez_state_machine_state.htm">ezStateMachineState</a>(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sName = <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a>());</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keywordtype">void</span> SetName(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sName);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> GetName()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_sName; }</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../de/dce/classez_hashed_string.htm">ezHashedString</a>&amp; GetNameHashed()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_sName; }</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> OnEnter(<a class="code" href="../../d7/d08/classez_state_machine_instance.htm">ezStateMachineInstance</a>&amp; ref_instance, <span class="keywordtype">void</span>* pInstanceData, <span class="keyword">const</span> <a class="code" href="../../dd/d2e/classez_state_machine_state.htm">ezStateMachineState</a>* pFromState) <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> OnExit(<a class="code" href="../../d7/d08/classez_state_machine_instance.htm">ezStateMachineInstance</a>&amp; ref_instance, <span class="keywordtype">void</span>* pInstanceData, <span class="keyword">const</span> <a class="code" href="../../dd/d2e/classez_state_machine_state.htm">ezStateMachineState</a>* pToState) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> Update(<a class="code" href="../../d7/d08/classez_state_machine_instance.htm">ezStateMachineInstance</a>&amp; ref_instance, <span class="keywordtype">void</span>* pInstanceData, <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> deltaTime) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> Serialize(<a class="code" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a>&amp; inout_stream) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> Deserialize(<a class="code" href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a>&amp; inout_stream);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> GetInstanceDataDesc(<a class="code" href="../../da/d72/structez_state_machine_instance_data_desc.htm">ezStateMachineInstanceDataDesc</a>&amp; out_desc);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="../../de/dce/classez_hashed_string.htm">ezHashedString</a> m_sName;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;};</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="../../d9/d43/classez_state_machine_transition.htm">   50</a></span>&#160;<span class="keyword">class </span>EZ_GAMEENGINE_DLL <a class="code" href="../../d9/d43/classez_state_machine_transition.htm">ezStateMachineTransition</a> : <span class="keyword">public</span> <a class="code" href="../../db/d45/classez_reflected_class.htm">ezReflectedClass</a></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  EZ_ADD_DYNAMIC_REFLECTION(<a class="code" href="../../d9/d43/classez_state_machine_transition.htm">ezStateMachineTransition</a>, <a class="code" href="../../db/d45/classez_reflected_class.htm">ezReflectedClass</a>);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> IsConditionMet(<a class="code" href="../../d7/d08/classez_state_machine_instance.htm">ezStateMachineInstance</a>&amp; ref_instance, <span class="keywordtype">void</span>* pInstanceData) <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> Serialize(<a class="code" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a>&amp; inout_stream) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> Deserialize(<a class="code" href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a>&amp; inout_stream);</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">class </span><a class="code" href="../../d6/d30/classez_component.htm">ezComponent</a>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">class </span><a class="code" href="../../da/d3c/classez_world.htm">ezWorld</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">class </span><a class="code" href="../../d3/d82/classez_blackboard.htm">ezBlackboard</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">class </span><a class="code" href="../../d7/d08/classez_state_machine_instance.htm">ezStateMachineInstance</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="../../dd/d2e/classez_state_machine_state.htm">   19</a></span>&#160;<span class="keyword">class </span>EZ_GAMEENGINE_DLL <a class="code" href="../../dd/d2e/classez_state_machine_state.htm">ezStateMachineState</a> : <span class="keyword">public</span> <a class="code" href="../../db/d45/classez_reflected_class.htm">ezReflectedClass</a></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  EZ_ADD_DYNAMIC_REFLECTION(<a class="code" href="../../dd/d2e/classez_state_machine_state.htm">ezStateMachineState</a>, <a class="code" href="../../db/d45/classez_reflected_class.htm">ezReflectedClass</a>);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <a class="code" href="../../dd/d2e/classez_state_machine_state.htm">ezStateMachineState</a>(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sName = <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a>());</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keywordtype">void</span> SetName(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sName);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> GetName()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_sName; }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../de/dce/classez_hashed_string.htm">ezHashedString</a>&amp; GetNameHashed()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_sName; }</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> OnEnter(<a class="code" href="../../d7/d08/classez_state_machine_instance.htm">ezStateMachineInstance</a>&amp; ref_instance, <span class="keywordtype">void</span>* pInstanceData, <span class="keyword">const</span> <a class="code" href="../../dd/d2e/classez_state_machine_state.htm">ezStateMachineState</a>* pFromState) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> OnExit(<a class="code" href="../../d7/d08/classez_state_machine_instance.htm">ezStateMachineInstance</a>&amp; ref_instance, <span class="keywordtype">void</span>* pInstanceData, <span class="keyword">const</span> <a class="code" href="../../dd/d2e/classez_state_machine_state.htm">ezStateMachineState</a>* pToState) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> Update(<a class="code" href="../../d7/d08/classez_state_machine_instance.htm">ezStateMachineInstance</a>&amp; ref_instance, <span class="keywordtype">void</span>* pInstanceData, <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> deltaTime) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> Serialize(<a class="code" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a>&amp; inout_stream) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> Deserialize(<a class="code" href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a>&amp; inout_stream);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> GetInstanceDataDesc(<a class="code" href="../../d3/d46/structez_instance_data_desc.htm">ezInstanceDataDesc</a>&amp; out_desc);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="comment">// These are dummy functions for the scripting reflection</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordtype">void</span> Reflection_OnEnter(<a class="code" href="../../d7/d08/classez_state_machine_instance.htm">ezStateMachineInstance</a>* pStateMachineInstance, <span class="keyword">const</span> <a class="code" href="../../dd/d2e/classez_state_machine_state.htm">ezStateMachineState</a>* pFromState);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordtype">void</span> Reflection_OnExit(<a class="code" href="../../d7/d08/classez_state_machine_instance.htm">ezStateMachineInstance</a>* pStateMachineInstance, <span class="keyword">const</span> <a class="code" href="../../dd/d2e/classez_state_machine_state.htm">ezStateMachineState</a>* pToState);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordtype">void</span> Reflection_Update(<a class="code" href="../../d7/d08/classez_state_machine_instance.htm">ezStateMachineInstance</a>* pStateMachineInstance, <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> deltaTime);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <a class="code" href="../../de/dce/classez_hashed_string.htm">ezHashedString</a> m_sName;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;};</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="../../d4/d20/classez_state_machine_state___empty.htm">   51</a></span>&#160;<span class="keyword">class </span>EZ_GAMEENGINE_DLL <a class="code" href="../../d4/d20/classez_state_machine_state___empty.htm">ezStateMachineState_Empty</a> final : <span class="keyword">public</span> <a class="code" href="../../dd/d2e/classez_state_machine_state.htm">ezStateMachineState</a></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  EZ_ADD_DYNAMIC_REFLECTION(<a class="code" href="../../d4/d20/classez_state_machine_state___empty.htm">ezStateMachineState_Empty</a>, <a class="code" href="../../dd/d2e/classez_state_machine_state.htm">ezStateMachineState</a>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <a class="code" href="../../d4/d20/classez_state_machine_state___empty.htm">ezStateMachineState_Empty</a>(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sName = <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a>());</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  ~<a class="code" href="../../d4/d20/classez_state_machine_state___empty.htm">ezStateMachineState_Empty</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> GetInstanceDataDesc(<a class="code" href="../../da/d72/structez_state_machine_instance_data_desc.htm">ezStateMachineInstanceDataDesc</a>&amp; out_desc);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;};</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="../../dc/da0/classez_state_machine_description.htm">   68</a></span>&#160;<span class="keyword">class </span>EZ_GAMEENGINE_DLL <a class="code" href="../../dc/da0/classez_state_machine_description.htm">ezStateMachineDescription</a> : <span class="keyword">public</span> <a class="code" href="../../d2/d70/classez_ref_counted.htm">ezRefCounted</a></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;{</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  EZ_DISALLOW_COPY_AND_ASSIGN(<a class="code" href="../../dc/da0/classez_state_machine_description.htm">ezStateMachineDescription</a>);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <a class="code" href="../../dc/da0/classez_state_machine_description.htm">ezStateMachineDescription</a>();</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  ~<a class="code" href="../../dc/da0/classez_state_machine_description.htm">ezStateMachineDescription</a>();</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  ezUInt32 AddState(<a class="code" href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt;ezStateMachineState&gt;</a>&amp;&amp; pState);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keywordtype">void</span> AddTransition(ezUInt32 uiFromStateIndex, ezUInt32 uiToStateIndex, <a class="code" href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt;ezStateMachineTransition&gt;</a>&amp;&amp; pTransistion);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> Serialize(<a class="code" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a>&amp; inout_stream) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> Deserialize(<a class="code" href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a>&amp; inout_stream);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d7/d08/classez_state_machine_instance.htm">ezStateMachineInstance</a>;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keyword">struct </span>TransitionContext</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <a class="code" href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt;ezStateMachineTransition&gt;</a> m_pTransition;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    ezUInt32 m_uiToStateIndex = 0;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    ezUInt32 m_uiInstanceDataOffset = ezInvalidIndex;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  };</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> OnEnter(<a class="code" href="../../d7/d08/classez_state_machine_instance.htm">ezStateMachineInstance</a>&amp; ref_instance, <span class="keywordtype">void</span>* pInstanceData, <span class="keyword">const</span> <a class="code" href="../../dd/d2e/classez_state_machine_state.htm">ezStateMachineState</a>* pFromState)<span class="keyword"> const override </span>{}</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;};</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="../../d0/dc5/structez_state_machine_state___script_base_class_functions.htm">   62</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../d0/dc5/structez_state_machine_state___script_base_class_functions.htm">ezStateMachineState_ScriptBaseClassFunctions</a></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;{</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keyword">enum</span> Enum</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    OnEnter,</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    OnExit,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    Update,</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    Count</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  };</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;};</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="../../d9/d43/classez_state_machine_transition.htm">   80</a></span>&#160;<span class="keyword">class </span>EZ_GAMEENGINE_DLL <a class="code" href="../../d9/d43/classez_state_machine_transition.htm">ezStateMachineTransition</a> : <span class="keyword">public</span> <a class="code" href="../../db/d45/classez_reflected_class.htm">ezReflectedClass</a></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;{</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  EZ_ADD_DYNAMIC_REFLECTION(<a class="code" href="../../d9/d43/classez_state_machine_transition.htm">ezStateMachineTransition</a>, <a class="code" href="../../db/d45/classez_reflected_class.htm">ezReflectedClass</a>);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> IsConditionMet(<a class="code" href="../../d7/d08/classez_state_machine_instance.htm">ezStateMachineInstance</a>&amp; ref_instance, <span class="keywordtype">void</span>* pInstanceData) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> Serialize(<a class="code" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a>&amp; inout_stream) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> Deserialize(<a class="code" href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a>&amp; inout_stream);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> GetInstanceDataDesc(<a class="code" href="../../d3/d46/structez_instance_data_desc.htm">ezInstanceDataDesc</a>&amp; out_desc);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;};</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keyword">using</span> <a class="code" href="../../d0/d0c/classez_small_array.htm">TransitionArray</a> = <a class="code" href="../../d0/d0c/classez_small_array.htm">ezSmallArray&lt;TransitionContext, 2&gt;</a>;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <a class="code" href="../../d0/d0c/classez_small_array.htm">TransitionArray</a> m_FromAnyTransitions;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keyword">struct </span>StateContext</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <a class="code" href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt;ezStateMachineState&gt;</a> m_pState;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <a class="code" href="../../d0/d0c/classez_small_array.htm">TransitionArray</a> m_Transitions;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    ezUInt32 m_uiInstanceDataOffset = ezInvalidIndex;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  };</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;StateContext&gt;</a> m_States;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <a class="code" href="../../d8/d86/classez_hash_table.htm">ezHashTable&lt;ezHashedString, ezUInt32&gt;</a> m_StateNameToIndexTable;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <a class="code" href="../../d8/d77/classez_state_machine_internal_1_1_instance_data_allocator.htm">ezStateMachineInternal::InstanceDataAllocator</a> m_InstanceDataAllocator;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;};</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="../../d7/d08/classez_state_machine_instance.htm">  113</a></span>&#160;<span class="keyword">class </span>EZ_GAMEENGINE_DLL <a class="code" href="../../d7/d08/classez_state_machine_instance.htm">ezStateMachineInstance</a></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;{</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  EZ_DISALLOW_COPY_AND_ASSIGN(<a class="code" href="../../d7/d08/classez_state_machine_instance.htm">ezStateMachineInstance</a>);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <a class="code" href="../../d7/d08/classez_state_machine_instance.htm">ezStateMachineInstance</a>(<a class="code" href="../../db/d45/classez_reflected_class.htm">ezReflectedClass</a>&amp; ref_owner, <span class="keyword">const</span> <a class="code" href="../../de/dc1/classez_shared_ptr.htm">ezSharedPtr&lt;const ezStateMachineDescription&gt;</a>&amp; pDescription = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  ~<a class="code" href="../../d7/d08/classez_state_machine_instance.htm">ezStateMachineInstance</a>();</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> SetState(<a class="code" href="../../dd/d2e/classez_state_machine_state.htm">ezStateMachineState</a>* pState);</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> SetState(ezUInt32 uiStateIndex);</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> SetState(<span class="keyword">const</span> <a class="code" href="../../de/dce/classez_hashed_string.htm">ezHashedString</a>&amp; sStateName);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> SetStateOrFallback(<span class="keyword">const</span> <a class="code" href="../../de/dce/classez_hashed_string.htm">ezHashedString</a>&amp; sStateName, ezUInt32 uiFallbackStateIndex = 0);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <a class="code" href="../../dd/d2e/classez_state_machine_state.htm">ezStateMachineState</a>* GetCurrentState() { <span class="keywordflow">return</span> m_pCurrentState; }</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <span class="keywordtype">void</span> Update(<a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> deltaTime);</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <a class="code" href="../../db/d45/classez_reflected_class.htm">ezReflectedClass</a>&amp; GetOwner() { <span class="keywordflow">return</span> m_Owner; }</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <span class="keywordtype">void</span> SetBlackboard(<span class="keyword">const</span> <a class="code" href="../../de/dc1/classez_shared_ptr.htm">ezSharedPtr&lt;ezBlackboard&gt;</a>&amp; pBlackboard);</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../de/dc1/classez_shared_ptr.htm">ezSharedPtr&lt;ezBlackboard&gt;</a>&amp; GetBlackboard()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pBlackboard; }</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
-<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="../../d7/d08/classez_state_machine_instance.htm#af63d61712a3764c6ec025292cb1a055e">  135</a></span>&#160;  <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> <a class="code" href="../../d7/d08/classez_state_machine_instance.htm#af63d61712a3764c6ec025292cb1a055e">GetTimeInCurrentState</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_TimeInCurrentState; }</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  <span class="keywordtype">void</span> SetStateInternal(ezUInt32 uiStateIndex);</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  <span class="keywordtype">void</span> EnterCurrentState(<span class="keyword">const</span> <a class="code" href="../../dd/d2e/classez_state_machine_state.htm">ezStateMachineState</a>* pFromState);</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  <span class="keywordtype">void</span> ExitCurrentState(<span class="keyword">const</span> <a class="code" href="../../dd/d2e/classez_state_machine_state.htm">ezStateMachineState</a>* pToState);</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  ezUInt32 FindNewStateToTransitionTo();</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">void</span>* GetInstanceData(ezUInt32 uiOffset)</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  {</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordflow">return</span> ezStateMachineInternal::InstanceDataAllocator::GetInstanceData(m_InstanceData.GetByteBlobPtr(), uiOffset);</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  }</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">void</span>* GetCurrentStateInstanceData()</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  {</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordflow">if</span> (m_pDescription != <span class="keyword">nullptr</span> &amp;&amp; m_uiCurrentStateIndex &lt; m_pDescription-&gt;m_States.GetCount())</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    {</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;      <span class="keywordflow">return</span> GetInstanceData(m_pDescription-&gt;m_States[m_uiCurrentStateIndex].m_uiInstanceDataOffset);</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    }</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  }</div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="../../dc/da0/classez_state_machine_description.htm">   98</a></span>&#160;<span class="keyword">class </span>EZ_GAMEENGINE_DLL <a class="code" href="../../dc/da0/classez_state_machine_description.htm">ezStateMachineDescription</a> : <span class="keyword">public</span> <a class="code" href="../../d2/d70/classez_ref_counted.htm">ezRefCounted</a></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;{</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  EZ_DISALLOW_COPY_AND_ASSIGN(<a class="code" href="../../dc/da0/classez_state_machine_description.htm">ezStateMachineDescription</a>);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <a class="code" href="../../dc/da0/classez_state_machine_description.htm">ezStateMachineDescription</a>();</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  ~<a class="code" href="../../dc/da0/classez_state_machine_description.htm">ezStateMachineDescription</a>();</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  ezUInt32 AddState(<a class="code" href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt;ezStateMachineState&gt;</a>&amp;&amp; pState);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <span class="keywordtype">void</span> AddTransition(ezUInt32 uiFromStateIndex, ezUInt32 uiToStateIndex, <a class="code" href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt;ezStateMachineTransition&gt;</a>&amp;&amp; pTransistion);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> Serialize(<a class="code" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a>&amp; inout_stream) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> Deserialize(<a class="code" href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a>&amp; inout_stream);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d7/d08/classez_state_machine_instance.htm">ezStateMachineInstance</a>;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <span class="keyword">struct </span>TransitionContext</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <a class="code" href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt;ezStateMachineTransition&gt;</a> m_pTransition;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    ezUInt32 m_uiToStateIndex = 0;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    ezUInt32 m_uiInstanceDataOffset = ezInvalidIndex;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  };</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <span class="keyword">using</span> <a class="code" href="../../d0/d0c/classez_small_array.htm">TransitionArray</a> = <a class="code" href="../../d0/d0c/classez_small_array.htm">ezSmallArray&lt;TransitionContext, 2&gt;</a>;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <a class="code" href="../../d0/d0c/classez_small_array.htm">TransitionArray</a> m_FromAnyTransitions;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <span class="keyword">struct </span>StateContext</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  {</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <a class="code" href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt;ezStateMachineState&gt;</a> m_pState;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <a class="code" href="../../d0/d0c/classez_small_array.htm">TransitionArray</a> m_Transitions;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    ezUInt32 m_uiInstanceDataOffset = ezInvalidIndex;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  };</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;StateContext&gt;</a> m_States;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <a class="code" href="../../d8/d86/classez_hash_table.htm">ezHashTable&lt;ezHashedString, ezUInt32&gt;</a> m_StateNameToIndexTable;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  <a class="code" href="../../da/d1b/classez_instance_data_allocator.htm">ezInstanceDataAllocator</a> m_InstanceDataAllocator;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;};</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
+<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="../../d7/d08/classez_state_machine_instance.htm">  143</a></span>&#160;<span class="keyword">class </span>EZ_GAMEENGINE_DLL <a class="code" href="../../d7/d08/classez_state_machine_instance.htm">ezStateMachineInstance</a></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;{</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  EZ_DISALLOW_COPY_AND_ASSIGN(<a class="code" href="../../d7/d08/classez_state_machine_instance.htm">ezStateMachineInstance</a>);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  <a class="code" href="../../d7/d08/classez_state_machine_instance.htm">ezStateMachineInstance</a>(<a class="code" href="../../db/d45/classez_reflected_class.htm">ezReflectedClass</a>&amp; ref_owner, <span class="keyword">const</span> <a class="code" href="../../de/dc1/classez_shared_ptr.htm">ezSharedPtr&lt;const ezStateMachineDescription&gt;</a>&amp; pDescription = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  ~<a class="code" href="../../d7/d08/classez_state_machine_instance.htm">ezStateMachineInstance</a>();</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> SetState(<a class="code" href="../../dd/d2e/classez_state_machine_state.htm">ezStateMachineState</a>* pState);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> SetState(ezUInt32 uiStateIndex);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> SetState(<span class="keyword">const</span> <a class="code" href="../../de/dce/classez_hashed_string.htm">ezHashedString</a>&amp; sStateName);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> SetStateOrFallback(<span class="keyword">const</span> <a class="code" href="../../de/dce/classez_hashed_string.htm">ezHashedString</a>&amp; sStateName, ezUInt32 uiFallbackStateIndex = 0);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  <a class="code" href="../../dd/d2e/classez_state_machine_state.htm">ezStateMachineState</a>* GetCurrentState() { <span class="keywordflow">return</span> m_pCurrentState; }</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  <a class="code" href="../../db/d45/classez_reflected_class.htm">ezReflectedClass</a>&amp; m_Owner;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  <a class="code" href="../../de/dc1/classez_shared_ptr.htm">ezSharedPtr&lt;const ezStateMachineDescription&gt;</a> m_pDescription;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  <a class="code" href="../../de/dc1/classez_shared_ptr.htm">ezSharedPtr&lt;ezBlackboard&gt;</a> m_pBlackboard;</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  <a class="code" href="../../dd/d2e/classez_state_machine_state.htm">ezStateMachineState</a>* m_pCurrentState = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  ezUInt32 m_uiCurrentStateIndex = ezInvalidIndex;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> m_TimeInCurrentState;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  <span class="keywordtype">void</span> Update(<a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> deltaTime);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  <a class="code" href="../../db/d45/classez_reflected_class.htm">ezReflectedClass</a>&amp; GetOwner() { <span class="keywordflow">return</span> m_Owner; }</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  <a class="code" href="../../da/d3c/classez_world.htm">ezWorld</a>* GetOwnerWorld();</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  <span class="keywordtype">void</span> SetBlackboard(<span class="keyword">const</span> <a class="code" href="../../de/dc1/classez_shared_ptr.htm">ezSharedPtr&lt;ezBlackboard&gt;</a>&amp; pBlackboard);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../de/dc1/classez_shared_ptr.htm">ezSharedPtr&lt;ezBlackboard&gt;</a>&amp; GetBlackboard()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pBlackboard; }</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d0/d0c/classez_small_array.htm">ezStateMachineDescription::TransitionArray</a>* m_pCurrentTransitions = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  <a class="code" href="../../dd/db8/classez_blob.htm">ezBlob</a> m_InstanceData;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;};</div>
+<div class="line"><a name="l00166"></a><span class="lineno"><a class="line" href="../../d7/d08/classez_state_machine_instance.htm#af63d61712a3764c6ec025292cb1a055e">  166</a></span>&#160;  <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> <a class="code" href="../../d7/d08/classez_state_machine_instance.htm#af63d61712a3764c6ec025292cb1a055e">GetTimeInCurrentState</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_TimeInCurrentState; }</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  <span class="keywordtype">void</span> FireTransitionEvent(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sEvent);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> GetCurrentTransitionEvent()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_sCurrentTransitionEvent; }</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;  EZ_ALLOW_PRIVATE_PROPERTIES(<a class="code" href="../../d7/d08/classez_state_machine_instance.htm">ezStateMachineInstance</a>);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  <span class="keywordtype">bool</span> Reflection_SetState(<span class="keyword">const</span> <a class="code" href="../../de/dce/classez_hashed_string.htm">ezHashedString</a>&amp; sStateName);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  <a class="code" href="../../d6/d30/classez_component.htm">ezComponent</a>* Reflection_GetOwnerComponent() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;  <a class="code" href="../../d3/d82/classez_blackboard.htm">ezBlackboard</a>* Reflection_GetBlackboard()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pBlackboard.Borrow(); }</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  <span class="keywordtype">void</span> SetStateInternal(ezUInt32 uiStateIndex);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;  <span class="keywordtype">void</span> EnterCurrentState(<span class="keyword">const</span> <a class="code" href="../../dd/d2e/classez_state_machine_state.htm">ezStateMachineState</a>* pFromState);</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  <span class="keywordtype">void</span> ExitCurrentState(<span class="keyword">const</span> <a class="code" href="../../dd/d2e/classez_state_machine_state.htm">ezStateMachineState</a>* pToState);</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  ezUInt32 FindNewStateToTransitionTo();</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">void</span>* GetInstanceData(ezUInt32 uiOffset)</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  {</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../da/d1b/classez_instance_data_allocator.htm#a6b3bd9497e198a25e315f42f3cff2e17">ezInstanceDataAllocator::GetInstanceData</a>(m_InstanceData.GetByteBlobPtr(), uiOffset);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  }</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">void</span>* GetCurrentStateInstanceData()</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  {</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordflow">if</span> (m_pDescription != <span class="keyword">nullptr</span> &amp;&amp; m_uiCurrentStateIndex &lt; m_pDescription-&gt;m_States.GetCount())</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    {</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;      <span class="keywordflow">return</span> GetInstanceData(m_pDescription-&gt;m_States[m_uiCurrentStateIndex].m_uiInstanceDataOffset);</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    }</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  }</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  <a class="code" href="../../db/d45/classez_reflected_class.htm">ezReflectedClass</a>&amp; m_Owner;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;  <a class="code" href="../../de/dc1/classez_shared_ptr.htm">ezSharedPtr&lt;const ezStateMachineDescription&gt;</a> m_pDescription;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;  <a class="code" href="../../de/dc1/classez_shared_ptr.htm">ezSharedPtr&lt;ezBlackboard&gt;</a> m_pBlackboard;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;  <a class="code" href="../../dd/d2e/classez_state_machine_state.htm">ezStateMachineState</a>* m_pCurrentState = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;  ezUInt32 m_uiCurrentStateIndex = ezInvalidIndex;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;  <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> m_TimeInCurrentState;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;  <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> m_sCurrentTransitionEvent;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d0/d0c/classez_small_array.htm">ezStateMachineDescription::TransitionArray</a>* m_pCurrentTransitions = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;  <a class="code" href="../../dd/db8/classez_blob.htm">ezBlob</a> m_InstanceData;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;};</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;EZ_DECLARE_REFLECTABLE_TYPE(EZ_GAMEENGINE_DLL, <a class="code" href="../../d7/d08/classez_state_machine_instance.htm">ezStateMachineInstance</a>);</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition:</b> Types.h:50</div></div>
 <div class="ttc" id="aclassez_stream_writer_htm"><div class="ttname"><a href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a></div><div class="ttdoc">Interface for binary out (write) streams.</div><div class="ttdef"><b>Definition:</b> Stream.h:106</div></div>
 <div class="ttc" id="aclassez_shared_ptr_htm"><div class="ttname"><a href="../../de/dc1/classez_shared_ptr.htm">ezSharedPtr&lt; const ezStateMachineDescription &gt;</a></div></div>
 <div class="ttc" id="astructez_time_htm"><div class="ttname"><a href="../../d3/d90/structez_time.htm">ezTime</a></div><div class="ttdoc">The time class encapsulates a double value storing the time in seconds.</div><div class="ttdef"><b>Definition:</b> Time.h:11</div></div>
-<div class="ttc" id="aclassez_state_machine_description_htm"><div class="ttname"><a href="../../dc/da0/classez_state_machine_description.htm">ezStateMachineDescription</a></div><div class="ttdoc">The state machine description defines the structure of a state machine like e.g. what states it has a...</div><div class="ttdef"><b>Definition:</b> StateMachine.h:68</div></div>
-<div class="ttc" id="aclassez_state_machine_internal_1_1_instance_data_allocator_htm"><div class="ttname"><a href="../../d8/d77/classez_state_machine_internal_1_1_instance_data_allocator.htm">ezStateMachineInternal::InstanceDataAllocator</a></div><div class="ttdoc">Helper class to manager instance data allocation, construction and destruction.</div><div class="ttdef"><b>Definition:</b> StateMachineInstanceData.h:35</div></div>
+<div class="ttc" id="aclassez_state_machine_description_htm"><div class="ttname"><a href="../../dc/da0/classez_state_machine_description.htm">ezStateMachineDescription</a></div><div class="ttdoc">The state machine description defines the structure of a state machine like e.g. what states it has a...</div><div class="ttdef"><b>Definition:</b> StateMachine.h:98</div></div>
+<div class="ttc" id="astructez_instance_data_desc_htm"><div class="ttname"><a href="../../d3/d46/structez_instance_data_desc.htm">ezInstanceDataDesc</a></div><div class="ttdoc">Structure to describe an instance data type.</div><div class="ttdef"><b>Definition:</b> InstanceDataAllocator.h:16</div></div>
 <div class="ttc" id="aclassez_stream_reader_htm"><div class="ttname"><a href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a></div><div class="ttdoc">Interface for binary in (read) streams.</div><div class="ttdef"><b>Definition:</b> Stream.h:21</div></div>
-<div class="ttc" id="aclassez_state_machine_state_htm"><div class="ttname"><a href="../../dd/d2e/classez_state_machine_state.htm">ezStateMachineState</a></div><div class="ttdoc">Base class for a state in a state machine.</div><div class="ttdef"><b>Definition:</b> StateMachine.h:17</div></div>
-<div class="ttc" id="aclassez_blob_htm"><div class="ttname"><a href="../../dd/db8/classez_blob.htm">ezBlob</a></div><div class="ttdoc">ezBlob allows to store simple binary data larger than 4GB. This storage class is used by ezImage to a...</div><div class="ttdef"><b>Definition:</b> Blob.h:321</div></div>
-<div class="ttc" id="aclassez_state_machine_instance_htm_af63d61712a3764c6ec025292cb1a055e"><div class="ttname"><a href="../../d7/d08/classez_state_machine_instance.htm#af63d61712a3764c6ec025292cb1a055e">ezStateMachineInstance::GetTimeInCurrentState</a></div><div class="ttdeci">ezTime GetTimeInCurrentState() const</div><div class="ttdoc">Returns how long the state machine is in its current state.</div><div class="ttdef"><b>Definition:</b> StateMachine.h:135</div></div>
-<div class="ttc" id="aclassez_state_machine_instance_htm"><div class="ttname"><a href="../../d7/d08/classez_state_machine_instance.htm">ezStateMachineInstance</a></div><div class="ttdoc">The state machine instance represents the actual state machine. Typically it is created from a descri...</div><div class="ttdef"><b>Definition:</b> StateMachine.h:113</div></div>
+<div class="ttc" id="aclassez_state_machine_state_htm"><div class="ttname"><a href="../../dd/d2e/classez_state_machine_state.htm">ezStateMachineState</a></div><div class="ttdoc">Base class for a state in a state machine.</div><div class="ttdef"><b>Definition:</b> StateMachine.h:19</div></div>
+<div class="ttc" id="aclassez_instance_data_allocator_htm_a6b3bd9497e198a25e315f42f3cff2e17"><div class="ttname"><a href="../../da/d1b/classez_instance_data_allocator.htm#a6b3bd9497e198a25e315f42f3cff2e17">ezInstanceDataAllocator::GetInstanceData</a></div><div class="ttdeci">static EZ_ALWAYS_INLINE void * GetInstanceData(const ezByteBlobPtr &amp;blobPtr, ezUInt32 uiOffset)</div><div class="ttdoc">Retrieves a void pointer to the instance data within the given blob at the given offset,...</div><div class="ttdef"><b>Definition:</b> InstanceDataAllocator.h:59</div></div>
+<div class="ttc" id="astructez_state_machine_state___script_base_class_functions_htm"><div class="ttname"><a href="../../d0/dc5/structez_state_machine_state___script_base_class_functions.htm">ezStateMachineState_ScriptBaseClassFunctions</a></div><div class="ttdef"><b>Definition:</b> StateMachine.h:62</div></div>
+<div class="ttc" id="aclassez_component_htm"><div class="ttname"><a href="../../d6/d30/classez_component.htm">ezComponent</a></div><div class="ttdoc">Base class of all component types.</div><div class="ttdef"><b>Definition:</b> Component.h:24</div></div>
+<div class="ttc" id="aclassez_instance_data_allocator_htm"><div class="ttname"><a href="../../da/d1b/classez_instance_data_allocator.htm">ezInstanceDataAllocator</a></div><div class="ttdoc">Helper class to manager instance data allocation, construction and destruction.</div><div class="ttdef"><b>Definition:</b> InstanceDataAllocator.h:34</div></div>
+<div class="ttc" id="aclassez_blob_htm"><div class="ttname"><a href="../../dd/db8/classez_blob.htm">ezBlob</a></div><div class="ttdoc">ezBlob allows to store simple binary data larger than 4GB. This storage class is used by ezImage to a...</div><div class="ttdef"><b>Definition:</b> Blob.h:317</div></div>
+<div class="ttc" id="aclassez_state_machine_state___empty_htm"><div class="ttname"><a href="../../d4/d20/classez_state_machine_state___empty.htm">ezStateMachineState_Empty</a></div><div class="ttdef"><b>Definition:</b> StateMachine.h:51</div></div>
+<div class="ttc" id="aclassez_state_machine_instance_htm_af63d61712a3764c6ec025292cb1a055e"><div class="ttname"><a href="../../d7/d08/classez_state_machine_instance.htm#af63d61712a3764c6ec025292cb1a055e">ezStateMachineInstance::GetTimeInCurrentState</a></div><div class="ttdeci">ezTime GetTimeInCurrentState() const</div><div class="ttdoc">Returns how long the state machine is in its current state.</div><div class="ttdef"><b>Definition:</b> StateMachine.h:166</div></div>
+<div class="ttc" id="aclassez_state_machine_instance_htm"><div class="ttname"><a href="../../d7/d08/classez_state_machine_instance.htm">ezStateMachineInstance</a></div><div class="ttdoc">The state machine instance represents the actual state machine. Typically it is created from a descri...</div><div class="ttdef"><b>Definition:</b> StateMachine.h:143</div></div>
 <div class="ttc" id="aclassez_unique_ptr_htm"><div class="ttname"><a href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt; ezStateMachineState &gt;</a></div></div>
 <div class="ttc" id="aclassez_dynamic_array_htm"><div class="ttname"><a href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt; StateContext &gt;</a></div></div>
 <div class="ttc" id="aclassez_small_array_htm"><div class="ttname"><a href="../../d0/d0c/classez_small_array.htm">ezSmallArray&lt; TransitionContext, 2 &gt;</a></div></div>
@@ -250,15 +299,15 @@ $(document).ready(function(){initNavTree('df/dcf/_state_machine_8h_source.htm','
 <div class="ttc" id="aclassez_blackboard_htm"><div class="ttname"><a href="../../d3/d82/classez_blackboard.htm">ezBlackboard</a></div><div class="ttdoc">A blackboard is a key/value store that provides OnChange events to be informed when a value changes.</div><div class="ttdef"><b>Definition:</b> Blackboard.h:65</div></div>
 <div class="ttc" id="aclassez_hashed_string_htm"><div class="ttname"><a href="../../de/dce/classez_hashed_string.htm">ezHashedString</a></div><div class="ttdoc">This class is optimized to take nearly no memory (sizeof(void*)) and to allow very fast checks whethe...</div><div class="ttdef"><b>Definition:</b> HashedString.h:24</div></div>
 <div class="ttc" id="aclassez_ref_counted_htm"><div class="ttname"><a href="../../d2/d70/classez_ref_counted.htm">ezRefCounted</a></div><div class="ttdoc">Base class for reference counted objects.</div><div class="ttdef"><b>Definition:</b> RefCounted.h:51</div></div>
-<div class="ttc" id="aclassez_state_machine_transition_htm"><div class="ttname"><a href="../../d9/d43/classez_state_machine_transition.htm">ezStateMachineTransition</a></div><div class="ttdoc">Base class for a transition in a state machine. The target state of a transition is automatically set...</div><div class="ttdef"><b>Definition:</b> StateMachine.h:50</div></div>
+<div class="ttc" id="aclassez_state_machine_transition_htm"><div class="ttname"><a href="../../d9/d43/classez_state_machine_transition.htm">ezStateMachineTransition</a></div><div class="ttdoc">Base class for a transition in a state machine. The target state of a transition is automatically set...</div><div class="ttdef"><b>Definition:</b> StateMachine.h:80</div></div>
+<div class="ttc" id="aclassez_world_htm"><div class="ttname"><a href="../../da/d3c/classez_world.htm">ezWorld</a></div><div class="ttdoc">A world encapsulates a scene graph of game objects and various component managers and their component...</div><div class="ttdef"><b>Definition:</b> World.h:21</div></div>
 <div class="ttc" id="aclassez_reflected_class_htm"><div class="ttname"><a href="../../db/d45/classez_reflected_class.htm">ezReflectedClass</a></div><div class="ttdoc">All classes that should be dynamically reflectable, need to be derived from this base class.</div><div class="ttdef"><b>Definition:</b> DynamicRTTI.h:77</div></div>
-<div class="ttc" id="astructez_state_machine_instance_data_desc_htm"><div class="ttname"><a href="../../da/d72/structez_state_machine_instance_data_desc.htm">ezStateMachineInstanceDataDesc</a></div><div class="ttdoc">Structure to describe an instance data type for a state or transition.</div><div class="ttdef"><b>Definition:</b> StateMachineInstanceData.h:15</div></div>
 <div class="ttc" id="aclassez_hash_table_htm"><div class="ttname"><a href="../../d8/d86/classez_hash_table.htm">ezHashTable&lt; ezHashedString, ezUInt32 &gt;</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_fe4f349dd73c6459187bb04ae7deb06f.htm">GameEngine</a></li><li class="navelem"><a class="el" href="../../dir_b5acae571bcde48717a6d5892341cf6b.htm">StateMachine</a></li><li class="navelem"><b>StateMachine.h</b></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:21:58 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:19 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

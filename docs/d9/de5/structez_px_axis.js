@@ -1,7 +1,7 @@
 var structez_px_axis =
 [
     [ "Bits", "d6/d1b/structez_px_axis_1_1_bits.htm", "d6/d1b/structez_px_axis_1_1_bits" ],
-    [ "StorageType", "d9/de5/structez_px_axis.htm#afefa35b68403265333184f888a0cb86d", null ],
+    [ "StorageType", "d9/de5/structez_px_axis.htm#ab65ed39cb2e5b58feb53e1b5259a34db", null ],
     [ "Enum", "d9/de5/structez_px_axis.htm#aba17ca5641212c77fce5d90514f30503", [
       [ "None", "d9/de5/structez_px_axis.htm#aba17ca5641212c77fce5d90514f30503abf57d7ddb25ade09df46487a919d1f8e", null ],
       [ "X", "d9/de5/structez_px_axis.htm#aba17ca5641212c77fce5d90514f30503a96aee45ef02b8ceb00acf8f2a2341043", null ],

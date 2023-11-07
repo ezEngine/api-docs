@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['inclusioncallback_21386',['InclusionCallback',['../da/d17/classez_archive_builder.htm#aa89c9885727fb97ab951cef2bfbd0e00',1,'ezArchiveBuilder']]],
-  ['issearchedobjectcallback_21387',['IsSearchedObjectCallback',['../dd/d7b/classez_path_search.htm#aa4e56a75d0c0b3daebdd40e023bff116',1,'ezPathSearch']]]
+  ['inclusioncallback_22254',['InclusionCallback',['../da/d17/classez_archive_builder.htm#a127fada9b925acc484f1f877a84b76c2',1,'ezArchiveBuilder']]],
+  ['issearchedobjectcallback_22255',['IsSearchedObjectCallback',['../dd/d7b/classez_path_search.htm#a2a557772e61174db725bce444032b64d',1,'ezPathSearch']]]
 ];

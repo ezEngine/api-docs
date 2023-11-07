@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -105,135 +105,137 @@ $(document).ready(function(){initNavTree('d7/d6a/_action_8h_source.htm','../../'
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">class </span><a class="code" href="../../d2/d03/classez_action.htm">ezAction</a>;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">struct </span><a class="code" href="../../dc/dcc/structez_action_context.htm">ezActionContext</a>;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">typedef</span> <a class="code" href="../../dd/d2a/structez_generic_id.htm">ezGenericId&lt;24, 8&gt;</a> <a class="code" href="../../dd/d2a/structez_generic_id.htm">ezActionId</a>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">typedef</span> <a class="code" href="../../d2/d03/classez_action.htm">ezAction</a>* (*CreateActionFunc)(<span class="keyword">const</span> <a class="code" href="../../dc/dcc/structez_action_context.htm">ezActionContext</a>&amp; context);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">typedef</span> void (*DeleteActionFunc)(<a class="code" href="../../d2/d03/classez_action.htm">ezAction</a>* pAction);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">using</span> <a class="code" href="../../dd/d2a/structez_generic_id.htm">ezActionId</a> = <a class="code" href="../../dd/d2a/structez_generic_id.htm">ezGenericId&lt;24, 8&gt;</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">using</span> CreateActionFunc = <a class="code" href="../../d2/d03/classez_action.htm">ezAction</a>* (*)(<span class="keyword">const</span> <a class="code" href="../../dc/dcc/structez_action_context.htm">ezActionContext</a>&amp;);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">using</span> DeleteActionFunc = void (*)(<a class="code" href="../../d2/d03/classez_action.htm">ezAction</a>*);</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../d6/da8/classez_action_descriptor_handle.htm">   26</a></span>&#160;<span class="keyword">class </span>EZ_GUIFOUNDATION_DLL <a class="code" href="../../d6/da8/classez_action_descriptor_handle.htm">ezActionDescriptorHandle</a></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keyword">typedef</span> ezUInt32 StorageType;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  EZ_DECLARE_HANDLE_TYPE(<a class="code" href="../../d6/da8/classez_action_descriptor_handle.htm">ezActionDescriptorHandle</a>, <a class="code" href="../../dd/d2a/structez_generic_id.htm">ezActionId</a>);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d3/dd6/classez_action_manager.htm">ezActionManager</a>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d5/d0c/structez_action_descriptor.htm">ezActionDescriptor</a>* GetDescriptor() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="../../d2/d75/structez_action_scope.htm">   38</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../d2/d75/structez_action_scope.htm">ezActionScope</a></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keyword">enum</span> Enum</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    Global,</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    Document,</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    Window,</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    Default = Global</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  };</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keyword">typedef</span> ezUInt8 StorageType;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;};</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="../../de/d11/structez_action_type.htm">   51</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../de/d11/structez_action_type.htm">ezActionType</a></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keyword">enum</span> Enum</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    Action,</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    Category,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    Menu,</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    ActionAndMenu,</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    Default = Action</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  };</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keyword">typedef</span> ezUInt8 StorageType;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;};</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="../../dc/dcc/structez_action_context.htm">   65</a></span>&#160;<span class="keyword">struct </span>EZ_GUIFOUNDATION_DLL <a class="code" href="../../dc/dcc/structez_action_context.htm">ezActionContext</a></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <a class="code" href="../../dc/dcc/structez_action_context.htm">ezActionContext</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <a class="code" href="../../dc/dcc/structez_action_context.htm">ezActionContext</a>(<a class="code" href="../../d6/dd3/classez_document.htm">ezDocument</a>* pDoc) { m_pDocument = pDoc; }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <a class="code" href="../../d6/dd3/classez_document.htm">ezDocument</a>* m_pDocument = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sMapping;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  QWidget* m_pWindow = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;};</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keyword">using</span> StorageType = ezUInt32;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  EZ_DECLARE_HANDLE_TYPE(<a class="code" href="../../d6/da8/classez_action_descriptor_handle.htm">ezActionDescriptorHandle</a>, <a class="code" href="../../dd/d2a/structez_generic_id.htm">ezActionId</a>);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d3/dd6/classez_action_manager.htm">ezActionManager</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d5/d0c/structez_action_descriptor.htm">ezActionDescriptor</a>* GetDescriptor() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="../../d2/d75/structez_action_scope.htm">   39</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../d2/d75/structez_action_scope.htm">ezActionScope</a></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keyword">enum</span> Enum</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    Global,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    Document,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    Window,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    Default = Global</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  };</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keyword">using</span> StorageType = ezUInt8;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;};</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="../../de/d11/structez_action_type.htm">   52</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../de/d11/structez_action_type.htm">ezActionType</a></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">enum</span> Enum</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    Action,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    Category,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    Menu,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    ActionAndMenu,</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    Default = Action</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  };</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keyword">using</span> StorageType = ezUInt8;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;};</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="../../dc/dcc/structez_action_context.htm">   66</a></span>&#160;<span class="keyword">struct </span>EZ_GUIFOUNDATION_DLL <a class="code" href="../../dc/dcc/structez_action_context.htm">ezActionContext</a></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <a class="code" href="../../dc/dcc/structez_action_context.htm">ezActionContext</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <a class="code" href="../../dc/dcc/structez_action_context.htm">ezActionContext</a>(<a class="code" href="../../d6/dd3/classez_document.htm">ezDocument</a>* pDoc) { m_pDocument = pDoc; }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <a class="code" href="../../d6/dd3/classez_document.htm">ezDocument</a>* m_pDocument = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sMapping;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  QWidget* m_pWindow = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;};</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="../../d5/d0c/structez_action_descriptor.htm">   77</a></span>&#160;<span class="keyword">struct </span>EZ_GUIFOUNDATION_DLL <a class="code" href="../../d5/d0c/structez_action_descriptor.htm">ezActionDescriptor</a></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;{</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <a class="code" href="../../d5/d0c/structez_action_descriptor.htm">ezActionDescriptor</a>(){};</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <a class="code" href="../../d5/d0c/structez_action_descriptor.htm">ezActionDescriptor</a>(ezActionType::Enum type, ezActionScope::Enum scope, <span class="keyword">const</span> <span class="keywordtype">char</span>* szName, <span class="keyword">const</span> <span class="keywordtype">char</span>* szCategoryPath, <span class="keyword">const</span> <span class="keywordtype">char</span>* szShortcut,</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    CreateActionFunc createAction, DeleteActionFunc deleteAction = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <a class="code" href="../../d6/da8/classez_action_descriptor_handle.htm">ezActionDescriptorHandle</a> m_Handle;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <a class="code" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezActionType&gt;</a> m_Type;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <a class="code" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezActionScope&gt;</a> m_Scope;</div>
-<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="../../d5/d0c/structez_action_descriptor.htm#aae03ec32053745e2dcb0168940c476fd">   87</a></span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> <a class="code" href="../../d5/d0c/structez_action_descriptor.htm#aae03ec32053745e2dcb0168940c476fd">m_sActionName</a>;   </div>
-<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="../../d5/d0c/structez_action_descriptor.htm#afc11efe046979813173f7062c0a5ff4b">   88</a></span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> <a class="code" href="../../d5/d0c/structez_action_descriptor.htm#afc11efe046979813173f7062c0a5ff4b">m_sCategoryPath</a>; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sShortcut;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sDefaultShortcut;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <a class="code" href="../../d2/d03/classez_action.htm">ezAction</a>* CreateAction(<span class="keyword">const</span> <a class="code" href="../../dc/dcc/structez_action_context.htm">ezActionContext</a>&amp; context) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keywordtype">void</span> DeleteAction(<a class="code" href="../../d2/d03/classez_action.htm">ezAction</a>* pAction) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <span class="keywordtype">void</span> UpdateExistingActions();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="../../d5/d0c/structez_action_descriptor.htm">   78</a></span>&#160;<span class="keyword">struct </span>EZ_GUIFOUNDATION_DLL <a class="code" href="../../d5/d0c/structez_action_descriptor.htm">ezActionDescriptor</a></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;{</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <a class="code" href="../../d5/d0c/structez_action_descriptor.htm">ezActionDescriptor</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  ;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <a class="code" href="../../d5/d0c/structez_action_descriptor.htm">ezActionDescriptor</a>(ezActionType::Enum type, ezActionScope::Enum scope, <span class="keyword">const</span> <span class="keywordtype">char</span>* szName, <span class="keyword">const</span> <span class="keywordtype">char</span>* szCategoryPath, <span class="keyword">const</span> <span class="keywordtype">char</span>* szShortcut,</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    CreateActionFunc createAction, DeleteActionFunc deleteAction = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <a class="code" href="../../d6/da8/classez_action_descriptor_handle.htm">ezActionDescriptorHandle</a> m_Handle;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <a class="code" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezActionType&gt;</a> m_Type;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <a class="code" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezActionScope&gt;</a> m_Scope;</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="../../d5/d0c/structez_action_descriptor.htm#aae03ec32053745e2dcb0168940c476fd">   89</a></span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> <a class="code" href="../../d5/d0c/structez_action_descriptor.htm#aae03ec32053745e2dcb0168940c476fd">m_sActionName</a>;   </div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="../../d5/d0c/structez_action_descriptor.htm#afc11efe046979813173f7062c0a5ff4b">   90</a></span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> <a class="code" href="../../d5/d0c/structez_action_descriptor.htm#afc11efe046979813173f7062c0a5ff4b">m_sCategoryPath</a>; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sShortcut;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sDefaultShortcut;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <a class="code" href="../../d2/d03/classez_action.htm">ezAction</a>* CreateAction(<span class="keyword">const</span> <a class="code" href="../../dc/dcc/structez_action_context.htm">ezActionContext</a>&amp; context) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <span class="keywordtype">void</span> DeleteAction(<a class="code" href="../../d2/d03/classez_action.htm">ezAction</a>* pAction) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  CreateActionFunc m_CreateAction;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  DeleteActionFunc m_DeleteAction;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keyword">mutable</span> <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezAction*, 4&gt;</a> m_CreatedActions;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;};</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keywordtype">void</span> UpdateExistingActions();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  CreateActionFunc m_CreateAction;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  DeleteActionFunc m_DeleteAction;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="keyword">mutable</span> <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezAction*, 4&gt;</a> m_CreatedActions;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;};</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="../../d2/d03/classez_action.htm">  108</a></span>&#160;<span class="keyword">class </span>EZ_GUIFOUNDATION_DLL <a class="code" href="../../d2/d03/classez_action.htm">ezAction</a> : <span class="keyword">public</span> <a class="code" href="../../db/d45/classez_reflected_class.htm">ezReflectedClass</a></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;{</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  EZ_ADD_DYNAMIC_REFLECTION(<a class="code" href="../../d2/d03/classez_action.htm">ezAction</a>, <a class="code" href="../../db/d45/classez_reflected_class.htm">ezReflectedClass</a>);</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  EZ_DISALLOW_COPY_AND_ASSIGN(<a class="code" href="../../d2/d03/classez_action.htm">ezAction</a>);</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <a class="code" href="../../d2/d03/classez_action.htm">ezAction</a>(<span class="keyword">const</span> <a class="code" href="../../dc/dcc/structez_action_context.htm">ezActionContext</a>&amp; context) { m_Context = context; }</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> Execute(<span class="keyword">const</span> <a class="code" href="../../de/de6/classez_variant.htm">ezVariant</a>&amp; value) = 0;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <span class="keywordtype">void</span> TriggerUpdate();</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../dc/dcc/structez_action_context.htm">ezActionContext</a>&amp; GetContext()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_Context; }</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <a class="code" href="../../d6/da8/classez_action_descriptor_handle.htm">ezActionDescriptorHandle</a> GetDescriptorHandle() { <span class="keywordflow">return</span> m_hDescriptorHandle; }</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="../../d2/d03/classez_action.htm#a55c66d003af21bbb5bae5751d5495f9e">  122</a></span>&#160;  <a class="code" href="../../d0/daf/classez_event.htm">ezEvent&lt;ezAction*&gt;</a> <a class="code" href="../../d2/d03/classez_action.htm#a55c66d003af21bbb5bae5751d5495f9e">m_StatusUpdateEvent</a>; </div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <a class="code" href="../../dc/dcc/structez_action_context.htm">ezActionContext</a> m_Context;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <span class="keyword">friend</span> <span class="keyword">struct </span><a class="code" href="../../d5/d0c/structez_action_descriptor.htm">ezActionDescriptor</a>;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <a class="code" href="../../d6/da8/classez_action_descriptor_handle.htm">ezActionDescriptorHandle</a> m_hDescriptorHandle;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;};</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="../../d2/d03/classez_action.htm">  110</a></span>&#160;<span class="keyword">class </span>EZ_GUIFOUNDATION_DLL <a class="code" href="../../d2/d03/classez_action.htm">ezAction</a> : <span class="keyword">public</span> <a class="code" href="../../db/d45/classez_reflected_class.htm">ezReflectedClass</a></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;{</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  EZ_ADD_DYNAMIC_REFLECTION(<a class="code" href="../../d2/d03/classez_action.htm">ezAction</a>, <a class="code" href="../../db/d45/classez_reflected_class.htm">ezReflectedClass</a>);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  EZ_DISALLOW_COPY_AND_ASSIGN(<a class="code" href="../../d2/d03/classez_action.htm">ezAction</a>);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <a class="code" href="../../d2/d03/classez_action.htm">ezAction</a>(<span class="keyword">const</span> <a class="code" href="../../dc/dcc/structez_action_context.htm">ezActionContext</a>&amp; context) { m_Context = context; }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> Execute(<span class="keyword">const</span> <a class="code" href="../../de/de6/classez_variant.htm">ezVariant</a>&amp; value) = 0;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <span class="keywordtype">void</span> TriggerUpdate();</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../dc/dcc/structez_action_context.htm">ezActionContext</a>&amp; GetContext()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_Context; }</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <a class="code" href="../../d6/da8/classez_action_descriptor_handle.htm">ezActionDescriptorHandle</a> GetDescriptorHandle() { <span class="keywordflow">return</span> m_hDescriptorHandle; }</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="../../d2/d03/classez_action.htm#a55c66d003af21bbb5bae5751d5495f9e">  124</a></span>&#160;  <a class="code" href="../../d0/daf/classez_event.htm">ezEvent&lt;ezAction*&gt;</a> <a class="code" href="../../d2/d03/classez_action.htm#a55c66d003af21bbb5bae5751d5495f9e">m_StatusUpdateEvent</a>; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <a class="code" href="../../dc/dcc/structez_action_context.htm">ezActionContext</a> m_Context;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  <span class="keyword">friend</span> <span class="keyword">struct </span><a class="code" href="../../d5/d0c/structez_action_descriptor.htm">ezActionDescriptor</a>;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <a class="code" href="../../d6/da8/classez_action_descriptor_handle.htm">ezActionDescriptorHandle</a> m_hDescriptorHandle;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_document_htm"><div class="ttname"><a href="../../d6/dd3/classez_document.htm">ezDocument</a></div><div class="ttdef"><b>Definition:</b> Document.h:56</div></div>
-<div class="ttc" id="astructez_action_descriptor_htm_aae03ec32053745e2dcb0168940c476fd"><div class="ttname"><a href="../../d5/d0c/structez_action_descriptor.htm#aae03ec32053745e2dcb0168940c476fd">ezActionDescriptor::m_sActionName</a></div><div class="ttdeci">ezString m_sActionName</div><div class="ttdoc">Unique within category path, shown in key configuration dialog.</div><div class="ttdef"><b>Definition:</b> Action.h:87</div></div>
-<div class="ttc" id="aclassez_action_htm_a55c66d003af21bbb5bae5751d5495f9e"><div class="ttname"><a href="../../d2/d03/classez_action.htm#a55c66d003af21bbb5bae5751d5495f9e">ezAction::m_StatusUpdateEvent</a></div><div class="ttdeci">ezEvent&lt; ezAction * &gt; m_StatusUpdateEvent</div><div class="ttdoc">Fire when the state of the action changes (enabled, value etc...)</div><div class="ttdef"><b>Definition:</b> Action.h:122</div></div>
-<div class="ttc" id="aclassez_action_htm"><div class="ttname"><a href="../../d2/d03/classez_action.htm">ezAction</a></div><div class="ttdef"><b>Definition:</b> Action.h:108</div></div>
+<div class="ttc" id="astructez_action_descriptor_htm_aae03ec32053745e2dcb0168940c476fd"><div class="ttname"><a href="../../d5/d0c/structez_action_descriptor.htm#aae03ec32053745e2dcb0168940c476fd">ezActionDescriptor::m_sActionName</a></div><div class="ttdeci">ezString m_sActionName</div><div class="ttdoc">Unique within category path, shown in key configuration dialog.</div><div class="ttdef"><b>Definition:</b> Action.h:89</div></div>
+<div class="ttc" id="aclassez_action_htm_a55c66d003af21bbb5bae5751d5495f9e"><div class="ttname"><a href="../../d2/d03/classez_action.htm#a55c66d003af21bbb5bae5751d5495f9e">ezAction::m_StatusUpdateEvent</a></div><div class="ttdeci">ezEvent&lt; ezAction * &gt; m_StatusUpdateEvent</div><div class="ttdoc">Fire when the state of the action changes (enabled, value etc...)</div><div class="ttdef"><b>Definition:</b> Action.h:124</div></div>
+<div class="ttc" id="aclassez_action_htm"><div class="ttname"><a href="../../d2/d03/classez_action.htm">ezAction</a></div><div class="ttdef"><b>Definition:</b> Action.h:110</div></div>
 <div class="ttc" id="astructez_hybrid_string_htm"><div class="ttname"><a href="../../d4/d53/structez_hybrid_string.htm">ezHybridString&lt; 32, ezDefaultAllocatorWrapper &gt;</a></div></div>
-<div class="ttc" id="aclassez_action_manager_htm"><div class="ttname"><a href="../../d3/dd6/classez_action_manager.htm">ezActionManager</a></div><div class="ttdef"><b>Definition:</b> ActionManager.h:39</div></div>
+<div class="ttc" id="aclassez_action_manager_htm"><div class="ttname"><a href="../../d3/dd6/classez_action_manager.htm">ezActionManager</a></div><div class="ttdoc">Stores 'actions' (things that can be triggered from UI).</div><div class="ttdef"><b>Definition:</b> ActionManager.h:59</div></div>
 <div class="ttc" id="aclassez_action_descriptor_handle_htm"><div class="ttname"><a href="../../d6/da8/classez_action_descriptor_handle.htm">ezActionDescriptorHandle</a></div><div class="ttdoc">Handle for a ezAction.</div><div class="ttdef"><b>Definition:</b> Action.h:26</div></div>
-<div class="ttc" id="astructez_action_descriptor_htm_afc11efe046979813173f7062c0a5ff4b"><div class="ttname"><a href="../../d5/d0c/structez_action_descriptor.htm#afc11efe046979813173f7062c0a5ff4b">ezActionDescriptor::m_sCategoryPath</a></div><div class="ttdeci">ezString m_sCategoryPath</div><div class="ttdoc">Category in key configuration dialog, e.g. &quot;Tree View&quot; or &quot;File&quot;.</div><div class="ttdef"><b>Definition:</b> Action.h:88</div></div>
-<div class="ttc" id="astructez_action_context_htm"><div class="ttname"><a href="../../dc/dcc/structez_action_context.htm">ezActionContext</a></div><div class="ttdef"><b>Definition:</b> Action.h:65</div></div>
+<div class="ttc" id="astructez_action_descriptor_htm_afc11efe046979813173f7062c0a5ff4b"><div class="ttname"><a href="../../d5/d0c/structez_action_descriptor.htm#afc11efe046979813173f7062c0a5ff4b">ezActionDescriptor::m_sCategoryPath</a></div><div class="ttdeci">ezString m_sCategoryPath</div><div class="ttdoc">Category in key configuration dialog, e.g. &quot;Tree View&quot; or &quot;File&quot;.</div><div class="ttdef"><b>Definition:</b> Action.h:90</div></div>
+<div class="ttc" id="astructez_action_context_htm"><div class="ttname"><a href="../../dc/dcc/structez_action_context.htm">ezActionContext</a></div><div class="ttdef"><b>Definition:</b> Action.h:66</div></div>
 <div class="ttc" id="astructez_enum_htm"><div class="ttname"><a href="../../d6/dd9/structez_enum.htm">ezEnum&lt; ezActionType &gt;</a></div></div>
 <div class="ttc" id="aclassez_event_htm"><div class="ttname"><a href="../../d0/daf/classez_event.htm">ezEvent&lt; ezAction * &gt;</a></div></div>
-<div class="ttc" id="aclassez_variant_htm"><div class="ttname"><a href="../../de/de6/classez_variant.htm">ezVariant</a></div><div class="ttdoc">ezVariant is a class that can store different types of variables, which is useful in situations where...</div><div class="ttdef"><b>Definition:</b> Variant.h:45</div></div>
+<div class="ttc" id="aclassez_variant_htm"><div class="ttname"><a href="../../de/de6/classez_variant.htm">ezVariant</a></div><div class="ttdoc">ezVariant is a class that can store different types of variables, which is useful in situations where...</div><div class="ttdef"><b>Definition:</b> Variant.h:46</div></div>
 <div class="ttc" id="aclassez_hybrid_array_htm"><div class="ttname"><a href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt; ezAction *, 4 &gt;</a></div></div>
 <div class="ttc" id="aclassez_reflected_class_htm"><div class="ttname"><a href="../../db/d45/classez_reflected_class.htm">ezReflectedClass</a></div><div class="ttdoc">All classes that should be dynamically reflectable, need to be derived from this base class.</div><div class="ttdef"><b>Definition:</b> DynamicRTTI.h:77</div></div>
-<div class="ttc" id="astructez_action_scope_htm"><div class="ttname"><a href="../../d2/d75/structez_action_scope.htm">ezActionScope</a></div><div class="ttdef"><b>Definition:</b> Action.h:38</div></div>
-<div class="ttc" id="astructez_action_type_htm"><div class="ttname"><a href="../../de/d11/structez_action_type.htm">ezActionType</a></div><div class="ttdef"><b>Definition:</b> Action.h:51</div></div>
+<div class="ttc" id="astructez_action_scope_htm"><div class="ttname"><a href="../../d2/d75/structez_action_scope.htm">ezActionScope</a></div><div class="ttdef"><b>Definition:</b> Action.h:39</div></div>
+<div class="ttc" id="astructez_action_type_htm"><div class="ttname"><a href="../../de/d11/structez_action_type.htm">ezActionType</a></div><div class="ttdef"><b>Definition:</b> Action.h:52</div></div>
 <div class="ttc" id="astructez_generic_id_htm"><div class="ttname"><a href="../../dd/d2a/structez_generic_id.htm">ezGenericId&lt; 24, 8 &gt;</a></div></div>
-<div class="ttc" id="astructez_action_descriptor_htm"><div class="ttname"><a href="../../d5/d0c/structez_action_descriptor.htm">ezActionDescriptor</a></div><div class="ttdef"><b>Definition:</b> Action.h:77</div></div>
+<div class="ttc" id="astructez_action_descriptor_htm"><div class="ttname"><a href="../../d5/d0c/structez_action_descriptor.htm">ezActionDescriptor</a></div><div class="ttdef"><b>Definition:</b> Action.h:78</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_07792d309f5611e62640e8ec1fb96105.htm">Tools</a></li><li class="navelem"><a class="el" href="../../dir_8e80be223102188e67d1ce7cce146de0.htm">Libs</a></li><li class="navelem"><a class="el" href="../../dir_67a151a8658de153dad045cdd2f730f7.htm">GuiFoundation</a></li><li class="navelem"><a class="el" href="../../dir_1e8b03fcf511e7cb7d064a590c09d14a.htm">Action</a></li><li class="navelem"><b>Action.h</b></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:22:00 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:21 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

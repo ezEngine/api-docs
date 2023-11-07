@@ -1,6 +1,6 @@
 var structez_texture_cube_channel_mapping_enum =
 [
-    [ "StorageType", "da/df2/structez_texture_cube_channel_mapping_enum.htm#aeb32e57d8cac7965a1440f6d9790741b", null ],
+    [ "StorageType", "da/df2/structez_texture_cube_channel_mapping_enum.htm#aadac9a92eebb4ca88674ef7466797e15", null ],
     [ "Enum", "da/df2/structez_texture_cube_channel_mapping_enum.htm#a307eac58e7a5beacbf6cc3737e22fd63", [
       [ "RGB1", "da/df2/structez_texture_cube_channel_mapping_enum.htm#a307eac58e7a5beacbf6cc3737e22fd63ac2ea4910035872a95f81e425dc316bb3", null ],
       [ "RGBA1", "da/df2/structez_texture_cube_channel_mapping_enum.htm#a307eac58e7a5beacbf6cc3737e22fd63ad3b0a456364aa5cbd185b5cdb62bc9fe", null ],

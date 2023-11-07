@@ -4,5 +4,5 @@ var classez_abstract_member_property =
     [ "GetCategory", "da/d67/classez_abstract_member_property.htm#a6799a8b691ee7f90fd8fbbd2e534a9db", null ],
     [ "GetPropertyPointer", "da/d67/classez_abstract_member_property.htm#ae47ec5c08a707c6443e626e414f86a21", null ],
     [ "GetValuePtr", "da/d67/classez_abstract_member_property.htm#ac88450eb4e640a2b051eb0609d4a2174", null ],
-    [ "SetValuePtr", "da/d67/classez_abstract_member_property.htm#a24722c6c87fd7b21e108f15bed2d7c9b", null ]
+    [ "SetValuePtr", "da/d67/classez_abstract_member_property.htm#a0753e2dc58b2c3f98855c017661595b4", null ]
 ];

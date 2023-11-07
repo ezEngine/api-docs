@@ -1,7 +1,7 @@
 var classez_component_manager =
 [
-    [ "ComponentType", "d7/df2/classez_component_manager.htm#a760d1bf6b94b5e9bf2ad0ed1f1b9d06d", null ],
-    [ "SUPER", "d7/df2/classez_component_manager.htm#a204b2ccce2360a8a5a812e7b7df8af56", null ],
+    [ "ComponentType", "d7/df2/classez_component_manager.htm#ab095d850731997f9b59b2667ef3b7b6e", null ],
+    [ "SUPER", "d7/df2/classez_component_manager.htm#a12fe1be3df00fcb9c9e0615dea5d2815", null ],
     [ "ezComponentManager", "d7/df2/classez_component_manager.htm#afdf1b5acce3dfc40dc6e31858ff71501", null ],
     [ "~ezComponentManager", "d7/df2/classez_component_manager.htm#a6b3afad908a2b4d4043dcb7474e22e7a", null ],
     [ "CollectAllComponents", "d7/df2/classez_component_manager.htm#a190b977cd64a4674400a590c3edcee62", null ],

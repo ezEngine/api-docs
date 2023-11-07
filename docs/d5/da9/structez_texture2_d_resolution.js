@@ -1,6 +1,6 @@
 var structez_texture2_d_resolution =
 [
-    [ "StorageType", "d5/da9/structez_texture2_d_resolution.htm#a06668cc3cd2b8c5d2a63137184f5a3c1", null ],
+    [ "StorageType", "d5/da9/structez_texture2_d_resolution.htm#adff4c832592939c3c0342d87563cf3da", null ],
     [ "Enum", "d5/da9/structez_texture2_d_resolution.htm#a3e3455f0829033c0b8ed43dda597eabb", [
       [ "Fixed64x64", "d5/da9/structez_texture2_d_resolution.htm#a3e3455f0829033c0b8ed43dda597eabbaa9480447d994086b3dc50d611cffd72c", null ],
       [ "Fixed128x128", "d5/da9/structez_texture2_d_resolution.htm#a3e3455f0829033c0b8ed43dda597eabbab8d9c0d6c6db4c68d492460c3bad9376", null ],

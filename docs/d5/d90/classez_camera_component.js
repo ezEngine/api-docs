@@ -19,6 +19,7 @@ var classez_camera_component =
     [ "GetRenderTargetFile", "d5/d90/classez_camera_component.htm#aceb0bf6e2dd04825136ba52f93779c25", null ],
     [ "GetRenderTargetRectOffset", "d5/d90/classez_camera_component.htm#a2e0771bdf55fa47b843b5dd1d05fea84", null ],
     [ "GetRenderTargetRectSize", "d5/d90/classez_camera_component.htm#a3b837c19af0731da86b1eba20b4b0329", null ],
+    [ "GetRenderTargetView", "d5/d90/classez_camera_component.htm#a6a1ef5159c258022729a1ef2b76193a7", null ],
     [ "GetShutterTime", "d5/d90/classez_camera_component.htm#a5bd87022111e0f6ce7f0e6501ec5c496", null ],
     [ "GetUsageHint", "d5/d90/classez_camera_component.htm#a3cebc88747f6ce1710ad8371cc4194ce", null ],
     [ "OnActivated", "d5/d90/classez_camera_component.htm#a439ed8d4812a9fce5cf17065978c2454", null ],

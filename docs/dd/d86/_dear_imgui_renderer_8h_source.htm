@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -140,60 +140,65 @@ $(document).ready(function(){initNavTree('dd/d86/_dear_imgui_renderer_8h_source.
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> Extract(</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d2/d23/classez_view.htm">ezView</a>&amp; view, <span class="keyword">const</span> <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;const ezGameObject*&gt;</a>&amp; visibleObjects, <a class="code" href="../../d6/d06/classez_extracted_render_data.htm">ezExtractedRenderData</a>&amp; ref_extractedRenderData) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;};</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">class </span>EZ_GAMEENGINE_DLL ezImguiRenderer : <span class="keyword">public</span> <a class="code" href="../../d5/daa/classez_renderer.htm">ezRenderer</a></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  EZ_ADD_DYNAMIC_REFLECTION(ezImguiRenderer, <a class="code" href="../../d5/daa/classez_renderer.htm">ezRenderer</a>);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  EZ_DISALLOW_COPY_AND_ASSIGN(ezImguiRenderer);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  ezImguiRenderer();</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  ~ezImguiRenderer();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> GetSupportedRenderDataTypes(<a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;const ezRTTI*, 8&gt;</a>&amp; ref_types) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> GetSupportedRenderDataCategories(<a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezRenderData::Category, 8&gt;</a>&amp; ref_categories) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> RenderBatch(</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d7/d76/structez_render_view_context.htm">ezRenderViewContext</a>&amp; renderContext, <span class="keyword">const</span> <a class="code" href="../../d1/d0d/classez_render_pipeline_pass.htm">ezRenderPipelinePass</a>* pPass, <span class="keyword">const</span> <a class="code" href="../../d1/d11/classez_render_data_batch.htm">ezRenderDataBatch</a>&amp; batch) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordtype">void</span> SetupRenderer();</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> ezUInt32 s_uiVertexBufferSize = 10000;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> ezUInt32 s_uiIndexBufferSize = s_uiVertexBufferSize * 2;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <a class="code" href="../../d3/dd7/classez_typed_resource_handle.htm">ezShaderResourceHandle</a> m_hShader;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <a class="code" href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a> m_hVertexBuffer;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <a class="code" href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a> m_hIndexBuffer;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <a class="code" href="../../d4/d48/structez_vertex_declaration_info.htm">ezVertexDeclarationInfo</a> m_VertexDeclarationInfo;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;};</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> Serialize(<a class="code" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a>&amp; inout_stream) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> Deserialize(<a class="code" href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a>&amp; inout_stream) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;};</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">class </span>EZ_GAMEENGINE_DLL ezImguiRenderer : <span class="keyword">public</span> <a class="code" href="../../d5/daa/classez_renderer.htm">ezRenderer</a></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  EZ_ADD_DYNAMIC_REFLECTION(ezImguiRenderer, <a class="code" href="../../d5/daa/classez_renderer.htm">ezRenderer</a>);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  EZ_DISALLOW_COPY_AND_ASSIGN(ezImguiRenderer);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  ezImguiRenderer();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  ~ezImguiRenderer();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> GetSupportedRenderDataTypes(<a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;const ezRTTI*, 8&gt;</a>&amp; ref_types) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> GetSupportedRenderDataCategories(<a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezRenderData::Category, 8&gt;</a>&amp; ref_categories) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> RenderBatch(</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d7/d76/structez_render_view_context.htm">ezRenderViewContext</a>&amp; renderContext, <span class="keyword">const</span> <a class="code" href="../../d1/d0d/classez_render_pipeline_pass.htm">ezRenderPipelinePass</a>* pPass, <span class="keyword">const</span> <a class="code" href="../../d1/d11/classez_render_data_batch.htm">ezRenderDataBatch</a>&amp; batch) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordtype">void</span> SetupRenderer();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> ezUInt32 s_uiVertexBufferSize = 10000;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> ezUInt32 s_uiIndexBufferSize = s_uiVertexBufferSize * 2;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <a class="code" href="../../d3/dd7/classez_typed_resource_handle.htm">ezShaderResourceHandle</a> m_hShader;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <a class="code" href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a> m_hVertexBuffer;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <a class="code" href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a> m_hIndexBuffer;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <a class="code" href="../../d4/d48/structez_vertex_declaration_info.htm">ezVertexDeclarationInfo</a> m_VertexDeclarationInfo;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;};</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_view_htm"><div class="ttname"><a href="../../d2/d23/classez_view.htm">ezView</a></div><div class="ttdoc">Encapsulates a view on the given world through the given camera and rendered with the specified Rende...</div><div class="ttdef"><b>Definition:</b> View.h:20</div></div>
 <div class="ttc" id="aclassez_g_a_l_buffer_handle_htm"><div class="ttname"><a href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a></div><div class="ttdef"><b>Definition:</b> RendererFoundationDLL.h:337</div></div>
+<div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition:</b> Types.h:50</div></div>
 <div class="ttc" id="aclassez_render_data_htm"><div class="ttname"><a href="../../d3/dab/classez_render_data.htm">ezRenderData</a></div><div class="ttdoc">Base class for all render data. Render data must contain all information that is needed to render the...</div><div class="ttdef"><b>Definition:</b> RenderData.h:13</div></div>
+<div class="ttc" id="aclassez_stream_writer_htm"><div class="ttname"><a href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a></div><div class="ttdoc">Interface for binary out (write) streams.</div><div class="ttdef"><b>Definition:</b> Stream.h:106</div></div>
+<div class="ttc" id="aclassez_stream_reader_htm"><div class="ttname"><a href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a></div><div class="ttdoc">Interface for binary in (read) streams.</div><div class="ttdef"><b>Definition:</b> Stream.h:21</div></div>
 <div class="ttc" id="aclassez_array_ptr_htm"><div class="ttname"><a href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr</a></div><div class="ttdoc">This class encapsulates an array and it's size. It is recommended to use this class instead of plain ...</div><div class="ttdef"><b>Definition:</b> ArrayPtr.h:36</div></div>
 <div class="ttc" id="aclassez_color_linear_u_b_htm"><div class="ttname"><a href="../../de/d68/classez_color_linear_u_b.htm">ezColorLinearUB</a></div><div class="ttdoc">A 8bit per channel unsigned normalized (values interpreted as 0-1) color storage format that represen...</div><div class="ttdef"><b>Definition:</b> Color8UNorm.h:40</div></div>
 <div class="ttc" id="aclassez_extracted_render_data_htm"><div class="ttname"><a href="../../d6/d06/classez_extracted_render_data.htm">ezExtractedRenderData</a></div><div class="ttdef"><b>Definition:</b> ExtractedRenderData.h:9</div></div>
 <div class="ttc" id="aclassez_renderer_htm"><div class="ttname"><a href="../../d5/daa/classez_renderer.htm">ezRenderer</a></div><div class="ttdoc">This is the base class for types that handle rendering of different object types.</div><div class="ttdef"><b>Definition:</b> Renderer.h:8</div></div>
-<div class="ttc" id="aclassez_render_pipeline_pass_htm"><div class="ttname"><a href="../../d1/d0d/classez_render_pipeline_pass.htm">ezRenderPipelinePass</a></div><div class="ttdef"><b>Definition:</b> RenderPipelinePass.h:24</div></div>
+<div class="ttc" id="aclassez_render_pipeline_pass_htm"><div class="ttname"><a href="../../d1/d0d/classez_render_pipeline_pass.htm">ezRenderPipelinePass</a></div><div class="ttdef"><b>Definition:</b> RenderPipelinePass.h:25</div></div>
 <div class="ttc" id="astructez_render_view_context_htm"><div class="ttname"><a href="../../d7/d76/structez_render_view_context.htm">ezRenderViewContext</a></div><div class="ttdef"><b>Definition:</b> Declarations.h:50</div></div>
 <div class="ttc" id="aclassez_dynamic_array_htm"><div class="ttname"><a href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt; const ezGameObject * &gt;</a></div></div>
-<div class="ttc" id="aclassez_extractor_htm"><div class="ttname"><a href="../../dc/d13/classez_extractor.htm">ezExtractor</a></div><div class="ttdef"><b>Definition:</b> Extractor.h:6</div></div>
-<div class="ttc" id="aclassez_rect_template_htm"><div class="ttname"><a href="../../de/dd8/classez_rect_template.htm">ezRectTemplate</a></div><div class="ttdoc">A simple rectangle class templated on the type for x, y and width, height.</div><div class="ttdef"><b>Definition:</b> Rect.h:9</div></div>
+<div class="ttc" id="aclassez_extractor_htm"><div class="ttname"><a href="../../dc/d13/classez_extractor.htm">ezExtractor</a></div><div class="ttdef"><b>Definition:</b> Extractor.h:8</div></div>
+<div class="ttc" id="aclassez_rect_template_htm"><div class="ttname"><a href="../../de/dd8/classez_rect_template.htm">ezRectTemplate&lt; ezUInt32 &gt;</a></div></div>
 <div class="ttc" id="astructez_vertex_declaration_info_htm"><div class="ttname"><a href="../../d4/d48/structez_vertex_declaration_info.htm">ezVertexDeclarationInfo</a></div><div class="ttdef"><b>Definition:</b> MeshBufferResource.h:23</div></div>
 <div class="ttc" id="aclassez_render_data_batch_htm"><div class="ttname"><a href="../../d1/d11/classez_render_data_batch.htm">ezRenderDataBatch</a></div><div class="ttdef"><b>Definition:</b> RenderDataBatch.h:5</div></div>
 <div class="ttc" id="aclassez_hybrid_array_htm"><div class="ttname"><a href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt; const ezRTTI *, 8 &gt;</a></div></div>
-<div class="ttc" id="aclassez_vec2_template_htm"><div class="ttname"><a href="../../d1/df8/classez_vec2_template.htm">ezVec2Template&lt; float &gt;</a></div></div>
-<div class="ttc" id="aclassez_vec3_template_htm"><div class="ttname"><a href="../../da/df1/classez_vec3_template.htm">ezVec3Template</a></div><div class="ttdoc">A 3-component vector class.</div><div class="ttdef"><b>Definition:</b> Declarations.h:134</div></div>
+<div class="ttc" id="aclassez_vec2_template_htm"><div class="ttname"><a href="../../d1/df8/classez_vec2_template.htm">ezVec2Template</a></div><div class="ttdoc">A 2-component vector class.</div><div class="ttdef"><b>Definition:</b> Declarations.h:126</div></div>
+<div class="ttc" id="aclassez_vec3_template_htm"><div class="ttname"><a href="../../da/df1/classez_vec3_template.htm">ezVec3Template&lt; float &gt;</a></div></div>
 <div class="ttc" id="aclassez_typed_resource_handle_htm"><div class="ttname"><a href="../../d3/dd7/classez_typed_resource_handle.htm">ezTypedResourceHandle&lt; class ezShaderResource &gt;</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_fe4f349dd73c6459187bb04ae7deb06f.htm">GameEngine</a></li><li class="navelem"><a class="el" href="../../dir_0f1360896c33ada020f4e9db144b5beb.htm">DearImgui</a></li><li class="navelem"><b>DearImguiRenderer.h</b></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:21:58 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:19 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

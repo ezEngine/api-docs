@@ -8,10 +8,10 @@ var classez_file_system_mirror =
     ] ],
     [ "ezFileSystemMirror", "d7/d01/classez_file_system_mirror.htm#a035a0c6a85a5a2cb2626269418c8e0b3", null ],
     [ "~ezFileSystemMirror", "d7/d01/classez_file_system_mirror.htm#a30585a0f4dcefee5024b2cc9559e182a", null ],
-    [ "AddDirectory", "d7/d01/classez_file_system_mirror.htm#a401da613b162d9aced71c4f1bbc28751", null ],
-    [ "AddFile", "d7/d01/classez_file_system_mirror.htm#ad25480e9c33e6ea425fc07df0a0c3e51", null ],
-    [ "Enumerate", "d7/d01/classez_file_system_mirror.htm#a63c1bcb3c8017ccc3c8cd71ddf53be6c", null ],
-    [ "MoveDirectory", "d7/d01/classez_file_system_mirror.htm#acd1e56b6d71ab008ca81ca8c79cc8212", null ],
-    [ "RemoveDirectory", "d7/d01/classez_file_system_mirror.htm#a37aa5a7f66b267f83bbe931e2dda2cc4", null ],
-    [ "RemoveFile", "d7/d01/classez_file_system_mirror.htm#aee8e61a9cd39ca7b7f323478e4b7fb37", null ]
+    [ "AddDirectory", "d7/d01/classez_file_system_mirror.htm#a77f2c2e03dcdaa663fae6634c53683c2", null ],
+    [ "AddFile", "d7/d01/classez_file_system_mirror.htm#a198cc551841aae34dd0abf10a10c3f70", null ],
+    [ "Enumerate", "d7/d01/classez_file_system_mirror.htm#a5c14beddf8196ff41885acf9404a3a75", null ],
+    [ "MoveDirectory", "d7/d01/classez_file_system_mirror.htm#a9d021b9cb98f0915b667a7fed082d4e5", null ],
+    [ "RemoveDirectory", "d7/d01/classez_file_system_mirror.htm#ab4c38dde066a13ede01ea37dc0d082c0", null ],
+    [ "RemoveFile", "d7/d01/classez_file_system_mirror.htm#a0076dbcdc152b638476ea30d8b8cb14c", null ]
 ];

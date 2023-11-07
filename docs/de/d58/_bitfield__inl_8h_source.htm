@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -278,243 +278,292 @@ $(document).ready(function(){initNavTree('de/d58/_bitfield__inl_8h_source.htm','
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;}</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Container&gt;</div>
-<div class="line"><a name="l00192"></a><span class="lineno"><a class="line" href="../../d2/d62/classez_bitfield.htm#ab30c12ebc439eef63010e8c3d5a56471">  192</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../d2/d62/classez_bitfield.htm#ab30c12ebc439eef63010e8c3d5a56471">ezBitfield&lt;Container&gt;::IsBitSet</a>(ezUInt32 uiBit)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  EZ_ASSERT_DEBUG(uiBit &lt; m_uiCount, <span class="stringliteral">&quot;Cannot access bit {0}, the bitfield only has {1} bits.&quot;</span>, uiBit, m_uiCount);</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;  <span class="keywordflow">return</span> (m_Container[GetBitInt(uiBit)] &amp; GetBitMask(uiBit)) != 0;</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;}</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Container&gt;</div>
-<div class="line"><a name="l00200"></a><span class="lineno"><a class="line" href="../../d2/d62/classez_bitfield.htm#a33f3b1f5dcb047a2ec667470281e7187">  200</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d2/d62/classez_bitfield.htm#a33f3b1f5dcb047a2ec667470281e7187">ezBitfield&lt;Container&gt;::ClearAllBits</a>()</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;{</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;  <span class="keywordflow">for</span> (ezUInt32 i = 0; i &lt; m_Container.GetCount(); ++i)</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    m_Container[i] = 0;</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;}</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Container&gt;</div>
-<div class="line"><a name="l00207"></a><span class="lineno"><a class="line" href="../../d2/d62/classez_bitfield.htm#ac93aa3da4c16de9c15887e99b788e90f">  207</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d2/d62/classez_bitfield.htm#ac93aa3da4c16de9c15887e99b788e90f">ezBitfield&lt;Container&gt;::SetAllBits</a>()</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;{</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;  <span class="keywordflow">for</span> (ezUInt32 i = 0; i &lt; m_Container.GetCount(); ++i)</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    m_Container[i] = 0xFFFFFFFF;</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;}</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Container&gt;</div>
-<div class="line"><a name="l00214"></a><span class="lineno"><a class="line" href="../../d2/d62/classez_bitfield.htm#adcad809b5a1ef9295d853af3684c7e1a">  214</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d2/d62/classez_bitfield.htm#adcad809b5a1ef9295d853af3684c7e1a">ezBitfield&lt;Container&gt;::SetBitRange</a>(ezUInt32 uiFirstBit, ezUInt32 uiNumBits)</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;{</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;  <span class="keywordflow">if</span> (m_uiCount == 0 || uiNumBits == 0)</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00192"></a><span class="lineno"><a class="line" href="../../d2/d62/classez_bitfield.htm#aea4835778bbdab097300e08eb69a744b">  192</a></span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../d2/d62/classez_bitfield.htm#aea4835778bbdab097300e08eb69a744b">ezBitfield&lt;Container&gt;::SetBitValue</a>(ezUInt32 uiBit, <span class="keywordtype">bool</span> bValue)</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;{</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  <span class="keywordflow">if</span> (bValue)</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;  {</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    SetBit(uiBit);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  }</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  {</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    ClearBit(uiBit);</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;  }</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;}</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Container&gt;</div>
+<div class="line"><a name="l00205"></a><span class="lineno"><a class="line" href="../../d2/d62/classez_bitfield.htm#ab30c12ebc439eef63010e8c3d5a56471">  205</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../d2/d62/classez_bitfield.htm#ab30c12ebc439eef63010e8c3d5a56471">ezBitfield&lt;Container&gt;::IsBitSet</a>(ezUInt32 uiBit)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;  EZ_ASSERT_DEBUG(uiBit &lt; m_uiCount, <span class="stringliteral">&quot;Cannot access bit {0}, the bitfield only has {1} bits.&quot;</span>, uiBit, m_uiCount);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;  <span class="keywordflow">return</span> (m_Container[GetBitInt(uiBit)] &amp; GetBitMask(uiBit)) != 0;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;}</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Container&gt;</div>
+<div class="line"><a name="l00213"></a><span class="lineno"><a class="line" href="../../d2/d62/classez_bitfield.htm#a33f3b1f5dcb047a2ec667470281e7187">  213</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d2/d62/classez_bitfield.htm#a33f3b1f5dcb047a2ec667470281e7187">ezBitfield&lt;Container&gt;::ClearAllBits</a>()</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;{</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;  <span class="keywordflow">for</span> (ezUInt32 i = 0; i &lt; m_Container.GetCount(); ++i)</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    m_Container[i] = 0;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;}</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;  EZ_ASSERT_DEBUG(uiFirstBit &lt; m_uiCount, <span class="stringliteral">&quot;Cannot access bit {0}, the bitfield only has {1} bits.&quot;</span>, uiFirstBit, m_uiCount);</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;  <span class="keyword">const</span> ezUInt32 uiLastBit = uiFirstBit + uiNumBits - 1;</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;  <span class="keyword">const</span> ezUInt32 uiFirstInt = GetBitInt(uiFirstBit);</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;  <span class="keyword">const</span> ezUInt32 uiLastInt = GetBitInt(uiLastBit);</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Container&gt;</div>
+<div class="line"><a name="l00220"></a><span class="lineno"><a class="line" href="../../d2/d62/classez_bitfield.htm#ac93aa3da4c16de9c15887e99b788e90f">  220</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d2/d62/classez_bitfield.htm#ac93aa3da4c16de9c15887e99b788e90f">ezBitfield&lt;Container&gt;::SetAllBits</a>()</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;{</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;  <span class="keywordflow">for</span> (ezUInt32 i = 0; i &lt; m_Container.GetCount(); ++i)</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    m_Container[i] = 0xFFFFFFFF;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;}</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;  <span class="comment">// all within the same int</span></div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;  <span class="keywordflow">if</span> (uiFirstInt == uiLastInt)</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;  {</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="keywordflow">for</span> (ezUInt32 i = uiFirstBit; i &lt;= uiLastBit; ++i)</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;      SetBit(i);</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Container&gt;</div>
+<div class="line"><a name="l00227"></a><span class="lineno"><a class="line" href="../../d2/d62/classez_bitfield.htm#adcad809b5a1ef9295d853af3684c7e1a">  227</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d2/d62/classez_bitfield.htm#adcad809b5a1ef9295d853af3684c7e1a">ezBitfield&lt;Container&gt;::SetBitRange</a>(ezUInt32 uiFirstBit, ezUInt32 uiNumBits)</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;{</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;  <span class="keywordflow">if</span> (m_uiCount == 0 || uiNumBits == 0)</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;  }</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160; </div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;  <span class="keyword">const</span> ezUInt32 uiNextIntBit = (uiFirstInt + 1) * 32;</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;  <span class="keyword">const</span> ezUInt32 uiPrevIntBit = uiLastInt * 32;</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;  <span class="comment">// set the bits in the first int individually</span></div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;  <span class="keywordflow">for</span> (ezUInt32 i = uiFirstBit; i &lt; uiNextIntBit; ++i)</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    SetBit(i);</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;  <span class="comment">// set the bits in the ints in between with one operation</span></div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;  <span class="keywordflow">for</span> (ezUInt32 i = uiFirstInt + 1; i &lt; uiLastInt; ++i)</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    m_Container[i] = 0xFFFFFFFF;</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;  <span class="comment">// set the bits in the last int individually</span></div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;  <span class="keywordflow">for</span> (ezUInt32 i = uiPrevIntBit; i &lt;= uiLastBit; ++i)</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    SetBit(i);</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;}</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;  EZ_ASSERT_DEBUG(uiFirstBit &lt; m_uiCount, <span class="stringliteral">&quot;Cannot access bit {0}, the bitfield only has {1} bits.&quot;</span>, uiFirstBit, m_uiCount);</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;  <span class="keyword">const</span> ezUInt32 uiLastBit = uiFirstBit + uiNumBits - 1;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160; </div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;  <span class="keyword">const</span> ezUInt32 uiFirstInt = GetBitInt(uiFirstBit);</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;  <span class="keyword">const</span> ezUInt32 uiLastInt = GetBitInt(uiLastBit);</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;  <span class="comment">// all within the same int</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;  <span class="keywordflow">if</span> (uiFirstInt == uiLastInt)</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;  {</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keywordflow">for</span> (ezUInt32 i = uiFirstBit; i &lt;= uiLastBit; ++i)</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;      SetBit(i);</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;  }</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;  <span class="keyword">const</span> ezUInt32 uiNextIntBit = (uiFirstInt + 1) * 32;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;  <span class="keyword">const</span> ezUInt32 uiPrevIntBit = uiLastInt * 32;</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Container&gt;</div>
-<div class="line"><a name="l00252"></a><span class="lineno"><a class="line" href="../../d2/d62/classez_bitfield.htm#a97bcb21f9c0e2472111fe7d97948392b">  252</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d2/d62/classez_bitfield.htm#a97bcb21f9c0e2472111fe7d97948392b">ezBitfield&lt;Container&gt;::ClearBitRange</a>(ezUInt32 uiFirstBit, ezUInt32 uiNumBits)</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;{</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;  <span class="keywordflow">if</span> (m_uiCount == 0 || uiNumBits == 0)</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; </div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;  EZ_ASSERT_DEBUG(uiFirstBit &lt; m_uiCount, <span class="stringliteral">&quot;Cannot access bit {0}, the bitfield only has {1} bits.&quot;</span>, uiFirstBit, m_uiCount);</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;  <span class="comment">// set the bits in the first int individually</span></div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;  <span class="keywordflow">for</span> (ezUInt32 i = uiFirstBit; i &lt; uiNextIntBit; ++i)</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    SetBit(i);</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; </div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;  <span class="comment">// set the bits in the ints in between with one operation</span></div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;  <span class="keywordflow">for</span> (ezUInt32 i = uiFirstInt + 1; i &lt; uiLastInt; ++i)</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    m_Container[i] = 0xFFFFFFFF;</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;  <span class="keyword">const</span> ezUInt32 uiLastBit = uiFirstBit + uiNumBits - 1;</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;  <span class="keyword">const</span> ezUInt32 uiFirstInt = GetBitInt(uiFirstBit);</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;  <span class="keyword">const</span> ezUInt32 uiLastInt = GetBitInt(uiLastBit);</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;  <span class="comment">// set the bits in the last int individually</span></div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;  <span class="keywordflow">for</span> (ezUInt32 i = uiPrevIntBit; i &lt;= uiLastBit; ++i)</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    SetBit(i);</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;}</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160; </div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;  <span class="comment">// all within the same int</span></div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;  <span class="keywordflow">if</span> (uiFirstInt == uiLastInt)</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;  {</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="keywordflow">for</span> (ezUInt32 i = uiFirstBit; i &lt;= uiLastBit; ++i)</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;      ClearBit(i);</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Container&gt;</div>
+<div class="line"><a name="l00265"></a><span class="lineno"><a class="line" href="../../d2/d62/classez_bitfield.htm#a97bcb21f9c0e2472111fe7d97948392b">  265</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d2/d62/classez_bitfield.htm#a97bcb21f9c0e2472111fe7d97948392b">ezBitfield&lt;Container&gt;::ClearBitRange</a>(ezUInt32 uiFirstBit, ezUInt32 uiNumBits)</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;{</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;  <span class="keywordflow">if</span> (m_uiCount == 0 || uiNumBits == 0)</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;  }</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;  <span class="keyword">const</span> ezUInt32 uiNextIntBit = (uiFirstInt + 1) * 32;</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;  <span class="keyword">const</span> ezUInt32 uiPrevIntBit = uiLastInt * 32;</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160; </div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;  <span class="comment">// set the bits in the first int individually</span></div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  <span class="keywordflow">for</span> (ezUInt32 i = uiFirstBit; i &lt; uiNextIntBit; ++i)</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    ClearBit(i);</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160; </div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;  <span class="comment">// set the bits in the ints in between with one operation</span></div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;  <span class="keywordflow">for</span> (ezUInt32 i = uiFirstInt + 1; i &lt; uiLastInt; ++i)</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    m_Container[i] = 0;</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160; </div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;  <span class="comment">// set the bits in the last int individually</span></div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;  <span class="keywordflow">for</span> (ezUInt32 i = uiPrevIntBit; i &lt;= uiLastBit; ++i)</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    ClearBit(i);</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;}</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;  EZ_ASSERT_DEBUG(uiFirstBit &lt; m_uiCount, <span class="stringliteral">&quot;Cannot access bit {0}, the bitfield only has {1} bits.&quot;</span>, uiFirstBit, m_uiCount);</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160; </div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;  <span class="keyword">const</span> ezUInt32 uiLastBit = uiFirstBit + uiNumBits - 1;</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160; </div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;  <span class="keyword">const</span> ezUInt32 uiFirstInt = GetBitInt(uiFirstBit);</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;  <span class="keyword">const</span> ezUInt32 uiLastInt = GetBitInt(uiLastBit);</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  <span class="comment">// all within the same int</span></div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;  <span class="keywordflow">if</span> (uiFirstInt == uiLastInt)</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;  {</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <span class="keywordflow">for</span> (ezUInt32 i = uiFirstBit; i &lt;= uiLastBit; ++i)</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;      ClearBit(i);</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;  }</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160; </div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;  <span class="keyword">const</span> ezUInt32 uiNextIntBit = (uiFirstInt + 1) * 32;</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;  <span class="keyword">const</span> ezUInt32 uiPrevIntBit = uiLastInt * 32;</div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160; </div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;  <span class="comment">// set the bits in the first int individually</span></div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;  <span class="keywordflow">for</span> (ezUInt32 i = uiFirstBit; i &lt; uiNextIntBit; ++i)</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    ClearBit(i);</div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160; </div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00294"></a><span class="lineno"><a class="line" href="../../d7/d49/classez_static_bitfield.htm#a4b5144fa732d74afb51d97d2de037db8">  294</a></span>&#160;EZ_ALWAYS_INLINE <a class="code" href="../../d7/d49/classez_static_bitfield.htm#a4b5144fa732d74afb51d97d2de037db8">ezStaticBitfield&lt;T&gt;::ezStaticBitfield</a>()</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;{</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;  static_assert(std::is_unsigned&lt;T&gt;::value, <span class="stringliteral">&quot;Storage type must be unsigned&quot;</span>);</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;}</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160; </div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;EZ_ALWAYS_INLINE <a class="code" href="../../d7/d49/classez_static_bitfield.htm">ezStaticBitfield&lt;T&gt;</a> <a class="code" href="../../d7/d49/classez_static_bitfield.htm">ezStaticBitfield&lt;T&gt;::FromMask</a>(StorageType bits)</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;{</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../d7/d49/classez_static_bitfield.htm">ezStaticBitfield&lt;T&gt;</a>(bits);</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;}</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; </div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00306"></a><span class="lineno"><a class="line" href="../../d7/d49/classez_static_bitfield.htm#ad22cb17cacfab8521e2a5289476cfbe4">  306</a></span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> <a class="code" href="../../d7/d49/classez_static_bitfield.htm#ad22cb17cacfab8521e2a5289476cfbe4">ezStaticBitfield&lt;T&gt;::IsAnyBitSet</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;  <span class="keywordflow">return</span> m_Storage != 0;</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;}</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160; </div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00312"></a><span class="lineno"><a class="line" href="../../d7/d49/classez_static_bitfield.htm#ac08954c1c7161ecf4e568f867286969e">  312</a></span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> <a class="code" href="../../d7/d49/classez_static_bitfield.htm#ac08954c1c7161ecf4e568f867286969e">ezStaticBitfield&lt;T&gt;::IsNoBitSet</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;  <span class="keywordflow">return</span> m_Storage == 0;</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;}</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160; </div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00318"></a><span class="lineno"><a class="line" href="../../d7/d49/classez_static_bitfield.htm#a2b44eb887d27a71a67f322bf3992e1a0">  318</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../d7/d49/classez_static_bitfield.htm#a2b44eb887d27a71a67f322bf3992e1a0">ezStaticBitfield&lt;T&gt;::AreAllBitsSet</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;  <span class="keyword">const</span> T inv = ~m_Storage;</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;  <span class="keywordflow">return</span> inv == 0;</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;  <span class="comment">// set the bits in the ints in between with one operation</span></div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;  <span class="keywordflow">for</span> (ezUInt32 i = uiFirstInt + 1; i &lt; uiLastInt; ++i)</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    m_Container[i] = 0;</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;  <span class="comment">// set the bits in the last int individually</span></div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;  <span class="keywordflow">for</span> (ezUInt32 i = uiPrevIntBit; i &lt;= uiLastBit; ++i)</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    ClearBit(i);</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;}</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00307"></a><span class="lineno"><a class="line" href="../../d7/d49/classez_static_bitfield.htm#a4b5144fa732d74afb51d97d2de037db8">  307</a></span>&#160;EZ_ALWAYS_INLINE <a class="code" href="../../d7/d49/classez_static_bitfield.htm#a4b5144fa732d74afb51d97d2de037db8">ezStaticBitfield&lt;T&gt;::ezStaticBitfield</a>()</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;{</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;  static_assert(std::is_unsigned&lt;T&gt;::value, <span class="stringliteral">&quot;Storage type must be unsigned&quot;</span>);</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;}</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160; </div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;EZ_ALWAYS_INLINE <a class="code" href="../../d7/d49/classez_static_bitfield.htm">ezStaticBitfield&lt;T&gt;</a> <a class="code" href="../../d7/d49/classez_static_bitfield.htm">ezStaticBitfield&lt;T&gt;::MakeFromMask</a>(StorageType bits)</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;{</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../d7/d49/classez_static_bitfield.htm">ezStaticBitfield&lt;T&gt;</a>(bits);</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;}</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160; </div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00319"></a><span class="lineno"><a class="line" href="../../d7/d49/classez_static_bitfield.htm#ad22cb17cacfab8521e2a5289476cfbe4">  319</a></span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> <a class="code" href="../../d7/d49/classez_static_bitfield.htm#ad22cb17cacfab8521e2a5289476cfbe4">ezStaticBitfield&lt;T&gt;::IsAnyBitSet</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;  <span class="keywordflow">return</span> m_Storage != 0;</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;}</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160; </div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00325"></a><span class="lineno"><a class="line" href="../../d7/d49/classez_static_bitfield.htm#a45f15761c9ca73cef777994ef949c4c7">  325</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d7/d49/classez_static_bitfield.htm#a45f15761c9ca73cef777994ef949c4c7">ezStaticBitfield&lt;T&gt;::ClearBitRange</a>(ezUInt32 uiFirstBit, ezUInt32 uiNumBits)</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;{</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;  EZ_ASSERT_DEBUG(uiFirstBit &lt; GetNumBits(), <span class="stringliteral">&quot;Cannot access first bit {0}, the bitfield only has {1} bits.&quot;</span>, uiFirstBit, GetNumBits());</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160; </div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;  <span class="keywordflow">for</span> (ezUInt32 i = 0; i &lt; uiNumBits; ++i)</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;  {</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <span class="keyword">const</span> ezUInt32 uiBit = uiFirstBit + i;</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    m_Storage &amp;= ~(<span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(1u) &lt;&lt; uiBit);</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;  }</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;}</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160; </div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00337"></a><span class="lineno"><a class="line" href="../../d7/d49/classez_static_bitfield.htm#aa9a4922565cd058d77ebd71f1333fbb2">  337</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d7/d49/classez_static_bitfield.htm#aa9a4922565cd058d77ebd71f1333fbb2">ezStaticBitfield&lt;T&gt;::SetBitRange</a>(ezUInt32 uiFirstBit, ezUInt32 uiNumBits)</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;{</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;  EZ_ASSERT_DEBUG(uiFirstBit &lt; GetNumBits(), <span class="stringliteral">&quot;Cannot access first bit {0}, the bitfield only has {1} bits.&quot;</span>, uiFirstBit, GetNumBits());</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160; </div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;  <span class="keywordflow">for</span> (ezUInt32 i = 0; i &lt; uiNumBits; ++i)</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;  {</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    <span class="keyword">const</span> ezUInt32 uiBit = uiFirstBit + i;</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    m_Storage |= <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(1u) &lt;&lt; uiBit;</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;  }</div>
+<div class="line"><a name="l00325"></a><span class="lineno"><a class="line" href="../../d7/d49/classez_static_bitfield.htm#ac08954c1c7161ecf4e568f867286969e">  325</a></span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> <a class="code" href="../../d7/d49/classez_static_bitfield.htm#ac08954c1c7161ecf4e568f867286969e">ezStaticBitfield&lt;T&gt;::IsNoBitSet</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;  <span class="keywordflow">return</span> m_Storage == 0;</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;}</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160; </div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00331"></a><span class="lineno"><a class="line" href="../../d7/d49/classez_static_bitfield.htm#a2b44eb887d27a71a67f322bf3992e1a0">  331</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../d7/d49/classez_static_bitfield.htm#a2b44eb887d27a71a67f322bf3992e1a0">ezStaticBitfield&lt;T&gt;::AreAllBitsSet</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;  <span class="keyword">const</span> T inv = ~m_Storage;</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;  <span class="keywordflow">return</span> inv == 0;</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;}</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160; </div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00338"></a><span class="lineno"><a class="line" href="../../d7/d49/classez_static_bitfield.htm#a45f15761c9ca73cef777994ef949c4c7">  338</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d7/d49/classez_static_bitfield.htm#a45f15761c9ca73cef777994ef949c4c7">ezStaticBitfield&lt;T&gt;::ClearBitRange</a>(ezUInt32 uiFirstBit, ezUInt32 uiNumBits)</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;{</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;  EZ_ASSERT_DEBUG(uiFirstBit &lt; GetStorageTypeBitCount(), <span class="stringliteral">&quot;Cannot access first bit {0}, the bitfield only has {1} bits.&quot;</span>, uiFirstBit, GetStorageTypeBitCount());</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160; </div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;  T mask = (uiNumBits / 8 &gt;= <span class="keyword">sizeof</span>(T)) ? (~static_cast&lt;T&gt;(0)) : ((<span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(1) &lt;&lt; uiNumBits) - 1);</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;  mask &lt;&lt;= uiFirstBit;</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;  mask = ~mask;</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;  m_Storage &amp;= mask;</div>
 <div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;}</div>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160; </div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00349"></a><span class="lineno"><a class="line" href="../../d7/d49/classez_static_bitfield.htm#abbfcf7318ab085ca06dcd8eed022060c">  349</a></span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../d7/d49/classez_static_bitfield.htm#abbfcf7318ab085ca06dcd8eed022060c">ezStaticBitfield&lt;T&gt;::SetAllBits</a>()</div>
+<div class="line"><a name="l00349"></a><span class="lineno"><a class="line" href="../../d7/d49/classez_static_bitfield.htm#aa9a4922565cd058d77ebd71f1333fbb2">  349</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d7/d49/classez_static_bitfield.htm#aa9a4922565cd058d77ebd71f1333fbb2">ezStaticBitfield&lt;T&gt;::SetBitRange</a>(ezUInt32 uiFirstBit, ezUInt32 uiNumBits)</div>
 <div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;{</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;  m_Storage = ezMath::MaxValue&lt;T&gt;(); <span class="comment">// possible because we assert that T is unsigned</span></div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;}</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160; </div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00355"></a><span class="lineno"><a class="line" href="../../d7/d49/classez_static_bitfield.htm#ab9c8aa0b8287fb9a6d139a4f45f8e1b7">  355</a></span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../d7/d49/classez_static_bitfield.htm#ab9c8aa0b8287fb9a6d139a4f45f8e1b7">ezStaticBitfield&lt;T&gt;::ClearAllBits</a>()</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;{</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;  m_Storage = 0;</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;}</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160; </div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00361"></a><span class="lineno"><a class="line" href="../../d7/d49/classez_static_bitfield.htm#a130bfe6663dbb0d19927e499d44a6532">  361</a></span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> <a class="code" href="../../d7/d49/classez_static_bitfield.htm#a130bfe6663dbb0d19927e499d44a6532">ezStaticBitfield&lt;T&gt;::IsBitSet</a>(ezUInt32 uiBit)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;  EZ_ASSERT_DEBUG(uiBit &lt; GetNumBits(), <span class="stringliteral">&quot;Cannot access bit {0}, the bitfield only has {1} bits.&quot;</span>, uiBit, GetNumBits());</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160; </div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;  <span class="keywordflow">return</span> (m_Storage &amp; (<span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(1u) &lt;&lt; uiBit)) != 0;</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;}</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160; </div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00369"></a><span class="lineno"><a class="line" href="../../d7/d49/classez_static_bitfield.htm#a58dc7be6d97276d75a3049547270ede3">  369</a></span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../d7/d49/classez_static_bitfield.htm#a58dc7be6d97276d75a3049547270ede3">ezStaticBitfield&lt;T&gt;::ClearBit</a>(ezUInt32 uiBit)</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;{</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;  EZ_ASSERT_DEBUG(uiBit &lt; GetNumBits(), <span class="stringliteral">&quot;Cannot access bit {0}, the bitfield only has {1} bits.&quot;</span>, uiBit, GetNumBits());</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160; </div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;  m_Storage &amp;= ~(<span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(1u) &lt;&lt; uiBit);</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;  EZ_ASSERT_DEBUG(uiFirstBit &lt; GetStorageTypeBitCount(), <span class="stringliteral">&quot;Cannot access first bit {0}, the bitfield only has {1} bits.&quot;</span>, uiFirstBit, GetStorageTypeBitCount());</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160; </div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;  T mask = (uiNumBits / 8 &gt;= <span class="keyword">sizeof</span>(T)) ? (~static_cast&lt;T&gt;(0)) : ((<span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(1) &lt;&lt; uiNumBits) - 1);</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;  mask &lt;&lt;= uiFirstBit;</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;  m_Storage |= mask;</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;}</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160; </div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00359"></a><span class="lineno"><a class="line" href="../../d7/d49/classez_static_bitfield.htm#a9775d824ceade69a13ed3a21c95c03a0">  359</a></span>&#160;EZ_ALWAYS_INLINE ezUInt32 <a class="code" href="../../d7/d49/classez_static_bitfield.htm#a9775d824ceade69a13ed3a21c95c03a0">ezStaticBitfield&lt;T&gt;::GetNumBitsSet</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../db/d78/namespaceez_math.htm#a6a78ee109368657dafd74a19d26d6b7c">ezMath::CountBits</a>(m_Storage);</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;}</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160; </div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00365"></a><span class="lineno"><a class="line" href="../../d7/d49/classez_static_bitfield.htm#a016cccd3653a7d52a55ee7f528630834">  365</a></span>&#160;EZ_ALWAYS_INLINE ezUInt32 <a class="code" href="../../d7/d49/classez_static_bitfield.htm#a016cccd3653a7d52a55ee7f528630834">ezStaticBitfield&lt;T&gt;::GetHighestBitSet</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;  <span class="keywordflow">return</span> m_Storage == 0 ? GetStorageTypeBitCount() : <a class="code" href="../../db/d78/namespaceez_math.htm#a35aee647f78c0673015f09c8791c448f">ezMath::FirstBitHigh</a>(m_Storage);</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;}</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160; </div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00371"></a><span class="lineno"><a class="line" href="../../d7/d49/classez_static_bitfield.htm#ab01d96409feb7c5eb803d02018d17c22">  371</a></span>&#160;EZ_ALWAYS_INLINE ezUInt32 <a class="code" href="../../d7/d49/classez_static_bitfield.htm#ab01d96409feb7c5eb803d02018d17c22">ezStaticBitfield&lt;T&gt;::GetLowestBitSet</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;  <span class="keywordflow">return</span> m_Storage == 0 ? GetStorageTypeBitCount() : <a class="code" href="../../db/d78/namespaceez_math.htm#a20cbb5a32d60124534dd65b2871166d0">ezMath::FirstBitLow</a>(m_Storage);</div>
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;}</div>
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160; </div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00377"></a><span class="lineno"><a class="line" href="../../d7/d49/classez_static_bitfield.htm#a4266b70a3530425eba1ff01bd9cbd450">  377</a></span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../d7/d49/classez_static_bitfield.htm#a4266b70a3530425eba1ff01bd9cbd450">ezStaticBitfield&lt;T&gt;::SetBit</a>(ezUInt32 uiBit)</div>
+<div class="line"><a name="l00377"></a><span class="lineno"><a class="line" href="../../d7/d49/classez_static_bitfield.htm#abbfcf7318ab085ca06dcd8eed022060c">  377</a></span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../d7/d49/classez_static_bitfield.htm#abbfcf7318ab085ca06dcd8eed022060c">ezStaticBitfield&lt;T&gt;::SetAllBits</a>()</div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;{</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;  EZ_ASSERT_DEBUG(uiBit &lt; GetNumBits(), <span class="stringliteral">&quot;Cannot access bit {0}, the bitfield only has {1} bits.&quot;</span>, uiBit, GetNumBits());</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160; </div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;  m_Storage |= <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(1u) &lt;&lt; uiBit;</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;}</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160; </div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00385"></a><span class="lineno"><a class="line" href="../../d7/d49/classez_static_bitfield.htm#accee6b155d9f434105428528f22afe35">  385</a></span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../d7/d49/classez_static_bitfield.htm#accee6b155d9f434105428528f22afe35">ezStaticBitfield&lt;T&gt;::SetValue</a>(T value)</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;{</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;  m_Storage = value;</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;}</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160; </div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00391"></a><span class="lineno"><a class="line" href="../../d7/d49/classez_static_bitfield.htm#a9daba5221702b65b0cf55cce45d150a6">  391</a></span>&#160;EZ_ALWAYS_INLINE T <a class="code" href="../../d7/d49/classez_static_bitfield.htm#a9daba5221702b65b0cf55cce45d150a6">ezStaticBitfield&lt;T&gt;::GetValue</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;  <span class="keywordflow">return</span> m_Storage;</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;  m_Storage = ezMath::MaxValue&lt;T&gt;(); <span class="comment">// possible because we assert that T is unsigned</span></div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;}</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160; </div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00383"></a><span class="lineno"><a class="line" href="../../d7/d49/classez_static_bitfield.htm#ab9c8aa0b8287fb9a6d139a4f45f8e1b7">  383</a></span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../d7/d49/classez_static_bitfield.htm#ab9c8aa0b8287fb9a6d139a4f45f8e1b7">ezStaticBitfield&lt;T&gt;::ClearAllBits</a>()</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;{</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;  m_Storage = 0;</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;}</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160; </div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00389"></a><span class="lineno"><a class="line" href="../../d7/d49/classez_static_bitfield.htm#a130bfe6663dbb0d19927e499d44a6532">  389</a></span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> <a class="code" href="../../d7/d49/classez_static_bitfield.htm#a130bfe6663dbb0d19927e499d44a6532">ezStaticBitfield&lt;T&gt;::IsBitSet</a>(ezUInt32 uiBit)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;  EZ_ASSERT_DEBUG(uiBit &lt; GetStorageTypeBitCount(), <span class="stringliteral">&quot;Cannot access bit {0}, the bitfield only has {1} bits.&quot;</span>, uiBit, GetStorageTypeBitCount());</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160; </div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;  <span class="keywordflow">return</span> (m_Storage &amp; (<span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(1u) &lt;&lt; uiBit)) != 0;</div>
 <div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;}</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160; </div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00397"></a><span class="lineno"><a class="line" href="../../d7/d49/classez_static_bitfield.htm#a58dc7be6d97276d75a3049547270ede3">  397</a></span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../d7/d49/classez_static_bitfield.htm#a58dc7be6d97276d75a3049547270ede3">ezStaticBitfield&lt;T&gt;::ClearBit</a>(ezUInt32 uiBit)</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;{</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;  EZ_ASSERT_DEBUG(uiBit &lt; GetStorageTypeBitCount(), <span class="stringliteral">&quot;Cannot access bit {0}, the bitfield only has {1} bits.&quot;</span>, uiBit, GetStorageTypeBitCount());</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160; </div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;  m_Storage &amp;= ~(<span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(1u) &lt;&lt; uiBit);</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;}</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160; </div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00405"></a><span class="lineno"><a class="line" href="../../d7/d49/classez_static_bitfield.htm#aa2284db7917c62103fa7c39b2057a495">  405</a></span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../d7/d49/classez_static_bitfield.htm#aa2284db7917c62103fa7c39b2057a495">ezStaticBitfield&lt;T&gt;::SetBitValue</a>(ezUInt32 uiBit, <span class="keywordtype">bool</span> bValue)</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;{</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;  <span class="keywordflow">if</span> (bValue)</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;  {</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    SetBit(uiBit);</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;  }</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;  {</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    ClearBit(uiBit);</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;  }</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;}</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160; </div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00418"></a><span class="lineno"><a class="line" href="../../d7/d49/classez_static_bitfield.htm#a4266b70a3530425eba1ff01bd9cbd450">  418</a></span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../d7/d49/classez_static_bitfield.htm#a4266b70a3530425eba1ff01bd9cbd450">ezStaticBitfield&lt;T&gt;::SetBit</a>(ezUInt32 uiBit)</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;{</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;  EZ_ASSERT_DEBUG(uiBit &lt; GetStorageTypeBitCount(), <span class="stringliteral">&quot;Cannot access bit {0}, the bitfield only has {1} bits.&quot;</span>, uiBit, GetStorageTypeBitCount());</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160; </div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;  m_Storage |= <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(1u) &lt;&lt; uiBit;</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;}</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160; </div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00426"></a><span class="lineno"><a class="line" href="../../d7/d49/classez_static_bitfield.htm#accee6b155d9f434105428528f22afe35">  426</a></span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../d7/d49/classez_static_bitfield.htm#accee6b155d9f434105428528f22afe35">ezStaticBitfield&lt;T&gt;::SetValue</a>(T value)</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;{</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;  m_Storage = value;</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;}</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160; </div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00432"></a><span class="lineno"><a class="line" href="../../d7/d49/classez_static_bitfield.htm#a9daba5221702b65b0cf55cce45d150a6">  432</a></span>&#160;EZ_ALWAYS_INLINE T <a class="code" href="../../d7/d49/classez_static_bitfield.htm#a9daba5221702b65b0cf55cce45d150a6">ezStaticBitfield&lt;T&gt;::GetValue</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;  <span class="keywordflow">return</span> m_Storage;</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassez_static_bitfield_htm_ac08954c1c7161ecf4e568f867286969e"><div class="ttname"><a href="../../d7/d49/classez_static_bitfield.htm#ac08954c1c7161ecf4e568f867286969e">ezStaticBitfield::IsNoBitSet</a></div><div class="ttdeci">bool IsNoBitSet() const</div><div class="ttdoc">Returns true, if the bitfield is all zero.</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:312</div></div>
+<div class="ttc" id="aclassez_static_bitfield_htm_ac08954c1c7161ecf4e568f867286969e"><div class="ttname"><a href="../../d7/d49/classez_static_bitfield.htm#ac08954c1c7161ecf4e568f867286969e">ezStaticBitfield::IsNoBitSet</a></div><div class="ttdeci">bool IsNoBitSet() const</div><div class="ttdoc">Returns true, if the bitfield is all zero.</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:325</div></div>
 <div class="ttc" id="aclassez_bitfield_htm_aa6d897045d639889ca47c86452abeaa3"><div class="ttname"><a href="../../d2/d62/classez_bitfield.htm#aa6d897045d639889ca47c86452abeaa3">ezBitfield::ClearBit</a></div><div class="ttdeci">void ClearBit(ezUInt32 uiBit)</div><div class="ttdoc">Clears the given bit to 0.</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:184</div></div>
-<div class="ttc" id="aclassez_bitfield_htm_ac93aa3da4c16de9c15887e99b788e90f"><div class="ttname"><a href="../../d2/d62/classez_bitfield.htm#ac93aa3da4c16de9c15887e99b788e90f">ezBitfield::SetAllBits</a></div><div class="ttdeci">void SetAllBits()</div><div class="ttdoc">Sets all bits to 1.</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:207</div></div>
-<div class="ttc" id="aclassez_static_bitfield_htm_ab9c8aa0b8287fb9a6d139a4f45f8e1b7"><div class="ttname"><a href="../../d7/d49/classez_static_bitfield.htm#ab9c8aa0b8287fb9a6d139a4f45f8e1b7">ezStaticBitfield::ClearAllBits</a></div><div class="ttdeci">void ClearAllBits()</div><div class="ttdoc">Clears all bits to 0. Same as Clear().</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:355</div></div>
-<div class="ttc" id="aclassez_bitfield_htm_ab30c12ebc439eef63010e8c3d5a56471"><div class="ttname"><a href="../../d2/d62/classez_bitfield.htm#ab30c12ebc439eef63010e8c3d5a56471">ezBitfield::IsBitSet</a></div><div class="ttdeci">bool IsBitSet(ezUInt32 uiBit) const</div><div class="ttdoc">Returns true, if the given bit is set to 1.</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:192</div></div>
+<div class="ttc" id="aclassez_bitfield_htm_ac93aa3da4c16de9c15887e99b788e90f"><div class="ttname"><a href="../../d2/d62/classez_bitfield.htm#ac93aa3da4c16de9c15887e99b788e90f">ezBitfield::SetAllBits</a></div><div class="ttdeci">void SetAllBits()</div><div class="ttdoc">Sets all bits to 1.</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:220</div></div>
+<div class="ttc" id="aclassez_static_bitfield_htm_a9775d824ceade69a13ed3a21c95c03a0"><div class="ttname"><a href="../../d7/d49/classez_static_bitfield.htm#a9775d824ceade69a13ed3a21c95c03a0">ezStaticBitfield::GetNumBitsSet</a></div><div class="ttdeci">ezUInt32 GetNumBitsSet() const</div><div class="ttdoc">Returns the count of how many bits are set in total.</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:359</div></div>
+<div class="ttc" id="aclassez_static_bitfield_htm_ab9c8aa0b8287fb9a6d139a4f45f8e1b7"><div class="ttname"><a href="../../d7/d49/classez_static_bitfield.htm#ab9c8aa0b8287fb9a6d139a4f45f8e1b7">ezStaticBitfield::ClearAllBits</a></div><div class="ttdeci">void ClearAllBits()</div><div class="ttdoc">Clears all bits to 0. Same as Clear().</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:383</div></div>
+<div class="ttc" id="anamespaceez_math_htm_a35aee647f78c0673015f09c8791c448f"><div class="ttname"><a href="../../db/d78/namespaceez_math.htm#a35aee647f78c0673015f09c8791c448f">ezMath::FirstBitHigh</a></div><div class="ttdeci">EZ_ALWAYS_INLINE ezUInt32 FirstBitHigh(ezUInt32 value)</div><div class="ttdoc">Returns the index of the most significant bit set.</div><div class="ttdef"><b>Definition:</b> Math_inl.h:116</div></div>
+<div class="ttc" id="aclassez_bitfield_htm_ab30c12ebc439eef63010e8c3d5a56471"><div class="ttname"><a href="../../d2/d62/classez_bitfield.htm#ab30c12ebc439eef63010e8c3d5a56471">ezBitfield::IsBitSet</a></div><div class="ttdeci">bool IsBitSet(ezUInt32 uiBit) const</div><div class="ttdoc">Returns true, if the given bit is set to 1.</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:205</div></div>
 <div class="ttc" id="aclassez_bitfield_htm_a9e2f730a80533668732441f695ad13fc"><div class="ttname"><a href="../../d2/d62/classez_bitfield.htm#a9e2f730a80533668732441f695ad13fc">ezBitfield::SetBit</a></div><div class="ttdeci">void SetBit(ezUInt32 uiBit)</div><div class="ttdoc">Sets the given bit to 1.</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:176</div></div>
 <div class="ttc" id="aclassez_bitfield_htm_acefb6bbf5ba62038a91adfdfd527344c"><div class="ttname"><a href="../../d2/d62/classez_bitfield.htm#acefb6bbf5ba62038a91adfdfd527344c">ezBitfield::IsNoBitSet</a></div><div class="ttdeci">bool IsNoBitSet(ezUInt32 uiFirstBit=0, ezUInt32 uiNumBits=0xFFFFFFFF) const</div><div class="ttdoc">Returns true, if the bitfield is empty or all bits are set to zero.</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:111</div></div>
-<div class="ttc" id="aclassez_bitfield_htm_a97bcb21f9c0e2472111fe7d97948392b"><div class="ttname"><a href="../../d2/d62/classez_bitfield.htm#a97bcb21f9c0e2472111fe7d97948392b">ezBitfield::ClearBitRange</a></div><div class="ttdeci">void ClearBitRange(ezUInt32 uiFirstBit, ezUInt32 uiNumBits)</div><div class="ttdoc">Clears the range starting at uiFirstBit up to (and including) uiLastBit to 0.</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:252</div></div>
+<div class="ttc" id="aclassez_static_bitfield_htm_aa2284db7917c62103fa7c39b2057a495"><div class="ttname"><a href="../../d7/d49/classez_static_bitfield.htm#aa2284db7917c62103fa7c39b2057a495">ezStaticBitfield::SetBitValue</a></div><div class="ttdeci">void SetBitValue(ezUInt32 uiBit, bool bValue)</div><div class="ttdoc">Sets the given bit to 1 or 0 depending on the given value.</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:405</div></div>
+<div class="ttc" id="aclassez_bitfield_htm_a97bcb21f9c0e2472111fe7d97948392b"><div class="ttname"><a href="../../d2/d62/classez_bitfield.htm#a97bcb21f9c0e2472111fe7d97948392b">ezBitfield::ClearBitRange</a></div><div class="ttdeci">void ClearBitRange(ezUInt32 uiFirstBit, ezUInt32 uiNumBits)</div><div class="ttdoc">Clears the range starting at uiFirstBit up to (and including) uiLastBit to 0.</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:265</div></div>
+<div class="ttc" id="aclassez_static_bitfield_htm_a016cccd3653a7d52a55ee7f528630834"><div class="ttname"><a href="../../d7/d49/classez_static_bitfield.htm#a016cccd3653a7d52a55ee7f528630834">ezStaticBitfield::GetHighestBitSet</a></div><div class="ttdeci">ezUInt32 GetHighestBitSet() const</div><div class="ttdoc">Returns the index of the highest bit that is set. Returns the max index+1 in case no bit is set,...</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:365</div></div>
 <div class="ttc" id="aclassez_bitfield_htm_a2df952dade46abd60d44d954c4b5c821"><div class="ttname"><a href="../../d2/d62/classez_bitfield.htm#a2df952dade46abd60d44d954c4b5c821">ezBitfield::AreAllBitsSet</a></div><div class="ttdeci">bool AreAllBitsSet(ezUInt32 uiFirstBit=0, ezUInt32 uiNumBits=0xFFFFFFFF) const</div><div class="ttdoc">Returns true, if the bitfield is not empty and all bits are set to one.</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:117</div></div>
-<div class="ttc" id="aclassez_static_bitfield_htm_accee6b155d9f434105428528f22afe35"><div class="ttname"><a href="../../d7/d49/classez_static_bitfield.htm#accee6b155d9f434105428528f22afe35">ezStaticBitfield::SetValue</a></div><div class="ttdeci">void SetValue(T value)</div><div class="ttdoc">Sets the raw uint that stores all bits.</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:385</div></div>
+<div class="ttc" id="aclassez_static_bitfield_htm_accee6b155d9f434105428528f22afe35"><div class="ttname"><a href="../../d7/d49/classez_static_bitfield.htm#accee6b155d9f434105428528f22afe35">ezStaticBitfield::SetValue</a></div><div class="ttdeci">void SetValue(T value)</div><div class="ttdoc">Sets the raw uint that stores all bits.</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:426</div></div>
 <div class="ttc" id="aclassez_bitfield_htm_a7541e5112a522c7429f2f18e95fef35c"><div class="ttname"><a href="../../d2/d62/classez_bitfield.htm#a7541e5112a522c7429f2f18e95fef35c">ezBitfield::SetCountUninitialized</a></div><div class="ttdeci">void SetCountUninitialized(ezUInt32 uiBitCount)</div><div class="ttdoc">Resizes the Bitfield to hold the given number of bits. This version does NOT initialize new bits!</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:24</div></div>
-<div class="ttc" id="aclassez_static_bitfield_htm_a4b5144fa732d74afb51d97d2de037db8"><div class="ttname"><a href="../../d7/d49/classez_static_bitfield.htm#a4b5144fa732d74afb51d97d2de037db8">ezStaticBitfield::ezStaticBitfield</a></div><div class="ttdeci">ezStaticBitfield()</div><div class="ttdoc">Initializes the bitfield to all zero.</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:294</div></div>
-<div class="ttc" id="aclassez_static_bitfield_htm_a45f15761c9ca73cef777994ef949c4c7"><div class="ttname"><a href="../../d7/d49/classez_static_bitfield.htm#a45f15761c9ca73cef777994ef949c4c7">ezStaticBitfield::ClearBitRange</a></div><div class="ttdeci">void ClearBitRange(ezUInt32 uiFirstBit, ezUInt32 uiNumBits)</div><div class="ttdoc">Clears the range starting at uiFirstBit up to (and including) uiLastBit to 0.</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:325</div></div>
-<div class="ttc" id="aclassez_static_bitfield_htm_a58dc7be6d97276d75a3049547270ede3"><div class="ttname"><a href="../../d7/d49/classez_static_bitfield.htm#a58dc7be6d97276d75a3049547270ede3">ezStaticBitfield::ClearBit</a></div><div class="ttdeci">void ClearBit(ezUInt32 uiBit)</div><div class="ttdoc">Clears the given bit to 0.</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:369</div></div>
-<div class="ttc" id="aclassez_static_bitfield_htm_a4266b70a3530425eba1ff01bd9cbd450"><div class="ttname"><a href="../../d7/d49/classez_static_bitfield.htm#a4266b70a3530425eba1ff01bd9cbd450">ezStaticBitfield::SetBit</a></div><div class="ttdeci">void SetBit(ezUInt32 uiBit)</div><div class="ttdoc">Sets the given bit to 1.</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:377</div></div>
-<div class="ttc" id="aclassez_bitfield_htm_adcad809b5a1ef9295d853af3684c7e1a"><div class="ttname"><a href="../../d2/d62/classez_bitfield.htm#adcad809b5a1ef9295d853af3684c7e1a">ezBitfield::SetBitRange</a></div><div class="ttdeci">void SetBitRange(ezUInt32 uiFirstBit, ezUInt32 uiNumBits)</div><div class="ttdoc">Sets the range starting at uiFirstBit up to (and including) uiLastBit to 1.</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:214</div></div>
+<div class="ttc" id="aclassez_static_bitfield_htm_a4b5144fa732d74afb51d97d2de037db8"><div class="ttname"><a href="../../d7/d49/classez_static_bitfield.htm#a4b5144fa732d74afb51d97d2de037db8">ezStaticBitfield::ezStaticBitfield</a></div><div class="ttdeci">ezStaticBitfield()</div><div class="ttdoc">Initializes the bitfield to all zero.</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:307</div></div>
+<div class="ttc" id="aclassez_static_bitfield_htm_a45f15761c9ca73cef777994ef949c4c7"><div class="ttname"><a href="../../d7/d49/classez_static_bitfield.htm#a45f15761c9ca73cef777994ef949c4c7">ezStaticBitfield::ClearBitRange</a></div><div class="ttdeci">void ClearBitRange(ezUInt32 uiFirstBit, ezUInt32 uiNumBits)</div><div class="ttdoc">Clears the range starting at uiFirstBit up to (and including) uiLastBit to 0.</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:338</div></div>
+<div class="ttc" id="aclassez_static_bitfield_htm_a58dc7be6d97276d75a3049547270ede3"><div class="ttname"><a href="../../d7/d49/classez_static_bitfield.htm#a58dc7be6d97276d75a3049547270ede3">ezStaticBitfield::ClearBit</a></div><div class="ttdeci">void ClearBit(ezUInt32 uiBit)</div><div class="ttdoc">Clears the given bit to 0.</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:397</div></div>
+<div class="ttc" id="aclassez_static_bitfield_htm_a4266b70a3530425eba1ff01bd9cbd450"><div class="ttname"><a href="../../d7/d49/classez_static_bitfield.htm#a4266b70a3530425eba1ff01bd9cbd450">ezStaticBitfield::SetBit</a></div><div class="ttdeci">void SetBit(ezUInt32 uiBit)</div><div class="ttdoc">Sets the given bit to 1.</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:418</div></div>
+<div class="ttc" id="aclassez_bitfield_htm_adcad809b5a1ef9295d853af3684c7e1a"><div class="ttname"><a href="../../d2/d62/classez_bitfield.htm#adcad809b5a1ef9295d853af3684c7e1a">ezBitfield::SetBitRange</a></div><div class="ttdeci">void SetBitRange(ezUInt32 uiFirstBit, ezUInt32 uiNumBits)</div><div class="ttdoc">Sets the range starting at uiFirstBit up to (and including) uiLastBit to 1.</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:227</div></div>
 <div class="ttc" id="aclassez_bitfield_htm_a7d72c9d5cdef37f42a845d7d191453fd"><div class="ttname"><a href="../../d2/d62/classez_bitfield.htm#a7d72c9d5cdef37f42a845d7d191453fd">ezBitfield::IsAnyBitSet</a></div><div class="ttdeci">bool IsAnyBitSet(ezUInt32 uiFirstBit=0, ezUInt32 uiNumBits=0xFFFFFFFF) const</div><div class="ttdoc">Returns true, if the bitfield is not empty and any bit is 1.</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:59</div></div>
-<div class="ttc" id="aclassez_static_bitfield_htm_a130bfe6663dbb0d19927e499d44a6532"><div class="ttname"><a href="../../d7/d49/classez_static_bitfield.htm#a130bfe6663dbb0d19927e499d44a6532">ezStaticBitfield::IsBitSet</a></div><div class="ttdeci">bool IsBitSet(ezUInt32 uiBit) const</div><div class="ttdoc">Returns true, if the given bit is set to 1.</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:361</div></div>
+<div class="ttc" id="aclassez_static_bitfield_htm_a130bfe6663dbb0d19927e499d44a6532"><div class="ttname"><a href="../../d7/d49/classez_static_bitfield.htm#a130bfe6663dbb0d19927e499d44a6532">ezStaticBitfield::IsBitSet</a></div><div class="ttdeci">bool IsBitSet(ezUInt32 uiBit) const</div><div class="ttdoc">Returns true, if the given bit is set to 1.</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:389</div></div>
+<div class="ttc" id="anamespaceez_math_htm_a20cbb5a32d60124534dd65b2871166d0"><div class="ttname"><a href="../../db/d78/namespaceez_math.htm#a20cbb5a32d60124534dd65b2871166d0">ezMath::FirstBitLow</a></div><div class="ttdeci">EZ_ALWAYS_INLINE ezUInt32 FirstBitLow(ezUInt32 value)</div><div class="ttdoc">Returns the index of the least significant bit set.</div><div class="ttdef"><b>Definition:</b> Math_inl.h:67</div></div>
 <div class="ttc" id="aclassez_bitfield_htm_aec1f88c81c67279e730d88fcd6e48723"><div class="ttname"><a href="../../d2/d62/classez_bitfield.htm#aec1f88c81c67279e730d88fcd6e48723">ezBitfield::Clear</a></div><div class="ttdeci">void Clear()</div><div class="ttdoc">Discards all bits and sets count to zero.</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:169</div></div>
-<div class="ttc" id="aclassez_static_bitfield_htm_ad22cb17cacfab8521e2a5289476cfbe4"><div class="ttname"><a href="../../d7/d49/classez_static_bitfield.htm#ad22cb17cacfab8521e2a5289476cfbe4">ezStaticBitfield::IsAnyBitSet</a></div><div class="ttdeci">bool IsAnyBitSet() const</div><div class="ttdoc">Returns true, if the bitfield is not zero.</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:306</div></div>
+<div class="ttc" id="aclassez_static_bitfield_htm_ad22cb17cacfab8521e2a5289476cfbe4"><div class="ttname"><a href="../../d7/d49/classez_static_bitfield.htm#ad22cb17cacfab8521e2a5289476cfbe4">ezStaticBitfield::IsAnyBitSet</a></div><div class="ttdeci">bool IsAnyBitSet() const</div><div class="ttdoc">Returns true, if the bitfield is not zero.</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:319</div></div>
 <div class="ttc" id="aclassez_bitfield_htm_ad418a90f02802f36dce70a2ad1c02e06"><div class="ttname"><a href="../../d2/d62/classez_bitfield.htm#ad418a90f02802f36dce70a2ad1c02e06">ezBitfield::IsEmpty</a></div><div class="ttdeci">bool IsEmpty() const</div><div class="ttdoc">Returns true, if the bitfield does not store any bits.</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:53</div></div>
-<div class="ttc" id="aclassez_static_bitfield_htm_a9daba5221702b65b0cf55cce45d150a6"><div class="ttname"><a href="../../d7/d49/classez_static_bitfield.htm#a9daba5221702b65b0cf55cce45d150a6">ezStaticBitfield::GetValue</a></div><div class="ttdeci">T GetValue() const</div><div class="ttdoc">Returns the raw uint that stores all bits.</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:391</div></div>
+<div class="ttc" id="aclassez_static_bitfield_htm_a9daba5221702b65b0cf55cce45d150a6"><div class="ttname"><a href="../../d7/d49/classez_static_bitfield.htm#a9daba5221702b65b0cf55cce45d150a6">ezStaticBitfield::GetValue</a></div><div class="ttdeci">T GetValue() const</div><div class="ttdoc">Returns the raw uint that stores all bits.</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:432</div></div>
 <div class="ttc" id="aclassez_bitfield_htm_a5d2e77f2c19d452c5a81fc2da9fb05f2"><div class="ttname"><a href="../../d2/d62/classez_bitfield.htm#a5d2e77f2c19d452c5a81fc2da9fb05f2">ezBitfield::SetCount</a></div><div class="ttdeci">void SetCount(ezUInt32 uiBitCount, bool bSetNew=false)</div><div class="ttdoc">Resizes the Bitfield to hold the given number of bits. If bSetNew is true, new bits are set to 1,...</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:33</div></div>
 <div class="ttc" id="aclassez_bitfield_htm_acf370dced312910f0aca4ea0449c54d5"><div class="ttname"><a href="../../d2/d62/classez_bitfield.htm#acf370dced312910f0aca4ea0449c54d5">ezBitfield::GetCount</a></div><div class="ttdeci">ezUInt32 GetCount() const</div><div class="ttdoc">Returns the number of bits that this bitfield stores.</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:16</div></div>
-<div class="ttc" id="aclassez_static_bitfield_htm_a2b44eb887d27a71a67f322bf3992e1a0"><div class="ttname"><a href="../../d7/d49/classez_static_bitfield.htm#a2b44eb887d27a71a67f322bf3992e1a0">ezStaticBitfield::AreAllBitsSet</a></div><div class="ttdeci">bool AreAllBitsSet() const</div><div class="ttdoc">Returns true, if the bitfield is not empty and all bits are set to one.</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:318</div></div>
-<div class="ttc" id="aclassez_static_bitfield_htm_abbfcf7318ab085ca06dcd8eed022060c"><div class="ttname"><a href="../../d7/d49/classez_static_bitfield.htm#abbfcf7318ab085ca06dcd8eed022060c">ezStaticBitfield::SetAllBits</a></div><div class="ttdeci">void SetAllBits()</div><div class="ttdoc">Sets all bits to 1.</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:349</div></div>
-<div class="ttc" id="aclassez_bitfield_htm_a33f3b1f5dcb047a2ec667470281e7187"><div class="ttname"><a href="../../d2/d62/classez_bitfield.htm#a33f3b1f5dcb047a2ec667470281e7187">ezBitfield::ClearAllBits</a></div><div class="ttdeci">void ClearAllBits()</div><div class="ttdoc">Clears all bits to 0.</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:200</div></div>
+<div class="ttc" id="aclassez_static_bitfield_htm_a2b44eb887d27a71a67f322bf3992e1a0"><div class="ttname"><a href="../../d7/d49/classez_static_bitfield.htm#a2b44eb887d27a71a67f322bf3992e1a0">ezStaticBitfield::AreAllBitsSet</a></div><div class="ttdeci">bool AreAllBitsSet() const</div><div class="ttdoc">Returns true, if the bitfield is not empty and all bits are set to one.</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:331</div></div>
+<div class="ttc" id="aclassez_static_bitfield_htm_abbfcf7318ab085ca06dcd8eed022060c"><div class="ttname"><a href="../../d7/d49/classez_static_bitfield.htm#abbfcf7318ab085ca06dcd8eed022060c">ezStaticBitfield::SetAllBits</a></div><div class="ttdeci">void SetAllBits()</div><div class="ttdoc">Sets all bits to 1.</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:377</div></div>
+<div class="ttc" id="aclassez_bitfield_htm_a33f3b1f5dcb047a2ec667470281e7187"><div class="ttname"><a href="../../d2/d62/classez_bitfield.htm#a33f3b1f5dcb047a2ec667470281e7187">ezBitfield::ClearAllBits</a></div><div class="ttdeci">void ClearAllBits()</div><div class="ttdoc">Clears all bits to 0.</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:213</div></div>
+<div class="ttc" id="aclassez_static_bitfield_htm_ab01d96409feb7c5eb803d02018d17c22"><div class="ttname"><a href="../../d7/d49/classez_static_bitfield.htm#ab01d96409feb7c5eb803d02018d17c22">ezStaticBitfield::GetLowestBitSet</a></div><div class="ttdeci">ezUInt32 GetLowestBitSet() const</div><div class="ttdoc">Returns the index of the lowest bit that is set. Returns the max index+1 in case no bit is set,...</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:371</div></div>
 <div class="ttc" id="aclassez_bitfield_htm"><div class="ttname"><a href="../../d2/d62/classez_bitfield.htm">ezBitfield</a></div><div class="ttdoc">A template interface, that turns any array class into a bitfield.</div><div class="ttdef"><b>Definition:</b> Bitfield.h:15</div></div>
-<div class="ttc" id="aclassez_static_bitfield_htm_aa9a4922565cd058d77ebd71f1333fbb2"><div class="ttname"><a href="../../d7/d49/classez_static_bitfield.htm#aa9a4922565cd058d77ebd71f1333fbb2">ezStaticBitfield::SetBitRange</a></div><div class="ttdeci">void SetBitRange(ezUInt32 uiFirstBit, ezUInt32 uiNumBits)</div><div class="ttdoc">Sets the range starting at uiFirstBit up to (and including) uiLastBit to 1.</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:337</div></div>
-<div class="ttc" id="aclassez_static_bitfield_htm"><div class="ttname"><a href="../../d7/d49/classez_static_bitfield.htm">ezStaticBitfield</a></div><div class="ttdef"><b>Definition:</b> Bitfield.h:86</div></div>
+<div class="ttc" id="aclassez_static_bitfield_htm_aa9a4922565cd058d77ebd71f1333fbb2"><div class="ttname"><a href="../../d7/d49/classez_static_bitfield.htm#aa9a4922565cd058d77ebd71f1333fbb2">ezStaticBitfield::SetBitRange</a></div><div class="ttdeci">void SetBitRange(ezUInt32 uiFirstBit, ezUInt32 uiNumBits)</div><div class="ttdoc">Sets the range starting at uiFirstBit up to (and including) uiLastBit to 1.</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:349</div></div>
+<div class="ttc" id="anamespaceez_math_htm_a6a78ee109368657dafd74a19d26d6b7c"><div class="ttname"><a href="../../db/d78/namespaceez_math.htm#a6a78ee109368657dafd74a19d26d6b7c">ezMath::CountBits</a></div><div class="ttdeci">EZ_ALWAYS_INLINE ezUInt32 CountBits(ezUInt32 value)</div><div class="ttdoc">Returns the number of bits set.</div><div class="ttdef"><b>Definition:</b> Math_inl.h:183</div></div>
+<div class="ttc" id="aclassez_static_bitfield_htm"><div class="ttname"><a href="../../d7/d49/classez_static_bitfield.htm">ezStaticBitfield</a></div><div class="ttdef"><b>Definition:</b> Bitfield.h:89</div></div>
+<div class="ttc" id="aclassez_bitfield_htm_aea4835778bbdab097300e08eb69a744b"><div class="ttname"><a href="../../d2/d62/classez_bitfield.htm#aea4835778bbdab097300e08eb69a744b">ezBitfield::SetBitValue</a></div><div class="ttdeci">void SetBitValue(ezUInt32 uiBit, bool bValue)</div><div class="ttdoc">Sets the given bit to 1 or 0 depending on the given value.</div><div class="ttdef"><b>Definition:</b> Bitfield_inl.h:192</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_6b567e6755824bd0b8ffd754b9d67ac0.htm">Containers</a></li><li class="navelem"><a class="el" href="../../dir_ab7c7fd106dde24a64865a60f78fe0d2.htm">Implementation</a></li><li class="navelem"><b>Bitfield_inl.h</b></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:21:54 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:16 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

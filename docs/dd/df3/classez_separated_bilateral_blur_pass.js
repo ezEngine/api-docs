@@ -2,11 +2,13 @@ var classez_separated_bilateral_blur_pass =
 [
     [ "ezSeparatedBilateralBlurPass", "dd/df3/classez_separated_bilateral_blur_pass.htm#a3d97eabe4e1da304c41fb287725d66ff", null ],
     [ "~ezSeparatedBilateralBlurPass", "dd/df3/classez_separated_bilateral_blur_pass.htm#aed9403f83f1d335fb83e323a569d1563", null ],
+    [ "Deserialize", "dd/df3/classez_separated_bilateral_blur_pass.htm#a3231169a3b0d780768ac51cfa6673854", null ],
     [ "Execute", "dd/df3/classez_separated_bilateral_blur_pass.htm#a1cc0d15146c5e66861a233a74d287c4c", null ],
     [ "GetGaussianSigma", "dd/df3/classez_separated_bilateral_blur_pass.htm#aaba1dcde5e4a1d89dd1f397d016db8d2", null ],
     [ "GetRadius", "dd/df3/classez_separated_bilateral_blur_pass.htm#aa93a99e13f3f0e1bf20de779d309c620", null ],
     [ "GetRenderTargetDescriptions", "dd/df3/classez_separated_bilateral_blur_pass.htm#aaeb15c8b46e90fc0c16b5a79a13b852d", null ],
     [ "GetSharpness", "dd/df3/classez_separated_bilateral_blur_pass.htm#a703fa12dd080d375df2648e922655741", null ],
+    [ "Serialize", "dd/df3/classez_separated_bilateral_blur_pass.htm#adb11bb55f2e99488e6c8986f0c4ef6e6", null ],
     [ "SetGaussianSigma", "dd/df3/classez_separated_bilateral_blur_pass.htm#ae1116e310c94b60abad2a4e5c4a7ecc3", null ],
     [ "SetRadius", "dd/df3/classez_separated_bilateral_blur_pass.htm#a4b23074bd10badde33b7659b192974eb", null ],
     [ "SetSharpness", "dd/df3/classez_separated_bilateral_blur_pass.htm#a0a9a40b206b4d61ffbf1088eea6f789f", null ],

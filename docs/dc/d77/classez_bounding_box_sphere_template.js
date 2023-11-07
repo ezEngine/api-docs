@@ -1,9 +1,8 @@
 var classez_bounding_box_sphere_template =
 [
-    [ "ComponentType", "dc/d77/classez_bounding_box_sphere_template.htm#a8d42f5df17f8624187e8941e3faf7f47", null ],
+    [ "ComponentType", "dc/d77/classez_bounding_box_sphere_template.htm#a50a8a295640b32d55b4f38f5328395b7", null ],
     [ "ezBoundingBoxSphereTemplate", "dc/d77/classez_bounding_box_sphere_template.htm#ad75b054fd89f333de8f1e62b2a27d087", null ],
-    [ "ezBoundingBoxSphereTemplate", "dc/d77/classez_bounding_box_sphere_template.htm#ad1048e4199195a502cc388cff6ad3cef", null ],
-    [ "ezBoundingBoxSphereTemplate", "dc/d77/classez_bounding_box_sphere_template.htm#aaa9a1c64477c1ddc698e51e17e2289af", null ],
+    [ "ezBoundingBoxSphereTemplate", "dc/d77/classez_bounding_box_sphere_template.htm#a30a37b57ef670d6c3f6fbb4f6f521588", null ],
     [ "ezBoundingBoxSphereTemplate", "dc/d77/classez_bounding_box_sphere_template.htm#a775f918eb3edf81a4472976504061ca7", null ],
     [ "ezBoundingBoxSphereTemplate", "dc/d77/classez_bounding_box_sphere_template.htm#a45e6803fdf931da1d1ecc340a265dc04", null ],
     [ "ExpandToInclude", "dc/d77/classez_bounding_box_sphere_template.htm#ab6c97ee0d4d829ba7db7e94469c8e4fc", null ],
@@ -12,8 +11,7 @@ var classez_bounding_box_sphere_template =
     [ "GetSphere", "dc/d77/classez_bounding_box_sphere_template.htm#a10cf40d70a76aefeee16bd32feeeaccc", null ],
     [ "IsNaN", "dc/d77/classez_bounding_box_sphere_template.htm#a3ba4a95273b4bd6dfa40efb1a17ab187", null ],
     [ "IsValid", "dc/d77/classez_bounding_box_sphere_template.htm#a51d3c4b5cd64174b0b0488ff622de772", null ],
-    [ "SetFromPoints", "dc/d77/classez_bounding_box_sphere_template.htm#ab46805164e6b503abe29c7fec6ff2ed9", null ],
-    [ "SetInvalid", "dc/d77/classez_bounding_box_sphere_template.htm#af5708416209d144449ba8d0e906fdc21", null ],
+    [ "operator=", "dc/d77/classez_bounding_box_sphere_template.htm#af484043f8d8e95e295c943f317af7388", null ],
     [ "Transform", "dc/d77/classez_bounding_box_sphere_template.htm#a384348ca32c1b3b9a8dea858f52753be", null ],
     [ "m_fSphereRadius", "dc/d77/classez_bounding_box_sphere_template.htm#a9ea85c44814602ce8831c3739432e64d", null ],
     [ "m_vBoxHalfExtends", "dc/d77/classez_bounding_box_sphere_template.htm#a4bb427f91dd1cbbcdcffc8138e2ba352", null ],

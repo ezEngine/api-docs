@@ -1,9 +1,7 @@
 var structez_g_a_l_device_capabilities =
 [
-    [ "ezGALDeviceCapabilities", "dc/d6c/structez_g_a_l_device_capabilities.htm#a2592a4e5bc5b4fabf2e17f6bbc6efe6f", null ],
     [ "m_b32BitIndices", "dc/d6c/structez_g_a_l_device_capabilities.htm#a66195ca241510ea3940562b718b22729", null ],
     [ "m_bAlphaToCoverage", "dc/d6c/structez_g_a_l_device_capabilities.htm#a5f087a13a68b96d0747ef4999919e5e7", null ],
-    [ "m_bB5G6R5Textures", "dc/d6c/structez_g_a_l_device_capabilities.htm#a721df1c628803f460e2aef4fa5b061c2", null ],
     [ "m_bConservativeRasterization", "dc/d6c/structez_g_a_l_device_capabilities.htm#a8ff779e6709492d39953417b7d423819", null ],
     [ "m_bCubemapArrays", "dc/d6c/structez_g_a_l_device_capabilities.htm#ac1de9d006afd4ca803fc84221242f7e8", null ],
     [ "m_bHardwareAccelerated", "dc/d6c/structez_g_a_l_device_capabilities.htm#a6a435292c461e63535cc9a3a934152ab", null ],
@@ -12,9 +10,10 @@ var structez_g_a_l_device_capabilities =
     [ "m_bMultithreadedResourceCreation", "dc/d6c/structez_g_a_l_device_capabilities.htm#a2cb6b8cc77ecc3ee4832837b1229294b", null ],
     [ "m_bNoOverwriteBufferUpdate", "dc/d6c/structez_g_a_l_device_capabilities.htm#adbd3da356c9b4ceaaffbb9eca9b8474f", null ],
     [ "m_bShaderStageSupported", "dc/d6c/structez_g_a_l_device_capabilities.htm#a28436d2b1f40d1d81284a5d42c5253a7", null ],
-    [ "m_bStreamOut", "dc/d6c/structez_g_a_l_device_capabilities.htm#ace882438e42c94cc1debaa64855b646f", null ],
+    [ "m_bSharedTextures", "dc/d6c/structez_g_a_l_device_capabilities.htm#af37dadce9021f386c061763d162f16c1", null ],
     [ "m_bTextureArrays", "dc/d6c/structez_g_a_l_device_capabilities.htm#a5c0db16ed72d641c9e212f7825713a67", null ],
     [ "m_bVertexShaderRenderTargetArrayIndex", "dc/d6c/structez_g_a_l_device_capabilities.htm#aea1b75e3c69158e286d6cecbaf226fe4", null ],
+    [ "m_FormatSupport", "dc/d6c/structez_g_a_l_device_capabilities.htm#abc4ac9dc4f60ac84fe049ba8f14bb203", null ],
     [ "m_sAdapterName", "dc/d6c/structez_g_a_l_device_capabilities.htm#a7eca0983fb5f775041fb9808090bac15", null ],
     [ "m_uiDedicatedSystemRAM", "dc/d6c/structez_g_a_l_device_capabilities.htm#afce62f2411a1074bb00357495071c135", null ],
     [ "m_uiDedicatedVRAM", "dc/d6c/structez_g_a_l_device_capabilities.htm#a46cc70f7c4647ee3d9c23823fe0d0aa2", null ],

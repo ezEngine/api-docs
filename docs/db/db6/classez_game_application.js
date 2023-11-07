@@ -1,6 +1,6 @@
 var classez_game_application =
 [
-    [ "SUPER", "db/db6/classez_game_application.htm#ad4b2087c56f9ae2cb83f833e463cb5eb", null ],
+    [ "SUPER", "db/db6/classez_game_application.htm#a62b052bf05eedc14de9d52b8d36cd7e7", null ],
     [ "ezGameApplication", "db/db6/classez_game_application.htm#a0b2b4b7f88534dd5acea3127dde6175a", null ],
     [ "~ezGameApplication", "db/db6/classez_game_application.htm#a2e9a3d775b496a7a96428d2f3d7284f9", null ],
     [ "Deinit_ShutdownGraphicsDevice", "db/db6/classez_game_application.htm#af906e5c0d635087afb53608ad6620d85", null ],

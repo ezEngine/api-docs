@@ -14,6 +14,7 @@ var classez_bitfield =
     [ "SetAllBits", "d2/d62/classez_bitfield.htm#ac93aa3da4c16de9c15887e99b788e90f", null ],
     [ "SetBit", "d2/d62/classez_bitfield.htm#a9e2f730a80533668732441f695ad13fc", null ],
     [ "SetBitRange", "d2/d62/classez_bitfield.htm#adcad809b5a1ef9295d853af3684c7e1a", null ],
+    [ "SetBitValue", "d2/d62/classez_bitfield.htm#aea4835778bbdab097300e08eb69a744b", null ],
     [ "SetCount", "d2/d62/classez_bitfield.htm#a5d2e77f2c19d452c5a81fc2da9fb05f2", null ],
     [ "SetCountUninitialized", "d2/d62/classez_bitfield.htm#a7541e5112a522c7429f2f18e95fef35c", null ]
 ];

@@ -1,6 +1,6 @@
 var structez_render_target_format =
 [
-    [ "StorageType", "dd/d98/structez_render_target_format.htm#a556554039ce2ad994cad5d1d0033288a", null ],
+    [ "StorageType", "dd/d98/structez_render_target_format.htm#a5ece5976896fd849b3c496ec32ac44ae", null ],
     [ "Enum", "dd/d98/structez_render_target_format.htm#a63a2c1edd86124d3563c51d64c6e96e0", [
       [ "RGBA8sRgb", "dd/d98/structez_render_target_format.htm#a63a2c1edd86124d3563c51d64c6e96e0afb7479342e911553942b25fd8361420c", null ],
       [ "RGBA8", "dd/d98/structez_render_target_format.htm#a63a2c1edd86124d3563c51d64c6e96e0a33390b474fbdc28b9c25165cf6fb3e87", null ],

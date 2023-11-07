@@ -5,6 +5,7 @@ var classez_qt_container_window =
     [ "AddApplicationPanel", "df/d80/classez_qt_container_window.htm#ae30871bddcfb74429560cf9368ab92a8", null ],
     [ "AddDocumentWindow", "df/d80/classez_qt_container_window.htm#a374d32037e4cc4ab88edfdca82173a2f", null ],
     [ "closeEvent", "df/d80/classez_qt_container_window.htm#a0fdacb2fb0b815e4aed45eb55ac318f4", null ],
+    [ "DocumentWindowRenamed", "df/d80/classez_qt_container_window.htm#ada0ebd07dede2d8446a9bb580ed29701", null ],
     [ "eventFilter", "df/d80/classez_qt_container_window.htm#a770891353a63e04928ef6705c204c509", null ],
     [ "GetDockManager", "df/d80/classez_qt_container_window.htm#af13c8229f6ac5b13bcbaf957758c9d99", null ],
     [ "GetDocumentWindows", "df/d80/classez_qt_container_window.htm#a11c5d6fe1e51c7ddef07e81618450c27", null ],

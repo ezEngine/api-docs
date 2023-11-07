@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -86,6 +86,8 @@ $(document).ready(function(){initNavTree('d4/d65/classez_qt_asset_browser_model.
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-types">Public Types</a> &#124;
+<a href="#pub-slots">Public Slots</a> &#124;
+<a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="../../df/d38/classez_qt_asset_browser_model-members.htm">List of all members</a>  </div>
@@ -93,12 +95,17 @@ $(document).ready(function(){initNavTree('d4/d65/classez_qt_asset_browser_model.
 <div class="title">ezQtAssetBrowserModel Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Model of the item view in the asset browser.  
+ <a href="../../d4/d65/classez_qt_asset_browser_model.htm#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../da/d1a/_asset_browser_model_8moc_8h_source.htm">AssetBrowserModel.moc.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ezQtAssetBrowserModel:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d0/d48/classez_qt_asset_browser_model__inherit__graph.png" border="0" usemap="#ez_qt_asset_browser_model_inherit__map" alt="Inheritance graph"/></div>
 <map name="ez_qt_asset_browser_model_inherit__map" id="ez_qt_asset_browser_model_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,80,187,107"/>
+<area shape="rect" title="Model of the item view in the asset browser." alt="" coords="5,80,187,107"/>
 <area shape="rect" title=" " alt="" coords="18,5,174,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="../../graph_legend.htm">legend</a>]</span></center></div>
@@ -111,11 +118,31 @@ Public Types</h2></td></tr>
 <b>AbsolutePath</b>, 
 <b>RelativePath</b>, 
 <br />
-&#160;&#160;<b>AssetIconPath</b>, 
-<b>TransformState</b>
+&#160;&#160;<b>AssetIcon</b>, 
+<b>TransformState</b>, 
+<b>Importable</b>, 
+<b>ItemFlags</b>
 <br />
  }</td></tr>
 <tr class="separator:a7624a8869f72d50876d8b5e7cbc1537a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
+Public Slots</h2></td></tr>
+<tr class="memitem:ae821b76328750bd22f9de7f2e7344a26"><td class="memItemLeft" align="right" valign="top"><a id="ae821b76328750bd22f9de7f2e7344a26"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ThumbnailLoaded</b> (QString sPath, QModelIndex index, QVariant userData1, QVariant userData2)</td></tr>
+<tr class="separator:ae821b76328750bd22f9de7f2e7344a26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7625cc85142fac77aff13a741887ade4"><td class="memItemLeft" align="right" valign="top"><a id="a7625cc85142fac77aff13a741887ade4"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ThumbnailInvalidated</b> (QString sPath, ezUInt32 uiImageID)</td></tr>
+<tr class="separator:a7625cc85142fac77aff13a741887ade4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab62446222b73d8b50f9c9a6bc2d0f9e7"><td class="memItemLeft" align="right" valign="top"><a id="ab62446222b73d8b50f9c9a6bc2d0f9e7"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>OnFileSystemUpdate</b> ()</td></tr>
+<tr class="separator:ab62446222b73d8b50f9c9a6bc2d0f9e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
+Signals</h2></td></tr>
+<tr class="memitem:adda5cb207f7d70f9240e5bd81102e984"><td class="memItemLeft" align="right" valign="top"><a id="adda5cb207f7d70f9240e5bd81102e984"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>editingFinished</b> (const QString &amp;sAbsPath, const QString &amp;sNewName, bool bIsAsset) const</td></tr>
+<tr class="separator:adda5cb207f7d70f9240e5bd81102e984"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -131,9 +158,18 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SetIconMode</b> (bool
 <tr class="memitem:ad469cb3381593f3813ff127d3ccd8b9c"><td class="memItemLeft" align="right" valign="top"><a id="ad469cb3381593f3813ff127d3ccd8b9c"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>GetIconMode</b> ()</td></tr>
 <tr class="separator:ad469cb3381593f3813ff127d3ccd8b9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2314bf1b5bce4cc8709e78af32e07df"><td class="memItemLeft" align="right" valign="top"><a id="ad2314bf1b5bce4cc8709e78af32e07df"></a>
+ezInt32&#160;</td><td class="memItemRight" valign="bottom"><b>FindAssetIndex</b> (const <a class="el" href="../../da/d89/classez_uuid.htm">ezUuid</a> &amp;assetGuid) const</td></tr>
+<tr class="separator:ad2314bf1b5bce4cc8709e78af32e07df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0a57f2068f16d78038fe3de1cd5d977"><td class="memItemLeft" align="right" valign="top"><a id="ab0a57f2068f16d78038fe3de1cd5d977"></a>
+ezInt32&#160;</td><td class="memItemRight" valign="bottom"><b>FindIndex</b> (<a class="el" href="../../de/db8/structez_string_view.htm">ezStringView</a> sAbsPath) const</td></tr>
+<tr class="separator:ab0a57f2068f16d78038fe3de1cd5d977"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64cc1c4d196839ae22c4ac796f59565f"><td class="memItemLeft" align="right" valign="top"><a id="a64cc1c4d196839ae22c4ac796f59565f"></a>
 virtual QVariant&#160;</td><td class="memItemRight" valign="bottom"><b>data</b> (const QModelIndex &amp;index, int iRole) const override</td></tr>
 <tr class="separator:a64cc1c4d196839ae22c4ac796f59565f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeddb14dc4c96bdcbbba1294989f1e277"><td class="memItemLeft" align="right" valign="top"><a id="aeddb14dc4c96bdcbbba1294989f1e277"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>setData</b> (const QModelIndex &amp;index, const QVariant &amp;value, int iRole=Qt::EditRole) override</td></tr>
+<tr class="separator:aeddb14dc4c96bdcbbba1294989f1e277"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6966778b77b9aa43b4e4b5237773f23d"><td class="memItemLeft" align="right" valign="top"><a id="a6966778b77b9aa43b4e4b5237773f23d"></a>
 virtual Qt::ItemFlags&#160;</td><td class="memItemRight" valign="bottom"><b>flags</b> (const QModelIndex &amp;index) const override</td></tr>
 <tr class="separator:a6966778b77b9aa43b4e4b5237773f23d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -158,14 +194,19 @@ virtual <a class="el" href="../../db/daa/class_q_list.htm">QStringList</a>&#160;
 <tr class="memitem:a6e2c9ba6dfa2a3af1dbd2ff0a997ea75"><td class="memItemLeft" align="right" valign="top"><a id="a6e2c9ba6dfa2a3af1dbd2ff0a997ea75"></a>
 virtual QMimeData *&#160;</td><td class="memItemRight" valign="bottom"><b>mimeData</b> (const QModelIndexList &amp;indexes) const override</td></tr>
 <tr class="separator:a6e2c9ba6dfa2a3af1dbd2ff0a997ea75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa5c8f39e5d42e686672969b7b518c93"><td class="memItemLeft" align="right" valign="top"><a id="aaa5c8f39e5d42e686672969b7b518c93"></a>
+virtual Qt::DropActions&#160;</td><td class="memItemRight" valign="bottom"><b>supportedDropActions</b> () const override</td></tr>
+<tr class="separator:aaa5c8f39e5d42e686672969b7b518c93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
-<tr class="memitem:a46715e8cb45cb187b54cec43c1b34d26"><td class="memItemLeft" align="right" valign="top"><a id="a46715e8cb45cb187b54cec43c1b34d26"></a>
-struct&#160;</td><td class="memItemRight" valign="bottom"><b>AssetComparer</b></td></tr>
-<tr class="separator:a46715e8cb45cb187b54cec43c1b34d26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af76fccce7c32ae930b49915e0c9af5c6"><td class="memItemLeft" align="right" valign="top"><a id="af76fccce7c32ae930b49915e0c9af5c6"></a>
+struct&#160;</td><td class="memItemRight" valign="bottom"><b>FileComparer</b></td></tr>
+<tr class="separator:af76fccce7c32ae930b49915e0c9af5c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Model of the item view in the asset browser. </p>
+</div><hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Editor/EditorFramework/Assets/<a class="el" href="../../da/d1a/_asset_browser_model_8moc_8h_source.htm">AssetBrowserModel.moc.h</a></li>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Editor/EditorFramework/Assets/Implementation/AssetBrowserModel.cpp</li>
 </ul>
@@ -175,7 +216,7 @@ struct&#160;</td><td class="memItemRight" valign="bottom"><b>AssetComparer</b></
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d4/d65/classez_qt_asset_browser_model.htm">ezQtAssetBrowserModel</a></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:22:06 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:27 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

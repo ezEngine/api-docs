@@ -1,6 +1,6 @@
 var structez_camera_usage_hint =
 [
-    [ "StorageType", "d3/d61/structez_camera_usage_hint.htm#ab88d6643df8ce30e7d53d08f4fcba11b", null ],
+    [ "StorageType", "d3/d61/structez_camera_usage_hint.htm#a876e062d1b3c69235e64b0a18b2e3a8f", null ],
     [ "Enum", "d3/d61/structez_camera_usage_hint.htm#a270e5fe37f762cc03dfb710fe2e9e3d6", [
       [ "None", "d3/d61/structez_camera_usage_hint.htm#a270e5fe37f762cc03dfb710fe2e9e3d6aa9dcd57094b3d68775e777a4292710ae", null ],
       [ "MainView", "d3/d61/structez_camera_usage_hint.htm#a270e5fe37f762cc03dfb710fe2e9e3d6a58e8d56491bc66d243107a332e5778a5", null ],

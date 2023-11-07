@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -106,8 +106,8 @@ $(document).ready(function(){initNavTree('dc/d1d/_atomic_utils__win_8h_source.ht
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  ezInt64 old;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keywordflow">do</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    old = src;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  } <span class="keywordflow">while</span> (_InterlockedCompareExchange64(<span class="keyword">const_cast&lt;</span><span class="keyword">volatile </span>ezInt64*<span class="keyword">&gt;</span>(&amp;src), old, old) != old);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    old = iSrc;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  } <span class="keywordflow">while</span> (_InterlockedCompareExchange64(<span class="keyword">const_cast&lt;</span><span class="keyword">volatile </span>ezInt64*<span class="keyword">&gt;</span>(&amp;iSrc), old, old) != old);</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keywordflow">return</span> old;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keywordflow">return</span> _InterlockedOr64(<span class="keyword">const_cast&lt;</span><span class="keyword">volatile </span>ezInt64*<span class="keyword">&gt;</span>(&amp;iSrc), 0);</div>
@@ -125,8 +125,8 @@ $(document).ready(function(){initNavTree('dc/d1d/_atomic_utils__win_8h_source.ht
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  ezInt64 old;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordflow">do</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    old = dest;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  } <span class="keywordflow">while</span> (_InterlockedCompareExchange64(&amp;dest, old + 1, old) != old);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    old = ref_iDest;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  } <span class="keywordflow">while</span> (_InterlockedCompareExchange64(&amp;ref_iDest, old + 1, old) != old);</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keywordflow">return</span> old + 1;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordflow">return</span> _InterlockedIncrement64(&amp;ref_iDest);</div>
@@ -144,8 +144,8 @@ $(document).ready(function(){initNavTree('dc/d1d/_atomic_utils__win_8h_source.ht
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  ezInt64 old;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordflow">do</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    old = dest;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  } <span class="keywordflow">while</span> (_InterlockedCompareExchange64(&amp;dest, old - 1, old) != old);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    old = ref_iDest;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  } <span class="keywordflow">while</span> (_InterlockedCompareExchange64(&amp;ref_iDest, old - 1, old) != old);</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordflow">return</span> old - 1;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordflow">return</span> _InterlockedDecrement64(&amp;ref_iDest);</div>
@@ -163,8 +163,8 @@ $(document).ready(function(){initNavTree('dc/d1d/_atomic_utils__win_8h_source.ht
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  ezInt64 old;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordflow">do</span></div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    old = dest;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  } <span class="keywordflow">while</span> (_InterlockedCompareExchange64(&amp;dest, old + 1, old) != old);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    old = ref_iDest;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  } <span class="keywordflow">while</span> (_InterlockedCompareExchange64(&amp;ref_iDest, old + 1, old) != old);</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keywordflow">return</span> old;</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordflow">return</span> _InterlockedExchangeAdd64(&amp;ref_iDest, 1);</div>
@@ -182,8 +182,8 @@ $(document).ready(function(){initNavTree('dc/d1d/_atomic_utils__win_8h_source.ht
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  ezInt64 old;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keywordflow">do</span></div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    old = dest;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  } <span class="keywordflow">while</span> (_InterlockedCompareExchange64(&amp;dest, old - 1, old) != old);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    old = ref_iDest;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  } <span class="keywordflow">while</span> (_InterlockedCompareExchange64(&amp;ref_iDest, old - 1, old) != old);</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keywordflow">return</span> old;</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keywordflow">return</span> _InterlockedExchangeAdd64(&amp;ref_iDest, -1);</div>
@@ -201,8 +201,8 @@ $(document).ready(function(){initNavTree('dc/d1d/_atomic_utils__win_8h_source.ht
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  ezInt64 old;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <span class="keywordflow">do</span></div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  {</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    old = dest;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  } <span class="keywordflow">while</span> (_InterlockedCompareExchange64(&amp;dest, old + value, old) != old);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    old = ref_iDest;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  } <span class="keywordflow">while</span> (_InterlockedCompareExchange64(&amp;ref_iDest, old + value, old) != old);</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  _InterlockedExchangeAdd64(&amp;ref_iDest, value);</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="preprocessor">#endif</span></div>
@@ -220,8 +220,8 @@ $(document).ready(function(){initNavTree('dc/d1d/_atomic_utils__win_8h_source.ht
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  ezInt64 old;</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  <span class="keywordflow">do</span></div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  {</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    old = dest;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  } <span class="keywordflow">while</span> (_InterlockedCompareExchange64(&amp;dest, old &amp; value, old) != old);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    old = ref_iDest;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  } <span class="keywordflow">while</span> (_InterlockedCompareExchange64(&amp;ref_iDest, old &amp; value, old) != old);</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  _InterlockedAnd64(&amp;ref_iDest, value);</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="preprocessor">#endif</span></div>
@@ -239,8 +239,8 @@ $(document).ready(function(){initNavTree('dc/d1d/_atomic_utils__win_8h_source.ht
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  ezInt64 old;</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  <span class="keywordflow">do</span></div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  {</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    old = dest;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  } <span class="keywordflow">while</span> (_InterlockedCompareExchange64(&amp;dest, old | value, old) != old);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    old = ref_iDest;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  } <span class="keywordflow">while</span> (_InterlockedCompareExchange64(&amp;ref_iDest, old | value, old) != old);</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  _InterlockedOr64(&amp;ref_iDest, value);</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="preprocessor">#endif</span></div>
@@ -258,8 +258,8 @@ $(document).ready(function(){initNavTree('dc/d1d/_atomic_utils__win_8h_source.ht
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  ezInt64 old;</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  <span class="keywordflow">do</span></div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  {</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    old = dest;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  } <span class="keywordflow">while</span> (_InterlockedCompareExchange64(&amp;dest, old ^ value, old) != old);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    old = ref_iDest;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  } <span class="keywordflow">while</span> (_InterlockedCompareExchange64(&amp;ref_iDest, old ^ value, old) != old);</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  _InterlockedXor64(&amp;ref_iDest, value);</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="preprocessor">#endif</span></div>
@@ -330,8 +330,8 @@ $(document).ready(function(){initNavTree('dc/d1d/_atomic_utils__win_8h_source.ht
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;  ezInt64 old;</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;  <span class="keywordflow">do</span></div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;  {</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    old = dest;</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;  } <span class="keywordflow">while</span> (_InterlockedCompareExchange64(&amp;dest, value, old) != old);</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    old = ref_iDest;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;  } <span class="keywordflow">while</span> (_InterlockedCompareExchange64(&amp;ref_iDest, value, old) != old);</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;  <span class="keywordflow">return</span> old;</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;  <span class="keywordflow">return</span> _InterlockedExchange64(&amp;ref_iDest, value);</div>
@@ -383,7 +383,7 @@ $(document).ready(function(){initNavTree('dc/d1d/_atomic_utils__win_8h_source.ht
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_05460f4aa032e23246d68b56847b5fed.htm">Threading</a></li><li class="navelem"><a class="el" href="../../dir_87563d8e459b6b2efd39d0a742560444.htm">Implementation</a></li><li class="navelem"><a class="el" href="../../dir_06ea2611347162e727b538927c98d26b.htm">Win</a></li><li class="navelem"><b>AtomicUtils_win.h</b></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:21:57 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:18 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

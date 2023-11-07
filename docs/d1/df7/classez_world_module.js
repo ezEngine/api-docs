@@ -2,7 +2,7 @@ var classez_world_module =
 [
     [ "UpdateContext", "d6/d3c/structez_world_module_1_1_update_context.htm", "d6/d3c/structez_world_module_1_1_update_context" ],
     [ "UpdateFunctionDesc", "df/dfe/structez_world_module_1_1_update_function_desc.htm", "df/dfe/structez_world_module_1_1_update_function_desc" ],
-    [ "UpdateFunction", "d1/df7/classez_world_module.htm#ac1d8ecf65d6913430682096879958455", null ],
+    [ "UpdateFunction", "d1/df7/classez_world_module.htm#ad0f8409ed1df3afc0f41b50616bf1284", null ],
     [ "ezWorldModule", "d1/df7/classez_world_module.htm#a8d62e2848bdfda5017e805a1d5f8e0ad", null ],
     [ "~ezWorldModule", "d1/df7/classez_world_module.htm#aca7795fc710014193bd3adca8340a6ac", null ],
     [ "Deinitialize", "d1/df7/classez_world_module.htm#a810bb207fc9e3e66c74bb8d13b8d1c63", null ],

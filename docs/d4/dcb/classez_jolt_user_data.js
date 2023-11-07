@@ -1,7 +1,7 @@
 var classez_jolt_user_data =
 [
     [ "ezJoltUserData", "d4/dcb/classez_jolt_user_data.htm#ad32893e64fc77bc34bc9a5d8c853aa25", null ],
-    [ "~ezJoltUserData", "d4/dcb/classez_jolt_user_data.htm#a7e70cbc9e3ab5a327ae9aec2e8a91b62", null ],
+    [ "~ezJoltUserData", "d4/dcb/classez_jolt_user_data.htm#a1e50060c9bae31b24eb610e59393f9c5", null ],
     [ "EZ_DECLARE_POD_TYPE", "d4/dcb/classez_jolt_user_data.htm#a3beaef75ed9f1aeb182396d3df220f03", null ],
     [ "Init", "d4/dcb/classez_jolt_user_data.htm#af7e504b31230525b4b8e9c1b4d96b0c8", null ],
     [ "Init", "d4/dcb/classez_jolt_user_data.htm#ab965eb7e61b4f03ef68f8f64b8b65d1f", null ],

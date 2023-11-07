@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -103,10 +103,11 @@ Public Types</h2></td></tr>
 <br />
 &#160;&#160;<b>NeedsThumbnail</b>, 
 <b>TransformError</b>, 
-<b>MissingDependency</b>, 
-<b>MissingReference</b>, 
+<b>MissingTransformDependency</b>, 
+<b>MissingThumbnailDependency</b>, 
 <br />
-&#160;&#160;<b>COUNT</b>
+&#160;&#160;<b>CircularDependency</b>, 
+<b>COUNT</b>
 <br />
  }</td></tr>
 <tr class="separator:a8dbcdb6aff84fb21e851e44fae260610"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -146,24 +147,21 @@ ezUInt64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 <tr class="memitem:a0ddb29f3d6adda35010356b3978f6f43"><td class="memItemLeft" align="right" valign="top"><a id="a0ddb29f3d6adda35010356b3978f6f43"></a>
 const <a class="el" href="../../dd/dc0/structez_asset_document_type_descriptor.htm">ezAssetDocumentTypeDescriptor</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_pDocumentTypeDescriptor</b> = nullptr</td></tr>
 <tr class="separator:a0ddb29f3d6adda35010356b3978f6f43"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a818151bd31e5335898baed5d11183b8f"><td class="memItemLeft" align="right" valign="top"><a id="a818151bd31e5335898baed5d11183b8f"></a>
-<a class="el" href="../../d4/d53/structez_hybrid_string.htm">ezString</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_sAbsolutePath</b></td></tr>
-<tr class="separator:a818151bd31e5335898baed5d11183b8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52fb3f61a47bcd2de4ba1ccb65b9ac18"><td class="memItemLeft" align="right" valign="top"><a id="a52fb3f61a47bcd2de4ba1ccb65b9ac18"></a>
-<a class="el" href="../../d4/d53/structez_hybrid_string.htm">ezString</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_sDataDirParentRelativePath</b></td></tr>
-<tr class="separator:a52fb3f61a47bcd2de4ba1ccb65b9ac18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af33a51b85db7195f35240c8d9d725a65"><td class="memItemLeft" align="right" valign="top"><a id="af33a51b85db7195f35240c8d9d725a65"></a>
-<a class="el" href="../../de/db8/structez_string_view.htm">ezStringView</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_sDataDirRelativePath</b></td></tr>
-<tr class="separator:af33a51b85db7195f35240c8d9d725a65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbdeec917f8e05e25066bcfa9ec58e9b"><td class="memItemLeft" align="right" valign="top"><a id="afbdeec917f8e05e25066bcfa9ec58e9b"></a>
+<a class="el" href="../../d0/d6a/classez_data_dir_path.htm">ezDataDirPath</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_Path</b></td></tr>
+<tr class="separator:afbdeec917f8e05e25066bcfa9ec58e9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15f29ae435b416ddcabcad7fd60e8bc6"><td class="memItemLeft" align="right" valign="top"><a id="a15f29ae435b416ddcabcad7fd60e8bc6"></a>
 <a class="el" href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr</a>&lt; <a class="el" href="../../d4/dc7/classez_asset_document_info.htm">ezAssetDocumentInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_Info</b></td></tr>
 <tr class="separator:a15f29ae435b416ddcabcad7fd60e8bc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77391347e8ff53ad27f784ef9d7a9cf4"><td class="memItemLeft" align="right" valign="top"><a id="a77391347e8ff53ad27f784ef9d7a9cf4"></a>
-<a class="el" href="../../d0/d90/classez_set.htm">ezSet</a>&lt; <a class="el" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_MissingDependencies</b></td></tr>
-<tr class="separator:a77391347e8ff53ad27f784ef9d7a9cf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae155cf263be1483387a0fee20c3c74b0"><td class="memItemLeft" align="right" valign="top"><a id="ae155cf263be1483387a0fee20c3c74b0"></a>
-<a class="el" href="../../d0/d90/classez_set.htm">ezSet</a>&lt; <a class="el" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_MissingReferences</b></td></tr>
-<tr class="separator:ae155cf263be1483387a0fee20c3c74b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee066ac32b402bd942d9a5d13d6ff70a"><td class="memItemLeft" align="right" valign="top"><a id="aee066ac32b402bd942d9a5d13d6ff70a"></a>
+<a class="el" href="../../d0/d90/classez_set.htm">ezSet</a>&lt; <a class="el" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_MissingTransformDeps</b></td></tr>
+<tr class="separator:aee066ac32b402bd942d9a5d13d6ff70a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa159e56f1f099734a418ce3cf5e569d"><td class="memItemLeft" align="right" valign="top"><a id="aaa159e56f1f099734a418ce3cf5e569d"></a>
+<a class="el" href="../../d0/d90/classez_set.htm">ezSet</a>&lt; <a class="el" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_MissingThumbnailDeps</b></td></tr>
+<tr class="separator:aaa159e56f1f099734a418ce3cf5e569d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2383b2a9da72a8f719a02535d3c69f42"><td class="memItemLeft" align="right" valign="top"><a id="a2383b2a9da72a8f719a02535d3c69f42"></a>
+<a class="el" href="../../d0/d90/classez_set.htm">ezSet</a>&lt; <a class="el" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_CircularDependencies</b></td></tr>
+<tr class="separator:a2383b2a9da72a8f719a02535d3c69f42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b7f6dc29ebe52511fe1d0d5592b9b17"><td class="memItemLeft" align="right" valign="top"><a id="a0b7f6dc29ebe52511fe1d0d5592b9b17"></a>
 <a class="el" href="../../d0/d90/classez_set.htm">ezSet</a>&lt; <a class="el" href="../../da/d89/classez_uuid.htm">ezUuid</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d20/structez_asset_info.htm#a0b7f6dc29ebe52511fe1d0d5592b9b17">m_SubAssets</a></td></tr>
 <tr class="memdesc:a0b7f6dc29ebe52511fe1d0d5592b9b17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main asset uses the same GUID as this (see m_Info), but is NOT stored in m_SubAssets. <br /></td></tr>
@@ -179,7 +177,7 @@ const <a class="el" href="../../dd/dc0/structez_asset_document_type_descriptor.h
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dc/d20/structez_asset_info.htm">ezAssetInfo</a></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:22:01 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:22 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

@@ -1,6 +1,6 @@
 var classez_bounding_box_template =
 [
-    [ "ComponentType", "d6/d25/classez_bounding_box_template.htm#a78ab530a94672666299b9f1d55b7ed98", null ],
+    [ "ComponentType", "d6/d25/classez_bounding_box_template.htm#ad20c97361109a815a51fad57744e0e37", null ],
     [ "ezBoundingBoxTemplate", "d6/d25/classez_bounding_box_template.htm#a9e7856a6da6bc5f71440e309584b7238", null ],
     [ "ezBoundingBoxTemplate", "d6/d25/classez_bounding_box_template.htm#a4baf0a26aafdf68d78f63ed6c0721203", null ],
     [ "Contains", "d6/d25/classez_bounding_box_template.htm#ac292e4095bebdc00d8bad2bc4643077f", null ],
@@ -22,7 +22,7 @@ var classez_bounding_box_template =
     [ "GetDistanceTo", "d6/d25/classez_bounding_box_template.htm#ad5924571951717a84ec1f88f6d8d572a", null ],
     [ "GetDistanceTo", "d6/d25/classez_bounding_box_template.htm#aa6e1b369a4cba10665e6e6fb86fb9176", null ],
     [ "GetExtents", "d6/d25/classez_bounding_box_template.htm#a7a2481364a5a6c6e320035619bfb0465", null ],
-    [ "GetHalfExtents", "d6/d25/classez_bounding_box_template.htm#ab66f497f60fd9b1d33918031b011d63f", null ],
+    [ "GetHalfExtents", "d6/d25/classez_bounding_box_template.htm#a485fc4c93b1eb36b1f89b24bb4177644", null ],
     [ "GetLineSegmentIntersection", "d6/d25/classez_bounding_box_template.htm#a0fa8841453c64d36e81476f7adb0fe3d", null ],
     [ "GetRayIntersection", "d6/d25/classez_bounding_box_template.htm#acc6196bf642a8e5351811db5e91ff962", null ],
     [ "Grow", "d6/d25/classez_bounding_box_template.htm#ad59a4af199ac0a7afadec9fddb8b986f", null ],
@@ -35,10 +35,6 @@ var classez_bounding_box_template =
     [ "Overlaps", "d6/d25/classez_bounding_box_template.htm#ae7eef5f9eb661343eb37c899045e0f76", null ],
     [ "ScaleFromCenter", "d6/d25/classez_bounding_box_template.htm#a4170976eea7cbc231d17581dab59515f", null ],
     [ "ScaleFromOrigin", "d6/d25/classez_bounding_box_template.htm#a9c90db5c117368f3efb2325a11f7f9a7", null ],
-    [ "SetCenterAndHalfExtents", "d6/d25/classez_bounding_box_template.htm#a6ca25e4114ac48f0e50e02439ea0bf6e", null ],
-    [ "SetElements", "d6/d25/classez_bounding_box_template.htm#a36bd66a483f3d12b89672098bcb0bdf0", null ],
-    [ "SetFromPoints", "d6/d25/classez_bounding_box_template.htm#af97646ade7b90f53aa3b616c77535bc4", null ],
-    [ "SetInvalid", "d6/d25/classez_bounding_box_template.htm#a716d22560897ddea00431f9733747a79", null ],
     [ "TransformFromCenter", "d6/d25/classez_bounding_box_template.htm#a52c2dc04664fdcf22eeecc0e10d17bdb", null ],
     [ "TransformFromOrigin", "d6/d25/classez_bounding_box_template.htm#a9048b79c0771b59051c39f1bc50987eb", null ],
     [ "Translate", "d6/d25/classez_bounding_box_template.htm#a4a2167dcbd2197b7d6b882e5596435d3", null ],

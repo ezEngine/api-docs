@@ -13,6 +13,7 @@ var classez_projectile_component =
     [ "m_fMetersPerSecond", "d5/d84/classez_projectile_component.htm#abb217bac308632ca7cee7bdaa9359679", null ],
     [ "m_hFallbackSurface", "d5/d84/classez_projectile_component.htm#a30f2ccaacb339559df8a7e20934f5353", null ],
     [ "m_MaxLifetime", "d5/d84/classez_projectile_component.htm#a836cee5c9d121a68e8e407321ffc330c", null ],
+    [ "m_ShapeTypesToHit", "d5/d84/classez_projectile_component.htm#a081cd12232532855e6357daa764d8819", null ],
     [ "m_SurfaceInteractions", "d5/d84/classez_projectile_component.htm#a6589d2d787f736caf915337f95a77e1b", null ],
     [ "m_uiCollisionLayer", "d5/d84/classez_projectile_component.htm#a966d7f9d8bca7bb73f438956870c49c2", null ]
 ];

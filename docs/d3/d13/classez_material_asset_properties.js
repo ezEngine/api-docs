@@ -1,6 +1,6 @@
 var classez_material_asset_properties =
 [
-    [ "ezMaterialAssetProperties", "d3/d13/classez_material_asset_properties.htm#ab82edcc8b7e80227f3df6933cb16d939", null ],
+    [ "ezMaterialAssetProperties", "d3/d13/classez_material_asset_properties.htm#a93fca50eb5159be5565d88f95b2c56d0", null ],
     [ "CreateProperties", "d3/d13/classez_material_asset_properties.htm#a21b27cf2f0549e04c1fc2a061212560a", null ],
     [ "DeleteProperties", "d3/d13/classez_material_asset_properties.htm#af0a94ef61a385a2fa9a6a6ce037dc1ae", null ],
     [ "GetAutoGenShaderPathAbs", "d3/d13/classez_material_asset_properties.htm#af55eef7b61ac935d6ebd34c6e135fdd8", null ],

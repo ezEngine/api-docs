@@ -1,7 +1,7 @@
 var structez_memory_tracking_flags =
 [
     [ "Bits", "d8/dab/structez_memory_tracking_flags_1_1_bits.htm", "d8/dab/structez_memory_tracking_flags_1_1_bits" ],
-    [ "StorageType", "d6/dce/structez_memory_tracking_flags.htm#a988c08088142ec2b100936b01eb38939", null ],
+    [ "StorageType", "d6/dce/structez_memory_tracking_flags.htm#a6637f28c874c196691b827b5e24c2ae4", null ],
     [ "Enum", "d6/dce/structez_memory_tracking_flags.htm#ae574bce1a09f0b0742cb69e86500fa27", [
       [ "None", "d6/dce/structez_memory_tracking_flags.htm#ae574bce1a09f0b0742cb69e86500fa27a7c1ecd8db2603b21074b45aff270a9a9", null ],
       [ "RegisterAllocator", "d6/dce/structez_memory_tracking_flags.htm#ae574bce1a09f0b0742cb69e86500fa27a4ee4d73546e1b91b6bd414b1fe92e729", null ],

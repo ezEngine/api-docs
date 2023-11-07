@@ -1,14 +1,14 @@
 var classez_pointer_with_flags =
 [
     [ "ezPointerWithFlags", "da/dd1/classez_pointer_with_flags.htm#acb1fb04451c24483047618ac673e6a63", null ],
-    [ "ezPointerWithFlags", "da/dd1/classez_pointer_with_flags.htm#a9ef10a105ad082f482e91d8e77182e14", null ],
-    [ "GetFlags", "da/dd1/classez_pointer_with_flags.htm#a4bc07dd71f6fac77b630fa6c72ce6b14", null ],
+    [ "ezPointerWithFlags", "da/dd1/classez_pointer_with_flags.htm#a060b873ca57f24e079b99fa6e951435f", null ],
+    [ "GetFlags", "da/dd1/classez_pointer_with_flags.htm#aefe75cdd74a5ae072d164cbdf1d19070", null ],
     [ "GetPtr", "da/dd1/classez_pointer_with_flags.htm#a52cd270a6284c98d1f6080d4af5a0f37", null ],
     [ "GetPtr", "da/dd1/classez_pointer_with_flags.htm#a0311637d648366070eab3258c8aabbe0", null ],
     [ "operator bool", "da/dd1/classez_pointer_with_flags.htm#a95cbed00000f74e6a795530c5bdd4a96", null ],
     [ "operator const PtrType *", "da/dd1/classez_pointer_with_flags.htm#a8f28c533122e985bab8824498ad5c392", null ],
     [ "operator PtrType *", "da/dd1/classez_pointer_with_flags.htm#a692bba0b0d8ba3f1835632d6450f4a03", null ],
-    [ "operator!=", "da/dd1/classez_pointer_with_flags.htm#a244f689221d08ff384c21779a2fe3f87", null ],
+    [ "operator!=", "da/dd1/classez_pointer_with_flags.htm#a4ccb8daa89807e5761b3a4e3a15f2718", null ],
     [ "operator!=", "da/dd1/classez_pointer_with_flags.htm#a364fed47bac9c410855d2d4a3d32a1a7", null ],
     [ "operator!=", "da/dd1/classez_pointer_with_flags.htm#ad8a33d87812c1cb595ac4a373de4ec3d", null ],
     [ "operator*", "da/dd1/classez_pointer_with_flags.htm#a6f626b90bf3ab35ff2fd6f2960c6166c", null ],
@@ -16,10 +16,10 @@ var classez_pointer_with_flags =
     [ "operator->", "da/dd1/classez_pointer_with_flags.htm#ad7c147c1ad8c17ca38440a1f58a11269", null ],
     [ "operator->", "da/dd1/classez_pointer_with_flags.htm#a1336918eae172c27f9b5036f3dee8208", null ],
     [ "operator=", "da/dd1/classez_pointer_with_flags.htm#a39e2064fc865f5e430d2e16d8329762e", null ],
-    [ "operator==", "da/dd1/classez_pointer_with_flags.htm#a5b28799fd956791f4fa3e6af519cbb82", null ],
+    [ "operator==", "da/dd1/classez_pointer_with_flags.htm#a56968a0e3a350235c9c668da94c1b1f4", null ],
     [ "operator==", "da/dd1/classez_pointer_with_flags.htm#ad0026298d95111333814742c1f70c04a", null ],
     [ "operator==", "da/dd1/classez_pointer_with_flags.htm#af48423015aeaadc1a1b452bf9b60344d", null ],
-    [ "SetFlags", "da/dd1/classez_pointer_with_flags.htm#a28ce7fb30b04259778ae8d9ecfac9784", null ],
+    [ "SetFlags", "da/dd1/classez_pointer_with_flags.htm#a55bdc91dcf7838e6cabceb4bbd403537", null ],
     [ "SetPtr", "da/dd1/classez_pointer_with_flags.htm#a6cb464815743755feb005e80b8e25387", null ],
-    [ "SetPtrAndFlags", "da/dd1/classez_pointer_with_flags.htm#af41f69c1e873671e917de4de6bd8bb5d", null ]
+    [ "SetPtrAndFlags", "da/dd1/classez_pointer_with_flags.htm#af2455b0538c00f34c152438bdd7a1e4f", null ]
 ];

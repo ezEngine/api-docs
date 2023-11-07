@@ -1,7 +1,7 @@
 var structez_transform_component_flags =
 [
     [ "Bits", "d0/d27/structez_transform_component_flags_1_1_bits.htm", "d0/d27/structez_transform_component_flags_1_1_bits" ],
-    [ "StorageType", "d0/de9/structez_transform_component_flags.htm#a2a91b9b60d82a7693fdf33b654b30b5d", null ],
+    [ "StorageType", "d0/de9/structez_transform_component_flags.htm#a9f131e1f5a46594c2b79c7a85870d4a1", null ],
     [ "Enum", "d0/de9/structez_transform_component_flags.htm#a3c76eecab44c3853232ab369ad3f0867", [
       [ "None", "d0/de9/structez_transform_component_flags.htm#a3c76eecab44c3853232ab369ad3f0867aeb33939233177408eee83feba837426c", null ],
       [ "Running", "d0/de9/structez_transform_component_flags.htm#a3c76eecab44c3853232ab369ad3f0867a391c5277fcbe88a0a48f121685f8a2bd", null ],

@@ -1,6 +1,6 @@
 var classez_particle_system_instance =
 [
-    [ "ParticleDeathHandler", "dc/dd4/classez_particle_system_instance.htm#a1815d22ffe06556480882c2f4ec935ad", null ],
+    [ "ParticleDeathHandler", "dc/dd4/classez_particle_system_instance.htm#aca63eed7c07ee6e3b965a07da79138f3", null ],
     [ "ezParticleSystemInstance", "dc/dd4/classez_particle_system_instance.htm#a5554e1b75f8e111877f268dc5f4a3702", null ],
     [ "AddParticleDeathEventHandler", "dc/dd4/classez_particle_system_instance.htm#ae2b17fc03d0ca0e6de3233e1ba1ca5b1", null ],
     [ "ConfigureFromTemplate", "dc/dd4/classez_particle_system_instance.htm#a026e2a2d3802db7fc292d04ba9b3770e", null ],

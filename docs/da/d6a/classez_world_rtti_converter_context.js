@@ -1,7 +1,6 @@
 var classez_world_rtti_converter_context =
 [
     [ "Event", "dc/d50/structez_world_rtti_converter_context_1_1_event.htm", "dc/d50/structez_world_rtti_converter_context_1_1_event" ],
-    [ "ezWorldRttiConverterContext", "da/d6a/classez_world_rtti_converter_context.htm#a07711fcab0269a01fb318db8ce6dc6db", null ],
     [ "Clear", "da/d6a/classez_world_rtti_converter_context.htm#a838c1393a001d0fd40c343034ee23ff7", null ],
     [ "CreateObject", "da/d6a/classez_world_rtti_converter_context.htm#a8c36e8fb1937b656cd39f41235d06761", null ],
     [ "DeleteExistingObjects", "da/d6a/classez_world_rtti_converter_context.htm#ac79b6d636a98cf93eeef2771c7c9d326", null ],

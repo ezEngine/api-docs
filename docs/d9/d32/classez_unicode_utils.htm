@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -192,15 +192,19 @@ template&lt;typename WCharIterator &gt; </td></tr>
 <tr class="memitem:abf2e3d2a3daac062c7d924db1e735dbe"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d9/d32/classez_unicode_utils.htm#abf2e3d2a3daac062c7d924db1e735dbe">EncodeUtf32ToWChar</a> (ezUInt32 uiUtf32, WCharIterator &amp;ref_szWCharOutput)</td></tr>
 <tr class="memdesc:abf2e3d2a3daac062c7d924db1e735dbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encodes the given Utf32 character to wchar_t and writes as many bytes to the output iterator, as necessary. <br /></td></tr>
 <tr class="separator:abf2e3d2a3daac062c7d924db1e735dbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad14aa352862f29d33165e6aa35907c3"><td class="memTemplParams" colspan="2">template&lt;typename Container &gt; </td></tr>
+<tr class="memitem:aad14aa352862f29d33165e6aa35907c3"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d9/d32/classez_unicode_utils.htm#aad14aa352862f29d33165e6aa35907c3">RepairNonUtf8Text</a> (const char *pStartData, const char *pEndData, Container &amp;out_result)</td></tr>
+<tr class="memdesc:aad14aa352862f29d33165e6aa35907c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks an array of char's, whether it is a valid Utf8 string. If not, it repairs the string, ie by either re-encoding characters or removing them. Writes the result to the desired container type (ezString or <a class="el" href="../../d3/d88/classez_string_builder.htm" title="ezStringBuilder is a class that is meant for creating and modifying strings.">ezStringBuilder</a>).  <a href="../../d9/d32/classez_unicode_utils.htm#aad14aa352862f29d33165e6aa35907c3">More...</a><br /></td></tr>
+<tr class="separator:aad14aa352862f29d33165e6aa35907c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:ab4577c154bb2c133203d2b23ca486172"><td class="memItemLeft" align="right" valign="top"><a id="ab4577c154bb2c133203d2b23ca486172"></a>
-static constexpr ezUInt16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d32/classez_unicode_utils.htm#ab4577c154bb2c133203d2b23ca486172">Utf16BomLE</a> = 0xfffe</td></tr>
+static constexpr ezUInt16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d32/classez_unicode_utils.htm#ab4577c154bb2c133203d2b23ca486172">Utf16BomLE</a> = 0xfeff</td></tr>
 <tr class="memdesc:ab4577c154bb2c133203d2b23ca486172"><td class="mdescLeft">&#160;</td><td class="mdescRight">Byte Order Mark for Little Endian Utf16 strings. <br /></td></tr>
 <tr class="separator:ab4577c154bb2c133203d2b23ca486172"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a4078cb0ffb999aea8f9816dd30b0f6"><td class="memItemLeft" align="right" valign="top"><a id="a9a4078cb0ffb999aea8f9816dd30b0f6"></a>
-static constexpr ezUInt16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d32/classez_unicode_utils.htm#a9a4078cb0ffb999aea8f9816dd30b0f6">Utf16BomBE</a> = 0xfeff</td></tr>
+static constexpr ezUInt16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d32/classez_unicode_utils.htm#a9a4078cb0ffb999aea8f9816dd30b0f6">Utf16BomBE</a> = 0xfffe</td></tr>
 <tr class="memdesc:a9a4078cb0ffb999aea8f9816dd30b0f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Byte Order Mark for Big Endian Utf16 strings. <br /></td></tr>
 <tr class="separator:a9a4078cb0ffb999aea8f9816dd30b0f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -330,6 +334,54 @@ static constexpr ezUInt16&#160;</td><td class="memItemRight" valign="bottom"><a 
 
 </div>
 </div>
+<a id="aad14aa352862f29d33165e6aa35907c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad14aa352862f29d33165e6aa35907c3">&#9670;&nbsp;</a></span>RepairNonUtf8Text()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Container &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ezUnicodeUtils::RepairNonUtf8Text </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>pStartData</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>pEndData</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Container &amp;&#160;</td>
+          <td class="paramname"><em>out_result</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks an array of char's, whether it is a valid Utf8 string. If not, it repairs the string, ie by either re-encoding characters or removing them. Writes the result to the desired container type (ezString or <a class="el" href="../../d3/d88/classez_string_builder.htm" title="ezStringBuilder is a class that is meant for creating and modifying strings.">ezStringBuilder</a>). </p>
+<p>Returns true if the text had to be repaired, false if it was already valid.</p>
+<dl class="section note"><dt>Note</dt><dd>That the for #include order reasons, the implementation is in <a class="el" href="../../da/dbb/_string_builder__inl_8h_source.htm">StringBuilder_inl.h</a>, so you need to have <a class="el" href="../../d5/df1/_string_builder_8h_source.htm">StringBuilder.h</a> included to use it. </dd></dl>
+
+</div>
+</div>
 <a id="a64b0f38b887bb909109a2864c155b654"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a64b0f38b887bb909109a2864c155b654">&#9670;&nbsp;</a></span>SkipUtf16BomBE()</h2>
 
@@ -419,6 +471,7 @@ static constexpr ezUInt16&#160;</td><td class="memItemRight" valign="bottom"><a 
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/Strings/<a class="el" href="../../d0/d2e/_unicode_utils_8h_source.htm">UnicodeUtils.h</a></li>
+<li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/Strings/Implementation/<a class="el" href="../../da/dbb/_string_builder__inl_8h_source.htm">StringBuilder_inl.h</a></li>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/Strings/Implementation/<a class="el" href="../../d6/dc7/_unicode_utils__inl_8h_source.htm">UnicodeUtils_inl.h</a></li>
 </ul>
 </div><!-- contents -->
@@ -427,7 +480,7 @@ static constexpr ezUInt16&#160;</td><td class="memItemRight" valign="bottom"><a 
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d9/d32/classez_unicode_utils.htm">ezUnicodeUtils</a></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:22:08 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:29 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

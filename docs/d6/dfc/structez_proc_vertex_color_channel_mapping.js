@@ -1,6 +1,6 @@
 var structez_proc_vertex_color_channel_mapping =
 [
-    [ "StorageType", "d6/dfc/structez_proc_vertex_color_channel_mapping.htm#ae26be67a78a50f910b0bfb672ca4ea68", null ],
+    [ "StorageType", "d6/dfc/structez_proc_vertex_color_channel_mapping.htm#ab5d6bb8becf8a5aa28c7843b8e95bb6f", null ],
     [ "Enum", "d6/dfc/structez_proc_vertex_color_channel_mapping.htm#a83696e0abb7fae39efb915b6a254dfe0", [
       [ "R", "d6/dfc/structez_proc_vertex_color_channel_mapping.htm#a83696e0abb7fae39efb915b6a254dfe0a755fc8fda35f0d1e2de54399220f603c", null ],
       [ "G", "d6/dfc/structez_proc_vertex_color_channel_mapping.htm#a83696e0abb7fae39efb915b6a254dfe0a9c3d8e39474b94cce5ecec151083cab7", null ],

@@ -11,6 +11,6 @@ var classez_blob =
     [ "GetByteBlobPtr", "dd/db8/classez_blob.htm#add3f9e61a2d9dfc792c161b6bde7bf2f", null ],
     [ "operator=", "dd/db8/classez_blob.htm#ad9d40a5b4b6a73e63e7c72f5c10b1b2d", null ],
     [ "SetCountUninitialized", "dd/db8/classez_blob.htm#a5e37c7912821afc596a94c70979f3ad6", null ],
-    [ "SetFrom", "dd/db8/classez_blob.htm#a1db266e508ddc1fc0de01275087af581", null ],
+    [ "SetFrom", "dd/db8/classez_blob.htm#a58c47f10015bc1c972f1b27e3521a5ca", null ],
     [ "ZeroFill", "dd/db8/classez_blob.htm#acc40743aeb7b867a5c219ce509e83ac0", null ]
 ];

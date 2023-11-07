@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -100,49 +100,58 @@ $(document).ready(function(){initNavTree('d6/dda/_skeleton_builder_8h_source.htm
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <a class="code" href="../../d1/d87/classez_skeleton_builder.htm">ezSkeletonBuilder</a>();</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  ~<a class="code" href="../../d1/d87/classez_skeleton_builder.htm">ezSkeletonBuilder</a>();</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  ezUInt16 AddJoint(<span class="keyword">const</span> <span class="keywordtype">char</span>* szName, <span class="keyword">const</span> <a class="code" href="../../d3/db1/classez_transform_template.htm">ezTransform</a>&amp; localBindPose, ezUInt16 uiParentIndex = ezInvalidJointIndex);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  ezUInt16 AddJoint(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sName, <span class="keyword">const</span> <a class="code" href="../../d3/db1/classez_transform_template.htm">ezTransform</a>&amp; localRestPose, ezUInt16 uiParentIndex = ezInvalidJointIndex);</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keywordtype">void</span> SetJointLimit(ezUInt16 uiJointIndex, <span class="keyword">const</span> <a class="code" href="../../de/d15/classez_quat_template.htm">ezQuat</a>&amp; qLocalOrientation, <span class="keywordtype">bool</span> bLimitSwing, <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> halfSwingLimitY, <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> halfSwingLimitZ, <span class="keywordtype">bool</span> bLimitTwist, <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> twistLimitHalfAngle, <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> twistLimitCenterAngle);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keywordtype">void</span> SetJointLimit(ezUInt16 uiJointIndex, <span class="keyword">const</span> <a class="code" href="../../de/d15/classez_quat_template.htm">ezQuat</a>&amp; qLocalOrientation, ezSkeletonJointType::Enum jointType, <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> halfSwingLimitY, <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> halfSwingLimitZ, <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> twistLimitHalfAngle, <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> twistLimitCenterAngle, <span class="keywordtype">float</span> fStiffness);</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keywordtype">void</span> BuildSkeleton(<a class="code" href="../../db/df5/classez_skeleton.htm">ezSkeleton</a>&amp; ref_skeleton) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordtype">void</span> SetJointSurface(ezUInt16 uiJointIndex, <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sSurface);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keywordtype">void</span> SetJointCollisionLayer(ezUInt16 uiJointIndex, ezUInt8 uiCollsionLayer);</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordtype">bool</span> HasJoints() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordtype">void</span> BuildSkeleton(<a class="code" href="../../db/df5/classez_skeleton.htm">ezSkeleton</a>&amp; ref_skeleton) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="../../d7/dcb/structez_skeleton_builder_1_1_builder_joint.htm">   30</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../d7/dcb/structez_skeleton_builder_1_1_builder_joint.htm">BuilderJoint</a></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="../../d3/db1/classez_transform_template.htm">ezTransform</a> m_BindPoseLocal;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="../../d3/db1/classez_transform_template.htm">ezTransform</a> m_BindPoseGlobal; <span class="comment">// this one is temporary and not stored in the final ezSkeleton</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="../../d3/db1/classez_transform_template.htm">ezTransform</a> m_InverseBindPoseGlobal;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    ezUInt16 m_uiParentIndex = ezInvalidJointIndex;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="../../de/dce/classez_hashed_string.htm">ezHashedString</a> m_sName;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="../../de/d15/classez_quat_template.htm">ezQuat</a> m_qLocalJointOrientation = <a class="code" href="../../de/d15/classez_quat_template.htm#a694d84e2c4804573efcf5ae8623dc4c3">ezQuat::IdentityQuaternion</a>();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> m_HalfSwingLimitZ;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> m_HalfSwingLimitY;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> m_TwistLimitHalfAngle;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> m_TwistLimitCenterAngle;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">bool</span> m_bLimitTwist = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">bool</span> m_bLimitSwing = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  };</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <a class="code" href="../../d9/dfe/classez_deque.htm">ezDeque&lt;BuilderJoint&gt;</a> m_Joints;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;};</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordtype">bool</span> HasJoints() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="../../d7/dcb/structez_skeleton_builder_1_1_builder_joint.htm">   33</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../d7/dcb/structez_skeleton_builder_1_1_builder_joint.htm">BuilderJoint</a></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="../../d3/db1/classez_transform_template.htm">ezTransform</a> m_RestPoseLocal;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="../../d3/db1/classez_transform_template.htm">ezTransform</a> m_RestPoseGlobal; <span class="comment">// this one is temporary and not stored in the final ezSkeleton</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="../../d3/db1/classez_transform_template.htm">ezTransform</a> m_InverseRestPoseGlobal;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    ezUInt16 m_uiParentIndex = ezInvalidJointIndex;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="../../de/dce/classez_hashed_string.htm">ezHashedString</a> m_sName;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezSkeletonJointType&gt;</a> m_JointType;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="../../de/d15/classez_quat_template.htm">ezQuat</a> m_qLocalJointOrientation = <a class="code" href="../../de/d15/classez_quat_template.htm#a655d61a2f2c0bd1e8a1d71c4e2697301">ezQuat::MakeIdentity</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> m_HalfSwingLimitZ;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> m_HalfSwingLimitY;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> m_TwistLimitHalfAngle;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> m_TwistLimitCenterAngle;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">float</span> m_fStiffness = 0.0f;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sSurface;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    ezUInt8 m_uiCollisionLayer = 0;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  };</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="../../d9/dfe/classez_deque.htm">ezDeque&lt;BuilderJoint&gt;</a> m_Joints;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="astructez_skeleton_builder_1_1_builder_joint_htm"><div class="ttname"><a href="../../d7/dcb/structez_skeleton_builder_1_1_builder_joint.htm">ezSkeletonBuilder::BuilderJoint</a></div><div class="ttdef"><b>Definition:</b> SkeletonBuilder.h:30</div></div>
+<div class="ttc" id="astructez_skeleton_builder_1_1_builder_joint_htm"><div class="ttname"><a href="../../d7/dcb/structez_skeleton_builder_1_1_builder_joint.htm">ezSkeletonBuilder::BuilderJoint</a></div><div class="ttdef"><b>Definition:</b> SkeletonBuilder.h:33</div></div>
 <div class="ttc" id="aclassez_deque_htm"><div class="ttname"><a href="../../d9/dfe/classez_deque.htm">ezDeque</a></div><div class="ttdef"><b>Definition:</b> Deque.h:269</div></div>
+<div class="ttc" id="aclassez_quat_template_htm_a655d61a2f2c0bd1e8a1d71c4e2697301"><div class="ttname"><a href="../../de/d15/classez_quat_template.htm#a655d61a2f2c0bd1e8a1d71c4e2697301">ezQuatTemplate&lt; float &gt;::MakeIdentity</a></div><div class="ttdeci">static const ezQuatTemplate&lt; float &gt; MakeIdentity()</div><div class="ttdoc">Static function that returns a quaternion that represents the identity rotation (none).</div><div class="ttdef"><b>Definition:</b> Quat_inl.h:29</div></div>
+<div class="ttc" id="astructez_hybrid_string_htm"><div class="ttname"><a href="../../d4/d53/structez_hybrid_string.htm">ezHybridString&lt; 32, ezDefaultAllocatorWrapper &gt;</a></div></div>
 <div class="ttc" id="aclassez_skeleton_builder_htm"><div class="ttname"><a href="../../d1/d87/classez_skeleton_builder.htm">ezSkeletonBuilder</a></div><div class="ttdoc">The skeleton builder class provides the means to build skeleton instances from scratch....</div><div class="ttdef"><b>Definition:</b> SkeletonBuilder.h:9</div></div>
-<div class="ttc" id="aclassez_quat_template_htm_a694d84e2c4804573efcf5ae8623dc4c3"><div class="ttname"><a href="../../de/d15/classez_quat_template.htm#a694d84e2c4804573efcf5ae8623dc4c3">ezQuatTemplate::IdentityQuaternion</a></div><div class="ttdeci">static const ezQuatTemplate&lt; Type &gt; IdentityQuaternion()</div><div class="ttdoc">Static function that returns a quaternion that represents the identity rotation (none).</div><div class="ttdef"><b>Definition:</b> Quat_inl.h:24</div></div>
 <div class="ttc" id="aclassez_angle_htm"><div class="ttname"><a href="../../db/d6f/classez_angle.htm">ezAngle</a></div><div class="ttdoc">Float wrapper struct for a safe usage and conversions of angles.</div><div class="ttdef"><b>Definition:</b> Angle.h:9</div></div>
-<div class="ttc" id="aclassez_skeleton_htm"><div class="ttname"><a href="../../db/df5/classez_skeleton.htm">ezSkeleton</a></div><div class="ttdoc">The skeleton class encapsulates the information about the joint structure for a model.</div><div class="ttdef"><b>Definition:</b> Skeleton.h:60</div></div>
+<div class="ttc" id="aclassez_skeleton_htm"><div class="ttname"><a href="../../db/df5/classez_skeleton.htm">ezSkeleton</a></div><div class="ttdoc">The skeleton class encapsulates the information about the joint structure for a model.</div><div class="ttdef"><b>Definition:</b> Skeleton.h:74</div></div>
+<div class="ttc" id="astructez_enum_htm"><div class="ttname"><a href="../../d6/dd9/structez_enum.htm">ezEnum&lt; ezSkeletonJointType &gt;</a></div></div>
 <div class="ttc" id="aclassez_quat_template_htm"><div class="ttname"><a href="../../de/d15/classez_quat_template.htm">ezQuatTemplate&lt; float &gt;</a></div></div>
+<div class="ttc" id="astructez_string_view_htm"><div class="ttname"><a href="../../de/db8/structez_string_view.htm">ezStringView</a></div><div class="ttdoc">ezStringView represent a read-only sub-string of a larger string, as it can store a dedicated string ...</div><div class="ttdef"><b>Definition:</b> StringView.h:23</div></div>
 <div class="ttc" id="aclassez_hashed_string_htm"><div class="ttname"><a href="../../de/dce/classez_hashed_string.htm">ezHashedString</a></div><div class="ttdoc">This class is optimized to take nearly no memory (sizeof(void*)) and to allow very fast checks whethe...</div><div class="ttdef"><b>Definition:</b> HashedString.h:24</div></div>
 <div class="ttc" id="aclassez_transform_template_htm"><div class="ttname"><a href="../../d3/db1/classez_transform_template.htm">ezTransformTemplate&lt; float &gt;</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_9b39d7517b28e8ee3dee1b9d862ddabb.htm">RendererCore</a></li><li class="navelem"><a class="el" href="../../dir_77db471eb2b64e2aaad44708419e1af7.htm">AnimationSystem</a></li><li class="navelem"><b>SkeletonBuilder.h</b></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:21:58 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:20 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

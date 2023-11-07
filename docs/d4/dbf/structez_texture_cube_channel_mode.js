@@ -1,6 +1,6 @@
 var structez_texture_cube_channel_mode =
 [
-    [ "StorageType", "d4/dbf/structez_texture_cube_channel_mode.htm#a830b3a849df03c3359d6483beff1db6d", null ],
+    [ "StorageType", "d4/dbf/structez_texture_cube_channel_mode.htm#a24d75e33ee46d926202c3e1e69d791d4", null ],
     [ "Enum", "d4/dbf/structez_texture_cube_channel_mode.htm#a1423109038652a5bd896a2b67150fc75", [
       [ "RGB", "d4/dbf/structez_texture_cube_channel_mode.htm#a1423109038652a5bd896a2b67150fc75aeb2c151d57b7f7971f7859d1e8c3d60a", null ],
       [ "Red", "d4/dbf/structez_texture_cube_channel_mode.htm#a1423109038652a5bd896a2b67150fc75af2c3a0bdf07157e57c1900a7e4f61007", null ],

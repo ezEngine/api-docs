@@ -31,6 +31,8 @@ var classez_view =
     [ "GetWorld", "d2/d23/classez_view.htm#a7d86038908f47e658ecbe73b5b9a59e1", null ],
     [ "IsRenderPassReadBackPropertyExisting", "d2/d23/classez_view.htm#aa45d3845243eb232905dd8b7ea055c0d", null ],
     [ "IsValid", "d2/d23/classez_view.htm#a6be4e4821358eea2ce68bcd3b54c0d3a", null ],
+    [ "ResetExtractorProperties", "d2/d23/classez_view.htm#a8fe480a06a75c57df05188027d87a3b1", null ],
+    [ "ResetRenderPassProperties", "d2/d23/classez_view.htm#a468ecaddcb8069a671cda2a5e3de2885", null ],
     [ "SetCamera", "d2/d23/classez_view.htm#ab34caa6db70b7b73561ad4ee1dc4b265", null ],
     [ "SetCameraUsageHint", "d2/d23/classez_view.htm#a4357123d03b2bc1082f6852a6bbed289", null ],
     [ "SetCullingCamera", "d2/d23/classez_view.htm#a6d1c6e7dcaac7ba63879b9e8386a57ec", null ],

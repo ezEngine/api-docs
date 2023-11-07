@@ -1,6 +1,6 @@
 var structez_g_a_l_stencil_op =
 [
-    [ "StorageType", "d1/d5f/structez_g_a_l_stencil_op.htm#a5651251faf007cca7ecc1d6a7f19a288", null ],
+    [ "StorageType", "d1/d5f/structez_g_a_l_stencil_op.htm#a992ab73cbc6a32a2fca2490f0bc1cdc2", null ],
     [ "Enum", "d1/d5f/structez_g_a_l_stencil_op.htm#a7a41652305f00eb2d07d70829103d09d", [
       [ "Keep", "d1/d5f/structez_g_a_l_stencil_op.htm#a7a41652305f00eb2d07d70829103d09da270ed168d5752dfb130b526a0ace2c12", null ],
       [ "Zero", "d1/d5f/structez_g_a_l_stencil_op.htm#a7a41652305f00eb2d07d70829103d09da898c5fbf821c9e5070ca2d58b9d9c629", null ],

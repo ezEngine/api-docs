@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -120,7 +120,7 @@ $(document).ready(function(){initNavTree('df/d74/_timestamp__win_8h_source.htm',
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  FILETIME fileTime;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  GetSystemTimeAsFileTime(&amp;fileTime);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../d9/d88/classez_timestamp.htm#ae3185ef7bce8acaee19aac97aff5a58a">ezTimestamp</a>(FileTimeToEpoch(fileTime), <a class="code" href="../../de/d45/structez_s_i_unit_of_time.htm#a538e85facb1e675e5d47f8a92126235ba52c31273eead9fdf1ce1988d286ab661">ezSIUnitOfTime::Microsecond</a>);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../d9/d88/classez_timestamp.htm#a2cc742e6ff4ecf8715b6c9ae4922c3ed">ezTimestamp::MakeFromInt</a>(FileTimeToEpoch(fileTime), <a class="code" href="../../de/d45/structez_s_i_unit_of_time.htm#a538e85facb1e675e5d47f8a92126235ba52c31273eead9fdf1ce1988d286ab661">ezSIUnitOfTime::Microsecond</a>);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">const</span> <a class="code" href="../../d9/d88/classez_timestamp.htm">ezTimestamp</a> <a class="code" href="../../df/d59/classez_date_time.htm#ab794cc732062e207d2d6905ee95ed3ed">ezDateTime::GetTimestamp</a>()<span class="keyword"> const</span></div>
@@ -139,19 +139,19 @@ $(document).ready(function(){initNavTree('df/d74/_timestamp__win_8h_source.htm',
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  BOOL res = SystemTimeToFileTime(&amp;st, &amp;fileTime);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <a class="code" href="../../d9/d88/classez_timestamp.htm">ezTimestamp</a> timestamp;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordflow">if</span> (res != 0)</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    timestamp.<a class="code" href="../../d9/d88/classez_timestamp.htm#a35a00647d93e64a5efc018509f5dce31">SetInt64</a>(FileTimeToEpoch(fileTime), <a class="code" href="../../de/d45/structez_s_i_unit_of_time.htm#a538e85facb1e675e5d47f8a92126235ba52c31273eead9fdf1ce1988d286ab661">ezSIUnitOfTime::Microsecond</a>);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    timestamp = <a class="code" href="../../d9/d88/classez_timestamp.htm#a2cc742e6ff4ecf8715b6c9ae4922c3ed">ezTimestamp::MakeFromInt</a>(FileTimeToEpoch(fileTime), <a class="code" href="../../de/d45/structez_s_i_unit_of_time.htm#a538e85facb1e675e5d47f8a92126235ba52c31273eead9fdf1ce1988d286ab661">ezSIUnitOfTime::Microsecond</a>);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordflow">return</span> timestamp;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../df/d59/classez_date_time.htm#a5a23b8409a8a2fab95ed83178165e916">ezDateTime::SetTimestamp</a>(<a class="code" href="../../d9/d88/classez_timestamp.htm">ezTimestamp</a> timestamp)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> <a class="code" href="../../df/d59/classez_date_time.htm#a649ed3f516c5879222353c13c765f32c">ezDateTime::SetFromTimestamp</a>(<a class="code" href="../../d9/d88/classez_timestamp.htm">ezTimestamp</a> timestamp)</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  FILETIME fileTime = EpochToFileTime(timestamp.<a class="code" href="../../d9/d88/classez_timestamp.htm#a3b0557de426d5aa0272285daae248b34">GetInt64</a>(<a class="code" href="../../de/d45/structez_s_i_unit_of_time.htm#a538e85facb1e675e5d47f8a92126235ba52c31273eead9fdf1ce1988d286ab661">ezSIUnitOfTime::Microsecond</a>));</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  SYSTEMTIME st;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  BOOL res = FileTimeToSystemTime(&amp;fileTime, &amp;st);</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordflow">if</span> (res == 0)</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">return</span> EZ_FAILURE;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  m_iYear = (ezInt16)st.wYear;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  m_uiMonth = (ezUInt8)st.wMonth;</div>
@@ -161,23 +161,23 @@ $(document).ready(function(){initNavTree('df/d74/_timestamp__win_8h_source.htm',
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  m_uiMinute = (ezUInt8)st.wMinute;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  m_uiSecond = (ezUInt8)st.wSecond;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  m_uiMicroseconds = ezUInt32(st.wMilliseconds * 1000);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordflow">return</span> EZ_SUCCESS;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassez_timestamp_htm_a35a00647d93e64a5efc018509f5dce31"><div class="ttname"><a href="../../d9/d88/classez_timestamp.htm#a35a00647d93e64a5efc018509f5dce31">ezTimestamp::SetInt64</a></div><div class="ttdeci">void SetInt64(ezInt64 iTimeValue, ezSIUnitOfTime::Enum unitOfTime)</div><div class="ttdoc">Sets the timestamp as 'iTimeValue' in 'unitOfTime' since Unix epoch.</div><div class="ttdef"><b>Definition:</b> Timestamp.cpp:36</div></div>
+<div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition:</b> Types.h:50</div></div>
+<div class="ttc" id="aclassez_timestamp_htm_a2cc742e6ff4ecf8715b6c9ae4922c3ed"><div class="ttname"><a href="../../d9/d88/classez_timestamp.htm#a2cc742e6ff4ecf8715b6c9ae4922c3ed">ezTimestamp::MakeFromInt</a></div><div class="ttdeci">static ezTimestamp MakeFromInt(ezInt64 iTimeValue, ezSIUnitOfTime::Enum unitOfTime)</div><div class="ttdoc">Returns a timestamp initialized from 'iTimeValue' in 'unitOfTime' since Unix epoch.</div><div class="ttdef"><b>Definition:</b> Timestamp.cpp:36</div></div>
 <div class="ttc" id="aclassez_date_time_htm_ab794cc732062e207d2d6905ee95ed3ed"><div class="ttname"><a href="../../df/d59/classez_date_time.htm#ab794cc732062e207d2d6905ee95ed3ed">ezDateTime::GetTimestamp</a></div><div class="ttdeci">const ezTimestamp GetTimestamp() const</div><div class="ttdoc">Converts this instance' values into a ezTimestamp.</div><div class="ttdef"><b>Definition:</b> Timestamp_android.h:36</div></div>
 <div class="ttc" id="aclassez_timestamp_htm"><div class="ttname"><a href="../../d9/d88/classez_timestamp.htm">ezTimestamp</a></div><div class="ttdoc">The timestamp class encapsulates a date in time as microseconds since Unix epoch.</div><div class="ttdef"><b>Definition:</b> Timestamp.h:22</div></div>
+<div class="ttc" id="aclassez_date_time_htm_a649ed3f516c5879222353c13c765f32c"><div class="ttname"><a href="../../df/d59/classez_date_time.htm#a649ed3f516c5879222353c13c765f32c">ezDateTime::SetFromTimestamp</a></div><div class="ttdeci">ezResult SetFromTimestamp(ezTimestamp timestamp)</div><div class="ttdoc">Sets this instance to the given timestamp.</div><div class="ttdef"><b>Definition:</b> Timestamp_android.h:66</div></div>
 <div class="ttc" id="astructez_s_i_unit_of_time_htm_a538e85facb1e675e5d47f8a92126235ba52c31273eead9fdf1ce1988d286ab661"><div class="ttname"><a href="../../de/d45/structez_s_i_unit_of_time.htm#a538e85facb1e675e5d47f8a92126235ba52c31273eead9fdf1ce1988d286ab661">ezSIUnitOfTime::Microsecond</a></div><div class="ttdeci">@ Microsecond</div><div class="ttdoc">SI-unit of time (10^-6 second)</div><div class="ttdef"><b>Definition:</b> Timestamp.h:11</div></div>
 <div class="ttc" id="aclassez_timestamp_htm_a739cac6b2f28d9ad01f348d44acf154b"><div class="ttname"><a href="../../d9/d88/classez_timestamp.htm#a739cac6b2f28d9ad01f348d44acf154b">ezTimestamp::CurrentTimestamp</a></div><div class="ttdeci">static const ezTimestamp CurrentTimestamp()</div><div class="ttdoc">Returns the current timestamp. Returned value will always be valid.</div><div class="ttdef"><b>Definition:</b> Timestamp_android.h:11</div></div>
-<div class="ttc" id="aclassez_date_time_htm_a5a23b8409a8a2fab95ed83178165e916"><div class="ttname"><a href="../../df/d59/classez_date_time.htm#a5a23b8409a8a2fab95ed83178165e916">ezDateTime::SetTimestamp</a></div><div class="ttdeci">bool SetTimestamp(ezTimestamp timestamp)</div><div class="ttdoc">Sets this instance to the given timestamp.</div><div class="ttdef"><b>Definition:</b> Timestamp_android.h:66</div></div>
 <div class="ttc" id="aclassez_timestamp_htm_a3b0557de426d5aa0272285daae248b34"><div class="ttname"><a href="../../d9/d88/classez_timestamp.htm#a3b0557de426d5aa0272285daae248b34">ezTimestamp::GetInt64</a></div><div class="ttdeci">ezInt64 GetInt64(ezSIUnitOfTime::Enum unitOfTime) const</div><div class="ttdoc">Returns the number of 'unitOfTime' since Unix epoch.</div><div class="ttdef"><b>Definition:</b> Timestamp.cpp:17</div></div>
-<div class="ttc" id="aclassez_timestamp_htm_ae3185ef7bce8acaee19aac97aff5a58a"><div class="ttname"><a href="../../d9/d88/classez_timestamp.htm#ae3185ef7bce8acaee19aac97aff5a58a">ezTimestamp::ezTimestamp</a></div><div class="ttdeci">ezTimestamp()</div><div class="ttdoc">Creates an invalidated timestamp.</div><div class="ttdef"><b>Definition:</b> Timestamp_inl.h:8</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_2ca30144367a1d3c7745a014e5802100.htm">Time</a></li><li class="navelem"><a class="el" href="../../dir_521869badcff1dcecad1bf20c9457d7d.htm">Implementation</a></li><li class="navelem"><a class="el" href="../../dir_8e7f8e6b12e31ebfde3efdda788f0c30.htm">Win</a></li><li class="navelem"><b>Timestamp_win.h</b></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:21:57 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:19 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

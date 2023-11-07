@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -104,7 +104,7 @@ $(document).ready(function(){initNavTree('d1/dcd/_engine_2_renderer_core_2_shade
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// \brief Flags that affect the compilation process of a shader</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="../../d6/d69/structez_shader_compiler_flags.htm">   16</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../d6/d69/structez_shader_compiler_flags.htm">ezShaderCompilerFlags</a></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keyword">typedef</span> ezUInt8 StorageType;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keyword">using</span> StorageType = ezUInt8;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keyword">enum</span> Enum</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  {</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    Debug = EZ_BIT(0),</div>
@@ -127,20 +127,20 @@ $(document).ready(function(){initNavTree('d1/dcd/_engine_2_renderer_core_2_shade
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  {</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="../../d6/d44/structez_shader_program_compiler_1_1ez_shader_program_data.htm">ezShaderProgramData</a>()</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      m_szPlatform = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      m_szSourceFile = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      m_sPlatform = {};</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      m_sSourceFile = {};</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      <span class="keywordflow">for</span> (ezUInt32 stage = 0; stage &lt; ezGALShaderStage::ENUM_COUNT; ++stage)</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      {</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        m_bWriteToDisk[stage] = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        m_szShaderSource[stage] = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        m_sShaderSource[stage] = {};</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      }</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="../../d1/dec/structez_bitflags.htm">ezBitflags&lt;ezShaderCompilerFlags&gt;</a> m_Flags;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* m_szPlatform;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* m_szSourceFile;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* m_szShaderSource[ezGALShaderStage::ENUM_COUNT];</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> m_sPlatform;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> m_sSourceFile;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> m_sShaderSource[ezGALShaderStage::ENUM_COUNT];</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="../../da/dfd/classez_shader_stage_binary.htm">ezShaderStageBinary</a> m_StageBinary[ezGALShaderStage::ENUM_COUNT];</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">bool</span> m_bWriteToDisk[ezGALShaderStage::ENUM_COUNT];</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  };</div>
@@ -153,45 +153,43 @@ $(document).ready(function(){initNavTree('d1/dcd/_engine_2_renderer_core_2_shade
 <div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="../../de/d23/classez_shader_compiler.htm">   64</a></span>&#160;<span class="keyword">class </span>EZ_RENDERERCORE_DLL <a class="code" href="../../de/d23/classez_shader_compiler.htm">ezShaderCompiler</a></div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;{</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> CompileShaderPermutationForPlatforms(</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* szFile, <span class="keyword">const</span> <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;const ezPermutationVar&gt;</a>&amp; permutationVars, <a class="code" href="../../d2/d9e/classez_log_interface.htm">ezLogInterface</a>* pLog, <span class="keyword">const</span> <span class="keywordtype">char</span>* szPlatform = <span class="stringliteral">&quot;ALL&quot;</span>);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> RunShaderCompiler(<span class="keyword">const</span> <span class="keywordtype">char</span>* szFile, <span class="keyword">const</span> <span class="keywordtype">char</span>* szPlatform, <a class="code" href="../../d7/d28/classez_shader_program_compiler.htm">ezShaderProgramCompiler</a>* pCompiler, <a class="code" href="../../d2/d9e/classez_log_interface.htm">ezLogInterface</a>* pLog);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordtype">void</span> WriteFailedShaderSource(<a class="code" href="../../d6/d44/structez_shader_program_compiler_1_1ez_shader_program_data.htm">ezShaderProgramCompiler::ezShaderProgramData</a>&amp; spd, <a class="code" href="../../d2/d9e/classez_log_interface.htm">ezLogInterface</a>* pLog);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordtype">bool</span> PassThroughUnknownCommandCB(<span class="keyword">const</span> <span class="keywordtype">char</span>* szCmd) { <span class="keywordflow">return</span> <a class="code" href="../../de/df8/classez_string_utils.htm#aa1b8c125ced33a6a904f741597ecc673">ezStringUtils::IsEqual</a>(szCmd, <span class="stringliteral">&quot;version&quot;</span>); }</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keyword">struct </span>ezShaderData</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_Platforms;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezPermutationVar, 16&gt;</a> m_Permutations;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezPermutationVar, 16&gt;</a> m_FixedPermVars;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_StateSource;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_ShaderStageSource[ezGALShaderStage::ENUM_COUNT];</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  };</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> FileOpen(<span class="keyword">const</span> <span class="keywordtype">char</span>* szAbsoluteFile, <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezUInt8&gt;</a>&amp; FileContent, <a class="code" href="../../d9/d88/classez_timestamp.htm">ezTimestamp</a>&amp; out_FileModification);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <a class="code" href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a> m_StageSourceFile[ezGALShaderStage::ENUM_COUNT];</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <a class="code" href="../../d0/d55/classez_tokenized_file_cache.htm">ezTokenizedFileCache</a> m_FileCache;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  ezShaderData m_ShaderData;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <a class="code" href="../../d0/d90/classez_set.htm">ezSet&lt;ezString&gt;</a> m_IncludeFiles;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;};</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> CompileShaderPermutationForPlatforms(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sFile, <span class="keyword">const</span> <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;const ezPermutationVar&gt;</a>&amp; permutationVars, <a class="code" href="../../d2/d9e/classez_log_interface.htm">ezLogInterface</a>* pLog, <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sPlatform = <span class="stringliteral">&quot;ALL&quot;</span>);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> RunShaderCompiler(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sFile, <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sPlatform, <a class="code" href="../../d7/d28/classez_shader_program_compiler.htm">ezShaderProgramCompiler</a>* pCompiler, <a class="code" href="../../d2/d9e/classez_log_interface.htm">ezLogInterface</a>* pLog);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordtype">void</span> WriteFailedShaderSource(<a class="code" href="../../d6/d44/structez_shader_program_compiler_1_1ez_shader_program_data.htm">ezShaderProgramCompiler::ezShaderProgramData</a>&amp; spd, <a class="code" href="../../d2/d9e/classez_log_interface.htm">ezLogInterface</a>* pLog);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordtype">bool</span> PassThroughUnknownCommandCB(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sCmd) { <span class="keywordflow">return</span> sCmd == <span class="stringliteral">&quot;version&quot;</span>; }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keyword">struct </span>ezShaderData</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_Platforms;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezPermutationVar, 16&gt;</a> m_Permutations;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezPermutationVar, 16&gt;</a> m_FixedPermVars;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_StateSource;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_ShaderStageSource[ezGALShaderStage::ENUM_COUNT];</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  };</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> FileOpen(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sAbsoluteFile, <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezUInt8&gt;</a>&amp; FileContent, <a class="code" href="../../d9/d88/classez_timestamp.htm">ezTimestamp</a>&amp; out_FileModification);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <a class="code" href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a> m_StageSourceFile[ezGALShaderStage::ENUM_COUNT];</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <a class="code" href="../../d0/d55/classez_tokenized_file_cache.htm">ezTokenizedFileCache</a> m_FileCache;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  ezShaderData m_ShaderData;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <a class="code" href="../../d0/d90/classez_set.htm">ezSet&lt;ezString&gt;</a> m_IncludeFiles;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astructez_bitflags_htm"><div class="ttname"><a href="../../d1/dec/structez_bitflags.htm">ezBitflags&lt; ezShaderCompilerFlags &gt;</a></div></div>
 <div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition:</b> Types.h:50</div></div>
-<div class="ttc" id="aclassez_set_htm"><div class="ttname"><a href="../../d0/d90/classez_set.htm">ezSet</a></div><div class="ttdef"><b>Definition:</b> Set.h:237</div></div>
-<div class="ttc" id="aclassez_string_utils_htm_aa1b8c125ced33a6a904f741597ecc673"><div class="ttname"><a href="../../de/df8/classez_string_utils.htm#aa1b8c125ced33a6a904f741597ecc673">ezStringUtils::IsEqual</a></div><div class="ttdeci">static bool IsEqual(const char *pString1, const char *pString2, const char *pString1End=ezUnicodeUtils::GetMaxStringEnd&lt; char &gt;(), const char *pString2End=ezUnicodeUtils::GetMaxStringEnd&lt; char &gt;())</div><div class="ttdoc">Returns true, if the two given strings are identical (bitwise).</div><div class="ttdef"><b>Definition:</b> StringUtils_inl.h:124</div></div>
+<div class="ttc" id="aclassez_set_htm"><div class="ttname"><a href="../../d0/d90/classez_set.htm">ezSet</a></div><div class="ttdef"><b>Definition:</b> Set.h:235</div></div>
 <div class="ttc" id="aclassez_timestamp_htm"><div class="ttname"><a href="../../d9/d88/classez_timestamp.htm">ezTimestamp</a></div><div class="ttdoc">The timestamp class encapsulates a date in time as microseconds since Unix epoch.</div><div class="ttdef"><b>Definition:</b> Timestamp.h:22</div></div>
 <div class="ttc" id="aclassez_array_ptr_htm"><div class="ttname"><a href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr</a></div><div class="ttdoc">This class encapsulates an array and it's size. It is recommended to use this class instead of plain ...</div><div class="ttdef"><b>Definition:</b> ArrayPtr.h:36</div></div>
 <div class="ttc" id="aclassez_shader_stage_binary_htm"><div class="ttname"><a href="../../da/dfd/classez_shader_stage_binary.htm">ezShaderStageBinary</a></div><div class="ttdef"><b>Definition:</b> ShaderStageBinary.h:91</div></div>
 <div class="ttc" id="aclassez_log_interface_htm"><div class="ttname"><a href="../../d2/d9e/classez_log_interface.htm">ezLogInterface</a></div><div class="ttdoc">Base class for all logging classes.</div><div class="ttdef"><b>Definition:</b> Log.h:76</div></div>
-<div class="ttc" id="astructez_hybrid_string_htm"><div class="ttname"><a href="../../d4/d53/structez_hybrid_string.htm">ezHybridString</a></div><div class="ttdef"><b>Definition:</b> Stream.h:16</div></div>
+<div class="ttc" id="astructez_hybrid_string_htm"><div class="ttname"><a href="../../d4/d53/structez_hybrid_string.htm">ezHybridString&lt; 32, ezDefaultAllocatorWrapper &gt;</a></div></div>
 <div class="ttc" id="astructez_shader_compiler_flags_1_1_bits_htm"><div class="ttname"><a href="../../de/d68/structez_shader_compiler_flags_1_1_bits.htm">ezShaderCompilerFlags::Bits</a></div><div class="ttdef"><b>Definition:</b> ShaderCompiler.h:25</div></div>
 <div class="ttc" id="aclassez_shader_compiler_htm"><div class="ttname"><a href="../../de/d23/classez_shader_compiler.htm">ezShaderCompiler</a></div><div class="ttdef"><b>Definition:</b> ShaderCompiler.h:64</div></div>
 <div class="ttc" id="astructez_shader_compiler_flags_htm"><div class="ttname"><a href="../../d6/d69/structez_shader_compiler_flags.htm">ezShaderCompilerFlags</a></div><div class="ttdef"><b>Definition:</b> ShaderCompiler.h:16</div></div>
@@ -199,6 +197,7 @@ $(document).ready(function(){initNavTree('d1/dcd/_engine_2_renderer_core_2_shade
 <div class="ttc" id="aclassez_dynamic_array_htm"><div class="ttname"><a href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt; ezUInt8 &gt;</a></div></div>
 <div class="ttc" id="aclassez_tokenized_file_cache_htm"><div class="ttname"><a href="../../d0/d55/classez_tokenized_file_cache.htm">ezTokenizedFileCache</a></div><div class="ttdoc">This object caches files in a tokenized state. It can be shared among ezPreprocessor instances to imp...</div><div class="ttdef"><b>Definition:</b> Preprocessor.h:15</div></div>
 <div class="ttc" id="aclassez_shader_program_compiler_htm"><div class="ttname"><a href="../../d7/d28/classez_shader_program_compiler.htm">ezShaderProgramCompiler</a></div><div class="ttdef"><b>Definition:</b> ShaderCompiler.h:32</div></div>
+<div class="ttc" id="astructez_string_view_htm"><div class="ttname"><a href="../../de/db8/structez_string_view.htm">ezStringView</a></div><div class="ttdoc">ezStringView represent a read-only sub-string of a larger string, as it can store a dedicated string ...</div><div class="ttdef"><b>Definition:</b> StringView.h:23</div></div>
 <div class="ttc" id="aclassez_hybrid_array_htm"><div class="ttname"><a href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray</a></div><div class="ttdoc">A hybrid array uses in-place storage to handle the first few elements without any allocation....</div><div class="ttdef"><b>Definition:</b> HybridArray.h:11</div></div>
 <div class="ttc" id="aclassez_string_builder_htm"><div class="ttname"><a href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a></div><div class="ttdoc">ezStringBuilder is a class that is meant for creating and modifying strings.</div><div class="ttdef"><b>Definition:</b> StringBuilder.h:34</div></div>
 <div class="ttc" id="aclassez_reflected_class_htm"><div class="ttname"><a href="../../db/d45/classez_reflected_class.htm">ezReflectedClass</a></div><div class="ttdoc">All classes that should be dynamically reflectable, need to be derived from this base class.</div><div class="ttdef"><b>Definition:</b> DynamicRTTI.h:77</div></div>
@@ -206,7 +205,7 @@ $(document).ready(function(){initNavTree('d1/dcd/_engine_2_renderer_core_2_shade
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_9b39d7517b28e8ee3dee1b9d862ddabb.htm">RendererCore</a></li><li class="navelem"><a class="el" href="../../dir_c40da1759cfbe57191cc3792b6cdceae.htm">ShaderCompiler</a></li><li class="navelem"><b>ShaderCompiler.h</b></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:21:59 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:20 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

@@ -2,9 +2,11 @@ var classez_bloom_pass =
 [
     [ "ezBloomPass", "df/df3/classez_bloom_pass.htm#a8df9f77f23bbe3a950e679a077a1fb6d", null ],
     [ "~ezBloomPass", "df/df3/classez_bloom_pass.htm#a8b5a88b248d7099ab0475170b79b83a5", null ],
+    [ "Deserialize", "df/df3/classez_bloom_pass.htm#a4aa6418e41eb6af060ec5a750ec0de8d", null ],
     [ "Execute", "df/df3/classez_bloom_pass.htm#a3c971ff3d51ffe1d5c24cb0f8f072434", null ],
     [ "ExecuteInactive", "df/df3/classez_bloom_pass.htm#a2777b3073d0d5926524a6df409631652", null ],
     [ "GetRenderTargetDescriptions", "df/df3/classez_bloom_pass.htm#a7be9aaaeab065844536685c8df829e0e", null ],
+    [ "Serialize", "df/df3/classez_bloom_pass.htm#ab84660792f4530c2390f03bb2e0138e5", null ],
     [ "UpdateConstantBuffer", "df/df3/classez_bloom_pass.htm#a2b2cdbde769ae7c476f6297c921d9475", null ],
     [ "m_fIntensity", "df/df3/classez_bloom_pass.htm#a4301123b3e0c6d6d8a6c4a6a7e41d053", null ],
     [ "m_fRadius", "df/df3/classez_bloom_pass.htm#ad1fd89665cf716e2a6e59c3493bd3d26", null ],

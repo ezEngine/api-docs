@@ -9,6 +9,7 @@ var classez_qt_asset_browser_widget =
     [ "ItemChosen", "db/d27/classez_qt_asset_browser_widget.htm#a765074b1c85ec00411a07ac66bc94268", null ],
     [ "ItemCleared", "db/d27/classez_qt_asset_browser_widget.htm#ac0a26ca02af19b52baedb0dda770fd82", null ],
     [ "ItemSelected", "db/d27/classez_qt_asset_browser_widget.htm#a639bc2d0ac8c23d70a90962947cc2f93", null ],
+    [ "keyPressEvent", "db/d27/classez_qt_asset_browser_widget.htm#ab993ae683e09126b839e3c94b6e26990", null ],
     [ "RestoreState", "db/d27/classez_qt_asset_browser_widget.htm#af0a663ce89f04f81d1d51df568e6fe15", null ],
     [ "SaveState", "db/d27/classez_qt_asset_browser_widget.htm#a4d1571095dc9d8897c00dea172c67378", null ],
     [ "SetDialogMode", "db/d27/classez_qt_asset_browser_widget.htm#ab15d367ab59f687d90debdeb22eb281b", null ],

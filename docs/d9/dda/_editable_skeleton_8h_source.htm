@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -117,146 +117,159 @@ $(document).ready(function(){initNavTree('d9/dda/_editable_skeleton_8h_source.ht
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <a class="code" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezSkeletonJointGeometryType&gt;</a> m_Geometry;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> m_vOffset = <a class="code" href="../../da/df1/classez_vec3_template.htm#add7061770113b1065f78a3cbad6b0a8b">ezVec3::ZeroVector</a>();</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <a class="code" href="../../de/d15/classez_quat_template.htm">ezQuat</a> m_qRotation = <a class="code" href="../../de/d15/classez_quat_template.htm#a694d84e2c4804573efcf5ae8623dc4c3">ezQuat::IdentityQuaternion</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> m_vOffset = <a class="code" href="../../da/df1/classez_vec3_template.htm#ad9bf0c48a691584e39d7aede05a5b904">ezVec3::MakeZero</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <a class="code" href="../../de/d15/classez_quat_template.htm">ezQuat</a> m_qRotation = <a class="code" href="../../de/d15/classez_quat_template.htm#a655d61a2f2c0bd1e8a1d71c4e2697301">ezQuat::MakeIdentity</a>();</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordtype">float</span> m_fLength = 0;    <span class="comment">// Box, Capsule; 0 means parent joint to this joint (auto mode)</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordtype">float</span> m_fWidth = 0;     <span class="comment">// Box</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordtype">float</span> m_fThickness = 0; <span class="comment">// Sphere radius, Capsule radius</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordtype">bool</span> m_bOverrideName = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keywordtype">bool</span> m_bOverrideSurface = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordtype">bool</span> m_bOverrideCollisionLayer = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sNameOverride;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sSurfaceOverride;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  ezUInt8 m_uiCollisionLayerOverride;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;};</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="../../d4/d8e/classez_editable_skeleton_joint.htm">   47</a></span>&#160;<span class="keyword">class </span>EZ_RENDERERCORE_DLL <a class="code" href="../../d4/d8e/classez_editable_skeleton_joint.htm">ezEditableSkeletonJoint</a> : <span class="keyword">public</span> <a class="code" href="../../db/d45/classez_reflected_class.htm">ezReflectedClass</a></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;{</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  EZ_ADD_DYNAMIC_REFLECTION(<a class="code" href="../../d4/d8e/classez_editable_skeleton_joint.htm">ezEditableSkeletonJoint</a>, <a class="code" href="../../db/d45/classez_reflected_class.htm">ezReflectedClass</a>);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="../../d4/d8e/classez_editable_skeleton_joint.htm">ezEditableSkeletonJoint</a>();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  ~<a class="code" href="../../d4/d8e/classez_editable_skeleton_joint.htm">ezEditableSkeletonJoint</a>();</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* GetName() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordtype">void</span> SetName(<span class="keyword">const</span> <span class="keywordtype">char</span>* szSz);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordtype">void</span> ClearJoints();</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="comment">// copies the properties for geometry etc. from another joint</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="comment">// does NOT copy the name, the transform or the children</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordtype">void</span> CopyPropertiesFrom(<span class="keyword">const</span> <a class="code" href="../../d4/d8e/classez_editable_skeleton_joint.htm">ezEditableSkeletonJoint</a>* pJoint);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <a class="code" href="../../de/dce/classez_hashed_string.htm">ezHashedString</a> m_sName;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <a class="code" href="../../d3/db1/classez_transform_template.htm">ezTransform</a> m_LocalTransform = <a class="code" href="../../d3/db1/classez_transform_template.htm#a43e9da3ac54c729e7920bc3b6b880562">ezTransform::IdentityTransform</a>();</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordtype">bool</span> m_bLimitTwist = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordtype">bool</span> m_bLimitSwing = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;};</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="../../d0/d68/structez_editable_skeleton_bone_collider.htm">   39</a></span>&#160;<span class="keyword">struct </span>EZ_RENDERERCORE_DLL <a class="code" href="../../d0/d68/structez_editable_skeleton_bone_collider.htm">ezEditableSkeletonBoneCollider</a> : <span class="keyword">public</span> <a class="code" href="../../db/d45/classez_reflected_class.htm">ezReflectedClass</a></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  EZ_ADD_DYNAMIC_REFLECTION(<a class="code" href="../../d0/d68/structez_editable_skeleton_bone_collider.htm">ezEditableSkeletonBoneCollider</a>, <a class="code" href="../../db/d45/classez_reflected_class.htm">ezReflectedClass</a>);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sIdentifier;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezVec3&gt;</a> m_VertexPositions;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezUInt8&gt;</a> m_TriangleIndices;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;};</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="../../d4/d8e/classez_editable_skeleton_joint.htm">   48</a></span>&#160;<span class="keyword">class </span>EZ_RENDERERCORE_DLL <a class="code" href="../../d4/d8e/classez_editable_skeleton_joint.htm">ezEditableSkeletonJoint</a> : <span class="keyword">public</span> <a class="code" href="../../db/d45/classez_reflected_class.htm">ezReflectedClass</a></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  EZ_ADD_DYNAMIC_REFLECTION(<a class="code" href="../../d4/d8e/classez_editable_skeleton_joint.htm">ezEditableSkeletonJoint</a>, <a class="code" href="../../db/d45/classez_reflected_class.htm">ezReflectedClass</a>);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="../../d4/d8e/classez_editable_skeleton_joint.htm">ezEditableSkeletonJoint</a>();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  ~<a class="code" href="../../d4/d8e/classez_editable_skeleton_joint.htm">ezEditableSkeletonJoint</a>();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* GetName() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordtype">void</span> SetName(<span class="keyword">const</span> <span class="keywordtype">char</span>* szSz);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordtype">void</span> ClearJoints();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="comment">// copies the properties for geometry etc. from another joint</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="comment">// does NOT copy the name, the transform or the children</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordtype">void</span> CopyPropertiesFrom(<span class="keyword">const</span> <a class="code" href="../../d4/d8e/classez_editable_skeleton_joint.htm">ezEditableSkeletonJoint</a>* pJoint);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <a class="code" href="../../de/dce/classez_hashed_string.htm">ezHashedString</a> m_sName;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <a class="code" href="../../d3/db1/classez_transform_template.htm">ezTransform</a> m_LocalTransform = <a class="code" href="../../d3/db1/classez_transform_template.htm#a097bfb7a7c048011a677dde51015c9e2">ezTransform::MakeIdentity</a>();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <a class="code" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezSkeletonJointType&gt;</a> m_JointType;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> m_TwistLimitHalfAngle;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> m_TwistLimitCenterAngle;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> m_SwingLimitY;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> m_SwingLimitZ;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> m_vGizmoOffsetPositionRO = <a class="code" href="../../da/df1/classez_vec3_template.htm#add7061770113b1065f78a3cbad6b0a8b">ezVec3::ZeroVector</a>();</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <a class="code" href="../../de/d15/classez_quat_template.htm">ezQuat</a> m_qGizmoOffsetRotationRO = <a class="code" href="../../de/d15/classez_quat_template.htm#a694d84e2c4804573efcf5ae8623dc4c3">ezQuat::IdentityQuaternion</a>();</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <a class="code" href="../../de/d15/classez_quat_template.htm">ezQuat</a> m_qLocalJointRotation = <a class="code" href="../../de/d15/classez_quat_template.htm#a694d84e2c4804573efcf5ae8623dc4c3">ezQuat::IdentityQuaternion</a>();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordtype">float</span> m_fStiffness = 0.0f;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> m_TwistLimitHalfAngle;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> m_TwistLimitCenterAngle;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> m_SwingLimitY;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> m_SwingLimitZ;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> m_vGizmoOffsetPositionRO = <a class="code" href="../../da/df1/classez_vec3_template.htm#ad9bf0c48a691584e39d7aede05a5b904">ezVec3::MakeZero</a>();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <a class="code" href="../../de/d15/classez_quat_template.htm">ezQuat</a> m_qGizmoOffsetRotationRO = <a class="code" href="../../de/d15/classez_quat_template.htm#a655d61a2f2c0bd1e8a1d71c4e2697301">ezQuat::MakeIdentity</a>();</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezEditableSkeletonJoint*, 4&gt;</a> m_Children;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezEditableSkeletonBoneShape, 1&gt;</a> m_BoneShapes;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;};</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="../../d5/d83/classez_editable_skeleton.htm">   84</a></span>&#160;<span class="keyword">class </span>EZ_RENDERERCORE_DLL <a class="code" href="../../d5/d83/classez_editable_skeleton.htm">ezEditableSkeleton</a> : <span class="keyword">public</span> <a class="code" href="../../db/d45/classez_reflected_class.htm">ezReflectedClass</a></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;{</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  EZ_ADD_DYNAMIC_REFLECTION(<a class="code" href="../../d5/d83/classez_editable_skeleton.htm">ezEditableSkeleton</a>, <a class="code" href="../../db/d45/classez_reflected_class.htm">ezReflectedClass</a>);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <a class="code" href="../../d5/d83/classez_editable_skeleton.htm">ezEditableSkeleton</a>();</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  ~<a class="code" href="../../d5/d83/classez_editable_skeleton.htm">ezEditableSkeleton</a>();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <a class="code" href="../../de/d15/classez_quat_template.htm">ezQuat</a> m_qLocalJointRotation = <a class="code" href="../../de/d15/classez_quat_template.htm#a655d61a2f2c0bd1e8a1d71c4e2697301">ezQuat::MakeIdentity</a>();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezEditableSkeletonJoint*, 4&gt;</a> m_Children;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezEditableSkeletonBoneShape, 1&gt;</a> m_BoneShapes;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezEditableSkeletonBoneCollider&gt;</a> m_BoneColliders;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keywordtype">bool</span> m_bOverrideSurface = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keywordtype">bool</span> m_bOverrideCollisionLayer = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sSurfaceOverride;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  ezUInt8 m_uiCollisionLayerOverride;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;};</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keywordtype">void</span> ClearJoints();</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keywordtype">void</span> FillResourceDescriptor(<a class="code" href="../../db/d22/structez_skeleton_resource_descriptor.htm">ezSkeletonResourceDescriptor</a>&amp; ref_desc) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keywordtype">void</span> GenerateRawOzzSkeleton(ozz::animation::offline::RawSkeleton&amp; out_skeleton) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keywordtype">void</span> GenerateOzzSkeleton(ozz::animation::Skeleton&amp; out_skeleton) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <span class="keywordtype">void</span> CreateJointsRecursive(<a class="code" href="../../d1/d87/classez_skeleton_builder.htm">ezSkeletonBuilder</a>&amp; ref_sb, <a class="code" href="../../db/d22/structez_skeleton_resource_descriptor.htm">ezSkeletonResourceDescriptor</a>&amp; ref_desc, <span class="keyword">const</span> <a class="code" href="../../d4/d8e/classez_editable_skeleton_joint.htm">ezEditableSkeletonJoint</a>* pParentJoint, <span class="keyword">const</span> <a class="code" href="../../d4/d8e/classez_editable_skeleton_joint.htm">ezEditableSkeletonJoint</a>* pThisJoint, ezUInt16 uiThisJointIdx, <span class="keyword">const</span> <a class="code" href="../../de/d15/classez_quat_template.htm">ezQuat</a>&amp; qParentAccuRot, <span class="keyword">const</span> <a class="code" href="../../d7/d9b/classez_mat4_template.htm">ezMat4</a>&amp; mRootTransform) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sSourceFile;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sSurfaceFile;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  ezUInt8 m_uiCollisionLayer = 0;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keywordtype">float</span> m_fUniformScaling = 1.0f;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <a class="code" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezBasisAxis&gt;</a> m_RightDir;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <a class="code" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezBasisAxis&gt;</a> m_UpDir;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="keywordtype">bool</span> m_bFlipForwardDir = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <a class="code" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezBasisAxis&gt;</a> m_BoneDirection;</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="../../d5/d83/classez_editable_skeleton.htm">   92</a></span>&#160;<span class="keyword">class </span>EZ_RENDERERCORE_DLL <a class="code" href="../../d5/d83/classez_editable_skeleton.htm">ezEditableSkeleton</a> : <span class="keyword">public</span> <a class="code" href="../../db/d45/classez_reflected_class.htm">ezReflectedClass</a></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;{</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  EZ_ADD_DYNAMIC_REFLECTION(<a class="code" href="../../d5/d83/classez_editable_skeleton.htm">ezEditableSkeleton</a>, <a class="code" href="../../db/d45/classez_reflected_class.htm">ezReflectedClass</a>);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <a class="code" href="../../d5/d83/classez_editable_skeleton.htm">ezEditableSkeleton</a>();</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  ~<a class="code" href="../../d5/d83/classez_editable_skeleton.htm">ezEditableSkeleton</a>();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keywordtype">void</span> ClearJoints();</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="keywordtype">void</span> FillResourceDescriptor(<a class="code" href="../../db/d22/structez_skeleton_resource_descriptor.htm">ezSkeletonResourceDescriptor</a>&amp; ref_desc) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keywordtype">void</span> GenerateRawOzzSkeleton(ozz::animation::offline::RawSkeleton&amp; out_skeleton) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <span class="keywordtype">void</span> GenerateOzzSkeleton(ozz::animation::Skeleton&amp; out_skeleton) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="keywordtype">void</span> CreateJointsRecursive(<a class="code" href="../../d1/d87/classez_skeleton_builder.htm">ezSkeletonBuilder</a>&amp; ref_sb, <a class="code" href="../../db/d22/structez_skeleton_resource_descriptor.htm">ezSkeletonResourceDescriptor</a>&amp; ref_desc, <span class="keyword">const</span> <a class="code" href="../../d4/d8e/classez_editable_skeleton_joint.htm">ezEditableSkeletonJoint</a>* pParentJoint, <span class="keyword">const</span> <a class="code" href="../../d4/d8e/classez_editable_skeleton_joint.htm">ezEditableSkeletonJoint</a>* pThisJoint, ezUInt16 uiThisJointIdx, <span class="keyword">const</span> <a class="code" href="../../de/d15/classez_quat_template.htm">ezQuat</a>&amp; qParentAccuRot, <span class="keyword">const</span> <a class="code" href="../../d7/d9b/classez_mat4_template.htm">ezMat4</a>&amp; mRootTransform) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sSourceFile;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sPreviewMesh;</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezEditableSkeletonJoint*, 4&gt;</a> m_Children;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;};</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sSurfaceFile;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  ezUInt8 m_uiCollisionLayer = 0;</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="../../d8/db1/structez_exposed_bone.htm">  112</a></span>&#160;<span class="keyword">struct </span>EZ_RENDERERCORE_DLL <a class="code" href="../../d8/db1/structez_exposed_bone.htm">ezExposedBone</a></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;{</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sName;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sParent;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <a class="code" href="../../d3/db1/classez_transform_template.htm">ezTransform</a> m_Transform;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <span class="comment">// when adding new values, the hash function below has to be adjusted</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;};</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <span class="keywordtype">float</span> m_fUniformScaling = 1.0f;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <span class="keywordtype">float</span> m_fMaxImpulse = 100.0f;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <a class="code" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezBasisAxis&gt;</a> m_RightDir;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <a class="code" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezBasisAxis&gt;</a> m_UpDir;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <span class="keywordtype">bool</span> m_bFlipForwardDir = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <a class="code" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezBasisAxis&gt;</a> m_BoneDirection;</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;EZ_DECLARE_CUSTOM_VARIANT_TYPE(<a class="code" href="../../d8/db1/structez_exposed_bone.htm">ezExposedBone</a>);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;EZ_RENDERERCORE_DLL <span class="keywordtype">void</span> operator&lt;&lt;(<a class="code" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a>&amp; inout_stream, <span class="keyword">const</span> <a class="code" href="../../d8/db1/structez_exposed_bone.htm">ezExposedBone</a>&amp; bone);</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;EZ_RENDERERCORE_DLL <span class="keywordtype">void</span> operator&gt;&gt;(<a class="code" href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a>&amp; inout_stream, <a class="code" href="../../d8/db1/structez_exposed_bone.htm">ezExposedBone</a>&amp; ref_bone);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;EZ_RENDERERCORE_DLL <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code" href="../../d8/db1/structez_exposed_bone.htm">ezExposedBone</a>&amp; lhs, <span class="keyword">const</span> <a class="code" href="../../d8/db1/structez_exposed_bone.htm">ezExposedBone</a>&amp; rhs);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="keyword">template</span> &lt;&gt;</div>
-<div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="../../d2/db9/structez_hash_helper_3_01ez_exposed_bone_01_4.htm">  127</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../dc/d65/structez_hash_helper.htm">ezHashHelper</a>&lt;<a class="code" href="../../d8/db1/structez_exposed_bone.htm">ezExposedBone</a>&gt;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;{</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  EZ_ALWAYS_INLINE <span class="keyword">static</span> ezUInt32 Hash(<span class="keyword">const</span> <a class="code" href="../../d8/db1/structez_exposed_bone.htm">ezExposedBone</a>&amp; value)</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  {</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../dd/dd0/classez_hashing_utils.htm#a599ab11dcb317148f81d0bd6ba2e92a5">ezHashingUtils::xxHash32String</a>(value.m_sName) + <a class="code" href="../../dd/dd0/classez_hashing_utils.htm#a599ab11dcb317148f81d0bd6ba2e92a5">ezHashingUtils::xxHash32String</a>(value.m_sParent) + <a class="code" href="../../dd/dd0/classez_hashing_utils.htm#a5c65d83450f2edff74c18d5b4f894ec8">ezHashingUtils::xxHash32</a>(&amp;value, <span class="keyword">sizeof</span>(<a class="code" href="../../d3/db1/classez_transform_template.htm">ezTransform</a>));</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  }</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  EZ_ALWAYS_INLINE <span class="keyword">static</span> <span class="keywordtype">bool</span> Equal(<span class="keyword">const</span> <a class="code" href="../../d8/db1/structez_exposed_bone.htm">ezExposedBone</a>&amp; a, <span class="keyword">const</span> <a class="code" href="../../d8/db1/structez_exposed_bone.htm">ezExposedBone</a>&amp; b) { <span class="keywordflow">return</span> a == b; }</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;};</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezEditableSkeletonJoint*, 4&gt;</a> m_Children;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;};</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="../../d8/db1/structez_exposed_bone.htm">  123</a></span>&#160;<span class="keyword">struct </span>EZ_RENDERERCORE_DLL <a class="code" href="../../d8/db1/structez_exposed_bone.htm">ezExposedBone</a></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;{</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sName;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sParent;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <a class="code" href="../../d3/db1/classez_transform_template.htm">ezTransform</a> m_Transform;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <span class="comment">// when adding new values, the hash function below has to be adjusted</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;};</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;EZ_DECLARE_CUSTOM_VARIANT_TYPE(<a class="code" href="../../d8/db1/structez_exposed_bone.htm">ezExposedBone</a>);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;EZ_RENDERERCORE_DLL <span class="keywordtype">void</span> operator&lt;&lt;(<a class="code" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a>&amp; inout_stream, <span class="keyword">const</span> <a class="code" href="../../d8/db1/structez_exposed_bone.htm">ezExposedBone</a>&amp; bone);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;EZ_RENDERERCORE_DLL <span class="keywordtype">void</span> operator&gt;&gt;(<a class="code" href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a>&amp; inout_stream, <a class="code" href="../../d8/db1/structez_exposed_bone.htm">ezExposedBone</a>&amp; ref_bone);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;EZ_RENDERERCORE_DLL <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code" href="../../d8/db1/structez_exposed_bone.htm">ezExposedBone</a>&amp; lhs, <span class="keyword">const</span> <a class="code" href="../../d8/db1/structez_exposed_bone.htm">ezExposedBone</a>&amp; rhs);</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;EZ_DECLARE_REFLECTABLE_TYPE(EZ_RENDERERCORE_DLL, <a class="code" href="../../d8/db1/structez_exposed_bone.htm">ezExposedBone</a>);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="keyword">template</span> &lt;&gt;</div>
+<div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="../../d2/db9/structez_hash_helper_3_01ez_exposed_bone_01_4.htm">  138</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../dc/d65/structez_hash_helper.htm">ezHashHelper</a>&lt;<a class="code" href="../../d8/db1/structez_exposed_bone.htm">ezExposedBone</a>&gt;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;{</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  EZ_ALWAYS_INLINE <span class="keyword">static</span> ezUInt32 Hash(<span class="keyword">const</span> <a class="code" href="../../d8/db1/structez_exposed_bone.htm">ezExposedBone</a>&amp; value)</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  {</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../dd/dd0/classez_hashing_utils.htm#a599ab11dcb317148f81d0bd6ba2e92a5">ezHashingUtils::xxHash32String</a>(value.m_sName) + <a class="code" href="../../dd/dd0/classez_hashing_utils.htm#a599ab11dcb317148f81d0bd6ba2e92a5">ezHashingUtils::xxHash32String</a>(value.m_sParent) + <a class="code" href="../../dd/dd0/classez_hashing_utils.htm#a5c65d83450f2edff74c18d5b4f894ec8">ezHashingUtils::xxHash32</a>(&amp;value, <span class="keyword">sizeof</span>(<a class="code" href="../../d3/db1/classez_transform_template.htm">ezTransform</a>));</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  }</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  EZ_ALWAYS_INLINE <span class="keyword">static</span> <span class="keywordtype">bool</span> Equal(<span class="keyword">const</span> <a class="code" href="../../d8/db1/structez_exposed_bone.htm">ezExposedBone</a>&amp; a, <span class="keyword">const</span> <a class="code" href="../../d8/db1/structez_exposed_bone.htm">ezExposedBone</a>&amp; b) { <span class="keywordflow">return</span> a == b; }</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;};</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;EZ_DECLARE_REFLECTABLE_TYPE(EZ_RENDERERCORE_DLL, <a class="code" href="../../d8/db1/structez_exposed_bone.htm">ezExposedBone</a>);</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_stream_writer_htm"><div class="ttname"><a href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a></div><div class="ttdoc">Interface for binary out (write) streams.</div><div class="ttdef"><b>Definition:</b> Stream.h:106</div></div>
+<div class="ttc" id="aclassez_transform_template_htm_a097bfb7a7c048011a677dde51015c9e2"><div class="ttname"><a href="../../d3/db1/classez_transform_template.htm#a097bfb7a7c048011a677dde51015c9e2">ezTransformTemplate::MakeIdentity</a></div><div class="ttdeci">static ezTransformTemplate&lt; Type &gt; MakeIdentity()</div><div class="ttdoc">Creates an identity transform.</div><div class="ttdef"><b>Definition:</b> Transform_inl.h:25</div></div>
 <div class="ttc" id="aclassez_stream_reader_htm"><div class="ttname"><a href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a></div><div class="ttdoc">Interface for binary in (read) streams.</div><div class="ttdef"><b>Definition:</b> Stream.h:21</div></div>
 <div class="ttc" id="aclassez_hashing_utils_htm_a599ab11dcb317148f81d0bd6ba2e92a5"><div class="ttname"><a href="../../dd/dd0/classez_hashing_utils.htm#a599ab11dcb317148f81d0bd6ba2e92a5">ezHashingUtils::xxHash32String</a></div><div class="ttdeci">constexpr static ezUInt32 xxHash32String(const char(&amp;str)[N], ezUInt32 uiSeed=0)</div><div class="ttdoc">Calculates the 32bit xxHash of the given string literal at compile time.</div></div>
-<div class="ttc" id="aclassez_editable_skeleton_joint_htm"><div class="ttname"><a href="../../d4/d8e/classez_editable_skeleton_joint.htm">ezEditableSkeletonJoint</a></div><div class="ttdef"><b>Definition:</b> EditableSkeleton.h:47</div></div>
+<div class="ttc" id="aclassez_editable_skeleton_joint_htm"><div class="ttname"><a href="../../d4/d8e/classez_editable_skeleton_joint.htm">ezEditableSkeletonJoint</a></div><div class="ttdef"><b>Definition:</b> EditableSkeleton.h:48</div></div>
+<div class="ttc" id="aclassez_quat_template_htm_a655d61a2f2c0bd1e8a1d71c4e2697301"><div class="ttname"><a href="../../de/d15/classez_quat_template.htm#a655d61a2f2c0bd1e8a1d71c4e2697301">ezQuatTemplate&lt; float &gt;::MakeIdentity</a></div><div class="ttdeci">static const ezQuatTemplate&lt; float &gt; MakeIdentity()</div><div class="ttdoc">Static function that returns a quaternion that represents the identity rotation (none).</div><div class="ttdef"><b>Definition:</b> Quat_inl.h:29</div></div>
 <div class="ttc" id="aclassez_hashing_utils_htm_a5c65d83450f2edff74c18d5b4f894ec8"><div class="ttname"><a href="../../dd/dd0/classez_hashing_utils.htm#a5c65d83450f2edff74c18d5b4f894ec8">ezHashingUtils::xxHash32</a></div><div class="ttdeci">static ezUInt32 xxHash32(const void *pKey, size_t uiSizeInByte, ezUInt32 uiSeed=0)</div><div class="ttdoc">Calculates the 32bit xxHash of the given key.</div><div class="ttdef"><b>Definition:</b> HashingUtils.cpp:204</div></div>
-<div class="ttc" id="astructez_skeleton_resource_descriptor_htm"><div class="ttname"><a href="../../db/d22/structez_skeleton_resource_descriptor.htm">ezSkeletonResourceDescriptor</a></div><div class="ttdef"><b>Definition:</b> SkeletonResource.h:22</div></div>
-<div class="ttc" id="aclassez_transform_template_htm_a43e9da3ac54c729e7920bc3b6b880562"><div class="ttname"><a href="../../d3/db1/classez_transform_template.htm#a43e9da3ac54c729e7920bc3b6b880562">ezTransformTemplate&lt; float &gt;::IdentityTransform</a></div><div class="ttdeci">static const ezTransformTemplate&lt; float &gt; IdentityTransform()</div><div class="ttdoc">Returns an Identity Transform.</div><div class="ttdef"><b>Definition:</b> Transform_inl.h:34</div></div>
+<div class="ttc" id="astructez_skeleton_resource_descriptor_htm"><div class="ttname"><a href="../../db/d22/structez_skeleton_resource_descriptor.htm">ezSkeletonResourceDescriptor</a></div><div class="ttdef"><b>Definition:</b> SkeletonResource.h:23</div></div>
 <div class="ttc" id="astructez_hash_helper_htm"><div class="ttname"><a href="../../dc/d65/structez_hash_helper.htm">ezHashHelper</a></div><div class="ttdoc">Helper struct to calculate the Hash of different types.</div><div class="ttdef"><b>Definition:</b> HashingUtils.h:74</div></div>
 <div class="ttc" id="astructez_hybrid_string_htm"><div class="ttname"><a href="../../d4/d53/structez_hybrid_string.htm">ezHybridString&lt; 32, ezDefaultAllocatorWrapper &gt;</a></div></div>
 <div class="ttc" id="aclassez_skeleton_builder_htm"><div class="ttname"><a href="../../d1/d87/classez_skeleton_builder.htm">ezSkeletonBuilder</a></div><div class="ttdoc">The skeleton builder class provides the means to build skeleton instances from scratch....</div><div class="ttdef"><b>Definition:</b> SkeletonBuilder.h:9</div></div>
-<div class="ttc" id="aclassez_quat_template_htm_a694d84e2c4804573efcf5ae8623dc4c3"><div class="ttname"><a href="../../de/d15/classez_quat_template.htm#a694d84e2c4804573efcf5ae8623dc4c3">ezQuatTemplate::IdentityQuaternion</a></div><div class="ttdeci">static const ezQuatTemplate&lt; Type &gt; IdentityQuaternion()</div><div class="ttdoc">Static function that returns a quaternion that represents the identity rotation (none).</div><div class="ttdef"><b>Definition:</b> Quat_inl.h:24</div></div>
 <div class="ttc" id="aclassez_mat4_template_htm"><div class="ttname"><a href="../../d7/d9b/classez_mat4_template.htm">ezMat4Template&lt; float &gt;</a></div></div>
 <div class="ttc" id="aclassez_angle_htm"><div class="ttname"><a href="../../db/d6f/classez_angle.htm">ezAngle</a></div><div class="ttdoc">Float wrapper struct for a safe usage and conversions of angles.</div><div class="ttdef"><b>Definition:</b> Angle.h:9</div></div>
-<div class="ttc" id="astructez_exposed_bone_htm"><div class="ttname"><a href="../../d8/db1/structez_exposed_bone.htm">ezExposedBone</a></div><div class="ttdef"><b>Definition:</b> EditableSkeleton.h:112</div></div>
-<div class="ttc" id="aclassez_skeleton_htm"><div class="ttname"><a href="../../db/df5/classez_skeleton.htm">ezSkeleton</a></div><div class="ttdoc">The skeleton class encapsulates the information about the joint structure for a model.</div><div class="ttdef"><b>Definition:</b> Skeleton.h:60</div></div>
+<div class="ttc" id="aclassez_dynamic_array_htm"><div class="ttname"><a href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray</a></div><div class="ttdef"><b>Definition:</b> DynamicArray.h:80</div></div>
+<div class="ttc" id="astructez_exposed_bone_htm"><div class="ttname"><a href="../../d8/db1/structez_exposed_bone.htm">ezExposedBone</a></div><div class="ttdef"><b>Definition:</b> EditableSkeleton.h:123</div></div>
+<div class="ttc" id="aclassez_skeleton_htm"><div class="ttname"><a href="../../db/df5/classez_skeleton.htm">ezSkeleton</a></div><div class="ttdoc">The skeleton class encapsulates the information about the joint structure for a model.</div><div class="ttdef"><b>Definition:</b> Skeleton.h:74</div></div>
 <div class="ttc" id="astructez_enum_htm"><div class="ttname"><a href="../../d6/dd9/structez_enum.htm">ezEnum&lt; ezSkeletonJointGeometryType &gt;</a></div></div>
 <div class="ttc" id="astructez_editable_skeleton_bone_shape_htm"><div class="ttname"><a href="../../d6/dc2/structez_editable_skeleton_bone_shape.htm">ezEditableSkeletonBoneShape</a></div><div class="ttdef"><b>Definition:</b> EditableSkeleton.h:25</div></div>
 <div class="ttc" id="aclassez_quat_template_htm"><div class="ttname"><a href="../../de/d15/classez_quat_template.htm">ezQuatTemplate&lt; float &gt;</a></div></div>
-<div class="ttc" id="aclassez_vec3_template_htm_add7061770113b1065f78a3cbad6b0a8b"><div class="ttname"><a href="../../da/df1/classez_vec3_template.htm#add7061770113b1065f78a3cbad6b0a8b">ezVec3Template::ZeroVector</a></div><div class="ttdeci">static ezVec3Template&lt; Type &gt; ZeroVector()</div><div class="ttdoc">Returns a vector with all components set to zero.</div><div class="ttdef"><b>Definition:</b> Vec3.h:33</div></div>
 <div class="ttc" id="astructez_skeleton_joint_geometry_type_htm"><div class="ttname"><a href="../../df/dd3/structez_skeleton_joint_geometry_type.htm">ezSkeletonJointGeometryType</a></div><div class="ttdef"><b>Definition:</b> Declarations.h:23</div></div>
 <div class="ttc" id="aclassez_hashed_string_htm"><div class="ttname"><a href="../../de/dce/classez_hashed_string.htm">ezHashedString</a></div><div class="ttdoc">This class is optimized to take nearly no memory (sizeof(void*)) and to allow very fast checks whethe...</div><div class="ttdef"><b>Definition:</b> HashedString.h:24</div></div>
 <div class="ttc" id="aclassez_hybrid_array_htm"><div class="ttname"><a href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt; ezEditableSkeletonJoint *, 4 &gt;</a></div></div>
+<div class="ttc" id="astructez_editable_skeleton_bone_collider_htm"><div class="ttname"><a href="../../d0/d68/structez_editable_skeleton_bone_collider.htm">ezEditableSkeletonBoneCollider</a></div><div class="ttdef"><b>Definition:</b> EditableSkeleton.h:39</div></div>
 <div class="ttc" id="aclassez_reflected_class_htm"><div class="ttname"><a href="../../db/d45/classez_reflected_class.htm">ezReflectedClass</a></div><div class="ttdoc">All classes that should be dynamically reflectable, need to be derived from this base class.</div><div class="ttdef"><b>Definition:</b> DynamicRTTI.h:77</div></div>
 <div class="ttc" id="aclassez_transform_template_htm"><div class="ttname"><a href="../../d3/db1/classez_transform_template.htm">ezTransformTemplate&lt; float &gt;</a></div></div>
-<div class="ttc" id="aclassez_editable_skeleton_htm"><div class="ttname"><a href="../../d5/d83/classez_editable_skeleton.htm">ezEditableSkeleton</a></div><div class="ttdef"><b>Definition:</b> EditableSkeleton.h:84</div></div>
+<div class="ttc" id="aclassez_vec3_template_htm_ad9bf0c48a691584e39d7aede05a5b904"><div class="ttname"><a href="../../da/df1/classez_vec3_template.htm#ad9bf0c48a691584e39d7aede05a5b904">ezVec3Template&lt; float &gt;::MakeZero</a></div><div class="ttdeci">static ezVec3Template&lt; float &gt; MakeZero()</div><div class="ttdoc">Returns a vector with all components set to zero.</div><div class="ttdef"><b>Definition:</b> Vec3.h:37</div></div>
+<div class="ttc" id="aclassez_editable_skeleton_htm"><div class="ttname"><a href="../../d5/d83/classez_editable_skeleton.htm">ezEditableSkeleton</a></div><div class="ttdef"><b>Definition:</b> EditableSkeleton.h:92</div></div>
 <div class="ttc" id="aclassez_vec3_template_htm"><div class="ttname"><a href="../../da/df1/classez_vec3_template.htm">ezVec3Template&lt; float &gt;</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_9b39d7517b28e8ee3dee1b9d862ddabb.htm">RendererCore</a></li><li class="navelem"><a class="el" href="../../dir_77db471eb2b64e2aaad44708419e1af7.htm">AnimationSystem</a></li><li class="navelem"><b>EditableSkeleton.h</b></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:21:58 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:20 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

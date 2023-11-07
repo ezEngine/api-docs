@@ -11,13 +11,13 @@ var classez_command_line_option =
       [ "Always", "db/d9d/classez_command_line_option.htm#a40d309c9de7fc4214d3eac5101f4cecaa68eec46437c384d8dad18d5464ebc35c", null ],
       [ "AlwaysIfSpecified", "db/d9d/classez_command_line_option.htm#a40d309c9de7fc4214d3eac5101f4cecaa1644dc20516cb1b423acc5b7cac81bcf", null ]
     ] ],
-    [ "ezCommandLineOption", "db/d9d/classez_command_line_option.htm#aad6023e8561e7ad23c5e0408b3d18e30", null ],
+    [ "ezCommandLineOption", "db/d9d/classez_command_line_option.htm#a2de52969617a8ebdf20eb4d7d4962a4f", null ],
     [ "GetLongDesc", "db/d9d/classez_command_line_option.htm#af660bb7c226624645f9d87775606403e", null ],
     [ "GetOptions", "db/d9d/classez_command_line_option.htm#a67f714973c3b77fbf8765ce0ea565d4a", null ],
     [ "GetParamDefaultValueDesc", "db/d9d/classez_command_line_option.htm#ad331a796fef7f7c7b54af11352686d35", null ],
     [ "GetParamShortDesc", "db/d9d/classez_command_line_option.htm#ad66d456dd9cd6917067ab2643beee8bb", null ],
     [ "GetSortingGroup", "db/d9d/classez_command_line_option.htm#a70c87a77129eabf7dcf331b13cd9d430", null ],
     [ "GetSplitOptions", "db/d9d/classez_command_line_option.htm#a71b04c57cf00feeec91e65ce0c055990", null ],
-    [ "GetType", "db/d9d/classez_command_line_option.htm#aa89a2a84028c9e115cadc5f79b6e137a", null ],
-    [ "m_szSortingGroup", "db/d9d/classez_command_line_option.htm#a979c7a9c832efc2d1c83b73c97c00611", null ]
+    [ "GetType", "db/d9d/classez_command_line_option.htm#a13b481feb7f28d9e13b9d2fd4d4a772d", null ],
+    [ "m_sSortingGroup", "db/d9d/classez_command_line_option.htm#a4ea5d234374860d428a193bdff30a5a6", null ]
 ];

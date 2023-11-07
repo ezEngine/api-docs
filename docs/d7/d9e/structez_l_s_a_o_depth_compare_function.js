@@ -1,6 +1,6 @@
 var structez_l_s_a_o_depth_compare_function =
 [
-    [ "StorageType", "d7/d9e/structez_l_s_a_o_depth_compare_function.htm#a8bf78faed817904fbe204404459ad78e", null ],
+    [ "StorageType", "d7/d9e/structez_l_s_a_o_depth_compare_function.htm#ac61a085b7ef603ddb769e31175de8274", null ],
     [ "Enum", "d7/d9e/structez_l_s_a_o_depth_compare_function.htm#a3b38e16ffb7ff05596bab3980e2f44b1", [
       [ "Depth", "d7/d9e/structez_l_s_a_o_depth_compare_function.htm#a3b38e16ffb7ff05596bab3980e2f44b1a4424cfb9cf965bba2ffaf1e795d1b768", null ],
       [ "Normal", "d7/d9e/structez_l_s_a_o_depth_compare_function.htm#a3b38e16ffb7ff05596bab3980e2f44b1a78dbc2ddd16e504602c4e68b01e4c5fe", null ],

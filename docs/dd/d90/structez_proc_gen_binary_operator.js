@@ -1,6 +1,6 @@
 var structez_proc_gen_binary_operator =
 [
-    [ "StorageType", "dd/d90/structez_proc_gen_binary_operator.htm#a5d61710ba33656b9eebf2c0abd6ab8f2", null ],
+    [ "StorageType", "dd/d90/structez_proc_gen_binary_operator.htm#a8ca03d007162943832bfc55fb540e185", null ],
     [ "Enum", "dd/d90/structez_proc_gen_binary_operator.htm#a577f0ac899608ac50859d4889f354912", [
       [ "Add", "dd/d90/structez_proc_gen_binary_operator.htm#a577f0ac899608ac50859d4889f354912a32de4350c95ea24e583366f41c577dc2", null ],
       [ "Subtract", "dd/d90/structez_proc_gen_binary_operator.htm#a577f0ac899608ac50859d4889f354912a01c28eec97e2afa8ec8faca76b7d0def", null ],

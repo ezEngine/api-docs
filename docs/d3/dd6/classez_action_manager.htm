@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -92,6 +92,11 @@ $(document).ready(function(){initNavTree('d3/dd6/classez_action_manager.htm','..
 <div class="title">ezActionManager Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Stores 'actions' (things that can be triggered from UI).  
+ <a href="../../d3/dd6/classez_action_manager.htm#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d7/dfa/_action_manager_8h_source.htm">ActionManager.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -135,7 +140,12 @@ Static Public Attributes</h2></td></tr>
 static <a class="el" href="../../d0/daf/classez_event.htm">ezEvent</a>&lt; const <a class="el" href="../../d1/d3a/structez_action_manager_1_1_event.htm">Event</a> &amp; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>s_Events</b></td></tr>
 <tr class="separator:a24b62d58f5b74d4320876756b4b80b92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Stores 'actions' (things that can be triggered from UI). </p>
+<p>Actions are usually represented by a button in a toolbar, or a menu entry. Actions are unique across the entire application. Each action is registered exactly once, but it may be referenced by many different <a class="el" href="../../d2/dd6/classez_action_map.htm" title="Defines the structure of how actions are organized in a particular context.">ezActionMap</a> instances, which defines how an action shows up in a window.</p>
+<p>Through RegisterAction() / UnregisterAction() an action is added or removed. These functions are usually not called directly, but rather the macros at the top of this file are used (see EZ_REGISTER_CATEGORY, EZ_REGISTER_MENU, EZ_REGISTER_ACTION_X, ...).</p>
+<p>Unit tests can call <a class="el" href="../../d3/dd6/classez_action_manager.htm#a151dfabcc997d2438ef5f6c7f001f32e" title="Quick way to execute an action from code.">ExecuteAction()</a> to directly invoke an action. Widgets use <a class="el" href="../../d2/dd6/classez_action_map.htm" title="Defines the structure of how actions are organized in a particular context.">ezActionMap</a> to organize which actions are available in a window, and how they are structured. For instance, the same action can appear in a menu, in a toolbar and a context menu. In each case their location may be different (top-level, in a sub-menu, etc). See <a class="el" href="../../d2/dd6/classez_action_map.htm" title="Defines the structure of how actions are organized in a particular context.">ezActionMap</a> for details. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a151dfabcc997d2438ef5f6c7f001f32e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a151dfabcc997d2438ef5f6c7f001f32e">&#9670;&nbsp;</a></span>ExecuteAction()</h2>
 
@@ -207,7 +217,7 @@ static <a class="el" href="../../d0/daf/classez_event.htm">ezEvent</a>&lt; const
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d3/dd6/classez_action_manager.htm">ezActionManager</a></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:22:01 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:22 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

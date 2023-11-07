@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -88,6 +88,7 @@ $(document).ready(function(){initNavTree('d9/d0a/classez_g_a_l_texture_vulkan.ht
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-static-methods">Static Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="../../d0/d77/classez_g_a_l_texture_vulkan-members.htm">List of all members</a>  </div>
@@ -101,6 +102,7 @@ Inheritance diagram for ezGALTextureVulkan:</div>
 <div class="center"><img src="../../d3/d64/classez_g_a_l_texture_vulkan__inherit__graph.png" border="0" usemap="#ez_g_a_l_texture_vulkan_inherit__map" alt="Inheritance graph"/></div>
 <map name="ez_g_a_l_texture_vulkan_inherit__map" id="ez_g_a_l_texture_vulkan_inherit__map">
 <area shape="rect" title=" " alt="" coords="42,393,195,420"/>
+<area shape="rect" href="../../d4/d89/classez_g_a_l_shared_texture_vulkan.htm" title=" " alt="" coords="19,468,218,495"/>
 <area shape="rect" href="../../d3/db1/classez_g_a_l_texture.htm" title=" " alt="" coords="63,319,174,345"/>
 <area shape="rect" href="../../dd/dab/classez_g_a_l_resource.htm" title=" " alt="" coords="5,229,232,271"/>
 <area shape="rect" href="../../da/d70/classez_g_a_l_resource_base.htm" title=" " alt="" coords="41,155,196,181"/>
@@ -149,9 +151,6 @@ EZ_ALWAYS_INLINE ezVulkanAllocation&#160;</td><td class="memItemRight" valign="b
 <tr class="memitem:a1816a9b125e1379c80e0d6a5ba665cb0"><td class="memItemLeft" align="right" valign="top"><a id="a1816a9b125e1379c80e0d6a5ba665cb0"></a>
 const EZ_ALWAYS_INLINE <a class="el" href="../../de/d10/structez_vulkan_allocation_info.htm">ezVulkanAllocationInfo</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetAllocationInfo</b> () const</td></tr>
 <tr class="separator:a1816a9b125e1379c80e0d6a5ba665cb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b3e4efbc9ff4528b32fbc73ee4dc0ce"><td class="memItemLeft" align="right" valign="top"><a id="a9b3e4efbc9ff4528b32fbc73ee4dc0ce"></a>
-EZ_ALWAYS_INLINE bool&#160;</td><td class="memItemRight" valign="bottom"><b>GetFormatOverrideEnabled</b> () const</td></tr>
-<tr class="separator:a9b3e4efbc9ff4528b32fbc73ee4dc0ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73e322c786b78fd718b83e6953408f9a"><td class="memItemLeft" align="right" valign="top"><a id="a73e322c786b78fd718b83e6953408f9a"></a>
 EZ_ALWAYS_INLINE bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsLinearLayout</b> () const</td></tr>
 <tr class="separator:a73e322c786b78fd718b83e6953408f9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -225,12 +224,9 @@ ezInt32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=".
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a185a6a6a2c463c7a5d4faf8f624499b0"><td class="memItemLeft" align="right" valign="top"><a id="a185a6a6a2c463c7a5d4faf8f624499b0"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ezGALTextureVulkan</b> (const <a class="el" href="../../da/dad/structez_g_a_l_texture_creation_description.htm">ezGALTextureCreationDescription</a> &amp;Description)</td></tr>
-<tr class="separator:a185a6a6a2c463c7a5d4faf8f624499b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1963a37c9e93cd69e830d3b2f4e89d6"><td class="memItemLeft" align="right" valign="top"><a id="ad1963a37c9e93cd69e830d3b2f4e89d6"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ezGALTextureVulkan</b> (const <a class="el" href="../../da/dad/structez_g_a_l_texture_creation_description.htm">ezGALTextureCreationDescription</a> &amp;Description, vk::Format OverrideFormat, bool bLinearCPU)</td></tr>
-<tr class="separator:ad1963a37c9e93cd69e830d3b2f4e89d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b39efb4271e0685a1128d649397b6a1"><td class="memItemLeft" align="right" valign="top"><a id="a8b39efb4271e0685a1128d649397b6a1"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ezGALTextureVulkan</b> (const <a class="el" href="../../da/dad/structez_g_a_l_texture_creation_description.htm">ezGALTextureCreationDescription</a> &amp;Description, bool bLinearCPU, bool bStaging)</td></tr>
+<tr class="separator:a8b39efb4271e0685a1128d649397b6a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f141ad2f3ffb0c30195b69edda2b277"><td class="memItemLeft" align="right" valign="top"><a id="a4f141ad2f3ffb0c30195b69edda2b277"></a>
 virtual <a class="el" href="../../d4/da9/structez_result.htm">ezResult</a>&#160;</td><td class="memItemRight" valign="bottom"><b>InitPlatform</b> (<a class="el" href="../../d2/d09/classez_g_a_l_device.htm">ezGALDevice</a> *pDevice, <a class="el" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr</a>&lt; <a class="el" href="../../d2/d8f/structez_g_a_l_system_memory_description.htm">ezGALSystemMemoryDescription</a> &gt; pInitialData) override</td></tr>
 <tr class="separator:a4f141ad2f3ffb0c30195b69edda2b277"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -240,9 +236,6 @@ virtual <a class="el" href="../../d4/da9/structez_result.htm">ezResult</a>&#160;
 <tr class="memitem:a0862c7d956420208b7708953a831a9a4"><td class="memItemLeft" align="right" valign="top"><a id="a0862c7d956420208b7708953a831a9a4"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>SetDebugNamePlatform</b> (const char *szName) const override</td></tr>
 <tr class="separator:a0862c7d956420208b7708953a831a9a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a921be06aff5823988fe20ac1ad2f2c1e"><td class="memItemLeft" align="right" valign="top"><a id="a921be06aff5823988fe20ac1ad2f2c1e"></a>
-<a class="el" href="../../d9/d0a/classez_g_a_l_texture_vulkan.htm#ac8853b2b483a3f860acbb86518b5abf4">StagingMode</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ComputeStagingMode</b> (const vk::ImageCreateInfo &amp;createInfo) const</td></tr>
-<tr class="separator:a921be06aff5823988fe20ac1ad2f2c1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69f89ee0d88691aa74db0aa0bfb4c789"><td class="memItemLeft" align="right" valign="top"><a id="a69f89ee0d88691aa74db0aa0bfb4c789"></a>
 <a class="el" href="../../d4/da9/structez_result.htm">ezResult</a>&#160;</td><td class="memItemRight" valign="bottom"><b>CreateStagingBuffer</b> (const vk::ImageCreateInfo &amp;createInfo)</td></tr>
 <tr class="separator:a69f89ee0d88691aa74db0aa0bfb4c789"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -250,6 +243,24 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>SetDebugNameP
 <tr class="memitem:aac797377c3dc31a6193c670f8a7d7a0c inherit pro_methods_classez_g_a_l_texture"><td class="memItemLeft" align="right" valign="top"><a id="aac797377c3dc31a6193c670f8a7d7a0c"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>ezGALTexture</b> (const <a class="el" href="../../da/dad/structez_g_a_l_texture_creation_description.htm">ezGALTextureCreationDescription</a> &amp;Description)</td></tr>
 <tr class="separator:aac797377c3dc31a6193c670f8a7d7a0c inherit pro_methods_classez_g_a_l_texture"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-methods"></a>
+Static Protected Member Functions</h2></td></tr>
+<tr class="memitem:a0ac6cb4ce713ef72119d90d1925991cd"><td class="memItemLeft" align="right" valign="top"><a id="a0ac6cb4ce713ef72119d90d1925991cd"></a>
+static vk::Format&#160;</td><td class="memItemRight" valign="bottom"><b>ComputeImageFormat</b> (<a class="el" href="../../d1/d02/classez_g_a_l_device_vulkan.htm">ezGALDeviceVulkan</a> *pDevice, <a class="el" href="../../d6/dd9/structez_enum.htm">ezEnum</a>&lt; <a class="el" href="../../da/dfe/structez_g_a_l_resource_format.htm">ezGALResourceFormat</a> &gt; galFormat, vk::ImageCreateInfo &amp;ref_createInfo, vk::ImageFormatListCreateInfo &amp;ref_imageFormats, bool bStaging)</td></tr>
+<tr class="separator:a0ac6cb4ce713ef72119d90d1925991cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3524ba322f1285bc3e503185d3105b68"><td class="memItemLeft" align="right" valign="top"><a id="a3524ba322f1285bc3e503185d3105b68"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>ComputeCreateInfo</b> (<a class="el" href="../../d1/d02/classez_g_a_l_device_vulkan.htm">ezGALDeviceVulkan</a> *pDevice, const <a class="el" href="../../da/dad/structez_g_a_l_texture_creation_description.htm">ezGALTextureCreationDescription</a> &amp;description, vk::ImageCreateInfo &amp;ref_createInfo, vk::PipelineStageFlags &amp;ref_stages, vk::AccessFlags &amp;ref_access, vk::ImageLayout &amp;ref_preferredLayout)</td></tr>
+<tr class="separator:a3524ba322f1285bc3e503185d3105b68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a261b1daaafa3c42168c3d917ea653c07"><td class="memItemLeft" align="right" valign="top"><a id="a261b1daaafa3c42168c3d917ea653c07"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>ComputeCreateInfoLinear</b> (vk::ImageCreateInfo &amp;ref_createInfo, vk::PipelineStageFlags &amp;ref_stages, vk::AccessFlags &amp;ref_access)</td></tr>
+<tr class="separator:a261b1daaafa3c42168c3d917ea653c07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88a41e740f5d145592fc225d5e4c2ffc"><td class="memItemLeft" align="right" valign="top"><a id="a88a41e740f5d145592fc225d5e4c2ffc"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>ComputeAllocInfo</b> (bool bLinearCPU, <a class="el" href="../../db/d67/structez_vulkan_allocation_create_info.htm">ezVulkanAllocationCreateInfo</a> &amp;ref_allocInfo)</td></tr>
+<tr class="separator:a88a41e740f5d145592fc225d5e4c2ffc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98399820f8a8f2e79126be5a984f3f1e"><td class="memItemLeft" align="right" valign="top"><a id="a98399820f8a8f2e79126be5a984f3f1e"></a>
+static <a class="el" href="../../d9/d0a/classez_g_a_l_texture_vulkan.htm#ac8853b2b483a3f860acbb86518b5abf4">StagingMode</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ComputeStagingMode</b> (<a class="el" href="../../d1/d02/classez_g_a_l_device_vulkan.htm">ezGALDeviceVulkan</a> *pDevice, const <a class="el" href="../../da/dad/structez_g_a_l_texture_creation_description.htm">ezGALTextureCreationDescription</a> &amp;description, const vk::ImageCreateInfo &amp;createInfo)</td></tr>
+<tr class="separator:a98399820f8a8f2e79126be5a984f3f1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -277,15 +288,12 @@ ezVulkanAllocation&#160;</td><td class="memItemRight" valign="bottom"><b>m_alloc
 <tr class="memitem:abaededda87f4a3464f9880dd47fb2994"><td class="memItemLeft" align="right" valign="top"><a id="abaededda87f4a3464f9880dd47fb2994"></a>
 <a class="el" href="../../d1/d02/classez_g_a_l_device_vulkan.htm">ezGALDeviceVulkan</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_pDevice</b> = nullptr</td></tr>
 <tr class="separator:abaededda87f4a3464f9880dd47fb2994"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba50ce337e2309c2c110785f25870fbc"><td class="memItemLeft" align="right" valign="top"><a id="aba50ce337e2309c2c110785f25870fbc"></a>
-void *&#160;</td><td class="memItemRight" valign="bottom"><b>m_pExisitingNativeObject</b> = nullptr</td></tr>
-<tr class="separator:aba50ce337e2309c2c110785f25870fbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19b6c4d34a074e4e56e8c25f0e8ee7fb"><td class="memItemLeft" align="right" valign="top"><a id="a19b6c4d34a074e4e56e8c25f0e8ee7fb"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_formatOverride</b> = false</td></tr>
-<tr class="separator:a19b6c4d34a074e4e56e8c25f0e8ee7fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acba47d88cfbd48cbec5f14f0d73b0b1b"><td class="memItemLeft" align="right" valign="top"><a id="acba47d88cfbd48cbec5f14f0d73b0b1b"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_bLinearCPU</b> = false</td></tr>
 <tr class="separator:acba47d88cfbd48cbec5f14f0d73b0b1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab129f0a7ecd34f124c9122d2427f6ce5"><td class="memItemLeft" align="right" valign="top"><a id="ab129f0a7ecd34f124c9122d2427f6ce5"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_bStaging</b> = false</td></tr>
+<tr class="separator:ab129f0a7ecd34f124c9122d2427f6ce5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36fb4776b89ca1b5d83fe51842b2062c"><td class="memItemLeft" align="right" valign="top"><a id="a36fb4776b89ca1b5d83fe51842b2062c"></a>
 <a class="el" href="../../d9/d0a/classez_g_a_l_texture_vulkan.htm#ac8853b2b483a3f860acbb86518b5abf4">StagingMode</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_stagingMode</b> = StagingMode::None</td></tr>
 <tr class="separator:a36fb4776b89ca1b5d83fe51842b2062c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -367,7 +375,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>ezMemoryUtils</b></t
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d9/d0a/classez_g_a_l_texture_vulkan.htm">ezGALTextureVulkan</a></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:22:03 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:24 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

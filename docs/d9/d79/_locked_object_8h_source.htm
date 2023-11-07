@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -131,26 +131,30 @@ $(document).ready(function(){initNavTree('d9/d79/_locked_object_8h_source.htm','
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
 <div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="../../d7/da5/classez_locked_object.htm#a0596480136fa3ed454a94ef0e8ee78fb">   46</a></span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> <a class="code" href="../../d7/da5/classez_locked_object.htm#a0596480136fa3ed454a94ef0e8ee78fb">isValid</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pObject != <span class="keyword">nullptr</span>; }</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  O* operator-&gt;() { <span class="keywordflow">return</span> m_pObject; }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  O* Borrow() { <span class="keywordflow">return</span> m_pObject; }</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">const</span> O* operator-&gt;()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pObject; }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">const</span> O* Borrow()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pObject; }</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  O&amp; operator*() { <span class="keywordflow">return</span> *m_pObject; }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  O* operator-&gt;() { <span class="keywordflow">return</span> m_pObject; }</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">const</span> O&amp; operator*()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> *m_pObject; }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">const</span> O* operator-&gt;()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pObject; }</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> O* rhs)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pObject == rhs; }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  O&amp; operator*() { <span class="keywordflow">return</span> *m_pObject; }</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> O* rhs)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pObject != rhs; }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keyword">const</span> O&amp; operator*()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> *m_pObject; }</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">bool</span> operator!()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pObject == <span class="keyword">nullptr</span>; }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> O* rhs)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pObject == rhs; }</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keyword">operator</span> bool()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pObject != <span class="keyword">nullptr</span>; }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> O* rhs)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pObject != rhs; }</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keyword">mutable</span> T* m_pLock = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keyword">mutable</span> O* m_pObject = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;};</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordtype">bool</span> operator!()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pObject == <span class="keyword">nullptr</span>; }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keyword">operator</span> bool()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pObject != <span class="keyword">nullptr</span>; }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keyword">mutable</span> T* m_pLock = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keyword">mutable</span> O* m_pObject = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_locked_object_htm"><div class="ttname"><a href="../../d7/da5/classez_locked_object.htm">ezLockedObject</a></div><div class="ttdoc">Provides access to an object while managing a lock (e.g. a mutex) that ensures that during its lifeti...</div><div class="ttdef"><b>Definition:</b> LockedObject.h:6</div></div>
@@ -159,7 +163,7 @@ $(document).ready(function(){initNavTree('d9/d79/_locked_object_8h_source.htm','
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_05460f4aa032e23246d68b56847b5fed.htm">Threading</a></li><li class="navelem"><b>LockedObject.h</b></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:21:57 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:18 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

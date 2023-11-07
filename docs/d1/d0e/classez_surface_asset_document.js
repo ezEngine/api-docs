@@ -1,5 +1,5 @@
 var classez_surface_asset_document =
 [
-    [ "ezSurfaceAssetDocument", "d1/d0e/classez_surface_asset_document.htm#ab3aa0d163419d8f2a5db96f6ef17a47e", null ],
-    [ "InternalTransformAsset", "d1/d0e/classez_surface_asset_document.htm#a50484082ca05030c9c0535fc79c2c81f", null ]
+    [ "ezSurfaceAssetDocument", "d1/d0e/classez_surface_asset_document.htm#a58ddff181f74785a6cdf3416f9321ab2", null ],
+    [ "InternalTransformAsset", "d1/d0e/classez_surface_asset_document.htm#ac97ad081e438c55c4aa72ede320a0dd9", null ]
 ];

@@ -2,7 +2,7 @@ var classez_message =
 [
     [ "ezMessage", "dd/d22/classez_message.htm#a66f226cbda165bab68e52716a27d5636", null ],
     [ "ezMessage", "dd/d22/classez_message.htm#acc1eaa93d805aade02b413edab8a0c5e", null ],
-    [ "~ezMessage", "dd/d22/classez_message.htm#a39ae56304612d964453db8ea8de7b22d", null ],
+    [ "~ezMessage", "dd/d22/classez_message.htm#a532f2e1f134bcfbec8966f5317d70cd7", null ],
     [ "Deserialize", "dd/d22/classez_message.htm#a05a14245c220150d3034e260b12ba15c", null ],
     [ "GetHash", "dd/d22/classez_message.htm#ac7e285c04225a756bba68ca0766550e3", null ],
     [ "GetId", "dd/d22/classez_message.htm#a47ddef52d08ee21e00a579d27651b03e", null ],

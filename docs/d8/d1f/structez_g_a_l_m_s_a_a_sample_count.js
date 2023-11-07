@@ -1,6 +1,6 @@
 var structez_g_a_l_m_s_a_a_sample_count =
 [
-    [ "StorageType", "d8/d1f/structez_g_a_l_m_s_a_a_sample_count.htm#aee905c92597770e0a8e4899ed752e5a5", null ],
+    [ "StorageType", "d8/d1f/structez_g_a_l_m_s_a_a_sample_count.htm#a856fce2045c9a3b6f3935a57491c515e", null ],
     [ "Enum", "d8/d1f/structez_g_a_l_m_s_a_a_sample_count.htm#a151e1a777150a4664898e47d456b0c60", [
       [ "None", "d8/d1f/structez_g_a_l_m_s_a_a_sample_count.htm#a151e1a777150a4664898e47d456b0c60a3e38535746fb3c629b72a5906ac09d7a", null ],
       [ "TwoSamples", "d8/d1f/structez_g_a_l_m_s_a_a_sample_count.htm#a151e1a777150a4664898e47d456b0c60a9ea60f209713975777c7973e97f31f48", null ],

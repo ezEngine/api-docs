@@ -1,6 +1,6 @@
 var classez_property_anim_asset_document =
 [
-    [ "ezPropertyAnimAssetDocument", "db/d0f/classez_property_anim_asset_document.htm#a8d2f5ccc3bff72b19d2371d806a44cf5", null ],
+    [ "ezPropertyAnimAssetDocument", "db/d0f/classez_property_anim_asset_document.htm#a394c009af86ba9f55ea366dd9c85e9d0", null ],
     [ "~ezPropertyAnimAssetDocument", "db/d0f/classez_property_anim_asset_document.htm#a75c0a08346c11acd51053e9c2193ee74", null ],
     [ "AdjustDuration", "db/d0f/classez_property_anim_asset_document.htm#aa1fd4f044c460034e7899f64b82af999", null ],
     [ "CanAnimate", "db/d0f/classez_property_anim_asset_document.htm#a2b84c5d22f0d4512673d342bd50e6b23", null ],
@@ -14,7 +14,6 @@ var classez_property_anim_asset_document =
     [ "GetAnimationDurationTicks", "db/d0f/classez_property_anim_asset_document.htm#ae0373920d1a8b33582d3178dad3403ed", null ],
     [ "GetAnimationDurationTime", "db/d0f/classez_property_anim_asset_document.htm#a1b8ae630eb7a1f197d45ea88f4026af1", null ],
     [ "GetManipulatorSearchStrategy", "db/d0f/classez_property_anim_asset_document.htm#a3d6877ce491d15b519c5d9e4142bb35b", null ],
-    [ "GetObjectAccessor", "db/d0f/classez_property_anim_asset_document.htm#adc7b6c6fc397e8bcbd0e5dd4816fc842", null ],
     [ "GetPlayAnimation", "db/d0f/classez_property_anim_asset_document.htm#aa589cc929b6b9be4e5431770120e5dc8", null ],
     [ "GetRepeatAnimation", "db/d0f/classez_property_anim_asset_document.htm#ab73b76fdfcdaa9c25ceb43a9457c7b7d", null ],
     [ "GetScrubberPosition", "db/d0f/classez_property_anim_asset_document.htm#a286448e99c7f64fcd3101eb26652bff3", null ],
@@ -26,7 +25,7 @@ var classez_property_anim_asset_document =
     [ "InsertGradientAlphaCpAt", "db/d0f/classez_property_anim_asset_document.htm#a55943610fcee7eea1cbb143ba092769c", null ],
     [ "InsertGradientColorCpAt", "db/d0f/classez_property_anim_asset_document.htm#a31265bee44a83b3e2c584d2b0071a82e", null ],
     [ "InsertGradientIntensityCpAt", "db/d0f/classez_property_anim_asset_document.htm#aa90704b78d8233579dcb8661acbbd1b6", null ],
-    [ "InternalTransformAsset", "db/d0f/classez_property_anim_asset_document.htm#a17d40ec95a17f30494f17d0fa75bd525", null ],
+    [ "InternalTransformAsset", "db/d0f/classez_property_anim_asset_document.htm#a599f41af12591772d8887ed8e5877f58", null ],
     [ "SetAnimationDurationTicks", "db/d0f/classez_property_anim_asset_document.htm#a5f68ec3dc7b76fe59b2290e68561fda7", null ],
     [ "SetPlayAnimation", "db/d0f/classez_property_anim_asset_document.htm#a1cfa99d137be05e8c7add87af61b379f", null ],
     [ "SetRepeatAnimation", "db/d0f/classez_property_anim_asset_document.htm#aee8828d05c8f705f141baf3d39092df2", null ],

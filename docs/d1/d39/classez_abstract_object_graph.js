@@ -1,9 +1,9 @@
 var classez_abstract_object_graph =
 [
     [ "FilterFunction", "d1/d39/classez_abstract_object_graph.htm#aae0db1efb43964a0f54e8e226e64643b", null ],
-    [ "ezAbstractObjectGraph", "d1/d39/classez_abstract_object_graph.htm#a590157dccbd669e22fca19f414a86811", null ],
+    [ "ezAbstractObjectGraph", "d1/d39/classez_abstract_object_graph.htm#afd463dc53531da61a3546733995fd824", null ],
     [ "~ezAbstractObjectGraph", "d1/d39/classez_abstract_object_graph.htm#a395ee08e8f4803113afc0dd43fe9298a", null ],
-    [ "AddNode", "d1/d39/classez_abstract_object_graph.htm#a4c0ddc8e3feb138ce487012c9dfddf26", null ],
+    [ "AddNode", "d1/d39/classez_abstract_object_graph.htm#adc0ed9eb4f40427b91d01375238e747a", null ],
     [ "ApplyDiff", "d1/d39/classez_abstract_object_graph.htm#af172af8992c06cd451ce830df859107a", null ],
     [ "Clear", "d1/d39/classez_abstract_object_graph.htm#a907ebbe9f296b9edcc8e5b424046c55d", null ],
     [ "Clone", "d1/d39/classez_abstract_object_graph.htm#a41726a894cb948e734cf1c4ac0dd2a41", null ],
@@ -15,12 +15,12 @@ var classez_abstract_object_graph =
     [ "GetAllNodes", "d1/d39/classez_abstract_object_graph.htm#a144f08f78e2898bbe16bd376adabc382", null ],
     [ "GetNode", "d1/d39/classez_abstract_object_graph.htm#ae0113833429ddcc9b06560a4f0391931", null ],
     [ "GetNode", "d1/d39/classez_abstract_object_graph.htm#a62f57fc0d020ea1ac31c74e0968e8b24", null ],
-    [ "GetNodeByName", "d1/d39/classez_abstract_object_graph.htm#a329e112f21d6413e4454a18a197309e5", null ],
-    [ "GetNodeByName", "d1/d39/classez_abstract_object_graph.htm#a8994af67b49d48ec3145806499b42ff1", null ],
+    [ "GetNodeByName", "d1/d39/classez_abstract_object_graph.htm#a82f4477fb417af98f63057fdf71a4541", null ],
+    [ "GetNodeByName", "d1/d39/classez_abstract_object_graph.htm#a960039b0f3bf7fefb7b82b95e69b019d", null ],
     [ "MergeDiffs", "d1/d39/classez_abstract_object_graph.htm#ae79820c027c7ef459f18ac55f40fe97d", null ],
     [ "ModifyNodeViaNativeCounterpart", "d1/d39/classez_abstract_object_graph.htm#adf4dccc01e6b1283bbcc84c454126af7", null ],
     [ "PruneGraph", "d1/d39/classez_abstract_object_graph.htm#ad7337f28756b01cce61fcc9c2782b8da", null ],
-    [ "RegisterString", "d1/d39/classez_abstract_object_graph.htm#a7d358ebde6c58a8b25f1eb2ae769b181", null ],
+    [ "RegisterString", "d1/d39/classez_abstract_object_graph.htm#a47a41375ff03e643e27a46a746a03919", null ],
     [ "ReMapNodeGuids", "d1/d39/classez_abstract_object_graph.htm#a48f674aacd73808a0691d4656176e3c3", null ],
     [ "ReMapNodeGuidsToMatchGraph", "d1/d39/classez_abstract_object_graph.htm#a19ad89aa9b7ae01c0a8c906c6a8754d8", null ],
     [ "RemoveNode", "d1/d39/classez_abstract_object_graph.htm#aa5d4c85dbbc3809ec572e58cac6bf8f5", null ]

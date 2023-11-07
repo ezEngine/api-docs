@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -91,7 +91,7 @@ $(document).ready(function(){initNavTree('d9/d2f/_asset_browser_filter_8moc_8h_s
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;EditorFramework/Assets/AssetBrowserModel.moc.h&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;EditorFramework/EditorFrameworkDLL.h&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;Foundation/Strings/String.h&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;ToolsFoundation/Utilities/SearchPatternFilter.h&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="../../d5/d1f/classez_qt_asset_browser_filter.htm">    7</a></span>&#160;<span class="keyword">class </span>EZ_EDITORFRAMEWORK_DLL <a class="code" href="../../d5/d1f/classez_qt_asset_browser_filter.htm">ezQtAssetBrowserFilter</a> : <span class="keyword">public</span> <a class="code" href="../../d5/db6/classez_qt_asset_filter.htm">ezQtAssetFilter</a></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
@@ -100,61 +100,77 @@ $(document).ready(function(){initNavTree('d9/d2f/_asset_browser_filter_8moc_8h_s
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keyword">explicit</span> <a class="code" href="../../d5/d1f/classez_qt_asset_browser_filter.htm">ezQtAssetBrowserFilter</a>(QObject* pParent);</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keywordtype">void</span> Reset();</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keywordtype">void</span> SetShowItemsInSubFolders(<span class="keywordtype">bool</span> bShow);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="keywordtype">bool</span> GetShowItemsInSubFolders()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_bShowItemsInSubFolders; }</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keywordtype">void</span> SetShowItemsInHiddenFolders(<span class="keywordtype">bool</span> bShow);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keywordtype">bool</span> GetShowItemsInHiddenFolders()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_bShowItemsInHiddenFolders; }</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keywordtype">void</span> SetSortByRecentUse(<span class="keywordtype">bool</span> bSort);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordtype">bool</span> GetSortByRecentUse()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_bSortByRecentUse; }</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keywordtype">void</span> SetTextFilter(<span class="keyword">const</span> <span class="keywordtype">char</span>* szText);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* GetTextFilter()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_sTextFilter; }</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keywordtype">void</span> SetPathFilter(<span class="keyword">const</span> <span class="keywordtype">char</span>* szPath);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* GetPathFilter()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_sPathFilter; }</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keywordtype">void</span> SetTypeFilter(<span class="keyword">const</span> <span class="keywordtype">char</span>* szTypes);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* GetTypeFilter()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_sTypeFilter; }</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;Q_SIGNALS:</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordtype">void</span> TextFilterChanged();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordtype">void</span> TypeFilterChanged();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordtype">void</span> PathFilterChanged();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordtype">void</span> SortByRecentUseChanged();</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> IsAssetFiltered(<span class="keyword">const</span> <a class="code" href="../../de/d5d/structez_sub_asset.htm">ezSubAsset</a>* pInfo) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> Less(<span class="keyword">const</span> <a class="code" href="../../de/d5d/structez_sub_asset.htm">ezSubAsset</a>* pInfoA, <span class="keyword">const</span> <a class="code" href="../../de/d5d/structez_sub_asset.htm">ezSubAsset</a>* pInfoB) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sTextFilter, m_sTypeFilter, m_sPathFilter;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordtype">bool</span> m_bShowItemsInSubFolders = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordtype">bool</span> m_bShowItemsInHiddenFolders = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordtype">bool</span> m_bSortByRecentUse = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">mutable</span> <a class="code" href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a> m_sTemp; <span class="comment">// stored here to reduce unnecessary allocations</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="comment">// Cache for uses search</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordtype">bool</span> m_bUsesSearchActive = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordtype">bool</span> m_bTransitive = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <a class="code" href="../../d0/d90/classez_set.htm">ezSet&lt;ezUuid&gt;</a> m_Uses;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;};</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keywordtype">void</span> UpdateImportExtensions(<span class="keyword">const</span> <a class="code" href="../../d0/d90/classez_set.htm">ezSet&lt;ezString&gt;</a>&amp; extensions);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="keywordtype">void</span> SetShowItemsInSubFolders(<span class="keywordtype">bool</span> bShow);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keywordtype">bool</span> GetShowItemsInSubFolders()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_bShowItemsInSubFolders; }</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keywordtype">void</span> SetShowFiles(<span class="keywordtype">bool</span> bShow);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keywordtype">bool</span> GetShowFiles()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_bShowFiles; }</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordtype">void</span> SetShowNonImportableFiles(<span class="keywordtype">bool</span> bShow);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keywordtype">bool</span> GetShowNonImportableFiles()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_bShowNonImportableFiles; }</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keywordtype">void</span> SetShowItemsInHiddenFolders(<span class="keywordtype">bool</span> bShow);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordtype">bool</span> GetShowItemsInHiddenFolders()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_bShowItemsInHiddenFolders; }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordtype">void</span> SetSortByRecentUse(<span class="keywordtype">bool</span> bSort);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordtype">bool</span> GetSortByRecentUse()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_bSortByRecentUse; }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keywordtype">void</span> SetTextFilter(<span class="keyword">const</span> <span class="keywordtype">char</span>* szText);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* GetTextFilter()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_SearchFilter.GetSearchText(); }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordtype">void</span> SetPathFilter(<span class="keyword">const</span> <span class="keywordtype">char</span>* szPath);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> GetPathFilter() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordtype">void</span> SetTypeFilter(<span class="keyword">const</span> <span class="keywordtype">char</span>* szTypes);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* GetTypeFilter()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_sTypeFilter; }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordtype">void</span> SetTemporaryPinnedItem(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sDataDirParentRelativePath);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> GetTemporaryPinnedItem()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_sTemporaryPinnedItem; }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;Q_SIGNALS:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordtype">void</span> TextFilterChanged();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordtype">void</span> TypeFilterChanged();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordtype">void</span> PathFilterChanged();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordtype">void</span> SortByRecentUseChanged();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> IsAssetFiltered(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sDataDirParentRelativePath, <span class="keywordtype">bool</span> bIsFolder, <span class="keyword">const</span> <a class="code" href="../../de/d5d/structez_sub_asset.htm">ezSubAsset</a>* pInfo) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sTypeFilter;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sPathFilter;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sTemporaryPinnedItem;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <a class="code" href="../../d9/da2/classez_search_pattern_filter.htm">ezSearchPatternFilter</a> m_SearchFilter;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">bool</span> m_bShowItemsInSubFolders = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordtype">bool</span> m_bShowFiles = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordtype">bool</span> m_bShowNonImportableFiles = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordtype">bool</span> m_bShowItemsInHiddenFolders = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordtype">bool</span> m_bSortByRecentUse = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keyword">mutable</span> <a class="code" href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a> m_sTemp; <span class="comment">// stored here to reduce unnecessary allocations</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="comment">// Cache for uses search</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordtype">bool</span> m_bUsesSearchActive = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordtype">bool</span> m_bTransitive = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <a class="code" href="../../d0/d90/classez_set.htm">ezSet&lt;ezUuid&gt;</a> m_Uses;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <a class="code" href="../../d0/d90/classez_set.htm">ezSet&lt;ezString&gt;</a> m_ImportExtensions;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassez_set_htm"><div class="ttname"><a href="../../d0/d90/classez_set.htm">ezSet&lt; ezUuid &gt;</a></div></div>
-<div class="ttc" id="aclassez_qt_asset_filter_htm"><div class="ttname"><a href="../../d5/db6/classez_qt_asset_filter.htm">ezQtAssetFilter</a></div><div class="ttdef"><b>Definition:</b> AssetBrowserModel.moc.h:13</div></div>
-<div class="ttc" id="astructez_sub_asset_htm"><div class="ttname"><a href="../../de/d5d/structez_sub_asset.htm">ezSubAsset</a></div><div class="ttdoc">Information about an asset or sub-asset.</div><div class="ttdef"><b>Definition:</b> AssetCurator.h:100</div></div>
-<div class="ttc" id="astructez_hybrid_string_htm"><div class="ttname"><a href="../../d4/d53/structez_hybrid_string.htm">ezHybridString&lt; 32, ezDefaultAllocatorWrapper &gt;</a></div></div>
+<div class="ttc" id="aclassez_set_htm"><div class="ttname"><a href="../../d0/d90/classez_set.htm">ezSet</a></div><div class="ttdef"><b>Definition:</b> Set.h:235</div></div>
+<div class="ttc" id="aclassez_qt_asset_filter_htm"><div class="ttname"><a href="../../d5/db6/classez_qt_asset_filter.htm">ezQtAssetFilter</a></div><div class="ttdoc">Interface class of the asset filter used to decide which items are shown in the asset browser.</div><div class="ttdef"><b>Definition:</b> AssetBrowserModel.moc.h:16</div></div>
+<div class="ttc" id="astructez_sub_asset_htm"><div class="ttname"><a href="../../de/d5d/structez_sub_asset.htm">ezSubAsset</a></div><div class="ttdoc">Information about an asset or sub-asset.</div><div class="ttdef"><b>Definition:</b> AssetCurator.h:106</div></div>
+<div class="ttc" id="astructez_hybrid_string_htm"><div class="ttname"><a href="../../d4/d53/structez_hybrid_string.htm">ezHybridString</a></div><div class="ttdef"><b>Definition:</b> Stream.h:16</div></div>
+<div class="ttc" id="astructez_string_view_htm"><div class="ttname"><a href="../../de/db8/structez_string_view.htm">ezStringView</a></div><div class="ttdoc">ezStringView represent a read-only sub-string of a larger string, as it can store a dedicated string ...</div><div class="ttdef"><b>Definition:</b> StringView.h:23</div></div>
+<div class="ttc" id="aclassez_search_pattern_filter_htm"><div class="ttname"><a href="../../d9/da2/classez_search_pattern_filter.htm">ezSearchPatternFilter</a></div><div class="ttdoc">A small helper class to implement a simple search pattern filter that can contain multiple parts.</div><div class="ttdef"><b>Definition:</b> SearchPatternFilter.h:13</div></div>
 <div class="ttc" id="aclassez_qt_asset_browser_filter_htm"><div class="ttname"><a href="../../d5/d1f/classez_qt_asset_browser_filter.htm">ezQtAssetBrowserFilter</a></div><div class="ttdef"><b>Definition:</b> AssetBrowserFilter.moc.h:7</div></div>
 <div class="ttc" id="aclassez_string_builder_htm"><div class="ttname"><a href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a></div><div class="ttdoc">ezStringBuilder is a class that is meant for creating and modifying strings.</div><div class="ttdef"><b>Definition:</b> StringBuilder.h:34</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_898824d97bbfb864e5ee6bfb2857fc31.htm">Editor</a></li><li class="navelem"><a class="el" href="../../dir_2c11fbcc86473fad6c721ead68acf992.htm">EditorFramework</a></li><li class="navelem"><a class="el" href="../../dir_5814822b5fe0e25e106f6a2b5290738d.htm">Assets</a></li><li class="navelem"><b>AssetBrowserFilter.moc.h</b></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:21:50 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:12 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

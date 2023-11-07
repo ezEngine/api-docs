@@ -2,9 +2,11 @@ var classez_reflection_filter_pass =
 [
     [ "ezReflectionFilterPass", "d3/d00/classez_reflection_filter_pass.htm#a6e6c57f6f12c742041ad057a96b89291", null ],
     [ "~ezReflectionFilterPass", "d3/d00/classez_reflection_filter_pass.htm#a73eb094625a4bcca014e1fe34018f956", null ],
+    [ "Deserialize", "d3/d00/classez_reflection_filter_pass.htm#a4b0f100c775423e7ec24e379dc11acc5", null ],
     [ "Execute", "d3/d00/classez_reflection_filter_pass.htm#ac6e00a5ea4ff9d1b71a4bdb664f6ae6f", null ],
     [ "GetInputCubemap", "d3/d00/classez_reflection_filter_pass.htm#abd1b28278a24a7fad70e4654efa2be53", null ],
     [ "GetRenderTargetDescriptions", "d3/d00/classez_reflection_filter_pass.htm#aaa91c9256cf71174cd3c0709bca101bb", null ],
+    [ "Serialize", "d3/d00/classez_reflection_filter_pass.htm#ac8a389f943a1aecd73e7334ae871acc1", null ],
     [ "SetInputCubemap", "d3/d00/classez_reflection_filter_pass.htm#a0868f96796821f5bb8c2102a722eedd1", null ],
     [ "UpdateFilteredSpecularConstantBuffer", "d3/d00/classez_reflection_filter_pass.htm#a3fe5ba5a0db30834bc35449fced5bec2", null ],
     [ "UpdateIrradianceConstantBuffer", "d3/d00/classez_reflection_filter_pass.htm#a85df352725a6086b3319cbc0ea4f69b6", null ],

@@ -1,6 +1,6 @@
 var structez_g_a_l_primitive_topology =
 [
-    [ "StorageType", "d7/dae/structez_g_a_l_primitive_topology.htm#ab072e217f1ffd4753446a6ec4a19d352", null ],
+    [ "StorageType", "d7/dae/structez_g_a_l_primitive_topology.htm#a9d3be14ce64ae20e17fa8494db24e4c0", null ],
     [ "Enum", "d7/dae/structez_g_a_l_primitive_topology.htm#ad0e867b38019edb3d1c4c67b47444d12", [
       [ "Points", "d7/dae/structez_g_a_l_primitive_topology.htm#ad0e867b38019edb3d1c4c67b47444d12ad001c94cfb5854039e9134bd63583529", null ],
       [ "Lines", "d7/dae/structez_g_a_l_primitive_topology.htm#ad0e867b38019edb3d1c4c67b47444d12aee491d71552deea549bd83f4cc393041", null ],

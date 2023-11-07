@@ -7,5 +7,5 @@ var structez_stats_1_1_stats_event_data =
     ] ],
     [ "m_EventType", "d4/da7/structez_stats_1_1_stats_event_data.htm#af635df7f85306be72c50c8b69b3b2a7c", null ],
     [ "m_NewStatValue", "d4/da7/structez_stats_1_1_stats_event_data.htm#ab382756aa10d404299e5b9f596929b74", null ],
-    [ "m_szStatName", "d4/da7/structez_stats_1_1_stats_event_data.htm#a310da0c054ce9834e0ab9c9ab8f743cd", null ]
+    [ "m_sStatName", "d4/da7/structez_stats_1_1_stats_event_data.htm#a898e68e4d93ae5a9779889ef11decdd7", null ]
 ];

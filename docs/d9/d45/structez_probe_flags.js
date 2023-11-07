@@ -1,7 +1,7 @@
 var structez_probe_flags =
 [
     [ "Bits", "d5/de2/structez_probe_flags_1_1_bits.htm", "d5/de2/structez_probe_flags_1_1_bits" ],
-    [ "StorageType", "d9/d45/structez_probe_flags.htm#a8225a3fcfc36edf4a26858fa7a4b5254", null ],
+    [ "StorageType", "d9/d45/structez_probe_flags.htm#ac35be28f453474d804701d8f9967def0", null ],
     [ "Enum", "d9/d45/structez_probe_flags.htm#abb96aace368bdd95e7a353d2f3fce9a9", [
       [ "SkyLight", "d9/d45/structez_probe_flags.htm#abb96aace368bdd95e7a353d2f3fce9a9a84aa3316e96f2bf2cd7cfea250f43fdb", null ],
       [ "HasCustomCubeMap", "d9/d45/structez_probe_flags.htm#abb96aace368bdd95e7a353d2f3fce9a9a7871f132ff6cc606c61fa1655dfcaf90", null ],

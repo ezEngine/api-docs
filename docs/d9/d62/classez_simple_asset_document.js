@@ -1,7 +1,7 @@
 var classez_simple_asset_document =
 [
-    [ "ezSimpleAssetDocument", "d9/d62/classez_simple_asset_document.htm#a4ef62281b1305804dcc44ffe7bb8db4f", null ],
-    [ "ezSimpleAssetDocument", "d9/d62/classez_simple_asset_document.htm#ac4e9b79f128475ebfd5db764d1911655", null ],
+    [ "ezSimpleAssetDocument", "d9/d62/classez_simple_asset_document.htm#af47e74a147843149729b78ac7a8e8f7e", null ],
+    [ "ezSimpleAssetDocument", "d9/d62/classez_simple_asset_document.htm#abe5392492b1ad49d65384d0d2a0140e1", null ],
     [ "~ezSimpleAssetDocument", "d9/d62/classez_simple_asset_document.htm#a22398c50680af68332fe46e386fe6972", null ],
     [ "ApplyNativePropertyChangesToObjectManager", "d9/d62/classez_simple_asset_document.htm#a303cde0d295fbf7109ce383bc156e7a6", null ],
     [ "CreateDocumentInfo", "d9/d62/classez_simple_asset_document.htm#ab8e47fb93d4dcda84088b5bec7917c88", null ],

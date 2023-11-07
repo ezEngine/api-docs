@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -153,39 +153,58 @@ $(document).ready(function(){initNavTree('df/d06/_color_scheme_8h_source.htm','.
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../db/d78/namespaceez_math.htm#a70aea4554d1be096b314db9f10c9f1fc">ezMath::Lerp</a>(s_LightUIColors[uiIndexA], s_LightUIColors[uiIndexB], fFrac);</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  }</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  EZ_ALWAYS_INLINE constexpr <span class="keyword">static</span> <span class="keywordtype">void</span> GetInterpolation(<span class="keywordtype">float</span> fIndex, ezUInt32&amp; out_uiIndexA, ezUInt32&amp; out_uiIndexB, <span class="keywordtype">float</span>&amp; out_fFrac)</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="../../df/dfe/classez_color_scheme.htm#a3a32d20458a064d04e904bef11af15ea">   81</a></span>&#160;  <span class="keyword">enum class</span> <a class="code" href="../../df/dfe/classez_color_scheme.htm#a3a32d20458a064d04e904bef11af15ea">CategoryColorUsage</a></div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    fIndex = <a class="code" href="../../db/d78/namespaceez_math.htm#ade0bbc96e88750c5d07fed586baa0bd6">ezMath::Saturate</a>(fIndex);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    constexpr ezUInt32 uiCountWithoutGray = Count - 1;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    constexpr ezUInt32 uiMaxIndex = uiCountWithoutGray - 1;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    out_uiIndexA = ezUInt32(fIndex * uiMaxIndex);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    out_uiIndexB = (out_uiIndexA + 1) % uiCountWithoutGray;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    out_fFrac = (fIndex * uiMaxIndex) - out_uiIndexA;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    ViewportIcon,    <span class="comment">// shape icons in 3D viewport</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    MenuEntryIcon,   <span class="comment">// tint color for icons in a menu</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    SceneTreeIcon,   <span class="comment">// tint color for icons in a scene tree</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    OverlayIcon,     <span class="comment">// tint color for overlay icons on top of thumbnails (asset browser)</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    BorderColor,     <span class="comment">// color for a border frame around UI elements</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    BorderIconColor, <span class="comment">// color for icons embedded in a border frame</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    AssetMenuIcon,   <span class="comment">// tint color for icons in asset browser menus</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  };</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a> s_Colors[Count][10];</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a> s_DarkUIColors[Count];</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a> s_LightUIColors[Count];</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;};</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keyword">using</span> CategoryColorFunc = <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a> (*)(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sCategory, CategoryColorUsage usage);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keyword">static</span> CategoryColorFunc s_CategoryColorFunc;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a> GetCategoryColor(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sCategory, CategoryColorUsage usage);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  EZ_ALWAYS_INLINE constexpr <span class="keyword">static</span> <span class="keywordtype">void</span> GetInterpolation(<span class="keywordtype">float</span> fIndex, ezUInt32&amp; out_uiIndexA, ezUInt32&amp; out_uiIndexB, <span class="keywordtype">float</span>&amp; out_fFrac)</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    fIndex = <a class="code" href="../../db/d78/namespaceez_math.htm#ade0bbc96e88750c5d07fed586baa0bd6">ezMath::Saturate</a>(fIndex);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    constexpr ezUInt32 uiCountWithoutGray = Count - 1;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    constexpr ezUInt32 uiMaxIndex = uiCountWithoutGray - 1;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    out_uiIndexA = ezUInt32(fIndex * uiMaxIndex);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    out_uiIndexB = (out_uiIndexA + 1) % uiCountWithoutGray;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    out_fFrac = (fIndex * uiMaxIndex) - out_uiIndexA;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  }</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a> s_Colors[Count][10];</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a> s_DarkUIColors[Count];</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a> s_LightUIColors[Count];</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_color_htm"><div class="ttname"><a href="../../dd/d01/classez_color.htm">ezColor</a></div><div class="ttdoc">ezColor represents and RGBA color in linear color space. Values are stored as float,...</div><div class="ttdef"><b>Definition:</b> Color.h:43</div></div>
 <div class="ttc" id="aclassez_color_scheme_htm_a1addb9785e66a17ee8d3e1857c9d6c36"><div class="ttname"><a href="../../df/dfe/classez_color_scheme.htm#a1addb9785e66a17ee8d3e1857c9d6c36">ezColorScheme::LightUI</a></div><div class="ttdeci">static EZ_ALWAYS_INLINE ezColor LightUI(Enum schemeColor)</div><div class="ttdoc">Get a scheme color with predefined brightness and saturation to look good as highlight color in EZ to...</div><div class="ttdef"><b>Definition:</b> ColorScheme.h:65</div></div>
-<div class="ttc" id="anamespaceez_math_htm_a70aea4554d1be096b314db9f10c9f1fc"><div class="ttname"><a href="../../db/d78/namespaceez_math.htm#a70aea4554d1be096b314db9f10c9f1fc">ezMath::Lerp</a></div><div class="ttdeci">EZ_FORCE_INLINE T Lerp(T f1, T f2, float fFactor)</div><div class="ttdoc">Returns the linear interpolation of f1 and f2. factor is a value between 0 and 1.</div><div class="ttdef"><b>Definition:</b> Math_inl.h:209</div></div>
+<div class="ttc" id="anamespaceez_math_htm_a70aea4554d1be096b314db9f10c9f1fc"><div class="ttname"><a href="../../db/d78/namespaceez_math.htm#a70aea4554d1be096b314db9f10c9f1fc">ezMath::Lerp</a></div><div class="ttdeci">EZ_FORCE_INLINE T Lerp(T f1, T f2, float fFactor)</div><div class="ttdoc">Returns the linear interpolation of f1 and f2. factor is a value between 0 and 1.</div><div class="ttdef"><b>Definition:</b> Math_inl.h:227</div></div>
 <div class="ttc" id="aclassez_color_scheme_htm_a331f96675b5cfc784a12aa746a5835cd"><div class="ttname"><a href="../../df/dfe/classez_color_scheme.htm#a331f96675b5cfc784a12aa746a5835cd">ezColorScheme::DarkUI</a></div><div class="ttdeci">static EZ_ALWAYS_INLINE ezColor DarkUI(Enum schemeColor)</div><div class="ttdoc">Get a scheme color with predefined brightness and saturation to look good with the EZ tools dark UI s...</div><div class="ttdef"><b>Definition:</b> ColorScheme.h:49</div></div>
 <div class="ttc" id="aclassez_color_scheme_htm_a7cd52b820cc2103a38a295b9c03fec4b"><div class="ttname"><a href="../../df/dfe/classez_color_scheme.htm#a7cd52b820cc2103a38a295b9c03fec4b">ezColorScheme::GetColor</a></div><div class="ttdeci">static EZ_FORCE_INLINE ezColor GetColor(Enum schemeColor, ezUInt8 uiBrightness, float fSaturation=1.0f, float fAlpha=1.0f)</div><div class="ttdoc">Get the scheme color with the given brightness (0..9) and with optional saturation and alpha.</div><div class="ttdef"><b>Definition:</b> ColorScheme.h:36</div></div>
-<div class="ttc" id="aclassez_color_htm_a2dfa20c3c2d69a30846502a83c71c3d1"><div class="ttname"><a href="../../dd/d01/classez_color.htm#a2dfa20c3c2d69a30846502a83c71c3d1">ezColor::GetLuminance</a></div><div class="ttdeci">float GetLuminance() const</div><div class="ttdoc">Computes the perceived luminance. Assumes linear color space (http://en.wikipedia....</div><div class="ttdef"><b>Definition:</b> Color_inl.h:54</div></div>
+<div class="ttc" id="aclassez_color_htm_a2dfa20c3c2d69a30846502a83c71c3d1"><div class="ttname"><a href="../../dd/d01/classez_color.htm#a2dfa20c3c2d69a30846502a83c71c3d1">ezColor::GetLuminance</a></div><div class="ttdeci">float GetLuminance() const</div><div class="ttdoc">Computes the perceived luminance. Assumes linear color space (http://en.wikipedia....</div><div class="ttdef"><b>Definition:</b> Color_inl.h:49</div></div>
 <div class="ttc" id="aclassez_color_scheme_htm"><div class="ttname"><a href="../../df/dfe/classez_color_scheme.htm">ezColorScheme</a></div><div class="ttdoc">A color scheme based on https://github.com/yeun/open-color version 1.9.1.</div><div class="ttdef"><b>Definition:</b> ColorScheme.h:10</div></div>
 <div class="ttc" id="aclassez_color_scheme_htm_a6ab43e8d851aa1aca848afb6e5aa31f2"><div class="ttname"><a href="../../df/dfe/classez_color_scheme.htm#a6ab43e8d851aa1aca848afb6e5aa31f2">ezColorScheme::LightUI</a></div><div class="ttdeci">static EZ_FORCE_INLINE ezColor LightUI(float fIndex)</div><div class="ttdoc">Get a scheme color by index with predefined brightness and saturation to look good as highlight color...</div><div class="ttdef"><b>Definition:</b> ColorScheme.h:71</div></div>
 <div class="ttc" id="aclassez_color_scheme_htm_ae87d66539793a1ae60981d2e7f9d7b1c"><div class="ttname"><a href="../../df/dfe/classez_color_scheme.htm#ae87d66539793a1ae60981d2e7f9d7b1c">ezColorScheme::DarkUI</a></div><div class="ttdeci">static EZ_FORCE_INLINE ezColor DarkUI(float fIndex)</div><div class="ttdoc">Gets a scheme color by index with predefined brightness and saturation to look good with the EZ tools...</div><div class="ttdef"><b>Definition:</b> ColorScheme.h:55</div></div>
+<div class="ttc" id="astructez_string_view_htm"><div class="ttname"><a href="../../de/db8/structez_string_view.htm">ezStringView</a></div><div class="ttdoc">ezStringView represent a read-only sub-string of a larger string, as it can store a dedicated string ...</div><div class="ttdef"><b>Definition:</b> StringView.h:23</div></div>
 <div class="ttc" id="anamespaceez_math_htm_ade0bbc96e88750c5d07fed586baa0bd6"><div class="ttname"><a href="../../db/d78/namespaceez_math.htm#ade0bbc96e88750c5d07fed586baa0bd6">ezMath::Saturate</a></div><div class="ttdeci">constexpr EZ_ALWAYS_INLINE T Saturate(T value)</div><div class="ttdoc">Clamps &quot;value&quot; to the range [0; 1]. Returns &quot;value&quot;, if it is inside the range already.</div><div class="ttdef"><b>Definition:</b> Math_inl.h:56</div></div>
+<div class="ttc" id="aclassez_color_scheme_htm_a3a32d20458a064d04e904bef11af15ea"><div class="ttname"><a href="../../df/dfe/classez_color_scheme.htm#a3a32d20458a064d04e904bef11af15ea">ezColorScheme::CategoryColorUsage</a></div><div class="ttdeci">CategoryColorUsage</div><div class="ttdef"><b>Definition:</b> ColorScheme.h:81</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_4ad0f5fbee83b30173e7fecedeea26f0.htm">Math</a></li><li class="navelem"><b>ColorScheme.h</b></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:21:55 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:17 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

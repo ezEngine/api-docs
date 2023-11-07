@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -235,16 +235,16 @@ $(document).ready(function(){initNavTree('d8/d9e/_string_view__inl_8h_source.htm
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  <span class="keywordflow">while</span> (<span class="keyword">true</span>)</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  {</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* szFoundPos = ezUnicodeUtils::GetMaxStringEnd&lt;char&gt;();</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    ezInt32 iFoundSeparator = 0;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    ezUInt32 uiFoundSeparator = 0;</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordflow">for</span> (ezInt32 i = 0; i &lt; uiParams; ++i)</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordflow">for</span> (ezUInt32 i = 0; i &lt; uiParams; ++i)</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    {</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;      <span class="keyword">const</span> <span class="keywordtype">char</span>* szFound = <a class="code" href="../../de/df8/classez_string_utils.htm#a4e7bb80c9b5b1bc468d88e70379895ff">ezStringUtils::FindSubString</a>(szReadPos, seps[i].<a class="code" href="../../de/db8/structez_string_view.htm#a7e6ab4aebc721857871d822321935d5f">GetStartPointer</a>(), <a class="code" href="../../de/db8/structez_string_view.htm#aeb4fee979aa7e71f8c3596fb342ad2bc">GetEndPointer</a>(), seps[i].<a class="code" href="../../de/db8/structez_string_view.htm#aeb4fee979aa7e71f8c3596fb342ad2bc">GetEndPointer</a>());</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;      <span class="keywordflow">if</span> ((szFound != <span class="keyword">nullptr</span>) &amp;&amp; (szFound &lt; szFoundPos))</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;      {</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        szFoundPos = szFound;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        iFoundSeparator = i;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        uiFoundSeparator = i;</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;      }</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    }</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
@@ -262,7 +262,7 @@ $(document).ready(function(){initNavTree('d8/d9e/_string_view__inl_8h_source.htm
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="keywordflow">if</span> (bReturnEmptyStrings || (szFoundPos &gt; szReadPos))</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;      ref_output.PushBack(<a class="code" href="../../de/db8/structez_string_view.htm#aef334b813854953301fac01f9bb528e4">ezStringView</a>(szReadPos, szFoundPos));</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    szReadPos = szFoundPos + seps[iFoundSeparator].<a class="code" href="../../de/db8/structez_string_view.htm#a64dec920b26c9df50ea139826fcdd448">GetElementCount</a>();</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    szReadPos = szFoundPos + seps[uiFoundSeparator].<a class="code" href="../../de/db8/structez_string_view.htm#a64dec920b26c9df50ea139826fcdd448">GetElementCount</a>();</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  }</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;}</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
@@ -332,7 +332,7 @@ $(document).ready(function(){initNavTree('d8/d9e/_string_view__inl_8h_source.htm
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_b52479c911fe9a42767226b3387b3a02.htm">Strings</a></li><li class="navelem"><a class="el" href="../../dir_067384bf2c73f8a8078edb859c0ba426.htm">Implementation</a></li><li class="navelem"><b>StringView_inl.h</b></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:21:56 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:18 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

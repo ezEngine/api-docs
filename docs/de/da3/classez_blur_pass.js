@@ -2,9 +2,11 @@ var classez_blur_pass =
 [
     [ "ezBlurPass", "de/da3/classez_blur_pass.htm#a9ed709cf9d73e749584de0697b8a1db0", null ],
     [ "~ezBlurPass", "de/da3/classez_blur_pass.htm#ac2310392a81311064012550dce357f03", null ],
+    [ "Deserialize", "de/da3/classez_blur_pass.htm#a527f16ac7e2c29406438e0654e92e6f2", null ],
     [ "Execute", "de/da3/classez_blur_pass.htm#af9bbe565ef12fab60939495d1a7d1769", null ],
     [ "GetRadius", "de/da3/classez_blur_pass.htm#a7992245c7991d064928675053c25af09", null ],
     [ "GetRenderTargetDescriptions", "de/da3/classez_blur_pass.htm#a4f4fe88b933e3eb13157659bcec79a9c", null ],
+    [ "Serialize", "de/da3/classez_blur_pass.htm#aa6713d8953c29426326ce209b0fbd695", null ],
     [ "SetRadius", "de/da3/classez_blur_pass.htm#aa2513318f10962fc05a0d4c98d14abf9", null ],
     [ "m_hBlurCB", "de/da3/classez_blur_pass.htm#acbd18a1a89991be21a23ca7f366a676b", null ],
     [ "m_hShader", "de/da3/classez_blur_pass.htm#a799c259183dd10438ef398b56f883672", null ],

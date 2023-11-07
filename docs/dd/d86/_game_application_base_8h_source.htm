@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -134,9 +134,9 @@ $(document).ready(function(){initNavTree('dd/d86/_game_application_base_8h_sourc
 <div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="../../d0/d69/classez_game_application_base.htm">   50</a></span>&#160;<span class="keyword">class </span>EZ_CORE_DLL <a class="code" href="../../d0/d69/classez_game_application_base.htm">ezGameApplicationBase</a> : <span class="keyword">public</span> <a class="code" href="../../da/d72/classez_application.htm">ezApplication</a></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keyword">typedef</span> <a class="code" href="../../da/d72/classez_application.htm">ezApplication</a> <a class="code" href="../../da/d72/classez_application.htm">SUPER</a>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keyword">using</span> <a class="code" href="../../da/d72/classez_application.htm">SUPER</a> = <a class="code" href="../../da/d72/classez_application.htm#a6e510b326ac529bc07472ea38589ef52">ezApplication</a>;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <a class="code" href="../../d0/d69/classez_game_application_base.htm">ezGameApplicationBase</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* szAppName);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <a class="code" href="../../d0/d69/classez_game_application_base.htm">ezGameApplicationBase</a>(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sAppName);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  ~<a class="code" href="../../d0/d69/classez_game_application_base.htm">ezGameApplicationBase</a>();</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
@@ -153,9 +153,9 @@ $(document).ready(function(){initNavTree('dd/d86/_game_application_base_8h_sourc
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keywordtype">void</span> TakeScreenshot();</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> StoreScreenshot(<a class="code" href="../../d4/d43/classez_image.htm">ezImage</a>&amp;&amp; image, <span class="keyword">const</span> <span class="keywordtype">char</span>* szContext = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> StoreScreenshot(<a class="code" href="../../d4/d43/classez_image.htm">ezImage</a>&amp;&amp; image, <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sContext = {});</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordtype">void</span> ExecuteTakeScreenshot(<a class="code" href="../../df/d7b/classez_window_output_target_base.htm">ezWindowOutputTargetBase</a>* pOutputTarget, <span class="keyword">const</span> <span class="keywordtype">char</span>* szContext = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordtype">void</span> ExecuteTakeScreenshot(<a class="code" href="../../df/d7b/classez_window_output_target_base.htm">ezWindowOutputTargetBase</a>* pOutputTarget, <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sContext = {});</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keywordtype">bool</span> m_bTakeScreenshot = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
@@ -171,7 +171,7 @@ $(document).ready(function(){initNavTree('dd/d86/_game_application_base_8h_sourc
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> GetAbsFrameCaptureOutputPath(<a class="code" href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a>&amp; ref_sOutputPath);</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <span class="keywordtype">void</span> ExecuteFrameCapture(ezWindowHandle targetWindowHandle, <span class="keyword">const</span> <span class="keywordtype">char</span>* szContext = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <span class="keywordtype">void</span> ExecuteFrameCapture(ezWindowHandle targetWindowHandle, <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sContext = {});</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <span class="keywordtype">bool</span> m_bContinuousFrameCapture = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <span class="keywordtype">bool</span> m_bCaptureFrame = <span class="keyword">false</span>;</div>
@@ -248,26 +248,28 @@ $(document).ready(function(){initNavTree('dd/d86/_game_application_base_8h_sourc
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../da/d72/classez_application.htm#aa282212e075c042d8adccd76ff3d95f2">ezApplication::Execution</a> <a class="code" href="../../da/d72/classez_application.htm#a9a775624db52313a4f79cd39cff3a3b4">Run</a>() <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160; </div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;  <a class="code" href="../../d0/daf/classez_event.htm">ezCopyOnBroadcastEvent&lt;const ezGameApplicationExecutionEvent&amp;&gt;</a> m_ExecutionEvents;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;  <span class="keywordtype">void</span> RunOneFrame();</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;  <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> GetFrameTime()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_FrameTime; }</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;  <a class="code" href="../../d0/daf/classez_event.htm">ezCopyOnBroadcastEvent&lt;const ezGameApplicationExecutionEvent&amp;&gt;</a> m_ExecutionEvents;</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160; </div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> IsGameUpdateEnabled()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> Run_InputUpdate();</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> Run_ProcessApplicationInput();</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> Run_WorldUpdateAndRender() = 0;</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> Run_BeforeWorldUpdate();</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> Run_AfterWorldUpdate();</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> Run_UpdatePlugins();</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> Run_Present();</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> Run_FinishFrame();</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;  <span class="keywordtype">void</span> UpdateFrameTime();</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;  <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> GetFrameTime()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_FrameTime; }</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> IsGameUpdateEnabled()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> Run_InputUpdate();</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> Run_ProcessApplicationInput();</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> Run_WorldUpdateAndRender() = 0;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> Run_BeforeWorldUpdate();</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> Run_AfterWorldUpdate();</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> Run_UpdatePlugins();</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> Run_Present();</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> Run_FinishFrame();</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160; </div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;  <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> m_FrameTime;</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;};</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;  <span class="keywordtype">void</span> UpdateFrameTime();</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160; </div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;  <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> m_FrameTime;</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition:</b> Types.h:50</div></div>
@@ -275,7 +277,7 @@ $(document).ready(function(){initNavTree('dd/d86/_game_application_base_8h_sourc
 <div class="ttc" id="aclassez_game_application_base_htm_aa7e171f96bd29c049bf0c79c294ce8e6"><div class="ttname"><a href="../../d0/d69/classez_game_application_base.htm#aa7e171f96bd29c049bf0c79c294ce8e6">ezGameApplicationBase::m_ConFunc_TakeScreenshot</a></div><div class="ttdeci">ezConsoleFunction&lt; void()&gt; m_ConFunc_TakeScreenshot</div><div class="ttdoc">expose TakeScreenshot() as a console function</div><div class="ttdef"><b>Definition:</b> GameApplicationBase.h:90</div></div>
 <div class="ttc" id="aclassez_application_htm"><div class="ttname"><a href="../../da/d72/classez_application.htm">ezApplication</a></div><div class="ttdoc">Base class to be used by applications based on ezEngine.</div><div class="ttdef"><b>Definition:</b> Application.h:63</div></div>
 <div class="ttc" id="aclassez_image_htm"><div class="ttname"><a href="../../d4/d43/classez_image.htm">ezImage</a></div><div class="ttdoc">A class containing image data and associated meta data.</div><div class="ttdef"><b>Definition:</b> Image.h:102</div></div>
-<div class="ttc" id="aclassez_application_htm_ab5fd3ecc68ddb52a1c956adddd0e363f"><div class="ttname"><a href="../../da/d72/classez_application.htm#ab5fd3ecc68ddb52a1c956adddd0e363f">ezApplication::BeforeCoreSystemsStartup</a></div><div class="ttdeci">virtual ezResult BeforeCoreSystemsStartup()</div><div class="ttdoc">This function is called before any kind of engine initialization is done.</div><div class="ttdef"><b>Definition:</b> Application.cpp:29</div></div>
+<div class="ttc" id="aclassez_application_htm_ab5fd3ecc68ddb52a1c956adddd0e363f"><div class="ttname"><a href="../../da/d72/classez_application.htm#ab5fd3ecc68ddb52a1c956adddd0e363f">ezApplication::BeforeCoreSystemsStartup</a></div><div class="ttdeci">virtual ezResult BeforeCoreSystemsStartup()</div><div class="ttdoc">This function is called before any kind of engine initialization is done.</div><div class="ttdef"><b>Definition:</b> Application.cpp:25</div></div>
 <div class="ttc" id="aclassez_application_htm_aa282212e075c042d8adccd76ff3d95f2"><div class="ttname"><a href="../../da/d72/classez_application.htm#aa282212e075c042d8adccd76ff3d95f2">ezApplication::Execution</a></div><div class="ttdeci">Execution</div><div class="ttdoc">Defines the possible return values for the ezApplication::Run() function.</div><div class="ttdef"><b>Definition:</b> Application.h:69</div></div>
 <div class="ttc" id="aclassez_game_application_base_htm_ad2f3e29ed647a94655267b406e66796a"><div class="ttname"><a href="../../d0/d69/classez_game_application_base.htm#ad2f3e29ed647a94655267b406e66796a">ezGameApplicationBase::m_ConFunc_CaptureFrame</a></div><div class="ttdeci">ezConsoleFunction&lt; void()&gt; m_ConFunc_CaptureFrame</div><div class="ttdoc">expose CaptureFrame() as a console function</div><div class="ttdef"><b>Definition:</b> GameApplicationBase.h:122</div></div>
 <div class="ttc" id="astructez_hybrid_string_htm"><div class="ttname"><a href="../../d4/d53/structez_hybrid_string.htm">ezHybridString</a></div><div class="ttdef"><b>Definition:</b> Stream.h:16</div></div>
@@ -286,8 +288,10 @@ $(document).ready(function(){initNavTree('dd/d86/_game_application_base_8h_sourc
 <div class="ttc" id="aclassez_game_application_base_htm_a63acdf10ba6fe94114ac417dd2ee1f78"><div class="ttname"><a href="../../d0/d69/classez_game_application_base.htm#a63acdf10ba6fe94114ac417dd2ee1f78">ezGameApplicationBase::GetPlatformProfile</a></div><div class="ttdeci">const ezPlatformProfile &amp; GetPlatformProfile() const</div><div class="ttdoc">Returns the ezPlatformProfile that has been loaded for this application.</div><div class="ttdef"><b>Definition:</b> GameApplicationBase.h:178</div></div>
 <div class="ttc" id="aclassez_window_base_htm"><div class="ttname"><a href="../../d4/d8c/classez_window_base.htm">ezWindowBase</a></div><div class="ttdoc">Base class of all window classes that have a client area and a native window handle.</div><div class="ttdef"><b>Definition:</b> Window.h:125</div></div>
 <div class="ttc" id="aclassez_event_htm"><div class="ttname"><a href="../../d0/daf/classez_event.htm">ezEvent&lt; const ezGameApplicationStaticEvent &amp; &gt;</a></div></div>
+<div class="ttc" id="aclassez_application_htm_a6e510b326ac529bc07472ea38589ef52"><div class="ttname"><a href="../../da/d72/classez_application.htm#a6e510b326ac529bc07472ea38589ef52">ezApplication::ezApplication</a></div><div class="ttdeci">ezApplication(ezStringView sAppName)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> Application.cpp:11</div></div>
 <div class="ttc" id="aclassez_game_application_base_htm_a874b80453635e183abf19983ee3f9c07"><div class="ttname"><a href="../../d0/d69/classez_game_application_base.htm#a874b80453635e183abf19983ee3f9c07">ezGameApplicationBase::GetActiveGameState</a></div><div class="ttdeci">ezGameStateBase * GetActiveGameState() const</div><div class="ttdoc">Returns the currently active game state. Could be nullptr.</div><div class="ttdef"><b>Definition:</b> GameApplicationBase.h:147</div></div>
 <div class="ttc" id="astructez_game_application_static_event_htm"><div class="ttname"><a href="../../dd/d95/structez_game_application_static_event.htm">ezGameApplicationStaticEvent</a></div><div class="ttdef"><b>Definition:</b> GameApplicationBase.h:18</div></div>
+<div class="ttc" id="astructez_string_view_htm"><div class="ttname"><a href="../../de/db8/structez_string_view.htm">ezStringView</a></div><div class="ttdoc">ezStringView represent a read-only sub-string of a larger string, as it can store a dedicated string ...</div><div class="ttdef"><b>Definition:</b> StringView.h:23</div></div>
 <div class="ttc" id="astructez_game_application_execution_event_htm"><div class="ttname"><a href="../../d0/db6/structez_game_application_execution_event.htm">ezGameApplicationExecutionEvent</a></div><div class="ttdef"><b>Definition:</b> GameApplicationBase.h:31</div></div>
 <div class="ttc" id="aclassez_game_application_base_htm_af774343e3587cb375672eefc5c261aaa"><div class="ttname"><a href="../../d0/d69/classez_game_application_base.htm#af774343e3587cb375672eefc5c261aaa">ezGameApplicationBase::GetGameApplicationBaseInstance</a></div><div class="ttdeci">static ezGameApplicationBase * GetGameApplicationBaseInstance()</div><div class="ttdoc">Returns the ezGameApplicationBase singleton.</div><div class="ttdef"><b>Definition:</b> GameApplicationBase.h:63</div></div>
 <div class="ttc" id="astructez_window_creation_desc_htm"><div class="ttname"><a href="../../dd/d3b/structez_window_creation_desc.htm">ezWindowCreationDesc</a></div><div class="ttdoc">Parameters for creating a window, such as position and resolution.</div><div class="ttdef"><b>Definition:</b> Window.h:167</div></div>
@@ -304,7 +308,7 @@ $(document).ready(function(){initNavTree('dd/d86/_game_application_base_8h_sourc
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_ac029bbb8a17b4d550e2f9d55d89a029.htm">Core</a></li><li class="navelem"><a class="el" href="../../dir_e5eea20dab1500b68963bcb42fe4de8f.htm">GameApplication</a></li><li class="navelem"><b>GameApplicationBase.h</b></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:21:51 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:13 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

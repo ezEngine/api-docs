@@ -8,6 +8,6 @@ var structez_resource_event =
       [ "ResourceContentUnloading", "df/d46/structez_resource_event.htm#ac528fc091f4c7052a949e923724c94d3ac1a938ce8e0dc1299d8fe9a52faf2904", null ],
       [ "ResourcePriorityChanged", "df/d46/structez_resource_event.htm#ac528fc091f4c7052a949e923724c94d3a41014b6c891727f45cff2ddbbe764078", null ]
     ] ],
-    [ "m_pResource", "df/d46/structez_resource_event.htm#a2aa163ffcfc5f729d3bf90cf10344bab", null ],
+    [ "m_pResource", "df/d46/structez_resource_event.htm#ad35cfd84324bf9ebc35cafc4a2df8830", null ],
     [ "m_Type", "df/d46/structez_resource_event.htm#a3d6f3374f52473d38497f24770b42939", null ]
 ];

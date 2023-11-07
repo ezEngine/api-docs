@@ -9,6 +9,7 @@ var structez_update_rate =
       [ "Max5fps", "dc/d2e/structez_update_rate.htm#ae16fc45b9b333ce99ea80cd8e4e0de16a6ea9f1375f07de5c25abf18a96eed572", null ],
       [ "Max2fps", "dc/d2e/structez_update_rate.htm#ae16fc45b9b333ce99ea80cd8e4e0de16a769bdcf4bf80d068b215bc4e249f4497", null ],
       [ "Max1fps", "dc/d2e/structez_update_rate.htm#ae16fc45b9b333ce99ea80cd8e4e0de16abe07857276b2f7e5b402cccd32d63c3d", null ],
+      [ "Never", "dc/d2e/structez_update_rate.htm#ae16fc45b9b333ce99ea80cd8e4e0de16ac1a8955e1a0e4a2e59a32f38772fa121", null ],
       [ "Default", "dc/d2e/structez_update_rate.htm#ae16fc45b9b333ce99ea80cd8e4e0de16aaf1108e392a9621451f512bc4f4985be", null ]
     ] ]
 ];

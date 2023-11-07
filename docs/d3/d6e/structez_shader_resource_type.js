@@ -1,6 +1,6 @@
 var structez_shader_resource_type =
 [
-    [ "StorageType", "d3/d6e/structez_shader_resource_type.htm#a9151c386b1a2c8894713377a0d26638f", null ],
+    [ "StorageType", "d3/d6e/structez_shader_resource_type.htm#ae8a82897595d8bac3f6249f870a6ed92", null ],
     [ "Enum", "d3/d6e/structez_shader_resource_type.htm#a1d155e7159994d54f86200a943197e5a", [
       [ "Unknown", "d3/d6e/structez_shader_resource_type.htm#a1d155e7159994d54f86200a943197e5aa425e1658d7f1665e4dd5a94cece1b928", null ],
       [ "Texture1D", "d3/d6e/structez_shader_resource_type.htm#a1d155e7159994d54f86200a943197e5aacdd53a64017814846c9dc84599663bb7", null ],

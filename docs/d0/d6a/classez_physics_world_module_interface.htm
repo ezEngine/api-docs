@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -115,6 +115,9 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a2da56fbdec9dc773c73a3e168d0d316e"><td class="memItemLeft" align="right" valign="top">virtual ezUInt32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d6a/classez_physics_world_module_interface.htm#a2da56fbdec9dc773c73a3e168d0d316e">GetCollisionLayerByName</a> (<a class="el" href="../../de/db8/structez_string_view.htm">ezStringView</a> sName) const =0</td></tr>
+<tr class="memdesc:a2da56fbdec9dc773c73a3e168d0d316e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches for a collision layer with the given name and returns its index.  <a href="../../d0/d6a/classez_physics_world_module_interface.htm#a2da56fbdec9dc773c73a3e168d0d316e">More...</a><br /></td></tr>
+<tr class="separator:a2da56fbdec9dc773c73a3e168d0d316e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a713dd56bf50a8dd323d1bcf56a2ae32c"><td class="memItemLeft" align="right" valign="top"><a id="a713dd56bf50a8dd323d1bcf56a2ae32c"></a>
 virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>Raycast</b> (<a class="el" href="../../db/d5b/structez_physics_cast_result.htm">ezPhysicsCastResult</a> &amp;out_result, const <a class="el" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> &amp;vStart, const <a class="el" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> &amp;vDir, float fDistance, const <a class="el" href="../../d7/de5/structez_physics_query_parameters.htm">ezPhysicsQueryParameters</a> &amp;params, ezPhysicsHitCollection collection=ezPhysicsHitCollection::Closest) const =0</td></tr>
 <tr class="separator:a713dd56bf50a8dd323d1bcf56a2ae32c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -142,6 +145,9 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>QueryShapesIn
 <tr class="memitem:aaeef7e6b6b551e512495d0f2c78c26f8"><td class="memItemLeft" align="right" valign="top"><a id="aaeef7e6b6b551e512495d0f2c78c26f8"></a>
 virtual <a class="el" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GetGravity</b> () const =0</td></tr>
 <tr class="separator:aaeef7e6b6b551e512495d0f2c78c26f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47f32b94f1663d1b3dcce3e341a52234"><td class="memItemLeft" align="right" valign="top"><a id="a47f32b94f1663d1b3dcce3e341a52234"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>QueryGeometryInBox</b> (const <a class="el" href="../../d7/de5/structez_physics_query_parameters.htm">ezPhysicsQueryParameters</a> &amp;params, <a class="el" href="../../d6/d25/classez_bounding_box_template.htm">ezBoundingBox</a> box, <a class="el" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray</a>&lt; <a class="el" href="../../d0/d50/structez_physics_triangle.htm">ezPhysicsTriangle</a> &gt; &amp;out_triangles) const =0</td></tr>
+<tr class="separator:a47f32b94f1663d1b3dcce3e341a52234"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6874761ed60bc0e8ab4b055230075fe"><td class="memItemLeft" align="right" valign="top"><a id="ab6874761ed60bc0e8ab4b055230075fe"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d6a/classez_physics_world_module_interface.htm#ab6874761ed60bc0e8ab4b055230075fe">AddStaticCollisionBox</a> (<a class="el" href="../../d6/d61/classez_game_object.htm">ezGameObject</a> *pOwner, <a class="el" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> vBoxSize)</td></tr>
 <tr class="memdesc:ab6874761ed60bc0e8ab4b055230075fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a static actor with a box shape to pOwner. <br /></td></tr>
@@ -230,15 +236,47 @@ Additional Inherited Members</h2></td></tr>
 static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>GetStaticRTTI</b> ()</td></tr>
 <tr class="separator:ad676281ced156eb886aa4f74a2a45d2f inherit pub_static_methods_classez_no_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_types_classez_world_module"><td colspan="2" onclick="javascript:toggleInherit('pro_types_classez_world_module')"><img src="../../closed.png" alt="-"/>&#160;Protected Types inherited from <a class="el" href="../../d1/df7/classez_world_module.htm">ezWorldModule</a></td></tr>
-<tr class="memitem:ac1d8ecf65d6913430682096879958455 inherit pro_types_classez_world_module"><td class="memItemLeft" align="right" valign="top"><a id="ac1d8ecf65d6913430682096879958455"></a>
-typedef <a class="el" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>&lt; void(const <a class="el" href="../../d6/d3c/structez_world_module_1_1_update_context.htm">UpdateContext</a> &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/df7/classez_world_module.htm#ac1d8ecf65d6913430682096879958455">UpdateFunction</a></td></tr>
-<tr class="memdesc:ac1d8ecf65d6913430682096879958455 inherit pro_types_classez_world_module"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update function delegate. <br /></td></tr>
-<tr class="separator:ac1d8ecf65d6913430682096879958455 inherit pro_types_classez_world_module"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0f8409ed1df3afc0f41b50616bf1284 inherit pro_types_classez_world_module"><td class="memItemLeft" align="right" valign="top"><a id="ad0f8409ed1df3afc0f41b50616bf1284"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/df7/classez_world_module.htm#ad0f8409ed1df3afc0f41b50616bf1284">UpdateFunction</a> = <a class="el" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>&lt; void(const <a class="el" href="../../d6/d3c/structez_world_module_1_1_update_context.htm">UpdateContext</a> &amp;)&gt;</td></tr>
+<tr class="memdesc:ad0f8409ed1df3afc0f41b50616bf1284 inherit pro_types_classez_world_module"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update function delegate. <br /></td></tr>
+<tr class="separator:ad0f8409ed1df3afc0f41b50616bf1284 inherit pro_types_classez_world_module"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classez_world_module"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classez_world_module')"><img src="../../closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="../../d1/df7/classez_world_module.htm">ezWorldModule</a></td></tr>
 <tr class="memitem:ae00cd951e5406e9764633d6a8c51bfc8 inherit pro_attribs_classez_world_module"><td class="memItemLeft" align="right" valign="top"><a id="ae00cd951e5406e9764633d6a8c51bfc8"></a>
 <a class="el" href="../../da/d3c/classez_world.htm">ezWorld</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_pWorld</b></td></tr>
 <tr class="separator:ae00cd951e5406e9764633d6a8c51bfc8 inherit pro_attribs_classez_world_module"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a2da56fbdec9dc773c73a3e168d0d316e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2da56fbdec9dc773c73a3e168d0d316e">&#9670;&nbsp;</a></span>GetCollisionLayerByName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ezUInt32 ezPhysicsWorldModuleInterface::GetCollisionLayerByName </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/db8/structez_string_view.htm">ezStringView</a>&#160;</td>
+          <td class="paramname"><em>sName</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Searches for a collision layer with the given name and returns its index. </p>
+<p>Returns ezInvalidIndex if no such collision layer exists. </p>
+
+<p>Implemented in <a class="el" href="../../dc/da2/classez_jolt_world_module.htm#a76770376912a5546de1c4c5850b7e126">ezJoltWorldModule</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Core/Interfaces/<a class="el" href="../../de/d7f/_physics_world_module_8h_source.htm">PhysicsWorldModule.h</a></li>
 </ul>
@@ -248,7 +286,7 @@ typedef <a class="el" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>&l
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d0/d6a/classez_physics_world_module_interface.htm">ezPhysicsWorldModuleInterface</a></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:22:05 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:26 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

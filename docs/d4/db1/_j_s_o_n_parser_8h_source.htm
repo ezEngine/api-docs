@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('d4/db1/_j_s_o_n_parser_8h_source.htm',
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <a class="code" href="../../d3/d3d/classez_j_s_o_n_parser.htm">ezJSONParser</a>();</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keyword">virtual</span> ~<a class="code" href="../../d3/d3d/classez_j_s_o_n_parser.htm">ezJSONParser</a>() {}</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keyword">virtual</span> ~<a class="code" href="../../d3/d3d/classez_j_s_o_n_parser.htm">ezJSONParser</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
 <div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="../../d3/d3d/classez_j_s_o_n_parser.htm#a72c03812e9ed90797a5b6b464aae2fc7">   21</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="../../d3/d3d/classez_j_s_o_n_parser.htm#a72c03812e9ed90797a5b6b464aae2fc7">SetLogInterface</a>(<a class="code" href="../../d2/d9e/classez_log_interface.htm">ezLogInterface</a>* pLog) { m_pLogInterface = pLog; }</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
@@ -115,14 +115,14 @@ $(document).ready(function(){initNavTree('d4/db1/_j_s_o_n_parser_8h_source.htm',
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordtype">void</span> SkipArray();</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordtype">void</span> ParsingError(<span class="keyword">const</span> <span class="keywordtype">char</span>* szMessage, <span class="keywordtype">bool</span> bFatal);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordtype">void</span> ParsingError(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sMessage, <span class="keywordtype">bool</span> bFatal);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <a class="code" href="../../d2/d9e/classez_log_interface.htm">ezLogInterface</a>* m_pLogInterface;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <a class="code" href="../../d2/d9e/classez_log_interface.htm">ezLogInterface</a>* m_pLogInterface = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> OnVariable(<span class="keyword">const</span> <span class="keywordtype">char</span>* szVarName) = 0;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> OnVariable(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sVarName) = 0;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> OnReadValue(<span class="keyword">const</span> <span class="keywordtype">char</span>* szValue) = 0;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> OnReadValue(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sValue) = 0;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> OnReadValue(<span class="keywordtype">double</span> fValue) = 0;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
@@ -138,7 +138,7 @@ $(document).ready(function(){initNavTree('d4/db1/_j_s_o_n_parser_8h_source.htm',
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> OnEndArray() = 0;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="../../d3/d3d/classez_j_s_o_n_parser.htm#aee5818a43f9f151a88425c65a6dae47d">   98</a></span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d3/d3d/classez_j_s_o_n_parser.htm#aee5818a43f9f151a88425c65a6dae47d">OnParsingError</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* szMessage, <span class="keywordtype">bool</span> bFatal, ezUInt32 uiLine, ezUInt32 uiColumn) {}</div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="../../d3/d3d/classez_j_s_o_n_parser.htm#a75ba30be2cd2732385a0e0925aa9b5fb">   98</a></span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d3/d3d/classez_j_s_o_n_parser.htm#a75ba30be2cd2732385a0e0925aa9b5fb">OnParsingError</a>(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sMessage, <span class="keywordtype">bool</span> bFatal, ezUInt32 uiLine, ezUInt32 uiColumn) {}</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="keyword">enum</span> State</div>
@@ -191,16 +191,17 @@ $(document).ready(function(){initNavTree('d4/db1/_j_s_o_n_parser_8h_source.htm',
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_stream_reader_htm"><div class="ttname"><a href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a></div><div class="ttdoc">Interface for binary in (read) streams.</div><div class="ttdef"><b>Definition:</b> Stream.h:21</div></div>
+<div class="ttc" id="aclassez_j_s_o_n_parser_htm_a75ba30be2cd2732385a0e0925aa9b5fb"><div class="ttname"><a href="../../d3/d3d/classez_j_s_o_n_parser.htm#a75ba30be2cd2732385a0e0925aa9b5fb">ezJSONParser::OnParsingError</a></div><div class="ttdeci">virtual void OnParsingError(ezStringView sMessage, bool bFatal, ezUInt32 uiLine, ezUInt32 uiColumn)</div><div class="ttdoc">Called when something unexpected is encountered in the JSON document.</div><div class="ttdef"><b>Definition:</b> JSONParser.h:98</div></div>
 <div class="ttc" id="aclassez_log_interface_htm"><div class="ttname"><a href="../../d2/d9e/classez_log_interface.htm">ezLogInterface</a></div><div class="ttdoc">Base class for all logging classes.</div><div class="ttdef"><b>Definition:</b> Log.h:76</div></div>
 <div class="ttc" id="aclassez_j_s_o_n_parser_htm_a72c03812e9ed90797a5b6b464aae2fc7"><div class="ttname"><a href="../../d3/d3d/classez_j_s_o_n_parser.htm#a72c03812e9ed90797a5b6b464aae2fc7">ezJSONParser::SetLogInterface</a></div><div class="ttdeci">void SetLogInterface(ezLogInterface *pLog)</div><div class="ttdoc">Allows to specify an ezLogInterface through which errors and warnings are reported.</div><div class="ttdef"><b>Definition:</b> JSONParser.h:21</div></div>
-<div class="ttc" id="aclassez_j_s_o_n_parser_htm_aee5818a43f9f151a88425c65a6dae47d"><div class="ttname"><a href="../../d3/d3d/classez_j_s_o_n_parser.htm#aee5818a43f9f151a88425c65a6dae47d">ezJSONParser::OnParsingError</a></div><div class="ttdeci">virtual void OnParsingError(const char *szMessage, bool bFatal, ezUInt32 uiLine, ezUInt32 uiColumn)</div><div class="ttdoc">Called when something unexpected is encountered in the JSON document.</div><div class="ttdef"><b>Definition:</b> JSONParser.h:98</div></div>
+<div class="ttc" id="astructez_string_view_htm"><div class="ttname"><a href="../../de/db8/structez_string_view.htm">ezStringView</a></div><div class="ttdoc">ezStringView represent a read-only sub-string of a larger string, as it can store a dedicated string ...</div><div class="ttdef"><b>Definition:</b> StringView.h:23</div></div>
 <div class="ttc" id="aclassez_hybrid_array_htm"><div class="ttname"><a href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt; JSONState, 32 &gt;</a></div></div>
 <div class="ttc" id="aclassez_j_s_o_n_parser_htm"><div class="ttname"><a href="../../d3/d3d/classez_j_s_o_n_parser.htm">ezJSONParser</a></div><div class="ttdoc">A low level JSON parser that can incrementally parse the structure of a JSON document.</div><div class="ttdef"><b>Definition:</b> JSONParser.h:12</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_64fdcb4094ee5a27b054d4fa23e28e01.htm">IO</a></li><li class="navelem"><b>JSONParser.h</b></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:21:55 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:17 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

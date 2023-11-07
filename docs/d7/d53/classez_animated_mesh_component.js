@@ -11,7 +11,9 @@ var classez_animated_mesh_component =
     [ "OnAnimationPoseUpdated", "d7/d53/classez_animated_mesh_component.htm#a660ab5f8fc42b7c9bff0fcf2b1b762ce", null ],
     [ "OnDeactivated", "d7/d53/classez_animated_mesh_component.htm#a3e5fbc30ca98bb1456120214e4c0d452", null ],
     [ "OnQueryAnimationSkeleton", "d7/d53/classez_animated_mesh_component.htm#ad8cf4a978563c3942c81e39d32a48ecf", null ],
+    [ "RetrievePose", "d7/d53/classez_animated_mesh_component.htm#a741920185e1972b85d154a79c206d2ca", null ],
     [ "SerializeComponent", "d7/d53/classez_animated_mesh_component.htm#abe83929801b6f155dc10442884d9be40", null ],
+    [ "m_hDefaultSkeleton", "d7/d53/classez_animated_mesh_component.htm#a110c06a189c4a9782680ec141b1b8bde", null ],
     [ "m_MaxBounds", "d7/d53/classez_animated_mesh_component.htm#a1959b06941db5d49b946246079a0cad0", null ],
     [ "m_RootTransform", "d7/d53/classez_animated_mesh_component.htm#a864c8f33a14747c9c885c63f50ed66e7", null ],
     [ "m_SkinningState", "d7/d53/classez_animated_mesh_component.htm#a7ddd90a4119ef2a86fe655655c81187f", null ]

@@ -1,9 +1,6 @@
 var classez_simd_mat4f =
 [
     [ "ezSimdMat4f", "d2/d62/classez_simd_mat4f.htm#a2985067da3d82a491f6acea8e7ac45ad", null ],
-    [ "ezSimdMat4f", "d2/d62/classez_simd_mat4f.htm#a8a60812f05ecab53295d6ec42b9be35e", null ],
-    [ "ezSimdMat4f", "d2/d62/classez_simd_mat4f.htm#a13581c3a4f276f928e4dd1e390128b7e", null ],
-    [ "ezSimdMat4f", "d2/d62/classez_simd_mat4f.htm#a82c9df902dc6e9af914da53aee347dd8", null ],
     [ "EZ_DECLARE_POD_TYPE", "d2/d62/classez_simd_mat4f.htm#aa92494124bd564d5b856ac9035cf6b8a", null ],
     [ "GetAsArray", "d2/d62/classez_simd_mat4f.htm#aac17b7ee205b49a89c1326052e5977e5", null ],
     [ "GetInverse", "d2/d62/classez_simd_mat4f.htm#ae94aabff1a91372916f46978b3112b8d", null ],
@@ -18,8 +15,6 @@ var classez_simd_mat4f =
     [ "operator*", "d2/d62/classez_simd_mat4f.htm#a6da11f08ae667642a8b6376b3d419935", null ],
     [ "operator*=", "d2/d62/classez_simd_mat4f.htm#aedb936f9822251e4b6ad3e472f121aaa", null ],
     [ "operator==", "d2/d62/classez_simd_mat4f.htm#a60f4d10a6bc40b13f12091676baab8d8", null ],
-    [ "SetFromArray", "d2/d62/classez_simd_mat4f.htm#ae15a8fc67433ba2d51ca0640ae741a5a", null ],
-    [ "SetIdentity", "d2/d62/classez_simd_mat4f.htm#a67f36ae7573ab875defc2bb06e36f22a", null ],
     [ "SetRows", "d2/d62/classez_simd_mat4f.htm#a06688b7babec4640583e77f06e53eeb5", null ],
     [ "TransformDirection", "d2/d62/classez_simd_mat4f.htm#a0c3f77da1feab8ca158346d72050e6b7", null ],
     [ "TransformPosition", "d2/d62/classez_simd_mat4f.htm#a849d351580f175be2956da10ac443d02", null ],

@@ -19,7 +19,7 @@ var classez_image =
     [ "GetSliceView", "d4/d43/classez_image.htm#a6c97f9f5cc74238527b8bb47888ef86a", null ],
     [ "GetSubImageView", "d4/d43/classez_image.htm#ab1a64811fc14728dbf65749cc1a4ce48", null ],
     [ "GetSubImageView", "d4/d43/classez_image.htm#a526f96d12490d12fbb45218d350f6b11", null ],
-    [ "LoadFrom", "d4/d43/classez_image.htm#af66ac6ccebb9b7a427dc4a802e62c01d", null ],
+    [ "LoadFrom", "d4/d43/classez_image.htm#a4687bb48efce2121800d224303007dd4", null ],
     [ "operator=", "d4/d43/classez_image.htm#a9a90823b5bf1a9a9a97d58f21d0f2ad9", null ],
     [ "ResetAndAlloc", "d4/d43/classez_image.htm#a234448df9e9ce953371ee6422e67d48d", null ],
     [ "ResetAndCopy", "d4/d43/classez_image.htm#a79f203f4c20f0304b41bbf17c11d29c0", null ],

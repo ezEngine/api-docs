@@ -2,7 +2,7 @@ var classez_open_x_r =
 [
     [ "ezOpenXR", "dd/d72/classez_open_x_r.htm#af337149021fce5672848778c812a9440", null ],
     [ "~ezOpenXR", "dd/d72/classez_open_x_r.htm#a9a16803ef3841f95c1c1260cf119d8c9", null ],
-    [ "CreateActor", "dd/d72/classez_open_x_r.htm#af8a4d6335e738c99b1439579236db3d7", null ],
+    [ "CreateActor", "dd/d72/classez_open_x_r.htm#a3418f0b8434dd3567e10e593187c338f", null ],
     [ "Deinitialize", "dd/d72/classez_open_x_r.htm#a6ff789e6287acd6b06ba55d335305efd", null ],
     [ "DelayPresent", "dd/d72/classez_open_x_r.htm#ae9529aaae106da29d5bb8775bd85cd47", null ],
     [ "EndFrame", "dd/d72/classez_open_x_r.htm#a25e384f7d8844ab7a5ac3813f59053f4", null ],

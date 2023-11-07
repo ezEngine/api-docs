@@ -1,5 +1,6 @@
 var structez_r_t_t_i_allocator =
 [
+    [ "~ezRTTIAllocator", "db/df8/structez_r_t_t_i_allocator.htm#ad92f310d2bb93651fb945f7ad03d837c", null ],
     [ "Allocate", "db/df8/structez_r_t_t_i_allocator.htm#a4486cd8e3f58b163d9c2c776f6802a5f", null ],
     [ "AllocateInternal", "db/df8/structez_r_t_t_i_allocator.htm#a0e7c86efe99f3173e141fea34d3b516a", null ],
     [ "CanAllocate", "db/df8/structez_r_t_t_i_allocator.htm#a996b32cc9b2e56c695ed8774a4b147bb", null ],

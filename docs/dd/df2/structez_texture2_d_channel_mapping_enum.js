@@ -1,6 +1,6 @@
 var structez_texture2_d_channel_mapping_enum =
 [
-    [ "StorageType", "dd/df2/structez_texture2_d_channel_mapping_enum.htm#a26f8242828a50676882062ad9c581688", null ],
+    [ "StorageType", "dd/df2/structez_texture2_d_channel_mapping_enum.htm#ab5491b6e658d33168eb31e4f7c9a67ad", null ],
     [ "Enum", "dd/df2/structez_texture2_d_channel_mapping_enum.htm#af8103a6370001850e1d2d2c38d88b328", [
       [ "R1", "dd/df2/structez_texture2_d_channel_mapping_enum.htm#af8103a6370001850e1d2d2c38d88b328add5bd39920551452c098b08b5344a5ce", null ],
       [ "RG1", "dd/df2/structez_texture2_d_channel_mapping_enum.htm#af8103a6370001850e1d2d2c38d88b328ae1252bf09b611757e9a7cb8508dd7be2", null ],

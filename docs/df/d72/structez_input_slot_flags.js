@@ -1,7 +1,7 @@
 var structez_input_slot_flags =
 [
     [ "Bits", "da/d98/structez_input_slot_flags_1_1_bits.htm", "da/d98/structez_input_slot_flags_1_1_bits" ],
-    [ "StorageType", "df/d72/structez_input_slot_flags.htm#a206f4059a43a608106b37224cebddf8e", null ],
+    [ "StorageType", "df/d72/structez_input_slot_flags.htm#a5b1ba9e9e43d8546b20d58d5bc9b5c08", null ],
     [ "Enum", "df/d72/structez_input_slot_flags.htm#a48934806cc8163cb09b11179db8c3808", [
       [ "None", "df/d72/structez_input_slot_flags.htm#a48934806cc8163cb09b11179db8c3808afcbdb97fca32dcc7c4ccf31b0bbaf7f9", null ],
       [ "ReportsRelativeValues", "df/d72/structez_input_slot_flags.htm#a48934806cc8163cb09b11179db8c3808aae146bb0713ae7dff9760af3e5b912ce", null ],

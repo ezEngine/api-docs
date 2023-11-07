@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -91,166 +91,99 @@ $(document).ready(function(){initNavTree('da/d4b/_anim_graph_8h_source.htm','../
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;RendererCore/RendererCoreDLL.h&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;Core/Utils/Blackboard.h&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;Foundation/Memory/AllocatorWrapper.h&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;Foundation/Types/Delegate.h&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;Foundation/Types/UniquePtr.h&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;RendererCore/AnimationSystem/AnimGraph/AnimGraphNode.h&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;RendererCore/AnimationSystem/AnimPoseGenerator.h&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;Foundation/Containers/HashTable.h&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;Foundation/Types/SharedPtr.h&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">class </span><a class="code" href="../../d6/d61/classez_game_object.htm">ezGameObject</a>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">using</span> <a class="code" href="../../d3/dd7/classez_typed_resource_handle.htm">ezSkeletonResourceHandle</a> = <a class="code" href="../../d3/dd7/classez_typed_resource_handle.htm">ezTypedResourceHandle&lt;class ezSkeletonResource&gt;</a>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;EZ_DEFINE_AS_POD_TYPE(ozz::math::SimdFloat4);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="../../dc/d02/structez_anim_graph_pin_data_bone_weights.htm">   21</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../dc/d02/structez_anim_graph_pin_data_bone_weights.htm">ezAnimGraphPinDataBoneWeights</a></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  ezUInt16 m_uiOwnIndex = 0xFFFF;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keywordtype">float</span> m_fOverallWeight = 1.0f;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d3/d71/structez_anim_graph_shared_bone_weights.htm">ezAnimGraphSharedBoneWeights</a>* m_pSharedBoneWeights = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;};</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="../../d1/d7b/structez_anim_graph_pin_data_local_transforms.htm">   28</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../d1/d7b/structez_anim_graph_pin_data_local_transforms.htm">ezAnimGraphPinDataLocalTransforms</a></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  ezUInt16 m_uiOwnIndex = 0xFFFF;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  ezAnimPoseGeneratorCommandID m_CommandID;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../dc/d02/structez_anim_graph_pin_data_bone_weights.htm">ezAnimGraphPinDataBoneWeights</a>* m_pWeights = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordtype">float</span> m_fOverallWeight = 1.0f;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> m_vRootMotion = <a class="code" href="../../da/df1/classez_vec3_template.htm#add7061770113b1065f78a3cbad6b0a8b">ezVec3::ZeroVector</a>();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordtype">bool</span> m_bUseRootMotion = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="../../d7/dfb/structez_anim_graph_pin_data_model_transforms.htm">   38</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../d7/dfb/structez_anim_graph_pin_data_model_transforms.htm">ezAnimGraphPinDataModelTransforms</a></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  ezUInt16 m_uiOwnIndex = 0xFFFF;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  ezAnimPoseGeneratorCommandID m_CommandID;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> m_vRootMotion = <a class="code" href="../../da/df1/classez_vec3_template.htm#add7061770113b1065f78a3cbad6b0a8b">ezVec3::ZeroVector</a>();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> m_RootRotationX;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> m_RootRotationY;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> m_RootRotationZ;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordtype">bool</span> m_bUseRootMotion = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;};</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="../../d5/d0d/classez_anim_graph.htm">   49</a></span>&#160;<span class="keyword">class </span>EZ_RENDERERCORE_DLL <a class="code" href="../../d5/d0d/classez_anim_graph.htm">ezAnimGraph</a></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  EZ_DISALLOW_COPY_AND_ASSIGN(<a class="code" href="../../d5/d0d/classez_anim_graph.htm">ezAnimGraph</a>);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <a class="code" href="../../d5/d0d/classez_anim_graph.htm">ezAnimGraph</a>();</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  ~<a class="code" href="../../d5/d0d/classez_anim_graph.htm">ezAnimGraph</a>();</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordtype">void</span> Configure(<span class="keyword">const</span> <a class="code" href="../../d3/dd7/classez_typed_resource_handle.htm">ezSkeletonResourceHandle</a>&amp; hSkeleton, <a class="code" href="../../d0/d0a/classez_anim_pose_generator.htm">ezAnimPoseGenerator</a>&amp; ref_poseGenerator, <span class="keyword">const</span> <a class="code" href="../../de/dc1/classez_shared_ptr.htm">ezSharedPtr&lt;ezBlackboard&gt;</a>&amp; pBlackboard = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;Foundation/Containers/DynamicArray.h&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;Foundation/Memory/InstanceDataAllocator.h&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;Foundation/Types/UniquePtr.h&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;RendererCore/AnimationSystem/AnimGraph/AnimGraphNode.h&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="../../d5/d0d/classez_anim_graph.htm">   10</a></span>&#160;<span class="keyword">class </span>EZ_RENDERERCORE_DLL <a class="code" href="../../d5/d0d/classez_anim_graph.htm">ezAnimGraph</a></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  EZ_DISALLOW_COPY_AND_ASSIGN(<a class="code" href="../../d5/d0d/classez_anim_graph.htm">ezAnimGraph</a>);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <a class="code" href="../../d5/d0d/classez_anim_graph.htm">ezAnimGraph</a>();</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  ~<a class="code" href="../../d5/d0d/classez_anim_graph.htm">ezAnimGraph</a>();</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keywordtype">void</span> Clear();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <a class="code" href="../../df/df1/classez_anim_graph_node.htm">ezAnimGraphNode</a>* AddNode(<a class="code" href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt;ezAnimGraphNode&gt;</a>&amp;&amp; pNode);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keywordtype">void</span> AddConnection(<span class="keyword">const</span> <a class="code" href="../../df/df1/classez_anim_graph_node.htm">ezAnimGraphNode</a>* pSrcNode, <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sSrcPinName, <a class="code" href="../../df/df1/classez_anim_graph_node.htm">ezAnimGraphNode</a>* pDstNode, <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sDstPinName);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> Serialize(<a class="code" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a>&amp; inout_stream) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> Deserialize(<a class="code" href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a>&amp; inout_stream);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../da/d1b/classez_instance_data_allocator.htm">ezInstanceDataAllocator</a>&amp; GetInstanceDataAlloator()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_InstanceDataAllocator; }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;const ezUniquePtr&lt;ezAnimGraphNode&gt;</a>&gt; GetNodes()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_Nodes; }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordtype">void</span> PrepareForUse();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../db/d86/classez_anim_graph_instance.htm">ezAnimGraphInstance</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keyword">struct </span>ConnectionTo</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sSrcPinName;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../df/df1/classez_anim_graph_node.htm">ezAnimGraphNode</a>* m_pDstNode = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sDstPinName;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="../../d2/de1/classez_anim_graph_pin.htm">ezAnimGraphPin</a>* m_pSrcPin = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="../../d2/de1/classez_anim_graph_pin.htm">ezAnimGraphPin</a>* m_pDstPin = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  };</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keyword">struct </span>ConnectionsTo</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ConnectionTo, 2&gt;</a> m_To;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  };</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordtype">void</span> SortNodesByPriority();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordtype">void</span> PreparePinMapping();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordtype">void</span> AssignInputPinIndices();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordtype">void</span> AssignOutputPinIndices();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  ezUInt16 ComputeNodePriority(<span class="keyword">const</span> <a class="code" href="../../df/df1/classez_anim_graph_node.htm">ezAnimGraphNode</a>* pNode, <a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;const ezAnimGraphNode*, ezUInt16&gt;</a>&amp; inout_Prios, ezUInt16&amp; inout_uiOutputPrio) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordtype">bool</span> m_bPreparedForUse = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  ezUInt32 m_uiInputPinCounts[ezAnimGraphPin::Type::ENUM_COUNT];</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  ezUInt32 m_uiPinInstanceDataOffset[ezAnimGraphPin::Type::ENUM_COUNT];</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;const ezAnimGraphNode*, ConnectionsTo&gt;</a> m_From;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordtype">void</span> Update(<a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> diff, <a class="code" href="../../d6/d61/classez_game_object.htm">ezGameObject</a>* pTarget);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">void</span> GetRootMotion(<a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; ref_vTranslation, <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a>&amp; ref_rotationX, <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a>&amp; ref_rotationY, <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a>&amp; ref_rotationZ) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../de/dc1/classez_shared_ptr.htm">ezSharedPtr&lt;ezBlackboard&gt;</a>&amp; GetBlackboard() { <span class="keywordflow">return</span> m_pBlackboard; }</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> Serialize(<a class="code" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a>&amp; inout_stream) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> Deserialize(<a class="code" href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a>&amp; inout_stream);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <a class="code" href="../../d0/d0a/classez_anim_pose_generator.htm">ezAnimPoseGenerator</a>&amp; GetPoseGenerator() { <span class="keywordflow">return</span> *m_pPoseGenerator; }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../de/dc1/classez_shared_ptr.htm">ezSharedPtr&lt;ezAnimGraphSharedBoneWeights&gt;</a> CreateBoneWeights(<span class="keyword">const</span> <span class="keywordtype">char</span>* szUniqueName, <span class="keyword">const</span> <a class="code" href="../../d9/d0c/classez_skeleton_resource.htm">ezSkeletonResource</a>&amp; skeleton, <a class="code" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>&lt;<span class="keywordtype">void</span>(<a class="code" href="../../d3/d71/structez_anim_graph_shared_bone_weights.htm">ezAnimGraphSharedBoneWeights</a>&amp;)&gt; fill);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <a class="code" href="../../dc/d02/structez_anim_graph_pin_data_bone_weights.htm">ezAnimGraphPinDataBoneWeights</a>* AddPinDataBoneWeights();</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <a class="code" href="../../d1/d7b/structez_anim_graph_pin_data_local_transforms.htm">ezAnimGraphPinDataLocalTransforms</a>* AddPinDataLocalTransforms();</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <a class="code" href="../../d7/dfb/structez_anim_graph_pin_data_model_transforms.htm">ezAnimGraphPinDataModelTransforms</a>* AddPinDataModelTransforms();</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordtype">void</span> SetOutputModelTransform(<a class="code" href="../../d7/dfb/structez_anim_graph_pin_data_model_transforms.htm">ezAnimGraphPinDataModelTransforms</a>* pModelTransform);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordtype">void</span> SetRootMotion(<span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; vTranslation, <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> rotationX, <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> rotationY, <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> rotationZ);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezUniquePtr&lt;ezAnimGraphNode&gt;</a>&gt; m_Nodes;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <a class="code" href="../../d3/dd7/classez_typed_resource_handle.htm">ezSkeletonResourceHandle</a> m_hSkeleton;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezDynamicArray&lt;ezUInt16&gt;</a>&gt; m_OutputPinToInputPinMapping[ezAnimGraphPin::ENUM_COUNT];</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="comment">// EXTEND THIS if a new type is introduced</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezInt8&gt;</a> m_TriggerInputPinStates;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;double&gt;</a> m_NumberInputPinStates;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezUInt16&gt;</a> m_BoneWeightInputPinStates;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezHybridArray&lt;ezUInt16, 1&gt;</a>&gt; m_LocalPoseInputPinStates;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezUInt16&gt;</a> m_ModelPoseInputPinStates;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <a class="code" href="../../d7/dfb/structez_anim_graph_pin_data_model_transforms.htm">ezAnimGraphPinDataModelTransforms</a>* m_pCurrentModelTransforms = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> m_vRootMotion = <a class="code" href="../../da/df1/classez_vec3_template.htm#add7061770113b1065f78a3cbad6b0a8b">ezVec3::ZeroVector</a>();</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> m_RootRotationX;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> m_RootRotationY;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> m_RootRotationZ;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d2/d07/classez_animation_controller_asset_document.htm">ezAnimationControllerAssetDocument</a>;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../db/def/classez_anim_graph_trigger_output_pin.htm">ezAnimGraphTriggerOutputPin</a>;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d8/db1/classez_anim_graph_trigger_input_pin.htm">ezAnimGraphTriggerInputPin</a>;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d3/df7/classez_anim_graph_bone_weights_input_pin.htm">ezAnimGraphBoneWeightsInputPin</a>;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../da/d8f/classez_anim_graph_bone_weights_output_pin.htm">ezAnimGraphBoneWeightsOutputPin</a>;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d7/de3/classez_anim_graph_local_pose_input_pin.htm">ezAnimGraphLocalPoseInputPin</a>;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../dc/d00/classez_anim_graph_local_pose_output_pin.htm">ezAnimGraphLocalPoseOutputPin</a>;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d1/d77/classez_anim_graph_model_pose_input_pin.htm">ezAnimGraphModelPoseInputPin</a>;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d1/dcb/classez_anim_graph_model_pose_output_pin.htm">ezAnimGraphModelPoseOutputPin</a>;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d4/d5b/classez_anim_graph_local_pose_multi_input_pin.htm">ezAnimGraphLocalPoseMultiInputPin</a>;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d9/df6/classez_anim_graph_number_input_pin.htm">ezAnimGraphNumberInputPin</a>;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../db/d3d/classez_anim_graph_number_output_pin.htm">ezAnimGraphNumberOutputPin</a>;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <span class="keywordtype">bool</span> m_bInitialized = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <a class="code" href="../../d0/d0a/classez_anim_pose_generator.htm">ezAnimPoseGenerator</a>* m_pPoseGenerator = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <a class="code" href="../../de/dc1/classez_shared_ptr.htm">ezSharedPtr&lt;ezBlackboard&gt;</a> m_pBlackboard = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezAnimGraphPinDataBoneWeights, 4&gt;</a> m_PinDataBoneWeights;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezAnimGraphPinDataLocalTransforms, 4&gt;</a> m_PinDataLocalTransforms;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezAnimGraphPinDataModelTransforms, 2&gt;</a> m_PinDataModelTransforms;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../dd/dbe/classez_mutex.htm">ezMutex</a> s_SharedDataMutex;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d8/d86/classez_hash_table.htm">ezHashTable&lt;ezString, ezSharedPtr&lt;ezAnimGraphSharedBoneWeights&gt;</a>&gt; s_SharedBoneWeights;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;};</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezUniquePtr&lt;ezAnimGraphNode&gt;</a>&gt; m_Nodes;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezHybridArray&lt;ezUInt16, 1&gt;</a>&gt; m_OutputPinToInputPinMapping[ezAnimGraphPin::ENUM_COUNT];</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <a class="code" href="../../da/d1b/classez_instance_data_allocator.htm">ezInstanceDataAllocator</a> m_InstanceDataAllocator;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../db/def/classez_anim_graph_trigger_output_pin.htm">ezAnimGraphTriggerOutputPin</a>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../db/d3d/classez_anim_graph_number_output_pin.htm">ezAnimGraphNumberOutputPin</a>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d3/d6c/classez_anim_graph_bool_output_pin.htm">ezAnimGraphBoolOutputPin</a>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../da/d8f/classez_anim_graph_bone_weights_output_pin.htm">ezAnimGraphBoneWeightsOutputPin</a>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../dc/d00/classez_anim_graph_local_pose_output_pin.htm">ezAnimGraphLocalPoseOutputPin</a>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d1/dcb/classez_anim_graph_model_pose_output_pin.htm">ezAnimGraphModelPoseOutputPin</a>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="astructez_anim_graph_pin_data_bone_weights_htm"><div class="ttname"><a href="../../dc/d02/structez_anim_graph_pin_data_bone_weights.htm">ezAnimGraphPinDataBoneWeights</a></div><div class="ttdef"><b>Definition:</b> AnimGraph.h:21</div></div>
-<div class="ttc" id="aclassez_anim_pose_generator_htm"><div class="ttname"><a href="../../d0/d0a/classez_anim_pose_generator.htm">ezAnimPoseGenerator</a></div><div class="ttdef"><b>Definition:</b> AnimPoseGenerator.h:160</div></div>
 <div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition:</b> Types.h:50</div></div>
 <div class="ttc" id="aclassez_stream_writer_htm"><div class="ttname"><a href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a></div><div class="ttdoc">Interface for binary out (write) streams.</div><div class="ttdef"><b>Definition:</b> Stream.h:106</div></div>
-<div class="ttc" id="aclassez_anim_graph_number_input_pin_htm"><div class="ttname"><a href="../../d9/df6/classez_anim_graph_number_input_pin.htm">ezAnimGraphNumberInputPin</a></div><div class="ttdef"><b>Definition:</b> AnimGraphPins.h:97</div></div>
-<div class="ttc" id="aclassez_shared_ptr_htm"><div class="ttname"><a href="../../de/dc1/classez_shared_ptr.htm">ezSharedPtr&lt; ezBlackboard &gt;</a></div></div>
-<div class="ttc" id="astructez_time_htm"><div class="ttname"><a href="../../d3/d90/structez_time.htm">ezTime</a></div><div class="ttdoc">The time class encapsulates a double value storing the time in seconds.</div><div class="ttdef"><b>Definition:</b> Time.h:11</div></div>
 <div class="ttc" id="aclassez_stream_reader_htm"><div class="ttname"><a href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a></div><div class="ttdoc">Interface for binary in (read) streams.</div><div class="ttdef"><b>Definition:</b> Stream.h:21</div></div>
-<div class="ttc" id="aclassez_mutex_htm"><div class="ttname"><a href="../../dd/dbe/classez_mutex.htm">ezMutex</a></div><div class="ttdoc">Provides a simple mechanism for mutual exclusion to prevent multiple threads from accessing a shared ...</div><div class="ttdef"><b>Definition:</b> Mutex.h:12</div></div>
-<div class="ttc" id="aclassez_skeleton_resource_htm"><div class="ttname"><a href="../../d9/d0c/classez_skeleton_resource.htm">ezSkeletonResource</a></div><div class="ttdef"><b>Definition:</b> SkeletonResource.h:44</div></div>
-<div class="ttc" id="aclassez_animation_controller_asset_document_htm"><div class="ttname"><a href="../../d2/d07/classez_animation_controller_asset_document.htm">ezAnimationControllerAssetDocument</a></div><div class="ttdef"><b>Definition:</b> AnimationControllerAsset.h:32</div></div>
-<div class="ttc" id="aclassez_anim_graph_model_pose_input_pin_htm"><div class="ttname"><a href="../../d1/d77/classez_anim_graph_model_pose_input_pin.htm">ezAnimGraphModelPoseInputPin</a></div><div class="ttdef"><b>Definition:</b> AnimGraphPins.h:159</div></div>
-<div class="ttc" id="aclassez_anim_graph_local_pose_multi_input_pin_htm"><div class="ttname"><a href="../../d4/d5b/classez_anim_graph_local_pose_multi_input_pin.htm">ezAnimGraphLocalPoseMultiInputPin</a></div><div class="ttdef"><b>Definition:</b> AnimGraphPins.h:141</div></div>
-<div class="ttc" id="aclassez_anim_graph_number_output_pin_htm"><div class="ttname"><a href="../../db/d3d/classez_anim_graph_number_output_pin.htm">ezAnimGraphNumberOutputPin</a></div><div class="ttdef"><b>Definition:</b> AnimGraphPins.h:105</div></div>
-<div class="ttc" id="aclassez_angle_htm"><div class="ttname"><a href="../../db/d6f/classez_angle.htm">ezAngle</a></div><div class="ttdoc">Float wrapper struct for a safe usage and conversions of angles.</div><div class="ttdef"><b>Definition:</b> Angle.h:9</div></div>
+<div class="ttc" id="aclassez_array_ptr_htm"><div class="ttname"><a href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr</a></div><div class="ttdoc">This class encapsulates an array and it's size. It is recommended to use this class instead of plain ...</div><div class="ttdef"><b>Definition:</b> ArrayPtr.h:36</div></div>
+<div class="ttc" id="aclassez_instance_data_allocator_htm"><div class="ttname"><a href="../../da/d1b/classez_instance_data_allocator.htm">ezInstanceDataAllocator</a></div><div class="ttdoc">Helper class to manager instance data allocation, construction and destruction.</div><div class="ttdef"><b>Definition:</b> InstanceDataAllocator.h:34</div></div>
+<div class="ttc" id="astructez_hybrid_string_htm"><div class="ttname"><a href="../../d4/d53/structez_hybrid_string.htm">ezHybridString&lt; 32, ezDefaultAllocatorWrapper &gt;</a></div></div>
+<div class="ttc" id="aclassez_anim_graph_number_output_pin_htm"><div class="ttname"><a href="../../db/d3d/classez_anim_graph_number_output_pin.htm">ezAnimGraphNumberOutputPin</a></div><div class="ttdef"><b>Definition:</b> AnimGraphPins.h:117</div></div>
+<div class="ttc" id="aclassez_unique_ptr_htm"><div class="ttname"><a href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt; ezAnimGraphNode &gt;</a></div></div>
 <div class="ttc" id="aclassez_dynamic_array_htm"><div class="ttname"><a href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray</a></div><div class="ttdef"><b>Definition:</b> DynamicArray.h:80</div></div>
-<div class="ttc" id="astructez_delegate_htm"><div class="ttname"><a href="../../d5/d68/structez_delegate.htm">ezDelegate</a></div><div class="ttdoc">A generic delegate class which supports static functions and member functions.</div><div class="ttdef"><b>Definition:</b> Delegate.h:75</div></div>
-<div class="ttc" id="aclassez_anim_graph_local_pose_output_pin_htm"><div class="ttname"><a href="../../dc/d00/classez_anim_graph_local_pose_output_pin.htm">ezAnimGraphLocalPoseOutputPin</a></div><div class="ttdef"><b>Definition:</b> AnimGraphPins.h:149</div></div>
-<div class="ttc" id="astructez_anim_graph_pin_data_local_transforms_htm"><div class="ttname"><a href="../../d1/d7b/structez_anim_graph_pin_data_local_transforms.htm">ezAnimGraphPinDataLocalTransforms</a></div><div class="ttdef"><b>Definition:</b> AnimGraph.h:28</div></div>
-<div class="ttc" id="aclassez_game_object_htm"><div class="ttname"><a href="../../d6/d61/classez_game_object.htm">ezGameObject</a></div><div class="ttdoc">This class represents an object inside the world.</div><div class="ttdef"><b>Definition:</b> GameObject.h:29</div></div>
-<div class="ttc" id="aclassez_vec3_template_htm_add7061770113b1065f78a3cbad6b0a8b"><div class="ttname"><a href="../../da/df1/classez_vec3_template.htm#add7061770113b1065f78a3cbad6b0a8b">ezVec3Template::ZeroVector</a></div><div class="ttdeci">static ezVec3Template&lt; Type &gt; ZeroVector()</div><div class="ttdoc">Returns a vector with all components set to zero.</div><div class="ttdef"><b>Definition:</b> Vec3.h:33</div></div>
-<div class="ttc" id="aclassez_anim_graph_trigger_input_pin_htm"><div class="ttname"><a href="../../d8/db1/classez_anim_graph_trigger_input_pin.htm">ezAnimGraphTriggerInputPin</a></div><div class="ttdef"><b>Definition:</b> AnimGraphPins.h:74</div></div>
-<div class="ttc" id="aclassez_anim_graph_model_pose_output_pin_htm"><div class="ttname"><a href="../../d1/dcb/classez_anim_graph_model_pose_output_pin.htm">ezAnimGraphModelPoseOutputPin</a></div><div class="ttdef"><b>Definition:</b> AnimGraphPins.h:167</div></div>
-<div class="ttc" id="aclassez_hybrid_array_htm"><div class="ttname"><a href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt; ezAnimGraphPinDataBoneWeights, 4 &gt;</a></div></div>
-<div class="ttc" id="aclassez_anim_graph_local_pose_input_pin_htm"><div class="ttname"><a href="../../d7/de3/classez_anim_graph_local_pose_input_pin.htm">ezAnimGraphLocalPoseInputPin</a></div><div class="ttdef"><b>Definition:</b> AnimGraphPins.h:133</div></div>
-<div class="ttc" id="aclassez_anim_graph_htm"><div class="ttname"><a href="../../d5/d0d/classez_anim_graph.htm">ezAnimGraph</a></div><div class="ttdef"><b>Definition:</b> AnimGraph.h:49</div></div>
-<div class="ttc" id="aclassez_anim_graph_bone_weights_input_pin_htm"><div class="ttname"><a href="../../d3/df7/classez_anim_graph_bone_weights_input_pin.htm">ezAnimGraphBoneWeightsInputPin</a></div><div class="ttdef"><b>Definition:</b> AnimGraphPins.h:115</div></div>
-<div class="ttc" id="astructez_anim_graph_pin_data_model_transforms_htm"><div class="ttname"><a href="../../d7/dfb/structez_anim_graph_pin_data_model_transforms.htm">ezAnimGraphPinDataModelTransforms</a></div><div class="ttdef"><b>Definition:</b> AnimGraph.h:38</div></div>
-<div class="ttc" id="aclassez_anim_graph_bone_weights_output_pin_htm"><div class="ttname"><a href="../../da/d8f/classez_anim_graph_bone_weights_output_pin.htm">ezAnimGraphBoneWeightsOutputPin</a></div><div class="ttdef"><b>Definition:</b> AnimGraphPins.h:123</div></div>
-<div class="ttc" id="aclassez_anim_graph_trigger_output_pin_htm"><div class="ttname"><a href="../../db/def/classez_anim_graph_trigger_output_pin.htm">ezAnimGraphTriggerOutputPin</a></div><div class="ttdef"><b>Definition:</b> AnimGraphPins.h:83</div></div>
-<div class="ttc" id="aclassez_hash_table_htm"><div class="ttname"><a href="../../d8/d86/classez_hash_table.htm">ezHashTable</a></div><div class="ttdef"><b>Definition:</b> HashTable.h:264</div></div>
-<div class="ttc" id="aclassez_vec3_template_htm"><div class="ttname"><a href="../../da/df1/classez_vec3_template.htm">ezVec3Template&lt; float &gt;</a></div></div>
-<div class="ttc" id="astructez_anim_graph_shared_bone_weights_htm"><div class="ttname"><a href="../../d3/d71/structez_anim_graph_shared_bone_weights.htm">ezAnimGraphSharedBoneWeights</a></div><div class="ttdef"><b>Definition:</b> AnimGraphPins.h:18</div></div>
-<div class="ttc" id="aclassez_typed_resource_handle_htm"><div class="ttname"><a href="../../d3/dd7/classez_typed_resource_handle.htm">ezTypedResourceHandle&lt; class ezSkeletonResource &gt;</a></div></div>
+<div class="ttc" id="aclassez_anim_graph_instance_htm"><div class="ttname"><a href="../../db/d86/classez_anim_graph_instance.htm">ezAnimGraphInstance</a></div><div class="ttdef"><b>Definition:</b> AnimGraphInstance.h:14</div></div>
+<div class="ttc" id="aclassez_anim_graph_pin_htm"><div class="ttname"><a href="../../d2/de1/classez_anim_graph_pin.htm">ezAnimGraphPin</a></div><div class="ttdef"><b>Definition:</b> AnimGraphPins.h:28</div></div>
+<div class="ttc" id="aclassez_map_htm"><div class="ttname"><a href="../../d1/d79/classez_map.htm">ezMap</a></div><div class="ttdef"><b>Definition:</b> Map.h:328</div></div>
+<div class="ttc" id="aclassez_anim_graph_local_pose_output_pin_htm"><div class="ttname"><a href="../../dc/d00/classez_anim_graph_local_pose_output_pin.htm">ezAnimGraphLocalPoseOutputPin</a></div><div class="ttdef"><b>Definition:</b> AnimGraphPins.h:193</div></div>
+<div class="ttc" id="astructez_string_view_htm"><div class="ttname"><a href="../../de/db8/structez_string_view.htm">ezStringView</a></div><div class="ttdoc">ezStringView represent a read-only sub-string of a larger string, as it can store a dedicated string ...</div><div class="ttdef"><b>Definition:</b> StringView.h:23</div></div>
+<div class="ttc" id="aclassez_anim_graph_node_htm"><div class="ttname"><a href="../../df/df1/classez_anim_graph_node.htm">ezAnimGraphNode</a></div><div class="ttdoc">Base class for all nodes in an ezAnimGraphInstance.</div><div class="ttdef"><b>Definition:</b> AnimGraphNode.h:35</div></div>
+<div class="ttc" id="aclassez_anim_graph_model_pose_output_pin_htm"><div class="ttname"><a href="../../d1/dcb/classez_anim_graph_model_pose_output_pin.htm">ezAnimGraphModelPoseOutputPin</a></div><div class="ttdef"><b>Definition:</b> AnimGraphPins.h:215</div></div>
+<div class="ttc" id="aclassez_hybrid_array_htm"><div class="ttname"><a href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt; ConnectionTo, 2 &gt;</a></div></div>
+<div class="ttc" id="aclassez_anim_graph_bool_output_pin_htm"><div class="ttname"><a href="../../d3/d6c/classez_anim_graph_bool_output_pin.htm">ezAnimGraphBoolOutputPin</a></div><div class="ttdef"><b>Definition:</b> AnimGraphPins.h:139</div></div>
+<div class="ttc" id="aclassez_anim_graph_htm"><div class="ttname"><a href="../../d5/d0d/classez_anim_graph.htm">ezAnimGraph</a></div><div class="ttdef"><b>Definition:</b> AnimGraph.h:10</div></div>
+<div class="ttc" id="aclassez_anim_graph_bone_weights_output_pin_htm"><div class="ttname"><a href="../../da/d8f/classez_anim_graph_bone_weights_output_pin.htm">ezAnimGraphBoneWeightsOutputPin</a></div><div class="ttdef"><b>Definition:</b> AnimGraphPins.h:161</div></div>
+<div class="ttc" id="aclassez_anim_graph_trigger_output_pin_htm"><div class="ttname"><a href="../../db/def/classez_anim_graph_trigger_output_pin.htm">ezAnimGraphTriggerOutputPin</a></div><div class="ttdef"><b>Definition:</b> AnimGraphPins.h:91</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_9b39d7517b28e8ee3dee1b9d862ddabb.htm">RendererCore</a></li><li class="navelem"><a class="el" href="../../dir_77db471eb2b64e2aaad44708419e1af7.htm">AnimationSystem</a></li><li class="navelem"><a class="el" href="../../dir_1a6a38560ac223de10f179e8f50eb402.htm">AnimGraph</a></li><li class="navelem"><b>AnimGraph.h</b></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:21:58 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:19 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

@@ -5,5 +5,5 @@ var classez_phantom_member_property =
     [ "GetPropertyPointer", "d7/dcc/classez_phantom_member_property.htm#aad54c52e132e1d0dbb30758accabd8ff", null ],
     [ "GetSpecificType", "d7/dcc/classez_phantom_member_property.htm#a41951269e236ae2f0c4fc1252d2165f1", null ],
     [ "GetValuePtr", "d7/dcc/classez_phantom_member_property.htm#aa963ea55913ce3c64c80e6064b670040", null ],
-    [ "SetValuePtr", "d7/dcc/classez_phantom_member_property.htm#ab2b500508fcad3c91a6ad96a92a72a75", null ]
+    [ "SetValuePtr", "d7/dcc/classez_phantom_member_property.htm#a408424bec37cbd8d86e7398bc3b50591", null ]
 ];

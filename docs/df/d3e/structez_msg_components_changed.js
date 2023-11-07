@@ -2,7 +2,8 @@ var structez_msg_components_changed =
 [
     [ "Type", "df/d3e/structez_msg_components_changed.htm#a5b228f39a531a22396dd464c8fd50f9c", [
       [ "ComponentAdded", "df/d3e/structez_msg_components_changed.htm#a5b228f39a531a22396dd464c8fd50f9ca6143032316f6704bbc1275b159277c92", null ],
-      [ "ComponentRemoved", "df/d3e/structez_msg_components_changed.htm#a5b228f39a531a22396dd464c8fd50f9ca82032b3786c9cdfce3efaf8fd11d2ede", null ]
+      [ "ComponentRemoved", "df/d3e/structez_msg_components_changed.htm#a5b228f39a531a22396dd464c8fd50f9ca82032b3786c9cdfce3efaf8fd11d2ede", null ],
+      [ "Invalid", "df/d3e/structez_msg_components_changed.htm#a5b228f39a531a22396dd464c8fd50f9ca4bbb8f967da6d1a610596d7257179c2b", null ]
     ] ],
     [ "EZ_DECLARE_MESSAGE_TYPE", "df/d3e/structez_msg_components_changed.htm#a272c68040f4c16206103e4a8f192185b", null ],
     [ "m_hComponent", "df/d3e/structez_msg_components_changed.htm#a77a053e0b69de77ee0ece7baf6c8989e", null ],

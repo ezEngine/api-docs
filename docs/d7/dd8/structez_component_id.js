@@ -1,6 +1,6 @@
 var structez_component_id =
 [
-    [ "StorageType", "d7/dd8/structez_component_id.htm#a84b06e98d4edef52eb2686fcc0ed8465", null ],
+    [ "StorageType", "d7/dd8/structez_component_id.htm#aeaf11de6255b05a9c8967e8ead3a0871", null ],
     [ "ezComponentId", "d7/dd8/structez_component_id.htm#ae83ad238ec7baa75fd88dfc95f0376d4", null ],
     [ "EZ_DECLARE_ID_TYPE", "d7/dd8/structez_component_id.htm#a31a147397f1b20053b65cb3ff361ab6e", null ],
     [ "m_Data", "d7/dd8/structez_component_id.htm#ad181a1e15ce60ac1eb06aee929e84c81", null ],

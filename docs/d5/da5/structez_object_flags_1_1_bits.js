@@ -4,6 +4,7 @@ var structez_object_flags_1_1_bits =
     [ "ActiveState", "d5/da5/structez_object_flags_1_1_bits.htm#ac9b0bcd2e94e01200875b86b2296b421", null ],
     [ "ChildChangesNotifications", "d5/da5/structez_object_flags_1_1_bits.htm#ab6e3c85b92c08526715f61285d252815", null ],
     [ "ComponentChangesNotifications", "d5/da5/structez_object_flags_1_1_bits.htm#ae7f93ff02581c6f87fb7dacc80cff92a", null ],
+    [ "CreatedByPrefab", "d5/da5/structez_object_flags_1_1_bits.htm#a3cc93496cff6ec6ebaae3ec369096af2", null ],
     [ "Dynamic", "d5/da5/structez_object_flags_1_1_bits.htm#a04ba0dd6a66da88fe930813ccfc3cc9d", null ],
     [ "ForceDynamic", "d5/da5/structez_object_flags_1_1_bits.htm#a9841ee8563a6b8d61aaa10334eade363", null ],
     [ "Initialized", "d5/da5/structez_object_flags_1_1_bits.htm#afb65769fb9439884713ce70bdde2832f", null ],

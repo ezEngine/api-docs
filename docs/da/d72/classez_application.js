@@ -4,7 +4,7 @@ var classez_application =
       [ "Continue", "da/d72/classez_application.htm#aa282212e075c042d8adccd76ff3d95f2aa0bfb8e59e6c13fc8d990781f77694fe", null ],
       [ "Quit", "da/d72/classez_application.htm#aa282212e075c042d8adccd76ff3d95f2a0d82790b0612935992bd564a17ce37d6", null ]
     ] ],
-    [ "ezApplication", "da/d72/classez_application.htm#abdd237ed6de92db7f4761c01b0317236", null ],
+    [ "ezApplication", "da/d72/classez_application.htm#a6e510b326ac529bc07472ea38589ef52", null ],
     [ "~ezApplication", "da/d72/classez_application.htm#a009671f7fd433795350359dbe07662d5", null ],
     [ "AfterCoreSystemsShutdown", "da/d72/classez_application.htm#a0ec6c40c3087acfe3fdf3d5a824e6572", null ],
     [ "AfterCoreSystemsStartup", "da/d72/classez_application.htm#ab626087d1b25b1f8d24872245f0d0ef9", null ],
@@ -23,7 +23,7 @@ var classez_application =
     [ "IsMemoryLeakReportingEnabled", "da/d72/classez_application.htm#a2690b02395cb5ee29f8a81241a87749c", null ],
     [ "RequestQuit", "da/d72/classez_application.htm#afb55905454fa279df96f3466e236bd76", null ],
     [ "Run", "da/d72/classez_application.htm#a9a775624db52313a4f79cd39cff3a3b4", null ],
-    [ "SetApplicationName", "da/d72/classez_application.htm#a76b912ad4b96dffb8003f452d14868ad", null ],
+    [ "SetApplicationName", "da/d72/classez_application.htm#adcb1913944008501935c894c8ae728b9", null ],
     [ "SetCommandLineArguments", "da/d72/classez_application.htm#af059e23d38332d2d014191a51121576c", null ],
     [ "SetReturnCode", "da/d72/classez_application.htm#a8e76e01da8cc0f14aea5a3b49c27520d", null ],
     [ "TranslateReturnCode", "da/d72/classez_application.htm#afd33b7ab600517fbf05a3b6a1faab2b9", null ],

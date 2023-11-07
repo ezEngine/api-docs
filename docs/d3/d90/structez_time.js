@@ -26,6 +26,5 @@ var structez_time =
     [ "operator<=", "d3/d90/structez_time.htm#a9f204533af0c1e2c20e7c9e77b794249", null ],
     [ "operator==", "d3/d90/structez_time.htm#a1433b693801ed8b656a42d8eb85ae747", null ],
     [ "operator>", "d3/d90/structez_time.htm#a93f9ec346291a12e140763f74cfc428a", null ],
-    [ "operator>=", "d3/d90/structez_time.htm#a8bbc216e1aee3dddf8e3ebac8e74ca06", null ],
-    [ "SetZero", "d3/d90/structez_time.htm#a039365055f5f2fb62d17d86dd14f10fb", null ]
+    [ "operator>=", "d3/d90/structez_time.htm#a8bbc216e1aee3dddf8e3ebac8e74ca06", null ]
 ];

@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -121,6 +121,21 @@ Public Types</h2></td></tr>
 <br />
  }</td></tr>
 <tr class="separator:ad0d41d757f1f416b42fa619e7c91f85a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a32d20458a064d04e904bef11af15ea"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dfe/classez_color_scheme.htm#a3a32d20458a064d04e904bef11af15ea">CategoryColorUsage</a> { <br />
+&#160;&#160;<b>ViewportIcon</b>, 
+<b>MenuEntryIcon</b>, 
+<b>SceneTreeIcon</b>, 
+<b>OverlayIcon</b>, 
+<br />
+&#160;&#160;<b>BorderColor</b>, 
+<b>BorderIconColor</b>, 
+<b>AssetMenuIcon</b>
+<br />
+ }</td></tr>
+<tr class="separator:a3a32d20458a064d04e904bef11af15ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42762a0c7b6478161261af84cd3926be"><td class="memItemLeft" align="right" valign="top"><a id="a42762a0c7b6478161261af84cd3926be"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>CategoryColorFunc</b> = <a class="el" href="../../dd/d01/classez_color.htm">ezColor</a>(*)(<a class="el" href="../../de/db8/structez_string_view.htm">ezStringView</a> sCategory, <a class="el" href="../../df/dfe/classez_color_scheme.htm#a3a32d20458a064d04e904bef11af15ea">CategoryColorUsage</a> usage)</td></tr>
+<tr class="separator:a42762a0c7b6478161261af84cd3926be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -148,6 +163,9 @@ static EZ_ALWAYS_INLINE <a class="el" href="../../dd/d01/classez_color.htm">ezCo
 static EZ_FORCE_INLINE <a class="el" href="../../dd/d01/classez_color.htm">ezColor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dfe/classez_color_scheme.htm#a6ab43e8d851aa1aca848afb6e5aa31f2">LightUI</a> (float fIndex)</td></tr>
 <tr class="memdesc:a6ab43e8d851aa1aca848afb6e5aa31f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a scheme color by index with predefined brightness and saturation to look good as highlight color in EZ tools. Can also be used in a 3D scene for e.g. visualizers etc. <br /></td></tr>
 <tr class="separator:a6ab43e8d851aa1aca848afb6e5aa31f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15ae83ef65a3323023e0f0c7b3a5ba47"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../dd/d01/classez_color.htm">ezColor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dfe/classez_color_scheme.htm#a15ae83ef65a3323023e0f0c7b3a5ba47">GetCategoryColor</a> (<a class="el" href="../../de/db8/structez_string_view.htm">ezStringView</a> sCategory, <a class="el" href="../../df/dfe/classez_color_scheme.htm#a3a32d20458a064d04e904bef11af15ea">CategoryColorUsage</a> usage)</td></tr>
+<tr class="memdesc:a15ae83ef65a3323023e0f0c7b3a5ba47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a color to use in UI for elements of a given 'category'.  <a href="../../df/dfe/classez_color_scheme.htm#a15ae83ef65a3323023e0f0c7b3a5ba47">More...</a><br /></td></tr>
+<tr class="separator:a15ae83ef65a3323023e0f0c7b3a5ba47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -155,11 +173,80 @@ Static Public Attributes</h2></td></tr>
 constexpr static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dfe/classez_color_scheme.htm#a805706706dc59b77cb7e9e9ed218c7bc">s_fIndexNormalizer</a> = 1.0f / (Count - 2)</td></tr>
 <tr class="memdesc:a805706706dc59b77cb7e9e9ed218c7bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalization factor for getting colors by index. E.g. ezColorScheme::Blue * s_fIndexNormalizer would get exactly Blue as color. <br /></td></tr>
 <tr class="separator:a805706706dc59b77cb7e9e9ed218c7bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a674ace5aa4fc497e8dc0a45bcade4f1a"><td class="memItemLeft" align="right" valign="top"><a id="a674ace5aa4fc497e8dc0a45bcade4f1a"></a>
+static CategoryColorFunc&#160;</td><td class="memItemRight" valign="bottom"><b>s_CategoryColorFunc</b> = nullptr</td></tr>
+<tr class="separator:a674ace5aa4fc497e8dc0a45bcade4f1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A color scheme based on <a href="https://github.com/yeun/open-color">https://github.com/yeun/open-color</a> version 1.9.1. </p>
 <p>Open Color Goals: All colors will be beautiful in itself and harmonious At the same brightness level, the perceived brightness will be constant </p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="a3a32d20458a064d04e904bef11af15ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a32d20458a064d04e904bef11af15ea">&#9670;&nbsp;</a></span>CategoryColorUsage</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../df/dfe/classez_color_scheme.htm#a3a32d20458a064d04e904bef11af15ea">ezColorScheme::CategoryColorUsage</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../df/dfe/classez_color_scheme.htm#a15ae83ef65a3323023e0f0c7b3a5ba47" title="Returns a color to use in UI for elements of a given &#39;category&#39;.">GetCategoryColor()</a> </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a15ae83ef65a3323023e0f0c7b3a5ba47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15ae83ef65a3323023e0f0c7b3a5ba47">&#9670;&nbsp;</a></span>GetCategoryColor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dd/d01/classez_color.htm">ezColor</a> ezColorScheme::GetCategoryColor </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/db8/structez_string_view.htm">ezStringView</a>&#160;</td>
+          <td class="paramname"><em>sCategory</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../df/dfe/classez_color_scheme.htm#a3a32d20458a064d04e904bef11af15ea">CategoryColorUsage</a>&#160;</td>
+          <td class="paramname"><em>usage</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a color to use in UI for elements of a given 'category'. </p>
+<p>The category is typically defined via an <a class="el" href="../../d9/db8/classez_category_attribute.htm" title="Used to categorize types (e.g. add component menu)">ezCategoryAttribute</a>. It is simply a string. If it is a complex category, e.g. a path such as "Effects/Wind", the default implementation only looks at the first part, ie. it treats this all as the category "Effects.</p>
+<p>A custom implementation can be provided through s_CategoryColorFunc, in which case it has full control and can also use the full category name.</p>
+<p>The 'usage' is provided to tell the function what the color will be used for, allowing to use more or less contrast or switch of coloring entirely. </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/Math/<a class="el" href="../../df/d06/_color_scheme_8h_source.htm">ColorScheme.h</a></li>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/Math/Implementation/ColorScheme.cpp</li>
 </ul>
@@ -169,7 +256,7 @@ constexpr static float&#160;</td><td class="memItemRight" valign="bottom"><a cla
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../df/dfe/classez_color_scheme.htm">ezColorScheme</a></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:22:01 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:23 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

@@ -2,7 +2,7 @@ var classez_object_command_accessor =
 [
     [ "ezObjectCommandAccessor", "d9/d52/classez_object_command_accessor.htm#aab12decfb6a1780bbdc1a095dde5ee80", null ],
     [ "AddObject", "d9/d52/classez_object_command_accessor.htm#a74e1d1c83a9c8ebc783f8fb5687e324a", null ],
-    [ "BeginTemporaryCommands", "d9/d52/classez_object_command_accessor.htm#adcb2d3a6d71d667cf1dfd6b06a668471", null ],
+    [ "BeginTemporaryCommands", "d9/d52/classez_object_command_accessor.htm#a3d6842b96dc660fde864f8a38ab50106", null ],
     [ "CancelTemporaryCommands", "d9/d52/classez_object_command_accessor.htm#ab670d96a15c379d4a945810507299d17", null ],
     [ "CancelTransaction", "d9/d52/classez_object_command_accessor.htm#a5b519d81baaee677067d182c9e9f1aa1", null ],
     [ "FinishTemporaryCommands", "d9/d52/classez_object_command_accessor.htm#a0e41d357b5508826f7948f6f2e25a36a", null ],
@@ -13,5 +13,6 @@ var classez_object_command_accessor =
     [ "RemoveObject", "d9/d52/classez_object_command_accessor.htm#afb8eb767e5dd5a955818e8a7f0457f4c", null ],
     [ "RemoveValue", "d9/d52/classez_object_command_accessor.htm#af17d6ea991d2fc267a4764dac211cc34", null ],
     [ "SetValue", "d9/d52/classez_object_command_accessor.htm#a17ac864897c03b4d822c426af49b54c6", null ],
-    [ "StartTransaction", "d9/d52/classez_object_command_accessor.htm#a29841d03994efeb72b506db540acfece", null ]
+    [ "StartTransaction", "d9/d52/classez_object_command_accessor.htm#a9a5b9c4595fa731a7d9b09485a9f82ae", null ],
+    [ "m_pHistory", "d9/d52/classez_object_command_accessor.htm#a854e557be3ea62f5efbb5b28b30ebb52", null ]
 ];

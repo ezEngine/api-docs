@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -97,8 +97,8 @@ $(document).ready(function(){initNavTree('dd/d77/_process_8h_source.htm','../../
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;Foundation/Types/Delegate.h&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;Foundation/Types/UniquePtr.h&gt;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">void</span>* ezOsProcessHandle;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">typedef</span> ezUInt32 ezOsProcessID;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">using</span> ezOsProcessHandle = <span class="keywordtype">void</span>*;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">using</span> ezOsProcessID = ezUInt32;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#if EZ_ENABLED(EZ_SUPPORTS_PROCESSES)</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">enum class</span> ezProcessState</div>
@@ -125,19 +125,19 @@ $(document).ready(function(){initNavTree('dd/d77/_process_8h_source.htm','../../
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordtype">void</span> AddArgument(<span class="keyword">const</span> <a class="code" href="../../d4/d2e/classez_format_string.htm">ezFormatString</a>&amp; arg);</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... ARGS&gt;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordtype">void</span> AddArgument(<span class="keyword">const</span> <span class="keywordtype">char</span>* szFormat, ARGS&amp;&amp;... args)</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordtype">void</span> AddArgument(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sFormat, ARGS&amp;&amp;... args)</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    AddArgument(<a class="code" href="../../df/d42/classez_format_string_impl.htm">ezFormatStringImpl&lt;ARGS...&gt;</a>(szFormat, std::forward&lt;ARGS&gt;(args)...));</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    AddArgument(<a class="code" href="../../df/d42/classez_format_string_impl.htm">ezFormatStringImpl&lt;ARGS...&gt;</a>(sFormat, std::forward&lt;ARGS&gt;(args)...));</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  }</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">void</span> AddCommandLine(<span class="keyword">const</span> <span class="keywordtype">char</span>* szCmdLine);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">void</span> AddCommandLine(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sCmdLine);</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordtype">void</span> BuildCommandLineString(<a class="code" href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a>&amp; out_sCmdLine) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;};</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">struct </span>ezProcessLaunchFlags</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keyword">typedef</span> ezUInt32 StorageType;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keyword">using</span> StorageType = ezUInt32;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keyword">enum</span> Enum</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  {</div>
@@ -172,7 +172,7 @@ $(document).ready(function(){initNavTree('dd/d77/_process_8h_source.htm','../../
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ResumeSuspended();</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> WaitToFinish(<a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> timeout = <a class="code" href="../../d3/d90/structez_time.htm#a87b37655fad76f9e6972af8d88b540f4">ezTime::Zero</a>());</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> WaitToFinish(<a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> timeout = <a class="code" href="../../d3/d90/structez_time.htm#afac0fdd4c1f3e5d63531e6ac0c601cfc">ezTime::MakeZero</a>());</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> Terminate();</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
@@ -189,7 +189,7 @@ $(document).ready(function(){initNavTree('dd/d77/_process_8h_source.htm','../../
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  <span class="keyword">static</span> ezOsProcessID GetCurrentProcessID();</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  <span class="keywordtype">void</span> BuildFullCommandLineString(<span class="keyword">const</span> ezProcessOptions&amp; opt, <span class="keyword">const</span> <span class="keywordtype">char</span>* szProcess, <a class="code" href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a>&amp; cmd) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  <span class="keywordtype">void</span> BuildFullCommandLineString(<span class="keyword">const</span> ezProcessOptions&amp; opt, <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sProcess, <a class="code" href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a>&amp; cmd) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  <a class="code" href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt;struct ezProcessImpl&gt;</a> m_pImpl;</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
@@ -199,8 +199,9 @@ $(document).ready(function(){initNavTree('dd/d77/_process_8h_source.htm','../../
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sProcess;</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  <a class="code" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>&lt;void(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a>)&gt; m_OnStdOut;</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  <a class="code" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>&lt;void(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a>)&gt; m_OnStdError;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;};</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  <span class="keyword">mutable</span> <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> m_ProcessExited = <a class="code" href="../../d3/d90/structez_time.htm#afac0fdd4c1f3e5d63531e6ac0c601cfc">ezTime::MakeZero</a>();</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;};</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_format_string_htm"><div class="ttname"><a href="../../d4/d2e/classez_format_string.htm">ezFormatString</a></div><div class="ttdoc">Implements formating of strings with placeholders and formatting options.</div><div class="ttdef"><b>Definition:</b> FormatString.h:54</div></div>
@@ -208,18 +209,18 @@ $(document).ready(function(){initNavTree('dd/d77/_process_8h_source.htm','../../
 <div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition:</b> Types.h:50</div></div>
 <div class="ttc" id="astructez_time_htm"><div class="ttname"><a href="../../d3/d90/structez_time.htm">ezTime</a></div><div class="ttdoc">The time class encapsulates a double value storing the time in seconds.</div><div class="ttdef"><b>Definition:</b> Time.h:11</div></div>
 <div class="ttc" id="aclassez_format_string_impl_htm"><div class="ttname"><a href="../../df/d42/classez_format_string_impl.htm">ezFormatStringImpl</a></div><div class="ttdef"><b>Definition:</b> FormatStringImpl.h:8</div></div>
-<div class="ttc" id="astructez_time_htm_a87b37655fad76f9e6972af8d88b540f4"><div class="ttname"><a href="../../d3/d90/structez_time.htm#a87b37655fad76f9e6972af8d88b540f4">ezTime::Zero</a></div><div class="ttdeci">constexpr static EZ_ALWAYS_INLINE ezTime Zero()</div><div class="ttdoc">Creates an instance of ezTime that was initialized with zero.</div><div class="ttdef"><b>Definition:</b> Time.h:36</div></div>
 <div class="ttc" id="astructez_hybrid_string_htm"><div class="ttname"><a href="../../d4/d53/structez_hybrid_string.htm">ezHybridString</a></div><div class="ttdef"><b>Definition:</b> Stream.h:16</div></div>
 <div class="ttc" id="aclassez_unique_ptr_htm"><div class="ttname"><a href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr</a></div><div class="ttdoc">A Unique ptr manages an object and destroys that object when it goes out of scope....</div><div class="ttdef"><b>Definition:</b> UniquePtr.h:8</div></div>
 <div class="ttc" id="astructez_delegate_htm"><div class="ttname"><a href="../../d5/d68/structez_delegate.htm">ezDelegate</a></div><div class="ttdoc">A generic delegate class which supports static functions and member functions.</div><div class="ttdef"><b>Definition:</b> Delegate.h:75</div></div>
 <div class="ttc" id="astructez_string_view_htm"><div class="ttname"><a href="../../de/db8/structez_string_view.htm">ezStringView</a></div><div class="ttdoc">ezStringView represent a read-only sub-string of a larger string, as it can store a dedicated string ...</div><div class="ttdef"><b>Definition:</b> StringView.h:23</div></div>
 <div class="ttc" id="aclassez_hybrid_array_htm"><div class="ttname"><a href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray</a></div><div class="ttdoc">A hybrid array uses in-place storage to handle the first few elements without any allocation....</div><div class="ttdef"><b>Definition:</b> HybridArray.h:11</div></div>
 <div class="ttc" id="aclassez_string_builder_htm"><div class="ttname"><a href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a></div><div class="ttdoc">ezStringBuilder is a class that is meant for creating and modifying strings.</div><div class="ttdef"><b>Definition:</b> StringBuilder.h:34</div></div>
+<div class="ttc" id="astructez_time_htm_afac0fdd4c1f3e5d63531e6ac0c601cfc"><div class="ttname"><a href="../../d3/d90/structez_time.htm#afac0fdd4c1f3e5d63531e6ac0c601cfc">ezTime::MakeZero</a></div><div class="ttdeci">constexpr static EZ_ALWAYS_INLINE ezTime MakeZero()</div><div class="ttdoc">Creates an instance of ezTime that was initialized with zero.</div><div class="ttdef"><b>Definition:</b> Time.h:42</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_755fdcfb6b850fe41cc906fd4ef666a8.htm">System</a></li><li class="navelem"><b>Process.h</b></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:21:57 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:18 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

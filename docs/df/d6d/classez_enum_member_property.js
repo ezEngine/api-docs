@@ -6,5 +6,5 @@ var classez_enum_member_property =
     [ "ezEnumMemberProperty", "df/d6d/classez_enum_member_property.htm#a7981930d769dd9bd3ae16d54d0d2c283", null ],
     [ "GetPropertyPointer", "df/d6d/classez_enum_member_property.htm#af3e120f1601d8666ebde71fe4086bbaa", null ],
     [ "GetValue", "df/d6d/classez_enum_member_property.htm#aa39a5501a9bc39ae4af567ae3b324cc2", null ],
-    [ "SetValue", "df/d6d/classez_enum_member_property.htm#ae86c0f41a2c0b06038d4475d2b8050d3", null ]
+    [ "SetValue", "df/d6d/classez_enum_member_property.htm#a2df025ec772e8070a42d047ebd68fb2d", null ]
 ];

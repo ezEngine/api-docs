@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -101,39 +101,56 @@ $(document).ready(function(){initNavTree('dd/d6f/_debug_anim_nodes_8h_source.htm
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> SerializeNode(<a class="code" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a>&amp; stream) <span class="keyword">const override</span>;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> DeserializeNode(<a class="code" href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a>&amp; stream) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> Step(<a class="code" href="../../d5/d0d/classez_anim_graph.htm">ezAnimGraph</a>&amp; graph, <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> tDiff, <span class="keyword">const</span> <a class="code" href="../../d9/d0c/classez_skeleton_resource.htm">ezSkeletonResource</a>* pSkeleton, <a class="code" href="../../d6/d61/classez_game_object.htm">ezGameObject</a>* pTarget) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="comment">// ezLogAnimNode</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sText;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <a class="code" href="../../d8/db1/classez_anim_graph_trigger_input_pin.htm">ezAnimGraphTriggerInputPin</a> m_ActivePin; <span class="comment">// [ property ]</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <a class="code" href="../../d8/db1/classez_anim_graph_trigger_input_pin.htm">ezAnimGraphTriggerInputPin</a> m_Input0;    <span class="comment">// [ property ]</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="../../d8/db1/classez_anim_graph_trigger_input_pin.htm">ezAnimGraphTriggerInputPin</a> m_Input1;    <span class="comment">// [ property ]</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <a class="code" href="../../d9/df6/classez_anim_graph_number_input_pin.htm">ezAnimGraphNumberInputPin</a> m_Input2;     <span class="comment">// [ property ]</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <a class="code" href="../../d9/df6/classez_anim_graph_number_input_pin.htm">ezAnimGraphNumberInputPin</a> m_Input3;     <span class="comment">// [ property ]</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;};</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="comment">// ezLogAnimNode</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sText;                                        <span class="comment">// [ property ]</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <a class="code" href="../../d8/db1/classez_anim_graph_trigger_input_pin.htm">ezAnimGraphTriggerInputPin</a> m_InActivate;                 <span class="comment">// [ property ]</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  ezUInt8 m_uiNumberCount = 1;                             <span class="comment">// [ property ]</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezAnimGraphNumberInputPin, 2&gt;</a> m_InNumbers; <span class="comment">// [ property ]</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;};</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../d1/d76/classez_log_info_anim_node.htm">   26</a></span>&#160;<span class="keyword">class </span>EZ_RENDERERCORE_DLL <a class="code" href="../../d1/d76/classez_log_info_anim_node.htm">ezLogInfoAnimNode</a> : <span class="keyword">public</span> <a class="code" href="../../db/d8d/classez_log_anim_node.htm">ezLogAnimNode</a></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  EZ_ADD_DYNAMIC_REFLECTION(<a class="code" href="../../d1/d76/classez_log_info_anim_node.htm">ezLogInfoAnimNode</a>, <a class="code" href="../../db/d8d/classez_log_anim_node.htm">ezLogAnimNode</a>);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="comment">// ezLogAnimNode</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> Step(<a class="code" href="../../d2/de1/classez_anim_controller.htm">ezAnimController</a>&amp; ref_controller, <a class="code" href="../../db/d86/classez_anim_graph_instance.htm">ezAnimGraphInstance</a>&amp; ref_graph, <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> tDiff, <span class="keyword">const</span> <a class="code" href="../../d9/d0c/classez_skeleton_resource.htm">ezSkeletonResource</a>* pSkeleton, <a class="code" href="../../d6/d61/classez_game_object.htm">ezGameObject</a>* pTarget) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="../../d8/d1f/classez_log_error_anim_node.htm">   37</a></span>&#160;<span class="keyword">class </span>EZ_RENDERERCORE_DLL <a class="code" href="../../d8/d1f/classez_log_error_anim_node.htm">ezLogErrorAnimNode</a> : <span class="keyword">public</span> <a class="code" href="../../db/d8d/classez_log_anim_node.htm">ezLogAnimNode</a></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  EZ_ADD_DYNAMIC_REFLECTION(<a class="code" href="../../d8/d1f/classez_log_error_anim_node.htm">ezLogErrorAnimNode</a>, <a class="code" href="../../db/d8d/classez_log_anim_node.htm">ezLogAnimNode</a>);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="comment">// ezLogAnimNode</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> Step(<a class="code" href="../../d2/de1/classez_anim_controller.htm">ezAnimController</a>&amp; ref_controller, <a class="code" href="../../db/d86/classez_anim_graph_instance.htm">ezAnimGraphInstance</a>&amp; ref_graph, <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> tDiff, <span class="keyword">const</span> <a class="code" href="../../d9/d0c/classez_skeleton_resource.htm">ezSkeletonResource</a>* pSkeleton, <a class="code" href="../../d6/d61/classez_game_object.htm">ezGameObject</a>* pTarget) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aclassez_anim_controller_htm"><div class="ttname"><a href="../../d2/de1/classez_anim_controller.htm">ezAnimController</a></div><div class="ttdef"><b>Definition:</b> AnimController.h:51</div></div>
 <div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition:</b> Types.h:50</div></div>
 <div class="ttc" id="aclassez_stream_writer_htm"><div class="ttname"><a href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a></div><div class="ttdoc">Interface for binary out (write) streams.</div><div class="ttdef"><b>Definition:</b> Stream.h:106</div></div>
-<div class="ttc" id="aclassez_anim_graph_number_input_pin_htm"><div class="ttname"><a href="../../d9/df6/classez_anim_graph_number_input_pin.htm">ezAnimGraphNumberInputPin</a></div><div class="ttdef"><b>Definition:</b> AnimGraphPins.h:97</div></div>
 <div class="ttc" id="astructez_time_htm"><div class="ttname"><a href="../../d3/d90/structez_time.htm">ezTime</a></div><div class="ttdoc">The time class encapsulates a double value storing the time in seconds.</div><div class="ttdef"><b>Definition:</b> Time.h:11</div></div>
 <div class="ttc" id="aclassez_log_anim_node_htm"><div class="ttname"><a href="../../db/d8d/classez_log_anim_node.htm">ezLogAnimNode</a></div><div class="ttdef"><b>Definition:</b> DebugAnimNodes.h:5</div></div>
 <div class="ttc" id="aclassez_stream_reader_htm"><div class="ttname"><a href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a></div><div class="ttdoc">Interface for binary in (read) streams.</div><div class="ttdef"><b>Definition:</b> Stream.h:21</div></div>
-<div class="ttc" id="aclassez_skeleton_resource_htm"><div class="ttname"><a href="../../d9/d0c/classez_skeleton_resource.htm">ezSkeletonResource</a></div><div class="ttdef"><b>Definition:</b> SkeletonResource.h:44</div></div>
+<div class="ttc" id="aclassez_skeleton_resource_htm"><div class="ttname"><a href="../../d9/d0c/classez_skeleton_resource.htm">ezSkeletonResource</a></div><div class="ttdef"><b>Definition:</b> SkeletonResource.h:46</div></div>
 <div class="ttc" id="astructez_hybrid_string_htm"><div class="ttname"><a href="../../d4/d53/structez_hybrid_string.htm">ezHybridString&lt; 32, ezDefaultAllocatorWrapper &gt;</a></div></div>
-<div class="ttc" id="aclassez_game_object_htm"><div class="ttname"><a href="../../d6/d61/classez_game_object.htm">ezGameObject</a></div><div class="ttdoc">This class represents an object inside the world.</div><div class="ttdef"><b>Definition:</b> GameObject.h:29</div></div>
-<div class="ttc" id="aclassez_anim_graph_trigger_input_pin_htm"><div class="ttname"><a href="../../d8/db1/classez_anim_graph_trigger_input_pin.htm">ezAnimGraphTriggerInputPin</a></div><div class="ttdef"><b>Definition:</b> AnimGraphPins.h:74</div></div>
-<div class="ttc" id="aclassez_anim_graph_node_htm"><div class="ttname"><a href="../../df/df1/classez_anim_graph_node.htm">ezAnimGraphNode</a></div><div class="ttdoc">Base class for all nodes in an ezAnimGraph.</div><div class="ttdef"><b>Definition:</b> AnimGraphNode.h:32</div></div>
-<div class="ttc" id="aclassez_anim_graph_htm"><div class="ttname"><a href="../../d5/d0d/classez_anim_graph.htm">ezAnimGraph</a></div><div class="ttdef"><b>Definition:</b> AnimGraph.h:49</div></div>
+<div class="ttc" id="aclassez_log_info_anim_node_htm"><div class="ttname"><a href="../../d1/d76/classez_log_info_anim_node.htm">ezLogInfoAnimNode</a></div><div class="ttdef"><b>Definition:</b> DebugAnimNodes.h:26</div></div>
+<div class="ttc" id="aclassez_anim_graph_instance_htm"><div class="ttname"><a href="../../db/d86/classez_anim_graph_instance.htm">ezAnimGraphInstance</a></div><div class="ttdef"><b>Definition:</b> AnimGraphInstance.h:14</div></div>
+<div class="ttc" id="aclassez_log_error_anim_node_htm"><div class="ttname"><a href="../../d8/d1f/classez_log_error_anim_node.htm">ezLogErrorAnimNode</a></div><div class="ttdef"><b>Definition:</b> DebugAnimNodes.h:37</div></div>
+<div class="ttc" id="aclassez_game_object_htm"><div class="ttname"><a href="../../d6/d61/classez_game_object.htm">ezGameObject</a></div><div class="ttdoc">This class represents an object inside the world.</div><div class="ttdef"><b>Definition:</b> GameObject.h:31</div></div>
+<div class="ttc" id="aclassez_anim_graph_trigger_input_pin_htm"><div class="ttname"><a href="../../d8/db1/classez_anim_graph_trigger_input_pin.htm">ezAnimGraphTriggerInputPin</a></div><div class="ttdef"><b>Definition:</b> AnimGraphPins.h:80</div></div>
+<div class="ttc" id="aclassez_anim_graph_node_htm"><div class="ttname"><a href="../../df/df1/classez_anim_graph_node.htm">ezAnimGraphNode</a></div><div class="ttdoc">Base class for all nodes in an ezAnimGraphInstance.</div><div class="ttdef"><b>Definition:</b> AnimGraphNode.h:35</div></div>
+<div class="ttc" id="aclassez_hybrid_array_htm"><div class="ttname"><a href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt; ezAnimGraphNumberInputPin, 2 &gt;</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_9b39d7517b28e8ee3dee1b9d862ddabb.htm">RendererCore</a></li><li class="navelem"><a class="el" href="../../dir_77db471eb2b64e2aaad44708419e1af7.htm">AnimationSystem</a></li><li class="navelem"><a class="el" href="../../dir_1a6a38560ac223de10f179e8f50eb402.htm">AnimGraph</a></li><li class="navelem"><a class="el" href="../../dir_25add7f5a3c9565ece2b6a3d97ba5fe1.htm">AnimNodes</a></li><li class="navelem"><b>DebugAnimNodes.h</b></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:21:58 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:19 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

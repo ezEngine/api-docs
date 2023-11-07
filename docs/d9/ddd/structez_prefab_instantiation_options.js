@@ -14,5 +14,6 @@ var structez_prefab_instantiation_options =
     [ "m_pOverrideTeamID", "d9/ddd/structez_prefab_instantiation_options.htm#aad74bbab90f4d5339bfe3cf656820e9e", null ],
     [ "m_pProgress", "d9/ddd/structez_prefab_instantiation_options.htm#acbd7f9c79008ac2d4a51bd595727d33f", null ],
     [ "m_RandomSeedMode", "d9/ddd/structez_prefab_instantiation_options.htm#a14ab0e2152c2e58318d9c1e80a982e99", null ],
+    [ "m_ReplaceNamedRootWithParent", "d9/ddd/structez_prefab_instantiation_options.htm#af8d0f036e39f88b43c46e2a1b56058ce", null ],
     [ "m_uiCustomRandomSeedRootValue", "d9/ddd/structez_prefab_instantiation_options.htm#a11eadebd01f0ee31249da6c34a39791e", null ]
 ];

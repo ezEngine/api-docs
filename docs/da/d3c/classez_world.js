@@ -1,13 +1,16 @@
 var classez_world =
 [
-    [ "ReferenceResolver", "da/d3c/classez_world.htm#ace11c57b9f4c0615ea87871def0a2f53", null ],
-    [ "VisitorFunc", "da/d3c/classez_world.htm#a3741bedbea111dc6178cbb37d225ad45", null ],
+    [ "ReferenceResolver", "da/d3c/classez_world.htm#a85fab0ebd84cc9b76ec29b1196750f97", null ],
+    [ "ResourceReloadContext", "da/d3c/classez_world.htm#ac90980ce5e28b4134e0caffb7ce3bac0", null ],
+    [ "ResourceReloadFunc", "da/d3c/classez_world.htm#a6705258c067fe923ed228495ffd9f5d2", null ],
+    [ "VisitorFunc", "da/d3c/classez_world.htm#a6373b821cee463ac991cbccee4d9e9d3", null ],
     [ "TraversalMethod", "da/d3c/classez_world.htm#a6a45d1beef585d6f4ca37177a5538ab6", [
       [ "BreadthFirst", "da/d3c/classez_world.htm#a6a45d1beef585d6f4ca37177a5538ab6ab59d03390bb65d6d73f8b0bd5453aff9", null ],
       [ "DepthFirst", "da/d3c/classez_world.htm#a6a45d1beef585d6f4ca37177a5538ab6a58d181be32f468fcdfce23fe5759127c", null ]
     ] ],
     [ "ezWorld", "da/d3c/classez_world.htm#a5624dfad004c38b2be6c3414e4fdcbea", null ],
     [ "~ezWorld", "da/d3c/classez_world.htm#aafbeb9801baba341d167447410eaa841", null ],
+    [ "AddResourceReloadFunction", "da/d3c/classez_world.htm#a2faaa52ae9301f4b834d6bf3f5f853b6", null ],
     [ "BeginAddingComponentsToInitBatch", "da/d3c/classez_world.htm#ab308928eb2134b2db8d8d1fa4b60d98a", null ],
     [ "CancelComponentInitBatch", "da/d3c/classez_world.htm#a8aac2fda017f7af5d5eb21200676304f", null ],
     [ "Clear", "da/d3c/classez_world.htm#abc954cdca51d7a691e5244cbb8b42cbe", null ],
@@ -62,6 +65,7 @@ var classez_world =
     [ "GetSpatialSystem", "da/d3c/classez_world.htm#a321b3e22434766cb4389d4e3957d8524", null ],
     [ "GetSpatialSystem", "da/d3c/classez_world.htm#a8448ff7a11ebc79f63cba6c556ac1cd8", null ],
     [ "GetStackAllocator", "da/d3c/classez_world.htm#a022fcf333852e5dc75b767cfa353c04d", null ],
+    [ "GetUpdateCounter", "da/d3c/classez_world.htm#af35337ba3e24226ef36670cb9ad61916", null ],
     [ "GetUpdateTask", "da/d3c/classez_world.htm#a4a70683d477003530ef84419914d47b3", null ],
     [ "GetUserData", "da/d3c/classez_world.htm#a28beb180e9d1d106aeed4ca6ba04fe72", null ],
     [ "GetWorldSimulationEnabled", "da/d3c/classez_world.htm#a615423cf968d8b9a04f63ab517158968", null ],
@@ -72,6 +76,7 @@ var classez_world =
     [ "PostMessage", "da/d3c/classez_world.htm#ab66e471ca6672a5128962a8099a52502", null ],
     [ "PostMessage", "da/d3c/classez_world.htm#ad80708cbaa493ecf3a8afdd70271a4a0", null ],
     [ "PostMessageRecursive", "da/d3c/classez_world.htm#a5ec24fbe69348d416f4419f5de5c26fc", null ],
+    [ "RemoveResourceReloadFunction", "da/d3c/classez_world.htm#a312259aa783df40895af5dfee9bedc33", null ],
     [ "SendMessage", "da/d3c/classez_world.htm#a6eda3793e41cfe714e6e982154f1a62f", null ],
     [ "SendMessage", "da/d3c/classez_world.htm#a5fdfdec76662096e8c0c3da7a83a29af", null ],
     [ "SendMessageRecursive", "da/d3c/classez_world.htm#a4966f847ef6e4dbdd4721ea67379af4c", null ],

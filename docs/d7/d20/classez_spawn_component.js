@@ -25,7 +25,7 @@ var classez_spawn_component =
     [ "SetSpawnAtStart", "d7/d20/classez_spawn_component.htm#a077f047d93303b2f953e99a1201e5c79", null ],
     [ "SetSpawnContinuously", "d7/d20/classez_spawn_component.htm#a45390dc4a1c21cd617fbebde6f6f4ae3", null ],
     [ "SpawnOnce", "d7/d20/classez_spawn_component.htm#aa06da27347e83601658dfe12c7553bdd", null ],
-    [ "TriggerManualSpawn", "d7/d20/classez_spawn_component.htm#afe36276ebf393353639d6f050a484fa4", null ],
+    [ "TriggerManualSpawn", "d7/d20/classez_spawn_component.htm#a2e78e037df7d1b69a0d0bc43dc09286f", null ],
     [ "m_DelayRange", "d7/d20/classez_spawn_component.htm#a2e9dc822b848dc2f0cfe2f85c6b719a3", null ],
     [ "m_hPrefab", "d7/d20/classez_spawn_component.htm#a794123f6c0960d14cbb8ae829f2041c6", null ],
     [ "m_LastManualSpawn", "d7/d20/classez_spawn_component.htm#ac1508952875791c59be6d8750dd50527", null ],

@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -90,64 +90,60 @@ $(document).ready(function(){initNavTree('de/d1f/_rtti_mapped_object_factory__in
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Object&gt;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<a class="code" href="../../d8/d28/classez_rtti_mapped_object_factory.htm">ezRttiMappedObjectFactory&lt;Object&gt;::ezRttiMappedObjectFactory</a>()</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;{</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;}</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Object&gt;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<a class="code" href="../../d8/d28/classez_rtti_mapped_object_factory.htm">ezRttiMappedObjectFactory&lt;Object&gt;::~ezRttiMappedObjectFactory</a>()</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;}</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Object&gt;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d8/d28/classez_rtti_mapped_object_factory.htm">ezRttiMappedObjectFactory&lt;Object&gt;::RegisterCreator</a>(<span class="keyword">const</span> <a class="code" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a>* pType, CreateObjectFunc creator)</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  EZ_ASSERT_DEV(!m_Creators.Contains(pType), <span class="stringliteral">&quot;Type already registered.&quot;</span>);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  m_Creators.Insert(pType, creator);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  Event <a class="code" href="../../db/d78/namespaceez_math.htm#a70fa9a79fb67ea653462d2cdbbfd675d">e</a>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <a class="code" href="../../db/d78/namespaceez_math.htm#a70fa9a79fb67ea653462d2cdbbfd675d">e</a>.m_Type = Event::Type::CreatorAdded;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <a class="code" href="../../db/d78/namespaceez_math.htm#a70fa9a79fb67ea653462d2cdbbfd675d">e</a>.m_pRttiType = pType;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  m_Events.Broadcast(e);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Object&gt;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d8/d28/classez_rtti_mapped_object_factory.htm">ezRttiMappedObjectFactory&lt;Object&gt;::UnregisterCreator</a>(<span class="keyword">const</span> <a class="code" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a>* pType)</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  EZ_ASSERT_DEV(m_Creators.Contains(pType), <span class="stringliteral">&quot;Type was never registered.&quot;</span>);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  m_Creators.Remove(pType);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  Event <a class="code" href="../../db/d78/namespaceez_math.htm#a70fa9a79fb67ea653462d2cdbbfd675d">e</a>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <a class="code" href="../../db/d78/namespaceez_math.htm#a70fa9a79fb67ea653462d2cdbbfd675d">e</a>.m_Type = Event::Type::CreatorRemoved;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <a class="code" href="../../db/d78/namespaceez_math.htm#a70fa9a79fb67ea653462d2cdbbfd675d">e</a>.m_pRttiType = pType;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  m_Events.Broadcast(e);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Object&gt;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;Object* <a class="code" href="../../d8/d28/classez_rtti_mapped_object_factory.htm">ezRttiMappedObjectFactory&lt;Object&gt;::CreateObject</a>(<span class="keyword">const</span> <a class="code" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a>* pType)</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  CreateObjectFunc* creator = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keywordflow">while</span> (pType != <span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">if</span> (m_Creators.TryGetValue(pType, creator))</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      <span class="keywordflow">return</span> (*creator)(pType);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    pType = pType-&gt;<a class="code" href="../../dd/d19/classez_r_t_t_i.htm#a4887d66c7de28b4886359cb93d7efe5f">GetParentType</a>();</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<a class="code" href="../../d8/d28/classez_rtti_mapped_object_factory.htm">ezRttiMappedObjectFactory&lt;Object&gt;::ezRttiMappedObjectFactory</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Object&gt;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<a class="code" href="../../d8/d28/classez_rtti_mapped_object_factory.htm">ezRttiMappedObjectFactory&lt;Object&gt;::~ezRttiMappedObjectFactory</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Object&gt;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d8/d28/classez_rtti_mapped_object_factory.htm">ezRttiMappedObjectFactory&lt;Object&gt;::RegisterCreator</a>(<span class="keyword">const</span> <a class="code" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a>* pType, CreateObjectFunc creator)</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  EZ_ASSERT_DEV(!m_Creators.Contains(pType), <span class="stringliteral">&quot;Type already registered.&quot;</span>);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  m_Creators.Insert(pType, creator);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  Event <a class="code" href="../../db/d78/namespaceez_math.htm#a70fa9a79fb67ea653462d2cdbbfd675d">e</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <a class="code" href="../../db/d78/namespaceez_math.htm#a70fa9a79fb67ea653462d2cdbbfd675d">e</a>.m_Type = Event::Type::CreatorAdded;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <a class="code" href="../../db/d78/namespaceez_math.htm#a70fa9a79fb67ea653462d2cdbbfd675d">e</a>.m_pRttiType = pType;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  m_Events.Broadcast(e);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Object&gt;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d8/d28/classez_rtti_mapped_object_factory.htm">ezRttiMappedObjectFactory&lt;Object&gt;::UnregisterCreator</a>(<span class="keyword">const</span> <a class="code" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a>* pType)</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  EZ_ASSERT_DEV(m_Creators.Contains(pType), <span class="stringliteral">&quot;Type was never registered.&quot;</span>);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  m_Creators.Remove(pType);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  Event <a class="code" href="../../db/d78/namespaceez_math.htm#a70fa9a79fb67ea653462d2cdbbfd675d">e</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <a class="code" href="../../db/d78/namespaceez_math.htm#a70fa9a79fb67ea653462d2cdbbfd675d">e</a>.m_Type = Event::Type::CreatorRemoved;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <a class="code" href="../../db/d78/namespaceez_math.htm#a70fa9a79fb67ea653462d2cdbbfd675d">e</a>.m_pRttiType = pType;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  m_Events.Broadcast(e);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Object&gt;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;Object* <a class="code" href="../../d8/d28/classez_rtti_mapped_object_factory.htm">ezRttiMappedObjectFactory&lt;Object&gt;::CreateObject</a>(<span class="keyword">const</span> <a class="code" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a>* pType)</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  CreateObjectFunc* creator = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordflow">while</span> (pType != <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">if</span> (m_Creators.TryGetValue(pType, creator))</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      <span class="keywordflow">return</span> (*creator)(pType);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    pType = pType-&gt;<a class="code" href="../../dd/d19/classez_r_t_t_i.htm#a4887d66c7de28b4886359cb93d7efe5f">GetParentType</a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassez_r_t_t_i_htm"><div class="ttname"><a href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a></div><div class="ttdoc">This enumerable class holds information about reflected types. Each instance represents one type that...</div><div class="ttdef"><b>Definition:</b> RTTI.h:30</div></div>
+<div class="ttc" id="aclassez_r_t_t_i_htm"><div class="ttname"><a href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a></div><div class="ttdoc">This class holds information about reflected types. Each instance represents one type that is known t...</div><div class="ttdef"><b>Definition:</b> RTTI.h:28</div></div>
 <div class="ttc" id="anamespaceez_math_htm_a70fa9a79fb67ea653462d2cdbbfd675d"><div class="ttname"><a href="../../db/d78/namespaceez_math.htm#a70fa9a79fb67ea653462d2cdbbfd675d">ezMath::e</a></div><div class="ttdeci">constexpr TYPE e()</div><div class="ttdoc">Returns the natural constant e.</div><div class="ttdef"><b>Definition:</b> Constants_inl.h:24</div></div>
 <div class="ttc" id="aclassez_rtti_mapped_object_factory_htm"><div class="ttname"><a href="../../d8/d28/classez_rtti_mapped_object_factory.htm">ezRttiMappedObjectFactory</a></div><div class="ttdoc">A factory that creates the closest matching objects according to the passed type.</div><div class="ttdef"><b>Definition:</b> RttiMappedObjectFactory.h:12</div></div>
-<div class="ttc" id="aclassez_r_t_t_i_htm_a4887d66c7de28b4886359cb93d7efe5f"><div class="ttname"><a href="../../dd/d19/classez_r_t_t_i.htm#a4887d66c7de28b4886359cb93d7efe5f">ezRTTI::GetParentType</a></div><div class="ttdeci">const EZ_ALWAYS_INLINE ezRTTI * GetParentType() const</div><div class="ttdoc">Returns the type that is the base class of this type. May be nullptr if this type has no base class.</div><div class="ttdef"><b>Definition:</b> RTTI.h:57</div></div>
+<div class="ttc" id="aclassez_r_t_t_i_htm_a4887d66c7de28b4886359cb93d7efe5f"><div class="ttname"><a href="../../dd/d19/classez_r_t_t_i.htm#a4887d66c7de28b4886359cb93d7efe5f">ezRTTI::GetParentType</a></div><div class="ttdeci">const EZ_ALWAYS_INLINE ezRTTI * GetParentType() const</div><div class="ttdoc">Returns the type that is the base class of this type. May be nullptr if this type has no base class.</div><div class="ttdef"><b>Definition:</b> RTTI.h:53</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_07792d309f5611e62640e8ec1fb96105.htm">Tools</a></li><li class="navelem"><a class="el" href="../../dir_8e80be223102188e67d1ce7cce146de0.htm">Libs</a></li><li class="navelem"><a class="el" href="../../dir_2c504b9267ae5782c5ed966d1eebd572.htm">ToolsFoundation</a></li><li class="navelem"><a class="el" href="../../dir_a780bed1bd09260fc69abb92296648b5.htm">Factory</a></li><li class="navelem"><a class="el" href="../../dir_8d574d37fc69d2db17ab0de546082442.htm">Implementation</a></li><li class="navelem"><b>RttiMappedObjectFactory_inl.h</b></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:22:00 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:22 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

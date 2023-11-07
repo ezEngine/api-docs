@@ -1,7 +1,7 @@
 var structez_qt_editor_app_1_1_startup_flags =
 [
     [ "Bits", "d3/df1/structez_qt_editor_app_1_1_startup_flags_1_1_bits.htm", "d3/df1/structez_qt_editor_app_1_1_startup_flags_1_1_bits" ],
-    [ "StorageType", "d7/db1/structez_qt_editor_app_1_1_startup_flags.htm#a91cee7af7ae36210aa5dfb54f4b59308", null ],
+    [ "StorageType", "d7/db1/structez_qt_editor_app_1_1_startup_flags.htm#ab40ebdfcb59c239bc394a263c8947973", null ],
     [ "Enum", "d7/db1/structez_qt_editor_app_1_1_startup_flags.htm#a957ad3eca94ddd2e1d3659f45f8c07ef", [
       [ "Headless", "d7/db1/structez_qt_editor_app_1_1_startup_flags.htm#a957ad3eca94ddd2e1d3659f45f8c07efaa006cfcfd697bc3802d49ae1747bd8ae", null ],
       [ "SafeMode", "d7/db1/structez_qt_editor_app_1_1_startup_flags.htm#a957ad3eca94ddd2e1d3659f45f8c07efab0e4e8393ead2d89af311152485b33bd", null ],

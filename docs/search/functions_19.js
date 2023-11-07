@@ -1,9 +1,5 @@
 var searchData=
 [
-  ['zero_20778',['Zero',['../d3/d90/structez_time.htm#a87b37655fad76f9e6972af8d88b540f4',1,'ezTime']]],
-  ['zerocolor_20779',['ZeroColor',['../dd/d01/classez_color.htm#a43f8bfe44e9ee120e97d3c5a64611125',1,'ezColor']]],
-  ['zerofill_20780',['ZeroFill',['../dd/db8/classez_blob.htm#acc40743aeb7b867a5c219ce509e83ac0',1,'ezBlob::ZeroFill()'],['../dc/d4d/classez_memory_utils.htm#a0df3a6403e0c7ab2a65997e1e6f6bc14',1,'ezMemoryUtils::ZeroFill()']]],
-  ['zerofillarray_20781',['ZeroFillArray',['../dc/d4d/classez_memory_utils.htm#a89ae3939ff6b2284152f36ac59290780',1,'ezMemoryUtils']]],
-  ['zeromatrix_20782',['ZeroMatrix',['../db/daf/classez_mat3_template.htm#a091a687a65d134a3097de3edd8ffc3d5',1,'ezMat3Template::ZeroMatrix()'],['../d7/d9b/classez_mat4_template.htm#a37637ef99c6e67ef90d2c92baa9a1180',1,'ezMat4Template::ZeroMatrix()']]],
-  ['zerovector_20783',['ZeroVector',['../d1/df8/classez_vec2_template.htm#a5bfb330b990eae4ee79bf01f972d852d',1,'ezVec2Template::ZeroVector()'],['../da/df1/classez_vec3_template.htm#add7061770113b1065f78a3cbad6b0a8b',1,'ezVec3Template::ZeroVector()'],['../da/dd2/classez_vec4_template.htm#a1ed45b3b7e1591ba3f2ac6e8d09fdc00',1,'ezVec4Template::ZeroVector()']]]
+  ['zerofill_21633',['ZeroFill',['../dd/db8/classez_blob.htm#acc40743aeb7b867a5c219ce509e83ac0',1,'ezBlob::ZeroFill()'],['../dc/d4d/classez_memory_utils.htm#a0df3a6403e0c7ab2a65997e1e6f6bc14',1,'ezMemoryUtils::ZeroFill(T *pDestination, size_t uiCount=1)'],['../dc/d4d/classez_memory_utils.htm#a30821c4f7800bea66906c0f54b6fb339',1,'ezMemoryUtils::ZeroFill(T(&amp;destination)[N])=delete']]],
+  ['zerofillarray_21634',['ZeroFillArray',['../dc/d4d/classez_memory_utils.htm#a89ae3939ff6b2284152f36ac59290780',1,'ezMemoryUtils']]]
 ];

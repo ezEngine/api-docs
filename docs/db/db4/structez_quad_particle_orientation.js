@@ -1,6 +1,6 @@
 var structez_quad_particle_orientation =
 [
-    [ "StorageType", "db/db4/structez_quad_particle_orientation.htm#affbda732101e3edfc8573d97e473c529", null ],
+    [ "StorageType", "db/db4/structez_quad_particle_orientation.htm#ace807338d432e0835134723c68911dce", null ],
     [ "Enum", "db/db4/structez_quad_particle_orientation.htm#a09407fee7f60ecf571a92b683b566500", [
       [ "Billboard", "db/db4/structez_quad_particle_orientation.htm#a09407fee7f60ecf571a92b683b566500acb44f4dacc211fc9d3ddfdaea3ebc63d", null ],
       [ "Rotating_OrthoEmitterDir", "db/db4/structez_quad_particle_orientation.htm#a09407fee7f60ecf571a92b683b566500ae94194d0699cf4828b815d4b272a3a00", null ],

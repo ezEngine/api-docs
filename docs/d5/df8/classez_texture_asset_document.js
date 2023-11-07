@@ -1,9 +1,9 @@
 var classez_texture_asset_document =
 [
-    [ "ezTextureAssetDocument", "d5/df8/classez_texture_asset_document.htm#a298c0ef6e4570c4a1e1a25c3b4c0c61e", null ],
+    [ "ezTextureAssetDocument", "d5/df8/classez_texture_asset_document.htm#a73373596eaa077402df7764e63c3ec44", null ],
     [ "InitializeAfterLoading", "d5/df8/classez_texture_asset_document.htm#a75b3f49c5d1fe4bfb2dfa52ae289ed55", null ],
-    [ "InternalTransformAsset", "d5/df8/classez_texture_asset_document.htm#a71409e94b46d78088534462851b6d69d", null ],
-    [ "InternalTransformAsset", "d5/df8/classez_texture_asset_document.htm#a5526a68b3d94c587356205c31b2c5d00", null ],
+    [ "InternalTransformAsset", "d5/df8/classez_texture_asset_document.htm#aed887960c78380196571a170d271c9be", null ],
+    [ "InternalTransformAsset", "d5/df8/classez_texture_asset_document.htm#a94a0ba954e1138b137fbc7e832c5dac6", null ],
     [ "RunTexConv", "d5/df8/classez_texture_asset_document.htm#a88b6b947ff70522e92342ce4ceaad13c", null ],
     [ "UpdateAssetDocumentInfo", "d5/df8/classez_texture_asset_document.htm#ab1a76bd952ae5c8b413fe15eedb524c7", null ],
     [ "m_bIsRenderTarget", "d5/df8/classez_texture_asset_document.htm#a5db05a3854ec97c508a8e3568868c904", null ],

@@ -1,7 +1,7 @@
 var structez_px_character_shape_collision_flags =
 [
     [ "Bits", "d1/d52/structez_px_character_shape_collision_flags_1_1_bits.htm", "d1/d52/structez_px_character_shape_collision_flags_1_1_bits" ],
-    [ "StorageType", "d2/dcc/structez_px_character_shape_collision_flags.htm#a1d36e723744cee05a17e884636ce179e", null ],
+    [ "StorageType", "d2/dcc/structez_px_character_shape_collision_flags.htm#ae296acdf688adff9fbb79e7c82186e27", null ],
     [ "Enum", "d2/dcc/structez_px_character_shape_collision_flags.htm#a05699384a0c7ddb54c8f9b39a8fb49a0", [
       [ "None", "d2/dcc/structez_px_character_shape_collision_flags.htm#a05699384a0c7ddb54c8f9b39a8fb49a0a1b6323aa91b4c2c8d4962bd361437cda", null ],
       [ "Sides", "d2/dcc/structez_px_character_shape_collision_flags.htm#a05699384a0c7ddb54c8f9b39a8fb49a0a7b1538c077b0ff7f44f634ca90780a4a", null ],

@@ -1,6 +1,6 @@
 var classez_document_object_mirror =
 [
-    [ "FilterFunction", "d1/d6b/classez_document_object_mirror.htm#a42da81918f787d3a059a6c87d0071b39", null ],
+    [ "FilterFunction", "d1/d6b/classez_document_object_mirror.htm#adfae85357efd4189ae90dc6b3630bb43", null ],
     [ "ezDocumentObjectMirror", "d1/d6b/classez_document_object_mirror.htm#a517fd974dbdb6163956e8776e2a96b87", null ],
     [ "~ezDocumentObjectMirror", "d1/d6b/classez_document_object_mirror.htm#a9975a51399c37d83617dc1ea49d9955f", null ],
     [ "ApplyOp", "d1/d6b/classez_document_object_mirror.htm#a8849333f4dc5530c6ace8986c0eda8af", null ],
@@ -11,8 +11,8 @@ var classez_document_object_mirror =
     [ "GetNativeObjectPointer", "d1/d6b/classez_document_object_mirror.htm#af3e6b1e749c50f639e9d10b73b20da51", null ],
     [ "InitReceiver", "d1/d6b/classez_document_object_mirror.htm#aae79d877d0ad85607026fb1e5d18d79e", null ],
     [ "InitSender", "d1/d6b/classez_document_object_mirror.htm#a07ee05645e3671d5d61992f838b7762d", null ],
-    [ "IsDiscardedByFilter", "d1/d6b/classez_document_object_mirror.htm#a38e5c66e98e51acadfdc114776daa1c1", null ],
-    [ "IsHeapAllocated", "d1/d6b/classez_document_object_mirror.htm#a802a0f3e370093a84565ca9367104627", null ],
+    [ "IsDiscardedByFilter", "d1/d6b/classez_document_object_mirror.htm#aac3adc1e9d4bf89c6471b19ed20e49fb", null ],
+    [ "IsHeapAllocated", "d1/d6b/classez_document_object_mirror.htm#a29872d1fbaed3ce3c260eb3d5f9355d2", null ],
     [ "IsRootObject", "d1/d6b/classez_document_object_mirror.htm#a7b31028a62b93f29ebe8416f9b505b81", null ],
     [ "SendDocument", "d1/d6b/classez_document_object_mirror.htm#a313d55b742fa389b7888849bd337b2a8", null ],
     [ "SetFilterFunction", "d1/d6b/classez_document_object_mirror.htm#abbdf12c8e25358005f286e4fc4e4ccf6", null ],

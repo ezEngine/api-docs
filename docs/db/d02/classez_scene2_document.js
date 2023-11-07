@@ -1,6 +1,6 @@
 var classez_scene2_document =
 [
-    [ "ezScene2Document", "db/d02/classez_scene2_document.htm#a1c2a32f781de1d06a2dbff19ffbc68f6", null ],
+    [ "ezScene2Document", "db/d02/classez_scene2_document.htm#a1f50251a2ca2a14305300c657f170a07", null ],
     [ "~ezScene2Document", "db/d02/classez_scene2_document.htm#aa8a08d3168212e82e7050a1385f3af1a", null ],
     [ "CreateLayer", "db/d02/classez_scene2_document.htm#ace60dc43bbd90eb9d78fd61409410487", null ],
     [ "DeleteLayer", "db/d02/classez_scene2_document.htm#a7bb791343d96ce46948fbc65c5df8d7d", null ],

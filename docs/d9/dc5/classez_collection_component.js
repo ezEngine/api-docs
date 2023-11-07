@@ -10,5 +10,6 @@ var classez_collection_component =
     [ "SerializeComponent", "d9/dc5/classez_collection_component.htm#a1647975b3de88825920e35024f68b8ef", null ],
     [ "SetCollection", "d9/dc5/classez_collection_component.htm#a2b35376077843444a3b76743eff8c187", null ],
     [ "SetCollectionFile", "d9/dc5/classez_collection_component.htm#a2b73447a3cd0195471a935a0198e15c7", null ],
+    [ "m_bRegisterNames", "d9/dc5/classez_collection_component.htm#ab8040cccfaa713094f445d779cb32f3e", null ],
     [ "m_hCollection", "d9/dc5/classez_collection_component.htm#a7278d658ea5643b0eb4fc2ae8df98051", null ]
 ];

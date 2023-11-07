@@ -15,6 +15,7 @@ var structez_surface_resource_descriptor =
     [ "m_fPhysicsFrictionStatic", "d0/d67/structez_surface_resource_descriptor.htm#ac3c2bc81db30c41fa72151512ea2cc3d", null ],
     [ "m_fPhysicsRestitution", "d0/d67/structez_surface_resource_descriptor.htm#a8215e63bf5c1a7d54a3b0f3cf6060172", null ],
     [ "m_hBaseSurface", "d0/d67/structez_surface_resource_descriptor.htm#a5717cb50fedfd053c843887154ff0a0d", null ],
+    [ "m_iGroundType", "d0/d67/structez_surface_resource_descriptor.htm#a2fe633df9e1061cc3ac2cd03c2fa40d2", null ],
     [ "m_Interactions", "d0/d67/structez_surface_resource_descriptor.htm#a529929a22294fa82f59a1dee18cfa492", null ],
     [ "m_sOnCollideInteraction", "d0/d67/structez_surface_resource_descriptor.htm#aa6419f194226883e2a067cf0ebbbea10", null ],
     [ "m_sRollInteractionPrefab", "d0/d67/structez_surface_resource_descriptor.htm#ab57116661472d2085e77e0af75b36e59", null ],

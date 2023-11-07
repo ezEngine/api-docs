@@ -1,6 +1,6 @@
 var structez_g_a_l_present_mode =
 [
-    [ "StorageType", "d9/dd3/structez_g_a_l_present_mode.htm#a9536f2fd4ad914b05c0fc4f4ca0343de", null ],
+    [ "StorageType", "d9/dd3/structez_g_a_l_present_mode.htm#afb9cfbd61478f6280781785eef4ea02b", null ],
     [ "Enum", "d9/dd3/structez_g_a_l_present_mode.htm#a4587d7a22132b7facdaac2ad24011163", [
       [ "Immediate", "d9/dd3/structez_g_a_l_present_mode.htm#a4587d7a22132b7facdaac2ad24011163a9af80d59d5ab10d7811ed072a301b650", null ],
       [ "VSync", "d9/dd3/structez_g_a_l_present_mode.htm#a4587d7a22132b7facdaac2ad24011163a15695398dfdecb2ccaf78dde9685bfee", null ],

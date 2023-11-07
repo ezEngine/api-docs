@@ -7,6 +7,7 @@ var classez_transform_component =
     [ "GetReverseAtStart", "d8/dbd/classez_transform_component.htm#abed9cd3e01501738b0b0d20c3b0fa602", null ],
     [ "IsDirectionForwards", "d8/dbd/classez_transform_component.htm#ab7dd68f125060747b9a2233eb3f68d10", null ],
     [ "IsRunning", "d8/dbd/classez_transform_component.htm#a40aadfcd251dcff677182092746dd5c6", null ],
+    [ "OnSimulationStarted", "d8/dbd/classez_transform_component.htm#adf94aabf03e616f0b291bc0dd2cebb24", null ],
     [ "SerializeComponent", "d8/dbd/classez_transform_component.htm#afdb0ee691af3f7a8421da1d5531627e0", null ],
     [ "SetDirectionForwards", "d8/dbd/classez_transform_component.htm#a8e11cd6cfa8605de0de13286321e3962", null ],
     [ "SetReverseAtEnd", "d8/dbd/classez_transform_component.htm#a2348c10e5e3b3553000108e308da6aaf", null ],

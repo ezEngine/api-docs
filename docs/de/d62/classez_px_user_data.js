@@ -2,7 +2,7 @@ var classez_px_user_data =
 [
     [ "ezPxUserData", "de/d62/classez_px_user_data.htm#a526f8e687ff6549b722d317450e50b4d", null ],
     [ "~ezPxUserData", "de/d62/classez_px_user_data.htm#a8a0e69e9e136d394578a2df37d674757", null ],
-    [ "EZ_DECLARE_POD_TYPE", "de/d62/classez_px_user_data.htm#a67b749e996ede572b0b602a31e23706f", null ],
+    [ "EZ_DECLARE_MEM_RELOCATABLE_TYPE", "de/d62/classez_px_user_data.htm#a640cf7181b17dce17bb5c67ab4a74711", null ],
     [ "Init", "de/d62/classez_px_user_data.htm#abdd95ddc8cc6dc3be638cdcf3b35cd1a", null ],
     [ "Init", "de/d62/classez_px_user_data.htm#a04f32aef4a4c9454faaa763baefa674c", null ],
     [ "Init", "de/d62/classez_px_user_data.htm#a504a08809f04e949bc0532131727c405", null ],

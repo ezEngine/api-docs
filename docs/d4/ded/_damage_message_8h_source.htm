@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -90,7 +90,7 @@ $(document).ready(function(){initNavTree('d4/ded/_damage_message_8h_source.htm',
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;Core/Messages/EventMessage.h&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;GameEngine/VisualScript/VisualScriptNode.h&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;GameEngine/GameEngineDLL.h&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
 <div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="../../d4/df7/structez_msg_damage.htm">    6</a></span>&#160;<span class="keyword">struct </span>EZ_GAMEENGINE_DLL <a class="code" href="../../d4/df7/structez_msg_damage.htm">ezMsgDamage</a> : <span class="keyword">public</span> <a class="code" href="../../dd/d06/structez_event_message.htm">ezEventMessage</a></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
@@ -102,43 +102,20 @@ $(document).ready(function(){initNavTree('d4/ded/_damage_message_8h_source.htm',
 <div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="../../d4/df7/structez_msg_damage.htm#a85ebf967ee03858e183ecdd14784c0f1">   13</a></span>&#160;  <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> <a class="code" href="../../d4/df7/structez_msg_damage.htm#a85ebf967ee03858e183ecdd14784c0f1">m_vGlobalPosition</a>;  </div>
 <div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="../../d4/df7/structez_msg_damage.htm#a0543585083717ed99ee8e3aaaba8d48a">   14</a></span>&#160;  <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> <a class="code" href="../../d4/df7/structez_msg_damage.htm#a0543585083717ed99ee8e3aaaba8d48a">m_vImpactDirection</a>; </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;};</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="../../db/dac/classez_visual_script_node___on_damage.htm">   17</a></span>&#160;<span class="keyword">class </span>EZ_GAMEENGINE_DLL <a class="code" href="../../db/dac/classez_visual_script_node___on_damage.htm">ezVisualScriptNode_OnDamage</a> : <span class="keyword">public</span> <a class="code" href="../../dd/d18/classez_visual_script_node.htm">ezVisualScriptNode</a></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  EZ_ADD_DYNAMIC_REFLECTION(<a class="code" href="../../db/dac/classez_visual_script_node___on_damage.htm">ezVisualScriptNode_OnDamage</a>, <a class="code" href="../../dd/d18/classez_visual_script_node.htm">ezVisualScriptNode</a>);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <a class="code" href="../../db/dac/classez_visual_script_node___on_damage.htm">ezVisualScriptNode_OnDamage</a>();</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  ~<a class="code" href="../../db/dac/classez_visual_script_node___on_damage.htm">ezVisualScriptNode_OnDamage</a>();</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> Execute(<a class="code" href="../../db/dab/classez_visual_script_instance.htm">ezVisualScriptInstance</a>* pInstance, ezUInt8 uiExecPin) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span>* GetInputPinDataPointer(ezUInt8 uiPin)<span class="keyword"> override </span>{ <span class="keywordflow">return</span> <span class="keyword">nullptr</span>; }</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keyword">virtual</span> ezInt32 <a class="code" href="../../dd/d18/classez_visual_script_node.htm#a87104c7fa4befcaa84081fb6a09f00f1">HandlesMessagesWithID</a>() <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../dd/d18/classez_visual_script_node.htm#afe4a75d5bffbaa6026c8e306b7de1b8c">HandleMessage</a>(<a class="code" href="../../dd/d22/classez_message.htm">ezMessage</a>* pMsg) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <a class="code" href="../../d4/df7/structez_msg_damage.htm">ezMsgDamage</a> m_Msg;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassez_message_htm"><div class="ttname"><a href="../../dd/d22/classez_message.htm">ezMessage</a></div><div class="ttdoc">Base class for all message types. Each message type has it's own id which is used to dispatch message...</div><div class="ttdef"><b>Definition:</b> Message.h:21</div></div>
 <div class="ttc" id="astructez_msg_damage_htm_a85ebf967ee03858e183ecdd14784c0f1"><div class="ttname"><a href="../../d4/df7/structez_msg_damage.htm#a85ebf967ee03858e183ecdd14784c0f1">ezMsgDamage::m_vGlobalPosition</a></div><div class="ttdeci">ezVec3 m_vGlobalPosition</div><div class="ttdoc">The global position at which the damage was applied. Set to zero, if unused.</div><div class="ttdef"><b>Definition:</b> DamageMessage.h:13</div></div>
 <div class="ttc" id="astructez_event_message_htm"><div class="ttname"><a href="../../dd/d06/structez_event_message.htm">ezEventMessage</a></div><div class="ttdoc">Base class for all messages that are sent as 'events'.</div><div class="ttdef"><b>Definition:</b> EventMessage.h:7</div></div>
 <div class="ttc" id="astructez_msg_damage_htm"><div class="ttname"><a href="../../d4/df7/structez_msg_damage.htm">ezMsgDamage</a></div><div class="ttdef"><b>Definition:</b> DamageMessage.h:6</div></div>
-<div class="ttc" id="aclassez_visual_script_node_htm_a87104c7fa4befcaa84081fb6a09f00f1"><div class="ttname"><a href="../../dd/d18/classez_visual_script_node.htm#a87104c7fa4befcaa84081fb6a09f00f1">ezVisualScriptNode::HandlesMessagesWithID</a></div><div class="ttdeci">virtual ezInt32 HandlesMessagesWithID() const</div><div class="ttdoc">Should return the message ID of the message type that this node wants to handle.</div><div class="ttdef"><b>Definition:</b> VisualScriptNode.cpp:15</div></div>
-<div class="ttc" id="aclassez_visual_script_node_htm"><div class="ttname"><a href="../../dd/d18/classez_visual_script_node.htm">ezVisualScriptNode</a></div><div class="ttdef"><b>Definition:</b> VisualScriptNode.h:10</div></div>
 <div class="ttc" id="astructez_hybrid_string_htm"><div class="ttname"><a href="../../d4/d53/structez_hybrid_string.htm">ezHybridString&lt; 32, ezDefaultAllocatorWrapper &gt;</a></div></div>
 <div class="ttc" id="astructez_msg_damage_htm_a42868469b4ae0289c860d550e1025e0a"><div class="ttname"><a href="../../d4/df7/structez_msg_damage.htm#a42868469b4ae0289c860d550e1025e0a">ezMsgDamage::m_sHitObjectName</a></div><div class="ttdeci">ezString m_sHitObjectName</div><div class="ttdoc">The actual game object that was hit (may be a child of the object to which the message is sent)</div><div class="ttdef"><b>Definition:</b> DamageMessage.h:11</div></div>
-<div class="ttc" id="aclassez_visual_script_node_htm_afe4a75d5bffbaa6026c8e306b7de1b8c"><div class="ttname"><a href="../../dd/d18/classez_visual_script_node.htm#afe4a75d5bffbaa6026c8e306b7de1b8c">ezVisualScriptNode::HandleMessage</a></div><div class="ttdeci">virtual void HandleMessage(ezMessage *pMsg)</div><div class="ttdoc">If HandlesMessagesWithID() returns a valid message ID, messages of that type may be delivered through...</div><div class="ttdef"><b>Definition:</b> VisualScriptNode.cpp:20</div></div>
-<div class="ttc" id="aclassez_visual_script_instance_htm"><div class="ttname"><a href="../../db/dab/classez_visual_script_instance.htm">ezVisualScriptInstance</a></div><div class="ttdoc">An instance of a visual script resource. Stores the current script state and executes nodes.</div><div class="ttdef"><b>Definition:</b> VisualScriptInstance.h:29</div></div>
 <div class="ttc" id="astructez_msg_damage_htm_a0543585083717ed99ee8e3aaaba8d48a"><div class="ttname"><a href="../../d4/df7/structez_msg_damage.htm#a0543585083717ed99ee8e3aaaba8d48a">ezMsgDamage::m_vImpactDirection</a></div><div class="ttdeci">ezVec3 m_vImpactDirection</div><div class="ttdoc">The direction into which the damage was applied (e.g. direction of a projectile). May be zero.</div><div class="ttdef"><b>Definition:</b> DamageMessage.h:14</div></div>
 <div class="ttc" id="aclassez_vec3_template_htm"><div class="ttname"><a href="../../da/df1/classez_vec3_template.htm">ezVec3Template&lt; float &gt;</a></div></div>
-<div class="ttc" id="aclassez_visual_script_node___on_damage_htm"><div class="ttname"><a href="../../db/dac/classez_visual_script_node___on_damage.htm">ezVisualScriptNode_OnDamage</a></div><div class="ttdef"><b>Definition:</b> DamageMessage.h:17</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_fe4f349dd73c6459187bb04ae7deb06f.htm">GameEngine</a></li><li class="navelem"><a class="el" href="../../dir_a15081e6bd67a263b484e85a831bf7be.htm">Messages</a></li><li class="navelem"><b>DamageMessage.h</b></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:21:58 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:19 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

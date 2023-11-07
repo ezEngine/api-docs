@@ -14,9 +14,5 @@ var classez_simd_quat =
     [ "operator*", "d7/dc1/classez_simd_quat.htm#a7b78ee0af954f9e039c852869d18c65e", null ],
     [ "operator-", "d7/dc1/classez_simd_quat.htm#a0176fe511ca167ab14b03ed4bd04080a", null ],
     [ "operator==", "d7/dc1/classez_simd_quat.htm#ab7ebadc95240f79ec911742cf3823cd9", null ],
-    [ "SetFromAxisAndAngle", "d7/dc1/classez_simd_quat.htm#a0fcf3b1027eebadc78e0d7cfe447a62e", null ],
-    [ "SetIdentity", "d7/dc1/classez_simd_quat.htm#ab693f7a47be9954ab29deb1f858792d2", null ],
-    [ "SetShortestRotation", "d7/dc1/classez_simd_quat.htm#aca6a8fde81c096ef11973a81ce0fdc49", null ],
-    [ "SetSlerp", "d7/dc1/classez_simd_quat.htm#afb752475fe1e1a58023a12d583147ad2", null ],
     [ "m_v", "d7/dc1/classez_simd_quat.htm#a55421bbc32de3eee60aab0bcaf441da0", null ]
 ];

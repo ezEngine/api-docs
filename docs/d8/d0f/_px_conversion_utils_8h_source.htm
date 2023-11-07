@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -121,12 +121,12 @@ $(document).ready(function(){initNavTree('d8/d0f/_px_conversion_utils_8h_source.
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  EZ_ALWAYS_INLINE <a class="code" href="../../d7/dc1/classez_simd_quat.htm">ezSimdQuat</a> ToSimdQuat(<span class="keyword">const</span> physx::PxQuat&amp; q) { <span class="keywordflow">return</span> <a class="code" href="../../d7/dc1/classez_simd_quat.htm">ezSimdQuat</a>(<a class="code" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a>(q.x, q.y, q.z, q.w)); }</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  EZ_ALWAYS_INLINE physx::PxQuat ToQuat(<span class="keyword">const</span> <a class="code" href="../../de/d15/classez_quat_template.htm">ezQuat</a>&amp; q) { <span class="keywordflow">return</span> physx::PxQuat(q.v.x, q.v.y, q.v.z, q.w); }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  EZ_ALWAYS_INLINE physx::PxQuat ToQuat(<span class="keyword">const</span> <a class="code" href="../../de/d15/classez_quat_template.htm">ezQuat</a>&amp; q) { <span class="keywordflow">return</span> physx::PxQuat(q.x, q.y, q.z, q.w); }</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  EZ_ALWAYS_INLINE physx::PxQuat ToQuat(<span class="keyword">const</span> <a class="code" href="../../d7/dc1/classez_simd_quat.htm">ezSimdQuat</a>&amp; q)</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  {</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="../../de/d15/classez_quat_template.htm">ezQuat</a> tmp;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    q.m_v.Store&lt;4&gt;(&amp;tmp.v.x);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    q.m_v.Store&lt;4&gt;(&amp;tmp.x);</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">return</span> ToQuat(tmp);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  }</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
@@ -150,16 +150,16 @@ $(document).ready(function(){initNavTree('d8/d0f/_px_conversion_utils_8h_source.
 <div class="ttc" id="aclassez_simd_transform_htm"><div class="ttname"><a href="../../da/d8b/classez_simd_transform.htm">ezSimdTransform</a></div><div class="ttdef"><b>Definition:</b> SimdTransform.h:5</div></div>
 <div class="ttc" id="aclassez_vec4_template_htm_a54bfbe91369aa9bd44c87741e1210463"><div class="ttname"><a href="../../da/dd2/classez_vec4_template.htm#a54bfbe91369aa9bd44c87741e1210463">ezVec4Template::GetAsVec3</a></div><div class="ttdeci">const ezVec3Template&lt; Type &gt; GetAsVec3() const</div><div class="ttdoc">Returns an ezVec3Template with x,y and z from this vector.</div><div class="ttdef"><b>Definition:</b> Vec4_inl.h:103</div></div>
 <div class="ttc" id="aclassez_simd_quat_htm"><div class="ttname"><a href="../../d7/dc1/classez_simd_quat.htm">ezSimdQuat</a></div><div class="ttdef"><b>Definition:</b> SimdQuat.h:5</div></div>
-<div class="ttc" id="aclassez_quat_template_htm"><div class="ttname"><a href="../../de/d15/classez_quat_template.htm">ezQuatTemplate</a></div><div class="ttdoc">Quaternions can be used to represent rotations in 3D space.</div><div class="ttdef"><b>Definition:</b> Declarations.h:172</div></div>
+<div class="ttc" id="aclassez_quat_template_htm"><div class="ttname"><a href="../../de/d15/classez_quat_template.htm">ezQuatTemplate&lt; float &gt;</a></div></div>
 <div class="ttc" id="aclassez_simd_vec4f_htm"><div class="ttname"><a href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a></div><div class="ttdoc">A 4-component SIMD vector class.</div><div class="ttdef"><b>Definition:</b> SimdVec4f.h:7</div></div>
-<div class="ttc" id="aclassez_transform_template_htm"><div class="ttname"><a href="../../d3/db1/classez_transform_template.htm">ezTransformTemplate&lt; float &gt;</a></div></div>
-<div class="ttc" id="aclassez_vec4_template_htm"><div class="ttname"><a href="../../da/dd2/classez_vec4_template.htm">ezVec4Template&lt; float &gt;</a></div></div>
-<div class="ttc" id="aclassez_vec3_template_htm"><div class="ttname"><a href="../../da/df1/classez_vec3_template.htm">ezVec3Template</a></div><div class="ttdoc">A 3-component vector class.</div><div class="ttdef"><b>Definition:</b> Declarations.h:134</div></div>
+<div class="ttc" id="aclassez_transform_template_htm"><div class="ttname"><a href="../../d3/db1/classez_transform_template.htm">ezTransformTemplate</a></div><div class="ttdoc">A class that represents position, rotation and scaling via a position vector, a quaternion and a scal...</div><div class="ttdef"><b>Definition:</b> Declarations.h:202</div></div>
+<div class="ttc" id="aclassez_vec4_template_htm"><div class="ttname"><a href="../../da/dd2/classez_vec4_template.htm">ezVec4Template</a></div><div class="ttdoc">A 4-component vector class.</div><div class="ttdef"><b>Definition:</b> Declarations.h:142</div></div>
+<div class="ttc" id="aclassez_vec3_template_htm"><div class="ttname"><a href="../../da/df1/classez_vec3_template.htm">ezVec3Template&lt; float &gt;</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_103378c88ff4c88de6bfabe12da9ec96.htm">EnginePlugins</a></li><li class="navelem"><a class="el" href="../../dir_f005ef8928685eac504f8ad4860ca63f.htm">PhysXPlugin</a></li><li class="navelem"><a class="el" href="../../dir_a1900c4a4d84298f5f7610131e4359b8.htm">Utilities</a></li><li class="navelem"><b>PxConversionUtils.h</b></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:22:00 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:21 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

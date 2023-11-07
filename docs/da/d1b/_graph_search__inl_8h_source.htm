@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -255,7 +255,7 @@ $(document).ready(function(){initNavTree('da/d1b/_graph_search__inl_8h_source.ht
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> PathStateType&gt;</div>
 <div class="line"><a name="l00168"></a><span class="lineno"><a class="line" href="../../dd/d7b/classez_path_search.htm#a9dd131f0eeee5872a41e952c664722e4">  168</a></span>&#160;<a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> <a class="code" href="../../dd/d7b/classez_path_search.htm#a9dd131f0eeee5872a41e952c664722e4">ezPathSearch&lt;PathStateType&gt;::FindClosest</a>(</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  ezInt64 iStartNodeIndex, <span class="keyword">const</span> PathStateType&amp; StartState, IsSearchedObjectCallback Callback, <a class="code" href="../../d9/dfe/classez_deque.htm">ezDeque&lt;PathResultData&gt;</a>&amp; out_Path, <span class="keywordtype">float</span> fMaxPathCost)</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  ezInt64 iStartNodeIndex, <span class="keyword">const</span> PathStateType&amp; StartState, <a class="code" href="../../dd/d7b/classez_path_search.htm#a2a557772e61174db725bce444032b64d">IsSearchedObjectCallback</a> Callback, <a class="code" href="../../d9/dfe/classez_deque.htm">ezDeque&lt;PathResultData&gt;</a>&amp; out_Path, <span class="keywordtype">float</span> fMaxPathCost)</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;{</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  EZ_ASSERT_DEV(m_pStateGenerator != <span class="keyword">nullptr</span>, <span class="stringliteral">&quot;No Path State Generator is set.&quot;</span>);</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
@@ -312,6 +312,7 @@ $(document).ready(function(){initNavTree('da/d1b/_graph_search__inl_8h_source.ht
 <div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition:</b> Types.h:50</div></div>
 <div class="ttc" id="aclassez_deque_base_htm_a4b6e09e691f83d699b01e61a927e52d2"><div class="ttname"><a href="../../d7/d68/classez_deque_base.htm#a4b6e09e691f83d699b01e61a927e52d2">ezDequeBase&lt; T, true &gt;::PushBack</a></div><div class="ttdeci">void PushBack()</div><div class="ttdoc">Adds one default constructed element to the back of the deque.</div><div class="ttdef"><b>Definition:</b> Deque_inl.h:493</div></div>
 <div class="ttc" id="aclassez_deque_htm"><div class="ttname"><a href="../../d9/dfe/classez_deque.htm">ezDeque</a></div><div class="ttdef"><b>Definition:</b> Deque.h:269</div></div>
+<div class="ttc" id="aclassez_path_search_htm_a2a557772e61174db725bce444032b64d"><div class="ttname"><a href="../../dd/d7b/classez_path_search.htm#a2a557772e61174db725bce444032b64d">ezPathSearch::IsSearchedObjectCallback</a></div><div class="ttdeci">bool(*)(ezInt64 iStartNodeIndex, const PathStateType &amp;StartState) IsSearchedObjectCallback</div><div class="ttdoc">Used by FindClosest() to query whether the currently visited node fulfills the termination criteria.</div><div class="ttdef"><b>Definition:</b> GraphSearch.h:19</div></div>
 <div class="ttc" id="aclassez_path_search_htm"><div class="ttname"><a href="../../dd/d7b/classez_path_search.htm">ezPathSearch</a></div><div class="ttdoc">Implements a directed breadth-first search through a graph (A*).</div><div class="ttdef"><b>Definition:</b> GraphSearch.h:15</div></div>
 <div class="ttc" id="astructez_path_search_1_1_path_result_data_htm_a99edd6521fa1d4e04a3b06702124148b"><div class="ttname"><a href="../../dd/d48/structez_path_search_1_1_path_result_data.htm#a99edd6521fa1d4e04a3b06702124148b">ezPathSearch::PathResultData::m_iNodeIndex</a></div><div class="ttdeci">ezInt64 m_iNodeIndex</div><div class="ttdoc">The index of the node that was visited.</div><div class="ttdef"><b>Definition:</b> GraphSearch.h:27</div></div>
 <div class="ttc" id="astructez_path_search_1_1_path_result_data_htm"><div class="ttname"><a href="../../dd/d48/structez_path_search_1_1_path_result_data.htm">ezPathSearch::PathResultData</a></div><div class="ttdoc">FindPath() and FindClosest() return an array of these objects as the path result.</div><div class="ttdef"><b>Definition:</b> GraphSearch.h:22</div></div>
@@ -325,7 +326,7 @@ $(document).ready(function(){initNavTree('da/d1b/_graph_search__inl_8h_source.ht
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_313417988e5cb64d4fc37d0cee521906.htm">Utilities</a></li><li class="navelem"><a class="el" href="../../dir_c5862f5eeec03dc993a3fc477e73a5ac.htm">PathFinding</a></li><li class="navelem"><a class="el" href="../../dir_51e9585c898d16558142d6631f89e51f.htm">Implementation</a></li><li class="navelem"><b>GraphSearch_inl.h</b></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:21:59 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:20 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

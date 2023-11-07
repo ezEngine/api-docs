@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -94,7 +94,7 @@ $(document).ready(function(){initNavTree('d1/da3/_uuid_generator__android_8h_sou
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;Foundation/Basics/Platform/Android/AndroidUtils.h&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;android_native_app_glue.h&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="../../da/d89/classez_uuid.htm#acacf135e87d371793210496517fd4c92">    8</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../da/d89/classez_uuid.htm#acacf135e87d371793210496517fd4c92">ezUuid::CreateNewUuid</a>()</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="../../da/d89/classez_uuid.htm#acba7c271f63cedede7d9e12551736341">    8</a></span>&#160;<a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a> <a class="code" href="../../da/d89/classez_uuid.htm#acba7c271f63cedede7d9e12551736341">ezUuid::MakeUuid</a>()</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  ezJniAttachment attachment;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
@@ -104,20 +104,21 @@ $(document).ready(function(){initNavTree('d1/da3/_uuid_generator__android_8h_sou
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  jlong mostSignificant = javaUuid.Call&lt;jlong&gt;(<span class="stringliteral">&quot;getMostSignificantBits&quot;</span>);</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  jlong leastSignificant = javaUuid.Call&lt;jlong&gt;(<span class="stringliteral">&quot;getLeastSignificantBits&quot;</span>);</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  m_uiHigh = mostSignificant;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  m_uiLow = leastSignificant;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="comment">//#TODO maybe faster to read /proc/sys/kernel/random/uuid, but that can&#39;t be done via ezOSFile</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="comment">// see https://stackoverflow.com/questions/11888055/include-uuid-h-into-android-ndk-project</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../da/d89/classez_uuid.htm#aceb6a9c783d231a9942b913235348d03">ezUuid</a>(leastSignificant, mostSignificant);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="comment">//#TODO maybe faster to read /proc/sys/kernel/random/uuid, but that can&#39;t be done via ezOSFile</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="comment">// see https://stackoverflow.com/questions/11888055/include-uuid-h-into-android-ndk-project</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassez_uuid_htm_acacf135e87d371793210496517fd4c92"><div class="ttname"><a href="../../da/d89/classez_uuid.htm#acacf135e87d371793210496517fd4c92">ezUuid::CreateNewUuid</a></div><div class="ttdeci">void CreateNewUuid()</div><div class="ttdoc">Creates a new Uuid and stores is it in this object.</div><div class="ttdef"><b>Definition:</b> UuidGenerator_android.h:8</div></div>
+<div class="ttc" id="aclassez_uuid_htm_aceb6a9c783d231a9942b913235348d03"><div class="ttname"><a href="../../da/d89/classez_uuid.htm#aceb6a9c783d231a9942b913235348d03">ezUuid::ezUuid</a></div><div class="ttdeci">EZ_ALWAYS_INLINE ezUuid()</div><div class="ttdoc">Default constructor. Constructed Uuid will be invalid.</div><div class="ttdef"><b>Definition:</b> Uuid_inl.h:2</div></div>
+<div class="ttc" id="aclassez_uuid_htm"><div class="ttname"><a href="../../da/d89/classez_uuid.htm">ezUuid</a></div><div class="ttdoc">This data type is the abstraction for 128-bit Uuid (also known as GUID) instances.</div><div class="ttdef"><b>Definition:</b> Uuid.h:10</div></div>
+<div class="ttc" id="aclassez_uuid_htm_acba7c271f63cedede7d9e12551736341"><div class="ttname"><a href="../../da/d89/classez_uuid.htm#acba7c271f63cedede7d9e12551736341">ezUuid::MakeUuid</a></div><div class="ttdeci">static ezUuid MakeUuid()</div><div class="ttdoc">Returns a new Uuid.</div><div class="ttdef"><b>Definition:</b> UuidGenerator_android.h:8</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_755fdcfb6b850fe41cc906fd4ef666a8.htm">System</a></li><li class="navelem"><a class="el" href="../../dir_8580235f0f8f387a258dcf4b47a3ab70.htm">Implementation</a></li><li class="navelem"><a class="el" href="../../dir_2213381e10952c3ef539e30e1d1c8022.htm">Android</a></li><li class="navelem"><b>UuidGenerator_android.h</b></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:21:57 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:18 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

@@ -7,7 +7,7 @@ var classez_state_map =
     [ "RetrieveColor", "d1/d48/classez_state_map.htm#ae1539ea060449bfb3d0b5dd0daf8f796", null ],
     [ "RetrieveDouble", "d1/d48/classez_state_map.htm#aeee427c02c08826a1540f996573b855a", null ],
     [ "RetrieveInteger", "d1/d48/classez_state_map.htm#ae0912cfd359dc5ae5c9d8dff13b39738", null ],
-    [ "RetrieveString", "d1/d48/classez_state_map.htm#ae0878b412f0ab2e1f3bd2f258a3515ca", null ],
+    [ "RetrieveString", "d1/d48/classez_state_map.htm#a08526751ef9eddb10e118234b213c8c2", null ],
     [ "RetrieveVec3", "d1/d48/classez_state_map.htm#ad845d3fe93d7213c704378e19387d4a0", null ],
     [ "StoreBool", "d1/d48/classez_state_map.htm#ae6141b7b6042bafc10e95d16297af907", null ],
     [ "StoreColor", "d1/d48/classez_state_map.htm#a179344927ed97e56a890e3c7e738d1d6", null ],

@@ -1,6 +1,6 @@
 var structez_forward_render_shading_quality =
 [
-    [ "StorageType", "d8/de9/structez_forward_render_shading_quality.htm#adf78214f8852922d74a3282b5f8242ba", null ],
+    [ "StorageType", "d8/de9/structez_forward_render_shading_quality.htm#a83f83b49a384d6720ebcb0d71bbb5fe6", null ],
     [ "Enum", "d8/de9/structez_forward_render_shading_quality.htm#a63be035eb808cb13a98a608bc72d3e2d", [
       [ "Normal", "d8/de9/structez_forward_render_shading_quality.htm#a63be035eb808cb13a98a608bc72d3e2da354a61a6cf1d11e9971822b4be9c753b", null ],
       [ "Simplified", "d8/de9/structez_forward_render_shading_quality.htm#a63be035eb808cb13a98a608bc72d3e2da69d93b311bf23cb12b180d413f259b1b", null ],

@@ -1,7 +1,7 @@
 var structez_on_phys_x_contact =
 [
     [ "Bits", "d5/de4/structez_on_phys_x_contact_1_1_bits.htm", "d5/de4/structez_on_phys_x_contact_1_1_bits" ],
-    [ "StorageType", "db/db3/structez_on_phys_x_contact.htm#a9d46d37140c778b36564eef9e2764319", null ],
+    [ "StorageType", "db/db3/structez_on_phys_x_contact.htm#a1cd5bd7714acf1a8103cd9c8a2616bfb", null ],
     [ "Enum", "db/db3/structez_on_phys_x_contact.htm#aed74fff88a75a1fa228486934fdc64df", [
       [ "None", "db/db3/structez_on_phys_x_contact.htm#aed74fff88a75a1fa228486934fdc64dfa83f1094db75ca377447c2231da12c3ba", null ],
       [ "SendReportMsg", "db/db3/structez_on_phys_x_contact.htm#aed74fff88a75a1fa228486934fdc64dfa6c15d29cd1980fe25217245107820344", null ],

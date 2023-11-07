@@ -1,4 +1,4 @@
 var classez_allocator =
 [
-    [ "ezAllocator", "d0/dbb/classez_allocator.htm#a7d8e8c03f76be15f6f7833a37945b104", null ]
+    [ "ezAllocator", "d0/dbb/classez_allocator.htm#a37dc750bb937d93d7c254a5d5833f389", null ]
 ];

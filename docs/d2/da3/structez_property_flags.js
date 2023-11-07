@@ -1,7 +1,7 @@
 var structez_property_flags =
 [
     [ "Bits", "d8/df3/structez_property_flags_1_1_bits.htm", "d8/df3/structez_property_flags_1_1_bits" ],
-    [ "StorageType", "d2/da3/structez_property_flags.htm#af6d74fe1d02d18b02cc444d322762006", null ],
+    [ "StorageType", "d2/da3/structez_property_flags.htm#a161fcc35be25a75a263fb29e08a8cd42", null ],
     [ "Enum", "d2/da3/structez_property_flags.htm#a3c2cffe365eb84e9e31c93491fcf852f", [
       [ "StandardType", "d2/da3/structez_property_flags.htm#a3c2cffe365eb84e9e31c93491fcf852facf9e7b987b0f2cae4127c5f663f5470d", null ],
       [ "IsEnum", "d2/da3/structez_property_flags.htm#a3c2cffe365eb84e9e31c93491fcf852fa82e55e1f2e0c5cdf417c4428e8b3a0e1", null ],

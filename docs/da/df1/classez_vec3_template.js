@@ -1,6 +1,6 @@
 var classez_vec3_template =
 [
-    [ "ComponentType", "da/df1/classez_vec3_template.htm#ad1799165240f44fd8b3cf95198d8a4ab", null ],
+    [ "ComponentType", "da/df1/classez_vec3_template.htm#a74dc66766ef8fb74727260f36b043c1b", null ],
     [ "ezVec3Template", "da/df1/classez_vec3_template.htm#a96f63b8bd98381acc8603773f183ab44", null ],
     [ "ezVec3Template", "da/df1/classez_vec3_template.htm#a08a6ef5ad90156b8321da9930d1f668a", null ],
     [ "ezVec3Template", "da/df1/classez_vec3_template.htm#aea114ce8511b08a3af04d36d43ecbcde", null ],

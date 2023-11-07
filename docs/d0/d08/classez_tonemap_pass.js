@@ -2,11 +2,13 @@ var classez_tonemap_pass =
 [
     [ "ezTonemapPass", "d0/d08/classez_tonemap_pass.htm#a6638b2dc2d52426b9375645afbd71f2c", null ],
     [ "~ezTonemapPass", "d0/d08/classez_tonemap_pass.htm#a62edd996e1439e1ecb783ce6b0b539b0", null ],
+    [ "Deserialize", "d0/d08/classez_tonemap_pass.htm#a912a632e03a920abbf8a708d984be330", null ],
     [ "Execute", "d0/d08/classez_tonemap_pass.htm#ad2fd2e700f46bdd9f03768f075b22629", null ],
     [ "GetLUT1TextureFile", "d0/d08/classez_tonemap_pass.htm#a6dfc2e87684179414d01e267ff9a6f24", null ],
     [ "GetLUT2TextureFile", "d0/d08/classez_tonemap_pass.htm#a3b085ac12c6072debbdb8e39f0e69861", null ],
     [ "GetRenderTargetDescriptions", "d0/d08/classez_tonemap_pass.htm#a36a5889a5e012e88b36d1a62355e7775", null ],
     [ "GetVignettingTextureFile", "d0/d08/classez_tonemap_pass.htm#ab3a5c694049bb113f9ea08b32e8e51ff", null ],
+    [ "Serialize", "d0/d08/classez_tonemap_pass.htm#a5be2e02efbe82cd3979110b48b81706b", null ],
     [ "SetLUT1TextureFile", "d0/d08/classez_tonemap_pass.htm#a995fad36ec11da775a429c6063fdfe7c", null ],
     [ "SetLUT2TextureFile", "d0/d08/classez_tonemap_pass.htm#a120ab0e771d71b41d4e08766bb4fc9ba", null ],
     [ "SetVignettingTextureFile", "d0/d08/classez_tonemap_pass.htm#a59c840f9dc323ee99c27af8237804fec", null ],

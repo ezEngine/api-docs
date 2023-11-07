@@ -1,6 +1,6 @@
 var structez_g_a_l_compare_func =
 [
-    [ "StorageType", "d1/d01/structez_g_a_l_compare_func.htm#add031dd5822085d0250f5b6be8bee75a", null ],
+    [ "StorageType", "d1/d01/structez_g_a_l_compare_func.htm#ac378a3c04565b731955b05eb0987a382", null ],
     [ "Enum", "d1/d01/structez_g_a_l_compare_func.htm#ad136a1d0d1d4ee468fe2445489f10740", [
       [ "Never", "d1/d01/structez_g_a_l_compare_func.htm#ad136a1d0d1d4ee468fe2445489f10740a646e5635c451d6f7f49804ee6f4a7de5", null ],
       [ "Less", "d1/d01/structez_g_a_l_compare_func.htm#ad136a1d0d1d4ee468fe2445489f10740a7def371194aeee04e65974df747a1ca0", null ],

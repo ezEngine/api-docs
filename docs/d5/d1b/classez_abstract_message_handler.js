@@ -1,7 +1,8 @@
 var classez_abstract_message_handler =
 [
-    [ "ConstDispatchFunc", "d5/d1b/classez_abstract_message_handler.htm#a53ae09b5ec7820659af76ef1be6f35ea", null ],
-    [ "DispatchFunc", "d5/d1b/classez_abstract_message_handler.htm#a3518601a040c064a7fb51a0fbe107714", null ],
+    [ "ConstDispatchFunc", "d5/d1b/classez_abstract_message_handler.htm#a7e9bac7c2ede738779ec87b24f457fdb", null ],
+    [ "DispatchFunc", "d5/d1b/classez_abstract_message_handler.htm#ae81e54d94d820db98253449ad864b7e3", null ],
+    [ "~ezAbstractMessageHandler", "d5/d1b/classez_abstract_message_handler.htm#a39e60cf5e6ba020ed2fd9df16d31e61c", null ],
     [ "GetMessageId", "d5/d1b/classez_abstract_message_handler.htm#ab5287be485ccc51592a782ceed08b7d0", null ],
     [ "IsConst", "d5/d1b/classez_abstract_message_handler.htm#a9b35abf99b335de69266ae6caaed9078", null ],
     [ "operator()", "d5/d1b/classez_abstract_message_handler.htm#aa2332ab3f48af31381ac1c0086aa8b96", null ],

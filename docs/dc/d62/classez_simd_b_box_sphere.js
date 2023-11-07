@@ -13,7 +13,7 @@ var classez_simd_b_box_sphere =
     [ "IsValid", "dc/d62/classez_simd_b_box_sphere.htm#adfc75e9045471d239d7870f2ad98460b", null ],
     [ "operator!=", "dc/d62/classez_simd_b_box_sphere.htm#a8d108c919e59c0d11ac9a47d204e4534", null ],
     [ "operator==", "dc/d62/classez_simd_b_box_sphere.htm#a9d3aacd42dfb5169a7f97bd31481da05", null ],
-    [ "SetFromPoints", "dc/d62/classez_simd_b_box_sphere.htm#aeddd8ccb2adb1079406813a3ec2617e8", null ],
+    [ "SetFromPoints", "dc/d62/classez_simd_b_box_sphere.htm#ad9bf1fd3f5155eafc039836182fdedaa", null ],
     [ "SetInvalid", "dc/d62/classez_simd_b_box_sphere.htm#aeb7b14414ef182aa77a6b68fa7e28a97", null ],
     [ "Transform", "dc/d62/classez_simd_b_box_sphere.htm#add7b210a110b747d6855a83845a34e6d", null ],
     [ "Transform", "dc/d62/classez_simd_b_box_sphere.htm#a6c2cddee9fbc7a0580d284739335c274", null ],

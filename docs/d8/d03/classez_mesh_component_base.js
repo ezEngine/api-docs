@@ -9,6 +9,7 @@ var classez_mesh_component_base =
     [ "GetMaterial", "d8/d03/classez_mesh_component_base.htm#a9e92e3f7a025b2ff7c82fed6a387307f", null ],
     [ "GetMesh", "d8/d03/classez_mesh_component_base.htm#ac234ebc603b0bdf8ff9aa62cedc20399", null ],
     [ "GetMeshFile", "d8/d03/classez_mesh_component_base.htm#a7df2c2420806c8df43b173c3f5b43e5d", null ],
+    [ "GetSortingDepthOffset", "d8/d03/classez_mesh_component_base.htm#a17c7ccc16958ad0da72f1279723a4f98", null ],
     [ "Materials_GetCount", "d8/d03/classez_mesh_component_base.htm#a49022e5f570298bda7f91671c636196f", null ],
     [ "Materials_GetValue", "d8/d03/classez_mesh_component_base.htm#acc0c818836da96e784d55cd6863110a2", null ],
     [ "Materials_Insert", "d8/d03/classez_mesh_component_base.htm#a65f0c07f728c9f4fc4a94ff117a97474", null ],
@@ -22,9 +23,9 @@ var classez_mesh_component_base =
     [ "SetMaterial", "d8/d03/classez_mesh_component_base.htm#a1336f5e996525f4804b02ec446a909ce", null ],
     [ "SetMesh", "d8/d03/classez_mesh_component_base.htm#a1fc22f040dfa8f110fe7bd673f3b3b50", null ],
     [ "SetMeshFile", "d8/d03/classez_mesh_component_base.htm#a95d73499c46560d01f60fe60cfb18ee4", null ],
-    [ "SetRenderDataCategory", "d8/d03/classez_mesh_component_base.htm#a28b1210f2a60182aa89876ad7108e3c3", null ],
+    [ "SetSortingDepthOffset", "d8/d03/classez_mesh_component_base.htm#a7371495b14e475e2aa710d0059fe44e0", null ],
     [ "m_Color", "d8/d03/classez_mesh_component_base.htm#a4985899919b6d004db7061175226f96d", null ],
+    [ "m_fSortingDepthOffset", "d8/d03/classez_mesh_component_base.htm#a26c5d7dda2b401b6a53152425acd99a9", null ],
     [ "m_hMesh", "d8/d03/classez_mesh_component_base.htm#ab60bd07fe9938415264731b9841d1e64", null ],
-    [ "m_Materials", "d8/d03/classez_mesh_component_base.htm#ac3fcd9c6f1821d96e27b4ec9cc809a23", null ],
-    [ "m_RenderDataCategory", "d8/d03/classez_mesh_component_base.htm#a282895d268bbf5912ae06b73a7eb0ec2", null ]
+    [ "m_Materials", "d8/d03/classez_mesh_component_base.htm#ac3fcd9c6f1821d96e27b4ec9cc809a23", null ]
 ];

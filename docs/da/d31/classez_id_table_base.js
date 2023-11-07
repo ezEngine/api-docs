@@ -2,8 +2,8 @@ var classez_id_table_base =
 [
     [ "ConstIterator", "d8/d3d/classez_id_table_base_1_1_const_iterator.htm", "d8/d3d/classez_id_table_base_1_1_const_iterator" ],
     [ "Iterator", "d7/d1b/structez_id_table_base_1_1_iterator.htm", "d7/d1b/structez_id_table_base_1_1_iterator" ],
-    [ "IndexType", "da/d31/classez_id_table_base.htm#a6f30184e536e6b25aa418e8f30ae9d6b", null ],
-    [ "TypeOfId", "da/d31/classez_id_table_base.htm#ae11b5212d4112e172ab5edd4e3e78024", null ],
+    [ "IndexType", "da/d31/classez_id_table_base.htm#a72389217a85f6961050626d40a184d43", null ],
+    [ "TypeOfId", "da/d31/classez_id_table_base.htm#aae817910dd70a9bbb17f4444867f097b", null ],
     [ "ezIdTableBase", "da/d31/classez_id_table_base.htm#af00fe7c45f08585d3e4d8a60d887f2d4", null ],
     [ "ezIdTableBase", "da/d31/classez_id_table_base.htm#af370b7f3f2ba8e22193498b05c972409", null ],
     [ "~ezIdTableBase", "da/d31/classez_id_table_base.htm#a8e8d83852a64760ee3226d70aded21e4", null ],

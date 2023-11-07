@@ -24,7 +24,7 @@ var classez_type_script_binding =
     [ "Initialize", "d2/da2/classez_type_script_binding.htm#a9529fa2e9f183378d9b5b3635a7db16f", null ],
     [ "LoadComponent", "d2/da2/classez_type_script_binding.htm#ad97fbe7930f66424f491694ea88ed9a8", null ],
     [ "MessageFromParameter", "d2/da2/classez_type_script_binding.htm#a487e5cb80ddd5f5e0132bf2acf3364f6", null ],
-    [ "RegisterComponent", "d2/da2/classez_type_script_binding.htm#a133af531efa6c466f7c50e85e52e6ce0", null ],
+    [ "RegisterComponent", "d2/da2/classez_type_script_binding.htm#a529b2cd5a63c492f8d0a3edcad205233", null ],
     [ "RegisterGameObject", "d2/da2/classez_type_script_binding.htm#a6864517fd69f9a3f153ec48126144a63", null ],
     [ "RegisterMessageHandlersForComponentType", "d2/da2/classez_type_script_binding.htm#af229b18a9c8344b46c924e20b115c4e6", null ],
     [ "ReleaseStashObjIndex", "d2/da2/classez_type_script_binding.htm#a770e5e0801b7529bff71b0635ff7640f", null ],

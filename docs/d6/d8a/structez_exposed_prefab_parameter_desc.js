@@ -1,7 +1,6 @@
 var structez_exposed_prefab_parameter_desc =
 [
     [ "Load", "d6/d8a/structez_exposed_prefab_parameter_desc.htm#a07ca167121cbab6d4f3105aaaff71a07", null ],
-    [ "LoadOld", "d6/d8a/structez_exposed_prefab_parameter_desc.htm#af53dc669e9914c8c962f57498dcec1e0", null ],
     [ "Save", "d6/d8a/structez_exposed_prefab_parameter_desc.htm#ac86bb189f682d2a1edcae63e9b090ef3", null ],
     [ "m_CachedPropertyPath", "d6/d8a/structez_exposed_prefab_parameter_desc.htm#a0abba9a1234628d5d4d27f8bbf1de128", null ],
     [ "m_sComponentType", "d6/d8a/structez_exposed_prefab_parameter_desc.htm#ac5806e46580744900fef7441fabbdba3", null ],

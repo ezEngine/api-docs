@@ -5,6 +5,8 @@ var classez_locked_object =
     [ "ezLockedObject", "d7/da5/classez_locked_object.htm#a14cb5e4a220b05b95da180512924776d", null ],
     [ "ezLockedObject", "d7/da5/classez_locked_object.htm#a985e322471236618549fc1bb3c00155a", null ],
     [ "~ezLockedObject", "d7/da5/classez_locked_object.htm#ac0f137de36a2b92efdbab76cf0cd8815", null ],
+    [ "Borrow", "d7/da5/classez_locked_object.htm#aef59c41aba9c8ff9670aa40d650009ed", null ],
+    [ "Borrow", "d7/da5/classez_locked_object.htm#a66f3d1cfda84e6b46e3d7fff3800bb8b", null ],
     [ "isValid", "d7/da5/classez_locked_object.htm#a0596480136fa3ed454a94ef0e8ee78fb", null ],
     [ "operator bool", "d7/da5/classez_locked_object.htm#a6f0788af9bd44118454b71eb214572dd", null ],
     [ "operator!", "d7/da5/classez_locked_object.htm#a2f1d693867d01744cd785f1f594c21ba", null ],

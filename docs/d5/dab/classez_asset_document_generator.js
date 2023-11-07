@@ -11,5 +11,6 @@ var classez_asset_document_generator =
     [ "GetDocumentExtension", "d5/dab/classez_asset_document_generator.htm#aedace93098725f56caf008d4c4b1e086", null ],
     [ "GetGeneratorGroup", "d5/dab/classez_asset_document_generator.htm#acb060ce8d2d3e58033e1d93f11b75a34", null ],
     [ "GetImportModes", "d5/dab/classez_asset_document_generator.htm#ab6792e12c86f0702944bab6123aecc1f", null ],
+    [ "GetSupportedFileTypes", "d5/dab/classez_asset_document_generator.htm#a21ef8f10d391cf540c6f681344417702", null ],
     [ "SupportsFileType", "d5/dab/classez_asset_document_generator.htm#aeb50f40a35e87c16a513ffe20ef84e97", null ]
 ];

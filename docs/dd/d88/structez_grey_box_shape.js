@@ -1,6 +1,6 @@
 var structez_grey_box_shape =
 [
-    [ "StorageType", "dd/d88/structez_grey_box_shape.htm#ab2a292c6b42580b38d6776d41448febf", null ],
+    [ "StorageType", "dd/d88/structez_grey_box_shape.htm#a7286c3991df31ad000eb3827d79bd2d5", null ],
     [ "Enum", "dd/d88/structez_grey_box_shape.htm#a3116821a0187ba707d0a4c9c4ebe8481", [
       [ "Box", "dd/d88/structez_grey_box_shape.htm#a3116821a0187ba707d0a4c9c4ebe8481ab22a61be502dbb99a2e5a8bbdb1abab2", null ],
       [ "RampX", "dd/d88/structez_grey_box_shape.htm#a3116821a0187ba707d0a4c9c4ebe8481ac7822cfefec5194d9daa8123e30dd3b8", null ],

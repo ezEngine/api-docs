@@ -1,6 +1,6 @@
 var classez_fixed_point =
 [
-    [ "ezFixedPoint", "d7/d2d/classez_fixed_point.htm#a10766f7b04ca0851d27119bd7631c9ff", null ],
+    [ "ezFixedPoint", "d7/d2d/classez_fixed_point.htm#a292942a83ac36f392035e4c868f6141b", null ],
     [ "ezFixedPoint", "d7/d2d/classez_fixed_point.htm#a08f8071ff497eba1388a6709a3ebd860", null ],
     [ "ezFixedPoint", "d7/d2d/classez_fixed_point.htm#a9d9b5ad6406386373f6eaf76c1e17efe", null ],
     [ "ezFixedPoint", "d7/d2d/classez_fixed_point.htm#a6e9dceceb2699b7ffefbcdda5d846ff9", null ],

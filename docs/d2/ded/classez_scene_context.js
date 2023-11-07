@@ -30,7 +30,7 @@ var classez_scene_context =
     [ "OnInitialize", "d2/ded/classez_scene_context.htm#ae0437fe1321dcef006dc27635b69c3e2", null ],
     [ "OnThumbnailViewContextCreated", "d2/ded/classez_scene_context.htm#a6d54d9b7c579b8e2148d3cee255c69e4", null ],
     [ "RegisterLayer", "d2/ded/classez_scene_context.htm#a8cc486a0e7e5eef1b0249f4a4aa843ed", null ],
-    [ "ResolveStringToGameObjectHandle", "d2/ded/classez_scene_context.htm#a7c02fbd3cd59b433e56f93cd722a648a", null ],
+    [ "ResolveStringToGameObjectHandle", "d2/ded/classez_scene_context.htm#a8ca4a0fb566d2d8b03609a463d4ca626", null ],
     [ "UnregisterLayer", "d2/ded/classez_scene_context.htm#a41fcec1ca8dbc50fa94059b063ed3100", null ],
     [ "UpdateDocumentContext", "d2/ded/classez_scene_context.htm#aa15730a159209c462e1d82bf06903dd0", null ],
     [ "UpdateThumbnailViewContext", "d2/ded/classez_scene_context.htm#afd189c8d70260157667806b8d2c30345", null ]

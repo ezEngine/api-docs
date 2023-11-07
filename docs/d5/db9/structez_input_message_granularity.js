@@ -1,6 +1,6 @@
 var structez_input_message_granularity =
 [
-    [ "StorageType", "d5/db9/structez_input_message_granularity.htm#a88d0cfa314f499d78fef7633c7946391", null ],
+    [ "StorageType", "d5/db9/structez_input_message_granularity.htm#a032f9c28ceb58498253301b2bfa5e4ba", null ],
     [ "Enum", "d5/db9/structez_input_message_granularity.htm#ab4a5a8e2810b0fb912939a3e0a64878a", [
       [ "PressOnly", "d5/db9/structez_input_message_granularity.htm#ab4a5a8e2810b0fb912939a3e0a64878aa981897b0f25ca32bde5b2836f4651d14", null ],
       [ "PressAndRelease", "d5/db9/structez_input_message_granularity.htm#ab4a5a8e2810b0fb912939a3e0a64878aa3273270ed8158e45722bd01c55d01289", null ],

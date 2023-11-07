@@ -13,6 +13,7 @@ var classez_material_resource =
     [ "GetCurrentDesc", "df/db6/classez_material_resource.htm#a38c1f4a83ef90f4ac8bdb7e42773d191", null ],
     [ "GetParameter", "df/db6/classez_material_resource.htm#a3f003b1d50df75c0082cdea3f6ec0672", null ],
     [ "GetPermutationValue", "df/db6/classez_material_resource.htm#a05d3ec8262454f1ac8411c99fa4db1fd", null ],
+    [ "GetRenderDataCategory", "df/db6/classez_material_resource.htm#a6bf73e92b2191b8f9f27d9fe21d59481", null ],
     [ "GetSurface", "df/db6/classez_material_resource.htm#ad99db7430ead5df50915f76346b929f9", null ],
     [ "GetTexture2DBinding", "df/db6/classez_material_resource.htm#a642383aa2934fa21153131ec2c1c0197", null ],
     [ "GetTextureCubeBinding", "df/db6/classez_material_resource.htm#ac9de7e5e760153013f9c929dccdd69d0", null ],

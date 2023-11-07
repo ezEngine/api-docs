@@ -2,7 +2,6 @@ var classez_cpp_settings =
 [
     [ "Compiler", "d5/d3d/classez_cpp_settings.htm#afdfa1c017262005707ab10bdf5936600", [
       [ "None", "d5/d3d/classez_cpp_settings.htm#afdfa1c017262005707ab10bdf5936600a6adf97f83acf6453d4a6a4b1070f3754", null ],
-      [ "Vs2019", "d5/d3d/classez_cpp_settings.htm#afdfa1c017262005707ab10bdf5936600ae2f2f30fb163e7d4000b7efd9fb0538b", null ],
       [ "Vs2022", "d5/d3d/classez_cpp_settings.htm#afdfa1c017262005707ab10bdf5936600a656c377d0b3713b8ecacd9b7229f6899", null ]
     ] ],
     [ "Load", "d5/d3d/classez_cpp_settings.htm#a503fb003fd91c3e0cd6b23a86247304e", null ],

@@ -2,8 +2,10 @@ var structez_model_importer2_1_1_import_options =
 [
     [ "m_bAdditiveAnimation", "df/d32/structez_model_importer2_1_1_import_options.htm#aecd05e6cac09f64e39801bd64e574d73", null ],
     [ "m_bImportSkinningData", "df/d32/structez_model_importer2_1_1_import_options.htm#a162cf64c0704ca586faaf7d1b8d870f3", null ],
+    [ "m_bNormalizeWeights", "df/d32/structez_model_importer2_1_1_import_options.htm#ac99340886d81c7f31867ef1d3730b27c", null ],
     [ "m_bRecomputeNormals", "df/d32/structez_model_importer2_1_1_import_options.htm#addb4382b341031b543371beeb1f67f6f", null ],
     [ "m_bRecomputeTangents", "df/d32/structez_model_importer2_1_1_import_options.htm#a71916aa5e2ba25df22a1cae88998c2fc", null ],
+    [ "m_MeshBoneWeightPrecision", "df/d32/structez_model_importer2_1_1_import_options.htm#a2825592ff9472f27458d33eadacfd08e", null ],
     [ "m_MeshNormalsPrecision", "df/d32/structez_model_importer2_1_1_import_options.htm#a679db150ae630fb7e4ceb0418934ea4b", null ],
     [ "m_MeshTexCoordsPrecision", "df/d32/structez_model_importer2_1_1_import_options.htm#a32b861802d52041bc3ecb1114ed87ed8", null ],
     [ "m_pAnimationOutput", "df/d32/structez_model_importer2_1_1_import_options.htm#abed382fae922847b744fb418e94c5faf", null ],

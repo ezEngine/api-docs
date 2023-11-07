@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -107,7 +107,7 @@ $(document).ready(function(){initNavTree('d5/d90/_engine_process_document_contex
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="../../d8/d19/structez_engine_process_document_context_flags.htm">   19</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../d8/d19/structez_engine_process_document_context_flags.htm">ezEngineProcessDocumentContextFlags</a></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keyword">typedef</span> ezUInt8 StorageType;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keyword">using</span> StorageType = ezUInt8;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keyword">enum</span> Enum</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  {</div>
@@ -131,152 +131,158 @@ $(document).ready(function(){initNavTree('d5/d90/_engine_process_document_contex
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <a class="code" href="../../d3/d26/classez_engine_process_document_context.htm">ezEngineProcessDocumentContext</a>(<a class="code" href="../../d1/dec/structez_bitflags.htm">ezBitflags&lt;ezEngineProcessDocumentContextFlags&gt;</a> flags);</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keyword">virtual</span> ~<a class="code" href="../../d3/d26/classez_engine_process_document_context.htm">ezEngineProcessDocumentContext</a>();</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> Initialize(<span class="keyword">const</span> <a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a>&amp; documentGuid, <span class="keyword">const</span> <a class="code" href="../../de/de6/classez_variant.htm">ezVariant</a>&amp; metaData, <a class="code" href="../../d8/d12/classez_engine_process_communication_channel.htm">ezEngineProcessCommunicationChannel</a>* pIPC);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> Initialize(<span class="keyword">const</span> <a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a>&amp; documentGuid, <span class="keyword">const</span> <a class="code" href="../../de/de6/classez_variant.htm">ezVariant</a>&amp; metaData, <a class="code" href="../../d8/d12/classez_engine_process_communication_channel.htm">ezEngineProcessCommunicationChannel</a>* pIPC, <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sDocumentType);</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordtype">void</span> Deinitialize();</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordtype">void</span> SendProcessMessage(<a class="code" href="../../db/d40/classez_process_message.htm">ezProcessMessage</a>* pMsg = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> HandleMessage(<span class="keyword">const</span> <a class="code" href="../../d1/dfa/classez_editor_engine_document_msg.htm">ezEditorEngineDocumentMsg</a>* pMsg);</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="../../d3/d26/classez_engine_process_document_context.htm#a0d7bcd483b363fe19ac06a0513ddcce1">   53</a></span>&#160;  <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> <a class="code" href="../../d3/d26/classez_engine_process_document_context.htm#a0d7bcd483b363fe19ac06a0513ddcce1">GetDocumentType</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_sDocumentType; }</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d3/d26/classez_engine_process_document_context.htm">ezEngineProcessDocumentContext</a>* GetDocumentContext(<a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a> guid);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> AddDocumentContext(<a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a> guid, <span class="keyword">const</span> <a class="code" href="../../de/de6/classez_variant.htm">ezVariant</a>&amp; metaData, <a class="code" href="../../d3/d26/classez_engine_process_document_context.htm">ezEngineProcessDocumentContext</a>* pView, <a class="code" href="../../d8/d12/classez_engine_process_communication_channel.htm">ezEngineProcessCommunicationChannel</a>* pIPC);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">bool</span> PendingOperationsInProgress();</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> UpdateDocumentContexts();</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> DestroyDocumentContext(<a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a> guid);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="comment">// \brief Returns the bounding box of the objects in the world.</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <a class="code" href="../../dc/d77/classez_bounding_box_sphere_template.htm">ezBoundingBoxSphere</a> GetWorldBounds(<a class="code" href="../../da/d3c/classez_world.htm">ezWorld</a>* pWorld);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordtype">void</span> SendProcessMessage(<a class="code" href="../../db/d40/classez_process_message.htm">ezProcessMessage</a>* pMsg = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> HandleMessage(<span class="keyword">const</span> <a class="code" href="../../d1/dfa/classez_editor_engine_document_msg.htm">ezEditorEngineDocumentMsg</a>* pMsg);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d3/d26/classez_engine_process_document_context.htm">ezEngineProcessDocumentContext</a>* GetDocumentContext(<a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a> guid);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> AddDocumentContext(<a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a> guid, <span class="keyword">const</span> <a class="code" href="../../de/de6/classez_variant.htm">ezVariant</a>&amp; metaData, <a class="code" href="../../d3/d26/classez_engine_process_document_context.htm">ezEngineProcessDocumentContext</a>* pView, <a class="code" href="../../d8/d12/classez_engine_process_communication_channel.htm">ezEngineProcessCommunicationChannel</a>* pIPC, <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sDocumentType);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">bool</span> PendingOperationsInProgress();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> UpdateDocumentContexts();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> DestroyDocumentContext(<a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a> guid);</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordtype">void</span> ProcessEditorEngineSyncObjectMsg(<span class="keyword">const</span> <a class="code" href="../../df/de7/classez_editor_engine_sync_object_msg.htm">ezEditorEngineSyncObjectMsg</a>&amp; msg);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a>&amp; GetDocumentGuid()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_DocumentGuid; }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> Reset();</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordtype">void</span> ClearExistingObjects();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="comment">// \brief Returns the bounding box of the objects in the world.</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <a class="code" href="../../dc/d77/classez_bounding_box_sphere_template.htm">ezBoundingBoxSphere</a> GetWorldBounds(<a class="code" href="../../da/d3c/classez_world.htm">ezWorld</a>* pWorld);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordtype">void</span> ProcessEditorEngineSyncObjectMsg(<span class="keyword">const</span> <a class="code" href="../../df/de7/classez_editor_engine_sync_object_msg.htm">ezEditorEngineSyncObjectMsg</a>&amp; msg);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a>&amp; GetDocumentGuid()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_DocumentGuid; }</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <a class="code" href="../../d2/dfe/classez_i_p_c_object_mirror_engine.htm">ezIPCObjectMirrorEngine</a> m_Mirror;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <a class="code" href="../../da/d6a/classez_world_rtti_converter_context.htm">ezWorldRttiConverterContext</a> m_Context; <span class="comment">// TODO: Move actual context into the EngineProcessDocumentContext</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> Reset();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordtype">void</span> ClearExistingObjects();</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <a class="code" href="../../da/d3c/classez_world.htm">ezWorld</a>* GetWorld()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pWorld; }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d6/d5c/structez_game_object_handle.htm">ezGameObjectHandle</a> ResolveStringToGameObjectHandle(<span class="keyword">const</span> <span class="keywordtype">void</span>* pString, <a class="code" href="../../df/d34/structez_component_handle.htm">ezComponentHandle</a> hThis, <span class="keyword">const</span> <span class="keywordtype">char</span>* szProperty) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <a class="code" href="../../d2/dfe/classez_i_p_c_object_mirror_engine.htm">ezIPCObjectMirrorEngine</a> m_Mirror;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <a class="code" href="../../da/d6a/classez_world_rtti_converter_context.htm">ezWorldRttiConverterContext</a> m_Context; <span class="comment">// TODO: Move actual context into the EngineProcessDocumentContext</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../da/d6a/classez_world_rtti_converter_context.htm">ezWorldRttiConverterContext</a>&amp; GetContext() { <span class="keywordflow">return</span> m_Context; }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keyword">virtual</span> <span class="keyword">const</span> <a class="code" href="../../da/d6a/classez_world_rtti_converter_context.htm">ezWorldRttiConverterContext</a>&amp; GetContext()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_Context; }</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> OnInitialize();</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> OnDeinitialize();</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d3/dad/classez_engine_process_view_context.htm">ezEngineProcessViewContext</a>* CreateViewContext() = 0;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> DestroyViewContext(<a class="code" href="../../d3/dad/classez_engine_process_view_context.htm">ezEngineProcessViewContext</a>* pContext) = 0;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <a class="code" href="../../da/d3c/classez_world.htm">ezWorld</a>* GetWorld()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pWorld; }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d6/d5c/structez_game_object_handle.htm">ezGameObjectHandle</a> ResolveStringToGameObjectHandle(<span class="keyword">const</span> <span class="keywordtype">void</span>* pString, <a class="code" href="../../df/d34/structez_component_handle.htm">ezComponentHandle</a> hThis, <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sProperty) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> OnInitialize();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> OnDeinitialize();</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> PendingOperationInProgress() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> UpdateDocumentContext();</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d7/d6e/structez_status.htm">ezStatus</a> ExportDocument(<span class="keyword">const</span> <a class="code" href="../../d5/de0/classez_export_document_msg_to_engine.htm">ezExportDocumentMsgToEngine</a>* pMsg);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="keywordtype">void</span> UpdateSyncObjects();</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="keywordtype">void</span> CreateThumbnailViewContext(<span class="keyword">const</span> <a class="code" href="../../d7/d0e/classez_create_thumbnail_msg_to_engine.htm">ezCreateThumbnailMsgToEngine</a>* pMsg);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <span class="keywordtype">void</span> DestroyThumbnailViewContext();</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> UpdateThumbnailViewContext(<a class="code" href="../../d3/dad/classez_engine_process_view_context.htm">ezEngineProcessViewContext</a>* pThumbnailViewContext);</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="../../d3/d26/classez_engine_process_document_context.htm#a4a90d7ba0b6bc5547978a433af2be4eb">  119</a></span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d3/d26/classez_engine_process_document_context.htm#a4a90d7ba0b6bc5547978a433af2be4eb">OnThumbnailViewContextRequested</a>() {}</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> OnThumbnailViewContextCreated();</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> OnDestroyThumbnailViewContext();</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <a class="code" href="../../da/d3c/classez_world.htm">ezWorld</a>* m_pWorld = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <span class="keywordtype">void</span> SetTagOnObject(<span class="keyword">const</span> <a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a>&amp; <span class="keywordtype">object</span>, <span class="keyword">const</span> <span class="keywordtype">char</span>* szTag, <span class="keywordtype">bool</span> bSet, <span class="keywordtype">bool</span> recursive);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d3/dad/classez_engine_process_view_context.htm">ezEngineProcessViewContext</a>* CreateViewContext() = 0;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> DestroyViewContext(<a class="code" href="../../d3/dad/classez_engine_process_view_context.htm">ezEngineProcessViewContext</a>* pContext) = 0;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> PendingOperationInProgress() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> UpdateDocumentContext();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d7/d6e/structez_status.htm">ezStatus</a> ExportDocument(<span class="keyword">const</span> <a class="code" href="../../d5/de0/classez_export_document_msg_to_engine.htm">ezExportDocumentMsgToEngine</a>* pMsg);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="keywordtype">void</span> UpdateSyncObjects();</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="keywordtype">void</span> CreateThumbnailViewContext(<span class="keyword">const</span> <a class="code" href="../../d7/d0e/classez_create_thumbnail_msg_to_engine.htm">ezCreateThumbnailMsgToEngine</a>* pMsg);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <span class="keywordtype">void</span> DestroyThumbnailViewContext();</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> UpdateThumbnailViewContext(<a class="code" href="../../d3/dad/classez_engine_process_view_context.htm">ezEngineProcessViewContext</a>* pThumbnailViewContext);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="../../d3/d26/classez_engine_process_document_context.htm#a4a90d7ba0b6bc5547978a433af2be4eb">  124</a></span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d3/d26/classez_engine_process_document_context.htm#a4a90d7ba0b6bc5547978a433af2be4eb">OnThumbnailViewContextRequested</a>() {}</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> OnThumbnailViewContextCreated();</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> OnDestroyThumbnailViewContext();</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <span class="keywordtype">void</span> SetTagRecursive(<a class="code" href="../../d6/d61/classez_game_object.htm">ezGameObject</a>* pObject, <span class="keyword">const</span> <a class="code" href="../../db/db8/classez_tag.htm">ezTag</a>&amp; tag);</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  <span class="keywordtype">void</span> ClearTagRecursive(<a class="code" href="../../d6/d61/classez_game_object.htm">ezGameObject</a>* pObject, <span class="keyword">const</span> <a class="code" href="../../db/db8/classez_tag.htm">ezTag</a>&amp; tag);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  <a class="code" href="../../da/d3c/classez_world.htm">ezWorld</a>* m_pWorld = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  <span class="keywordtype">void</span> SetTagOnObject(<span class="keyword">const</span> <a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a>&amp; <span class="keywordtype">object</span>, <span class="keyword">const</span> <span class="keywordtype">char</span>* szTag, <span class="keywordtype">bool</span> bSet, <span class="keywordtype">bool</span> recursive);</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d3/dad/classez_engine_process_view_context.htm">ezEngineProcessViewContext</a>* GetViewContext(ezUInt32 uiView)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordflow">return</span> uiView &gt;= m_ViewContexts.GetCount() ? nullptr : m_ViewContexts[uiView];</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  }</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d4/d36/classez_editor_engine_sync_object.htm">ezEditorEngineSyncObject</a>;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  <span class="keywordtype">void</span> AddSyncObject(<a class="code" href="../../d4/d36/classez_editor_engine_sync_object.htm">ezEditorEngineSyncObject</a>* pSync);</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  <span class="keywordtype">void</span> RemoveSyncObject(<a class="code" href="../../d4/d36/classez_editor_engine_sync_object.htm">ezEditorEngineSyncObject</a>* pSync);</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  <a class="code" href="../../d4/d36/classez_editor_engine_sync_object.htm">ezEditorEngineSyncObject</a>* FindSyncObject(<span class="keyword">const</span> <a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a>&amp; guid);</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <span class="keywordtype">void</span> SetTagRecursive(<a class="code" href="../../d6/d61/classez_game_object.htm">ezGameObject</a>* pObject, <span class="keyword">const</span> <a class="code" href="../../db/db8/classez_tag.htm">ezTag</a>&amp; tag);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  <span class="keywordtype">void</span> ClearTagRecursive(<a class="code" href="../../d6/d61/classez_game_object.htm">ezGameObject</a>* pObject, <span class="keyword">const</span> <a class="code" href="../../db/db8/classez_tag.htm">ezTag</a>&amp; tag);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d3/dad/classez_engine_process_view_context.htm">ezEngineProcessViewContext</a>* GetViewContext(ezUInt32 uiView)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="keyword">  </span>{</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordflow">return</span> uiView &gt;= m_ViewContexts.GetCount() ? nullptr : m_ViewContexts[uiView];</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  }</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d4/d36/classez_editor_engine_sync_object.htm">ezEditorEngineSyncObject</a>;</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  <span class="keywordtype">void</span> ClearViewContexts();</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  <span class="comment">// Maps a document guid to the corresponding context that handles that document on the engine side</span></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d8/d86/classez_hash_table.htm">ezHashTable&lt;ezUuid, ezEngineProcessDocumentContext*&gt;</a> s_DocumentContexts;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  <span class="keywordtype">void</span> CleanUpContextSyncObjects();</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  <a class="code" href="../../d1/dec/structez_bitflags.htm">ezBitflags&lt;ezEngineProcessDocumentContextFlags&gt;</a> m_Flags;</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  <a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a> m_DocumentGuid;</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  <a class="code" href="../../de/de6/classez_variant.htm">ezVariant</a> m_MetaData;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  <span class="keywordtype">void</span> AddSyncObject(<a class="code" href="../../d4/d36/classez_editor_engine_sync_object.htm">ezEditorEngineSyncObject</a>* pSync);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  <span class="keywordtype">void</span> RemoveSyncObject(<a class="code" href="../../d4/d36/classez_editor_engine_sync_object.htm">ezEditorEngineSyncObject</a>* pSync);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  <a class="code" href="../../d4/d36/classez_editor_engine_sync_object.htm">ezEditorEngineSyncObject</a>* FindSyncObject(<span class="keyword">const</span> <a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a>&amp; guid);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  <span class="keywordtype">void</span> ClearViewContexts();</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  <span class="comment">// Maps a document guid to the corresponding context that handles that document on the engine side</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d8/d86/classez_hash_table.htm">ezHashTable&lt;ezUuid, ezEngineProcessDocumentContext*&gt;</a> s_DocumentContexts;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  <span class="keywordtype">void</span> CleanUpContextSyncObjects();</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  <a class="code" href="../../d8/d12/classez_engine_process_communication_channel.htm">ezEngineProcessCommunicationChannel</a>* m_pIPC = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezEngineProcessViewContext*, 4&gt;</a> m_ViewContexts;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  <a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;ezUuid, ezEditorEngineSyncObject*&gt;</a> m_SyncObjects;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  <a class="code" href="../../d1/dec/structez_bitflags.htm">ezBitflags&lt;ezEngineProcessDocumentContextFlags&gt;</a> m_Flags;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  <a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a> m_DocumentGuid;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  <a class="code" href="../../de/de6/classez_variant.htm">ezVariant</a> m_MetaData;</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  <span class="keyword">enum</span> Constants</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  {</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    ThumbnailSuperscaleFactor =</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;      2, </div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    ThumbnailConvergenceFramesTarget = 4 </div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;  };</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  ezUInt8 m_uiThumbnailConvergenceFrames = 0;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  ezUInt16 m_uiThumbnailWidth = 0;</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;  ezUInt16 m_uiThumbnailHeight = 0;</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;  <a class="code" href="../../d3/dad/classez_engine_process_view_context.htm">ezEngineProcessViewContext</a>* m_pThumbnailViewContext = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  <a class="code" href="../../d2/d2f/structez_g_a_l_render_targets.htm">ezGALRenderTargets</a> m_ThumbnailRenderTargets;</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;  <a class="code" href="../../de/d27/classez_g_a_l_texture_handle.htm">ezGALTextureHandle</a> m_hThumbnailColorRT;</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  <a class="code" href="../../de/d27/classez_g_a_l_texture_handle.htm">ezGALTextureHandle</a> m_hThumbnailDepthRT;</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  <span class="keywordtype">bool</span> m_bWorldSimStateBeforeThumbnail = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  <span class="comment">// GameObject reference resolution</span></div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  <span class="keyword">struct </span>GoReferenceTo</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  {</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* m_szComponentProperty = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a> m_ReferenceToGameObject;</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  };</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  <span class="keyword">struct </span>GoReferencedBy</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  <a class="code" href="../../d8/d12/classez_engine_process_communication_channel.htm">ezEngineProcessCommunicationChannel</a>* m_pIPC = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezEngineProcessViewContext*, 4&gt;</a> m_ViewContexts;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  <a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;ezUuid, ezEditorEngineSyncObject*&gt;</a> m_SyncObjects;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;  <span class="keyword">enum</span> Constants</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  {</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    ThumbnailSuperscaleFactor =</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;      2,                                 </div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    ThumbnailConvergenceFramesTarget = 4 </div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;  };</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;  ezUInt8 m_uiThumbnailConvergenceFrames = 0;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  ezUInt16 m_uiThumbnailWidth = 0;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  ezUInt16 m_uiThumbnailHeight = 0;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;  <a class="code" href="../../d3/dad/classez_engine_process_view_context.htm">ezEngineProcessViewContext</a>* m_pThumbnailViewContext = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  <a class="code" href="../../d2/d2f/structez_g_a_l_render_targets.htm">ezGALRenderTargets</a> m_ThumbnailRenderTargets;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  <a class="code" href="../../de/d27/classez_g_a_l_texture_handle.htm">ezGALTextureHandle</a> m_hThumbnailColorRT;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  <a class="code" href="../../de/d27/classez_g_a_l_texture_handle.htm">ezGALTextureHandle</a> m_hThumbnailDepthRT;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  <span class="keywordtype">bool</span> m_bWorldSimStateBeforeThumbnail = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sDocumentType;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  <span class="comment">// GameObject reference resolution</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  <span class="keyword">struct </span>GoReferenceTo</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;  {</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* m_szComponentProperty = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a> m_ReferencedByComponent;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> m_sComponentProperty;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a> m_ReferenceToGameObject;</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  };</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;  <span class="comment">// Components reference GameObjects</span></div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;  <span class="keyword">mutable</span> <a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;ezUuid, ezHybridArray&lt;GoReferenceTo, 4&gt;</a>&gt; m_GoRef_ReferencesTo;</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;  <span class="comment">// GameObjects referenced by Components</span></div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;  <span class="keyword">mutable</span> <a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;ezUuid, ezHybridArray&lt;GoReferencedBy, 4&gt;</a>&gt; m_GoRef_ReferencedBy;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;  <span class="keyword">struct </span>GoReferencedBy</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;  {</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> m_sComponentProperty;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a> m_ReferencedByComponent;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;  };</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;  <span class="keywordtype">void</span> WorldRttiConverterContextEventHandler(<span class="keyword">const</span> <a class="code" href="../../dc/d50/structez_world_rtti_converter_context_1_1_event.htm">ezWorldRttiConverterContext::Event</a>&amp; e);</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;};</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;  <span class="comment">// Components reference GameObjects</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;  <span class="keyword">mutable</span> <a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;ezUuid, ezHybridArray&lt;GoReferenceTo, 4&gt;</a>&gt; m_GoRef_ReferencesTo;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;  <span class="comment">// GameObjects referenced by Components</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;  <span class="keyword">mutable</span> <a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;ezUuid, ezHybridArray&lt;GoReferencedBy, 4&gt;</a>&gt; m_GoRef_ReferencedBy;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;  <span class="keywordtype">void</span> WorldRttiConverterContextEventHandler(<span class="keyword">const</span> <a class="code" href="../../dc/d50/structez_world_rtti_converter_context_1_1_event.htm">ezWorldRttiConverterContext::Event</a>&amp; e);</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_i_p_c_object_mirror_engine_htm"><div class="ttname"><a href="../../d2/dfe/classez_i_p_c_object_mirror_engine.htm">ezIPCObjectMirrorEngine</a></div><div class="ttdoc">An object mirror that mirrors across IPC to the engine process.</div><div class="ttdef"><b>Definition:</b> IPCObjectMirrorEngine.h:10</div></div>
 <div class="ttc" id="aclassez_world_rtti_converter_context_htm"><div class="ttname"><a href="../../da/d6a/classez_world_rtti_converter_context.htm">ezWorldRttiConverterContext</a></div><div class="ttdoc">The world rtti converter context tracks created objects and is capable of also handling components / ...</div><div class="ttdef"><b>Definition:</b> WorldRttiConverterContext.h:13</div></div>
 <div class="ttc" id="aclassez_engine_process_communication_channel_htm"><div class="ttname"><a href="../../d8/d12/classez_engine_process_communication_channel.htm">ezEngineProcessCommunicationChannel</a></div><div class="ttdef"><b>Definition:</b> EngineProcessCommunicationChannel.h:5</div></div>
 <div class="ttc" id="astructez_bitflags_htm"><div class="ttname"><a href="../../d1/dec/structez_bitflags.htm">ezBitflags&lt; ezEngineProcessDocumentContextFlags &gt;</a></div></div>
-<div class="ttc" id="aclassez_bounding_box_sphere_template_htm"><div class="ttname"><a href="../../dc/d77/classez_bounding_box_sphere_template.htm">ezBoundingBoxSphereTemplate&lt; float &gt;</a></div></div>
-<div class="ttc" id="aclassez_create_thumbnail_msg_to_engine_htm"><div class="ttname"><a href="../../d7/d0e/classez_create_thumbnail_msg_to_engine.htm">ezCreateThumbnailMsgToEngine</a></div><div class="ttdef"><b>Definition:</b> EngineProcessMessages.h:321</div></div>
-<div class="ttc" id="aclassez_export_document_msg_to_engine_htm"><div class="ttname"><a href="../../d5/de0/classez_export_document_msg_to_engine.htm">ezExportDocumentMsgToEngine</a></div><div class="ttdef"><b>Definition:</b> EngineProcessMessages.h:296</div></div>
+<div class="ttc" id="aclassez_bounding_box_sphere_template_htm"><div class="ttname"><a href="../../dc/d77/classez_bounding_box_sphere_template.htm">ezBoundingBoxSphereTemplate</a></div><div class="ttdoc">A combination of a bounding box and a bounding sphere with the same center.</div><div class="ttdef"><b>Definition:</b> BoundingBoxSphere.h:11</div></div>
+<div class="ttc" id="aclassez_create_thumbnail_msg_to_engine_htm"><div class="ttname"><a href="../../d7/d0e/classez_create_thumbnail_msg_to_engine.htm">ezCreateThumbnailMsgToEngine</a></div><div class="ttdef"><b>Definition:</b> EngineProcessMessages.h:328</div></div>
+<div class="ttc" id="aclassez_export_document_msg_to_engine_htm"><div class="ttname"><a href="../../d5/de0/classez_export_document_msg_to_engine.htm">ezExportDocumentMsgToEngine</a></div><div class="ttdef"><b>Definition:</b> EngineProcessMessages.h:305</div></div>
 <div class="ttc" id="aclassez_process_message_htm"><div class="ttname"><a href="../../db/d40/classez_process_message.htm">ezProcessMessage</a></div><div class="ttdoc">Base class for IPC messages transmitted by ezIpcChannel.</div><div class="ttdef"><b>Definition:</b> RemoteMessage.h:63</div></div>
 <div class="ttc" id="aclassez_editor_engine_sync_object_htm"><div class="ttname"><a href="../../d4/d36/classez_editor_engine_sync_object.htm">ezEditorEngineSyncObject</a></div><div class="ttdef"><b>Definition:</b> SyncObject.h:10</div></div>
-<div class="ttc" id="aclassez_editor_engine_sync_object_msg_htm"><div class="ttname"><a href="../../df/de7/classez_editor_engine_sync_object_msg.htm">ezEditorEngineSyncObjectMsg</a></div><div class="ttdef"><b>Definition:</b> EngineProcessMessages.h:452</div></div>
+<div class="ttc" id="aclassez_editor_engine_sync_object_msg_htm"><div class="ttname"><a href="../../df/de7/classez_editor_engine_sync_object_msg.htm">ezEditorEngineSyncObjectMsg</a></div><div class="ttdef"><b>Definition:</b> EngineProcessMessages.h:459</div></div>
+<div class="ttc" id="astructez_hybrid_string_htm"><div class="ttname"><a href="../../d4/d53/structez_hybrid_string.htm">ezHybridString</a></div><div class="ttdef"><b>Definition:</b> Stream.h:16</div></div>
 <div class="ttc" id="astructez_status_htm"><div class="ttname"><a href="../../d7/d6e/structez_status.htm">ezStatus</a></div><div class="ttdoc">An ezResult with an additional message for the reason of failure.</div><div class="ttdef"><b>Definition:</b> Status.h:11</div></div>
-<div class="ttc" id="aclassez_engine_process_document_context_htm_a4a90d7ba0b6bc5547978a433af2be4eb"><div class="ttname"><a href="../../d3/d26/classez_engine_process_document_context.htm#a4a90d7ba0b6bc5547978a433af2be4eb">ezEngineProcessDocumentContext::OnThumbnailViewContextRequested</a></div><div class="ttdeci">virtual void OnThumbnailViewContextRequested()</div><div class="ttdoc">Called before a thumbnail context is created.</div><div class="ttdef"><b>Definition:</b> EngineProcessDocumentContext.h:119</div></div>
-<div class="ttc" id="aclassez_editor_engine_document_msg_htm"><div class="ttname"><a href="../../d1/dfa/classez_editor_engine_document_msg.htm">ezEditorEngineDocumentMsg</a></div><div class="ttdoc">Base class for all messages that are tied to some document.</div><div class="ttdef"><b>Definition:</b> EngineProcessMessages.h:140</div></div>
+<div class="ttc" id="aclassez_engine_process_document_context_htm_a4a90d7ba0b6bc5547978a433af2be4eb"><div class="ttname"><a href="../../d3/d26/classez_engine_process_document_context.htm#a4a90d7ba0b6bc5547978a433af2be4eb">ezEngineProcessDocumentContext::OnThumbnailViewContextRequested</a></div><div class="ttdeci">virtual void OnThumbnailViewContextRequested()</div><div class="ttdoc">Called before a thumbnail context is created.</div><div class="ttdef"><b>Definition:</b> EngineProcessDocumentContext.h:124</div></div>
+<div class="ttc" id="aclassez_editor_engine_document_msg_htm"><div class="ttname"><a href="../../d1/dfa/classez_editor_engine_document_msg.htm">ezEditorEngineDocumentMsg</a></div><div class="ttdoc">Base class for all messages that are tied to some document.</div><div class="ttdef"><b>Definition:</b> EngineProcessMessages.h:149</div></div>
 <div class="ttc" id="aclassez_tag_htm"><div class="ttname"><a href="../../db/db8/classez_tag.htm">ezTag</a></div><div class="ttdoc">The tag class stores the necessary lookup information for a single tag which can be used in conjuncti...</div><div class="ttdef"><b>Definition:</b> Tag.h:15</div></div>
 <div class="ttc" id="aclassez_engine_process_document_context_htm"><div class="ttname"><a href="../../d3/d26/classez_engine_process_document_context.htm">ezEngineProcessDocumentContext</a></div><div class="ttdoc">A document context is the counter part to an editor document on the engine side.</div><div class="ttdef"><b>Definition:</b> EngineProcessDocumentContext.h:41</div></div>
 <div class="ttc" id="astructez_engine_process_document_context_flags_1_1_bits_htm"><div class="ttname"><a href="../../d9/d92/structez_engine_process_document_context_flags_1_1_bits.htm">ezEngineProcessDocumentContextFlags::Bits</a></div><div class="ttdef"><b>Definition:</b> EngineProcessDocumentContext.h:30</div></div>
@@ -285,10 +291,12 @@ $(document).ready(function(){initNavTree('d5/d90/_engine_process_document_contex
 <div class="ttc" id="astructez_resource_event_htm"><div class="ttname"><a href="../../df/d46/structez_resource_event.htm">ezResourceEvent</a></div><div class="ttdoc">These events may be sent by a specific ezResource or by the ezResourceManager.</div><div class="ttdef"><b>Definition:</b> Declarations.h:21</div></div>
 <div class="ttc" id="astructez_g_a_l_render_targets_htm"><div class="ttname"><a href="../../d2/d2f/structez_g_a_l_render_targets.htm">ezGALRenderTargets</a></div><div class="ttdef"><b>Definition:</b> RenderTargetSetup.h:8</div></div>
 <div class="ttc" id="aclassez_map_htm"><div class="ttname"><a href="../../d1/d79/classez_map.htm">ezMap&lt; ezUuid, ezEditorEngineSyncObject * &gt;</a></div></div>
-<div class="ttc" id="astructez_world_rtti_converter_context_1_1_event_htm"><div class="ttname"><a href="../../dc/d50/structez_world_rtti_converter_context_1_1_event.htm">ezWorldRttiConverterContext::Event</a></div><div class="ttdef"><b>Definition:</b> WorldRttiConverterContext.h:46</div></div>
-<div class="ttc" id="aclassez_variant_htm"><div class="ttname"><a href="../../de/de6/classez_variant.htm">ezVariant</a></div><div class="ttdoc">ezVariant is a class that can store different types of variables, which is useful in situations where...</div><div class="ttdef"><b>Definition:</b> Variant.h:45</div></div>
-<div class="ttc" id="aclassez_game_object_htm"><div class="ttname"><a href="../../d6/d61/classez_game_object.htm">ezGameObject</a></div><div class="ttdoc">This class represents an object inside the world.</div><div class="ttdef"><b>Definition:</b> GameObject.h:29</div></div>
+<div class="ttc" id="aclassez_engine_process_document_context_htm_a0d7bcd483b363fe19ac06a0513ddcce1"><div class="ttname"><a href="../../d3/d26/classez_engine_process_document_context.htm#a0d7bcd483b363fe19ac06a0513ddcce1">ezEngineProcessDocumentContext::GetDocumentType</a></div><div class="ttdeci">ezStringView GetDocumentType() const</div><div class="ttdoc">Returns the document type for which this context was created. Useful in case a context may be used fo...</div><div class="ttdef"><b>Definition:</b> EngineProcessDocumentContext.h:53</div></div>
+<div class="ttc" id="astructez_world_rtti_converter_context_1_1_event_htm"><div class="ttname"><a href="../../dc/d50/structez_world_rtti_converter_context_1_1_event.htm">ezWorldRttiConverterContext::Event</a></div><div class="ttdef"><b>Definition:</b> WorldRttiConverterContext.h:39</div></div>
+<div class="ttc" id="aclassez_variant_htm"><div class="ttname"><a href="../../de/de6/classez_variant.htm">ezVariant</a></div><div class="ttdoc">ezVariant is a class that can store different types of variables, which is useful in situations where...</div><div class="ttdef"><b>Definition:</b> Variant.h:46</div></div>
+<div class="ttc" id="aclassez_game_object_htm"><div class="ttname"><a href="../../d6/d61/classez_game_object.htm">ezGameObject</a></div><div class="ttdoc">This class represents an object inside the world.</div><div class="ttdef"><b>Definition:</b> GameObject.h:31</div></div>
 <div class="ttc" id="aclassez_uuid_htm"><div class="ttname"><a href="../../da/d89/classez_uuid.htm">ezUuid</a></div><div class="ttdoc">This data type is the abstraction for 128-bit Uuid (also known as GUID) instances.</div><div class="ttdef"><b>Definition:</b> Uuid.h:10</div></div>
+<div class="ttc" id="astructez_string_view_htm"><div class="ttname"><a href="../../de/db8/structez_string_view.htm">ezStringView</a></div><div class="ttdoc">ezStringView represent a read-only sub-string of a larger string, as it can store a dedicated string ...</div><div class="ttdef"><b>Definition:</b> StringView.h:23</div></div>
 <div class="ttc" id="astructez_component_handle_htm"><div class="ttname"><a href="../../df/d34/structez_component_handle.htm">ezComponentHandle</a></div><div class="ttdoc">A handle to a component.</div><div class="ttdef"><b>Definition:</b> Declarations.h:137</div></div>
 <div class="ttc" id="aclassez_hybrid_array_htm"><div class="ttname"><a href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt; ezEngineProcessViewContext *, 4 &gt;</a></div></div>
 <div class="ttc" id="astructez_game_object_handle_htm"><div class="ttname"><a href="../../d6/d5c/structez_game_object_handle.htm">ezGameObjectHandle</a></div><div class="ttdoc">A handle to a game object.</div><div class="ttdef"><b>Definition:</b> Declarations.h:75</div></div>
@@ -300,7 +308,7 @@ $(document).ready(function(){initNavTree('d5/d90/_engine_process_document_contex
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_898824d97bbfb864e5ee6bfb2857fc31.htm">Editor</a></li><li class="navelem"><a class="el" href="../../dir_58cd665830f691b636779262d22385da.htm">EditorEngineProcessFramework</a></li><li class="navelem"><a class="el" href="../../dir_2191880c6b569b9c9b9d9bd637a2d0d3.htm">EngineProcess</a></li><li class="navelem"><b>EngineProcessDocumentContext.h</b></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:21:50 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:12 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

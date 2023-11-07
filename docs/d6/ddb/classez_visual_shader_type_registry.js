@@ -5,5 +5,5 @@ var classez_visual_shader_type_registry =
     [ "GetNodeBaseType", "d6/ddb/classez_visual_shader_type_registry.htm#a7fc14a9869aad9498ba91095be40c356", null ],
     [ "GetPinSamplerType", "d6/ddb/classez_visual_shader_type_registry.htm#a2aed9ee0b485b4c783bafdd1ec43ed7e", null ],
     [ "UpdateNodeData", "d6/ddb/classez_visual_shader_type_registry.htm#a75420c0bf9993eaf44fdf3708de758f4", null ],
-    [ "UpdateNodeData", "d6/ddb/classez_visual_shader_type_registry.htm#a064d1cb8ec243abad1a0733e6236e022", null ]
+    [ "UpdateNodeData", "d6/ddb/classez_visual_shader_type_registry.htm#a230d8d1787d387ce80348c45916abc85", null ]
 ];

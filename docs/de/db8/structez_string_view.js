@@ -64,6 +64,6 @@ var structez_string_view =
     [ "StartsWith_NoCase", "de/db8/structez_string_view.htm#a6d9972bb83ef029b5232d478d478ff70", null ],
     [ "Trim", "de/db8/structez_string_view.htm#aa09c8b4d9d14accbb7543fe45d62712d", null ],
     [ "Trim", "de/db8/structez_string_view.htm#af7921e770e8ca3ee0205a4d8e4bf6400", null ],
-    [ "TrimWordEnd", "de/db8/structez_string_view.htm#a3139f5e1dc374a2335a0f0342f8b39d3", null ],
-    [ "TrimWordStart", "de/db8/structez_string_view.htm#acf575e6e33394c2c52ae397a88fe76f6", null ]
+    [ "TrimWordEnd", "de/db8/structez_string_view.htm#ae6e47ea85f1ad36042fb208bee06c215", null ],
+    [ "TrimWordStart", "de/db8/structez_string_view.htm#a0f9db33d9e3b1cfc253e147386efe437", null ]
 ];

@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -103,7 +103,7 @@ $(document).ready(function(){initNavTree('de/d1a/_map__inl_8h_source.htm','../..
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keywordflow">if</span> (m_pElement == <span class="keyword">nullptr</span>)</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    EZ_ASSERT_DEV(m_pElement != <span class="keyword">nullptr</span>, <span class="stringliteral">&quot;The Iterator is invalid (end).&quot;</span>);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    EZ_ASSERT_DEBUG(m_pElement != <span class="keyword">nullptr</span>, <span class="stringliteral">&quot;The Iterator is invalid (end).&quot;</span>);</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  }</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
@@ -154,7 +154,7 @@ $(document).ready(function(){initNavTree('de/d1a/_map__inl_8h_source.htm','../..
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordflow">if</span> (m_pElement == <span class="keyword">nullptr</span>)</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    EZ_ASSERT_DEV(m_pElement != <span class="keyword">nullptr</span>, <span class="stringliteral">&quot;The Iterator is invalid (end).&quot;</span>);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    EZ_ASSERT_DEBUG(m_pElement != <span class="keyword">nullptr</span>, <span class="stringliteral">&quot;The Iterator is invalid (end).&quot;</span>);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  }</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
@@ -660,327 +660,326 @@ $(document).ready(function(){initNavTree('de/d1a/_map__inl_8h_source.htm','../..
 <div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> ValueType, <span class="keyword">typename</span> Comparer&gt;</div>
 <div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d1/d43/classez_map_base.htm">ezMapBase&lt;KeyType, ValueType, Comparer&gt;::ReleaseNode</a>(Node* pNode)</div>
 <div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;{</div>
-<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;  EZ_ASSERT_DEV(pNode != <span class="keyword">nullptr</span>, <span class="stringliteral">&quot;pNode is invalid.&quot;</span>);</div>
-<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;  EZ_ASSERT_DEV(pNode != &amp;m_NilNode, <span class="stringliteral">&quot;pNode is invalid.&quot;</span>);</div>
-<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160; </div>
-<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;  ezMemoryUtils::Destruct&lt;Node&gt;(pNode, 1);</div>
-<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160; </div>
-<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;  <span class="comment">// try to reduce the element array, if possible</span></div>
-<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;  <span class="keywordflow">if</span> (pNode == &amp;m_Elements.PeekBack())</div>
-<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;  {</div>
-<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;    m_Elements.PopBack();</div>
-<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;  }</div>
-<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pNode == &amp;m_Elements.PeekFront())</div>
-<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;  {</div>
-<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;    m_Elements.PopFront();</div>
-<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;  }</div>
-<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;  {</div>
-<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;    pNode-&gt;m_pParent = m_pFreeElementStack;</div>
-<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;    m_pFreeElementStack = pNode;</div>
-<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;  }</div>
-<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160; </div>
-<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;  --m_uiCount;</div>
-<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;}</div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160; </div>
-<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> ValueType, <span class="keyword">typename</span> Comparer&gt;</div>
-<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;EZ_ALWAYS_INLINE <span class="keyword">typename</span> <a class="code" href="../../d1/d43/classez_map_base.htm">ezMapBase&lt;KeyType, ValueType, Comparer&gt;::Node</a>* <a class="code" href="../../d1/d43/classez_map_base.htm">ezMapBase&lt;KeyType, ValueType, Comparer&gt;::SkewNode</a>(Node* root)</div>
-<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;{</div>
-<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;  <span class="keywordflow">if</span> ((root-&gt;m_pLink[0]-&gt;m_uiLevel == root-&gt;m_uiLevel) &amp;&amp; (root-&gt;m_uiLevel != 0))</div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;  {</div>
-<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;    Node* save = root-&gt;m_pLink[0];</div>
-<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;    root-&gt;m_pLink[0] = save-&gt;m_pLink[1];</div>
-<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;    root-&gt;m_pLink[0]-&gt;m_pParent = root;</div>
-<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;    save-&gt;m_pLink[1] = root;</div>
-<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;    save-&gt;m_pLink[1]-&gt;m_pParent = save;</div>
-<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;    root = save;</div>
-<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;  }</div>
-<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160; </div>
-<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;  <span class="keywordflow">return</span> root;</div>
-<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;}</div>
-<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160; </div>
-<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> ValueType, <span class="keyword">typename</span> Comparer&gt;</div>
-<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;EZ_ALWAYS_INLINE <span class="keyword">typename</span> <a class="code" href="../../d1/d43/classez_map_base.htm">ezMapBase&lt;KeyType, ValueType, Comparer&gt;::Node</a>* <a class="code" href="../../d1/d43/classez_map_base.htm">ezMapBase&lt;KeyType, ValueType, Comparer&gt;::SplitNode</a>(Node* root)</div>
-<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;{</div>
-<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;  <span class="keywordflow">if</span> ((root-&gt;m_pLink[1]-&gt;m_pLink[1]-&gt;m_uiLevel == root-&gt;m_uiLevel) &amp;&amp; (root-&gt;m_uiLevel != 0))</div>
-<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;  {</div>
-<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;    Node* save = root-&gt;m_pLink[1];</div>
-<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;    root-&gt;m_pLink[1] = save-&gt;m_pLink[0];</div>
-<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;    root-&gt;m_pLink[1]-&gt;m_pParent = root;</div>
-<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;    save-&gt;m_pLink[0] = root;</div>
-<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;    save-&gt;m_pLink[0]-&gt;m_pParent = save;</div>
-<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;    root = save;</div>
-<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;    ++root-&gt;m_uiLevel;</div>
-<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;  }</div>
-<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160; </div>
-<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;  <span class="keywordflow">return</span> root;</div>
-<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;}</div>
-<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160; </div>
-<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> ValueType, <span class="keyword">typename</span> Comparer&gt;</div>
-<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> CompatibleKeyType&gt;</div>
-<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;<span class="keyword">typename</span> <a class="code" href="../../d1/d43/classez_map_base.htm">ezMapBase&lt;KeyType, ValueType, Comparer&gt;::Node</a>* <a class="code" href="../../d1/d43/classez_map_base.htm#a39ec812de69d422bdff1acc12d1d516f">ezMapBase&lt;KeyType, ValueType, Comparer&gt;::Remove</a>(Node* root, <span class="keyword">const</span> CompatibleKeyType&amp; key, <span class="keywordtype">bool</span>&amp; bRemoved)</div>
-<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;{</div>
-<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;  bRemoved = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160; </div>
-<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;  Node* ToErase = <span class="keyword">reinterpret_cast&lt;</span>Node*<span class="keyword">&gt;</span>(&amp;m_NilNode);</div>
-<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;  Node* ToOverride = <span class="keyword">reinterpret_cast&lt;</span>Node*<span class="keyword">&gt;</span>(&amp;m_NilNode);</div>
-<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160; </div>
-<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;  <span class="keywordflow">if</span> (root != &amp;m_NilNode)</div>
-<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;  {</div>
-<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;    Node* it = root;</div>
-<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;    Node* up[STACK_SIZE];</div>
-<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;    ezInt32 top = 0;</div>
-<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;    ezInt32 dir = 0;</div>
-<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160; </div>
-<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;    <span class="keywordflow">while</span> (<span class="keyword">true</span>)</div>
-<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;    {</div>
-<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;      EZ_ASSERT_DEBUG(top &gt;= 0 &amp;&amp; top &lt; STACK_SIZE, <span class="stringliteral">&quot;Implementation error&quot;</span>);</div>
-<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;      up[top++] = it;</div>
-<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160; </div>
-<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;      <span class="keywordflow">if</span> (it == &amp;m_NilNode)</div>
-<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;        <span class="keywordflow">return</span> root;</div>
-<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160; </div>
-<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;      <span class="keywordflow">if</span> (m_Comparer.Equal(it-&gt;m_Key, key))</div>
-<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160; </div>
-<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;      dir = m_Comparer.Less(it-&gt;m_Key, key) ? 1 : 0;</div>
-<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160; </div>
-<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;      it = it-&gt;m_pLink[dir];</div>
-<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;    }</div>
-<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160; </div>
-<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;    ToOverride = it;</div>
-<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160; </div>
-<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;    <span class="keywordflow">if</span> ((it-&gt;m_pLink[0] == &amp;m_NilNode) || (it-&gt;m_pLink[1] == &amp;m_NilNode))</div>
-<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;    {</div>
-<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;      ezInt32 dir2 = it-&gt;m_pLink[0] == &amp;m_NilNode;</div>
-<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160; </div>
-<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;      <span class="keywordflow">if</span> (--top != 0)</div>
-<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;      {</div>
-<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;        EZ_ASSERT_DEBUG(top &gt;= 1 &amp;&amp; top &lt; STACK_SIZE, <span class="stringliteral">&quot;Implementation error&quot;</span>);</div>
-<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;        up[top - 1]-&gt;m_pLink[dir] = it-&gt;m_pLink[dir2];</div>
-<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;        up[top - 1]-&gt;m_pLink[dir]-&gt;m_pParent = up[top - 1];</div>
-<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;      }</div>
-<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;      <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;        root = it-&gt;m_pLink[1];</div>
-<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;    }</div>
-<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;    {</div>
-<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;      Node* heir = it-&gt;m_pLink[1];</div>
-<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;      Node* prev = it;</div>
-<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160; </div>
-<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;      <span class="keywordflow">while</span> (heir-&gt;m_pLink[0] != &amp;m_NilNode)</div>
-<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;      {</div>
-<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;        EZ_ASSERT_DEBUG(top &gt;= 0 &amp;&amp; top &lt; STACK_SIZE, <span class="stringliteral">&quot;Implementation error&quot;</span>);</div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;        up[top++] = prev = heir;</div>
-<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160; </div>
-<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;        heir = heir-&gt;m_pLink[0];</div>
-<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;      }</div>
-<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160; </div>
-<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;      ToErase = heir;</div>
-<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;      ToOverride = it;</div>
-<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160; </div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;      prev-&gt;m_pLink[prev == it] = heir-&gt;m_pLink[1];</div>
-<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;      prev-&gt;m_pLink[prev == it]-&gt;m_pParent = prev;</div>
-<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;    }</div>
-<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160; </div>
-<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;    <span class="keywordflow">while</span> (--top &gt;= 0)</div>
-<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;    {</div>
-<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;      <span class="keywordflow">if</span> (top != 0)</div>
-<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;      {</div>
-<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;        EZ_ASSERT_DEBUG(top &gt;= 1 &amp;&amp; top &lt; STACK_SIZE, <span class="stringliteral">&quot;Implementation error&quot;</span>);</div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;        dir = up[top - 1]-&gt;m_pLink[1] == up[top];</div>
-<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;      }</div>
-<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160; </div>
-<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;      EZ_ASSERT_DEBUG(top &gt;= 0 &amp;&amp; top &lt; STACK_SIZE, <span class="stringliteral">&quot;Implementation error&quot;</span>);</div>
-<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160; </div>
-<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;      <span class="keywordflow">if</span> ((up[top]-&gt;m_pLink[0]-&gt;m_uiLevel &lt; up[top]-&gt;m_uiLevel - 1) || (up[top]-&gt;m_pLink[1]-&gt;m_uiLevel &lt; up[top]-&gt;m_uiLevel - 1))</div>
-<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;      {</div>
-<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;        <span class="keywordflow">if</span> (up[top]-&gt;m_pLink[1]-&gt;m_uiLevel &gt; --up[top]-&gt;m_uiLevel)</div>
-<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;          up[top]-&gt;m_pLink[1]-&gt;m_uiLevel = up[top]-&gt;m_uiLevel;</div>
-<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160; </div>
-<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;        up[top] = SkewNode(up[top]);</div>
-<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;        up[top]-&gt;m_pLink[1] = SkewNode(up[top]-&gt;m_pLink[1]);</div>
-<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;        up[top]-&gt;m_pLink[1]-&gt;m_pParent = up[top];</div>
-<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160; </div>
-<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;        up[top]-&gt;m_pLink[1]-&gt;m_pLink[1] = SkewNode(up[top]-&gt;m_pLink[1]-&gt;m_pLink[1]);</div>
-<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;        up[top] = SplitNode(up[top]);</div>
-<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;        up[top]-&gt;m_pLink[1] = SplitNode(up[top]-&gt;m_pLink[1]);</div>
-<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;        up[top]-&gt;m_pLink[1]-&gt;m_pParent = up[top];</div>
-<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;      }</div>
-<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160; </div>
-<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;      <span class="keywordflow">if</span> (top != 0)</div>
-<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;      {</div>
-<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;        EZ_ASSERT_DEBUG(top &gt;= 1 &amp;&amp; top &lt; STACK_SIZE, <span class="stringliteral">&quot;Implementation error&quot;</span>);</div>
-<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160; </div>
-<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;        up[top - 1]-&gt;m_pLink[dir] = up[top];</div>
-<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;        up[top - 1]-&gt;m_pLink[dir]-&gt;m_pParent = up[top - 1];</div>
-<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;      }</div>
-<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;      <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;      {</div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;        EZ_ASSERT_DEBUG(top &gt;= 0 &amp;&amp; top &lt; STACK_SIZE, <span class="stringliteral">&quot;Implementation error&quot;</span>);</div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;        root = up[top];</div>
-<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;      }</div>
-<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;    }</div>
-<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;  }</div>
-<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160; </div>
-<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;  root-&gt;m_pParent = <span class="keyword">reinterpret_cast&lt;</span>Node*<span class="keyword">&gt;</span>(&amp;m_NilNode);</div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;  EZ_ASSERT_DEBUG(pNode != <span class="keyword">nullptr</span> &amp;&amp; pNode != &amp;m_NilNode, <span class="stringliteral">&quot;pNode is invalid.&quot;</span>);</div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160; </div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;  ezMemoryUtils::Destruct&lt;Node&gt;(pNode, 1);</div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160; </div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;  <span class="comment">// try to reduce the element array, if possible</span></div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;  <span class="keywordflow">if</span> (pNode == &amp;m_Elements.PeekBack())</div>
+<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;  {</div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;    m_Elements.PopBack();</div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;  }</div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pNode == &amp;m_Elements.PeekFront())</div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;  {</div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;    m_Elements.PopFront();</div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;  }</div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;  {</div>
+<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;    pNode-&gt;m_pParent = m_pFreeElementStack;</div>
+<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;    m_pFreeElementStack = pNode;</div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;  }</div>
+<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160; </div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;  --m_uiCount;</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;}</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160; </div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> ValueType, <span class="keyword">typename</span> Comparer&gt;</div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;EZ_ALWAYS_INLINE <span class="keyword">typename</span> <a class="code" href="../../d1/d43/classez_map_base.htm">ezMapBase&lt;KeyType, ValueType, Comparer&gt;::Node</a>* <a class="code" href="../../d1/d43/classez_map_base.htm">ezMapBase&lt;KeyType, ValueType, Comparer&gt;::SkewNode</a>(Node* root)</div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;{</div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;  <span class="keywordflow">if</span> ((root-&gt;m_pLink[0]-&gt;m_uiLevel == root-&gt;m_uiLevel) &amp;&amp; (root-&gt;m_uiLevel != 0))</div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;  {</div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;    Node* save = root-&gt;m_pLink[0];</div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;    root-&gt;m_pLink[0] = save-&gt;m_pLink[1];</div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;    root-&gt;m_pLink[0]-&gt;m_pParent = root;</div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;    save-&gt;m_pLink[1] = root;</div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;    save-&gt;m_pLink[1]-&gt;m_pParent = save;</div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;    root = save;</div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;  }</div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160; </div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;  <span class="keywordflow">return</span> root;</div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;}</div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160; </div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> ValueType, <span class="keyword">typename</span> Comparer&gt;</div>
+<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;EZ_ALWAYS_INLINE <span class="keyword">typename</span> <a class="code" href="../../d1/d43/classez_map_base.htm">ezMapBase&lt;KeyType, ValueType, Comparer&gt;::Node</a>* <a class="code" href="../../d1/d43/classez_map_base.htm">ezMapBase&lt;KeyType, ValueType, Comparer&gt;::SplitNode</a>(Node* root)</div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;{</div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;  <span class="keywordflow">if</span> ((root-&gt;m_pLink[1]-&gt;m_pLink[1]-&gt;m_uiLevel == root-&gt;m_uiLevel) &amp;&amp; (root-&gt;m_uiLevel != 0))</div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;  {</div>
+<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;    Node* save = root-&gt;m_pLink[1];</div>
+<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;    root-&gt;m_pLink[1] = save-&gt;m_pLink[0];</div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;    root-&gt;m_pLink[1]-&gt;m_pParent = root;</div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;    save-&gt;m_pLink[0] = root;</div>
+<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;    save-&gt;m_pLink[0]-&gt;m_pParent = save;</div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;    root = save;</div>
+<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;    ++root-&gt;m_uiLevel;</div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;  }</div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160; </div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;  <span class="keywordflow">return</span> root;</div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;}</div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160; </div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> ValueType, <span class="keyword">typename</span> Comparer&gt;</div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> CompatibleKeyType&gt;</div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;<span class="keyword">typename</span> <a class="code" href="../../d1/d43/classez_map_base.htm">ezMapBase&lt;KeyType, ValueType, Comparer&gt;::Node</a>* <a class="code" href="../../d1/d43/classez_map_base.htm#a39ec812de69d422bdff1acc12d1d516f">ezMapBase&lt;KeyType, ValueType, Comparer&gt;::Remove</a>(Node* root, <span class="keyword">const</span> CompatibleKeyType&amp; key, <span class="keywordtype">bool</span>&amp; bRemoved)</div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;{</div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;  bRemoved = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160; </div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;  Node* ToErase = <span class="keyword">reinterpret_cast&lt;</span>Node*<span class="keyword">&gt;</span>(&amp;m_NilNode);</div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;  Node* ToOverride = <span class="keyword">reinterpret_cast&lt;</span>Node*<span class="keyword">&gt;</span>(&amp;m_NilNode);</div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160; </div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;  <span class="keywordflow">if</span> (root != &amp;m_NilNode)</div>
+<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;  {</div>
+<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;    Node* it = root;</div>
+<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;    Node* up[STACK_SIZE];</div>
+<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;    ezInt32 top = 0;</div>
+<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;    ezInt32 dir = 0;</div>
+<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160; </div>
+<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;    <span class="keywordflow">while</span> (<span class="keyword">true</span>)</div>
+<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;    {</div>
+<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;      EZ_ASSERT_DEBUG(top &gt;= 0 &amp;&amp; top &lt; STACK_SIZE, <span class="stringliteral">&quot;Implementation error&quot;</span>);</div>
+<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;      up[top++] = it;</div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160; </div>
+<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;      <span class="keywordflow">if</span> (it == &amp;m_NilNode)</div>
+<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;        <span class="keywordflow">return</span> root;</div>
+<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160; </div>
+<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;      <span class="keywordflow">if</span> (m_Comparer.Equal(it-&gt;m_Key, key))</div>
+<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160; </div>
+<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;      dir = m_Comparer.Less(it-&gt;m_Key, key) ? 1 : 0;</div>
+<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160; </div>
+<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;      it = it-&gt;m_pLink[dir];</div>
+<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;    }</div>
+<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160; </div>
+<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;    ToOverride = it;</div>
+<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160; </div>
+<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;    <span class="keywordflow">if</span> ((it-&gt;m_pLink[0] == &amp;m_NilNode) || (it-&gt;m_pLink[1] == &amp;m_NilNode))</div>
+<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;    {</div>
+<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;      ezInt32 dir2 = it-&gt;m_pLink[0] == &amp;m_NilNode;</div>
+<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160; </div>
+<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;      <span class="keywordflow">if</span> (--top != 0)</div>
+<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;      {</div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;        EZ_ASSERT_DEBUG(top &gt;= 1 &amp;&amp; top &lt; STACK_SIZE, <span class="stringliteral">&quot;Implementation error&quot;</span>);</div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;        up[top - 1]-&gt;m_pLink[dir] = it-&gt;m_pLink[dir2];</div>
+<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;        up[top - 1]-&gt;m_pLink[dir]-&gt;m_pParent = up[top - 1];</div>
+<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;      }</div>
+<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;      <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;        root = it-&gt;m_pLink[1];</div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;    }</div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;    {</div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;      Node* heir = it-&gt;m_pLink[1];</div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;      Node* prev = it;</div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160; </div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;      <span class="keywordflow">while</span> (heir-&gt;m_pLink[0] != &amp;m_NilNode)</div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;      {</div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;        EZ_ASSERT_DEBUG(top &gt;= 0 &amp;&amp; top &lt; STACK_SIZE, <span class="stringliteral">&quot;Implementation error&quot;</span>);</div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;        up[top++] = prev = heir;</div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160; </div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;        heir = heir-&gt;m_pLink[0];</div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;      }</div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160; </div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;      ToErase = heir;</div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;      ToOverride = it;</div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160; </div>
+<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;      prev-&gt;m_pLink[prev == it] = heir-&gt;m_pLink[1];</div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;      prev-&gt;m_pLink[prev == it]-&gt;m_pParent = prev;</div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;    }</div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160; </div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;    <span class="keywordflow">while</span> (--top &gt;= 0)</div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;    {</div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;      <span class="keywordflow">if</span> (top != 0)</div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;      {</div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;        EZ_ASSERT_DEBUG(top &gt;= 1 &amp;&amp; top &lt; STACK_SIZE, <span class="stringliteral">&quot;Implementation error&quot;</span>);</div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;        dir = up[top - 1]-&gt;m_pLink[1] == up[top];</div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;      }</div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160; </div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;      EZ_ASSERT_DEBUG(top &gt;= 0 &amp;&amp; top &lt; STACK_SIZE, <span class="stringliteral">&quot;Implementation error&quot;</span>);</div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160; </div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;      <span class="keywordflow">if</span> ((up[top]-&gt;m_pLink[0]-&gt;m_uiLevel &lt; up[top]-&gt;m_uiLevel - 1) || (up[top]-&gt;m_pLink[1]-&gt;m_uiLevel &lt; up[top]-&gt;m_uiLevel - 1))</div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;      {</div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;        <span class="keywordflow">if</span> (up[top]-&gt;m_pLink[1]-&gt;m_uiLevel &gt; --up[top]-&gt;m_uiLevel)</div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;          up[top]-&gt;m_pLink[1]-&gt;m_uiLevel = up[top]-&gt;m_uiLevel;</div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160; </div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;        up[top] = SkewNode(up[top]);</div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;        up[top]-&gt;m_pLink[1] = SkewNode(up[top]-&gt;m_pLink[1]);</div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;        up[top]-&gt;m_pLink[1]-&gt;m_pParent = up[top];</div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160; </div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;        up[top]-&gt;m_pLink[1]-&gt;m_pLink[1] = SkewNode(up[top]-&gt;m_pLink[1]-&gt;m_pLink[1]);</div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;        up[top] = SplitNode(up[top]);</div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;        up[top]-&gt;m_pLink[1] = SplitNode(up[top]-&gt;m_pLink[1]);</div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;        up[top]-&gt;m_pLink[1]-&gt;m_pParent = up[top];</div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;      }</div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160; </div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;      <span class="keywordflow">if</span> (top != 0)</div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;      {</div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;        EZ_ASSERT_DEBUG(top &gt;= 1 &amp;&amp; top &lt; STACK_SIZE, <span class="stringliteral">&quot;Implementation error&quot;</span>);</div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160; </div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;        up[top - 1]-&gt;m_pLink[dir] = up[top];</div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;        up[top - 1]-&gt;m_pLink[dir]-&gt;m_pParent = up[top - 1];</div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;      }</div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;      <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;      {</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;        EZ_ASSERT_DEBUG(top &gt;= 0 &amp;&amp; top &lt; STACK_SIZE, <span class="stringliteral">&quot;Implementation error&quot;</span>);</div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;        root = up[top];</div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;      }</div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;    }</div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;  }</div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160; </div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;  root-&gt;m_pParent = <span class="keyword">reinterpret_cast&lt;</span>Node*<span class="keyword">&gt;</span>(&amp;m_NilNode);</div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160; </div>
 <div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160; </div>
-<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160; </div>
-<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;  <span class="comment">// if necessary, swap nodes</span></div>
-<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;  <span class="keywordflow">if</span> (ToErase != &amp;m_NilNode)</div>
-<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;  {</div>
-<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;    Node* parent = ToOverride-&gt;m_pParent;</div>
-<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160; </div>
-<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;    <span class="keywordflow">if</span> (parent != &amp;m_NilNode)</div>
-<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;    {</div>
-<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;      <span class="keywordflow">if</span> (parent-&gt;m_pLink[0] == ToOverride)</div>
-<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;      {</div>
-<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;        parent-&gt;m_pLink[0] = ToErase;</div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;        parent-&gt;m_pLink[0]-&gt;m_pParent = parent;</div>
-<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;      }</div>
-<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;      <span class="keywordflow">if</span> (parent-&gt;m_pLink[1] == ToOverride)</div>
-<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;      {</div>
-<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;        parent-&gt;m_pLink[1] = ToErase;</div>
-<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;        parent-&gt;m_pLink[1]-&gt;m_pParent = parent;</div>
-<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;      }</div>
-<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;    }</div>
-<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;      root = ToErase;</div>
-<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160; </div>
-<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;    ToErase-&gt;m_uiLevel = ToOverride-&gt;m_uiLevel;</div>
-<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;    ToErase-&gt;m_pLink[0] = ToOverride-&gt;m_pLink[0];</div>
-<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;    ToErase-&gt;m_pLink[0]-&gt;m_pParent = ToErase;</div>
-<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;    ToErase-&gt;m_pLink[1] = ToOverride-&gt;m_pLink[1];</div>
-<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;    ToErase-&gt;m_pLink[1]-&gt;m_pParent = ToErase;</div>
-<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;  }</div>
-<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160; </div>
-<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;  <span class="comment">// remove the erased node</span></div>
-<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;  <span class="keywordflow">if</span> (ToOverride != &amp;m_NilNode)</div>
-<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;  {</div>
-<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;    bRemoved = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;    ReleaseNode(ToOverride);</div>
-<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;  }</div>
-<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160; </div>
-<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;  <span class="keywordflow">return</span> root;</div>
-<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;}</div>
-<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160; </div>
-<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> ValueType, <span class="keyword">typename</span> Comparer&gt;</div>
-<div class="line"><a name="l00779"></a><span class="lineno"><a class="line" href="../../d1/d43/classez_map_base.htm#ac5898be4e807c0b5c9f260a9bc7d2455">  779</a></span>&#160;<span class="keyword">typename</span> <a class="code" href="../../da/d8e/structez_map_base_1_1_iterator.htm">ezMapBase&lt;KeyType, ValueType, Comparer&gt;::Iterator</a> <a class="code" href="../../d1/d43/classez_map_base.htm#a39ec812de69d422bdff1acc12d1d516f">ezMapBase&lt;KeyType, ValueType, Comparer&gt;::Remove</a>(<span class="keyword">const</span> Iterator&amp; pos)</div>
-<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;{</div>
-<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;  EZ_ASSERT_DEV(pos.m_pElement != <span class="keyword">nullptr</span>, <span class="stringliteral">&quot;The Iterator(pos) is invalid.&quot;</span>);</div>
-<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160; </div>
-<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;  Iterator temp(pos);</div>
-<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;  ++temp;</div>
-<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;  Remove(pos.Key());</div>
-<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;  <span class="keywordflow">return</span> temp;</div>
-<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;}</div>
-<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160; </div>
-<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> ValueType, <span class="keyword">typename</span> Comparer&gt;</div>
-<div class="line"><a name="l00790"></a><span class="lineno"><a class="line" href="../../d1/d43/classez_map_base.htm#a29ebab2c0b4ca2184e86fcc7354de31e">  790</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../d1/d43/classez_map_base.htm#a29ebab2c0b4ca2184e86fcc7354de31e">ezMapBase&lt;KeyType, ValueType, Comparer&gt;::operator==</a>(<span class="keyword">const</span> <a class="code" href="../../d1/d43/classez_map_base.htm">ezMapBase&lt;KeyType, ValueType, Comparer&gt;</a>&amp; rhs)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;  <span class="keywordflow">if</span> (GetCount() != rhs.<a class="code" href="../../d1/d43/classez_map_base.htm#a400e55a001e58137d0e483a2aba85784">GetCount</a>())</div>
-<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160; </div>
-<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;  <span class="keyword">auto</span> itLhs = GetIterator();</div>
-<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;  <span class="keyword">auto</span> itRhs = rhs.<a class="code" href="../../d1/d43/classez_map_base.htm#a999fb772f02ce74de03af456db13ef38">GetIterator</a>();</div>
-<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160; </div>
-<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;  <span class="keywordflow">while</span> (itLhs.IsValid())</div>
-<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;  {</div>
-<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;    <span class="keywordflow">if</span> (!m_Comparer.Equal(itLhs.Key(), itRhs.Key()))</div>
-<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160; </div>
-<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;    <span class="keywordflow">if</span> (itLhs.Value() != itRhs.Value())</div>
-<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160; </div>
-<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;    ++itLhs;</div>
-<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;    ++itRhs;</div>
-<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;  }</div>
-<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160; </div>
-<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;}</div>
-<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160; </div>
-<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> ValueType, <span class="keyword">typename</span> Comparer&gt;</div>
-<div class="line"><a name="l00814"></a><span class="lineno"><a class="line" href="../../d1/d43/classez_map_base.htm#a5979d1ba64cd2de6e724229344b31b83">  814</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../d1/d43/classez_map_base.htm#a5979d1ba64cd2de6e724229344b31b83">ezMapBase&lt;KeyType, ValueType, Comparer&gt;::operator!=</a>(<span class="keyword">const</span> <a class="code" href="../../d1/d43/classez_map_base.htm">ezMapBase&lt;KeyType, ValueType, Comparer&gt;</a>&amp; rhs)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;  <span class="keywordflow">return</span> !operator==(rhs);</div>
-<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;}</div>
-<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160; </div>
-<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;<span class="preprocessor">#undef STACK_SIZE</span></div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;  <span class="comment">// if necessary, swap nodes</span></div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;  <span class="keywordflow">if</span> (ToErase != &amp;m_NilNode)</div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;  {</div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;    Node* parent = ToOverride-&gt;m_pParent;</div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160; </div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;    <span class="keywordflow">if</span> (parent != &amp;m_NilNode)</div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;    {</div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;      <span class="keywordflow">if</span> (parent-&gt;m_pLink[0] == ToOverride)</div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;      {</div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;        parent-&gt;m_pLink[0] = ToErase;</div>
+<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;        parent-&gt;m_pLink[0]-&gt;m_pParent = parent;</div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;      }</div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;      <span class="keywordflow">if</span> (parent-&gt;m_pLink[1] == ToOverride)</div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;      {</div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;        parent-&gt;m_pLink[1] = ToErase;</div>
+<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;        parent-&gt;m_pLink[1]-&gt;m_pParent = parent;</div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;      }</div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;    }</div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;      root = ToErase;</div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160; </div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;    ToErase-&gt;m_uiLevel = ToOverride-&gt;m_uiLevel;</div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;    ToErase-&gt;m_pLink[0] = ToOverride-&gt;m_pLink[0];</div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;    ToErase-&gt;m_pLink[0]-&gt;m_pParent = ToErase;</div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;    ToErase-&gt;m_pLink[1] = ToOverride-&gt;m_pLink[1];</div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;    ToErase-&gt;m_pLink[1]-&gt;m_pParent = ToErase;</div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;  }</div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160; </div>
+<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;  <span class="comment">// remove the erased node</span></div>
+<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;  <span class="keywordflow">if</span> (ToOverride != &amp;m_NilNode)</div>
+<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;  {</div>
+<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;    bRemoved = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;    ReleaseNode(ToOverride);</div>
+<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;  }</div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160; </div>
+<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;  <span class="keywordflow">return</span> root;</div>
+<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;}</div>
+<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160; </div>
+<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> ValueType, <span class="keyword">typename</span> Comparer&gt;</div>
+<div class="line"><a name="l00778"></a><span class="lineno"><a class="line" href="../../d1/d43/classez_map_base.htm#ac5898be4e807c0b5c9f260a9bc7d2455">  778</a></span>&#160;<span class="keyword">typename</span> <a class="code" href="../../da/d8e/structez_map_base_1_1_iterator.htm">ezMapBase&lt;KeyType, ValueType, Comparer&gt;::Iterator</a> <a class="code" href="../../d1/d43/classez_map_base.htm#a39ec812de69d422bdff1acc12d1d516f">ezMapBase&lt;KeyType, ValueType, Comparer&gt;::Remove</a>(<span class="keyword">const</span> Iterator&amp; pos)</div>
+<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;{</div>
+<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;  EZ_ASSERT_DEBUG(pos.m_pElement != <span class="keyword">nullptr</span>, <span class="stringliteral">&quot;The Iterator(pos) is invalid.&quot;</span>);</div>
+<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160; </div>
+<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;  Iterator temp(pos);</div>
+<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;  ++temp;</div>
+<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;  Remove(pos.Key());</div>
+<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;  <span class="keywordflow">return</span> temp;</div>
+<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;}</div>
+<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160; </div>
+<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> ValueType, <span class="keyword">typename</span> Comparer&gt;</div>
+<div class="line"><a name="l00789"></a><span class="lineno"><a class="line" href="../../d1/d43/classez_map_base.htm#a29ebab2c0b4ca2184e86fcc7354de31e">  789</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../d1/d43/classez_map_base.htm#a29ebab2c0b4ca2184e86fcc7354de31e">ezMapBase&lt;KeyType, ValueType, Comparer&gt;::operator==</a>(<span class="keyword">const</span> <a class="code" href="../../d1/d43/classez_map_base.htm">ezMapBase&lt;KeyType, ValueType, Comparer&gt;</a>&amp; rhs)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;  <span class="keywordflow">if</span> (GetCount() != rhs.<a class="code" href="../../d1/d43/classez_map_base.htm#a400e55a001e58137d0e483a2aba85784">GetCount</a>())</div>
+<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160; </div>
+<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;  <span class="keyword">auto</span> itLhs = GetIterator();</div>
+<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;  <span class="keyword">auto</span> itRhs = rhs.<a class="code" href="../../d1/d43/classez_map_base.htm#a999fb772f02ce74de03af456db13ef38">GetIterator</a>();</div>
+<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160; </div>
+<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;  <span class="keywordflow">while</span> (itLhs.IsValid())</div>
+<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;  {</div>
+<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;    <span class="keywordflow">if</span> (!m_Comparer.Equal(itLhs.Key(), itRhs.Key()))</div>
+<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160; </div>
+<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;    <span class="keywordflow">if</span> (itLhs.Value() != itRhs.Value())</div>
+<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160; </div>
+<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;    ++itLhs;</div>
+<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;    ++itRhs;</div>
+<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;  }</div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160; </div>
+<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;}</div>
+<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160; </div>
+<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> ValueType, <span class="keyword">typename</span> Comparer&gt;</div>
+<div class="line"><a name="l00813"></a><span class="lineno"><a class="line" href="../../d1/d43/classez_map_base.htm#a5979d1ba64cd2de6e724229344b31b83">  813</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../d1/d43/classez_map_base.htm#a5979d1ba64cd2de6e724229344b31b83">ezMapBase&lt;KeyType, ValueType, Comparer&gt;::operator!=</a>(<span class="keyword">const</span> <a class="code" href="../../d1/d43/classez_map_base.htm">ezMapBase&lt;KeyType, ValueType, Comparer&gt;</a>&amp; rhs)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;  <span class="keywordflow">return</span> !operator==(rhs);</div>
+<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;}</div>
+<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160; </div>
+<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;<span class="preprocessor">#undef STACK_SIZE</span></div>
+<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160; </div>
 <div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160; </div>
-<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160; </div>
-<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> ValueType, <span class="keyword">typename</span> Comparer, <span class="keyword">typename</span> AllocatorWrapper&gt;</div>
-<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;<a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;KeyType, ValueType, Comparer, AllocatorWrapper&gt;::ezMap</a>()</div>
-<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;  : <a class="code" href="../../d1/d43/classez_map_base.htm">ezMapBase</a>&lt;KeyType, ValueType, Comparer&gt;(Comparer(), AllocatorWrapper::GetAllocator())</div>
-<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;{</div>
-<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;}</div>
-<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160; </div>
-<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> ValueType, <span class="keyword">typename</span> Comparer, <span class="keyword">typename</span> AllocatorWrapper&gt;</div>
-<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;<a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;KeyType, ValueType, Comparer, AllocatorWrapper&gt;::ezMap</a>(<a class="code" href="../../d1/d4c/classez_allocator_base.htm">ezAllocatorBase</a>* pAllocator)</div>
-<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;  : <a class="code" href="../../d1/d43/classez_map_base.htm">ezMapBase</a>&lt;KeyType, ValueType, Comparer&gt;(Comparer(), pAllocator)</div>
-<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;{</div>
-<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;}</div>
-<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160; </div>
-<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> ValueType, <span class="keyword">typename</span> Comparer, <span class="keyword">typename</span> AllocatorWrapper&gt;</div>
-<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;<a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;KeyType, ValueType, Comparer, AllocatorWrapper&gt;::ezMap</a>(<span class="keyword">const</span> Comparer&amp; comparer, <a class="code" href="../../d1/d4c/classez_allocator_base.htm">ezAllocatorBase</a>* pAllocator)</div>
-<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;  : <a class="code" href="../../d1/d43/classez_map_base.htm">ezMapBase</a>&lt;KeyType, ValueType, Comparer&gt;(comparer, pAllocator)</div>
-<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;{</div>
-<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;}</div>
-<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160; </div>
-<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> ValueType, <span class="keyword">typename</span> Comparer, <span class="keyword">typename</span> AllocatorWrapper&gt;</div>
-<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;<a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;KeyType, ValueType, Comparer, AllocatorWrapper&gt;::ezMap</a>(<span class="keyword">const</span> <a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;KeyType, ValueType, Comparer, AllocatorWrapper&gt;</a>&amp; other)</div>
-<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;  : <a class="code" href="../../d1/d43/classez_map_base.htm">ezMapBase</a>&lt;KeyType, ValueType, Comparer&gt;(other, AllocatorWrapper::GetAllocator())</div>
-<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;{</div>
-<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;}</div>
-<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160; </div>
-<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> ValueType, <span class="keyword">typename</span> Comparer, <span class="keyword">typename</span> AllocatorWrapper&gt;</div>
-<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;<a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;KeyType, ValueType, Comparer, AllocatorWrapper&gt;::ezMap</a>(<span class="keyword">const</span> <a class="code" href="../../d1/d43/classez_map_base.htm">ezMapBase&lt;KeyType, ValueType, Comparer&gt;</a>&amp; other)</div>
-<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;  : <a class="code" href="../../d1/d43/classez_map_base.htm">ezMapBase</a>&lt;KeyType, ValueType, Comparer&gt;(other, AllocatorWrapper::GetAllocator())</div>
-<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;{</div>
-<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;}</div>
-<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160; </div>
-<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> ValueType, <span class="keyword">typename</span> Comparer, <span class="keyword">typename</span> AllocatorWrapper&gt;</div>
-<div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;KeyType, ValueType, Comparer, AllocatorWrapper&gt;::operator=</a>(<span class="keyword">const</span> <a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;KeyType, ValueType, Comparer, AllocatorWrapper&gt;</a>&amp; rhs)</div>
-<div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;{</div>
-<div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;  <a class="code" href="../../d1/d43/classez_map_base.htm#a29cfe65a8cf027f6f3818b1f2f9893b2">ezMapBase&lt;KeyType, ValueType, Comparer&gt;::operator=</a>(rhs);</div>
-<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;}</div>
-<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160; </div>
-<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> ValueType, <span class="keyword">typename</span> Comparer, <span class="keyword">typename</span> AllocatorWrapper&gt;</div>
-<div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;KeyType, ValueType, Comparer, AllocatorWrapper&gt;::operator=</a>(<span class="keyword">const</span> <a class="code" href="../../d1/d43/classez_map_base.htm">ezMapBase&lt;KeyType, ValueType, Comparer&gt;</a>&amp; rhs)</div>
-<div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;{</div>
-<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;  <a class="code" href="../../d1/d43/classez_map_base.htm#a29cfe65a8cf027f6f3818b1f2f9893b2">ezMapBase&lt;KeyType, ValueType, Comparer&gt;::operator=</a>(rhs);</div>
-<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;}</div>
-<div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160; </div>
-<div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> ValueType, <span class="keyword">typename</span> Comparer&gt;</div>
-<div class="line"><a name="l00865"></a><span class="lineno"><a class="line" href="../../d1/d43/classez_map_base.htm#aea57c64492f82788afe5ee6e9161d8bf">  865</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d1/d43/classez_map_base.htm#aea57c64492f82788afe5ee6e9161d8bf">ezMapBase&lt;KeyType, ValueType, Comparer&gt;::Swap</a>(<a class="code" href="../../d1/d43/classez_map_base.htm">ezMapBase&lt;KeyType, ValueType, Comparer&gt;</a>&amp; other)</div>
-<div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;{</div>
-<div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;  SwapNilNode(this-&gt;m_pRoot, &amp;this-&gt;m_NilNode, &amp;other.m_NilNode);</div>
-<div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;  SwapNilNode(other.m_pRoot, &amp;other.m_NilNode, &amp;this-&gt;m_NilNode);</div>
-<div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160; </div>
-<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;  <a class="code" href="../../db/d78/namespaceez_math.htm#a0cd624055a97c96719b925cb11e6a08e">ezMath::Swap</a>(this-&gt;m_pRoot, other.m_pRoot);</div>
-<div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;  <a class="code" href="../../db/d78/namespaceez_math.htm#a0cd624055a97c96719b925cb11e6a08e">ezMath::Swap</a>(this-&gt;m_uiCount, other.m_uiCount);</div>
-<div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;  <a class="code" href="../../db/d78/namespaceez_math.htm#a0cd624055a97c96719b925cb11e6a08e">ezMath::Swap</a>(this-&gt;m_pFreeElementStack, other.m_pFreeElementStack);</div>
-<div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;  <a class="code" href="../../db/d78/namespaceez_math.htm#a0cd624055a97c96719b925cb11e6a08e">ezMath::Swap</a>(this-&gt;m_Comparer, other.m_Comparer);</div>
-<div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160; </div>
-<div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;  <span class="comment">// after we swapped the root nodes, fix up their parent nodes</span></div>
-<div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;  this-&gt;m_pRoot-&gt;m_pParent = <span class="keyword">reinterpret_cast&lt;</span>Node*<span class="keyword">&gt;</span>(&amp;this-&gt;m_NilNode);</div>
-<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;  other.m_pRoot-&gt;m_pParent = <span class="keyword">reinterpret_cast&lt;</span>Node*<span class="keyword">&gt;</span>(&amp;other.m_NilNode);</div>
-<div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160; </div>
-<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;  <span class="comment">// the set allocator is stored in this array</span></div>
-<div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;  m_Elements.Swap(other.m_Elements);</div>
-<div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;}</div>
-<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160; </div>
-<div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> ValueType, <span class="keyword">typename</span> Comparer&gt;</div>
-<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d1/d43/classez_map_base.htm">ezMapBase&lt;KeyType, ValueType, Comparer&gt;::SwapNilNode</a>(Node*&amp; pCurNode, NilNode* pOld, NilNode* pNew)</div>
-<div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;{</div>
-<div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;  <span class="keywordflow">if</span> (pCurNode == pOld)</div>
-<div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;  {</div>
-<div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;    pCurNode = <span class="keyword">reinterpret_cast&lt;</span>Node*<span class="keyword">&gt;</span>(pNew);</div>
-<div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;    <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;  }</div>
-<div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160; </div>
-<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;  SwapNilNode(pCurNode-&gt;m_pLink[0], pOld, pNew);</div>
-<div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160;  SwapNilNode(pCurNode-&gt;m_pLink[1], pOld, pNew);</div>
-<div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160;}</div>
+<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> ValueType, <span class="keyword">typename</span> Comparer, <span class="keyword">typename</span> AllocatorWrapper&gt;</div>
+<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;<a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;KeyType, ValueType, Comparer, AllocatorWrapper&gt;::ezMap</a>()</div>
+<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;  : <a class="code" href="../../d1/d43/classez_map_base.htm">ezMapBase</a>&lt;KeyType, ValueType, Comparer&gt;(Comparer(), AllocatorWrapper::GetAllocator())</div>
+<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;{</div>
+<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;}</div>
+<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160; </div>
+<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> ValueType, <span class="keyword">typename</span> Comparer, <span class="keyword">typename</span> AllocatorWrapper&gt;</div>
+<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;<a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;KeyType, ValueType, Comparer, AllocatorWrapper&gt;::ezMap</a>(<a class="code" href="../../d1/d4c/classez_allocator_base.htm">ezAllocatorBase</a>* pAllocator)</div>
+<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;  : <a class="code" href="../../d1/d43/classez_map_base.htm">ezMapBase</a>&lt;KeyType, ValueType, Comparer&gt;(Comparer(), pAllocator)</div>
+<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;{</div>
+<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;}</div>
+<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160; </div>
+<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> ValueType, <span class="keyword">typename</span> Comparer, <span class="keyword">typename</span> AllocatorWrapper&gt;</div>
+<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;<a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;KeyType, ValueType, Comparer, AllocatorWrapper&gt;::ezMap</a>(<span class="keyword">const</span> Comparer&amp; comparer, <a class="code" href="../../d1/d4c/classez_allocator_base.htm">ezAllocatorBase</a>* pAllocator)</div>
+<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;  : <a class="code" href="../../d1/d43/classez_map_base.htm">ezMapBase</a>&lt;KeyType, ValueType, Comparer&gt;(comparer, pAllocator)</div>
+<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;{</div>
+<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;}</div>
+<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160; </div>
+<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> ValueType, <span class="keyword">typename</span> Comparer, <span class="keyword">typename</span> AllocatorWrapper&gt;</div>
+<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;<a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;KeyType, ValueType, Comparer, AllocatorWrapper&gt;::ezMap</a>(<span class="keyword">const</span> <a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;KeyType, ValueType, Comparer, AllocatorWrapper&gt;</a>&amp; other)</div>
+<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;  : <a class="code" href="../../d1/d43/classez_map_base.htm">ezMapBase</a>&lt;KeyType, ValueType, Comparer&gt;(other, AllocatorWrapper::GetAllocator())</div>
+<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;{</div>
+<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;}</div>
+<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160; </div>
+<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> ValueType, <span class="keyword">typename</span> Comparer, <span class="keyword">typename</span> AllocatorWrapper&gt;</div>
+<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;<a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;KeyType, ValueType, Comparer, AllocatorWrapper&gt;::ezMap</a>(<span class="keyword">const</span> <a class="code" href="../../d1/d43/classez_map_base.htm">ezMapBase&lt;KeyType, ValueType, Comparer&gt;</a>&amp; other)</div>
+<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;  : <a class="code" href="../../d1/d43/classez_map_base.htm">ezMapBase</a>&lt;KeyType, ValueType, Comparer&gt;(other, AllocatorWrapper::GetAllocator())</div>
+<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;{</div>
+<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;}</div>
+<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160; </div>
+<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> ValueType, <span class="keyword">typename</span> Comparer, <span class="keyword">typename</span> AllocatorWrapper&gt;</div>
+<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;KeyType, ValueType, Comparer, AllocatorWrapper&gt;::operator=</a>(<span class="keyword">const</span> <a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;KeyType, ValueType, Comparer, AllocatorWrapper&gt;</a>&amp; rhs)</div>
+<div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;{</div>
+<div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;  <a class="code" href="../../d1/d43/classez_map_base.htm#a29cfe65a8cf027f6f3818b1f2f9893b2">ezMapBase&lt;KeyType, ValueType, Comparer&gt;::operator=</a>(rhs);</div>
+<div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;}</div>
+<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160; </div>
+<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> ValueType, <span class="keyword">typename</span> Comparer, <span class="keyword">typename</span> AllocatorWrapper&gt;</div>
+<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;KeyType, ValueType, Comparer, AllocatorWrapper&gt;::operator=</a>(<span class="keyword">const</span> <a class="code" href="../../d1/d43/classez_map_base.htm">ezMapBase&lt;KeyType, ValueType, Comparer&gt;</a>&amp; rhs)</div>
+<div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;{</div>
+<div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;  <a class="code" href="../../d1/d43/classez_map_base.htm#a29cfe65a8cf027f6f3818b1f2f9893b2">ezMapBase&lt;KeyType, ValueType, Comparer&gt;::operator=</a>(rhs);</div>
+<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;}</div>
+<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160; </div>
+<div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> ValueType, <span class="keyword">typename</span> Comparer&gt;</div>
+<div class="line"><a name="l00864"></a><span class="lineno"><a class="line" href="../../d1/d43/classez_map_base.htm#aea57c64492f82788afe5ee6e9161d8bf">  864</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d1/d43/classez_map_base.htm#aea57c64492f82788afe5ee6e9161d8bf">ezMapBase&lt;KeyType, ValueType, Comparer&gt;::Swap</a>(<a class="code" href="../../d1/d43/classez_map_base.htm">ezMapBase&lt;KeyType, ValueType, Comparer&gt;</a>&amp; other)</div>
+<div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;{</div>
+<div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;  SwapNilNode(this-&gt;m_pRoot, &amp;this-&gt;m_NilNode, &amp;other.m_NilNode);</div>
+<div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;  SwapNilNode(other.m_pRoot, &amp;other.m_NilNode, &amp;this-&gt;m_NilNode);</div>
+<div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160; </div>
+<div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;  <a class="code" href="../../db/d78/namespaceez_math.htm#a0cd624055a97c96719b925cb11e6a08e">ezMath::Swap</a>(this-&gt;m_pRoot, other.m_pRoot);</div>
+<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;  <a class="code" href="../../db/d78/namespaceez_math.htm#a0cd624055a97c96719b925cb11e6a08e">ezMath::Swap</a>(this-&gt;m_uiCount, other.m_uiCount);</div>
+<div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;  <a class="code" href="../../db/d78/namespaceez_math.htm#a0cd624055a97c96719b925cb11e6a08e">ezMath::Swap</a>(this-&gt;m_pFreeElementStack, other.m_pFreeElementStack);</div>
+<div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;  <a class="code" href="../../db/d78/namespaceez_math.htm#a0cd624055a97c96719b925cb11e6a08e">ezMath::Swap</a>(this-&gt;m_Comparer, other.m_Comparer);</div>
+<div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160; </div>
+<div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;  <span class="comment">// after we swapped the root nodes, fix up their parent nodes</span></div>
+<div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;  this-&gt;m_pRoot-&gt;m_pParent = <span class="keyword">reinterpret_cast&lt;</span>Node*<span class="keyword">&gt;</span>(&amp;this-&gt;m_NilNode);</div>
+<div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;  other.m_pRoot-&gt;m_pParent = <span class="keyword">reinterpret_cast&lt;</span>Node*<span class="keyword">&gt;</span>(&amp;other.m_NilNode);</div>
+<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160; </div>
+<div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;  <span class="comment">// the set allocator is stored in this array</span></div>
+<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;  m_Elements.Swap(other.m_Elements);</div>
+<div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;}</div>
+<div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160; </div>
+<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> ValueType, <span class="keyword">typename</span> Comparer&gt;</div>
+<div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d1/d43/classez_map_base.htm">ezMapBase&lt;KeyType, ValueType, Comparer&gt;::SwapNilNode</a>(Node*&amp; pCurNode, NilNode* pOld, NilNode* pNew)</div>
+<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;{</div>
+<div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;  <span class="keywordflow">if</span> (pCurNode == pOld)</div>
+<div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;  {</div>
+<div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;    pCurNode = <span class="keyword">reinterpret_cast&lt;</span>Node*<span class="keyword">&gt;</span>(pNew);</div>
+<div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;  }</div>
+<div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160; </div>
+<div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160;  SwapNilNode(pCurNode-&gt;m_pLink[0], pOld, pNew);</div>
+<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;  SwapNilNode(pCurNode-&gt;m_pLink[1], pOld, pNew);</div>
+<div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astructez_map_base_1_1_const_iterator_htm_a66d3c856b8cffbccf434341227dffd17"><div class="ttname"><a href="../../dd/d35/structez_map_base_1_1_const_iterator.htm#a66d3c856b8cffbccf434341227dffd17">ezMapBase::ConstIterator::Next</a></div><div class="ttdeci">void Next()</div><div class="ttdoc">Advances the iterator to the next element in the map. The iterator will not be valid anymore,...</div><div class="ttdef"><b>Definition:</b> Map_inl.h:10</div></div>
@@ -1005,20 +1004,20 @@ $(document).ready(function(){initNavTree('de/d1a/_map__inl_8h_source.htm','../..
 <div class="ttc" id="aclassez_map_base_htm_a607565550de36a41762eec35182ad52d"><div class="ttname"><a href="../../d1/d43/classez_map_base.htm#a607565550de36a41762eec35182ad52d">ezMapBase::GetValueOrDefault</a></div><div class="ttdeci">const ValueType &amp; GetValueOrDefault(const CompatibleKeyType &amp;key, const ValueType &amp;defaultValue) const</div><div class="ttdoc">Either returns the value of the entry with the given key, if found, or the provided default value.</div></div>
 <div class="ttc" id="aclassez_map_base_htm_a05768a8676508c2e5b971386f2cf5a8e"><div class="ttname"><a href="../../d1/d43/classez_map_base.htm#a05768a8676508c2e5b971386f2cf5a8e">ezMapBase::GetLastIterator</a></div><div class="ttdeci">Iterator GetLastIterator()</div><div class="ttdoc">Returns an Iterator to the very last element. For reverse traversal.</div><div class="ttdef"><b>Definition:</b> Map_inl.h:204</div></div>
 <div class="ttc" id="aclassez_map_base_htm_a093bd0438e613ffff840693d6134cd63"><div class="ttname"><a href="../../d1/d43/classez_map_base.htm#a093bd0438e613ffff840693d6134cd63">ezMapBase::GetValue</a></div><div class="ttdeci">const ValueType * GetValue(const CompatibleKeyType &amp;key) const</div><div class="ttdoc">Returns a pointer to the value of the entry with the given key if found, otherwise returns nullptr.</div></div>
-<div class="ttc" id="aclassez_map_base_htm_aea57c64492f82788afe5ee6e9161d8bf"><div class="ttname"><a href="../../d1/d43/classez_map_base.htm#aea57c64492f82788afe5ee6e9161d8bf">ezMapBase::Swap</a></div><div class="ttdeci">void Swap(ezMapBase&lt; KeyType, ValueType, Comparer &gt; &amp;other)</div><div class="ttdoc">Swaps this map with the other one.</div><div class="ttdef"><b>Definition:</b> Map_inl.h:865</div></div>
+<div class="ttc" id="aclassez_map_base_htm_aea57c64492f82788afe5ee6e9161d8bf"><div class="ttname"><a href="../../d1/d43/classez_map_base.htm#aea57c64492f82788afe5ee6e9161d8bf">ezMapBase::Swap</a></div><div class="ttdeci">void Swap(ezMapBase&lt; KeyType, ValueType, Comparer &gt; &amp;other)</div><div class="ttdoc">Swaps this map with the other one.</div><div class="ttdef"><b>Definition:</b> Map_inl.h:864</div></div>
 <div class="ttc" id="astructez_map_base_1_1_const_iterator_htm"><div class="ttname"><a href="../../dd/d35/structez_map_base_1_1_const_iterator.htm">ezMapBase::ConstIterator</a></div><div class="ttdoc">Base class for all iterators.</div><div class="ttdef"><b>Definition:</b> Map.h:39</div></div>
-<div class="ttc" id="anamespaceez_math_htm_a0cd624055a97c96719b925cb11e6a08e"><div class="ttname"><a href="../../db/d78/namespaceez_math.htm#a0cd624055a97c96719b925cb11e6a08e">ezMath::Swap</a></div><div class="ttdeci">EZ_ALWAYS_INLINE void Swap(T &amp;ref_f1, T &amp;ref_f2)</div><div class="ttdoc">Swaps the values in the two variables f1 and f2.</div><div class="ttdef"><b>Definition:</b> Math_inl.h:203</div></div>
+<div class="ttc" id="anamespaceez_math_htm_a0cd624055a97c96719b925cb11e6a08e"><div class="ttname"><a href="../../db/d78/namespaceez_math.htm#a0cd624055a97c96719b925cb11e6a08e">ezMath::Swap</a></div><div class="ttdeci">EZ_ALWAYS_INLINE void Swap(T &amp;ref_f1, T &amp;ref_f2)</div><div class="ttdoc">Swaps the values in the two variables f1 and f2.</div><div class="ttdef"><b>Definition:</b> Math_inl.h:221</div></div>
 <div class="ttc" id="astructez_map_base_1_1_iterator_htm"><div class="ttname"><a href="../../da/d8e/structez_map_base_1_1_iterator.htm">ezMapBase::Iterator</a></div><div class="ttdoc">Forward Iterator to iterate over all elements in sorted order.</div><div class="ttdef"><b>Definition:</b> Map.h:105</div></div>
-<div class="ttc" id="aclassez_map_base_htm_a5979d1ba64cd2de6e724229344b31b83"><div class="ttname"><a href="../../d1/d43/classez_map_base.htm#a5979d1ba64cd2de6e724229344b31b83">ezMapBase::operator!=</a></div><div class="ttdeci">bool operator!=(const ezMapBase&lt; KeyType, ValueType, Comparer &gt; &amp;rhs) const</div><div class="ttdoc">Comparison operator.</div><div class="ttdef"><b>Definition:</b> Map_inl.h:814</div></div>
+<div class="ttc" id="aclassez_map_base_htm_a5979d1ba64cd2de6e724229344b31b83"><div class="ttname"><a href="../../d1/d43/classez_map_base.htm#a5979d1ba64cd2de6e724229344b31b83">ezMapBase::operator!=</a></div><div class="ttdeci">bool operator!=(const ezMapBase&lt; KeyType, ValueType, Comparer &gt; &amp;rhs) const</div><div class="ttdoc">Comparison operator.</div><div class="ttdef"><b>Definition:</b> Map_inl.h:813</div></div>
 <div class="ttc" id="aclassez_map_base_htm_a07307d10c2c64e866f69a11665c8186f"><div class="ttname"><a href="../../d1/d43/classez_map_base.htm#a07307d10c2c64e866f69a11665c8186f">ezMapBase::UpperBound</a></div><div class="ttdeci">Iterator UpperBound(const CompatibleKeyType &amp;key)</div><div class="ttdoc">Returns an Iterator to the element with a key that is LARGER than the given key. Returns an invalid i...</div></div>
-<div class="ttc" id="aclassez_map_base_htm_a29ebab2c0b4ca2184e86fcc7354de31e"><div class="ttname"><a href="../../d1/d43/classez_map_base.htm#a29ebab2c0b4ca2184e86fcc7354de31e">ezMapBase::operator==</a></div><div class="ttdeci">bool operator==(const ezMapBase&lt; KeyType, ValueType, Comparer &gt; &amp;rhs) const</div><div class="ttdoc">Comparison operator.</div><div class="ttdef"><b>Definition:</b> Map_inl.h:790</div></div>
+<div class="ttc" id="aclassez_map_base_htm_a29ebab2c0b4ca2184e86fcc7354de31e"><div class="ttname"><a href="../../d1/d43/classez_map_base.htm#a29ebab2c0b4ca2184e86fcc7354de31e">ezMapBase::operator==</a></div><div class="ttdeci">bool operator==(const ezMapBase&lt; KeyType, ValueType, Comparer &gt; &amp;rhs) const</div><div class="ttdoc">Comparison operator.</div><div class="ttdef"><b>Definition:</b> Map_inl.h:789</div></div>
 <div class="ttc" id="aclassez_map_base_htm_a39ec812de69d422bdff1acc12d1d516f"><div class="ttname"><a href="../../d1/d43/classez_map_base.htm#a39ec812de69d422bdff1acc12d1d516f">ezMapBase::Remove</a></div><div class="ttdeci">bool Remove(const CompatibleKeyType &amp;key)</div><div class="ttdoc">Erases the key/value pair with the given key, if it exists. O(log n) operation.</div><div class="ttdef"><b>Definition:</b> Map_inl.h:530</div></div>
 <div class="ttc" id="aclassez_map_base_htm_ac8a2e13c622f9827d6185dba8977552c"><div class="ttname"><a href="../../d1/d43/classez_map_base.htm#ac8a2e13c622f9827d6185dba8977552c">ezMapBase::FindOrAdd</a></div><div class="ttdeci">Iterator FindOrAdd(CompatibleKeyType &amp;&amp;key, bool *out_pExisted=nullptr)</div><div class="ttdoc">Searches for the given key and returns an iterator to it. If it did not exist yet,...</div><div class="ttdef"><b>Definition:</b> Map_inl.h:442</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_6b567e6755824bd0b8ffd754b9d67ac0.htm">Containers</a></li><li class="navelem"><a class="el" href="../../dir_ab7c7fd106dde24a64865a60f78fe0d2.htm">Implementation</a></li><li class="navelem"><b>Map_inl.h</b></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:21:54 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:16 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.04</span>
+   &#160;<span id="projectnumber">Release 23.11</span>
    </div>
   </td>
  </tr>
@@ -89,53 +89,51 @@ $(document).ready(function(){initNavTree('d0/d74/_path_pattern_filter_8h_source.
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;Foundation/Containers/DynamicArray.h&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;Foundation/Strings/String.h&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;Foundation/Strings/StringView.h&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;ToolsFoundation/ToolsFoundationDLL.h&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="../../d9/d5b/structez_path_pattern.htm">   13</a></span>&#160;<span class="keyword">struct </span>EZ_TOOLSFOUNDATION_DLL <a class="code" href="../../d9/d5b/structez_path_pattern.htm">ezPathPattern</a></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keyword">enum</span> MatchType : ezUInt8</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    Exact,</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    StartsWith,</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    EndsWith,</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    Contains</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  };</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  MatchType m_MatchType = MatchType::Exact;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sString;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordtype">void</span> Configure(<span class="keyword">const</span> <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sText);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordtype">bool</span> Matches(<span class="keyword">const</span> <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sText) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;};</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="../../d8/d68/structez_path_pattern_filter.htm">   35</a></span>&#160;<span class="keyword">struct </span>EZ_TOOLSFOUNDATION_DLL <a class="code" href="../../d8/d68/structez_path_pattern_filter.htm">ezPathPatternFilter</a></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezPathPattern&gt;</a> m_ExcludePatterns;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezPathPattern&gt;</a> m_IncludePatterns;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ReadConfigFile(<span class="keyword">const</span> <span class="keywordtype">char</span>* szFile, <span class="keyword">const</span> <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezString&gt;</a>&amp; preprocessorDefines);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordtype">void</span> AddFilter(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sText, <span class="keywordtype">bool</span> bIncludeFilter);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordtype">bool</span> PassesFilters(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sText) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;};</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;Foundation/Strings/String.h&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;ToolsFoundation/ToolsFoundationDLL.h&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="../../d9/d5b/structez_path_pattern.htm">   11</a></span>&#160;<span class="keyword">struct </span>EZ_TOOLSFOUNDATION_DLL <a class="code" href="../../d9/d5b/structez_path_pattern.htm">ezPathPattern</a></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keyword">enum</span> MatchType : ezUInt8</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    Exact,</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    StartsWith,</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    EndsWith,</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    Contains</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  };</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  MatchType m_MatchType = MatchType::Exact;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sString;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keywordtype">void</span> Configure(<span class="keyword">const</span> <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sText);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keywordtype">bool</span> Matches(<span class="keyword">const</span> <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sText) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;};</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="../../d8/d68/structez_path_pattern_filter.htm">   33</a></span>&#160;<span class="keyword">struct </span>EZ_TOOLSFOUNDATION_DLL <a class="code" href="../../d8/d68/structez_path_pattern_filter.htm">ezPathPatternFilter</a></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezPathPattern&gt;</a> m_ExcludePatterns;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezPathPattern&gt;</a> m_IncludePatterns;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ReadConfigFile(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sFile, <span class="keyword">const</span> <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezString&gt;</a>&amp; preprocessorDefines);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordtype">void</span> AddFilter(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sText, <span class="keywordtype">bool</span> bIncludeFilter);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordtype">bool</span> PassesFilters(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sText) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition:</b> Types.h:50</div></div>
 <div class="ttc" id="astructez_hybrid_string_htm"><div class="ttname"><a href="../../d4/d53/structez_hybrid_string.htm">ezHybridString&lt; 32, ezDefaultAllocatorWrapper &gt;</a></div></div>
-<div class="ttc" id="astructez_path_pattern_htm"><div class="ttname"><a href="../../d9/d5b/structez_path_pattern.htm">ezPathPattern</a></div><div class="ttdoc">Describes a single path pattern.</div><div class="ttdef"><b>Definition:</b> PathPatternFilter.h:13</div></div>
+<div class="ttc" id="astructez_path_pattern_htm"><div class="ttname"><a href="../../d9/d5b/structez_path_pattern.htm">ezPathPattern</a></div><div class="ttdoc">Describes a single path pattern.</div><div class="ttdef"><b>Definition:</b> PathPatternFilter.h:11</div></div>
 <div class="ttc" id="aclassez_dynamic_array_htm"><div class="ttname"><a href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt; ezPathPattern &gt;</a></div></div>
-<div class="ttc" id="astructez_path_pattern_filter_htm"><div class="ttname"><a href="../../d8/d68/structez_path_pattern_filter.htm">ezPathPatternFilter</a></div><div class="ttdoc">A collection of ezPathPatterns.</div><div class="ttdef"><b>Definition:</b> PathPatternFilter.h:35</div></div>
+<div class="ttc" id="astructez_path_pattern_filter_htm"><div class="ttname"><a href="../../d8/d68/structez_path_pattern_filter.htm">ezPathPatternFilter</a></div><div class="ttdoc">A collection of ezPathPatterns.</div><div class="ttdef"><b>Definition:</b> PathPatternFilter.h:33</div></div>
 <div class="ttc" id="astructez_string_view_htm"><div class="ttname"><a href="../../de/db8/structez_string_view.htm">ezStringView</a></div><div class="ttdoc">ezStringView represent a read-only sub-string of a larger string, as it can store a dedicated string ...</div><div class="ttdef"><b>Definition:</b> StringView.h:23</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_07792d309f5611e62640e8ec1fb96105.htm">Tools</a></li><li class="navelem"><a class="el" href="../../dir_8e80be223102188e67d1ce7cce146de0.htm">Libs</a></li><li class="navelem"><a class="el" href="../../dir_2c504b9267ae5782c5ed966d1eebd572.htm">ToolsFoundation</a></li><li class="navelem"><a class="el" href="../../dir_3e07097f31fb2dc43e8fdda432741100.htm">Utilities</a></li><li class="navelem"><b>PathPatternFilter.h</b></li>
-    <li class="footer">Generated on Sat Mar 25 2023 19:22:00 for ezEngine by
+    <li class="footer">Generated on Tue Nov 7 2023 21:39:22 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

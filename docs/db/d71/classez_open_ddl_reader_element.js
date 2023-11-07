@@ -1,12 +1,12 @@
 var classez_open_ddl_reader_element =
 [
     [ "EZ_DECLARE_POD_TYPE", "db/d71/classez_open_ddl_reader_element.htm#afa52f5a10da99fb4d030773fefe3ac28", null ],
-    [ "FindChild", "db/d71/classez_open_ddl_reader_element.htm#a07004bbb634b507664d1eaf1758a4de5", null ],
-    [ "FindChildOfType", "db/d71/classez_open_ddl_reader_element.htm#a3fcf32febf38c45c4c15c9716321f572", null ],
-    [ "FindChildOfType", "db/d71/classez_open_ddl_reader_element.htm#a0d2f784cce95a0ceca2857f73e25cdc8", null ],
-    [ "GetCustomType", "db/d71/classez_open_ddl_reader_element.htm#a20538c87119ef00a58f3b039379563fd", null ],
+    [ "FindChild", "db/d71/classez_open_ddl_reader_element.htm#a95aeda263ae37ffe771c6f1ca94910e6", null ],
+    [ "FindChildOfType", "db/d71/classez_open_ddl_reader_element.htm#afa490e9d4efdab2f0380f74af6ed190f", null ],
+    [ "FindChildOfType", "db/d71/classez_open_ddl_reader_element.htm#ad99d9778a2ac57851089d61372715f32", null ],
+    [ "GetCustomType", "db/d71/classez_open_ddl_reader_element.htm#a0dc94c18f19cf4c722eee12d3dee0d42", null ],
     [ "GetFirstChild", "db/d71/classez_open_ddl_reader_element.htm#a38abb06f534da456ec4e0ae2ea18168d", null ],
-    [ "GetName", "db/d71/classez_open_ddl_reader_element.htm#a84bf48f2e9c1f329239d9c2bda9cfdb0", null ],
+    [ "GetName", "db/d71/classez_open_ddl_reader_element.htm#a70f7fb7d4c292482fe2d7220be2a52f0", null ],
     [ "GetNumChildObjects", "db/d71/classez_open_ddl_reader_element.htm#a11805deee98259f9816d1a36e80471de", null ],
     [ "GetNumPrimitives", "db/d71/classez_open_ddl_reader_element.htm#a2cadd2b5cbda198c73088cdd15351b05", null ],
     [ "GetPrimitivesBool", "db/d71/classez_open_ddl_reader_element.htm#a99b4dd2891e42dd4cb50ee6c143dbd31", null ],
@@ -26,7 +26,7 @@ var classez_open_ddl_reader_element =
     [ "HasName", "db/d71/classez_open_ddl_reader_element.htm#a1cf22aa3249fc426e73ad09d7a2e3a3e", null ],
     [ "HasPrimitives", "db/d71/classez_open_ddl_reader_element.htm#aacc5908328a8244d3786d2a8f4220c1f", null ],
     [ "IsCustomType", "db/d71/classez_open_ddl_reader_element.htm#a6b816c7b67c04fa31edb22bd374e484b", null ],
-    [ "IsCustomType", "db/d71/classez_open_ddl_reader_element.htm#aeaf3c79427e0d99a76e869ba9b0e9a64", null ],
+    [ "IsCustomType", "db/d71/classez_open_ddl_reader_element.htm#a3e78e3b7682622e2bf9270b5f72a3206", null ],
     [ "IsNameGlobal", "db/d71/classez_open_ddl_reader_element.htm#a6fca5cd3571ccdb8fefb189586af08cc", null ],
     [ "ezOpenDdlReader", "db/d71/classez_open_ddl_reader_element.htm#aec7e8b32b7796cb5a8126dd9cdb0d677", null ]
 ];
