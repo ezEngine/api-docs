@@ -1,5 +1,6 @@
 var NAVTREEINDEX56 =
 {
+"d6/dc5/classez_clock.htm#a2937c10004fbecf2273ea2c8cb4b0ebd":[4,0,296,12],
 "d6/dc5/classez_clock.htm#a4f4637cfab7e1c26632ff06670ddc943":[4,0,296,7],
 "d6/dc5/classez_clock.htm#a5819d7bd9a6dc8e155d02a49b990ebc8":[4,0,296,17],
 "d6/dc5/classez_clock.htm#a5d36d93fac4c9c94854cfde632258a74":[4,0,296,21],
@@ -248,6 +249,5 @@ var NAVTREEINDEX56 =
 "d6/ddf/classez_serialization_context.htm#a7a126e573d6ecfc3569d77d4eac814eb":[4,0,2308,2],
 "d6/de0/structez_move_to_component_flags.htm":[4,0,1336],
 "d6/de0/structez_move_to_component_flags.htm#a9cebd746c2d5d3415d636fa34ec5e2f7":[4,0,1336,2],
-"d6/de0/structez_move_to_component_flags.htm#a9cebd746c2d5d3415d636fa34ec5e2f7a89f58fad8487208e0fb757b426d75d52":[4,0,1336,2,2],
-"d6/de0/structez_move_to_component_flags.htm#a9cebd746c2d5d3415d636fa34ec5e2f7ac6b3494bd7e8b500f25a8b7b8b9666f3":[4,0,1336,2,1]
+"d6/de0/structez_move_to_component_flags.htm#a9cebd746c2d5d3415d636fa34ec5e2f7a89f58fad8487208e0fb757b426d75d52":[4,0,1336,2,2]
 };

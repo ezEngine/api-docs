@@ -1,5 +1,6 @@
 var NAVTREEINDEX64 =
 {
+"d7/dca/classez_float16.htm#a52cdb73a4e3ec338c3e27314d3ef9788":[4,0,705,7],
 "d7/dca/classez_float16.htm#a736f1377257e8276c46d5dab34639878":[4,0,705,8],
 "d7/dca/classez_float16.htm#a757c56b5d6b5a7244487fbab461f4369":[4,0,705,5],
 "d7/dca/classez_float16.htm#a9bfbce5a475ac1af052568a5aaa9e68e":[4,0,705,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX64 =
 "d7/de7/classez_g_a_l_vertex_declaration_d_x11.htm#a0188bcaeae07d712efdd6d1a3d8d2917":[4,0,882,0],
 "d7/de7/classez_g_a_l_vertex_declaration_d_x11.htm#a751d661d8e98e0a07252ec63209da06c":[4,0,882,4],
 "d7/de7/classez_g_a_l_vertex_declaration_d_x11.htm#a7d1a67079939bb6e5e0de0ab9fbe71fc":[4,0,882,7],
-"d7/de7/classez_g_a_l_vertex_declaration_d_x11.htm#aa7e540e575bcedfc810e1956f76200ec":[4,0,882,3],
-"d7/de7/classez_g_a_l_vertex_declaration_d_x11.htm#ad1c6b4048862438ab8093223c60c2351":[4,0,882,2]
+"d7/de7/classez_g_a_l_vertex_declaration_d_x11.htm#aa7e540e575bcedfc810e1956f76200ec":[4,0,882,3]
 };

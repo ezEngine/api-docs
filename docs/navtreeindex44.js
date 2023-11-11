@@ -1,5 +1,6 @@
 var NAVTREEINDEX44 =
 {
+"d5/d3a/classez_set_object_property_command.htm#a60a27dd9c28b87b831113418cf04b8cd":[4,0,2315,2],
 "d5/d3a/classez_set_object_property_command.htm#a636531af31a3cf1f31d4dc1c4a85aed4":[4,0,2315,6],
 "d5/d3a/classez_set_object_property_command.htm#a67b57d53274933e946d453c816feb9f9":[4,0,2315,3],
 "d5/d3a/classez_set_object_property_command.htm#aca394f5c016427790c5fdfd9b76c276c":[4,0,2315,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX44 =
 "d5/d5f/classez_asset_curator.htm#a371bdd29054b8103976a3804a25769de":[4,0,186,25],
 "d5/d5f/classez_asset_curator.htm#a3941107df0fbc5d7369f3a1a7692a5b3":[4,0,186,49],
 "d5/d5f/classez_asset_curator.htm#a3ae1aa83246200fcceb920119c932195":[4,0,186,52],
-"d5/d5f/classez_asset_curator.htm#a3d33cd226f1090cbaa5d65dc6da6eb6d":[4,0,186,35],
-"d5/d5f/classez_asset_curator.htm#a41565f19f13e633237d780d3ebd2e166":[4,0,186,24]
+"d5/d5f/classez_asset_curator.htm#a3d33cd226f1090cbaa5d65dc6da6eb6d":[4,0,186,35]
 };

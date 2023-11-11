@@ -1,5 +1,6 @@
 var NAVTREEINDEX65 =
 {
+"d7/de7/classez_g_a_l_vertex_declaration_d_x11.htm#ad1c6b4048862438ab8093223c60c2351":[4,0,882,2],
 "d7/de7/classez_g_a_l_vertex_declaration_d_x11.htm#adb628535376e75753ff87e46e017ee6a":[4,0,882,1],
 "d7/de7/classez_g_a_l_vertex_declaration_d_x11.htm#aedd88a418f4111b0f670c96423cfd850":[4,0,882,6],
 "d7/de7/classez_g_a_l_vertex_declaration_d_x11.htm#af6317ae5bf9c369d27c87f6b3ec93352":[4,0,882,5],
@@ -248,6 +249,5 @@ var NAVTREEINDEX65 =
 "d8/d18/classez_animated_mesh_asset_document_generator.htm#a7c3378b5cdca0150a48fb53f44f74891":[4,0,92,3],
 "d8/d19/structez_engine_process_document_context_flags.htm":[4,0,630],
 "d8/d19/structez_engine_process_document_context_flags.htm#a4113480bd8dccbb0f71e89b8d67a36e6":[4,0,630,1],
-"d8/d19/structez_engine_process_document_context_flags.htm#a41307d35d778de7c21a91036547ae2a9":[4,0,630,2],
-"d8/d19/structez_engine_process_document_context_flags.htm#a41307d35d778de7c21a91036547ae2a9a19fe5071d5d60385fdf968b35c2193ed":[4,0,630,2,0]
+"d8/d19/structez_engine_process_document_context_flags.htm#a41307d35d778de7c21a91036547ae2a9":[4,0,630,2]
 };

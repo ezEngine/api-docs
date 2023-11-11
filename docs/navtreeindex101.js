@@ -1,5 +1,6 @@
 var NAVTREEINDEX101 =
 {
+"dc/d8c/structez_simd_math.htm":[4,0,2354],
 "dc/d8f/classez_debug_renderer_context.htm":[4,0,479],
 "dc/d8f/classez_debug_renderer_context.htm#a36176b2c88b4b38d0b61404651c7205c":[4,0,479,1],
 "dc/d8f/classez_debug_renderer_context.htm#a91b3ec07980fed3e0ca79e124ec5a008":[4,0,479,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX101 =
 "dc/da7/classez_color_gradient_asset_document_manager.htm":[4,0,333],
 "dc/da7/classez_color_gradient_asset_document_manager.htm#a3d7d4719cf3a75b5b294931c4ae63003":[4,0,333,2],
 "dc/da7/classez_color_gradient_asset_document_manager.htm#a56d1b2dd102536fd7d3b7bf86524e3b0":[4,0,333,4],
-"dc/da7/classez_color_gradient_asset_document_manager.htm#a57eda04af30bf0f336f9ac2024495813":[4,0,333,1],
-"dc/da7/classez_color_gradient_asset_document_manager.htm#a7e821271f6d34a48411212c0e4aed0d1":[4,0,333,5]
+"dc/da7/classez_color_gradient_asset_document_manager.htm#a57eda04af30bf0f336f9ac2024495813":[4,0,333,1]
 };

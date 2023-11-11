@@ -1,5 +1,6 @@
 var NAVTREEINDEX67 =
 {
+"d8/d3a/classez_qt_engine_view_widget.htm#af89929f479c68dda9fb520e0eec747c2":[4,0,1891,17],
 "d8/d3a/classez_qt_engine_view_widget.htm#afad8904786613b5698843bcb06b2c539":[4,0,1891,15],
 "d8/d3a/classez_qt_engine_view_widget.htm#afd160e7e65f020f947dc22b684e2c162":[4,0,1891,20],
 "d8/d3d/classez_id_table_base_1_1_const_iterator.htm":[4,0,1004,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX67 =
 "d8/d6a/classez_px_settings_component.htm#a854add67aa513a5fcbf9853c29cf245a":[4,0,1800,8],
 "d8/d6a/classez_px_settings_component.htm#a9cbc7827ae70f3e4757485ac355ce769":[4,0,1800,17],
 "d8/d6a/classez_px_settings_component.htm#aa3153f28a503c864e09ab1fa7e5517a1":[4,0,1800,14],
-"d8/d6a/classez_px_settings_component.htm#aaf8108857e034bf25744386af87ce4f8":[4,0,1800,6],
-"d8/d6a/classez_px_settings_component.htm#ab43914b105448523cb1013cf337be993":[4,0,1800,4]
+"d8/d6a/classez_px_settings_component.htm#aaf8108857e034bf25744386af87ce4f8":[4,0,1800,6]
 };

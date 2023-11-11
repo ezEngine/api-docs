@@ -1,5 +1,6 @@
 var NAVTREEINDEX75 =
 {
+"d9/d53/classez_remove_object_command.htm#aa3b929324ad5a47e8e9c0e9142edf077":[4,0,2126,0],
 "d9/d53/classez_remove_object_command.htm#ae7ae8aed33fa940a4879aa1a2de85e25":[4,0,2126,1],
 "d9/d53/classez_remove_object_command.htm#afdee70609591b5a604aa346e2cc626e4":[4,0,2126,3],
 "d9/d55/structez_texture_atlas_creation_desc_1_1_item.htm":[4,0,2592,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX75 =
 "d9/d7c/classez_shader_resource.htm#a22a76d12d896f5caa466ad3298caa15c":[4,0,2336,5],
 "d9/d7c/classez_shader_resource.htm#a666a5c8dda536fa0cd2822613d97653e":[4,0,2336,4],
 "d9/d7c/classez_shader_resource.htm#a811b8002a0b34aee40ea67ac5f6fadb4":[4,0,2336,2],
-"d9/d7c/classez_shader_resource.htm#aad6c8cbdfcb976a33f74acae29c1a0e6":[4,0,2336,3],
-"d9/d7c/classez_shader_resource.htm#ab53e2a60d95f2246d2f199e22341a545":[4,0,2336,0]
+"d9/d7c/classez_shader_resource.htm#aad6c8cbdfcb976a33f74acae29c1a0e6":[4,0,2336,3]
 };

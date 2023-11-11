@@ -1,5 +1,6 @@
 var NAVTREEINDEX116 =
 {
+"de/d6f/classez_fallback_game_state.htm#a6d852b7a62cda82d216bc575ae82c3ed":[4,0,681,36],
 "de/d6f/classez_fallback_game_state.htm#a71caebca9447a17609a0f287dacbbb3f":[4,0,681,25],
 "de/d6f/classez_fallback_game_state.htm#a79fd0b8ffdacb255dea2495ad3b94348":[4,0,681,20],
 "de/d6f/classez_fallback_game_state.htm#a839afa5dfd24f5ad74638874064adb49":[4,0,681,17],
@@ -248,6 +249,5 @@ var NAVTREEINDEX116 =
 "de/d8c/structez_window_mode.htm#a8f35db4cb20b0a05f22e3ba8f302d135":[4,0,2834,0],
 "de/d8c/structez_window_mode.htm#a9d016072ce39a9c85bb11f609f39b843":[4,0,2834,1],
 "de/d8c/structez_window_mode.htm#a9d016072ce39a9c85bb11f609f39b843a41718a2bed1f35f3e92e65bc6fe1b3e6":[4,0,2834,1,4],
-"de/d8c/structez_window_mode.htm#a9d016072ce39a9c85bb11f609f39b843a7d53b3b3eeb5a83d56dccc1b323bc91c":[4,0,2834,1,0],
-"de/d8c/structez_window_mode.htm#a9d016072ce39a9c85bb11f609f39b843aa9db4cf767368cc58312c4d67364c052":[4,0,2834,1,2]
+"de/d8c/structez_window_mode.htm#a9d016072ce39a9c85bb11f609f39b843a7d53b3b3eeb5a83d56dccc1b323bc91c":[4,0,2834,1,0]
 };

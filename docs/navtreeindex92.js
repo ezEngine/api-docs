@@ -1,5 +1,6 @@
 var NAVTREEINDEX92 =
 {
+"db/d67/structez_vulkan_allocation_create_info.htm#afd18bd0f113aff3243bf68df5ca03d82":[4,0,2824,3],
 "db/d68/classez_shader_utils.htm":[4,0,2344],
 "db/d68/classez_shader_utils.htm#a56a836ad8f498be018114e5665de3519":[4,0,2344,1],
 "db/d68/classez_shader_utils.htm#a56a836ad8f498be018114e5665de3519aa5f0a7ca56ff1581731aa481e45f96d5":[4,0,2344,1,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX92 =
 "db/d85/structez_c_var_value.htm#a4229da35bc087f6198b2c517a6269eeea196aa937d8e41532bb5b5c3a45837e44":[4,0,464,0,3],
 "db/d85/structez_c_var_value.htm#a4229da35bc087f6198b2c517a6269eeea367013326da2a4422f44757fee34dd33":[4,0,464,0,2],
 "db/d85/structez_c_var_value.htm#a4229da35bc087f6198b2c517a6269eeea757f5320c8a61916f48c504f4f247cf8":[4,0,464,0,0],
-"db/d85/structez_c_var_value.htm#a4229da35bc087f6198b2c517a6269eeea9eec97fe8429d6611da9a3a4712a0f30":[4,0,464,0,4],
-"db/d86/classez_anim_graph_instance.htm":[4,0,125]
+"db/d85/structez_c_var_value.htm#a4229da35bc087f6198b2c517a6269eeea9eec97fe8429d6611da9a3a4712a0f30":[4,0,464,0,4]
 };

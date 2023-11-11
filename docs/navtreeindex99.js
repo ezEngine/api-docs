@@ -1,5 +1,6 @@
 var NAVTREEINDEX99 =
 {
+"dc/d4b/classez_set_base.htm#a9c086e931d3c985838274f22f3fcd466":[4,0,2311,23],
 "dc/d4b/classez_set_base.htm#a9fddb61a95208ee0431f553e512959bd":[4,0,2311,26],
 "dc/d4b/classez_set_base.htm#aa70ba7d1d3d97df83dac701b08889523":[4,0,2311,25],
 "dc/d4b/classez_set_base.htm#aaf9b11b02b7dc68cd4a4d95f2e678ce5":[4,0,2311,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX99 =
 "dc/d62/classez_qt_item_delegate.htm#a6736e55a42a989ba0710ceed66af5431":[4,0,1926,5],
 "dc/d62/classez_qt_item_delegate.htm#a75ff62dd137530abfdd16806619826df":[4,0,1926,0],
 "dc/d62/classez_qt_item_delegate.htm#a857e73d0816d4c74dab3da0823e3991c":[4,0,1926,1],
-"dc/d62/classez_qt_item_delegate.htm#a96238d2b0adb7b153f51632ac9caa00c":[4,0,1926,2],
-"dc/d62/classez_qt_item_delegate.htm#ac3fb2a5f6af285f76de8611cb608959d":[4,0,1926,3]
+"dc/d62/classez_qt_item_delegate.htm#a96238d2b0adb7b153f51632ac9caa00c":[4,0,1926,2]
 };

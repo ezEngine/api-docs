@@ -1,5 +1,6 @@
 var NAVTREEINDEX61 =
 {
+"d7/d59/classez_picking_render_pass.htm#a12172f87bc2990087bc60e2f6736bcb0":[4,0,1623,2],
 "d7/d59/classez_picking_render_pass.htm#a151842bc9a90287118bb166c25f053d2":[4,0,1623,4],
 "d7/d59/classez_picking_render_pass.htm#a2d52000dc6d8c8fca65c8d6e3977a664":[4,0,1623,13],
 "d7/d59/classez_picking_render_pass.htm#a34c693fe259809ae8b222b77117d768b":[4,0,1623,15],
@@ -248,6 +249,5 @@ var NAVTREEINDEX61 =
 "d7/d7f/classez_g_a_l_rasterizer_state_handle.htm":[4,0,815],
 "d7/d7f/classez_g_a_l_rasterizer_state_handle.htm#a8dcbecd17dea850cbe8b1f3181dacb0f":[4,0,815,0],
 "d7/d81/structez_tex_conv_compression_mode.htm":[4,0,2571],
-"d7/d81/structez_tex_conv_compression_mode.htm#a541db46e5f17817a9ecd1e683ebbf239":[4,0,2571,1],
-"d7/d81/structez_tex_conv_compression_mode.htm#a541db46e5f17817a9ecd1e683ebbf239a1fe28e8c38c044db9c0b982a39b6e583":[4,0,2571,1,3]
+"d7/d81/structez_tex_conv_compression_mode.htm#a541db46e5f17817a9ecd1e683ebbf239":[4,0,2571,1]
 };

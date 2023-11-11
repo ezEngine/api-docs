@@ -1,5 +1,6 @@
 var NAVTREEINDEX60 =
 {
+"d7/d3b/structez_camera_mode.htm#ac39ecbb13b1714621edb6e8b4b6d9b11":[4,0,266,1],
 "d7/d3b/structez_camera_mode.htm#ac39ecbb13b1714621edb6e8b4b6d9b11a19ac4cf1a155f957c7a21c8c1d87b5ae":[4,0,266,1,3],
 "d7/d3b/structez_camera_mode.htm#ac39ecbb13b1714621edb6e8b4b6d9b11a2246ce7dfc8b5b0f27509df8bc81476c":[4,0,266,1,0],
 "d7/d3b/structez_camera_mode.htm#ac39ecbb13b1714621edb6e8b4b6d9b11a292a9fc347243767d48f607722b2adb6":[4,0,266,1,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX60 =
 "d7/d59/classez_log_system_to_buffer.htm#a5197a2f8e521e0cbe7f07b40cee25728":[4,0,1224,1],
 "d7/d59/classez_log_system_to_buffer.htm#aefcb40598324e14e71136ea29094473b":[4,0,1224,0],
 "d7/d59/classez_picking_render_pass.htm":[4,0,1623],
-"d7/d59/classez_picking_render_pass.htm#a00be0eb2aab113dae75d9fcac7f73e9f":[4,0,1623,8],
-"d7/d59/classez_picking_render_pass.htm#a12172f87bc2990087bc60e2f6736bcb0":[4,0,1623,2]
+"d7/d59/classez_picking_render_pass.htm#a00be0eb2aab113dae75d9fcac7f73e9f":[4,0,1623,8]
 };

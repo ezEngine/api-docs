@@ -1,5 +1,6 @@
 var NAVTREEINDEX90 =
 {
+"db/d20/classez_scoped_ref_pointer.htm#ae9c64b0afbec5c21c269aeb146df87c5":[4,0,2258,6],
 "db/d21/classez_phantom_array_property.htm":[4,0,1599],
 "db/d21/classez_phantom_array_property.htm#a07e00561f30f95093b8bbf336990d9b1":[4,0,1599,4],
 "db/d21/classez_phantom_array_property.htm#a2968e2c36f0e130551a6018825fc34bf":[4,0,1599,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX90 =
 "db/d41/classez_particle_behavior___flies.htm#afeb75ed9a46d07350afc5d642e302666":[4,0,1453,8],
 "db/d42/classez_qt_tool_bar_action_map_view.htm":[4,0,2037],
 "db/d42/classez_qt_tool_bar_action_map_view.htm#a0b625a3e067a5188a5b6c7818be7a6ae":[4,0,2037,2],
-"db/d42/classez_qt_tool_bar_action_map_view.htm#a3142835bf1fd4123392588e57066705b":[4,0,2037,1],
-"db/d42/classez_qt_tool_bar_action_map_view.htm#acd2438fca64b98e4977ca2a2f4cc27ef":[4,0,2037,3]
+"db/d42/classez_qt_tool_bar_action_map_view.htm#a3142835bf1fd4123392588e57066705b":[4,0,2037,1]
 };

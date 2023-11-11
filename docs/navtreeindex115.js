@@ -1,5 +1,6 @@
 var NAVTREEINDEX115 =
 {
+"de/d52/classez_scene_document.htm#adfd049c3896475b42f1120634589fecfa9ead0d38e06ec253ca0ecbf6ea56e59b":[4,0,2237,0,0],
 "de/d52/classez_scene_document.htm#adfd049c3896475b42f1120634589fecfafc149351d98dcbf17361c6a449e6355e":[4,0,2237,0,1],
 "de/d52/classez_scene_document.htm#ae894d955f66a0843a3587bd229e720fb":[4,0,2237,27],
 "de/d52/classez_scene_document.htm#aec010ca676e5aa330a172d835211a8d6":[4,0,2237,47],
@@ -248,6 +249,5 @@ var NAVTREEINDEX115 =
 "de/d6f/classez_fallback_game_state.htm#a5ee37257515725f54faab0d271538de0":[4,0,681,11],
 "de/d6f/classez_fallback_game_state.htm#a623127bdfc5d7c84efb04a7c2a166866":[4,0,681,35],
 "de/d6f/classez_fallback_game_state.htm#a67640f021ae0e7389bcf5a5e86f8c3b1":[4,0,681,6],
-"de/d6f/classez_fallback_game_state.htm#a68f9ae166fb9211602bc43fcc4ca69ac":[4,0,681,22],
-"de/d6f/classez_fallback_game_state.htm#a6d852b7a62cda82d216bc575ae82c3ed":[4,0,681,36]
+"de/d6f/classez_fallback_game_state.htm#a68f9ae166fb9211602bc43fcc4ca69ac":[4,0,681,22]
 };

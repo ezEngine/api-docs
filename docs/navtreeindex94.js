@@ -1,5 +1,6 @@
 var NAVTREEINDEX94 =
 {
+"db/db4/structez_quad_particle_orientation.htm#a09407fee7f60ecf571a92b683b566500af6480603f2d5fa3a59bc6064242f1ec6":[4,0,2058,1,5],
 "db/db4/structez_quad_particle_orientation.htm#ace807338d432e0835134723c68911dce":[4,0,2058,0],
 "db/db5/structez_decal_mode.htm":[4,0,494],
 "db/db5/structez_decal_mode.htm#a09a70af6881fcd5e79d06088bb97a493":[4,0,494,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX94 =
 "db/dc8/structez_visual_script_component_handle.htm#a427fc7d29355b298297a80ae8a76cd8f":[4,0,2787,4],
 "db/dc8/structez_visual_script_component_handle.htm#a4e53962e58f36f4f60c532d405bf9daf":[4,0,2787,3],
 "db/dc8/structez_visual_script_component_handle.htm#ab7934e68b7d6c3783a2c941f40093c0d":[4,0,2787,5],
-"db/dc8/structez_visual_script_component_handle.htm#ae5aa6952dabf230464aae278e337d906":[4,0,2787,0],
-"db/dca/structogt__vox__palette.htm":[4,0,2896]
+"db/dc8/structez_visual_script_component_handle.htm#ae5aa6952dabf230464aae278e337d906":[4,0,2787,0]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX91 =
 {
+"db/d42/classez_qt_tool_bar_action_map_view.htm#acd2438fca64b98e4977ca2a2f4cc27ef":[4,0,2037,3],
 "db/d42/classez_qt_tool_bar_action_map_view.htm#af5ebd15fb78765a3f842ec1e4f953de1":[4,0,2037,0],
 "db/d42/structez_msg_move_character_controller.htm":[4,0,1360],
 "db/d42/structez_msg_move_character_controller.htm#a117b23d4504353e24b6ae9dae37c3eae":[4,0,1360,5],
@@ -248,6 +249,5 @@ var NAVTREEINDEX91 =
 "db/d67/structez_vulkan_allocation_create_info.htm":[4,0,2824],
 "db/d67/structez_vulkan_allocation_create_info.htm#a78efd42de78bb825e04455c98be0cdc6":[4,0,2824,2],
 "db/d67/structez_vulkan_allocation_create_info.htm#a8d7f4dcf23765335ffd718600bffb990":[4,0,2824,1],
-"db/d67/structez_vulkan_allocation_create_info.htm#aa148b204983ad2c81b7d71b43c391a6f":[4,0,2824,0],
-"db/d67/structez_vulkan_allocation_create_info.htm#afd18bd0f113aff3243bf68df5ca03d82":[4,0,2824,3]
+"db/d67/structez_vulkan_allocation_create_info.htm#aa148b204983ad2c81b7d71b43c391a6f":[4,0,2824,0]
 };

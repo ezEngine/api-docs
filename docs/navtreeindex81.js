@@ -1,5 +1,6 @@
 var NAVTREEINDEX81 =
 {
+"da/d34/classez_raw_memory_stream_reader.htm#af8eb901b7821a01abb72611791bbcffd":[4,0,2075,1],
 "da/d37/classez_qt_tree_search_filter_model.htm":[4,0,2038],
 "da/d37/classez_qt_tree_search_filter_model.htm#a059eb7acb2adc6a76436289a85ed9cc5":[4,0,2038,4],
 "da/d37/classez_qt_tree_search_filter_model.htm#a1edf1eb907950ab6f06e1991659a3e0b":[4,0,2038,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX81 =
 "da/d47/classez_rml_ui_internal_1_1_file_interface.htm#a47b1bd171a6eab986a36dbde7889fa4b":[4,0,11,8,4],
 "da/d47/classez_rml_ui_internal_1_1_file_interface.htm#a5c605f4daa57cf01324944a45971575a":[4,0,11,8,1],
 "da/d47/classez_rml_ui_internal_1_1_file_interface.htm#a62cd6799ab3b623b62a02a3f8d2c3866":[4,0,11,8,7],
-"da/d47/classez_rml_ui_internal_1_1_file_interface.htm#a725a6fdc690bfa5d6d55c697910f9003":[4,0,11,8,5],
-"da/d47/classez_rml_ui_internal_1_1_file_interface.htm#aaa6457f3a56ec30ce788d775f87acb84":[4,0,11,8,2]
+"da/d47/classez_rml_ui_internal_1_1_file_interface.htm#a725a6fdc690bfa5d6d55c697910f9003":[4,0,11,8,5]
 };

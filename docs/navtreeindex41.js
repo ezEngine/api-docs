@@ -1,5 +1,6 @@
 var NAVTREEINDEX41 =
 {
+"d4/dd9/structez_document_object_structure_event.htm#a68355c61d035b04e76b553e7d7c5b1f8":[4,0,556,0],
 "d4/dd9/structez_document_object_structure_event.htm#a68355c61d035b04e76b553e7d7c5b1f8a06be0bb4ebac56723d39b3eecb478641":[4,0,556,0,4],
 "d4/dd9/structez_document_object_structure_event.htm#a68355c61d035b04e76b553e7d7c5b1f8a263b47579a8f3fdc60fe3bb0bd48c152":[4,0,556,0,3],
 "d4/dd9/structez_document_object_structure_event.htm#a68355c61d035b04e76b553e7d7c5b1f8a2a748e1f8b0715665615d1c0fdb4ef67":[4,0,556,0,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX41 =
 "d4/dfd/classez_constant_property.htm":[4,0,407],
 "d4/dfd/classez_constant_property.htm#a3e569077e704aafd9a13e0c3ae35e6a8":[4,0,407,0],
 "d4/dfd/classez_constant_property.htm#a5380fcdc955151691ead0ef5b236893d":[4,0,407,3],
-"d4/dfd/classez_constant_property.htm#a850c8afbebe7607d8c0f687b66c6f7b7":[4,0,407,1],
-"d4/dfd/classez_constant_property.htm#ab113bdd226f8880b8a60028a88be938c":[4,0,407,2]
+"d4/dfd/classez_constant_property.htm#a850c8afbebe7607d8c0f687b66c6f7b7":[4,0,407,1]
 };

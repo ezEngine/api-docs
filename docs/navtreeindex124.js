@@ -1,5 +1,6 @@
 var NAVTREEINDEX124 =
 {
+"df/d58/classez_settings_component_manager.htm#a7889b2b00d2d90a638d2dc9108372cbc":[4,0,2318,4],
 "df/d58/classez_settings_component_manager.htm#a8eecf1dd9865218c93ce2de07fe740a2":[4,0,2318,1],
 "df/d58/classez_settings_component_manager.htm#aa359ecc03cf0a75b5339202690ad6e93":[4,0,2318,3],
 "df/d58/classez_settings_component_manager.htm#aede4f69b9b117478ec2d79a4b57fa62a":[4,0,2318,5],
@@ -248,6 +249,5 @@ var NAVTREEINDEX124 =
 "df/d74/structez_baked_probes_world_module_1_1_probe_index_data.htm#a19275b831ba91b74c0ce85dade1f9eb5":[4,0,215,0,0],
 "df/d74/structez_baked_probes_world_module_1_1_probe_index_data.htm#a8400a654cf8552e4ece7529003dbc356":[4,0,215,0,1],
 "df/d75/classez_decal_context.htm":[4,0,493],
-"df/d75/classez_decal_context.htm#a1624932e3aa039e33aa1f246d86ea4b1":[4,0,493,0],
-"df/d75/classez_decal_context.htm#a4d54bc8a47d605ac673c1e1787de68d7":[4,0,493,1]
+"df/d75/classez_decal_context.htm#a1624932e3aa039e33aa1f246d86ea4b1":[4,0,493,0]
 };

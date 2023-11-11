@@ -1,5 +1,6 @@
 var NAVTREEINDEX72 =
 {
+"d8/df3/structez_property_flags_1_1_bits.htm#a41e25ee16519dd1fd147e89bd1bca0f9":[4,0,1753,0,2],
 "d8/df3/structez_property_flags_1_1_bits.htm#a7f18b0c5ed4258755aa72a6fe5fb970c":[4,0,1753,0,1],
 "d8/df3/structez_property_flags_1_1_bits.htm#a8a447a09ca30498685fcf238c82a9814":[4,0,1753,0,6],
 "d8/df3/structez_property_flags_1_1_bits.htm#a8ff2f083e3cca9404764b6cdd7bd0243":[4,0,1753,0,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX72 =
 "d9/d0e/structez_clustered_data_g_p_u.htm#a16e98c42cd45e282544f413ab41e5ae7":[4,0,305,7],
 "d9/d0e/structez_clustered_data_g_p_u.htm#a17817315b642dc21ff423e1c5e2d0eb4":[4,0,305,10],
 "d9/d0e/structez_clustered_data_g_p_u.htm#a1f12d50342739f79a8c3a171a9444222":[4,0,305,0],
-"d9/d0e/structez_clustered_data_g_p_u.htm#a2fb0610588fa3817ad410d53a2ae117a":[4,0,305,9],
-"d9/d0e/structez_clustered_data_g_p_u.htm#a3f1753497c4a73a31b02f6cba8c1c668":[4,0,305,3]
+"d9/d0e/structez_clustered_data_g_p_u.htm#a2fb0610588fa3817ad410d53a2ae117a":[4,0,305,9]
 };

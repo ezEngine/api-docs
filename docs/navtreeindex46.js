@@ -1,5 +1,6 @@
 var NAVTREEINDEX46 =
 {
+"d5/d83/classez_editable_skeleton.htm#a351a893e1c8047ae6e30a9fe601baf76":[4,0,597,8],
 "d5/d83/classez_editable_skeleton.htm#a4759fabc597961ece1f479614e07646e":[4,0,597,0],
 "d5/d83/classez_editable_skeleton.htm#a600a9dd4e7dc5df36b9eff556ef094e5":[4,0,597,3],
 "d5/d83/classez_editable_skeleton.htm#a6036b7c365f9edffa884d87aff5f0aa1":[4,0,597,14],
@@ -248,6 +249,5 @@ var NAVTREEINDEX46 =
 "d5/d97/classez_substance_package_asset_document_manager.htm#ab10fe647ec40824f54ba4a9e8b52e553":[4,0,2528,7],
 "d5/d97/classez_substance_package_asset_document_manager.htm#aee8d54c30dcc8710aab1cd32c93a27ae":[4,0,2528,2],
 "d5/d98/classez_qt_extract_geometry_dlg.htm":[4,0,1899],
-"d5/d98/classez_qt_extract_geometry_dlg.htm#a14cf6203c97d161aaf05e2b559ea8f7a":[4,0,1899,0],
-"d5/d98/structez_msg_animation_pose_updated.htm":[4,0,1341]
+"d5/d98/classez_qt_extract_geometry_dlg.htm#a14cf6203c97d161aaf05e2b559ea8f7a":[4,0,1899,0]
 };

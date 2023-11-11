@@ -1,5 +1,6 @@
 var NAVTREEINDEX121 =
 {
+"de/dfb/classez_document_manager.htm#adfe0fc99f10dd866764827d01bc7c107":[4,0,545,3],
 "de/dfb/classez_document_manager.htm#ae1c1465b9c4edf48a0b37555a28d8624":[4,0,545,6],
 "de/dfb/classez_g_a_l_command_encoder_render_platform_interface.htm":[4,0,774],
 "de/dfb/classez_g_a_l_command_encoder_render_platform_interface.htm#a09f55e59b0096e7bf570b992518958ed":[4,0,774,9],
@@ -248,6 +249,5 @@ var NAVTREEINDEX121 =
 "df/d1b/classez_breakable_sheet_component.htm#a62629b3b94b946a26bc1deb7483abd48":[4,0,260,24],
 "df/d1b/classez_breakable_sheet_component.htm#a6274a5e46e0af90afecee57cfbbb33f1":[4,0,260,11],
 "df/d1b/classez_breakable_sheet_component.htm#a6275814f39cf55db24f840671cfec7bd":[4,0,260,29],
-"df/d1b/classez_breakable_sheet_component.htm#a66f76caa13d7c0bd2097b084751d1ab1":[4,0,260,31],
-"df/d1b/classez_breakable_sheet_component.htm#a6752b77ebcdfcd6195b0e0d32261c51e":[4,0,260,50]
+"df/d1b/classez_breakable_sheet_component.htm#a66f76caa13d7c0bd2097b084751d1ab1":[4,0,260,31]
 };

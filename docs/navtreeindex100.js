@@ -1,5 +1,6 @@
 var NAVTREEINDEX100 =
 {
+"dc/d62/classez_qt_item_delegate.htm#ac3fb2a5f6af285f76de8611cb608959d":[4,0,1926,3],
 "dc/d62/classez_qt_layer_panel.htm":[4,0,1937],
 "dc/d62/classez_qt_layer_panel.htm#a2dc4e782cd7034e12449387a8007bb20":[4,0,1937,0],
 "dc/d62/classez_qt_layer_panel.htm#a8bcd97e7f70803391392997922e85205":[4,0,1937,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX100 =
 "dc/d8c/structez_on_jolt_contact_1_1_bits.htm#a6e1eb52900d97b4922dcc04452d44b5a":[4,0,1425,0,1],
 "dc/d8c/structez_on_jolt_contact_1_1_bits.htm#a71d6c9b3928729dd3aee6524144df45c":[4,0,1425,0,0],
 "dc/d8c/structez_on_jolt_contact_1_1_bits.htm#a7c1d3ec9792dda8b6d44878c54d6723b":[4,0,1425,0,2],
-"dc/d8c/structez_on_jolt_contact_1_1_bits.htm#a91a920f158b85732869b7d7c488d4b9c":[4,0,1425,0,4],
-"dc/d8c/structez_simd_math.htm":[4,0,2354]
+"dc/d8c/structez_on_jolt_contact_1_1_bits.htm#a91a920f158b85732869b7d7c488d4b9c":[4,0,1425,0,4]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX95 =
 {
+"db/dca/structogt__vox__palette.htm":[4,0,2896],
 "db/dca/structogt__vox__palette.htm#a160f43560d565cd003484ef723b4465f":[4,0,2896,0],
 "db/dcc/classez_manipulator_adapter_registry.htm":[4,0,1251],
 "db/dcc/classez_manipulator_adapter_registry.htm#a04b3d92b9792d7086a8d943eb898e942":[4,0,1251,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX95 =
 "db/def/classez_anim_graph_trigger_output_pin.htm#a1858c9f6e91ebd38b7110ed6618d4b54":[4,0,142,1],
 "db/def/classez_anim_graph_trigger_output_pin.htm#a85660b65c2371ba0ba6a82c7d8a99044":[4,0,142,0],
 "db/def/structez_standard_j_s_o_n_writer_1_1_comma_writer.htm":[4,0,2463,0],
-"db/def/structez_standard_j_s_o_n_writer_1_1_comma_writer.htm#a9de832f3390a1157488c42b0cceadf46":[4,0,2463,0,2],
-"db/def/structez_standard_j_s_o_n_writer_1_1_comma_writer.htm#ae4c4bd2c21be3f5c597ac8a757dffbd9":[4,0,2463,0,0]
+"db/def/structez_standard_j_s_o_n_writer_1_1_comma_writer.htm#a9de832f3390a1157488c42b0cceadf46":[4,0,2463,0,2]
 };

@@ -9,6 +9,7 @@ var classeq_qt_asset_browser_folder_view =
     [ "keyPressEvent", "d4/dcf/classeq_qt_asset_browser_folder_view.htm#ad459d47284b6ef0c062a4005c69b1d58", null ],
     [ "mimeData", "d4/dcf/classeq_qt_asset_browser_folder_view.htm#abc5911df63470b18dc2ce8678941de43", null ],
     [ "mimeTypes", "d4/dcf/classeq_qt_asset_browser_folder_view.htm#ae1c8b10186552c5daba2e406de1dac46", null ],
+    [ "mousePressEvent", "d4/dcf/classeq_qt_asset_browser_folder_view.htm#a4b695cd6d03d7401f1da984187d5962a", null ],
     [ "NewFolder", "d4/dcf/classeq_qt_asset_browser_folder_view.htm#ab4c9ac3553307729cdc831603eccf522", null ],
     [ "SetDialogMode", "d4/dcf/classeq_qt_asset_browser_folder_view.htm#a02d8dc3458b80e0beaeb02f1981aca69", null ],
     [ "SetFilter", "d4/dcf/classeq_qt_asset_browser_folder_view.htm#a007d0733a370b3029322cb34b318ec7e", null ],
