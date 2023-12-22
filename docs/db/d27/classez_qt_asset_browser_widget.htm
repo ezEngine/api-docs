@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.11</span>
+   &#160;<span id="projectnumber">Release 23.12</span>
    </div>
   </td>
  </tr>
@@ -84,6 +84,7 @@ $(document).ready(function(){initNavTree('db/d27/classez_qt_asset_browser_widget
 
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="../../dd/d6e/classez_qt_asset_browser_widget-members.htm">List of all members</a>  </div>
@@ -102,14 +103,22 @@ Inheritance diagram for ezQtAssetBrowserWidget:</div>
 </map>
 <center><span class="legend">[<a target="top" href="../../graph_legend.htm">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a115d6675033c0fd1225290eee7f6e35b"><td class="memItemLeft" align="right" valign="top"><a id="a115d6675033c0fd1225290eee7f6e35b"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>Mode</b> { <b>Browser</b>, 
+<b>AssetPicker</b>, 
+<b>FilePicker</b>
+ }</td></tr>
+<tr class="separator:a115d6675033c0fd1225290eee7f6e35b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
 Signals</h2></td></tr>
-<tr class="memitem:a765074b1c85ec00411a07ac66bc94268"><td class="memItemLeft" align="right" valign="top"><a id="a765074b1c85ec00411a07ac66bc94268"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>ItemChosen</b> (<a class="el" href="../../da/d89/classez_uuid.htm">ezUuid</a> guid, QString sAssetPathRelative, QString sAssetPathAbsolute)</td></tr>
-<tr class="separator:a765074b1c85ec00411a07ac66bc94268"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a639bc2d0ac8c23d70a90962947cc2f93"><td class="memItemLeft" align="right" valign="top"><a id="a639bc2d0ac8c23d70a90962947cc2f93"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>ItemSelected</b> (<a class="el" href="../../da/d89/classez_uuid.htm">ezUuid</a> guid, QString sAssetPathRelative, QString sAssetPathAbsolute)</td></tr>
-<tr class="separator:a639bc2d0ac8c23d70a90962947cc2f93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b65b821cbc7be388839ead07e927733"><td class="memItemLeft" align="right" valign="top"><a id="a0b65b821cbc7be388839ead07e927733"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ItemChosen</b> (<a class="el" href="../../da/d89/classez_uuid.htm">ezUuid</a> guid, QString sAssetPathRelative, QString sAssetPathAbsolute, ezUInt8 uiAssetBrowserItemFlags)</td></tr>
+<tr class="separator:a0b65b821cbc7be388839ead07e927733"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a524b2f161cfc8470866448cc97cf28b7"><td class="memItemLeft" align="right" valign="top"><a id="a524b2f161cfc8470866448cc97cf28b7"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ItemSelected</b> (<a class="el" href="../../da/d89/classez_uuid.htm">ezUuid</a> guid, QString sAssetPathRelative, QString sAssetPathAbsolute, ezUInt8 uiAssetBrowserItemFlags)</td></tr>
+<tr class="separator:a524b2f161cfc8470866448cc97cf28b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0a26ca02af19b52baedb0dda770fd82"><td class="memItemLeft" align="right" valign="top"><a id="ac0a26ca02af19b52baedb0dda770fd82"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>ItemCleared</b> ()</td></tr>
 <tr class="separator:ac0a26ca02af19b52baedb0dda770fd82"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -119,15 +128,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3085193417ebe9835d3c5cc2b55083ea"><td class="memItemLeft" align="right" valign="top"><a id="a3085193417ebe9835d3c5cc2b55083ea"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>ezQtAssetBrowserWidget</b> (QWidget *pParent)</td></tr>
 <tr class="separator:a3085193417ebe9835d3c5cc2b55083ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab15d367ab59f687d90debdeb22eb281b"><td class="memItemLeft" align="right" valign="top"><a id="ab15d367ab59f687d90debdeb22eb281b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetDialogMode</b> ()</td></tr>
-<tr class="separator:ab15d367ab59f687d90debdeb22eb281b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2481153e1723a77b10aca69664536918"><td class="memItemLeft" align="right" valign="top"><a id="a2481153e1723a77b10aca69664536918"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SetMode</b> (Mode mode)</td></tr>
+<tr class="separator:a2481153e1723a77b10aca69664536918"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e6a44120e04a1a32a91c47b60848fd3"><td class="memItemLeft" align="right" valign="top"><a id="a3e6a44120e04a1a32a91c47b60848fd3"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>SetSelectedAsset</b> (<a class="el" href="../../da/d89/classez_uuid.htm">ezUuid</a> preselectedAsset)</td></tr>
 <tr class="separator:a3e6a44120e04a1a32a91c47b60848fd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19fb2a33fb180bb5197d925c406a338b"><td class="memItemLeft" align="right" valign="top"><a id="a19fb2a33fb180bb5197d925c406a338b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>ShowOnlyTheseTypeFilters</b> (const char *szFilters)</td></tr>
-<tr class="separator:a19fb2a33fb180bb5197d925c406a338b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac08dc67a2764de1829113a491b59686e"><td class="memItemLeft" align="right" valign="top"><a id="ac08dc67a2764de1829113a491b59686e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SetSelectedFile</b> (<a class="el" href="../../de/db8/structez_string_view.htm">ezStringView</a> sAbsPath)</td></tr>
+<tr class="separator:ac08dc67a2764de1829113a491b59686e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa96ffdcfcd3da348ed2e2c37a34fec83"><td class="memItemLeft" align="right" valign="top"><a id="aa96ffdcfcd3da348ed2e2c37a34fec83"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ShowOnlyTheseTypeFilters</b> (<a class="el" href="../../de/db8/structez_string_view.htm">ezStringView</a> sFilters)</td></tr>
+<tr class="separator:aa96ffdcfcd3da348ed2e2c37a34fec83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9fa472d3f2bd2868dda5a55d1d869b2"><td class="memItemLeft" align="right" valign="top"><a id="ab9fa472d3f2bd2868dda5a55d1d869b2"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>UseFileExtensionFilters</b> (<a class="el" href="../../de/db8/structez_string_view.htm">ezStringView</a> sFileExtensions)</td></tr>
+<tr class="separator:ab9fa472d3f2bd2868dda5a55d1d869b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d1571095dc9d8897c00dea172c67378"><td class="memItemLeft" align="right" valign="top"><a id="a4d1571095dc9d8897c00dea172c67378"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>SaveState</b> (const char *szSettingsName)</td></tr>
 <tr class="separator:a4d1571095dc9d8897c00dea172c67378"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -157,7 +172,7 @@ const <a class="el" href="../../d5/d1f/classez_qt_asset_browser_filter.htm">ezQt
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../db/d27/classez_qt_asset_browser_widget.htm">ezQtAssetBrowserWidget</a></li>
-    <li class="footer">Generated on Sat Nov 11 2023 19:41:05 for ezEngine by
+    <li class="footer">Generated on Fri Dec 22 2023 20:43:15 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

@@ -2,6 +2,7 @@ var structez_substance_graph_output =
 [
     [ "operator==", "da/da7/structez_substance_graph_output.htm#a70d6df44b7c2b6404031920bbeab7471", null ],
     [ "m_bEnabled", "da/da7/structez_substance_graph_output.htm#ab35e41fc86f270b803bbe40cbdfe8809", null ],
+    [ "m_bPreserveAlphaCoverage", "da/da7/structez_substance_graph_output.htm#a161d224bed2ab083c53171dcb146b0b6", null ],
     [ "m_CompressionMode", "da/da7/structez_substance_graph_output.htm#adc972426bcf317f0725aaa27a8becaa2", null ],
     [ "m_sLabel", "da/da7/structez_substance_graph_output.htm#abae533112d94553b6feabb91e1f66fee", null ],
     [ "m_sName", "da/da7/structez_substance_graph_output.htm#adca97c3e57993fdced10a25e3a342a75", null ],

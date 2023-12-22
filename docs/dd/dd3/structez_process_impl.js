@@ -3,8 +3,9 @@ var structez_process_impl =
     [ "StdStreamInfo", "d0/df0/structez_process_impl_1_1_std_stream_info.htm", "d0/df0/structez_process_impl_1_1_std_stream_info" ],
     [ "~ezProcessImpl", "dd/dd3/structez_process_impl.htm#aa71af6c1220dbf0ede2ad48bf65f230b", null ],
     [ "~ezProcessImpl", "dd/dd3/structez_process_impl.htm#aa71af6c1220dbf0ede2ad48bf65f230b", null ],
-    [ "AddStream", "dd/dd3/structez_process_impl.htm#a4a51999e326acf2597a0116c2de0da95", null ],
+    [ "AddStream", "dd/dd3/structez_process_impl.htm#a3c2776d80796257a6763bc6d0d123f96", null ],
     [ "Close", "dd/dd3/structez_process_impl.htm#ab62fb13d437a49836aa9acd0016b2b52", null ],
+    [ "GetNumStreams", "dd/dd3/structez_process_impl.htm#a6305f1c1c22f75279f4518258b8998e8", null ],
     [ "StartStreamWatcher", "dd/dd3/structez_process_impl.htm#a2bde3bf8003d34dba058a349f1634317", null ],
     [ "StopStreamWatcher", "dd/dd3/structez_process_impl.htm#a40467c3301521e18fae799238bfa8e27", null ],
     [ "m_childPid", "dd/dd3/structez_process_impl.htm#aaf1e2ea176ef409c33952733ac966351", null ],
@@ -18,6 +19,6 @@ var structez_process_impl =
     [ "m_processSuspended", "dd/dd3/structez_process_impl.htm#a222a1bb55a984392d890b1526ef8dcf7", null ],
     [ "m_streams", "dd/dd3/structez_process_impl.htm#a7cb60816d8014b3863d94913e235d2b6", null ],
     [ "m_streamWatcherThread", "dd/dd3/structez_process_impl.htm#a268b1a4f809485fd3edfcff2b763ef9d", null ],
-    [ "m_wakeupPipeReadEnd", "dd/dd3/structez_process_impl.htm#a147369f3ba7ddaa7e9c512e16b4a8eca", null ],
-    [ "m_wakeupPipeWriteEnd", "dd/dd3/structez_process_impl.htm#ac711eb2e71fc95f81a29b5cbd4299bd8", null ]
+    [ "m_wakeupPipeReadEnd", "dd/dd3/structez_process_impl.htm#ae7b1b84871707d3d32e39dbb58f7d24b", null ],
+    [ "m_wakeupPipeWriteEnd", "dd/dd3/structez_process_impl.htm#ab718fe75d1be7e48936a805d1dadb80c", null ]
 ];

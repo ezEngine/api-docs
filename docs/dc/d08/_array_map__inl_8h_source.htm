@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.11</span>
+   &#160;<span id="projectnumber">Release 23.12</span>
    </div>
   </td>
  </tr>
@@ -388,47 +388,41 @@ $(document).ready(function(){initNavTree('dc/d08/_array_map__inl_8h_source.htm',
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;  <span class="keywordflow">return</span> m_Data == rhs.m_Data;</div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;}</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KEY, <span class="keyword">typename</span> VALUE&gt;</div>
-<div class="line"><a name="l00303"></a><span class="lineno"><a class="line" href="../../dc/da4/classez_array_map_base.htm#ac68043cb6b8b24caecae05a5d4af8282">  303</a></span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> <a class="code" href="../../dc/da4/classez_array_map_base.htm#ac68043cb6b8b24caecae05a5d4af8282">ezArrayMapBase&lt;KEY, VALUE&gt;::operator!=</a>(<span class="keyword">const</span> <a class="code" href="../../dc/da4/classez_array_map_base.htm">ezArrayMapBase&lt;KEY, VALUE&gt;</a>&amp; rhs)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;  <span class="keywordflow">return</span> !(*<span class="keyword">this</span> == rhs);</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KEY, <span class="keyword">typename</span> VALUE, <span class="keyword">typename</span> A&gt;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;<a class="code" href="../../d4/d34/classez_array_map.htm">ezArrayMap&lt;KEY, VALUE, A&gt;::ezArrayMap</a>()</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;  : <a class="code" href="../../dc/da4/classez_array_map_base.htm">ezArrayMapBase</a>&lt;KEY, VALUE&gt;(A::GetAllocator())</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;{</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;}</div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KEY, <span class="keyword">typename</span> VALUE, <span class="keyword">typename</span> A&gt;</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;<a class="code" href="../../d4/d34/classez_array_map.htm">ezArrayMap&lt;KEY, VALUE, A&gt;::ezArrayMap</a>()</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;  : <a class="code" href="../../dc/da4/classez_array_map_base.htm">ezArrayMapBase</a>&lt;KEY, VALUE&gt;(A::GetAllocator())</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;<a class="code" href="../../d4/d34/classez_array_map.htm">ezArrayMap&lt;KEY, VALUE, A&gt;::ezArrayMap</a>(<a class="code" href="../../d1/d4c/classez_allocator_base.htm">ezAllocatorBase</a>* pAllocator)</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;  : <a class="code" href="../../dc/da4/classez_array_map_base.htm">ezArrayMapBase</a>&lt;KEY, VALUE&gt;(pAllocator)</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;{</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;}</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KEY, <span class="keyword">typename</span> VALUE, <span class="keyword">typename</span> A&gt;</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;<a class="code" href="../../d4/d34/classez_array_map.htm">ezArrayMap&lt;KEY, VALUE, A&gt;::ezArrayMap</a>(<a class="code" href="../../d1/d4c/classez_allocator_base.htm">ezAllocatorBase</a>* pAllocator)</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;  : <a class="code" href="../../dc/da4/classez_array_map_base.htm">ezArrayMapBase</a>&lt;KEY, VALUE&gt;(pAllocator)</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;<a class="code" href="../../d4/d34/classez_array_map.htm">ezArrayMap&lt;KEY, VALUE, A&gt;::ezArrayMap</a>(<span class="keyword">const</span> <a class="code" href="../../d4/d34/classez_array_map.htm">ezArrayMap&lt;KEY, VALUE, A&gt;</a>&amp; rhs)</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;  : <a class="code" href="../../dc/da4/classez_array_map_base.htm">ezArrayMapBase</a>&lt;KEY, VALUE&gt;(rhs, A::GetAllocator())</div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;{</div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;}</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160; </div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KEY, <span class="keyword">typename</span> VALUE, <span class="keyword">typename</span> A&gt;</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;<a class="code" href="../../d4/d34/classez_array_map.htm">ezArrayMap&lt;KEY, VALUE, A&gt;::ezArrayMap</a>(<span class="keyword">const</span> <a class="code" href="../../d4/d34/classez_array_map.htm">ezArrayMap&lt;KEY, VALUE, A&gt;</a>&amp; rhs)</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;<a class="code" href="../../d4/d34/classez_array_map.htm">ezArrayMap&lt;KEY, VALUE, A&gt;::ezArrayMap</a>(<span class="keyword">const</span> <a class="code" href="../../dc/da4/classez_array_map_base.htm">ezArrayMapBase&lt;KEY, VALUE&gt;</a>&amp; rhs)</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;  : <a class="code" href="../../dc/da4/classez_array_map_base.htm">ezArrayMapBase</a>&lt;KEY, VALUE&gt;(rhs, A::GetAllocator())</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;{</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;}</div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160; </div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KEY, <span class="keyword">typename</span> VALUE, <span class="keyword">typename</span> A&gt;</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;<a class="code" href="../../d4/d34/classez_array_map.htm">ezArrayMap&lt;KEY, VALUE, A&gt;::ezArrayMap</a>(<span class="keyword">const</span> <a class="code" href="../../dc/da4/classez_array_map_base.htm">ezArrayMapBase&lt;KEY, VALUE&gt;</a>&amp; rhs)</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;  : <a class="code" href="../../dc/da4/classez_array_map_base.htm">ezArrayMapBase</a>&lt;KEY, VALUE&gt;(rhs, A::GetAllocator())</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;{</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d4/d34/classez_array_map.htm">ezArrayMap&lt;KEY, VALUE, A&gt;::operator=</a>(<span class="keyword">const</span> <a class="code" href="../../d4/d34/classez_array_map.htm">ezArrayMap&lt;KEY, VALUE, A&gt;</a>&amp; rhs)</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;{</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;  <a class="code" href="../../dc/da4/classez_array_map_base.htm#a5a83bc105d9e4c445ac253bc8509e91d">ezArrayMapBase&lt;KEY, VALUE&gt;::operator=</a>(rhs);</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;}</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160; </div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KEY, <span class="keyword">typename</span> VALUE, <span class="keyword">typename</span> A&gt;</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d4/d34/classez_array_map.htm">ezArrayMap&lt;KEY, VALUE, A&gt;::operator=</a>(<span class="keyword">const</span> <a class="code" href="../../d4/d34/classez_array_map.htm">ezArrayMap&lt;KEY, VALUE, A&gt;</a>&amp; rhs)</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d4/d34/classez_array_map.htm">ezArrayMap&lt;KEY, VALUE, A&gt;::operator=</a>(<span class="keyword">const</span> <a class="code" href="../../dc/da4/classez_array_map_base.htm">ezArrayMapBase&lt;KEY, VALUE&gt;</a>&amp; rhs)</div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;{</div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;  <a class="code" href="../../dc/da4/classez_array_map_base.htm#a5a83bc105d9e4c445ac253bc8509e91d">ezArrayMapBase&lt;KEY, VALUE&gt;::operator=</a>(rhs);</div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;}</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; </div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KEY, <span class="keyword">typename</span> VALUE, <span class="keyword">typename</span> A&gt;</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d4/d34/classez_array_map.htm">ezArrayMap&lt;KEY, VALUE, A&gt;::operator=</a>(<span class="keyword">const</span> <a class="code" href="../../dc/da4/classez_array_map_base.htm">ezArrayMapBase&lt;KEY, VALUE&gt;</a>&amp; rhs)</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;{</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;  <a class="code" href="../../dc/da4/classez_array_map_base.htm#a5a83bc105d9e4c445ac253bc8509e91d">ezArrayMapBase&lt;KEY, VALUE&gt;::operator=</a>(rhs);</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_array_map_base_htm_a288b5afe34ba2ee0e0ee7fa87d9dbc32"><div class="ttname"><a href="../../dc/da4/classez_array_map_base.htm#a288b5afe34ba2ee0e0ee7fa87d9dbc32">ezArrayMapBase::GetValue</a></div><div class="ttdeci">const VALUE &amp; GetValue(ezUInt32 uiIndex) const</div><div class="ttdoc">Returns the value that is stored at the given index.</div><div class="ttdef"><b>Definition:</b> ArrayMap_inl.h:169</div></div>
@@ -447,7 +441,7 @@ $(document).ready(function(){initNavTree('dc/d08/_array_map__inl_8h_source.htm',
 <div class="ttc" id="aclassez_array_map_base_htm_a8f5167ecee29fbaf666ac6faa489f31b"><div class="ttname"><a href="../../dc/da4/classez_array_map_base.htm#a8f5167ecee29fbaf666ac6faa489f31b">ezArrayMapBase::Clear</a></div><div class="ttdeci">void Clear()</div><div class="ttdoc">Purges all elements from the map.</div><div class="ttdef"><b>Definition:</b> ArrayMap_inl.h:38</div></div>
 <div class="ttc" id="aclassez_allocator_base_htm"><div class="ttname"><a href="../../d1/d4c/classez_allocator_base.htm">ezAllocatorBase</a></div><div class="ttdoc">Base class for all memory allocators.</div><div class="ttdef"><b>Definition:</b> AllocatorBase.h:22</div></div>
 <div class="ttc" id="aclassez_array_map_base_htm_a515442b35f6aabbd067ad533971e2101"><div class="ttname"><a href="../../dc/da4/classez_array_map_base.htm#a515442b35f6aabbd067ad533971e2101">ezArrayMapBase::GetPair</a></div><div class="ttdeci">const Pair &amp; GetPair(ezUInt32 uiIndex) const</div><div class="ttdoc">Returns the key/value pair at the given index.</div><div class="ttdef"><b>Definition:</b> ArrayMap_inl.h:218</div></div>
-<div class="ttc" id="aclassez_array_map_htm"><div class="ttname"><a href="../../d4/d34/classez_array_map.htm">ezArrayMap</a></div><div class="ttdoc">See ezArrayMapBase for details.</div><div class="ttdef"><b>Definition:</b> ArrayMap.h:150</div></div>
+<div class="ttc" id="aclassez_array_map_htm"><div class="ttname"><a href="../../d4/d34/classez_array_map.htm">ezArrayMap</a></div><div class="ttdoc">See ezArrayMapBase for details.</div><div class="ttdef"><b>Definition:</b> ArrayMap.h:148</div></div>
 <div class="ttc" id="aclassez_dynamic_array_htm"><div class="ttname"><a href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray</a></div><div class="ttdef"><b>Definition:</b> DynamicArray.h:80</div></div>
 <div class="ttc" id="aclassez_array_map_base_htm_ac19061d1bc4c1da91d405c420d4eda18"><div class="ttname"><a href="../../dc/da4/classez_array_map_base.htm#ac19061d1bc4c1da91d405c420d4eda18">ezArrayMapBase::Sort</a></div><div class="ttdeci">void Sort() const</div><div class="ttdoc">Ensures the internal data structure is sorted. This is done automatically every time a lookup needs t...</div><div class="ttdef"><b>Definition:</b> ArrayMap_inl.h:56</div></div>
 <div class="ttc" id="aclassez_array_map_base_htm"><div class="ttname"><a href="../../dc/da4/classez_array_map_base.htm">ezArrayMapBase</a></div><div class="ttdoc">An associative container, similar to ezMap, but all data is stored in a sorted contiguous array,...</div><div class="ttdef"><b>Definition:</b> ArrayMap.h:13</div></div>
@@ -458,12 +452,11 @@ $(document).ready(function(){initNavTree('dc/d08/_array_map__inl_8h_source.htm',
 <div class="ttc" id="aclassez_array_map_base_htm_aacf3733cf78d14ee4e6956d3a28fa0da"><div class="ttname"><a href="../../dc/da4/classez_array_map_base.htm#aacf3733cf78d14ee4e6956d3a28fa0da">ezArrayMapBase::GetData</a></div><div class="ttdeci">ezDynamicArray&lt; Pair &gt; &amp; GetData()</div><div class="ttdoc">Returns a reference to the map data array.</div><div class="ttdef"><b>Definition:</b> ArrayMap_inl.h:181</div></div>
 <div class="ttc" id="aclassez_array_map_base_htm_aa9b993909798458921ef75ef0501c65a"><div class="ttname"><a href="../../dc/da4/classez_array_map_base.htm#aa9b993909798458921ef75ef0501c65a">ezArrayMapBase::LowerBound</a></div><div class="ttdeci">ezUInt32 LowerBound(const CompatibleKeyType &amp;key) const</div><div class="ttdoc">Returns the index to the first element with a key equal or larger than the given key....</div><div class="ttdef"><b>Definition:</b> ArrayMap_inl.h:100</div></div>
 <div class="ttc" id="aclassez_array_map_base_htm_a15be69636bacae3a01ef7a6d41f74cd8"><div class="ttname"><a href="../../dc/da4/classez_array_map_base.htm#a15be69636bacae3a01ef7a6d41f74cd8">ezArrayMapBase::operator==</a></div><div class="ttdeci">bool operator==(const ezArrayMapBase&lt; KEY, VALUE &gt; &amp;rhs) const</div><div class="ttdoc">Compares the two containers for equality.</div><div class="ttdef"><b>Definition:</b> ArrayMap_inl.h:294</div></div>
-<div class="ttc" id="aclassez_array_map_base_htm_ac68043cb6b8b24caecae05a5d4af8282"><div class="ttname"><a href="../../dc/da4/classez_array_map_base.htm#ac68043cb6b8b24caecae05a5d4af8282">ezArrayMapBase::operator!=</a></div><div class="ttdeci">bool operator!=(const ezArrayMapBase&lt; KEY, VALUE &gt; &amp;rhs) const</div><div class="ttdoc">Compares the two containers for equality.</div><div class="ttdef"><b>Definition:</b> ArrayMap_inl.h:303</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_6b567e6755824bd0b8ffd754b9d67ac0.htm">Containers</a></li><li class="navelem"><a class="el" href="../../dir_ab7c7fd106dde24a64865a60f78fe0d2.htm">Implementation</a></li><li class="navelem"><b>ArrayMap_inl.h</b></li>
-    <li class="footer">Generated on Sat Nov 11 2023 19:40:51 for ezEngine by
+    <li class="footer">Generated on Fri Dec 22 2023 20:43:05 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

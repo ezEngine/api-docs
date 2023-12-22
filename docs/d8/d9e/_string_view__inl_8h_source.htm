@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.11</span>
+   &#160;<span id="projectnumber">Release 23.12</span>
    </div>
   </td>
  </tr>
@@ -271,30 +271,34 @@ $(document).ready(function(){initNavTree('d8/d9e/_string_view__inl_8h_source.htm
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  <span class="keywordflow">return</span> lhs.<a class="code" href="../../de/db8/structez_string_view.htm#ac5bbc247c663689d4bacd1278db889ed">IsEqual</a>(rhs);</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;}</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> operator!=(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> lhs, <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> rhs)</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;{</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  <span class="keywordflow">return</span> !lhs.<a class="code" href="../../de/db8/structez_string_view.htm#ac5bbc247c663689d4bacd1278db889ed">IsEqual</a>(rhs);</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;}</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> operator&lt;(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> lhs, <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> rhs)</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;{</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  <span class="keywordflow">return</span> lhs.<a class="code" href="../../de/db8/structez_string_view.htm#a10c06c013c9ac651e4927e52e6ab9662">Compare</a>(rhs) &lt; 0;</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;}</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> operator&lt;=(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> lhs, <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> rhs)</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;{</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  <span class="keywordflow">return</span> lhs.<a class="code" href="../../de/db8/structez_string_view.htm#a10c06c013c9ac651e4927e52e6ab9662">Compare</a>(rhs) &lt;= 0;</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;}</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> operator&gt;(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> lhs, <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> rhs)</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;{</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;  <span class="keywordflow">return</span> lhs.<a class="code" href="../../de/db8/structez_string_view.htm#a10c06c013c9ac651e4927e52e6ab9662">Compare</a>(rhs) &gt; 0;</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;}</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> operator&gt;=(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> lhs, <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> rhs)</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;{</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;  <span class="keywordflow">return</span> lhs.<a class="code" href="../../de/db8/structez_string_view.htm#a10c06c013c9ac651e4927e52e6ab9662">Compare</a>(rhs) &gt;= 0;</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;}</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="preprocessor">#if EZ_DISABLED(EZ_USE_CPP20_OPERATORS)</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> operator!=(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> lhs, <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> rhs)</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;{</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  <span class="keywordflow">return</span> !lhs.<a class="code" href="../../de/db8/structez_string_view.htm#ac5bbc247c663689d4bacd1278db889ed">IsEqual</a>(rhs);</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;}</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> operator&lt;(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> lhs, <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> rhs)</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;{</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;  <span class="keywordflow">return</span> lhs.<a class="code" href="../../de/db8/structez_string_view.htm#a10c06c013c9ac651e4927e52e6ab9662">Compare</a>(rhs) &lt; 0;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;}</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> operator&lt;=(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> lhs, <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> rhs)</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;{</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;  <span class="keywordflow">return</span> lhs.<a class="code" href="../../de/db8/structez_string_view.htm#a10c06c013c9ac651e4927e52e6ab9662">Compare</a>(rhs) &lt;= 0;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;}</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> operator&gt;(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> lhs, <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> rhs)</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;{</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;  <span class="keywordflow">return</span> lhs.<a class="code" href="../../de/db8/structez_string_view.htm#a10c06c013c9ac651e4927e52e6ab9662">Compare</a>(rhs) &gt; 0;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;}</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">bool</span> operator&gt;=(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> lhs, <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> rhs)</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;{</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;  <span class="keywordflow">return</span> lhs.<a class="code" href="../../de/db8/structez_string_view.htm#a10c06c013c9ac651e4927e52e6ab9662">Compare</a>(rhs) &gt;= 0;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_string_utils_htm_accbc0437beaf0f2ee1907522caf628e4"><div class="ttname"><a href="../../de/df8/classez_string_utils.htm#accbc0437beaf0f2ee1907522caf628e4">ezStringUtils::Trim</a></div><div class="ttdeci">static void Trim(const char *&amp;ref_pString, const char *&amp;ref_pStringEnd, const char *szTrimCharsStart, const char *szTrimCharsEnd)</div><div class="ttdoc">Removes all characters at the start and end of the string that match the respective characters and up...</div><div class="ttdef"><b>Definition:</b> StringUtils.cpp:828</div></div>
@@ -332,7 +336,7 @@ $(document).ready(function(){initNavTree('d8/d9e/_string_view__inl_8h_source.htm
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_b52479c911fe9a42767226b3387b3a02.htm">Strings</a></li><li class="navelem"><a class="el" href="../../dir_067384bf2c73f8a8078edb859c0ba426.htm">Implementation</a></li><li class="navelem"><b>StringView_inl.h</b></li>
-    <li class="footer">Generated on Sat Nov 11 2023 19:40:54 for ezEngine by
+    <li class="footer">Generated on Fri Dec 22 2023 20:43:07 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

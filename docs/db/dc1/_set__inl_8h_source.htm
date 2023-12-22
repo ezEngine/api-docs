@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.11</span>
+   &#160;<span id="projectnumber">Release 23.12</span>
    </div>
   </td>
  </tr>
@@ -817,93 +817,85 @@ $(document).ready(function(){initNavTree('db/dc1/_set__inl_8h_source.htm','../..
 <div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;}</div>
 <div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160; </div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> Comparer&gt;</div>
-<div class="line"><a name="l00732"></a><span class="lineno"><a class="line" href="../../dc/d4b/classez_set_base.htm#a4a25bbb212171837df6af427c3b03475">  732</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../dc/d4b/classez_set_base.htm#a4a25bbb212171837df6af427c3b03475">ezSetBase&lt;KeyType, Comparer&gt;::operator!=</a>(<span class="keyword">const</span> <a class="code" href="../../dc/d4b/classez_set_base.htm">ezSetBase&lt;KeyType, Comparer&gt;</a>&amp; rhs)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;  <span class="keywordflow">return</span> !operator==(rhs);</div>
-<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;}</div>
-<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160; </div>
-<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;<span class="preprocessor">#undef STACK_SIZE</span></div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;<span class="preprocessor">#undef STACK_SIZE</span></div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160; </div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> Comparer, <span class="keyword">typename</span> AllocatorWrapper&gt;</div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;<a class="code" href="../../d0/d90/classez_set.htm">ezSet&lt;KeyType, Comparer, AllocatorWrapper&gt;::ezSet</a>()</div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;  : <a class="code" href="../../dc/d4b/classez_set_base.htm">ezSetBase</a>&lt;KeyType, Comparer&gt;(Comparer(), AllocatorWrapper::GetAllocator())</div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;{</div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;}</div>
 <div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160; </div>
-<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160; </div>
-<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160; </div>
-<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> Comparer, <span class="keyword">typename</span> AllocatorWrapper&gt;</div>
-<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;<a class="code" href="../../d0/d90/classez_set.htm">ezSet&lt;KeyType, Comparer, AllocatorWrapper&gt;::ezSet</a>()</div>
-<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;  : <a class="code" href="../../dc/d4b/classez_set_base.htm">ezSetBase</a>&lt;KeyType, Comparer&gt;(Comparer(), AllocatorWrapper::GetAllocator())</div>
-<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;{</div>
-<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;}</div>
-<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160; </div>
-<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> Comparer, <span class="keyword">typename</span> AllocatorWrapper&gt;</div>
-<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;<a class="code" href="../../d0/d90/classez_set.htm">ezSet&lt;KeyType, Comparer, AllocatorWrapper&gt;::ezSet</a>(<a class="code" href="../../d1/d4c/classez_allocator_base.htm">ezAllocatorBase</a>* pAllocator)</div>
-<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;  : <a class="code" href="../../dc/d4b/classez_set_base.htm">ezSetBase</a>&lt;KeyType, Comparer&gt;(Comparer(), pAllocator)</div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;{</div>
-<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;}</div>
-<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160; </div>
-<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> Comparer, <span class="keyword">typename</span> AllocatorWrapper&gt;</div>
-<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;<a class="code" href="../../d0/d90/classez_set.htm">ezSet&lt;KeyType, Comparer, AllocatorWrapper&gt;::ezSet</a>(<span class="keyword">const</span> Comparer&amp; comparer, <a class="code" href="../../d1/d4c/classez_allocator_base.htm">ezAllocatorBase</a>* pAllocator)</div>
-<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;  : <a class="code" href="../../dc/d4b/classez_set_base.htm">ezSetBase</a>&lt;KeyType, Comparer&gt;(comparer, pAllocator)</div>
-<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;{</div>
-<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;}</div>
-<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160; </div>
-<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> Comparer, <span class="keyword">typename</span> AllocatorWrapper&gt;</div>
-<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;<a class="code" href="../../d0/d90/classez_set.htm">ezSet&lt;KeyType, Comparer, AllocatorWrapper&gt;::ezSet</a>(<span class="keyword">const</span> <a class="code" href="../../d0/d90/classez_set.htm">ezSet&lt;KeyType, Comparer, AllocatorWrapper&gt;</a>&amp; other)</div>
-<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;  : <a class="code" href="../../dc/d4b/classez_set_base.htm">ezSetBase</a>&lt;KeyType, Comparer&gt;(other, AllocatorWrapper::GetAllocator())</div>
-<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;{</div>
-<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;}</div>
-<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160; </div>
-<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> Comparer, <span class="keyword">typename</span> AllocatorWrapper&gt;</div>
-<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;<a class="code" href="../../d0/d90/classez_set.htm">ezSet&lt;KeyType, Comparer, AllocatorWrapper&gt;::ezSet</a>(<span class="keyword">const</span> <a class="code" href="../../dc/d4b/classez_set_base.htm">ezSetBase&lt;KeyType, Comparer&gt;</a>&amp; other)</div>
-<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;  : <a class="code" href="../../dc/d4b/classez_set_base.htm">ezSetBase</a>&lt;KeyType, Comparer&gt;(other, AllocatorWrapper::GetAllocator())</div>
-<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;{</div>
-<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;}</div>
-<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160; </div>
-<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> Comparer, <span class="keyword">typename</span> AllocatorWrapper&gt;</div>
-<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/d90/classez_set.htm">ezSet&lt;KeyType, Comparer, AllocatorWrapper&gt;::operator=</a>(<span class="keyword">const</span> <a class="code" href="../../d0/d90/classez_set.htm">ezSet&lt;KeyType, Comparer, AllocatorWrapper&gt;</a>&amp; rhs)</div>
-<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;{</div>
-<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;  <a class="code" href="../../dc/d4b/classez_set_base.htm#a31c031cf509d78327fec1c4f23b775f6">ezSetBase&lt;KeyType, Comparer&gt;::operator=</a>(rhs);</div>
-<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;}</div>
-<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160; </div>
-<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> Comparer, <span class="keyword">typename</span> AllocatorWrapper&gt;</div>
-<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/d90/classez_set.htm">ezSet&lt;KeyType, Comparer, AllocatorWrapper&gt;::operator=</a>(<span class="keyword">const</span> <a class="code" href="../../dc/d4b/classez_set_base.htm">ezSetBase&lt;KeyType, Comparer&gt;</a>&amp; rhs)</div>
-<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;{</div>
-<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;  <a class="code" href="../../dc/d4b/classez_set_base.htm#a31c031cf509d78327fec1c4f23b775f6">ezSetBase&lt;KeyType, Comparer&gt;::operator=</a>(rhs);</div>
-<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;}</div>
-<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160; </div>
-<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> Comparer&gt;</div>
-<div class="line"><a name="l00784"></a><span class="lineno"><a class="line" href="../../dc/d4b/classez_set_base.htm#a9fddb61a95208ee0431f553e512959bd">  784</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dc/d4b/classez_set_base.htm#a9fddb61a95208ee0431f553e512959bd">ezSetBase&lt;KeyType, Comparer&gt;::Swap</a>(<a class="code" href="../../dc/d4b/classez_set_base.htm">ezSetBase&lt;KeyType, Comparer&gt;</a>&amp; other)</div>
-<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;{</div>
-<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;  SwapNilNode(this-&gt;m_pRoot, &amp;this-&gt;m_NilNode, &amp;other.m_NilNode);</div>
-<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;  SwapNilNode(other.m_pRoot, &amp;other.m_NilNode, &amp;this-&gt;m_NilNode);</div>
-<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160; </div>
-<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;  <a class="code" href="../../db/d78/namespaceez_math.htm#a0cd624055a97c96719b925cb11e6a08e">ezMath::Swap</a>(this-&gt;m_pRoot, other.m_pRoot);</div>
-<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;  <a class="code" href="../../db/d78/namespaceez_math.htm#a0cd624055a97c96719b925cb11e6a08e">ezMath::Swap</a>(this-&gt;m_uiCount, other.m_uiCount);</div>
-<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;  <a class="code" href="../../db/d78/namespaceez_math.htm#a0cd624055a97c96719b925cb11e6a08e">ezMath::Swap</a>(this-&gt;m_pFreeElementStack, other.m_pFreeElementStack);</div>
-<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;  <a class="code" href="../../db/d78/namespaceez_math.htm#a0cd624055a97c96719b925cb11e6a08e">ezMath::Swap</a>(this-&gt;m_Comparer, other.m_Comparer);</div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> Comparer, <span class="keyword">typename</span> AllocatorWrapper&gt;</div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;<a class="code" href="../../d0/d90/classez_set.htm">ezSet&lt;KeyType, Comparer, AllocatorWrapper&gt;::ezSet</a>(<a class="code" href="../../d1/d4c/classez_allocator_base.htm">ezAllocatorBase</a>* pAllocator)</div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;  : <a class="code" href="../../dc/d4b/classez_set_base.htm">ezSetBase</a>&lt;KeyType, Comparer&gt;(Comparer(), pAllocator)</div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;{</div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;}</div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160; </div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> Comparer, <span class="keyword">typename</span> AllocatorWrapper&gt;</div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;<a class="code" href="../../d0/d90/classez_set.htm">ezSet&lt;KeyType, Comparer, AllocatorWrapper&gt;::ezSet</a>(<span class="keyword">const</span> Comparer&amp; comparer, <a class="code" href="../../d1/d4c/classez_allocator_base.htm">ezAllocatorBase</a>* pAllocator)</div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;  : <a class="code" href="../../dc/d4b/classez_set_base.htm">ezSetBase</a>&lt;KeyType, Comparer&gt;(comparer, pAllocator)</div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;{</div>
+<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;}</div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160; </div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> Comparer, <span class="keyword">typename</span> AllocatorWrapper&gt;</div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;<a class="code" href="../../d0/d90/classez_set.htm">ezSet&lt;KeyType, Comparer, AllocatorWrapper&gt;::ezSet</a>(<span class="keyword">const</span> <a class="code" href="../../d0/d90/classez_set.htm">ezSet&lt;KeyType, Comparer, AllocatorWrapper&gt;</a>&amp; other)</div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;  : <a class="code" href="../../dc/d4b/classez_set_base.htm">ezSetBase</a>&lt;KeyType, Comparer&gt;(other, AllocatorWrapper::GetAllocator())</div>
+<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;{</div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;}</div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160; </div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> Comparer, <span class="keyword">typename</span> AllocatorWrapper&gt;</div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;<a class="code" href="../../d0/d90/classez_set.htm">ezSet&lt;KeyType, Comparer, AllocatorWrapper&gt;::ezSet</a>(<span class="keyword">const</span> <a class="code" href="../../dc/d4b/classez_set_base.htm">ezSetBase&lt;KeyType, Comparer&gt;</a>&amp; other)</div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;  : <a class="code" href="../../dc/d4b/classez_set_base.htm">ezSetBase</a>&lt;KeyType, Comparer&gt;(other, AllocatorWrapper::GetAllocator())</div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;{</div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;}</div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160; </div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> Comparer, <span class="keyword">typename</span> AllocatorWrapper&gt;</div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/d90/classez_set.htm">ezSet&lt;KeyType, Comparer, AllocatorWrapper&gt;::operator=</a>(<span class="keyword">const</span> <a class="code" href="../../d0/d90/classez_set.htm">ezSet&lt;KeyType, Comparer, AllocatorWrapper&gt;</a>&amp; rhs)</div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;{</div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;  <a class="code" href="../../dc/d4b/classez_set_base.htm#a31c031cf509d78327fec1c4f23b775f6">ezSetBase&lt;KeyType, Comparer&gt;::operator=</a>(rhs);</div>
+<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;}</div>
+<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160; </div>
+<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> Comparer, <span class="keyword">typename</span> AllocatorWrapper&gt;</div>
+<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d0/d90/classez_set.htm">ezSet&lt;KeyType, Comparer, AllocatorWrapper&gt;::operator=</a>(<span class="keyword">const</span> <a class="code" href="../../dc/d4b/classez_set_base.htm">ezSetBase&lt;KeyType, Comparer&gt;</a>&amp; rhs)</div>
+<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;{</div>
+<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;  <a class="code" href="../../dc/d4b/classez_set_base.htm#a31c031cf509d78327fec1c4f23b775f6">ezSetBase&lt;KeyType, Comparer&gt;::operator=</a>(rhs);</div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;}</div>
+<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160; </div>
+<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> Comparer&gt;</div>
+<div class="line"><a name="l00776"></a><span class="lineno"><a class="line" href="../../dc/d4b/classez_set_base.htm#a9fddb61a95208ee0431f553e512959bd">  776</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dc/d4b/classez_set_base.htm#a9fddb61a95208ee0431f553e512959bd">ezSetBase&lt;KeyType, Comparer&gt;::Swap</a>(<a class="code" href="../../dc/d4b/classez_set_base.htm">ezSetBase&lt;KeyType, Comparer&gt;</a>&amp; other)</div>
+<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;{</div>
+<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;  SwapNilNode(this-&gt;m_pRoot, &amp;this-&gt;m_NilNode, &amp;other.m_NilNode);</div>
+<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;  SwapNilNode(other.m_pRoot, &amp;other.m_NilNode, &amp;this-&gt;m_NilNode);</div>
+<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160; </div>
+<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;  <a class="code" href="../../db/d78/namespaceez_math.htm#a0cd624055a97c96719b925cb11e6a08e">ezMath::Swap</a>(this-&gt;m_pRoot, other.m_pRoot);</div>
+<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;  <a class="code" href="../../db/d78/namespaceez_math.htm#a0cd624055a97c96719b925cb11e6a08e">ezMath::Swap</a>(this-&gt;m_uiCount, other.m_uiCount);</div>
+<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;  <a class="code" href="../../db/d78/namespaceez_math.htm#a0cd624055a97c96719b925cb11e6a08e">ezMath::Swap</a>(this-&gt;m_pFreeElementStack, other.m_pFreeElementStack);</div>
+<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;  <a class="code" href="../../db/d78/namespaceez_math.htm#a0cd624055a97c96719b925cb11e6a08e">ezMath::Swap</a>(this-&gt;m_Comparer, other.m_Comparer);</div>
+<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160; </div>
+<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;  <span class="comment">// after we swapped the root nodes, fix up their parent nodes</span></div>
+<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;  this-&gt;m_pRoot-&gt;m_pParent = <span class="keyword">reinterpret_cast&lt;</span>Node*<span class="keyword">&gt;</span>(&amp;this-&gt;m_NilNode);</div>
+<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;  other.m_pRoot-&gt;m_pParent = <span class="keyword">reinterpret_cast&lt;</span>Node*<span class="keyword">&gt;</span>(&amp;other.m_NilNode);</div>
+<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160; </div>
+<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;  <span class="comment">// the set allocator is stored in this array</span></div>
+<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;  m_Elements.Swap(other.m_Elements);</div>
+<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;}</div>
 <div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160; </div>
-<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;  <span class="comment">// after we swapped the root nodes, fix up their parent nodes</span></div>
-<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;  this-&gt;m_pRoot-&gt;m_pParent = <span class="keyword">reinterpret_cast&lt;</span>Node*<span class="keyword">&gt;</span>(&amp;this-&gt;m_NilNode);</div>
-<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;  other.m_pRoot-&gt;m_pParent = <span class="keyword">reinterpret_cast&lt;</span>Node*<span class="keyword">&gt;</span>(&amp;other.m_NilNode);</div>
-<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160; </div>
-<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;  <span class="comment">// the set allocator is stored in this array</span></div>
-<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;  m_Elements.Swap(other.m_Elements);</div>
-<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;}</div>
-<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160; </div>
-<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> Comparer&gt;</div>
-<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dc/d4b/classez_set_base.htm">ezSetBase&lt;KeyType, Comparer&gt;::SwapNilNode</a>(Node*&amp; pCurNode, NilNode* pOld, NilNode* pNew)</div>
-<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;{</div>
-<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;  <span class="keywordflow">if</span> (pCurNode == pOld)</div>
-<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;  {</div>
-<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;    pCurNode = <span class="keyword">reinterpret_cast&lt;</span>Node*<span class="keyword">&gt;</span>(pNew);</div>
-<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;    <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;  }</div>
-<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160; </div>
-<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;  SwapNilNode(pCurNode-&gt;m_pLink[0], pOld, pNew);</div>
-<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;  SwapNilNode(pCurNode-&gt;m_pLink[1], pOld, pNew);</div>
-<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;}</div>
+<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> Comparer&gt;</div>
+<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dc/d4b/classez_set_base.htm">ezSetBase&lt;KeyType, Comparer&gt;::SwapNilNode</a>(Node*&amp; pCurNode, NilNode* pOld, NilNode* pNew)</div>
+<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;{</div>
+<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;  <span class="keywordflow">if</span> (pCurNode == pOld)</div>
+<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;  {</div>
+<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;    pCurNode = <span class="keyword">reinterpret_cast&lt;</span>Node*<span class="keyword">&gt;</span>(pNew);</div>
+<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;  }</div>
+<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160; </div>
+<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;  SwapNilNode(pCurNode-&gt;m_pLink[0], pOld, pNew);</div>
+<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;  SwapNilNode(pCurNode-&gt;m_pLink[1], pOld, pNew);</div>
+<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astructez_set_base_1_1_iterator_htm"><div class="ttname"><a href="../../de/d30/structez_set_base_1_1_iterator.htm">ezSetBase::Iterator</a></div><div class="ttdoc">Base class for all iterators.</div><div class="ttdef"><b>Definition:</b> Set.h:33</div></div>
-<div class="ttc" id="aclassez_set_htm"><div class="ttname"><a href="../../d0/d90/classez_set.htm">ezSet</a></div><div class="ttdef"><b>Definition:</b> Set.h:235</div></div>
+<div class="ttc" id="aclassez_set_htm"><div class="ttname"><a href="../../d0/d90/classez_set.htm">ezSet</a></div><div class="ttdef"><b>Definition:</b> Set.h:231</div></div>
 <div class="ttc" id="aclassez_set_base_htm_a9c086e931d3c985838274f22f3fcd466"><div class="ttname"><a href="../../dc/d4b/classez_set_base.htm#a9c086e931d3c985838274f22f3fcd466">ezSetBase::operator==</a></div><div class="ttdeci">bool operator==(const ezSetBase&lt; KeyType, Comparer &gt; &amp;rhs) const</div><div class="ttdoc">Comparison operator.</div><div class="ttdef"><b>Definition:</b> Set_inl.h:711</div></div>
 <div class="ttc" id="astructez_set_base_1_1_iterator_htm_a7b8a8a9642c51efbd772ce07ca37f1b4"><div class="ttname"><a href="../../de/d30/structez_set_base_1_1_iterator.htm#a7b8a8a9642c51efbd772ce07ca37f1b4">ezSetBase::Iterator::Next</a></div><div class="ttdeci">void Next()</div><div class="ttdoc">Advances the iterator to the next element in the set. The iterator will not be valid anymore,...</div><div class="ttdef"><b>Definition:</b> Set_inl.h:10</div></div>
 <div class="ttc" id="aclassez_set_base_htm_a6cd727af03c407c8807c19b2b2ace759"><div class="ttname"><a href="../../dc/d4b/classez_set_base.htm#a6cd727af03c407c8807c19b2b2ace759">ezSetBase::Difference</a></div><div class="ttdeci">void Difference(const ezSetBase&lt; KeyType, Comparer &gt; &amp;operand)</div><div class="ttdoc">Makes this set the difference of itself and the operand, i.e. subtracts operand.</div><div class="ttdef"><b>Definition:</b> Set_inl.h:356</div></div>
@@ -913,7 +905,6 @@ $(document).ready(function(){initNavTree('db/dc1/_set__inl_8h_source.htm','../..
 <div class="ttc" id="aclassez_set_base_htm_a7e3d6dec6e73f77bd804ccd051b12e4c"><div class="ttname"><a href="../../dc/d4b/classez_set_base.htm#a7e3d6dec6e73f77bd804ccd051b12e4c">ezSetBase::ContainsSet</a></div><div class="ttdeci">bool ContainsSet(const ezSetBase&lt; KeyType, Comparer &gt; &amp;operand) const</div><div class="ttdoc">Checks whether all keys of the given set are in the container.</div><div class="ttdef"><b>Definition:</b> Set_inl.h:269</div></div>
 <div class="ttc" id="aclassez_set_base_htm_a5ae601269a798870895be7818e07d0cb"><div class="ttname"><a href="../../dc/d4b/classez_set_base.htm#a5ae601269a798870895be7818e07d0cb">ezSetBase::LowerBound</a></div><div class="ttdeci">Iterator LowerBound(const CompatibleKeyType &amp;key) const</div><div class="ttdoc">Returns an Iterator to the element with a key equal or larger than the given key. Returns an invalid ...</div></div>
 <div class="ttc" id="aclassez_allocator_base_htm"><div class="ttname"><a href="../../d1/d4c/classez_allocator_base.htm">ezAllocatorBase</a></div><div class="ttdoc">Base class for all memory allocators.</div><div class="ttdef"><b>Definition:</b> AllocatorBase.h:22</div></div>
-<div class="ttc" id="aclassez_set_base_htm_a4a25bbb212171837df6af427c3b03475"><div class="ttname"><a href="../../dc/d4b/classez_set_base.htm#a4a25bbb212171837df6af427c3b03475">ezSetBase::operator!=</a></div><div class="ttdeci">bool operator!=(const ezSetBase&lt; KeyType, Comparer &gt; &amp;rhs) const</div><div class="ttdoc">Comparison operator.</div><div class="ttdef"><b>Definition:</b> Set_inl.h:732</div></div>
 <div class="ttc" id="aclassez_set_base_htm_a7b13983d1806d4ef48f927f4e735482b"><div class="ttname"><a href="../../dc/d4b/classez_set_base.htm#a7b13983d1806d4ef48f927f4e735482b">ezSetBase::GetLastIterator</a></div><div class="ttdeci">Iterator GetLastIterator() const</div><div class="ttdoc">Returns a constant Iterator to the very last element. For reverse traversal.</div><div class="ttdef"><b>Definition:</b> Set_inl.h:198</div></div>
 <div class="ttc" id="aclassez_set_base_htm_a165e4059d89375b118570be343a704de"><div class="ttname"><a href="../../dc/d4b/classez_set_base.htm#a165e4059d89375b118570be343a704de">ezSetBase::UpperBound</a></div><div class="ttdeci">Iterator UpperBound(const CompatibleKeyType &amp;key) const</div><div class="ttdoc">Returns an Iterator to the element with a key that is LARGER than the given key. Returns an invalid i...</div></div>
 <div class="ttc" id="aclassez_set_base_htm_a463675853c88dd0a90d44bba4dd95b3e"><div class="ttname"><a href="../../dc/d4b/classez_set_base.htm#a463675853c88dd0a90d44bba4dd95b3e">ezSetBase::Intersection</a></div><div class="ttdeci">void Intersection(const ezSetBase&lt; KeyType, Comparer &gt; &amp;operand)</div><div class="ttdoc">Makes this set the intersection of itself and the operand.</div><div class="ttdef"><b>Definition:</b> Set_inl.h:365</div></div>
@@ -929,12 +920,12 @@ $(document).ready(function(){initNavTree('db/dc1/_set__inl_8h_source.htm','../..
 <div class="ttc" id="aclassez_set_base_htm_a213ce7620045405f3fdb703d415753a5"><div class="ttname"><a href="../../dc/d4b/classez_set_base.htm#a213ce7620045405f3fdb703d415753a5">ezSetBase::ezSetBase</a></div><div class="ttdeci">ezSetBase(const Comparer &amp;comparer, ezAllocatorBase *pAllocator)</div><div class="ttdoc">Initializes the set to be empty.</div><div class="ttdef"><b>Definition:</b> Set_inl.h:128</div></div>
 <div class="ttc" id="astructez_set_base_1_1_iterator_htm_acd8cdb2c128ed7d1562fe9fac3eeb8e7"><div class="ttname"><a href="../../de/d30/structez_set_base_1_1_iterator.htm#acd8cdb2c128ed7d1562fe9fac3eeb8e7">ezSetBase::Iterator::Prev</a></div><div class="ttdeci">void Prev()</div><div class="ttdoc">Advances the iterator to the previous element in the set. The iterator will not be valid anymore,...</div><div class="ttdef"><b>Definition:</b> Set_inl.h:61</div></div>
 <div class="ttc" id="aclassez_set_base_htm_a31c031cf509d78327fec1c4f23b775f6"><div class="ttname"><a href="../../dc/d4b/classez_set_base.htm#a31c031cf509d78327fec1c4f23b775f6">ezSetBase::operator=</a></div><div class="ttdeci">void operator=(const ezSetBase&lt; KeyType, Comparer &gt; &amp;rhs)</div><div class="ttdoc">Copies all keys from the given set into this one.</div><div class="ttdef"><b>Definition:</b> Set_inl.h:151</div></div>
-<div class="ttc" id="aclassez_set_base_htm_a9fddb61a95208ee0431f553e512959bd"><div class="ttname"><a href="../../dc/d4b/classez_set_base.htm#a9fddb61a95208ee0431f553e512959bd">ezSetBase::Swap</a></div><div class="ttdeci">void Swap(ezSetBase&lt; KeyType, Comparer &gt; &amp;other)</div><div class="ttdoc">Swaps this map with the other one.</div><div class="ttdef"><b>Definition:</b> Set_inl.h:784</div></div>
+<div class="ttc" id="aclassez_set_base_htm_a9fddb61a95208ee0431f553e512959bd"><div class="ttname"><a href="../../dc/d4b/classez_set_base.htm#a9fddb61a95208ee0431f553e512959bd">ezSetBase::Swap</a></div><div class="ttdeci">void Swap(ezSetBase&lt; KeyType, Comparer &gt; &amp;other)</div><div class="ttdoc">Swaps this map with the other one.</div><div class="ttdef"><b>Definition:</b> Set_inl.h:776</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_6b567e6755824bd0b8ffd754b9d67ac0.htm">Containers</a></li><li class="navelem"><a class="el" href="../../dir_ab7c7fd106dde24a64865a60f78fe0d2.htm">Implementation</a></li><li class="navelem"><b>Set_inl.h</b></li>
-    <li class="footer">Generated on Sat Nov 11 2023 19:40:52 for ezEngine by
+    <li class="footer">Generated on Fri Dec 22 2023 20:43:05 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

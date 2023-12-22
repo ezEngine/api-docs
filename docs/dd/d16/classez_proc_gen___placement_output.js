@@ -10,6 +10,7 @@ var classez_proc_gen___placement_output =
     [ "m_ObjectIndexPin", "dd/d16/classez_proc_gen___placement_output.htm#ac28f4d43285ca670807c4c95ac79c27d", null ],
     [ "m_ObjectsToPlace", "dd/d16/classez_proc_gen___placement_output.htm#aabe48854bf35ef850b4f82747cc50f9c", null ],
     [ "m_PlacementMode", "dd/d16/classez_proc_gen___placement_output.htm#aa86d7d84cbbbdada6dbc1ebd5e6b9416", null ],
+    [ "m_PlacementPattern", "dd/d16/classez_proc_gen___placement_output.htm#aa354254853bd71f2a9b39e5866ce576c", null ],
     [ "m_ScalePin", "dd/d16/classez_proc_gen___placement_output.htm#ab4ccf60309226129aaf5e5267f8d9de7", null ],
     [ "m_sColorGradient", "dd/d16/classez_proc_gen___placement_output.htm#aefb93134f88fb3b34acc2fd07d6a1d0f", null ],
     [ "m_sSurface", "dd/d16/classez_proc_gen___placement_output.htm#a04a8112f4d1494725451af9a79911c87", null ],

@@ -9,7 +9,7 @@ var classez_qt_inlined_group_box =
     [ "SetCollapseState", "da/dea/classez_qt_inlined_group_box.htm#a4c6e7ef84088e7a15c8b0cce1a2aa1b3", null ],
     [ "SetFillColor", "da/dea/classez_qt_inlined_group_box.htm#a7433d1cbec81d4e1ccb87fdda2798f66", null ],
     [ "SetIcon", "da/dea/classez_qt_inlined_group_box.htm#a4b37dfb5f22d2c37bf8d57b124adf5e1", null ],
-    [ "SetTitle", "da/dea/classez_qt_inlined_group_box.htm#afb02f25a4de87f794a0e81a6c2ca6a87", null ],
+    [ "SetTitle", "da/dea/classez_qt_inlined_group_box.htm#a791814979bfd557187bec2949a593eee", null ],
     [ "m_pContent", "da/dea/classez_qt_inlined_group_box.htm#adc4a06dedb45847f21377ef7a0d93259", null ],
     [ "m_pHeader", "da/dea/classez_qt_inlined_group_box.htm#a890648b5d04aa5f1c4117088e2e36061", null ]
 ];

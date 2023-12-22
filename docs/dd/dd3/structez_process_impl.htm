@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.11</span>
+   &#160;<span id="projectnumber">Release 23.12</span>
    </div>
   </td>
  </tr>
@@ -107,9 +107,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a40467c3301521e18fae799238bfa8e27"><td class="memItemLeft" align="right" valign="top"><a id="a40467c3301521e18fae799238bfa8e27"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>StopStreamWatcher</b> ()</td></tr>
 <tr class="separator:a40467c3301521e18fae799238bfa8e27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a51999e326acf2597a0116c2de0da95"><td class="memItemLeft" align="right" valign="top"><a id="a4a51999e326acf2597a0116c2de0da95"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>AddStream</b> (int fd, const <a class="el" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>&lt; void(<a class="el" href="../../de/db8/structez_string_view.htm">ezStringView</a>)&gt; &amp;callback)</td></tr>
-<tr class="separator:a4a51999e326acf2597a0116c2de0da95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c2776d80796257a6763bc6d0d123f96"><td class="memItemLeft" align="right" valign="top"><a id="a3c2776d80796257a6763bc6d0d123f96"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>AddStream</b> (<a class="el" href="../../df/d18/classez_fd.htm">ezFd</a> fd, const <a class="el" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>&lt; void(<a class="el" href="../../de/db8/structez_string_view.htm">ezStringView</a>)&gt; &amp;callback)</td></tr>
+<tr class="separator:a3c2776d80796257a6763bc6d0d123f96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6305f1c1c22f75279f4518258b8998e8"><td class="memItemLeft" align="right" valign="top"><a id="a6305f1c1c22f75279f4518258b8998e8"></a>
+ezUInt32&#160;</td><td class="memItemRight" valign="bottom"><b>GetNumStreams</b> () const</td></tr>
+<tr class="separator:a6305f1c1c22f75279f4518258b8998e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab62fb13d437a49836aa9acd0016b2b52"><td class="memItemLeft" align="right" valign="top"><a id="ab62fb13d437a49836aa9acd0016b2b52"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Close</b> ()</td></tr>
 <tr class="separator:ab62fb13d437a49836aa9acd0016b2b52"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -119,9 +122,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a2f03d23619dccb364faca9f7b7b49da2"><td class="memItemLeft" align="right" valign="top"><a id="a2f03d23619dccb364faca9f7b7b49da2"></a>
 static void *&#160;</td><td class="memItemRight" valign="bottom"><b>StreamWatcherThread</b> (void *context)</td></tr>
 <tr class="separator:a2f03d23619dccb364faca9f7b7b49da2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19f23c4062378431d4ec29a64c9cd79c"><td class="memItemLeft" align="right" valign="top"><a id="a19f23c4062378431d4ec29a64c9cd79c"></a>
-static <a class="el" href="../../d4/da9/structez_result.htm">ezResult</a>&#160;</td><td class="memItemRight" valign="bottom"><b>StartChildProcess</b> (const ezProcessOptions &amp;opt, pid_t &amp;outPid, bool suspended, int &amp;outStdOutFd, int &amp;outStdErrFd)</td></tr>
-<tr class="separator:a19f23c4062378431d4ec29a64c9cd79c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b767697e4c2f2baf25f39ceeda24bc0"><td class="memItemLeft" align="right" valign="top"><a id="a4b767697e4c2f2baf25f39ceeda24bc0"></a>
+static <a class="el" href="../../d4/da9/structez_result.htm">ezResult</a>&#160;</td><td class="memItemRight" valign="bottom"><b>StartChildProcess</b> (const ezProcessOptions &amp;opt, pid_t &amp;outPid, bool suspended, <a class="el" href="../../df/d18/classez_fd.htm">ezFd</a> &amp;outStdOutFd, <a class="el" href="../../df/d18/classez_fd.htm">ezFd</a> &amp;outStdErrFd)</td></tr>
+<tr class="separator:a4b767697e4c2f2baf25f39ceeda24bc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -143,12 +146,12 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_processSuspended</b
 <tr class="memitem:a268b1a4f809485fd3edfcff2b763ef9d"><td class="memItemLeft" align="right" valign="top"><a id="a268b1a4f809485fd3edfcff2b763ef9d"></a>
 <a class="el" href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr</a>&lt; <a class="el" href="../../dc/dee/classez_o_s_thread.htm">ezOSThread</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_streamWatcherThread</b></td></tr>
 <tr class="separator:a268b1a4f809485fd3edfcff2b763ef9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a147369f3ba7ddaa7e9c512e16b4a8eca"><td class="memItemLeft" align="right" valign="top"><a id="a147369f3ba7ddaa7e9c512e16b4a8eca"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>m_wakeupPipeReadEnd</b> = -1</td></tr>
-<tr class="separator:a147369f3ba7ddaa7e9c512e16b4a8eca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac711eb2e71fc95f81a29b5cbd4299bd8"><td class="memItemLeft" align="right" valign="top"><a id="ac711eb2e71fc95f81a29b5cbd4299bd8"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>m_wakeupPipeWriteEnd</b> = -1</td></tr>
-<tr class="separator:ac711eb2e71fc95f81a29b5cbd4299bd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7b1b84871707d3d32e39dbb58f7d24b"><td class="memItemLeft" align="right" valign="top"><a id="ae7b1b84871707d3d32e39dbb58f7d24b"></a>
+<a class="el" href="../../df/d18/classez_fd.htm">ezFd</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_wakeupPipeReadEnd</b></td></tr>
+<tr class="separator:ae7b1b84871707d3d32e39dbb58f7d24b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab718fe75d1be7e48936a805d1dadb80c"><td class="memItemLeft" align="right" valign="top"><a id="ab718fe75d1be7e48936a805d1dadb80c"></a>
+<a class="el" href="../../df/d18/classez_fd.htm">ezFd</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_wakeupPipeWriteEnd</b></td></tr>
+<tr class="separator:ab718fe75d1be7e48936a805d1dadb80c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e1de369f455abc107ea4e2f90dc1a0e"><td class="memItemLeft" align="right" valign="top"><a id="a6e1de369f455abc107ea4e2f90dc1a0e"></a>
 ezOsProcessHandle&#160;</td><td class="memItemRight" valign="bottom"><b>m_ProcessHandle</b> = nullptr</td></tr>
 <tr class="separator:a6e1de369f455abc107ea4e2f90dc1a0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -175,7 +178,7 @@ ezOsProcessID&#160;</td><td class="memItemRight" valign="bottom"><b>m_ProcessID<
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dd/dd3/structez_process_impl.htm">ezProcessImpl</a></li>
-    <li class="footer">Generated on Sat Nov 11 2023 19:41:05 for ezEngine by
+    <li class="footer">Generated on Fri Dec 22 2023 20:43:15 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

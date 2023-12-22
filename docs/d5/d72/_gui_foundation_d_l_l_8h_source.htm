@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.11</span>
+   &#160;<span id="projectnumber">Release 23.12</span>
    </div>
   </td>
  </tr>
@@ -91,12 +91,12 @@ $(document).ready(function(){initNavTree('d5/d72/_gui_foundation_d_l_l_8h_source
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;Foundation/Basics.h&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;Foundation/Math/Color8UNorm.h&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;Foundation/Types/Uuid.h&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QColor&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;QMetaType&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;ToolsFoundation/ToolsFoundationDLL.h&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;Foundation/Strings/String.h&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;QDataStream&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;Foundation/Strings/String.h&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;Foundation/Types/Uuid.h&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;QColor&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;QDataStream&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;QMetaType&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;ToolsFoundation/ToolsFoundationDLL.h&gt;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// Configure the DLL Import/Export Define</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#if EZ_ENABLED(EZ_COMPILE_ENGINE_AS_DLL)</span></div>
@@ -151,7 +151,7 @@ $(document).ready(function(){initNavTree('d5/d72/_gui_foundation_d_l_l_8h_source
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;EZ_ALWAYS_INLINE <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> qtToEzString(<span class="keyword">const</span> QString&amp; sString)</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;{</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  QByteArray data = sString.toUtf8();</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a>(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a>(data.data(), data.size()));</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a>(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a>(data.data(), <span class="keyword">static_cast&lt;</span>ezUInt32<span class="keyword">&gt;</span>(data.size())));</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;EZ_ALWAYS_INLINE QString ezMakeQString(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sString)</div>
@@ -175,7 +175,7 @@ $(document).ready(function(){initNavTree('d5/d72/_gui_foundation_d_l_l_8h_source
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  inout_stream.writeRawData((<span class="keyword">const</span> <span class="keywordtype">char</span>*)&amp;rhs, <span class="keyword">sizeof</span>(<span class="keywordtype">void</span>*));</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keywordtype">void</span> operator&gt;&gt;(QDataStream&amp; inout_stream, <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;T&gt;</a>&amp; rhs)</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;{</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  ezUInt32 uiIndices = 0;</div>
@@ -205,23 +205,23 @@ $(document).ready(function(){initNavTree('d5/d72/_gui_foundation_d_l_l_8h_source
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_qt_scoped_block_signals_htm"><div class="ttname"><a href="../../d1/d31/classez_qt_scoped_block_signals.htm">ezQtScopedBlockSignals</a></div><div class="ttdoc">Calls blockSignals(true) on all given QObjects, and the reverse in the destructor....</div><div class="ttdef"><b>Definition:</b> GuiFoundationDLL.h:43</div></div>
-<div class="ttc" id="aclassez_array_base_htm_abc514bdf8b2de7b5b220ffdbd862e830"><div class="ttname"><a href="../../dc/d59/classez_array_base.htm#abc514bdf8b2de7b5b220ffdbd862e830">ezArrayBase&lt; T, ezDynamicArrayBase&lt; T &gt; &gt;::PushBack</a></div><div class="ttdeci">void PushBack(const T &amp;value)</div><div class="ttdoc">Pushes value at the end of the array.</div><div class="ttdef"><b>Definition:</b> ArrayBase_inl.h:322</div></div>
+<div class="ttc" id="aclassez_array_base_htm_abc514bdf8b2de7b5b220ffdbd862e830"><div class="ttname"><a href="../../dc/d59/classez_array_base.htm#abc514bdf8b2de7b5b220ffdbd862e830">ezArrayBase&lt; T, ezDynamicArrayBase&lt; T &gt; &gt;::PushBack</a></div><div class="ttdeci">void PushBack(const T &amp;value)</div><div class="ttdoc">Pushes value at the end of the array.</div><div class="ttdef"><b>Definition:</b> ArrayBase_inl.h:333</div></div>
 <div class="ttc" id="aclassez_qt_scoped_updates_disabled_htm"><div class="ttname"><a href="../../d2/d17/classez_qt_scoped_updates_disabled.htm">ezQtScopedUpdatesDisabled</a></div><div class="ttdoc">Calls setUpdatesEnabled(false) on all given QObjects, and the reverse in the destructor....</div><div class="ttdef"><b>Definition:</b> GuiFoundationDLL.h:30</div></div>
 <div class="ttc" id="aclassez_color_gamma_u_b_htm"><div class="ttname"><a href="../../da/d51/classez_color_gamma_u_b.htm">ezColorGammaUB</a></div><div class="ttdoc">A 8bit per channel unsigned normalized (values interpreted as 0-1) color storage format that represen...</div><div class="ttdef"><b>Definition:</b> Color8UNorm.h:69</div></div>
 <div class="ttc" id="astructez_hybrid_string_htm"><div class="ttname"><a href="../../d4/d53/structez_hybrid_string.htm">ezHybridString</a></div><div class="ttdef"><b>Definition:</b> Stream.h:16</div></div>
-<div class="ttc" id="aclassez_array_base_htm_a51ba61fcbd2350ae8850754a41acbaa1"><div class="ttname"><a href="../../dc/d59/classez_array_base.htm#a51ba61fcbd2350ae8850754a41acbaa1">ezArrayBase&lt; T, ezDynamicArrayBase&lt; T &gt; &gt;::GetCount</a></div><div class="ttdeci">ezUInt32 GetCount() const</div><div class="ttdoc">Returns the number of active elements in the array.</div><div class="ttdef"><b>Definition:</b> ArrayBase_inl.h:161</div></div>
+<div class="ttc" id="aclassez_array_base_htm_a51ba61fcbd2350ae8850754a41acbaa1"><div class="ttname"><a href="../../dc/d59/classez_array_base.htm#a51ba61fcbd2350ae8850754a41acbaa1">ezArrayBase&lt; T, ezDynamicArrayBase&lt; T &gt; &gt;::GetCount</a></div><div class="ttdeci">ezUInt32 GetCount() const</div><div class="ttdoc">Returns the number of active elements in the array.</div><div class="ttdef"><b>Definition:</b> ArrayBase_inl.h:172</div></div>
 <div class="ttc" id="aclassez_dynamic_array_htm"><div class="ttname"><a href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray</a></div><div class="ttdef"><b>Definition:</b> DynamicArray.h:80</div></div>
 <div class="ttc" id="aclassez_dynamic_array_base_htm_a50350d5df71a36771f23feabe9315296"><div class="ttname"><a href="../../d5/d3f/classez_dynamic_array_base.htm#a50350d5df71a36771f23feabe9315296">ezDynamicArrayBase::Reserve</a></div><div class="ttdeci">void Reserve(ezUInt32 uiCapacity)</div><div class="ttdoc">Expands the array so it can at least store the given capacity.</div><div class="ttdef"><b>Definition:</b> DynamicArray_inl.h:179</div></div>
 <div class="ttc" id="aclassez_uuid_htm"><div class="ttname"><a href="../../da/d89/classez_uuid.htm">ezUuid</a></div><div class="ttdoc">This data type is the abstraction for 128-bit Uuid (also known as GUID) instances.</div><div class="ttdef"><b>Definition:</b> Uuid.h:10</div></div>
 <div class="ttc" id="astructez_string_view_htm"><div class="ttname"><a href="../../de/db8/structez_string_view.htm">ezStringView</a></div><div class="ttdoc">ezStringView represent a read-only sub-string of a larger string, as it can store a dedicated string ...</div><div class="ttdef"><b>Definition:</b> StringView.h:23</div></div>
 <div class="ttc" id="astructez_string_view_htm_a7e6ab4aebc721857871d822321935d5f"><div class="ttname"><a href="../../de/db8/structez_string_view.htm#a7e6ab4aebc721857871d822321935d5f">ezStringView::GetStartPointer</a></div><div class="ttdeci">const char * GetStartPointer() const</div><div class="ttdoc">Returns the start of the view range.</div><div class="ttdef"><b>Definition:</b> StringView.h:92</div></div>
 <div class="ttc" id="astructez_string_view_htm_a64dec920b26c9df50ea139826fcdd448"><div class="ttname"><a href="../../de/db8/structez_string_view.htm#a64dec920b26c9df50ea139826fcdd448">ezStringView::GetElementCount</a></div><div class="ttdeci">ezUInt32 GetElementCount() const</div><div class="ttdoc">Returns the number of bytes from the start position up to its end.</div><div class="ttdef"><b>Definition:</b> StringView.h:83</div></div>
-<div class="ttc" id="aclassez_array_base_htm_a74099c2d7681df345aedf8cfe24f0bc4"><div class="ttname"><a href="../../dc/d59/classez_array_base.htm#a74099c2d7681df345aedf8cfe24f0bc4">ezArrayBase&lt; T, ezDynamicArrayBase&lt; T &gt; &gt;::Clear</a></div><div class="ttdeci">void Clear()</div><div class="ttdoc">Clears the array.</div><div class="ttdef"><b>Definition:</b> ArrayBase_inl.h:173</div></div>
+<div class="ttc" id="aclassez_array_base_htm_a74099c2d7681df345aedf8cfe24f0bc4"><div class="ttname"><a href="../../dc/d59/classez_array_base.htm#a74099c2d7681df345aedf8cfe24f0bc4">ezArrayBase&lt; T, ezDynamicArrayBase&lt; T &gt; &gt;::Clear</a></div><div class="ttdeci">void Clear()</div><div class="ttdoc">Clears the array.</div><div class="ttdef"><b>Definition:</b> ArrayBase_inl.h:184</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_07792d309f5611e62640e8ec1fb96105.htm">Tools</a></li><li class="navelem"><a class="el" href="../../dir_8e80be223102188e67d1ce7cce146de0.htm">Libs</a></li><li class="navelem"><a class="el" href="../../dir_67a151a8658de153dad045cdd2f730f7.htm">GuiFoundation</a></li><li class="navelem"><b>GuiFoundationDLL.h</b></li>
-    <li class="footer">Generated on Sat Nov 11 2023 19:40:58 for ezEngine by
+    <li class="footer">Generated on Fri Dec 22 2023 20:43:10 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

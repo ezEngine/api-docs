@@ -3,6 +3,7 @@ var classez_vec4_template =
     [ "ComponentType", "da/dd2/classez_vec4_template.htm#a3bcbd3184d6dcba11d013b7ae00a3216", null ],
     [ "ezVec4Template", "da/dd2/classez_vec4_template.htm#a58ca6e0fd129b688b3520529bbebe6e7", null ],
     [ "ezVec4Template", "da/dd2/classez_vec4_template.htm#aacd37055d4349db084842a4ac78fe228", null ],
+    [ "ezVec4Template", "da/dd2/classez_vec4_template.htm#a1678722e4e840a5925d34cb3fbc5fb0e", null ],
     [ "ezVec4Template", "da/dd2/classez_vec4_template.htm#a1c07a268fb4667e574e307876fae40c0", null ],
     [ "Abs", "da/dd2/classez_vec4_template.htm#a2f4fd92f542c7ea5f37834c9149766ea", null ],
     [ "CompClamp", "da/dd2/classez_vec4_template.htm#a461ad8757c32b6019b29a76481ae1863", null ],

@@ -14,6 +14,7 @@ var classez_jolt_dynamic_actor_component =
     [ "GetJoltBodyID", "db/dcd/classez_jolt_dynamic_actor_component.htm#a54b111b743cfce25141cd3a1ac6a701b", null ],
     [ "GetJoltMaterial", "db/dcd/classez_jolt_dynamic_actor_component.htm#a527c0f633dfb7657c4d699b0f149b083", null ],
     [ "GetKinematic", "db/dcd/classez_jolt_dynamic_actor_component.htm#ac45ab3499394c3cd14bb2ce35ded90a4", null ],
+    [ "GetMass", "db/dcd/classez_jolt_dynamic_actor_component.htm#a333ab3c1902718e47cab5c2120fbf6ef", null ],
     [ "GetSurfaceFile", "db/dcd/classez_jolt_dynamic_actor_component.htm#afef7fbf99dfcd272b60e90ec78dd8eb5", null ],
     [ "GetUseCustomCoM", "db/dcd/classez_jolt_dynamic_actor_component.htm#a81e435c144f4fc9d958e523a03182f6f", null ],
     [ "OnDeactivated", "db/dcd/classez_jolt_dynamic_actor_component.htm#a4ad5f982169120257d8f116893084a78", null ],
@@ -31,8 +32,8 @@ var classez_jolt_dynamic_actor_component =
     [ "m_fAngularDamping", "db/dcd/classez_jolt_dynamic_actor_component.htm#a98c0f1af6d4a8bf74f378246031a7808", null ],
     [ "m_fDensity", "db/dcd/classez_jolt_dynamic_actor_component.htm#a53ae2c9f4b7940cdf64a84c5ed0ea566", null ],
     [ "m_fGravityFactor", "db/dcd/classez_jolt_dynamic_actor_component.htm#ad2478e421b07436c981e931b6454a646", null ],
+    [ "m_fInitialMass", "db/dcd/classez_jolt_dynamic_actor_component.htm#ad922de6395ad1717af5149d309b6bb81", null ],
     [ "m_fLinearDamping", "db/dcd/classez_jolt_dynamic_actor_component.htm#a151e90268b72d5f23fa5fd54d2ddf6b3", null ],
-    [ "m_fMass", "db/dcd/classez_jolt_dynamic_actor_component.htm#a0cebff74b56c7561f4825c9e5e0af922", null ],
     [ "m_hSurface", "db/dcd/classez_jolt_dynamic_actor_component.htm#a8cae5c21766fd668c711f39ed8e7ab52", null ],
     [ "m_OnContact", "db/dcd/classez_jolt_dynamic_actor_component.htm#a09590e1438397fdc9443120e202083d6", null ],
     [ "m_vCenterOfMass", "db/dcd/classez_jolt_dynamic_actor_component.htm#af5e8aa82feab3e628b7dd3a95d32c064", null ]

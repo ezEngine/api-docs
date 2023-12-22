@@ -24,7 +24,7 @@ var classez_qt_group_box_base =
     [ "SetDraggable", "da/db7/classez_qt_group_box_base.htm#a94c0dbe785c911bed6b063f3801e4018", null ],
     [ "SetFillColor", "da/db7/classez_qt_group_box_base.htm#a7229272af907570c23069c936775594f", null ],
     [ "SetIcon", "da/db7/classez_qt_group_box_base.htm#a97c738704b44885588869e93ecf9355f", null ],
-    [ "SetTitle", "da/db7/classez_qt_group_box_base.htm#a3f6e9e50619992f48433ebc4255e147a", null ],
+    [ "SetTitle", "da/db7/classez_qt_group_box_base.htm#a10d5cb97f450c35784cf0ebc7cd6c241", null ],
     [ "m_bBoldTitle", "da/db7/classez_qt_group_box_base.htm#a5e126f9f7ba43653b5d883f2bddec396", null ],
     [ "m_bCollapsible", "da/db7/classez_qt_group_box_base.htm#afb77503987b98293dbed2e7d9167e056", null ],
     [ "m_bDraggable", "da/db7/classez_qt_group_box_base.htm#adab8f47c3d517a10455f5ad335db53a1", null ],

@@ -37,7 +37,7 @@ var classez_vec3_template =
     [ "IsZero", "da/df1/classez_vec3_template.htm#a3a070fded3017061e2f96620d5148828", null ],
     [ "MakeOrthogonalTo", "da/df1/classez_vec3_template.htm#a4283a7b22b195027731f0a02bbc58611", null ],
     [ "Normalize", "da/df1/classez_vec3_template.htm#af0a6d50203589742653c50484734ef19", null ],
-    [ "NormalizeIfNotZero", "da/df1/classez_vec3_template.htm#a371533372c47fa274e0e39144d51f73c", null ],
+    [ "NormalizeIfNotZero", "da/df1/classez_vec3_template.htm#a8f8d784ce093d804fc4e1b6f61d4a647", null ],
     [ "operator*=", "da/df1/classez_vec3_template.htm#a8009bc202b1f20dc95d4296d063f3ff4", null ],
     [ "operator*=", "da/df1/classez_vec3_template.htm#a0fcb807c8aa58a796520fd3ca2d1c4b2", null ],
     [ "operator+=", "da/df1/classez_vec3_template.htm#a8a43db9c1ba66e580bf3eea85cc3f559", null ],

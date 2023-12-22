@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.11</span>
+   &#160;<span id="projectnumber">Release 23.12</span>
    </div>
   </td>
  </tr>
@@ -133,7 +133,7 @@ Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A resource loader that is mainly used to update a resource on the fly with custom data, e.g. in an editor. </p>
-<p>Use like this: Allocate a <a class="el" href="../../d0/ded/classez_resource_loader_from_memory.htm" title="A resource loader that is mainly used to update a resource on the fly with custom data,...">ezResourceLoaderFromMemory</a> instance on the heap, using EZ_DEFAULT_NEW and store the result in a <a class="el" href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt;ezResourceTypeLoader&gt;</a>. Then set the description, the modification time (simply use <a class="el" href="../../d9/d88/classez_timestamp.htm#a739cac6b2f28d9ad01f348d44acf154b" title="Returns the current timestamp. Returned value will always be valid.">ezTimestamp::CurrentTimestamp()</a>), and the custom data. Use a <a class="el" href="../../dc/db9/classez_memory_stream_writer.htm" title="A writer which can access a memory stream.">ezMemoryStreamWriter</a> to write your custom data. Make sure to write EXACTLY the same format that the targeted resource type would read, including all data that would typically be written by outside code, e.g. the default <a class="el" href="../../d3/d5e/classez_resource_loader_from_file.htm" title="A default implementation of ezResourceTypeLoader for standard file loading.">ezResourceLoaderFromFile</a> additionally writes the path to the resource at the start of the stream. If such data is usually present in the stream, you must write this yourself. Then call <a class="el" href="../../dc/d99/classez_resource_manager.htm#a711fe4ae6b8d3f21d96053a2df23b839" title="Calls ReloadResource() on the given resource, but makes sure that the reload happens with the given c...">ezResourceManager::UpdateResourceWithCustomLoader()</a>, specify the target resource and std::move your created loader in there. </p>
+<p>Use like this: Allocate a <a class="el" href="../../d0/ded/classez_resource_loader_from_memory.htm" title="A resource loader that is mainly used to update a resource on the fly with custom data,...">ezResourceLoaderFromMemory</a> instance on the heap, using EZ_DEFAULT_NEW and store the result in a <a class="el" href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt;ezResourceTypeLoader&gt;</a>. Then set the description, the modification time (simply use <a class="el" href="../../d9/d88/classez_timestamp.htm#a5c6ec3110d477acd5a4d265e7a180ca1" title="Returns the current timestamp. Returned value will always be valid.">ezTimestamp::CurrentTimestamp()</a>), and the custom data. Use a <a class="el" href="../../dc/db9/classez_memory_stream_writer.htm" title="A writer which can access a memory stream.">ezMemoryStreamWriter</a> to write your custom data. Make sure to write EXACTLY the same format that the targeted resource type would read, including all data that would typically be written by outside code, e.g. the default <a class="el" href="../../d3/d5e/classez_resource_loader_from_file.htm" title="A default implementation of ezResourceTypeLoader for standard file loading.">ezResourceLoaderFromFile</a> additionally writes the path to the resource at the start of the stream. If such data is usually present in the stream, you must write this yourself. Then call <a class="el" href="../../dc/d99/classez_resource_manager.htm#a711fe4ae6b8d3f21d96053a2df23b839" title="Calls ReloadResource() on the given resource, but makes sure that the reload happens with the given c...">ezResourceManager::UpdateResourceWithCustomLoader()</a>, specify the target resource and std::move your created loader in there. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="aab7ad6b20760e5ca8c8afdd97ea38b5d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aab7ad6b20760e5ca8c8afdd97ea38b5d">&#9670;&nbsp;</a></span>IsResourceOutdated()</h2>
@@ -208,7 +208,7 @@ Public Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d0/ded/classez_resource_loader_from_memory.htm">ezResourceLoaderFromMemory</a></li>
-    <li class="footer">Generated on Sat Nov 11 2023 19:41:06 for ezEngine by
+    <li class="footer">Generated on Fri Dec 22 2023 20:43:16 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

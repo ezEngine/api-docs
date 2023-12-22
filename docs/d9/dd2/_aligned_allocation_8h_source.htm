@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.11</span>
+   &#160;<span id="projectnumber">Release 23.12</span>
    </div>
   </td>
  </tr>
@@ -155,12 +155,12 @@ $(document).ready(function(){initNavTree('d9/dd2/_aligned_allocation_8h_source.h
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// Meta-data is stored 4 bytes before the aligned memory</span></div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">inline</span> ezUInt32* GetMetadataPtr(<span class="keywordtype">void</span>* pAlignedMemory)</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>ezUInt32*<span class="keyword">&gt;</span>(<a class="code" href="../../dc/d4d/classez_memory_utils.htm#a0bedfdd60a93e5a48cd7e412a4aa984b">ezMemoryUtils::AddByteOffset</a>(pAlignedMemory, -MetadataSize));</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>ezUInt32*<span class="keyword">&gt;</span>(<a class="code" href="../../dc/d4d/classez_memory_utils.htm#a15eef52da68b90ff049784e96ef0501c">ezMemoryUtils::AddByteOffset</a>(pAlignedMemory, -MetadataSize));</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keyword">inline</span> ezUInt32 GetMetadata(<span class="keyword">const</span> <span class="keywordtype">void</span>* pAlignedMemory)</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      <span class="keywordflow">return</span> *<span class="keyword">static_cast&lt;</span><span class="keyword">const </span>ezUInt32*<span class="keyword">&gt;</span>(<a class="code" href="../../dc/d4d/classez_memory_utils.htm#a0bedfdd60a93e5a48cd7e412a4aa984b">ezMemoryUtils::AddByteOffset</a>(pAlignedMemory, -MetadataSize));</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      <span class="keywordflow">return</span> *<span class="keyword">static_cast&lt;</span><span class="keyword">const </span>ezUInt32*<span class="keyword">&gt;</span>(<a class="code" href="../../dc/d4d/classez_memory_utils.htm#a15eef52da68b90ff049784e96ef0501c">ezMemoryUtils::AddByteOffset</a>(pAlignedMemory, -MetadataSize));</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">// Store offset between pMemory and pAlignedMemory in the lower 24 bit of meta-data.</span></div>
@@ -177,15 +177,15 @@ $(document).ready(function(){initNavTree('d9/dd2/_aligned_allocation_8h_source.h
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_memory_policies_1_1ez_aligned_allocation_htm"><div class="ttname"><a href="../../d0/da4/classez_memory_policies_1_1ez_aligned_allocation.htm">ezMemoryPolicies::ezAlignedAllocation</a></div><div class="ttdoc">Allocation policy to support custom alignment per allocation.</div><div class="ttdef"><b>Definition:</b> AlignedAllocation.h:11</div></div>
-<div class="ttc" id="aclassez_memory_utils_htm_a0bedfdd60a93e5a48cd7e412a4aa984b"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm#a0bedfdd60a93e5a48cd7e412a4aa984b">ezMemoryUtils::AddByteOffset</a></div><div class="ttdeci">static T * AddByteOffset(T *pPtr, ptrdiff_t iOffset)</div><div class="ttdoc">Returns the address stored in ptr plus the given byte offset iOffset, cast to type T.</div></div>
 <div class="ttc" id="anamespaceez_math_htm_a83324fcba89f4cb6ed5d1612bfaa0244"><div class="ttname"><a href="../../db/d78/namespaceez_math.htm#a83324fcba89f4cb6ed5d1612bfaa0244">ezMath::Log2i</a></div><div class="ttdeci">EZ_ALWAYS_INLINE ezUInt32 Log2i(ezUInt32 uiVal)</div><div class="ttdoc">Returns the integral logarithm to the base 2, that comes closest to the given integer.</div><div class="ttdef"><b>Definition:</b> MathInt32_inl.h:41</div></div>
 <div class="ttc" id="aclassez_allocator_base_htm"><div class="ttname"><a href="../../d1/d4c/classez_allocator_base.htm">ezAllocatorBase</a></div><div class="ttdoc">Base class for all memory allocators.</div><div class="ttdef"><b>Definition:</b> AllocatorBase.h:22</div></div>
+<div class="ttc" id="aclassez_memory_utils_htm_a15eef52da68b90ff049784e96ef0501c"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm#a15eef52da68b90ff049784e96ef0501c">ezMemoryUtils::AddByteOffset</a></div><div class="ttdeci">static T * AddByteOffset(T *pPtr, std::ptrdiff_t offset)</div><div class="ttdoc">Returns the address stored in ptr plus the given byte offset iOffset, cast to type T.</div></div>
 <div class="ttc" id="aclassez_memory_utils_htm_a1326a85e9177e3a18bd88938ad46048e"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm#a1326a85e9177e3a18bd88938ad46048e">ezMemoryUtils::AlignBackwards</a></div><div class="ttdeci">static T * AlignBackwards(T *pPtr, size_t uiAlignment)</div><div class="ttdoc">Aligns the pointer ptr by moving its address backwards to the previous multiple of uiAlignment.</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_adb0ac2a169525f5fa05f0527c58e205.htm">Memory</a></li><li class="navelem"><a class="el" href="../../dir_7e8e2491845ec7b2b62df622f0295925.htm">Policies</a></li><li class="navelem"><b>AlignedAllocation.h</b></li>
-    <li class="footer">Generated on Sat Nov 11 2023 19:40:53 for ezEngine by
+    <li class="footer">Generated on Fri Dec 22 2023 20:43:06 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

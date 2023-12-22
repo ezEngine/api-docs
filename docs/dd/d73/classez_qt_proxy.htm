@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.11</span>
+   &#160;<span id="projectnumber">Release 23.12</span>
    </div>
   </td>
  </tr>
@@ -130,9 +130,9 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>SetAction</b>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:acc576e9eddbe377212e83f0d54abf957"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d73/classez_qt_proxy.htm#acc576e9eddbe377212e83f0d54abf957">TriggerDocumentAction</a> (<a class="el" href="../../d6/dd3/classez_document.htm">ezDocument</a> *pDocument, QKeyEvent *pEvent)</td></tr>
-<tr class="memdesc:acc576e9eddbe377212e83f0d54abf957"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the QKeyEvent into a shortcut and tries to find a matching action in the document and global action list.  <a href="../../dd/d73/classez_qt_proxy.htm#acc576e9eddbe377212e83f0d54abf957">More...</a><br /></td></tr>
-<tr class="separator:acc576e9eddbe377212e83f0d54abf957"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a202365d6ea8de64cca358d2297dd7f10"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d73/classez_qt_proxy.htm#a202365d6ea8de64cca358d2297dd7f10">TriggerDocumentAction</a> (<a class="el" href="../../d6/dd3/classez_document.htm">ezDocument</a> *pDocument, QKeyEvent *pEvent, bool bTestOnly)</td></tr>
+<tr class="memdesc:a202365d6ea8de64cca358d2297dd7f10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the QKeyEvent into a shortcut and tries to find a matching action in the document and global action list.  <a href="../../dd/d73/classez_qt_proxy.htm#a202365d6ea8de64cca358d2297dd7f10">More...</a><br /></td></tr>
+<tr class="separator:a202365d6ea8de64cca358d2297dd7f10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c605ed37abc058ff9ca3e5c4a300650"><td class="memItemLeft" align="right" valign="top"><a id="a0c605ed37abc058ff9ca3e5c4a300650"></a>
 static <a class="el" href="../../d8/d28/classez_rtti_mapped_object_factory.htm">ezRttiMappedObjectFactory</a>&lt; <a class="el" href="../../dd/d73/classez_qt_proxy.htm">ezQtProxy</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetFactory</b> ()</td></tr>
 <tr class="separator:a0c605ed37abc058ff9ca3e5c4a300650"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -173,8 +173,8 @@ static QObject *&#160;</td><td class="memItemRight" valign="bottom"><b>s_pSignal
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Glue class that maps ezActions to QActions. QActions are only created if the <a class="el" href="../../d2/d03/classez_action.htm">ezAction</a> is actually mapped somewhere. Document and Global actions are manually executed and don't solely rely on Qt's ShortcutContext setting to prevent ambiguous action shortcuts. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="acc576e9eddbe377212e83f0d54abf957"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc576e9eddbe377212e83f0d54abf957">&#9670;&nbsp;</a></span>TriggerDocumentAction()</h2>
+<a id="a202365d6ea8de64cca358d2297dd7f10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a202365d6ea8de64cca358d2297dd7f10">&#9670;&nbsp;</a></span>TriggerDocumentAction()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -192,7 +192,13 @@ static QObject *&#160;</td><td class="memItemRight" valign="bottom"><b>s_pSignal
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">QKeyEvent *&#160;</td>
-          <td class="paramname"><em>pEvent</em>&#160;</td>
+          <td class="paramname"><em>pEvent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>bTestOnly</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -208,11 +214,12 @@ static QObject *&#160;</td><td class="memItemRight" valign="bottom"><b>s_pSignal
 </div><div class="memdoc">
 
 <p>Converts the QKeyEvent into a shortcut and tries to find a matching action in the document and global action list. </p>
-<p>Document actions are not mapped as ShortcutContext::WindowShortcut because docking allows for multiple documents to be mapped into the same window. Instead, ShortcutContext::WidgetWithChildrenShortcut is used to prevent ambiguous action shortcuts and the actions are executed manually via filtering QEvent::ShortcutOverride at the dock widget level.</p>
+<p>Document actions are not mapped as ShortcutContext::WindowShortcut because docking allows for multiple documents to be mapped into the same window. Instead, ShortcutContext::WidgetWithChildrenShortcut is used to prevent ambiguous action shortcuts and the actions are executed manually via filtering QEvent::ShortcutOverride at the dock widget level. The function always has to be called two times: A: QEvent::ShortcutOverride: Only check with bTestOnly = true that we want to override the shortcut. This will instruct Qt to send the event as a regular key press event to the widget that accepted the override. B: QEvent::keyPressEvent: Execute the actual action with bTestOnly = false;</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pDocument</td><td>The document for which matching actions should be searched for. If null, only global actions are searched. </td></tr>
-    <tr><td class="paramname">event</td><td>The key event that should be converted into a shortcut. </td></tr>
+    <tr><td class="paramname">pEvent</td><td>The key event that should be converted into a shortcut. </td></tr>
+    <tr><td class="paramname">bTestOnly</td><td>Accept the event and return true but don't execute the action. Use this inside QEvent::ShortcutOverride. </td></tr>
   </table>
   </dd>
 </dl>
@@ -230,7 +237,7 @@ static QObject *&#160;</td><td class="memItemRight" valign="bottom"><b>s_pSignal
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dd/d73/classez_qt_proxy.htm">ezQtProxy</a></li>
-    <li class="footer">Generated on Sat Nov 11 2023 19:41:06 for ezEngine by
+    <li class="footer">Generated on Fri Dec 22 2023 20:43:16 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

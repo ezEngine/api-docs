@@ -1,11 +1,5 @@
 var NAVTREEINDEX129 =
 {
-"functions_eval_q.htm":[4,3,5,15],
-"functions_eval_r.htm":[4,3,5,16],
-"functions_eval_s.htm":[4,3,5,17],
-"functions_eval_t.htm":[4,3,5,18],
-"functions_eval_u.htm":[4,3,5,19],
-"functions_eval_v.htm":[4,3,5,20],
 "functions_eval_w.htm":[4,3,5,21],
 "functions_eval_z.htm":[4,3,5,22],
 "functions_f.htm":[4,3,0,5],
@@ -55,8 +49,8 @@ var NAVTREEINDEX129 =
 "functions_type.htm":[4,3,3],
 "functions_u.htm":[4,3,0,20],
 "functions_v.htm":[4,3,0,21],
-"functions_vars.htm":[4,3,2,0],
 "functions_vars.htm":[4,3,2],
+"functions_vars.htm":[4,3,2,0],
 "functions_vars_b.htm":[4,3,2,1],
 "functions_vars_c.htm":[4,3,2,2],
 "functions_vars_d.htm":[4,3,2,3],

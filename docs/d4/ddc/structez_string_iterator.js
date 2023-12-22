@@ -1,6 +1,6 @@
 var structez_string_iterator =
 [
-    [ "difference_type", "d4/ddc/structez_string_iterator.htm#a72e701c4fcd647044ea40d193de2163c", null ],
+    [ "difference_type", "d4/ddc/structez_string_iterator.htm#aeecc91d9a6ddcb61d0fe85b7f8d2b56f", null ],
     [ "iterator_category", "d4/ddc/structez_string_iterator.htm#a31fddc97f5e3d9c259e2696bcebe317e", null ],
     [ "pointer", "d4/ddc/structez_string_iterator.htm#aba18da885cd8a7d8fab0f886939804be", null ],
     [ "reference", "d4/ddc/structez_string_iterator.htm#a0a2b75d7fba4e22a88345c5f089a15a2", null ],
@@ -8,11 +8,11 @@ var structez_string_iterator =
     [ "ezStringIterator", "d4/ddc/structez_string_iterator.htm#ae924b0a0566c1fa37e10f8d3c13bbc74", null ],
     [ "ezStringIterator", "d4/ddc/structez_string_iterator.htm#a7765401740968757855b8da62ca95f79", null ],
     [ "Advance", "d4/ddc/structez_string_iterator.htm#a237a0f46bf808589954a87afe2a7cab7", null ],
+    [ "EZ_ADD_DEFAULT_OPERATOR_NOTEQUAL", "d4/ddc/structez_string_iterator.htm#aafc8f7ca38edfff82df38c90f89ffd6c", null ],
     [ "EZ_DECLARE_POD_TYPE", "d4/ddc/structez_string_iterator.htm#a718f9fb364e5e129f2cb5060c459df8f", null ],
     [ "GetCharacter", "d4/ddc/structez_string_iterator.htm#a1953ef3cd58b849fbc9adabad5635bdf", null ],
     [ "GetData", "d4/ddc/structez_string_iterator.htm#acb917796f746f893a937f2d53a9b9d88", null ],
     [ "IsValid", "d4/ddc/structez_string_iterator.htm#afdba2b12be6134c25b8fbea27eca4bfb", null ],
-    [ "operator!=", "d4/ddc/structez_string_iterator.htm#ac04fb66381a2e863fb4da1b01c68f48f", null ],
     [ "operator*", "d4/ddc/structez_string_iterator.htm#ae3be42c7380b6454daae79fa9dd3be20", null ],
     [ "operator+", "d4/ddc/structez_string_iterator.htm#a39b609c48b4da08df028f55ed31d2eb3", null ],
     [ "operator++", "d4/ddc/structez_string_iterator.htm#a8f4524e2e5ccf7ccfef5ffc3a01819cf", null ],

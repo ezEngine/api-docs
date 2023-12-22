@@ -12,6 +12,7 @@ var classez_jolt_character_controller_component =
     [ "GetContactVelocityAndPushAway", "d6/d30/classez_jolt_character_controller_component.htm#a3302b875dedbe37bb53f2e400f3200e1", null ],
     [ "GetInverseUpdateTimeDelta", "d6/d30/classez_jolt_character_controller_component.htm#af7369e777234df0a85413085b7e7f01c", null ],
     [ "GetJoltCharacter", "d6/d30/classez_jolt_character_controller_component.htm#afe67e20c9252cfbe6f9b6906d093783c", null ],
+    [ "GetJoltCharacter", "d6/d30/classez_jolt_character_controller_component.htm#a8223a897a78524a3b466001ac0c9edf8", null ],
     [ "GetMass", "d6/d30/classez_jolt_character_controller_component.htm#a944d22eb74f0a97bb0f64cf30939ad99", null ],
     [ "GetMaxClimbingSlope", "d6/d30/classez_jolt_character_controller_component.htm#ad377b07a2286918b43e98c2ea1a4df0c", null ],
     [ "GetShapeRadius", "d6/d30/classez_jolt_character_controller_component.htm#a26122c7ddc99aec9f36ff2fea5667e13", null ],

@@ -1,10 +1,10 @@
 var structez_visual_script_data_description_1_1_data_offset =
 [
     [ "Source", "d4/dd2/structez_visual_script_data_description_1_1_data_offset_1_1_source.htm", "d4/dd2/structez_visual_script_data_description_1_1_data_offset_1_1_source" ],
-    [ "BYTE_OFFSET_BITS", "da/dfe/structez_visual_script_data_description_1_1_data_offset.htm#a6504041feb349859c0634474d2f57575ad76e31ace025baba25972717664c1682", null ],
-    [ "TYPE_BITS", "da/dfe/structez_visual_script_data_description_1_1_data_offset.htm#a6504041feb349859c0634474d2f57575a7d0dda5ef2b29323dc7ddbf78590f33f", null ],
-    [ "SOURCE_BITS", "da/dfe/structez_visual_script_data_description_1_1_data_offset.htm#a6504041feb349859c0634474d2f57575a2642d5c167e0be4f7b4b616575696e64", null ],
-    [ "INVALID_BYTE_OFFSET", "da/dfe/structez_visual_script_data_description_1_1_data_offset.htm#a6504041feb349859c0634474d2f57575ac056eb041aeaf259bcd379b981943128", null ],
+    [ "BYTE_OFFSET_BITS", "da/dfe/structez_visual_script_data_description_1_1_data_offset.htm#a9fdb45b5aac831f133b5090abfa6811ead76e31ace025baba25972717664c1682", null ],
+    [ "TYPE_BITS", "da/dfe/structez_visual_script_data_description_1_1_data_offset.htm#a9fdb45b5aac831f133b5090abfa6811ea7d0dda5ef2b29323dc7ddbf78590f33f", null ],
+    [ "SOURCE_BITS", "da/dfe/structez_visual_script_data_description_1_1_data_offset.htm#a9fdb45b5aac831f133b5090abfa6811ea2642d5c167e0be4f7b4b616575696e64", null ],
+    [ "INVALID_BYTE_OFFSET", "da/dfe/structez_visual_script_data_description_1_1_data_offset.htm#a9fdb45b5aac831f133b5090abfa6811eac056eb041aeaf259bcd379b981943128", null ],
     [ "DataOffset", "da/dfe/structez_visual_script_data_description_1_1_data_offset.htm#ab89826c006e5128b3806987a6027c3a7", null ],
     [ "DataOffset", "da/dfe/structez_visual_script_data_description_1_1_data_offset.htm#a4d96f564f10d8691f335f50ea2c3c9c8", null ],
     [ "Deserialize", "da/dfe/structez_visual_script_data_description_1_1_data_offset.htm#a0c7c7aa8dce026c00bf133dd3c3a069b", null ],

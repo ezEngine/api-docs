@@ -5,7 +5,7 @@ var classez_jolt_custom_shape_info =
     [ "CastRay", "d2/d1f/classez_jolt_custom_shape_info.htm#a7d256a8dc36fd1d25c84ed5e4259cd05", null ],
     [ "CastRay", "d2/d1f/classez_jolt_custom_shape_info.htm#a7ccdfd7be862f6bb81bc879ac2986488", null ],
     [ "CollidePoint", "d2/d1f/classez_jolt_custom_shape_info.htm#a768c0ea7f39ed035a21186f3e22cd1d7", null ],
-    [ "CollideSoftBodyVertices", "d2/d1f/classez_jolt_custom_shape_info.htm#a5a733201865fff27cc17c5928ba4675c", null ],
+    [ "CollideSoftBodyVertices", "d2/d1f/classez_jolt_custom_shape_info.htm#af234298a858d36eae3df62c9a375ef24", null ],
     [ "Draw", "d2/d1f/classez_jolt_custom_shape_info.htm#ad19f9faec1dc42ae945ad6bfbb26e33c", null ],
     [ "GetCenterOfMass", "d2/d1f/classez_jolt_custom_shape_info.htm#ab9655c0b650c2604a9d1d690a4130922", null ],
     [ "GetInnerRadius", "d2/d1f/classez_jolt_custom_shape_info.htm#afe97767b5a5152b418d0a409ae5b65d5", null ],

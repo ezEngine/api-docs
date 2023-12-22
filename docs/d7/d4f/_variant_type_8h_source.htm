@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.11</span>
+   &#160;<span id="projectnumber">Release 23.12</span>
    </div>
   </td>
  </tr>
@@ -177,32 +177,27 @@ $(document).ready(function(){initNavTree('d7/d4f/_variant_type_8h_source.htm','.
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="../../df/da8/structez_variant_type_deduction.htm">   96</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../df/da8/structez_variant_type_deduction.htm">ezVariantTypeDeduction</a></div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;{</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keyword">enum</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    value = <a class="code" href="../../da/d6c/structez_variant_type.htm#a91ecf53decb31d57981c71043fa30299a4584fcc346fd11c86028e40233016612">ezVariantType::Invalid</a>,</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    forceSharing = <span class="keyword">false</span>,</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    hasReflectedMembers = <span class="keyword">false</span>,</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    classification = ezVariantClass::Invalid</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  };</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keyword">static</span> constexpr <a class="code" href="../../da/d6c/structez_variant_type.htm#a91ecf53decb31d57981c71043fa30299">ezVariantType::Enum</a> value = <a class="code" href="../../da/d6c/structez_variant_type.htm#a91ecf53decb31d57981c71043fa30299a4584fcc346fd11c86028e40233016612">ezVariantType::Invalid</a>;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keyword">static</span> constexpr <span class="keywordtype">bool</span> forceSharing = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keyword">static</span> constexpr <span class="keywordtype">bool</span> hasReflectedMembers = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="keyword">static</span> constexpr <a class="code" href="../../dc/dd6/structez_variant_class.htm#ae69956de86b79976526628f7847c6e29">ezVariantClass::Enum</a> classification = ezVariantClass::Invalid;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <span class="keyword">using</span> StorageType = T;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;};</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="keyword">using</span> StorageType = T;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;};</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor">#define EZ_DECLARE_CUSTOM_VARIANT_TYPE(TYPE)          \</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor">  template &lt;&gt;                                         \</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="preprocessor">  struct ezVariantTypeDeduction&lt;TYPE&gt;                 \</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="preprocessor">  {                                                   \</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="preprocessor">    enum                                              \</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="preprocessor">    {                                                 \</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="preprocessor">      value = ezVariantType::TypedObject,             \</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="preprocessor">      forceSharing = false,                           \</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="preprocessor">      hasReflectedMembers = true,                     \</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="preprocessor">      classification = ezVariantClass::CustomTypeCast \</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="preprocessor">    };                                                \</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="preprocessor">    using StorageType = TYPE;                         \</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="preprocessor">  };</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="preprocessor">#include &lt;Foundation/Types/Implementation/VariantTypeDeduction_inl.h&gt;</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">#define EZ_DECLARE_CUSTOM_VARIANT_TYPE(TYPE)                                               \</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor">  template &lt;&gt;                                                                              \</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="preprocessor">  struct ezVariantTypeDeduction&lt;TYPE&gt;                                                      \</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor">  {                                                                                        \</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor">    static constexpr ezVariantType::Enum value = ezVariantType::TypedObject;               \</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="preprocessor">    static constexpr bool forceSharing = false;                                            \</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="preprocessor">    static constexpr bool hasReflectedMembers = true;                                      \</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="preprocessor">    static constexpr ezVariantClass::Enum classification = ezVariantClass::CustomTypeCast; \</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="preprocessor">                                                                                           \</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="preprocessor">    using StorageType = TYPE;                                                              \</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="preprocessor">  };</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="preprocessor">#include &lt;Foundation/Types/Implementation/VariantTypeDeduction_inl.h&gt;</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astructez_variant_type_htm_a91ecf53decb31d57981c71043fa30299ac4af591f48624b00a42223fa8ecb2c97"><div class="ttname"><a href="../../da/d6c/structez_variant_type.htm#a91ecf53decb31d57981c71043fa30299ac4af591f48624b00a42223fa8ecb2c97">ezVariantType::FirstStandardType</a></div><div class="ttdeci">@ FirstStandardType</div><div class="ttdoc">*** Types that are flagged as 'StandardTypes' (see DetermineTypeFlags) ***</div><div class="ttdef"><b>Definition:</b> VariantType.h:30</div></div>
@@ -240,7 +235,7 @@ $(document).ready(function(){initNavTree('d7/d4f/_variant_type_8h_source.htm','.
 <div class="ttc" id="astructez_variant_type_htm_a91ecf53decb31d57981c71043fa30299ab023cd04e8fa6cf088c564fb64ca3b2d"><div class="ttname"><a href="../../da/d6c/structez_variant_type.htm#a91ecf53decb31d57981c71043fa30299ab023cd04e8fa6cf088c564fb64ca3b2d">ezVariantType::Angle</a></div><div class="ttdeci">@ Angle</div><div class="ttdoc">The variant stores an ezAngle value.</div><div class="ttdef"><b>Definition:</b> VariantType.h:61</div></div>
 <div class="ttc" id="astructez_variant_type_htm_a91ecf53decb31d57981c71043fa30299acf0face2f7294e78788cedd137e7acc5"><div class="ttname"><a href="../../da/d6c/structez_variant_type.htm#a91ecf53decb31d57981c71043fa30299acf0face2f7294e78788cedd137e7acc5">ezVariantType::ColorGamma</a></div><div class="ttdeci">@ ColorGamma</div><div class="ttdoc">The variant stores an ezColorGammaUB value.</div><div class="ttdef"><b>Definition:</b> VariantType.h:62</div></div>
 <div class="ttc" id="astructez_variant_type_htm_a91ecf53decb31d57981c71043fa30299af8417e46b49b56817cf6ea9c30cc48d9"><div class="ttname"><a href="../../da/d6c/structez_variant_type.htm#a91ecf53decb31d57981c71043fa30299af8417e46b49b56817cf6ea9c30cc48d9">ezVariantType::DataBuffer</a></div><div class="ttdeci">@ DataBuffer</div><div class="ttdoc">The variant stores an ezDataBuffer, a typedef to DynamicArray&lt;ezUInt8&gt;. A heap allocation is required...</div><div class="ttdef"><b>Definition:</b> VariantType.h:58</div></div>
-<div class="ttc" id="aclassez_variant_htm"><div class="ttname"><a href="../../de/de6/classez_variant.htm">ezVariant</a></div><div class="ttdoc">ezVariant is a class that can store different types of variables, which is useful in situations where...</div><div class="ttdef"><b>Definition:</b> Variant.h:46</div></div>
+<div class="ttc" id="aclassez_variant_htm"><div class="ttname"><a href="../../de/de6/classez_variant.htm">ezVariant</a></div><div class="ttdoc">ezVariant is a class that can store different types of variables, which is useful in situations where...</div><div class="ttdef"><b>Definition:</b> Variant.h:43</div></div>
 <div class="ttc" id="astructez_variant_type_htm_a91ecf53decb31d57981c71043fa30299ab066b314c0abb93be5fa976a7cc5f820"><div class="ttname"><a href="../../da/d6c/structez_variant_type.htm#a91ecf53decb31d57981c71043fa30299ab066b314c0abb93be5fa976a7cc5f820">ezVariantType::Int64</a></div><div class="ttdeci">@ Int64</div><div class="ttdoc">The variant stores an ezInt64.</div><div class="ttdef"><b>Definition:</b> VariantType.h:38</div></div>
 <div class="ttc" id="astructez_variant_type_htm_a91ecf53decb31d57981c71043fa30299afad7be7b75ea94418e3915463719d4fa"><div class="ttname"><a href="../../da/d6c/structez_variant_type.htm#a91ecf53decb31d57981c71043fa30299afad7be7b75ea94418e3915463719d4fa">ezVariantType::Matrix3</a></div><div class="ttdeci">@ Matrix3</div><div class="ttdoc">The variant stores an ezMat3. A heap allocation is required to store this data type.</div><div class="ttdef"><b>Definition:</b> VariantType.h:53</div></div>
 <div class="ttc" id="astructez_variant_type_htm_a91ecf53decb31d57981c71043fa30299aa386f2aea900bb049ed58b432d011cda"><div class="ttname"><a href="../../da/d6c/structez_variant_type.htm#a91ecf53decb31d57981c71043fa30299aa386f2aea900bb049ed58b432d011cda">ezVariantType::Time</a></div><div class="ttdeci">@ Time</div><div class="ttdoc">The variant stores an ezTime value.</div><div class="ttdef"><b>Definition:</b> VariantType.h:59</div></div>
@@ -270,7 +265,7 @@ $(document).ready(function(){initNavTree('d7/d4f/_variant_type_8h_source.htm','.
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_f95f7c440efc771b227d40e9293549bd.htm">Types</a></li><li class="navelem"><b>VariantType.h</b></li>
-    <li class="footer">Generated on Sat Nov 11 2023 19:40:56 for ezEngine by
+    <li class="footer">Generated on Fri Dec 22 2023 20:43:08 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

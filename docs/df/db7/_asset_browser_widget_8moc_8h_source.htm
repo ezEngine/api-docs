@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.11</span>
+   &#160;<span id="projectnumber">Release 23.12</span>
    </div>
   </td>
  </tr>
@@ -109,92 +109,107 @@ $(document).ready(function(){initNavTree('df/db7/_asset_browser_widget_8moc_8h_s
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <a class="code" href="../../db/d27/classez_qt_asset_browser_widget.htm">ezQtAssetBrowserWidget</a>(QWidget* pParent);</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  ~<a class="code" href="../../db/d27/classez_qt_asset_browser_widget.htm">ezQtAssetBrowserWidget</a>();</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordtype">void</span> SetDialogMode();</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keywordtype">void</span> SetSelectedAsset(<a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a> preselectedAsset);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keywordtype">void</span> ShowOnlyTheseTypeFilters(<span class="keyword">const</span> <span class="keywordtype">char</span>* szFilters);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordtype">void</span> SaveState(<span class="keyword">const</span> <span class="keywordtype">char</span>* szSettingsName);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keywordtype">void</span> RestoreState(<span class="keyword">const</span> <span class="keywordtype">char</span>* szSettingsName);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keyword">enum class</span> Mode</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    Browser,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    AssetPicker,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    FilePicker,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  };</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <a class="code" href="../../d4/d65/classez_qt_asset_browser_model.htm">ezQtAssetBrowserModel</a>* GetAssetBrowserModel() { <span class="keywordflow">return</span> m_pModel; }</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d4/d65/classez_qt_asset_browser_model.htm">ezQtAssetBrowserModel</a>* GetAssetBrowserModel()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pModel; }</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <a class="code" href="../../d5/d1f/classez_qt_asset_browser_filter.htm">ezQtAssetBrowserFilter</a>* GetAssetBrowserFilter() { <span class="keywordflow">return</span> m_pFilter; }</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d5/d1f/classez_qt_asset_browser_filter.htm">ezQtAssetBrowserFilter</a>* GetAssetBrowserFilter()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pFilter; }</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;Q_SIGNALS:</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordtype">void</span> ItemChosen(<a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a> guid, QString sAssetPathRelative, QString sAssetPathAbsolute);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordtype">void</span> ItemSelected(<a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a> guid, QString sAssetPathRelative, QString sAssetPathAbsolute);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordtype">void</span> ItemCleared();</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">private</span> Q_SLOTS:</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keywordtype">void</span> OnTextFilterChanged();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordtype">void</span> OnTypeFilterChanged();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordtype">void</span> OnPathFilterChanged();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordtype">void</span> on_ListAssets_doubleClicked(<span class="keyword">const</span> QModelIndex&amp; index);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordtype">void</span> on_ListAssets_activated(<span class="keyword">const</span> QModelIndex&amp; index);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordtype">void</span> on_ListAssets_clicked(<span class="keyword">const</span> QModelIndex&amp; index);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordtype">void</span> on_ButtonListMode_clicked();</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordtype">void</span> on_ButtonIconMode_clicked();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordtype">void</span> on_IconSizeSlider_valueChanged(<span class="keywordtype">int</span> iValue);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordtype">void</span> on_ListAssets_ViewZoomed(ezInt32 iIconSizePercentage);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordtype">void</span> OnSearchWidgetTextChanged(<span class="keyword">const</span> QString&amp; text);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordtype">void</span> on_TreeFolderFilter_customContextMenuRequested(<span class="keyword">const</span> QPoint&amp; pt);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordtype">void</span> on_TypeFilter_currentIndexChanged(<span class="keywordtype">int</span> index);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordtype">void</span> OnScrollToItem(<a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a> preselectedAsset);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordtype">void</span> OnShowSubFolderItemsToggled();</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordtype">void</span> OnShowHiddenFolderItemsToggled();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordtype">void</span> on_ListAssets_customContextMenuRequested(<span class="keyword">const</span> QPoint&amp; pt);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordtype">void</span> OnListOpenExplorer();</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordtype">void</span> OnListOpenAssetDocument();</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">void</span> OnTransform();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordtype">void</span> OnListToggleSortByRecentlyUsed();</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordtype">void</span> OnListCopyAssetGuid();</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordtype">void</span> OnFilterToThisPath();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordtype">void</span> OnListFindAllReferences(<span class="keywordtype">bool</span> transitive);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordtype">void</span> OnSelectionTimer();</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordtype">void</span> OnAssetSelectionChanged(<span class="keyword">const</span> QItemSelection&amp; selected, <span class="keyword">const</span> QItemSelection&amp; deselected);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordtype">void</span> OnAssetSelectionCurrentChanged(<span class="keyword">const</span> QModelIndex&amp; current, <span class="keyword">const</span> QModelIndex&amp; previous);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordtype">void</span> OnModelReset();</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordtype">void</span> NewAsset();</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordtype">void</span> OnFileEditingFinished(<span class="keyword">const</span> QString&amp; sAbsPath, <span class="keyword">const</span> QString&amp; sNewName, <span class="keywordtype">bool</span> bIsAsset);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordtype">void</span> ImportSelection();</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordtype">void</span> OnOpenImportReferenceAsset();</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordtype">void</span> DeleteSelection();</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> keyPressEvent(QKeyEvent* e) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keywordtype">void</span> AssetCuratorEventHandler(<span class="keyword">const</span> <a class="code" href="../../d0/d24/structez_asset_curator_event.htm">ezAssetCuratorEvent</a>&amp; e);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordtype">void</span> UpdateAssetTypes();</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keywordtype">void</span> ProjectEventHandler(<span class="keyword">const</span> <a class="code" href="../../d4/d43/structez_tools_project_event.htm">ezToolsProjectEvent</a>&amp; e);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keywordtype">void</span> AddAssetCreatorMenu(QMenu* pMenu, <span class="keywordtype">bool</span> useSelectedAsset);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keywordtype">void</span> AddImportedViaMenu(QMenu* pMenu);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keywordtype">bool</span> m_bDialogMode = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <a class="code" href="../../db/d42/classez_qt_tool_bar_action_map_view.htm">ezQtToolBarActionMapView</a>* m_pToolbar = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sAllTypesFilter;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <a class="code" href="../../d4/d65/classez_qt_asset_browser_model.htm">ezQtAssetBrowserModel</a>* m_pModel = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <a class="code" href="../../d5/d1f/classez_qt_asset_browser_filter.htm">ezQtAssetBrowserFilter</a>* m_pFilter = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keywordtype">bool</span> m_bOpenAfterRename = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;};</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordtype">void</span> SetMode(Mode mode);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keywordtype">void</span> SetSelectedAsset(<a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a> preselectedAsset);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keywordtype">void</span> SetSelectedFile(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sAbsPath);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordtype">void</span> ShowOnlyTheseTypeFilters(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sFilters);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordtype">void</span> UseFileExtensionFilters(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sFileExtensions);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordtype">void</span> SaveState(<span class="keyword">const</span> <span class="keywordtype">char</span>* szSettingsName);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordtype">void</span> RestoreState(<span class="keyword">const</span> <span class="keywordtype">char</span>* szSettingsName);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <a class="code" href="../../d4/d65/classez_qt_asset_browser_model.htm">ezQtAssetBrowserModel</a>* GetAssetBrowserModel() { <span class="keywordflow">return</span> m_pModel; }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d4/d65/classez_qt_asset_browser_model.htm">ezQtAssetBrowserModel</a>* GetAssetBrowserModel()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pModel; }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="../../d5/d1f/classez_qt_asset_browser_filter.htm">ezQtAssetBrowserFilter</a>* GetAssetBrowserFilter() { <span class="keywordflow">return</span> m_pFilter; }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d5/d1f/classez_qt_asset_browser_filter.htm">ezQtAssetBrowserFilter</a>* GetAssetBrowserFilter()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pFilter; }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;Q_SIGNALS:</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordtype">void</span> ItemChosen(<a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a> guid, QString sAssetPathRelative, QString sAssetPathAbsolute, ezUInt8 uiAssetBrowserItemFlags);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordtype">void</span> ItemSelected(<a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a> guid, QString sAssetPathRelative, QString sAssetPathAbsolute, ezUInt8 uiAssetBrowserItemFlags);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordtype">void</span> ItemCleared();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">private</span> Q_SLOTS:</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordtype">void</span> OnTextFilterChanged();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordtype">void</span> OnTypeFilterChanged();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordtype">void</span> OnPathFilterChanged();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordtype">void</span> on_ListAssets_doubleClicked(<span class="keyword">const</span> QModelIndex&amp; index);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordtype">void</span> on_ListAssets_activated(<span class="keyword">const</span> QModelIndex&amp; index);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordtype">void</span> on_ListAssets_clicked(<span class="keyword">const</span> QModelIndex&amp; index);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordtype">void</span> on_ButtonListMode_clicked();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordtype">void</span> on_ButtonIconMode_clicked();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordtype">void</span> on_IconSizeSlider_valueChanged(<span class="keywordtype">int</span> iValue);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordtype">void</span> on_ListAssets_ViewZoomed(ezInt32 iIconSizePercentage);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">void</span> OnSearchWidgetTextChanged(<span class="keyword">const</span> QString&amp; text);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordtype">void</span> on_TreeFolderFilter_customContextMenuRequested(<span class="keyword">const</span> QPoint&amp; pt);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordtype">void</span> on_TypeFilter_currentIndexChanged(<span class="keywordtype">int</span> index);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordtype">void</span> OnScrollToItem(<a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a> preselectedAsset);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordtype">void</span> OnScrollToFile(QString sPreselectedFile);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordtype">void</span> OnShowSubFolderItemsToggled();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordtype">void</span> OnShowHiddenFolderItemsToggled();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordtype">void</span> on_ListAssets_customContextMenuRequested(<span class="keyword">const</span> QPoint&amp; pt);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordtype">void</span> OnListOpenExplorer();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordtype">void</span> OnListOpenAssetDocument();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordtype">void</span> OnTransform();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordtype">void</span> OnListToggleSortByRecentlyUsed();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordtype">void</span> OnListCopyAssetGuid();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordtype">void</span> OnFilterToThisPath();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordtype">void</span> OnListFindAllReferences(<span class="keywordtype">bool</span> transitive);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordtype">void</span> OnSelectionTimer();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordtype">void</span> OnAssetSelectionChanged(<span class="keyword">const</span> QItemSelection&amp; selected, <span class="keyword">const</span> QItemSelection&amp; deselected);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordtype">void</span> OnAssetSelectionCurrentChanged(<span class="keyword">const</span> QModelIndex&amp; current, <span class="keyword">const</span> QModelIndex&amp; previous);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keywordtype">void</span> OnModelReset();</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keywordtype">void</span> NewAsset();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keywordtype">void</span> OnFileEditingFinished(<span class="keyword">const</span> QString&amp; sAbsPath, <span class="keyword">const</span> QString&amp; sNewName, <span class="keywordtype">bool</span> bIsAsset);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordtype">void</span> ImportSelection();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keywordtype">void</span> OnOpenImportReferenceAsset();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keywordtype">void</span> DeleteSelection();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keywordtype">void</span> OnImportAsAboutToShow();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordtype">void</span> OnImportAsClicked();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> keyPressEvent(QKeyEvent* e) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keywordtype">void</span> AssetCuratorEventHandler(<span class="keyword">const</span> <a class="code" href="../../d0/d24/structez_asset_curator_event.htm">ezAssetCuratorEvent</a>&amp; e);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keywordtype">void</span> UpdateAssetTypes();</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keywordtype">void</span> ProjectEventHandler(<span class="keyword">const</span> <a class="code" href="../../d4/d43/structez_tools_project_event.htm">ezToolsProjectEvent</a>&amp; e);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keywordtype">void</span> AddAssetCreatorMenu(QMenu* pMenu, <span class="keywordtype">bool</span> useSelectedAsset);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <span class="keywordtype">void</span> AddImportedViaMenu(QMenu* pMenu);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="keywordtype">void</span> GetSelectedImportableFiles(<a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezString&gt;</a>&amp; out_Files) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  Mode m_Mode = Mode::Browser;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <a class="code" href="../../db/d42/classez_qt_tool_bar_action_map_view.htm">ezQtToolBarActionMapView</a>* m_pToolbar = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sAllTypesFilter;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <a class="code" href="../../d4/d65/classez_qt_asset_browser_model.htm">ezQtAssetBrowserModel</a>* m_pModel = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <a class="code" href="../../d5/d1f/classez_qt_asset_browser_filter.htm">ezQtAssetBrowserFilter</a>* m_pFilter = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="keywordtype">bool</span> m_bOpenAfterRename = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astructez_tools_project_event_htm"><div class="ttname"><a href="../../d4/d43/structez_tools_project_event.htm">ezToolsProjectEvent</a></div><div class="ttdef"><b>Definition:</b> ToolsProject.h:12</div></div>
 <div class="ttc" id="aclassez_qt_tool_bar_action_map_view_htm"><div class="ttname"><a href="../../db/d42/classez_qt_tool_bar_action_map_view.htm">ezQtToolBarActionMapView</a></div><div class="ttdef"><b>Definition:</b> ToolBarActionMapView.moc.h:15</div></div>
 <div class="ttc" id="astructez_hybrid_string_htm"><div class="ttname"><a href="../../d4/d53/structez_hybrid_string.htm">ezHybridString&lt; 32, ezDefaultAllocatorWrapper &gt;</a></div></div>
+<div class="ttc" id="aclassez_dynamic_array_htm"><div class="ttname"><a href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray</a></div><div class="ttdef"><b>Definition:</b> DynamicArray.h:80</div></div>
 <div class="ttc" id="aclassez_qt_asset_browser_widget_htm"><div class="ttname"><a href="../../db/d27/classez_qt_asset_browser_widget.htm">ezQtAssetBrowserWidget</a></div><div class="ttdef"><b>Definition:</b> AssetBrowserWidget.moc.h:16</div></div>
 <div class="ttc" id="aclassez_uuid_htm"><div class="ttname"><a href="../../da/d89/classez_uuid.htm">ezUuid</a></div><div class="ttdoc">This data type is the abstraction for 128-bit Uuid (also known as GUID) instances.</div><div class="ttdef"><b>Definition:</b> Uuid.h:10</div></div>
+<div class="ttc" id="astructez_string_view_htm"><div class="ttname"><a href="../../de/db8/structez_string_view.htm">ezStringView</a></div><div class="ttdoc">ezStringView represent a read-only sub-string of a larger string, as it can store a dedicated string ...</div><div class="ttdef"><b>Definition:</b> StringView.h:23</div></div>
 <div class="ttc" id="aclassez_qt_asset_browser_filter_htm"><div class="ttname"><a href="../../d5/d1f/classez_qt_asset_browser_filter.htm">ezQtAssetBrowserFilter</a></div><div class="ttdef"><b>Definition:</b> AssetBrowserFilter.moc.h:7</div></div>
-<div class="ttc" id="aclassez_qt_asset_browser_model_htm"><div class="ttname"><a href="../../d4/d65/classez_qt_asset_browser_model.htm">ezQtAssetBrowserModel</a></div><div class="ttdoc">Model of the item view in the asset browser.</div><div class="ttdef"><b>Definition:</b> AssetBrowserModel.moc.h:56</div></div>
+<div class="ttc" id="aclassez_qt_asset_browser_model_htm"><div class="ttname"><a href="../../d4/d65/classez_qt_asset_browser_model.htm">ezQtAssetBrowserModel</a></div><div class="ttdoc">Model of the item view in the asset browser.</div><div class="ttdef"><b>Definition:</b> AssetBrowserModel.moc.h:58</div></div>
 <div class="ttc" id="astructez_asset_curator_event_htm"><div class="ttname"><a href="../../d0/d24/structez_asset_curator_event.htm">ezAssetCuratorEvent</a></div><div class="ttdef"><b>Definition:</b> AssetCurator.h:121</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_898824d97bbfb864e5ee6bfb2857fc31.htm">Editor</a></li><li class="navelem"><a class="el" href="../../dir_2c11fbcc86473fad6c721ead68acf992.htm">EditorFramework</a></li><li class="navelem"><a class="el" href="../../dir_5814822b5fe0e25e106f6a2b5290738d.htm">Assets</a></li><li class="navelem"><b>AssetBrowserWidget.moc.h</b></li>
-    <li class="footer">Generated on Sat Nov 11 2023 19:40:46 for ezEngine by
+    <li class="footer">Generated on Fri Dec 22 2023 20:43:01 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>
