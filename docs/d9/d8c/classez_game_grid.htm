@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.12</span>
+   &#160;<span id="projectnumber">Release 24.09</span>
    </div>
   </td>
  </tr>
@@ -206,6 +206,15 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d8c/classez_game_grid.htm#a4bb91ddd6badad53561ad797a8e8decd">GetRayIntersectionExpandedBBox</a> (const <a class="el" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> &amp;vRayStartWorldSpace, const <a class="el" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> &amp;vRayDirNormalizedWorldSpace, float fMaxLength, float &amp;out_fIntersection, const <a class="el" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> &amp;vExpandBBoxByThis) const</td></tr>
 <tr class="memdesc:a4bb91ddd6badad53561ad797a8e8decd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests whether a ray would hit the grid bounding box, if it were expanded by a constant. <br /></td></tr>
 <tr class="separator:a4bb91ddd6badad53561ad797a8e8decd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c0a7f210b5d1dc2a553f56a7e741c12"><td class="memItemLeft" align="right" valign="top"><a id="a9c0a7f210b5d1dc2a553f56a7e741c12"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ComputeWorldSpaceCorners</b> (<a class="el" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> *pCorners) const</td></tr>
+<tr class="separator:a9c0a7f210b5d1dc2a553f56a7e741c12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d6c2ede24b48487819e8b9d1d40f85c"><td class="memItemLeft" align="right" valign="top"><a id="a8d6c2ede24b48487819e8b9d1d40f85c"></a>
+<a class="el" href="../../d4/da9/structez_result.htm">ezResult</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Serialize</b> (<a class="el" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a> &amp;ref_stream) const</td></tr>
+<tr class="separator:a8d6c2ede24b48487819e8b9d1d40f85c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9928c85aae79ff16e6112ac491507052"><td class="memItemLeft" align="right" valign="top"><a id="a9928c85aae79ff16e6112ac491507052"></a>
+<a class="el" href="../../d4/da9/structez_result.htm">ezResult</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Deserialize</b> (<a class="el" href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a> &amp;ref_stream)</td></tr>
+<tr class="separator:a9928c85aae79ff16e6112ac491507052"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;class CellData&gt;<br />
@@ -279,7 +288,9 @@ template&lt;class CellData &gt; </div>
 </div><div class="memdoc">
 
 <p>Casts a world space ray through the grid and determines which cell is hit (if any). </p>
-<dl class="section note"><dt>Note</dt><dd>The picked cell is determined from where the ray hits the 'ground plane', ie. the plane that goes through the world space origin. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The picked cell is determined from where the ray hits the 'ground plane', ie. the plane that goes through the world space origin. </dd>
+<dd>
+Returns true, if the ray would hit the ground, at all. The returned cell coordinate may not be valid (outside the valid range). Call <a class="el" href="../../d9/d8c/classez_game_grid.htm#a0f927787d1dbf44c2b238eb15f314b0c" title="Checks whether the given cell coordinate is inside valid ranges.">IsValidCellCoordinate()</a> to check. </dd></dl>
 
 </div>
 </div>
@@ -371,7 +382,7 @@ template&lt;class CellData &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d9/d8c/classez_game_grid.htm">ezGameGrid</a></li>
-    <li class="footer">Generated on Fri Dec 22 2023 20:43:13 for ezEngine by
+    <li class="footer">Generated on Sun Aug 25 2024 13:06:28 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

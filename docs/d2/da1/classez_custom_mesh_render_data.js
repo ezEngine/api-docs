@@ -8,5 +8,6 @@ var classez_custom_mesh_render_data =
     [ "m_uiFlipWinding", "d2/da1/classez_custom_mesh_render_data.htm#a098799811e8e78b36dc9f9b011ed3a13", null ],
     [ "m_uiNumPrimitives", "d2/da1/classez_custom_mesh_render_data.htm#a376e1010b5a3c7480ba95317a1d780f7", null ],
     [ "m_uiUniformScale", "d2/da1/classez_custom_mesh_render_data.htm#a8d94ccee03762e4af146d092daa0cd37", null ],
-    [ "m_uiUniqueID", "d2/da1/classez_custom_mesh_render_data.htm#aa9359e084220dc7547c3908f82f70bcc", null ]
+    [ "m_uiUniqueID", "d2/da1/classez_custom_mesh_render_data.htm#aa9359e084220dc7547c3908f82f70bcc", null ],
+    [ "m_vCustomData", "d2/da1/classez_custom_mesh_render_data.htm#abf0511097a4b17333fd5c75073e6b447", null ]
 ];

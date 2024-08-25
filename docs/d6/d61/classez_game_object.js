@@ -61,6 +61,7 @@ var classez_game_object =
     [ "GetLocalUniformScaling", "d6/d61/classez_game_object.htm#ac6aa7c6567941a6a81ea3e97683aafbf", null ],
     [ "GetLocalUniformScalingSimd", "d6/d61/classez_game_object.htm#a352667eeb7e22089b8304826fc7bac87", null ],
     [ "GetName", "d6/d61/classez_game_object.htm#a794ea905899afd27d1148452d7152387", null ],
+    [ "GetNameHashed", "d6/d61/classez_game_object.htm#a12f2f351ec840d1e0438bd13ab9350b5", null ],
     [ "GetParent", "d6/d61/classez_game_object.htm#a8c68b107b401448f9c766bdff5534843", null ],
     [ "GetParent", "d6/d61/classez_game_object.htm#af60f8fddeb0559600aa16e2d51c9158f", null ],
     [ "GetSpatialData", "d6/d61/classez_game_object.htm#a97752f127340de9ad69481d08df4c1ba", null ],

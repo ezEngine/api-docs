@@ -12,8 +12,8 @@ var classez_wind_volume_component =
     [ "OnSimulationStarted", "d8/d1a/classez_wind_volume_component.htm#a6dae5fd5ce0bd25421f3a7db1962d3ee", null ],
     [ "OnTriggered", "d8/d1a/classez_wind_volume_component.htm#a86c3a1234b8244cfb63359de19486a83", null ],
     [ "SerializeComponent", "d8/d1a/classez_wind_volume_component.htm#a66b4e6d16bdf21a5f39e4a2f25584433", null ],
-    [ "m_bReverseDirection", "d8/d1a/classez_wind_volume_component.htm#ab434a50f78660c76712ca092b5f5cb5b", null ],
     [ "m_BurstDuration", "d8/d1a/classez_wind_volume_component.htm#a973e7df1b42c211e3bed3337551ebb40", null ],
+    [ "m_fStrengthFactor", "d8/d1a/classez_wind_volume_component.htm#abc432ccb63c6850d0cd2064e28de5014", null ],
     [ "m_OnFinishedAction", "d8/d1a/classez_wind_volume_component.htm#a67b606cb91670797eb632b4633ff7a77", null ],
     [ "m_Strength", "d8/d1a/classez_wind_volume_component.htm#a78bbb405e9695b15cac04f022eec294c", null ]
 ];

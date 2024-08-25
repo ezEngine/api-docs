@@ -2,7 +2,7 @@ var classez_block_storage =
 [
     [ "ConstIterator", "d5/d8b/classez_block_storage_1_1_const_iterator.htm", "d5/d8b/classez_block_storage_1_1_const_iterator" ],
     [ "Iterator", "d8/de1/classez_block_storage_1_1_iterator.htm", "d8/de1/classez_block_storage_1_1_iterator" ],
-    [ "ezBlockStorage", "d3/d1f/classez_block_storage.htm#a534b5241f1789fc6c7c0f3bf70812d73", null ],
+    [ "ezBlockStorage", "d3/d1f/classez_block_storage.htm#a68aac18ac51263f15a982007b47082a1", null ],
     [ "~ezBlockStorage", "d3/d1f/classez_block_storage.htm#ac45c59d49b9753fd7599d8fe6931ae5e", null ],
     [ "Clear", "d3/d1f/classez_block_storage.htm#aa148388aaa0d738f9c67b9be5a106cd7", null ],
     [ "Create", "d3/d1f/classez_block_storage.htm#adb116b120c3614ddecb6f58accd45d8d", null ],

@@ -32,6 +32,7 @@ var classez_remote_interface =
     [ "Send", "df/d93/classez_remote_interface.htm#a1fc4ebec6018198572618680216da0a3", null ],
     [ "Send", "df/d93/classez_remote_interface.htm#ab542626bb273287105135f5544290c7f", null ],
     [ "SetMessageHandler", "df/d93/classez_remote_interface.htm#ac2d9c2f478ee90260ba745ca18d63c3d", null ],
+    [ "SetUnhandledMessageHandler", "df/d93/classez_remote_interface.htm#a9763f5cce2f21997a24709660c31c5b5", null ],
     [ "ShutdownConnection", "df/d93/classez_remote_interface.htm#a25c651f364d185ae4e5c860dd37a85ae", null ],
     [ "StartServer", "df/d93/classez_remote_interface.htm#a0bd5cfe5bfd789e17ec858c6d4261c7f", null ],
     [ "UpdatePingToServer", "df/d93/classez_remote_interface.htm#a8259601348e522ec79f5e5e266d4f318", null ],

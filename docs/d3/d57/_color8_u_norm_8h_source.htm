@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.12</span>
+   &#160;<span id="projectnumber">Release 24.09</span>
    </div>
   </td>
  </tr>
@@ -109,61 +109,90 @@ $(document).ready(function(){initNavTree('d3/d57/_color8_u_norm_8h_source.htm','
 <div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="../../d4/dd4/classez_color_base_u_b.htm#ac901bd891133d1d7b0180762bc33e66d">   28</a></span>&#160;  <span class="keyword">const</span> ezUInt8* <a class="code" href="../../d4/dd4/classez_color_base_u_b.htm#ac901bd891133d1d7b0180762bc33e66d">GetData</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> &amp;r; }</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="../../d4/dd4/classez_color_base_u_b.htm#aea132fb5c99128af9100c4f96af86526">   31</a></span>&#160;  ezUInt8* <a class="code" href="../../d4/dd4/classez_color_base_u_b.htm#aea132fb5c99128af9100c4f96af86526">GetData</a>() { <span class="keywordflow">return</span> &amp;r; }</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;};</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;EZ_CHECK_AT_COMPILETIME(<span class="keyword">sizeof</span>(<a class="code" href="../../d4/dd4/classez_color_base_u_b.htm">ezColorBaseUB</a>) == 4);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="../../de/d68/classez_color_linear_u_b.htm">   40</a></span>&#160;<span class="keyword">class </span>EZ_FOUNDATION_DLL <a class="code" href="../../de/d68/classez_color_linear_u_b.htm">ezColorLinearUB</a> : <span class="keyword">public</span> <a class="code" href="../../d4/dd4/classez_color_base_u_b.htm">ezColorBaseUB</a></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  EZ_DECLARE_POD_TYPE();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <a class="code" href="../../de/d68/classez_color_linear_u_b.htm">ezColorLinearUB</a>() = <span class="keywordflow">default</span>; <span class="comment">// [tested]</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <a class="code" href="../../de/d68/classez_color_linear_u_b.htm">ezColorLinearUB</a>(ezUInt8 r, ezUInt8 g, ezUInt8 b, ezUInt8 a = 255); <span class="comment">// [tested]</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <a class="code" href="../../de/d68/classez_color_linear_u_b.htm">ezColorLinearUB</a>(<span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; color); <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="../../d4/dd4/classez_color_base_u_b.htm#a4efaa2b3e9e4d2acb1c51d9670e444f8">   34</a></span>&#160;  [[nodiscard]] ezUInt32 <a class="code" href="../../d4/dd4/classez_color_base_u_b.htm#a4efaa2b3e9e4d2acb1c51d9670e444f8">ToRGBA8</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">  </span>{</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">// RGBA (A at lowest address, R at highest)</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">return</span> (<span class="keyword">static_cast&lt;</span>ezUInt32<span class="keyword">&gt;</span>(r) &lt;&lt; 24) +</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;           (<span class="keyword">static_cast&lt;</span>ezUInt32<span class="keyword">&gt;</span>(g) &lt;&lt; 16) +</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;           (<span class="keyword">static_cast&lt;</span>ezUInt32<span class="keyword">&gt;</span>(b) &lt;&lt; 8) +</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;           (<span class="keyword">static_cast&lt;</span>ezUInt32<span class="keyword">&gt;</span>(a) &lt;&lt; 0);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="../../d4/dd4/classez_color_base_u_b.htm#ae069796870c52f420dc7758fcc54dfb3">   44</a></span>&#160;  [[nodiscard]] ezUInt32 <a class="code" href="../../d4/dd4/classez_color_base_u_b.htm#ae069796870c52f420dc7758fcc54dfb3">ToABGR8</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">  </span>{</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">// RGBA (A at highest address, R at lowest)</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">return</span> (<span class="keyword">static_cast&lt;</span>ezUInt32<span class="keyword">&gt;</span>(a) &lt;&lt; 24) +</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;           (<span class="keyword">static_cast&lt;</span>ezUInt32<span class="keyword">&gt;</span>(b) &lt;&lt; 16) +</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;           (<span class="keyword">static_cast&lt;</span>ezUInt32<span class="keyword">&gt;</span>(g) &lt;&lt; 8) +</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;           (<span class="keyword">static_cast&lt;</span>ezUInt32<span class="keyword">&gt;</span>(r) &lt;&lt; 0);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;};</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;static_assert(<span class="keyword">sizeof</span>(<a class="code" href="../../d4/dd4/classez_color_base_u_b.htm">ezColorBaseUB</a>) == 4);</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordtype">void</span> operator=(<span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; color); <span class="comment">// [tested]</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a> ToLinearFloat() <span class="keyword">const</span>; <span class="comment">// [tested]</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;};</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;EZ_CHECK_AT_COMPILETIME(<span class="keyword">sizeof</span>(<a class="code" href="../../de/d68/classez_color_linear_u_b.htm">ezColorLinearUB</a>) == 4);</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="../../de/d68/classez_color_linear_u_b.htm">   60</a></span>&#160;<span class="keyword">class </span>EZ_FOUNDATION_DLL <a class="code" href="../../de/d68/classez_color_linear_u_b.htm">ezColorLinearUB</a> : <span class="keyword">public</span> <a class="code" href="../../d4/dd4/classez_color_base_u_b.htm">ezColorBaseUB</a></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  EZ_DECLARE_POD_TYPE();</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="../../da/d51/classez_color_gamma_u_b.htm">   69</a></span>&#160;<span class="keyword">class </span>EZ_FOUNDATION_DLL <a class="code" href="../../da/d51/classez_color_gamma_u_b.htm">ezColorGammaUB</a> : <span class="keyword">public</span> <a class="code" href="../../d4/dd4/classez_color_base_u_b.htm">ezColorBaseUB</a></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;{</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  EZ_DECLARE_POD_TYPE();</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <a class="code" href="../../da/d51/classez_color_gamma_u_b.htm">ezColorGammaUB</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <a class="code" href="../../da/d51/classez_color_gamma_u_b.htm">ezColorGammaUB</a>(ezUInt8 uiGammaRed, ezUInt8 uiGammaGreen, ezUInt8 uiGammaBlue, ezUInt8 uiLinearAlpha = 255); <span class="comment">// [tested]</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <a class="code" href="../../da/d51/classez_color_gamma_u_b.htm">ezColorGammaUB</a>(<span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; color); <span class="comment">// [tested]</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keywordtype">void</span> operator=(<span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; color); <span class="comment">// [tested]</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a> ToLinearFloat() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <a class="code" href="../../de/d68/classez_color_linear_u_b.htm">ezColorLinearUB</a>() = <span class="keywordflow">default</span>; <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <a class="code" href="../../de/d68/classez_color_linear_u_b.htm">ezColorLinearUB</a>(ezUInt8 r, ezUInt8 g, ezUInt8 b, ezUInt8 a = 255); <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <a class="code" href="../../de/d68/classez_color_linear_u_b.htm">ezColorLinearUB</a>(<span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; color); <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordtype">void</span> operator=(<span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; color); <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a> ToLinearFloat() <span class="keyword">const</span>; <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="../../de/d68/classez_color_linear_u_b.htm#abc0168cb3d95ac6f59856ecac850fc21">   83</a></span>&#160;  <span class="keyword">static</span> <a class="code" href="../../de/d68/classez_color_linear_u_b.htm">ezColorLinearUB</a> <a class="code" href="../../de/d68/classez_color_linear_u_b.htm#abc0168cb3d95ac6f59856ecac850fc21">MakeFromABGR8</a>(ezUInt32 value)</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../de/d68/classez_color_linear_u_b.htm">ezColorLinearUB</a>(<span class="keyword">static_cast&lt;</span>ezUInt8<span class="keyword">&gt;</span>(value &gt;&gt; 0) &amp; 0xFF,</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      <span class="keyword">static_cast&lt;</span>ezUInt8<span class="keyword">&gt;</span>(value &gt;&gt; 8) &amp; 0xFF,</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;      <span class="keyword">static_cast&lt;</span>ezUInt8<span class="keyword">&gt;</span>(value &gt;&gt; 16) &amp; 0xFF,</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      <span class="keyword">static_cast&lt;</span>ezUInt8<span class="keyword">&gt;</span>(value &gt;&gt; 24) &amp; 0xFF);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  }</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;};</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;EZ_CHECK_AT_COMPILETIME(<span class="keyword">sizeof</span>(<a class="code" href="../../da/d51/classez_color_gamma_u_b.htm">ezColorGammaUB</a>) == 4);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;static_assert(<span class="keyword">sizeof</span>(<a class="code" href="../../de/d68/classez_color_linear_u_b.htm">ezColorLinearUB</a>) == 4);</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#include &lt;Foundation/Math/Implementation/Color8UNorm_inl.h&gt;</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="../../da/d51/classez_color_gamma_u_b.htm">   98</a></span>&#160;<span class="keyword">class </span>EZ_FOUNDATION_DLL <a class="code" href="../../da/d51/classez_color_gamma_u_b.htm">ezColorGammaUB</a> : <span class="keyword">public</span> <a class="code" href="../../d4/dd4/classez_color_base_u_b.htm">ezColorBaseUB</a></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;{</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  EZ_DECLARE_POD_TYPE();</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <a class="code" href="../../da/d51/classez_color_gamma_u_b.htm">ezColorGammaUB</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <a class="code" href="../../da/d51/classez_color_gamma_u_b.htm">ezColorGammaUB</a>(ezUInt8 uiGammaRed, ezUInt8 uiGammaGreen, ezUInt8 uiGammaBlue, ezUInt8 uiLinearAlpha = 255); <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <a class="code" href="../../da/d51/classez_color_gamma_u_b.htm">ezColorGammaUB</a>(<span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; color); <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <span class="keywordtype">void</span> operator=(<span class="keyword">const</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>&amp; color); <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a> ToLinearFloat() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;};</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;static_assert(<span class="keyword">sizeof</span>(<a class="code" href="../../da/d51/classez_color_gamma_u_b.htm">ezColorGammaUB</a>) == 4);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="preprocessor">#include &lt;Foundation/Math/Implementation/Color8UNorm_inl.h&gt;</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aclassez_color_linear_u_b_htm_abc0168cb3d95ac6f59856ecac850fc21"><div class="ttname"><a href="../../de/d68/classez_color_linear_u_b.htm#abc0168cb3d95ac6f59856ecac850fc21">ezColorLinearUB::MakeFromABGR8</a></div><div class="ttdeci">static ezColorLinearUB MakeFromABGR8(ezUInt32 value)</div><div class="ttdoc">Extracts the values from a uint32 with R at the least significant bits, then G, then B and A at the m...</div><div class="ttdef"><b>Definition:</b> Color8UNorm.h:83</div></div>
 <div class="ttc" id="aclassez_color_htm"><div class="ttname"><a href="../../dd/d01/classez_color.htm">ezColor</a></div><div class="ttdoc">ezColor represents an RGBA color in linear color space. Values are stored as float,...</div><div class="ttdef"><b>Definition:</b> Color.h:43</div></div>
-<div class="ttc" id="aclassez_color_gamma_u_b_htm"><div class="ttname"><a href="../../da/d51/classez_color_gamma_u_b.htm">ezColorGammaUB</a></div><div class="ttdoc">A 8bit per channel unsigned normalized (values interpreted as 0-1) color storage format that represen...</div><div class="ttdef"><b>Definition:</b> Color8UNorm.h:69</div></div>
-<div class="ttc" id="aclassez_color_linear_u_b_htm"><div class="ttname"><a href="../../de/d68/classez_color_linear_u_b.htm">ezColorLinearUB</a></div><div class="ttdoc">A 8bit per channel unsigned normalized (values interpreted as 0-1) color storage format that represen...</div><div class="ttdef"><b>Definition:</b> Color8UNorm.h:40</div></div>
+<div class="ttc" id="aclassez_color_gamma_u_b_htm"><div class="ttname"><a href="../../da/d51/classez_color_gamma_u_b.htm">ezColorGammaUB</a></div><div class="ttdoc">A 8bit per channel unsigned normalized (values interpreted as 0-1) color storage format that represen...</div><div class="ttdef"><b>Definition:</b> Color8UNorm.h:98</div></div>
+<div class="ttc" id="aclassez_color_linear_u_b_htm"><div class="ttname"><a href="../../de/d68/classez_color_linear_u_b.htm">ezColorLinearUB</a></div><div class="ttdoc">A 8bit per channel unsigned normalized (values interpreted as 0-1) color storage format that represen...</div><div class="ttdef"><b>Definition:</b> Color8UNorm.h:60</div></div>
+<div class="ttc" id="aclassez_color_base_u_b_htm_a4efaa2b3e9e4d2acb1c51d9670e444f8"><div class="ttname"><a href="../../d4/dd4/classez_color_base_u_b.htm#a4efaa2b3e9e4d2acb1c51d9670e444f8">ezColorBaseUB::ToRGBA8</a></div><div class="ttdeci">ezUInt32 ToRGBA8() const</div><div class="ttdoc">Packs the 4 color values into a single uint32 with A in the least significant bits and R in the most ...</div><div class="ttdef"><b>Definition:</b> Color8UNorm.h:34</div></div>
 <div class="ttc" id="aclassez_color_base_u_b_htm_aea132fb5c99128af9100c4f96af86526"><div class="ttname"><a href="../../d4/dd4/classez_color_base_u_b.htm#aea132fb5c99128af9100c4f96af86526">ezColorBaseUB::GetData</a></div><div class="ttdeci">ezUInt8 * GetData()</div><div class="ttdoc">Conversion to ezUInt8*.</div><div class="ttdef"><b>Definition:</b> Color8UNorm.h:31</div></div>
 <div class="ttc" id="aclassez_color_base_u_b_htm"><div class="ttname"><a href="../../d4/dd4/classez_color_base_u_b.htm">ezColorBaseUB</a></div><div class="ttdoc">A 8bit per channel color storage format with undefined encoding. It is up to the user to reinterpret ...</div><div class="ttdef"><b>Definition:</b> Color8UNorm.h:11</div></div>
 <div class="ttc" id="aclassez_color_base_u_b_htm_ac901bd891133d1d7b0180762bc33e66d"><div class="ttname"><a href="../../d4/dd4/classez_color_base_u_b.htm#ac901bd891133d1d7b0180762bc33e66d">ezColorBaseUB::GetData</a></div><div class="ttdeci">const ezUInt8 * GetData() const</div><div class="ttdoc">Conversion to const ezUInt8*.</div><div class="ttdef"><b>Definition:</b> Color8UNorm.h:28</div></div>
+<div class="ttc" id="aclassez_color_base_u_b_htm_ae069796870c52f420dc7758fcc54dfb3"><div class="ttname"><a href="../../d4/dd4/classez_color_base_u_b.htm#ae069796870c52f420dc7758fcc54dfb3">ezColorBaseUB::ToABGR8</a></div><div class="ttdeci">ezUInt32 ToABGR8() const</div><div class="ttdoc">Packs the 4 color values into a single uint32 with R in the least significant bits and A in the most ...</div><div class="ttdef"><b>Definition:</b> Color8UNorm.h:44</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_4ad0f5fbee83b30173e7fecedeea26f0.htm">Math</a></li><li class="navelem"><b>Color8UNorm.h</b></li>
-    <li class="footer">Generated on Fri Dec 22 2023 20:43:06 for ezEngine by
+    <li class="footer">Generated on Sun Aug 25 2024 13:06:19 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

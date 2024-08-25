@@ -2,12 +2,12 @@ var classez_visual_script_node_manager =
 [
     [ "ezVisualScriptNodeManager", "d1/d30/classez_visual_script_node_manager.htm#a7ac14212f4ed8255dfe76a4e7c7d75f4", null ],
     [ "~ezVisualScriptNodeManager", "d1/d30/classez_visual_script_node_manager.htm#a79d5d0216f122e91c785e589cd8e73cb", null ],
-    [ "GetCreateableTypes", "d1/d30/classez_visual_script_node_manager.htm#a0fae5087ba0af79c7cf2e525e1808b48", null ],
     [ "GetDeductedType", "d1/d30/classez_visual_script_node_manager.htm#aa026d2d0d15653ba58261a902a41216f", null ],
     [ "GetDeductedType", "d1/d30/classez_visual_script_node_manager.htm#aa97770859b449fc557f1e3f8ca8fff5c", null ],
     [ "GetEntryNodes", "d1/d30/classez_visual_script_node_manager.htm#ad6c2c608886c9e3bc63a457b2e5a65c4", null ],
     [ "GetInputDataPins", "d1/d30/classez_visual_script_node_manager.htm#ae19a7cdb674259c7617b9df8b9677c2d", null ],
     [ "GetInputExecutionPins", "d1/d30/classez_visual_script_node_manager.htm#a2ff6109c00457a8c4eddec6e10e09842", null ],
+    [ "GetNodeCreationTemplates", "d1/d30/classez_visual_script_node_manager.htm#a0a9442cb8fbfddf3df13eb9a82e56252", null ],
     [ "GetOutputDataPins", "d1/d30/classez_visual_script_node_manager.htm#aa4625ba94e693407977dad89e267d3b1", null ],
     [ "GetOutputExecutionPins", "d1/d30/classez_visual_script_node_manager.htm#a599a2b33a5d2c649b08032d36f64234a", null ],
     [ "GetScriptBaseClass", "d1/d30/classez_visual_script_node_manager.htm#a93a5a718176f2595fea863d40ba10c79", null ],

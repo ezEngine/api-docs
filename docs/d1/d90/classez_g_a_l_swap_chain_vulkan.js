@@ -15,7 +15,6 @@ var classez_g_a_l_swap_chain_vulkan =
     [ "m_currentPipelineImageAvailableSemaphore", "d1/d90/classez_g_a_l_swap_chain_vulkan.htm#a6cbf004a52f4858244daead08842c1d0", null ],
     [ "m_currentPresentMode", "d1/d90/classez_g_a_l_swap_chain_vulkan.htm#a4bda6a396429008243425c06c2a15361", null ],
     [ "m_pVulkanDevice", "d1/d90/classez_g_a_l_swap_chain_vulkan.htm#a19430de259482fc7125b13572914d7a9", null ],
-    [ "m_swapChainImageInUseFences", "d1/d90/classez_g_a_l_swap_chain_vulkan.htm#af2773f2692eb49f8f5033bc35ad13921", null ],
     [ "m_swapChainImages", "d1/d90/classez_g_a_l_swap_chain_vulkan.htm#ac71f573796d93f0980246c90a312b341", null ],
     [ "m_swapChainTextures", "d1/d90/classez_g_a_l_swap_chain_vulkan.htm#adec3e31b50fb4b1c508d19f8a574688d", null ],
     [ "m_uiCurrentSwapChainImage", "d1/d90/classez_g_a_l_swap_chain_vulkan.htm#a78ee4d62e9d0b200afc577205642b898", null ],

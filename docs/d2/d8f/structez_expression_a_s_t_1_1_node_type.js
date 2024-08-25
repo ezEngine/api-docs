@@ -66,6 +66,8 @@ var structez_expression_a_s_t_1_1_node_type =
       [ "Clamp", "d2/d8f/structez_expression_a_s_t_1_1_node_type.htm#a1fbeae9f91dce0cfbe3ea4fba64f06c1a0e152ed29fc5d5634efdd7c6ad8e31de", null ],
       [ "Select", "d2/d8f/structez_expression_a_s_t_1_1_node_type.htm#a1fbeae9f91dce0cfbe3ea4fba64f06c1a3598315b0be15ddf6107932e9ca4bddc", null ],
       [ "Lerp", "d2/d8f/structez_expression_a_s_t_1_1_node_type.htm#a1fbeae9f91dce0cfbe3ea4fba64f06c1ae61be316de68387eb027e6681e40ccfb", null ],
+      [ "SmoothStep", "d2/d8f/structez_expression_a_s_t_1_1_node_type.htm#a1fbeae9f91dce0cfbe3ea4fba64f06c1ae60ac0c216dd224b7e4439c9db58f6a4", null ],
+      [ "SmootherStep", "d2/d8f/structez_expression_a_s_t_1_1_node_type.htm#a1fbeae9f91dce0cfbe3ea4fba64f06c1acd0d33977701ea522743b83e599c042b", null ],
       [ "LastTernary", "d2/d8f/structez_expression_a_s_t_1_1_node_type.htm#a1fbeae9f91dce0cfbe3ea4fba64f06c1a7973ba1cc6d68e6b04ebf9c79581ecdb", null ],
       [ "Constant", "d2/d8f/structez_expression_a_s_t_1_1_node_type.htm#a1fbeae9f91dce0cfbe3ea4fba64f06c1a9e6f8c4c35515bb373963cd49a06b872", null ],
       [ "Swizzle", "d2/d8f/structez_expression_a_s_t_1_1_node_type.htm#a1fbeae9f91dce0cfbe3ea4fba64f06c1a351fa832608d913e43a20d1946bf8ab6", null ],

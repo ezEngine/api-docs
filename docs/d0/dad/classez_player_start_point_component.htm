@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.12</span>
+   &#160;<span id="projectnumber">Release 24.09</span>
    </div>
   </td>
  </tr>
@@ -92,12 +92,17 @@ $(document).ready(function(){initNavTree('d0/dad/classez_player_start_point_comp
 <div class="title">ezPlayerStartPointComponent Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Defines a location that the player may start from.  
+ <a href="../../d0/dad/classez_player_start_point_component.htm#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../db/d5e/_player_start_point_component_8h_source.htm">PlayerStartPointComponent.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ezPlayerStartPointComponent:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d0/db3/classez_player_start_point_component__inherit__graph.png" border="0" usemap="#ez_player_start_point_component_inherit__map" alt="Inheritance graph"/></div>
 <map name="ez_player_start_point_component_inherit__map" id="ez_player_start_point_component_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,229,223,256"/>
+<area shape="rect" title="Defines a location that the player may start from." alt="" coords="5,229,223,256"/>
 <area shape="rect" href="../../d6/d30/classez_component.htm" title="Base class of all component types." alt="" coords="58,155,170,181"/>
 <area shape="rect" href="../../db/d45/classez_reflected_class.htm" title="All classes that should be dynamically reflectable, need to be derived from this base class." alt="" coords="47,80,181,107"/>
 <area shape="rect" href="../../d4/d02/classez_no_base.htm" title="Dummy type to pass to templates and macros that expect a base type for a class that has no base." alt="" coords="71,5,157,32"/>
@@ -113,12 +118,6 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <tr class="memitem:ab3de92d4a7c02cf6a74e654d513398d6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dad/classez_player_start_point_component.htm#ab3de92d4a7c02cf6a74e654d513398d6">DeserializeComponent</a> (<a class="el" href="../../d9/dd6/classez_world_reader.htm">ezWorldReader</a> &amp;inout_stream) override</td></tr>
 <tr class="memdesc:ab3de92d4a7c02cf6a74e654d513398d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override this to load the current state of the component from the given stream.  <a href="../../d0/dad/classez_player_start_point_component.htm#ab3de92d4a7c02cf6a74e654d513398d6">More...</a><br /></td></tr>
 <tr class="separator:ab3de92d4a7c02cf6a74e654d513398d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c50a9772fb277ef6413c7d41251fdf7"><td class="memItemLeft" align="right" valign="top"><a id="a7c50a9772fb277ef6413c7d41251fdf7"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetPlayerPrefabFile</b> (const char *szFile)</td></tr>
-<tr class="separator:a7c50a9772fb277ef6413c7d41251fdf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46d993f90ab1fc3b1183218a0c51173f"><td class="memItemLeft" align="right" valign="top"><a id="a46d993f90ab1fc3b1183218a0c51173f"></a>
-const char *&#160;</td><td class="memItemRight" valign="bottom"><b>GetPlayerPrefabFile</b> () const</td></tr>
-<tr class="separator:a46d993f90ab1fc3b1183218a0c51173f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc318d0877e11a0e1a02727aede7bd4e"><td class="memItemLeft" align="right" valign="top"><a id="afc318d0877e11a0e1a02727aede7bd4e"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>SetPlayerPrefab</b> (const <a class="el" href="../../d3/dd7/classez_typed_resource_handle.htm">ezPrefabResourceHandle</a> &amp;hPrefab)</td></tr>
 <tr class="separator:afc318d0877e11a0e1a02727aede7bd4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -315,7 +314,13 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsInitializing</b> ()
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsSimulationStarted</b> () const</td></tr>
 <tr class="separator:a11a8594eda72a1a93da5caba223028b5 inherit pro_methods_classez_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Defines a location that the player may start from. </p>
+<p>This component specifies which prefab to use as the player object and parameters to spawn the player object with.</p>
+<p>The component itself has no functionality. It is the <a class="el" href="../../de/d84/classez_game_state.htm" title="ezGameState implements the ezGameStateBase interface and adds several convenience features.">ezGameState</a> that decides how to utilize player start points. The default game state searches for a start point component and spawns the prefab from there, assuming that the prefab contains all the functionality to make the game playable (e.g. it should contain a main camera, input handling, movement and so on).</p>
+<p>A game state may also ignore the prefab and on the player start point component and only use the location to spawn or relocate the player object.</p>
+<p>It is not mandatory to use a spawn point component. A player object can also be instantiated in a scene just as a regular prefab. However, the editor functionality "Play from here", that allows you to spawn the player object at any location in the scene, relies on spawn points, as the spawn point defines which prefab to use for the player prefab, but the game state can now override the location where to spawn the player. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ab3de92d4a7c02cf6a74e654d513398d6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab3de92d4a7c02cf6a74e654d513398d6">&#9670;&nbsp;</a></span>DeserializeComponent()</h2>
 
@@ -357,7 +362,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsSimulationStarted</
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d0/dad/classez_player_start_point_component.htm">ezPlayerStartPointComponent</a></li>
-    <li class="footer">Generated on Fri Dec 22 2023 20:43:15 for ezEngine by
+    <li class="footer">Generated on Sun Aug 25 2024 13:06:30 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

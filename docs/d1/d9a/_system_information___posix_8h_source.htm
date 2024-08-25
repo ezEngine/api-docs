@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.12</span>
+   &#160;<span id="projectnumber">Release 24.09</span>
    </div>
   </td>
  </tr>
@@ -109,8 +109,8 @@ $(document).ready(function(){initNavTree('d1/d9a/_system_information___posix_8h_
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  status.<a class="code" href="../../db/d00/classez_o_s_file.htm#aa1ba820f6aea53fbfcc3440817cd9d0c">Close</a>();</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> contents(buffer, numBytesRead);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* tracerPid = contents.<a class="code" href="../../de/db8/structez_string_view.htm#ae380afd9a5311d28aca9a724076c73d1">FindSubString</a>(<span class="stringliteral">&quot;TracerPid:&quot;</span>);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> contents(buffer, numBytesRead);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* tracerPid = contents.<a class="code" href="../../d9/d18/classez_string_view.htm#ae380afd9a5311d28aca9a724076c73d1">FindSubString</a>(<span class="stringliteral">&quot;TracerPid:&quot;</span>);</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keywordflow">if</span> (tracerPid == <span class="keyword">nullptr</span>)</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  {</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
@@ -187,49 +187,51 @@ $(document).ready(function(){initNavTree('d1/d9a/_system_information___posix_8h_
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keywordflow">return</span> 0.0f;</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keyword">namespace </span>cpu_x86</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;{</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#include &lt;cpuid.h&gt;</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <span class="keywordtype">void</span> cpuid(int32_t out[4], int32_t eax, int32_t ecx)</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  {</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    __cpuid_count(eax, ecx, out[0], out[1], out[2], out[3]);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  }</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  uint64_t xgetbv(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> index)</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  {</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    uint32_t eax, edx;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    __asm__ __volatile__(<span class="stringliteral">&quot;xgetbv&quot;</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                         : <span class="stringliteral">&quot;=a&quot;</span>(eax), <span class="stringliteral">&quot;=d&quot;</span>(edx)</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                         : <span class="stringliteral">&quot;c&quot;</span>(index));</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordflow">return</span> ((uint64_t)edx &lt;&lt; 32) | eax;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  }</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <span class="keywordtype">bool</span> detect_OS_x64()</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  {</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="comment">//  We only support x64 on Linux / Mac / etc.</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  }</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;} <span class="comment">// namespace cpu_x86</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#if EZ_ENABLED(EZ_PLATFORM_ARCH_X86)</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keyword">namespace </span>cpu_x86</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;{</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">#  include &lt;cpuid.h&gt;</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="keywordtype">void</span> cpuid(int32_t out[4], int32_t eax, int32_t ecx)</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    __cpuid_count(eax, ecx, out[0], out[1], out[2], out[3]);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  uint64_t xgetbv(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> index)</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    uint32_t eax, edx;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    __asm__ __volatile__(<span class="stringliteral">&quot;xgetbv&quot;</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                         : <span class="stringliteral">&quot;=a&quot;</span>(eax), <span class="stringliteral">&quot;=d&quot;</span>(edx)</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                         : <span class="stringliteral">&quot;c&quot;</span>(index));</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">return</span> ((uint64_t)edx &lt;&lt; 32) | eax;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  }</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <span class="keywordtype">bool</span> detect_OS_x64()</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="comment">//  We only support x64 on Linux / Mac / etc.</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  }</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;} <span class="comment">// namespace cpu_x86</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_system_information_htm_a7ac1dfb9c7032270c6dd0fd71dadf118"><div class="ttname"><a href="../../d5/d9e/classez_system_information.htm#a7ac1dfb9c7032270c6dd0fd71dadf118">ezSystemInformation::GetCPUUtilization</a></div><div class="ttdeci">float GetCPUUtilization() const</div><div class="ttdoc">Returns the total utilization of the CPU core in percent.</div><div class="ttdef"><b>Definition:</b> SystemInformation_Posix.h:95</div></div>
-<div class="ttc" id="astructez_string_view_htm_ae380afd9a5311d28aca9a724076c73d1"><div class="ttname"><a href="../../de/db8/structez_string_view.htm#ae380afd9a5311d28aca9a724076c73d1">ezStringView::FindSubString</a></div><div class="ttdeci">const char * FindSubString(ezStringView sStringToFind, const char *szStartSearchAt=nullptr) const</div><div class="ttdef"><b>Definition:</b> StringView.cpp:58</div></div>
 <div class="ttc" id="aclassez_o_s_file_htm"><div class="ttname"><a href="../../db/d00/classez_o_s_file.htm">ezOSFile</a></div><div class="ttdoc">This is an abstraction for the most important file operations.</div><div class="ttdef"><b>Definition:</b> OSFile.h:169</div></div>
 <div class="ttc" id="aclassez_system_information_htm_a78898c2775cf065395bdbc91bb026a8c"><div class="ttname"><a href="../../d5/d9e/classez_system_information.htm#a78898c2775cf065395bdbc91bb026a8c">ezSystemInformation::IsDebuggerAttached</a></div><div class="ttdeci">static bool IsDebuggerAttached()</div><div class="ttdoc">Returns whether a debugger is currently attached to this process.</div><div class="ttdef"><b>Definition:</b> SystemInformation_Posix.h:9</div></div>
 <div class="ttc" id="aclassez_system_information_htm_ab3ae4fd5961acb2d8c0c58a0a6301b74"><div class="ttname"><a href="../../d5/d9e/classez_system_information.htm#ab3ae4fd5961acb2d8c0c58a0a6301b74">ezSystemInformation::GetAvailableMainMemory</a></div><div class="ttdeci">ezUInt64 GetAvailableMainMemory() const</div><div class="ttdoc">Returns the currently available physical memory.</div><div class="ttdef"><b>Definition:</b> SystemInformation_Posix.h:90</div></div>
 <div class="ttc" id="aclassez_o_s_file_htm_a2ee1509a51f0f0dcb79e3bc22db4c9b0"><div class="ttname"><a href="../../db/d00/classez_o_s_file.htm#a2ee1509a51f0f0dcb79e3bc22db4c9b0">ezOSFile::Read</a></div><div class="ttdeci">ezUInt64 Read(void *pBuffer, ezUInt64 uiBytes)</div><div class="ttdoc">Reads up to the given number of bytes from the file. Returns the actual number of bytes that was read...</div><div class="ttdef"><b>Definition:</b> OSFile.cpp:143</div></div>
 <div class="ttc" id="aclassez_o_s_file_htm_a008a5a9019e619cbb0fceb335a6c5694"><div class="ttname"><a href="../../db/d00/classez_o_s_file.htm#a008a5a9019e619cbb0fceb335a6c5694">ezOSFile::Open</a></div><div class="ttdeci">ezResult Open(ezStringView sFile, ezFileOpenMode::Enum openMode, ezFileShareMode::Enum fileShareMode=ezFileShareMode::Default)</div><div class="ttdoc">Opens a file for reading or writing. Returns EZ_SUCCESS if the file could be opened successfully.</div><div class="ttdef"><b>Definition:</b> OSFile.cpp:33</div></div>
 <div class="ttc" id="astructez_file_open_mode_htm_aa4c406e7c17f3dfa422e2e2402cb744aad3c1cc0e10984d4bec87350a9e452696"><div class="ttname"><a href="../../df/d56/structez_file_open_mode.htm#aa4c406e7c17f3dfa422e2e2402cb744aad3c1cc0e10984d4bec87350a9e452696">ezFileOpenMode::Read</a></div><div class="ttdeci">@ Read</div><div class="ttdoc">Open file for reading.</div><div class="ttdef"><b>Definition:</b> OSFile.h:26</div></div>
-<div class="ttc" id="astructez_string_view_htm"><div class="ttname"><a href="../../de/db8/structez_string_view.htm">ezStringView</a></div><div class="ttdoc">ezStringView represent a read-only sub-string of a larger string, as it can store a dedicated string ...</div><div class="ttdef"><b>Definition:</b> StringView.h:23</div></div>
 <div class="ttc" id="aclassez_o_s_file_htm_aa1ba820f6aea53fbfcc3440817cd9d0c"><div class="ttname"><a href="../../db/d00/classez_o_s_file.htm#aa1ba820f6aea53fbfcc3440817cd9d0c">ezOSFile::Close</a></div><div class="ttdeci">void Close()</div><div class="ttdoc">Closes the file, if it is currently opened.</div><div class="ttdef"><b>Definition:</b> OSFile.cpp:93</div></div>
 <div class="ttc" id="astructez_cpu_features_htm_ae0a6a282c6f2c42c4e137b24c109093d"><div class="ttname"><a href="../../d3/de7/structez_cpu_features.htm#ae0a6a282c6f2c42c4e137b24c109093d">ezCpuFeatures::Detect</a></div><div class="ttdeci">void Detect()</div><div class="ttdoc">CPU feature detection code copied from https://github.com/Mysticial/FeatureDetector.</div><div class="ttdef"><b>Definition:</b> SystemInformation.cpp:168</div></div>
+<div class="ttc" id="aclassez_string_view_htm"><div class="ttname"><a href="../../d9/d18/classez_string_view.htm">ezStringView</a></div><div class="ttdoc">ezStringView represent a read-only sub-string of a larger string, as it can store a dedicated string ...</div><div class="ttdef"><b>Definition:</b> StringView.h:33</div></div>
+<div class="ttc" id="aclassez_string_view_htm_ae380afd9a5311d28aca9a724076c73d1"><div class="ttname"><a href="../../d9/d18/classez_string_view.htm#ae380afd9a5311d28aca9a724076c73d1">ezStringView::FindSubString</a></div><div class="ttdeci">const char * FindSubString(ezStringView sStringToFind, const char *szStartSearchAt=nullptr) const</div><div class="ttdef"><b>Definition:</b> StringView.cpp:60</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_81a97b29d048515ed79592945c8b94b3.htm">Platform</a></li><li class="navelem"><a class="el" href="../../dir_ea0f1cea308dbde9b8c550f938edec5f.htm">Posix</a></li><li class="navelem"><b>SystemInformation_Posix.h</b></li>
-    <li class="footer">Generated on Fri Dec 22 2023 20:43:06 for ezEngine by
+    <li class="footer">Generated on Sun Aug 25 2024 13:06:19 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

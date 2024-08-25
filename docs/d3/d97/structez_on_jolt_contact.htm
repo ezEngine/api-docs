@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.12</span>
+   &#160;<span id="projectnumber">Release 24.09</span>
    </div>
   </td>
  </tr>
@@ -91,6 +91,11 @@ $(document).ready(function(){initNavTree('d3/d97/structez_on_jolt_contact.htm','
 <div class="title">ezOnJoltContact Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Flags for what should happen when two physical bodies touch.  
+ <a href="../../d3/d97/structez_on_jolt_contact.htm#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d1/d0f/_engine_plugins_2_jolt_plugin_2_declarations_8h_source.htm">Declarations.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -99,14 +104,14 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:adaa65f2008f4d42d2f845a0f95222a3d"><td class="memItemLeft" align="right" valign="top"><a id="adaa65f2008f4d42d2f845a0f95222a3d"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>Enum</b> { <br />
+<tr class="memitem:adaa65f2008f4d42d2f845a0f95222a3d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d97/structez_on_jolt_contact.htm#adaa65f2008f4d42d2f845a0f95222a3d">Enum</a> { <br />
 &#160;&#160;<b>None</b> = 0, 
-<b>ImpactReactions</b> = EZ_BIT(1), 
-<b>SlideReactions</b> = EZ_BIT(2), 
-<b>RollXReactions</b> = EZ_BIT(3), 
+<a class="el" href="../../d3/d97/structez_on_jolt_contact.htm#adaa65f2008f4d42d2f845a0f95222a3da29780b52105df71c969cf4229cc2344a">ImpactReactions</a> = EZ_BIT(1), 
+<a class="el" href="../../d3/d97/structez_on_jolt_contact.htm#adaa65f2008f4d42d2f845a0f95222a3da10aa32a050143751648fedc2b7fd585a">SlideReactions</a> = EZ_BIT(2), 
+<a class="el" href="../../d3/d97/structez_on_jolt_contact.htm#adaa65f2008f4d42d2f845a0f95222a3dabca2b4044c17649d5742bc3201ea2af7">RollXReactions</a> = EZ_BIT(3), 
 <br />
-&#160;&#160;<b>RollYReactions</b> = EZ_BIT(4), 
-<b>RollZReactions</b> = EZ_BIT(5), 
+&#160;&#160;<a class="el" href="../../d3/d97/structez_on_jolt_contact.htm#adaa65f2008f4d42d2f845a0f95222a3da6c60f97409fc31e258985d68bcbab456">RollYReactions</a> = EZ_BIT(4), 
+<a class="el" href="../../d3/d97/structez_on_jolt_contact.htm#adaa65f2008f4d42d2f845a0f95222a3da8eaf5bd306a6c74d04627cbaa229b226">RollZReactions</a> = EZ_BIT(5), 
 <b>AllRollReactions</b> = RollXReactions | RollYReactions | RollZReactions, 
 <b>SlideAndRollReactions</b> = AllRollReactions | SlideReactions, 
 <br />
@@ -119,6 +124,36 @@ Public Types</h2></td></tr>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>StorageType</b> = ezUInt32</td></tr>
 <tr class="separator:af5e5225abadcb37f8a22c5e4a2a31fed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Flags for what should happen when two physical bodies touch. </p>
+<p>The reactions need to be set up through ezSurface's. For most objects only some reactions make sense. For example a box may hit another object as well as slide, but it cannot roll. A barrel can impact and slide on some sides, but roll around its up axis (Z). A sphere can impact and roll around all its axis, but never slide. A soft object may not have any impact reactions. </p>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="adaa65f2008f4d42d2f845a0f95222a3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adaa65f2008f4d42d2f845a0f95222a3d">&#9670;&nbsp;</a></span>Enum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../d3/d97/structez_on_jolt_contact.htm#adaa65f2008f4d42d2f845a0f95222a3d">ezOnJoltContact::Enum</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="adaa65f2008f4d42d2f845a0f95222a3da29780b52105df71c969cf4229cc2344a"></a>ImpactReactions&#160;</td><td class="fielddoc"><p>Spawn prefabs for impacts (two objects hit each other with enough force). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adaa65f2008f4d42d2f845a0f95222a3da10aa32a050143751648fedc2b7fd585a"></a>SlideReactions&#160;</td><td class="fielddoc"><p>Spawn prefabs for sliding (one object slides along the surface of another). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adaa65f2008f4d42d2f845a0f95222a3dabca2b4044c17649d5742bc3201ea2af7"></a>RollXReactions&#160;</td><td class="fielddoc"><p>Spawn prefabs for rolling (one object rotates around its X axis while touching another). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adaa65f2008f4d42d2f845a0f95222a3da6c60f97409fc31e258985d68bcbab456"></a>RollYReactions&#160;</td><td class="fielddoc"><p>Spawn prefabs for rolling (one object rotates around its Y axis while touching another). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="adaa65f2008f4d42d2f845a0f95222a3da8eaf5bd306a6c74d04627cbaa229b226"></a>RollZReactions&#160;</td><td class="fielddoc"><p>Spawn prefabs for rolling (one object rotates around its Z axis while touching another). </p>
+</td></tr>
+</table>
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>/home/runner/work/ezEngine/ezEngine/Code/EnginePlugins/JoltPlugin/<a class="el" href="../../d1/d0f/_engine_plugins_2_jolt_plugin_2_declarations_8h_source.htm">Declarations.h</a></li>
 </ul>
@@ -128,7 +163,7 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>StorageType</b> = ez
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d3/d97/structez_on_jolt_contact.htm">ezOnJoltContact</a></li>
-    <li class="footer">Generated on Fri Dec 22 2023 20:43:14 for ezEngine by
+    <li class="footer">Generated on Sun Aug 25 2024 13:06:30 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

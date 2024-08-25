@@ -11,6 +11,7 @@ var classez_render_pipeline_pass =
     [ "GetRenderTargetDescriptions", "d1/d0d/classez_render_pipeline_pass.htm#a2ab75318ceefe2234d89b24376f60af2", null ],
     [ "InitRenderPipelinePass", "d1/d0d/classez_render_pipeline_pass.htm#a618d3f94d1eb4180faa1cfa4438cb0e2", null ],
     [ "IsStereoAware", "d1/d0d/classez_render_pipeline_pass.htm#aa45954c7cf15f480180f23110134069b", null ],
+    [ "QueryTextureProvider", "d1/d0d/classez_render_pipeline_pass.htm#a0ce843074aa4a8346c426ce9a718153c", null ],
     [ "ReadBackProperties", "d1/d0d/classez_render_pipeline_pass.htm#a9c4f71e9c47684c7a59cbb80e6bf4574", null ],
     [ "RenderDataWithCategory", "d1/d0d/classez_render_pipeline_pass.htm#a8ee2da04b97813a1c68e012eb43aefe3", null ],
     [ "Serialize", "d1/d0d/classez_render_pipeline_pass.htm#ab2b2d7228d8ab47e31c4115b3e28b09a", null ],

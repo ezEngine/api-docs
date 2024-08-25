@@ -6,6 +6,7 @@ var classez_jolt_actor_component =
     [ "CreateShapes", "d9/d79/classez_jolt_actor_component.htm#aa72d27f524410a4326139bbb1f3883bb", null ],
     [ "DeserializeComponent", "d9/d79/classez_jolt_actor_component.htm#a5ef8545a262292ba394b196a21adff06", null ],
     [ "ExtractSubShapeGeometry", "d9/d79/classez_jolt_actor_component.htm#a1544f804d9f5498e3986ade7d303f196", null ],
+    [ "GetJoltBodyID", "d9/d79/classez_jolt_actor_component.htm#a7dab4cebc43ac07112cb1e9dfccd8620", null ],
     [ "GetObjectFilterID", "d9/d79/classez_jolt_actor_component.htm#a19648f7217294557d105dd1d7782b54d", null ],
     [ "GetUserData", "d9/d79/classez_jolt_actor_component.htm#a18f893e9591f36e202887637a9d93ea9", null ],
     [ "OnDeactivated", "d9/d79/classez_jolt_actor_component.htm#a4d8b434d55365274e63f899ed3ed2e9d", null ],

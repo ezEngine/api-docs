@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.12</span>
+   &#160;<span id="projectnumber">Release 24.09</span>
    </div>
   </td>
  </tr>
@@ -119,78 +119,89 @@ $(document).ready(function(){initNavTree('dd/d96/_fileserver_8h_source.htm','../
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    FileUploading,</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    FileUploadFinished,</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    AreYouThereRequest,</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  };</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  Type m_Type = Type::None;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  ezUInt32 m_uiClientID = 0;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* m_szName = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* m_szPath = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* m_szRedirectedPath = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  ezUInt32 m_uiSizeTotal = 0;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  ezUInt32 m_uiSentTotal = 0;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  ezFileserveFileState m_FileState = ezFileserveFileState::None;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;};</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="../../d1/d00/classez_fileserver.htm">   57</a></span>&#160;<span class="keyword">class </span>EZ_FILESERVEPLUGIN_DLL <a class="code" href="../../d1/d00/classez_fileserver.htm">ezFileserver</a></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  EZ_DECLARE_SINGLETON(<a class="code" href="../../d1/d00/classez_fileserver.htm">ezFileserver</a>);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <a class="code" href="../../d1/d00/classez_fileserver.htm">ezFileserver</a>();</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordtype">void</span> StartServer();</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordtype">void</span> StopServer();</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordtype">bool</span> UpdateServer();</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordtype">bool</span> IsServerRunning() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordtype">void</span> SetPort(ezUInt16 uiPort);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="../../d1/d00/classez_fileserver.htm#a5def5bf602df13296b593a1e30e4e889">   81</a></span>&#160;  ezUInt16 <a class="code" href="../../d1/d00/classez_fileserver.htm#a5def5bf602df13296b593a1e30e4e889">GetPort</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_uiPort; }</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="../../d1/d00/classez_fileserver.htm#addd00da31ca8d87100459a2e1950cb66">   84</a></span>&#160;  <a class="code" href="../../d0/daf/classez_event.htm">ezEvent&lt;const ezFileserverEvent&amp;&gt;</a> <a class="code" href="../../d1/d00/classez_fileserver.htm#addd00da31ca8d87100459a2e1950cb66">m_Events</a>;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keywordtype">void</span> BroadcastReloadResourcesCommand();</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> SendConnectionInfo(</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* szClientAddress, ezUInt16 uiMyPort, <span class="keyword">const</span> <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;ezStringBuilder&gt;</a>&amp; myIPs, <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> timeout = <a class="code" href="../../d3/d90/structez_time.htm#a7810d213329178ba8332dedc36d0166d">ezTime::MakeFromSeconds</a>(10));</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keywordtype">void</span> NetworkEventHandler(<span class="keyword">const</span> <a class="code" href="../../d8/df3/structez_remote_event.htm">ezRemoteEvent</a>&amp; e);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <a class="code" href="../../d4/d70/classez_fileserve_client_context.htm">ezFileserveClientContext</a>&amp; DetermineClient(<a class="code" href="../../d5/d37/classez_remote_message.htm">ezRemoteMessage</a>&amp; msg);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keywordtype">void</span> NetworkMsgHandler(<a class="code" href="../../d5/d37/classez_remote_message.htm">ezRemoteMessage</a>&amp; msg);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <span class="keywordtype">void</span> HandleMountRequest(<a class="code" href="../../d4/d70/classez_fileserve_client_context.htm">ezFileserveClientContext</a>&amp; client, <a class="code" href="../../d5/d37/classez_remote_message.htm">ezRemoteMessage</a>&amp; msg);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="keywordtype">void</span> HandleUnmountRequest(<a class="code" href="../../d4/d70/classez_fileserve_client_context.htm">ezFileserveClientContext</a>&amp; client, <a class="code" href="../../d5/d37/classez_remote_message.htm">ezRemoteMessage</a>&amp; msg);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keywordtype">void</span> HandleFileRequest(<a class="code" href="../../d4/d70/classez_fileserve_client_context.htm">ezFileserveClientContext</a>&amp; client, <a class="code" href="../../d5/d37/classez_remote_message.htm">ezRemoteMessage</a>&amp; msg);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keywordtype">void</span> HandleDeleteFileRequest(<a class="code" href="../../d4/d70/classez_fileserve_client_context.htm">ezFileserveClientContext</a>&amp; client, <a class="code" href="../../d5/d37/classez_remote_message.htm">ezRemoteMessage</a>&amp; msg);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keywordtype">void</span> HandleUploadFileHeader(<a class="code" href="../../d4/d70/classez_fileserve_client_context.htm">ezFileserveClientContext</a>&amp; client, <a class="code" href="../../d5/d37/classez_remote_message.htm">ezRemoteMessage</a>&amp; msg);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="keywordtype">void</span> HandleUploadFileTransfer(<a class="code" href="../../d4/d70/classez_fileserve_client_context.htm">ezFileserveClientContext</a>&amp; client, <a class="code" href="../../d5/d37/classez_remote_message.htm">ezRemoteMessage</a>&amp; msg);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keywordtype">void</span> HandleUploadFileFinished(<a class="code" href="../../d4/d70/classez_fileserve_client_context.htm">ezFileserveClientContext</a>&amp; client, <a class="code" href="../../d5/d37/classez_remote_message.htm">ezRemoteMessage</a>&amp; msg);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <a class="code" href="../../d8/d86/classez_hash_table.htm">ezHashTable&lt;ezUInt32, ezFileserveClientContext&gt;</a> m_Clients;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <a class="code" href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt;ezRemoteInterface&gt;</a> m_pNetwork;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezUInt8&gt;</a> m_SendToClient;   <span class="comment">// ie. &#39;downloads&#39; from server to client</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezUInt8&gt;</a> m_SentFromClient; <span class="comment">// ie. &#39;uploads&#39; from client to server</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <a class="code" href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a> m_sCurFileUpload;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a> m_FileUploadGuid;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  ezUInt32 m_uiFileUploadSize;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  ezUInt16 m_uiPort = 1042;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;};</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    LogCustomActivity,</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  };</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  Type m_Type = Type::None;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  ezUInt32 m_uiClientID = 0;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* m_szName = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* m_szPath = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* m_szRedirectedPath = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  ezUInt32 m_uiSizeTotal = 0;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  ezUInt32 m_uiSentTotal = 0;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  ezFileserveFileState m_FileState = ezFileserveFileState::None;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;};</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="../../d1/d00/classez_fileserver.htm">   58</a></span>&#160;<span class="keyword">class </span>EZ_FILESERVEPLUGIN_DLL <a class="code" href="../../d1/d00/classez_fileserver.htm">ezFileserver</a></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  EZ_DECLARE_SINGLETON(<a class="code" href="../../d1/d00/classez_fileserver.htm">ezFileserver</a>);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <a class="code" href="../../d1/d00/classez_fileserver.htm">ezFileserver</a>();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordtype">void</span> StartServer();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordtype">void</span> StopServer();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordtype">bool</span> UpdateServer();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordtype">bool</span> IsServerRunning() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keywordtype">void</span> SetPort(ezUInt16 uiPort);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="../../d1/d00/classez_fileserver.htm#a5def5bf602df13296b593a1e30e4e889">   82</a></span>&#160;  ezUInt16 <a class="code" href="../../d1/d00/classez_fileserver.htm#a5def5bf602df13296b593a1e30e4e889">GetPort</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_uiPort; }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="../../d1/d00/classez_fileserver.htm#addd00da31ca8d87100459a2e1950cb66">   85</a></span>&#160;  <a class="code" href="../../d0/daf/classez_event.htm">ezEvent&lt;const ezFileserverEvent&amp;&gt;</a> <a class="code" href="../../d1/d00/classez_fileserver.htm#addd00da31ca8d87100459a2e1950cb66">m_Events</a>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keywordtype">void</span> BroadcastReloadResourcesCommand();</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> SendConnectionInfo(</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* szClientAddress, ezUInt16 uiMyPort, <span class="keyword">const</span> <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;ezStringBuilder&gt;</a>&amp; myIPs, <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> timeout = <a class="code" href="../../d3/d90/structez_time.htm#a7810d213329178ba8332dedc36d0166d">ezTime::MakeFromSeconds</a>(10));</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keyword">using</span> <a class="code" href="../../d5/d68/structez_delegate.htm">ClientMessageHandler</a> = <a class="code" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>&lt;void(<a class="code" href="../../d4/d70/classez_fileserve_client_context.htm">ezFileserveClientContext</a>&amp;, <a class="code" href="../../d5/d37/classez_remote_message.htm">ezRemoteMessage</a>&amp;, <a class="code" href="../../df/d93/classez_remote_interface.htm">ezRemoteInterface</a>&amp;, <a class="code" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>&lt;<span class="keywordtype">void</span>(<span class="keyword">const</span> <span class="keywordtype">char</span>*)&gt;)&gt;;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keywordtype">void</span> SetCustomMessageHandler(ezUInt32 uiSystemID, <a class="code" href="../../d5/d68/structez_delegate.htm">ClientMessageHandler</a> handler);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keywordtype">void</span> NetworkEventHandler(<span class="keyword">const</span> <a class="code" href="../../d8/df3/structez_remote_event.htm">ezRemoteEvent</a>&amp; e);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <a class="code" href="../../d4/d70/classez_fileserve_client_context.htm">ezFileserveClientContext</a>&amp; DetermineClient(<a class="code" href="../../d5/d37/classez_remote_message.htm">ezRemoteMessage</a>&amp; msg);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keywordtype">void</span> NetworkMsgHandler(<a class="code" href="../../d5/d37/classez_remote_message.htm">ezRemoteMessage</a>&amp; msg);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="keywordtype">void</span> UnknownNetworkMsgHandler(<a class="code" href="../../d5/d37/classez_remote_message.htm">ezRemoteMessage</a>&amp; msg);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keywordtype">void</span> HandleMountRequest(<a class="code" href="../../d4/d70/classez_fileserve_client_context.htm">ezFileserveClientContext</a>&amp; client, <a class="code" href="../../d5/d37/classez_remote_message.htm">ezRemoteMessage</a>&amp; msg);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <span class="keywordtype">void</span> HandleUnmountRequest(<a class="code" href="../../d4/d70/classez_fileserve_client_context.htm">ezFileserveClientContext</a>&amp; client, <a class="code" href="../../d5/d37/classez_remote_message.htm">ezRemoteMessage</a>&amp; msg);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="keywordtype">void</span> HandleFileRequest(<a class="code" href="../../d4/d70/classez_fileserve_client_context.htm">ezFileserveClientContext</a>&amp; client, <a class="code" href="../../d5/d37/classez_remote_message.htm">ezRemoteMessage</a>&amp; msg);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <span class="keywordtype">void</span> HandleDeleteFileRequest(<a class="code" href="../../d4/d70/classez_fileserve_client_context.htm">ezFileserveClientContext</a>&amp; client, <a class="code" href="../../d5/d37/classez_remote_message.htm">ezRemoteMessage</a>&amp; msg);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="keywordtype">void</span> HandleUploadFileHeader(<a class="code" href="../../d4/d70/classez_fileserve_client_context.htm">ezFileserveClientContext</a>&amp; client, <a class="code" href="../../d5/d37/classez_remote_message.htm">ezRemoteMessage</a>&amp; msg);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <span class="keywordtype">void</span> HandleUploadFileTransfer(<a class="code" href="../../d4/d70/classez_fileserve_client_context.htm">ezFileserveClientContext</a>&amp; client, <a class="code" href="../../d5/d37/classez_remote_message.htm">ezRemoteMessage</a>&amp; msg);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="keywordtype">void</span> HandleUploadFileFinished(<a class="code" href="../../d4/d70/classez_fileserve_client_context.htm">ezFileserveClientContext</a>&amp; client, <a class="code" href="../../d5/d37/classez_remote_message.htm">ezRemoteMessage</a>&amp; msg);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="keywordtype">void</span> LogCustomActivity(<span class="keyword">const</span> <span class="keywordtype">char</span>* szText);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <a class="code" href="../../d8/d86/classez_hash_table.htm">ezHashTable&lt;ezUInt32, ezFileserveClientContext&gt;</a> m_Clients;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <a class="code" href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt;ezRemoteInterface&gt;</a> m_pNetwork;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezUInt8&gt;</a> m_SendToClient;   <span class="comment">// ie. &#39;downloads&#39; from server to client</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezUInt8&gt;</a> m_SentFromClient; <span class="comment">// ie. &#39;uploads&#39; from client to server</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <a class="code" href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a> m_sCurFileUpload;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <a class="code" href="../../da/d89/classez_uuid.htm">ezUuid</a> m_FileUploadGuid;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  ezUInt32 m_uiFileUploadSize;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  ezUInt16 m_uiPort = 1042;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;ezUInt32, ClientMessageHandler&gt;</a> m_CustomMessageHandlers;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassez_fileserver_htm"><div class="ttname"><a href="../../d1/d00/classez_fileserver.htm">ezFileserver</a></div><div class="ttdoc">A file server allows to serve files from a host PC to another process that is potentially on another ...</div><div class="ttdef"><b>Definition:</b> Fileserver.h:57</div></div>
-<div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition:</b> Types.h:50</div></div>
+<div class="ttc" id="aclassez_fileserver_htm"><div class="ttname"><a href="../../d1/d00/classez_fileserver.htm">ezFileserver</a></div><div class="ttdoc">A file server allows to serve files from a host PC to another process that is potentially on another ...</div><div class="ttdef"><b>Definition:</b> Fileserver.h:58</div></div>
+<div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition:</b> Types.h:53</div></div>
 <div class="ttc" id="astructez_time_htm"><div class="ttname"><a href="../../d3/d90/structez_time.htm">ezTime</a></div><div class="ttdoc">The time class encapsulates a double value storing the time in seconds.</div><div class="ttdef"><b>Definition:</b> Time.h:11</div></div>
-<div class="ttc" id="aclassez_fileserver_htm_a5def5bf602df13296b593a1e30e4e889"><div class="ttname"><a href="../../d1/d00/classez_fileserver.htm#a5def5bf602df13296b593a1e30e4e889">ezFileserver::GetPort</a></div><div class="ttdeci">ezUInt16 GetPort() const</div><div class="ttdoc">Returns the currently set port. If the command line option &quot;-fs_port X&quot; was used, this will return th...</div><div class="ttdef"><b>Definition:</b> Fileserver.h:81</div></div>
+<div class="ttc" id="aclassez_fileserver_htm_a5def5bf602df13296b593a1e30e4e889"><div class="ttname"><a href="../../d1/d00/classez_fileserver.htm#a5def5bf602df13296b593a1e30e4e889">ezFileserver::GetPort</a></div><div class="ttdeci">ezUInt16 GetPort() const</div><div class="ttdoc">Returns the currently set port. If the command line option &quot;-fs_port X&quot; was used, this will return th...</div><div class="ttdef"><b>Definition:</b> Fileserver.h:82</div></div>
 <div class="ttc" id="aclassez_array_ptr_htm"><div class="ttname"><a href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr</a></div><div class="ttdoc">This class encapsulates an array and it's size. It is recommended to use this class instead of plain ...</div><div class="ttdef"><b>Definition:</b> ArrayPtr.h:36</div></div>
-<div class="ttc" id="aclassez_fileserver_htm_addd00da31ca8d87100459a2e1950cb66"><div class="ttname"><a href="../../d1/d00/classez_fileserver.htm#addd00da31ca8d87100459a2e1950cb66">ezFileserver::m_Events</a></div><div class="ttdeci">ezEvent&lt; const ezFileserverEvent &amp; &gt; m_Events</div><div class="ttdoc">The server broadcasts events about its activity.</div><div class="ttdef"><b>Definition:</b> Fileserver.h:84</div></div>
+<div class="ttc" id="aclassez_fileserver_htm_addd00da31ca8d87100459a2e1950cb66"><div class="ttname"><a href="../../d1/d00/classez_fileserver.htm#addd00da31ca8d87100459a2e1950cb66">ezFileserver::m_Events</a></div><div class="ttdeci">ezEvent&lt; const ezFileserverEvent &amp; &gt; m_Events</div><div class="ttdoc">The server broadcasts events about its activity.</div><div class="ttdef"><b>Definition:</b> Fileserver.h:85</div></div>
 <div class="ttc" id="aclassez_remote_message_htm"><div class="ttname"><a href="../../d5/d37/classez_remote_message.htm">ezRemoteMessage</a></div><div class="ttdoc">Encapsulates all the data that is transmitted when sending or receiving a message with ezRemoteInterf...</div><div class="ttdef"><b>Definition:</b> RemoteMessage.h:10</div></div>
 <div class="ttc" id="aclassez_unique_ptr_htm"><div class="ttname"><a href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt; ezRemoteInterface &gt;</a></div></div>
 <div class="ttc" id="aclassez_dynamic_array_htm"><div class="ttname"><a href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt; ezUInt8 &gt;</a></div></div>
+<div class="ttc" id="astructez_delegate_htm"><div class="ttname"><a href="../../d5/d68/structez_delegate.htm">ezDelegate</a></div><div class="ttdoc">A generic delegate class which supports static functions and member functions.</div><div class="ttdef"><b>Definition:</b> Delegate.h:75</div></div>
+<div class="ttc" id="aclassez_map_htm"><div class="ttname"><a href="../../d1/d79/classez_map.htm">ezMap</a></div><div class="ttdef"><b>Definition:</b> Map.h:407</div></div>
 <div class="ttc" id="aclassez_event_htm"><div class="ttname"><a href="../../d0/daf/classez_event.htm">ezEvent&lt; const ezFileserverEvent &amp; &gt;</a></div></div>
 <div class="ttc" id="astructez_fileserver_event_htm"><div class="ttname"><a href="../../d1/d66/structez_fileserver_event.htm">ezFileserverEvent</a></div><div class="ttdef"><b>Definition:</b> Fileserver.h:12</div></div>
+<div class="ttc" id="aclassez_remote_interface_htm"><div class="ttname"><a href="../../df/d93/classez_remote_interface.htm">ezRemoteInterface</a></div><div class="ttdef"><b>Definition:</b> RemoteInterface.h:59</div></div>
 <div class="ttc" id="aclassez_fileserve_client_context_htm"><div class="ttname"><a href="../../d4/d70/classez_fileserve_client_context.htm">ezFileserveClientContext</a></div><div class="ttdef"><b>Definition:</b> ClientContext.h:17</div></div>
 <div class="ttc" id="astructez_remote_event_htm"><div class="ttname"><a href="../../d8/df3/structez_remote_event.htm">ezRemoteEvent</a></div><div class="ttdoc">Event type for connections.</div><div class="ttdef"><b>Definition:</b> RemoteInterface.h:32</div></div>
 <div class="ttc" id="aclassez_uuid_htm"><div class="ttname"><a href="../../da/d89/classez_uuid.htm">ezUuid</a></div><div class="ttdoc">This data type is the abstraction for 128-bit Uuid (also known as GUID) instances.</div><div class="ttdef"><b>Definition:</b> Uuid.h:10</div></div>
@@ -201,7 +212,7 @@ $(document).ready(function(){initNavTree('dd/d96/_fileserver_8h_source.htm','../
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_103378c88ff4c88de6bfabe12da9ec96.htm">EnginePlugins</a></li><li class="navelem"><a class="el" href="../../dir_d82887413fbdf5648e677c8a56f82ecd.htm">FileservePlugin</a></li><li class="navelem"><a class="el" href="../../dir_d3b5a899091597e34082c74c8ad33e96.htm">Fileserver</a></li><li class="navelem"><b>Fileserver.h</b></li>
-    <li class="footer">Generated on Fri Dec 22 2023 20:43:09 for ezEngine by
+    <li class="footer">Generated on Sun Aug 25 2024 13:06:24 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

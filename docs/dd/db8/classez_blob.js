@@ -9,6 +9,7 @@ var classez_blob =
     [ "GetBlobPtr", "dd/db8/classez_blob.htm#a6a200f596c2da51f32b34c5457adfb7e", null ],
     [ "GetByteBlobPtr", "dd/db8/classez_blob.htm#a08f617a147d7f18e284a17fd65b41dcd", null ],
     [ "GetByteBlobPtr", "dd/db8/classez_blob.htm#add3f9e61a2d9dfc792c161b6bde7bf2f", null ],
+    [ "IsEmpty", "dd/db8/classez_blob.htm#aedfa97cbca86796ea2837309edf17b41", null ],
     [ "operator=", "dd/db8/classez_blob.htm#ad9d40a5b4b6a73e63e7c72f5c10b1b2d", null ],
     [ "SetCountUninitialized", "dd/db8/classez_blob.htm#a5e37c7912821afc596a94c70979f3ad6", null ],
     [ "SetFrom", "dd/db8/classez_blob.htm#a58c47f10015bc1c972f1b27e3521a5ca", null ],

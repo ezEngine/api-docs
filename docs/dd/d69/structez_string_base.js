@@ -18,7 +18,7 @@ var structez_string_base =
     [ "FindWholeWord", "dd/d69/structez_string_base.htm#afcc7196e4bb81b8b3e2da961dd917fde", null ],
     [ "FindWholeWord_NoCase", "dd/d69/structez_string_base.htm#ab40b7ada5f552ec62ad5c2a87d9eb2e9", null ],
     [ "GetFileDirectory", "dd/d69/structez_string_base.htm#abcd136562b6d279801aa6653c3dbd7c8", null ],
-    [ "GetFileExtension", "dd/d69/structez_string_base.htm#a3b376db2ee452d362736bbf20021cc49", null ],
+    [ "GetFileExtension", "dd/d69/structez_string_base.htm#a5643d2cd395334ef41df8d253cfe85b1", null ],
     [ "GetFileName", "dd/d69/structez_string_base.htm#a6e36684efb429bac40152974cd8ca817", null ],
     [ "GetFileNameAndExtension", "dd/d69/structez_string_base.htm#a839a783b7199310da98f5e52f7174c43", null ],
     [ "GetIteratorBack", "dd/d69/structez_string_base.htm#a3821af6b610f6c40a46336f7accc0c7e", null ],

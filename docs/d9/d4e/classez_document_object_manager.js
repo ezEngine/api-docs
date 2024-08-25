@@ -19,7 +19,6 @@ var classez_document_object_manager =
     [ "GetRootObject", "d9/d4e/classez_document_object_manager.htm#ae061f8d8bc76fac8b3fc16f8756a87a9", null ],
     [ "GetRootObject", "d9/d4e/classez_document_object_manager.htm#acf12c9fbb7408927b3084105d9ffcf38", null ],
     [ "GetStorage", "d9/d4e/classez_document_object_manager.htm#af583d46f240f9497558f15c9c884d7eb", null ],
-    [ "GetTypeCategory", "d9/d4e/classez_document_object_manager.htm#a0279f0866ba99063ee46a9ede32117ca", null ],
     [ "InsertValue", "d9/d4e/classez_document_object_manager.htm#a9cfbb7a20e811e28247c75d4022daafb", null ],
     [ "InternalCanAdd", "d9/d4e/classez_document_object_manager.htm#a7fd7f4775e4b61cac533b16021af80a1", null ],
     [ "InternalCanMove", "d9/d4e/classez_document_object_manager.htm#a4d58ee8f3db0f72e7d2572365b0a0816", null ],

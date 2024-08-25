@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.12</span>
+   &#160;<span id="projectnumber">Release 24.09</span>
    </div>
   </td>
  </tr>
@@ -91,84 +91,85 @@ $(document).ready(function(){initNavTree('d6/d78/_condition_variable___posix_8h_
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;EZ_FOUNDATION_INTERNAL_HEADER</div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;Foundation/Threading/ConditionVariable.h&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;errno.h&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;pthread.h&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;sys/time.h&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;ezConditionVariable::ezConditionVariable()</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  pthread_cond_init(&amp;m_Data.m_ConditionVariable, <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;}</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;ezConditionVariable::~ezConditionVariable()</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  EZ_ASSERT_DEV(m_iLockCount == 0, <span class="stringliteral">&quot;Thread-signal must be unlocked during destruction.&quot;</span>);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  pthread_cond_destroy(&amp;m_Data.m_ConditionVariable);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="../../d7/d18/classez_condition_variable.htm#a44f7bd1f6123ea7da8989cadbe68efb8">   22</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d7/d18/classez_condition_variable.htm#a44f7bd1f6123ea7da8989cadbe68efb8">ezConditionVariable::SignalOne</a>()</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  pthread_cond_signal(&amp;m_Data.m_ConditionVariable);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="../../d7/d18/classez_condition_variable.htm#ac33b3307ba6de893ddce4ae4bbfbc582">   27</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d7/d18/classez_condition_variable.htm#ac33b3307ba6de893ddce4ae4bbfbc582">ezConditionVariable::SignalAll</a>()</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  pthread_cond_broadcast(&amp;m_Data.m_ConditionVariable);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="../../d7/d18/classez_condition_variable.htm#a0e8c6decc6d97b37b3c7b80d48749cb6">   32</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d7/d18/classez_condition_variable.htm#a0e8c6decc6d97b37b3c7b80d48749cb6">ezConditionVariable::UnlockWaitForSignalAndLock</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  EZ_ASSERT_DEV(m_iLockCount &gt; 0, <span class="stringliteral">&quot;ezConditionVariable must be locked when calling UnlockWaitForSignalAndLock.&quot;</span>);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  pthread_cond_wait(&amp;m_Data.m_ConditionVariable, &amp;m_Mutex.GetMutexHandle());</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="../../d7/d18/classez_condition_variable.htm#adadfc30a89b4b7e993b1395723710227">   39</a></span>&#160;ezConditionVariable::WaitResult <a class="code" href="../../d7/d18/classez_condition_variable.htm#a0e8c6decc6d97b37b3c7b80d48749cb6">ezConditionVariable::UnlockWaitForSignalAndLock</a>(<a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> timeout)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  EZ_ASSERT_DEV(m_iLockCount &gt; 0, <span class="stringliteral">&quot;ezConditionVariable must be locked when calling UnlockWaitForSignalAndLock.&quot;</span>);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="comment">// inside the lock</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  --m_iLockCount;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  timeval now;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  gettimeofday(&amp;now, <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="comment">// pthread_cond_timedwait needs an absolute time value, so compute it from the current time.</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">struct </span>timespec timeToWait;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keyword">const</span> ezInt64 iNanoSecondsPerSecond = 1000000000LL;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keyword">const</span> ezInt64 iMicroSecondsPerNanoSecond = 1000LL;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  ezInt64 endTime = now.tv_sec * iNanoSecondsPerSecond + now.tv_usec * iMicroSecondsPerNanoSecond + <span class="keyword">static_cast&lt;</span>ezInt64<span class="keyword">&gt;</span>(timeout.<a class="code" href="../../d3/d90/structez_time.htm#a2826e7b3030634c463945164f2ce629c">GetNanoseconds</a>());</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  timeToWait.tv_sec = endTime / iNanoSecondsPerSecond;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  timeToWait.tv_nsec = endTime % iNanoSecondsPerSecond;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordflow">if</span> (pthread_cond_timedwait(&amp;m_Data.m_ConditionVariable, &amp;m_Mutex.GetMutexHandle(), &amp;timeToWait) == ETIMEDOUT)</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// inside the lock</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    ++m_iLockCount;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">return</span> WaitResult::Timeout;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="comment">// inside the lock</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  ++m_iLockCount;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordflow">return</span> WaitResult::Signaled;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;Foundation/Time/Time.h&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;errno.h&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;pthread.h&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;sys/time.h&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;ezConditionVariable::ezConditionVariable()</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  pthread_cond_init(&amp;m_Data.m_ConditionVariable, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;ezConditionVariable::~ezConditionVariable()</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  EZ_ASSERT_DEV(m_iLockCount == 0, <span class="stringliteral">&quot;Thread-signal must be unlocked during destruction.&quot;</span>);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  pthread_cond_destroy(&amp;m_Data.m_ConditionVariable);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="../../d7/d18/classez_condition_variable.htm#a44f7bd1f6123ea7da8989cadbe68efb8">   23</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d7/d18/classez_condition_variable.htm#a44f7bd1f6123ea7da8989cadbe68efb8">ezConditionVariable::SignalOne</a>()</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  pthread_cond_signal(&amp;m_Data.m_ConditionVariable);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="../../d7/d18/classez_condition_variable.htm#ac33b3307ba6de893ddce4ae4bbfbc582">   28</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d7/d18/classez_condition_variable.htm#ac33b3307ba6de893ddce4ae4bbfbc582">ezConditionVariable::SignalAll</a>()</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  pthread_cond_broadcast(&amp;m_Data.m_ConditionVariable);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="../../d7/d18/classez_condition_variable.htm#a0e8c6decc6d97b37b3c7b80d48749cb6">   33</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d7/d18/classez_condition_variable.htm#a0e8c6decc6d97b37b3c7b80d48749cb6">ezConditionVariable::UnlockWaitForSignalAndLock</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  EZ_ASSERT_DEV(m_iLockCount &gt; 0, <span class="stringliteral">&quot;ezConditionVariable must be locked when calling UnlockWaitForSignalAndLock.&quot;</span>);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  pthread_cond_wait(&amp;m_Data.m_ConditionVariable, &amp;m_Mutex.GetMutexHandle());</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="../../d7/d18/classez_condition_variable.htm#adadfc30a89b4b7e993b1395723710227">   40</a></span>&#160;ezConditionVariable::WaitResult <a class="code" href="../../d7/d18/classez_condition_variable.htm#a0e8c6decc6d97b37b3c7b80d48749cb6">ezConditionVariable::UnlockWaitForSignalAndLock</a>(<a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> timeout)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  EZ_ASSERT_DEV(m_iLockCount &gt; 0, <span class="stringliteral">&quot;ezConditionVariable must be locked when calling UnlockWaitForSignalAndLock.&quot;</span>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="comment">// inside the lock</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  --m_iLockCount;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  timeval now;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  gettimeofday(&amp;now, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="comment">// pthread_cond_timedwait needs an absolute time value, so compute it from the current time.</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keyword">struct </span>timespec timeToWait;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keyword">const</span> ezInt64 iNanoSecondsPerSecond = 1000000000LL;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">const</span> ezInt64 iMicroSecondsPerNanoSecond = 1000LL;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  ezInt64 endTime = now.tv_sec * iNanoSecondsPerSecond + now.tv_usec * iMicroSecondsPerNanoSecond + <span class="keyword">static_cast&lt;</span>ezInt64<span class="keyword">&gt;</span>(timeout.<a class="code" href="../../d3/d90/structez_time.htm#a2826e7b3030634c463945164f2ce629c">GetNanoseconds</a>());</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  timeToWait.tv_sec = endTime / iNanoSecondsPerSecond;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  timeToWait.tv_nsec = endTime % iNanoSecondsPerSecond;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordflow">if</span> (pthread_cond_timedwait(&amp;m_Data.m_ConditionVariable, &amp;m_Mutex.GetMutexHandle(), &amp;timeToWait) == ETIMEDOUT)</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// inside the lock</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    ++m_iLockCount;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">return</span> WaitResult::Timeout;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="comment">// inside the lock</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  ++m_iLockCount;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordflow">return</span> WaitResult::Signaled;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astructez_time_htm"><div class="ttname"><a href="../../d3/d90/structez_time.htm">ezTime</a></div><div class="ttdoc">The time class encapsulates a double value storing the time in seconds.</div><div class="ttdef"><b>Definition:</b> Time.h:11</div></div>
-<div class="ttc" id="aclassez_condition_variable_htm_ac33b3307ba6de893ddce4ae4bbfbc582"><div class="ttname"><a href="../../d7/d18/classez_condition_variable.htm#ac33b3307ba6de893ddce4ae4bbfbc582">ezConditionVariable::SignalAll</a></div><div class="ttdeci">void SignalAll()</div><div class="ttdoc">Wakes up all the threads that are currently waiting for the variable.</div><div class="ttdef"><b>Definition:</b> ConditionVariable_Posix.h:27</div></div>
-<div class="ttc" id="aclassez_condition_variable_htm_a0e8c6decc6d97b37b3c7b80d48749cb6"><div class="ttname"><a href="../../d7/d18/classez_condition_variable.htm#a0e8c6decc6d97b37b3c7b80d48749cb6">ezConditionVariable::UnlockWaitForSignalAndLock</a></div><div class="ttdeci">void UnlockWaitForSignalAndLock() const</div><div class="ttdoc">Puts the calling thread to sleep and waits for the variable to get signaled.</div><div class="ttdef"><b>Definition:</b> ConditionVariable_Posix.h:32</div></div>
-<div class="ttc" id="aclassez_condition_variable_htm_a44f7bd1f6123ea7da8989cadbe68efb8"><div class="ttname"><a href="../../d7/d18/classez_condition_variable.htm#a44f7bd1f6123ea7da8989cadbe68efb8">ezConditionVariable::SignalOne</a></div><div class="ttdeci">void SignalOne()</div><div class="ttdoc">Wakes up one of the threads that are currently waiting for the variable.</div><div class="ttdef"><b>Definition:</b> ConditionVariable_Posix.h:22</div></div>
+<div class="ttc" id="aclassez_condition_variable_htm_ac33b3307ba6de893ddce4ae4bbfbc582"><div class="ttname"><a href="../../d7/d18/classez_condition_variable.htm#ac33b3307ba6de893ddce4ae4bbfbc582">ezConditionVariable::SignalAll</a></div><div class="ttdeci">void SignalAll()</div><div class="ttdoc">Wakes up all the threads that are currently waiting for the variable.</div><div class="ttdef"><b>Definition:</b> ConditionVariable_Posix.h:28</div></div>
+<div class="ttc" id="aclassez_condition_variable_htm_a0e8c6decc6d97b37b3c7b80d48749cb6"><div class="ttname"><a href="../../d7/d18/classez_condition_variable.htm#a0e8c6decc6d97b37b3c7b80d48749cb6">ezConditionVariable::UnlockWaitForSignalAndLock</a></div><div class="ttdeci">void UnlockWaitForSignalAndLock() const</div><div class="ttdoc">Puts the calling thread to sleep and waits for the variable to get signaled.</div><div class="ttdef"><b>Definition:</b> ConditionVariable_Posix.h:33</div></div>
+<div class="ttc" id="aclassez_condition_variable_htm_a44f7bd1f6123ea7da8989cadbe68efb8"><div class="ttname"><a href="../../d7/d18/classez_condition_variable.htm#a44f7bd1f6123ea7da8989cadbe68efb8">ezConditionVariable::SignalOne</a></div><div class="ttdeci">void SignalOne()</div><div class="ttdoc">Wakes up one of the threads that are currently waiting for the variable.</div><div class="ttdef"><b>Definition:</b> ConditionVariable_Posix.h:23</div></div>
 <div class="ttc" id="astructez_time_htm_a2826e7b3030634c463945164f2ce629c"><div class="ttname"><a href="../../d3/d90/structez_time.htm#a2826e7b3030634c463945164f2ce629c">ezTime::GetNanoseconds</a></div><div class="ttdeci">constexpr double GetNanoseconds() const</div><div class="ttdoc">Returns the nanoseconds value.</div><div class="ttdef"><b>Definition:</b> Time_inl.h:15</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_81a97b29d048515ed79592945c8b94b3.htm">Platform</a></li><li class="navelem"><a class="el" href="../../dir_ea0f1cea308dbde9b8c550f938edec5f.htm">Posix</a></li><li class="navelem"><b>ConditionVariable_Posix.h</b></li>
-    <li class="footer">Generated on Fri Dec 22 2023 20:43:06 for ezEngine by
+    <li class="footer">Generated on Sun Aug 25 2024 13:06:19 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

@@ -29,6 +29,7 @@ var classez_jolt_constraint_component =
     [ "SetPairCollision", "d0/db2/classez_jolt_constraint_component.htm#a6882e071659402829d805dcd574a65ec", null ],
     [ "SetParentActor", "d0/db2/classez_jolt_constraint_component.htm#afae88913a39e0dfc6afe254af8e1a0e6", null ],
     [ "SetParentActorReference", "d0/db2/classez_jolt_constraint_component.htm#a10d34935cf3dad64e3252e44001f5d7b", null ],
+    [ "ezJoltWorldModule", "d0/db2/classez_jolt_constraint_component.htm#aa0ab423c4ae4151ebb55bb0167c4393a", null ],
     [ "m_bPairCollision", "d0/db2/classez_jolt_constraint_component.htm#aaf3a5613318c7c6e7b27540a90ed7558", null ],
     [ "m_fBreakForce", "d0/db2/classez_jolt_constraint_component.htm#a3559b9571863b3ec80dcaac838414a50", null ],
     [ "m_fBreakTorque", "d0/db2/classez_jolt_constraint_component.htm#a0c6335ace63d7e20e0ad3c8db0394ef6", null ],

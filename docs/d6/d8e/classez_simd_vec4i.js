@@ -13,6 +13,8 @@ var classez_simd_vec4i =
     [ "EZ_DECLARE_POD_TYPE", "d6/d8e/classez_simd_vec4i.htm#a12aad45a94ff87e2d9735492dcca3b03", null ],
     [ "Get", "d6/d8e/classez_simd_vec4i.htm#a8e573f23a6e35e2193cb990832dd0d9b", null ],
     [ "Get", "d6/d8e/classez_simd_vec4i.htm#ad179ed17a7b3e9e7c8bbf83d785f6b73", null ],
+    [ "GetCombined", "d6/d8e/classez_simd_vec4i.htm#a77ff38e3011ef413ced5f3f332d4aaab", null ],
+    [ "GetCombined", "d6/d8e/classez_simd_vec4i.htm#ae7cc0cadbf425189c7eca57d9ca696a2", null ],
     [ "GetComponent", "d6/d8e/classez_simd_vec4i.htm#ad9118ac4f3c056d102201cc57c214615", null ],
     [ "GetComponent", "d6/d8e/classez_simd_vec4i.htm#a9911d67833a4ec543d65046791f72f07", null ],
     [ "Load", "d6/d8e/classez_simd_vec4i.htm#a049049efcdb4c2ec0378c6a7df12bf57", null ],

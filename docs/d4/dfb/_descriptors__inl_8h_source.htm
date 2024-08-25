@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.12</span>
+   &#160;<span id="projectnumber">Release 24.09</span>
    </div>
   </td>
  </tr>
@@ -87,85 +87,64 @@ $(document).ready(function(){initNavTree('d4/dfb/_descriptors__inl_8h_source.htm
 <div class="title">Descriptors_inl.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> ezShaderResourceType::IsArray(<a class="code" href="../../d3/d6e/structez_shader_resource_type.htm#a1d155e7159994d54f86200a943197e5a">ezShaderResourceType::Enum</a> format)</div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;{</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;  <span class="keywordflow">switch</span> (format)</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;  {</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <span class="keywordflow">case</span> ezShaderResourceType::Texture1DArray:</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="keywordflow">case</span> ezShaderResourceType::Texture2DArray:</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keywordflow">case</span> ezShaderResourceType::Texture2DMSArray:</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordflow">case</span> ezShaderResourceType::TextureCubeArray:</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  }</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;}</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">inline</span> ezGALShaderCreationDescription::ezGALShaderCreationDescription()</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  : <a class="code" href="../../d3/d14/classez_hashable_struct.htm">ezHashableStruct</a>()</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">inline</span> ezGALShaderCreationDescription::~ezGALShaderCreationDescription()</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keywordflow">for</span> (ezUInt32 i = 0; i &lt; ezGALShaderStage::ENUM_COUNT; ++i)</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="../../d4/daa/classez_g_a_l_shader_byte_code.htm">ezGALShaderByteCode</a>* pByteCode = m_ByteCodes[i];</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    m_ByteCodes[i] = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">if</span> (pByteCode != <span class="keyword">nullptr</span> &amp;&amp; pByteCode-&gt;<a class="code" href="../../d9/d13/classez_ref_counting_impl.htm#ab062bf58d10e8221f31045742f713d17">GetRefCount</a>() == 0)</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;      EZ_DEFAULT_DELETE(pByteCode);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  }</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> ezGALShaderCreationDescription::HasByteCodeForStage(ezGALShaderStage::Enum stage)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordflow">return</span> m_ByteCodes[stage] != <span class="keyword">nullptr</span> &amp;&amp; m_ByteCodes[stage]-&gt;IsValid();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> ezGALTextureCreationDescription::SetAsRenderTarget(</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  ezUInt32 uiWidth, ezUInt32 uiHeight, ezGALResourceFormat::Enum format, ezGALMSAASampleCount::Enum sampleCount <span class="comment">/*= ezGALMSAASampleCount::None*/</span>)</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  m_uiWidth = uiWidth;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  m_uiHeight = uiHeight;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  m_uiDepth = 1;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  m_uiMipLevelCount = 1;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  m_uiArraySize = 1;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  m_SampleCount = sampleCount;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  m_Format = format;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  m_Type = ezGALTextureType::Texture2D;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  m_bAllowShaderResourceView = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  m_bAllowUAV = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  m_bCreateRenderTarget = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  m_bAllowDynamicMipGeneration = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  m_ResourceAccess.m_bReadBack = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  m_ResourceAccess.m_bImmutable = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <a class="code" href="../../da/dad/structez_g_a_l_texture_creation_description.htm#a36464f4e9f5a071ceef063b367829d01">m_pExisitingNativeObject</a> = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;EZ_FORCE_INLINE ezGALVertexAttribute::ezGALVertexAttribute(</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  ezGALVertexAttributeSemantic::Enum semantic, ezGALResourceFormat::Enum format, ezUInt16 uiOffset, ezUInt8 uiVertexBufferSlot, <span class="keywordtype">bool</span> bInstanceData)</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  : m_eSemantic(semantic)</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  , m_eFormat(format)</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  , m_uiOffset(uiOffset)</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  , m_uiVertexBufferSlot(uiVertexBufferSlot)</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  , m_bInstanceData(bInstanceData)</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">inline</span> ezGALShaderCreationDescription::ezGALShaderCreationDescription()</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;  : <a class="code" href="../../d3/d14/classez_hashable_struct.htm">ezHashableStruct</a>()</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;{</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;}</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">inline</span> ezGALShaderCreationDescription::~ezGALShaderCreationDescription()</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keywordflow">for</span> (ezUInt32 i = 0; i &lt; ezGALShaderStage::ENUM_COUNT; ++i)</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    m_ByteCodes[i] = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  }</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> ezGALShaderCreationDescription::HasByteCodeForStage(ezGALShaderStage::Enum stage)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keywordflow">return</span> m_ByteCodes[stage] != <span class="keyword">nullptr</span> &amp;&amp; m_ByteCodes[stage]-&gt;IsValid();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> ezGALTextureCreationDescription::SetAsRenderTarget(</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  ezUInt32 uiWidth, ezUInt32 uiHeight, ezGALResourceFormat::Enum format, ezGALMSAASampleCount::Enum sampleCount <span class="comment">/*= ezGALMSAASampleCount::None*/</span>)</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  m_uiWidth = uiWidth;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  m_uiHeight = uiHeight;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  m_uiDepth = 1;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  m_uiMipLevelCount = 1;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  m_uiArraySize = 1;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  m_SampleCount = sampleCount;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  m_Format = format;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  m_Type = ezGALTextureType::Texture2D;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  m_bAllowShaderResourceView = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  m_bAllowUAV = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  m_bCreateRenderTarget = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  m_bAllowDynamicMipGeneration = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  m_ResourceAccess.m_bReadBack = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  m_ResourceAccess.m_bImmutable = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <a class="code" href="../../da/dad/structez_g_a_l_texture_creation_description.htm#a36464f4e9f5a071ceef063b367829d01">m_pExisitingNativeObject</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;EZ_FORCE_INLINE ezGALVertexAttribute::ezGALVertexAttribute(</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  ezGALVertexAttributeSemantic::Enum semantic, ezGALResourceFormat::Enum format, ezUInt16 uiOffset, ezUInt8 uiVertexBufferSlot, <span class="keywordtype">bool</span> bInstanceData)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  : m_eSemantic(semantic)</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  , m_eFormat(format)</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  , m_uiOffset(uiOffset)</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  , m_uiVertexBufferSlot(uiVertexBufferSlot)</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  , m_bInstanceData(bInstanceData)</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;{</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="astructez_shader_resource_type_htm_a1d155e7159994d54f86200a943197e5a"><div class="ttname"><a href="../../d3/d6e/structez_shader_resource_type.htm#a1d155e7159994d54f86200a943197e5a">ezShaderResourceType::Enum</a></div><div class="ttdeci">Enum</div><div class="ttdef"><b>Definition:</b> Descriptors.h:19</div></div>
 <div class="ttc" id="aclassez_hashable_struct_htm"><div class="ttname"><a href="../../d3/d14/classez_hashable_struct.htm">ezHashableStruct</a></div><div class="ttdoc">This class provides a base class for hashable structs (e.g. descriptor objects).</div><div class="ttdef"><b>Definition:</b> HashableStruct.h:16</div></div>
-<div class="ttc" id="astructez_g_a_l_texture_creation_description_htm_a36464f4e9f5a071ceef063b367829d01"><div class="ttname"><a href="../../da/dad/structez_g_a_l_texture_creation_description.htm#a36464f4e9f5a071ceef063b367829d01">ezGALTextureCreationDescription::m_pExisitingNativeObject</a></div><div class="ttdeci">void * m_pExisitingNativeObject</div><div class="ttdoc">Can be used to encapsulate existing native textures in objects usable by the GAL.</div><div class="ttdef"><b>Definition:</b> Descriptors.h:302</div></div>
-<div class="ttc" id="aclassez_g_a_l_shader_byte_code_htm"><div class="ttname"><a href="../../d4/daa/classez_g_a_l_shader_byte_code.htm">ezGALShaderByteCode</a></div><div class="ttdoc">This class wraps shader byte code storage. Since byte code can have different requirements for alignm...</div><div class="ttdef"><b>Definition:</b> ShaderByteCode.h:12</div></div>
-<div class="ttc" id="aclassez_ref_counting_impl_htm_ab062bf58d10e8221f31045742f713d17"><div class="ttname"><a href="../../d9/d13/classez_ref_counting_impl.htm#ab062bf58d10e8221f31045742f713d17">ezRefCountingImpl::GetRefCount</a></div><div class="ttdeci">ezInt32 GetRefCount() const</div><div class="ttdoc">Returns the current reference count.</div><div class="ttdef"><b>Definition:</b> RefCounted.h:41</div></div>
+<div class="ttc" id="astructez_g_a_l_texture_creation_description_htm_a36464f4e9f5a071ceef063b367829d01"><div class="ttname"><a href="../../da/dad/structez_g_a_l_texture_creation_description.htm#a36464f4e9f5a071ceef063b367829d01">ezGALTextureCreationDescription::m_pExisitingNativeObject</a></div><div class="ttdeci">void * m_pExisitingNativeObject</div><div class="ttdoc">Can be used to encapsulate existing native textures in objects usable by the GAL.</div><div class="ttdef"><b>Definition:</b> Descriptors.h:198</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_86889b9ebd9c49a9e3637c5d5b24303b.htm">RendererFoundation</a></li><li class="navelem"><a class="el" href="../../dir_d074cf545e581e442228da2d8af492e3.htm">Descriptors</a></li><li class="navelem"><a class="el" href="../../dir_2e9bdda967d8798c595099163790ff32.htm">Implementation</a></li><li class="navelem"><b>Descriptors_inl.h</b></li>
-    <li class="footer">Generated on Fri Dec 22 2023 20:43:09 for ezEngine by
+    <li class="footer">Generated on Sun Aug 25 2024 13:06:23 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

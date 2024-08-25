@@ -1,5 +1,6 @@
 var structez_bitflags =
 [
+    [ "ConstIterator", "d1/dec/structez_bitflags.htm#a139e03ec441fd3d03a9cc87502d06542", null ],
     [ "ezBitflags", "d1/dec/structez_bitflags.htm#a534f0018f017f682e03fc7467dc972b3", null ],
     [ "ezBitflags", "d1/dec/structez_bitflags.htm#ae7c6c0231ec87cdae8d7a5df84554f83", null ],
     [ "Add", "d1/dec/structez_bitflags.htm#aaa83c1e77b70d0b549604a64c20f8a83", null ],
@@ -7,6 +8,8 @@ var structez_bitflags =
     [ "AreAllSet", "d1/dec/structez_bitflags.htm#a40e906628358d1029f5645c13410bd56", null ],
     [ "AreNoneSet", "d1/dec/structez_bitflags.htm#a45db2d923c911f433c8349ac99ce464a", null ],
     [ "Clear", "d1/dec/structez_bitflags.htm#a2864c50a58574d58cf243b6ed1f6a95d", null ],
+    [ "GetEndIterator", "d1/dec/structez_bitflags.htm#a0bc8b9a7dfc5771023980bd143f21330", null ],
+    [ "GetIterator", "d1/dec/structez_bitflags.htm#abe97765c065531507027e5e0bdf89d0e", null ],
     [ "GetValue", "d1/dec/structez_bitflags.htm#aa93ba8c89c9f1c1cd79c87d02f6a3656", null ],
     [ "IsAnyFlagSet", "d1/dec/structez_bitflags.htm#a479a5092574665af3f7c635a4908d9de", null ],
     [ "IsAnySet", "d1/dec/structez_bitflags.htm#a10f86da5d9b9d336871ec40b70c38b31", null ],

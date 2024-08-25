@@ -8,6 +8,7 @@ var classez_simple_asset_document =
     [ "GetProperties", "d9/d62/classez_simple_asset_document.htm#a34b499b8c072f5bbdd270b6c270a5af8", null ],
     [ "GetProperties", "d9/d62/classez_simple_asset_document.htm#adbcef2ffb59009dcee03898bc5685b09", null ],
     [ "GetPropertyObject", "d9/d62/classez_simple_asset_document.htm#a19ba6b5624d7e1a1b42227368901bfa7", null ],
+    [ "GetPropertyObject", "d9/d62/classez_simple_asset_document.htm#ae054b351c9ce06787f21ea183c204045", null ],
     [ "InitializeAfterLoading", "d9/d62/classez_simple_asset_document.htm#ae6520fcddbe8ebc069452854e1eb307f", null ],
     [ "InternalLoadDocument", "d9/d62/classez_simple_asset_document.htm#a3ad94bbfb2ad25798fc7defcf178438f", null ],
     [ "m_Context", "d9/d62/classez_simple_asset_document.htm#a2f9e88b9f72a03e402dac61dc8b0ff1b", null ],

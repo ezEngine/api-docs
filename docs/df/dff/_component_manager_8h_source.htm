@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.12</span>
+   &#160;<span id="projectnumber">Release 24.09</span>
    </div>
   </td>
  </tr>
@@ -120,7 +120,7 @@ $(document).ready(function(){initNavTree('df/dff/_component_manager_8h_source.ht
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="../../df/d34/structez_component_handle.htm">ezComponentHandle</a> CreateComponent(<a class="code" href="../../d6/d61/classez_game_object.htm">ezGameObject</a>* pOwnerObject);</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> ComponentType&gt;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <a class="code" href="../../df/d34/structez_component_handle.htm">ezComponentHandle</a> CreateComponent(<a class="code" href="../../d6/d61/classez_game_object.htm">ezGameObject</a>* pOwnerObject, ComponentType*&amp; out_pComponent);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <a class="code" href="../../df/d45/structez_typed_component_handle.htm">ezTypedComponentHandle&lt;ComponentType&gt;</a> CreateComponent(<a class="code" href="../../d6/d61/classez_game_object.htm">ezGameObject</a>* pOwnerObject, ComponentType*&amp; out_pComponent);</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordtype">void</span> DeleteComponent(<span class="keyword">const</span> <a class="code" href="../../df/d34/structez_component_handle.htm">ezComponentHandle</a>&amp; hComponent);</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
@@ -213,54 +213,77 @@ $(document).ready(function(){initNavTree('df/dff/_component_manager_8h_source.ht
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;};</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="preprocessor">#define EZ_ADD_COMPONENT_FUNCTIONALITY(componentType, baseType, managerType)                        \</span></div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="preprocessor">public:                                                                                             \</span></div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="preprocessor">  using ComponentManagerType = managerType;                                                         \</span></div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="preprocessor">  virtual ezWorldModuleTypeId GetTypeId() const override { return s_TypeId; }                       \</span></div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="preprocessor">  static EZ_ALWAYS_INLINE ezWorldModuleTypeId TypeId() { return s_TypeId; }                         \</span></div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="preprocessor">  virtual ezComponentMode::Enum GetMode() const override;                                           \</span></div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="preprocessor">  static ezComponentHandle CreateComponent(ezGameObject* pOwnerObject, componentType*&amp; pComponent); \</span></div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="preprocessor">  static void DeleteComponent(componentType* pComponent);                                           \</span></div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="preprocessor">  void DeleteComponent();                                                                           \</span></div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="preprocessor">                                                                                                    \</span></div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="preprocessor">private:                                                                                            \</span></div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="preprocessor">  friend managerType;                                                                               \</span></div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="preprocessor">  static ezWorldModuleTypeId s_TypeId</span></div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="preprocessor">#define EZ_ADD_ABSTRACT_COMPONENT_FUNCTIONALITY(componentType, baseType)                     \</span></div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="preprocessor">public:                                                                                      \</span></div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="preprocessor">  virtual ezWorldModuleTypeId GetTypeId() const override { return ezWorldModuleTypeId(-1); } \</span></div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="preprocessor">  static EZ_ALWAYS_INLINE ezWorldModuleTypeId TypeId() { return ezWorldModuleTypeId(-1); }</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="preprocessor">#define EZ_DECLARE_COMPONENT_TYPE(componentType, baseType, managerType) \</span></div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="preprocessor">  EZ_ADD_DYNAMIC_REFLECTION(componentType, baseType);                   \</span></div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="preprocessor">  EZ_ADD_COMPONENT_FUNCTIONALITY(componentType, baseType, managerType);</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="preprocessor">#define EZ_ADD_COMPONENT_FUNCTIONALITY(componentType, baseType, managerType)                                            \</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="preprocessor">public:                                                                                                                 \</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="preprocessor">  using ComponentManagerType = managerType;                                                                             \</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="preprocessor">  virtual ezWorldModuleTypeId GetTypeId() const override                                                                \</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="preprocessor">  {                                                                                                                     \</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="preprocessor">    return s_TypeId;                                                                                                    \</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="preprocessor">  }                                                                                                                     \</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="preprocessor">  static EZ_ALWAYS_INLINE ezWorldModuleTypeId TypeId()                                                                  \</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="preprocessor">  {                                                                                                                     \</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="preprocessor">    return s_TypeId;                                                                                                    \</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="preprocessor">  }                                                                                                                     \</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="preprocessor">  ezTypedComponentHandle&lt;componentType&gt; GetHandle() const                                                               \</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="preprocessor">  {                                                                                                                     \</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="preprocessor">    return ezTypedComponentHandle&lt;componentType&gt;(ezComponent::GetHandle());                                             \</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="preprocessor">  }                                                                                                                     \</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="preprocessor">  virtual ezComponentMode::Enum GetMode() const override;                                                               \</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="preprocessor">  static ezTypedComponentHandle&lt;componentType&gt; CreateComponent(ezGameObject* pOwnerObject, componentType*&amp; pComponent); \</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="preprocessor">  static void DeleteComponent(componentType* pComponent);                                                               \</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="preprocessor">  void DeleteComponent();                                                                                               \</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="preprocessor">                                                                                                                        \</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="preprocessor">private:                                                                                                                \</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="preprocessor">  friend managerType;                                                                                                   \</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="preprocessor">  static ezWorldModuleTypeId s_TypeId</span></div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="preprocessor">#define EZ_DECLARE_ABSTRACT_COMPONENT_TYPE(componentType, baseType) \</span></div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="preprocessor">  EZ_ADD_DYNAMIC_REFLECTION(componentType, baseType);               \</span></div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="preprocessor">  EZ_ADD_ABSTRACT_COMPONENT_FUNCTIONALITY(componentType, baseType);</span></div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="preprocessor">#define EZ_BEGIN_COMPONENT_TYPE(componentType, version, mode)                                                                                  \</span></div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="preprocessor">  ezWorldModuleTypeId componentType::s_TypeId =                                                                                                \</span></div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="preprocessor">    ezWorldModuleFactory::GetInstance()-&gt;RegisterWorldModule&lt;typename componentType::ComponentManagerType, componentType&gt;();                   \</span></div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="preprocessor">  ezComponentMode::Enum componentType::GetMode() const { return mode; }                                                                        \</span></div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="preprocessor">  ezComponentHandle componentType::CreateComponent(ezGameObject* pOwnerObject, componentType*&amp; out_pComponent)                                 \</span></div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="preprocessor">  {                                                                                                                                            \</span></div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="preprocessor">    return pOwnerObject-&gt;GetWorld()-&gt;GetOrCreateComponentManager&lt;ComponentManagerType&gt;()-&gt;CreateComponent(pOwnerObject, out_pComponent);       \</span></div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="preprocessor">  }                                                                                                                                            \</span></div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="preprocessor">  void componentType::DeleteComponent(componentType* pComponent) { pComponent-&gt;GetOwningManager()-&gt;DeleteComponent(pComponent-&gt;GetHandle()); } \</span></div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="preprocessor">  void componentType::DeleteComponent() { GetOwningManager()-&gt;DeleteComponent(GetHandle()); }                                                  \</span></div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="preprocessor">  EZ_BEGIN_DYNAMIC_REFLECTED_TYPE(componentType, version, ezRTTINoAllocator)</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="preprocessor">#define EZ_ADD_ABSTRACT_COMPONENT_FUNCTIONALITY(componentType, baseType) \</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="preprocessor">public:                                                                  \</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="preprocessor">  virtual ezWorldModuleTypeId GetTypeId() const override                 \</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="preprocessor">  {                                                                      \</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="preprocessor">    return ezWorldModuleTypeId(-1);                                      \</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="preprocessor">  }                                                                      \</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="preprocessor">  static EZ_ALWAYS_INLINE ezWorldModuleTypeId TypeId()                   \</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="preprocessor">  {                                                                      \</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="preprocessor">    return ezWorldModuleTypeId(-1);                                      \</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="preprocessor">  }</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="preprocessor">#define EZ_DECLARE_COMPONENT_TYPE(componentType, baseType, managerType) \</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="preprocessor">  EZ_ADD_DYNAMIC_REFLECTION(componentType, baseType);                   \</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="preprocessor">  EZ_ADD_COMPONENT_FUNCTIONALITY(componentType, baseType, managerType);</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="preprocessor">#define EZ_DECLARE_ABSTRACT_COMPONENT_TYPE(componentType, baseType) \</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="preprocessor">  EZ_ADD_DYNAMIC_REFLECTION(componentType, baseType);               \</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="preprocessor">  EZ_ADD_ABSTRACT_COMPONENT_FUNCTIONALITY(componentType, baseType);</span></div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="preprocessor">#define EZ_BEGIN_ABSTRACT_COMPONENT_TYPE(componentType, version)             \</span></div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="preprocessor">  EZ_BEGIN_DYNAMIC_REFLECTED_TYPE(componentType, version, ezRTTINoAllocator) \</span></div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<span class="preprocessor">    flags.Add(ezTypeFlags::Abstract);</span></div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="preprocessor">#define EZ_END_COMPONENT_TYPE EZ_END_DYNAMIC_REFLECTED_TYPE</span></div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="preprocessor">#define EZ_END_ABSTRACT_COMPONENT_TYPE EZ_END_DYNAMIC_REFLECTED_TYPE</span></div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="preprocessor">#include &lt;Core/World/Implementation/ComponentManager_inl.h&gt;</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="preprocessor">#define EZ_BEGIN_COMPONENT_TYPE(componentType, version, mode)                                                                            \</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<span class="preprocessor">  ezWorldModuleTypeId componentType::s_TypeId =                                                                                          \</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="preprocessor">    ezWorldModuleFactory::GetInstance()-&gt;RegisterWorldModule&lt;typename componentType::ComponentManagerType, componentType&gt;();             \</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="preprocessor">  ezComponentMode::Enum componentType::GetMode() const                                                                                   \</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="preprocessor">  {                                                                                                                                      \</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="preprocessor">    return mode;                                                                                                                         \</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="preprocessor">  }                                                                                                                                      \</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="preprocessor">  ezTypedComponentHandle&lt;componentType&gt; componentType::CreateComponent(ezGameObject* pOwnerObject, componentType*&amp; out_pComponent)       \</span></div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="preprocessor">  {                                                                                                                                      \</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="preprocessor">    return pOwnerObject-&gt;GetWorld()-&gt;GetOrCreateComponentManager&lt;ComponentManagerType&gt;()-&gt;CreateComponent(pOwnerObject, out_pComponent); \</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="preprocessor">  }                                                                                                                                      \</span></div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="preprocessor">  void componentType::DeleteComponent(componentType* pComponent)                                                                         \</span></div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="preprocessor">  {                                                                                                                                      \</span></div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="preprocessor">    pComponent-&gt;GetOwningManager()-&gt;DeleteComponent(pComponent-&gt;GetHandle());                                                            \</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="preprocessor">  }                                                                                                                                      \</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="preprocessor">  void componentType::DeleteComponent()                                                                                                  \</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="preprocessor">  {                                                                                                                                      \</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="preprocessor">    GetOwningManager()-&gt;DeleteComponent(GetHandle());                                                                                    \</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="preprocessor">  }                                                                                                                                      \</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="preprocessor">  EZ_BEGIN_DYNAMIC_REFLECTED_TYPE(componentType, version, ezRTTINoAllocator)</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="preprocessor">#define EZ_BEGIN_ABSTRACT_COMPONENT_TYPE(componentType, version) EZ_BEGIN_ABSTRACT_DYNAMIC_REFLECTED_TYPE(componentType, version)</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="preprocessor">#define EZ_END_COMPONENT_TYPE EZ_END_DYNAMIC_REFLECTED_TYPE</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="preprocessor">#define EZ_END_ABSTRACT_COMPONENT_TYPE EZ_END_ABSTRACT_DYNAMIC_REFLECTED_TYPE</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160; </div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;<span class="preprocessor">#include &lt;Core/World/Implementation/ComponentManager_inl.h&gt;</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_world_module_htm"><div class="ttname"><a href="../../d1/df7/classez_world_module.htm">ezWorldModule</a></div><div class="ttdef"><b>Definition:</b> WorldModule.h:9</div></div>
@@ -282,6 +305,7 @@ $(document).ready(function(){initNavTree('df/dff/_component_manager_8h_source.ht
 <div class="ttc" id="aclassez_component_manager_simple_htm_a329b54c59c3fe331474c2f4f8a945ba5"><div class="ttname"><a href="../../d6/ddd/classez_component_manager_simple.htm#a329b54c59c3fe331474c2f4f8a945ba5">ezComponentManagerSimple::SimpleUpdate</a></div><div class="ttdeci">void SimpleUpdate(const ezWorldModule::UpdateContext &amp;context)</div><div class="ttdoc">A simple update function that iterates over all components and calls Update() on every component.</div><div class="ttdef"><b>Definition:</b> ComponentManager_inl.h:180</div></div>
 <div class="ttc" id="aclassez_dynamic_array_htm"><div class="ttname"><a href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt; ezComponentHandle &gt;</a></div></div>
 <div class="ttc" id="aclassez_game_object_htm"><div class="ttname"><a href="../../d6/d61/classez_game_object.htm">ezGameObject</a></div><div class="ttdoc">This class represents an object inside the world.</div><div class="ttdef"><b>Definition:</b> GameObject.h:31</div></div>
+<div class="ttc" id="astructez_typed_component_handle_htm"><div class="ttname"><a href="../../df/d45/structez_typed_component_handle.htm">ezTypedComponentHandle</a></div><div class="ttdoc">A typed handle to a component.</div><div class="ttdef"><b>Definition:</b> Declarations.h:153</div></div>
 <div class="ttc" id="astructez_component_handle_htm"><div class="ttname"><a href="../../df/d34/structez_component_handle.htm">ezComponentHandle</a></div><div class="ttdoc">A handle to a component.</div><div class="ttdef"><b>Definition:</b> Declarations.h:137</div></div>
 <div class="ttc" id="aclassez_string_builder_htm"><div class="ttname"><a href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a></div><div class="ttdoc">ezStringBuilder is a class that is meant for creating and modifying strings.</div><div class="ttdef"><b>Definition:</b> StringBuilder.h:34</div></div>
 <div class="ttc" id="aclassez_component_manager_htm_afdf1b5acce3dfc40dc6e31858ff71501"><div class="ttname"><a href="../../d7/df2/classez_component_manager.htm#afdf1b5acce3dfc40dc6e31858ff71501">ezComponentManager::ezComponentManager</a></div><div class="ttdeci">ezComponentManager(ezWorld *pWorld)</div><div class="ttdoc">Although the constructor is public always use ezWorld::CreateComponentManager to create an instance.</div><div class="ttdef"><b>Definition:</b> ComponentManager_inl.h:43</div></div>
@@ -292,7 +316,7 @@ $(document).ready(function(){initNavTree('df/dff/_component_manager_8h_source.ht
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_ac029bbb8a17b4d550e2f9d55d89a029.htm">Core</a></li><li class="navelem"><a class="el" href="../../dir_89e289b549b3db86cc2bc4f6ebaf52c6.htm">World</a></li><li class="navelem"><b>ComponentManager.h</b></li>
-    <li class="footer">Generated on Fri Dec 22 2023 20:43:02 for ezEngine by
+    <li class="footer">Generated on Sun Aug 25 2024 13:06:14 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

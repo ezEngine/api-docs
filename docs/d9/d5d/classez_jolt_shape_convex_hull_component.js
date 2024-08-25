@@ -6,8 +6,7 @@ var classez_jolt_shape_convex_hull_component =
     [ "DeserializeComponent", "d9/d5d/classez_jolt_shape_convex_hull_component.htm#aabdc631d1278a3a6fc28d5f6c4780eee", null ],
     [ "ExtractGeometry", "d9/d5d/classez_jolt_shape_convex_hull_component.htm#a76a95993bc528db050c00a406cf18bb0", null ],
     [ "GetMesh", "d9/d5d/classez_jolt_shape_convex_hull_component.htm#adf61398db54ff98daed7bfc838a429c5", null ],
-    [ "GetMeshFile", "d9/d5d/classez_jolt_shape_convex_hull_component.htm#a5e2cdeb1889c154823bbd9358767509a", null ],
+    [ "OnUpdateLocalBounds", "d9/d5d/classez_jolt_shape_convex_hull_component.htm#a23bf8428f91c6d5aad2cc13760c127dd", null ],
     [ "SerializeComponent", "d9/d5d/classez_jolt_shape_convex_hull_component.htm#a06d674a32a252e9df898ea8ecfdfee17", null ],
-    [ "SetMeshFile", "d9/d5d/classez_jolt_shape_convex_hull_component.htm#ac8b2b89cb984e811e1d903ce2e09ca8e", null ],
     [ "m_hCollisionMesh", "d9/d5d/classez_jolt_shape_convex_hull_component.htm#a457f14a14b497ec528bc04f41e7fb2af", null ]
 ];

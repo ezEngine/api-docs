@@ -17,7 +17,8 @@ var structez_fileserver_event =
       [ "FileUploadRequest", "d1/d66/structez_fileserver_event.htm#a6384d461b22b71b2e614a7ae087298e1a0941c01e9bcc321538efd0c4e62a1b8f", null ],
       [ "FileUploading", "d1/d66/structez_fileserver_event.htm#a6384d461b22b71b2e614a7ae087298e1a6b480ec7aa5edce985d10a5c09fb87f8", null ],
       [ "FileUploadFinished", "d1/d66/structez_fileserver_event.htm#a6384d461b22b71b2e614a7ae087298e1a9581a2d8be75b2d3ea4023365c4e7f51", null ],
-      [ "AreYouThereRequest", "d1/d66/structez_fileserver_event.htm#a6384d461b22b71b2e614a7ae087298e1a5cfd34334565075df1563bd1f5298784", null ]
+      [ "AreYouThereRequest", "d1/d66/structez_fileserver_event.htm#a6384d461b22b71b2e614a7ae087298e1a5cfd34334565075df1563bd1f5298784", null ],
+      [ "LogCustomActivity", "d1/d66/structez_fileserver_event.htm#a6384d461b22b71b2e614a7ae087298e1a1fec991fbcec1b79c2ca2c65392806cd", null ]
     ] ],
     [ "m_FileState", "d1/d66/structez_fileserver_event.htm#a00c0192ddfaa076f08d9710b812ef989", null ],
     [ "m_szName", "d1/d66/structez_fileserver_event.htm#a148e80382cc37ab9f2e954dfa206219e", null ],

@@ -21,6 +21,7 @@ var structez_g_a_l_device_capabilities =
     [ "m_uiMaxAnisotropy", "dc/d6c/structez_g_a_l_device_capabilities.htm#aefaa208c6c770dbbb10aab3445ed3bac", null ],
     [ "m_uiMaxConstantBuffers", "dc/d6c/structez_g_a_l_device_capabilities.htm#a2e5e673a1393c7607494ce1a79bcd5ce", null ],
     [ "m_uiMaxCubemapDimension", "dc/d6c/structez_g_a_l_device_capabilities.htm#ab5e888ec11593a5d26e92ba161740fec", null ],
+    [ "m_uiMaxPushConstantsSize", "dc/d6c/structez_g_a_l_device_capabilities.htm#a5b03d9e3d77d123625848b2dbcc1beb1", null ],
     [ "m_uiMaxRendertargets", "dc/d6c/structez_g_a_l_device_capabilities.htm#ac90de1d7d9b7d7a33048fb8a5679593c", null ],
     [ "m_uiMaxTextureDimension", "dc/d6c/structez_g_a_l_device_capabilities.htm#a1ded74701bfe7e82651a75d85858ce8f", null ],
     [ "m_uiSharedSystemRAM", "dc/d6c/structez_g_a_l_device_capabilities.htm#a93c8273f0cc8ea8ff15d3a8c59d8934f", null ],

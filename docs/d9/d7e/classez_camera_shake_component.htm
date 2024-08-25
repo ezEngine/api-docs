@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.12</span>
+   &#160;<span id="projectnumber">Release 24.09</span>
    </div>
   </td>
  </tr>
@@ -93,12 +93,17 @@ $(document).ready(function(){initNavTree('d9/d7e/classez_camera_shake_component.
 <div class="title">ezCameraShakeComponent Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>This component is used to apply a shaking effect to the game object that it is attached to.  
+ <a href="../../d9/d7e/classez_camera_shake_component.htm#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../da/db7/_camera_shake_component_8h_source.htm">CameraShakeComponent.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ezCameraShakeComponent:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../da/d9e/classez_camera_shake_component__inherit__graph.png" border="0" usemap="#ez_camera_shake_component_inherit__map" alt="Inheritance graph"/></div>
 <map name="ez_camera_shake_component_inherit__map" id="ez_camera_shake_component_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,229,208,256"/>
+<area shape="rect" title="This component is used to apply a shaking effect to the game object that it is attached to." alt="" coords="5,229,208,256"/>
 <area shape="rect" href="../../d6/d30/classez_component.htm" title="Base class of all component types." alt="" coords="51,155,163,181"/>
 <area shape="rect" href="../../db/d45/classez_reflected_class.htm" title="All classes that should be dynamically reflectable, need to be derived from this base class." alt="" coords="40,80,173,107"/>
 <area shape="rect" href="../../d4/d02/classez_no_base.htm" title="Dummy type to pass to templates and macros that expect a base type for a class that has no base." alt="" coords="63,5,150,32"/>
@@ -222,10 +227,12 @@ template&lt;typename T &gt; </td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:acaa7e4a21e3e6445d8cabf7991f5d798"><td class="memItemLeft" align="right" valign="top"><a id="acaa7e4a21e3e6445d8cabf7991f5d798"></a>
-<a class="el" href="../../db/d6f/classez_angle.htm">ezAngle</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_MinShake</b></td></tr>
+<a class="el" href="../../db/d6f/classez_angle.htm">ezAngle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d7e/classez_camera_shake_component.htm#acaa7e4a21e3e6445d8cabf7991f5d798">m_MinShake</a></td></tr>
+<tr class="memdesc:acaa7e4a21e3e6445d8cabf7991f5d798"><td class="mdescLeft">&#160;</td><td class="mdescRight">How much shake to apply as the minimum value, even if no shake volume is found or the shake strength is zero. <br /></td></tr>
 <tr class="separator:acaa7e4a21e3e6445d8cabf7991f5d798"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71d60024bd28be70263abdaafa843195"><td class="memItemLeft" align="right" valign="top"><a id="a71d60024bd28be70263abdaafa843195"></a>
-<a class="el" href="../../db/d6f/classez_angle.htm">ezAngle</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_MaxShake</b></td></tr>
+<a class="el" href="../../db/d6f/classez_angle.htm">ezAngle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d7e/classez_camera_shake_component.htm#a71d60024bd28be70263abdaafa843195">m_MaxShake</a> = <a class="el" href="../../db/d6f/classez_angle.htm#a6e6aec7948f52b69936a9074eca179fa">ezAngle::MakeFromDegree</a>(5)</td></tr>
+<tr class="memdesc:a71d60024bd28be70263abdaafa843195"><td class="mdescLeft">&#160;</td><td class="mdescRight">How much shake to apply at shake strength 1. <br /></td></tr>
 <tr class="separator:a71d60024bd28be70263abdaafa843195"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
@@ -319,7 +326,13 @@ Additional Inherited Members</h2></td></tr>
 static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>GetStaticRTTI</b> ()</td></tr>
 <tr class="separator:ad676281ced156eb886aa4f74a2a45d2f inherit pub_static_methods_classez_no_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This component is used to apply a shaking effect to the game object that it is attached to. </p>
+<p>The shake is applied as a local rotation around the Y and Z axis, assuming the camera is looking along the positive X axis. The component can be attached to the same object as a camera component, but it is usually best to insert a dedicated shake object as a parent of the camera.</p>
+<p>How much shake to apply is controlled through the m_MinShake and m_MaxShake properties.</p>
+<p>The shake values can be modified dynamically to force a shake, but it is more convenient to instead place shake volumes (see <a class="el" href="../../d6/d82/classez_camera_shake_volume_component.htm" title="Base class for components that define volumes in which a camera shake effect shall be applied.">ezCameraShakeVolumeComponent</a> and derived classes). The camera shake component samples these volumes using its own location and uses the determined strength to fade between its min and max shake amount.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d6/d82/classez_camera_shake_volume_component.htm" title="Base class for components that define volumes in which a camera shake effect shall be applied.">ezCameraShakeVolumeComponent</a> </dd></dl>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ab88724a03297ad87b69efb0436096ebb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab88724a03297ad87b69efb0436096ebb">&#9670;&nbsp;</a></span>DeserializeComponent()</h2>
 
@@ -361,7 +374,7 @@ static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d9/d7e/classez_camera_shake_component.htm">ezCameraShakeComponent</a></li>
-    <li class="footer">Generated on Fri Dec 22 2023 20:43:11 for ezEngine by
+    <li class="footer">Generated on Sun Aug 25 2024 13:06:26 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

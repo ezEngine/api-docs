@@ -1,6 +1,7 @@
 var classez_fmod =
 [
     [ "ezFmod", "d4/d2b/classez_fmod.htm#a38140d3c7be412f799dc562005b00d65", null ],
+    [ "GetGlobalParameter", "d4/d2b/classez_fmod.htm#aa328d1a548b6db7dd79e1dd069735131", null ],
     [ "GetListenerPosition", "d4/d2b/classez_fmod.htm#ad468a20949dc4f24bda41013cae38990", null ],
     [ "GetLowLevelSystem", "d4/d2b/classez_fmod.htm#a034db020ccacff629e981918f08400fc", null ],
     [ "GetMasterChannelMute", "d4/d2b/classez_fmod.htm#a317a0de690d7b07fa7346db627230067", null ],
@@ -12,6 +13,7 @@ var classez_fmod =
     [ "GetStudioSystem", "d4/d2b/classez_fmod.htm#a1dd0b896bb59491a9b15219ed51f0cb7", null ],
     [ "LoadConfiguration", "d4/d2b/classez_fmod.htm#a98d1ea319c8a564a3ece5231edc3f7c2", null ],
     [ "OneShotSound", "d4/d2b/classez_fmod.htm#adb8cbf4539a9fd246d319831ac017d18", null ],
+    [ "SetGlobalParameter", "d4/d2b/classez_fmod.htm#af5ba59929b1443209422c0b4e805c82f", null ],
     [ "SetListener", "d4/d2b/classez_fmod.htm#a4c74be54fb7b5d2d00390671da3c51fb", null ],
     [ "SetListenerOverrideMode", "d4/d2b/classez_fmod.htm#ae221aa88cfbb1f0e836e4ce1de0a8f54", null ],
     [ "SetMasterChannelMute", "d4/d2b/classez_fmod.htm#a42c4cc939a2cab0b9822e61cf43a30a7", null ],

@@ -9,7 +9,7 @@ var classez_script_coroutine =
     [ "GetScriptInstance", "d3/d37/classez_script_coroutine.htm#aa30b8de8d7a36b59779294fa7a21d4d8", null ],
     [ "GetScriptWorldModule", "d3/d37/classez_script_coroutine.htm#ac2fe257cb318801a1e38a9eabfb48c91", null ],
     [ "GetScriptWorldModule", "d3/d37/classez_script_coroutine.htm#a2f9a5c039234641f55ff104318eccd17", null ],
-    [ "Start", "d3/d37/classez_script_coroutine.htm#abb59c33cb03735842a53e44016149442", null ],
+    [ "StartWithVarargs", "d3/d37/classez_script_coroutine.htm#a8900a4ecbc5872a3d78bbf337f88f0f1", null ],
     [ "Stop", "d3/d37/classez_script_coroutine.htm#ae230dd0a0fd88c0f969954d42f228911", null ],
     [ "Update", "d3/d37/classez_script_coroutine.htm#aecce3047db518489940e79531e3c1086", null ],
     [ "UpdateAndSchedule", "d3/d37/classez_script_coroutine.htm#a6ad9f05631a544ac023989b86b02f930", null ],

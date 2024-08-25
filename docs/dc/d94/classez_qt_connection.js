@@ -3,6 +3,7 @@ var classez_qt_connection =
     [ "ezQtConnection", "dc/d94/classez_qt_connection.htm#a65992eb0941562384b8b947b8d7b839c", null ],
     [ "~ezQtConnection", "dc/d94/classez_qt_connection.htm#ad535d0a9c16ba2d1021cc5fe3d56021b", null ],
     [ "DeterminePen", "dc/d94/classez_qt_connection.htm#aec22ba4c7515df6856dc7620c3edc2fa", null ],
+    [ "DrawSubwayPath", "dc/d94/classez_qt_connection.htm#ac57c1ca014b654df97a6c3d5ce551ce5", null ],
     [ "ExtendContextMenu", "dc/d94/classez_qt_connection.htm#aa340a130278f7ec17ced241b0e4a4c07", null ],
     [ "GetConnection", "dc/d94/classez_qt_connection.htm#aa5ae9a5db6df6563c9a21bb1221725ed", null ],
     [ "GetInPos", "dc/d94/classez_qt_connection.htm#a612fe0312ed0db225552dc048941a87e", null ],

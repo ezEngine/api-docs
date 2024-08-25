@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.12</span>
+   &#160;<span id="projectnumber">Release 24.09</span>
    </div>
   </td>
  </tr>
@@ -188,7 +188,7 @@ $(document).ready(function(){initNavTree('d2/dcb/_block_storage__inl_8h_source.h
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, ezUInt32 BlockSize, ezBlockStorageType::Enum StorageType&gt;</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;EZ_FORCE_INLINE <a class="code" href="../../d3/d1f/classez_block_storage.htm">ezBlockStorage&lt;T, BlockSize, StorageType&gt;::ezBlockStorage</a>(</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <a class="code" href="../../d1/d52/classez_large_block_allocator.htm">ezLargeBlockAllocator&lt;BlockSize&gt;</a>* pBlockAllocator, <a class="code" href="../../d1/d4c/classez_allocator_base.htm">ezAllocatorBase</a>* pAllocator)</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <a class="code" href="../../d1/d52/classez_large_block_allocator.htm">ezLargeBlockAllocator&lt;BlockSize&gt;</a>* pBlockAllocator, <a class="code" href="../../d0/dbb/classez_allocator.htm">ezAllocator</a>* pAllocator)</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  : m_pBlockAllocator(pBlockAllocator)</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  , m_Blocks(pAllocator)</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
@@ -268,7 +268,7 @@ $(document).ready(function(){initNavTree('d2/dcb/_block_storage__inl_8h_source.h
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    ++m_uiCount;</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  }</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;  <a class="code" href="../../dc/d4d/classez_memory_utils.htm#ab4c3930b2de5e40c33a2bfca4c5dda1f">ezMemoryUtils::Construct</a>(pNewObject, 1);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;  ezMemoryUtils::Construct&lt;SkipTrivialTypes&gt;(pNewObject, 1);</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  <span class="keywordflow">if</span> (StorageType == ezBlockStorageType::FreeList)</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  {</div>
@@ -364,23 +364,22 @@ $(document).ready(function(){initNavTree('d2/dcb/_block_storage__inl_8h_source.h
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_large_block_allocator_htm"><div class="ttname"><a href="../../d1/d52/classez_large_block_allocator.htm">ezLargeBlockAllocator</a></div><div class="ttdoc">A block allocator which can only allocates blocks of memory at once.</div><div class="ttdef"><b>Definition:</b> LargeBlockAllocator.h:39</div></div>
-<div class="ttc" id="aclassez_memory_utils_htm_ab4c3930b2de5e40c33a2bfca4c5dda1f"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm#ab4c3930b2de5e40c33a2bfca4c5dda1f">ezMemoryUtils::Construct</a></div><div class="ttdeci">static void Construct(T *pDestination, size_t uiCount=1)</div><div class="ttdoc">Constructs uiCount objects of type T in a raw buffer at pDestination.</div></div>
-<div class="ttc" id="anamespaceez_math_htm_a6f7ee19d0f8e81ff6ae5f394075e3a56"><div class="ttname"><a href="../../db/d78/namespaceez_math.htm#a6f7ee19d0f8e81ff6ae5f394075e3a56">ezMath::Max</a></div><div class="ttdeci">constexpr EZ_ALWAYS_INLINE T Max(T f1, T f2)</div><div class="ttdoc">Returns the greater value, f1 or f2.</div><div class="ttdef"><b>Definition:</b> Math_inl.h:38</div></div>
+<div class="ttc" id="anamespaceez_math_htm_a6f7ee19d0f8e81ff6ae5f394075e3a56"><div class="ttname"><a href="../../db/d78/namespaceez_math.htm#a6f7ee19d0f8e81ff6ae5f394075e3a56">ezMath::Max</a></div><div class="ttdeci">constexpr EZ_ALWAYS_INLINE T Max(T f1, T f2)</div><div class="ttdoc">Returns the greater value, f1 or f2.</div><div class="ttdef"><b>Definition:</b> Math_inl.h:39</div></div>
 <div class="ttc" id="aclassez_block_storage_1_1_iterator_htm"><div class="ttname"><a href="../../d8/de1/classez_block_storage_1_1_iterator.htm">ezBlockStorage::Iterator</a></div><div class="ttdef"><b>Definition:</b> BlockStorage.h:44</div></div>
-<div class="ttc" id="aclassez_allocator_base_htm"><div class="ttname"><a href="../../d1/d4c/classez_allocator_base.htm">ezAllocatorBase</a></div><div class="ttdoc">Base class for all memory allocators.</div><div class="ttdef"><b>Definition:</b> AllocatorBase.h:22</div></div>
 <div class="ttc" id="astructez_data_block_htm"><div class="ttname"><a href="../../d6/d01/structez_data_block.htm">ezDataBlock</a></div><div class="ttdoc">This struct represents a block of type T, typically 4kb.</div><div class="ttdef"><b>Definition:</b> LargeBlockAllocator.h:13</div></div>
 <div class="ttc" id="aclassez_block_storage_1_1_const_iterator_htm"><div class="ttname"><a href="../../d5/d8b/classez_block_storage_1_1_const_iterator.htm">ezBlockStorage::ConstIterator</a></div><div class="ttdef"><b>Definition:</b> BlockStorage.h:19</div></div>
-<div class="ttc" id="anamespaceez_math_htm_ad8009b4da9cb427658d71e30576f209e"><div class="ttname"><a href="../../db/d78/namespaceez_math.htm#ad8009b4da9cb427658d71e30576f209e">ezMath::Min</a></div><div class="ttdeci">constexpr EZ_ALWAYS_INLINE T Min(T f1, T f2)</div><div class="ttdoc">Returns the smaller value, f1 or f2.</div><div class="ttdef"><b>Definition:</b> Math_inl.h:26</div></div>
-<div class="ttc" id="astructez_arg_p_htm"><div class="ttname"><a href="../../d7/d5f/structez_arg_p.htm">ezArgP</a></div><div class="ttdef"><b>Definition:</b> FormatStringArgs.h:74</div></div>
+<div class="ttc" id="anamespaceez_math_htm_ad8009b4da9cb427658d71e30576f209e"><div class="ttname"><a href="../../db/d78/namespaceez_math.htm#ad8009b4da9cb427658d71e30576f209e">ezMath::Min</a></div><div class="ttdeci">constexpr EZ_ALWAYS_INLINE T Min(T f1, T f2)</div><div class="ttdoc">Returns the smaller value, f1 or f2.</div><div class="ttdef"><b>Definition:</b> Math_inl.h:27</div></div>
+<div class="ttc" id="astructez_arg_p_htm"><div class="ttname"><a href="../../d7/d5f/structez_arg_p.htm">ezArgP</a></div><div class="ttdef"><b>Definition:</b> FormatStringArgs.h:75</div></div>
+<div class="ttc" id="aclassez_allocator_htm"><div class="ttname"><a href="../../d0/dbb/classez_allocator.htm">ezAllocator</a></div><div class="ttdoc">Base class for all memory allocators.</div><div class="ttdef"><b>Definition:</b> Allocator.h:22</div></div>
 <div class="ttc" id="aclassez_memory_utils_htm_add65b87c39dade4ee7b0671c16b10a39"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm#add65b87c39dade4ee7b0671c16b10a39">ezMemoryUtils::Destruct</a></div><div class="ttdeci">static void Destruct(T *pDestination, size_t uiCount=1)</div><div class="ttdoc">Destructs uiCount objects of type T at pDestination.</div></div>
-<div class="ttc" id="astructez_trait_int_htm"><div class="ttname"><a href="../../d6/d09/structez_trait_int.htm">ezTraitInt</a></div><div class="ttdoc">Type traits.</div><div class="ttdef"><b>Definition:</b> TypeTraits.h:9</div></div>
+<div class="ttc" id="astructez_trait_int_htm"><div class="ttname"><a href="../../d6/d09/structez_trait_int.htm">ezTraitInt</a></div><div class="ttdoc">Type traits.</div><div class="ttdef"><b>Definition:</b> TypeTraits.h:11</div></div>
 <div class="ttc" id="aclassez_memory_utils_htm_ad6e16a61a60f0979acacc0d918abf74a"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm#ad6e16a61a60f0979acacc0d918abf74a">ezMemoryUtils::Relocate</a></div><div class="ttdeci">static void Relocate(T *pDestination, T *pSource, size_t uiCount=1)</div><div class="ttdoc">Moves objects of type T from pSource to pDestination.</div></div>
 <div class="ttc" id="aclassez_block_storage_htm"><div class="ttname"><a href="../../d3/d1f/classez_block_storage.htm">ezBlockStorage</a></div><div class="ttdef"><b>Definition:</b> BlockStorage.h:16</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_adb0ac2a169525f5fa05f0527c58e205.htm">Memory</a></li><li class="navelem"><a class="el" href="../../dir_2b61d82766792ebb24827eac69b772f5.htm">Implementation</a></li><li class="navelem"><b>BlockStorage_inl.h</b></li>
-    <li class="footer">Generated on Fri Dec 22 2023 20:43:06 for ezEngine by
+    <li class="footer">Generated on Sun Aug 25 2024 13:06:19 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

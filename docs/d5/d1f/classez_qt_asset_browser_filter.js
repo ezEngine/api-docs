@@ -15,6 +15,7 @@ var classez_qt_asset_browser_filter =
     [ "Reset", "d5/d1f/classez_qt_asset_browser_filter.htm#a5b1299cab5b081ab97541098d81adfe1", null ],
     [ "SetFileExtensionFilters", "d5/d1f/classez_qt_asset_browser_filter.htm#ac86f7386cb619449e648bf3c94f2825f", null ],
     [ "SetPathFilter", "d5/d1f/classez_qt_asset_browser_filter.htm#ad2cb82c6cf9bc672f42ad8d329d9b6b5", null ],
+    [ "SetRequiredTag", "d5/d1f/classez_qt_asset_browser_filter.htm#ad2c24a3158caaa964865f3af88593ad5", null ],
     [ "SetShowFiles", "d5/d1f/classez_qt_asset_browser_filter.htm#a86dce570ab7906bfb0f5b8329a09cf5b", null ],
     [ "SetShowItemsInHiddenFolders", "d5/d1f/classez_qt_asset_browser_filter.htm#a0006daa73d86f49a270cf126e82d2c67", null ],
     [ "SetShowItemsInSubFolders", "d5/d1f/classez_qt_asset_browser_filter.htm#a8efa827db63bd2c4885be5bbf501905b", null ],

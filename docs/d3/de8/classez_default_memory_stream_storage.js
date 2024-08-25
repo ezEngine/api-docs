@@ -1,6 +1,6 @@
 var classez_default_memory_stream_storage =
 [
-    [ "ezDefaultMemoryStreamStorage", "d3/de8/classez_default_memory_stream_storage.htm#a7202059df32122abe96f5670ebe9a1c9", null ],
+    [ "ezDefaultMemoryStreamStorage", "d3/de8/classez_default_memory_stream_storage.htm#a0c92d99aa909d197af2375d47394f197", null ],
     [ "~ezDefaultMemoryStreamStorage", "d3/de8/classez_default_memory_stream_storage.htm#aedc16f3ffb23984a7ba0f2a52337c8b2", null ],
     [ "Clear", "d3/de8/classez_default_memory_stream_storage.htm#a7fdc7ad564028591662b2fa64c5234de", null ],
     [ "Compact", "d3/de8/classez_default_memory_stream_storage.htm#a31ec15b2d5ae1766f571950ea95b2089", null ],

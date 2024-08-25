@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.12</span>
+   &#160;<span id="projectnumber">Release 24.09</span>
    </div>
   </td>
  </tr>
@@ -94,89 +94,97 @@ $(document).ready(function(){initNavTree('d4/d94/_transform_component_8h_source.
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;Foundation/Time/Time.h&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;GameEngine/GameEngineDLL.h&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="../../d0/de9/structez_transform_component_flags.htm">    8</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../d0/de9/structez_transform_component_flags.htm">ezTransformComponentFlags</a></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keyword">using</span> StorageType = ezUInt16;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <span class="keyword">enum</span> Enum</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    None = 0,</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    Running = EZ_BIT(0),</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    AutoReturnStart = EZ_BIT(1),</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    AutoReturnEnd = EZ_BIT(2),</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    AnimationReversed = EZ_BIT(5),</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    Default = Running | AutoReturnStart | AutoReturnEnd</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  };</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="../../d0/d27/structez_transform_component_flags_1_1_bits.htm">   22</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../d0/d27/structez_transform_component_flags_1_1_bits.htm">Bits</a></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    StorageType Running : 1;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    StorageType AutoReturnStart : 1;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    StorageType AutoReturnEnd : 1;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    StorageType Unused1 : 1;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    StorageType Unused2 : 1;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    StorageType AnimationReversed : 1;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  };</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;};</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;EZ_DECLARE_FLAGS_OPERATORS(<a class="code" href="../../d0/de9/structez_transform_component_flags.htm">ezTransformComponentFlags</a>);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="../../d8/dbd/classez_transform_component.htm">   35</a></span>&#160;<span class="keyword">class </span>EZ_GAMEENGINE_DLL <a class="code" href="../../d8/dbd/classez_transform_component.htm">ezTransformComponent</a> : <span class="keyword">public</span> <a class="code" href="../../d6/d30/classez_component.htm">ezComponent</a></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  EZ_ADD_DYNAMIC_REFLECTION(<a class="code" href="../../d8/dbd/classez_transform_component.htm">ezTransformComponent</a>, <a class="code" href="../../d6/d30/classez_component.htm">ezComponent</a>);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="comment">// ezComponent</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d6/d30/classez_component.htm#aa607b7c06fdfcc61735366aef5b0e159">SerializeComponent</a>(<a class="code" href="../../dc/dd8/classez_world_writer.htm">ezWorldWriter</a>&amp; inout_stream) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d6/d30/classez_component.htm#a5733baf54244ceb284fd0f7e4fd2a0b4">DeserializeComponent</a>(<a class="code" href="../../d9/dd6/classez_world_reader.htm">ezWorldReader</a>&amp; inout_stream) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d6/d30/classez_component.htm#a2dc05ad8b8ffdecd5bc9b5f68f14ae3f">OnSimulationStarted</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="comment">// ezTransformComponent</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="../../d8/dbd/classez_transform_component.htm">ezTransformComponent</a>();</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  ~<a class="code" href="../../d8/dbd/classez_transform_component.htm">ezTransformComponent</a>();</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordtype">void</span> SetDirectionForwards(<span class="keywordtype">bool</span> bForwards); <span class="comment">// [ scriptable ]</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordtype">void</span> ToggleDirection();                    <span class="comment">// [ scriptable ]</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordtype">bool</span> IsDirectionForwards() <span class="keyword">const</span>;          <span class="comment">// [ scriptable ]</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">bool</span> IsRunning(<span class="keywordtype">void</span>) <span class="keyword">const</span>;     <span class="comment">// [ property ]</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordtype">void</span> SetRunning(<span class="keywordtype">bool</span> bRunning); <span class="comment">// [ property ]</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="../../d0/de9/structez_transform_component_flags.htm">    9</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../d0/de9/structez_transform_component_flags.htm">ezTransformComponentFlags</a></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keyword">using</span> StorageType = ezUInt16;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="../../d0/de9/structez_transform_component_flags.htm#a3c76eecab44c3853232ab369ad3f0867">   13</a></span>&#160;  <span class="keyword">enum</span> <a class="code" href="../../d0/de9/structez_transform_component_flags.htm#a3c76eecab44c3853232ab369ad3f0867">Enum</a></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    None = 0,</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="../../d0/de9/structez_transform_component_flags.htm#a3c76eecab44c3853232ab369ad3f0867a391c5277fcbe88a0a48f121685f8a2bd">   16</a></span>&#160;    <a class="code" href="../../d0/de9/structez_transform_component_flags.htm#a3c76eecab44c3853232ab369ad3f0867a391c5277fcbe88a0a48f121685f8a2bd">Running</a> = EZ_BIT(0),           </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="../../d0/de9/structez_transform_component_flags.htm#a3c76eecab44c3853232ab369ad3f0867acc74d15b24a05e34fbb76a9fc761006a">   17</a></span>&#160;    <a class="code" href="../../d0/de9/structez_transform_component_flags.htm#a3c76eecab44c3853232ab369ad3f0867acc74d15b24a05e34fbb76a9fc761006a">AutoReturnStart</a> = EZ_BIT(1),   </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="../../d0/de9/structez_transform_component_flags.htm#a3c76eecab44c3853232ab369ad3f0867a2983b1e6c1e8472f5d72f63b14ef0036">   18</a></span>&#160;    <a class="code" href="../../d0/de9/structez_transform_component_flags.htm#a3c76eecab44c3853232ab369ad3f0867a2983b1e6c1e8472f5d72f63b14ef0036">AutoReturnEnd</a> = EZ_BIT(2),     </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="../../d0/de9/structez_transform_component_flags.htm#a3c76eecab44c3853232ab369ad3f0867a7e4dcce10f67312c60f68541e03af492">   19</a></span>&#160;    <a class="code" href="../../d0/de9/structez_transform_component_flags.htm#a3c76eecab44c3853232ab369ad3f0867a7e4dcce10f67312c60f68541e03af492">AnimationReversed</a> = EZ_BIT(5), </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    Default = <a class="code" href="../../d0/de9/structez_transform_component_flags.htm#a3c76eecab44c3853232ab369ad3f0867a391c5277fcbe88a0a48f121685f8a2bd">Running</a> | <a class="code" href="../../d0/de9/structez_transform_component_flags.htm#a3c76eecab44c3853232ab369ad3f0867acc74d15b24a05e34fbb76a9fc761006a">AutoReturnStart</a> | <a class="code" href="../../d0/de9/structez_transform_component_flags.htm#a3c76eecab44c3853232ab369ad3f0867a2983b1e6c1e8472f5d72f63b14ef0036">AutoReturnEnd</a></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  };</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="../../d0/d27/structez_transform_component_flags_1_1_bits.htm">   23</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../d0/d27/structez_transform_component_flags_1_1_bits.htm">Bits</a></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    StorageType Running : 1;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    StorageType AutoReturnStart : 1;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    StorageType AutoReturnEnd : 1;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    StorageType Unused1 : 1;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    StorageType Unused2 : 1;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    StorageType AnimationReversed : 1;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  };</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;};</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;EZ_DECLARE_FLAGS_OPERATORS(<a class="code" href="../../d0/de9/structez_transform_component_flags.htm">ezTransformComponentFlags</a>);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="../../d8/dbd/classez_transform_component.htm">   37</a></span>&#160;<span class="keyword">class </span>EZ_GAMEENGINE_DLL <a class="code" href="../../d8/dbd/classez_transform_component.htm">ezTransformComponent</a> : <span class="keyword">public</span> <a class="code" href="../../d6/d30/classez_component.htm">ezComponent</a></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  EZ_ADD_DYNAMIC_REFLECTION(<a class="code" href="../../d8/dbd/classez_transform_component.htm">ezTransformComponent</a>, <a class="code" href="../../d6/d30/classez_component.htm">ezComponent</a>);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="comment">// ezComponent</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d6/d30/classez_component.htm#aa607b7c06fdfcc61735366aef5b0e159">SerializeComponent</a>(<a class="code" href="../../dc/dd8/classez_world_writer.htm">ezWorldWriter</a>&amp; inout_stream) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d6/d30/classez_component.htm#a5733baf54244ceb284fd0f7e4fd2a0b4">DeserializeComponent</a>(<a class="code" href="../../d9/dd6/classez_world_reader.htm">ezWorldReader</a>&amp; inout_stream) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d6/d30/classez_component.htm#a2dc05ad8b8ffdecd5bc9b5f68f14ae3f">OnSimulationStarted</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="comment">// ezTransformComponent</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <a class="code" href="../../d8/dbd/classez_transform_component.htm">ezTransformComponent</a>();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  ~<a class="code" href="../../d8/dbd/classez_transform_component.htm">ezTransformComponent</a>();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordtype">void</span> SetDirectionForwards(<span class="keywordtype">bool</span> bForwards); <span class="comment">// [ scriptable ]</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordtype">bool</span> GetReverseAtStart(<span class="keywordtype">void</span>) <span class="keyword">const</span>; <span class="comment">// [ property ]</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordtype">void</span> SetReverseAtStart(<span class="keywordtype">bool</span> b);     <span class="comment">// [ property ]</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordtype">bool</span> GetReverseAtEnd(<span class="keywordtype">void</span>) <span class="keyword">const</span>; <span class="comment">// [ property ]</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordtype">void</span> SetReverseAtEnd(<span class="keywordtype">bool</span> b);     <span class="comment">// [ property ]</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordtype">float</span> m_fAnimationSpeed = 1.0f; <span class="comment">// [ property ]</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordtype">void</span> ToggleDirection(); <span class="comment">// [ scriptable ]</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordtype">bool</span> IsDirectionForwards() <span class="keyword">const</span>; <span class="comment">// [ scriptable ]</span></div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <a class="code" href="../../d1/dec/structez_bitflags.htm">ezBitflags&lt;ezTransformComponentFlags&gt;</a> m_Flags;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> m_AnimationTime;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;};</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordtype">bool</span> IsRunning(<span class="keywordtype">void</span>) <span class="keyword">const</span>; <span class="comment">// [ property ]</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordtype">void</span> SetRunning(<span class="keywordtype">bool</span> bRunning); <span class="comment">// [ property ]</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keywordtype">bool</span> GetReverseAtStart(<span class="keywordtype">void</span>) <span class="keyword">const</span>; <span class="comment">// [ property ]</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keywordtype">void</span> SetReverseAtStart(<span class="keywordtype">bool</span> b);     <span class="comment">// [ property ]</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keywordtype">bool</span> GetReverseAtEnd(<span class="keywordtype">void</span>) <span class="keyword">const</span>; <span class="comment">// [ property ]</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keywordtype">void</span> SetReverseAtEnd(<span class="keywordtype">bool</span> b);     <span class="comment">// [ property ]</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="../../d8/dbd/classez_transform_component.htm#a7a139ef588e73cd00a5f9a33a8b42504">   86</a></span>&#160;  <span class="keywordtype">float</span> m_fAnimationSpeed = 1.0f; <span class="comment">// [ property ]</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <a class="code" href="../../d1/dec/structez_bitflags.htm">ezBitflags&lt;ezTransformComponentFlags&gt;</a> m_Flags;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> m_AnimationTime;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="astructez_transform_component_flags_htm_a3c76eecab44c3853232ab369ad3f0867a7e4dcce10f67312c60f68541e03af492"><div class="ttname"><a href="../../d0/de9/structez_transform_component_flags.htm#a3c76eecab44c3853232ab369ad3f0867a7e4dcce10f67312c60f68541e03af492">ezTransformComponentFlags::AnimationReversed</a></div><div class="ttdeci">@ AnimationReversed</div><div class="ttdoc">The animation playback is currently in reverse.</div><div class="ttdef"><b>Definition:</b> TransformComponent.h:19</div></div>
+<div class="ttc" id="astructez_transform_component_flags_htm_a3c76eecab44c3853232ab369ad3f0867acc74d15b24a05e34fbb76a9fc761006a"><div class="ttname"><a href="../../d0/de9/structez_transform_component_flags.htm#a3c76eecab44c3853232ab369ad3f0867acc74d15b24a05e34fbb76a9fc761006a">ezTransformComponentFlags::AutoReturnStart</a></div><div class="ttdeci">@ AutoReturnStart</div><div class="ttdoc">When reaching the start point, the transform should automatically turn around.</div><div class="ttdef"><b>Definition:</b> TransformComponent.h:17</div></div>
 <div class="ttc" id="astructez_bitflags_htm"><div class="ttname"><a href="../../d1/dec/structez_bitflags.htm">ezBitflags&lt; ezTransformComponentFlags &gt;</a></div></div>
 <div class="ttc" id="astructez_time_htm"><div class="ttname"><a href="../../d3/d90/structez_time.htm">ezTime</a></div><div class="ttdoc">The time class encapsulates a double value storing the time in seconds.</div><div class="ttdef"><b>Definition:</b> Time.h:11</div></div>
 <div class="ttc" id="aclassez_world_writer_htm"><div class="ttname"><a href="../../dc/dd8/classez_world_writer.htm">ezWorldWriter</a></div><div class="ttdoc">Stores an entire ezWorld in a stream.</div><div class="ttdef"><b>Definition:</b> WorldWriter.h:12</div></div>
 <div class="ttc" id="aclassez_component_htm"><div class="ttname"><a href="../../d6/d30/classez_component.htm">ezComponent</a></div><div class="ttdoc">Base class of all component types.</div><div class="ttdef"><b>Definition:</b> Component.h:24</div></div>
-<div class="ttc" id="astructez_transform_component_flags_1_1_bits_htm"><div class="ttname"><a href="../../d0/d27/structez_transform_component_flags_1_1_bits.htm">ezTransformComponentFlags::Bits</a></div><div class="ttdef"><b>Definition:</b> TransformComponent.h:22</div></div>
+<div class="ttc" id="astructez_transform_component_flags_1_1_bits_htm"><div class="ttname"><a href="../../d0/d27/structez_transform_component_flags_1_1_bits.htm">ezTransformComponentFlags::Bits</a></div><div class="ttdef"><b>Definition:</b> TransformComponent.h:23</div></div>
 <div class="ttc" id="aclassez_world_reader_htm"><div class="ttname"><a href="../../d9/dd6/classez_world_reader.htm">ezWorldReader</a></div><div class="ttdoc">Reads a world description from a stream. Allows to instantiate that world multiple times in different...</div><div class="ttdef"><b>Definition:</b> WorldReader.h:46</div></div>
+<div class="ttc" id="astructez_transform_component_flags_htm_a3c76eecab44c3853232ab369ad3f0867a391c5277fcbe88a0a48f121685f8a2bd"><div class="ttname"><a href="../../d0/de9/structez_transform_component_flags.htm#a3c76eecab44c3853232ab369ad3f0867a391c5277fcbe88a0a48f121685f8a2bd">ezTransformComponentFlags::Running</a></div><div class="ttdeci">@ Running</div><div class="ttdoc">The component is currently modifying the transform.</div><div class="ttdef"><b>Definition:</b> TransformComponent.h:16</div></div>
 <div class="ttc" id="aclassez_component_htm_aa607b7c06fdfcc61735366aef5b0e159"><div class="ttname"><a href="../../d6/d30/classez_component.htm#aa607b7c06fdfcc61735366aef5b0e159">ezComponent::SerializeComponent</a></div><div class="ttdeci">virtual void SerializeComponent(ezWorldWriter &amp;inout_stream) const</div><div class="ttdoc">Override this to save the current state of the component to the given stream.</div><div class="ttdef"><b>Definition:</b> Component.cpp:54</div></div>
-<div class="ttc" id="aclassez_component_htm_a5733baf54244ceb284fd0f7e4fd2a0b4"><div class="ttname"><a href="../../d6/d30/classez_component.htm#a5733baf54244ceb284fd0f7e4fd2a0b4">ezComponent::DeserializeComponent</a></div><div class="ttdeci">virtual void DeserializeComponent(ezWorldReader &amp;inout_stream)</div><div class="ttdoc">Override this to load the current state of the component from the given stream.</div><div class="ttdef"><b>Definition:</b> Component.cpp:58</div></div>
-<div class="ttc" id="astructez_transform_component_flags_htm"><div class="ttname"><a href="../../d0/de9/structez_transform_component_flags.htm">ezTransformComponentFlags</a></div><div class="ttdef"><b>Definition:</b> TransformComponent.h:8</div></div>
-<div class="ttc" id="aclassez_component_htm_a2dc05ad8b8ffdecd5bc9b5f68f14ae3f"><div class="ttname"><a href="../../d6/d30/classez_component.htm#a2dc05ad8b8ffdecd5bc9b5f68f14ae3f">ezComponent::OnSimulationStarted</a></div><div class="ttdeci">virtual void OnSimulationStarted()</div><div class="ttdoc">This method is called once for active components, at the start of the next world update,...</div><div class="ttdef"><b>Definition:</b> Component.cpp:144</div></div>
-<div class="ttc" id="aclassez_transform_component_htm"><div class="ttname"><a href="../../d8/dbd/classez_transform_component.htm">ezTransformComponent</a></div><div class="ttdef"><b>Definition:</b> TransformComponent.h:35</div></div>
+<div class="ttc" id="aclassez_component_htm_a5733baf54244ceb284fd0f7e4fd2a0b4"><div class="ttname"><a href="../../d6/d30/classez_component.htm#a5733baf54244ceb284fd0f7e4fd2a0b4">ezComponent::DeserializeComponent</a></div><div class="ttdeci">virtual void DeserializeComponent(ezWorldReader &amp;inout_stream)</div><div class="ttdoc">Override this to load the current state of the component from the given stream.</div><div class="ttdef"><b>Definition:</b> Component.cpp:59</div></div>
+<div class="ttc" id="astructez_transform_component_flags_htm"><div class="ttname"><a href="../../d0/de9/structez_transform_component_flags.htm">ezTransformComponentFlags</a></div><div class="ttdoc">Internal flags for the current state of a transform component.</div><div class="ttdef"><b>Definition:</b> TransformComponent.h:9</div></div>
+<div class="ttc" id="aclassez_component_htm_a2dc05ad8b8ffdecd5bc9b5f68f14ae3f"><div class="ttname"><a href="../../d6/d30/classez_component.htm#a2dc05ad8b8ffdecd5bc9b5f68f14ae3f">ezComponent::OnSimulationStarted</a></div><div class="ttdeci">virtual void OnSimulationStarted()</div><div class="ttdoc">This method is called once for active components, at the start of the next world update,...</div><div class="ttdef"><b>Definition:</b> Component.cpp:146</div></div>
+<div class="ttc" id="astructez_transform_component_flags_htm_a3c76eecab44c3853232ab369ad3f0867"><div class="ttname"><a href="../../d0/de9/structez_transform_component_flags.htm#a3c76eecab44c3853232ab369ad3f0867">ezTransformComponentFlags::Enum</a></div><div class="ttdeci">Enum</div><div class="ttdef"><b>Definition:</b> TransformComponent.h:13</div></div>
+<div class="ttc" id="astructez_transform_component_flags_htm_a3c76eecab44c3853232ab369ad3f0867a2983b1e6c1e8472f5d72f63b14ef0036"><div class="ttname"><a href="../../d0/de9/structez_transform_component_flags.htm#a3c76eecab44c3853232ab369ad3f0867a2983b1e6c1e8472f5d72f63b14ef0036">ezTransformComponentFlags::AutoReturnEnd</a></div><div class="ttdeci">@ AutoReturnEnd</div><div class="ttdoc">When reaching the end point, the transform should automatically turn around.</div><div class="ttdef"><b>Definition:</b> TransformComponent.h:18</div></div>
+<div class="ttc" id="aclassez_transform_component_htm"><div class="ttname"><a href="../../d8/dbd/classez_transform_component.htm">ezTransformComponent</a></div><div class="ttdoc">Base class for some components that modify an object's transform.</div><div class="ttdef"><b>Definition:</b> TransformComponent.h:37</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_fe4f349dd73c6459187bb04ae7deb06f.htm">GameEngine</a></li><li class="navelem"><a class="el" href="../../dir_21dd496ca2368f769821084730b24209.htm">Animation</a></li><li class="navelem"><b>TransformComponent.h</b></li>
-    <li class="footer">Generated on Fri Dec 22 2023 20:43:08 for ezEngine by
+    <li class="footer">Generated on Sun Aug 25 2024 13:06:22 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

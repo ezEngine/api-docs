@@ -8,12 +8,10 @@ var classez_sprite_component =
     [ "GetMaxScreenSize", "d7/da8/classez_sprite_component.htm#a3a5e572b4feeaa9a14d3acb919572541", null ],
     [ "GetSize", "d7/da8/classez_sprite_component.htm#a5eb6b8b175ab0d782a132fdd938c520d", null ],
     [ "GetTexture", "d7/da8/classez_sprite_component.htm#a21056ce27d70f670856d1a1719df379b", null ],
-    [ "GetTextureFile", "d7/da8/classez_sprite_component.htm#aa4e4acb856c6c6465b48e9c10e6f0aea", null ],
     [ "OnMsgSetColor", "d7/da8/classez_sprite_component.htm#afcd2219215d98a0d726901501abf5ed7", null ],
     [ "SerializeComponent", "d7/da8/classez_sprite_component.htm#a60beb2540499e868e84faa269664f5d1", null ],
     [ "SetColor", "d7/da8/classez_sprite_component.htm#ad7efe75f983d19504dd5cec173e647e6", null ],
     [ "SetMaxScreenSize", "d7/da8/classez_sprite_component.htm#a6ece21ab1538bd8ac3ba4ad6ae7740e6", null ],
     [ "SetSize", "d7/da8/classez_sprite_component.htm#aa5fb576ca1cbc1faa47e0120d823055b", null ],
-    [ "SetTexture", "d7/da8/classez_sprite_component.htm#a1178bb36ac0e95b703559e85ffa5802a", null ],
-    [ "SetTextureFile", "d7/da8/classez_sprite_component.htm#ad756041493739ccfd5d2c402199af2d5", null ]
+    [ "SetTexture", "d7/da8/classez_sprite_component.htm#a1178bb36ac0e95b703559e85ffa5802a", null ]
 ];

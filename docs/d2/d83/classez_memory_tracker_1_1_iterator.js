@@ -7,6 +7,6 @@ var classez_memory_tracker_1_1_iterator =
     [ "Next", "d2/d83/classez_memory_tracker_1_1_iterator.htm#ae0e832f251907986492f02cee823806a", null ],
     [ "operator++", "d2/d83/classez_memory_tracker_1_1_iterator.htm#a9a37accd9ef946b9368446284176c766", null ],
     [ "ParentId", "d2/d83/classez_memory_tracker_1_1_iterator.htm#a5fc86cff7742cb81fb626b04f5218cd9", null ],
-    [ "Stats", "d2/d83/classez_memory_tracker_1_1_iterator.htm#ada5c312d4807d927e12f409c787598e7", null ],
+    [ "Stats", "d2/d83/classez_memory_tracker_1_1_iterator.htm#a7fa5d0f31ca80c2e096a30e09a218e26", null ],
     [ "ezMemoryTracker", "d2/d83/classez_memory_tracker_1_1_iterator.htm#a79fb4ae3d2f2758f0cc4985529378f2a", null ]
 ];

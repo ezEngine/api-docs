@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ezEngine: /home/runner/work/ezEngine/ezEngine/Code/EnginePlugins/XBoxControllerPlugin/InputDeviceXBox.h Source File</title>
+<title>ezEngine: /home/runner/work/ezEngine/ezEngine/Code/Engine/GameEngine/Input/XBoxController/InputDeviceXBox.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.12</span>
+   &#160;<span id="projectnumber">Release 24.09</span>
    </div>
   </td>
  </tr>
@@ -90,54 +90,57 @@ $(document).ready(function(){initNavTree('db/da8/_input_device_x_box_8h_source.h
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;Core/Input/DeviceTypes/Controller.h&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;XBoxControllerPlugin/XBoxControllerDLL.h&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;GameEngine/GameEngineDLL.h&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="../../d9/d39/classez_input_device_x_box360.htm">    9</a></span>&#160;<span class="keyword">class </span>EZ_XBOXCONTROLLER_DLL <a class="code" href="../../d9/d39/classez_input_device_x_box360.htm">ezInputDeviceXBox360</a> : <span class="keyword">public</span> <a class="code" href="../../d1/dd2/classez_input_device_controller.htm">ezInputDeviceController</a></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  EZ_ADD_DYNAMIC_REFLECTION(<a class="code" href="../../d9/d39/classez_input_device_x_box360.htm">ezInputDeviceXBox360</a>, <a class="code" href="../../d1/dd2/classez_input_device_controller.htm">ezInputDeviceController</a>);</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <a class="code" href="../../d9/d39/classez_input_device_x_box360.htm">ezInputDeviceXBox360</a>();</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  ~<a class="code" href="../../d9/d39/classez_input_device_x_box360.htm">ezInputDeviceXBox360</a>();</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d9/d39/classez_input_device_x_box360.htm">ezInputDeviceXBox360</a>* GetDevice();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> DestroyAllDevices();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="../../d1/dd2/classez_input_device_controller.htm#a2332b76d62529a348a233fa21dcbdc75">IsControllerConnected</a>(ezUInt8 uiPhysical) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#if EZ_ENABLED(EZ_PLATFORM_WINDOWS)</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">class </span>EZ_GAMEENGINE_DLL ezInputDeviceXBox360 : <span class="keyword">public</span> <a class="code" href="../../d1/dd2/classez_input_device_controller.htm">ezInputDeviceController</a></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  EZ_ADD_DYNAMIC_REFLECTION(ezInputDeviceXBox360, <a class="code" href="../../d1/dd2/classez_input_device_controller.htm">ezInputDeviceController</a>);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  ezInputDeviceXBox360();</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  ~ezInputDeviceXBox360();</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keyword">static</span> ezInputDeviceXBox360* GetDevice();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> DestroyAllDevices();</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d1/dd2/classez_input_device_controller.htm#a751ae324f2dc6147fc74029ab75ad268">ApplyVibration</a>(ezUInt8 uiPhysicalController, Motor::Enum eMotor, <span class="keywordtype">float</span> fStrength) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keywordtype">bool</span> m_bControllerConnected[4];</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="../../d1/dd2/classez_input_device_controller.htm#a2332b76d62529a348a233fa21dcbdc75">IsControllerConnected</a>(ezUInt8 uiPhysical) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d1/dd2/classez_input_device_controller.htm#a751ae324f2dc6147fc74029ab75ad268">ApplyVibration</a>(ezUInt8 uiPhysicalController, Motor::Enum eMotor, <span class="keywordtype">float</span> fStrength) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="../../d9/d39/classez_input_device_x_box360.htm#a33bf40409e201fb1d2938b075552fc79">   30</a></span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d9/d39/classez_input_device_x_box360.htm#a33bf40409e201fb1d2938b075552fc79">InitializeDevice</a>()<span class="keyword"> override </span>{}</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../df/d18/classez_input_device.htm#a45c72b370f50d7b314571fccbb0fe6e2">UpdateInputSlotValues</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../df/d18/classez_input_device.htm#ad70250d056a9db8e4de9195bc229ecfc">RegisterInputSlots</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../df/d18/classez_input_device.htm#ac56c8b35631ad7da84c901a2c64ac9f7">UpdateHardwareState</a>(<a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> tTimeDifference) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordtype">void</span> SetValue(ezInt32 iController, <span class="keyword">const</span> <span class="keywordtype">char</span>* szButton, <span class="keywordtype">float</span> fValue);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordtype">bool</span> m_bControllerConnected[4];</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../df/d18/classez_input_device.htm#af81b9d83d1cb91e1b84aa6dd75b94ec8">InitializeDevice</a>()<span class="keyword"> override </span>{}</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../df/d18/classez_input_device.htm#a45c72b370f50d7b314571fccbb0fe6e2">UpdateInputSlotValues</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../df/d18/classez_input_device.htm#ad70250d056a9db8e4de9195bc229ecfc">RegisterInputSlots</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../df/d18/classez_input_device.htm#ac56c8b35631ad7da84c901a2c64ac9f7">UpdateHardwareState</a>(<a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> tTimeDifference) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> RegisterControllerButton(<span class="keyword">const</span> <span class="keywordtype">char</span>* szButton, <span class="keyword">const</span> <span class="keywordtype">char</span>* szName, <a class="code" href="../../d1/dec/structez_bitflags.htm">ezBitflags&lt;ezInputSlotFlags&gt;</a> SlotFlags);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> SetDeadZone(<span class="keyword">const</span> <span class="keywordtype">char</span>* szButton);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;};</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordtype">void</span> SetValue(ezInt32 iController, <span class="keyword">const</span> <span class="keywordtype">char</span>* szButton, <span class="keywordtype">float</span> fValue);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> RegisterControllerButton(<span class="keyword">const</span> <span class="keywordtype">char</span>* szButton, <span class="keyword">const</span> <span class="keywordtype">char</span>* szName, <a class="code" href="../../d1/dec/structez_bitflags.htm">ezBitflags&lt;ezInputSlotFlags&gt;</a> SlotFlags);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> SetDeadZone(<span class="keyword">const</span> <span class="keywordtype">char</span>* szButton);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;};</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astructez_bitflags_htm"><div class="ttname"><a href="../../d1/dec/structez_bitflags.htm">ezBitflags&lt; ezInputSlotFlags &gt;</a></div></div>
 <div class="ttc" id="astructez_time_htm"><div class="ttname"><a href="../../d3/d90/structez_time.htm">ezTime</a></div><div class="ttdoc">The time class encapsulates a double value storing the time in seconds.</div><div class="ttdef"><b>Definition:</b> Time.h:11</div></div>
 <div class="ttc" id="aclassez_input_device_htm_ad70250d056a9db8e4de9195bc229ecfc"><div class="ttname"><a href="../../df/d18/classez_input_device.htm#ad70250d056a9db8e4de9195bc229ecfc">ezInputDevice::RegisterInputSlots</a></div><div class="ttdeci">virtual void RegisterInputSlots()=0</div><div class="ttdoc">Override this to register all the input slots that this device exposes.</div></div>
-<div class="ttc" id="aclassez_input_device_x_box360_htm"><div class="ttname"><a href="../../d9/d39/classez_input_device_x_box360.htm">ezInputDeviceXBox360</a></div><div class="ttdoc">An implementation of ezInputDeviceController that handles XBox 360 controllers.</div><div class="ttdef"><b>Definition:</b> InputDeviceXBox.h:9</div></div>
 <div class="ttc" id="aclassez_input_device_htm_ac56c8b35631ad7da84c901a2c64ac9f7"><div class="ttname"><a href="../../df/d18/classez_input_device.htm#ac56c8b35631ad7da84c901a2c64ac9f7">ezInputDevice::UpdateHardwareState</a></div><div class="ttdeci">virtual void UpdateHardwareState(ezTime tTimeDifference)</div><div class="ttdoc">This function is called once after ezInputManager::Update with the same time delta value....</div><div class="ttdef"><b>Definition:</b> InputDevice.h:128</div></div>
 <div class="ttc" id="aclassez_input_device_controller_htm"><div class="ttname"><a href="../../d1/dd2/classez_input_device_controller.htm">ezInputDeviceController</a></div><div class="ttdoc">This class is the base class for all controller type input devices.</div><div class="ttdef"><b>Definition:</b> Controller.h:11</div></div>
 <div class="ttc" id="aclassez_input_device_htm_a45c72b370f50d7b314571fccbb0fe6e2"><div class="ttname"><a href="../../df/d18/classez_input_device.htm#a45c72b370f50d7b314571fccbb0fe6e2">ezInputDevice::UpdateInputSlotValues</a></div><div class="ttdeci">virtual void UpdateInputSlotValues()=0</div><div class="ttdoc">Override this, if you need to query the state of the hardware to update the input slots.</div></div>
+<div class="ttc" id="aclassez_input_device_htm_af81b9d83d1cb91e1b84aa6dd75b94ec8"><div class="ttname"><a href="../../df/d18/classez_input_device.htm#af81b9d83d1cb91e1b84aa6dd75b94ec8">ezInputDevice::InitializeDevice</a></div><div class="ttdeci">virtual void InitializeDevice()=0</div><div class="ttdoc">Override this if you need to do device specific initialization before the first use.</div></div>
 <div class="ttc" id="aclassez_input_device_controller_htm_a2332b76d62529a348a233fa21dcbdc75"><div class="ttname"><a href="../../d1/dd2/classez_input_device_controller.htm#a2332b76d62529a348a233fa21dcbdc75">ezInputDeviceController::IsControllerConnected</a></div><div class="ttdeci">virtual bool IsControllerConnected(ezUInt8 uiPhysical) const =0</div><div class="ttdoc">Queries whether the controller with the given physical index is connected to the computer....</div></div>
-<div class="ttc" id="aclassez_input_device_x_box360_htm_a33bf40409e201fb1d2938b075552fc79"><div class="ttname"><a href="../../d9/d39/classez_input_device_x_box360.htm#a33bf40409e201fb1d2938b075552fc79">ezInputDeviceXBox360::InitializeDevice</a></div><div class="ttdeci">virtual void InitializeDevice() override</div><div class="ttdoc">Override this if you need to do device specific initialization before the first use.</div><div class="ttdef"><b>Definition:</b> InputDeviceXBox.h:30</div></div>
 <div class="ttc" id="aclassez_input_device_controller_htm_a751ae324f2dc6147fc74029ab75ad268"><div class="ttname"><a href="../../d1/dd2/classez_input_device_controller.htm#a751ae324f2dc6147fc74029ab75ad268">ezInputDeviceController::ApplyVibration</a></div><div class="ttdeci">virtual void ApplyVibration(ezUInt8 uiPhysicalController, Motor::Enum eMotor, float fStrength)=0</div><div class="ttdoc">Must be implemented by a derived controller implementation. Should set apply the vibration for the gi...</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_103378c88ff4c88de6bfabe12da9ec96.htm">EnginePlugins</a></li><li class="navelem"><a class="el" href="../../dir_7831a41dc0dd273ef8da165e7705bd8d.htm">XBoxControllerPlugin</a></li><li class="navelem"><b>InputDeviceXBox.h</b></li>
-    <li class="footer">Generated on Fri Dec 22 2023 20:43:10 for ezEngine by
+    <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_fe4f349dd73c6459187bb04ae7deb06f.htm">GameEngine</a></li><li class="navelem"><a class="el" href="../../dir_a02310edf56297bf65e9f614a64cee19.htm">Input</a></li><li class="navelem"><a class="el" href="../../dir_691c48ef495514a1646b55c4881297e3.htm">XBoxController</a></li><li class="navelem"><b>InputDeviceXBox.h</b></li>
+    <li class="footer">Generated on Sun Aug 25 2024 13:06:22 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

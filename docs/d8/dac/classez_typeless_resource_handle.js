@@ -5,7 +5,7 @@ var classez_typeless_resource_handle =
     [ "ezTypelessResourceHandle", "d8/dac/classez_typeless_resource_handle.htm#ae6491f5c5beb354fb7988a57670bd760", null ],
     [ "ezTypelessResourceHandle", "d8/dac/classez_typeless_resource_handle.htm#a8ded2b9143340484f7ab2f99b6e3ff77", null ],
     [ "~ezTypelessResourceHandle", "d8/dac/classez_typeless_resource_handle.htm#a8fbd013f526278e54ddb994370a5e5e3", null ],
-    [ "GetResourceID", "d8/dac/classez_typeless_resource_handle.htm#aa9d2aca88a7a1b70d8425ae57db3c560", null ],
+    [ "GetResourceID", "d8/dac/classez_typeless_resource_handle.htm#ae5891fdd1da433ef5094f77039aecd05", null ],
     [ "GetResourceIDHash", "d8/dac/classez_typeless_resource_handle.htm#aeda9757a49ed616a37ba5c5e630b58fe", null ],
     [ "GetResourceType", "d8/dac/classez_typeless_resource_handle.htm#a5e9c673d4638ad2a98be9d1d10108e6d", null ],
     [ "Invalidate", "d8/dac/classez_typeless_resource_handle.htm#ac1952c782cc85a1b112566bd544110b4", null ],

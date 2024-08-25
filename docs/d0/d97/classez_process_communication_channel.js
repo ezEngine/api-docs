@@ -4,6 +4,7 @@ var classez_process_communication_channel =
     [ "WaitForMessageCallback", "d0/d97/classez_process_communication_channel.htm#a9ea559d26af3e1b0debe17d89dcf21e3", null ],
     [ "ezProcessCommunicationChannel", "d0/d97/classez_process_communication_channel.htm#af067925f55cb555205ca48778c2fd5c6", null ],
     [ "~ezProcessCommunicationChannel", "d0/d97/classez_process_communication_channel.htm#a1f027524f258783594734469b995a0ac", null ],
+    [ "IsConnected", "d0/d97/classez_process_communication_channel.htm#a5295adfebad5a0d1afd19be554d51b76", null ],
     [ "MessageFunc", "d0/d97/classez_process_communication_channel.htm#a9d4c2cac2b43bfa82ade6c175fc891a3", null ],
     [ "ProcessMessages", "d0/d97/classez_process_communication_channel.htm#a2a44df837d5d1e0b569fa2f8589d8ea7", null ],
     [ "SendMessage", "d0/d97/classez_process_communication_channel.htm#a7998e1b3b502a19dc8dc443fc7562024", null ],

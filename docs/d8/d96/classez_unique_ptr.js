@@ -2,12 +2,12 @@ var classez_unique_ptr =
 [
     [ "ezUniquePtr", "d8/d96/classez_unique_ptr.htm#a9ebf27226bb5f802d86ac22bcfdef3ed", null ],
     [ "ezUniquePtr", "d8/d96/classez_unique_ptr.htm#a1d0c4ba87bb187ac51f987f99a9e16b0", null ],
-    [ "ezUniquePtr", "d8/d96/classez_unique_ptr.htm#a412d2a169276af6dfb49438a76b049fe", null ],
+    [ "ezUniquePtr", "d8/d96/classez_unique_ptr.htm#a0c66c91cbdb8e05f5503fb8899c1b5de", null ],
     [ "ezUniquePtr", "d8/d96/classez_unique_ptr.htm#a739761ad5f4c05ed3a7a87f8e139ae9b", null ],
     [ "ezUniquePtr", "d8/d96/classez_unique_ptr.htm#a2ab710113eb763af3c9239edfecdaa3f", null ],
     [ "~ezUniquePtr", "d8/d96/classez_unique_ptr.htm#a5a1ed4aa69afef8ca1c7d89b0ea3b0d3", null ],
     [ "ezUniquePtr", "d8/d96/classez_unique_ptr.htm#a377158c37b630aef473f0af1148afa9b", null ],
-    [ "ezUniquePtr", "d8/d96/classez_unique_ptr.htm#a3531f9a0a8332990381e413ae99f9faf", null ],
+    [ "ezUniquePtr", "d8/d96/classez_unique_ptr.htm#a54fc13ea8858157236ba49d91375f8b0", null ],
     [ "ezUniquePtr", "d8/d96/classez_unique_ptr.htm#a68605638e4404d42441667dc8849155a", null ],
     [ "Borrow", "d8/d96/classez_unique_ptr.htm#ada02149912c53d5a2de431d09bf83333", null ],
     [ "Clear", "d8/d96/classez_unique_ptr.htm#a37714ec8c2a44922d05ead413a73cf8f", null ],
@@ -33,6 +33,6 @@ var classez_unique_ptr =
     [ "operator>=", "d8/d96/classez_unique_ptr.htm#a10c03bbf72cb300b2ba036da7031b45a", null ],
     [ "operator>=", "d8/d96/classez_unique_ptr.htm#a8f24a2e523b727227673bea72cbc6a91", null ],
     [ "Release", "d8/d96/classez_unique_ptr.htm#aa89c34ae52823bb39579105aba3455e0", null ],
-    [ "Release", "d8/d96/classez_unique_ptr.htm#a8e47992ad71bd39f2edefc6b410f0e34", null ],
+    [ "Release", "d8/d96/classez_unique_ptr.htm#a8191139e0f5634c7bcf8c5ff9dbfc738", null ],
     [ "ezUniquePtr", "d8/d96/classez_unique_ptr.htm#abb0839f2f9b406ae4e60a8f519f5eab2", null ]
 ];

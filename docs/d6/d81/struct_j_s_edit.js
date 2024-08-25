@@ -8,6 +8,7 @@ var struct_j_s_edit =
       [ "KeywordBlue", "d6/d81/struct_j_s_edit.htm#a5a465193a1344e5be9b04f5ff7883213ac91bfe3131f5d386f03525463f9c3a55", null ],
       [ "KeywordPink", "d6/d81/struct_j_s_edit.htm#a5a465193a1344e5be9b04f5ff7883213a0f7d641d2e62ba674ae3d4bb440ff8a9", null ],
       [ "KeywordGreen", "d6/d81/struct_j_s_edit.htm#a5a465193a1344e5be9b04f5ff7883213a631a384c077f6931ccb815e9007db6d9", null ],
-      [ "BuiltIn", "d6/d81/struct_j_s_edit.htm#a5a465193a1344e5be9b04f5ff7883213a8b227288b9e8c72ccb15968f3127f6c2", null ]
+      [ "BuiltIn", "d6/d81/struct_j_s_edit.htm#a5a465193a1344e5be9b04f5ff7883213a8b227288b9e8c72ccb15968f3127f6c2", null ],
+      [ "Count", "d6/d81/struct_j_s_edit.htm#a5a465193a1344e5be9b04f5ff7883213a0cfba8c94a191183a9ce6e6514d28942", null ]
     ] ]
 ];

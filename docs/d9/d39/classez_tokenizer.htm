@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.12</span>
+   &#160;<span id="projectnumber">Release 24.09</span>
    </div>
   </td>
  </tr>
@@ -98,9 +98,9 @@ $(document).ready(function(){initNavTree('d9/d39/classez_tokenizer.htm','../../'
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a421441126f6a9ff84a91c94acdd39dbe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d39/classez_tokenizer.htm#a421441126f6a9ff84a91c94acdd39dbe">ezTokenizer</a> (<a class="el" href="../../d1/d4c/classez_allocator_base.htm">ezAllocatorBase</a> *pAllocator=nullptr)</td></tr>
-<tr class="memdesc:a421441126f6a9ff84a91c94acdd39dbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="../../d9/d39/classez_tokenizer.htm#a421441126f6a9ff84a91c94acdd39dbe">More...</a><br /></td></tr>
-<tr class="separator:a421441126f6a9ff84a91c94acdd39dbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e1f06bcc060184a7c4742d36bbb393c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d39/classez_tokenizer.htm#a5e1f06bcc060184a7c4742d36bbb393c">ezTokenizer</a> (<a class="el" href="../../d0/dbb/classez_allocator.htm">ezAllocator</a> *pAllocator=nullptr)</td></tr>
+<tr class="memdesc:a5e1f06bcc060184a7c4742d36bbb393c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="../../d9/d39/classez_tokenizer.htm#a5e1f06bcc060184a7c4742d36bbb393c">More...</a><br /></td></tr>
+<tr class="separator:a5e1f06bcc060184a7c4742d36bbb393c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44653ce9576eab7f4d249dd26f8980f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d39/classez_tokenizer.htm#a44653ce9576eab7f4d249dd26f8980f7">Tokenize</a> (<a class="el" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr</a>&lt; const ezUInt8 &gt; data, <a class="el" href="../../d2/d9e/classez_log_interface.htm">ezLogInterface</a> *pLog, bool bCopyData=true)</td></tr>
 <tr class="memdesc:a44653ce9576eab7f4d249dd26f8980f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears any previous result and creates a new token stream for the given array.  <a href="../../d9/d39/classez_tokenizer.htm#a44653ce9576eab7f4d249dd26f8980f7">More...</a><br /></td></tr>
 <tr class="separator:a44653ce9576eab7f4d249dd26f8980f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -143,8 +143,8 @@ Non-Identifiers are everything else. However, they will currently never consist 
 Parenthesis etc. will not be tokenized in any special way, they are all considered as non-Identifiers.</p>
 <p>The token stream will always end with an end-of-file token. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a421441126f6a9ff84a91c94acdd39dbe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a421441126f6a9ff84a91c94acdd39dbe">&#9670;&nbsp;</a></span>ezTokenizer()</h2>
+<a id="a5e1f06bcc060184a7c4742d36bbb393c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e1f06bcc060184a7c4742d36bbb393c">&#9670;&nbsp;</a></span>ezTokenizer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -152,7 +152,7 @@ Parenthesis etc. will not be tokenized in any special way, they are all consider
         <tr>
           <td class="memname">ezTokenizer::ezTokenizer </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d1/d4c/classez_allocator_base.htm">ezAllocatorBase</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d0/dbb/classez_allocator.htm">ezAllocator</a> *&#160;</td>
           <td class="paramname"><em>pAllocator</em> = <code>nullptr</code></td><td>)</td>
           <td></td>
         </tr>
@@ -194,7 +194,7 @@ Parenthesis etc. will not be tokenized in any special way, they are all consider
 <p>Returns an array of tokens that represent the next line in the file. </p>
 <p>Returns EZ_SUCCESS when there was more data to return, EZ_FAILURE if the end of the file was reached already. uiFirstToken is the index from where to start. It will be updated automatically. Consecutive calls to <a class="el" href="../../d9/d39/classez_tokenizer.htm#ae23fa2b63098d0a368e0f244ea556919" title="Returns an array of tokens that represent the next line in the file.">GetNextLine()</a> with the same uiFirstToken variable will give one line after the other.</p>
 <dl class="section note"><dt>Note</dt><dd>This function takes care of handling the 'backslash/newline' combination, as defined in the C language. That means all such sequences will be ignored. Therefore the tokens that are returned as one line might not contain all tokens that are actually in the stream. Also the tokens might have different line numbers, when two or more lines from the file are merged into one logical line. </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.htm#_todo000031">Todo:</a></b></dt><dd>Theoretically, if the line ends with an identifier, and the next directly starts with one again, </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.htm#_todo000030">Todo:</a></b></dt><dd>Theoretically, if the line ends with an identifier, and the next directly starts with one again, </dd></dl>
 
 </div>
 </div>
@@ -281,7 +281,7 @@ Parenthesis etc. will not be tokenized in any special way, they are all consider
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d9/d39/classez_tokenizer.htm">ezTokenizer</a></li>
-    <li class="footer">Generated on Fri Dec 22 2023 20:43:17 for ezEngine by
+    <li class="footer">Generated on Sun Aug 25 2024 13:06:34 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

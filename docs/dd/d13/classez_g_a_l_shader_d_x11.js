@@ -10,7 +10,7 @@ var classez_g_a_l_shader_d_x11 =
     [ "GetDXPixelShader", "dd/d13/classez_g_a_l_shader_d_x11.htm#a7c2df748d24f30cdee81090ea112120b", null ],
     [ "GetDXVertexShader", "dd/d13/classez_g_a_l_shader_d_x11.htm#ad79b65a1fedf9538fa2feb195c3181c8", null ],
     [ "InitPlatform", "dd/d13/classez_g_a_l_shader_d_x11.htm#a292783a9c9966caaf09a409d9dd10317", null ],
-    [ "SetDebugName", "dd/d13/classez_g_a_l_shader_d_x11.htm#af6782370d20685309e85ed8cd670250b", null ],
+    [ "SetDebugName", "dd/d13/classez_g_a_l_shader_d_x11.htm#a4b5c0aee0f588170b4163822d6899ed9", null ],
     [ "ezGALDeviceDX11", "dd/d13/classez_g_a_l_shader_d_x11.htm#af6317ae5bf9c369d27c87f6b3ec93352", null ],
     [ "ezMemoryUtils", "dd/d13/classez_g_a_l_shader_d_x11.htm#aedd88a418f4111b0f670c96423cfd850", null ],
     [ "m_pComputeShader", "dd/d13/classez_g_a_l_shader_d_x11.htm#ae1bf729dc7dc9e6a516aaaa1e4d901c4", null ],

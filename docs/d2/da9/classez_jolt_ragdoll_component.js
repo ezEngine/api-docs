@@ -30,7 +30,6 @@ var classez_jolt_ragdoll_component =
     [ "HasCreatedLimbs", "d2/da9/classez_jolt_ragdoll_component.htm#a2a9ed256acd8d91b495c967c4dd721a4", null ],
     [ "OnAnimationPoseUpdated", "d2/da9/classez_jolt_ragdoll_component.htm#aac7d736c4f1450ded2379a725da0b1e8", null ],
     [ "OnDeactivated", "d2/da9/classez_jolt_ragdoll_component.htm#a713485ee5d9caf8e9e9119dacb89e5df", null ],
-    [ "OnMsgAnimationPoseProposal", "d2/da9/classez_jolt_ragdoll_component.htm#aec915fc4e12357ce74d24cc256edbf6a", null ],
     [ "OnMsgPhysicsAddForce", "d2/da9/classez_jolt_ragdoll_component.htm#ad5eb9b9d0816ebb5675e608ff0cb30a8", null ],
     [ "OnMsgPhysicsAddImpulse", "d2/da9/classez_jolt_ragdoll_component.htm#acf872056edb952011fd2c2a2e397021e", null ],
     [ "OnRetrieveBoneState", "d2/da9/classez_jolt_ragdoll_component.htm#af3ce1a683e4694edd8c6fd6118fcb402", null ],

@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.12</span>
+   &#160;<span id="projectnumber">Release 24.09</span>
    </div>
   </td>
  </tr>
@@ -92,29 +92,80 @@ $(document).ready(function(){initNavTree('df/d16/classez_fallback_resources_vulk
 </div><!--header-->
 <div class="contents">
 
-<p>Creates fallback resources in case the high-level renderer did not map a resource to a descriptor slot.  
+<p>Creates fallback resources in case the high-level renderer did not map a resource to a descriptor slot. #TODO_VULKAN: Although the class has 'Vulkan' in the name, it could be made GAL agnostic by just returning the base class of the resource views and then it will work for any device type so it could be moved to RendererFoundation if needed for another GAL implementation.  
  <a href="../../df/d16/classez_fallback_resources_vulkan.htm#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../db/de5/_fallback_resources_vulkan_8h_source.htm">FallbackResourcesVulkan.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:aa25246c3a503994972412df707c839ef"><td class="memItemLeft" align="right" valign="top"><a id="aa25246c3a503994972412df707c839ef"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>Initialize</b> (<a class="el" href="../../d1/d02/classez_g_a_l_device_vulkan.htm">ezGALDeviceVulkan</a> *pDevice)</td></tr>
-<tr class="separator:aa25246c3a503994972412df707c839ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a483838d4ffe6e8eda2472c72001a82bc"><td class="memItemLeft" align="right" valign="top"><a id="a483838d4ffe6e8eda2472c72001a82bc"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>DeInitialize</b> ()</td></tr>
-<tr class="separator:a483838d4ffe6e8eda2472c72001a82bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4491bfb4e43a1cc224db5e1738f6deef"><td class="memItemLeft" align="right" valign="top"><a id="a4491bfb4e43a1cc224db5e1738f6deef"></a>
-static const <a class="el" href="../../d1/df0/classez_g_a_l_resource_view_vulkan.htm">ezGALResourceViewVulkan</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>GetFallbackResourceView</b> (vk::DescriptorType descriptorType, <a class="el" href="../../d3/d6e/structez_shader_resource_type.htm#a1d155e7159994d54f86200a943197e5a">ezShaderResourceType::Enum</a> ezType, bool bDepth)</td></tr>
-<tr class="separator:a4491bfb4e43a1cc224db5e1738f6deef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e6de015f8c1e398f48a381f0b13335b"><td class="memItemLeft" align="right" valign="top"><a id="a9e6de015f8c1e398f48a381f0b13335b"></a>
-static const <a class="el" href="../../de/d25/classez_g_a_l_unordered_access_view_vulkan.htm">ezGALUnorderedAccessViewVulkan</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>GetFallbackUnorderedAccessView</b> (vk::DescriptorType descriptorType, <a class="el" href="../../d3/d6e/structez_shader_resource_type.htm#a1d155e7159994d54f86200a943197e5a">ezShaderResourceType::Enum</a> ezType)</td></tr>
-<tr class="separator:a9e6de015f8c1e398f48a381f0b13335b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab029617b8a2a827081c6be09e7cd8048"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="../../dd/d3b/classez_g_a_l_texture_resource_view_vulkan.htm">ezGALTextureResourceViewVulkan</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d16/classez_fallback_resources_vulkan.htm#ab029617b8a2a827081c6be09e7cd8048">GetFallbackTextureResourceView</a> (<a class="el" href="../../de/d81/structez_g_a_l_shader_resource_type.htm#a56b09cf1b044f64a16ccc3bd9bc8ba22">ezGALShaderResourceType::Enum</a> descriptorType, ezGALShaderTextureType::Enum textureType, bool bDepth)</td></tr>
+<tr class="separator:ab029617b8a2a827081c6be09e7cd8048"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23240e64d649528f54a2a878c7ecd3f8"><td class="memItemLeft" align="right" valign="top"><a id="a23240e64d649528f54a2a878c7ecd3f8"></a>
+static const <a class="el" href="../../d1/dab/classez_g_a_l_buffer_resource_view_vulkan.htm">ezGALBufferResourceViewVulkan</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>GetFallbackBufferResourceView</b> (<a class="el" href="../../de/d81/structez_g_a_l_shader_resource_type.htm#a56b09cf1b044f64a16ccc3bd9bc8ba22">ezGALShaderResourceType::Enum</a> descriptorType)</td></tr>
+<tr class="separator:a23240e64d649528f54a2a878c7ecd3f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affc5b424b500e4c437df20470b2fd838"><td class="memItemLeft" align="right" valign="top"><a id="affc5b424b500e4c437df20470b2fd838"></a>
+static const <a class="el" href="../../dc/d24/classez_g_a_l_texture_unordered_access_view_vulkan.htm">ezGALTextureUnorderedAccessViewVulkan</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>GetFallbackTextureUnorderedAccessView</b> (<a class="el" href="../../de/d81/structez_g_a_l_shader_resource_type.htm#a56b09cf1b044f64a16ccc3bd9bc8ba22">ezGALShaderResourceType::Enum</a> descriptorType, ezGALShaderTextureType::Enum textureType)</td></tr>
+<tr class="separator:affc5b424b500e4c437df20470b2fd838"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c727b968411f19421fab74b9c9ee83e"><td class="memItemLeft" align="right" valign="top"><a id="a7c727b968411f19421fab74b9c9ee83e"></a>
+static const <a class="el" href="../../d6/db9/classez_g_a_l_buffer_unordered_access_view_vulkan.htm">ezGALBufferUnorderedAccessViewVulkan</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>GetFallbackBufferUnorderedAccessView</b> (<a class="el" href="../../de/d81/structez_g_a_l_shader_resource_type.htm#a56b09cf1b044f64a16ccc3bd9bc8ba22">ezGALShaderResourceType::Enum</a> descriptorType)</td></tr>
+<tr class="separator:a7c727b968411f19421fab74b9c9ee83e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Creates fallback resources in case the high-level renderer did not map a resource to a descriptor slot. </p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+<div class="textblock"><p>Creates fallback resources in case the high-level renderer did not map a resource to a descriptor slot. #TODO_VULKAN: Although the class has 'Vulkan' in the name, it could be made GAL agnostic by just returning the base class of the resource views and then it will work for any device type so it could be moved to RendererFoundation if needed for another GAL implementation. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ab029617b8a2a827081c6be09e7cd8048"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab029617b8a2a827081c6be09e7cd8048">&#9670;&nbsp;</a></span>GetFallbackTextureResourceView()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../dd/d3b/classez_g_a_l_texture_resource_view_vulkan.htm">ezGALTextureResourceViewVulkan</a> * ezFallbackResourcesVulkan::GetFallbackTextureResourceView </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/d81/structez_g_a_l_shader_resource_type.htm#a56b09cf1b044f64a16ccc3bd9bc8ba22">ezGALShaderResourceType::Enum</a>&#160;</td>
+          <td class="paramname"><em>descriptorType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ezGALShaderTextureType::Enum&#160;</td>
+          <td class="paramname"><em>textureType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>bDepth</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Returns a fallback resource for the given shader resource type. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">descriptorType</td><td>The shader resource descriptor for which a compatible fallback resource is requested. </td></tr>
+    <tr><td class="paramname">textureType</td><td>In case descriptorType is a texture, this specifies the texture type. </td></tr>
+    <tr><td class="paramname">bDepth</td><td>Whether the shader resource is using a depth sampler. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/RendererVulkan/Resources/<a class="el" href="../../db/de5/_fallback_resources_vulkan_8h_source.htm">FallbackResourcesVulkan.h</a></li>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/RendererVulkan/Resources/Implementation/FallbackResourcesVulkan.cpp</li>
 </ul>
@@ -124,7 +175,7 @@ static const <a class="el" href="../../de/d25/classez_g_a_l_unordered_access_vie
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../df/d16/classez_fallback_resources_vulkan.htm">ezFallbackResourcesVulkan</a></li>
-    <li class="footer">Generated on Fri Dec 22 2023 20:43:12 for ezEngine by
+    <li class="footer">Generated on Sun Aug 25 2024 13:06:27 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

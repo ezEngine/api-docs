@@ -17,6 +17,8 @@ var classez_image_header =
     [ "GetPlaneCount", "d4/dfe/classez_image_header.htm#a9c73f87a436fce5eba69d4175f64e626", null ],
     [ "GetRowPitch", "d4/dfe/classez_image_header.htm#a06334f2dfa83e246ec67ff2fb0373bf7", null ],
     [ "GetWidth", "d4/dfe/classez_image_header.htm#ad12837e5a67d006ab2d1e53d46674289", null ],
+    [ "operator!=", "d4/dfe/classez_image_header.htm#ac95cee058f0129e663f4abb0e822d9da", null ],
+    [ "operator==", "d4/dfe/classez_image_header.htm#a6b965c84c928355b8ae8653c75331a77", null ],
     [ "SetDepth", "d4/dfe/classez_image_header.htm#afbee3f53532758618d6cedaff9a369c3", null ],
     [ "SetHeight", "d4/dfe/classez_image_header.htm#a7b6aa073d2b8b4ba9126112afd56993d", null ],
     [ "SetImageFormat", "d4/dfe/classez_image_header.htm#a03ba8ebe439c5eea29514818622786d0", null ],

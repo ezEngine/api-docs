@@ -5,6 +5,7 @@ var structez_window_creation_desc =
     [ "LoadFromDDL", "dd/d3b/structez_window_creation_desc.htm#a8fcd2310b0b08637a7181fe86c950bcf", null ],
     [ "SaveToDDL", "dd/d3b/structez_window_creation_desc.htm#a53bd03412a536b68651314a169002c9f", null ],
     [ "SaveToDDL", "dd/d3b/structez_window_creation_desc.htm#a08e54f23ceb51c379de2f4a3ec2dbbf3", null ],
+    [ "m_bCenterWindowOnDisplay", "dd/d3b/structez_window_creation_desc.htm#a142158762fa05c7b87b3fc09770d8705", null ],
     [ "m_bClipMouseCursor", "dd/d3b/structez_window_creation_desc.htm#a6acf4ad9c75d5de18753eafa6b807263", null ],
     [ "m_bSetForegroundOnInit", "dd/d3b/structez_window_creation_desc.htm#af348ff68586d6307997d95867aebf11e", null ],
     [ "m_bShowMouseCursor", "dd/d3b/structez_window_creation_desc.htm#a41b03cf3d067079dca47699ad5a32bdf", null ],

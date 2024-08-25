@@ -9,7 +9,6 @@ var classez_state_machine_component =
     [ "GetCurrentState", "de/d27/classez_state_machine_component.htm#ac7324e23b5a4e29bc819249ee9997bb8", null ],
     [ "GetInitialState", "de/d27/classez_state_machine_component.htm#a4f88f2e58ee8d8196cfc043289720719", null ],
     [ "GetResource", "de/d27/classez_state_machine_component.htm#a82031f02973f3475fa95dae376b1b51d", null ],
-    [ "GetResourceFile", "de/d27/classez_state_machine_component.htm#ab5a1a3074d59cf73ff23514c8d5b9111", null ],
     [ "GetStateMachineInstance", "de/d27/classez_state_machine_component.htm#a72ac3499aba39dbef9ec7b8debb49c84", null ],
     [ "GetStateMachineInstance", "de/d27/classez_state_machine_component.htm#a76dee6630ed8517a8a091ad29a6e8fa2", null ],
     [ "OnActivated", "de/d27/classez_state_machine_component.htm#ac51d8b4161f19aa853f683739d2feaae", null ],
@@ -19,7 +18,6 @@ var classez_state_machine_component =
     [ "SetBlackboardName", "de/d27/classez_state_machine_component.htm#aa7d6597e1f998146a6da22f1360bc72c", null ],
     [ "SetInitialState", "de/d27/classez_state_machine_component.htm#a4bddfa7c526ca2e206c584cd3ca0582e", null ],
     [ "SetResource", "de/d27/classez_state_machine_component.htm#adb8d82c5539d484d413ae70983bff116", null ],
-    [ "SetResourceFile", "de/d27/classez_state_machine_component.htm#a2922ec287e5b65b655b9722dce9c6499", null ],
     [ "SetState", "de/d27/classez_state_machine_component.htm#ac64be17598e2bab99a2262e0e3282e76", null ],
     [ "ezStateMachineState_SendMsg", "de/d27/classez_state_machine_component.htm#a6727874de2bef7fbc0d14e1e4b7f1efd", null ]
 ];

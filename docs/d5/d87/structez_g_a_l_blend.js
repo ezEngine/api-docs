@@ -1,5 +1,6 @@
 var structez_g_a_l_blend =
 [
+    [ "StorageType", "d5/d87/structez_g_a_l_blend.htm#a25027f7b13334b2b9a81f00ac4687856", null ],
     [ "Enum", "d5/d87/structez_g_a_l_blend.htm#a46106ddd733f83a7474555da6cf7ea68", [
       [ "Zero", "d5/d87/structez_g_a_l_blend.htm#a46106ddd733f83a7474555da6cf7ea68ae5ae603df544ed5a9df43377aad4f9bc", null ],
       [ "One", "d5/d87/structez_g_a_l_blend.htm#a46106ddd733f83a7474555da6cf7ea68a8bec4d947b65c9cc01661bb90b0974d5", null ],
@@ -14,6 +15,7 @@ var structez_g_a_l_blend =
       [ "SrcAlphaSaturated", "d5/d87/structez_g_a_l_blend.htm#a46106ddd733f83a7474555da6cf7ea68a57279f804d8225b7c3101531077562aa", null ],
       [ "BlendFactor", "d5/d87/structez_g_a_l_blend.htm#a46106ddd733f83a7474555da6cf7ea68aac798c52d194c15b009dbe02b5a98dab", null ],
       [ "InvBlendFactor", "d5/d87/structez_g_a_l_blend.htm#a46106ddd733f83a7474555da6cf7ea68af0c5e3a7e00e82057ca3df305a59cb67", null ],
-      [ "ENUM_COUNT", "d5/d87/structez_g_a_l_blend.htm#a46106ddd733f83a7474555da6cf7ea68ae6bafbea34e7255c6d7d30ee9367dfab", null ]
+      [ "ENUM_COUNT", "d5/d87/structez_g_a_l_blend.htm#a46106ddd733f83a7474555da6cf7ea68ae6bafbea34e7255c6d7d30ee9367dfab", null ],
+      [ "Default", "d5/d87/structez_g_a_l_blend.htm#a46106ddd733f83a7474555da6cf7ea68ade890457c77224809b2bbd9119cc277a", null ]
     ] ]
 ];

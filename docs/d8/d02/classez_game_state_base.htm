@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.12</span>
+   &#160;<span id="projectnumber">Release 24.09</span>
    </div>
   </td>
  </tr>
@@ -85,14 +85,13 @@ $(document).ready(function(){initNavTree('d8/d02/classez_game_state_base.htm','.
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="../../d2/d55/classez_game_state_base-members.htm">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">ezGameStateBase Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><a class="el" href="../../de/d84/classez_game_state.htm" title="ezGameState is the base class to build custom game logic upon. It works closely together with ezGameA...">ezGameState</a> is the base class to build custom game logic upon. It works closely together with <a class="el" href="../../db/db6/classez_game_application.htm" title="The base class for all typical game applications made with ezEngine.">ezGameApplication</a>.  
+<p><a class="el" href="../../d8/d02/classez_game_state_base.htm" title="ezGameStateBase is the base class for all game states. Game states are used to implement custom high ...">ezGameStateBase</a> is the base class for all game states. Game states are used to implement custom high level game logic.  
  <a href="../../d8/d02/classez_game_state_base.htm#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../d6/d39/_game_state_base_8h_source.htm">GameStateBase.h</a>&gt;</code></p>
@@ -101,8 +100,8 @@ Inheritance diagram for ezGameStateBase:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d5/df4/classez_game_state_base__inherit__graph.png" border="0" usemap="#ez_game_state_base_inherit__map" alt="Inheritance graph"/></div>
 <map name="ez_game_state_base_inherit__map" id="ez_game_state_base_inherit__map">
-<area shape="rect" title="ezGameState is the base class to build custom game logic upon. It works closely together with ezGameA..." alt="" coords="15,155,158,181"/>
-<area shape="rect" href="../../de/d84/classez_game_state.htm" title="ezGameState is the base class to build custom game logic upon. It works closely together with ezGameA..." alt="" coords="31,229,142,256"/>
+<area shape="rect" title="ezGameStateBase is the base class for all game states. Game states are used to implement custom high ..." alt="" coords="15,155,158,181"/>
+<area shape="rect" href="../../de/d84/classez_game_state.htm" title="ezGameState implements the ezGameStateBase interface and adds several convenience features." alt="" coords="31,229,142,256"/>
 <area shape="rect" href="../../db/d45/classez_reflected_class.htm" title="All classes that should be dynamically reflectable, need to be derived from this base class." alt="" coords="20,80,153,107"/>
 <area shape="rect" href="../../d4/d02/classez_no_base.htm" title="Dummy type to pass to templates and macros that expect a base type for a class that has no base." alt="" coords="43,5,130,32"/>
 <area shape="rect" href="../../de/d6f/classez_fallback_game_state.htm" title="ezFallbackGameState is an ezGameState that can handle existing worlds when no other game state is ava..." alt="" coords="5,304,168,331"/>
@@ -111,39 +110,40 @@ Inheritance diagram for ezGameStateBase:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6c3775232b839b8296c0fc9e2774a756"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d02/classez_game_state_base.htm#a6c3775232b839b8296c0fc9e2774a756">OnActivation</a> (<a class="el" href="../../da/d3c/classez_world.htm">ezWorld</a> *pWorld, const <a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransform</a> *pStartPosition)=0</td></tr>
-<tr class="memdesc:a6c3775232b839b8296c0fc9e2774a756"><td class="mdescLeft">&#160;</td><td class="mdescRight">When a game state was chosen, it gets activated through this function.  <a href="../../d8/d02/classez_game_state_base.htm#a6c3775232b839b8296c0fc9e2774a756">More...</a><br /></td></tr>
-<tr class="separator:a6c3775232b839b8296c0fc9e2774a756"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6947f8af9f0a6eba2d45b1b74be5d4fd"><td class="memItemLeft" align="right" valign="top"><a id="a6947f8af9f0a6eba2d45b1b74be5d4fd"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d02/classez_game_state_base.htm#a6947f8af9f0a6eba2d45b1b74be5d4fd">OnDeactivation</a> ()=0</td></tr>
-<tr class="memdesc:a6947f8af9f0a6eba2d45b1b74be5d4fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the game state is being shut down. <br /></td></tr>
+<tr class="memitem:ae6aa395c7207aa973d71197206a12796"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d02/classez_game_state_base.htm#ae6aa395c7207aa973d71197206a12796">OnActivation</a> (<a class="el" href="../../da/d3c/classez_world.htm">ezWorld</a> *pWorld, <a class="el" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sStartPosition, const <a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransform</a> &amp;startPositionOffset)=0</td></tr>
+<tr class="memdesc:ae6aa395c7207aa973d71197206a12796"><td class="mdescLeft">&#160;</td><td class="mdescRight">A game state gets activated through this function.  <a href="../../d8/d02/classez_game_state_base.htm#ae6aa395c7207aa973d71197206a12796">More...</a><br /></td></tr>
+<tr class="separator:ae6aa395c7207aa973d71197206a12796"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6947f8af9f0a6eba2d45b1b74be5d4fd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d02/classez_game_state_base.htm#a6947f8af9f0a6eba2d45b1b74be5d4fd">OnDeactivation</a> ()=0</td></tr>
+<tr class="memdesc:a6947f8af9f0a6eba2d45b1b74be5d4fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the game state is being shut down.  <a href="../../d8/d02/classez_game_state_base.htm#a6947f8af9f0a6eba2d45b1b74be5d4fd">More...</a><br /></td></tr>
 <tr class="separator:a6947f8af9f0a6eba2d45b1b74be5d4fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9b4df6d896095beda31aa8fdad27cc5"><td class="memItemLeft" align="right" valign="top"><a id="af9b4df6d896095beda31aa8fdad27cc5"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d02/classez_game_state_base.htm#af9b4df6d896095beda31aa8fdad27cc5">ProcessInput</a> ()</td></tr>
-<tr class="memdesc:af9b4df6d896095beda31aa8fdad27cc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called once per game update. Should handle input updates here. <br /></td></tr>
-<tr class="separator:af9b4df6d896095beda31aa8fdad27cc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a9a0642a0e02a75f24c84c9649a881b"><td class="memItemLeft" align="right" valign="top"><a id="a7a9a0642a0e02a75f24c84c9649a881b"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d02/classez_game_state_base.htm#a7a9a0642a0e02a75f24c84c9649a881b">BeforeWorldUpdate</a> ()</td></tr>
-<tr class="memdesc:a7a9a0642a0e02a75f24c84c9649a881b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called once each frame before the worlds are updated. <br /></td></tr>
-<tr class="separator:a7a9a0642a0e02a75f24c84c9649a881b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb95022a94606bd78de601d024c482ae"><td class="memItemLeft" align="right" valign="top"><a id="acb95022a94606bd78de601d024c482ae"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d02/classez_game_state_base.htm#acb95022a94606bd78de601d024c482ae">AfterWorldUpdate</a> ()</td></tr>
-<tr class="memdesc:acb95022a94606bd78de601d024c482ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called once each frame after the worlds have been updated. <br /></td></tr>
-<tr class="separator:acb95022a94606bd78de601d024c482ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d4507aef28ad83f4d0c7ba29b1a414d"><td class="memItemLeft" align="right" valign="top">virtual ezGameStatePriority&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d02/classez_game_state_base.htm#a6d4507aef28ad83f4d0c7ba29b1a414d">DeterminePriority</a> (<a class="el" href="../../da/d3c/classez_world.htm">ezWorld</a> *pWorld) const =0</td></tr>
-<tr class="memdesc:a6d4507aef28ad83f4d0c7ba29b1a414d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called by <a class="el" href="../../db/db6/classez_game_application.htm" title="The base class for all typical game applications made with ezEngine.">ezGameApplication</a> to determine which game state is best suited to handle a situation.  <a href="../../d8/d02/classez_game_state_base.htm#a6d4507aef28ad83f4d0c7ba29b1a414d">More...</a><br /></td></tr>
-<tr class="separator:a6d4507aef28ad83f4d0c7ba29b1a414d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06b283f255e98a107ad9977a00a97a97"><td class="memItemLeft" align="right" valign="top"><a id="a06b283f255e98a107ad9977a00a97a97"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d02/classez_game_state_base.htm#a06b283f255e98a107ad9977a00a97a97">ScheduleRendering</a> ()=0</td></tr>
-<tr class="memdesc:a06b283f255e98a107ad9977a00a97a97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Has to call ezRenderLoop::AddMainView for all views that need to be rendered. <br /></td></tr>
-<tr class="separator:a06b283f255e98a107ad9977a00a97a97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfd857451ab71a7938b8d8f0f9b47849"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d02/classez_game_state_base.htm#abfd857451ab71a7938b8d8f0f9b47849">RequestQuit</a> ()</td></tr>
-<tr class="memdesc:abfd857451ab71a7938b8d8f0f9b47849"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call this to signal that a game state requested the application to quit.  <a href="../../d8/d02/classez_game_state_base.htm#abfd857451ab71a7938b8d8f0f9b47849">More...</a><br /></td></tr>
-<tr class="separator:abfd857451ab71a7938b8d8f0f9b47849"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae77c1cb6e60933f7233222ab6a450ca3"><td class="memItemLeft" align="right" valign="top"><a id="ae77c1cb6e60933f7233222ab6a450ca3"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d02/classez_game_state_base.htm#ae77c1cb6e60933f7233222ab6a450ca3">WasQuitRequested</a> () const</td></tr>
-<tr class="memdesc:ae77c1cb6e60933f7233222ab6a450ca3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the game state wants to quit the application. <br /></td></tr>
-<tr class="separator:ae77c1cb6e60933f7233222ab6a450ca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa5fd779bcc55cf16174da688ed81db1"><td class="memItemLeft" align="right" valign="top"><a id="afa5fd779bcc55cf16174da688ed81db1"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d02/classez_game_state_base.htm#afa5fd779bcc55cf16174da688ed81db1">ProcessInput</a> ()</td></tr>
+<tr class="memdesc:afa5fd779bcc55cf16174da688ed81db1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called once per game update, early in the frame. Should handle input updates here. <br /></td></tr>
+<tr class="separator:afa5fd779bcc55cf16174da688ed81db1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08132b3330ae2fcb6188d33d685d831c"><td class="memItemLeft" align="right" valign="top"><a id="a08132b3330ae2fcb6188d33d685d831c"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d02/classez_game_state_base.htm#a08132b3330ae2fcb6188d33d685d831c">BeforeWorldUpdate</a> ()</td></tr>
+<tr class="memdesc:a08132b3330ae2fcb6188d33d685d831c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called once each frame before the worlds are updated. <br /></td></tr>
+<tr class="separator:a08132b3330ae2fcb6188d33d685d831c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdf6c74204daed82f52dc61b1a6cd10a"><td class="memItemLeft" align="right" valign="top"><a id="acdf6c74204daed82f52dc61b1a6cd10a"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d02/classez_game_state_base.htm#acdf6c74204daed82f52dc61b1a6cd10a">AfterWorldUpdate</a> ()</td></tr>
+<tr class="memdesc:acdf6c74204daed82f52dc61b1a6cd10a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called once each frame after the worlds have been updated. <br /></td></tr>
+<tr class="separator:acdf6c74204daed82f52dc61b1a6cd10a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5aa5cd6484424404bc9fca24c69e5330"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d02/classez_game_state_base.htm#a5aa5cd6484424404bc9fca24c69e5330">ConfigureMainCamera</a> ()</td></tr>
+<tr class="memdesc:a5aa5cd6484424404bc9fca24c69e5330"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called once each frame to configure the main camera position and rotation.  <a href="../../d8/d02/classez_game_state_base.htm#a5aa5cd6484424404bc9fca24c69e5330">More...</a><br /></td></tr>
+<tr class="separator:a5aa5cd6484424404bc9fca24c69e5330"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af33b9152262a539b80c8081fa800a4e2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d02/classez_game_state_base.htm#af33b9152262a539b80c8081fa800a4e2">AddMainViewsToRender</a> ()=0</td></tr>
+<tr class="memdesc:af33b9152262a539b80c8081fa800a4e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Has to call ezRenderLoop::AddMainView for all views that need to be rendered.  <a href="../../d8/d02/classez_game_state_base.htm#af33b9152262a539b80c8081fa800a4e2">More...</a><br /></td></tr>
+<tr class="separator:af33b9152262a539b80c8081fa800a4e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62468f85386f9cd3675cc166adcc96e2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d02/classez_game_state_base.htm#a62468f85386f9cd3675cc166adcc96e2">RequestQuit</a> ()=0</td></tr>
+<tr class="memdesc:a62468f85386f9cd3675cc166adcc96e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call this to signal that a game state requested the application to quit.  <a href="../../d8/d02/classez_game_state_base.htm#a62468f85386f9cd3675cc166adcc96e2">More...</a><br /></td></tr>
+<tr class="separator:a62468f85386f9cd3675cc166adcc96e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f4a7ded32f4dbbfed6880c8eba05eb5"><td class="memItemLeft" align="right" valign="top"><a id="a5f4a7ded32f4dbbfed6880c8eba05eb5"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d02/classez_game_state_base.htm#a5f4a7ded32f4dbbfed6880c8eba05eb5">WasQuitRequested</a> () const =0</td></tr>
+<tr class="memdesc:a5f4a7ded32f4dbbfed6880c8eba05eb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the game state wants to quit the application. <br /></td></tr>
+<tr class="separator:a5f4a7ded32f4dbbfed6880c8eba05eb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a114b3d15a3b85bc5d437ed8d695971e4"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d02/classez_game_state_base.htm#a114b3d15a3b85bc5d437ed8d695971e4">IsFallbackGameState</a> () const</td></tr>
+<tr class="memdesc:a114b3d15a3b85bc5d437ed8d695971e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Should be overridden by game states that are only meant as a fallback solution.  <a href="../../d8/d02/classez_game_state_base.htm#a114b3d15a3b85bc5d437ed8d695971e4">More...</a><br /></td></tr>
+<tr class="separator:a114b3d15a3b85bc5d437ed8d695971e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classez_reflected_class"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classez_reflected_class')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../db/d45/classez_reflected_class.htm">ezReflectedClass</a></td></tr>
 <tr class="memitem:a36b3c91f3b77fee7a0e4c7d262735a89 inherit pub_methods_classez_reflected_class"><td class="memItemLeft" align="right" valign="top"><a id="a36b3c91f3b77fee7a0e4c7d262735a89"></a>
 virtual const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>GetDynamicRTTI</b> () const</td></tr>
@@ -158,12 +158,6 @@ template&lt;typename T &gt; </td></tr>
 <tr class="memdesc:a86c6a804cc97a425928bce744607400a inherit pub_methods_classez_reflected_class"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the type of this instance is of the given type or derived from it. <br /></td></tr>
 <tr class="separator:a86c6a804cc97a425928bce744607400a inherit pub_methods_classez_reflected_class"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:a6307180d0f19d221a9beb0889c45c980"><td class="memItemLeft" align="right" valign="top"><a id="a6307180d0f19d221a9beb0889c45c980"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_bStateWantsToQuit</b> = false</td></tr>
-<tr class="separator:a6307180d0f19d221a9beb0889c45c980"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_static_methods_classez_no_base"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classez_no_base')"><img src="../../closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="../../d4/d02/classez_no_base.htm">ezNoBase</a></td></tr>
@@ -172,15 +166,12 @@ static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&
 <tr class="separator:ad676281ced156eb886aa4f74a2a45d2f inherit pub_static_methods_classez_no_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="../../de/d84/classez_game_state.htm" title="ezGameState is the base class to build custom game logic upon. It works closely together with ezGameA...">ezGameState</a> is the base class to build custom game logic upon. It works closely together with <a class="el" href="../../db/db6/classez_game_application.htm" title="The base class for all typical game applications made with ezEngine.">ezGameApplication</a>. </p>
-<p>In a typical game there is always exactly one instance of an <a class="el" href="../../de/d84/classez_game_state.htm" title="ezGameState is the base class to build custom game logic upon. It works closely together with ezGameA...">ezGameState</a> derived class active. The game state handles custom game logic, which must be handled outside <a class="el" href="../../da/d3c/classez_world.htm" title="A world encapsulates a scene graph of game objects and various component managers and their component...">ezWorld</a>, custom components and scripts.</p>
-<p>For example a custom implementation of <a class="el" href="../../de/d84/classez_game_state.htm" title="ezGameState is the base class to build custom game logic upon. It works closely together with ezGameA...">ezGameState</a> may handle how to show a menu, when to switch to another level, how multi-player works, or which player information is transitioned from one level to the next. It's main purpose is to implement high-level game logic.</p>
-<p><a class="el" href="../../db/db6/classez_game_application.htm" title="The base class for all typical game applications made with ezEngine.">ezGameApplication</a> will loop through all available <a class="el" href="../../de/d84/classez_game_state.htm" title="ezGameState is the base class to build custom game logic upon. It works closely together with ezGameA...">ezGameState</a> implementations and ask each available one whether it can handle a certain level. Each game state returns a 'priority' how well it can handle the game.</p>
-<p>In a typical game you only have one game state linked into the binary, so in that case there is no reason for such a system. However, in an editor you might have multiple game states available through plugins, but only one can take control. In such a case, each game state may inspect the given world and check whether it is e.g. a single-player or multi-player level, or whether it uses it's own game specific components, and then decide whether it is the best fit for that level.</p>
-<dl class="section note"><dt>Note</dt><dd>Do not forget to reflect your derived class, otherwise <a class="el" href="../../db/db6/classez_game_application.htm" title="The base class for all typical game applications made with ezEngine.">ezGameApplication</a> may not find it. </dd></dl>
+<div class="textblock"><p><a class="el" href="../../d8/d02/classez_game_state_base.htm" title="ezGameStateBase is the base class for all game states. Game states are used to implement custom high ...">ezGameStateBase</a> is the base class for all game states. Game states are used to implement custom high level game logic. </p>
+<p>See the online documentation for details: <a href="https://ezengine.net/pages/docs/runtime/application/game-state.html">https://ezengine.net/pages/docs/runtime/application/game-state.html</a></p>
+<p>Note that you would typically derive custom game states from <a class="el" href="../../de/d84/classez_game_state.htm" title="ezGameState implements the ezGameStateBase interface and adds several convenience features.">ezGameState</a>, not <a class="el" href="../../d8/d02/classez_game_state_base.htm" title="ezGameStateBase is the base class for all game states. Game states are used to implement custom high ...">ezGameStateBase</a>, since the former provides much more functionality out of the box. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a6d4507aef28ad83f4d0c7ba29b1a414d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6d4507aef28ad83f4d0c7ba29b1a414d">&#9670;&nbsp;</a></span>DeterminePriority()</h2>
+<a id="af33b9152262a539b80c8081fa800a4e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af33b9152262a539b80c8081fa800a4e2">&#9670;&nbsp;</a></span>AddMainViewsToRender()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -189,11 +180,10 @@ static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual ezGameStatePriority ezGameStateBase::DeterminePriority </td>
+          <td class="memname">virtual void ezGameStateBase::AddMainViewsToRender </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../da/d3c/classez_world.htm">ezWorld</a> *&#160;</td>
-          <td class="paramname"><em>pWorld</em></td><td>)</td>
-          <td> const</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
@@ -203,15 +193,75 @@ static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&
 </table>
 </div><div class="memdoc">
 
-<p>Called by <a class="el" href="../../db/db6/classez_game_application.htm" title="The base class for all typical game applications made with ezEngine.">ezGameApplication</a> to determine which game state is best suited to handle a situation. </p>
-<p>If the application already has a world that should be shown, the game state can inspect it. If the game state is expected to create a new world, pWorld will be nullptr. </p>
+<p>Has to call ezRenderLoop::AddMainView for all views that need to be rendered. </p>
+<p>This will be called every frame by the editor, to ensure that only the relevant views are rendered, but during stand-alone game execution this may never be called. </p>
 
-<p>Implemented in <a class="el" href="../../de/d6f/classez_fallback_game_state.htm#a67640f021ae0e7389bcf5a5e86f8c3b1">ezFallbackGameState</a>.</p>
+<p>Implemented in <a class="el" href="../../de/d84/classez_game_state.htm#a56e8c8bdf10c50880b36b113f43c79f1">ezGameState</a>.</p>
 
 </div>
 </div>
-<a id="a6c3775232b839b8296c0fc9e2774a756"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6c3775232b839b8296c0fc9e2774a756">&#9670;&nbsp;</a></span>OnActivation()</h2>
+<a id="a5aa5cd6484424404bc9fca24c69e5330"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5aa5cd6484424404bc9fca24c69e5330">&#9670;&nbsp;</a></span>ConfigureMainCamera()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ezGameStateBase::ConfigureMainCamera </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Called once each frame to configure the main camera position and rotation. </p>
+<p>Note that <a class="el" href="../../d5/d90/classez_camera_component.htm" title="Adds a camera to the scene.">ezCameraComponent</a> may already apply set general options like field-of-view, so don't override these values, if you want to use that component. The default <a class="el" href="../../de/d84/classez_game_state.htm" title="ezGameState implements the ezGameStateBase interface and adds several convenience features.">ezGameState</a> implementation searches for an <a class="el" href="../../d5/d90/classez_camera_component.htm" title="Adds a camera to the scene.">ezCameraComponent</a> in the world that is set to "Main View" and uses it's transform for the main camera. </p>
+
+<p>Reimplemented in <a class="el" href="../../de/d84/classez_game_state.htm#a02e977ecd9dccd15717368b3d336c56e">ezGameState</a>, and <a class="el" href="../../de/d6f/classez_fallback_game_state.htm#afc028b148129d3c6e43b3df4f8750a5d">ezFallbackGameState</a>.</p>
+
+</div>
+</div>
+<a id="a114b3d15a3b85bc5d437ed8d695971e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a114b3d15a3b85bc5d437ed8d695971e4">&#9670;&nbsp;</a></span>IsFallbackGameState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool ezGameStateBase::IsFallbackGameState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Should be overridden by game states that are only meant as a fallback solution. </p>
+<p>See the implementation for <a class="el" href="../../de/d6f/classez_fallback_game_state.htm" title="ezFallbackGameState is an ezGameState that can handle existing worlds when no other game state is ava...">ezFallbackGameState</a> for details. </p>
+
+<p>Reimplemented in <a class="el" href="../../de/d6f/classez_fallback_game_state.htm#abd6f5700abceb7409d5b167d3df8da23">ezFallbackGameState</a>.</p>
+
+</div>
+</div>
+<a id="ae6aa395c7207aa973d71197206a12796"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6aa395c7207aa973d71197206a12796">&#9670;&nbsp;</a></span>OnActivation()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -228,8 +278,14 @@ static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransform</a> *&#160;</td>
-          <td class="paramname"><em>pStartPosition</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d9/d18/classez_string_view.htm">ezStringView</a>&#160;</td>
+          <td class="paramname"><em>sStartPosition</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransform</a> &amp;&#160;</td>
+          <td class="paramname"><em>startPositionOffset</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -244,21 +300,22 @@ static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&
 </table>
 </div><div class="memdoc">
 
-<p>When a game state was chosen, it gets activated through this function. </p>
+<p>A game state gets activated through this function. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pWorld</td><td>The game state is supposed to operate on the given world. In a stand-alone application pWorld will always be nullptr and the game state is expected to create worlds itself. When run inside the editor, pWorld will already exist and the game state is expected to work on it.</td></tr>
+    <tr><td class="paramname">sStartPosition</td><td>An optional string to identify where the player should spawn. This may, for instance, be the unique name of an object. It is up to the game state how the string is used, if at all.</td></tr>
     <tr><td class="paramname">pStartPosition</td><td>An optional transform for the 'player object' to start at. Usually nullptr, but may be set by the editor to relocate or create the player object at the given destination. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="../../de/d84/classez_game_state.htm#afd34b222cd9e4c7685c5ebd088508347">ezGameState</a>, and <a class="el" href="../../de/d6f/classez_fallback_game_state.htm#a3acd675bdfb45462ffec4cb2b3892a7b">ezFallbackGameState</a>.</p>
+<p>Implemented in <a class="el" href="../../de/d84/classez_game_state.htm#a96c5b01cd350821129d539afe91e4c01">ezGameState</a>, and <a class="el" href="../../de/d6f/classez_fallback_game_state.htm#a7dc86f71f292478dd85657e6f7b6d5ea">ezFallbackGameState</a>.</p>
 
 </div>
 </div>
-<a id="abfd857451ab71a7938b8d8f0f9b47849"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abfd857451ab71a7938b8d8f0f9b47849">&#9670;&nbsp;</a></span>RequestQuit()</h2>
+<a id="a6947f8af9f0a6eba2d45b1b74be5d4fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6947f8af9f0a6eba2d45b1b74be5d4fd">&#9670;&nbsp;</a></span>OnDeactivation()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -267,7 +324,7 @@ static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void ezGameStateBase::RequestQuit </td>
+          <td class="memname">virtual void ezGameStateBase::OnDeactivation </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -275,7 +332,37 @@ static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Called when the game state is being shut down. </p>
+<p>Override this to clean up or save data to disk. </p>
+
+<p>Implemented in <a class="el" href="../../de/d84/classez_game_state.htm#a8a7468f8e8f4a19530929efe6d513c45">ezGameState</a>.</p>
+
+</div>
+</div>
+<a id="a62468f85386f9cd3675cc166adcc96e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62468f85386f9cd3675cc166adcc96e2">&#9670;&nbsp;</a></span>RequestQuit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ezGameStateBase::RequestQuit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -283,11 +370,12 @@ static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&
 <p>Call this to signal that a game state requested the application to quit. </p>
 <p><a class="el" href="../../db/db6/classez_game_application.htm" title="The base class for all typical game applications made with ezEngine.">ezGameApplication</a> will shut down when this happens. ezEditor will stop play-the-game mode when it is running. </p>
 
+<p>Implemented in <a class="el" href="../../de/d84/classez_game_state.htm#a0ddc77a03b285fb1b06a55383f2145fb">ezGameState</a>.</p>
+
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Core/GameState/<a class="el" href="../../d6/d39/_game_state_base_8h_source.htm">GameStateBase.h</a></li>
-<li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Core/GameState/Implementation/GameStateBase.cpp</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -295,7 +383,7 @@ static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d8/d02/classez_game_state_base.htm">ezGameStateBase</a></li>
-    <li class="footer">Generated on Fri Dec 22 2023 20:43:13 for ezEngine by
+    <li class="footer">Generated on Sun Aug 25 2024 13:06:28 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

@@ -1,13 +1,17 @@
 var classez_translate_gizmo =
 [
+    [ "HandleInteraction", "d2/d6c/classez_translate_gizmo.htm#a09f23e9853b2439e687d8a58b08d9b22", [
+      [ "None", "d2/d6c/classez_translate_gizmo.htm#a09f23e9853b2439e687d8a58b08d9b22a6adf97f83acf6453d4a6a4b1070f3754", null ],
+      [ "AxisX", "d2/d6c/classez_translate_gizmo.htm#a09f23e9853b2439e687d8a58b08d9b22a38b0844100a915cd3c87159b391161b9", null ],
+      [ "AxisY", "d2/d6c/classez_translate_gizmo.htm#a09f23e9853b2439e687d8a58b08d9b22ab30a50c686982b3b209cf1234f4247cd", null ],
+      [ "AxisZ", "d2/d6c/classez_translate_gizmo.htm#a09f23e9853b2439e687d8a58b08d9b22add1071c1aa89157c2386d3303413218f", null ],
+      [ "PlaneX", "d2/d6c/classez_translate_gizmo.htm#a09f23e9853b2439e687d8a58b08d9b22a752bf71fa9c1dfd3d190d407c94461f4", null ],
+      [ "PlaneY", "d2/d6c/classez_translate_gizmo.htm#a09f23e9853b2439e687d8a58b08d9b22a398b80e6117a85019982bc7e3be69410", null ],
+      [ "PlaneZ", "d2/d6c/classez_translate_gizmo.htm#a09f23e9853b2439e687d8a58b08d9b22a253c66abb938d1c0f30cbd011c4ee4b2", null ]
+    ] ],
     [ "MovementMode", "d2/d6c/classez_translate_gizmo.htm#a82b6227fcc74331eb821fd74dfea3e1d", [
       [ "ScreenProjection", "d2/d6c/classez_translate_gizmo.htm#a82b6227fcc74331eb821fd74dfea3e1da231b310e20e514d8424b9e4b3d56cc16", null ],
       [ "MouseDiff", "d2/d6c/classez_translate_gizmo.htm#a82b6227fcc74331eb821fd74dfea3e1dabf6cd29f3529cf06b1a2b1394c42850f", null ]
-    ] ],
-    [ "PlaneInteraction", "d2/d6c/classez_translate_gizmo.htm#a613e1cda7e7bfc9423d6e9c259859b21", [
-      [ "PlaneX", "d2/d6c/classez_translate_gizmo.htm#a613e1cda7e7bfc9423d6e9c259859b21a752bf71fa9c1dfd3d190d407c94461f4", null ],
-      [ "PlaneY", "d2/d6c/classez_translate_gizmo.htm#a613e1cda7e7bfc9423d6e9c259859b21a398b80e6117a85019982bc7e3be69410", null ],
-      [ "PlaneZ", "d2/d6c/classez_translate_gizmo.htm#a613e1cda7e7bfc9423d6e9c259859b21a253c66abb938d1c0f30cbd011c4ee4b2", null ]
     ] ],
     [ "TranslateMode", "d2/d6c/classez_translate_gizmo.htm#a61cc23ce80bb3a73ae0188751aee0d1e", [
       [ "None", "d2/d6c/classez_translate_gizmo.htm#a61cc23ce80bb3a73ae0188751aee0d1ea6adf97f83acf6453d4a6a4b1070f3754", null ],
@@ -19,7 +23,7 @@ var classez_translate_gizmo =
     [ "DoMouseMoveEvent", "d2/d6c/classez_translate_gizmo.htm#a5f2e051b904360dc6db8d36c562bffdc", null ],
     [ "DoMousePressEvent", "d2/d6c/classez_translate_gizmo.htm#a96c8c806ac3c80ea2857565522ea3072", null ],
     [ "DoMouseReleaseEvent", "d2/d6c/classez_translate_gizmo.htm#a7cf453ddf0deaf4237ecc6b615c909df", null ],
-    [ "GetLastPlaneInteraction", "d2/d6c/classez_translate_gizmo.htm#a74d6981810209bd69558ecb57dd36a8a", null ],
+    [ "GetLastHandleInteraction", "d2/d6c/classez_translate_gizmo.htm#a1a0ac6a4537b9a1cdb6c12835bc3e137", null ],
     [ "GetPointOnAxis", "d2/d6c/classez_translate_gizmo.htm#abd92555577c511a7b1d7a956da969267", null ],
     [ "GetPointOnPlane", "d2/d6c/classez_translate_gizmo.htm#ae3bc4f2cff2ef1465f24eae2f5e78e9c", null ],
     [ "GetStartPosition", "d2/d6c/classez_translate_gizmo.htm#a55cda7b4444c3582f061bd0370748793", null ],

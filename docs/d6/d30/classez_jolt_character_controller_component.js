@@ -1,8 +1,6 @@
 var classez_jolt_character_controller_component =
 [
     [ "ContactPoint", "d7/de5/structez_jolt_character_controller_component_1_1_contact_point.htm", "d7/de5/structez_jolt_character_controller_component_1_1_contact_point" ],
-    [ "ShapeContacts", "da/dbc/structez_jolt_character_controller_component_1_1_shape_contacts.htm", "da/dbc/structez_jolt_character_controller_component_1_1_shape_contacts" ],
-    [ "ContactFilter", "d6/d30/classez_jolt_character_controller_component.htm#a9c40f083dc05a8f0309289c252246b0f", null ],
     [ "ezJoltCharacterControllerComponent", "d6/d30/classez_jolt_character_controller_component.htm#a666d1a1e49089bb8bf8d2bb664689ffa", null ],
     [ "~ezJoltCharacterControllerComponent", "d6/d30/classez_jolt_character_controller_component.htm#ad4bf872764c7641424fb0e36a51868e8", null ],
     [ "ClearObjectToIgnore", "d6/d30/classez_jolt_character_controller_component.htm#add75494e90a7978543d768d992271cdc", null ],

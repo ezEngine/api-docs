@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.12</span>
+   &#160;<span id="projectnumber">Release 24.09</span>
    </div>
   </td>
  </tr>
@@ -105,55 +105,47 @@ $(document).ready(function(){initNavTree('d8/db3/_particle_behavior___color_grad
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="comment">// ************************************* PROPERTIES ***********************************</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keywordtype">void</span> SetColorGradient(<span class="keyword">const</span> <a class="code" href="../../d3/dd7/classez_typed_resource_handle.htm">ezColorGradientResourceHandle</a>&amp; hResource) { m_hGradient = hResource; }</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  EZ_ALWAYS_INLINE <span class="keyword">const</span> <a class="code" href="../../d3/dd7/classez_typed_resource_handle.htm">ezColorGradientResourceHandle</a>&amp; GetColorGradient()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_hGradient; }</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keywordtype">void</span> SetColorGradientFile(<span class="keyword">const</span> <span class="keywordtype">char</span>* szFile);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* GetColorGradientFile() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <a class="code" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezParticleColorGradientMode&gt;</a> m_GradientMode;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keywordtype">float</span> m_fMaxSpeed = 1.0f;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a> m_TintColor = <a class="code" href="../../dd/d01/classez_color.htm#a20d4d15acd9f0a7cb81d386467ab2204">ezColor::White</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <a class="code" href="../../d3/dd7/classez_typed_resource_handle.htm">ezColorGradientResourceHandle</a> m_hGradient;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;};</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <a class="code" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezParticleColorGradientMode&gt;</a> m_GradientMode;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keywordtype">float</span> m_fMaxSpeed = 1.0f;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a> m_TintColor = <a class="code" href="../../dd/d01/classez_color.htm#a20d4d15acd9f0a7cb81d386467ab2204">ezColor::White</a>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <a class="code" href="../../d3/dd7/classez_typed_resource_handle.htm">ezColorGradientResourceHandle</a> m_hGradient;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;};</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="../../de/d67/classez_particle_behavior___color_gradient.htm">   34</a></span>&#160;<span class="keyword">class </span>EZ_PARTICLEPLUGIN_DLL <a class="code" href="../../de/d67/classez_particle_behavior___color_gradient.htm">ezParticleBehavior_ColorGradient</a> final : <span class="keyword">public</span> <a class="code" href="../../d6/d10/classez_particle_behavior.htm">ezParticleBehavior</a></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  EZ_ADD_DYNAMIC_REFLECTION(<a class="code" href="../../de/d67/classez_particle_behavior___color_gradient.htm">ezParticleBehavior_ColorGradient</a>, <a class="code" href="../../d6/d10/classez_particle_behavior.htm">ezParticleBehavior</a>);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../de/d67/classez_particle_behavior___color_gradient.htm">   26</a></span>&#160;<span class="keyword">class </span>EZ_PARTICLEPLUGIN_DLL <a class="code" href="../../de/d67/classez_particle_behavior___color_gradient.htm">ezParticleBehavior_ColorGradient</a> final : <span class="keyword">public</span> <a class="code" href="../../d6/d10/classez_particle_behavior.htm">ezParticleBehavior</a></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  EZ_ADD_DYNAMIC_REFLECTION(<a class="code" href="../../de/d67/classez_particle_behavior___color_gradient.htm">ezParticleBehavior_ColorGradient</a>, <a class="code" href="../../d6/d10/classez_particle_behavior.htm">ezParticleBehavior</a>);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <a class="code" href="../../d3/dd7/classez_typed_resource_handle.htm">ezColorGradientResourceHandle</a> m_hGradient;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <a class="code" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezParticleColorGradientMode&gt;</a> m_GradientMode;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordtype">float</span> m_fMaxSpeed = 1.0f;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a> m_TintColor;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> CreateRequiredStreams() <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <a class="code" href="../../d3/dd7/classez_typed_resource_handle.htm">ezColorGradientResourceHandle</a> m_hGradient;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezParticleColorGradientMode&gt;</a> m_GradientMode;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keywordtype">float</span> m_fMaxSpeed = 1.0f;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a> m_TintColor;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d8/ddb/classez_particle_behavior_factory___color_gradient.htm">ezParticleBehaviorFactory_ColorGradient</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d6/d10/classez_particle_behavior.htm#a9eaf6d75d28aaabfd90704a165d702d2">InitializeElements</a>(ezUInt64 uiStartIndex, ezUInt64 uiNumElements) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../dc/d29/classez_processing_stream_processor.htm#a72e5ebd25495cedbedbd62ffac670f7b">Process</a>(ezUInt64 uiNumElements) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> CreateRequiredStreams() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d8/ddb/classez_particle_behavior_factory___color_gradient.htm">ezParticleBehaviorFactory_ColorGradient</a>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d6/d10/classez_particle_behavior.htm#a9eaf6d75d28aaabfd90704a165d702d2">InitializeElements</a>(ezUInt64 uiStartIndex, ezUInt64 uiNumElements) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../dc/d29/classez_processing_stream_processor.htm#a72e5ebd25495cedbedbd62ffac670f7b">Process</a>(ezUInt64 uiNumElements) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="../../d6/d22/classez_processing_stream.htm">ezProcessingStream</a>* m_pStreamLifeTime = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="../../d6/d22/classez_processing_stream.htm">ezProcessingStream</a>* m_pStreamColor = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <a class="code" href="../../d6/d22/classez_processing_stream.htm">ezProcessingStream</a>* m_pStreamVelocity = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a> m_InitColor;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  ezUInt8 m_uiFirstToUpdate = 0;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  ezUInt8 m_uiCurrentUpdateInterval = 8;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;};</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <a class="code" href="../../d6/d22/classez_processing_stream.htm">ezProcessingStream</a>* m_pStreamLifeTime = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <a class="code" href="../../d6/d22/classez_processing_stream.htm">ezProcessingStream</a>* m_pStreamColor = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <a class="code" href="../../d6/d22/classez_processing_stream.htm">ezProcessingStream</a>* m_pStreamVelocity = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a> m_InitColor;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  ezUInt8 m_uiFirstToUpdate = 0;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  ezUInt8 m_uiCurrentUpdateInterval = 8;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_particle_behavior_htm_a9eaf6d75d28aaabfd90704a165d702d2"><div class="ttname"><a href="../../d6/d10/classez_particle_behavior.htm#a9eaf6d75d28aaabfd90704a165d702d2">ezParticleBehavior::InitializeElements</a></div><div class="ttdeci">virtual void InitializeElements(ezUInt64 uiStartIndex, ezUInt64 uiNumElements) override</div><div class="ttdoc">This method needs to be implemented in order to initialize new elements to specific values.</div><div class="ttdef"><b>Definition:</b> ParticleBehavior.h:37</div></div>
 <div class="ttc" id="aclassez_stream_writer_htm"><div class="ttname"><a href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a></div><div class="ttdoc">Interface for binary out (write) streams.</div><div class="ttdef"><b>Definition:</b> Stream.h:106</div></div>
 <div class="ttc" id="aclassez_color_htm"><div class="ttname"><a href="../../dd/d01/classez_color.htm">ezColor</a></div><div class="ttdoc">ezColor represents an RGBA color in linear color space. Values are stored as float,...</div><div class="ttdef"><b>Definition:</b> Color.h:43</div></div>
-<div class="ttc" id="aclassez_r_t_t_i_htm"><div class="ttname"><a href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a></div><div class="ttdoc">This class holds information about reflected types. Each instance represents one type that is known t...</div><div class="ttdef"><b>Definition:</b> RTTI.h:28</div></div>
+<div class="ttc" id="aclassez_r_t_t_i_htm"><div class="ttname"><a href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a></div><div class="ttdoc">This class holds information about reflected types. Each instance represents one type that is known t...</div><div class="ttdef"><b>Definition:</b> RTTI.h:29</div></div>
 <div class="ttc" id="aclassez_processing_stream_processor_htm_a72e5ebd25495cedbedbd62ffac670f7b"><div class="ttname"><a href="../../dc/d29/classez_processing_stream_processor.htm#a72e5ebd25495cedbedbd62ffac670f7b">ezProcessingStreamProcessor::Process</a></div><div class="ttdeci">virtual void Process(ezUInt64 uiNumElements)=0</div><div class="ttdoc">The actual method which processes the data, will be called with the number of elements to process.</div></div>
 <div class="ttc" id="aclassez_stream_reader_htm"><div class="ttname"><a href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a></div><div class="ttdoc">Interface for binary in (read) streams.</div><div class="ttdef"><b>Definition:</b> Stream.h:21</div></div>
-<div class="ttc" id="aclassez_particle_behavior___color_gradient_htm"><div class="ttname"><a href="../../de/d67/classez_particle_behavior___color_gradient.htm">ezParticleBehavior_ColorGradient</a></div><div class="ttdef"><b>Definition:</b> ParticleBehavior_ColorGradient.h:34</div></div>
+<div class="ttc" id="aclassez_particle_behavior___color_gradient_htm"><div class="ttname"><a href="../../de/d67/classez_particle_behavior___color_gradient.htm">ezParticleBehavior_ColorGradient</a></div><div class="ttdef"><b>Definition:</b> ParticleBehavior_ColorGradient.h:26</div></div>
 <div class="ttc" id="aclassez_color_htm_a20d4d15acd9f0a7cb81d386467ab2204"><div class="ttname"><a href="../../dd/d01/classez_color.htm#a20d4d15acd9f0a7cb81d386467ab2204">ezColor::White</a></div><div class="ttdeci">static const ezColor White</div><div class="ttdoc">#FFFFFF</div><div class="ttdef"><b>Definition:</b> Color.h:194</div></div>
 <div class="ttc" id="aclassez_particle_behavior_factory_htm"><div class="ttname"><a href="../../d1/d68/classez_particle_behavior_factory.htm">ezParticleBehaviorFactory</a></div><div class="ttdoc">Base class for all particle behaviors.</div><div class="ttdef"><b>Definition:</b> ParticleBehavior.h:13</div></div>
 <div class="ttc" id="aclassez_processing_stream_htm"><div class="ttname"><a href="../../d6/d22/classez_processing_stream.htm">ezProcessingStream</a></div><div class="ttdoc">A single stream in a stream group holding contiguous data of a given type.</div><div class="ttdef"><b>Definition:</b> ProcessingStream.h:7</div></div>
@@ -165,7 +157,7 @@ $(document).ready(function(){initNavTree('d8/db3/_particle_behavior___color_grad
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_103378c88ff4c88de6bfabe12da9ec96.htm">EnginePlugins</a></li><li class="navelem"><a class="el" href="../../dir_9aa8b4544ca68b692a3a4785c1118130.htm">ParticlePlugin</a></li><li class="navelem"><a class="el" href="../../dir_19aa0450b14e7b5ed57ac5bbdbdfe06f.htm">Behavior</a></li><li class="navelem"><b>ParticleBehavior_ColorGradient.h</b></li>
-    <li class="footer">Generated on Fri Dec 22 2023 20:43:09 for ezEngine by
+    <li class="footer">Generated on Sun Aug 25 2024 13:06:24 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

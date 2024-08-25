@@ -2,8 +2,10 @@ var classez_jolt_collision_mesh_asset_properties =
 [
     [ "ezJoltCollisionMeshAssetProperties", "de/d2f/classez_jolt_collision_mesh_asset_properties.htm#aa1e0ee7351f27f8d003ffa31ecedcaed", null ],
     [ "~ezJoltCollisionMeshAssetProperties", "de/d2f/classez_jolt_collision_mesh_asset_properties.htm#aa3830c035588f0777868dc1e4b4d40df", null ],
+    [ "m_bAggressiveSimplification", "de/d2f/classez_jolt_collision_mesh_asset_properties.htm#a9950fb87cf1aa2b4c93e696840689bf8", null ],
     [ "m_bFlipForwardDir", "de/d2f/classez_jolt_collision_mesh_asset_properties.htm#a24392fd60f49d4e79557f6752c6780a7", null ],
     [ "m_bIsConvexMesh", "de/d2f/classez_jolt_collision_mesh_asset_properties.htm#a493d5dc633d0c5ffc91350480abf2c3d", null ],
+    [ "m_bSimplifyMesh", "de/d2f/classez_jolt_collision_mesh_asset_properties.htm#a6003628d5db7da678fa999ae5e291dfe", null ],
     [ "m_ConvexMeshType", "de/d2f/classez_jolt_collision_mesh_asset_properties.htm#a11af2ee145ebb94db7ca8d1a60f26ea6", null ],
     [ "m_fHeight", "de/d2f/classez_jolt_collision_mesh_asset_properties.htm#a8afcca493a0023b48fe706be4142112e", null ],
     [ "m_fRadius", "de/d2f/classez_jolt_collision_mesh_asset_properties.htm#a25332fda567e5064ff78ed1c85e2dfd8", null ],
@@ -15,6 +17,8 @@ var classez_jolt_collision_mesh_asset_properties =
     [ "m_sMeshFile", "de/d2f/classez_jolt_collision_mesh_asset_properties.htm#a75036df578b2843bd959f27f5613bc3f", null ],
     [ "m_uiDetail", "de/d2f/classez_jolt_collision_mesh_asset_properties.htm#a692e45eac10017ce96e94e3600015f0a", null ],
     [ "m_uiMaxConvexPieces", "de/d2f/classez_jolt_collision_mesh_asset_properties.htm#a1390664d66eb9697ab4104060a75d442", null ],
+    [ "m_uiMaxSimplificationError", "de/d2f/classez_jolt_collision_mesh_asset_properties.htm#a9c5af6d89f7abd763226c2f0e47e385e", null ],
+    [ "m_uiMeshSimplification", "de/d2f/classez_jolt_collision_mesh_asset_properties.htm#a879904b5b1cfe3d85c983309cc9fe0ea", null ],
     [ "m_uiTriangles", "de/d2f/classez_jolt_collision_mesh_asset_properties.htm#a3fd99e3a927379bc705a78b94040f5ad", null ],
     [ "m_uiVertices", "de/d2f/classez_jolt_collision_mesh_asset_properties.htm#a9e331271c6bce38412e3eb17a67024b5", null ],
     [ "m_UpDir", "de/d2f/classez_jolt_collision_mesh_asset_properties.htm#ad92ca7da8fa77321d6a82b51dbcd2a14", null ]

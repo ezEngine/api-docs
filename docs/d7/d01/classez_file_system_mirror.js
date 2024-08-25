@@ -11,6 +11,7 @@ var classez_file_system_mirror =
     [ "AddDirectory", "d7/d01/classez_file_system_mirror.htm#a77f2c2e03dcdaa663fae6634c53683c2", null ],
     [ "AddFile", "d7/d01/classez_file_system_mirror.htm#a198cc551841aae34dd0abf10a10c3f70", null ],
     [ "Enumerate", "d7/d01/classez_file_system_mirror.htm#a5c14beddf8196ff41885acf9404a3a75", null ],
+    [ "GetType", "d7/d01/classez_file_system_mirror.htm#a3a709bf67074509b32d1fc2ca6f05930", null ],
     [ "MoveDirectory", "d7/d01/classez_file_system_mirror.htm#a9d021b9cb98f0915b667a7fed082d4e5", null ],
     [ "RemoveDirectory", "d7/d01/classez_file_system_mirror.htm#ab4c38dde066a13ede01ea37dc0d082c0", null ],
     [ "RemoveFile", "d7/d01/classez_file_system_mirror.htm#a0076dbcdc152b638476ea30d8b8cb14c", null ]

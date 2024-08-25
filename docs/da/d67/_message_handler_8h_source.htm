@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.12</span>
+   &#160;<span id="projectnumber">Release 24.09</span>
    </div>
   </td>
  </tr>
@@ -156,52 +156,54 @@ $(document).ready(function(){initNavTree('da/d67/_message_handler_8h_source.htm'
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      <span class="keyword">static</span> <span class="keywordtype">void</span> Dispatch(<a class="code" href="../../d5/d1b/classez_abstract_message_handler.htm">ezAbstractMessageHandler</a>* pSelf, <span class="keywordtype">void</span>* pInstance, <a class="code" href="../../dd/d22/classez_message.htm">ezMessage</a>&amp; ref_msg)</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        Class* pTargetInstance = <span class="keyword">static_cast&lt;</span>Class*<span class="keyword">&gt;</span>(pInstance);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        (pTargetInstance-&gt;*Method)(<span class="keyword">static_cast&lt;</span>MessageType&amp;<span class="keyword">&gt;</span>(ref_msg));</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    };</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  };</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keyword">template</span> &lt;&gt;</div>
-<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="../../db/dd8/structez_internal_1_1_message_handler_3_01true_01_4.htm">   79</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../d5/df4/structez_internal_1_1_message_handler.htm">MessageHandler</a>&lt;true&gt;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Class, <span class="keyword">typename</span> MessageType, <span class="keywordtype">void</span> (Class::*Method)(MessageType&amp;) const&gt;</div>
-<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="../../d0/d45/classez_internal_1_1_message_handler_3_01true_01_4_1_1_impl.htm">   82</a></span>&#160;    <span class="keyword">class </span>Impl : <span class="keyword">public</span> <a class="code" href="../../d5/d1b/classez_abstract_message_handler.htm">ezAbstractMessageHandler</a></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      Impl()</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        m_ConstDispatchFunc = &amp;Dispatch;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        m_Id = MessageType::GetTypeMsgId();</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        m_bIsConst = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      }</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="../../d0/d45/classez_internal_1_1_message_handler_3_01true_01_4_1_1_impl.htm#ac557f393a0123959c88243ab16fbc6c7">   93</a></span>&#160;      <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="../../d0/d45/classez_internal_1_1_message_handler_3_01true_01_4_1_1_impl.htm#ac557f393a0123959c88243ab16fbc6c7">Dispatch</a>(<a class="code" href="../../d5/d1b/classez_abstract_message_handler.htm">ezAbstractMessageHandler</a>* pSelf, <span class="keyword">const</span> <span class="keywordtype">void</span>* pInstance, <a class="code" href="../../dd/d22/classez_message.htm">ezMessage</a>&amp; ref_msg)</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;      {</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keyword">const</span> Class* pTargetInstance = <span class="keyword">static_cast&lt;</span><span class="keyword">const </span>Class*<span class="keyword">&gt;</span>(pInstance);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        (pTargetInstance-&gt;*Method)(<span class="keyword">static_cast&lt;</span>MessageType&amp;<span class="keyword">&gt;</span>(ref_msg));</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;      }</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    };</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  };</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;} <span class="comment">// namespace ezInternal</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#define EZ_IS_CONST_MESSAGE_HANDLER(Class, MessageType, Method) \</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">  (sizeof(ezInternal::MessageHandlerTraits&lt;Class, MessageType&gt;::IsConst(Method)) == sizeof(ezCompileTimeTrueType))</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        EZ_IGNORE_UNUSED(pSelf);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        Class* pTargetInstance = <span class="keyword">static_cast&lt;</span>Class*<span class="keyword">&gt;</span>(pInstance);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        (pTargetInstance-&gt;*Method)(<span class="keyword">static_cast&lt;</span>MessageType&amp;<span class="keyword">&gt;</span>(ref_msg));</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    };</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  };</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keyword">template</span> &lt;&gt;</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="../../db/dd8/structez_internal_1_1_message_handler_3_01true_01_4.htm">   80</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../d5/df4/structez_internal_1_1_message_handler.htm">MessageHandler</a>&lt;true&gt;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Class, <span class="keyword">typename</span> MessageType, <span class="keywordtype">void</span> (Class::*Method)(MessageType&amp;) const&gt;</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="../../d0/d45/classez_internal_1_1_message_handler_3_01true_01_4_1_1_impl.htm">   83</a></span>&#160;    <span class="keyword">class </span>Impl : <span class="keyword">public</span> <a class="code" href="../../d5/d1b/classez_abstract_message_handler.htm">ezAbstractMessageHandler</a></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      Impl()</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;      {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        m_ConstDispatchFunc = &amp;Dispatch;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        m_Id = MessageType::GetTypeMsgId();</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        m_bIsConst = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;      }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="../../d0/d45/classez_internal_1_1_message_handler_3_01true_01_4_1_1_impl.htm#ac557f393a0123959c88243ab16fbc6c7">   94</a></span>&#160;      <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="../../d0/d45/classez_internal_1_1_message_handler_3_01true_01_4_1_1_impl.htm#ac557f393a0123959c88243ab16fbc6c7">Dispatch</a>(<a class="code" href="../../d5/d1b/classez_abstract_message_handler.htm">ezAbstractMessageHandler</a>* pSelf, <span class="keyword">const</span> <span class="keywordtype">void</span>* pInstance, <a class="code" href="../../dd/d22/classez_message.htm">ezMessage</a>&amp; ref_msg)</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        EZ_IGNORE_UNUSED(pSelf);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keyword">const</span> Class* pTargetInstance = <span class="keyword">static_cast&lt;</span><span class="keyword">const </span>Class*<span class="keyword">&gt;</span>(pInstance);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        (pTargetInstance-&gt;*Method)(<span class="keyword">static_cast&lt;</span>MessageType&amp;<span class="keyword">&gt;</span>(ref_msg));</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    };</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  };</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;} <span class="comment">// namespace ezInternal</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">#define EZ_IS_CONST_MESSAGE_HANDLER(Class, MessageType, Method) \</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">  (sizeof(ezInternal::MessageHandlerTraits&lt;Class, MessageType&gt;::IsConst(Method)) == sizeof(ezCompileTimeTrueType))</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astructez_internal_1_1_message_handler_traits_htm"><div class="ttname"><a href="../../dc/d29/structez_internal_1_1_message_handler_traits.htm">ezInternal::MessageHandlerTraits</a></div><div class="ttdef"><b>Definition:</b> MessageHandler.h:50</div></div>
 <div class="ttc" id="aclassez_message_htm"><div class="ttname"><a href="../../dd/d22/classez_message.htm">ezMessage</a></div><div class="ttdoc">Base class for all message types. Each message type has it's own id which is used to dispatch message...</div><div class="ttdef"><b>Definition:</b> Message.h:21</div></div>
 <div class="ttc" id="aclassez_abstract_message_handler_htm"><div class="ttname"><a href="../../d5/d1b/classez_abstract_message_handler.htm">ezAbstractMessageHandler</a></div><div class="ttdoc">The base class for all message handlers that a type provides.</div><div class="ttdef"><b>Definition:</b> MessageHandler.h:11</div></div>
-<div class="ttc" id="aclassez_r_t_t_i_htm"><div class="ttname"><a href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a></div><div class="ttdoc">This class holds information about reflected types. Each instance represents one type that is known t...</div><div class="ttdef"><b>Definition:</b> RTTI.h:28</div></div>
+<div class="ttc" id="aclassez_r_t_t_i_htm"><div class="ttname"><a href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a></div><div class="ttdoc">This class holds information about reflected types. Each instance represents one type that is known t...</div><div class="ttdef"><b>Definition:</b> RTTI.h:29</div></div>
 <div class="ttc" id="astructez_internal_1_1_message_handler_htm"><div class="ttname"><a href="../../d5/df4/structez_internal_1_1_message_handler.htm">ezInternal::MessageHandler</a></div><div class="ttdef"><b>Definition:</b> MessageHandler.h:57</div></div>
 <div class="ttc" id="astructez_message_sender_info_htm"><div class="ttname"><a href="../../d9/d44/structez_message_sender_info.htm">ezMessageSenderInfo</a></div><div class="ttdef"><b>Definition:</b> MessageHandler.h:41</div></div>
-<div class="ttc" id="aclassez_internal_1_1_message_handler_3_01true_01_4_1_1_impl_htm_ac557f393a0123959c88243ab16fbc6c7"><div class="ttname"><a href="../../d0/d45/classez_internal_1_1_message_handler_3_01true_01_4_1_1_impl.htm#ac557f393a0123959c88243ab16fbc6c7">ezInternal::MessageHandler&lt; true &gt;::Impl::Dispatch</a></div><div class="ttdeci">static void Dispatch(ezAbstractMessageHandler *pSelf, const void *pInstance, ezMessage &amp;ref_msg)</div><div class="ttdoc">Casts the given message to the type of this message handler, then passes that to the class instance.</div><div class="ttdef"><b>Definition:</b> MessageHandler.h:93</div></div>
+<div class="ttc" id="aclassez_internal_1_1_message_handler_3_01true_01_4_1_1_impl_htm_ac557f393a0123959c88243ab16fbc6c7"><div class="ttname"><a href="../../d0/d45/classez_internal_1_1_message_handler_3_01true_01_4_1_1_impl.htm#ac557f393a0123959c88243ab16fbc6c7">ezInternal::MessageHandler&lt; true &gt;::Impl::Dispatch</a></div><div class="ttdeci">static void Dispatch(ezAbstractMessageHandler *pSelf, const void *pInstance, ezMessage &amp;ref_msg)</div><div class="ttdoc">Casts the given message to the type of this message handler, then passes that to the class instance.</div><div class="ttdef"><b>Definition:</b> MessageHandler.h:94</div></div>
 <div class="ttc" id="aclassez_internal_1_1_message_handler_1_1_impl_htm"><div class="ttname"><a href="../../de/db6/classez_internal_1_1_message_handler_1_1_impl.htm">ezInternal::MessageHandler::Impl</a></div><div class="ttdef"><b>Definition:</b> MessageHandler.h:60</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_217b90e143c3d27cf4319fb9e916f4ad.htm">Reflection</a></li><li class="navelem"><a class="el" href="../../dir_4d499b0494fc84c22e280b98d7f4832b.htm">Implementation</a></li><li class="navelem"><b>MessageHandler.h</b></li>
-    <li class="footer">Generated on Fri Dec 22 2023 20:43:06 for ezEngine by
+    <li class="footer">Generated on Sun Aug 25 2024 13:06:20 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

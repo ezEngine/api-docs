@@ -11,6 +11,7 @@ var classez_project_action =
       [ "ReloadEngine", "db/d4f/classez_project_action.htm#a12569298179c0c333514ad6a5c8e3bcca8e42f9c1afa5cf169d67a626e041fde1", null ],
       [ "LaunchFileserve", "db/d4f/classez_project_action.htm#a12569298179c0c333514ad6a5c8e3bcca2a70b7b2c9433969eb0857311d7c0b20", null ],
       [ "LaunchInspector", "db/d4f/classez_project_action.htm#a12569298179c0c333514ad6a5c8e3bcca0fc709acedac0be3a5472f2bda46a755", null ],
+      [ "LaunchTracy", "db/d4f/classez_project_action.htm#a12569298179c0c333514ad6a5c8e3bccac8332b431d5166b331ed752b73eb74b6", null ],
       [ "SaveProfiling", "db/d4f/classez_project_action.htm#a12569298179c0c333514ad6a5c8e3bcca8c916ca6f6429ba25cf9236fa49aaa0e", null ],
       [ "OpenVsCode", "db/d4f/classez_project_action.htm#a12569298179c0c333514ad6a5c8e3bcca2edf858ed56dcd3ef75c58fa9d43a130", null ],
       [ "Shortcuts", "db/d4f/classez_project_action.htm#a12569298179c0c333514ad6a5c8e3bcca29e9d8e295b1d5b3002d2d3d5baa4c37", null ],

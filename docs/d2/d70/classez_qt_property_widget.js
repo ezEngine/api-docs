@@ -19,6 +19,7 @@ var classez_qt_property_widget =
     [ "PrepareToDie", "d2/d70/classez_qt_property_widget.htm#a1f05ef79d4c03e7bd6f06f5698d7f2ba", null ],
     [ "PropertyChangedHandler", "d2/d70/classez_qt_property_widget.htm#aa98f6206fbf25c7e6a6dcebad8fcc6f3", null ],
     [ "SetIsDefault", "d2/d70/classez_qt_property_widget.htm#a579b060b003cac010fd0af75155043b2", null ],
+    [ "SetReadOnly", "d2/d70/classez_qt_property_widget.htm#a65117131110a28c59ee6dad044902daf", null ],
     [ "SetSelection", "d2/d70/classez_qt_property_widget.htm#a40c9f838ed0bab394666f063b1913f94", null ],
     [ "m_bIsDefault", "d2/d70/classez_qt_property_widget.htm#a42902493b6db1307ca71253e81c5b856", null ],
     [ "m_Items", "d2/d70/classez_qt_property_widget.htm#a6bc75dba114b5d133285ca0fc3a0ba9a", null ],

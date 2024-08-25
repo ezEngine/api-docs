@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.12</span>
+   &#160;<span id="projectnumber">Release 24.09</span>
    </div>
   </td>
  </tr>
@@ -119,14 +119,18 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 Type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/db1/classez_transform_template.htm#acf35fe28ece862bc442af6550d95d60f">GetMaxScale</a> () const</td></tr>
 <tr class="memdesc:acf35fe28ece862bc442af6550d95d60f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the scale component with maximum magnitude. <br /></td></tr>
 <tr class="separator:acf35fe28ece862bc442af6550d95d60f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd4e93a858a6d3afea586780501c4f9c"><td class="memItemLeft" align="right" valign="top"><a id="afd4e93a858a6d3afea586780501c4f9c"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/db1/classez_transform_template.htm#afd4e93a858a6d3afea586780501c4f9c">ContainsNegativeScale</a> () const</td></tr>
-<tr class="memdesc:afd4e93a858a6d3afea586780501c4f9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether this transform contains negative scaling aka mirroring. <br /></td></tr>
-<tr class="separator:afd4e93a858a6d3afea586780501c4f9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30e2c126ab05b4c8ba04e7bb4e23574e"><td class="memItemLeft" align="right" valign="top"><a id="a30e2c126ab05b4c8ba04e7bb4e23574e"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/db1/classez_transform_template.htm#a30e2c126ab05b4c8ba04e7bb4e23574e">HasMirrorScaling</a> () const</td></tr>
+<tr class="memdesc:a30e2c126ab05b4c8ba04e7bb4e23574e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether this transform contains negative scaling aka mirroring. <br /></td></tr>
+<tr class="separator:a30e2c126ab05b4c8ba04e7bb4e23574e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61bc322679bd592d6c3264162d64029b"><td class="memItemLeft" align="right" valign="top"><a id="a61bc322679bd592d6c3264162d64029b"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/db1/classez_transform_template.htm#a61bc322679bd592d6c3264162d64029b">ContainsUniformScale</a> () const</td></tr>
 <tr class="memdesc:a61bc322679bd592d6c3264162d64029b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether this transform contains uniform scaling. <br /></td></tr>
 <tr class="separator:a61bc322679bd592d6c3264162d64029b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac10021515ba38eb36f216de50bba5c9"><td class="memItemLeft" align="right" valign="top"><a id="aac10021515ba38eb36f216de50bba5c9"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/db1/classez_transform_template.htm#aac10021515ba38eb36f216de50bba5c9">IsValid</a> () const</td></tr>
+<tr class="memdesc:aac10021515ba38eb36f216de50bba5c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks that all components are valid (no NaN, only finite numbers). <br /></td></tr>
+<tr class="separator:aac10021515ba38eb36f216de50bba5c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1289cbf3dc2804f901f8a2654c51131f"><td class="memItemLeft" align="right" valign="top"><a id="a1289cbf3dc2804f901f8a2654c51131f"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/db1/classez_transform_template.htm#a1289cbf3dc2804f901f8a2654c51131f">IsIdentical</a> (const <a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransformTemplate</a> &amp;rhs) const</td></tr>
 <tr class="memdesc:a1289cbf3dc2804f901f8a2654c51131f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equality Check (bitwise) <br /></td></tr>
@@ -199,7 +203,7 @@ Public Attributes</h2></td></tr>
 class ezTransformTemplate&lt; Type &gt;</h3>
 
 <p>A class that represents position, rotation and scaling via a position vector, a quaternion and a scale vector. </p>
-<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.htm#_todo000050">Todo:</a></b></dt><dd>Fix docs and unit tests </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.htm#_todo000049">Todo:</a></b></dt><dd>Fix docs and unit tests </dd></dl>
 <p>Scale is applied first, then rotation and finally translation is added. Thus scale and rotation are always in 'local space', i.e. applying a rotation to the <a class="el" href="../../d3/db1/classez_transform_template.htm" title="A class that represents position, rotation and scaling via a position vector, a quaternion and a scal...">ezTransformTemplate</a> will rotate objects in place around their local center. Since the translation is added afterwards, the translation component is always the global center position, around which objects rotate.</p>
 <p>The functions SetLocalTransform() and SetGlobalTransform() allow to create transforms that either represent the full global transformation of an object, factoring its parent's transform in, or the local transformation that will get you from the parent's global transformation to the current global transformation of a child (i.e. only the difference). This is particularly useful when editing entities in a hierarchical structure.</p>
 <p>This representation cannot handle shearing, which means rotations and scalings cannot be combined correctly. Many parts of game engine cannot handle shearing or non-uniform scaling across hierarchies anyway. Therefore this class implements a simplified way of combining scalings when multiplying two ezTransform's. Instead of rotating scale into the proper space, the two values are simply multiplied component-wise.</p>
@@ -247,7 +251,7 @@ template&lt;typename Type &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransformTemplate</a></li>
-    <li class="footer">Generated on Fri Dec 22 2023 20:43:17 for ezEngine by
+    <li class="footer">Generated on Sun Aug 25 2024 13:06:34 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

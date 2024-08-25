@@ -1,6 +1,7 @@
 var classez_collision_filter_config =
 [
     [ "ezCollisionFilterConfig", "dc/dd8/classez_collision_filter_config.htm#a660f8d94318ccd302e8912f88e8a90e4", null ],
+    [ "~ezCollisionFilterConfig", "dc/dd8/classez_collision_filter_config.htm#a1631a7bec14ef38d078c6830df6e71ee", null ],
     [ "EnableCollision", "dc/dd8/classez_collision_filter_config.htm#aeeebcb44ebc3bad2eba8c104cc8005e7", null ],
     [ "FindUnnamedGroup", "dc/dd8/classez_collision_filter_config.htm#a8e76eb825ad11b856d52d0b5f78126a3", null ],
     [ "GetFilterGroupByName", "dc/dd8/classez_collision_filter_config.htm#a805d8a0b4ccb5fccdad60a71bde47f28", null ],

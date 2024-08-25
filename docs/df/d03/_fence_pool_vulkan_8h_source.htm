@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.12</span>
+   &#160;<span id="projectnumber">Release 24.09</span>
    </div>
   </td>
  </tr>
@@ -91,30 +91,65 @@ $(document).ready(function(){initNavTree('df/d03/_fence_pool_vulkan_8h_source.ht
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;RendererVulkan/RendererVulkanDLL.h&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;vulkan/vulkan.hpp&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;Foundation/Time/Timestamp.h&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="../../d2/dd8/classez_fence_pool_vulkan.htm">   19</a></span>&#160;<span class="keyword">class </span>EZ_RENDERERVULKAN_DLL <a class="code" href="../../d2/dd8/classez_fence_pool_vulkan.htm">ezFencePoolVulkan</a></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> Initialize(vk::Device device);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> DeInitialize();</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keyword">static</span> vk::Fence RequestFence();</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> ReclaimFence(vk::Fence&amp; fence);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;vk::Fence, 4&gt;</a> s_Fences;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">static</span> vk::Device s_device;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;};</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;vulkan/vulkan.hpp&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="../../d2/dd8/classez_fence_pool_vulkan.htm">   21</a></span>&#160;<span class="keyword">class </span>EZ_RENDERERVULKAN_DLL <a class="code" href="../../d2/dd8/classez_fence_pool_vulkan.htm">ezFencePoolVulkan</a></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> Initialize(vk::Device device);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> DeInitialize();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keyword">static</span> vk::Fence RequestFence();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> ReclaimFence(vk::Fence&amp; fence);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;vk::Fence, 4&gt;</a> s_Fences;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">static</span> vk::Device s_device;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;};</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// #TODO_VULKAN extend to support multiple queues.</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="../../d8/d08/classez_fence_queue_vulkan.htm">   36</a></span>&#160;<span class="keyword">class </span>EZ_RENDERERVULKAN_DLL <a class="code" href="../../d8/d08/classez_fence_queue_vulkan.htm">ezFenceQueueVulkan</a></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <a class="code" href="../../d8/d08/classez_fence_queue_vulkan.htm">ezFenceQueueVulkan</a>(<a class="code" href="../../d1/d02/classez_g_a_l_device_vulkan.htm">ezGALDeviceVulkan</a>* pDevice);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  ~<a class="code" href="../../d8/d08/classez_fence_queue_vulkan.htm">ezFenceQueueVulkan</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  ezGALFenceHandle GetCurrentFenceHandle();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordtype">void</span> FenceSubmitted(vk::Fence vkFence);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordtype">void</span> FlushReadyFences();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <a class="code" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezGALAsyncResult&gt;</a> GetFenceResult(ezGALFenceHandle hFence, <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> timeout = <a class="code" href="../../d3/d90/structez_time.htm#afac0fdd4c1f3e5d63531e6ac0c601cfc">ezTime::MakeZero</a>());</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <a class="code" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezGALAsyncResult&gt;</a> WaitForNextFence(<a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> timeout = <a class="code" href="../../d3/d90/structez_time.htm#afac0fdd4c1f3e5d63531e6ac0c601cfc">ezTime::MakeZero</a>());</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keyword">struct </span>PendingFence</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    vk::Fence m_vkFence;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    ezGALFenceHandle m_hFence;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  };</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <a class="code" href="../../d9/dfe/classez_deque.htm">ezDeque&lt;PendingFence&gt;</a> m_PendingFences;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  ezUInt64 m_uiCurrentFenceCounter = 1;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  ezUInt64 m_uiReachedFenceCounter = 0;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  vk::Device m_device;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassez_fence_pool_vulkan_htm"><div class="ttname"><a href="../../d2/dd8/classez_fence_pool_vulkan.htm">ezFencePoolVulkan</a></div><div class="ttdoc">Simple pool for fences.</div><div class="ttdef"><b>Definition:</b> FencePoolVulkan.h:19</div></div>
+<div class="ttc" id="astructez_time_htm"><div class="ttname"><a href="../../d3/d90/structez_time.htm">ezTime</a></div><div class="ttdoc">The time class encapsulates a double value storing the time in seconds.</div><div class="ttdef"><b>Definition:</b> Time.h:11</div></div>
+<div class="ttc" id="aclassez_deque_htm"><div class="ttname"><a href="../../d9/dfe/classez_deque.htm">ezDeque&lt; PendingFence &gt;</a></div></div>
+<div class="ttc" id="aclassez_g_a_l_device_vulkan_htm"><div class="ttname"><a href="../../d1/d02/classez_g_a_l_device_vulkan.htm">ezGALDeviceVulkan</a></div><div class="ttdoc">The Vulkan device implementation of the graphics abstraction layer.</div><div class="ttdef"><b>Definition:</b> DeviceVulkan.h:57</div></div>
+<div class="ttc" id="aclassez_fence_pool_vulkan_htm"><div class="ttname"><a href="../../d2/dd8/classez_fence_pool_vulkan.htm">ezFencePoolVulkan</a></div><div class="ttdoc">Simple pool for fences.</div><div class="ttdef"><b>Definition:</b> FencePoolVulkan.h:21</div></div>
+<div class="ttc" id="astructez_enum_htm"><div class="ttname"><a href="../../d6/dd9/structez_enum.htm">ezEnum</a></div><div class="ttdoc">A custom enum implementation that allows to define the underlying storage type to control its memory ...</div><div class="ttdef"><b>Definition:</b> Enum.h:36</div></div>
+<div class="ttc" id="aclassez_fence_queue_vulkan_htm"><div class="ttname"><a href="../../d8/d08/classez_fence_queue_vulkan.htm">ezFenceQueueVulkan</a></div><div class="ttdef"><b>Definition:</b> FencePoolVulkan.h:36</div></div>
 <div class="ttc" id="aclassez_hybrid_array_htm"><div class="ttname"><a href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt; vk::Fence, 4 &gt;</a></div></div>
+<div class="ttc" id="astructez_time_htm_afac0fdd4c1f3e5d63531e6ac0c601cfc"><div class="ttname"><a href="../../d3/d90/structez_time.htm#afac0fdd4c1f3e5d63531e6ac0c601cfc">ezTime::MakeZero</a></div><div class="ttdeci">constexpr static EZ_ALWAYS_INLINE ezTime MakeZero()</div><div class="ttdoc">Creates an instance of ezTime that was initialized with zero.</div><div class="ttdef"><b>Definition:</b> Time.h:42</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_f7a638e0cc6766080d9014908e70532b.htm">RendererVulkan</a></li><li class="navelem"><a class="el" href="../../dir_b1f92f563c11033db016a8d81ef35016.htm">Pools</a></li><li class="navelem"><b>FencePoolVulkan.h</b></li>
-    <li class="footer">Generated on Fri Dec 22 2023 20:43:09 for ezEngine by
+    <li class="footer">Generated on Sun Aug 25 2024 13:06:23 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

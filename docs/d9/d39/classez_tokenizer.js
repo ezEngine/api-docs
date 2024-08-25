@@ -1,6 +1,6 @@
 var classez_tokenizer =
 [
-    [ "ezTokenizer", "d9/d39/classez_tokenizer.htm#a421441126f6a9ff84a91c94acdd39dbe", null ],
+    [ "ezTokenizer", "d9/d39/classez_tokenizer.htm#a5e1f06bcc060184a7c4742d36bbb393c", null ],
     [ "~ezTokenizer", "d9/d39/classez_tokenizer.htm#ac05c6b9951786b8867a4fda7192c9692", null ],
     [ "GetAllLines", "d9/d39/classez_tokenizer.htm#a532212ac1fa9e29582ad0f0e34449ea5", null ],
     [ "GetAllTokens", "d9/d39/classez_tokenizer.htm#ab7165f03bf90ad93528b26400adf8e8f", null ],

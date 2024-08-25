@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.12</span>
+   &#160;<span id="projectnumber">Release 24.09</span>
    </div>
   </td>
  </tr>
@@ -122,45 +122,50 @@ $(document).ready(function(){initNavTree('d8/d36/_importer_assimp_8h_source.htm'
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> ImportBoneColliders(<a class="code" href="../../d4/d8e/classez_editable_skeleton_joint.htm">ezEditableSkeletonJoint</a>* pJoint);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    Assimp::Importer m_Importer;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">const</span> aiScene* m_pScene = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    ezUInt32 m_uiTotalMeshVertices = 0;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    ezUInt32 m_uiTotalMeshTriangles = 0;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">struct </span>MeshInstance</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      <a class="code" href="../../d7/d9b/classez_mat4_template.htm">ezMat4</a> m_GlobalTransform;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      aiMesh* m_pMesh;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    };</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;ezUInt32, ezHybridArray&lt;MeshInstance, 4&gt;</a>&gt; m_MeshInstances;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  };</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">extern</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a> ConvertAssimpType(<span class="keyword">const</span> aiColor3D&amp; value, <span class="keywordtype">bool</span> bInvert = <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keyword">extern</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a> ConvertAssimpType(<span class="keyword">const</span> aiColor4D&amp; value, <span class="keywordtype">bool</span> bInvert = <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keyword">extern</span> <a class="code" href="../../d7/d9b/classez_mat4_template.htm">ezMat4</a> ConvertAssimpType(<span class="keyword">const</span> aiMatrix4x4&amp; value, <span class="keywordtype">bool</span> bDummy = <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keyword">extern</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> ConvertAssimpType(<span class="keyword">const</span> aiVector3D&amp; value, <span class="keywordtype">bool</span> bDummy = <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">extern</span> <a class="code" href="../../de/d15/classez_quat_template.htm">ezQuat</a> ConvertAssimpType(<span class="keyword">const</span> aiQuaternion&amp; value, <span class="keywordtype">bool</span> bDummy = <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keyword">extern</span> <span class="keywordtype">float</span> ConvertAssimpType(<span class="keywordtype">float</span> value, <span class="keywordtype">bool</span> bDummy = <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">extern</span> <span class="keywordtype">int</span> ConvertAssimpType(<span class="keywordtype">int</span> value, <span class="keywordtype">bool</span> bDummy = <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;} <span class="comment">// namespace ezModelImporter2</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> SimplifyAiMesh(aiMesh* pMesh);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    Assimp::Importer m_Importer;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">const</span> aiScene* m_pScene = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    ezUInt32 m_uiTotalMeshVertices = 0;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    ezUInt32 m_uiTotalMeshTriangles = 0;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">struct </span>MeshInstance</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      <a class="code" href="../../d7/d9b/classez_mat4_template.htm">ezMat4</a> m_GlobalTransform;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      aiMesh* m_pMesh;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    };</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="../../d1/d79/classez_map.htm">ezMap&lt;ezUInt32, ezHybridArray&lt;MeshInstance, 4&gt;</a>&gt; m_MeshInstances;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="../../d0/d90/classez_set.htm">ezSet&lt;aiMesh*&gt;</a> m_OptimizedMeshes;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  };</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">extern</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a> ConvertAssimpType(<span class="keyword">const</span> aiColor3D&amp; value, <span class="keywordtype">bool</span> bInvert = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keyword">extern</span> <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a> ConvertAssimpType(<span class="keyword">const</span> aiColor4D&amp; value, <span class="keywordtype">bool</span> bInvert = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">extern</span> <a class="code" href="../../d7/d9b/classez_mat4_template.htm">ezMat4</a> ConvertAssimpType(<span class="keyword">const</span> aiMatrix4x4&amp; value, <span class="keywordtype">bool</span> bDummy = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keyword">extern</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> ConvertAssimpType(<span class="keyword">const</span> aiVector3D&amp; value, <span class="keywordtype">bool</span> bDummy = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keyword">extern</span> <a class="code" href="../../de/d15/classez_quat_template.htm">ezQuat</a> ConvertAssimpType(<span class="keyword">const</span> aiQuaternion&amp; value, <span class="keywordtype">bool</span> bDummy = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keyword">extern</span> <span class="keywordtype">float</span> ConvertAssimpType(<span class="keywordtype">float</span> value, <span class="keywordtype">bool</span> bDummy = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keyword">extern</span> <span class="keywordtype">int</span> ConvertAssimpType(<span class="keywordtype">int</span> value, <span class="keywordtype">bool</span> bDummy = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;} <span class="comment">// namespace ezModelImporter2</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition:</b> Types.h:50</div></div>
+<div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition:</b> Types.h:53</div></div>
+<div class="ttc" id="aclassez_set_htm"><div class="ttname"><a href="../../d0/d90/classez_set.htm">ezSet&lt; aiMesh * &gt;</a></div></div>
 <div class="ttc" id="aclassez_color_htm"><div class="ttname"><a href="../../dd/d01/classez_color.htm">ezColor</a></div><div class="ttdoc">ezColor represents an RGBA color in linear color space. Values are stored as float,...</div><div class="ttdef"><b>Definition:</b> Color.h:43</div></div>
 <div class="ttc" id="aclassez_editable_skeleton_joint_htm"><div class="ttname"><a href="../../d4/d8e/classez_editable_skeleton_joint.htm">ezEditableSkeletonJoint</a></div><div class="ttdef"><b>Definition:</b> EditableSkeleton.h:48</div></div>
 <div class="ttc" id="aclassez_mat4_template_htm"><div class="ttname"><a href="../../d7/d9b/classez_mat4_template.htm">ezMat4Template&lt; float &gt;</a></div></div>
-<div class="ttc" id="aclassez_map_htm"><div class="ttname"><a href="../../d1/d79/classez_map.htm">ezMap</a></div><div class="ttdef"><b>Definition:</b> Map.h:324</div></div>
+<div class="ttc" id="aclassez_map_htm"><div class="ttname"><a href="../../d1/d79/classez_map.htm">ezMap</a></div><div class="ttdef"><b>Definition:</b> Map.h:407</div></div>
 <div class="ttc" id="aclassez_quat_template_htm"><div class="ttname"><a href="../../de/d15/classez_quat_template.htm">ezQuatTemplate&lt; float &gt;</a></div></div>
-<div class="ttc" id="aclassez_model_importer2_1_1_importer_htm"><div class="ttname"><a href="../../d0/d4d/classez_model_importer2_1_1_importer.htm">ezModelImporter2::Importer</a></div><div class="ttdef"><b>Definition:</b> Importer.h:83</div></div>
+<div class="ttc" id="aclassez_model_importer2_1_1_importer_htm"><div class="ttname"><a href="../../d0/d4d/classez_model_importer2_1_1_importer.htm">ezModelImporter2::Importer</a></div><div class="ttdef"><b>Definition:</b> Importer.h:88</div></div>
 <div class="ttc" id="aclassez_model_importer2_1_1_importer_assimp_htm"><div class="ttname"><a href="../../d3/d3f/classez_model_importer2_1_1_importer_assimp.htm">ezModelImporter2::ImporterAssimp</a></div><div class="ttdef"><b>Definition:</b> ImporterAssimp.h:13</div></div>
 <div class="ttc" id="aclassez_vec3_template_htm"><div class="ttname"><a href="../../da/df1/classez_vec3_template.htm">ezVec3Template&lt; float &gt;</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_07792d309f5611e62640e8ec1fb96105.htm">Tools</a></li><li class="navelem"><a class="el" href="../../dir_8e80be223102188e67d1ce7cce146de0.htm">Libs</a></li><li class="navelem"><a class="el" href="../../dir_9a22f53500ad7dc6bb404786c71cf46f.htm">ModelImporter2</a></li><li class="navelem"><a class="el" href="../../dir_6b86a8d0be73a3257d8f0636910fc187.htm">ImporterAssimp</a></li><li class="navelem"><b>ImporterAssimp.h</b></li>
-    <li class="footer">Generated on Fri Dec 22 2023 20:43:10 for ezEngine by
+    <li class="footer">Generated on Sun Aug 25 2024 13:06:25 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

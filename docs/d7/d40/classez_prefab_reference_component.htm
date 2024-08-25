@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.12</span>
+   &#160;<span id="projectnumber">Release 24.09</span>
    </div>
   </td>
  </tr>
@@ -92,12 +92,17 @@ $(document).ready(function(){initNavTree('d7/d40/classez_prefab_reference_compon
 <div class="title">ezPrefabReferenceComponent Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>The central component to instantiate prefabs.  
+ <a href="../../d7/d40/classez_prefab_reference_component.htm#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../df/de0/_prefab_reference_component_8h_source.htm">PrefabReferenceComponent.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ezPrefabReferenceComponent:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../dc/dfe/classez_prefab_reference_component__inherit__graph.png" border="0" usemap="#ez_prefab_reference_component_inherit__map" alt="Inheritance graph"/></div>
 <map name="ez_prefab_reference_component_inherit__map" id="ez_prefab_reference_component_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,229,225,256"/>
+<area shape="rect" title="The central component to instantiate prefabs." alt="" coords="5,229,225,256"/>
 <area shape="rect" href="../../d6/d30/classez_component.htm" title="Base class of all component types." alt="" coords="59,155,171,181"/>
 <area shape="rect" href="../../db/d45/classez_reflected_class.htm" title="All classes that should be dynamically reflectable, need to be derived from this base class." alt="" coords="49,80,182,107"/>
 <area shape="rect" href="../../d4/d02/classez_no_base.htm" title="Dummy type to pass to templates and macros that expect a base type for a class that has no base." alt="" coords="72,5,159,32"/>
@@ -113,12 +118,6 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <tr class="memitem:ad9deaab0abe8325a53c95c3b8c6f4cc3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d40/classez_prefab_reference_component.htm#ad9deaab0abe8325a53c95c3b8c6f4cc3">DeserializeComponent</a> (<a class="el" href="../../d9/dd6/classez_world_reader.htm">ezWorldReader</a> &amp;inout_stream) override</td></tr>
 <tr class="memdesc:ad9deaab0abe8325a53c95c3b8c6f4cc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override this to load the current state of the component from the given stream.  <a href="../../d7/d40/classez_prefab_reference_component.htm#ad9deaab0abe8325a53c95c3b8c6f4cc3">More...</a><br /></td></tr>
 <tr class="separator:ad9deaab0abe8325a53c95c3b8c6f4cc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a841133b357b1d7a951ac120fecf368c7"><td class="memItemLeft" align="right" valign="top"><a id="a841133b357b1d7a951ac120fecf368c7"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetPrefabFile</b> (const char *szFile)</td></tr>
-<tr class="separator:a841133b357b1d7a951ac120fecf368c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54e0389f66e7b9fe39b3f1dbd974334c"><td class="memItemLeft" align="right" valign="top"><a id="a54e0389f66e7b9fe39b3f1dbd974334c"></a>
-const char *&#160;</td><td class="memItemRight" valign="bottom"><b>GetPrefabFile</b> () const</td></tr>
-<tr class="separator:a54e0389f66e7b9fe39b3f1dbd974334c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b0d2219ed2748b15006ed3f7931457b"><td class="memItemLeft" align="right" valign="top"><a id="a9b0d2219ed2748b15006ed3f7931457b"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>SetPrefab</b> (const <a class="el" href="../../d3/dd7/classez_typed_resource_handle.htm">ezPrefabResourceHandle</a> &amp;hPrefab)</td></tr>
 <tr class="separator:a9b0d2219ed2748b15006ed3f7931457b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -315,7 +314,11 @@ const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&#160;</
 <tr class="memdesc:a429ee4d57e7769f38b90306befcd9d6e inherit pro_attribs_classez_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Messages will be dispatched to this type. Default is what GetDynamicRTTI() returns, can be redirected if necessary. <br /></td></tr>
 <tr class="separator:a429ee4d57e7769f38b90306befcd9d6e inherit pro_attribs_classez_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The central component to instantiate prefabs. </p>
+<p>This component instantiates a prefab and attaches the instantiated objects as children to this object. The component is able to remove and recreate instantiated objects, which is needed at editing time. Whenever the prefab resource changes, this component re-creates the instance.</p>
+<p>It also holds prefab parameters, which are passed through during instantiation. For that it also implements remapping of game object references, so that they can be passed into prefabs during instantiation. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ac8ce5878cd45d726b77a5785ad63bc06"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac8ce5878cd45d726b77a5785ad63bc06">&#9670;&nbsp;</a></span>Deinitialize()</h2>
 
@@ -466,7 +469,7 @@ const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&#160;</
 <p>This method is called once for active components, at the start of the next world update, but only when the world is simulated. </p>
 <p>This is the one preferred method to setup typical game logic. In a pure game environment there is no practical difference between <a class="el" href="../../d7/d40/classez_prefab_reference_component.htm#a86dd63bc23afde090f7dd5718a25f9c6" title="This method is called when the component gets activated.">OnActivated()</a> and <a class="el" href="../../d7/d40/classez_prefab_reference_component.htm#afc52ffa8ad79e523cd1cf3baa4554582" title="This method is called once for active components, at the start of the next world update,...">OnSimulationStarted()</a>, as <a class="el" href="../../d7/d40/classez_prefab_reference_component.htm#afc52ffa8ad79e523cd1cf3baa4554582" title="This method is called once for active components, at the start of the next world update,...">OnSimulationStarted()</a> will be called right after <a class="el" href="../../d7/d40/classez_prefab_reference_component.htm#a86dd63bc23afde090f7dd5718a25f9c6" title="This method is called when the component gets activated.">OnActivated()</a>.</p>
 <p>However, when a scene is open inside the editor, there is an important difference: <a class="el" href="../../d7/d40/classez_prefab_reference_component.htm#a86dd63bc23afde090f7dd5718a25f9c6" title="This method is called when the component gets activated.">OnActivated()</a> is called once the component was created. <a class="el" href="../../d7/d40/classez_prefab_reference_component.htm#afc52ffa8ad79e523cd1cf3baa4554582" title="This method is called once for active components, at the start of the next world update,...">OnSimulationStarted()</a> is only called once the game simulation is started inside the editor. As an example, if a component starts a sound in <a class="el" href="../../d7/d40/classez_prefab_reference_component.htm#a86dd63bc23afde090f7dd5718a25f9c6" title="This method is called when the component gets activated.">OnActivated()</a>, that sound will play right after the scene has been loaded into the editor. If instead the sound gets started in <a class="el" href="../../d7/d40/classez_prefab_reference_component.htm#afc52ffa8ad79e523cd1cf3baa4554582" title="This method is called once for active components, at the start of the next world update,...">OnSimulationStarted()</a>, it will only play once the user starts the game mode inside the editor.</p>
-<p>Additionally, <a class="el" href="../../d7/d40/classez_prefab_reference_component.htm#afc52ffa8ad79e523cd1cf3baa4554582" title="This method is called once for active components, at the start of the next world update,...">OnSimulationStarted()</a> is only ever executed once on a component, even if the <a class="el" href="../../da/d3c/classez_world.htm" title="A world encapsulates a scene graph of game objects and various component managers and their component...">ezWorld</a> pauses and resumes world simulation multiple times. Thus components that should only execute a thing exactly once, will work correctly. In contrast <a class="el" href="../../d7/d40/classez_prefab_reference_component.htm#a86dd63bc23afde090f7dd5718a25f9c6" title="This method is called when the component gets activated.">OnActivated()</a> and <a class="el" href="../../d7/d40/classez_prefab_reference_component.htm#adace517b35dfd12af8372cd0410ffdb9" title="This method is called when the component gets deactivated.">OnDeactivated()</a> will be executed every time the component's active state is toggled, which could re-execute the same behavior multiple times.</p>
+<p>Additionally, <a class="el" href="../../d7/d40/classez_prefab_reference_component.htm#afc52ffa8ad79e523cd1cf3baa4554582" title="This method is called once for active components, at the start of the next world update,...">OnSimulationStarted()</a> is only executed once, even if the <a class="el" href="../../da/d3c/classez_world.htm" title="A world encapsulates a scene graph of game objects and various component managers and their component...">ezWorld</a> pauses and resumes world simulation multiple times. However, note that it will be called again after the component has been deactivated and is activated again.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d7/d40/classez_prefab_reference_component.htm#a86dd63bc23afde090f7dd5718a25f9c6" title="This method is called when the component gets activated.">OnActivated()</a>, <a class="el" href="../../d7/d40/classez_prefab_reference_component.htm#adace517b35dfd12af8372cd0410ffdb9" title="This method is called when the component gets deactivated.">OnDeactivated()</a>, <a class="el" href="../../d6/d30/classez_component.htm#ac23da898c747537846308946db06ea09" title="Can be overridden for basic initialization that depends on a valid hierarchy and position.">Initialize()</a>, <a class="el" href="../../d7/d40/classez_prefab_reference_component.htm#ac8ce5878cd45d726b77a5785ad63bc06" title="This method is called before the component is destroyed. A derived type can override this method to d...">Deinitialize()</a>, <a class="el" href="../../d7/d40/classez_prefab_reference_component.htm#afc52ffa8ad79e523cd1cf3baa4554582" title="This method is called once for active components, at the start of the next world update,...">OnSimulationStarted()</a> </dd></dl>
 
 <p>Reimplemented from <a class="el" href="../../d6/d30/classez_component.htm#a2dc05ad8b8ffdecd5bc9b5f68f14ae3f">ezComponent</a>.</p>
@@ -483,7 +486,7 @@ const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&#160;</
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d7/d40/classez_prefab_reference_component.htm">ezPrefabReferenceComponent</a></li>
-    <li class="footer">Generated on Fri Dec 22 2023 20:43:15 for ezEngine by
+    <li class="footer">Generated on Sun Aug 25 2024 13:06:31 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

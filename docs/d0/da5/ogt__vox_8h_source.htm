@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.12</span>
+   &#160;<span id="projectnumber">Release 24.09</span>
    </div>
   </td>
  </tr>
@@ -1713,8 +1713,8 @@ $(document).ready(function(){initNavTree('d0/da5/ogt__vox_8h_source.htm','../../
 <div class="line"><a name="l01624"></a><span class="lineno"> 1624</span>&#160;    <span class="keywordtype">char</span>* key = &amp;pDict-&gt;buffer[pDict-&gt;buffer_mem_used];</div>
 <div class="line"><a name="l01625"></a><span class="lineno"> 1625</span>&#160;    pDict-&gt;buffer_mem_used += key_string_size + 1; <span class="comment">// + 1 for zero terminator</span></div>
 <div class="line"><a name="l01626"></a><span class="lineno"> 1626</span>&#160;    _vox_file_read(pFp, key, key_string_size);</div>
-<div class="line"><a name="l01627"></a><span class="lineno"> 1627</span>&#160;    key[key_string_size] = 0;                    <span class="comment">// zero-terminate</span></div>
-<div class="line"><a name="l01628"></a><span class="lineno"> 1628</span>&#160;    assert(_vox_strlen(key) == key_string_size); <span class="comment">// sanity check</span></div>
+<div class="line"><a name="l01627"></a><span class="lineno"> 1627</span>&#160;    key[key_string_size] = 0;                      <span class="comment">// zero-terminate</span></div>
+<div class="line"><a name="l01628"></a><span class="lineno"> 1628</span>&#160;    assert(_vox_strlen(key) == key_string_size);   <span class="comment">// sanity check</span></div>
 <div class="line"><a name="l01629"></a><span class="lineno"> 1629</span>&#160; </div>
 <div class="line"><a name="l01630"></a><span class="lineno"> 1630</span>&#160;    <span class="comment">// get the size of the value string</span></div>
 <div class="line"><a name="l01631"></a><span class="lineno"> 1631</span>&#160;    uint32_t value_string_size = 0;</div>
@@ -1864,7 +1864,7 @@ $(document).ready(function(){initNavTree('d0/da5/ogt__vox_8h_source.htm','../../
 <div class="line"><a name="l01775"></a><span class="lineno"> 1775</span>&#160;      <a class="code" href="../../d7/d30/structogt__vox__transform.htm">ogt_vox_transform</a> new_transform = (bGenerate_groups) ? node-&gt;u.transform.transform                                      <span class="comment">// don&#39;t multiply by the parent transform. caller wants the group-relative transform</span></div>
 <div class="line"><a name="l01776"></a><span class="lineno"> 1776</span>&#160;                                                           : _vox_transform_multiply(node-&gt;u.transform.transform, transform); <span class="comment">// flatten the transform if we&#39;re not generating groups: child transform * parent transform</span></div>
 <div class="line"><a name="l01777"></a><span class="lineno"> 1777</span>&#160;      <span class="keyword">const</span> <span class="keywordtype">char</span>* new_transform_name = node-&gt;u.transform.name[0] ? node-&gt;u.transform.name : NULL;</div>
-<div class="line"><a name="l01778"></a><span class="lineno"> 1778</span>&#160;      szTransform_last_name = new_transform_name ? new_transform_name : szTransform_last_name; <span class="comment">// if this node has a name, use it instead of our parent name</span></div>
+<div class="line"><a name="l01778"></a><span class="lineno"> 1778</span>&#160;      szTransform_last_name = new_transform_name ? new_transform_name : szTransform_last_name;                                <span class="comment">// if this node has a name, use it instead of our parent name</span></div>
 <div class="line"><a name="l01779"></a><span class="lineno"> 1779</span>&#160;      generate_instances_for_node(nodes, node-&gt;u.transform.child_node_id, child_id_array, node-&gt;u.transform.layer_id, new_transform, model_ptrs, szTransform_last_name, node-&gt;u.transform.hidden, ref_instances, ref_string_data, ref_groups, group_index, bGenerate_groups);</div>
 <div class="line"><a name="l01780"></a><span class="lineno"> 1780</span>&#160;      <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l01781"></a><span class="lineno"> 1781</span>&#160;    }</div>
@@ -1898,7 +1898,7 @@ $(document).ready(function(){initNavTree('d0/da5/ogt__vox_8h_source.htm','../../
 <div class="line"><a name="l01809"></a><span class="lineno"> 1809</span>&#160;      <span class="keywordflow">if</span> (node-&gt;u.shape.model_id &lt; model_ptrs.size() &amp;&amp; <span class="comment">// model ID is valid</span></div>
 <div class="line"><a name="l01810"></a><span class="lineno"> 1810</span>&#160;          model_ptrs[node-&gt;u.shape.model_id] != NULL)   <span class="comment">// model is non-NULL.</span></div>
 <div class="line"><a name="l01811"></a><span class="lineno"> 1811</span>&#160;      {</div>
-<div class="line"><a name="l01812"></a><span class="lineno"> 1812</span>&#160;        assert(bGenerate_groups || group_index == 0); <span class="comment">// if we&#39;re not generating groups, group_index should be zero to map to the root group.</span></div>
+<div class="line"><a name="l01812"></a><span class="lineno"> 1812</span>&#160;        assert(bGenerate_groups || group_index == 0);   <span class="comment">// if we&#39;re not generating groups, group_index should be zero to map to the root group.</span></div>
 <div class="line"><a name="l01813"></a><span class="lineno"> 1813</span>&#160;        <a class="code" href="../../da/d65/structogt__vox__instance.htm">ogt_vox_instance</a> new_instance;</div>
 <div class="line"><a name="l01814"></a><span class="lineno"> 1814</span>&#160;        new_instance.model_index = node-&gt;u.shape.model_id;</div>
 <div class="line"><a name="l01815"></a><span class="lineno"> 1815</span>&#160;        new_instance.transform = transform;</div>
@@ -2522,7 +2522,7 @@ $(document).ready(function(){initNavTree('d0/da5/ogt__vox_8h_source.htm','../../
 <div class="line"><a name="l02433"></a><span class="lineno"> 2433</span>&#160;      assert(f[i] == 0.0f); <span class="comment">// must be zero</span></div>
 <div class="line"><a name="l02434"></a><span class="lineno"> 2434</span>&#160;    }</div>
 <div class="line"><a name="l02435"></a><span class="lineno"> 2435</span>&#160;  }</div>
-<div class="line"><a name="l02436"></a><span class="lineno"> 2436</span>&#160;  assert(out_index != 3); <span class="comment">// if you hit this, you probably have all zeroes in the vector!</span></div>
+<div class="line"><a name="l02436"></a><span class="lineno"> 2436</span>&#160;  assert(out_index != 3);   <span class="comment">// if you hit this, you probably have all zeroes in the vector!</span></div>
 <div class="line"><a name="l02437"></a><span class="lineno"> 2437</span>&#160;  <span class="keywordflow">return</span> is_negative;</div>
 <div class="line"><a name="l02438"></a><span class="lineno"> 2438</span>&#160;}</div>
 <div class="line"><a name="l02439"></a><span class="lineno"> 2439</span>&#160; </div>
@@ -2642,7 +2642,7 @@ $(document).ready(function(){initNavTree('d0/da5/ogt__vox_8h_source.htm','../../
 <div class="line"><a name="l02553"></a><span class="lineno"> 2553</span>&#160;  _vox_file_write_uint32(pFp, child_node_id);</div>
 <div class="line"><a name="l02554"></a><span class="lineno"> 2554</span>&#160;  _vox_file_write_uint32(pFp, UINT32_MAX); <span class="comment">// reserved_id must have all bits set.</span></div>
 <div class="line"><a name="l02555"></a><span class="lineno"> 2555</span>&#160;  _vox_file_write_uint32(pFp, layer_id);</div>
-<div class="line"><a name="l02556"></a><span class="lineno"> 2556</span>&#160;  _vox_file_write_uint32(pFp, 1); <span class="comment">// num_frames must be 1</span></div>
+<div class="line"><a name="l02556"></a><span class="lineno"> 2556</span>&#160;  _vox_file_write_uint32(pFp, 1);          <span class="comment">// num_frames must be 1</span></div>
 <div class="line"><a name="l02557"></a><span class="lineno"> 2557</span>&#160; </div>
 <div class="line"><a name="l02558"></a><span class="lineno"> 2558</span>&#160;  <span class="comment">// write the frame dictionary</span></div>
 <div class="line"><a name="l02559"></a><span class="lineno"> 2559</span>&#160;  _vox_file_write_uint32(pFp, (r_string ? 1 : 0) + (t_string ? 1 : 0)); <span class="comment">// num key values</span></div>
@@ -2751,8 +2751,8 @@ $(document).ready(function(){initNavTree('d0/da5/ogt__vox_8h_source.htm','../../
 <div class="line"><a name="l02662"></a><span class="lineno"> 2662</span>&#160; </div>
 <div class="line"><a name="l02663"></a><span class="lineno"> 2663</span>&#160;    <span class="comment">// compute the chunk size.</span></div>
 <div class="line"><a name="l02664"></a><span class="lineno"> 2664</span>&#160;    uint32_t chunk_size_ngrp =</div>
-<div class="line"><a name="l02665"></a><span class="lineno"> 2665</span>&#160;      <span class="keyword">sizeof</span>(uint32_t) + <span class="comment">// node_id</span></div>
-<div class="line"><a name="l02666"></a><span class="lineno"> 2666</span>&#160;      <span class="keyword">sizeof</span>(uint32_t) + <span class="comment">// num keyvalue pairs in node dictionary</span></div>
+<div class="line"><a name="l02665"></a><span class="lineno"> 2665</span>&#160;      <span class="keyword">sizeof</span>(uint32_t) +                  <span class="comment">// node_id</span></div>
+<div class="line"><a name="l02666"></a><span class="lineno"> 2666</span>&#160;      <span class="keyword">sizeof</span>(uint32_t) +                  <span class="comment">// num keyvalue pairs in node dictionary</span></div>
 <div class="line"><a name="l02667"></a><span class="lineno"> 2667</span>&#160;      _vox_dict_key_value_size(<span class="stringliteral">&quot;_hidden&quot;</span>, hidden_string) +</div>
 <div class="line"><a name="l02668"></a><span class="lineno"> 2668</span>&#160;      <span class="keyword">sizeof</span>(uint32_t) +                  <span class="comment">// num_child_nodes field</span></div>
 <div class="line"><a name="l02669"></a><span class="lineno"> 2669</span>&#160;      <span class="keyword">sizeof</span>(uint32_t) * num_child_nodes; <span class="comment">// uint32_t for each child node id.</span></div>
@@ -2831,7 +2831,7 @@ $(document).ready(function(){initNavTree('d0/da5/ogt__vox_8h_source.htm','../../
 <div class="line"><a name="l02742"></a><span class="lineno"> 2742</span>&#160;      <span class="keyword">sizeof</span>(uint32_t) + <span class="comment">// num key value pairs</span></div>
 <div class="line"><a name="l02743"></a><span class="lineno"> 2743</span>&#160;      _vox_dict_key_value_size(<span class="stringliteral">&quot;_name&quot;</span>, layer_name_string) +</div>
 <div class="line"><a name="l02744"></a><span class="lineno"> 2744</span>&#160;      _vox_dict_key_value_size(<span class="stringliteral">&quot;_hidden&quot;</span>, hidden_string) +</div>
-<div class="line"><a name="l02745"></a><span class="lineno"> 2745</span>&#160;      <span class="keyword">sizeof</span>(int32_t); <span class="comment">// reserved id, must be -1</span></div>
+<div class="line"><a name="l02745"></a><span class="lineno"> 2745</span>&#160;      <span class="keyword">sizeof</span>(int32_t);   <span class="comment">// reserved id, must be -1</span></div>
 <div class="line"><a name="l02746"></a><span class="lineno"> 2746</span>&#160;    uint32_t layer_dict_keyvalue_count = (layer_name_string ? 1 : 0) + (hidden_string ? 1 : 0);</div>
 <div class="line"><a name="l02747"></a><span class="lineno"> 2747</span>&#160;    <span class="comment">// write the layer chunk header</span></div>
 <div class="line"><a name="l02748"></a><span class="lineno"> 2748</span>&#160;    _vox_file_write_uint32(fp, CHUNK_ID_LAYR);</div>
@@ -2842,7 +2842,7 @@ $(document).ready(function(){initNavTree('d0/da5/ogt__vox_8h_source.htm','../../
 <div class="line"><a name="l02753"></a><span class="lineno"> 2753</span>&#160;    _vox_file_write_uint32(fp, layer_dict_keyvalue_count); <span class="comment">// num keyvalue pairs in layer dictionary</span></div>
 <div class="line"><a name="l02754"></a><span class="lineno"> 2754</span>&#160;    _vox_file_write_dict_key_value(fp, <span class="stringliteral">&quot;_name&quot;</span>, layer_name_string);</div>
 <div class="line"><a name="l02755"></a><span class="lineno"> 2755</span>&#160;    _vox_file_write_dict_key_value(fp, <span class="stringliteral">&quot;_hidden&quot;</span>, hidden_string);</div>
-<div class="line"><a name="l02756"></a><span class="lineno"> 2756</span>&#160;    _vox_file_write_uint32(fp, UINT32_MAX); <span class="comment">// reserved id</span></div>
+<div class="line"><a name="l02756"></a><span class="lineno"> 2756</span>&#160;    _vox_file_write_uint32(fp, UINT32_MAX);                <span class="comment">// reserved id</span></div>
 <div class="line"><a name="l02757"></a><span class="lineno"> 2757</span>&#160;  }</div>
 <div class="line"><a name="l02758"></a><span class="lineno"> 2758</span>&#160; </div>
 <div class="line"><a name="l02759"></a><span class="lineno"> 2759</span>&#160;  <span class="comment">// we deliberately don&#39;t free the fp-&gt;data field, just pass the buffer pointer and size out to the caller</span></div>
@@ -2984,7 +2984,7 @@ $(document).ready(function(){initNavTree('d0/da5/ogt__vox_8h_source.htm','../../
 <div class="line"><a name="l02895"></a><span class="lineno"> 2895</span>&#160;  compute_scene_used_color_index_mask(scene_used_mask, pScene);</div>
 <div class="line"><a name="l02896"></a><span class="lineno"> 2896</span>&#160; </div>
 <div class="line"><a name="l02897"></a><span class="lineno"> 2897</span>&#160;  <span class="comment">// initialize the map that converts from scene color_index to master color_index</span></div>
-<div class="line"><a name="l02898"></a><span class="lineno"> 2898</span>&#160;  pScene_to_master_map[0] = 0; <span class="comment">// zero/empty always maps to zero/empty in the master palette</span></div>
+<div class="line"><a name="l02898"></a><span class="lineno"> 2898</span>&#160;  pScene_to_master_map[0] = 0;            <span class="comment">// zero/empty always maps to zero/empty in the master palette</span></div>
 <div class="line"><a name="l02899"></a><span class="lineno"> 2899</span>&#160;  <span class="keywordflow">for</span> (uint32_t i = 1; i &lt; 256; i++)</div>
 <div class="line"><a name="l02900"></a><span class="lineno"> 2900</span>&#160;    pScene_to_master_map[i] = UINT32_MAX; <span class="comment">// UINT32_MAX means unassigned</span></div>
 <div class="line"><a name="l02901"></a><span class="lineno"> 2901</span>&#160; </div>
@@ -3241,7 +3241,7 @@ $(document).ready(function(){initNavTree('d0/da5/ogt__vox_8h_source.htm','../../
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_07792d309f5611e62640e8ec1fb96105.htm">Tools</a></li><li class="navelem"><a class="el" href="../../dir_8e80be223102188e67d1ce7cce146de0.htm">Libs</a></li><li class="navelem"><a class="el" href="../../dir_9a22f53500ad7dc6bb404786c71cf46f.htm">ModelImporter2</a></li><li class="navelem"><a class="el" href="../../dir_cb4584dd146d64f7b6e8fa31e07a7a33.htm">ImporterMagicaVoxel</a></li><li class="navelem"><b>ogt_vox.h</b></li>
-    <li class="footer">Generated on Fri Dec 22 2023 20:43:10 for ezEngine by
+    <li class="footer">Generated on Sun Aug 25 2024 13:06:25 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

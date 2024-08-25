@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.12</span>
+   &#160;<span id="projectnumber">Release 24.09</span>
    </div>
   </td>
  </tr>
@@ -394,7 +394,7 @@ const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&#160;</
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.htm#_todo000142">Todo:</a></b></dt><dd>Hard-coded filter </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.htm#_todo000116">Todo:</a></b></dt><dd>Hard-coded filter </dd></dl>
 
 </div>
 </div>
@@ -423,7 +423,7 @@ const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&#160;</
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.htm#_todo000145">Todo:</a></b></dt><dd>The comment below may not always be true </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.htm#_todo000119">Todo:</a></b></dt><dd>The comment below may not always be true </dd></dl>
 
 </div>
 </div>
@@ -453,7 +453,7 @@ const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&#160;</
 <p>This method is called once for active components, at the start of the next world update, but only when the world is simulated. </p>
 <p>This is the one preferred method to setup typical game logic. In a pure game environment there is no practical difference between <a class="el" href="../../d6/d30/classez_component.htm#a6bfbe672c493cf7e80a0aa3c8739549e" title="This method is called when the component gets activated.">OnActivated()</a> and <a class="el" href="../../d5/dd5/classez_rc_agent_component.htm#ad056b9be19fac69779cf12d7f6fc6aeb" title="This method is called once for active components, at the start of the next world update,...">OnSimulationStarted()</a>, as <a class="el" href="../../d5/dd5/classez_rc_agent_component.htm#ad056b9be19fac69779cf12d7f6fc6aeb" title="This method is called once for active components, at the start of the next world update,...">OnSimulationStarted()</a> will be called right after <a class="el" href="../../d6/d30/classez_component.htm#a6bfbe672c493cf7e80a0aa3c8739549e" title="This method is called when the component gets activated.">OnActivated()</a>.</p>
 <p>However, when a scene is open inside the editor, there is an important difference: <a class="el" href="../../d6/d30/classez_component.htm#a6bfbe672c493cf7e80a0aa3c8739549e" title="This method is called when the component gets activated.">OnActivated()</a> is called once the component was created. <a class="el" href="../../d5/dd5/classez_rc_agent_component.htm#ad056b9be19fac69779cf12d7f6fc6aeb" title="This method is called once for active components, at the start of the next world update,...">OnSimulationStarted()</a> is only called once the game simulation is started inside the editor. As an example, if a component starts a sound in <a class="el" href="../../d6/d30/classez_component.htm#a6bfbe672c493cf7e80a0aa3c8739549e" title="This method is called when the component gets activated.">OnActivated()</a>, that sound will play right after the scene has been loaded into the editor. If instead the sound gets started in <a class="el" href="../../d5/dd5/classez_rc_agent_component.htm#ad056b9be19fac69779cf12d7f6fc6aeb" title="This method is called once for active components, at the start of the next world update,...">OnSimulationStarted()</a>, it will only play once the user starts the game mode inside the editor.</p>
-<p>Additionally, <a class="el" href="../../d5/dd5/classez_rc_agent_component.htm#ad056b9be19fac69779cf12d7f6fc6aeb" title="This method is called once for active components, at the start of the next world update,...">OnSimulationStarted()</a> is only ever executed once on a component, even if the <a class="el" href="../../da/d3c/classez_world.htm" title="A world encapsulates a scene graph of game objects and various component managers and their component...">ezWorld</a> pauses and resumes world simulation multiple times. Thus components that should only execute a thing exactly once, will work correctly. In contrast <a class="el" href="../../d6/d30/classez_component.htm#a6bfbe672c493cf7e80a0aa3c8739549e" title="This method is called when the component gets activated.">OnActivated()</a> and <a class="el" href="../../d6/d30/classez_component.htm#a5b6d097fd0840569f54279a08d543e91" title="This method is called when the component gets deactivated.">OnDeactivated()</a> will be executed every time the component's active state is toggled, which could re-execute the same behavior multiple times.</p>
+<p>Additionally, <a class="el" href="../../d5/dd5/classez_rc_agent_component.htm#ad056b9be19fac69779cf12d7f6fc6aeb" title="This method is called once for active components, at the start of the next world update,...">OnSimulationStarted()</a> is only executed once, even if the <a class="el" href="../../da/d3c/classez_world.htm" title="A world encapsulates a scene graph of game objects and various component managers and their component...">ezWorld</a> pauses and resumes world simulation multiple times. However, note that it will be called again after the component has been deactivated and is activated again.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d6/d30/classez_component.htm#a6bfbe672c493cf7e80a0aa3c8739549e" title="This method is called when the component gets activated.">OnActivated()</a>, <a class="el" href="../../d6/d30/classez_component.htm#a5b6d097fd0840569f54279a08d543e91" title="This method is called when the component gets deactivated.">OnDeactivated()</a>, <a class="el" href="../../d6/d30/classez_component.htm#ac23da898c747537846308946db06ea09" title="Can be overridden for basic initialization that depends on a valid hierarchy and position.">Initialize()</a>, <a class="el" href="../../d6/d30/classez_component.htm#a9fa1de7a6ea68259f8ce7f096e515b16" title="This method is called before the component is destroyed. A derived type can override this method to d...">Deinitialize()</a>, <a class="el" href="../../d5/dd5/classez_rc_agent_component.htm#ad056b9be19fac69779cf12d7f6fc6aeb" title="This method is called once for active components, at the start of the next world update,...">OnSimulationStarted()</a> </dd></dl>
 
 <p>Reimplemented from <a class="el" href="../../d6/d30/classez_component.htm#a2dc05ad8b8ffdecd5bc9b5f68f14ae3f">ezComponent</a>.</p>
@@ -470,7 +470,7 @@ const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&#160;</
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d5/dd5/classez_rc_agent_component.htm">ezRcAgentComponent</a></li>
-    <li class="footer">Generated on Fri Dec 22 2023 20:43:16 for ezEngine by
+    <li class="footer">Generated on Sun Aug 25 2024 13:06:32 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

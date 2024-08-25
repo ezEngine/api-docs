@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.12</span>
+   &#160;<span id="projectnumber">Release 24.09</span>
    </div>
   </td>
  </tr>
@@ -96,99 +96,147 @@ $(document).ready(function(){initNavTree('d1/d14/_game_state_8h_source.htm','../
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;Foundation/Reflection/Reflection.h&gt;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;Foundation/Types/UniquePtr.h&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;GameEngine/GameEngineDLL.h&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;RendererCore/Pipeline/Declarations.h&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;RendererFoundation/RendererFoundationDLL.h&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">class </span><a class="code" href="../../da/db5/classez_window.htm">ezWindow</a>;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">class </span><a class="code" href="../../df/d7b/classez_window_output_target_base.htm">ezWindowOutputTargetBase</a>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">class </span><a class="code" href="../../d2/d23/classez_view.htm">ezView</a>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">struct </span><a class="code" href="../../d2/d66/structez_actor_event.htm">ezActorEvent</a>;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">class </span><a class="code" href="../../d1/df6/classez_window_output_target_g_a_l.htm">ezWindowOutputTargetGAL</a>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">class </span><a class="code" href="../../d5/df3/classez_actor.htm">ezActor</a>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">class </span><a class="code" href="../../d2/db4/classez_dummy_x_r.htm">ezDummyXR</a>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">using</span> <a class="code" href="../../d3/dd7/classez_typed_resource_handle.htm">ezRenderPipelineResourceHandle</a> = <a class="code" href="../../d3/dd7/classez_typed_resource_handle.htm">ezTypedResourceHandle&lt;class ezRenderPipelineResource&gt;</a>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="../../de/d84/classez_game_state.htm">   43</a></span>&#160;<span class="keyword">class </span>EZ_GAMEENGINE_DLL <a class="code" href="../../de/d84/classez_game_state.htm">ezGameState</a> : <span class="keyword">public</span> <a class="code" href="../../d8/d02/classez_game_state_base.htm">ezGameStateBase</a></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  EZ_ADD_DYNAMIC_REFLECTION(<a class="code" href="../../de/d84/classez_game_state.htm">ezGameState</a>, <a class="code" href="../../d8/d02/classez_game_state_base.htm">ezGameStateBase</a>)</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <a class="code" href="../../de/d84/classez_game_state.htm">ezGameState</a>();</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keyword">virtual</span> ~<a class="code" href="../../de/d84/classez_game_state.htm">ezGameState</a>();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d8/d02/classez_game_state_base.htm#a6c3775232b839b8296c0fc9e2774a756">OnActivation</a>(<a class="code" href="../../da/d3c/classez_world.htm">ezWorld</a>* pWorld, <span class="keyword">const</span> <a class="code" href="../../d3/db1/classez_transform_template.htm">ezTransform</a>* pStartPosition) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d8/d02/classez_game_state_base.htm#a6947f8af9f0a6eba2d45b1b74be5d4fd">OnDeactivation</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d8/d02/classez_game_state_base.htm#a06b283f255e98a107ad9977a00a97a97">ScheduleRendering</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="../../de/d84/classez_game_state.htm#afc43602b3f9b086fb3b93d0dabd19a37">   74</a></span>&#160;  <a class="code" href="../../d8/d90/classez_camera.htm">ezCamera</a>* <a class="code" href="../../de/d84/classez_game_state.htm#afc43602b3f9b086fb3b93d0dabd19a37">GetMainCamera</a>() { <span class="keywordflow">return</span> &amp;m_MainCamera; }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> CreateActors();</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;GameEngine/Utils/SceneLoadUtil.h&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;RendererCore/Pipeline/Declarations.h&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;RendererFoundation/RendererFoundationDLL.h&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">class </span><a class="code" href="../../da/db5/classez_window.htm">ezWindow</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">class </span><a class="code" href="../../df/d7b/classez_window_output_target_base.htm">ezWindowOutputTargetBase</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">class </span><a class="code" href="../../d2/d23/classez_view.htm">ezView</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">struct </span><a class="code" href="../../d2/d66/structez_actor_event.htm">ezActorEvent</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">class </span><a class="code" href="../../d1/df6/classez_window_output_target_g_a_l.htm">ezWindowOutputTargetGAL</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">class </span><a class="code" href="../../d5/df3/classez_actor.htm">ezActor</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">class </span><a class="code" href="../../d2/db4/classez_dummy_x_r.htm">ezDummyXR</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">using</span> <a class="code" href="../../d3/dd7/classez_typed_resource_handle.htm">ezRenderPipelineResourceHandle</a> = <a class="code" href="../../d3/dd7/classez_typed_resource_handle.htm">ezTypedResourceHandle&lt;class ezRenderPipelineResource&gt;</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="../../de/d84/classez_game_state.htm">   42</a></span>&#160;<span class="keyword">class </span>EZ_GAMEENGINE_DLL <a class="code" href="../../de/d84/classez_game_state.htm">ezGameState</a> : <span class="keyword">public</span> <a class="code" href="../../d8/d02/classez_game_state_base.htm">ezGameStateBase</a></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  EZ_ADD_DYNAMIC_REFLECTION(<a class="code" href="../../de/d84/classez_game_state.htm">ezGameState</a>, <a class="code" href="../../d8/d02/classez_game_state_base.htm">ezGameStateBase</a>)</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <a class="code" href="../../de/d84/classez_game_state.htm">ezGameState</a>();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keyword">virtual</span> ~<a class="code" href="../../de/d84/classez_game_state.htm">ezGameState</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="../../de/d84/classez_game_state.htm#afc43602b3f9b086fb3b93d0dabd19a37">   54</a></span>&#160;  <a class="code" href="../../d8/d90/classez_camera.htm">ezCamera</a>* <a class="code" href="../../de/d84/classez_game_state.htm#afc43602b3f9b086fb3b93d0dabd19a37">GetMainCamera</a>() { <span class="keywordflow">return</span> &amp;m_MainCamera; }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordtype">bool</span> IsLoadingSceneInBackground(<span class="keywordtype">float</span>* out_pProgress = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">bool</span> IsInLoadingScreen() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d8/d02/classez_game_state_base.htm#ae6aa395c7207aa973d71197206a12796">OnActivation</a>(<a class="code" href="../../da/d3c/classez_world.htm">ezWorld</a>* pWorld, <a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sStartPosition, <span class="keyword">const</span> <a class="code" href="../../d3/db1/classez_transform_template.htm">ezTransform</a>&amp; startPositionOffset) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d8/d02/classez_game_state_base.htm#a6947f8af9f0a6eba2d45b1b74be5d4fd">OnDeactivation</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d8/d02/classez_game_state_base.htm#af33b9152262a539b80c8081fa800a4e2">AddMainViewsToRender</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d8/d02/classez_game_state_base.htm#a62468f85386f9cd3675cc166adcc96e2">RequestQuit</a>() <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> ConfigureInputActions();</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> SpawnPlayer(<span class="keyword">const</span> <a class="code" href="../../d3/db1/classez_transform_template.htm">ezTransform</a>* pStartPosition);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <a class="code" href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt;ezActor&gt;</a> CreateXRActor();</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <a class="code" href="../../d2/d23/classez_view.htm">ezView</a>* CreateMainView();</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <span class="keywordtype">void</span> ChangeMainWorld(<a class="code" href="../../da/d3c/classez_world.htm">ezWorld</a>* pNewMainWorld);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> ConfigureMainCamera();</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt;ezWindow&gt;</a> CreateMainWindow();</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt;ezWindowOutputTargetGAL&gt;</a> CreateMainOutputTarget(<a class="code" href="../../da/db5/classez_window.htm">ezWindow</a>* pMainWindow);</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetupMainView(<a class="code" href="../../db/dae/classez_g_a_l_swap_chain_handle.htm">ezGALSwapChainHandle</a> hSwapChain, <a class="code" href="../../d1/d2c/classez_size_template.htm">ezSizeU32</a> viewportSize);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> ConfigureMainWindowInputDevices(<a class="code" href="../../da/db5/classez_window.htm">ezWindow</a>* pWindow);</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <a class="code" href="../../dd/d6d/classez_view_handle.htm">ezViewHandle</a> m_hMainView;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <a class="code" href="../../da/d3c/classez_world.htm">ezWorld</a>* m_pMainWorld = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <a class="code" href="../../d8/d90/classez_camera.htm">ezCamera</a> m_MainCamera;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <span class="keywordtype">bool</span> m_bStateWantsToQuit = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <span class="keywordtype">bool</span> m_bXREnabled = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <span class="keywordtype">bool</span> m_bXRRemotingEnabled = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <a class="code" href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt;ezDummyXR&gt;</a> m_pDummyXR;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;};</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="../../d8/d02/classez_game_state_base.htm#a5f4a7ded32f4dbbfed6880c8eba05eb5">WasQuitRequested</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d8/d02/classez_game_state_base.htm#afa5fd779bcc55cf16174da688ed81db1">ProcessInput</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keywordtype">void</span> LoadScene(<a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sSceneFile, <a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sPreloadCollection, <a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sStartPosition, <span class="keyword">const</span> <a class="code" href="../../d3/db1/classez_transform_template.htm">ezTransform</a>&amp; startPositionOffset);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keywordtype">void</span> SwitchToLoadingScreen(<a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sTargetSceneFile);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <span class="keywordtype">void</span> ChangeMainWorld(<a class="code" href="../../da/d3c/classez_world.htm">ezWorld</a>* pNewMainWorld, <a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sStartPosition, <span class="keyword">const</span> <a class="code" href="../../d3/db1/classez_transform_template.htm">ezTransform</a>&amp; startPositionOffset);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <span class="keywordtype">void</span> StartBackgroundSceneLoading(<a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sSceneFile, <a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sPreloadCollection);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <span class="keywordtype">void</span> CancelBackgroundSceneLoading();</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> CreateActors();</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> ConfigureInputActions();</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> SpawnPlayer(<a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sStartPosition, <span class="keyword">const</span> <a class="code" href="../../d3/db1/classez_transform_template.htm">ezTransform</a>&amp; startPositionOffset);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  <a class="code" href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt;ezActor&gt;</a> CreateXRActor();</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  <a class="code" href="../../d2/d23/classez_view.htm">ezView</a>* CreateMainView();</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> OnChangedMainWorld(<a class="code" href="../../da/d3c/classez_world.htm">ezWorld</a>* pPrevWorld, <a class="code" href="../../da/d3c/classez_world.htm">ezWorld</a>* pNewWorld, <a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sStartPosition, <span class="keyword">const</span> <a class="code" href="../../d3/db1/classez_transform_template.htm">ezTransform</a>&amp; startPositionOffset);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d8/d02/classez_game_state_base.htm#a5aa5cd6484424404bc9fca24c69e5330">ConfigureMainCamera</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt;ezWindow&gt;</a> CreateMainWindow();</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt;ezWindowOutputTargetGAL&gt;</a> CreateMainOutputTarget(<a class="code" href="../../da/db5/classez_window.htm">ezWindow</a>* pMainWindow);</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetupMainView(<a class="code" href="../../db/dae/classez_g_a_l_swap_chain_handle.htm">ezGALSwapChainHandle</a> hSwapChain, <a class="code" href="../../d1/d2c/classez_size_template.htm">ezSizeU32</a> viewportSize);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> ConfigureMainWindowInputDevices(<a class="code" href="../../da/db5/classez_window.htm">ezWindow</a>* pWindow);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> GetStartupSceneFile();</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt;ezWorld&gt;</a> CreateLoadingScreenWorld(<a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sTargetSceneFile);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  <span class="keywordtype">void</span> UpdateBackgroundSceneLoading();</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> OnBackgroundSceneLoadingFinished(<a class="code" href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt;ezWorld&gt;</a>&amp;&amp; pWorld);</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> OnBackgroundSceneLoadingFailed(<a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sReason);</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> OnBackgroundSceneLoadingCanceled();</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;  <a class="code" href="../../dd/d6d/classez_view_handle.htm">ezViewHandle</a> m_hMainView;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;  <a class="code" href="../../da/d3c/classez_world.htm">ezWorld</a>* m_pMainWorld = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;  <a class="code" href="../../d8/d90/classez_camera.htm">ezCamera</a> m_MainCamera;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;  <a class="code" href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt;ezDummyXR&gt;</a> m_pDummyXR;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;  <span class="keywordtype">bool</span> m_bStateWantsToQuit = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;  <span class="keywordtype">bool</span> m_bXREnabled = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;  <span class="keywordtype">bool</span> m_bXRRemotingEnabled = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;  <span class="keywordtype">bool</span> m_bTransitionWhenReady = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;  <a class="code" href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt;ezSceneLoadUtility&gt;</a> m_pBackgroundSceneLoad;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;  <a class="code" href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt;ezWorld&gt;</a> m_pLoadingScreenWorld;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;  <a class="code" href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt;ezWorld&gt;</a> m_pLoadedWorld;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160; </div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sTargetSceneSpawnPoint;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;  <a class="code" href="../../d3/db1/classez_transform_template.htm">ezTransform</a> m_TargetSceneSpawnOffset = <a class="code" href="../../d3/db1/classez_transform_template.htm#a097bfb7a7c048011a677dde51015c9e2">ezTransform::MakeIdentity</a>();</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_view_htm"><div class="ttname"><a href="../../d2/d23/classez_view.htm">ezView</a></div><div class="ttdoc">Encapsulates a view on the given world through the given camera and rendered with the specified Rende...</div><div class="ttdef"><b>Definition:</b> View.h:20</div></div>
-<div class="ttc" id="aclassez_game_state_htm"><div class="ttname"><a href="../../de/d84/classez_game_state.htm">ezGameState</a></div><div class="ttdoc">ezGameState is the base class to build custom game logic upon. It works closely together with ezGameA...</div><div class="ttdef"><b>Definition:</b> GameState.h:43</div></div>
-<div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition:</b> Types.h:50</div></div>
+<div class="ttc" id="aclassez_game_state_htm"><div class="ttname"><a href="../../de/d84/classez_game_state.htm">ezGameState</a></div><div class="ttdoc">ezGameState implements the ezGameStateBase interface and adds several convenience features.</div><div class="ttdef"><b>Definition:</b> GameState.h:42</div></div>
+<div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition:</b> Types.h:53</div></div>
+<div class="ttc" id="aclassez_transform_template_htm_a097bfb7a7c048011a677dde51015c9e2"><div class="ttname"><a href="../../d3/db1/classez_transform_template.htm#a097bfb7a7c048011a677dde51015c9e2">ezTransformTemplate::MakeIdentity</a></div><div class="ttdeci">static ezTransformTemplate&lt; Type &gt; MakeIdentity()</div><div class="ttdoc">Creates an identity transform.</div><div class="ttdef"><b>Definition:</b> Transform_inl.h:25</div></div>
 <div class="ttc" id="aclassez_game_state_base_htm_a6947f8af9f0a6eba2d45b1b74be5d4fd"><div class="ttname"><a href="../../d8/d02/classez_game_state_base.htm#a6947f8af9f0a6eba2d45b1b74be5d4fd">ezGameStateBase::OnDeactivation</a></div><div class="ttdeci">virtual void OnDeactivation()=0</div><div class="ttdoc">Called when the game state is being shut down.</div></div>
 <div class="ttc" id="aclassez_view_handle_htm"><div class="ttname"><a href="../../dd/d6d/classez_view_handle.htm">ezViewHandle</a></div><div class="ttdef"><b>Definition:</b> Declarations.h:63</div></div>
-<div class="ttc" id="aclassez_window_htm"><div class="ttname"><a href="../../da/db5/classez_window.htm">ezWindow</a></div><div class="ttdoc">A simple abstraction for platform specific window creation.</div><div class="ttdef"><b>Definition:</b> Window.h:228</div></div>
+<div class="ttc" id="aclassez_window_htm"><div class="ttname"><a href="../../da/db5/classez_window.htm">ezWindow</a></div><div class="ttdoc">A simple abstraction for platform specific window creation.</div><div class="ttdef"><b>Definition:</b> Window.h:243</div></div>
 <div class="ttc" id="aclassez_size_template_htm"><div class="ttname"><a href="../../d1/d2c/classez_size_template.htm">ezSizeTemplate&lt; ezUInt32 &gt;</a></div></div>
-<div class="ttc" id="aclassez_game_state_htm_afc43602b3f9b086fb3b93d0dabd19a37"><div class="ttname"><a href="../../de/d84/classez_game_state.htm#afc43602b3f9b086fb3b93d0dabd19a37">ezGameState::GetMainCamera</a></div><div class="ttdeci">ezCamera * GetMainCamera()</div><div class="ttdoc">Gives access to the game state's main camera object.</div><div class="ttdef"><b>Definition:</b> GameState.h:74</div></div>
-<div class="ttc" id="aclassez_game_state_base_htm_a06b283f255e98a107ad9977a00a97a97"><div class="ttname"><a href="../../d8/d02/classez_game_state_base.htm#a06b283f255e98a107ad9977a00a97a97">ezGameStateBase::ScheduleRendering</a></div><div class="ttdeci">virtual void ScheduleRendering()=0</div><div class="ttdoc">Has to call ezRenderLoop::AddMainView for all views that need to be rendered.</div></div>
+<div class="ttc" id="aclassez_game_state_htm_afc43602b3f9b086fb3b93d0dabd19a37"><div class="ttname"><a href="../../de/d84/classez_game_state.htm#afc43602b3f9b086fb3b93d0dabd19a37">ezGameState::GetMainCamera</a></div><div class="ttdeci">ezCamera * GetMainCamera()</div><div class="ttdoc">Gives access to the game state's main camera object.</div><div class="ttdef"><b>Definition:</b> GameState.h:54</div></div>
+<div class="ttc" id="aclassez_game_state_base_htm_a62468f85386f9cd3675cc166adcc96e2"><div class="ttname"><a href="../../d8/d02/classez_game_state_base.htm#a62468f85386f9cd3675cc166adcc96e2">ezGameStateBase::RequestQuit</a></div><div class="ttdeci">virtual void RequestQuit()=0</div><div class="ttdoc">Call this to signal that a game state requested the application to quit.</div></div>
+<div class="ttc" id="astructez_hybrid_string_htm"><div class="ttname"><a href="../../d4/d53/structez_hybrid_string.htm">ezHybridString</a></div><div class="ttdef"><b>Definition:</b> Stream.h:16</div></div>
 <div class="ttc" id="aclassez_actor_htm"><div class="ttname"><a href="../../d5/df3/classez_actor.htm">ezActor</a></div><div class="ttdef"><b>Definition:</b> Actor.h:8</div></div>
-<div class="ttc" id="aclassez_g_a_l_swap_chain_handle_htm"><div class="ttname"><a href="../../db/dae/classez_g_a_l_swap_chain_handle.htm">ezGALSwapChainHandle</a></div><div class="ttdef"><b>Definition:</b> RendererFoundationDLL.h:316</div></div>
+<div class="ttc" id="aclassez_game_state_base_htm_ae6aa395c7207aa973d71197206a12796"><div class="ttname"><a href="../../d8/d02/classez_game_state_base.htm#ae6aa395c7207aa973d71197206a12796">ezGameStateBase::OnActivation</a></div><div class="ttdeci">virtual void OnActivation(ezWorld *pWorld, ezStringView sStartPosition, const ezTransform &amp;startPositionOffset)=0</div><div class="ttdoc">A game state gets activated through this function.</div></div>
+<div class="ttc" id="aclassez_g_a_l_swap_chain_handle_htm"><div class="ttname"><a href="../../db/dae/classez_g_a_l_swap_chain_handle.htm">ezGALSwapChainHandle</a></div><div class="ttdef"><b>Definition:</b> RendererFoundationDLL.h:396</div></div>
+<div class="ttc" id="aclassez_game_state_base_htm_a5f4a7ded32f4dbbfed6880c8eba05eb5"><div class="ttname"><a href="../../d8/d02/classez_game_state_base.htm#a5f4a7ded32f4dbbfed6880c8eba05eb5">ezGameStateBase::WasQuitRequested</a></div><div class="ttdeci">virtual bool WasQuitRequested() const =0</div><div class="ttdoc">Returns whether the game state wants to quit the application.</div></div>
+<div class="ttc" id="aclassez_game_state_base_htm_afa5fd779bcc55cf16174da688ed81db1"><div class="ttname"><a href="../../d8/d02/classez_game_state_base.htm#afa5fd779bcc55cf16174da688ed81db1">ezGameStateBase::ProcessInput</a></div><div class="ttdeci">virtual void ProcessInput()</div><div class="ttdoc">Called once per game update, early in the frame. Should handle input updates here.</div><div class="ttdef"><b>Definition:</b> GameStateBase.h:45</div></div>
 <div class="ttc" id="aclassez_unique_ptr_htm"><div class="ttname"><a href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt; ezActor &gt;</a></div></div>
 <div class="ttc" id="aclassez_camera_htm"><div class="ttname"><a href="../../d8/d90/classez_camera.htm">ezCamera</a></div><div class="ttdoc">A camera class that stores the orientation and some basic camera settings.</div><div class="ttdef"><b>Definition:</b> Camera.h:40</div></div>
-<div class="ttc" id="aclassez_game_state_base_htm_a6c3775232b839b8296c0fc9e2774a756"><div class="ttname"><a href="../../d8/d02/classez_game_state_base.htm#a6c3775232b839b8296c0fc9e2774a756">ezGameStateBase::OnActivation</a></div><div class="ttdeci">virtual void OnActivation(ezWorld *pWorld, const ezTransform *pStartPosition)=0</div><div class="ttdoc">When a game state was chosen, it gets activated through this function.</div></div>
 <div class="ttc" id="aclassez_dummy_x_r_htm"><div class="ttname"><a href="../../d2/db4/classez_dummy_x_r.htm">ezDummyXR</a></div><div class="ttdef"><b>Definition:</b> DummyXR.h:37</div></div>
-<div class="ttc" id="aclassez_window_output_target_g_a_l_htm"><div class="ttname"><a href="../../d1/df6/classez_window_output_target_g_a_l.htm">ezWindowOutputTargetGAL</a></div><div class="ttdoc">Creates a swapchain and keeps it up to date with the window.</div><div class="ttdef"><b>Definition:</b> WindowOutputTarget.h:14</div></div>
+<div class="ttc" id="aclassez_window_output_target_g_a_l_htm"><div class="ttname"><a href="../../d1/df6/classez_window_output_target_g_a_l.htm">ezWindowOutputTargetGAL</a></div><div class="ttdoc">Creates a swapchain and keeps it up to date with the window.</div><div class="ttdef"><b>Definition:</b> WindowOutputTarget.h:16</div></div>
+<div class="ttc" id="aclassez_game_state_base_htm_a5aa5cd6484424404bc9fca24c69e5330"><div class="ttname"><a href="../../d8/d02/classez_game_state_base.htm#a5aa5cd6484424404bc9fca24c69e5330">ezGameStateBase::ConfigureMainCamera</a></div><div class="ttdeci">virtual void ConfigureMainCamera()</div><div class="ttdoc">Called once each frame to configure the main camera position and rotation.</div><div class="ttdef"><b>Definition:</b> GameStateBase.h:59</div></div>
+<div class="ttc" id="aclassez_game_state_base_htm_af33b9152262a539b80c8081fa800a4e2"><div class="ttname"><a href="../../d8/d02/classez_game_state_base.htm#af33b9152262a539b80c8081fa800a4e2">ezGameStateBase::AddMainViewsToRender</a></div><div class="ttdeci">virtual void AddMainViewsToRender()=0</div><div class="ttdoc">Has to call ezRenderLoop::AddMainView for all views that need to be rendered.</div></div>
 <div class="ttc" id="aclassez_world_htm"><div class="ttname"><a href="../../da/d3c/classez_world.htm">ezWorld</a></div><div class="ttdoc">A world encapsulates a scene graph of game objects and various component managers and their component...</div><div class="ttdef"><b>Definition:</b> World.h:21</div></div>
+<div class="ttc" id="aclassez_string_view_htm"><div class="ttname"><a href="../../d9/d18/classez_string_view.htm">ezStringView</a></div><div class="ttdoc">ezStringView represent a read-only sub-string of a larger string, as it can store a dedicated string ...</div><div class="ttdef"><b>Definition:</b> StringView.h:33</div></div>
 <div class="ttc" id="astructez_actor_event_htm"><div class="ttname"><a href="../../d2/d66/structez_actor_event.htm">ezActorEvent</a></div><div class="ttdef"><b>Definition:</b> ActorManager.h:14</div></div>
-<div class="ttc" id="aclassez_transform_template_htm"><div class="ttname"><a href="../../d3/db1/classez_transform_template.htm">ezTransformTemplate&lt; float &gt;</a></div></div>
-<div class="ttc" id="aclassez_game_state_base_htm"><div class="ttname"><a href="../../d8/d02/classez_game_state_base.htm">ezGameStateBase</a></div><div class="ttdoc">ezGameState is the base class to build custom game logic upon. It works closely together with ezGameA...</div><div class="ttdef"><b>Definition:</b> GameStateBase.h:37</div></div>
+<div class="ttc" id="aclassez_transform_template_htm"><div class="ttname"><a href="../../d3/db1/classez_transform_template.htm">ezTransformTemplate</a></div><div class="ttdoc">A class that represents position, rotation and scaling via a position vector, a quaternion and a scal...</div><div class="ttdef"><b>Definition:</b> Declarations.h:211</div></div>
+<div class="ttc" id="aclassez_game_state_base_htm"><div class="ttname"><a href="../../d8/d02/classez_game_state_base.htm">ezGameStateBase</a></div><div class="ttdoc">ezGameStateBase is the base class for all game states. Game states are used to implement custom high ...</div><div class="ttdef"><b>Definition:</b> GameStateBase.h:15</div></div>
 <div class="ttc" id="aclassez_window_output_target_base_htm"><div class="ttname"><a href="../../df/d7b/classez_window_output_target_base.htm">ezWindowOutputTargetBase</a></div><div class="ttdoc">Base class for window output targets.</div><div class="ttdef"><b>Definition:</b> WindowOutputTargetBase.h:15</div></div>
 <div class="ttc" id="aclassez_typed_resource_handle_htm"><div class="ttname"><a href="../../d3/dd7/classez_typed_resource_handle.htm">ezTypedResourceHandle&lt; class ezRenderPipelineResource &gt;</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_fe4f349dd73c6459187bb04ae7deb06f.htm">GameEngine</a></li><li class="navelem"><a class="el" href="../../dir_9171f365389392da3cd690d7ed3eacd1.htm">GameState</a></li><li class="navelem"><b>GameState.h</b></li>
-    <li class="footer">Generated on Fri Dec 22 2023 20:43:08 for ezEngine by
+    <li class="footer">Generated on Sun Aug 25 2024 13:06:22 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

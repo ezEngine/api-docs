@@ -17,6 +17,5 @@ var classez_fake_rope_component =
     [ "SetAttachToAnchor2", "d4/dee/classez_fake_rope_component.htm#a261c1897917648eded292d1c22c7bdf7", null ],
     [ "SetSlack", "d4/dee/classez_fake_rope_component.htm#a153bd07da0569448675a3813b5a17dc7", null ],
     [ "m_fDamping", "d4/dee/classez_fake_rope_component.htm#a361c5dc0c108722004abe510630fcb09", null ],
-    [ "m_fSlack", "d4/dee/classez_fake_rope_component.htm#aeb6a61f3cc0d5bcecc1ba7bc2b1d799b", null ],
     [ "m_uiPieces", "d4/dee/classez_fake_rope_component.htm#a6178449429e665dd808da1b93e9bd713", null ]
 ];

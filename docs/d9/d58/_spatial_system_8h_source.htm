@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.12</span>
+   &#160;<span id="projectnumber">Release 24.09</span>
    </div>
   </td>
  </tr>
@@ -130,8 +130,8 @@ $(document).ready(function(){initNavTree('d9/d58/_spatial_system_8h_source.htm',
 <div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="../../d9/d7d/structez_spatial_system_1_1_query_params.htm">   46</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../d9/d7d/structez_spatial_system_1_1_query_params.htm">QueryParams</a></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  {</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    ezUInt32 m_uiCategoryBitmask = 0;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="../../df/d2d/classez_tag_set_template.htm">ezTagSet</a> m_IncludeTags;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="../../df/d2d/classez_tag_set_template.htm">ezTagSet</a> m_ExcludeTags;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../df/d2d/classez_tag_set_template.htm">ezTagSet</a>* m_pIncludeTags = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../df/d2d/classez_tag_set_template.htm">ezTagSet</a>* m_pExcludeTags = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#if EZ_ENABLED(EZ_COMPILE_FOR_DEVELOPMENT)</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    QueryStats* m_pStats = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#endif</span></div>
@@ -156,7 +156,7 @@ $(document).ready(function(){initNavTree('d9/d58/_spatial_system_8h_source.htm',
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <a class="code" href="../../d0/dbb/classez_allocator.htm">ezProxyAllocator</a> m_Allocator;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <a class="code" href="../../d8/dde/classez_allocator_with_policy.htm">ezProxyAllocator</a> m_Allocator;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  ezUInt64 m_uiFrameCounter = 0;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;};</div>
@@ -173,17 +173,17 @@ $(document).ready(function(){initNavTree('d9/d58/_spatial_system_8h_source.htm',
 <div class="ttc" id="astructez_spatial_system_1_1_query_params_htm"><div class="ttname"><a href="../../d9/d7d/structez_spatial_system_1_1_query_params.htm">ezSpatialSystem::QueryParams</a></div><div class="ttdef"><b>Definition:</b> SpatialSystem.h:46</div></div>
 <div class="ttc" id="aclassez_dynamic_array_htm"><div class="ttname"><a href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt; ezGameObject * &gt;</a></div></div>
 <div class="ttc" id="astructez_delegate_htm"><div class="ttname"><a href="../../d5/d68/structez_delegate.htm">ezDelegate&lt; ezVisitorExecution::Enum(ezGameObject *)&gt;</a></div></div>
+<div class="ttc" id="aclassez_allocator_with_policy_htm"><div class="ttname"><a href="../../d8/dde/classez_allocator_with_policy.htm">ezAllocatorWithPolicy&lt; ezAllocPolicyProxy &gt;</a></div></div>
 <div class="ttc" id="aclassez_game_object_htm"><div class="ttname"><a href="../../d6/d61/classez_game_object.htm">ezGameObject</a></div><div class="ttdoc">This class represents an object inside the world.</div><div class="ttdef"><b>Definition:</b> GameObject.h:31</div></div>
-<div class="ttc" id="aclassez_spatial_data_handle_htm"><div class="ttname"><a href="../../db/d2f/classez_spatial_data_handle.htm">ezSpatialDataHandle</a></div><div class="ttdef"><b>Definition:</b> Declarations.h:352</div></div>
-<div class="ttc" id="astructez_visitor_execution_htm_a4e76f4821e1b79df92f916823d5d51e8"><div class="ttname"><a href="../../d6/d5e/structez_visitor_execution.htm#a4e76f4821e1b79df92f916823d5d51e8">ezVisitorExecution::Enum</a></div><div class="ttdeci">Enum</div><div class="ttdef"><b>Definition:</b> Declarations.h:343</div></div>
-<div class="ttc" id="aclassez_allocator_htm"><div class="ttname"><a href="../../d0/dbb/classez_allocator.htm">ezAllocator&lt; ezMemoryPolicies::ezProxyAllocation &gt;</a></div></div>
+<div class="ttc" id="aclassez_spatial_data_handle_htm"><div class="ttname"><a href="../../db/d2f/classez_spatial_data_handle.htm">ezSpatialDataHandle</a></div><div class="ttdef"><b>Definition:</b> Declarations.h:380</div></div>
+<div class="ttc" id="astructez_visitor_execution_htm_a4e76f4821e1b79df92f916823d5d51e8"><div class="ttname"><a href="../../d6/d5e/structez_visitor_execution.htm#a4e76f4821e1b79df92f916823d5d51e8">ezVisitorExecution::Enum</a></div><div class="ttdeci">Enum</div><div class="ttdef"><b>Definition:</b> Declarations.h:371</div></div>
 <div class="ttc" id="aclassez_string_builder_htm"><div class="ttname"><a href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a></div><div class="ttdoc">ezStringBuilder is a class that is meant for creating and modifying strings.</div><div class="ttdef"><b>Definition:</b> StringBuilder.h:34</div></div>
-<div class="ttc" id="aclassez_reflected_class_htm"><div class="ttname"><a href="../../db/d45/classez_reflected_class.htm">ezReflectedClass</a></div><div class="ttdoc">All classes that should be dynamically reflectable, need to be derived from this base class.</div><div class="ttdef"><b>Definition:</b> DynamicRTTI.h:77</div></div>
+<div class="ttc" id="aclassez_reflected_class_htm"><div class="ttname"><a href="../../db/d45/classez_reflected_class.htm">ezReflectedClass</a></div><div class="ttdoc">All classes that should be dynamically reflectable, need to be derived from this base class.</div><div class="ttdef"><b>Definition:</b> DynamicRTTI.h:85</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_ac029bbb8a17b4d550e2f9d55d89a029.htm">Core</a></li><li class="navelem"><a class="el" href="../../dir_89e289b549b3db86cc2bc4f6ebaf52c6.htm">World</a></li><li class="navelem"><b>SpatialSystem.h</b></li>
-    <li class="footer">Generated on Fri Dec 22 2023 20:43:02 for ezEngine by
+    <li class="footer">Generated on Sun Aug 25 2024 13:06:14 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

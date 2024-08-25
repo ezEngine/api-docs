@@ -11,7 +11,10 @@ var structez_ai_navmesh_config =
     [ "m_fMaxSimplificationError", "d3/d93/structez_ai_navmesh_config.htm#afa48d09d1a24512771da224d96c3c2ea", null ],
     [ "m_fMinRegionSize", "d3/d93/structez_ai_navmesh_config.htm#ab6140b4822952bbe7172b72a27f92de9", null ],
     [ "m_fRegionMergeSize", "d3/d93/structez_ai_navmesh_config.htm#adf7f8d977f8754485ee0d5552cf4b662", null ],
+    [ "m_fSectorSize", "d3/d93/structez_ai_navmesh_config.htm#ab250e45e1e5011329644a9c4d5d3c402", null ],
     [ "m_sName", "d3/d93/structez_ai_navmesh_config.htm#a0647cfda6170186b7c0308c68ff4b493", null ],
     [ "m_uiCollisionLayer", "d3/d93/structez_ai_navmesh_config.htm#af62fd77baae1c67db4bc2f8284da0e95", null ],
+    [ "m_uiNumSectorsX", "d3/d93/structez_ai_navmesh_config.htm#ada27d11e9b9981a83a48d5d00dbcf95a", null ],
+    [ "m_uiNumSectorsY", "d3/d93/structez_ai_navmesh_config.htm#a757cc5bf850d1e30626b4fa4c96cd01b", null ],
     [ "m_WalkableSlope", "d3/d93/structez_ai_navmesh_config.htm#abe5862b087e41c3bc9910a947417d21c", null ]
 ];

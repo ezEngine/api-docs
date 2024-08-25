@@ -38,6 +38,8 @@ var classez_color =
     [ "ScaleRGBA", "dd/d01/classez_color.htm#a4e5e929ec809a903be9e278ebf229b3b", null ],
     [ "SetRGB", "dd/d01/classez_color.htm#a26e72d2b4e23e8d5cbee82f629f73cd8", null ],
     [ "SetRGBA", "dd/d01/classez_color.htm#aeac0109af46bd2ef667e84c962a9d2ed", null ],
+    [ "ToABGR8", "dd/d01/classez_color.htm#a094e6c490a6745d029b520367e3ec10e", null ],
+    [ "ToRGBA8", "dd/d01/classez_color.htm#aba7246717289d8bf1e7939d87c2810d3", null ],
     [ "WithAlpha", "dd/d01/classez_color.htm#a7663d269f1a48ccbd1bb162ba2d8f33a", null ],
     [ "a", "dd/d01/classez_color.htm#ad1670eeff004a9cab82cf6c2360d5bbf", null ],
     [ "b", "dd/d01/classez_color.htm#a936e43f5071e6a18807ed013cd9aaceb", null ],

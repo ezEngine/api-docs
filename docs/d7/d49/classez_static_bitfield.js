@@ -1,5 +1,6 @@
 var classez_static_bitfield =
 [
+    [ "ConstIterator", "d7/d49/classez_static_bitfield.htm#a226cca028691cc50060d6d8fa3bef196", null ],
     [ "StorageType", "d7/d49/classez_static_bitfield.htm#afe433e6c67564dddbee486d8b7c2e1d4", null ],
     [ "ezStaticBitfield", "d7/d49/classez_static_bitfield.htm#a4b5144fa732d74afb51d97d2de037db8", null ],
     [ "AreAllBitsSet", "d7/d49/classez_static_bitfield.htm#a2b44eb887d27a71a67f322bf3992e1a0", null ],
@@ -7,7 +8,9 @@ var classez_static_bitfield =
     [ "ClearBit", "d7/d49/classez_static_bitfield.htm#a58dc7be6d97276d75a3049547270ede3", null ],
     [ "ClearBitRange", "d7/d49/classez_static_bitfield.htm#a45f15761c9ca73cef777994ef949c4c7", null ],
     [ "Deserialize", "d7/d49/classez_static_bitfield.htm#a4029c123f434b1351d2fc1ea9701c0cd", null ],
+    [ "GetEndIterator", "d7/d49/classez_static_bitfield.htm#a7548b3439e95bfdbd0f4a5bff23042d4", null ],
     [ "GetHighestBitSet", "d7/d49/classez_static_bitfield.htm#a016cccd3653a7d52a55ee7f528630834", null ],
+    [ "GetIterator", "d7/d49/classez_static_bitfield.htm#ab04832b2e2420dc2a69b2685d0d8ed5d", null ],
     [ "GetLowestBitSet", "d7/d49/classez_static_bitfield.htm#ab01d96409feb7c5eb803d02018d17c22", null ],
     [ "GetNumBitsSet", "d7/d49/classez_static_bitfield.htm#a9775d824ceade69a13ed3a21c95c03a0", null ],
     [ "GetValue", "d7/d49/classez_static_bitfield.htm#a9daba5221702b65b0cf55cce45d150a6", null ],
@@ -22,6 +25,7 @@ var classez_static_bitfield =
     [ "SetBitRange", "d7/d49/classez_static_bitfield.htm#aa9a4922565cd058d77ebd71f1333fbb2", null ],
     [ "SetBitValue", "d7/d49/classez_static_bitfield.htm#aa2284db7917c62103fa7c39b2057a495", null ],
     [ "SetValue", "d7/d49/classez_static_bitfield.htm#accee6b155d9f434105428528f22afe35", null ],
+    [ "Swap", "d7/d49/classez_static_bitfield.htm#a30b63579f89956cc28569ee272d12287", null ],
     [ "operator!=", "d7/d49/classez_static_bitfield.htm#a54411f8af8894bb4549eb77bfdc32813", null ],
     [ "operator&", "d7/d49/classez_static_bitfield.htm#a1db227ae2d724f00efd12306117468a0", null ],
     [ "operator==", "d7/d49/classez_static_bitfield.htm#a02534bec2e9a4d9f04068f82bc43497a", null ],

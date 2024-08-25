@@ -1,10 +1,10 @@
 var classez_hash_table_base =
 [
-    [ "ConstIterator", "d7/db4/structez_hash_table_base_1_1_const_iterator.htm", "d7/db4/structez_hash_table_base_1_1_const_iterator" ],
-    [ "Iterator", "d4/d81/structez_hash_table_base_1_1_iterator.htm", "d4/d81/structez_hash_table_base_1_1_iterator" ],
-    [ "ezHashTableBase", "de/dc3/classez_hash_table_base.htm#ae3bdc925e5632754cad33fae216e37bd", null ],
-    [ "ezHashTableBase", "de/dc3/classez_hash_table_base.htm#a8ac7c32e9304443664d6b0a2fc2f4693", null ],
-    [ "ezHashTableBase", "de/dc3/classez_hash_table_base.htm#ac8f5f1ccec375410b5dcafc1db691dcd", null ],
+    [ "ConstIterator", "de/dc3/classez_hash_table_base.htm#a7000671d7a65a01932fd1d190ed7a8db", null ],
+    [ "Iterator", "de/dc3/classez_hash_table_base.htm#a6a3a2c748faa454bcf7d7484b19ab58c", null ],
+    [ "ezHashTableBase", "de/dc3/classez_hash_table_base.htm#a5ad53e40d70519cf3ad9f7537741a865", null ],
+    [ "ezHashTableBase", "de/dc3/classez_hash_table_base.htm#a59372f421cf9d1af9bf2f49339b4373b", null ],
+    [ "ezHashTableBase", "de/dc3/classez_hash_table_base.htm#ac39ea9a4093f7f7c41a8f70fe84ecea3", null ],
     [ "~ezHashTableBase", "de/dc3/classez_hash_table_base.htm#a506607a1fd3eb2922dcd0b648a17f92b", null ],
     [ "Clear", "de/dc3/classez_hash_table_base.htm#af42ca8f8e469ae41fe6aa8a87f8a1ccc", null ],
     [ "Compact", "de/dc3/classez_hash_table_base.htm#a0788dac0bf61b77ad5db32384f55df8c", null ],
@@ -14,8 +14,8 @@ var classez_hash_table_base =
     [ "Find", "de/dc3/classez_hash_table_base.htm#a0052fcc85ba429433e1b7ae0efab0a77", null ],
     [ "Find", "de/dc3/classez_hash_table_base.htm#a9c2ec41f21459ef7916326b393e415ce", null ],
     [ "FindEntry", "de/dc3/classez_hash_table_base.htm#ac3dbbe3ae07fcd02723e542d6f944513", null ],
-    [ "FindOrAdd", "de/dc3/classez_hash_table_base.htm#a74b6e89533ed1f2e6dc4fafad98bbefe", null ],
-    [ "GetAllocator", "de/dc3/classez_hash_table_base.htm#afec34d72c9f61700d55ba13f2e692fd7", null ],
+    [ "FindOrAdd", "de/dc3/classez_hash_table_base.htm#a282aecfb0aae481564cd22f80579834c", null ],
+    [ "GetAllocator", "de/dc3/classez_hash_table_base.htm#a12587c6d2ade6c6a6551ab09a8ed66a7", null ],
     [ "GetCount", "de/dc3/classez_hash_table_base.htm#a402cd17d004d929d9f777ca089bf8d8f", null ],
     [ "GetEndIterator", "de/dc3/classez_hash_table_base.htm#abfe9e0479d3c65382727c7d98636d032", null ],
     [ "GetEndIterator", "de/dc3/classez_hash_table_base.htm#a6e638db402d8decb2bc28856f4897725", null ],
@@ -44,5 +44,7 @@ var classez_hash_table_base =
     [ "TryGetValue", "de/dc3/classez_hash_table_base.htm#a6612562c1703142a45e6cd43ae198c55", null ],
     [ "TryGetValue", "de/dc3/classez_hash_table_base.htm#a37954b311127cada82eb1d3faaa2dd4c", null ],
     [ "TryGetValue", "de/dc3/classez_hash_table_base.htm#a6c279d62f8e45eb196bd532f2f9c95a5", null ],
-    [ "TryGetValue", "de/dc3/classez_hash_table_base.htm#a00ed14b174388e51362d0c6dd777a7c5", null ]
+    [ "TryGetValue", "de/dc3/classez_hash_table_base.htm#a00ed14b174388e51362d0c6dd777a7c5", null ],
+    [ "ezHashTableBaseConstIterator< KeyType, ValueType, Hasher >", "de/dc3/classez_hash_table_base.htm#a750c86b8068a3e598cc4322ce46232ce", null ],
+    [ "ezHashTableBaseIterator< KeyType, ValueType, Hasher >", "de/dc3/classez_hash_table_base.htm#a0dbebe09d1f3ea7fd8b4270c3eb0a169", null ]
 ];

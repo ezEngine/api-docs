@@ -1,5 +1,6 @@
 var classez_qt_log_widget =
 [
+    [ "LogItemContextActionCallback", "d3/da4/classez_qt_log_widget.htm#a7e3face54ed7e00f71f24d6839d94d5f", null ],
     [ "ezQtLogWidget", "d3/da4/classez_qt_log_widget.htm#aebfc4258a8b0c95a3d73934a406115b8", null ],
     [ "~ezQtLogWidget", "d3/da4/classez_qt_log_widget.htm#a6b86715997dc77ee60bbc9fddbc7a0ab", null ],
     [ "eventFilter", "d3/da4/classez_qt_log_widget.htm#a4ccffefd8c41e907993ec93829dcc210", null ],

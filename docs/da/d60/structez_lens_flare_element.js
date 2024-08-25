@@ -1,9 +1,7 @@
 var structez_lens_flare_element =
 [
     [ "Deserialize", "da/d60/structez_lens_flare_element.htm#a2038e7398fa5e6d659d011a87bf8ee78", null ],
-    [ "GetTextureFile", "da/d60/structez_lens_flare_element.htm#a9246431e4f69e3961777d4ab821257d5", null ],
     [ "Serialize", "da/d60/structez_lens_flare_element.htm#a059afe1138efb11f08072a62a1a68725", null ],
-    [ "SetTextureFile", "da/d60/structez_lens_flare_element.htm#ab31e8b80c69f1a3480f6bbabeebc8e01", null ],
     [ "m_bGreyscaleTexture", "da/d60/structez_lens_flare_element.htm#ab916cfb54bd3c012f8361554b77b395c", null ],
     [ "m_bInverseTonemap", "da/d60/structez_lens_flare_element.htm#a93d89ecbef29d5c94e9b2cbfe5a581bb", null ],
     [ "m_bModulateByLightColor", "da/d60/structez_lens_flare_element.htm#ac0d415e46868ccf9df42c57483b90222", null ],

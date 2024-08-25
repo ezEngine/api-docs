@@ -5,7 +5,7 @@ var classez_thread =
       [ "Running", "d2/d18/classez_thread.htm#ab29443bbc7acde16bb8330ef64d1b792a88b100628e974c2b9507dd8ad90c49fc", null ],
       [ "Finished", "d2/d18/classez_thread.htm#ab29443bbc7acde16bb8330ef64d1b792a895f47cfd174ea7f648346aafe424b05", null ]
     ] ],
-    [ "ezThread", "d2/d18/classez_thread.htm#af061330a8c8a74b591d8b5f214cd31b6", null ],
+    [ "ezThread", "d2/d18/classez_thread.htm#ae4384d6f5f1dcf70e43fe33728958450", null ],
     [ "~ezThread", "d2/d18/classez_thread.htm#a68feb50e97b1893022d787b1a6d9f552", null ],
     [ "GetThreadName", "d2/d18/classez_thread.htm#aa5e0daf61cd4ce105dd842c98c2d9058", null ],
     [ "GetThreadStatus", "d2/d18/classez_thread.htm#a731822b48397af8b235f819538d80cff", null ],

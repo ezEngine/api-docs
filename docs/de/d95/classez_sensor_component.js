@@ -25,6 +25,8 @@ var classez_sensor_component =
     [ "m_bShowDebugInfo", "de/d95/classez_sensor_component.htm#a71ef8baa1abd7152d43e6b972960cb84", null ],
     [ "m_bTestVisibility", "de/d95/classez_sensor_component.htm#adfc1a68bb6160d02fe4f1a591e6de96f", null ],
     [ "m_Color", "de/d95/classez_sensor_component.htm#aa20027a8247f48ce3b215641622cbe2e", null ],
+    [ "m_ExcludeTags", "de/d95/classez_sensor_component.htm#a00162f2190d2f54ee34798f30dacc75e", null ],
+    [ "m_IncludeTags", "de/d95/classez_sensor_component.htm#ab83e34932d5a4d6d9352439cb6303e1d", null ],
     [ "m_LastDetectedObjects", "de/d95/classez_sensor_component.htm#a54d58438e7f3070aec7a66648787495b", null ],
     [ "m_SpatialCategory", "de/d95/classez_sensor_component.htm#a38d17e08bb865af8e9b5ebb9fd4e9faf", null ],
     [ "m_sSpatialCategory", "de/d95/classez_sensor_component.htm#a246fd3a33ff06e5160450b128c2b8a01", null ],

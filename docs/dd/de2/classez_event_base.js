@@ -4,7 +4,7 @@ var classez_event_base =
     [ "Handler", "dd/de2/classez_event_base.htm#a15db4b9552ac331db5b96c866d745f6b", null ],
     [ "RecursionDepthSupported", "dd/de2/classez_event_base.htm#a92d966571842e62fd3ba6bad63212f5ead1c4019a445409016d524cee36e1917d", null ],
     [ "MaxRecursionDepthDefault", "dd/de2/classez_event_base.htm#a92d966571842e62fd3ba6bad63212f5ea3c37249bc19f1633b070c2bce1ff94bc", null ],
-    [ "ezEventBase", "dd/de2/classez_event_base.htm#a091e9f94c1fae72cd796663b173a02c3", null ],
+    [ "ezEventBase", "dd/de2/classez_event_base.htm#a7625ac5eb21359e63aec25247f1a8ee5", null ],
     [ "~ezEventBase", "dd/de2/classez_event_base.htm#a36b8dbac2d49c6b3f3c34e81d668cacd", null ],
     [ "AddEventHandler", "dd/de2/classez_event_base.htm#ab46b4d55704bf9f41af5be830ac46cf9", null ],
     [ "AddEventHandler", "dd/de2/classez_event_base.htm#a07fdb25581967df8f384bdbcc1bf6fa7", null ],

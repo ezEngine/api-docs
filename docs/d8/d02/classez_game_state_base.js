@@ -1,15 +1,15 @@
 var classez_game_state_base =
 [
-    [ "ezGameStateBase", "d8/d02/classez_game_state_base.htm#ad8fbcde8d3ae53606a9db99e23632e2f", null ],
-    [ "~ezGameStateBase", "d8/d02/classez_game_state_base.htm#aab000075e0d26acee2a414d51e3a7cd4", null ],
-    [ "AfterWorldUpdate", "d8/d02/classez_game_state_base.htm#acb95022a94606bd78de601d024c482ae", null ],
-    [ "BeforeWorldUpdate", "d8/d02/classez_game_state_base.htm#a7a9a0642a0e02a75f24c84c9649a881b", null ],
-    [ "DeterminePriority", "d8/d02/classez_game_state_base.htm#a6d4507aef28ad83f4d0c7ba29b1a414d", null ],
-    [ "OnActivation", "d8/d02/classez_game_state_base.htm#a6c3775232b839b8296c0fc9e2774a756", null ],
+    [ "ezGameStateBase", "d8/d02/classez_game_state_base.htm#ae3a1ff5d55b05211e2ac089003e0ee74", null ],
+    [ "~ezGameStateBase", "d8/d02/classez_game_state_base.htm#a6f80693ad87004d975a9bc2a1d6fce61", null ],
+    [ "AddMainViewsToRender", "d8/d02/classez_game_state_base.htm#af33b9152262a539b80c8081fa800a4e2", null ],
+    [ "AfterWorldUpdate", "d8/d02/classez_game_state_base.htm#acdf6c74204daed82f52dc61b1a6cd10a", null ],
+    [ "BeforeWorldUpdate", "d8/d02/classez_game_state_base.htm#a08132b3330ae2fcb6188d33d685d831c", null ],
+    [ "ConfigureMainCamera", "d8/d02/classez_game_state_base.htm#a5aa5cd6484424404bc9fca24c69e5330", null ],
+    [ "IsFallbackGameState", "d8/d02/classez_game_state_base.htm#a114b3d15a3b85bc5d437ed8d695971e4", null ],
+    [ "OnActivation", "d8/d02/classez_game_state_base.htm#ae6aa395c7207aa973d71197206a12796", null ],
     [ "OnDeactivation", "d8/d02/classez_game_state_base.htm#a6947f8af9f0a6eba2d45b1b74be5d4fd", null ],
-    [ "ProcessInput", "d8/d02/classez_game_state_base.htm#af9b4df6d896095beda31aa8fdad27cc5", null ],
-    [ "RequestQuit", "d8/d02/classez_game_state_base.htm#abfd857451ab71a7938b8d8f0f9b47849", null ],
-    [ "ScheduleRendering", "d8/d02/classez_game_state_base.htm#a06b283f255e98a107ad9977a00a97a97", null ],
-    [ "WasQuitRequested", "d8/d02/classez_game_state_base.htm#ae77c1cb6e60933f7233222ab6a450ca3", null ],
-    [ "m_bStateWantsToQuit", "d8/d02/classez_game_state_base.htm#a6307180d0f19d221a9beb0889c45c980", null ]
+    [ "ProcessInput", "d8/d02/classez_game_state_base.htm#afa5fd779bcc55cf16174da688ed81db1", null ],
+    [ "RequestQuit", "d8/d02/classez_game_state_base.htm#a62468f85386f9cd3675cc166adcc96e2", null ],
+    [ "WasQuitRequested", "d8/d02/classez_game_state_base.htm#a5f4a7ded32f4dbbfed6880c8eba05eb5", null ]
 ];

@@ -9,6 +9,7 @@ var structez_asset_info =
       [ "TransformError", "dc/d20/structez_asset_info.htm#a8dbcdb6aff84fb21e851e44fae260610a99bca24b5502582a0c4d5ed76b106cd1", null ],
       [ "MissingTransformDependency", "dc/d20/structez_asset_info.htm#a8dbcdb6aff84fb21e851e44fae260610ac7746d915c5d08c50c5e33e85230541a", null ],
       [ "MissingThumbnailDependency", "dc/d20/structez_asset_info.htm#a8dbcdb6aff84fb21e851e44fae260610a234deba4f8199030e0fc4b0d5d04daa6", null ],
+      [ "MissingPackageDependency", "dc/d20/structez_asset_info.htm#a8dbcdb6aff84fb21e851e44fae260610aa5ae267abaa20a31abf14697baf7bc3f", null ],
       [ "CircularDependency", "dc/d20/structez_asset_info.htm#a8dbcdb6aff84fb21e851e44fae260610abbb0bce4203553571464c591de718250", null ],
       [ "COUNT", "dc/d20/structez_asset_info.htm#a8dbcdb6aff84fb21e851e44fae260610a19be841fa932ecd4a58883dd624eb7a0", null ]
     ] ],
@@ -21,8 +22,10 @@ var structez_asset_info =
     [ "m_Info", "dc/d20/structez_asset_info.htm#a15f29ae435b416ddcabcad7fd60e8bc6", null ],
     [ "m_LastStateUpdate", "dc/d20/structez_asset_info.htm#acfefd7197dbf659c820d090c2826bc2d", null ],
     [ "m_LogEntries", "dc/d20/structez_asset_info.htm#a45da4d51dfe9014c0fbdaaef8a8524d7", null ],
+    [ "m_MissingPackageDeps", "dc/d20/structez_asset_info.htm#a88df588525ea7fddbd9a9adb2432e735", null ],
     [ "m_MissingThumbnailDeps", "dc/d20/structez_asset_info.htm#aaa159e56f1f099734a418ce3cf5e569d", null ],
     [ "m_MissingTransformDeps", "dc/d20/structez_asset_info.htm#aee066ac32b402bd942d9a5d13d6ff70a", null ],
+    [ "m_PackageHash", "dc/d20/structez_asset_info.htm#aee501df16a179bb9140aa825c664d6bf", null ],
     [ "m_Path", "dc/d20/structez_asset_info.htm#afbdeec917f8e05e25066bcfa9ec58e9b", null ],
     [ "m_pDocumentTypeDescriptor", "dc/d20/structez_asset_info.htm#a0ddb29f3d6adda35010356b3978f6f43", null ],
     [ "m_SubAssets", "dc/d20/structez_asset_info.htm#a0b7f6dc29ebe52511fe1d0d5592b9b17", null ],

@@ -3,6 +3,7 @@ var classez_qt_node_view =
     [ "ezQtNodeView", "dd/d6c/classez_qt_node_view.htm#a346089ddd88e90ce9e9537d051831230", null ],
     [ "~ezQtNodeView", "dd/d6c/classez_qt_node_view.htm#acd1dbdacc9c3adc00745941d226a36c2", null ],
     [ "contextMenuEvent", "dd/d6c/classez_qt_node_view.htm#ae1a08d813d9260723f626a5c537f6ee2", null ],
+    [ "drawBackground", "dd/d6c/classez_qt_node_view.htm#a3f3ed968e965d5292acbaf68f6a555b4", null ],
     [ "GetScene", "dd/d6c/classez_qt_node_view.htm#ab62b22427fbea8b2b8db2b2efe5bb641", null ],
     [ "mouseMoveEvent", "dd/d6c/classez_qt_node_view.htm#ae6615da9d8c8e5fe3d234d352a8302a9", null ],
     [ "mousePressEvent", "dd/d6c/classez_qt_node_view.htm#a5cb07d8d82954057b5a583f3cc93b95d", null ],

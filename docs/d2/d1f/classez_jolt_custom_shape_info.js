@@ -4,6 +4,7 @@ var classez_jolt_custom_shape_info =
     [ "ezJoltCustomShapeInfo", "d2/d1f/classez_jolt_custom_shape_info.htm#a57307ffd40275d281954a5b07c20065e", null ],
     [ "CastRay", "d2/d1f/classez_jolt_custom_shape_info.htm#a7d256a8dc36fd1d25c84ed5e4259cd05", null ],
     [ "CastRay", "d2/d1f/classez_jolt_custom_shape_info.htm#a7ccdfd7be862f6bb81bc879ac2986488", null ],
+    [ "CollectTransformedShapes", "d2/d1f/classez_jolt_custom_shape_info.htm#aaac1d48334ba9f548e18c454b69e80ce", null ],
     [ "CollidePoint", "d2/d1f/classez_jolt_custom_shape_info.htm#a768c0ea7f39ed035a21186f3e22cd1d7", null ],
     [ "CollideSoftBodyVertices", "d2/d1f/classez_jolt_custom_shape_info.htm#af234298a858d36eae3df62c9a375ef24", null ],
     [ "Draw", "d2/d1f/classez_jolt_custom_shape_info.htm#ad19f9faec1dc42ae945ad6bfbb26e33c", null ],

@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.12</span>
+   &#160;<span id="projectnumber">Release 24.09</span>
    </div>
   </td>
  </tr>
@@ -307,16 +307,58 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df8/classez_string_utils.htm#a15742dedc6d8fab96ca18df5f478c784">OutputFormattedFloat</a> (char *szOutputBuffer, ezUInt32 uiBufferSize, ezUInt32 &amp;ref_uiWritePos, double value, ezUInt8 uiWidth, bool bPadZeros, ezInt8 iPrecision, bool bScientific, bool bRemoveTrailingZeroes=false)</td></tr>
 <tr class="memdesc:a15742dedc6d8fab96ca18df5f478c784"><td class="mdescLeft">&#160;</td><td class="mdescRight">[internal] Prefer to use snprintf. <br /></td></tr>
 <tr class="separator:a15742dedc6d8fab96ca18df5f478c784"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f2da66c56613e691e5de0fc72ee6fbf"><td class="memItemLeft" align="right" valign="top"><a id="a4f2da66c56613e691e5de0fc72ee6fbf"></a>
-static EZ_ALWAYS_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><b>AddUsedStringLength</b> (ezUInt32)</td></tr>
-<tr class="separator:a4f2da66c56613e691e5de0fc72ee6fbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf8ed5a0372f69a3d167af3ef51d05c3"><td class="memItemLeft" align="right" valign="top"><a id="acf8ed5a0372f69a3d167af3ef51d05c3"></a>
-static EZ_ALWAYS_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><b>PrintStringLengthStatistics</b> ()</td></tr>
-<tr class="separator:acf8ed5a0372f69a3d167af3ef51d05c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3155414bf528cece9a9651945148972d"><td class="memItemLeft" align="right" valign="top">static ezUInt32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df8/classez_string_utils.htm#a3155414bf528cece9a9651945148972d">CalculateLineNumber</a> (const char *szString, const char *szOffset, const char *pStringEnd=<a class="el" href="../../d9/d32/classez_unicode_utils.htm#a580463d2f8474b7119639fa86104cb93">ezUnicodeUtils::GetMaxStringEnd</a>&lt; char &gt;())</td></tr>
+<tr class="memdesc:a3155414bf528cece9a9651945148972d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates in which line number szOffset is in the given string.  <a href="../../de/df8/classez_string_utils.htm#a3155414bf528cece9a9651945148972d">More...</a><br /></td></tr>
+<tr class="separator:a3155414bf528cece9a9651945148972d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Helper functions to work with UTF-8 strings (which include pure ASCII strings) </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a3155414bf528cece9a9651945148972d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3155414bf528cece9a9651945148972d">&#9670;&nbsp;</a></span>CalculateLineNumber()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ezUInt32 ezStringUtils::CalculateLineNumber </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>szString</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>szOffset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>pStringEnd</em> = <code><a class="el" href="../../d9/d32/classez_unicode_utils.htm#a580463d2f8474b7119639fa86104cb93">ezUnicodeUtils::GetMaxStringEnd</a>&lt;char&gt;()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculates in which line number szOffset is in the given string. </p>
+<p>Line numbers are 1-based. Returns 0, if szOffset is outside the given string. </p>
+
+</div>
+</div>
 <a id="acdb19aa3ae5704df01d8f7b3649ec8d7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acdb19aa3ae5704df01d8f7b3649ec8d7">&#9670;&nbsp;</a></span>Compare()</h2>
 
@@ -1333,7 +1375,7 @@ Formatting works exactly like printf, except that it additionally supports outpu
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../de/df8/classez_string_utils.htm">ezStringUtils</a></li>
-    <li class="footer">Generated on Fri Dec 22 2023 20:43:17 for ezEngine by
+    <li class="footer">Generated on Sun Aug 25 2024 13:06:33 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

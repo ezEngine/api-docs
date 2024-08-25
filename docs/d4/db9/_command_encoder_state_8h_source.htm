@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.12</span>
+   &#160;<span id="projectnumber">Release 24.09</span>
    </div>
   </td>
  </tr>
@@ -94,66 +94,47 @@ $(document).ready(function(){initNavTree('d4/db9/_command_encoder_state_8h_sourc
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;Foundation/Math/Rect.h&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;RendererFoundation/RendererFoundationDLL.h&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="../../de/d5e/structez_g_a_l_command_encoder_state.htm">    8</a></span>&#160;<span class="keyword">struct </span>EZ_RENDERERFOUNDATION_DLL <a class="code" href="../../de/d5e/structez_g_a_l_command_encoder_state.htm">ezGALCommandEncoderState</a></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> InvalidateState();</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="../../d2/d1d/structez_g_a_l_command_encoder_render_state.htm">    9</a></span>&#160;<span class="keyword">struct </span>EZ_RENDERERFOUNDATION_DLL <a class="code" href="../../d2/d1d/structez_g_a_l_command_encoder_render_state.htm">ezGALCommandEncoderRenderState</a> final</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keywordtype">void</span> InvalidateState();</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <a class="code" href="../../d1/d55/classez_g_a_l_shader_handle.htm">ezGALShaderHandle</a> m_hShader;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <a class="code" href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a> m_hConstantBuffers[EZ_GAL_MAX_CONSTANT_BUFFER_COUNT];</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <a class="code" href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a> m_hVertexBuffers[EZ_GAL_MAX_VERTEX_BUFFER_COUNT];</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <a class="code" href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a> m_hIndexBuffer;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezGALResourceViewHandle, 16&gt;</a> m_hResourceViews[ezGALShaderStage::ENUM_COUNT];</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;const ezGALResourceBase*, 16&gt;</a> m_pResourcesForResourceViews[ezGALShaderStage::ENUM_COUNT];</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <a class="code" href="../../de/d16/classez_g_a_l_vertex_declaration_handle.htm">ezGALVertexDeclarationHandle</a> m_hVertexDeclaration;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  ezGALPrimitiveTopology::Enum m_Topology = ezGALPrimitiveTopology::ENUM_COUNT;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezGALUnorderedAccessViewHandle, 16&gt;</a> m_hUnorderedAccessViews;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;const ezGALResourceBase*, 16&gt;</a> m_pResourcesForUnorderedAccessViews;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <a class="code" href="../../d7/db8/classez_g_a_l_sampler_state_handle.htm">ezGALSamplerStateHandle</a> m_hSamplerStates[ezGALShaderStage::ENUM_COUNT][EZ_GAL_MAX_SAMPLER_COUNT];</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;};</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="../../d2/d1d/structez_g_a_l_command_encoder_render_state.htm">   25</a></span>&#160;<span class="keyword">struct </span>EZ_RENDERERFOUNDATION_DLL <a class="code" href="../../d2/d1d/structez_g_a_l_command_encoder_render_state.htm">ezGALCommandEncoderRenderState</a> : <span class="keyword">public</span> <a class="code" href="../../de/d5e/structez_g_a_l_command_encoder_state.htm">ezGALCommandEncoderState</a></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> InvalidateState() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <a class="code" href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a> m_hVertexBuffers[EZ_GAL_MAX_VERTEX_BUFFER_COUNT];</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <a class="code" href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a> m_hIndexBuffer;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <a class="code" href="../../de/d16/classez_g_a_l_vertex_declaration_handle.htm">ezGALVertexDeclarationHandle</a> m_hVertexDeclaration;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  ezGALPrimitiveTopology::Enum m_Topology = ezGALPrimitiveTopology::ENUM_COUNT;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <a class="code" href="../../de/d2f/classez_g_a_l_blend_state_handle.htm">ezGALBlendStateHandle</a> m_hBlendState;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a> m_BlendFactor = <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>(0, 0, 0, 0);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  ezUInt32 m_uiSampleMask = 0;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <a class="code" href="../../d6/d5b/classez_g_a_l_depth_stencil_state_handle.htm">ezGALDepthStencilStateHandle</a> m_hDepthStencilState;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  ezUInt8 m_uiStencilRefValue = 0;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="../../d7/d7f/classez_g_a_l_rasterizer_state_handle.htm">ezGALRasterizerStateHandle</a> m_hRasterizerState;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <a class="code" href="../../de/dd8/classez_rect_template.htm">ezRectU32</a> m_ScissorRect = <a class="code" href="../../de/dd8/classez_rect_template.htm">ezRectU32</a>(0xFFFFFFFF, 0xFFFFFFFF, 0, 0);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <a class="code" href="../../de/dd8/classez_rect_template.htm">ezRectFloat</a> m_ViewPortRect = <a class="code" href="../../de/dd8/classez_rect_template.htm">ezRectFloat</a>(ezMath::MaxValue&lt;float&gt;(), ezMath::MaxValue&lt;float&gt;(), 0.0f, 0.0f);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordtype">float</span> m_fViewPortMinDepth = ezMath::MaxValue&lt;float&gt;();</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordtype">float</span> m_fViewPortMaxDepth = -ezMath::MaxValue&lt;float&gt;();</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;};</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <a class="code" href="../../de/d2f/classez_g_a_l_blend_state_handle.htm">ezGALBlendStateHandle</a> m_hBlendState;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a> m_BlendFactor = <a class="code" href="../../dd/d01/classez_color.htm">ezColor</a>(0, 0, 0, 0);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  ezUInt32 m_uiSampleMask = 0;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <a class="code" href="../../d6/d5b/classez_g_a_l_depth_stencil_state_handle.htm">ezGALDepthStencilStateHandle</a> m_hDepthStencilState;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  ezUInt8 m_uiStencilRefValue = 0;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <a class="code" href="../../d7/d7f/classez_g_a_l_rasterizer_state_handle.htm">ezGALRasterizerStateHandle</a> m_hRasterizerState;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <a class="code" href="../../de/dd8/classez_rect_template.htm">ezRectU32</a> m_ScissorRect = <a class="code" href="../../de/dd8/classez_rect_template.htm">ezRectU32</a>(0xFFFFFFFF, 0xFFFFFFFF, 0, 0);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <a class="code" href="../../de/dd8/classez_rect_template.htm">ezRectFloat</a> m_ViewPortRect = <a class="code" href="../../de/dd8/classez_rect_template.htm">ezRectFloat</a>(ezMath::MaxValue&lt;float&gt;(), ezMath::MaxValue&lt;float&gt;(), 0.0f, 0.0f);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordtype">float</span> m_fViewPortMinDepth = ezMath::MaxValue&lt;float&gt;();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keywordtype">float</span> m_fViewPortMaxDepth = -ezMath::MaxValue&lt;float&gt;();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="astructez_g_a_l_command_encoder_render_state_htm"><div class="ttname"><a href="../../d2/d1d/structez_g_a_l_command_encoder_render_state.htm">ezGALCommandEncoderRenderState</a></div><div class="ttdef"><b>Definition:</b> CommandEncoderState.h:25</div></div>
-<div class="ttc" id="aclassez_g_a_l_buffer_handle_htm"><div class="ttname"><a href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a></div><div class="ttdef"><b>Definition:</b> RendererFoundationDLL.h:337</div></div>
-<div class="ttc" id="aclassez_g_a_l_vertex_declaration_handle_htm"><div class="ttname"><a href="../../de/d16/classez_g_a_l_vertex_declaration_handle.htm">ezGALVertexDeclarationHandle</a></div><div class="ttdef"><b>Definition:</b> RendererFoundationDLL.h:393</div></div>
+<div class="ttc" id="astructez_g_a_l_command_encoder_render_state_htm"><div class="ttname"><a href="../../d2/d1d/structez_g_a_l_command_encoder_render_state.htm">ezGALCommandEncoderRenderState</a></div><div class="ttdef"><b>Definition:</b> CommandEncoderState.h:9</div></div>
+<div class="ttc" id="aclassez_g_a_l_buffer_handle_htm"><div class="ttname"><a href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a></div><div class="ttdef"><b>Definition:</b> RendererFoundationDLL.h:417</div></div>
+<div class="ttc" id="aclassez_g_a_l_vertex_declaration_handle_htm"><div class="ttname"><a href="../../de/d16/classez_g_a_l_vertex_declaration_handle.htm">ezGALVertexDeclarationHandle</a></div><div class="ttdef"><b>Definition:</b> RendererFoundationDLL.h:487</div></div>
 <div class="ttc" id="aclassez_color_htm"><div class="ttname"><a href="../../dd/d01/classez_color.htm">ezColor</a></div><div class="ttdoc">ezColor represents an RGBA color in linear color space. Values are stored as float,...</div><div class="ttdef"><b>Definition:</b> Color.h:43</div></div>
-<div class="ttc" id="astructez_g_a_l_command_encoder_state_htm"><div class="ttname"><a href="../../de/d5e/structez_g_a_l_command_encoder_state.htm">ezGALCommandEncoderState</a></div><div class="ttdef"><b>Definition:</b> CommandEncoderState.h:8</div></div>
-<div class="ttc" id="aclassez_g_a_l_blend_state_handle_htm"><div class="ttname"><a href="../../de/d2f/classez_g_a_l_blend_state_handle.htm">ezGALBlendStateHandle</a></div><div class="ttdef"><b>Definition:</b> RendererFoundationDLL.h:372</div></div>
-<div class="ttc" id="aclassez_g_a_l_depth_stencil_state_handle_htm"><div class="ttname"><a href="../../d6/d5b/classez_g_a_l_depth_stencil_state_handle.htm">ezGALDepthStencilStateHandle</a></div><div class="ttdef"><b>Definition:</b> RendererFoundationDLL.h:365</div></div>
-<div class="ttc" id="aclassez_g_a_l_sampler_state_handle_htm"><div class="ttname"><a href="../../d7/db8/classez_g_a_l_sampler_state_handle.htm">ezGALSamplerStateHandle</a></div><div class="ttdef"><b>Definition:</b> RendererFoundationDLL.h:386</div></div>
-<div class="ttc" id="aclassez_g_a_l_shader_handle_htm"><div class="ttname"><a href="../../d1/d55/classez_g_a_l_shader_handle.htm">ezGALShaderHandle</a></div><div class="ttdef"><b>Definition:</b> RendererFoundationDLL.h:323</div></div>
+<div class="ttc" id="aclassez_g_a_l_blend_state_handle_htm"><div class="ttname"><a href="../../de/d2f/classez_g_a_l_blend_state_handle.htm">ezGALBlendStateHandle</a></div><div class="ttdef"><b>Definition:</b> RendererFoundationDLL.h:466</div></div>
+<div class="ttc" id="aclassez_g_a_l_depth_stencil_state_handle_htm"><div class="ttname"><a href="../../d6/d5b/classez_g_a_l_depth_stencil_state_handle.htm">ezGALDepthStencilStateHandle</a></div><div class="ttdef"><b>Definition:</b> RendererFoundationDLL.h:459</div></div>
+<div class="ttc" id="aclassez_g_a_l_shader_handle_htm"><div class="ttname"><a href="../../d1/d55/classez_g_a_l_shader_handle.htm">ezGALShaderHandle</a></div><div class="ttdef"><b>Definition:</b> RendererFoundationDLL.h:403</div></div>
 <div class="ttc" id="aclassez_rect_template_htm"><div class="ttname"><a href="../../de/dd8/classez_rect_template.htm">ezRectTemplate&lt; ezUInt32 &gt;</a></div></div>
-<div class="ttc" id="aclassez_hybrid_array_htm"><div class="ttname"><a href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt; ezGALResourceViewHandle, 16 &gt;</a></div></div>
-<div class="ttc" id="aclassez_g_a_l_rasterizer_state_handle_htm"><div class="ttname"><a href="../../d7/d7f/classez_g_a_l_rasterizer_state_handle.htm">ezGALRasterizerStateHandle</a></div><div class="ttdef"><b>Definition:</b> RendererFoundationDLL.h:379</div></div>
+<div class="ttc" id="aclassez_g_a_l_rasterizer_state_handle_htm"><div class="ttname"><a href="../../d7/d7f/classez_g_a_l_rasterizer_state_handle.htm">ezGALRasterizerStateHandle</a></div><div class="ttdef"><b>Definition:</b> RendererFoundationDLL.h:473</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_86889b9ebd9c49a9e3637c5d5b24303b.htm">RendererFoundation</a></li><li class="navelem"><a class="el" href="../../dir_1d628a35245e13e4d74dc654d082b5b3.htm">CommandEncoder</a></li><li class="navelem"><b>CommandEncoderState.h</b></li>
-    <li class="footer">Generated on Fri Dec 22 2023 20:43:09 for ezEngine by
+    <li class="footer">Generated on Sun Aug 25 2024 13:06:23 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

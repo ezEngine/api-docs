@@ -26,6 +26,8 @@ var classez_editor_input_context =
     [ "MouseMoveEvent", "df/d1c/classez_editor_input_context.htm#a0a26ec8dd4b5ecb4ceddee01288a52aa", null ],
     [ "MousePressEvent", "df/d1c/classez_editor_input_context.htm#a63e009d5eb234608b1019f82356d5665", null ],
     [ "MouseReleaseEvent", "df/d1c/classez_editor_input_context.htm#a7ff2f1d6d31b3b6a35fc59fb2a0475b9", null ],
+    [ "OnActivated", "df/d1c/classez_editor_input_context.htm#a6126002d035e74b7d52faf133c7e4014", null ],
+    [ "OnDeactivated", "df/d1c/classez_editor_input_context.htm#a56673b866b64bc95ec390e03470c0d8a", null ],
     [ "OnSetOwner", "df/d1c/classez_editor_input_context.htm#ae854f94370011db00f1ee321b48dd180", null ],
     [ "SetMouseMode", "df/d1c/classez_editor_input_context.htm#a7f31bfe039a191707a16ae2e2d00f796", null ],
     [ "SetOwner", "df/d1c/classez_editor_input_context.htm#a9a0b2242d41ffab4675b37e1c0205a75", null ],

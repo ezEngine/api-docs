@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.12</span>
+   &#160;<span id="projectnumber">Release 24.09</span>
    </div>
   </td>
  </tr>
@@ -89,37 +89,109 @@ $(document).ready(function(){initNavTree('df/d4d/_allocator_8h_source.htm','../.
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;Foundation/Math/Math.h&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;Foundation/Memory/AllocatorBase.h&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;Foundation/Memory/MemoryTracker.h&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;Foundation/Threading/ThreadUtils.h&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;EZ_MAKE_MEMBERFUNCTION_CHECKER(Reallocate, ezHasReallocate);</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;Foundation/Time/Time.h&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;Foundation/Types/ArrayPtr.h&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;Foundation/Types/Id.h&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;Foundation/Memory/Implementation/Allocator_inl.h&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> AllocationPolicy, ezUInt32 TrackingFlags = ezMemoryTrackingFlags::Default&gt;</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="../../d0/dbb/classez_allocator.htm">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d0/dbb/classez_allocator.htm">ezAllocator</a> : <span class="keyword">public</span> <a class="code" href="../../d6/dc9/classez_internal_1_1ez_allocator_mixin_reallocate.htm">ezInternal::ezAllocatorMixinReallocate</a>&lt;AllocationPolicy, TrackingFlags,</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                      ezHasReallocate&lt;AllocationPolicy, void* (AllocationPolicy::*)(void*, size_t, size_t, size_t)&gt;::value&gt;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <a class="code" href="../../d0/dbb/classez_allocator.htm">ezAllocator</a>(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sName, <a class="code" href="../../d1/d4c/classez_allocator_base.htm">ezAllocatorBase</a>* pParent = <span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    : <a class="code" href="../../d6/dc9/classez_internal_1_1ez_allocator_mixin_reallocate.htm">ezInternal::ezAllocatorMixinReallocate</a>&lt;AllocationPolicy, TrackingFlags,</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        ezHasReallocate&lt;AllocationPolicy, <span class="keywordtype">void</span>* (AllocationPolicy::*)(<span class="keywordtype">void</span>*, <span class="keywordtype">size_t</span>, <span class="keywordtype">size_t</span>, <span class="keywordtype">size_t</span>)&gt;::value&gt;(sName, pParent)</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  }</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;};</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#ifdef new</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#  undef new</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifdef delete</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#  undef delete</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">using</span> <a class="code" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a> = <a class="code" href="../../dd/d2a/structez_generic_id.htm">ezGenericId&lt;24, 8&gt;</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="../../d0/dbb/classez_allocator.htm">   22</a></span>&#160;<span class="keyword">class </span>EZ_FOUNDATION_DLL <a class="code" href="../../d0/dbb/classez_allocator.htm">ezAllocator</a></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="../../d5/d3e/structez_allocator_1_1_stats.htm">   25</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../d5/d3e/structez_allocator_1_1_stats.htm">Stats</a></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    EZ_DECLARE_POD_TYPE();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="../../d5/d3e/structez_allocator_1_1_stats.htm#a7b02d6bd56b8cb550b79dd21bf805523">   29</a></span>&#160;    ezUInt64 m_uiNumAllocations = 0;         </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="../../d5/d3e/structez_allocator_1_1_stats.htm#a315fcac5e7a99b229982e6d22c2515f3">   30</a></span>&#160;    ezUInt64 m_uiNumDeallocations = 0;       </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="../../d5/d3e/structez_allocator_1_1_stats.htm#a5785c54ad94113fdd027173d7f77c0ab">   31</a></span>&#160;    ezUInt64 m_uiAllocationSize = 0;         </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="../../d5/d3e/structez_allocator_1_1_stats.htm#a30f0263438c412cadf1e49f3e5473be1">   33</a></span>&#160;    ezUInt64 m_uiPerFrameAllocationSize = 0; </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="../../d5/d3e/structez_allocator_1_1_stats.htm#a3858007f84ee3fcb9c0e31b11c76cca8">   34</a></span>&#160;    <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> <a class="code" href="../../d5/d3e/structez_allocator_1_1_stats.htm#a3858007f84ee3fcb9c0e31b11c76cca8">m_PerFrameAllocationTime</a>;         </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  };</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <a class="code" href="../../d0/dbb/classez_allocator.htm">ezAllocator</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">virtual</span> ~<a class="code" href="../../d0/dbb/classez_allocator.htm">ezAllocator</a>();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span>* Allocate(<span class="keywordtype">size_t</span> uiSize, <span class="keywordtype">size_t</span> uiAlign, ezMemoryUtils::DestructorFunction destructorFunc = <span class="keyword">nullptr</span>) = 0;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> Deallocate(<span class="keywordtype">void</span>* pPtr) = 0;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span>* Reallocate(<span class="keywordtype">void</span>* pPtr, <span class="keywordtype">size_t</span> uiCurrentSize, <span class="keywordtype">size_t</span> uiNewSize, <span class="keywordtype">size_t</span> uiAlign);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">size_t</span> AllocatedSize(<span class="keyword">const</span> <span class="keywordtype">void</span>* pPtr) = 0;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a> GetId() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d5/d3e/structez_allocator_1_1_stats.htm">Stats</a> GetStats() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  EZ_DISALLOW_COPY_AND_ASSIGN(<a class="code" href="../../d0/dbb/classez_allocator.htm">ezAllocator</a>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;};</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#include &lt;Foundation/Memory/Implementation/Allocator_inl.h&gt;</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#define EZ_NEW(allocator, type, ...) \</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">  ezInternal::NewInstance&lt;type&gt;(     \</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">    new ((allocator)-&gt;Allocate(sizeof(type), EZ_ALIGNMENT_OF(type), ezMemoryUtils::MakeDestructorFunction&lt;type&gt;())) type(__VA_ARGS__), (allocator))</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#define EZ_DELETE(allocator, ptr)       \</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">  {                                     \</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">    ezInternal::Delete(allocator, ptr); \</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">    ptr = nullptr;                      \</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">  }</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#define EZ_NEW_ARRAY(allocator, type, count) ezInternal::CreateArray&lt;type&gt;(allocator, count)</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#define EZ_DELETE_ARRAY(allocator, arrayPtr)      \</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">  {                                               \</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">    ezInternal::DeleteArray(allocator, arrayPtr); \</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">    arrayPtr.Clear();                             \</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">  }</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#define EZ_NEW_RAW_BUFFER(allocator, type, count) ezInternal::CreateRawBuffer&lt;type&gt;(allocator, count)</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">#define EZ_DELETE_RAW_BUFFER(allocator, ptr)     \</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">  {                                              \</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">    ezInternal::DeleteRawBuffer(allocator, ptr); \</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">    ptr = nullptr;                               \</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">  }</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#define EZ_EXTEND_RAW_BUFFER(allocator, ptr, oldSize, newSize) ezInternal::ExtendRawBuffer(ptr, allocator, oldSize, newSize)</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#define EZ_DEFAULT_NEW(type, ...) EZ_NEW(ezFoundation::GetDefaultAllocator(), type, __VA_ARGS__)</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#define EZ_DEFAULT_DELETE(ptr) EZ_DELETE(ezFoundation::GetDefaultAllocator(), ptr)</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">#define EZ_DEFAULT_NEW_ARRAY(type, count) EZ_NEW_ARRAY(ezFoundation::GetDefaultAllocator(), type, count)</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#define EZ_DEFAULT_DELETE_ARRAY(arrayPtr) EZ_DELETE_ARRAY(ezFoundation::GetDefaultAllocator(), arrayPtr)</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor">#define EZ_DEFAULT_NEW_RAW_BUFFER(type, count) EZ_NEW_RAW_BUFFER(ezFoundation::GetDefaultAllocator(), type, count)</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor">#define EZ_DEFAULT_DELETE_RAW_BUFFER(ptr) EZ_DELETE_RAW_BUFFER(ezFoundation::GetDefaultAllocator(), ptr)</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassez_allocator_base_htm"><div class="ttname"><a href="../../d1/d4c/classez_allocator_base.htm">ezAllocatorBase</a></div><div class="ttdoc">Base class for all memory allocators.</div><div class="ttdef"><b>Definition:</b> AllocatorBase.h:22</div></div>
-<div class="ttc" id="aclassez_internal_1_1ez_allocator_mixin_reallocate_htm"><div class="ttname"><a href="../../d6/dc9/classez_internal_1_1ez_allocator_mixin_reallocate.htm">ezInternal::ezAllocatorMixinReallocate</a></div><div class="ttdef"><b>Definition:</b> Allocator_inl.h:27</div></div>
-<div class="ttc" id="astructez_string_view_htm"><div class="ttname"><a href="../../de/db8/structez_string_view.htm">ezStringView</a></div><div class="ttdoc">ezStringView represent a read-only sub-string of a larger string, as it can store a dedicated string ...</div><div class="ttdef"><b>Definition:</b> StringView.h:23</div></div>
-<div class="ttc" id="aclassez_allocator_htm"><div class="ttname"><a href="../../d0/dbb/classez_allocator.htm">ezAllocator</a></div><div class="ttdoc">Policy based allocator implementation of the ezAllocatorBase interface.</div><div class="ttdef"><b>Definition:</b> Allocator.h:17</div></div>
+<div class="ttc" id="astructez_time_htm"><div class="ttname"><a href="../../d3/d90/structez_time.htm">ezTime</a></div><div class="ttdoc">The time class encapsulates a double value storing the time in seconds.</div><div class="ttdef"><b>Definition:</b> Time.h:11</div></div>
+<div class="ttc" id="astructez_allocator_1_1_stats_htm"><div class="ttname"><a href="../../d5/d3e/structez_allocator_1_1_stats.htm">ezAllocator::Stats</a></div><div class="ttdef"><b>Definition:</b> Allocator.h:25</div></div>
+<div class="ttc" id="aclassez_allocator_htm"><div class="ttname"><a href="../../d0/dbb/classez_allocator.htm">ezAllocator</a></div><div class="ttdoc">Base class for all memory allocators.</div><div class="ttdef"><b>Definition:</b> Allocator.h:22</div></div>
+<div class="ttc" id="astructez_allocator_1_1_stats_htm_a3858007f84ee3fcb9c0e31b11c76cca8"><div class="ttname"><a href="../../d5/d3e/structez_allocator_1_1_stats.htm#a3858007f84ee3fcb9c0e31b11c76cca8">ezAllocator::Stats::m_PerFrameAllocationTime</a></div><div class="ttdeci">ezTime m_PerFrameAllocationTime</div><div class="ttdoc">time spend on allocations in this frame</div><div class="ttdef"><b>Definition:</b> Allocator.h:34</div></div>
+<div class="ttc" id="astructez_generic_id_htm"><div class="ttname"><a href="../../dd/d2a/structez_generic_id.htm">ezGenericId&lt; 24, 8 &gt;</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_adb0ac2a169525f5fa05f0527c58e205.htm">Memory</a></li><li class="navelem"><b>Allocator.h</b></li>
-    <li class="footer">Generated on Fri Dec 22 2023 20:43:06 for ezEngine by
+    <li class="footer">Generated on Sun Aug 25 2024 13:06:19 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

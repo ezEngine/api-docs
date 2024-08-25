@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.12</span>
+   &#160;<span id="projectnumber">Release 24.09</span>
    </div>
   </td>
  </tr>
@@ -142,7 +142,7 @@ $(document).ready(function(){initNavTree('d0/d08/_archive_8h_source.htm','../../
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  EZ_DECLARE_POD_TYPE();</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <a class="code" href="../../d3/d60/classez_archive_lookup_string.htm">ezArchiveLookupString</a>(ezUInt64 uiLowerCaseHash, <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sString, <span class="keyword">const</span> <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezUInt8&gt;</a>&amp; archiveAllPathStrings)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <a class="code" href="../../d3/d60/classez_archive_lookup_string.htm">ezArchiveLookupString</a>(ezUInt64 uiLowerCaseHash, <a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sString, <span class="keyword">const</span> <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezUInt8&gt;</a>&amp; archiveAllPathStrings)</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    : m_uiLowerCaseHash(<a class="code" href="../../dd/dd0/classez_hashing_utils.htm#afd95702d7001da8afc62d2e44cb08d7a">ezHashingUtils::StringHashTo32</a>(uiLowerCaseHash))</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    , m_sString(sString)</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    , m_ArchiveAllPathStrings(archiveAllPathStrings)</div>
@@ -150,7 +150,7 @@ $(document).ready(function(){initNavTree('d0/d08/_archive_8h_source.htm','../../
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  }</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  ezUInt32 m_uiLowerCaseHash;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> m_sString;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> m_sString;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezUInt8&gt;</a>&amp; m_ArchiveAllPathStrings;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;};</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
@@ -166,7 +166,7 @@ $(document).ready(function(){initNavTree('d0/d08/_archive_8h_source.htm','../../
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  {</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="comment">// in case that we want to lookup a string using a ezArchiveLookupString, we validate</span></div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">// that the stored string is actually equal to the lookup string, to enable handling of hash collisions</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">return</span> b.m_sString.<a class="code" href="../../de/db8/structez_string_view.htm#a16a8c4afbb2f05aa5d912924b18aa572">IsEqual_NoCase</a>(<span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(&amp;b.m_ArchiveAllPathStrings[a.m_uiSrcStringOffset]));</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">return</span> b.m_sString.<a class="code" href="../../d9/d18/classez_string_view.htm#a16a8c4afbb2f05aa5d912924b18aa572">IsEqual_NoCase</a>(<span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(&amp;b.m_ArchiveAllPathStrings[a.m_uiSrcStringOffset]));</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  }</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;};</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
@@ -177,19 +177,24 @@ $(document).ready(function(){initNavTree('d0/d08/_archive_8h_source.htm','../../
 <div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="../../d5/dbf/classez_archive_t_o_c.htm#a7982ebb58e0edf045ac238f57d4f2970">  103</a></span>&#160;  <a class="code" href="../../d8/d86/classez_hash_table.htm">ezHashTable&lt;ezArchiveStoredString, ezUInt32&gt;</a> <a class="code" href="../../d5/dbf/classez_archive_t_o_c.htm#a7982ebb58e0edf045ac238f57d4f2970">m_PathToEntryIndex</a>;</div>
 <div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="../../d5/dbf/classez_archive_t_o_c.htm#a5e6bc813c9a03aa0de4363acce67412e">  105</a></span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezUInt8&gt;</a> <a class="code" href="../../d5/dbf/classez_archive_t_o_c.htm#a5e6bc813c9a03aa0de4363acce67412e">m_AllPathStrings</a>;</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  ezUInt32 FindEntry(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sFile) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  ezUInt32 FindEntry(<a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sFile) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> GetEntryPathString(ezUInt32 uiEntryIdx) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  ezUInt32 AddPathString(<a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sPathString);</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> Serialize(<a class="code" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a>&amp; inout_stream) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> Deserialize(<a class="code" href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a>&amp; inout_stream, ezUInt8 uiArchiveVersion);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;};</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <span class="keywordtype">void</span> RebuildPathToEntryHashes();</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> GetEntryPathString(ezUInt32 uiEntryIdx) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> Serialize(<a class="code" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a>&amp; inout_stream) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> Deserialize(<a class="code" href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a>&amp; inout_stream, ezUInt8 uiArchiveVersion);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition:</b> Types.h:50</div></div>
+<div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition:</b> Types.h:53</div></div>
 <div class="ttc" id="aclassez_archive_lookup_string_htm"><div class="ttname"><a href="../../d3/d60/classez_archive_lookup_string.htm">ezArchiveLookupString</a></div><div class="ttdoc">Helper class for looking up path strings in ezArchiveTOC::FindEntry()</div><div class="ttdef"><b>Definition:</b> Archive.h:60</div></div>
 <div class="ttc" id="aclassez_archive_t_o_c_htm_ad3b8cd06a007593b78d67a7c6d93f426"><div class="ttname"><a href="../../d5/dbf/classez_archive_t_o_c.htm#ad3b8cd06a007593b78d67a7c6d93f426">ezArchiveTOC::m_Entries</a></div><div class="ttdeci">ezDynamicArray&lt; ezArchiveEntry &gt; m_Entries</div><div class="ttdoc">all files stored in the ezArchive</div><div class="ttdef"><b>Definition:</b> Archive.h:101</div></div>
 <div class="ttc" id="aclassez_stream_writer_htm"><div class="ttname"><a href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a></div><div class="ttdoc">Interface for binary out (write) streams.</div><div class="ttdef"><b>Definition:</b> Stream.h:106</div></div>
+<div class="ttc" id="aclassez_string_view_htm_a16a8c4afbb2f05aa5d912924b18aa572"><div class="ttname"><a href="../../d9/d18/classez_string_view.htm#a16a8c4afbb2f05aa5d912924b18aa572">ezStringView::IsEqual_NoCase</a></div><div class="ttdeci">bool IsEqual_NoCase(ezStringView sOther) const</div><div class="ttdoc">Compares this string view with the other string view for equality.</div><div class="ttdef"><b>Definition:</b> StringView_inl.h:95</div></div>
 <div class="ttc" id="aclassez_archive_t_o_c_htm_a5e6bc813c9a03aa0de4363acce67412e"><div class="ttname"><a href="../../d5/dbf/classez_archive_t_o_c.htm#a5e6bc813c9a03aa0de4363acce67412e">ezArchiveTOC::m_AllPathStrings</a></div><div class="ttdeci">ezDynamicArray&lt; ezUInt8 &gt; m_AllPathStrings</div><div class="ttdoc">one large array holding all path strings for the file entries, to reduce allocations</div><div class="ttdef"><b>Definition:</b> Archive.h:105</div></div>
 <div class="ttc" id="aclassez_stream_reader_htm"><div class="ttname"><a href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a></div><div class="ttdoc">Interface for binary in (read) streams.</div><div class="ttdef"><b>Definition:</b> Stream.h:21</div></div>
 <div class="ttc" id="aclassez_archive_t_o_c_htm"><div class="ttname"><a href="../../d5/dbf/classez_archive_t_o_c.htm">ezArchiveTOC</a></div><div class="ttdoc">Table-of-contents for an ezArchive file.</div><div class="ttdef"><b>Definition:</b> Archive.h:97</div></div>
@@ -197,17 +202,16 @@ $(document).ready(function(){initNavTree('d0/d08/_archive_8h_source.htm','../../
 <div class="ttc" id="aclassez_archive_t_o_c_htm_a7982ebb58e0edf045ac238f57d4f2970"><div class="ttname"><a href="../../d5/dbf/classez_archive_t_o_c.htm#a7982ebb58e0edf045ac238f57d4f2970">ezArchiveTOC::m_PathToEntryIndex</a></div><div class="ttdeci">ezHashTable&lt; ezArchiveStoredString, ezUInt32 &gt; m_PathToEntryIndex</div><div class="ttdoc">allows to map a hashed string to the index of the file entry for the file path</div><div class="ttdef"><b>Definition:</b> Archive.h:103</div></div>
 <div class="ttc" id="aclassez_dynamic_array_htm"><div class="ttname"><a href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt; ezUInt8 &gt;</a></div></div>
 <div class="ttc" id="aclassez_archive_stored_string_htm"><div class="ttname"><a href="../../d5/dd1/classez_archive_stored_string.htm">ezArchiveStoredString</a></div><div class="ttdoc">Helper class to store a hashed string for quick lookup in the archive TOC.</div><div class="ttdef"><b>Definition:</b> Archive.h:37</div></div>
-<div class="ttc" id="astructez_string_view_htm"><div class="ttname"><a href="../../de/db8/structez_string_view.htm">ezStringView</a></div><div class="ttdoc">ezStringView represent a read-only sub-string of a larger string, as it can store a dedicated string ...</div><div class="ttdef"><b>Definition:</b> StringView.h:23</div></div>
 <div class="ttc" id="aclassez_archive_entry_htm"><div class="ttname"><a href="../../dd/dd9/classez_archive_entry.htm">ezArchiveEntry</a></div><div class="ttdoc">Data for a single file entry in an ezArchive file.</div><div class="ttdef"><b>Definition:</b> Archive.h:18</div></div>
+<div class="ttc" id="aclassez_string_view_htm"><div class="ttname"><a href="../../d9/d18/classez_string_view.htm">ezStringView</a></div><div class="ttdoc">ezStringView represent a read-only sub-string of a larger string, as it can store a dedicated string ...</div><div class="ttdef"><b>Definition:</b> StringView.h:33</div></div>
 <div class="ttc" id="aclassez_hash_table_htm"><div class="ttname"><a href="../../d8/d86/classez_hash_table.htm">ezHashTable&lt; ezArchiveStoredString, ezUInt32 &gt;</a></div></div>
-<div class="ttc" id="aclassez_raw_memory_stream_reader_htm"><div class="ttname"><a href="../../da/d34/classez_raw_memory_stream_reader.htm">ezRawMemoryStreamReader</a></div><div class="ttdoc">Maps a raw chunk of memory to the ezStreamReader interface.</div><div class="ttdef"><b>Definition:</b> MemoryStream.h:357</div></div>
-<div class="ttc" id="astructez_string_view_htm_a16a8c4afbb2f05aa5d912924b18aa572"><div class="ttname"><a href="../../de/db8/structez_string_view.htm#a16a8c4afbb2f05aa5d912924b18aa572">ezStringView::IsEqual_NoCase</a></div><div class="ttdeci">bool IsEqual_NoCase(ezStringView sOther) const</div><div class="ttdoc">Compares this string view with the other string view for equality.</div><div class="ttdef"><b>Definition:</b> StringView_inl.h:89</div></div>
+<div class="ttc" id="aclassez_raw_memory_stream_reader_htm"><div class="ttname"><a href="../../da/d34/classez_raw_memory_stream_reader.htm">ezRawMemoryStreamReader</a></div><div class="ttdoc">Maps a raw chunk of memory to the ezStreamReader interface.</div><div class="ttdef"><b>Definition:</b> MemoryStream.h:383</div></div>
 <div class="ttc" id="aclassez_hashing_utils_htm_afd95702d7001da8afc62d2e44cb08d7a"><div class="ttname"><a href="../../dd/dd0/classez_hashing_utils.htm#afd95702d7001da8afc62d2e44cb08d7a">ezHashingUtils::StringHashTo32</a></div><div class="ttdeci">constexpr static ezUInt32 StringHashTo32(ezUInt64 uiHash)</div><div class="ttdoc">Truncates a 64 bit string hash to 32 bit.</div><div class="ttdef"><b>Definition:</b> HashingUtils_inl.h:138</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_64fdcb4094ee5a27b054d4fa23e28e01.htm">IO</a></li><li class="navelem"><a class="el" href="../../dir_875d7adf883bab473c21f3095068c3c1.htm">Archive</a></li><li class="navelem"><b>Archive.h</b></li>
-    <li class="footer">Generated on Fri Dec 22 2023 20:43:06 for ezEngine by
+    <li class="footer">Generated on Sun Aug 25 2024 13:06:19 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

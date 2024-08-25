@@ -9,6 +9,7 @@ var classez_jolt_settings_component =
     [ "GetMaxSubSteps", "dd/dba/classez_jolt_settings_component.htm#ab197b5a1afd8b901d9b4187fd8f8e506", null ],
     [ "GetObjectGravity", "dd/dba/classez_jolt_settings_component.htm#ae53182d56b629c16fcf4ebd85395cb64", null ],
     [ "GetSettings", "dd/dba/classez_jolt_settings_component.htm#a1106078e5d36aa10e504537d09b47c52", null ],
+    [ "GetSleepVelocityThreshold", "dd/dba/classez_jolt_settings_component.htm#a92e171ee8b6313e3972578b1a7ff29dc", null ],
     [ "GetSteppingMode", "dd/dba/classez_jolt_settings_component.htm#afc02af284c5648d5a5c1cbb723af81c4", null ],
     [ "SerializeComponent", "dd/dba/classez_jolt_settings_component.htm#ae93f15da41b8914aae83b58a5f234433", null ],
     [ "SetCharacterGravity", "dd/dba/classez_jolt_settings_component.htm#a668dd202d12a3a9424e494e320f8e96b", null ],
@@ -16,6 +17,7 @@ var classez_jolt_settings_component =
     [ "SetMaxBodies", "dd/dba/classez_jolt_settings_component.htm#ab01cc7868a4770bfa03248e453d0a9b4", null ],
     [ "SetMaxSubSteps", "dd/dba/classez_jolt_settings_component.htm#a64026cd3ceef1028db6e720778768711", null ],
     [ "SetObjectGravity", "dd/dba/classez_jolt_settings_component.htm#a71ae465795e72cfec3e7bb40538ad39d", null ],
+    [ "SetSleepVelocityThreshold", "dd/dba/classez_jolt_settings_component.htm#ab2a6027b82b3ad6a6a0681dd4f38bbaf", null ],
     [ "SetSteppingMode", "dd/dba/classez_jolt_settings_component.htm#a4db9ffd67147800f14a396f2c3dcb83b", null ],
     [ "m_Settings", "dd/dba/classez_jolt_settings_component.htm#aff2bb2b89db0b7d69743987e4b1f8bac", null ]
 ];

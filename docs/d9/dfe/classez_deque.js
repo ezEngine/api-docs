@@ -1,7 +1,7 @@
 var classez_deque =
 [
     [ "ezDeque", "d9/dfe/classez_deque.htm#a9398b64080e7a5a83fe871f5ad7d25a5", null ],
-    [ "ezDeque", "d9/dfe/classez_deque.htm#ab94b285a185367af7717ecd842f5d529", null ],
+    [ "ezDeque", "d9/dfe/classez_deque.htm#ad8fc6422f75239e23523592ab4a397de", null ],
     [ "ezDeque", "d9/dfe/classez_deque.htm#a394107762d12d9a75e355bb466ca3675", null ],
     [ "ezDeque", "d9/dfe/classez_deque.htm#ad7f36495999b85bdf684180bd87bd854", null ],
     [ "ezDeque", "d9/dfe/classez_deque.htm#a1e9e3770225b202c7faf513cc401b560", null ],

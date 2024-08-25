@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.12</span>
+   &#160;<span id="projectnumber">Release 24.09</span>
    </div>
   </td>
  </tr>
@@ -107,7 +107,7 @@ $(document).ready(function(){initNavTree('df/dc1/_shared_ptr__inl_8h_source.htm'
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> U&gt;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;EZ_ALWAYS_INLINE <a class="code" href="../../de/dc1/classez_shared_ptr.htm">ezSharedPtr&lt;T&gt;::ezSharedPtr</a>(U* pInstance, <a class="code" href="../../d1/d4c/classez_allocator_base.htm">ezAllocatorBase</a>* pAllocator)</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;EZ_ALWAYS_INLINE <a class="code" href="../../de/dc1/classez_shared_ptr.htm">ezSharedPtr&lt;T&gt;::ezSharedPtr</a>(U* pInstance, <a class="code" href="../../d0/dbb/classez_allocator.htm">ezAllocator</a>* pAllocator)</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  m_pInstance = pInstance;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  m_pAllocator = pAllocator;</div>
@@ -384,32 +384,33 @@ $(document).ready(function(){initNavTree('df/dc1/_shared_ptr__inl_8h_source.htm'
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <span class="keywordflow">if</span> (m_pInstance-&gt;ReleaseRef() == 0)</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    {</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;      <span class="keyword">auto</span> pNonConstInstance = <span class="keyword">const_cast&lt;</span>typename <a class="code" href="../../d1/d32/structez_type_traits.htm#a4e377295b9ab7e2c78b1c82f92e63517">ezTypeTraits&lt;T&gt;::NonConstType</a>*<span class="keyword">&gt;</span>(m_pInstance);</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;      EZ_DELETE(m_pAllocator, pNonConstInstance);</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    }</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    m_pInstance = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    m_pAllocator = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;  }</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;}</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;      EZ_ASSERT_DEV(m_pAllocator != <span class="keyword">nullptr</span>, <span class="stringliteral">&quot;Fake shared pointers should never be released&quot;</span>);</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;      EZ_DELETE(m_pAllocator, pNonConstInstance);</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    }</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    m_pInstance = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    m_pAllocator = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;  }</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_shared_ptr_htm"><div class="ttname"><a href="../../de/dc1/classez_shared_ptr.htm">ezSharedPtr</a></div><div class="ttdoc">A Shared ptr manages a shared object and destroys that object when no one references it anymore....</div><div class="ttdef"><b>Definition:</b> SharedPtr.h:9</div></div>
 <div class="ttc" id="aclassez_shared_ptr_htm_acc907e6317fbd5e191ed23234d47db74"><div class="ttname"><a href="../../de/dc1/classez_shared_ptr.htm#acc907e6317fbd5e191ed23234d47db74">ezSharedPtr::operator*</a></div><div class="ttdeci">T &amp; operator*() const</div><div class="ttdoc">Provides access to the managed object.</div><div class="ttdef"><b>Definition:</b> SharedPtr_inl.h:180</div></div>
-<div class="ttc" id="astructez_type_traits_htm_a4e377295b9ab7e2c78b1c82f92e63517"><div class="ttname"><a href="../../d1/d32/structez_type_traits.htm#a4e377295b9ab7e2c78b1c82f92e63517">ezTypeTraits::NonConstType</a></div><div class="ttdeci">typename std::remove_const&lt; T &gt;::type NonConstType</div><div class="ttdoc">removes const qualifier</div><div class="ttdef"><b>Definition:</b> TypeTraits.h:208</div></div>
-<div class="ttc" id="astructez_internal_1_1_new_instance_htm"><div class="ttname"><a href="../../da/d7c/structez_internal_1_1_new_instance.htm">ezInternal::NewInstance</a></div><div class="ttdef"><b>Definition:</b> AllocatorBase_inl.h:17</div></div>
+<div class="ttc" id="astructez_type_traits_htm_a4e377295b9ab7e2c78b1c82f92e63517"><div class="ttname"><a href="../../d1/d32/structez_type_traits.htm#a4e377295b9ab7e2c78b1c82f92e63517">ezTypeTraits::NonConstType</a></div><div class="ttdeci">typename std::remove_const&lt; T &gt;::type NonConstType</div><div class="ttdoc">removes const qualifier</div><div class="ttdef"><b>Definition:</b> TypeTraits.h:209</div></div>
+<div class="ttc" id="astructez_internal_1_1_new_instance_htm"><div class="ttname"><a href="../../da/d7c/structez_internal_1_1_new_instance.htm">ezInternal::NewInstance</a></div><div class="ttdef"><b>Definition:</b> Allocator_inl.h:17</div></div>
 <div class="ttc" id="aclassez_shared_ptr_htm_a42e678e946ad5211bdb95bd4888d5da2"><div class="ttname"><a href="../../de/dc1/classez_shared_ptr.htm#a42e678e946ad5211bdb95bd4888d5da2">ezSharedPtr::Clear</a></div><div class="ttdeci">void Clear()</div><div class="ttdoc">Destroys the managed object if no one else references it anymore and resets the shared ptr.</div><div class="ttdef"><b>Definition:</b> SharedPtr_inl.h:174</div></div>
 <div class="ttc" id="aclassez_shared_ptr_htm_af3376c3fc97cf9178576df9a84d3ddde"><div class="ttname"><a href="../../de/dc1/classez_shared_ptr.htm#af3376c3fc97cf9178576df9a84d3ddde">ezSharedPtr::operator-&gt;</a></div><div class="ttdeci">T * operator-&gt;() const</div><div class="ttdoc">Provides access to the managed object.</div><div class="ttdef"><b>Definition:</b> SharedPtr_inl.h:186</div></div>
-<div class="ttc" id="aclassez_allocator_base_htm"><div class="ttname"><a href="../../d1/d4c/classez_allocator_base.htm">ezAllocatorBase</a></div><div class="ttdoc">Base class for all memory allocators.</div><div class="ttdef"><b>Definition:</b> AllocatorBase.h:22</div></div>
-<div class="ttc" id="aclassez_unique_ptr_htm"><div class="ttname"><a href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr</a></div><div class="ttdoc">A Unique ptr manages an object and destroys that object when it goes out of scope....</div><div class="ttdef"><b>Definition:</b> UniquePtr.h:8</div></div>
+<div class="ttc" id="aclassez_unique_ptr_htm"><div class="ttname"><a href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr</a></div><div class="ttdoc">A Unique ptr manages an object and destroys that object when it goes out of scope....</div><div class="ttdef"><b>Definition:</b> UniquePtr.h:9</div></div>
 <div class="ttc" id="aclassez_shared_ptr_htm_aedc1d5f14523b793c8d5e53b83a9a45d"><div class="ttname"><a href="../../de/dc1/classez_shared_ptr.htm#aedc1d5f14523b793c8d5e53b83a9a45d">ezSharedPtr::Borrow</a></div><div class="ttdeci">T * Borrow() const</div><div class="ttdoc">Borrows the managed object. The shared ptr stays unmodified.</div><div class="ttdef"><b>Definition:</b> SharedPtr_inl.h:168</div></div>
 <div class="ttc" id="aclassez_shared_ptr_htm_afc7eeabcc62c42518b16cf80c1f7630e"><div class="ttname"><a href="../../de/dc1/classez_shared_ptr.htm#afc7eeabcc62c42518b16cf80c1f7630e">ezSharedPtr::~ezSharedPtr</a></div><div class="ttdeci">~ezSharedPtr()</div><div class="ttdoc">Destroys the managed object using the stored allocator if no one else references it anymore.</div><div class="ttdef"><b>Definition:</b> SharedPtr_inl.h:76</div></div>
 <div class="ttc" id="aclassez_shared_ptr_htm_a5a181acfde7526beb65f8d594830ae71"><div class="ttname"><a href="../../de/dc1/classez_shared_ptr.htm#a5a181acfde7526beb65f8d594830ae71">ezSharedPtr::operator==</a></div><div class="ttdeci">bool operator==(const ezSharedPtr&lt; T &gt; &amp;rhs) const</div><div class="ttdoc">Compares the shared ptr against another shared ptr.</div><div class="ttdef"><b>Definition:</b> SharedPtr_inl.h:210</div></div>
 <div class="ttc" id="aclassez_shared_ptr_htm_a9c790946bd6364960c35d489c0f9e6d2"><div class="ttname"><a href="../../de/dc1/classez_shared_ptr.htm#a9c790946bd6364960c35d489c0f9e6d2">ezSharedPtr::operator=</a></div><div class="ttdeci">ezSharedPtr&lt; T &gt; &amp; operator=(const ezInternal::NewInstance&lt; U &gt; &amp;instance)</div><div class="ttdoc">Sets the shared ptr from a freshly created instance through EZ_NEW or EZ_DEFAULT_NEW.</div></div>
+<div class="ttc" id="aclassez_allocator_htm"><div class="ttname"><a href="../../d0/dbb/classez_allocator.htm">ezAllocator</a></div><div class="ttdoc">Base class for all memory allocators.</div><div class="ttdef"><b>Definition:</b> Allocator.h:22</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_f95f7c440efc771b227d40e9293549bd.htm">Types</a></li><li class="navelem"><a class="el" href="../../dir_81708b2bf5e0f7f3d10c3c7a8700c5a1.htm">Implementation</a></li><li class="navelem"><b>SharedPtr_inl.h</b></li>
-    <li class="footer">Generated on Fri Dec 22 2023 20:43:08 for ezEngine by
+    <li class="footer">Generated on Sun Aug 25 2024 13:06:21 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

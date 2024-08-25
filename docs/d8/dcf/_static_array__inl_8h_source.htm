@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.12</span>
+   &#160;<span id="projectnumber">Release 24.09</span>
    </div>
   </td>
  </tr>
@@ -107,7 +107,7 @@ $(document).ready(function(){initNavTree('d8/dcf/_static_array__inl_8h_source.ht
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">template</span> &lt;ezUInt32 OtherCapacity&gt;</div>
 <div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="../../df/d5c/classez_static_array.htm#a89305aa45371a1b3e8d7875eef263a85">   19</a></span>&#160;<a class="code" href="../../df/d5c/classez_static_array.htm#afe4a341e1e970140cf1bc11fd8db03ee">ezStaticArray&lt;T, C&gt;::ezStaticArray</a>(<span class="keyword">const</span> <a class="code" href="../../df/d5c/classez_static_array.htm">ezStaticArray&lt;T, OtherCapacity&gt;</a>&amp; rhs)</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  EZ_CHECK_AT_COMPILETIME(OtherCapacity &lt;= C);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  static_assert(OtherCapacity &lt;= C);</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  EZ_ASSERT_DEBUG(this-&gt;m_pElements == <span class="keyword">nullptr</span>, <span class="stringliteral">&quot;static arrays should not use m_pElements&quot;</span>);</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  this-&gt;m_uiCapacity = C;</div>
@@ -146,40 +146,41 @@ $(document).ready(function(){initNavTree('d8/dcf/_static_array__inl_8h_source.ht
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, ezUInt32 C&gt;</div>
 <div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="../../df/d5c/classez_static_array.htm#ab36e115696659385ce7b18cafcfb142e">   58</a></span>&#160;EZ_FORCE_INLINE <span class="keywordtype">void</span> <a class="code" href="../../df/d5c/classez_static_array.htm#ab36e115696659385ce7b18cafcfb142e">ezStaticArray&lt;T, C&gt;::Reserve</a>(ezUInt32 uiCapacity)</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  EZ_ASSERT_DEV(uiCapacity &lt;= C, <span class="stringliteral">&quot;The static array has a fixed capacity of {0}, cannot reserve more elements than that.&quot;</span>, C);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="comment">// Nothing to do here</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, ezUInt32 C&gt;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../df/d5c/classez_static_array.htm#ab55e8b0973ec374bdf180a7a370d1820">ezStaticArray&lt;T, C&gt;::operator=</a>(<span class="keyword">const</span> <a class="code" href="../../df/d5c/classez_static_array.htm">ezStaticArray&lt;T, C&gt;</a>&amp; rhs)</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  *<span class="keyword">this</span> = (<a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;const T&gt;</a>)rhs; <span class="comment">// redirect this to the ezArrayPtr version</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, ezUInt32 C&gt;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">template</span> &lt;ezUInt32 OtherCapacity&gt;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../df/d5c/classez_static_array.htm#ab55e8b0973ec374bdf180a7a370d1820">ezStaticArray&lt;T, C&gt;::operator=</a>(<span class="keyword">const</span> <a class="code" href="../../df/d5c/classez_static_array.htm">ezStaticArray&lt;T, OtherCapacity&gt;</a>&amp; rhs)</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;{</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  *<span class="keyword">this</span> = (<a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;const T&gt;</a>)rhs; <span class="comment">// redirect this to the ezArrayPtr version</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, ezUInt32 C&gt;</div>
-<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="../../df/d5c/classez_static_array.htm#ad484c0855aab0952aad9f737bac29591">   78</a></span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../df/d5c/classez_static_array.htm#ab55e8b0973ec374bdf180a7a370d1820">ezStaticArray&lt;T, C&gt;::operator=</a>(<span class="keyword">const</span> <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;const T&gt;</a>&amp; rhs)</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;{</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <a class="code" href="../../dc/d59/classez_array_base.htm">ezArrayBase&lt;T, ezStaticArray&lt;T, C&gt;</a>&gt;::operator=(rhs);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, ezUInt32 C&gt;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;EZ_FORCE_INLINE T* <a class="code" href="../../df/d5c/classez_static_array.htm">ezStaticArray&lt;T, C&gt;::GetElementsPtr</a>()</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;{</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keywordflow">return</span> GetStaticArray();</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, ezUInt32 C&gt;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;EZ_FORCE_INLINE <span class="keyword">const</span> T* <a class="code" href="../../df/d5c/classez_static_array.htm">ezStaticArray&lt;T, C&gt;::GetElementsPtr</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keywordflow">return</span> GetStaticArray();</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  EZ_IGNORE_UNUSED(uiCapacity);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  EZ_ASSERT_DEV(uiCapacity &lt;= C, <span class="stringliteral">&quot;The static array has a fixed capacity of {0}, cannot reserve more elements than that.&quot;</span>, C);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="comment">// Nothing to do here</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, ezUInt32 C&gt;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../df/d5c/classez_static_array.htm#ab55e8b0973ec374bdf180a7a370d1820">ezStaticArray&lt;T, C&gt;::operator=</a>(<span class="keyword">const</span> <a class="code" href="../../df/d5c/classez_static_array.htm">ezStaticArray&lt;T, C&gt;</a>&amp; rhs)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  *<span class="keyword">this</span> = (<a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;const T&gt;</a>)rhs; <span class="comment">// redirect this to the ezArrayPtr version</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, ezUInt32 C&gt;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">template</span> &lt;ezUInt32 OtherCapacity&gt;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../df/d5c/classez_static_array.htm#ab55e8b0973ec374bdf180a7a370d1820">ezStaticArray&lt;T, C&gt;::operator=</a>(<span class="keyword">const</span> <a class="code" href="../../df/d5c/classez_static_array.htm">ezStaticArray&lt;T, OtherCapacity&gt;</a>&amp; rhs)</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;{</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  *<span class="keyword">this</span> = (<a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;const T&gt;</a>)rhs; <span class="comment">// redirect this to the ezArrayPtr version</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, ezUInt32 C&gt;</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="../../df/d5c/classez_static_array.htm#ad484c0855aab0952aad9f737bac29591">   79</a></span>&#160;EZ_ALWAYS_INLINE <span class="keywordtype">void</span> <a class="code" href="../../df/d5c/classez_static_array.htm#ab55e8b0973ec374bdf180a7a370d1820">ezStaticArray&lt;T, C&gt;::operator=</a>(<span class="keyword">const</span> <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;const T&gt;</a>&amp; rhs)</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;{</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <a class="code" href="../../dc/d59/classez_array_base.htm">ezArrayBase&lt;T, ezStaticArray&lt;T, C&gt;</a>&gt;::operator=(rhs);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, ezUInt32 C&gt;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;EZ_FORCE_INLINE T* <a class="code" href="../../df/d5c/classez_static_array.htm">ezStaticArray&lt;T, C&gt;::GetElementsPtr</a>()</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;{</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keywordflow">return</span> GetStaticArray();</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, ezUInt32 C&gt;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;EZ_FORCE_INLINE <span class="keyword">const</span> T* <a class="code" href="../../df/d5c/classez_static_array.htm">ezStaticArray&lt;T, C&gt;::GetElementsPtr</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keywordflow">return</span> GetStaticArray();</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_static_array_htm_afe4a341e1e970140cf1bc11fd8db03ee"><div class="ttname"><a href="../../df/d5c/classez_static_array.htm#afe4a341e1e970140cf1bc11fd8db03ee">ezStaticArray::ezStaticArray</a></div><div class="ttdeci">ezStaticArray()</div><div class="ttdoc">Creates an empty array.</div><div class="ttdef"><b>Definition:</b> StaticArray_inl.h:3</div></div>
@@ -187,13 +188,13 @@ $(document).ready(function(){initNavTree('d8/dcf/_static_array__inl_8h_source.ht
 <div class="ttc" id="aclassez_static_array_htm_a1a2a115ddd0e0a4a39c0c27af73c9d9b"><div class="ttname"><a href="../../df/d5c/classez_static_array.htm#a1a2a115ddd0e0a4a39c0c27af73c9d9b">ezStaticArray::~ezStaticArray</a></div><div class="ttdeci">~ezStaticArray()</div><div class="ttdoc">Destroys all objects.</div><div class="ttdef"><b>Definition:</b> StaticArray_inl.h:39</div></div>
 <div class="ttc" id="aclassez_static_array_htm_ab36e115696659385ce7b18cafcfb142e"><div class="ttname"><a href="../../df/d5c/classez_static_array.htm#ab36e115696659385ce7b18cafcfb142e">ezStaticArray::Reserve</a></div><div class="ttdeci">void Reserve(ezUInt32 uiCapacity)</div><div class="ttdoc">For the static array Reserve is a no-op. However the function checks if the requested capacity is bel...</div><div class="ttdef"><b>Definition:</b> StaticArray_inl.h:58</div></div>
 <div class="ttc" id="aclassez_static_array_htm_ab55e8b0973ec374bdf180a7a370d1820"><div class="ttname"><a href="../../df/d5c/classez_static_array.htm#ab55e8b0973ec374bdf180a7a370d1820">ezStaticArray::operator=</a></div><div class="ttdeci">void operator=(const ezStaticArray&lt; T, Capacity &gt; &amp;rhs)</div><div class="ttdoc">Copies the data from some other contiguous array into this one.</div></div>
-<div class="ttc" id="aclassez_array_base_htm"><div class="ttname"><a href="../../dc/d59/classez_array_base.htm">ezArrayBase</a></div><div class="ttdoc">Base class for all array containers. Implements all the basic functionality that only requires a poin...</div><div class="ttdef"><b>Definition:</b> ArrayBase.h:14</div></div>
+<div class="ttc" id="aclassez_array_base_htm"><div class="ttname"><a href="../../dc/d59/classez_array_base.htm">ezArrayBase</a></div><div class="ttdoc">Base class for all array containers. Implements all the basic functionality that only requires a poin...</div><div class="ttdef"><b>Definition:</b> ArrayBase.h:18</div></div>
 <div class="ttc" id="aclassez_static_array_htm"><div class="ttname"><a href="../../df/d5c/classez_static_array.htm">ezStaticArray</a></div><div class="ttdoc">Wraps a C-style array, which has a fixed size at compile-time, with a more convenient interface.</div><div class="ttdef"><b>Definition:</b> StaticArray.h:12</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_6b567e6755824bd0b8ffd754b9d67ac0.htm">Containers</a></li><li class="navelem"><a class="el" href="../../dir_ab7c7fd106dde24a64865a60f78fe0d2.htm">Implementation</a></li><li class="navelem"><b>StaticArray_inl.h</b></li>
-    <li class="footer">Generated on Fri Dec 22 2023 20:43:05 for ezEngine by
+    <li class="footer">Generated on Sun Aug 25 2024 13:06:18 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

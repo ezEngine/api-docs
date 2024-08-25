@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.12</span>
+   &#160;<span id="projectnumber">Release 24.09</span>
    </div>
   </td>
  </tr>
@@ -104,10 +104,15 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a590f6235de8cadd952d7ea2c6a838790"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/ddf/structez_c_var_flags.htm#a590f6235de8cadd952d7ea2c6a838790">Enum</a> { <b>None</b> = 0, 
+<tr class="memitem:a590f6235de8cadd952d7ea2c6a838790"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/ddf/structez_c_var_flags.htm#a590f6235de8cadd952d7ea2c6a838790">Enum</a> { <br />
+&#160;&#160;<b>None</b> = 0, 
 <a class="el" href="../../d5/ddf/structez_c_var_flags.htm#a590f6235de8cadd952d7ea2c6a838790a3a5b8a9f16691d6ac5e271e450002aef">Save</a> = EZ_BIT(0), 
-<a class="el" href="../../d5/ddf/structez_c_var_flags.htm#a590f6235de8cadd952d7ea2c6a838790a8b4645dbbebfee1b4358519911c4af2b">RequiresRestart</a> = EZ_BIT(1), 
+<a class="el" href="../../d5/ddf/structez_c_var_flags.htm#a590f6235de8cadd952d7ea2c6a838790ac38f8b33c7bdb3a456ffe71702926e7d">RequiresDelayedSync</a> = EZ_BIT(1), 
+<b>ShowRequiresRestartMsg</b> = EZ_BIT(2), 
+<br />
+&#160;&#160;<a class="el" href="../../d5/ddf/structez_c_var_flags.htm#a590f6235de8cadd952d7ea2c6a838790a8b4645dbbebfee1b4358519911c4af2b">RequiresRestart</a> = Save | RequiresDelayedSync | ShowRequiresRestartMsg, 
 <a class="el" href="../../d5/ddf/structez_c_var_flags.htm#a590f6235de8cadd952d7ea2c6a838790af1a2f196656ce47f659edf0cb516892e">Default</a> = None
+<br />
  }</td></tr>
 <tr class="separator:a590f6235de8cadd952d7ea2c6a838790"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46cdb0a320728c4dd4ea19a6ecec93d7"><td class="memItemLeft" align="right" valign="top"><a id="a46cdb0a320728c4dd4ea19a6ecec93d7"></a>
@@ -131,7 +136,9 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>StorageType</b> = ez
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a590f6235de8cadd952d7ea2c6a838790a3a5b8a9f16691d6ac5e271e450002aef"></a>Save&#160;</td><td class="fielddoc"><p>If this flag is set, the CVar will be stored on disk and loaded again. Otherwise all changes to it will be lost on shutdown. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a590f6235de8cadd952d7ea2c6a838790a8b4645dbbebfee1b4358519911c4af2b"></a>RequiresRestart&#160;</td><td class="fielddoc"><p>Indicates that changing this cvar will only take effect after the proper subsystem has been reinitialized. This will always enforce the 'Save' flag as well. With this flag set, the 'Current' value never changes, unless 'SetToRestartValue' is called. </p>
+<tr><td class="fieldname"><a id="a590f6235de8cadd952d7ea2c6a838790ac38f8b33c7bdb3a456ffe71702926e7d"></a>RequiresDelayedSync&#160;</td><td class="fielddoc"><p>If the CVar value is changed, the new value will not be visible by default, until SetToDelayedSyncValue() is called on it. This allows to finalize the value change at a specific sync point in code. When this flag is set the <a class="el" href="../../dc/d54/structez_c_var_event.htm#add9e7e46f6267f81d310b87d19b484bda0b3e920257399e24576d80fd592809e6" title="Sent whenever the &#39;DelayedSync&#39; value of the CVar changes. It might actually change back to the &#39;Curr...">ezCVarEvent::DelayedSyncValueChanged</a> will be broadcast. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a590f6235de8cadd952d7ea2c6a838790a8b4645dbbebfee1b4358519911c4af2b"></a>RequiresRestart&#160;</td><td class="fielddoc"><p>Indicates that changing this CVar will only take effect after the proper subsystem has been reinitialized. This will always enforce the 'Save' flag as well. With this flag set, the 'Current' value never changes, unless 'SetToDelayedSyncValue' is called. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a590f6235de8cadd952d7ea2c6a838790af1a2f196656ce47f659edf0cb516892e"></a>Default&#160;</td><td class="fielddoc"><p>By default CVars are not saved. </p>
 </td></tr>
@@ -148,7 +155,7 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>StorageType</b> = ez
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d5/ddf/structez_c_var_flags.htm">ezCVarFlags</a></li>
-    <li class="footer">Generated on Fri Dec 22 2023 20:43:12 for ezEngine by
+    <li class="footer">Generated on Sun Aug 25 2024 13:06:27 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

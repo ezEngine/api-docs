@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.12</span>
+   &#160;<span id="projectnumber">Release 24.09</span>
    </div>
   </td>
  </tr>
@@ -90,58 +90,62 @@ $(document).ready(function(){initNavTree('da/db7/_camera_shake_component_8h_sour
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;Core/World/ComponentManager.h&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">using</span> <a class="code" href="../../d6/ddd/classez_component_manager_simple.htm">ezCameraShakeComponentManager</a> = <a class="code" href="../../d6/ddd/classez_component_manager_simple.htm">ezComponentManagerSimple&lt;class ezCameraShakeComponent, ezComponentUpdateType::WhenSimulating&gt;</a>;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="../../d9/d7e/classez_camera_shake_component.htm">    7</a></span>&#160;<span class="keyword">class </span>EZ_GAMECOMPONENTS_DLL <a class="code" href="../../d9/d7e/classez_camera_shake_component.htm">ezCameraShakeComponent</a> : <span class="keyword">public</span> <a class="code" href="../../d6/d30/classez_component.htm">ezComponent</a></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  EZ_DECLARE_COMPONENT_TYPE(<a class="code" href="../../d9/d7e/classez_camera_shake_component.htm">ezCameraShakeComponent</a>, <a class="code" href="../../d6/d30/classez_component.htm">ezComponent</a>, <a class="code" href="../../d6/ddd/classez_component_manager_simple.htm">ezCameraShakeComponentManager</a>);</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <span class="comment">// ezComponent</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d6/d30/classez_component.htm#aa607b7c06fdfcc61735366aef5b0e159">SerializeComponent</a>(<a class="code" href="../../dc/dd8/classez_world_writer.htm">ezWorldWriter</a>&amp; inout_stream) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d6/d30/classez_component.htm#a5733baf54244ceb284fd0f7e4fd2a0b4">DeserializeComponent</a>(<a class="code" href="../../d9/dd6/classez_world_reader.htm">ezWorldReader</a>&amp; inout_stream) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="comment">// ezCameraShakeComponent</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> m_MinShake;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> m_MaxShake;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;GameComponentsPlugin/GameComponentsDLL.h&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">using</span> <a class="code" href="../../d6/ddd/classez_component_manager_simple.htm">ezCameraShakeComponentManager</a> = <a class="code" href="../../d6/ddd/classez_component_manager_simple.htm">ezComponentManagerSimple&lt;class ezCameraShakeComponent, ezComponentUpdateType::WhenSimulating&gt;</a>;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="../../d9/d7e/classez_camera_shake_component.htm">   20</a></span>&#160;<span class="keyword">class </span>EZ_GAMECOMPONENTS_DLL <a class="code" href="../../d9/d7e/classez_camera_shake_component.htm">ezCameraShakeComponent</a> : <span class="keyword">public</span> <a class="code" href="../../d6/d30/classez_component.htm">ezComponent</a></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  EZ_DECLARE_COMPONENT_TYPE(<a class="code" href="../../d9/d7e/classez_camera_shake_component.htm">ezCameraShakeComponent</a>, <a class="code" href="../../d6/d30/classez_component.htm">ezComponent</a>, <a class="code" href="../../d6/ddd/classez_component_manager_simple.htm">ezCameraShakeComponentManager</a>);</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <a class="code" href="../../d9/d7e/classez_camera_shake_component.htm">ezCameraShakeComponent</a>();</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  ~<a class="code" href="../../d9/d7e/classez_camera_shake_component.htm">ezCameraShakeComponent</a>();</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordtype">void</span> Update();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="comment">// ezComponent</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d6/d30/classez_component.htm#aa607b7c06fdfcc61735366aef5b0e159">SerializeComponent</a>(<a class="code" href="../../dc/dd8/classez_world_writer.htm">ezWorldWriter</a>&amp; inout_stream) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d6/d30/classez_component.htm#a5733baf54244ceb284fd0f7e4fd2a0b4">DeserializeComponent</a>(<a class="code" href="../../d9/dd6/classez_world_reader.htm">ezWorldReader</a>&amp; inout_stream) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keywordtype">void</span> GenerateKeyframe();</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keywordtype">float</span> GetStrengthAtPosition() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="comment">// ezCameraShakeComponent</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordtype">float</span> m_fLastStrength = 0.0f;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> m_ReferenceTime;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> m_Rotation;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <a class="code" href="../../de/d15/classez_quat_template.htm">ezQuat</a> m_qPrevTarget = <a class="code" href="../../de/d15/classez_quat_template.htm#a655d61a2f2c0bd1e8a1d71c4e2697301">ezQuat::MakeIdentity</a>();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <a class="code" href="../../de/d15/classez_quat_template.htm">ezQuat</a> m_qNextTarget = <a class="code" href="../../de/d15/classez_quat_template.htm#a655d61a2f2c0bd1e8a1d71c4e2697301">ezQuat::MakeIdentity</a>();</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;};</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="../../d9/d7e/classez_camera_shake_component.htm#acaa7e4a21e3e6445d8cabf7991f5d798">   35</a></span>&#160;  <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> <a class="code" href="../../d9/d7e/classez_camera_shake_component.htm#acaa7e4a21e3e6445d8cabf7991f5d798">m_MinShake</a>; <span class="comment">// [ property ]</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="../../d9/d7e/classez_camera_shake_component.htm#a71d60024bd28be70263abdaafa843195">   38</a></span>&#160;  <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> m_MaxShake = <a class="code" href="../../db/d6f/classez_angle.htm#a6e6aec7948f52b69936a9074eca179fa">ezAngle::MakeFromDegree</a>(5); <span class="comment">// [ property ]</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="../../d9/d7e/classez_camera_shake_component.htm">ezCameraShakeComponent</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  ~<a class="code" href="../../d9/d7e/classez_camera_shake_component.htm">ezCameraShakeComponent</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordtype">void</span> Update();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordtype">void</span> GenerateKeyframe();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordtype">float</span> GetStrengthAtPosition() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordtype">float</span> m_fLastStrength = 0.0f;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> m_ReferenceTime;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> m_Rotation;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="../../de/d15/classez_quat_template.htm">ezQuat</a> m_qPrevTarget = <a class="code" href="../../de/d15/classez_quat_template.htm#a655d61a2f2c0bd1e8a1d71c4e2697301">ezQuat::MakeIdentity</a>();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <a class="code" href="../../de/d15/classez_quat_template.htm">ezQuat</a> m_qNextTarget = <a class="code" href="../../de/d15/classez_quat_template.htm#a655d61a2f2c0bd1e8a1d71c4e2697301">ezQuat::MakeIdentity</a>();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_component_manager_simple_htm"><div class="ttname"><a href="../../d6/ddd/classez_component_manager_simple.htm">ezComponentManagerSimple</a></div><div class="ttdoc">Simple component manager implementation that calls an update method on all components every frame.</div><div class="ttdef"><b>Definition:</b> ComponentManager.h:141</div></div>
 <div class="ttc" id="astructez_time_htm"><div class="ttname"><a href="../../d3/d90/structez_time.htm">ezTime</a></div><div class="ttdoc">The time class encapsulates a double value storing the time in seconds.</div><div class="ttdef"><b>Definition:</b> Time.h:11</div></div>
 <div class="ttc" id="aclassez_quat_template_htm_a655d61a2f2c0bd1e8a1d71c4e2697301"><div class="ttname"><a href="../../de/d15/classez_quat_template.htm#a655d61a2f2c0bd1e8a1d71c4e2697301">ezQuatTemplate&lt; float &gt;::MakeIdentity</a></div><div class="ttdeci">static const ezQuatTemplate&lt; float &gt; MakeIdentity()</div><div class="ttdoc">Static function that returns a quaternion that represents the identity rotation (none).</div><div class="ttdef"><b>Definition:</b> Quat_inl.h:29</div></div>
-<div class="ttc" id="aclassez_camera_shake_component_htm"><div class="ttname"><a href="../../d9/d7e/classez_camera_shake_component.htm">ezCameraShakeComponent</a></div><div class="ttdef"><b>Definition:</b> CameraShakeComponent.h:7</div></div>
+<div class="ttc" id="aclassez_camera_shake_component_htm"><div class="ttname"><a href="../../d9/d7e/classez_camera_shake_component.htm">ezCameraShakeComponent</a></div><div class="ttdoc">This component is used to apply a shaking effect to the game object that it is attached to.</div><div class="ttdef"><b>Definition:</b> CameraShakeComponent.h:20</div></div>
 <div class="ttc" id="aclassez_world_writer_htm"><div class="ttname"><a href="../../dc/dd8/classez_world_writer.htm">ezWorldWriter</a></div><div class="ttdoc">Stores an entire ezWorld in a stream.</div><div class="ttdef"><b>Definition:</b> WorldWriter.h:12</div></div>
 <div class="ttc" id="aclassez_component_htm"><div class="ttname"><a href="../../d6/d30/classez_component.htm">ezComponent</a></div><div class="ttdoc">Base class of all component types.</div><div class="ttdef"><b>Definition:</b> Component.h:24</div></div>
+<div class="ttc" id="aclassez_angle_htm_a6e6aec7948f52b69936a9074eca179fa"><div class="ttname"><a href="../../db/d6f/classez_angle.htm#a6e6aec7948f52b69936a9074eca179fa">ezAngle::MakeFromDegree</a></div><div class="ttdeci">constexpr static ezAngle MakeFromDegree(float fDegree)</div><div class="ttdoc">Creates an instance of ezAngle that was initialized from degree. (Performs a conversion)</div><div class="ttdef"><b>Definition:</b> Angle_inl.h:33</div></div>
 <div class="ttc" id="aclassez_world_reader_htm"><div class="ttname"><a href="../../d9/dd6/classez_world_reader.htm">ezWorldReader</a></div><div class="ttdoc">Reads a world description from a stream. Allows to instantiate that world multiple times in different...</div><div class="ttdef"><b>Definition:</b> WorldReader.h:46</div></div>
+<div class="ttc" id="aclassez_camera_shake_component_htm_acaa7e4a21e3e6445d8cabf7991f5d798"><div class="ttname"><a href="../../d9/d7e/classez_camera_shake_component.htm#acaa7e4a21e3e6445d8cabf7991f5d798">ezCameraShakeComponent::m_MinShake</a></div><div class="ttdeci">ezAngle m_MinShake</div><div class="ttdoc">How much shake to apply as the minimum value, even if no shake volume is found or the shake strength ...</div><div class="ttdef"><b>Definition:</b> CameraShakeComponent.h:35</div></div>
 <div class="ttc" id="aclassez_component_htm_aa607b7c06fdfcc61735366aef5b0e159"><div class="ttname"><a href="../../d6/d30/classez_component.htm#aa607b7c06fdfcc61735366aef5b0e159">ezComponent::SerializeComponent</a></div><div class="ttdeci">virtual void SerializeComponent(ezWorldWriter &amp;inout_stream) const</div><div class="ttdoc">Override this to save the current state of the component to the given stream.</div><div class="ttdef"><b>Definition:</b> Component.cpp:54</div></div>
 <div class="ttc" id="aclassez_angle_htm"><div class="ttname"><a href="../../db/d6f/classez_angle.htm">ezAngle</a></div><div class="ttdoc">Float wrapper struct for a safe usage and conversions of angles.</div><div class="ttdef"><b>Definition:</b> Angle.h:9</div></div>
-<div class="ttc" id="aclassez_component_htm_a5733baf54244ceb284fd0f7e4fd2a0b4"><div class="ttname"><a href="../../d6/d30/classez_component.htm#a5733baf54244ceb284fd0f7e4fd2a0b4">ezComponent::DeserializeComponent</a></div><div class="ttdeci">virtual void DeserializeComponent(ezWorldReader &amp;inout_stream)</div><div class="ttdoc">Override this to load the current state of the component from the given stream.</div><div class="ttdef"><b>Definition:</b> Component.cpp:58</div></div>
+<div class="ttc" id="aclassez_component_htm_a5733baf54244ceb284fd0f7e4fd2a0b4"><div class="ttname"><a href="../../d6/d30/classez_component.htm#a5733baf54244ceb284fd0f7e4fd2a0b4">ezComponent::DeserializeComponent</a></div><div class="ttdeci">virtual void DeserializeComponent(ezWorldReader &amp;inout_stream)</div><div class="ttdoc">Override this to load the current state of the component from the given stream.</div><div class="ttdef"><b>Definition:</b> Component.cpp:59</div></div>
 <div class="ttc" id="aclassez_quat_template_htm"><div class="ttname"><a href="../../de/d15/classez_quat_template.htm">ezQuatTemplate&lt; float &gt;</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_103378c88ff4c88de6bfabe12da9ec96.htm">EnginePlugins</a></li><li class="navelem"><a class="el" href="../../dir_2e9a420301af5eb96b814d617e0abfa9.htm">GameComponentsPlugin</a></li><li class="navelem"><a class="el" href="../../dir_ccf4cca4c2666721e82782fc23d1f58b.htm">Effects</a></li><li class="navelem"><a class="el" href="../../dir_614795602d1750dbaad9277fe3483475.htm">Shake</a></li><li class="navelem"><b>CameraShakeComponent.h</b></li>
-    <li class="footer">Generated on Fri Dec 22 2023 20:43:09 for ezEngine by
+    <li class="footer">Generated on Sun Aug 25 2024 13:06:24 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

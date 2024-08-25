@@ -21,6 +21,7 @@ var classez_material_asset_properties =
     [ "UpdateShader", "d3/d13/classez_material_asset_properties.htm#a5fcb1f4834d7321f8135e75a6a08897a", null ],
     [ "m_CachedProperties", "d3/d13/classez_material_asset_properties.htm#a9b55eeb4db6e680ccff0b8aadad4aee2", null ],
     [ "m_pDocument", "d3/d13/classez_material_asset_properties.htm#a7574c590192de4ce0616b22523009e60", null ],
+    [ "m_sAssetFilterTags", "d3/d13/classez_material_asset_properties.htm#a782387d4dc2278a1f2b28ed25a706a6a", null ],
     [ "m_sBaseMaterial", "d3/d13/classez_material_asset_properties.htm#a8493d078240aae80238f274990a5f6fc", null ],
     [ "m_ShaderMode", "d3/d13/classez_material_asset_properties.htm#a785a3e8899c22349ef48246a521addef", null ],
     [ "m_sShader", "d3/d13/classez_material_asset_properties.htm#a80a2d6e7358f39b197c9c2754f54807e", null ],

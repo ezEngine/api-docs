@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.12</span>
+   &#160;<span id="projectnumber">Release 24.09</span>
    </div>
   </td>
  </tr>
@@ -114,79 +114,87 @@ $(document).ready(function(){initNavTree('d1/d0f/_engine_plugins_2_jolt_plugin_2
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;EZ_DECLARE_REFLECTABLE_TYPE(EZ_JOLTPLUGIN_DLL, <a class="code" href="../../de/d9e/structez_jolt_stepping_mode.htm">ezJoltSteppingMode</a>);</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="../../d3/d97/structez_on_jolt_contact.htm">   29</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../d3/d97/structez_on_jolt_contact.htm">ezOnJoltContact</a></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">using</span> StorageType = ezUInt32;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keyword">enum</span> Enum</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    None = 0,</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">// SendReportMsg = EZ_BIT(0),</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    ImpactReactions = EZ_BIT(1),</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    SlideReactions = EZ_BIT(2),</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    RollXReactions = EZ_BIT(3),</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    RollYReactions = EZ_BIT(4),</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    RollZReactions = EZ_BIT(5),</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    AllRollReactions = RollXReactions | RollYReactions | RollZReactions,</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    SlideAndRollReactions = AllRollReactions | SlideReactions,</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    AllReactions = ImpactReactions | AllRollReactions | SlideReactions,</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    Default = None</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  };</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="../../dc/d8c/structez_on_jolt_contact_1_1_bits.htm">   50</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../dc/d8c/structez_on_jolt_contact_1_1_bits.htm">Bits</a></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    StorageType SendReportMsg : 1;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    StorageType ImpactReactions : 1;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    StorageType SlideReactions : 1;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    StorageType RollXReactions : 1;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    StorageType RollYReactions : 1;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    StorageType RollZReactions : 1;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  };</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;};</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;EZ_DECLARE_FLAGS_OPERATORS(<a class="code" href="../../d3/d97/structez_on_jolt_contact.htm">ezOnJoltContact</a>);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;EZ_DECLARE_REFLECTABLE_TYPE(EZ_JOLTPLUGIN_DLL, <a class="code" href="../../d3/d97/structez_on_jolt_contact.htm">ezOnJoltContact</a>);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="../../db/d13/structez_jolt_settings.htm">   66</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../db/d13/structez_jolt_settings.htm">ezJoltSettings</a></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> m_vObjectGravity = <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>(0, 0, -9.81f);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> m_vCharacterGravity = <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>(0, 0, -12.0f);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <a class="code" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezJoltSteppingMode&gt;</a> m_SteppingMode = ezJoltSteppingMode::SemiFixed;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordtype">float</span> m_fFixedFrameRate = 60.0f;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  ezUInt32 m_uiMaxSubSteps = 4;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  ezUInt32 m_uiMaxBodies = 1000 * 10;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;};</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="../../dc/da2/structez_jolt_msg_disconnect_constraints.htm">   80</a></span>&#160;<span class="keyword">struct </span>EZ_JOLTPLUGIN_DLL <a class="code" href="../../dc/da2/structez_jolt_msg_disconnect_constraints.htm">ezJoltMsgDisconnectConstraints</a> : <span class="keyword">public</span> <a class="code" href="../../dd/d22/classez_message.htm">ezMessage</a></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;{</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  EZ_DECLARE_MESSAGE_TYPE(<a class="code" href="../../dc/da2/structez_jolt_msg_disconnect_constraints.htm">ezJoltMsgDisconnectConstraints</a>, <a class="code" href="../../dd/d22/classez_message.htm">ezMessage</a>);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="../../dc/da2/structez_jolt_msg_disconnect_constraints.htm#a8ab3fde035d7477361a3f89eb9e74934">   85</a></span>&#160;  <a class="code" href="../../d9/d79/classez_jolt_actor_component.htm">ezJoltActorComponent</a>* m_pActor = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="../../dc/da2/structez_jolt_msg_disconnect_constraints.htm#a528d5f5f6ff158940610003dff93b55a">   88</a></span>&#160;  ezUInt32 m_uiJoltBodyID = 0;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;};</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="../../d3/d97/structez_on_jolt_contact.htm">   37</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../d3/d97/structez_on_jolt_contact.htm">ezOnJoltContact</a></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">using</span> StorageType = ezUInt32;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="../../d3/d97/structez_on_jolt_contact.htm#adaa65f2008f4d42d2f845a0f95222a3d">   41</a></span>&#160;  <span class="keyword">enum</span> <a class="code" href="../../d3/d97/structez_on_jolt_contact.htm#adaa65f2008f4d42d2f845a0f95222a3d">Enum</a></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    None = 0,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">// SendReportMsg = EZ_BIT(0),</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="../../d3/d97/structez_on_jolt_contact.htm#adaa65f2008f4d42d2f845a0f95222a3da29780b52105df71c969cf4229cc2344a">   45</a></span>&#160;    <a class="code" href="../../d3/d97/structez_on_jolt_contact.htm#adaa65f2008f4d42d2f845a0f95222a3da29780b52105df71c969cf4229cc2344a">ImpactReactions</a> = EZ_BIT(1), </div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="../../d3/d97/structez_on_jolt_contact.htm#adaa65f2008f4d42d2f845a0f95222a3da10aa32a050143751648fedc2b7fd585a">   46</a></span>&#160;    <a class="code" href="../../d3/d97/structez_on_jolt_contact.htm#adaa65f2008f4d42d2f845a0f95222a3da10aa32a050143751648fedc2b7fd585a">SlideReactions</a> = EZ_BIT(2),  </div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="../../d3/d97/structez_on_jolt_contact.htm#adaa65f2008f4d42d2f845a0f95222a3dabca2b4044c17649d5742bc3201ea2af7">   47</a></span>&#160;    <a class="code" href="../../d3/d97/structez_on_jolt_contact.htm#adaa65f2008f4d42d2f845a0f95222a3dabca2b4044c17649d5742bc3201ea2af7">RollXReactions</a> = EZ_BIT(3),  </div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="../../d3/d97/structez_on_jolt_contact.htm#adaa65f2008f4d42d2f845a0f95222a3da6c60f97409fc31e258985d68bcbab456">   48</a></span>&#160;    <a class="code" href="../../d3/d97/structez_on_jolt_contact.htm#adaa65f2008f4d42d2f845a0f95222a3da6c60f97409fc31e258985d68bcbab456">RollYReactions</a> = EZ_BIT(4),  </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="../../d3/d97/structez_on_jolt_contact.htm#adaa65f2008f4d42d2f845a0f95222a3da8eaf5bd306a6c74d04627cbaa229b226">   49</a></span>&#160;    <a class="code" href="../../d3/d97/structez_on_jolt_contact.htm#adaa65f2008f4d42d2f845a0f95222a3da8eaf5bd306a6c74d04627cbaa229b226">RollZReactions</a> = EZ_BIT(5),  </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    AllRollReactions = <a class="code" href="../../d3/d97/structez_on_jolt_contact.htm#adaa65f2008f4d42d2f845a0f95222a3dabca2b4044c17649d5742bc3201ea2af7">RollXReactions</a> | <a class="code" href="../../d3/d97/structez_on_jolt_contact.htm#adaa65f2008f4d42d2f845a0f95222a3da6c60f97409fc31e258985d68bcbab456">RollYReactions</a> | <a class="code" href="../../d3/d97/structez_on_jolt_contact.htm#adaa65f2008f4d42d2f845a0f95222a3da8eaf5bd306a6c74d04627cbaa229b226">RollZReactions</a>,</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    SlideAndRollReactions = AllRollReactions | <a class="code" href="../../d3/d97/structez_on_jolt_contact.htm#adaa65f2008f4d42d2f845a0f95222a3da10aa32a050143751648fedc2b7fd585a">SlideReactions</a>,</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    AllReactions = <a class="code" href="../../d3/d97/structez_on_jolt_contact.htm#adaa65f2008f4d42d2f845a0f95222a3da29780b52105df71c969cf4229cc2344a">ImpactReactions</a> | AllRollReactions | <a class="code" href="../../d3/d97/structez_on_jolt_contact.htm#adaa65f2008f4d42d2f845a0f95222a3da10aa32a050143751648fedc2b7fd585a">SlideReactions</a>,</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    Default = None</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  };</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="../../dc/d8c/structez_on_jolt_contact_1_1_bits.htm">   58</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../dc/d8c/structez_on_jolt_contact_1_1_bits.htm">Bits</a></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    StorageType SendReportMsg : 1;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    StorageType ImpactReactions : 1;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    StorageType SlideReactions : 1;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    StorageType RollXReactions : 1;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    StorageType RollYReactions : 1;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    StorageType RollZReactions : 1;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  };</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;};</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;EZ_DECLARE_FLAGS_OPERATORS(<a class="code" href="../../d3/d97/structez_on_jolt_contact.htm">ezOnJoltContact</a>);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;EZ_DECLARE_REFLECTABLE_TYPE(EZ_JOLTPLUGIN_DLL, <a class="code" href="../../d3/d97/structez_on_jolt_contact.htm">ezOnJoltContact</a>);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="../../db/d13/structez_jolt_settings.htm">   74</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../db/d13/structez_jolt_settings.htm">ezJoltSettings</a></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;{</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> m_vObjectGravity = <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>(0, 0, -9.81f);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> m_vCharacterGravity = <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>(0, 0, -12.0f);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <a class="code" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezJoltSteppingMode&gt;</a> m_SteppingMode = ezJoltSteppingMode::SemiFixed;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keywordtype">float</span> m_fFixedFrameRate = 60.0f;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  ezUInt32 m_uiMaxSubSteps = 4;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  ezUInt32 m_uiMaxBodies = 1000 * 10;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordtype">float</span> m_fSleepVelocityThreshold = 0.03f;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;};</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="../../dc/da2/structez_jolt_msg_disconnect_constraints.htm">   91</a></span>&#160;<span class="keyword">struct </span>EZ_JOLTPLUGIN_DLL <a class="code" href="../../dc/da2/structez_jolt_msg_disconnect_constraints.htm">ezJoltMsgDisconnectConstraints</a> : <span class="keyword">public</span> <a class="code" href="../../dd/d22/classez_message.htm">ezMessage</a></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;{</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  EZ_DECLARE_MESSAGE_TYPE(<a class="code" href="../../dc/da2/structez_jolt_msg_disconnect_constraints.htm">ezJoltMsgDisconnectConstraints</a>, <a class="code" href="../../dd/d22/classez_message.htm">ezMessage</a>);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="../../dc/da2/structez_jolt_msg_disconnect_constraints.htm#a8ab3fde035d7477361a3f89eb9e74934">   96</a></span>&#160;  <a class="code" href="../../d9/d79/classez_jolt_actor_component.htm">ezJoltActorComponent</a>* m_pActor = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="../../dc/da2/structez_jolt_msg_disconnect_constraints.htm#a528d5f5f6ff158940610003dff93b55a">   99</a></span>&#160;  ezUInt32 m_uiJoltBodyID = ezInvalidIndex;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_message_htm"><div class="ttname"><a href="../../dd/d22/classez_message.htm">ezMessage</a></div><div class="ttdoc">Base class for all message types. Each message type has it's own id which is used to dispatch message...</div><div class="ttdef"><b>Definition:</b> Message.h:21</div></div>
-<div class="ttc" id="astructez_on_jolt_contact_htm"><div class="ttname"><a href="../../d3/d97/structez_on_jolt_contact.htm">ezOnJoltContact</a></div><div class="ttdef"><b>Definition:</b> Declarations.h:29</div></div>
-<div class="ttc" id="astructez_on_jolt_contact_1_1_bits_htm"><div class="ttname"><a href="../../dc/d8c/structez_on_jolt_contact_1_1_bits.htm">ezOnJoltContact::Bits</a></div><div class="ttdef"><b>Definition:</b> Declarations.h:50</div></div>
-<div class="ttc" id="astructez_jolt_settings_htm"><div class="ttname"><a href="../../db/d13/structez_jolt_settings.htm">ezJoltSettings</a></div><div class="ttdef"><b>Definition:</b> Declarations.h:66</div></div>
+<div class="ttc" id="astructez_on_jolt_contact_htm_adaa65f2008f4d42d2f845a0f95222a3da29780b52105df71c969cf4229cc2344a"><div class="ttname"><a href="../../d3/d97/structez_on_jolt_contact.htm#adaa65f2008f4d42d2f845a0f95222a3da29780b52105df71c969cf4229cc2344a">ezOnJoltContact::ImpactReactions</a></div><div class="ttdeci">@ ImpactReactions</div><div class="ttdoc">Spawn prefabs for impacts (two objects hit each other with enough force).</div><div class="ttdef"><b>Definition:</b> Declarations.h:45</div></div>
+<div class="ttc" id="astructez_on_jolt_contact_htm_adaa65f2008f4d42d2f845a0f95222a3da8eaf5bd306a6c74d04627cbaa229b226"><div class="ttname"><a href="../../d3/d97/structez_on_jolt_contact.htm#adaa65f2008f4d42d2f845a0f95222a3da8eaf5bd306a6c74d04627cbaa229b226">ezOnJoltContact::RollZReactions</a></div><div class="ttdeci">@ RollZReactions</div><div class="ttdoc">Spawn prefabs for rolling (one object rotates around its Z axis while touching another).</div><div class="ttdef"><b>Definition:</b> Declarations.h:49</div></div>
+<div class="ttc" id="astructez_on_jolt_contact_htm"><div class="ttname"><a href="../../d3/d97/structez_on_jolt_contact.htm">ezOnJoltContact</a></div><div class="ttdoc">Flags for what should happen when two physical bodies touch.</div><div class="ttdef"><b>Definition:</b> Declarations.h:37</div></div>
+<div class="ttc" id="astructez_on_jolt_contact_htm_adaa65f2008f4d42d2f845a0f95222a3da6c60f97409fc31e258985d68bcbab456"><div class="ttname"><a href="../../d3/d97/structez_on_jolt_contact.htm#adaa65f2008f4d42d2f845a0f95222a3da6c60f97409fc31e258985d68bcbab456">ezOnJoltContact::RollYReactions</a></div><div class="ttdeci">@ RollYReactions</div><div class="ttdoc">Spawn prefabs for rolling (one object rotates around its Y axis while touching another).</div><div class="ttdef"><b>Definition:</b> Declarations.h:48</div></div>
+<div class="ttc" id="astructez_on_jolt_contact_1_1_bits_htm"><div class="ttname"><a href="../../dc/d8c/structez_on_jolt_contact_1_1_bits.htm">ezOnJoltContact::Bits</a></div><div class="ttdef"><b>Definition:</b> Declarations.h:58</div></div>
+<div class="ttc" id="astructez_on_jolt_contact_htm_adaa65f2008f4d42d2f845a0f95222a3d"><div class="ttname"><a href="../../d3/d97/structez_on_jolt_contact.htm#adaa65f2008f4d42d2f845a0f95222a3d">ezOnJoltContact::Enum</a></div><div class="ttdeci">Enum</div><div class="ttdef"><b>Definition:</b> Declarations.h:41</div></div>
+<div class="ttc" id="astructez_on_jolt_contact_htm_adaa65f2008f4d42d2f845a0f95222a3da10aa32a050143751648fedc2b7fd585a"><div class="ttname"><a href="../../d3/d97/structez_on_jolt_contact.htm#adaa65f2008f4d42d2f845a0f95222a3da10aa32a050143751648fedc2b7fd585a">ezOnJoltContact::SlideReactions</a></div><div class="ttdeci">@ SlideReactions</div><div class="ttdoc">Spawn prefabs for sliding (one object slides along the surface of another).</div><div class="ttdef"><b>Definition:</b> Declarations.h:46</div></div>
+<div class="ttc" id="astructez_jolt_settings_htm"><div class="ttname"><a href="../../db/d13/structez_jolt_settings.htm">ezJoltSettings</a></div><div class="ttdef"><b>Definition:</b> Declarations.h:74</div></div>
 <div class="ttc" id="astructez_enum_htm"><div class="ttname"><a href="../../d6/dd9/structez_enum.htm">ezEnum&lt; ezJoltSteppingMode &gt;</a></div></div>
-<div class="ttc" id="astructez_jolt_msg_disconnect_constraints_htm"><div class="ttname"><a href="../../dc/da2/structez_jolt_msg_disconnect_constraints.htm">ezJoltMsgDisconnectConstraints</a></div><div class="ttdef"><b>Definition:</b> Declarations.h:80</div></div>
+<div class="ttc" id="astructez_jolt_msg_disconnect_constraints_htm"><div class="ttname"><a href="../../dc/da2/structez_jolt_msg_disconnect_constraints.htm">ezJoltMsgDisconnectConstraints</a></div><div class="ttdoc">This message can be sent to a constraint component to break the constraint.</div><div class="ttdef"><b>Definition:</b> Declarations.h:91</div></div>
 <div class="ttc" id="astructez_jolt_stepping_mode_htm"><div class="ttname"><a href="../../de/d9e/structez_jolt_stepping_mode.htm">ezJoltSteppingMode</a></div><div class="ttdef"><b>Definition:</b> Declarations.h:11</div></div>
-<div class="ttc" id="aclassez_jolt_actor_component_htm"><div class="ttname"><a href="../../d9/d79/classez_jolt_actor_component.htm">ezJoltActorComponent</a></div><div class="ttdef"><b>Definition:</b> JoltActorComponent.h:16</div></div>
+<div class="ttc" id="astructez_on_jolt_contact_htm_adaa65f2008f4d42d2f845a0f95222a3dabca2b4044c17649d5742bc3201ea2af7"><div class="ttname"><a href="../../d3/d97/structez_on_jolt_contact.htm#adaa65f2008f4d42d2f845a0f95222a3dabca2b4044c17649d5742bc3201ea2af7">ezOnJoltContact::RollXReactions</a></div><div class="ttdeci">@ RollXReactions</div><div class="ttdoc">Spawn prefabs for rolling (one object rotates around its X axis while touching another).</div><div class="ttdef"><b>Definition:</b> Declarations.h:47</div></div>
+<div class="ttc" id="aclassez_jolt_actor_component_htm"><div class="ttname"><a href="../../d9/d79/classez_jolt_actor_component.htm">ezJoltActorComponent</a></div><div class="ttdoc">Base class for all Jolt actors.</div><div class="ttdef"><b>Definition:</b> JoltActorComponent.h:22</div></div>
 <div class="ttc" id="aclassez_vec3_template_htm"><div class="ttname"><a href="../../da/df1/classez_vec3_template.htm">ezVec3Template&lt; float &gt;</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_103378c88ff4c88de6bfabe12da9ec96.htm">EnginePlugins</a></li><li class="navelem"><a class="el" href="../../dir_dd0b839fcb3e262026bbe9297f463612.htm">JoltPlugin</a></li><li class="navelem"><b>Declarations.h</b></li>
-    <li class="footer">Generated on Fri Dec 22 2023 20:43:01 for ezEngine by
+    <li class="footer">Generated on Sun Aug 25 2024 13:06:12 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

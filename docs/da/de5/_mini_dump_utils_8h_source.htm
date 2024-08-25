@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.12</span>
+   &#160;<span id="projectnumber">Release 24.09</span>
    </div>
   </td>
  </tr>
@@ -103,31 +103,40 @@ $(document).ready(function(){initNavTree('da/de5/_mini_dump_utils_8h_source.htm'
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="../../de/d18/structez_mini_dump_utils.htm">   16</a></span>&#160;<span class="keyword">struct </span>EZ_FOUNDATION_DLL <a class="code" href="../../de/d18/structez_mini_dump_utils.htm">ezMiniDumpUtils</a></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d7/d6e/structez_status.htm">ezStatus</a> WriteExternalProcessMiniDump(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sDumpFile, ezUInt32 uiProcessID);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d7/d6e/structez_status.htm">ezStatus</a> LaunchMiniDumpTool(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sDumpFile);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#if EZ_ENABLED(EZ_PLATFORM_WINDOWS_DESKTOP)</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d7/d6e/structez_status.htm">ezStatus</a> WriteOwnProcessMiniDump(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sDumpFile, <span class="keyword">struct</span> _EXCEPTION_POINTERS* pExceptionInfo);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keyword">static</span> ezMinWindows::HANDLE GetProcessHandleWithNecessaryRights(ezUInt32 uiProcessID);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="../../de/d18/structez_mini_dump_utils.htm#a72a5876ef8e7aabae782a1887eb81ce1">   20</a></span>&#160;  <span class="keyword">enum class</span> <a class="code" href="../../de/d18/structez_mini_dump_utils.htm#a72a5876ef8e7aabae782a1887eb81ce1">ezDumpType</a></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    Auto,                  </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    MiniDump,              </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    MiniDumpWithFullMemory </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  };</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d7/d6e/structez_status.htm">ezStatus</a> WriteExternalProcessMiniDump(<a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sDumpFile, ezUInt32 uiProcessID, ezDumpType dumpTypeOverride = ezDumpType::Auto);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d7/d6e/structez_status.htm">ezStatus</a> LaunchMiniDumpTool(<a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sDumpFile, ezDumpType dumpTypeOverride = ezDumpType::Auto);</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d7/d6e/structez_status.htm">ezStatus</a> WriteExternalProcessMiniDump(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sDumpFile, ezUInt32 uiProcessID, ezMinWindows::HANDLE hProcess);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d7/d6e/structez_status.htm">ezStatus</a> WriteProcessMiniDump(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sDumpFile, ezUInt32 uiProcessID, ezMinWindows::HANDLE hProcess, <span class="keyword">struct</span> _EXCEPTION_POINTERS* pExceptionInfo);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;};</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#if EZ_ENABLED(EZ_PLATFORM_WINDOWS_DESKTOP)</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d7/d6e/structez_status.htm">ezStatus</a> WriteOwnProcessMiniDump(<a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sDumpFile, <span class="keyword">struct</span> _EXCEPTION_POINTERS* pExceptionInfo, ezDumpType dumpTypeOverride = ezDumpType::Auto);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keyword">static</span> ezMinWindows::HANDLE GetProcessHandleWithNecessaryRights(ezUInt32 uiProcessID);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d7/d6e/structez_status.htm">ezStatus</a> WriteExternalProcessMiniDump(<a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sDumpFile, ezUInt32 uiProcessID, ezMinWindows::HANDLE hProcess, ezDumpType dumpTypeOverride = ezDumpType::Auto);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d7/d6e/structez_status.htm">ezStatus</a> WriteProcessMiniDump(<a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sDumpFile, ezUInt32 uiProcessID, ezMinWindows::HANDLE hProcess, <span class="keyword">struct</span> _EXCEPTION_POINTERS* pExceptionInfo, ezDumpType dumpTypeOverrideType = ezDumpType::Auto);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astructez_mini_dump_utils_htm"><div class="ttname"><a href="../../de/d18/structez_mini_dump_utils.htm">ezMiniDumpUtils</a></div><div class="ttdoc">Functionality for writing process mini-dumps (callstacks, memory snapshots, etc)</div><div class="ttdef"><b>Definition:</b> MiniDumpUtils.h:16</div></div>
 <div class="ttc" id="astructez_status_htm"><div class="ttname"><a href="../../d7/d6e/structez_status.htm">ezStatus</a></div><div class="ttdoc">An ezResult with an additional message for the reason of failure.</div><div class="ttdef"><b>Definition:</b> Status.h:11</div></div>
-<div class="ttc" id="astructez_string_view_htm"><div class="ttname"><a href="../../de/db8/structez_string_view.htm">ezStringView</a></div><div class="ttdoc">ezStringView represent a read-only sub-string of a larger string, as it can store a dedicated string ...</div><div class="ttdef"><b>Definition:</b> StringView.h:23</div></div>
+<div class="ttc" id="astructez_mini_dump_utils_htm_a72a5876ef8e7aabae782a1887eb81ce1"><div class="ttname"><a href="../../de/d18/structez_mini_dump_utils.htm#a72a5876ef8e7aabae782a1887eb81ce1">ezMiniDumpUtils::ezDumpType</a></div><div class="ttdeci">ezDumpType</div><div class="ttdoc">Specifies the dump mode that is written.</div><div class="ttdef"><b>Definition:</b> MiniDumpUtils.h:20</div></div>
+<div class="ttc" id="aclassez_string_view_htm"><div class="ttname"><a href="../../d9/d18/classez_string_view.htm">ezStringView</a></div><div class="ttdoc">ezStringView represent a read-only sub-string of a larger string, as it can store a dedicated string ...</div><div class="ttdef"><b>Definition:</b> StringView.h:33</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_755fdcfb6b850fe41cc906fd4ef666a8.htm">System</a></li><li class="navelem"><b>MiniDumpUtils.h</b></li>
-    <li class="footer">Generated on Fri Dec 22 2023 20:43:07 for ezEngine by
+    <li class="footer">Generated on Sun Aug 25 2024 13:06:21 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

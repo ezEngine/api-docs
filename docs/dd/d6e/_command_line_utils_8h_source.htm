@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.12</span>
+   &#160;<span id="projectnumber">Release 24.09</span>
    </div>
   </td>
  </tr>
@@ -109,58 +109,64 @@ $(document).ready(function(){initNavTree('dd/d6e/_command_line_utils_8h_source.h
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordtype">void</span> SetCommandLine(ezUInt32 uiArgc, <span class="keyword">const</span> <span class="keywordtype">char</span>** pArgv, ArgMode mode = UseArgcArgv); <span class="comment">// [tested]</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordtype">void</span> SetCommandLine(<a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;ezString&gt;</a> commands);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#if EZ_ENABLED(EZ_PLATFORM_WINDOWS_DESKTOP)</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keywordtype">void</span> SetCommandLine();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezString&gt;</a>&amp; GetCommandLineArray() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> GetCommandLineString() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="../../d0/dc2/classez_command_line_utils.htm#aef899398f893f09cfcdfa5b87e864fb1">   36</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="../../d0/dc2/classez_command_line_utils.htm#aef899398f893f09cfcdfa5b87e864fb1">SetCommandLine</a>(ezUInt32 uiArgc, <span class="keywordtype">char</span>** pArgv, <a class="code" href="../../d0/dc2/classez_command_line_utils.htm#a14d1f89aa920f099f4cc902455098bb2">ArgMode</a> mode = UseArgcArgv)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    SetCommandLine(uiArgc, <span class="keyword">const_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">char</span>**<span class="keyword">&gt;</span>(pArgv), mode);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordtype">void</span> SetCommandLine(<a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;ezString&gt;</a> commands);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#if EZ_ENABLED(EZ_PLATFORM_WINDOWS_DESKTOP)</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordtype">void</span> SetCommandLine();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  ezUInt32 GetParameterCount() <span class="keyword">const</span>; <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezString&gt;</a>&amp; GetCommandLineArray() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a>&amp; GetParameter(ezUInt32 uiParam) <span class="keyword">const</span>; <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> GetCommandLineString() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  ezInt32 GetOptionIndex(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sOption, <span class="keywordtype">bool</span> bCaseSensitive = <span class="keyword">false</span>) <span class="keyword">const</span>; <span class="comment">// [tested]</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordtype">bool</span> HasOption(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sOption, <span class="keywordtype">bool</span> bCaseSensitive = <span class="keyword">false</span>) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  ezUInt32 GetStringOptionArguments(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sOption, <span class="keywordtype">bool</span> bCaseSensitive = <span class="keyword">false</span>) <span class="keyword">const</span>; <span class="comment">// [tested]</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> GetStringOption(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sOption, ezUInt32 uiArgument = 0, <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sDefault = {},</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">bool</span> bCaseSensitive = <span class="keyword">false</span>) <span class="keyword">const</span>; <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  ezUInt32 GetParameterCount() <span class="keyword">const</span>; <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a>&amp; GetParameter(ezUInt32 uiParam) <span class="keyword">const</span>; <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  ezInt32 GetOptionIndex(<a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sOption, <span class="keywordtype">bool</span> bCaseSensitive = <span class="keyword">false</span>) <span class="keyword">const</span>; <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordtype">bool</span> HasOption(<a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sOption, <span class="keywordtype">bool</span> bCaseSensitive = <span class="keyword">false</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  ezUInt32 GetStringOptionArguments(<a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sOption, <span class="keywordtype">bool</span> bCaseSensitive = <span class="keyword">false</span>) <span class="keyword">const</span>; <span class="comment">// [tested]</span></div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> GetAbsolutePathOption(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sOption, ezUInt32 uiArgument = 0, <a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sDefault = {}, <span class="keywordtype">bool</span> bCaseSensitive = <span class="keyword">false</span>) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="keywordtype">bool</span> GetBoolOption(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sOption, <span class="keywordtype">bool</span> bDefault = <span class="keyword">false</span>, <span class="keywordtype">bool</span> bCaseSensitive = <span class="keyword">false</span>) <span class="keyword">const</span>; <span class="comment">// [tested]</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  ezInt32 GetIntOption(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sOption, ezInt32 iDefault = 0, <span class="keywordtype">bool</span> bCaseSensitive = <span class="keyword">false</span>) <span class="keyword">const</span>; <span class="comment">// [tested]</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  ezUInt32 GetUIntOption(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sOption, ezUInt32 uiDefault = 0, <span class="keywordtype">bool</span> bCaseSensitive = <span class="keyword">false</span>) <span class="keyword">const</span>; <span class="comment">// [tested]</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  <span class="keywordtype">double</span> GetFloatOption(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sOption, <span class="keywordtype">double</span> fDefault = 0.0, <span class="keywordtype">bool</span> bCaseSensitive = <span class="keyword">false</span>) <span class="keyword">const</span>; <span class="comment">// [tested]</span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  <span class="keywordtype">void</span> InjectCustomArgument(<a class="code" href="../../de/db8/structez_string_view.htm">ezStringView</a> sArgument); <span class="comment">// [tested]</span></div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezString&gt;</a> m_Commands;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;};</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> GetStringOption(<a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sOption, ezUInt32 uiArgument = 0, <a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sDefault = {},</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">bool</span> bCaseSensitive = <span class="keyword">false</span>) <span class="keyword">const</span>; <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> GetAbsolutePathOption(<a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sOption, ezUInt32 uiArgument = 0, <a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sDefault = {}, <span class="keywordtype">bool</span> bCaseSensitive = <span class="keyword">false</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <span class="keywordtype">bool</span> GetBoolOption(<a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sOption, <span class="keywordtype">bool</span> bDefault = <span class="keyword">false</span>, <span class="keywordtype">bool</span> bCaseSensitive = <span class="keyword">false</span>) <span class="keyword">const</span>; <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  ezInt32 GetIntOption(<a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sOption, ezInt32 iDefault = 0, <span class="keywordtype">bool</span> bCaseSensitive = <span class="keyword">false</span>) <span class="keyword">const</span>; <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  ezUInt32 GetUIntOption(<a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sOption, ezUInt32 uiDefault = 0, <span class="keywordtype">bool</span> bCaseSensitive = <span class="keyword">false</span>) <span class="keyword">const</span>; <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  <span class="keywordtype">double</span> GetFloatOption(<a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sOption, <span class="keywordtype">double</span> fDefault = 0.0, <span class="keywordtype">bool</span> bCaseSensitive = <span class="keyword">false</span>) <span class="keyword">const</span>; <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  <span class="keywordtype">void</span> InjectCustomArgument(<a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sArgument); <span class="comment">// [tested]</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezString&gt;</a> m_Commands;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aclassez_command_line_utils_htm_aef899398f893f09cfcdfa5b87e864fb1"><div class="ttname"><a href="../../d0/dc2/classez_command_line_utils.htm#aef899398f893f09cfcdfa5b87e864fb1">ezCommandLineUtils::SetCommandLine</a></div><div class="ttdeci">void SetCommandLine(ezUInt32 uiArgc, char **pArgv, ArgMode mode=UseArgcArgv)</div><div class="ttdoc">Overload for non-const argv versions.</div><div class="ttdef"><b>Definition:</b> CommandLineUtils.h:36</div></div>
 <div class="ttc" id="aclassez_array_ptr_htm"><div class="ttname"><a href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr</a></div><div class="ttdoc">This class encapsulates an array and it's size. It is recommended to use this class instead of plain ...</div><div class="ttdef"><b>Definition:</b> ArrayPtr.h:36</div></div>
 <div class="ttc" id="aclassez_command_line_utils_htm"><div class="ttname"><a href="../../d0/dc2/classez_command_line_utils.htm">ezCommandLineUtils</a></div><div class="ttdoc">This is a helper class to parse command lines.</div><div class="ttdef"><b>Definition:</b> CommandLineUtils.h:12</div></div>
 <div class="ttc" id="astructez_hybrid_string_htm"><div class="ttname"><a href="../../d4/d53/structez_hybrid_string.htm">ezHybridString</a></div><div class="ttdef"><b>Definition:</b> Stream.h:16</div></div>
 <div class="ttc" id="aclassez_command_line_utils_htm_a14d1f89aa920f099f4cc902455098bb2"><div class="ttname"><a href="../../d0/dc2/classez_command_line_utils.htm#a14d1f89aa920f099f4cc902455098bb2">ezCommandLineUtils::ArgMode</a></div><div class="ttdeci">ArgMode</div><div class="ttdef"><b>Definition:</b> CommandLineUtils.h:15</div></div>
 <div class="ttc" id="aclassez_dynamic_array_htm"><div class="ttname"><a href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray</a></div><div class="ttdef"><b>Definition:</b> DynamicArray.h:80</div></div>
 <div class="ttc" id="aclassez_command_line_utils_htm_a14d1f89aa920f099f4cc902455098bb2a7a7f4852d6e1f0fef79bce0a4098b9df"><div class="ttname"><a href="../../d0/dc2/classez_command_line_utils.htm#a14d1f89aa920f099f4cc902455098bb2a7a7f4852d6e1f0fef79bce0a4098b9df">ezCommandLineUtils::UseArgcArgv</a></div><div class="ttdeci">@ UseArgcArgv</div><div class="ttdoc">Use the passed in argc/argv values as they are passed in.</div><div class="ttdef"><b>Definition:</b> CommandLineUtils.h:17</div></div>
-<div class="ttc" id="astructez_string_view_htm"><div class="ttname"><a href="../../de/db8/structez_string_view.htm">ezStringView</a></div><div class="ttdoc">ezStringView represent a read-only sub-string of a larger string, as it can store a dedicated string ...</div><div class="ttdef"><b>Definition:</b> StringView.h:23</div></div>
+<div class="ttc" id="aclassez_string_view_htm"><div class="ttname"><a href="../../d9/d18/classez_string_view.htm">ezStringView</a></div><div class="ttdoc">ezStringView represent a read-only sub-string of a larger string, as it can store a dedicated string ...</div><div class="ttdef"><b>Definition:</b> StringView.h:33</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_c39aeafa2a8d6fb642c09d4b1ea1a476.htm">Utilities</a></li><li class="navelem"><b>CommandLineUtils.h</b></li>
-    <li class="footer">Generated on Fri Dec 22 2023 20:43:08 for ezEngine by
+    <li class="footer">Generated on Sun Aug 25 2024 13:06:22 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

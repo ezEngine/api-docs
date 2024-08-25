@@ -6,9 +6,11 @@ var classez_game_grid =
       [ "InPlaneXminusZ", "d9/d8c/classez_game_grid.htm#ab2bec69a870b66c378ef4d17349590afa3766e6be4a422286ed588418efd43a5c", null ]
     ] ],
     [ "ezGameGrid", "d9/d8c/classez_game_grid.htm#ac357cef5873f4717803f418d679d5987", null ],
+    [ "ComputeWorldSpaceCorners", "d9/d8c/classez_game_grid.htm#a9c0a7f210b5d1dc2a553f56a7e741c12", null ],
     [ "ConvertCellCoordinateToIndex", "d9/d8c/classez_game_grid.htm#a5ef189c256ab3efa05ea62100a00ee36", null ],
     [ "ConvertCellIndexToCoordinate", "d9/d8c/classez_game_grid.htm#ae9df75721eb5b1542d754d7e4ef147a0", null ],
     [ "CreateGrid", "d9/d8c/classez_game_grid.htm#a6dc506b1730ce4be81310605d2bfce58", null ],
+    [ "Deserialize", "d9/d8c/classez_game_grid.htm#a9928c85aae79ff16e6112ac491507052", null ],
     [ "GetCell", "d9/d8c/classez_game_grid.htm#a25a9b43f7eb120af6bd7896feced24ab", null ],
     [ "GetCell", "d9/d8c/classez_game_grid.htm#aa5feeafc652521f4a10aca4b5308c14a", null ],
     [ "GetCell", "d9/d8c/classez_game_grid.htm#a06b8f856134fe662e70582be11fa5eb4", null ],
@@ -30,6 +32,7 @@ var classez_game_grid =
     [ "GetWorldSpaceOrigin", "d9/d8c/classez_game_grid.htm#a459110e13ab2badbf816fe33f8da8c60", null ],
     [ "IsValidCellCoordinate", "d9/d8c/classez_game_grid.htm#a0f927787d1dbf44c2b238eb15f314b0c", null ],
     [ "PickCell", "d9/d8c/classez_game_grid.htm#aabd03c583d0ce5955152f299b5f2e951", null ],
+    [ "Serialize", "d9/d8c/classez_game_grid.htm#a8d6c2ede24b48487819e8b9d1d40f85c", null ],
     [ "SetWorldSpaceDimensions", "d9/d8c/classez_game_grid.htm#ad7626dcd8b290752dc440c23e0fae268", null ],
     [ "SetWorldSpaceDimensions", "d9/d8c/classez_game_grid.htm#a831e5288afc1d7b79ba94ffacbf27397", null ]
 ];

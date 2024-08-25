@@ -9,6 +9,7 @@ var classez_qt_event_track_widget =
     [ "DoubleClickEvent", "d0/d2b/classez_qt_event_track_widget.htm#ab8a9dae5a2f702a6fd1c000c0cd3c6a0", null ],
     [ "EndOperationEvent", "d0/d2b/classez_qt_event_track_widget.htm#a7dac317048c463f73f9bdbd58d336126", null ],
     [ "FrameCurve", "d0/d2b/classez_qt_event_track_widget.htm#ad18669a66b9f426af7db07a9df26fe18", null ],
+    [ "GetScrubberPosition", "d0/d2b/classez_qt_event_track_widget.htm#a5aa26abdff3e6849e66d32206296fa54", null ],
     [ "GetSelection", "d0/d2b/classez_qt_event_track_widget.htm#adf8c5721383dcdb48f14b0b8232ff386", null ],
     [ "keyPressEvent", "d0/d2b/classez_qt_event_track_widget.htm#a7169191618285e352da5b04da7e222a6", null ],
     [ "MapFromScene", "d0/d2b/classez_qt_event_track_widget.htm#ab7ec359877a39247fe2dfb48f1779c82", null ],

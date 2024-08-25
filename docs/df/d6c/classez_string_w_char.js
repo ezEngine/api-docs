@@ -1,10 +1,10 @@
 var classez_string_w_char =
 [
-    [ "ezStringWChar", "df/d6c/classez_string_w_char.htm#ab54b90da62fc724bee1cbee14f8c6500", null ],
-    [ "ezStringWChar", "df/d6c/classez_string_w_char.htm#a57ea9efe80ba32ba25945dc887b7d148", null ],
-    [ "ezStringWChar", "df/d6c/classez_string_w_char.htm#a37853047a5d051f1c5f7e17690ce7ea5", null ],
-    [ "ezStringWChar", "df/d6c/classez_string_w_char.htm#a782a405f04812fe74d3cc0a486a9e865", null ],
-    [ "ezStringWChar", "df/d6c/classez_string_w_char.htm#ad63d7d74b40114dd3c09df7b2a3264ed", null ],
+    [ "ezStringWChar", "df/d6c/classez_string_w_char.htm#acf8767bc27dbb9d2e7dc2ae9c884ec6e", null ],
+    [ "ezStringWChar", "df/d6c/classez_string_w_char.htm#aade8339fdf9810e6ea8288b639e54e59", null ],
+    [ "ezStringWChar", "df/d6c/classez_string_w_char.htm#a338655761ab646599a4aa9ef9c841614", null ],
+    [ "ezStringWChar", "df/d6c/classez_string_w_char.htm#a04c9d8ec0b7f2bcda3c81060439b4d72", null ],
+    [ "ezStringWChar", "df/d6c/classez_string_w_char.htm#a2a86c87ce48b5b2809a264a47592f49b", null ],
     [ "GetData", "df/d6c/classez_string_w_char.htm#acfe1f945ff9d75711673b80676c42c5f", null ],
     [ "GetElementCount", "df/d6c/classez_string_w_char.htm#aeb9e48a5727c5aab13fcf05e469d54ee", null ],
     [ "operator const wchar_t *", "df/d6c/classez_string_w_char.htm#ab346d7c573aa8e18731cbfd4bd32db4f", null ],

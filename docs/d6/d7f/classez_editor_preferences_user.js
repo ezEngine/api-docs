@@ -12,6 +12,7 @@ var classez_editor_preferences_user =
     [ "SetHighlightUntranslatedUI", "d6/d7f/classez_editor_preferences_user.htm#a96f12c9716cc0228ec7f706d4cc05110", null ],
     [ "SetMaxFramerate", "d6/d7f/classez_editor_preferences_user.htm#abc5561ab829a425ffcc117b78077ae26", null ],
     [ "SetShowInDevelopmentFeatures", "d6/d7f/classez_editor_preferences_user.htm#af35604bb240881ddc1a90c8b1c6e3b3e", null ],
+    [ "m_bAssetBrowserShowItemsInSubFolders", "d6/d7f/classez_editor_preferences_user.htm#aa1dd26e3bf3b30f33e35b099072ec577", null ],
     [ "m_bBackgroundAssetProcessing", "d6/d7f/classez_editor_preferences_user.htm#a2f3d12c00e082c75d7c09df7c4b3c5f0", null ],
     [ "m_bClearEditorLogsOnPlay", "d6/d7f/classez_editor_preferences_user.htm#abd9e01dd9939bb017a2a7cdf79c0e410", null ],
     [ "m_bDirectionalLight", "d6/d7f/classez_editor_preferences_user.htm#a21503e74d65b8dcce3a7f40fb13a520a", null ],
@@ -31,5 +32,6 @@ var classez_editor_preferences_user =
     [ "m_fSkyLightIntensity", "d6/d7f/classez_editor_preferences_user.htm#a139ac492f3479baf07ebcc945bab08d1", null ],
     [ "m_fTranslationSnapValue", "d6/d7f/classez_editor_preferences_user.htm#a287d51a21950029d48610f578c1f68c8", null ],
     [ "m_RotationSnapValue", "d6/d7f/classez_editor_preferences_user.htm#a1d169b7ac0f7c27ce676dffd21122f08", null ],
+    [ "m_sCustomPrecompiledToolsFolder", "d6/d7f/classez_editor_preferences_user.htm#a580e6e12ba65c2933eb72b738ac30198", null ],
     [ "m_sSkyLightCubeMap", "d6/d7f/classez_editor_preferences_user.htm#a0b58299537e4db809c995d89a7e61adc", null ]
 ];

@@ -1,8 +1,8 @@
 var classez_message_queue_base =
 [
     [ "Entry", "d3/dca/structez_message_queue_base_1_1_entry.htm", "d3/dca/structez_message_queue_base_1_1_entry" ],
-    [ "ezMessageQueueBase", "d4/dbf/classez_message_queue_base.htm#ac3b1d995927bcc6db4f57cc61f0014fc", null ],
-    [ "ezMessageQueueBase", "d4/dbf/classez_message_queue_base.htm#a6ef36278989cdbe69447c2d4aa6e85eb", null ],
+    [ "ezMessageQueueBase", "d4/dbf/classez_message_queue_base.htm#a348c6f47e2c415abb5e4ab54e48b93db", null ],
+    [ "ezMessageQueueBase", "d4/dbf/classez_message_queue_base.htm#a8507910f9e4d02e1da18e6c93c6eb4ea", null ],
     [ "~ezMessageQueueBase", "d4/dbf/classez_message_queue_base.htm#aff0febc31f3e9958d18d690143b7a9ad", null ],
     [ "Clear", "d4/dbf/classez_message_queue_base.htm#a0674398d4bfaed94aa02593d952bc88a", null ],
     [ "Compact", "d4/dbf/classez_message_queue_base.htm#acc04482f492760f258e59de77e1bf69a", null ],

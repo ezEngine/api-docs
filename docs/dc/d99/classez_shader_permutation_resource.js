@@ -7,7 +7,7 @@ var classez_shader_permutation_resource =
     [ "GetGALShader", "dc/d99/classez_shader_permutation_resource.htm#ada5520ef0ca856c7d6f59329bb3d9493", null ],
     [ "GetPermutationVars", "dc/d99/classez_shader_permutation_resource.htm#a8e7a634b545c3a18f71b990ebdc55a37", null ],
     [ "GetRasterizerState", "dc/d99/classez_shader_permutation_resource.htm#aa795ef1bceab78057c244b15486e7110", null ],
-    [ "GetShaderStageBinary", "dc/d99/classez_shader_permutation_resource.htm#a3c4c4415892c5d22dbb7bd8b8f6e659b", null ],
+    [ "GetShaderByteCode", "dc/d99/classez_shader_permutation_resource.htm#afc0ba64b1a9455ecaa19534f9a67076e", null ],
     [ "IsShaderValid", "dc/d99/classez_shader_permutation_resource.htm#aff07ffb798c418d7240054ffe3e5ff6a", null ],
     [ "UnloadData", "dc/d99/classez_shader_permutation_resource.htm#a16668f0b6f75977799b384db210cf45a", null ],
     [ "UpdateContent", "dc/d99/classez_shader_permutation_resource.htm#a01528d6422ff6964365b5f3c053b0a19", null ],

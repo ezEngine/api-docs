@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.12</span>
+   &#160;<span id="projectnumber">Release 24.09</span>
    </div>
   </td>
  </tr>
@@ -118,57 +118,54 @@ $(document).ready(function(){initNavTree('dd/dc4/_particle_emitter___continuous_
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <a class="code" href="../../d3/dd7/classez_typed_resource_handle.htm">ezCurve1DResourceHandle</a> m_hCountCurve;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> m_CurveDuration;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordtype">void</span> SetCountCurveFile(<span class="keyword">const</span> <span class="keywordtype">char</span>* szFile);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* GetCountCurveFile() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="../../dc/d1e/classez_particle_emitter___continuous.htm">   38</a></span>&#160;<span class="keyword">class </span>EZ_PARTICLEPLUGIN_DLL <a class="code" href="../../dc/d1e/classez_particle_emitter___continuous.htm">ezParticleEmitter_Continuous</a> final : <span class="keyword">public</span> <a class="code" href="../../de/d1d/classez_particle_emitter.htm">ezParticleEmitter</a></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  EZ_ADD_DYNAMIC_REFLECTION(<a class="code" href="../../dc/d1e/classez_particle_emitter___continuous.htm">ezParticleEmitter_Continuous</a>, <a class="code" href="../../de/d1d/classez_particle_emitter.htm">ezParticleEmitter</a>);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;};</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="../../dc/d1e/classez_particle_emitter___continuous.htm">   35</a></span>&#160;<span class="keyword">class </span>EZ_PARTICLEPLUGIN_DLL <a class="code" href="../../dc/d1e/classez_particle_emitter___continuous.htm">ezParticleEmitter_Continuous</a> final : <span class="keyword">public</span> <a class="code" href="../../de/d1d/classez_particle_emitter.htm">ezParticleEmitter</a></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  EZ_ADD_DYNAMIC_REFLECTION(<a class="code" href="../../dc/d1e/classez_particle_emitter___continuous.htm">ezParticleEmitter_Continuous</a>, <a class="code" href="../../de/d1d/classez_particle_emitter.htm">ezParticleEmitter</a>);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> m_StartDelay; <span class="comment">// delay before the emitter becomes active, to sync with other systems, only used once, has no effect later on</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> m_StartDelay; <span class="comment">// delay before the emitter becomes active, to sync with other systems, only used once, has no effect later on</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  ezUInt32 m_uiSpawnCountPerSec;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  ezUInt32 m_uiSpawnCountPerSecRange;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <a class="code" href="../../db/dcf/classez_temp_hashed_string.htm">ezTempHashedString</a> m_sSpawnCountScaleParameter;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  ezUInt32 m_uiSpawnCountPerSec;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  ezUInt32 m_uiSpawnCountPerSecRange;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <a class="code" href="../../db/dcf/classez_temp_hashed_string.htm">ezTempHashedString</a> m_sSpawnCountScaleParameter;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <a class="code" href="../../d3/dd7/classez_typed_resource_handle.htm">ezCurve1DResourceHandle</a> m_hCountCurve;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> m_CurveDuration;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <a class="code" href="../../d3/dd7/classez_typed_resource_handle.htm">ezCurve1DResourceHandle</a> m_hCountCurve;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> m_CurveDuration;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> CreateRequiredStreams()<span class="keyword"> override </span>{}</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> CreateRequiredStreams()<span class="keyword"> override </span>{}</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> IsContinuous()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> IsContinuous()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="../../dc/d1e/classez_particle_emitter___continuous.htm#ab114d793cade124d203c50b88ac2cc05">   55</a></span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../dc/d1e/classez_particle_emitter___continuous.htm#ab114d793cade124d203c50b88ac2cc05">InitializeElements</a>(ezUInt64 uiStartIndex, ezUInt64 uiNumElements)<span class="keyword"> override </span>{}</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d1/dd7/classez_particle_module.htm#a2878a8c45549a4735b111908b7bbf9fc">OnFinalize</a>() <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="../../dc/d1e/classez_particle_emitter___continuous.htm#ab114d793cade124d203c50b88ac2cc05">   58</a></span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../dc/d1e/classez_particle_emitter___continuous.htm#ab114d793cade124d203c50b88ac2cc05">InitializeElements</a>(ezUInt64 uiStartIndex, ezUInt64 uiNumElements)<span class="keyword"> override </span>{}</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d1/dd7/classez_particle_module.htm#a2878a8c45549a4735b111908b7bbf9fc">OnFinalize</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keyword">virtual</span> ezParticleEmitterState <a class="code" href="../../de/d1d/classez_particle_emitter.htm#acf2479cad2163ba8c339c257f085de80">IsFinished</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keyword">virtual</span> ezUInt32 <a class="code" href="../../de/d1d/classez_particle_emitter.htm#a3e5e3f87b25127f29e11704af90bbbac">ComputeSpawnCount</a>(<span class="keyword">const</span> <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a>&amp; tDiff) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keyword">virtual</span> ezParticleEmitterState <a class="code" href="../../de/d1d/classez_particle_emitter.htm#acf2479cad2163ba8c339c257f085de80">IsFinished</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keyword">virtual</span> ezUInt32 <a class="code" href="../../de/d1d/classez_particle_emitter.htm#a3e5e3f87b25127f29e11704af90bbbac">ComputeSpawnCount</a>(<span class="keyword">const</span> <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a>&amp; tDiff) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> m_CountCurveTime;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> m_TimeSinceRandom;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordtype">float</span> m_fCurSpawnPerSec;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordtype">float</span> m_fCurSpawnCounter;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;};</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> m_CountCurveTime;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> m_TimeSinceRandom;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordtype">float</span> m_fCurSpawnPerSec;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordtype">float</span> m_fCurSpawnCounter;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_stream_writer_htm"><div class="ttname"><a href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a></div><div class="ttdoc">Interface for binary out (write) streams.</div><div class="ttdef"><b>Definition:</b> Stream.h:106</div></div>
-<div class="ttc" id="aclassez_r_t_t_i_htm"><div class="ttname"><a href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a></div><div class="ttdoc">This class holds information about reflected types. Each instance represents one type that is known t...</div><div class="ttdef"><b>Definition:</b> RTTI.h:28</div></div>
+<div class="ttc" id="aclassez_r_t_t_i_htm"><div class="ttname"><a href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a></div><div class="ttdoc">This class holds information about reflected types. Each instance represents one type that is known t...</div><div class="ttdef"><b>Definition:</b> RTTI.h:29</div></div>
 <div class="ttc" id="astructez_time_htm"><div class="ttname"><a href="../../d3/d90/structez_time.htm">ezTime</a></div><div class="ttdoc">The time class encapsulates a double value storing the time in seconds.</div><div class="ttdef"><b>Definition:</b> Time.h:11</div></div>
 <div class="ttc" id="aclassez_stream_reader_htm"><div class="ttname"><a href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a></div><div class="ttdoc">Interface for binary in (read) streams.</div><div class="ttdef"><b>Definition:</b> Stream.h:21</div></div>
 <div class="ttc" id="aclassez_particle_emitter_htm"><div class="ttname"><a href="../../de/d1d/classez_particle_emitter.htm">ezParticleEmitter</a></div><div class="ttdoc">Base class for stream spawners that are used by ezParticleEmitter's.</div><div class="ttdef"><b>Definition:</b> ParticleEmitter.h:37</div></div>
-<div class="ttc" id="aclassez_temp_hashed_string_htm"><div class="ttname"><a href="../../db/dcf/classez_temp_hashed_string.htm">ezTempHashedString</a></div><div class="ttdoc">A class to use together with ezHashedString for quick comparisons with temporary strings that need no...</div><div class="ttdef"><b>Definition:</b> HashedString.h:150</div></div>
+<div class="ttc" id="aclassez_temp_hashed_string_htm"><div class="ttname"><a href="../../db/dcf/classez_temp_hashed_string.htm">ezTempHashedString</a></div><div class="ttdoc">A class to use together with ezHashedString for quick comparisons with temporary strings that need no...</div><div class="ttdef"><b>Definition:</b> HashedString.h:156</div></div>
 <div class="ttc" id="aclassez_particle_emitter_htm_acf2479cad2163ba8c339c257f085de80"><div class="ttname"><a href="../../de/d1d/classez_particle_emitter.htm#acf2479cad2163ba8c339c257f085de80">ezParticleEmitter::IsFinished</a></div><div class="ttdeci">virtual ezParticleEmitterState IsFinished()=0</div><div class="ttdoc">Called before ComputeSpawnCount(). Should return true, if the emitter will never spawn any more parti...</div></div>
 <div class="ttc" id="aclassez_particle_emitter_factory___continuous_htm"><div class="ttname"><a href="../../d2/d01/classez_particle_emitter_factory___continuous.htm">ezParticleEmitterFactory_Continuous</a></div><div class="ttdef"><b>Definition:</b> ParticleEmitter_Continuous.h:9</div></div>
 <div class="ttc" id="astructez_hybrid_string_htm"><div class="ttname"><a href="../../d4/d53/structez_hybrid_string.htm">ezHybridString&lt; 32, ezDefaultAllocatorWrapper &gt;</a></div></div>
-<div class="ttc" id="aclassez_particle_emitter___continuous_htm"><div class="ttname"><a href="../../dc/d1e/classez_particle_emitter___continuous.htm">ezParticleEmitter_Continuous</a></div><div class="ttdef"><b>Definition:</b> ParticleEmitter_Continuous.h:38</div></div>
+<div class="ttc" id="aclassez_particle_emitter___continuous_htm"><div class="ttname"><a href="../../dc/d1e/classez_particle_emitter___continuous.htm">ezParticleEmitter_Continuous</a></div><div class="ttdef"><b>Definition:</b> ParticleEmitter_Continuous.h:35</div></div>
 <div class="ttc" id="aclassez_particle_emitter_htm_a3e5e3f87b25127f29e11704af90bbbac"><div class="ttname"><a href="../../de/d1d/classez_particle_emitter.htm#a3e5e3f87b25127f29e11704af90bbbac">ezParticleEmitter::ComputeSpawnCount</a></div><div class="ttdeci">virtual ezUInt32 ComputeSpawnCount(const ezTime &amp;tDiff)=0</div><div class="ttdoc">Called once per update. Must return how many new particles are to be spawned.</div></div>
-<div class="ttc" id="aclassez_particle_emitter___continuous_htm_ab114d793cade124d203c50b88ac2cc05"><div class="ttname"><a href="../../dc/d1e/classez_particle_emitter___continuous.htm#ab114d793cade124d203c50b88ac2cc05">ezParticleEmitter_Continuous::InitializeElements</a></div><div class="ttdeci">virtual void InitializeElements(ezUInt64 uiStartIndex, ezUInt64 uiNumElements) override</div><div class="ttdoc">This method needs to be implemented in order to initialize new elements to specific values.</div><div class="ttdef"><b>Definition:</b> ParticleEmitter_Continuous.h:58</div></div>
+<div class="ttc" id="aclassez_particle_emitter___continuous_htm_ab114d793cade124d203c50b88ac2cc05"><div class="ttname"><a href="../../dc/d1e/classez_particle_emitter___continuous.htm#ab114d793cade124d203c50b88ac2cc05">ezParticleEmitter_Continuous::InitializeElements</a></div><div class="ttdeci">virtual void InitializeElements(ezUInt64 uiStartIndex, ezUInt64 uiNumElements) override</div><div class="ttdoc">This method needs to be implemented in order to initialize new elements to specific values.</div><div class="ttdef"><b>Definition:</b> ParticleEmitter_Continuous.h:55</div></div>
 <div class="ttc" id="aclassez_particle_emitter_factory_htm"><div class="ttname"><a href="../../d2/d01/classez_particle_emitter_factory.htm">ezParticleEmitterFactory</a></div><div class="ttdoc">Base class for all particle emitters.</div><div class="ttdef"><b>Definition:</b> ParticleEmitter.h:13</div></div>
 <div class="ttc" id="aclassez_particle_module_htm_a2878a8c45549a4735b111908b7bbf9fc"><div class="ttname"><a href="../../d1/dd7/classez_particle_module.htm#a2878a8c45549a4735b111908b7bbf9fc">ezParticleModule::OnFinalize</a></div><div class="ttdeci">virtual void OnFinalize()</div><div class="ttdoc">Called after everything is set up.</div><div class="ttdef"><b>Definition:</b> ParticleModule.h:30</div></div>
 <div class="ttc" id="aclassez_typed_resource_handle_htm"><div class="ttname"><a href="../../d3/dd7/classez_typed_resource_handle.htm">ezTypedResourceHandle&lt; class ezCurve1DResource &gt;</a></div></div>
@@ -176,7 +173,7 @@ $(document).ready(function(){initNavTree('dd/dc4/_particle_emitter___continuous_
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_103378c88ff4c88de6bfabe12da9ec96.htm">EnginePlugins</a></li><li class="navelem"><a class="el" href="../../dir_9aa8b4544ca68b692a3a4785c1118130.htm">ParticlePlugin</a></li><li class="navelem"><a class="el" href="../../dir_c43ccd0dd6dbe477608bf20210030233.htm">Emitter</a></li><li class="navelem"><b>ParticleEmitter_Continuous.h</b></li>
-    <li class="footer">Generated on Fri Dec 22 2023 20:43:09 for ezEngine by
+    <li class="footer">Generated on Sun Aug 25 2024 13:06:24 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

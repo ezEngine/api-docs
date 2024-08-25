@@ -18,5 +18,6 @@ var classez_particle_effect_descriptor =
     [ "m_fApplyInstanceVelocity", "d0/d7b/classez_particle_effect_descriptor.htm#a58b55e7275b7d6bd91af0f0a607f08f5", null ],
     [ "m_FloatParameters", "d0/d7b/classez_particle_effect_descriptor.htm#a7fc3c196c9d4927242e0db6f0dd9c841", null ],
     [ "m_InvisibleUpdateRate", "d0/d7b/classez_particle_effect_descriptor.htm#ac815ea60657ced665a13a844664ac7e6", null ],
-    [ "m_PreSimulateDuration", "d0/d7b/classez_particle_effect_descriptor.htm#a54b713da03a4680e31f2cbfa0efb36e2", null ]
+    [ "m_PreSimulateDuration", "d0/d7b/classez_particle_effect_descriptor.htm#a54b713da03a4680e31f2cbfa0efb36e2", null ],
+    [ "m_vNumWindSamples", "d0/d7b/classez_particle_effect_descriptor.htm#ad95d1d1af60ebecc8fc63d06d61e6285", null ]
 ];

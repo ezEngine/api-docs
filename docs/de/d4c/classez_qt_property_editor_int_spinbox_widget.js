@@ -4,6 +4,7 @@ var classez_qt_property_editor_int_spinbox_widget =
     [ "~ezQtPropertyEditorIntSpinboxWidget", "de/d4c/classez_qt_property_editor_int_spinbox_widget.htm#af9faff2e3c41f012304d365de9bd8938", null ],
     [ "InternalSetValue", "de/d4c/classez_qt_property_editor_int_spinbox_widget.htm#a26ce96004e90fb484262676f29292aab", null ],
     [ "OnInit", "de/d4c/classez_qt_property_editor_int_spinbox_widget.htm#ac20e35d02d4bd7e9feb89a1973a62ec8", null ],
+    [ "SetReadOnly", "de/d4c/classez_qt_property_editor_int_spinbox_widget.htm#a2a11d8adda3611d16e2bbe629753ebe7", null ],
     [ "m_bTemporaryCommand", "de/d4c/classez_qt_property_editor_int_spinbox_widget.htm#a4d162001781055af12cbb3cf213375e2", null ],
     [ "m_bUseTemporaryTransaction", "de/d4c/classez_qt_property_editor_int_spinbox_widget.htm#a04207310b72376b0cba86681a2b70b17", null ],
     [ "m_iNumComponents", "de/d4c/classez_qt_property_editor_int_spinbox_widget.htm#af211b1e54f90e2661b974fa409d410ed", null ],

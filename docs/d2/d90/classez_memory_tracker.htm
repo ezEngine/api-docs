@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.12</span>
+   &#160;<span id="projectnumber">Release 24.09</span>
    </div>
   </td>
  </tr>
@@ -85,6 +85,7 @@ $(document).ready(function(){initNavTree('d2/d90/classez_memory_tracker.htm','..
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="../../dc/de6/classez_memory_tracker-members.htm">List of all members</a>  </div>
   <div class="headertitle">
@@ -104,51 +105,119 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d83/classez_memory_tracker_1_1_iterator.htm">Iterator</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a33b7836547c6a81054b55ceb5e41efec"><td class="memItemLeft" align="right" valign="top"><a id="a33b7836547c6a81054b55ceb5e41efec"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d90/classez_memory_tracker.htm#a33b7836547c6a81054b55ceb5e41efec">PrintFunc</a> = void(*)(const char *szLine)</td></tr>
+<tr class="memdesc:a33b7836547c6a81054b55ceb5e41efec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback for printing strings. <br /></td></tr>
+<tr class="separator:a33b7836547c6a81054b55ceb5e41efec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:abaaff0bda37912211afe4af716a10caa"><td class="memItemLeft" align="right" valign="top"><a id="abaaff0bda37912211afe4af716a10caa"></a>
-static <a class="el" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a>&#160;</td><td class="memItemRight" valign="bottom"><b>RegisterAllocator</b> (<a class="el" href="../../de/db8/structez_string_view.htm">ezStringView</a> sName, <a class="el" href="../../d1/dec/structez_bitflags.htm">ezBitflags</a>&lt; <a class="el" href="../../d6/dce/structez_memory_tracking_flags.htm">ezMemoryTrackingFlags</a> &gt; flags, <a class="el" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a> parentId)</td></tr>
-<tr class="separator:abaaff0bda37912211afe4af716a10caa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01f36c337c1b20f5a45080aa114c4469"><td class="memItemLeft" align="right" valign="top"><a id="a01f36c337c1b20f5a45080aa114c4469"></a>
+static <a class="el" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a>&#160;</td><td class="memItemRight" valign="bottom"><b>RegisterAllocator</b> (<a class="el" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sName, ezAllocatorTrackingMode mode, <a class="el" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a> parentId)</td></tr>
+<tr class="separator:a01f36c337c1b20f5a45080aa114c4469"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2cbf9a42cda16f938746323b27613ad7"><td class="memItemLeft" align="right" valign="top"><a id="a2cbf9a42cda16f938746323b27613ad7"></a>
 static void&#160;</td><td class="memItemRight" valign="bottom"><b>DeregisterAllocator</b> (<a class="el" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a> allocatorId)</td></tr>
 <tr class="separator:a2cbf9a42cda16f938746323b27613ad7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac50a118514b93fdef4897ffaac36c7de"><td class="memItemLeft" align="right" valign="top"><a id="ac50a118514b93fdef4897ffaac36c7de"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>AddAllocation</b> (<a class="el" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a> allocatorId, <a class="el" href="../../d1/dec/structez_bitflags.htm">ezBitflags</a>&lt; <a class="el" href="../../d6/dce/structez_memory_tracking_flags.htm">ezMemoryTrackingFlags</a> &gt; flags, const void *pPtr, size_t uiSize, size_t uiAlign, <a class="el" href="../../d3/d90/structez_time.htm">ezTime</a> allocationTime)</td></tr>
-<tr class="separator:ac50a118514b93fdef4897ffaac36c7de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef661e465fef97accb88c88a9ef456ad"><td class="memItemLeft" align="right" valign="top"><a id="aef661e465fef97accb88c88a9ef456ad"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>AddAllocation</b> (<a class="el" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a> allocatorId, ezAllocatorTrackingMode mode, const void *pPtr, size_t uiSize, size_t uiAlign, <a class="el" href="../../d3/d90/structez_time.htm">ezTime</a> allocationTime)</td></tr>
+<tr class="separator:aef661e465fef97accb88c88a9ef456ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abec8cd4d82fb7d401e07c132449ca4d2"><td class="memItemLeft" align="right" valign="top"><a id="abec8cd4d82fb7d401e07c132449ca4d2"></a>
 static void&#160;</td><td class="memItemRight" valign="bottom"><b>RemoveAllocation</b> (<a class="el" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a> allocatorId, const void *pPtr)</td></tr>
 <tr class="separator:abec8cd4d82fb7d401e07c132449ca4d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad40183e710685004f734e72ef5bfb1bf"><td class="memItemLeft" align="right" valign="top"><a id="ad40183e710685004f734e72ef5bfb1bf"></a>
 static void&#160;</td><td class="memItemRight" valign="bottom"><b>RemoveAllAllocations</b> (<a class="el" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a> allocatorId)</td></tr>
 <tr class="separator:ad40183e710685004f734e72ef5bfb1bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2427e5d386ff13262d2ca8f4d3409088"><td class="memItemLeft" align="right" valign="top"><a id="a2427e5d386ff13262d2ca8f4d3409088"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>SetAllocatorStats</b> (<a class="el" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a> allocatorId, const <a class="el" href="../../df/df0/structez_allocator_base_1_1_stats.htm">ezAllocatorBase::Stats</a> &amp;stats)</td></tr>
-<tr class="separator:a2427e5d386ff13262d2ca8f4d3409088"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed37dbd0e5a36bee120a75ed04019f38"><td class="memItemLeft" align="right" valign="top"><a id="aed37dbd0e5a36bee120a75ed04019f38"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>SetAllocatorStats</b> (<a class="el" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a> allocatorId, const <a class="el" href="../../d5/d3e/structez_allocator_1_1_stats.htm">ezAllocator::Stats</a> &amp;stats)</td></tr>
+<tr class="separator:aed37dbd0e5a36bee120a75ed04019f38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a535f0d241fe081bed59c2b1d35a917e7"><td class="memItemLeft" align="right" valign="top"><a id="a535f0d241fe081bed59c2b1d35a917e7"></a>
 static void&#160;</td><td class="memItemRight" valign="bottom"><b>ResetPerFrameAllocatorStats</b> ()</td></tr>
 <tr class="separator:a535f0d241fe081bed59c2b1d35a917e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c390fb47395f1a816b410b42d542534"><td class="memItemLeft" align="right" valign="top"><a id="a3c390fb47395f1a816b410b42d542534"></a>
-static <a class="el" href="../../de/db8/structez_string_view.htm">ezStringView</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GetAllocatorName</b> (<a class="el" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a> allocatorId)</td></tr>
+static <a class="el" href="../../d9/d18/classez_string_view.htm">ezStringView</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GetAllocatorName</b> (<a class="el" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a> allocatorId)</td></tr>
 <tr class="separator:a3c390fb47395f1a816b410b42d542534"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9848ff65be90acd167c8f32767cd9b4d"><td class="memItemLeft" align="right" valign="top"><a id="a9848ff65be90acd167c8f32767cd9b4d"></a>
-static const <a class="el" href="../../df/df0/structez_allocator_base_1_1_stats.htm">ezAllocatorBase::Stats</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetAllocatorStats</b> (<a class="el" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a> allocatorId)</td></tr>
-<tr class="separator:a9848ff65be90acd167c8f32767cd9b4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a09d71b1b348156acc86998b7869c42"><td class="memItemLeft" align="right" valign="top"><a id="a5a09d71b1b348156acc86998b7869c42"></a>
+static const <a class="el" href="../../d5/d3e/structez_allocator_1_1_stats.htm">ezAllocator::Stats</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetAllocatorStats</b> (<a class="el" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a> allocatorId)</td></tr>
+<tr class="separator:a5a09d71b1b348156acc86998b7869c42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e2547570b57378083aecd615615b76b"><td class="memItemLeft" align="right" valign="top"><a id="a1e2547570b57378083aecd615615b76b"></a>
 static <a class="el" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GetAllocatorParentId</b> (<a class="el" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a> allocatorId)</td></tr>
 <tr class="separator:a1e2547570b57378083aecd615615b76b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4f95e759cad29a0c3b1014a9d409b6a"><td class="memItemLeft" align="right" valign="top"><a id="af4f95e759cad29a0c3b1014a9d409b6a"></a>
 static const <a class="el" href="../../d2/d79/structez_memory_tracker_1_1_allocation_info.htm">AllocationInfo</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetAllocationInfo</b> (<a class="el" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a> allocatorId, const void *pPtr)</td></tr>
 <tr class="separator:af4f95e759cad29a0c3b1014a9d409b6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9baa6614d2fac3514b5f6a38c482139e"><td class="memItemLeft" align="right" valign="top"><a id="a9baa6614d2fac3514b5f6a38c482139e"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>DumpMemoryLeaks</b> ()</td></tr>
-<tr class="separator:a9baa6614d2fac3514b5f6a38c482139e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c1e7a26277e74b33dea5bb5f04eb1eb"><td class="memItemLeft" align="right" valign="top"><a id="a1c1e7a26277e74b33dea5bb5f04eb1eb"></a>
 static <a class="el" href="../../d2/d83/classez_memory_tracker_1_1_iterator.htm">Iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GetIterator</b> ()</td></tr>
 <tr class="separator:a1c1e7a26277e74b33dea5bb5f04eb1eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97f6571d1bbc2ce356a04186a7c6e1ea"><td class="memItemLeft" align="right" valign="top">static ezUInt32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d90/classez_memory_tracker.htm#a97f6571d1bbc2ce356a04186a7c6e1ea">PrintMemoryLeaks</a> (<a class="el" href="../../d2/d90/classez_memory_tracker.htm#a33b7836547c6a81054b55ceb5e41efec">PrintFunc</a> printfunc)</td></tr>
+<tr class="memdesc:a97f6571d1bbc2ce356a04186a7c6e1ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reports back information about all currently known root memory leaks.  <a href="../../d2/d90/classez_memory_tracker.htm#a97f6571d1bbc2ce356a04186a7c6e1ea">More...</a><br /></td></tr>
+<tr class="separator:a97f6571d1bbc2ce356a04186a7c6e1ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9baa6614d2fac3514b5f6a38c482139e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d90/classez_memory_tracker.htm#a9baa6614d2fac3514b5f6a38c482139e">DumpMemoryLeaks</a> ()</td></tr>
+<tr class="memdesc:a9baa6614d2fac3514b5f6a38c482139e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the known memory leaks to <a class="el" href="../../dc/d9e/classez_log.htm" title="Static class that allows to write out logging information.">ezLog</a> and triggers an assert if there are any.  <a href="../../d2/d90/classez_memory_tracker.htm#a9baa6614d2fac3514b5f6a38c482139e">More...</a><br /></td></tr>
+<tr class="separator:a9baa6614d2fac3514b5f6a38c482139e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Memory tracker which keeps track of all allocations and constructions. </p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a9baa6614d2fac3514b5f6a38c482139e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9baa6614d2fac3514b5f6a38c482139e">&#9670;&nbsp;</a></span>DumpMemoryLeaks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ezMemoryTracker::DumpMemoryLeaks </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Prints the known memory leaks to <a class="el" href="../../dc/d9e/classez_log.htm" title="Static class that allows to write out logging information.">ezLog</a> and triggers an assert if there are any. </p>
+<p>This is useful to call at the end of an application, to get a debug breakpoint in case of memory leaks. </p>
+
+</div>
+</div>
+<a id="a97f6571d1bbc2ce356a04186a7c6e1ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97f6571d1bbc2ce356a04186a7c6e1ea">&#9670;&nbsp;</a></span>PrintMemoryLeaks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ezUInt32 ezMemoryTracker::PrintMemoryLeaks </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d2/d90/classez_memory_tracker.htm#a33b7836547c6a81054b55ceb5e41efec">PrintFunc</a>&#160;</td>
+          <td class="paramname"><em>printfunc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reports back information about all currently known root memory leaks. </p>
+<p>Returns the number of found memory leaks. </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/Memory/<a class="el" href="../../dd/d00/_memory_tracker_8h_source.htm">MemoryTracker.h</a></li>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/Memory/Implementation/MemoryTracker.cpp</li>
 </ul>
@@ -158,7 +227,7 @@ static <a class="el" href="../../d2/d83/classez_memory_tracker_1_1_iterator.htm"
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d2/d90/classez_memory_tracker.htm">ezMemoryTracker</a></li>
-    <li class="footer">Generated on Fri Dec 22 2023 20:43:14 for ezEngine by
+    <li class="footer">Generated on Sun Aug 25 2024 13:06:29 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

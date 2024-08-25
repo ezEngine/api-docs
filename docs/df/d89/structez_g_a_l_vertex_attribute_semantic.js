@@ -1,5 +1,6 @@
 var structez_g_a_l_vertex_attribute_semantic =
 [
+    [ "StorageType", "df/d89/structez_g_a_l_vertex_attribute_semantic.htm#a6b23934165a8097004cc091f29e40e1d", null ],
     [ "Enum", "df/d89/structez_g_a_l_vertex_attribute_semantic.htm#a52e42c8ccbf5aca41b1c26423e727277", [
       [ "Position", "df/d89/structez_g_a_l_vertex_attribute_semantic.htm#a52e42c8ccbf5aca41b1c26423e727277aac0d002b245f0b47e3e74e0871b372b0", null ],
       [ "Normal", "df/d89/structez_g_a_l_vertex_attribute_semantic.htm#a52e42c8ccbf5aca41b1c26423e727277aaf82462dd4203e743393d9d717e58c5a", null ],
@@ -27,6 +28,7 @@ var structez_g_a_l_vertex_attribute_semantic =
       [ "BoneIndices1", "df/d89/structez_g_a_l_vertex_attribute_semantic.htm#a52e42c8ccbf5aca41b1c26423e727277a260f83aa4844603fe91bc6923828c8a1", null ],
       [ "BoneWeights0", "df/d89/structez_g_a_l_vertex_attribute_semantic.htm#a52e42c8ccbf5aca41b1c26423e727277aba6156fb405f74255f2cc34c22f76f39", null ],
       [ "BoneWeights1", "df/d89/structez_g_a_l_vertex_attribute_semantic.htm#a52e42c8ccbf5aca41b1c26423e727277afd16554cb2621b1ab58120359d96bff7", null ],
-      [ "ENUM_COUNT", "df/d89/structez_g_a_l_vertex_attribute_semantic.htm#a52e42c8ccbf5aca41b1c26423e727277a9a72853f1b6bc3355f447d9fdc47954b", null ]
+      [ "ENUM_COUNT", "df/d89/structez_g_a_l_vertex_attribute_semantic.htm#a52e42c8ccbf5aca41b1c26423e727277a9a72853f1b6bc3355f447d9fdc47954b", null ],
+      [ "Default", "df/d89/structez_g_a_l_vertex_attribute_semantic.htm#a52e42c8ccbf5aca41b1c26423e727277ab6725140ddca0d5954ecfd8618405e64", null ]
     ] ]
 ];

@@ -13,6 +13,6 @@ var classez_data_directory_reader_writer_base =
     [ "Open", "d2/d00/classez_data_directory_reader_writer_base.htm#a27daff832f5ba9caeb7f857e1930ac41", null ],
     [ "m_bIsReader", "d2/d00/classez_data_directory_reader_writer_base.htm#a57a1b8e3fbd9194830a656c039c8641c", null ],
     [ "m_iDataDirUserData", "d2/d00/classez_data_directory_reader_writer_base.htm#a47bddc742b4b64e9eab87bcce1702fb5", null ],
-    [ "m_pDataDirectory", "d2/d00/classez_data_directory_reader_writer_base.htm#a776a7a0466bd3095b7d7601fed9c7200", null ],
+    [ "m_pDataDirType", "d2/d00/classez_data_directory_reader_writer_base.htm#adc5b3a2769047b529a45911d134cd374", null ],
     [ "m_sFilePath", "d2/d00/classez_data_directory_reader_writer_base.htm#a9a22764355b113d77ac8d3edd73f8e20", null ]
 ];

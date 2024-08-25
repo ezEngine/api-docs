@@ -8,7 +8,7 @@ var classez_qt_property_type_widget =
     [ "SetIsDefault", "dc/d74/classez_qt_property_type_widget.htm#a474d95c6747deff5859ff2bd5c8a642f", null ],
     [ "SetSelection", "dc/d74/classez_qt_property_type_widget.htm#a47b52549a05fb8acac958ac48eb64f2a", null ],
     [ "m_pGroup", "dc/d74/classez_qt_property_type_widget.htm#ad99970dde724c08327bf944d3a56efde", null ],
-    [ "m_pGroupLayout", "dc/d74/classez_qt_property_type_widget.htm#a4396247b923c3e671ace1300c4da6186", null ],
-    [ "m_pLayout", "dc/d74/classez_qt_property_type_widget.htm#a7e09a0dc747440630bb9ac615f15e6b5", null ],
+    [ "m_pGroupLayout", "dc/d74/classez_qt_property_type_widget.htm#abe5861b1a8c077edd967813fa9ea70cb", null ],
+    [ "m_pLayout", "dc/d74/classez_qt_property_type_widget.htm#ae209e0e82eecbaa939fed0b2ca537e8d", null ],
     [ "m_pTypeWidget", "dc/d74/classez_qt_property_type_widget.htm#a4f27d9dc212b8ea4782f08e55bd0fa87", null ]
 ];

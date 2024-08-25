@@ -1,6 +1,6 @@
 var structez_spatial_system_1_1_query_params =
 [
-    [ "m_ExcludeTags", "d9/d7d/structez_spatial_system_1_1_query_params.htm#af0d326ef3eba3aa0bc00672e7ef0ecb4", null ],
-    [ "m_IncludeTags", "d9/d7d/structez_spatial_system_1_1_query_params.htm#aac4cfc815b45e66dabc43731145ca2e3", null ],
+    [ "m_pExcludeTags", "d9/d7d/structez_spatial_system_1_1_query_params.htm#a667b04bdaa25409a706f91169ae1b675", null ],
+    [ "m_pIncludeTags", "d9/d7d/structez_spatial_system_1_1_query_params.htm#a308fb29b44582c9282db92701c5a3ae7", null ],
     [ "m_uiCategoryBitmask", "d9/d7d/structez_spatial_system_1_1_query_params.htm#a352bebf7b52617d66383159d793226cb", null ]
 ];

@@ -116,6 +116,7 @@ var structez_image_format =
       [ "X1B5G5R5_UNORM", "da/dfa/structez_image_format.htm#a1c595e37b9f96c35dd90570bfcd8f853ad14d8c0aefaaf4a4a373e947f9ec07ac", null ],
       [ "X1B5G5R5_UNORM_SRGB", "da/dfa/structez_image_format.htm#a1c595e37b9f96c35dd90570bfcd8f853ac26c906d5f89e92ffbbee984d40e0337", null ],
       [ "NV12", "da/dfa/structez_image_format.htm#a1c595e37b9f96c35dd90570bfcd8f853a48fc8cd1bce87cc3b50354933a6af12e", null ],
+      [ "P010", "da/dfa/structez_image_format.htm#a1c595e37b9f96c35dd90570bfcd8f853aafa8c0bd0c8e58c1b1fbd170ffbf9ad5", null ],
       [ "NUM_FORMATS", "da/dfa/structez_image_format.htm#a1c595e37b9f96c35dd90570bfcd8f853af489ac42a3447dcd678f85ad3430ec82", null ],
       [ "Default", "da/dfa/structez_image_format.htm#a1c595e37b9f96c35dd90570bfcd8f853ad4d5818eed808b36cf283f523f764030", null ]
     ] ]

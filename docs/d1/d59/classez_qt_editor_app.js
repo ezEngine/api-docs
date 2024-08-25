@@ -59,6 +59,7 @@ var classez_qt_editor_app =
     [ "RunEditor", "d1/d59/classez_qt_editor_app.htm#a10842a8051c3d99d4951876df2c43d6b", null ],
     [ "RunFileserve", "d1/d59/classez_qt_editor_app.htm#acf140449e03deb8114f27821830b8fe2", null ],
     [ "RunInspector", "d1/d59/classez_qt_editor_app.htm#a384d6ad865e41e54279d38b109980bcd", null ],
+    [ "RunTracy", "d1/d59/classez_qt_editor_app.htm#ad7f5e3b37ee30b4cd3bc51c661a4f1f2", null ],
     [ "SaveOpenDocumentsList", "d1/d59/classez_qt_editor_app.htm#ad0aba264092a7894dfc02d57f7b708ef", null ],
     [ "SaveSettings", "d1/d59/classez_qt_editor_app.htm#ae7bfeec4fde862c416f4cce261524ac4", null ],
     [ "SaveTagRegistry", "d1/d59/classez_qt_editor_app.htm#aa34008ed6906b128dae39764f742a914", null ],

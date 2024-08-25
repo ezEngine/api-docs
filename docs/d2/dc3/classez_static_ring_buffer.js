@@ -6,7 +6,6 @@ var classez_static_ring_buffer =
     [ "CanAppend", "d2/dc3/classez_static_ring_buffer.htm#a882b3aafe0682c221b41638a196aeb4a", null ],
     [ "Clear", "d2/dc3/classez_static_ring_buffer.htm#a36fdb81685e4bac47c235f46300dc1ca", null ],
     [ "EZ_ADD_DEFAULT_OPERATOR_NOTEQUAL", "d2/dc3/classez_static_ring_buffer.htm#aa7a0c3679d26545cc8153e45811231c8", null ],
-    [ "EZ_CHECK_AT_COMPILETIME_MSG", "d2/dc3/classez_static_ring_buffer.htm#a3ee79de52511c9823b0e1d65a7c5cb10", null ],
     [ "GetCount", "d2/dc3/classez_static_ring_buffer.htm#a75aeaf529f144f803ed0117f75fe8d8b", null ],
     [ "IsEmpty", "d2/dc3/classez_static_ring_buffer.htm#a3768b2e8eb7f5e0de2ce2fb9eca47363", null ],
     [ "operator=", "d2/dc3/classez_static_ring_buffer.htm#a895a5ef77cc69cd941657c98516837ea", null ],

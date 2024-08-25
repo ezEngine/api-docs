@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.12</span>
+   &#160;<span id="projectnumber">Release 24.09</span>
    </div>
   </td>
  </tr>
@@ -91,33 +91,62 @@ $(document).ready(function(){initNavTree('dd/dd0/structez_local_allocator_wrappe
 <div class="title">ezLocalAllocatorWrapper Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Helper function to facilitate setting the allocator on member containers of a class Allocators can be either template arguments or a ctor parameter. Using the ctor parameter requires the class ctor to reference each member container in the initialization list. This can be very tedious. On the other hand, the template variant only support template parameter so you can't simply pass in a member allocator. This class solves this problem provided the following rules are followed:  
+ <a href="../../dd/dd0/structez_local_allocator_wrapper.htm#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../da/d3e/_allocator_wrapper_8h_source.htm">AllocatorWrapper.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad03c1b9dd1d050350d54974b2d9fa1fd"><td class="memItemLeft" align="right" valign="top"><a id="ad03c1b9dd1d050350d54974b2d9fa1fd"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ezLocalAllocatorWrapper</b> (<a class="el" href="../../d1/d4c/classez_allocator_base.htm">ezAllocatorBase</a> *pAllocator)</td></tr>
-<tr class="separator:ad03c1b9dd1d050350d54974b2d9fa1fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5076747850d18bb7bd7bb084818b505"><td class="memItemLeft" align="right" valign="top"><a id="ab5076747850d18bb7bd7bb084818b505"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ezLocalAllocatorWrapper</b> (<a class="el" href="../../d0/dbb/classez_allocator.htm">ezAllocator</a> *pAllocator)</td></tr>
+<tr class="separator:ab5076747850d18bb7bd7bb084818b505"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e7f82173dfae04596d3cfca9c9003e5"><td class="memItemLeft" align="right" valign="top"><a id="a1e7f82173dfae04596d3cfca9c9003e5"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Reset</b> ()</td></tr>
 <tr class="separator:a1e7f82173dfae04596d3cfca9c9003e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a947606a113515974379a343558783281"><td class="memItemLeft" align="right" valign="top"><a id="a947606a113515974379a343558783281"></a>
-static <a class="el" href="../../d1/d4c/classez_allocator_base.htm">ezAllocatorBase</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>GetAllocator</b> ()</td></tr>
-<tr class="separator:a947606a113515974379a343558783281"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8b92b0e2939210db48a6b8a91e81c7c"><td class="memItemLeft" align="right" valign="top"><a id="af8b92b0e2939210db48a6b8a91e81c7c"></a>
+static <a class="el" href="../../d0/dbb/classez_allocator.htm">ezAllocator</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>GetAllocator</b> ()</td></tr>
+<tr class="separator:af8b92b0e2939210db48a6b8a91e81c7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following files:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Helper function to facilitate setting the allocator on member containers of a class Allocators can be either template arguments or a ctor parameter. Using the ctor parameter requires the class ctor to reference each member container in the initialization list. This can be very tedious. On the other hand, the template variant only support template parameter so you can't simply pass in a member allocator. This class solves this problem provided the following rules are followed: </p>
+<ol type="1">
+<li>The <code><a class="el" href="../../d0/dbb/classez_allocator.htm" title="Base class for all memory allocators.">ezAllocator</a></code> must be the declared at the earliest in the class, before any container.</li>
+<li>The <code><a class="el" href="../../dd/dd0/structez_local_allocator_wrapper.htm" title="Helper function to facilitate setting the allocator on member containers of a class Allocators can be...">ezLocalAllocatorWrapper</a></code> should be declared right afterwards.</li>
+<li>Any container needs to be declared below these two and must include the <code><a class="el" href="../../dd/dd0/structez_local_allocator_wrapper.htm" title="Helper function to facilitate setting the allocator on member containers of a class Allocators can be...">ezLocalAllocatorWrapper</a></code> as a template argument to the allocator.</li>
+<li>In the ctor initializer list, init the <a class="el" href="../../d0/dbb/classez_allocator.htm" title="Base class for all memory allocators.">ezAllocator</a> first, then the <a class="el" href="../../dd/dd0/structez_local_allocator_wrapper.htm" title="Helper function to facilitate setting the allocator on member containers of a class Allocators can be...">ezLocalAllocatorWrapper</a>. With this approach all containers can be omitted. <div class="fragment"><div class="line"><span class="keyword">class </span>MyClass</div>
+<div class="line">{</div>
+<div class="line">  <a class="code" href="../../d0/dbb/classez_allocator.htm">ezAllocator</a> m_SpecialAlloc;</div>
+<div class="line">  <a class="code" href="../../dd/dd0/structez_local_allocator_wrapper.htm">ezLocalAllocatorWrapper</a> m_Wrapper;</div>
+<div class="line"> </div>
+<div class="line">  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;int, ezLocalAllocatorWrapper&gt;</a> m_Data;</div>
+<div class="line"> </div>
+<div class="line">  MyClass()</div>
+<div class="line">    : m_SpecialAlloc(<span class="stringliteral">&quot;MySpecialAlloc&quot;</span>)</div>
+<div class="line">    , m_Wrapper(&amp;m_SpecialAlloc)</div>
+<div class="line">  {</div>
+<div class="line">  }</div>
+<div class="line">}</div>
+</div><!-- fragment --> </li>
+</ol>
+</div><hr/>The documentation for this struct was generated from the following files:<ul>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/Memory/<a class="el" href="../../da/d3e/_allocator_wrapper_8h_source.htm">AllocatorWrapper.h</a></li>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/Memory/Implementation/AllocatorWrapper.cpp</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="astructez_local_allocator_wrapper_htm"><div class="ttname"><a href="../../dd/dd0/structez_local_allocator_wrapper.htm">ezLocalAllocatorWrapper</a></div><div class="ttdoc">Helper function to facilitate setting the allocator on member containers of a class Allocators can be...</div><div class="ttdef"><b>Definition:</b> AllocatorWrapper.h:51</div></div>
+<div class="ttc" id="aclassez_dynamic_array_htm"><div class="ttname"><a href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray</a></div><div class="ttdef"><b>Definition:</b> DynamicArray.h:80</div></div>
+<div class="ttc" id="aclassez_allocator_htm"><div class="ttname"><a href="../../d0/dbb/classez_allocator.htm">ezAllocator</a></div><div class="ttdoc">Base class for all memory allocators.</div><div class="ttdef"><b>Definition:</b> Allocator.h:22</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dd/dd0/structez_local_allocator_wrapper.htm">ezLocalAllocatorWrapper</a></li>
-    <li class="footer">Generated on Fri Dec 22 2023 20:43:14 for ezEngine by
+    <li class="footer">Generated on Sun Aug 25 2024 13:06:29 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

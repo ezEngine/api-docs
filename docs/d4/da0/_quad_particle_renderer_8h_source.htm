@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.12</span>
+   &#160;<span id="projectnumber">Release 24.09</span>
    </div>
   </td>
  </tr>
@@ -117,38 +117,42 @@ $(document).ready(function(){initNavTree('d4/da0/_quad_particle_renderer_8h_sour
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <a class="code" href="../../d3/dd7/classez_typed_resource_handle.htm">ezTexture2DResourceHandle</a> m_hDistortionTexture;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordtype">float</span> m_fDistortionStrength = 0;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <a class="code" href="../../db/dcf/classez_temp_hashed_string.htm">ezTempHashedString</a> m_QuadModePermutation;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;};</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="../../da/d6b/classez_particle_quad_renderer.htm">   34</a></span>&#160;<span class="keyword">class </span>EZ_PARTICLEPLUGIN_DLL <a class="code" href="../../da/d6b/classez_particle_quad_renderer.htm">ezParticleQuadRenderer</a> final : <span class="keyword">public</span> <a class="code" href="../../d8/d50/classez_particle_renderer.htm">ezParticleRenderer</a></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  EZ_ADD_DYNAMIC_REFLECTION(<a class="code" href="../../da/d6b/classez_particle_quad_renderer.htm">ezParticleQuadRenderer</a>, <a class="code" href="../../d8/d50/classez_particle_renderer.htm">ezParticleRenderer</a>);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  EZ_DISALLOW_COPY_AND_ASSIGN(<a class="code" href="../../da/d6b/classez_particle_quad_renderer.htm">ezParticleQuadRenderer</a>);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="../../da/d6b/classez_particle_quad_renderer.htm">ezParticleQuadRenderer</a>();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  ~<a class="code" href="../../da/d6b/classez_particle_quad_renderer.htm">ezParticleQuadRenderer</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <a class="code" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezParticleLightingMode&gt;</a> m_LightingMode;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordtype">float</span> m_fNormalCurvature = 0.5f;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordtype">float</span> m_fLightDirectionality = 0.5f;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="../../da/d6b/classez_particle_quad_renderer.htm">   38</a></span>&#160;<span class="keyword">class </span>EZ_PARTICLEPLUGIN_DLL <a class="code" href="../../da/d6b/classez_particle_quad_renderer.htm">ezParticleQuadRenderer</a> final : <span class="keyword">public</span> <a class="code" href="../../d8/d50/classez_particle_renderer.htm">ezParticleRenderer</a></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  EZ_ADD_DYNAMIC_REFLECTION(<a class="code" href="../../da/d6b/classez_particle_quad_renderer.htm">ezParticleQuadRenderer</a>, <a class="code" href="../../d8/d50/classez_particle_renderer.htm">ezParticleRenderer</a>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  EZ_DISALLOW_COPY_AND_ASSIGN(<a class="code" href="../../da/d6b/classez_particle_quad_renderer.htm">ezParticleQuadRenderer</a>);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> GetSupportedRenderDataTypes(<a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;const ezRTTI*, 8&gt;</a>&amp; ref_types) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> RenderBatch(</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d7/d76/structez_render_view_context.htm">ezRenderViewContext</a>&amp; renderContext, <span class="keyword">const</span> <a class="code" href="../../d1/d0d/classez_render_pipeline_pass.htm">ezRenderPipelinePass</a>* pPass, <span class="keyword">const</span> <a class="code" href="../../d1/d11/classez_render_data_batch.htm">ezRenderDataBatch</a>&amp; batch) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <a class="code" href="../../da/d6b/classez_particle_quad_renderer.htm">ezParticleQuadRenderer</a>();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  ~<a class="code" href="../../da/d6b/classez_particle_quad_renderer.htm">ezParticleQuadRenderer</a>();</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordtype">void</span> ConfigureRenderMode(<span class="keyword">const</span> <a class="code" href="../../d7/da0/classez_particle_quad_render_data.htm">ezParticleQuadRenderData</a>* pRenderData, <a class="code" href="../../db/d04/classez_render_context.htm">ezRenderContext</a>* pRenderContext) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> GetSupportedRenderDataTypes(<a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;const ezRTTI*, 8&gt;</a>&amp; ref_types) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> RenderBatch(</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d7/d76/structez_render_view_context.htm">ezRenderViewContext</a>&amp; renderContext, <span class="keyword">const</span> <a class="code" href="../../d1/d0d/classez_render_pipeline_pass.htm">ezRenderPipelinePass</a>* pPass, <span class="keyword">const</span> <a class="code" href="../../d1/d11/classez_render_data_batch.htm">ezRenderDataBatch</a>&amp; batch) <span class="keyword">const override</span>;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> ezUInt32 s_uiParticlesPerBatch = 1024;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a> m_hBaseDataBuffer;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a> m_hBillboardDataBuffer;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <a class="code" href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a> m_hTangentDataBuffer;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;};</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordtype">void</span> ConfigureRenderMode(<span class="keyword">const</span> <a class="code" href="../../d7/da0/classez_particle_quad_render_data.htm">ezParticleQuadRenderData</a>* pRenderData, <a class="code" href="../../db/d04/classez_render_context.htm">ezRenderContext</a>* pRenderContext) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> ezUInt32 s_uiParticlesPerBatch = 1024;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <a class="code" href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a> m_hBaseDataBuffer;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <a class="code" href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a> m_hBillboardDataBuffer;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <a class="code" href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a> m_hTangentDataBuffer;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassez_g_a_l_buffer_handle_htm"><div class="ttname"><a href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a></div><div class="ttdef"><b>Definition:</b> RendererFoundationDLL.h:337</div></div>
+<div class="ttc" id="aclassez_g_a_l_buffer_handle_htm"><div class="ttname"><a href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a></div><div class="ttdef"><b>Definition:</b> RendererFoundationDLL.h:417</div></div>
 <div class="ttc" id="aclassez_render_data_htm"><div class="ttname"><a href="../../d3/dab/classez_render_data.htm">ezRenderData</a></div><div class="ttdoc">Base class for all render data. Render data must contain all information that is needed to render the...</div><div class="ttdef"><b>Definition:</b> RenderData.h:13</div></div>
 <div class="ttc" id="astructez_time_htm"><div class="ttname"><a href="../../d3/d90/structez_time.htm">ezTime</a></div><div class="ttdoc">The time class encapsulates a double value storing the time in seconds.</div><div class="ttdef"><b>Definition:</b> Time.h:11</div></div>
-<div class="ttc" id="aclassez_particle_quad_renderer_htm"><div class="ttname"><a href="../../da/d6b/classez_particle_quad_renderer.htm">ezParticleQuadRenderer</a></div><div class="ttdoc">Implements rendering of particle systems.</div><div class="ttdef"><b>Definition:</b> QuadParticleRenderer.h:34</div></div>
+<div class="ttc" id="aclassez_particle_quad_renderer_htm"><div class="ttname"><a href="../../da/d6b/classez_particle_quad_renderer.htm">ezParticleQuadRenderer</a></div><div class="ttdoc">Implements rendering of particle systems.</div><div class="ttdef"><b>Definition:</b> QuadParticleRenderer.h:38</div></div>
 <div class="ttc" id="aclassez_array_ptr_htm"><div class="ttname"><a href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt; ezBaseParticleShaderData &gt;</a></div></div>
-<div class="ttc" id="aclassez_temp_hashed_string_htm"><div class="ttname"><a href="../../db/dcf/classez_temp_hashed_string.htm">ezTempHashedString</a></div><div class="ttdoc">A class to use together with ezHashedString for quick comparisons with temporary strings that need no...</div><div class="ttdef"><b>Definition:</b> HashedString.h:150</div></div>
+<div class="ttc" id="aclassez_temp_hashed_string_htm"><div class="ttname"><a href="../../db/dcf/classez_temp_hashed_string.htm">ezTempHashedString</a></div><div class="ttdoc">A class to use together with ezHashedString for quick comparisons with temporary strings that need no...</div><div class="ttdef"><b>Definition:</b> HashedString.h:156</div></div>
 <div class="ttc" id="aclassez_render_pipeline_pass_htm"><div class="ttname"><a href="../../d1/d0d/classez_render_pipeline_pass.htm">ezRenderPipelinePass</a></div><div class="ttdef"><b>Definition:</b> RenderPipelinePass.h:25</div></div>
 <div class="ttc" id="aclassez_particle_renderer_htm"><div class="ttname"><a href="../../d8/d50/classez_particle_renderer.htm">ezParticleRenderer</a></div><div class="ttdoc">Implements rendering of particle systems.</div><div class="ttdef"><b>Definition:</b> ParticleRenderer.h:15</div></div>
 <div class="ttc" id="astructez_render_view_context_htm"><div class="ttname"><a href="../../d7/d76/structez_render_view_context.htm">ezRenderViewContext</a></div><div class="ttdef"><b>Definition:</b> Declarations.h:50</div></div>
@@ -156,13 +160,13 @@ $(document).ready(function(){initNavTree('d4/da0/_quad_particle_renderer_8h_sour
 <div class="ttc" id="aclassez_render_data_batch_htm"><div class="ttname"><a href="../../d1/d11/classez_render_data_batch.htm">ezRenderDataBatch</a></div><div class="ttdef"><b>Definition:</b> RenderDataBatch.h:5</div></div>
 <div class="ttc" id="aclassez_hybrid_array_htm"><div class="ttname"><a href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt; const ezRTTI *, 8 &gt;</a></div></div>
 <div class="ttc" id="aclassez_particle_quad_render_data_htm"><div class="ttname"><a href="../../d7/da0/classez_particle_quad_render_data.htm">ezParticleQuadRenderData</a></div><div class="ttdef"><b>Definition:</b> QuadParticleRenderer.h:11</div></div>
-<div class="ttc" id="aclassez_render_context_htm"><div class="ttname"><a href="../../db/d04/classez_render_context.htm">ezRenderContext</a></div><div class="ttdef"><b>Definition:</b> RenderContext.h:31</div></div>
+<div class="ttc" id="aclassez_render_context_htm"><div class="ttname"><a href="../../db/d04/classez_render_context.htm">ezRenderContext</a></div><div class="ttdef"><b>Definition:</b> RenderContext.h:29</div></div>
 <div class="ttc" id="aclassez_typed_resource_handle_htm"><div class="ttname"><a href="../../d3/dd7/classez_typed_resource_handle.htm">ezTypedResourceHandle&lt; class ezTexture2DResource &gt;</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_103378c88ff4c88de6bfabe12da9ec96.htm">EnginePlugins</a></li><li class="navelem"><a class="el" href="../../dir_9aa8b4544ca68b692a3a4785c1118130.htm">ParticlePlugin</a></li><li class="navelem"><a class="el" href="../../dir_5e0ffabec4d56cce6d14aec199d335bf.htm">Type</a></li><li class="navelem"><a class="el" href="../../dir_55878da42e4b6b734e026047e3bfec68.htm">Quad</a></li><li class="navelem"><b>QuadParticleRenderer.h</b></li>
-    <li class="footer">Generated on Fri Dec 22 2023 20:43:10 for ezEngine by
+    <li class="footer">Generated on Sun Aug 25 2024 13:06:24 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

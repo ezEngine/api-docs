@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.12</span>
+   &#160;<span id="projectnumber">Release 24.09</span>
    </div>
   </td>
  </tr>
@@ -92,82 +92,127 @@ $(document).ready(function(){initNavTree('d9/d00/_id_8h_source.htm','../../'); i
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;Foundation/Basics.h&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#define EZ_DECLARE_ID_TYPE(name, instanceIndexBits, generationBits)                                        \</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">  static const StorageType MAX_INSTANCES = (1ULL &lt;&lt; instanceIndexBits);                                    \</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">  static const StorageType INVALID_INSTANCE_INDEX = MAX_INSTANCES - 1;                                     \</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">  static const StorageType INDEX_AND_GENERATION_MASK = (1ULL &lt;&lt; (instanceIndexBits + generationBits)) - 1; \</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">  EZ_DECLARE_POD_TYPE();                                                                                   \</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">  EZ_ALWAYS_INLINE name() { m_Data = INVALID_INSTANCE_INDEX; }                                             \</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">  EZ_ALWAYS_INLINE explicit name(StorageType internalData) { m_Data = internalData; }                      \</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">  EZ_ALWAYS_INLINE bool operator==(const name other) const { return m_Data == other.m_Data; }              \</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">  EZ_ALWAYS_INLINE bool operator!=(const name other) const { return m_Data != other.m_Data; }              \</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">  EZ_ALWAYS_INLINE bool operator&lt;(const name other) const { return m_Data &lt; other.m_Data; }                \</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">  EZ_ALWAYS_INLINE void Invalidate() { m_Data = INVALID_INSTANCE_INDEX; }                                  \</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">  EZ_ALWAYS_INLINE bool IsInvalidated() const { return m_Data == INVALID_INSTANCE_INDEX; }                 \</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">  EZ_ALWAYS_INLINE bool IsIndexAndGenerationEqual(const name other) const                                  \</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">  {                                                                                                        \</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">    return (m_Data &amp; INDEX_AND_GENERATION_MASK) == (other.m_Data &amp; INDEX_AND_GENERATION_MASK);             \</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">  }</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">template</span> &lt;ezUInt32 InstanceIndexBits, ezUInt32 GenerationBits&gt;</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="../../dd/d2a/structez_generic_id.htm">   30</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../dd/d2a/structez_generic_id.htm">ezGenericId</a></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">enum</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    STORAGE_SIZE = ((InstanceIndexBits + GenerationBits - 1) / 8) + 1</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  };</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keyword">using</span> StorageType = <span class="keyword">typename</span> <a class="code" href="../../d6/da6/structez_size_to_type.htm">ezSizeToType&lt;STORAGE_SIZE&gt;::Type</a>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  EZ_DECLARE_ID_TYPE(<a class="code" href="../../dd/d2a/structez_generic_id.htm">ezGenericId</a>, InstanceIndexBits, GenerationBits);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  EZ_ALWAYS_INLINE <a class="code" href="../../dd/d2a/structez_generic_id.htm">ezGenericId</a>(StorageType instanceIndex, StorageType generation)</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    m_Data = 0;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    m_InstanceIndex = instanceIndex;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    m_Generation = generation;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  }</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#define EZ_DECLARE_ID_TYPE(name, instanceIndexBits, generationBits)                                                     \</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">  static const StorageType MAX_INSTANCES = (1ULL &lt;&lt; instanceIndexBits);                                                 \</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">  static const StorageType INVALID_INSTANCE_INDEX = MAX_INSTANCES - 1;                                                  \</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">  static const StorageType INDEX_AND_GENERATION_MASK = ((ezUInt64) - 1) &gt;&gt; (64 - (instanceIndexBits + generationBits)); \</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">  EZ_DECLARE_POD_TYPE();                                                                                                \</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">  EZ_ALWAYS_INLINE name()                                                                                               \</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">  {                                                                                                                     \</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    m_Data = INVALID_INSTANCE_INDEX;                                                                                    \</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">  }                                                                                                                     \</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">  EZ_ALWAYS_INLINE explicit name(StorageType internalData)                                                              \</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">  {                                                                                                                     \</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">    m_Data = internalData;                                                                                              \</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">  }                                                                                                                     \</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">  EZ_ALWAYS_INLINE bool operator==(const name other) const                                                              \</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">  {                                                                                                                     \</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">    return m_Data == other.m_Data;                                                                                      \</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">  }                                                                                                                     \</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">  EZ_ALWAYS_INLINE bool operator!=(const name other) const                                                              \</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">  {                                                                                                                     \</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">    return m_Data != other.m_Data;                                                                                      \</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">  }                                                                                                                     \</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">  EZ_ALWAYS_INLINE bool operator&lt;(const name other) const                                                               \</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">  {                                                                                                                     \</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">    return m_Data &lt; other.m_Data;                                                                                       \</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">  }                                                                                                                     \</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">  EZ_ALWAYS_INLINE void Invalidate()                                                                                    \</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">  {                                                                                                                     \</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">    m_Data = INVALID_INSTANCE_INDEX;                                                                                    \</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">  }                                                                                                                     \</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">  EZ_ALWAYS_INLINE bool IsInvalidated() const                                                                           \</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">  {                                                                                                                     \</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">    return m_Data == INVALID_INSTANCE_INDEX;                                                                            \</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">  }                                                                                                                     \</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">  EZ_ALWAYS_INLINE bool IsIndexAndGenerationEqual(const name other) const                                               \</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">  {                                                                                                                     \</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">    return (m_Data &amp; INDEX_AND_GENERATION_MASK) == (other.m_Data &amp; INDEX_AND_GENERATION_MASK);                          \</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">  }</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keyword">union</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    StorageType m_Data;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">struct</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      StorageType m_InstanceIndex : InstanceIndexBits;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      StorageType m_Generation : GenerationBits;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    };</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  };</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;};</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#define EZ_DECLARE_HANDLE_TYPE(name, idType)                                                              \</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">public:                                                                                                   \</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">  EZ_DECLARE_POD_TYPE();                                                                                  \</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">  EZ_ALWAYS_INLINE name() {}                                                                              \</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">  EZ_ALWAYS_INLINE explicit name(idType internalId)                                                       \</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">    : m_InternalId(internalId)                                                                            \</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">  {                                                                                                       \</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">  }                                                                                                       \</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">  EZ_ALWAYS_INLINE bool operator==(const name other) const { return m_InternalId == other.m_InternalId; } \</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">  EZ_ALWAYS_INLINE bool operator!=(const name other) const { return m_InternalId != other.m_InternalId; } \</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">  EZ_ALWAYS_INLINE bool operator&lt;(const name other) const { return m_InternalId &lt; other.m_InternalId; }   \</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">  EZ_ALWAYS_INLINE void Invalidate() { m_InternalId.Invalidate(); }                                       \</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">  EZ_ALWAYS_INLINE bool IsInvalidated() const { return m_InternalId.IsInvalidated(); }                    \</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">  EZ_ALWAYS_INLINE idType GetInternalID() const { return m_InternalId; }                                  \</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">  using IdType = idType;                                                                                  \</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">                                                                                                          \</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">protected:                                                                                                \</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">  idType m_InternalId;                                                                                    \</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">  operator idType() { return m_InternalId; }                                                              \</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">  operator const idType() const { return m_InternalId; }</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">template</span> &lt;ezUInt32 InstanceIndexBits, ezUInt32 GenerationBits&gt;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="../../dd/d2a/structez_generic_id.htm">   51</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../dd/d2a/structez_generic_id.htm">ezGenericId</a></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keyword">enum</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    STORAGE_SIZE = ((InstanceIndexBits + GenerationBits - 1) / 8) + 1</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  };</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keyword">using</span> StorageType = <span class="keyword">typename</span> <a class="code" href="../../d6/da6/structez_size_to_type.htm">ezSizeToType&lt;STORAGE_SIZE&gt;::Type</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  EZ_DECLARE_ID_TYPE(<a class="code" href="../../dd/d2a/structez_generic_id.htm">ezGenericId</a>, InstanceIndexBits, GenerationBits);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  EZ_ALWAYS_INLINE <a class="code" href="../../dd/d2a/structez_generic_id.htm">ezGenericId</a>(StorageType instanceIndex, StorageType generation)</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    m_Data = 0;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    m_InstanceIndex = instanceIndex;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    m_Generation = generation;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keyword">union</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    StorageType m_Data;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">struct</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      StorageType m_InstanceIndex : InstanceIndexBits;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      StorageType m_Generation : GenerationBits;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    };</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  };</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;};</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#define EZ_DECLARE_HANDLE_TYPE(name, idType)               \</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">public:                                                    \</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">  EZ_DECLARE_POD_TYPE();                                   \</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">  EZ_ALWAYS_INLINE name() {}                               \</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">  EZ_ALWAYS_INLINE explicit name(idType internalId)        \</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">    : m_InternalId(internalId)                             \</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">  {                                                        \</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">  }                                                        \</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">  EZ_ALWAYS_INLINE bool operator==(const name other) const \</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">  {                                                        \</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">    return m_InternalId == other.m_InternalId;             \</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">  }                                                        \</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">  EZ_ALWAYS_INLINE bool operator!=(const name other) const \</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">  {                                                        \</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">    return m_InternalId != other.m_InternalId;             \</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">  }                                                        \</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">  EZ_ALWAYS_INLINE bool operator&lt;(const name other) const  \</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">  {                                                        \</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">    return m_InternalId &lt; other.m_InternalId;              \</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">  }                                                        \</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">  EZ_ALWAYS_INLINE void Invalidate()                       \</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor">  {                                                        \</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">    m_InternalId.Invalidate();                             \</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">  }                                                        \</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">  EZ_ALWAYS_INLINE bool IsInvalidated() const              \</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">  {                                                        \</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">    return m_InternalId.IsInvalidated();                   \</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">  }                                                        \</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="preprocessor">  EZ_ALWAYS_INLINE idType GetInternalID() const            \</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">  {                                                        \</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="preprocessor">    return m_InternalId;                                   \</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">  }                                                        \</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor">  using IdType = idType;                                   \</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="preprocessor">                                                           \</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor">protected:                                                 \</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor">  idType m_InternalId;                                     \</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="preprocessor">  operator idType()                                        \</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="preprocessor">  {                                                        \</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="preprocessor">    return m_InternalId;                                   \</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="preprocessor">  }                                                        \</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="preprocessor">  operator const idType() const                            \</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="preprocessor">  {                                                        \</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="preprocessor">    return m_InternalId;                                   \</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="preprocessor">  }</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="astructez_size_to_type_htm"><div class="ttname"><a href="../../d6/da6/structez_size_to_type.htm">ezSizeToType</a></div><div class="ttdoc">Helper struct to get a storage type from a size in byte.</div><div class="ttdef"><b>Definition:</b> Types.h:146</div></div>
-<div class="ttc" id="astructez_generic_id_htm"><div class="ttname"><a href="../../dd/d2a/structez_generic_id.htm">ezGenericId</a></div><div class="ttdoc">A generic id class that holds an id combined of an instance index and a generation counter.</div><div class="ttdef"><b>Definition:</b> Id.h:30</div></div>
+<div class="ttc" id="astructez_size_to_type_htm"><div class="ttname"><a href="../../d6/da6/structez_size_to_type.htm">ezSizeToType</a></div><div class="ttdoc">Helper struct to get a storage type from a size in byte.</div><div class="ttdef"><b>Definition:</b> Types.h:150</div></div>
+<div class="ttc" id="astructez_generic_id_htm"><div class="ttname"><a href="../../dd/d2a/structez_generic_id.htm">ezGenericId</a></div><div class="ttdoc">A generic id class that holds an id combined of an instance index and a generation counter.</div><div class="ttdef"><b>Definition:</b> Id.h:51</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_f95f7c440efc771b227d40e9293549bd.htm">Types</a></li><li class="navelem"><b>Id.h</b></li>
-    <li class="footer">Generated on Fri Dec 22 2023 20:43:08 for ezEngine by
+    <li class="footer">Generated on Sun Aug 25 2024 13:06:21 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

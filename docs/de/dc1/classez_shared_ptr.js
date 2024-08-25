@@ -2,7 +2,7 @@ var classez_shared_ptr =
 [
     [ "ezSharedPtr", "de/dc1/classez_shared_ptr.htm#a3a59be6ea0dbed6759236f3a12644f3b", null ],
     [ "ezSharedPtr", "de/dc1/classez_shared_ptr.htm#a1b5a47ef6ccedc9946e77ea4b57f193f", null ],
-    [ "ezSharedPtr", "de/dc1/classez_shared_ptr.htm#a515378929af17ff4d356edfc20930b70", null ],
+    [ "ezSharedPtr", "de/dc1/classez_shared_ptr.htm#a41495ad67d58eda2d509caf24176f731", null ],
     [ "ezSharedPtr", "de/dc1/classez_shared_ptr.htm#a7336261d3c43fe7fd69e511c7da6c543", null ],
     [ "ezSharedPtr", "de/dc1/classez_shared_ptr.htm#ada264edfd0ee350de531c87fff1ca5a7", null ],
     [ "ezSharedPtr", "de/dc1/classez_shared_ptr.htm#a16a6c415ccc88dce1bb9f7a5eba8755e", null ],
@@ -10,7 +10,7 @@ var classez_shared_ptr =
     [ "ezSharedPtr", "de/dc1/classez_shared_ptr.htm#af1687abb604fae381263a5e54dfd7d8a", null ],
     [ "~ezSharedPtr", "de/dc1/classez_shared_ptr.htm#afc7eeabcc62c42518b16cf80c1f7630e", null ],
     [ "ezSharedPtr", "de/dc1/classez_shared_ptr.htm#a1f410484af44a3a9f9e4ad426e3a8f30", null ],
-    [ "ezSharedPtr", "de/dc1/classez_shared_ptr.htm#ad8377bdf9600f6b24bc27e83f6a0c059", null ],
+    [ "ezSharedPtr", "de/dc1/classez_shared_ptr.htm#a901368587516ff5112ba30a7ff063b74", null ],
     [ "ezSharedPtr", "de/dc1/classez_shared_ptr.htm#aa813eebb4c3fe237dc6f5e5374c93a3e", null ],
     [ "ezSharedPtr", "de/dc1/classez_shared_ptr.htm#aa8575f35d323cd32621e98fc184577e4", null ],
     [ "ezSharedPtr", "de/dc1/classez_shared_ptr.htm#a8a788e4555b340a46dfef816c86aed31", null ],

@@ -1,13 +1,11 @@
 var structez_surface_resource_descriptor =
 [
     [ "EZ_ADD_DYNAMIC_REFLECTION", "d0/d67/structez_surface_resource_descriptor.htm#a2f1c6192a04281e4ce365b580ed16a8b", null ],
-    [ "GetBaseSurfaceFile", "d0/d67/structez_surface_resource_descriptor.htm#a708d6227a646d27e3842a89171549459", null ],
     [ "GetCollisionInteraction", "d0/d67/structez_surface_resource_descriptor.htm#aa57149056cfa0f18709ec0ccc17e9e41", null ],
     [ "GetRollReactionPrefabFile", "d0/d67/structez_surface_resource_descriptor.htm#a676ceb2aead2c4a4ead59cb7f0171149", null ],
     [ "GetSlideReactionPrefabFile", "d0/d67/structez_surface_resource_descriptor.htm#a9ff67ea01af455efd7720cd4e9483f2d", null ],
     [ "Load", "d0/d67/structez_surface_resource_descriptor.htm#a51efd64e0213625371a508e2867f8509", null ],
     [ "Save", "d0/d67/structez_surface_resource_descriptor.htm#a8f4a1d739e5d2ac3e4755ae39393619c", null ],
-    [ "SetBaseSurfaceFile", "d0/d67/structez_surface_resource_descriptor.htm#a0ae47bb91ae0cd7fecea02902e506960", null ],
     [ "SetCollisionInteraction", "d0/d67/structez_surface_resource_descriptor.htm#a36a768162de5fb6abd5a11ce9906b289", null ],
     [ "SetRollReactionPrefabFile", "d0/d67/structez_surface_resource_descriptor.htm#a92865cd2002cbd0fc0bff0bff7eaace8", null ],
     [ "SetSlideReactionPrefabFile", "d0/d67/structez_surface_resource_descriptor.htm#a0b436ef515edbdfeb983566aa23319c2", null ],

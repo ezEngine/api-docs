@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 23.12</span>
+   &#160;<span id="projectnumber">Release 24.09</span>
    </div>
   </td>
  </tr>
@@ -94,7 +94,7 @@ $(document).ready(function(){initNavTree('d0/dec/_resource_view_d_x11_8h_source.
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">struct </span>ID3D11ShaderResourceView;</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="../../d8/d80/classez_g_a_l_resource_view_d_x11.htm">    8</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d8/d80/classez_g_a_l_resource_view_d_x11.htm">ezGALResourceViewDX11</a> : <span class="keyword">public</span> <a class="code" href="../../d3/d61/classez_g_a_l_resource_view.htm">ezGALResourceView</a></div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="../../d8/d00/classez_g_a_l_texture_resource_view_d_x11.htm">    8</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d8/d00/classez_g_a_l_texture_resource_view_d_x11.htm">ezGALTextureResourceViewDX11</a> : <span class="keyword">public</span> <a class="code" href="../../d4/dc8/classez_g_a_l_texture_resource_view.htm">ezGALTextureResourceView</a></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  EZ_ALWAYS_INLINE ID3D11ShaderResourceView* GetDXResourceView() <span class="keyword">const</span>;</div>
@@ -103,9 +103,9 @@ $(document).ready(function(){initNavTree('d0/dec/_resource_view_d_x11_8h_source.
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d3/d78/classez_g_a_l_device_d_x11.htm">ezGALDeviceDX11</a>;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../dc/d4d/classez_memory_utils.htm">ezMemoryUtils</a>;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <a class="code" href="../../d8/d80/classez_g_a_l_resource_view_d_x11.htm">ezGALResourceViewDX11</a>(<a class="code" href="../../da/d70/classez_g_a_l_resource_base.htm">ezGALResourceBase</a>* pResource, <span class="keyword">const</span> <a class="code" href="../../d1/d9c/structez_g_a_l_resource_view_creation_description.htm">ezGALResourceViewCreationDescription</a>&amp; Description);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <a class="code" href="../../d8/d00/classez_g_a_l_texture_resource_view_d_x11.htm">ezGALTextureResourceViewDX11</a>(<a class="code" href="../../d3/db1/classez_g_a_l_texture.htm">ezGALTexture</a>* pResource, <span class="keyword">const</span> <a class="code" href="../../d8/d4e/structez_g_a_l_texture_resource_view_creation_description.htm">ezGALTextureResourceViewCreationDescription</a>&amp; Description);</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  ~<a class="code" href="../../d8/d80/classez_g_a_l_resource_view_d_x11.htm">ezGALResourceViewDX11</a>();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  ~<a class="code" href="../../d8/d00/classez_g_a_l_texture_resource_view_d_x11.htm">ezGALTextureResourceViewDX11</a>();</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> InitPlatform(<a class="code" href="../../d2/d09/classez_g_a_l_device.htm">ezGALDevice</a>* pDevice) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
@@ -114,22 +114,47 @@ $(document).ready(function(){initNavTree('d0/dec/_resource_view_d_x11_8h_source.
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  ID3D11ShaderResourceView* m_pDXResourceView = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;};</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;RendererDX11/Resources/Implementation/ResourceViewDX11_inl.h&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="../../d3/d40/classez_g_a_l_buffer_resource_view_d_x11.htm">   29</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d3/d40/classez_g_a_l_buffer_resource_view_d_x11.htm">ezGALBufferResourceViewDX11</a> : <span class="keyword">public</span> <a class="code" href="../../d6/d86/classez_g_a_l_buffer_resource_view.htm">ezGALBufferResourceView</a></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  EZ_ALWAYS_INLINE ID3D11ShaderResourceView* GetDXResourceView() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d3/d78/classez_g_a_l_device_d_x11.htm">ezGALDeviceDX11</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../dc/d4d/classez_memory_utils.htm">ezMemoryUtils</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <a class="code" href="../../d3/d40/classez_g_a_l_buffer_resource_view_d_x11.htm">ezGALBufferResourceViewDX11</a>(<a class="code" href="../../d4/d5d/classez_g_a_l_buffer.htm">ezGALBuffer</a>* pResource, <span class="keyword">const</span> <a class="code" href="../../d0/d85/structez_g_a_l_buffer_resource_view_creation_description.htm">ezGALBufferResourceViewCreationDescription</a>&amp; Description);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  ~<a class="code" href="../../d3/d40/classez_g_a_l_buffer_resource_view_d_x11.htm">ezGALBufferResourceViewDX11</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> InitPlatform(<a class="code" href="../../d2/d09/classez_g_a_l_device.htm">ezGALDevice</a>* pDevice) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> DeInitPlatform(<a class="code" href="../../d2/d09/classez_g_a_l_device.htm">ezGALDevice</a>* pDevice) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  ID3D11ShaderResourceView* m_pDXResourceView = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;};</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#include &lt;RendererDX11/Resources/Implementation/ResourceViewDX11_inl.h&gt;</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition:</b> Types.h:50</div></div>
+<div class="ttc" id="astructez_g_a_l_buffer_resource_view_creation_description_htm"><div class="ttname"><a href="../../d0/d85/structez_g_a_l_buffer_resource_view_creation_description.htm">ezGALBufferResourceViewCreationDescription</a></div><div class="ttdef"><b>Definition:</b> Descriptors.h:211</div></div>
+<div class="ttc" id="aclassez_g_a_l_buffer_htm"><div class="ttname"><a href="../../d4/d5d/classez_g_a_l_buffer.htm">ezGALBuffer</a></div><div class="ttdef"><b>Definition:</b> Buffer.h:7</div></div>
+<div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition:</b> Types.h:53</div></div>
+<div class="ttc" id="aclassez_g_a_l_texture_resource_view_htm"><div class="ttname"><a href="../../d4/dc8/classez_g_a_l_texture_resource_view.htm">ezGALTextureResourceView</a></div><div class="ttdef"><b>Definition:</b> ResourceView.h:10</div></div>
 <div class="ttc" id="aclassez_g_a_l_device_htm"><div class="ttname"><a href="../../d2/d09/classez_g_a_l_device.htm">ezGALDevice</a></div><div class="ttdoc">The ezRenderDevice class is the primary interface for interactions with rendering APIs It contains a ...</div><div class="ttdef"><b>Definition:</b> Device.h:18</div></div>
-<div class="ttc" id="aclassez_memory_utils_htm"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm">ezMemoryUtils</a></div><div class="ttdoc">This class provides functions to work on raw memory.</div><div class="ttdef"><b>Definition:</b> MemoryUtils.h:19</div></div>
-<div class="ttc" id="aclassez_g_a_l_resource_base_htm"><div class="ttname"><a href="../../da/d70/classez_g_a_l_resource_base.htm">ezGALResourceBase</a></div><div class="ttdef"><b>Definition:</b> Resource.h:8</div></div>
-<div class="ttc" id="aclassez_g_a_l_resource_view_htm"><div class="ttname"><a href="../../d3/d61/classez_g_a_l_resource_view.htm">ezGALResourceView</a></div><div class="ttdef"><b>Definition:</b> ResourceView.h:7</div></div>
-<div class="ttc" id="aclassez_g_a_l_resource_view_d_x11_htm"><div class="ttname"><a href="../../d8/d80/classez_g_a_l_resource_view_d_x11.htm">ezGALResourceViewDX11</a></div><div class="ttdef"><b>Definition:</b> ResourceViewDX11.h:8</div></div>
-<div class="ttc" id="astructez_g_a_l_resource_view_creation_description_htm"><div class="ttname"><a href="../../d1/d9c/structez_g_a_l_resource_view_creation_description.htm">ezGALResourceViewCreationDescription</a></div><div class="ttdef"><b>Definition:</b> Descriptors.h:305</div></div>
-<div class="ttc" id="aclassez_g_a_l_device_d_x11_htm"><div class="ttname"><a href="../../d3/d78/classez_g_a_l_device_d_x11.htm">ezGALDeviceDX11</a></div><div class="ttdoc">The DX11 device implementation of the graphics abstraction layer.</div><div class="ttdef"><b>Definition:</b> DeviceDX11.h:30</div></div>
+<div class="ttc" id="aclassez_memory_utils_htm"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm">ezMemoryUtils</a></div><div class="ttdoc">This class provides functions to work on raw memory.</div><div class="ttdef"><b>Definition:</b> MemoryUtils.h:25</div></div>
+<div class="ttc" id="aclassez_g_a_l_texture_htm"><div class="ttname"><a href="../../d3/db1/classez_g_a_l_texture.htm">ezGALTexture</a></div><div class="ttdef"><b>Definition:</b> Texture.h:7</div></div>
+<div class="ttc" id="aclassez_g_a_l_buffer_resource_view_d_x11_htm"><div class="ttname"><a href="../../d3/d40/classez_g_a_l_buffer_resource_view_d_x11.htm">ezGALBufferResourceViewDX11</a></div><div class="ttdef"><b>Definition:</b> ResourceViewDX11.h:29</div></div>
+<div class="ttc" id="astructez_g_a_l_texture_resource_view_creation_description_htm"><div class="ttname"><a href="../../d8/d4e/structez_g_a_l_texture_resource_view_creation_description.htm">ezGALTextureResourceViewCreationDescription</a></div><div class="ttdef"><b>Definition:</b> Descriptors.h:201</div></div>
+<div class="ttc" id="aclassez_g_a_l_buffer_resource_view_htm"><div class="ttname"><a href="../../d6/d86/classez_g_a_l_buffer_resource_view.htm">ezGALBufferResourceView</a></div><div class="ttdef"><b>Definition:</b> ResourceView.h:29</div></div>
+<div class="ttc" id="aclassez_g_a_l_texture_resource_view_d_x11_htm"><div class="ttname"><a href="../../d8/d00/classez_g_a_l_texture_resource_view_d_x11.htm">ezGALTextureResourceViewDX11</a></div><div class="ttdef"><b>Definition:</b> ResourceViewDX11.h:8</div></div>
+<div class="ttc" id="aclassez_g_a_l_device_d_x11_htm"><div class="ttname"><a href="../../d3/d78/classez_g_a_l_device_d_x11.htm">ezGALDeviceDX11</a></div><div class="ttdoc">The DX11 device implementation of the graphics abstraction layer.</div><div class="ttdef"><b>Definition:</b> DeviceDX11.h:32</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_d65d4e101d9462d8504e011e6a07ff24.htm">RendererDX11</a></li><li class="navelem"><a class="el" href="../../dir_d4c840b94715b2f4c7e778621839763e.htm">Resources</a></li><li class="navelem"><b>ResourceViewDX11.h</b></li>
-    <li class="footer">Generated on Fri Dec 22 2023 20:43:09 for ezEngine by
+    <li class="footer">Generated on Sun Aug 25 2024 13:06:23 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

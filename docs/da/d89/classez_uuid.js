@@ -1,7 +1,7 @@
 var classez_uuid =
 [
-    [ "ezUuid", "da/d89/classez_uuid.htm#aceb6a9c783d231a9942b913235348d03", null ],
-    [ "ezUuid", "da/d89/classez_uuid.htm#aa6530de29dcda11d9124b3064533fbf4", null ],
+    [ "ezUuid", "da/d89/classez_uuid.htm#a3fa2326f54fd3d1f405d4e3949b495cf", null ],
+    [ "ezUuid", "da/d89/classez_uuid.htm#af638f2029f47a893f0cc757f90786faf", null ],
     [ "CombineWithSeed", "da/d89/classez_uuid.htm#a7ec31ec7010d70dea643f657b156284c", null ],
     [ "EZ_DECLARE_POD_TYPE", "da/d89/classez_uuid.htm#a63f647daa2cd315c32f31b5518d67fa4", null ],
     [ "GetValues", "da/d89/classez_uuid.htm#a6ca407e8a81479a3050feda0f10ffb8f", null ],

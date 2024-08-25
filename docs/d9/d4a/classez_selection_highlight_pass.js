@@ -10,6 +10,6 @@ var classez_selection_highlight_pass =
     [ "m_hConstantBuffer", "d9/d4a/classez_selection_highlight_pass.htm#a89cc9e06aab80289e3ea8bc330c981a6", null ],
     [ "m_HighlightColor", "d9/d4a/classez_selection_highlight_pass.htm#ad17fb451b2934923b6fafadbeb51efca", null ],
     [ "m_hShader", "d9/d4a/classez_selection_highlight_pass.htm#a450f3fc61c7df43b3209bcd91eb901e7", null ],
-    [ "m_PinColor", "d9/d4a/classez_selection_highlight_pass.htm#a737e29ed4bc76f07236548e0b3facbfb", null ],
+    [ "m_PinColor", "d9/d4a/classez_selection_highlight_pass.htm#a9f6f3794f9867fe68eb99add315c07ca", null ],
     [ "m_PinDepthStencil", "d9/d4a/classez_selection_highlight_pass.htm#a9aded33e622008c0d83264b463db3dc3", null ]
 ];

@@ -5,7 +5,7 @@ var structez_visual_shader_node_descriptor =
     [ "m_NodeType", "dd/dfb/structez_visual_shader_node_descriptor.htm#a5384d65066b236f4cb4879c36a66d7dc", null ],
     [ "m_OutputPins", "dd/dfb/structez_visual_shader_node_descriptor.htm#a6ce1963055899bb48bb72fe7cd565665", null ],
     [ "m_Properties", "dd/dfb/structez_visual_shader_node_descriptor.htm#aaccc86ad16749f072750c41ef8951dec", null ],
-    [ "m_sCategory", "dd/dfb/structez_visual_shader_node_descriptor.htm#affc116611b7632a3e23c5b7960509d99", null ],
+    [ "m_sCategory", "dd/dfb/structez_visual_shader_node_descriptor.htm#ad98b031adac5d7483f748bebc60c2f70", null ],
     [ "m_sCfgFile", "dd/dfb/structez_visual_shader_node_descriptor.htm#a9cfc29582bbc41517398f68cbd9b3431", null ],
     [ "m_sCheckPermutations", "dd/dfb/structez_visual_shader_node_descriptor.htm#ac44d3994c4387bc02b6e20f277dbcce2", null ],
     [ "m_sName", "dd/dfb/structez_visual_shader_node_descriptor.htm#a8bbb799e47e7aa7c8613170bad10cdd4", null ],

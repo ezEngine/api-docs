@@ -26,6 +26,5 @@ var classez_dummy_x_r =
     [ "m_Input", "d2/db4/classez_dummy_x_r.htm#afc100fb86651f02515f201698788485c", null ],
     [ "m_pCameraToSynchronize", "d2/db4/classez_dummy_x_r.htm#a09e42974cc67a2f57a23aaf50a0babfe", null ],
     [ "m_pCompanion", "d2/db4/classez_dummy_x_r.htm#a2060b9a0fdac907cebb96d3cd3c61e0f", null ],
-    [ "m_pWorld", "d2/db4/classez_dummy_x_r.htm#a2dff34dcb33996e3739ef4a2c7142f27", null ],
     [ "m_StageSpace", "d2/db4/classez_dummy_x_r.htm#ac73db33607950b4146a943f8fd18bc6e", null ]
 ];

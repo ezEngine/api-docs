@@ -7,7 +7,7 @@ var classez_world_module =
     [ "~ezWorldModule", "d1/df7/classez_world_module.htm#aca7795fc710014193bd3adca8340a6ac", null ],
     [ "Deinitialize", "d1/df7/classez_world_module.htm#a810bb207fc9e3e66c74bb8d13b8d1c63", null ],
     [ "DeregisterUpdateFunction", "d1/df7/classez_world_module.htm#a222285ef89b35269b2a88750c4dbbe6f", null ],
-    [ "GetAllocator", "d1/df7/classez_world_module.htm#a8b3e42f597913bbac1398f1fd8702d1d", null ],
+    [ "GetAllocator", "d1/df7/classez_world_module.htm#a928bd12a6739af9b54e29a0a5bc49542", null ],
     [ "GetBlockAllocator", "d1/df7/classez_world_module.htm#a42ca7cc6f1e8c4035c41722e917a3098", null ],
     [ "GetWorld", "d1/df7/classez_world_module.htm#a198cada2342ab9d9921bd28cb706077f", null ],
     [ "GetWorld", "d1/df7/classez_world_module.htm#a07ed771ba10b4d8f3210fdcc44c1f6ce", null ],
