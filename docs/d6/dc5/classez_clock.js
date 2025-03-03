@@ -6,6 +6,7 @@ var classez_clock =
     [ "GetAccumulatedTime", "d6/dc5/classez_clock.htm#a8f5e2055f7b140728fc7d5a1493d8934", null ],
     [ "GetClockName", "d6/dc5/classez_clock.htm#aaba19abb38d8420f5fe815328cdc0f60", null ],
     [ "GetFixedTimeStep", "d6/dc5/classez_clock.htm#a19efa13954604bf7d7230e390d71bbb7", null ],
+    [ "GetLastUpdateTime", "d6/dc5/classez_clock.htm#af53f34581159224bb434c91de54a4977", null ],
     [ "GetMaximumTimeStep", "d6/dc5/classez_clock.htm#ad36530f127b040fa60377c94950b73f1", null ],
     [ "GetMinimumTimeStep", "d6/dc5/classez_clock.htm#a4f4637cfab7e1c26632ff06670ddc943", null ],
     [ "GetPaused", "d6/dc5/classez_clock.htm#aaaa37f367a1f3ac76a500d12b87cbc49", null ],

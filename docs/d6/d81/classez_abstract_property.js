@@ -1,7 +1,7 @@
 var classez_abstract_property =
 [
     [ "ezAbstractProperty", "d6/d81/classez_abstract_property.htm#a9f823cb935524098cc4c08e2351b43be", null ],
-    [ "~ezAbstractProperty", "d6/d81/classez_abstract_property.htm#a5a03542f19089532d32378f1224b1aa4", null ],
+    [ "~ezAbstractProperty", "d6/d81/classez_abstract_property.htm#aba860bc1473231f5be9c11d7022cf4c5", null ],
     [ "AddAttributes", "d6/d81/classez_abstract_property.htm#a58f20a9beb3479b679f4241585a16bb8", null ],
     [ "AddFlags", "d6/d81/classez_abstract_property.htm#a8c4938948f956e2fcdb2f40eae9104bc", null ],
     [ "GetAttributeByType", "d6/d81/classez_abstract_property.htm#aaf854f28a9813d44b239d1d4a6f0765f", null ],

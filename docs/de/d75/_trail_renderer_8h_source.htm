@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 24.09</span>
+   &#160;<span id="projectnumber">Release 25.03</span>
    </div>
   </td>
  </tr>
@@ -94,72 +94,76 @@ $(document).ready(function(){initNavTree('de/d75/_trail_renderer_8h_source.htm',
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;ParticlePlugin/Renderer/ParticleRenderer.h&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;RendererCore/Pipeline/Declarations.h&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;RendererCore/Pipeline/RenderData.h&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;RendererCore/../../../Data/Base/Shaders/Particles/TrailShaderData.h&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="../../d1/db0/classez_particle_trail_render_data.htm">   11</a></span>&#160;<span class="keyword">class </span>EZ_PARTICLEPLUGIN_DLL <a class="code" href="../../d1/db0/classez_particle_trail_render_data.htm">ezParticleTrailRenderData</a> final : <span class="keyword">public</span> <a class="code" href="../../d3/dab/classez_render_data.htm">ezRenderData</a></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  EZ_ADD_DYNAMIC_REFLECTION(<a class="code" href="../../d1/db0/classez_particle_trail_render_data.htm">ezParticleTrailRenderData</a>, <a class="code" href="../../d3/dab/classez_render_data.htm">ezRenderData</a>);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <a class="code" href="../../d3/dd7/classez_typed_resource_handle.htm">ezTexture2DResourceHandle</a> m_hTexture;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  ezUInt16 m_uiMaxTrailPoints;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keywordtype">float</span> m_fSnapshotFraction;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;ezBaseParticleShaderData&gt;</a> m_BaseParticleData;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;ezTrailParticleShaderData&gt;</a> m_TrailParticleData;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;ezVec4&gt;</a> m_TrailPointsShared;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <a class="code" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezParticleTypeRenderMode&gt;</a> m_RenderMode;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordtype">bool</span> m_bApplyObjectTransform = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> m_TotalEffectLifeTime;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  ezUInt8 m_uiNumVariationsX = 1;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  ezUInt8 m_uiNumVariationsY = 1;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  ezUInt8 m_uiNumFlipbookAnimationsX = 1;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  ezUInt8 m_uiNumFlipbookAnimationsY = 1;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <a class="code" href="../../d3/dd7/classez_typed_resource_handle.htm">ezTexture2DResourceHandle</a> m_hDistortionTexture;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordtype">float</span> m_fDistortionStrength = 0;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <a class="code" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezParticleLightingMode&gt;</a> m_LightingMode;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordtype">float</span> m_fNormalCurvature = 0.5f;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordtype">float</span> m_fLightDirectionality = 0.5f;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="../../d5/dd7/classez_particle_trail_renderer.htm">   38</a></span>&#160;<span class="keyword">class </span>EZ_PARTICLEPLUGIN_DLL <a class="code" href="../../d5/dd7/classez_particle_trail_renderer.htm">ezParticleTrailRenderer</a> final : <span class="keyword">public</span> <a class="code" href="../../d8/d50/classez_particle_renderer.htm">ezParticleRenderer</a></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  EZ_ADD_DYNAMIC_REFLECTION(<a class="code" href="../../d5/dd7/classez_particle_trail_renderer.htm">ezParticleTrailRenderer</a>, <a class="code" href="../../d8/d50/classez_particle_renderer.htm">ezParticleRenderer</a>);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  EZ_DISALLOW_COPY_AND_ASSIGN(<a class="code" href="../../d5/dd7/classez_particle_trail_renderer.htm">ezParticleTrailRenderer</a>);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <a class="code" href="../../d5/dd7/classez_particle_trail_renderer.htm">ezParticleTrailRenderer</a>();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  ~<a class="code" href="../../d5/dd7/classez_particle_trail_renderer.htm">ezParticleTrailRenderer</a>();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> GetSupportedRenderDataTypes(<a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;const ezRTTI*, 8&gt;</a>&amp; ref_types) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> RenderBatch(</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d7/d76/structez_render_view_context.htm">ezRenderViewContext</a>&amp; renderContext, <span class="keyword">const</span> <a class="code" href="../../d1/d0d/classez_render_pipeline_pass.htm">ezRenderPipelinePass</a>* pPass, <span class="keyword">const</span> <a class="code" href="../../d1/d11/classez_render_data_batch.htm">ezRenderDataBatch</a>&amp; batch) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordtype">bool</span> ConfigureShader(<span class="keyword">const</span> <a class="code" href="../../d1/db0/classez_particle_trail_render_data.htm">ezParticleTrailRenderData</a>* pRenderData, <span class="keyword">const</span> <a class="code" href="../../d7/d76/structez_render_view_context.htm">ezRenderViewContext</a>&amp; renderViewContext) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;RendererFoundation/Resources/BufferPool.h&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;RendererCore/../../../Data/Base/Shaders/Particles/TrailShaderData.h&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="../../d1/db0/classez_particle_trail_render_data.htm">   12</a></span>&#160;<span class="keyword">class </span>EZ_PARTICLEPLUGIN_DLL <a class="code" href="../../d1/db0/classez_particle_trail_render_data.htm">ezParticleTrailRenderData</a> final : <span class="keyword">public</span> <a class="code" href="../../d3/dab/classez_render_data.htm">ezRenderData</a></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  EZ_ADD_DYNAMIC_REFLECTION(<a class="code" href="../../d1/db0/classez_particle_trail_render_data.htm">ezParticleTrailRenderData</a>, <a class="code" href="../../d3/dab/classez_render_data.htm">ezRenderData</a>);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="../../d3/dab/classez_render_data.htm#ac20142b2dfcfeac56b2802bdf091b72e">CanBatch</a>(<span class="keyword">const</span> <a class="code" href="../../d3/dab/classez_render_data.htm">ezRenderData</a>&amp; other) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <a class="code" href="../../d3/dd7/classez_typed_resource_handle.htm">ezTexture2DResourceHandle</a> m_hTexture;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  ezUInt16 m_uiMaxTrailPoints;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keywordtype">float</span> m_fSnapshotFraction;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;ezBaseParticleShaderData&gt;</a> m_BaseParticleData;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;ezTrailParticleShaderData&gt;</a> m_TrailParticleData;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;ezVec4&gt;</a> m_TrailPointsShared;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <a class="code" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezParticleTypeRenderMode&gt;</a> m_RenderMode;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keywordtype">bool</span> m_bApplyObjectTransform = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="../../d3/d90/structez_time.htm">ezTime</a> m_TotalEffectLifeTime;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  ezUInt8 m_uiNumVariationsX = 1;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  ezUInt8 m_uiNumVariationsY = 1;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  ezUInt8 m_uiNumFlipbookAnimationsX = 1;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  ezUInt8 m_uiNumFlipbookAnimationsY = 1;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <a class="code" href="../../d3/dd7/classez_typed_resource_handle.htm">ezTexture2DResourceHandle</a> m_hDistortionTexture;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordtype">float</span> m_fDistortionStrength = 0;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <a class="code" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezParticleLightingMode&gt;</a> m_LightingMode;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordtype">float</span> m_fNormalCurvature = 0.5f;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordtype">float</span> m_fLightDirectionality = 0.5f;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;};</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="../../d5/dd7/classez_particle_trail_renderer.htm">   41</a></span>&#160;<span class="keyword">class </span>EZ_PARTICLEPLUGIN_DLL <a class="code" href="../../d5/dd7/classez_particle_trail_renderer.htm">ezParticleTrailRenderer</a> final : <span class="keyword">public</span> <a class="code" href="../../d8/d50/classez_particle_renderer.htm">ezParticleRenderer</a></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  EZ_ADD_DYNAMIC_REFLECTION(<a class="code" href="../../d5/dd7/classez_particle_trail_renderer.htm">ezParticleTrailRenderer</a>, <a class="code" href="../../d8/d50/classez_particle_renderer.htm">ezParticleRenderer</a>);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  EZ_DISALLOW_COPY_AND_ASSIGN(<a class="code" href="../../d5/dd7/classez_particle_trail_renderer.htm">ezParticleTrailRenderer</a>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <a class="code" href="../../d5/dd7/classez_particle_trail_renderer.htm">ezParticleTrailRenderer</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  ~<a class="code" href="../../d5/dd7/classez_particle_trail_renderer.htm">ezParticleTrailRenderer</a>();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> GetSupportedRenderDataTypes(<a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;const ezRTTI*, 8&gt;</a>&amp; ref_types) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> RenderBatch(</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d7/d76/structez_render_view_context.htm">ezRenderViewContext</a>&amp; renderContext, <span class="keyword">const</span> <a class="code" href="../../d1/d0d/classez_render_pipeline_pass.htm">ezRenderPipelinePass</a>* pPass, <span class="keyword">const</span> <a class="code" href="../../d1/d11/classez_render_data_batch.htm">ezRenderDataBatch</a>&amp; batch) <span class="keyword">const override</span>;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> ezUInt32 s_uiParticlesPerBatch = 512;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <a class="code" href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a> m_hBaseDataBuffer;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <a class="code" href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a> m_hTrailDataBuffer;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <a class="code" href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a> m_hTrailPointsDataBuffer8;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <a class="code" href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a> m_hTrailPointsDataBuffer16;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <a class="code" href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a> m_hTrailPointsDataBuffer32;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <a class="code" href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a> m_hTrailPointsDataBuffer64;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keyword">mutable</span> <a class="code" href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a> m_hActiveTrailPointsDataBuffer;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;};</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordtype">bool</span> ConfigureShader(<span class="keyword">const</span> <a class="code" href="../../d1/db0/classez_particle_trail_render_data.htm">ezParticleTrailRenderData</a>* pRenderData, <span class="keyword">const</span> <a class="code" href="../../d7/d76/structez_render_view_context.htm">ezRenderViewContext</a>&amp; renderViewContext) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> ezUInt32 s_uiParticlesPerBatch = 512;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <a class="code" href="../../de/d9a/classez_g_a_l_buffer_pool.htm">ezGALBufferPool</a> m_BaseDataBuffer;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <a class="code" href="../../de/d9a/classez_g_a_l_buffer_pool.htm">ezGALBufferPool</a> m_TrailDataBuffer;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <a class="code" href="../../de/d9a/classez_g_a_l_buffer_pool.htm">ezGALBufferPool</a> m_TrailPointsDataBuffer8;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <a class="code" href="../../de/d9a/classez_g_a_l_buffer_pool.htm">ezGALBufferPool</a> m_TrailPointsDataBuffer16;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <a class="code" href="../../de/d9a/classez_g_a_l_buffer_pool.htm">ezGALBufferPool</a> m_TrailPointsDataBuffer32;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <a class="code" href="../../de/d9a/classez_g_a_l_buffer_pool.htm">ezGALBufferPool</a> m_TrailPointsDataBuffer64;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keyword">mutable</span> <span class="keyword">const</span> <a class="code" href="../../de/d9a/classez_g_a_l_buffer_pool.htm">ezGALBufferPool</a>* m_pActiveTrailPointsDataBuffer = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassez_g_a_l_buffer_handle_htm"><div class="ttname"><a href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a></div><div class="ttdef"><b>Definition:</b> RendererFoundationDLL.h:417</div></div>
 <div class="ttc" id="aclassez_render_data_htm"><div class="ttname"><a href="../../d3/dab/classez_render_data.htm">ezRenderData</a></div><div class="ttdoc">Base class for all render data. Render data must contain all information that is needed to render the...</div><div class="ttdef"><b>Definition:</b> RenderData.h:13</div></div>
-<div class="ttc" id="aclassez_particle_trail_renderer_htm"><div class="ttname"><a href="../../d5/dd7/classez_particle_trail_renderer.htm">ezParticleTrailRenderer</a></div><div class="ttdoc">Implements rendering of a trail particle systems.</div><div class="ttdef"><b>Definition:</b> TrailRenderer.h:38</div></div>
+<div class="ttc" id="aclassez_particle_trail_renderer_htm"><div class="ttname"><a href="../../d5/dd7/classez_particle_trail_renderer.htm">ezParticleTrailRenderer</a></div><div class="ttdoc">Implements rendering of a trail particle systems.</div><div class="ttdef"><b>Definition:</b> TrailRenderer.h:41</div></div>
 <div class="ttc" id="astructez_time_htm"><div class="ttname"><a href="../../d3/d90/structez_time.htm">ezTime</a></div><div class="ttdoc">The time class encapsulates a double value storing the time in seconds.</div><div class="ttdef"><b>Definition:</b> Time.h:11</div></div>
-<div class="ttc" id="aclassez_particle_trail_render_data_htm"><div class="ttname"><a href="../../d1/db0/classez_particle_trail_render_data.htm">ezParticleTrailRenderData</a></div><div class="ttdef"><b>Definition:</b> TrailRenderer.h:11</div></div>
+<div class="ttc" id="aclassez_particle_trail_render_data_htm"><div class="ttname"><a href="../../d1/db0/classez_particle_trail_render_data.htm">ezParticleTrailRenderData</a></div><div class="ttdef"><b>Definition:</b> TrailRenderer.h:12</div></div>
 <div class="ttc" id="aclassez_array_ptr_htm"><div class="ttname"><a href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt; ezBaseParticleShaderData &gt;</a></div></div>
+<div class="ttc" id="aclassez_g_a_l_buffer_pool_htm"><div class="ttname"><a href="../../de/d9a/classez_g_a_l_buffer_pool.htm">ezGALBufferPool</a></div><div class="ttdoc">Manages a growing ring buffer of one or more buffers. The behaviour of the class changes depending on...</div><div class="ttdef"><b>Definition:</b> BufferPool.h:9</div></div>
 <div class="ttc" id="aclassez_render_pipeline_pass_htm"><div class="ttname"><a href="../../d1/d0d/classez_render_pipeline_pass.htm">ezRenderPipelinePass</a></div><div class="ttdef"><b>Definition:</b> RenderPipelinePass.h:25</div></div>
-<div class="ttc" id="aclassez_particle_renderer_htm"><div class="ttname"><a href="../../d8/d50/classez_particle_renderer.htm">ezParticleRenderer</a></div><div class="ttdoc">Implements rendering of particle systems.</div><div class="ttdef"><b>Definition:</b> ParticleRenderer.h:15</div></div>
+<div class="ttc" id="aclassez_particle_renderer_htm"><div class="ttname"><a href="../../d8/d50/classez_particle_renderer.htm">ezParticleRenderer</a></div><div class="ttdoc">Implements rendering of particle systems.</div><div class="ttdef"><b>Definition:</b> ParticleRenderer.h:16</div></div>
 <div class="ttc" id="astructez_render_view_context_htm"><div class="ttname"><a href="../../d7/d76/structez_render_view_context.htm">ezRenderViewContext</a></div><div class="ttdef"><b>Definition:</b> Declarations.h:50</div></div>
+<div class="ttc" id="aclassez_render_data_htm_ac20142b2dfcfeac56b2802bdf091b72e"><div class="ttname"><a href="../../d3/dab/classez_render_data.htm#ac20142b2dfcfeac56b2802bdf091b72e">ezRenderData::CanBatch</a></div><div class="ttdeci">virtual bool CanBatch(const ezRenderData &amp;other) const</div><div class="ttdoc">Returns whether this render data and the other render data can be batched together,...</div><div class="ttdef"><b>Definition:</b> RenderData.h:56</div></div>
 <div class="ttc" id="astructez_enum_htm"><div class="ttname"><a href="../../d6/dd9/structez_enum.htm">ezEnum&lt; ezParticleTypeRenderMode &gt;</a></div></div>
 <div class="ttc" id="aclassez_render_data_batch_htm"><div class="ttname"><a href="../../d1/d11/classez_render_data_batch.htm">ezRenderDataBatch</a></div><div class="ttdef"><b>Definition:</b> RenderDataBatch.h:5</div></div>
 <div class="ttc" id="aclassez_hybrid_array_htm"><div class="ttname"><a href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt; const ezRTTI *, 8 &gt;</a></div></div>
@@ -168,7 +172,7 @@ $(document).ready(function(){initNavTree('de/d75/_trail_renderer_8h_source.htm',
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_103378c88ff4c88de6bfabe12da9ec96.htm">EnginePlugins</a></li><li class="navelem"><a class="el" href="../../dir_9aa8b4544ca68b692a3a4785c1118130.htm">ParticlePlugin</a></li><li class="navelem"><a class="el" href="../../dir_5e0ffabec4d56cce6d14aec199d335bf.htm">Type</a></li><li class="navelem"><a class="el" href="../../dir_d3e2d5095e4eaf06fe5da32729a4d560.htm">Trail</a></li><li class="navelem"><b>TrailRenderer.h</b></li>
-    <li class="footer">Generated on Sun Aug 25 2024 13:06:24 for ezEngine by
+    <li class="footer">Generated on Mon Mar 3 2025 17:23:48 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

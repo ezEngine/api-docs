@@ -1,5 +1,7 @@
 var structez_variance_type_angle =
 [
+    [ "ezVarianceTypeAngle", "dc/de6/structez_variance_type_angle.htm#a0278dddbf872862f99334a880926e167", null ],
+    [ "ezVarianceTypeAngle", "dc/de6/structez_variance_type_angle.htm#a85a8b91e6ba37b66f5c63bd11fde2376", null ],
     [ "EZ_DECLARE_POD_TYPE", "dc/de6/structez_variance_type_angle.htm#a53edba85cc38c2d89a2a94bf74016425", null ],
     [ "operator!=", "dc/de6/structez_variance_type_angle.htm#af1778116b1b46ff2a6caba897527e881", null ],
     [ "operator==", "dc/de6/structez_variance_type_angle.htm#aa0b0da0e0e8447d6dc1353071ac641e0", null ],

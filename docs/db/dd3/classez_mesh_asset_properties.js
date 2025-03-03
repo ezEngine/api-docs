@@ -15,6 +15,7 @@ var classez_mesh_asset_properties =
     [ "m_fRadius", "db/dd3/classez_mesh_asset_properties.htm#ac34ca08bc42ae10d42ba7b47499e2a2a", null ],
     [ "m_fRadius2", "db/dd3/classez_mesh_asset_properties.htm#a880d75474ad247c8d66cbe76b9932ab6", null ],
     [ "m_fUniformScaling", "db/dd3/classez_mesh_asset_properties.htm#afcfe968b78ef23cea4dd516ea6bd5b35", null ],
+    [ "m_ImportTransform", "db/dd3/classez_mesh_asset_properties.htm#a44bd5924c913475da156e137b0154fda", null ],
     [ "m_NormalPrecision", "db/dd3/classez_mesh_asset_properties.htm#afaa5a5a8b00d9bb084be97b0bb9a50d1", null ],
     [ "m_PrimitiveType", "db/dd3/classez_mesh_asset_properties.htm#a4f4810773ee37e3cbce679891b2e19c9", null ],
     [ "m_RightDir", "db/dd3/classez_mesh_asset_properties.htm#a7f14993ae7f4f5c83fcf26fbf89ec074", null ],

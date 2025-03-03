@@ -21,7 +21,6 @@ var classez_game_application =
     [ "Run_ProcessApplicationInput", "db/db6/classez_game_application.htm#ae4694afd1dc039d53d76eb9bffd33099", null ],
     [ "Run_WorldUpdateAndRender", "db/db6/classez_game_application.htm#a9e93c480a415316c9d9425af6d7ec4c4", null ],
     [ "UpdateWorldsAndExtractViews", "db/db6/classez_game_application.htm#ac3a76ae7f9ca6dbf14f6e360723f1e04", null ],
-    [ "m_bIgnoreErrors", "db/db6/classez_game_application.htm#a4b183ea0f9597ff45797940e401d06d9", null ],
     [ "m_bShowConsole", "db/db6/classez_game_application.htm#aba97bf3ac6f12ab44d0a784fe7e5ea34", null ],
     [ "m_pConsole", "db/db6/classez_game_application.htm#ac6fece8423dd6deeb77335e449de92c7", null ],
     [ "m_pUpdateTask", "db/db6/classez_game_application.htm#ab567c9d0755f4294c0c2a0b9aa1540f0", null ],

@@ -9,7 +9,7 @@ var classez_world_reader =
     [ "GetComponentTypeVersion", "d9/dd6/classez_world_reader.htm#ade957b65754cc6d376c6ed2e13831a1a", null ],
     [ "GetHeapMemoryUsage", "d9/dd6/classez_world_reader.htm#a820af3e64374542dc6b508f4c708ed21", null ],
     [ "GetRootObjectCount", "d9/dd6/classez_world_reader.htm#adcb54dbfad49ecdf42f09ee14289d85d", null ],
-    [ "GetStream", "d9/dd6/classez_world_reader.htm#a86fdeb781618bbb91558364cb5722925", null ],
+    [ "GetStream", "d9/dd6/classez_world_reader.htm#a1c48fa22cb246dcc33e826fe7e51923e", null ],
     [ "HasComponentOfType", "d9/dd6/classez_world_reader.htm#a3080eae10bb90e7573a525080896a0dc", null ],
     [ "InstantiatePrefab", "d9/dd6/classez_world_reader.htm#abb526b22a12a38e51e7eee4fd2028a6f", null ],
     [ "InstantiateWorld", "d9/dd6/classez_world_reader.htm#a1cd5e567dca614f559e274bf21105334", null ],

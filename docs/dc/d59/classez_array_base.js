@@ -24,7 +24,7 @@ var classez_array_base =
     [ "IndexOf", "dc/d59/classez_array_base.htm#ad0b2297aad995f6b5b6c83318f1deec4", null ],
     [ "InsertAt", "dc/d59/classez_array_base.htm#afabace0a2eabdf350c81203eed1c7984", null ],
     [ "InsertAt", "dc/d59/classez_array_base.htm#a2e895667f6052199d90a7d703c69a91e", null ],
-    [ "InsertRange", "dc/d59/classez_array_base.htm#adaecd138f527b7a013478e2ae81f4c40", null ],
+    [ "InsertRangeAt", "dc/d59/classez_array_base.htm#a581b2d3a780af145c7f6333655807711", null ],
     [ "IsEmpty", "dc/d59/classez_array_base.htm#a35630a870ec53cf3b022653232a31c60", null ],
     [ "LastIndexOf", "dc/d59/classez_array_base.htm#a394c5310d1f8bc5907014761f72a4884", null ],
     [ "operator ezArrayPtr< const T >", "dc/d59/classez_array_base.htm#a6f3159683169130e19c955855dd0d854", null ],

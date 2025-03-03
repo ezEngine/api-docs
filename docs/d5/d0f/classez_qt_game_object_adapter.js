@@ -1,5 +1,9 @@
 var classez_qt_game_object_adapter =
 [
+    [ "UserRoles", "d5/d0f/classez_qt_game_object_adapter.htm#a7e465f136279a6f3386110cf0508b039", [
+      [ "HiddenRole", "d5/d0f/classez_qt_game_object_adapter.htm#a7e465f136279a6f3386110cf0508b039a2c8127849b37e2a5749852125165f4a4", null ],
+      [ "ActiveParentRole", "d5/d0f/classez_qt_game_object_adapter.htm#a7e465f136279a6f3386110cf0508b039a8f68b642211f7863f89d47a0eb13e54f", null ]
+    ] ],
     [ "ezQtGameObjectAdapter", "d5/d0f/classez_qt_game_object_adapter.htm#a053664d07cd7446c9279a0e4f973f603", null ],
     [ "~ezQtGameObjectAdapter", "d5/d0f/classez_qt_game_object_adapter.htm#abf7bce89fc608ba2250b7484b3476ac0", null ],
     [ "data", "d5/d0f/classez_qt_game_object_adapter.htm#ac9efd2672c036b0f8dc00a6d037d60d0", null ],

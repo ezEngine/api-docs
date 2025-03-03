@@ -32,5 +32,6 @@ var classez_qt_document_window =
     [ "showEvent", "d1/d13/classez_qt_document_window.htm#a8b0af01caf10e870a26c03344d44d298", null ],
     [ "ShowTemporaryStatusBarMsg", "d1/d13/classez_qt_document_window.htm#affaf081bb528d334d3f6c2e53f3c5e72", null ],
     [ "TriggerRedraw", "d1/d13/classez_qt_document_window.htm#a5a21b5faa6e161a1d349b945d45011b5", null ],
-    [ "ezQtContainerWindow", "d1/d13/classez_qt_document_window.htm#a6e683de4f1df13e8f276bc6fab0d28bf", null ]
+    [ "ezQtContainerWindow", "d1/d13/classez_qt_document_window.htm#a6e683de4f1df13e8f276bc6fab0d28bf", null ],
+    [ "m_pDockManager", "d1/d13/classez_qt_document_window.htm#a8c8712e1ccc1704497c0dabce5ed6bb5", null ]
 ];

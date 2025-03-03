@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 24.09</span>
+   &#160;<span id="projectnumber">Release 25.03</span>
    </div>
   </td>
  </tr>
@@ -127,6 +127,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SetSelection</b> (con
 <tr class="memitem:af269941e530cdf03257aae4a21fb9d32"><td class="memItemLeft" align="right" valign="top"><a id="af269941e530cdf03257aae4a21fb9d32"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>ToggleObject</b> (const <a class="el" href="../../d2/d53/classez_document_object.htm">ezDocumentObject</a> *pObject)</td></tr>
 <tr class="separator:af269941e530cdf03257aae4a21fb9d32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af366eadc93a0006f1de2cbeec20a364c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/da7/classez_selection_manager.htm#af366eadc93a0006f1de2cbeec20a364c">SetRuntimeOverrideSelection</a> (const <a class="el" href="../../d9/dfe/classez_deque.htm">ezDeque</a>&lt; const <a class="el" href="../../d2/d53/classez_document_object.htm">ezDocumentObject</a> * &gt; &amp;selection)</td></tr>
+<tr class="memdesc:af366eadc93a0006f1de2cbeec20a364c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a separate selection (temporarily), which is sent to the engine but not propagated to the editor.  <a href="../../d3/da7/classez_selection_manager.htm#af366eadc93a0006f1de2cbeec20a364c">More...</a><br /></td></tr>
+<tr class="separator:af366eadc93a0006f1de2cbeec20a364c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa610865936ae6e50e0cc43048dc00b1"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d9/dfe/classez_deque.htm">ezDeque</a>&lt; const <a class="el" href="../../d2/d53/classez_document_object.htm">ezDocumentObject</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/da7/classez_selection_manager.htm#aaa610865936ae6e50e0cc43048dc00b1">GetRuntimeOverrideSelection</a> () const</td></tr>
+<tr class="memdesc:aaa610865936ae6e50e0cc43048dc00b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current runtime override selection.  <a href="../../d3/da7/classez_selection_manager.htm#aaa610865936ae6e50e0cc43048dc00b1">More...</a><br /></td></tr>
+<tr class="separator:aaa610865936ae6e50e0cc43048dc00b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5cda540d9b763f307b3f1be18b74dbc3"><td class="memItemLeft" align="right" valign="top"><a id="a5cda540d9b763f307b3f1be18b74dbc3"></a>
 const <a class="el" href="../../d2/d53/classez_document_object.htm">ezDocumentObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/da7/classez_selection_manager.htm#a5cda540d9b763f307b3f1be18b74dbc3">GetCurrentObject</a> () const</td></tr>
 <tr class="memdesc:a5cda540d9b763f307b3f1be18b74dbc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the last selected object in the selection or null if empty. <br /></td></tr>
@@ -176,6 +182,34 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>ezDocument</b></td><
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Selection Manager stores a set of selected document objects. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="aaa610865936ae6e50e0cc43048dc00b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa610865936ae6e50e0cc43048dc00b1">&#9670;&nbsp;</a></span>GetRuntimeOverrideSelection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d9/dfe/classez_deque.htm">ezDeque</a>&lt;const <a class="el" href="../../d2/d53/classez_document_object.htm">ezDocumentObject</a>*&gt;&amp; ezSelectionManager::GetRuntimeOverrideSelection </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the current runtime override selection. </p>
+<p>Valid, if the selection is non-empty. See <a class="el" href="../../d3/da7/classez_selection_manager.htm#af366eadc93a0006f1de2cbeec20a364c" title="Sets a separate selection (temporarily), which is sent to the engine but not propagated to the editor...">SetRuntimeOverrideSelection()</a> for details. </p>
+
+</div>
+</div>
 <a id="ac858c14d80e9d076da8a3433a791cdb2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac858c14d80e9d076da8a3433a791cdb2">&#9670;&nbsp;</a></span>GetTopLevelSelection()</h2>
 
@@ -197,6 +231,28 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>ezDocument</b></td><
 
 </div>
 </div>
+<a id="af366eadc93a0006f1de2cbeec20a364c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af366eadc93a0006f1de2cbeec20a364c">&#9670;&nbsp;</a></span>SetRuntimeOverrideSelection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ezSelectionManager::SetRuntimeOverrideSelection </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/dfe/classez_deque.htm">ezDeque</a>&lt; const <a class="el" href="../../d2/d53/classez_document_object.htm">ezDocumentObject</a> * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>selection</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets a separate selection (temporarily), which is sent to the engine but not propagated to the editor. </p>
+<p>This is used for cases where temporarily the engine should use a different selection than the editor. Currently this is used during drag-and-drop, to already show the dragged object as selected and especially to exclude it from picking, but not yet show the new object as selected in the property grids, such that users can interact with the previously selected object.</p>
+<p>To clear a runtime override selection, simply set an empty selection. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Tools/Libs/ToolsFoundation/Selection/<a class="el" href="../../d5/d5c/_selection_manager_8h_source.htm">SelectionManager.h</a></li>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Tools/Libs/ToolsFoundation/Selection/Implementation/SelectionManager.cpp</li>
@@ -207,7 +263,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>ezDocument</b></td><
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d3/da7/classez_selection_manager.htm">ezSelectionManager</a></li>
-    <li class="footer">Generated on Sun Aug 25 2024 13:06:32 for ezEngine by
+    <li class="footer">Generated on Mon Mar 3 2025 17:23:56 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

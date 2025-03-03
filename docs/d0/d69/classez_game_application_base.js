@@ -43,7 +43,7 @@ var classez_game_application_base =
     [ "Init_SetupDefaultResources", "d0/d69/classez_game_application_base.htm#a7e38f9d04ad9fa950b4fbaf6e9f77415", null ],
     [ "Init_SetupGraphicsDevice", "d0/d69/classez_game_application_base.htm#a705d8972499dcb5c2d82b21daac34b6b", null ],
     [ "IsGameUpdateEnabled", "d0/d69/classez_game_application_base.htm#a70483f9c851e10afa1f12fcd47b9b883", null ],
-    [ "Run", "d0/d69/classez_game_application_base.htm#ad70388a2f66077dd796d559563a95716", null ],
+    [ "Run", "d0/d69/classez_game_application_base.htm#aedddb894e4f88c82b14f1e6fcd8b8692", null ],
     [ "Run_AcquireImage", "d0/d69/classez_game_application_base.htm#ac3ff80e316aa7b185d027313ec3af46f", null ],
     [ "Run_AfterWorldUpdate", "d0/d69/classez_game_application_base.htm#acc26f410d571cfd37aea80bce2aeaade", null ],
     [ "Run_BeforeWorldUpdate", "d0/d69/classez_game_application_base.htm#af93cc43e1795e16e43ffa3acfff43b6a", null ],

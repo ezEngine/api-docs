@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 24.09</span>
+   &#160;<span id="projectnumber">Release 25.03</span>
    </div>
   </td>
  </tr>
@@ -84,28 +84,107 @@ $(document).ready(function(){initNavTree('de/d28/classez_staging_buffer_pool_vul
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="../../db/dff/classez_staging_buffer_pool_vulkan-members.htm">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">ezStagingBufferPoolVulkan Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Allocates temporary staging buffers from a large pool. Allocations will automatically be freed at the end of the frame. New (larger) pools will be created if the existing ones run out of space. Pools will be deleted after a certain time of no usage.  
+ <a href="../../de/d28/classez_staging_buffer_pool_vulkan.htm#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d5/d17/_staging_buffer_pool_vulkan_8h_source.htm">StagingBufferPoolVulkan.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4d173b412e9c525c28af63882a23c0f1"><td class="memItemLeft" align="right" valign="top"><a id="a4d173b412e9c525c28af63882a23c0f1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Initialize</b> (<a class="el" href="../../d1/d02/classez_g_a_l_device_vulkan.htm">ezGALDeviceVulkan</a> *pDevice)</td></tr>
-<tr class="separator:a4d173b412e9c525c28af63882a23c0f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fe359e6b612b126804af47d337c2c44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d28/classez_staging_buffer_pool_vulkan.htm#a5fe359e6b612b126804af47d337c2c44">Initialize</a> (<a class="el" href="../../d1/d02/classez_g_a_l_device_vulkan.htm">ezGALDeviceVulkan</a> *pDevice, ezUInt64 uiStartingPoolSize)</td></tr>
+<tr class="memdesc:a5fe359e6b612b126804af47d337c2c44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the pool.  <a href="../../de/d28/classez_staging_buffer_pool_vulkan.htm#a5fe359e6b612b126804af47d337c2c44">More...</a><br /></td></tr>
+<tr class="separator:a5fe359e6b612b126804af47d337c2c44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae3f0cc4c976d1b77694e9abb8e07068"><td class="memItemLeft" align="right" valign="top"><a id="aae3f0cc4c976d1b77694e9abb8e07068"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>DeInitialize</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d28/classez_staging_buffer_pool_vulkan.htm#aae3f0cc4c976d1b77694e9abb8e07068">DeInitialize</a> ()</td></tr>
+<tr class="memdesc:aae3f0cc4c976d1b77694e9abb8e07068"><td class="mdescLeft">&#160;</td><td class="mdescRight">Needs to be called before destroying this instance. Ensure that the GPU is idle before calling. <br /></td></tr>
 <tr class="separator:aae3f0cc4c976d1b77694e9abb8e07068"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68465245800c4493b58ebfc4079368a7"><td class="memItemLeft" align="right" valign="top"><a id="a68465245800c4493b58ebfc4079368a7"></a>
-<a class="el" href="../../d6/dc5/structez_staging_buffer_vulkan.htm">ezStagingBufferVulkan</a>&#160;</td><td class="memItemRight" valign="bottom"><b>AllocateBuffer</b> (vk::DeviceSize alignment, vk::DeviceSize size)</td></tr>
-<tr class="separator:a68465245800c4493b58ebfc4079368a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a597906eeff953b8eb2b15ebf65831f89"><td class="memItemLeft" align="right" valign="top"><a id="a597906eeff953b8eb2b15ebf65831f89"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>ReclaimBuffer</b> (<a class="el" href="../../d6/dc5/structez_staging_buffer_vulkan.htm">ezStagingBufferVulkan</a> &amp;buffer)</td></tr>
-<tr class="separator:a597906eeff953b8eb2b15ebf65831f89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd369cb51c0bfb4b4529f74b3f2ce28e"><td class="memItemLeft" align="right" valign="top"><a id="acd369cb51c0bfb4b4529f74b3f2ce28e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d28/classez_staging_buffer_pool_vulkan.htm#acd369cb51c0bfb4b4529f74b3f2ce28e">AfterBeginFrame</a> ()</td></tr>
+<tr class="memdesc:acd369cb51c0bfb4b4529f74b3f2ce28e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Needs to be called after begin frame to free memory. <br /></td></tr>
+<tr class="separator:acd369cb51c0bfb4b4529f74b3f2ce28e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc15dd292b6f89f1b7303ece1e862de8"><td class="memItemLeft" align="right" valign="top"><a id="acc15dd292b6f89f1b7303ece1e862de8"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d28/classez_staging_buffer_pool_vulkan.htm#acc15dd292b6f89f1b7303ece1e862de8">BeforeCommandBufferSubmit</a> ()</td></tr>
+<tr class="memdesc:acc15dd292b6f89f1b7303ece1e862de8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Needs to be called before submitting work to the GPU to flush GPU caches. <br /></td></tr>
+<tr class="separator:acc15dd292b6f89f1b7303ece1e862de8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a290d07f7a059f8bd2dddc111dfd34dae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/dc5/structez_staging_buffer_vulkan.htm">ezStagingBufferVulkan</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d28/classez_staging_buffer_pool_vulkan.htm#a290d07f7a059f8bd2dddc111dfd34dae">AllocateBuffer</a> (ezUInt64 size)</td></tr>
+<tr class="memdesc:a290d07f7a059f8bd2dddc111dfd34dae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates a temp buffer of the given size.  <a href="../../de/d28/classez_staging_buffer_pool_vulkan.htm#a290d07f7a059f8bd2dddc111dfd34dae">More...</a><br /></td></tr>
+<tr class="separator:a290d07f7a059f8bd2dddc111dfd34dae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Allocates temporary staging buffers from a large pool. Allocations will automatically be freed at the end of the frame. New (larger) pools will be created if the existing ones run out of space. Pools will be deleted after a certain time of no usage. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a290d07f7a059f8bd2dddc111dfd34dae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a290d07f7a059f8bd2dddc111dfd34dae">&#9670;&nbsp;</a></span>AllocateBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d6/dc5/structez_staging_buffer_vulkan.htm">ezStagingBufferVulkan</a> ezStagingBufferPoolVulkan::AllocateBuffer </td>
+          <td>(</td>
+          <td class="paramtype">ezUInt64&#160;</td>
+          <td class="paramname"><em>size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Allocates a temp buffer of the given size. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>The size of the temp buffer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Allocated temp buffer. </dd></dl>
+
+</div>
+</div>
+<a id="a5fe359e6b612b126804af47d337c2c44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fe359e6b612b126804af47d337c2c44">&#9670;&nbsp;</a></span>Initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ezStagingBufferPoolVulkan::Initialize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d1/d02/classez_g_a_l_device_vulkan.htm">ezGALDeviceVulkan</a> *&#160;</td>
+          <td class="paramname"><em>pDevice</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ezUInt64&#160;</td>
+          <td class="paramname"><em>uiStartingPoolSize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes the pool. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pDevice</td><td>GAL device. </td></tr>
+    <tr><td class="paramname">uiStartingPoolSize</td><td>Size of the first pool. If depleted, a new one with twice the size of the previous one is created. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/RendererVulkan/Pools/<a class="el" href="../../d5/d17/_staging_buffer_pool_vulkan_8h_source.htm">StagingBufferPoolVulkan.h</a></li>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/RendererVulkan/Pools/Implementation/StagingBufferPoolVulkan.cpp</li>
@@ -116,7 +195,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>ReclaimBuffer</b> (<a
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../de/d28/classez_staging_buffer_pool_vulkan.htm">ezStagingBufferPoolVulkan</a></li>
-    <li class="footer">Generated on Sun Aug 25 2024 13:06:33 for ezEngine by
+    <li class="footer">Generated on Mon Mar 3 2025 17:23:56 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

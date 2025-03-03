@@ -2,6 +2,7 @@ var classez_script_component =
 [
     [ "ezScriptComponent", "dd/d2a/classez_script_component.htm#aa51943a6720b5a14ebaa1577b31ea82f", null ],
     [ "~ezScriptComponent", "dd/d2a/classez_script_component.htm#a1f3b64c6a64a34dbd8a4cd3ecbb6b810", null ],
+    [ "BroadcastEventMsg", "dd/d2a/classez_script_component.htm#ae2b8df877e650042cf516e58da69d586", null ],
     [ "Deinitialize", "dd/d2a/classez_script_component.htm#a1dc7f3614f6471e1a3095fc9e9723d05", null ],
     [ "DeserializeComponent", "dd/d2a/classez_script_component.htm#a57c3744e2396e0a656ab7387ddeb71f7", null ],
     [ "GetParameter", "dd/d2a/classez_script_component.htm#a1bd1cb0d75429c5941efc92b250a227e", null ],

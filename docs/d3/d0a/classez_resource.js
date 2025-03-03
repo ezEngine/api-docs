@@ -3,7 +3,8 @@ var classez_resource =
     [ "MemoryUsage", "d0/d12/structez_resource_1_1_memory_usage.htm", "d0/d12/structez_resource_1_1_memory_usage" ],
     [ "DoUpdate", "d3/d0a/classez_resource.htm#a781350a2978c000ec0ea426b896e75ae", [
       [ "OnMainThread", "d3/d0a/classez_resource.htm#a781350a2978c000ec0ea426b896e75aea817d39136a23588febde1f65edc02643", null ],
-      [ "OnAnyThread", "d3/d0a/classez_resource.htm#a781350a2978c000ec0ea426b896e75aeaa8748188c286904944ef4d9ee11b8577", null ]
+      [ "OnAnyThread", "d3/d0a/classez_resource.htm#a781350a2978c000ec0ea426b896e75aeaa8748188c286904944ef4d9ee11b8577", null ],
+      [ "OnGraphicsResourceThreads", "d3/d0a/classez_resource.htm#a781350a2978c000ec0ea426b896e75aea4b2667855c6142cf917891aca973ed3d", null ]
     ] ],
     [ "Unload", "d3/d0a/classez_resource.htm#aef6c19dd0c3b32987ad48d4e90c8e32d", [
       [ "AllQualityLevels", "d3/d0a/classez_resource.htm#aef6c19dd0c3b32987ad48d4e90c8e32daab5abb5b50bfc44757200c84d1cd6bbb", null ],

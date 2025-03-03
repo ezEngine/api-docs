@@ -26,6 +26,7 @@ var structez_visual_script_data_type =
       [ "Coroutine", "d0/d5e/structez_visual_script_data_type.htm#ace833a428e02a2c53c930a70adeca918af2720990eb93fbfe8a207c0db547fb8b", null ],
       [ "Count", "d0/d5e/structez_visual_script_data_type.htm#ace833a428e02a2c53c930a70adeca918aa0103de1abff2e50090d0426c5520ea9", null ],
       [ "EnumValue", "d0/d5e/structez_visual_script_data_type.htm#ace833a428e02a2c53c930a70adeca918aafe7d94039d86f16b6bf2e44bcbd38c7", null ],
+      [ "BitflagValue", "d0/d5e/structez_visual_script_data_type.htm#ace833a428e02a2c53c930a70adeca918a5c208e20826a3146e02368c3bba2923b", null ],
       [ "ExtendedCount", "d0/d5e/structez_visual_script_data_type.htm#ace833a428e02a2c53c930a70adeca918ada7a5cbfdfaaf5f93184dff76fc7ad46", null ],
       [ "AnyPointer", "d0/d5e/structez_visual_script_data_type.htm#ace833a428e02a2c53c930a70adeca918a1c0f232cc02f4316a4480aab64805d00", null ],
       [ "Any", "d0/d5e/structez_visual_script_data_type.htm#ace833a428e02a2c53c930a70adeca918aa3a6bd26c404a5ae98fdedd7f0328c40", null ],

@@ -14,6 +14,6 @@ var classez_bounding_box_sphere_template =
     [ "operator=", "dc/d77/classez_bounding_box_sphere_template.htm#af484043f8d8e95e295c943f317af7388", null ],
     [ "Transform", "dc/d77/classez_bounding_box_sphere_template.htm#a384348ca32c1b3b9a8dea858f52753be", null ],
     [ "m_fSphereRadius", "dc/d77/classez_bounding_box_sphere_template.htm#a9ea85c44814602ce8831c3739432e64d", null ],
-    [ "m_vBoxHalfExtends", "dc/d77/classez_bounding_box_sphere_template.htm#a4bb427f91dd1cbbcdcffc8138e2ba352", null ],
+    [ "m_vBoxHalfExtents", "dc/d77/classez_bounding_box_sphere_template.htm#a9fc9e5fb4a1791935ec49fb15d1da0dd", null ],
     [ "m_vCenter", "dc/d77/classez_bounding_box_sphere_template.htm#a6a3811ac6117345638febffea90160d9", null ]
 ];

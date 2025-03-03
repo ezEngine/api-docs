@@ -1,16 +1,8 @@
 var classez_g_a_l_texture_vulkan =
 [
     [ "SubResourceOffset", "da/d49/structez_g_a_l_texture_vulkan_1_1_sub_resource_offset.htm", "da/d49/structez_g_a_l_texture_vulkan_1_1_sub_resource_offset" ],
-    [ "StagingMode", "d9/d0a/classez_g_a_l_texture_vulkan.htm#ac8853b2b483a3f860acbb86518b5abf4", [
-      [ "None", "d9/d0a/classez_g_a_l_texture_vulkan.htm#ac8853b2b483a3f860acbb86518b5abf4a6adf97f83acf6453d4a6a4b1070f3754", null ],
-      [ "Buffer", "d9/d0a/classez_g_a_l_texture_vulkan.htm#ac8853b2b483a3f860acbb86518b5abf4a7e62bc342f41c946868f0ea6f0b712d8", null ],
-      [ "Texture", "d9/d0a/classez_g_a_l_texture_vulkan.htm#ac8853b2b483a3f860acbb86518b5abf4aa3e8ae43188ae76d38f414b2bdb0077b", null ],
-      [ "TextureAndBuffer", "d9/d0a/classez_g_a_l_texture_vulkan.htm#ac8853b2b483a3f860acbb86518b5abf4a1763137ac822c6165a7cc14489ab97c5", null ]
-    ] ],
-    [ "ezGALTextureVulkan", "d9/d0a/classez_g_a_l_texture_vulkan.htm#a8b39efb4271e0685a1128d649397b6a1", null ],
+    [ "ezGALTextureVulkan", "d9/d0a/classez_g_a_l_texture_vulkan.htm#a185a6a6a2c463c7a5d4faf8f624499b0", null ],
     [ "~ezGALTextureVulkan", "d9/d0a/classez_g_a_l_texture_vulkan.htm#a62de985d07be2d558bce9ffae8e88f39", null ],
-    [ "ComputeSubResourceOffsets", "d9/d0a/classez_g_a_l_texture_vulkan.htm#a970111cca4443de4352162e2ce660e4e", null ],
-    [ "CreateStagingBuffer", "d9/d0a/classez_g_a_l_texture_vulkan.htm#a69f89ee0d88691aa74db0aa0bfb4c789", null ],
     [ "DeInitPlatform", "d9/d0a/classez_g_a_l_texture_vulkan.htm#a38826ad6cbbad923db840036c2309c0a", null ],
     [ "GetAccessMask", "d9/d0a/classez_g_a_l_texture_vulkan.htm#a1abea4fd743a8a81130c14fd2115f7df", null ],
     [ "GetAllocation", "d9/d0a/classez_g_a_l_texture_vulkan.htm#a6cf3af0c54f541f247a1ac827406df90", null ],
@@ -22,26 +14,17 @@ var classez_g_a_l_texture_vulkan =
     [ "GetMipLevelSize", "d9/d0a/classez_g_a_l_texture_vulkan.htm#a83014d784754d718ef4d8facb68108ad", null ],
     [ "GetPreferredLayout", "d9/d0a/classez_g_a_l_texture_vulkan.htm#ab5c91ea25a1f627834bc323ccae16dca", null ],
     [ "GetPreferredLayout", "d9/d0a/classez_g_a_l_texture_vulkan.htm#a7ab575a9a9d1f48e05453807cadb294c", null ],
-    [ "GetStagingBuffer", "d9/d0a/classez_g_a_l_texture_vulkan.htm#aad6c280613a358d84e944a80c60c9dae", null ],
-    [ "GetStagingMode", "d9/d0a/classez_g_a_l_texture_vulkan.htm#a14b0a607b5d54e4399e1792a6662b83c", null ],
-    [ "GetStagingTexture", "d9/d0a/classez_g_a_l_texture_vulkan.htm#af64a01f6bb7e8173f6ea733022bf8ab2", null ],
     [ "GetUsedByPipelineStage", "d9/d0a/classez_g_a_l_texture_vulkan.htm#a6e70b39c4cbe86c081a783c9017d6d96", null ],
     [ "InitPlatform", "d9/d0a/classez_g_a_l_texture_vulkan.htm#a4f141ad2f3ffb0c30195b69edda2b277", null ],
-    [ "IsLinearLayout", "d9/d0a/classez_g_a_l_texture_vulkan.htm#a73e322c786b78fd718b83e6953408f9a", null ],
     [ "SetDebugNamePlatform", "d9/d0a/classez_g_a_l_texture_vulkan.htm#a0862c7d956420208b7708953a831a9a4", null ],
     [ "ezGALDeviceVulkan", "d9/d0a/classez_g_a_l_texture_vulkan.htm#a6146725f622bf7090bada94dc31cfd9e", null ],
     [ "ezMemoryUtils", "d9/d0a/classez_g_a_l_texture_vulkan.htm#aedd88a418f4111b0f670c96423cfd850", null ],
     [ "m_access", "d9/d0a/classez_g_a_l_texture_vulkan.htm#ac4b8beaf45d997d5ebfa9766399da06d", null ],
     [ "m_alloc", "d9/d0a/classez_g_a_l_texture_vulkan.htm#a1d6f27d11225db0c1c9ddf111186f34c", null ],
     [ "m_allocInfo", "d9/d0a/classez_g_a_l_texture_vulkan.htm#ade1f546cc316f01f7777c384f25bec5a", null ],
-    [ "m_bLinearCPU", "d9/d0a/classez_g_a_l_texture_vulkan.htm#acba47d88cfbd48cbec5f14f0d73b0b1b", null ],
-    [ "m_bStaging", "d9/d0a/classez_g_a_l_texture_vulkan.htm#ab129f0a7ecd34f124c9122d2427f6ce5", null ],
-    [ "m_hStagingBuffer", "d9/d0a/classez_g_a_l_texture_vulkan.htm#aa8156ad5fc6617632b3f36e303c83b3f", null ],
-    [ "m_hStagingTexture", "d9/d0a/classez_g_a_l_texture_vulkan.htm#a88bbb1b7ee21a26cf6ac80ed3ec1958e", null ],
     [ "m_image", "d9/d0a/classez_g_a_l_texture_vulkan.htm#a461e1fe543aac8525158d6b48d1737ce", null ],
     [ "m_imageFormat", "d9/d0a/classez_g_a_l_texture_vulkan.htm#a7e4f8c1e27f3f7d728335b7310f22d1a", null ],
     [ "m_pDevice", "d9/d0a/classez_g_a_l_texture_vulkan.htm#abaededda87f4a3464f9880dd47fb2994", null ],
     [ "m_preferredLayout", "d9/d0a/classez_g_a_l_texture_vulkan.htm#a2efe013a5d5092175190b85fa3e92081", null ],
-    [ "m_stages", "d9/d0a/classez_g_a_l_texture_vulkan.htm#ab8143c7384d1821ca6b4342ce70c1a33", null ],
-    [ "m_stagingMode", "d9/d0a/classez_g_a_l_texture_vulkan.htm#a36fb4776b89ca1b5d83fe51842b2062c", null ]
+    [ "m_stages", "d9/d0a/classez_g_a_l_texture_vulkan.htm#ab8143c7384d1821ca6b4342ce70c1a33", null ]
 ];

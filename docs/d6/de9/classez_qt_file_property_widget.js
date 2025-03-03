@@ -5,6 +5,7 @@ var classez_qt_file_property_widget =
     [ "IsValidFileReference", "d6/de9/classez_qt_file_property_widget.htm#a10572efe1b0062b0690f722715e279e1", null ],
     [ "on_TextChanged_triggered", "d6/de9/classez_qt_file_property_widget.htm#afe03e3a4b78770042d46363a24a06b99", null ],
     [ "on_TextFinished_triggered", "d6/de9/classez_qt_file_property_widget.htm#a688cde5bd356ec9020d3e3196fa01788", null ],
+    [ "OnCreateFile", "d6/de9/classez_qt_file_property_widget.htm#a091bf36348f2446d55d7f796a356841e", null ],
     [ "OnCustomAction", "d6/de9/classez_qt_file_property_widget.htm#a283edae238ad7efaa0074ca032404e73", null ],
     [ "OnInit", "d6/de9/classez_qt_file_property_widget.htm#a89bafc43a43062aebb92408d29aa599d", null ],
     [ "OnOpenExplorer", "d6/de9/classez_qt_file_property_widget.htm#a64d07f3aaaef4702e54fe2f1a3844719", null ],

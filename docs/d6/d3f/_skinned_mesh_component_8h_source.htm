@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 24.09</span>
+   &#160;<span id="projectnumber">Release 25.03</span>
    </div>
   </td>
  </tr>
@@ -100,44 +100,40 @@ $(document).ready(function(){initNavTree('d6/d3f/_skinned_mesh_component_8h_sour
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  EZ_ADD_DYNAMIC_REFLECTION(<a class="code" href="../../d5/d31/classez_skinned_mesh_render_data.htm">ezSkinnedMeshRenderData</a>, <a class="code" href="../../d7/d71/classez_mesh_render_data.htm">ezMeshRenderData</a>);</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> FillBatchIdAndSortingKey() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <a class="code" href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a> m_hSkinningTransforms;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;const ezUInt8&gt;</a> m_pNewSkinningTransformData;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  std::shared_ptr&lt;bool&gt; m_bTransformsUpdated;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;};</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="../../d9/dcf/structez_skinning_state.htm">   20</a></span>&#160;<span class="keyword">struct </span>EZ_RENDERERCORE_DLL <a class="code" href="../../d9/dcf/structez_skinning_state.htm">ezSkinningState</a></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <a class="code" href="../../d9/dcf/structez_skinning_state.htm">ezSkinningState</a>();</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  ~<a class="code" href="../../d9/dcf/structez_skinning_state.htm">ezSkinningState</a>();</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keywordtype">void</span> Clear();</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="../../d9/dcf/structez_skinning_state.htm#abb91d361d52e5c41763bd768be0bd5d3">   28</a></span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezShaderTransform, ezAlignedAllocatorWrapper&gt;</a> <a class="code" href="../../d9/dcf/structez_skinning_state.htm#abb91d361d52e5c41763bd768be0bd5d3">m_Transforms</a>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keywordtype">void</span> TransformsChanged();</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordtype">void</span> FillSkinnedMeshRenderData(<a class="code" href="../../d5/d31/classez_skinned_mesh_render_data.htm">ezSkinnedMeshRenderData</a>&amp; ref_renderData) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <a class="code" href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a> m_hGpuBuffer;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  std::shared_ptr&lt;bool&gt; m_bTransformsUpdated[2];</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;};</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="../../d5/d31/classez_skinned_mesh_render_data.htm#a06fc91025214b8f43c1f389a0222fb03">   14</a></span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="../../d5/d31/classez_skinned_mesh_render_data.htm#a06fc91025214b8f43c1f389a0222fb03">CanBatch</a>(<span class="keyword">const</span> <a class="code" href="../../d3/dab/classez_render_data.htm">ezRenderData</a>&amp; other)<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <a class="code" href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a> m_hSkinningTransforms;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;};</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="../../d9/dcf/structez_skinning_state.htm">   19</a></span>&#160;<span class="keyword">struct </span>EZ_RENDERERCORE_DLL <a class="code" href="../../d9/dcf/structez_skinning_state.htm">ezSkinningState</a></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <a class="code" href="../../d9/dcf/structez_skinning_state.htm">ezSkinningState</a>();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  ~<a class="code" href="../../d9/dcf/structez_skinning_state.htm">ezSkinningState</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keywordtype">void</span> Clear();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="../../d9/dcf/structez_skinning_state.htm#abb91d361d52e5c41763bd768be0bd5d3">   27</a></span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezShaderTransform, ezAlignedAllocatorWrapper&gt;</a> <a class="code" href="../../d9/dcf/structez_skinning_state.htm#abb91d361d52e5c41763bd768be0bd5d3">m_Transforms</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordtype">void</span> TransformsChanged();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <a class="code" href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a> m_hGpuBuffer;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassez_g_a_l_buffer_handle_htm"><div class="ttname"><a href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a></div><div class="ttdef"><b>Definition:</b> RendererFoundationDLL.h:417</div></div>
-<div class="ttc" id="astructez_skinning_state_htm_abb91d361d52e5c41763bd768be0bd5d3"><div class="ttname"><a href="../../d9/dcf/structez_skinning_state.htm#abb91d361d52e5c41763bd768be0bd5d3">ezSkinningState::m_Transforms</a></div><div class="ttdeci">ezDynamicArray&lt; ezShaderTransform, ezAlignedAllocatorWrapper &gt; m_Transforms</div><div class="ttdoc">Holds the current CPU-side copy of the skinning matrices. Modify these and call TransformsChanged() t...</div><div class="ttdef"><b>Definition:</b> SkinnedMeshComponent.h:28</div></div>
-<div class="ttc" id="aclassez_array_ptr_htm"><div class="ttname"><a href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt; const ezUInt8 &gt;</a></div></div>
-<div class="ttc" id="aclassez_shader_transform_htm"><div class="ttname"><a href="../../d5/dee/classez_shader_transform.htm">ezShaderTransform</a></div><div class="ttdoc">A wrapper class that converts a ezTransform into the correct data layout for shaders.</div><div class="ttdef"><b>Definition:</b> Types.h:34</div></div>
+<div class="ttc" id="aclassez_g_a_l_buffer_handle_htm"><div class="ttname"><a href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a></div><div class="ttdef"><b>Definition:</b> RendererFoundationDLL.h:439</div></div>
+<div class="ttc" id="aclassez_render_data_htm"><div class="ttname"><a href="../../d3/dab/classez_render_data.htm">ezRenderData</a></div><div class="ttdoc">Base class for all render data. Render data must contain all information that is needed to render the...</div><div class="ttdef"><b>Definition:</b> RenderData.h:13</div></div>
+<div class="ttc" id="astructez_skinning_state_htm_abb91d361d52e5c41763bd768be0bd5d3"><div class="ttname"><a href="../../d9/dcf/structez_skinning_state.htm#abb91d361d52e5c41763bd768be0bd5d3">ezSkinningState::m_Transforms</a></div><div class="ttdeci">ezDynamicArray&lt; ezShaderTransform, ezAlignedAllocatorWrapper &gt; m_Transforms</div><div class="ttdoc">Holds the current CPU-side copy of the skinning matrices. Modify these and call TransformsChanged() t...</div><div class="ttdef"><b>Definition:</b> SkinnedMeshComponent.h:27</div></div>
+<div class="ttc" id="aclassez_skinned_mesh_render_data_htm_a06fc91025214b8f43c1f389a0222fb03"><div class="ttname"><a href="../../d5/d31/classez_skinned_mesh_render_data.htm#a06fc91025214b8f43c1f389a0222fb03">ezSkinnedMeshRenderData::CanBatch</a></div><div class="ttdeci">virtual bool CanBatch(const ezRenderData &amp;other) const override</div><div class="ttdoc">Returns whether this render data and the other render data can be batched together,...</div><div class="ttdef"><b>Definition:</b> SkinnedMeshComponent.h:14</div></div>
+<div class="ttc" id="aclassez_shader_transform_htm"><div class="ttname"><a href="../../d5/dee/classez_shader_transform.htm">ezShaderTransform</a></div><div class="ttdoc">A wrapper class that converts a ezTransform into the correct data layout for shaders.</div><div class="ttdef"><b>Definition:</b> Types.h:90</div></div>
 <div class="ttc" id="aclassez_mesh_render_data_htm"><div class="ttname"><a href="../../d7/d71/classez_mesh_render_data.htm">ezMeshRenderData</a></div><div class="ttdef"><b>Definition:</b> MeshComponentBase.h:13</div></div>
-<div class="ttc" id="astructez_skinning_state_htm"><div class="ttname"><a href="../../d9/dcf/structez_skinning_state.htm">ezSkinningState</a></div><div class="ttdef"><b>Definition:</b> SkinnedMeshComponent.h:20</div></div>
+<div class="ttc" id="astructez_skinning_state_htm"><div class="ttname"><a href="../../d9/dcf/structez_skinning_state.htm">ezSkinningState</a></div><div class="ttdef"><b>Definition:</b> SkinnedMeshComponent.h:19</div></div>
 <div class="ttc" id="aclassez_dynamic_array_htm"><div class="ttname"><a href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt; ezShaderTransform, ezAlignedAllocatorWrapper &gt;</a></div></div>
 <div class="ttc" id="aclassez_skinned_mesh_render_data_htm"><div class="ttname"><a href="../../d5/d31/classez_skinned_mesh_render_data.htm">ezSkinnedMeshRenderData</a></div><div class="ttdef"><b>Definition:</b> SkinnedMeshComponent.h:9</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_9b39d7517b28e8ee3dee1b9d862ddabb.htm">RendererCore</a></li><li class="navelem"><a class="el" href="../../dir_86dbb1b2e83b0d7392768ac2411967d1.htm">Meshes</a></li><li class="navelem"><b>SkinnedMeshComponent.h</b></li>
-    <li class="footer">Generated on Sun Aug 25 2024 13:06:23 for ezEngine by
+    <li class="footer">Generated on Mon Mar 3 2025 17:23:47 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

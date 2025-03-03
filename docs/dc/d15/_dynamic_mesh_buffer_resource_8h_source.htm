@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 24.09</span>
+   &#160;<span id="projectnumber">Release 25.03</span>
    </div>
   </td>
  </tr>
@@ -93,144 +93,144 @@ $(document).ready(function(){initNavTree('dc/d15/_dynamic_mesh_buffer_resource_8
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;RendererCore/Meshes/MeshBufferResource.h&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;RendererCore/RendererCoreDLL.h&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;RendererFoundation/RendererFoundationDLL.h&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">using</span> <a class="code" href="../../d3/dd7/classez_typed_resource_handle.htm">ezDynamicMeshBufferResourceHandle</a> = <a class="code" href="../../d3/dd7/classez_typed_resource_handle.htm">ezTypedResourceHandle&lt;class ezDynamicMeshBufferResource&gt;</a>;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="../../da/dd5/structez_dynamic_mesh_buffer_resource_descriptor.htm">   10</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../da/dd5/structez_dynamic_mesh_buffer_resource_descriptor.htm">ezDynamicMeshBufferResourceDescriptor</a></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  ezGALPrimitiveTopology::Enum m_Topology = ezGALPrimitiveTopology::Triangles;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  ezGALIndexType::Enum m_IndexType = ezGALIndexType::UInt;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  ezUInt32 m_uiMaxPrimitives = 0;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  ezUInt32 m_uiMaxVertices = 0;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keywordtype">bool</span> m_bColorStream = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;};</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="../../de/dae/structez_dynamic_mesh_vertex.htm">   19</a></span>&#160;<span class="keyword">struct </span>EZ_RENDERERCORE_DLL <a class="code" href="../../de/dae/structez_dynamic_mesh_vertex.htm">ezDynamicMeshVertex</a></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  EZ_DECLARE_POD_TYPE();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> m_vPosition;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <a class="code" href="../../d1/df8/classez_vec2_template.htm">ezVec2</a> m_vTexCoord;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> m_vEncodedNormal;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <a class="code" href="../../da/dd2/classez_vec4_template.htm">ezVec4</a> m_vEncodedTangent;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="comment">// ezColorLinearUB m_Color;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">void</span> EncodeNormal(<span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; vNormal)</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">// store in [0; 1] range</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    m_vEncodedNormal = vNormal * 0.5f + <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>(0.5f);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// this is the same</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">// ezMeshBufferUtils::EncodeNormal(normal, ezByteArrayPtr(reinterpret_cast&lt;ezUInt8*&gt;(&amp;m_vEncodedNormal), sizeof(ezVec3)), ezMeshNormalPrecision::_32Bit).IgnoreResult();</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  }</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">void</span> EncodeTangent(<span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; vTangent, <span class="keywordtype">float</span> fBitangentSign)</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">// store in [0; 1] range</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    m_vEncodedTangent.x = vTangent.x * 0.5f + 0.5f;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    m_vEncodedTangent.y = vTangent.y * 0.5f + 0.5f;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    m_vEncodedTangent.z = vTangent.z * 0.5f + 0.5f;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    m_vEncodedTangent.w = fBitangentSign &lt; 0.0f ? 0.0f : 1.0f;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">// this is the same</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">// ezMeshBufferUtils::EncodeTangent(tangent, bitangentSign, ezByteArrayPtr(reinterpret_cast&lt;ezUInt8*&gt;(&amp;m_vEncodedTangent), sizeof(ezVec4)), ezMeshNormalPrecision::_32Bit).IgnoreResult();</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;};</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="../../d9/d6c/classez_dynamic_mesh_buffer_resource.htm">   51</a></span>&#160;<span class="keyword">class </span>EZ_RENDERERCORE_DLL <a class="code" href="../../d9/d6c/classez_dynamic_mesh_buffer_resource.htm">ezDynamicMeshBufferResource</a> : <span class="keyword">public</span> <a class="code" href="../../d3/d0a/classez_resource.htm">ezResource</a></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  EZ_ADD_DYNAMIC_REFLECTION(<a class="code" href="../../d9/d6c/classez_dynamic_mesh_buffer_resource.htm">ezDynamicMeshBufferResource</a>, <a class="code" href="../../d3/d0a/classez_resource.htm">ezResource</a>);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  EZ_RESOURCE_DECLARE_COMMON_CODE(<a class="code" href="../../d9/d6c/classez_dynamic_mesh_buffer_resource.htm">ezDynamicMeshBufferResource</a>);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  EZ_RESOURCE_DECLARE_CREATEABLE(<a class="code" href="../../d9/d6c/classez_dynamic_mesh_buffer_resource.htm">ezDynamicMeshBufferResource</a>, <a class="code" href="../../da/dd5/structez_dynamic_mesh_buffer_resource_descriptor.htm">ezDynamicMeshBufferResourceDescriptor</a>);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <a class="code" href="../../d9/d6c/classez_dynamic_mesh_buffer_resource.htm">ezDynamicMeshBufferResource</a>();</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  ~<a class="code" href="../../d9/d6c/classez_dynamic_mesh_buffer_resource.htm">ezDynamicMeshBufferResource</a>();</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  EZ_ALWAYS_INLINE <span class="keyword">const</span> <a class="code" href="../../da/dd5/structez_dynamic_mesh_buffer_resource_descriptor.htm">ezDynamicMeshBufferResourceDescriptor</a>&amp; GetDescriptor()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_Descriptor; }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  EZ_ALWAYS_INLINE <a class="code" href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a> GetVertexBuffer()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_hVertexBuffer; }</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  EZ_ALWAYS_INLINE <a class="code" href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a> GetIndexBuffer()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_hIndexBuffer; }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  EZ_ALWAYS_INLINE <a class="code" href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a> GetColorBuffer()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_hColorBuffer; }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="../../d9/d6c/classez_dynamic_mesh_buffer_resource.htm#a28ba3e8ad6f7f0301a064c6902844b61">   67</a></span>&#160;  <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;ezDynamicMeshVertex&gt;</a> <a class="code" href="../../d9/d6c/classez_dynamic_mesh_buffer_resource.htm#a28ba3e8ad6f7f0301a064c6902844b61">AccessVertexData</a>()</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    m_bAccessedVB = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">return</span> m_VertexData;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  }</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="../../d9/d6c/classez_dynamic_mesh_buffer_resource.htm#ae30ef3a8ea26903f0d7f94c23d8bee1b">   76</a></span>&#160;  <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;ezUInt16&gt;</a> <a class="code" href="../../d9/d6c/classez_dynamic_mesh_buffer_resource.htm#ae30ef3a8ea26903f0d7f94c23d8bee1b">AccessIndex16Data</a>()</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    m_bAccessedIB = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">return</span> m_Index16Data;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="../../d9/d6c/classez_dynamic_mesh_buffer_resource.htm#ab5cf84d94343ee47cc70cd85be2cc64c">   85</a></span>&#160;  <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;ezUInt32&gt;</a> <a class="code" href="../../d9/d6c/classez_dynamic_mesh_buffer_resource.htm#ab5cf84d94343ee47cc70cd85be2cc64c">AccessIndex32Data</a>()</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    m_bAccessedIB = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">return</span> m_Index32Data;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="../../d9/d6c/classez_dynamic_mesh_buffer_resource.htm#a03ce82d81eddb0d03e4ba1b9f93b8c46">   94</a></span>&#160;  <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;ezColorLinearUB&gt;</a> <a class="code" href="../../d9/d6c/classez_dynamic_mesh_buffer_resource.htm#a03ce82d81eddb0d03e4ba1b9f93b8c46">AccessColorData</a>()</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    m_bAccessedCB = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">return</span> m_ColorData;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  }</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d4/d48/structez_vertex_declaration_info.htm">ezVertexDeclarationInfo</a>&amp; GetVertexDeclaration()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_VertexDeclaration; }</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <span class="keywordtype">void</span> UpdateGpuBuffer(<a class="code" href="../../de/d3d/classez_g_a_l_command_encoder.htm">ezGALCommandEncoder</a>* pGALCommandEncoder, ezUInt32 uiFirstVertex = 0, ezUInt32 uiNumVertices = ezMath::MaxValue&lt;ezUInt32&gt;(), ezUInt32 uiFirstIndex = 0, ezUInt32 uiNumIndices = ezMath::MaxValue&lt;ezUInt32&gt;(), <a class="code" href="../../d5/d12/structez_g_a_l_update_mode.htm#a63c9158f8e7d784d04ab8a63e0b73196">ezGALUpdateMode::Enum</a> mode = <a class="code" href="../../d5/d12/structez_g_a_l_update_mode.htm#a63c9158f8e7d784d04ab8a63e0b73196a0a8434030e89732c60aae760e527ca7c">ezGALUpdateMode::Discard</a>);</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../de/d9b/structez_resource_load_desc.htm">ezResourceLoadDesc</a> <a class="code" href="../../d3/d0a/classez_resource.htm#aafc6ffb811439fcdf0ca0b2363606e69">UnloadData</a>(Unload WhatToUnload) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../de/d9b/structez_resource_load_desc.htm">ezResourceLoadDesc</a> <a class="code" href="../../d3/d0a/classez_resource.htm#acadf91c5f483db8c9777467552a14149">UpdateContent</a>(<a class="code" href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a>* Stream) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d3/d0a/classez_resource.htm#a6e9b6c3670b43b22fff2ed62537f69ce">UpdateMemoryUsage</a>(MemoryUsage&amp; out_NewMemoryUsage) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <span class="keywordtype">bool</span> m_bAccessedVB = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <span class="keywordtype">bool</span> m_bAccessedIB = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="keywordtype">bool</span> m_bAccessedCB = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <a class="code" href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a> m_hVertexBuffer;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <a class="code" href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a> m_hIndexBuffer;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <a class="code" href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a> m_hColorBuffer;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <a class="code" href="../../da/dd5/structez_dynamic_mesh_buffer_resource_descriptor.htm">ezDynamicMeshBufferResourceDescriptor</a> m_Descriptor;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <a class="code" href="../../d4/d48/structez_vertex_declaration_info.htm">ezVertexDeclarationInfo</a> m_VertexDeclaration;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezDynamicMeshVertex, ezAlignedAllocatorWrapper&gt;</a> m_VertexData;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezUInt16, ezAlignedAllocatorWrapper&gt;</a> m_Index16Data;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezUInt32, ezAlignedAllocatorWrapper&gt;</a> m_Index32Data;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezColorLinearUB, ezAlignedAllocatorWrapper&gt;</a> m_ColorData;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;};</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;RendererFoundation/Resources/BufferPool.h&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">using</span> <a class="code" href="../../d3/dd7/classez_typed_resource_handle.htm">ezDynamicMeshBufferResourceHandle</a> = <a class="code" href="../../d3/dd7/classez_typed_resource_handle.htm">ezTypedResourceHandle&lt;class ezDynamicMeshBufferResource&gt;</a>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="../../da/dd5/structez_dynamic_mesh_buffer_resource_descriptor.htm">   11</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../da/dd5/structez_dynamic_mesh_buffer_resource_descriptor.htm">ezDynamicMeshBufferResourceDescriptor</a></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  ezGALPrimitiveTopology::Enum m_Topology = ezGALPrimitiveTopology::Triangles;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  ezGALIndexType::Enum m_IndexType = ezGALIndexType::UInt;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  ezUInt32 m_uiMaxPrimitives = 0;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  ezUInt32 m_uiMaxVertices = 0;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="keywordtype">bool</span> m_bColorStream = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;};</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="../../de/dae/structez_dynamic_mesh_vertex.htm">   20</a></span>&#160;<span class="keyword">struct </span>EZ_RENDERERCORE_DLL <a class="code" href="../../de/dae/structez_dynamic_mesh_vertex.htm">ezDynamicMeshVertex</a></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  EZ_DECLARE_POD_TYPE();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> m_vPosition;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <a class="code" href="../../d1/df8/classez_vec2_template.htm">ezVec2</a> m_vTexCoord;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> m_vEncodedNormal;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="../../da/dd2/classez_vec4_template.htm">ezVec4</a> m_vEncodedTangent;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="comment">// ezColorLinearUB m_Color;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">void</span> EncodeNormal(<span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; vNormal)</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">// store in [0; 1] range</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    m_vEncodedNormal = vNormal * 0.5f + <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>(0.5f);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">// this is the same</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">// ezMeshBufferUtils::EncodeNormal(normal, ezByteArrayPtr(reinterpret_cast&lt;ezUInt8*&gt;(&amp;m_vEncodedNormal), sizeof(ezVec3)), ezMeshNormalPrecision::_32Bit).IgnoreResult();</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  EZ_ALWAYS_INLINE <span class="keywordtype">void</span> EncodeTangent(<span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; vTangent, <span class="keywordtype">float</span> fBitangentSign)</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">// store in [0; 1] range</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    m_vEncodedTangent.x = vTangent.x * 0.5f + 0.5f;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    m_vEncodedTangent.y = vTangent.y * 0.5f + 0.5f;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    m_vEncodedTangent.z = vTangent.z * 0.5f + 0.5f;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    m_vEncodedTangent.w = fBitangentSign &lt; 0.0f ? 0.0f : 1.0f;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">// this is the same</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">// ezMeshBufferUtils::EncodeTangent(tangent, bitangentSign, ezByteArrayPtr(reinterpret_cast&lt;ezUInt8*&gt;(&amp;m_vEncodedTangent), sizeof(ezVec4)), ezMeshNormalPrecision::_32Bit).IgnoreResult();</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;};</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="../../d9/d6c/classez_dynamic_mesh_buffer_resource.htm">   52</a></span>&#160;<span class="keyword">class </span>EZ_RENDERERCORE_DLL <a class="code" href="../../d9/d6c/classez_dynamic_mesh_buffer_resource.htm">ezDynamicMeshBufferResource</a> : <span class="keyword">public</span> <a class="code" href="../../d3/d0a/classez_resource.htm">ezResource</a></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  EZ_ADD_DYNAMIC_REFLECTION(<a class="code" href="../../d9/d6c/classez_dynamic_mesh_buffer_resource.htm">ezDynamicMeshBufferResource</a>, <a class="code" href="../../d3/d0a/classez_resource.htm">ezResource</a>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  EZ_RESOURCE_DECLARE_COMMON_CODE(<a class="code" href="../../d9/d6c/classez_dynamic_mesh_buffer_resource.htm">ezDynamicMeshBufferResource</a>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  EZ_RESOURCE_DECLARE_CREATEABLE(<a class="code" href="../../d9/d6c/classez_dynamic_mesh_buffer_resource.htm">ezDynamicMeshBufferResource</a>, <a class="code" href="../../da/dd5/structez_dynamic_mesh_buffer_resource_descriptor.htm">ezDynamicMeshBufferResourceDescriptor</a>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <a class="code" href="../../d9/d6c/classez_dynamic_mesh_buffer_resource.htm">ezDynamicMeshBufferResource</a>();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  ~<a class="code" href="../../d9/d6c/classez_dynamic_mesh_buffer_resource.htm">ezDynamicMeshBufferResource</a>();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  EZ_ALWAYS_INLINE <span class="keyword">const</span> <a class="code" href="../../da/dd5/structez_dynamic_mesh_buffer_resource_descriptor.htm">ezDynamicMeshBufferResourceDescriptor</a>&amp; GetDescriptor()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_Descriptor; }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  EZ_ALWAYS_INLINE <a class="code" href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a> GetVertexBuffer()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_VertexBuffer.IsInitialized() ? m_VertexBuffer.GetCurrentBuffer() : <a class="code" href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a>(); }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  EZ_ALWAYS_INLINE <a class="code" href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a> GetIndexBuffer()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_IndexBuffer.IsInitialized() ? m_IndexBuffer.GetCurrentBuffer() : <a class="code" href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a>(); }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  EZ_ALWAYS_INLINE <a class="code" href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a> GetColorBuffer()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_ColorBuffer.IsInitialized() ? m_ColorBuffer.GetCurrentBuffer() : <a class="code" href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a>(); }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="../../d9/d6c/classez_dynamic_mesh_buffer_resource.htm#a28ba3e8ad6f7f0301a064c6902844b61">   68</a></span>&#160;  <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;ezDynamicMeshVertex&gt;</a> <a class="code" href="../../d9/d6c/classez_dynamic_mesh_buffer_resource.htm#a28ba3e8ad6f7f0301a064c6902844b61">AccessVertexData</a>()</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    m_bAccessedVB = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">return</span> m_VertexData;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="../../d9/d6c/classez_dynamic_mesh_buffer_resource.htm#ae30ef3a8ea26903f0d7f94c23d8bee1b">   77</a></span>&#160;  <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;ezUInt16&gt;</a> <a class="code" href="../../d9/d6c/classez_dynamic_mesh_buffer_resource.htm#ae30ef3a8ea26903f0d7f94c23d8bee1b">AccessIndex16Data</a>()</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    m_bAccessedIB = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">return</span> m_Index16Data;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="../../d9/d6c/classez_dynamic_mesh_buffer_resource.htm#ab5cf84d94343ee47cc70cd85be2cc64c">   86</a></span>&#160;  <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;ezUInt32&gt;</a> <a class="code" href="../../d9/d6c/classez_dynamic_mesh_buffer_resource.htm#ab5cf84d94343ee47cc70cd85be2cc64c">AccessIndex32Data</a>()</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    m_bAccessedIB = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">return</span> m_Index32Data;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="../../d9/d6c/classez_dynamic_mesh_buffer_resource.htm#a03ce82d81eddb0d03e4ba1b9f93b8c46">   95</a></span>&#160;  <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;ezColorLinearUB&gt;</a> <a class="code" href="../../d9/d6c/classez_dynamic_mesh_buffer_resource.htm#a03ce82d81eddb0d03e4ba1b9f93b8c46">AccessColorData</a>()</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    m_bAccessedCB = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">return</span> m_ColorData;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="keyword">const</span> <a class="code" href="../../d4/d48/structez_vertex_declaration_info.htm">ezVertexDeclarationInfo</a>&amp; GetVertexDeclaration()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_VertexDeclaration; }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <span class="keywordtype">void</span> UpdateGpuBuffer(<a class="code" href="../../de/d3d/classez_g_a_l_command_encoder.htm">ezGALCommandEncoder</a>* pGALCommandEncoder, ezUInt32 uiFirstVertex = 0, ezUInt32 uiNumVertices = ezMath::MaxValue&lt;ezUInt32&gt;(), ezUInt32 uiFirstIndex = 0, ezUInt32 uiNumIndices = ezMath::MaxValue&lt;ezUInt32&gt;(), <span class="keywordtype">bool</span> bCreateNewBuffer = <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../de/d9b/structez_resource_load_desc.htm">ezResourceLoadDesc</a> <a class="code" href="../../d3/d0a/classez_resource.htm#aafc6ffb811439fcdf0ca0b2363606e69">UnloadData</a>(Unload WhatToUnload) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../de/d9b/structez_resource_load_desc.htm">ezResourceLoadDesc</a> <a class="code" href="../../d3/d0a/classez_resource.htm#acadf91c5f483db8c9777467552a14149">UpdateContent</a>(<a class="code" href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a>* Stream) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d3/d0a/classez_resource.htm#a6e9b6c3670b43b22fff2ed62537f69ce">UpdateMemoryUsage</a>(MemoryUsage&amp; out_NewMemoryUsage) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <span class="keywordtype">bool</span> m_bAccessedVB = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="keywordtype">bool</span> m_bAccessedIB = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <span class="keywordtype">bool</span> m_bAccessedCB = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <a class="code" href="../../de/d9a/classez_g_a_l_buffer_pool.htm">ezGALBufferPool</a> m_VertexBuffer;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <a class="code" href="../../de/d9a/classez_g_a_l_buffer_pool.htm">ezGALBufferPool</a> m_IndexBuffer;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <a class="code" href="../../de/d9a/classez_g_a_l_buffer_pool.htm">ezGALBufferPool</a> m_ColorBuffer;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <a class="code" href="../../da/dd5/structez_dynamic_mesh_buffer_resource_descriptor.htm">ezDynamicMeshBufferResourceDescriptor</a> m_Descriptor;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <a class="code" href="../../d4/d48/structez_vertex_declaration_info.htm">ezVertexDeclarationInfo</a> m_VertexDeclaration;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezDynamicMeshVertex, ezAlignedAllocatorWrapper&gt;</a> m_VertexData;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezUInt16, ezAlignedAllocatorWrapper&gt;</a> m_Index16Data;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezUInt32, ezAlignedAllocatorWrapper&gt;</a> m_Index32Data;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  <a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezColorLinearUB, ezAlignedAllocatorWrapper&gt;</a> m_ColorData;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassez_dynamic_mesh_buffer_resource_htm"><div class="ttname"><a href="../../d9/d6c/classez_dynamic_mesh_buffer_resource.htm">ezDynamicMeshBufferResource</a></div><div class="ttdef"><b>Definition:</b> DynamicMeshBufferResource.h:51</div></div>
-<div class="ttc" id="aclassez_dynamic_mesh_buffer_resource_htm_ae30ef3a8ea26903f0d7f94c23d8bee1b"><div class="ttname"><a href="../../d9/d6c/classez_dynamic_mesh_buffer_resource.htm#ae30ef3a8ea26903f0d7f94c23d8bee1b">ezDynamicMeshBufferResource::AccessIndex16Data</a></div><div class="ttdeci">ezArrayPtr&lt; ezUInt16 &gt; AccessIndex16Data()</div><div class="ttdoc">Grants write access to the 16 bit index data, and flags the data as 'dirty'.</div><div class="ttdef"><b>Definition:</b> DynamicMeshBufferResource.h:76</div></div>
-<div class="ttc" id="aclassez_g_a_l_buffer_handle_htm"><div class="ttname"><a href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a></div><div class="ttdef"><b>Definition:</b> RendererFoundationDLL.h:417</div></div>
+<div class="ttc" id="aclassez_dynamic_mesh_buffer_resource_htm"><div class="ttname"><a href="../../d9/d6c/classez_dynamic_mesh_buffer_resource.htm">ezDynamicMeshBufferResource</a></div><div class="ttdef"><b>Definition:</b> DynamicMeshBufferResource.h:52</div></div>
+<div class="ttc" id="aclassez_dynamic_mesh_buffer_resource_htm_ae30ef3a8ea26903f0d7f94c23d8bee1b"><div class="ttname"><a href="../../d9/d6c/classez_dynamic_mesh_buffer_resource.htm#ae30ef3a8ea26903f0d7f94c23d8bee1b">ezDynamicMeshBufferResource::AccessIndex16Data</a></div><div class="ttdeci">ezArrayPtr&lt; ezUInt16 &gt; AccessIndex16Data()</div><div class="ttdoc">Grants write access to the 16 bit index data, and flags the data as 'dirty'.</div><div class="ttdef"><b>Definition:</b> DynamicMeshBufferResource.h:77</div></div>
+<div class="ttc" id="aclassez_g_a_l_buffer_handle_htm"><div class="ttname"><a href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a></div><div class="ttdef"><b>Definition:</b> RendererFoundationDLL.h:439</div></div>
 <div class="ttc" id="aclassez_resource_htm_aafc6ffb811439fcdf0ca0b2363606e69"><div class="ttname"><a href="../../d3/d0a/classez_resource.htm#aafc6ffb811439fcdf0ca0b2363606e69">ezResource::UnloadData</a></div><div class="ttdeci">virtual ezResourceLoadDesc UnloadData(Unload WhatToUnload)=0</div><div class="ttdoc">Requests the resource to unload another quality level. If bFullUnload is true, the resource should un...</div></div>
-<div class="ttc" id="aclassez_g_a_l_command_encoder_htm"><div class="ttname"><a href="../../de/d3d/classez_g_a_l_command_encoder.htm">ezGALCommandEncoder</a></div><div class="ttdef"><b>Definition:</b> CommandEncoder.h:10</div></div>
+<div class="ttc" id="aclassez_g_a_l_command_encoder_htm"><div class="ttname"><a href="../../de/d3d/classez_g_a_l_command_encoder.htm">ezGALCommandEncoder</a></div><div class="ttdef"><b>Definition:</b> CommandEncoder.h:11</div></div>
 <div class="ttc" id="aclassez_stream_reader_htm"><div class="ttname"><a href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a></div><div class="ttdoc">Interface for binary in (read) streams.</div><div class="ttdef"><b>Definition:</b> Stream.h:21</div></div>
-<div class="ttc" id="aclassez_array_ptr_htm"><div class="ttname"><a href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr</a></div><div class="ttdoc">This class encapsulates an array and it's size. It is recommended to use this class instead of plain ...</div><div class="ttdef"><b>Definition:</b> ArrayPtr.h:36</div></div>
+<div class="ttc" id="aclassez_array_ptr_htm"><div class="ttname"><a href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr</a></div><div class="ttdoc">This class encapsulates an array and it's size. It is recommended to use this class instead of plain ...</div><div class="ttdef"><b>Definition:</b> ArrayPtr.h:40</div></div>
 <div class="ttc" id="aclassez_resource_htm_acadf91c5f483db8c9777467552a14149"><div class="ttname"><a href="../../d3/d0a/classez_resource.htm#acadf91c5f483db8c9777467552a14149">ezResource::UpdateContent</a></div><div class="ttdeci">virtual ezResourceLoadDesc UpdateContent(ezStreamReader *pStream)=0</div><div class="ttdoc">Called whenever more data for the resource is available. The resource must read the stream to update ...</div></div>
-<div class="ttc" id="astructez_dynamic_mesh_vertex_htm"><div class="ttname"><a href="../../de/dae/structez_dynamic_mesh_vertex.htm">ezDynamicMeshVertex</a></div><div class="ttdef"><b>Definition:</b> DynamicMeshBufferResource.h:19</div></div>
+<div class="ttc" id="aclassez_g_a_l_buffer_pool_htm"><div class="ttname"><a href="../../de/d9a/classez_g_a_l_buffer_pool.htm">ezGALBufferPool</a></div><div class="ttdoc">Manages a growing ring buffer of one or more buffers. The behaviour of the class changes depending on...</div><div class="ttdef"><b>Definition:</b> BufferPool.h:9</div></div>
+<div class="ttc" id="astructez_dynamic_mesh_vertex_htm"><div class="ttname"><a href="../../de/dae/structez_dynamic_mesh_vertex.htm">ezDynamicMeshVertex</a></div><div class="ttdef"><b>Definition:</b> DynamicMeshBufferResource.h:20</div></div>
 <div class="ttc" id="aclassez_resource_htm_a6e9b6c3670b43b22fff2ed62537f69ce"><div class="ttname"><a href="../../d3/d0a/classez_resource.htm#a6e9b6c3670b43b22fff2ed62537f69ce">ezResource::UpdateMemoryUsage</a></div><div class="ttdeci">virtual void UpdateMemoryUsage(MemoryUsage &amp;out_NewMemoryUsage)=0</div><div class="ttdoc">This function must be overridden by all resource types.</div></div>
-<div class="ttc" id="astructez_g_a_l_update_mode_htm_a63c9158f8e7d784d04ab8a63e0b73196"><div class="ttname"><a href="../../d5/d12/structez_g_a_l_update_mode.htm#a63c9158f8e7d784d04ab8a63e0b73196">ezGALUpdateMode::Enum</a></div><div class="ttdeci">Enum</div><div class="ttdef"><b>Definition:</b> RendererFoundationDLL.h:335</div></div>
-<div class="ttc" id="astructez_g_a_l_update_mode_htm_a63c9158f8e7d784d04ab8a63e0b73196a0a8434030e89732c60aae760e527ca7c"><div class="ttname"><a href="../../d5/d12/structez_g_a_l_update_mode.htm#a63c9158f8e7d784d04ab8a63e0b73196a0a8434030e89732c60aae760e527ca7c">ezGALUpdateMode::Discard</a></div><div class="ttdeci">@ Discard</div><div class="ttdoc">Buffer must be completely overwritten. No old data will be read. Data will not persist across frames.</div><div class="ttdef"><b>Definition:</b> RendererFoundationDLL.h:337</div></div>
 <div class="ttc" id="astructez_resource_load_desc_htm"><div class="ttname"><a href="../../de/d9b/structez_resource_load_desc.htm">ezResourceLoadDesc</a></div><div class="ttdoc">Describes in which loading state a resource currently is, and how many different quality levels there...</div><div class="ttdef"><b>Definition:</b> Declarations.h:101</div></div>
 <div class="ttc" id="aclassez_dynamic_array_htm"><div class="ttname"><a href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt; ezDynamicMeshVertex, ezAlignedAllocatorWrapper &gt;</a></div></div>
-<div class="ttc" id="aclassez_dynamic_mesh_buffer_resource_htm_a03ce82d81eddb0d03e4ba1b9f93b8c46"><div class="ttname"><a href="../../d9/d6c/classez_dynamic_mesh_buffer_resource.htm#a03ce82d81eddb0d03e4ba1b9f93b8c46">ezDynamicMeshBufferResource::AccessColorData</a></div><div class="ttdeci">ezArrayPtr&lt; ezColorLinearUB &gt; AccessColorData()</div><div class="ttdoc">Grants write access to the color data, and flags the data as 'dirty'.</div><div class="ttdef"><b>Definition:</b> DynamicMeshBufferResource.h:94</div></div>
+<div class="ttc" id="aclassez_dynamic_mesh_buffer_resource_htm_a03ce82d81eddb0d03e4ba1b9f93b8c46"><div class="ttname"><a href="../../d9/d6c/classez_dynamic_mesh_buffer_resource.htm#a03ce82d81eddb0d03e4ba1b9f93b8c46">ezDynamicMeshBufferResource::AccessColorData</a></div><div class="ttdeci">ezArrayPtr&lt; ezColorLinearUB &gt; AccessColorData()</div><div class="ttdoc">Grants write access to the color data, and flags the data as 'dirty'.</div><div class="ttdef"><b>Definition:</b> DynamicMeshBufferResource.h:95</div></div>
 <div class="ttc" id="aclassez_resource_htm"><div class="ttname"><a href="../../d3/d0a/classez_resource.htm">ezResource</a></div><div class="ttdoc">The base class for all resources.</div><div class="ttdef"><b>Definition:</b> Resource.h:9</div></div>
 <div class="ttc" id="astructez_vertex_declaration_info_htm"><div class="ttname"><a href="../../d4/d48/structez_vertex_declaration_info.htm">ezVertexDeclarationInfo</a></div><div class="ttdef"><b>Definition:</b> MeshBufferResource.h:23</div></div>
-<div class="ttc" id="aclassez_dynamic_mesh_buffer_resource_htm_ab5cf84d94343ee47cc70cd85be2cc64c"><div class="ttname"><a href="../../d9/d6c/classez_dynamic_mesh_buffer_resource.htm#ab5cf84d94343ee47cc70cd85be2cc64c">ezDynamicMeshBufferResource::AccessIndex32Data</a></div><div class="ttdeci">ezArrayPtr&lt; ezUInt32 &gt; AccessIndex32Data()</div><div class="ttdoc">Grants write access to the 32 bit index data, and flags the data as 'dirty'.</div><div class="ttdef"><b>Definition:</b> DynamicMeshBufferResource.h:85</div></div>
-<div class="ttc" id="astructez_dynamic_mesh_buffer_resource_descriptor_htm"><div class="ttname"><a href="../../da/dd5/structez_dynamic_mesh_buffer_resource_descriptor.htm">ezDynamicMeshBufferResourceDescriptor</a></div><div class="ttdef"><b>Definition:</b> DynamicMeshBufferResource.h:10</div></div>
-<div class="ttc" id="aclassez_dynamic_mesh_buffer_resource_htm_a28ba3e8ad6f7f0301a064c6902844b61"><div class="ttname"><a href="../../d9/d6c/classez_dynamic_mesh_buffer_resource.htm#a28ba3e8ad6f7f0301a064c6902844b61">ezDynamicMeshBufferResource::AccessVertexData</a></div><div class="ttdeci">ezArrayPtr&lt; ezDynamicMeshVertex &gt; AccessVertexData()</div><div class="ttdoc">Grants write access to the vertex data, and flags the data as 'dirty'.</div><div class="ttdef"><b>Definition:</b> DynamicMeshBufferResource.h:67</div></div>
+<div class="ttc" id="aclassez_dynamic_mesh_buffer_resource_htm_ab5cf84d94343ee47cc70cd85be2cc64c"><div class="ttname"><a href="../../d9/d6c/classez_dynamic_mesh_buffer_resource.htm#ab5cf84d94343ee47cc70cd85be2cc64c">ezDynamicMeshBufferResource::AccessIndex32Data</a></div><div class="ttdeci">ezArrayPtr&lt; ezUInt32 &gt; AccessIndex32Data()</div><div class="ttdoc">Grants write access to the 32 bit index data, and flags the data as 'dirty'.</div><div class="ttdef"><b>Definition:</b> DynamicMeshBufferResource.h:86</div></div>
+<div class="ttc" id="astructez_dynamic_mesh_buffer_resource_descriptor_htm"><div class="ttname"><a href="../../da/dd5/structez_dynamic_mesh_buffer_resource_descriptor.htm">ezDynamicMeshBufferResourceDescriptor</a></div><div class="ttdef"><b>Definition:</b> DynamicMeshBufferResource.h:11</div></div>
+<div class="ttc" id="aclassez_dynamic_mesh_buffer_resource_htm_a28ba3e8ad6f7f0301a064c6902844b61"><div class="ttname"><a href="../../d9/d6c/classez_dynamic_mesh_buffer_resource.htm#a28ba3e8ad6f7f0301a064c6902844b61">ezDynamicMeshBufferResource::AccessVertexData</a></div><div class="ttdeci">ezArrayPtr&lt; ezDynamicMeshVertex &gt; AccessVertexData()</div><div class="ttdoc">Grants write access to the vertex data, and flags the data as 'dirty'.</div><div class="ttdef"><b>Definition:</b> DynamicMeshBufferResource.h:68</div></div>
 <div class="ttc" id="aclassez_vec2_template_htm"><div class="ttname"><a href="../../d1/df8/classez_vec2_template.htm">ezVec2Template&lt; float &gt;</a></div></div>
 <div class="ttc" id="aclassez_vec4_template_htm"><div class="ttname"><a href="../../da/dd2/classez_vec4_template.htm">ezVec4Template&lt; float &gt;</a></div></div>
 <div class="ttc" id="aclassez_vec3_template_htm"><div class="ttname"><a href="../../da/df1/classez_vec3_template.htm">ezVec3Template&lt; float &gt;</a></div></div>
-<div class="ttc" id="aclassez_typed_resource_handle_htm"><div class="ttname"><a href="../../d3/dd7/classez_typed_resource_handle.htm">ezTypedResourceHandle</a></div><div class="ttdoc">The ezTypedResourceHandle controls access to an ezResource.</div><div class="ttdef"><b>Definition:</b> Declarations.h:16</div></div>
+<div class="ttc" id="aclassez_typed_resource_handle_htm"><div class="ttname"><a href="../../d3/dd7/classez_typed_resource_handle.htm">ezTypedResourceHandle&lt; class ezDynamicMeshBufferResource &gt;</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_9b39d7517b28e8ee3dee1b9d862ddabb.htm">RendererCore</a></li><li class="navelem"><a class="el" href="../../dir_86dbb1b2e83b0d7392768ac2411967d1.htm">Meshes</a></li><li class="navelem"><b>DynamicMeshBufferResource.h</b></li>
-    <li class="footer">Generated on Sun Aug 25 2024 13:06:23 for ezEngine by
+    <li class="footer">Generated on Mon Mar 3 2025 17:23:47 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

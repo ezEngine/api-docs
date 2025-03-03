@@ -8,6 +8,6 @@ var classez_shader_compiler_application =
     [ "Init_ConfigureTags", "d5/dfb/classez_shader_compiler_application.htm#a9fbd6ef56f8db51136bb45d9ee2b1126", null ],
     [ "Init_LoadProjectPlugins", "d5/dfb/classez_shader_compiler_application.htm#a2b1d63cee66e33a5a8deaa5f4a916b7b", null ],
     [ "Init_SetupDefaultResources", "d5/dfb/classez_shader_compiler_application.htm#a3b25abbf8026b84bf361faabbabd3d5f", null ],
-    [ "Run", "d5/dfb/classez_shader_compiler_application.htm#a851557ec253ac59a23376fcb1df3e00c", null ],
+    [ "Run", "d5/dfb/classez_shader_compiler_application.htm#abe4eef6c6d28b8ab26652da1f184112d", null ],
     [ "Run_ProcessApplicationInput", "d5/dfb/classez_shader_compiler_application.htm#a0ef94044801b5e9515fd3504cc8c00b3", null ]
 ];

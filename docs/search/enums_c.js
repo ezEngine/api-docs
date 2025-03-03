@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['randomseedmode_23646',['RandomSeedMode',['../d9/ddd/structez_prefab_instantiation_options.htm#af578e034ee1634fb1e81c18013cb834f',1,'ezPrefabInstantiationOptions']]]
+  ['patchtype_24096',['PatchType',['../d9/dfd/classez_graph_patch.htm#a7b0375807836d0240d338424da72f006',1,'ezGraphPatch']]],
+  ['processtaskstate_24097',['ProcessTaskState',['../d5/d88/classez_asset_processor.htm#aa9b59b4af953012e55985c597f2e8750',1,'ezAssetProcessor']]]
 ];

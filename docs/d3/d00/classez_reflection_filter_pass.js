@@ -8,7 +8,7 @@ var classez_reflection_filter_pass =
     [ "GetRenderTargetDescriptions", "d3/d00/classez_reflection_filter_pass.htm#aaa91c9256cf71174cd3c0709bca101bb", null ],
     [ "Serialize", "d3/d00/classez_reflection_filter_pass.htm#ac8a389f943a1aecd73e7334ae871acc1", null ],
     [ "SetInputCubemap", "d3/d00/classez_reflection_filter_pass.htm#a0868f96796821f5bb8c2102a722eedd1", null ],
-    [ "UpdateFilteredSpecularConstantBuffer", "d3/d00/classez_reflection_filter_pass.htm#a3fe5ba5a0db30834bc35449fced5bec2", null ],
+    [ "UpdateFilteredSpecularConstantBuffer", "d3/d00/classez_reflection_filter_pass.htm#ab621392edeae46a3f86f09ab5cf2dde5", null ],
     [ "UpdateIrradianceConstantBuffer", "d3/d00/classez_reflection_filter_pass.htm#a85df352725a6086b3319cbc0ea4f69b6", null ],
     [ "m_fIntensity", "d3/d00/classez_reflection_filter_pass.htm#ac6f7e94478df40b7a10718f0e9749d96", null ],
     [ "m_fSaturation", "d3/d00/classez_reflection_filter_pass.htm#a97834d32b52aa19f8090c2d1782568fb", null ],

@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 24.09</span>
+   &#160;<span id="projectnumber">Release 25.03</span>
    </div>
   </td>
  </tr>
@@ -114,75 +114,76 @@ $(document).ready(function(){initNavTree('d2/dd1/_asset_browser_view_8moc_8h_sou
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keywordtype">void</span> dragMoveEvent(QDragMoveEvent* pEvent) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keywordtype">void</span> dragLeaveEvent(QDragLeaveEvent* pEvent) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordtype">void</span> dropEvent(QDropEvent* pEvent) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;Q_SIGNALS:</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordtype">void</span> ViewZoomed(ezInt32 iIconSizePercentage);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> wheelEvent(QWheelEvent* pEvent) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> mousePressEvent(QMouseEvent* pEvent) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> mouseDoubleClickEvent(QMouseEvent* pEvent) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> mouseMoveEvent(QMouseEvent* pEvent) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keywordtype">bool</span> m_bDialogMode;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="../../db/d2a/classez_qt_icon_view_delegate.htm">ezQtIconViewDelegate</a>* m_pDelegate;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  ezInt32 m_iIconSizePercentage;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;};</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keywordtype">void</span> startDrag(Qt::DropActions supportedActions) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;Q_SIGNALS:</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keywordtype">void</span> ViewZoomed(ezInt32 iIconSizePercentage);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> wheelEvent(QWheelEvent* pEvent) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> mousePressEvent(QMouseEvent* pEvent) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> mouseDoubleClickEvent(QMouseEvent* pEvent) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> mouseMoveEvent(QMouseEvent* pEvent) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordtype">bool</span> m_bDialogMode;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="../../db/d2a/classez_qt_icon_view_delegate.htm">ezQtIconViewDelegate</a>* m_pDelegate;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  ezInt32 m_iIconSizePercentage;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;};</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="../../db/d2a/classez_qt_icon_view_delegate.htm">   45</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../db/d2a/classez_qt_icon_view_delegate.htm">ezQtIconViewDelegate</a> : <span class="keyword">public</span> <a class="code" href="../../dc/d62/classez_qt_item_delegate.htm">ezQtItemDelegate</a></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  Q_OBJECT</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <a class="code" href="../../db/d2a/classez_qt_icon_view_delegate.htm">ezQtIconViewDelegate</a>(<a class="code" href="../../de/d22/classez_qt_asset_browser_view.htm">ezQtAssetBrowserView</a>* pParent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordtype">void</span> SetDrawTransformState(<span class="keywordtype">bool</span> b) { m_bDrawTransformState = b; }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordtype">void</span> SetIconScale(ezInt32 iIconSizePercentage);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> mousePressEvent(QMouseEvent* pEvent, <span class="keyword">const</span> QStyleOptionViewItem&amp; option, <span class="keyword">const</span> QModelIndex&amp; index) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> mouseReleaseEvent(QMouseEvent* pEvent, <span class="keyword">const</span> QStyleOptionViewItem&amp; option, <span class="keyword">const</span> QModelIndex&amp; index) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="../../db/d2a/classez_qt_icon_view_delegate.htm">   46</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../db/d2a/classez_qt_icon_view_delegate.htm">ezQtIconViewDelegate</a> : <span class="keyword">public</span> <a class="code" href="../../dc/d62/classez_qt_item_delegate.htm">ezQtItemDelegate</a></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  Q_OBJECT</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <a class="code" href="../../db/d2a/classez_qt_icon_view_delegate.htm">ezQtIconViewDelegate</a>(<a class="code" href="../../de/d22/classez_qt_asset_browser_view.htm">ezQtAssetBrowserView</a>* pParent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordtype">void</span> SetDrawTransformState(<span class="keywordtype">bool</span> b) { m_bDrawTransformState = b; }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordtype">void</span> SetIconScale(ezInt32 iIconSizePercentage);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> mousePressEvent(QMouseEvent* pEvent, <span class="keyword">const</span> QStyleOptionViewItem&amp; option, <span class="keyword">const</span> QModelIndex&amp; index) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> mouseReleaseEvent(QMouseEvent* pEvent, <span class="keyword">const</span> QStyleOptionViewItem&amp; option, <span class="keyword">const</span> QModelIndex&amp; index) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> paint(QPainter* pPainter, <span class="keyword">const</span> QStyleOptionViewItem&amp; opt, <span class="keyword">const</span> QModelIndex&amp; index) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keyword">virtual</span> QSize sizeHint(<span class="keyword">const</span> QStyleOptionViewItem&amp; opt, <span class="keyword">const</span> QModelIndex&amp; index) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keyword">virtual</span> QWidget* createEditor(QWidget* pParent, <span class="keyword">const</span> QStyleOptionViewItem&amp; option, <span class="keyword">const</span> QModelIndex&amp; index) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> setModelData(QWidget* pEditor, QAbstractItemModel* pModel, <span class="keyword">const</span> QModelIndex&amp; index) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> updateEditorGeometry(QWidget* pEditor, <span class="keyword">const</span> QStyleOptionViewItem&amp; option, <span class="keyword">const</span> QModelIndex&amp; index) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  QSize ItemSize() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  QFont GetFont() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  ezUInt32 ThumbnailSize() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordtype">bool</span> IsInIconMode() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keyword">enum</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    MaxSize = ezThumbnailSize,</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    HighlightBorderWidth = 3,</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    ItemSideMargin = 5,</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    TextSpacing = 5</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  };</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keywordtype">bool</span> m_bDrawTransformState;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  ezInt32 m_iIconSizePercentage;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <a class="code" href="../../de/d22/classez_qt_asset_browser_view.htm">ezQtAssetBrowserView</a>* m_pView;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;};</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> paint(QPainter* pPainter, <span class="keyword">const</span> QStyleOptionViewItem&amp; opt, <span class="keyword">const</span> QModelIndex&amp; index) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keyword">virtual</span> QSize sizeHint(<span class="keyword">const</span> QStyleOptionViewItem&amp; opt, <span class="keyword">const</span> QModelIndex&amp; index) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keyword">virtual</span> QWidget* createEditor(QWidget* pParent, <span class="keyword">const</span> QStyleOptionViewItem&amp; option, <span class="keyword">const</span> QModelIndex&amp; index) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> setModelData(QWidget* pEditor, QAbstractItemModel* pModel, <span class="keyword">const</span> QModelIndex&amp; index) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> updateEditorGeometry(QWidget* pEditor, <span class="keyword">const</span> QStyleOptionViewItem&amp; option, <span class="keyword">const</span> QModelIndex&amp; index) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  QSize ItemSize() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  QFont GetFont() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  ezUInt32 ThumbnailSize() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordtype">bool</span> IsInIconMode() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keyword">enum</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    MaxSize = ezThumbnailSize,</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    HighlightBorderWidth = 3,</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    ItemSideMargin = 5,</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    TextSpacing = 5</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  };</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keywordtype">bool</span> m_bDrawTransformState;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  ezInt32 m_iIconSizePercentage;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <a class="code" href="../../de/d22/classez_qt_asset_browser_view.htm">ezQtAssetBrowserView</a>* m_pView;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_qt_item_delegate_htm"><div class="ttname"><a href="../../dc/d62/classez_qt_item_delegate.htm">ezQtItemDelegate</a></div><div class="ttdoc">In combination with ezQtItemView this delegate allows for receiving the full range of mouse input.</div><div class="ttdef"><b>Definition:</b> ItemView.moc.h:11</div></div>
 <div class="ttc" id="aclassez_qt_asset_browser_view_htm"><div class="ttname"><a href="../../de/d22/classez_qt_asset_browser_view.htm">ezQtAssetBrowserView</a></div><div class="ttdef"><b>Definition:</b> AssetBrowserView.moc.h:12</div></div>
-<div class="ttc" id="aclassez_qt_icon_view_delegate_htm"><div class="ttname"><a href="../../db/d2a/classez_qt_icon_view_delegate.htm">ezQtIconViewDelegate</a></div><div class="ttdef"><b>Definition:</b> AssetBrowserView.moc.h:45</div></div>
+<div class="ttc" id="aclassez_qt_icon_view_delegate_htm"><div class="ttname"><a href="../../db/d2a/classez_qt_icon_view_delegate.htm">ezQtIconViewDelegate</a></div><div class="ttdef"><b>Definition:</b> AssetBrowserView.moc.h:46</div></div>
 <div class="ttc" id="aclassez_qt_item_view_htm"><div class="ttname"><a href="../../d6/dc4/classez_qt_item_view.htm">ezQtItemView</a></div><div class="ttdoc">Template to be used with classes derived from QAbstractItemView. Allows the use of ezQtItemDelegate.</div><div class="ttdef"><b>Definition:</b> ItemView.moc.h:29</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_898824d97bbfb864e5ee6bfb2857fc31.htm">Editor</a></li><li class="navelem"><a class="el" href="../../dir_2c11fbcc86473fad6c721ead68acf992.htm">EditorFramework</a></li><li class="navelem"><a class="el" href="../../dir_5814822b5fe0e25e106f6a2b5290738d.htm">Assets</a></li><li class="navelem"><b>AssetBrowserView.moc.h</b></li>
-    <li class="footer">Generated on Sun Aug 25 2024 13:06:12 for ezEngine by
+    <li class="footer">Generated on Mon Mar 3 2025 17:23:37 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

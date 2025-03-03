@@ -9,6 +9,5 @@ var classez_g_a_l_texture_resource_view_vulkan =
     [ "ezGALDeviceVulkan", "dd/d3b/classez_g_a_l_texture_resource_view_vulkan.htm#a6146725f622bf7090bada94dc31cfd9e", null ],
     [ "ezMemoryUtils", "dd/d3b/classez_g_a_l_texture_resource_view_vulkan.htm#aedd88a418f4111b0f670c96423cfd850", null ],
     [ "m_range", "dd/d3b/classez_g_a_l_texture_resource_view_vulkan.htm#a274f87c49af0a033910980e44e2940ae", null ],
-    [ "m_resourceImageInfo", "dd/d3b/classez_g_a_l_texture_resource_view_vulkan.htm#ac03ef7652da103041b7c54d9b3bcea9a", null ],
-    [ "m_resourceImageInfoArray", "dd/d3b/classez_g_a_l_texture_resource_view_vulkan.htm#aa5e054d6ea8286e84b8cb23c15b9b884", null ]
+    [ "m_resourceImageInfo", "dd/d3b/classez_g_a_l_texture_resource_view_vulkan.htm#ac03ef7652da103041b7c54d9b3bcea9a", null ]
 ];

@@ -1,6 +1,7 @@
 var classez_sprite_render_data =
 [
-    [ "FillBatchIdAndSortingKey", "d2/d3b/classez_sprite_render_data.htm#a388207bf64e7a2299a4b2ec7c5c2e0c6", null ],
+    [ "CanBatch", "d2/d3b/classez_sprite_render_data.htm#a006badf63f2130c7121c8d01cc363003", null ],
+    [ "FillSortingKey", "d2/d3b/classez_sprite_render_data.htm#abe837588b84306660f88b31fda6c34cf", null ],
     [ "m_BlendMode", "d2/d3b/classez_sprite_render_data.htm#a2fdf4192c72edf2014c9d6c003bee162", null ],
     [ "m_color", "d2/d3b/classez_sprite_render_data.htm#a0b45631ec5a0af815d8a93dbc0bf76e5", null ],
     [ "m_fAspectRatio", "d2/d3b/classez_sprite_render_data.htm#ae35b2466f88d4412a3dbdb7fc2170f08", null ],

@@ -1,5 +1,6 @@
 var classez_proc_volume_component =
 [
+    [ "AreaInvalidatedEvent", "d2/d56/classez_proc_volume_component.htm#a5b85849c9275662c2318b6254ffef926", null ],
     [ "ezProcVolumeComponent", "d2/d56/classez_proc_volume_component.htm#a7919f88303d085d6f16def541e3ce69a", null ],
     [ "~ezProcVolumeComponent", "d2/d56/classez_proc_volume_component.htm#aaa43b31dd402720b796cd2c2bd9404ad", null ],
     [ "DeserializeComponent", "d2/d56/classez_proc_volume_component.htm#af225e606ab415019a3f8bcac3441aadf", null ],

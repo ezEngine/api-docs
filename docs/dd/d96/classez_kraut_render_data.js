@@ -1,5 +1,6 @@
 var classez_kraut_render_data =
 [
+    [ "CanBatch", "dd/d96/classez_kraut_render_data.htm#a962eb3dd300d4386d886153db10847b2", null ],
     [ "m_bCastShadows", "dd/d96/classez_kraut_render_data.htm#acf8b8741e6d05fae38392b84d46f7c70", null ],
     [ "m_fLodDistanceMaxSQR", "dd/d96/classez_kraut_render_data.htm#a0355b53e49f6b7ff82b07d2e1f255c47", null ],
     [ "m_fLodDistanceMinSQR", "dd/d96/classez_kraut_render_data.htm#a478bdd39cc53329c5bc38246285383d1", null ],

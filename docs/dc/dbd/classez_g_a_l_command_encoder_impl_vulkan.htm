@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 24.09</span>
+   &#160;<span id="projectnumber">Release 25.03</span>
    </div>
   </td>
  </tr>
@@ -109,12 +109,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a943c453988e251afb950e95df79fdb85"><td class="memItemLeft" align="right" valign="top"><a id="a943c453988e251afb950e95df79fdb85"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Reset</b> ()</td></tr>
 <tr class="separator:a943c453988e251afb950e95df79fdb85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a981cd081844fbc8f02b75381bc4adaa1"><td class="memItemLeft" align="right" valign="top"><a id="a981cd081844fbc8f02b75381bc4adaa1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>EndFrame</b> ()</td></tr>
+<tr class="separator:a981cd081844fbc8f02b75381bc4adaa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1ce2f8f4e2bef165b8b4515a398827c"><td class="memItemLeft" align="right" valign="top"><a id="ab1ce2f8f4e2bef165b8b4515a398827c"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>SetCurrentCommandBuffer</b> (vk::CommandBuffer *commandBuffer, <a class="el" href="../../dc/d15/classez_pipeline_barrier_vulkan.htm">ezPipelineBarrierVulkan</a> *pipelineBarrier)</td></tr>
 <tr class="separator:ab1ce2f8f4e2bef165b8b4515a398827c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab96442bde5be4368ccd7c906576283cb"><td class="memItemLeft" align="right" valign="top"><a id="ab96442bde5be4368ccd7c906576283cb"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>CommandBufferSubmitted</b> (vk::Fence submitFence)</td></tr>
-<tr class="separator:ab96442bde5be4368ccd7c906576283cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a155c4f66932b2e84809b19fd1fcf2e4e"><td class="memItemLeft" align="right" valign="top"><a id="a155c4f66932b2e84809b19fd1fcf2e4e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>BeforeCommandBufferSubmit</b> ()</td></tr>
+<tr class="separator:a155c4f66932b2e84809b19fd1fcf2e4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a251ae2806c6cad6754ef0b42ebea5984"><td class="memItemLeft" align="right" valign="top"><a id="a251ae2806c6cad6754ef0b42ebea5984"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>AfterCommandBufferSubmit</b> (vk::Fence submitFence)</td></tr>
+<tr class="separator:a251ae2806c6cad6754ef0b42ebea5984"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3563cc25af1d03a31164e437f023240"><td class="memItemLeft" align="right" valign="top"><a id="aa3563cc25af1d03a31164e437f023240"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>SetShaderPlatform</b> (const <a class="el" href="../../d6/d44/classez_g_a_l_shader.htm">ezGALShader</a> *pShader) override</td></tr>
 <tr class="separator:aa3563cc25af1d03a31164e437f023240"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -184,18 +190,21 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>UpdateTexture
 <tr class="memitem:adfa9558efe8c7871b9e9a0e862221c20"><td class="memItemLeft" align="right" valign="top"><a id="adfa9558efe8c7871b9e9a0e862221c20"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>ResolveTexturePlatform</b> (const <a class="el" href="../../d3/db1/classez_g_a_l_texture.htm">ezGALTexture</a> *pDestination, const <a class="el" href="../../d2/d1f/structez_g_a_l_texture_subresource.htm">ezGALTextureSubresource</a> &amp;DestinationSubResource, const <a class="el" href="../../d3/db1/classez_g_a_l_texture.htm">ezGALTexture</a> *pSource, const <a class="el" href="../../d2/d1f/structez_g_a_l_texture_subresource.htm">ezGALTextureSubresource</a> &amp;SourceSubResource) override</td></tr>
 <tr class="separator:adfa9558efe8c7871b9e9a0e862221c20"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b1524d71106b80a4fb20072d37787a8"><td class="memItemLeft" align="right" valign="top"><a id="a1b1524d71106b80a4fb20072d37787a8"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>ReadbackTexturePlatform</b> (const <a class="el" href="../../d3/db1/classez_g_a_l_texture.htm">ezGALTexture</a> *pTexture) override</td></tr>
-<tr class="separator:a1b1524d71106b80a4fb20072d37787a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd359b5b3c9a2f7ecf52a27101bb5ef2"><td class="memItemLeft" align="right" valign="top"><a id="afd359b5b3c9a2f7ecf52a27101bb5ef2"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>CopyTextureReadbackResultPlatform</b> (const <a class="el" href="../../d3/db1/classez_g_a_l_texture.htm">ezGALTexture</a> *pTexture, <a class="el" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr</a>&lt; <a class="el" href="../../d2/d1f/structez_g_a_l_texture_subresource.htm">ezGALTextureSubresource</a> &gt; SourceSubResource, <a class="el" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr</a>&lt; <a class="el" href="../../d2/d8f/structez_g_a_l_system_memory_description.htm">ezGALSystemMemoryDescription</a> &gt; TargetData) override</td></tr>
-<tr class="separator:afd359b5b3c9a2f7ecf52a27101bb5ef2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad319c43ee17df960723da8bb5119acf9"><td class="memItemLeft" align="right" valign="top"><a id="ad319c43ee17df960723da8bb5119acf9"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>ReadbackTexturePlatform</b> (const <a class="el" href="../../d7/d43/classez_g_a_l_readback_texture.htm">ezGALReadbackTexture</a> *pDestination, const <a class="el" href="../../d3/db1/classez_g_a_l_texture.htm">ezGALTexture</a> *pSource) override</td></tr>
+<tr class="separator:ad319c43ee17df960723da8bb5119acf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f6168db1be1ee2614db050810af7958"><td class="memItemLeft" align="right" valign="top"><a id="a1f6168db1be1ee2614db050810af7958"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>ReadbackBufferPlatform</b> (const <a class="el" href="../../de/d24/classez_g_a_l_readback_buffer.htm">ezGALReadbackBuffer</a> *pDestination, const <a class="el" href="../../d4/d5d/classez_g_a_l_buffer.htm">ezGALBuffer</a> *pSource) override</td></tr>
+<tr class="separator:a1f6168db1be1ee2614db050810af7958"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9149000734c6fc192013921f83ffc8d"><td class="memItemLeft" align="right" valign="top"><a id="ac9149000734c6fc192013921f83ffc8d"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>GenerateMipMapsPlatform</b> (const <a class="el" href="../../d4/dc8/classez_g_a_l_texture_resource_view.htm">ezGALTextureResourceView</a> *pResourceView) override</td></tr>
 <tr class="separator:ac9149000734c6fc192013921f83ffc8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9bcf8422a1c3a994896aec2567b4c24e"><td class="memItemLeft" align="right" valign="top"><a id="a9bcf8422a1c3a994896aec2567b4c24e"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>CopyImageToBuffer</b> (const <a class="el" href="../../d9/d0a/classez_g_a_l_texture_vulkan.htm">ezGALTextureVulkan</a> *pSource, const <a class="el" href="../../d9/d93/classez_g_a_l_buffer_vulkan.htm">ezGALBufferVulkan</a> *pDestination)</td></tr>
 <tr class="separator:a9bcf8422a1c3a994896aec2567b4c24e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae82a535059931d7da70e2dc880e5b327"><td class="memItemLeft" align="right" valign="top"><a id="ae82a535059931d7da70e2dc880e5b327"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>CopyImageToBuffer</b> (const <a class="el" href="../../d9/d0a/classez_g_a_l_texture_vulkan.htm">ezGALTextureVulkan</a> *pSource, vk::Buffer destination)</td></tr>
+<tr class="separator:ae82a535059931d7da70e2dc880e5b327"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a567bf908d6cbe09c4681e81359e2dd7e"><td class="memItemLeft" align="right" valign="top"><a id="a567bf908d6cbe09c4681e81359e2dd7e"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>FlushPlatform</b> () override</td></tr>
 <tr class="separator:a567bf908d6cbe09c4681e81359e2dd7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -285,7 +294,7 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>SetScissorRec
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dc/dbd/classez_g_a_l_command_encoder_impl_vulkan.htm">ezGALCommandEncoderImplVulkan</a></li>
-    <li class="footer">Generated on Sun Aug 25 2024 13:06:28 for ezEngine by
+    <li class="footer">Generated on Mon Mar 3 2025 17:23:51 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

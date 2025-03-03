@@ -2,7 +2,7 @@ var classez_visual_script_execution_context =
 [
     [ "DataOffset", "d2/d08/classez_visual_script_execution_context.htm#a6ca4f26cd01f66e4979d2bf0843dbc8d", null ],
     [ "ExecResult", "d2/d08/classez_visual_script_execution_context.htm#a443ad6d6dd0a5402c84e4d7ff7a8fa03", null ],
-    [ "ezVisualScriptExecutionContext", "d2/d08/classez_visual_script_execution_context.htm#a382f7c4c7a78c31089160d4d5305edb7", null ],
+    [ "ezVisualScriptExecutionContext", "d2/d08/classez_visual_script_execution_context.htm#a5cc599a2800a4c9740d5a1a01558f117", null ],
     [ "~ezVisualScriptExecutionContext", "d2/d08/classez_visual_script_execution_context.htm#a5ce958912e0b3dac62fb19b1f57d13c0", null ],
     [ "Deinitialize", "d2/d08/classez_visual_script_execution_context.htm#a53aa81e3102fbe77d14062ea6184bd77", null ],
     [ "Execute", "d2/d08/classez_visual_script_execution_context.htm#a2a22a1e32ae3c5197d7d28ed49bcd98b", null ],
@@ -15,7 +15,7 @@ var classez_visual_script_execution_context =
     [ "GetPointerData", "d2/d08/classez_visual_script_execution_context.htm#a9cb6e10e773d494501625cfc56ef4cfa", null ],
     [ "GetWritableData", "d2/d08/classez_visual_script_execution_context.htm#a83ca38c26704e69b8c96ad3931572fbe", null ],
     [ "GetWritableData", "d2/d08/classez_visual_script_execution_context.htm#ad5dbe94661b965d937b36fdd7fc84dfb", null ],
-    [ "Initialize", "d2/d08/classez_visual_script_execution_context.htm#ad72b1ef3bbd6571f87e37d48e145368b", null ],
+    [ "Initialize", "d2/d08/classez_visual_script_execution_context.htm#a318e719a34695ad217e3c492dc2fa2ad", null ],
     [ "SetCurrentCoroutine", "d2/d08/classez_visual_script_execution_context.htm#a152f57ad677b81d79e71324c6c0306ac", null ],
     [ "SetData", "d2/d08/classez_visual_script_execution_context.htm#acb09410230cc402e5e1f8e69fd2d42c0", null ],
     [ "SetData", "d2/d08/classez_visual_script_execution_context.htm#a62ec5bc6b348431c62c109c7ad907c00", null ],

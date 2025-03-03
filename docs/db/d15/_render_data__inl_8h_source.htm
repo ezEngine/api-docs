@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 24.09</span>
+   &#160;<span id="projectnumber">Release 25.03</span>
    </div>
   </td>
  </tr>
@@ -108,74 +108,77 @@ $(document).ready(function(){initNavTree('db/d15/_render_data__inl_8h_source.htm
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// static</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;EZ_FORCE_INLINE <span class="keyword">const</span> <a class="code" href="../../d5/daa/classez_renderer.htm">ezRenderer</a>* ezRenderData::GetCategoryRenderer(Category category, <span class="keyword">const</span> <a class="code" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a>* pRenderDataType)</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;EZ_FORCE_INLINE <a class="code" href="../../de/dce/classez_hashed_string.htm">ezHashedString</a> ezRenderData::GetCategoryName(Category category)</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keywordflow">if</span> (s_bRendererInstancesDirty)</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keywordflow">if</span> (category.m_uiValue &lt; s_CategoryData.<a class="code" href="../../dc/d59/classez_array_base.htm#a51ba61fcbd2350ae8850754a41acbaa1">GetCount</a>())</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    CreateRendererInstances();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">return</span> s_CategoryData[category.m_uiValue].m_sName;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  }</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">auto</span>&amp; categoryData = s_CategoryData[category.m_uiValue];</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  ezUInt32 uiIndex = 0;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordflow">if</span> (categoryData.m_TypeToRendererIndex.TryGetValue(pRenderDataType, uiIndex))</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">return</span> s_RendererInstances[uiIndex].Borrow();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  }</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../de/dce/classez_hashed_string.htm">ezHashedString</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// static</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;EZ_FORCE_INLINE <span class="keyword">const</span> <a class="code" href="../../d5/daa/classez_renderer.htm">ezRenderer</a>* ezRenderData::GetCategoryRenderer(Category category, <span class="keyword">const</span> <a class="code" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a>* pRenderDataType)</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordflow">if</span> (s_bRendererInstancesDirty)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    CreateRendererInstances();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  }</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">// static</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;EZ_FORCE_INLINE <a class="code" href="../../de/dce/classez_hashed_string.htm">ezHashedString</a> ezRenderData::GetCategoryName(Category category)</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordflow">if</span> (category.m_uiValue &lt; s_CategoryData.<a class="code" href="../../dc/d59/classez_array_base.htm#a51ba61fcbd2350ae8850754a41acbaa1">GetCount</a>())</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keyword">auto</span>&amp; categoryData = s_CategoryData[category.m_uiValue];</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  ezUInt32 uiIndex = 0;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordflow">if</span> (categoryData.m_TypeToRendererIndex.TryGetValue(pRenderDataType, uiIndex))</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">return</span> s_CategoryData[category.m_uiValue].m_sName;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">return</span> s_RendererInstances[uiIndex].Borrow();</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  }</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../de/dce/classez_hashed_string.htm">ezHashedString</a>();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;EZ_FORCE_INLINE ezUInt64 ezRenderData::GetCategorySortingKey(Category category, <span class="keyword">const</span> <a class="code" href="../../d8/d90/classez_camera.htm">ezCamera</a>&amp; camera)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordflow">return</span> s_CategoryData[category.m_uiValue].m_sortingKeyFunc(<span class="keyword">this</span>, camera);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="../../d3/dab/classez_render_data.htm#ab58ec0f00b81209ce9c6a13af09f8d10">   54</a></span>&#160;EZ_FORCE_INLINE ezUInt64 <a class="code" href="../../d3/dab/classez_render_data.htm#ab58ec0f00b81209ce9c6a13af09f8d10">ezRenderData::GetFinalSortingKey</a>(<a class="code" href="../../de/dc4/structez_render_data_1_1_category.htm">Category</a> category, <span class="keyword">const</span> <a class="code" href="../../d8/d90/classez_camera.htm">ezCamera</a>&amp; camera)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordflow">return</span> s_CategoryData[category.m_uiValue].m_sortingKeyFunc(<span class="keyword">this</span>, camera);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">static</span> T* ezCreateRenderDataForThisFrame(<span class="keyword">const</span> <a class="code" href="../../d6/d61/classez_game_object.htm">ezGameObject</a>* pOwner)</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  static_assert(EZ_IS_DERIVED_FROM_STATIC(<a class="code" href="../../d3/dab/classez_render_data.htm">ezRenderData</a>, T));</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  T* pRenderData = EZ_NEW(ezFrameAllocator::GetCurrentAllocator(), T);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">static</span> T* ezCreateRenderDataForThisFrame(<span class="keyword">const</span> <a class="code" href="../../d6/d61/classez_game_object.htm">ezGameObject</a>* pOwner)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;{</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  static_assert(EZ_IS_DERIVED_FROM_STATIC(<a class="code" href="../../d3/dab/classez_render_data.htm">ezRenderData</a>, T));</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordflow">if</span> (pOwner != <span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    pRenderData-&gt;m_hOwner = pOwner-&gt;<a class="code" href="../../d6/d61/classez_game_object.htm#a7a17afadfcbdcd7edd4426a8c5d93ecd">GetHandle</a>();</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#if EZ_ENABLED(EZ_COMPILE_FOR_DEVELOPMENT)</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  pRenderData-&gt;m_pOwner = pOwner;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordflow">return</span> pRenderData;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  T* pRenderData = EZ_NEW(ezFrameAllocator::GetCurrentAllocator(), T);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordflow">if</span> (pOwner != <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    pRenderData-&gt;m_hOwner = pOwner-&gt;<a class="code" href="../../d6/d61/classez_game_object.htm#a7a17afadfcbdcd7edd4426a8c5d93ecd">GetHandle</a>();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#if EZ_ENABLED(EZ_COMPILE_FOR_DEVELOPMENT)</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  pRenderData-&gt;m_pOwner = pOwner;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordflow">return</span> pRenderData;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassez_render_data_htm"><div class="ttname"><a href="../../d3/dab/classez_render_data.htm">ezRenderData</a></div><div class="ttdoc">Base class for all render data. Render data must contain all information that is needed to render the...</div><div class="ttdef"><b>Definition:</b> RenderData.h:13</div></div>
 <div class="ttc" id="aclassez_game_object_htm_a7a17afadfcbdcd7edd4426a8c5d93ecd"><div class="ttname"><a href="../../d6/d61/classez_game_object.htm#a7a17afadfcbdcd7edd4426a8c5d93ecd">ezGameObject::GetHandle</a></div><div class="ttdeci">ezGameObjectHandle GetHandle() const</div><div class="ttdoc">Returns a handle to this object.</div><div class="ttdef"><b>Definition:</b> GameObject_inl.h:64</div></div>
 <div class="ttc" id="aclassez_r_t_t_i_htm"><div class="ttname"><a href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a></div><div class="ttdoc">This class holds information about reflected types. Each instance represents one type that is known t...</div><div class="ttdef"><b>Definition:</b> RTTI.h:29</div></div>
 <div class="ttc" id="aclassez_renderer_htm"><div class="ttname"><a href="../../d5/daa/classez_renderer.htm">ezRenderer</a></div><div class="ttdoc">This is the base class for types that handle rendering of different object types.</div><div class="ttdef"><b>Definition:</b> Renderer.h:8</div></div>
+<div class="ttc" id="aclassez_render_data_htm_ab58ec0f00b81209ce9c6a13af09f8d10"><div class="ttname"><a href="../../d3/dab/classez_render_data.htm#ab58ec0f00b81209ce9c6a13af09f8d10">ezRenderData::GetFinalSortingKey</a></div><div class="ttdeci">ezUInt64 GetFinalSortingKey(Category category, const ezCamera &amp;camera) const</div><div class="ttdoc">Returns the final sorting for this render data with the given category and camera.</div><div class="ttdef"><b>Definition:</b> RenderData_inl.h:54</div></div>
 <div class="ttc" id="aclassez_array_base_htm_a51ba61fcbd2350ae8850754a41acbaa1"><div class="ttname"><a href="../../dc/d59/classez_array_base.htm#a51ba61fcbd2350ae8850754a41acbaa1">ezArrayBase::GetCount</a></div><div class="ttdeci">ezUInt32 GetCount() const</div><div class="ttdoc">Returns the number of active elements in the array.</div><div class="ttdef"><b>Definition:</b> ArrayBase_inl.h:172</div></div>
 <div class="ttc" id="aclassez_camera_htm"><div class="ttname"><a href="../../d8/d90/classez_camera.htm">ezCamera</a></div><div class="ttdoc">A camera class that stores the orientation and some basic camera settings.</div><div class="ttdef"><b>Definition:</b> Camera.h:40</div></div>
-<div class="ttc" id="aclassez_game_object_htm"><div class="ttname"><a href="../../d6/d61/classez_game_object.htm">ezGameObject</a></div><div class="ttdoc">This class represents an object inside the world.</div><div class="ttdef"><b>Definition:</b> GameObject.h:31</div></div>
+<div class="ttc" id="aclassez_game_object_htm"><div class="ttname"><a href="../../d6/d61/classez_game_object.htm">ezGameObject</a></div><div class="ttdoc">This class represents an object inside the world.</div><div class="ttdef"><b>Definition:</b> GameObject.h:46</div></div>
+<div class="ttc" id="astructez_render_data_1_1_category_htm"><div class="ttname"><a href="../../de/dc4/structez_render_data_1_1_category.htm">ezRenderData::Category</a></div><div class="ttdef"><b>Definition:</b> RenderData.h:18</div></div>
 <div class="ttc" id="aclassez_hashed_string_htm"><div class="ttname"><a href="../../de/dce/classez_hashed_string.htm">ezHashedString</a></div><div class="ttdoc">This class is optimized to take nearly no memory (sizeof(void*)) and to allow very fast checks whethe...</div><div class="ttdef"><b>Definition:</b> HashedString.h:24</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_9b39d7517b28e8ee3dee1b9d862ddabb.htm">RendererCore</a></li><li class="navelem"><a class="el" href="../../dir_eb76da9386bef717669986d87e939c0d.htm">Pipeline</a></li><li class="navelem"><a class="el" href="../../dir_402227dd37ee29f379b3af1c845d36ad.htm">Implementation</a></li><li class="navelem"><b>RenderData_inl.h</b></li>
-    <li class="footer">Generated on Sun Aug 25 2024 13:06:23 for ezEngine by
+    <li class="footer">Generated on Mon Mar 3 2025 17:23:47 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

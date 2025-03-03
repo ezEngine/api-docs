@@ -12,6 +12,7 @@ var structez_g_a_l_buffer_usage_flags =
       [ "ShaderResource", "dc/d4f/structez_g_a_l_buffer_usage_flags.htm#a6e98044292dc77fbbf4feb00a4b7e738af8b593b66f8f88c7950118a42f0495d5", null ],
       [ "UnorderedAccess", "dc/d4f/structez_g_a_l_buffer_usage_flags.htm#a6e98044292dc77fbbf4feb00a4b7e738a85dbacae56493781cc83f399db2093e7", null ],
       [ "DrawIndirect", "dc/d4f/structez_g_a_l_buffer_usage_flags.htm#a6e98044292dc77fbbf4feb00a4b7e738a4e0cdd9ebfd7e665c1a59f553322a892", null ],
+      [ "Transient", "dc/d4f/structez_g_a_l_buffer_usage_flags.htm#a6e98044292dc77fbbf4feb00a4b7e738acb167a002a729d2fc73e565a6490874e", null ],
       [ "Default", "dc/d4f/structez_g_a_l_buffer_usage_flags.htm#a6e98044292dc77fbbf4feb00a4b7e738a4cc571e0c36ec5a34703961474561fe6", null ]
     ] ]
 ];

@@ -15,6 +15,8 @@ var classez_game_state =
     [ "CreateMainWindow", "de/d84/classez_game_state.htm#a37649a75ea91150bf5a675bdec3b822c", null ],
     [ "CreateXRActor", "de/d84/classez_game_state.htm#a4705923f93166f848f35f18836b7d883", null ],
     [ "GetMainCamera", "de/d84/classez_game_state.htm#afc43602b3f9b086fb3b93d0dabd19a37", null ],
+    [ "GetMainView", "de/d84/classez_game_state.htm#a25c34aa4a58a57acd0bf90771ed6a467", null ],
+    [ "GetMainWorld", "de/d84/classez_game_state.htm#aa77eda7f3cda25e1c7be04497d88ac0a", null ],
     [ "GetStartupSceneFile", "de/d84/classez_game_state.htm#ad81ae7b2162f8ec32ba0ec31c613ae50", null ],
     [ "IsInLoadingScreen", "de/d84/classez_game_state.htm#aaa320912469657d87c323ee67be0913d", null ],
     [ "IsLoadingSceneInBackground", "de/d84/classez_game_state.htm#aae4b8ca145c866cc011c0d0b08df69ee", null ],

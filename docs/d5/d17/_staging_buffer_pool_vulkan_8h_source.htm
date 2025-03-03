@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 24.09</span>
+   &#160;<span id="projectnumber">Release 25.03</span>
    </div>
   </td>
  </tr>
@@ -89,44 +89,79 @@ $(document).ready(function(){initNavTree('d5/d17/_staging_buffer_pool_vulkan_8h_
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;RendererVulkan/MemoryAllocator/MemoryAllocatorVulkan.h&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;RendererVulkan/RendererVulkanDLL.h&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;vulkan/vulkan.hpp&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">class </span><a class="code" href="../../d1/d02/classez_g_a_l_device_vulkan.htm">ezGALDeviceVulkan</a>;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="../../d6/dc5/structez_staging_buffer_vulkan.htm">   10</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../d6/dc5/structez_staging_buffer_vulkan.htm">ezStagingBufferVulkan</a></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  vk::Buffer m_buffer;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  ezVulkanAllocation m_alloc;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <a class="code" href="../../de/d10/structez_vulkan_allocation_info.htm">ezVulkanAllocationInfo</a> m_allocInfo;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;};</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="../../de/d28/classez_staging_buffer_pool_vulkan.htm">   17</a></span>&#160;<span class="keyword">class </span>EZ_RENDERERVULKAN_DLL <a class="code" href="../../de/d28/classez_staging_buffer_pool_vulkan.htm">ezStagingBufferPoolVulkan</a></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keywordtype">void</span> Initialize(<a class="code" href="../../d1/d02/classez_g_a_l_device_vulkan.htm">ezGALDeviceVulkan</a>* pDevice);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keywordtype">void</span> DeInitialize();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <a class="code" href="../../d6/dc5/structez_staging_buffer_vulkan.htm">ezStagingBufferVulkan</a> AllocateBuffer(vk::DeviceSize alignment, vk::DeviceSize size);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keywordtype">void</span> ReclaimBuffer(<a class="code" href="../../d6/dc5/structez_staging_buffer_vulkan.htm">ezStagingBufferVulkan</a>&amp; buffer);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="../../d1/d02/classez_g_a_l_device_vulkan.htm">ezGALDeviceVulkan</a>* m_pDevice = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  vk::Device m_device;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;};</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;RendererFoundation/Utils/RingBufferTracker.h&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;RendererVulkan/MemoryAllocator/MemoryAllocatorVulkan.h&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;RendererVulkan/RendererVulkanDLL.h&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;vulkan/vulkan.hpp&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">class </span><a class="code" href="../../d1/d02/classez_g_a_l_device_vulkan.htm">ezGALDeviceVulkan</a>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="../../d6/dc5/structez_staging_buffer_vulkan.htm">   11</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../d6/dc5/structez_staging_buffer_vulkan.htm">ezStagingBufferVulkan</a></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  vk::Buffer m_buffer;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  vk::DeviceSize m_uiOffset = 0;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  ezVulkanAllocation m_alloc;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezByteArrayPtr</a> m_Data;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;};</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="../../de/d28/classez_staging_buffer_pool_vulkan.htm">   21</a></span>&#160;<span class="keyword">class </span>EZ_RENDERERVULKAN_DLL <a class="code" href="../../de/d28/classez_staging_buffer_pool_vulkan.htm">ezStagingBufferPoolVulkan</a></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordtype">void</span> Initialize(<a class="code" href="../../d1/d02/classez_g_a_l_device_vulkan.htm">ezGALDeviceVulkan</a>* pDevice, ezUInt64 uiStartingPoolSize);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordtype">void</span> DeInitialize();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keywordtype">void</span> AfterBeginFrame();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordtype">void</span> BeforeCommandBufferSubmit();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <a class="code" href="../../d6/dc5/structez_staging_buffer_vulkan.htm">ezStagingBufferVulkan</a> AllocateBuffer(ezUInt64 size);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">static</span> constexpr ezUInt32 s_uiNumberOfFramesToKeepUnusedPoolsAlive = 600;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keyword">struct </span>StagingBufferPool</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    StagingBufferPool(ezUInt32 uiAlignment, ezUInt32 uiTotalSize);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    ~StagingBufferPool();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> Allocate(ezUInt32 uiSize, ezUInt64 uiCurrentFrame, ezUInt32&amp; out_uiStartOffset, <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezByteArrayPtr</a>&amp; out_Allocation);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> Free(ezUInt64 uiUpToFrame);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> Submit(<a class="code" href="../../d1/d02/classez_g_a_l_device_vulkan.htm">ezGALDeviceVulkan</a>* pDevice, ezUInt64 uiFrame);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="../../d7/d22/classez_ring_buffer_tracker.htm">ezRingBufferTracker</a> m_Tracker;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;ezUInt8&gt;</a> m_Data;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    vk::Buffer m_Buffer;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    ezVulkanAllocation m_Alloc;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="../../de/d10/structez_vulkan_allocation_info.htm">ezVulkanAllocationInfo</a> m_AllocInfo;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    ezUInt32 m_uiFramesWithoutAllocations = 0;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  };</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  StagingBufferPool* GetFreePool(ezUInt64 uiSize);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  ezUInt64 m_uiAlignment = 0;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  ezUInt64 m_uiStartingPoolSize = 10 * 1024u * 1024u;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <a class="code" href="../../d1/d02/classez_g_a_l_device_vulkan.htm">ezGALDeviceVulkan</a>* m_pDevice = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  vk::Device m_device;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <a class="code" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;StagingBufferPool*, 8&gt;</a> m_Pools;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  ezUInt64 m_uiHighWatermark = 0;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassez_staging_buffer_pool_vulkan_htm"><div class="ttname"><a href="../../de/d28/classez_staging_buffer_pool_vulkan.htm">ezStagingBufferPoolVulkan</a></div><div class="ttdef"><b>Definition:</b> StagingBufferPoolVulkan.h:17</div></div>
+<div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition:</b> Types.h:53</div></div>
+<div class="ttc" id="aclassez_staging_buffer_pool_vulkan_htm"><div class="ttname"><a href="../../de/d28/classez_staging_buffer_pool_vulkan.htm">ezStagingBufferPoolVulkan</a></div><div class="ttdoc">Allocates temporary staging buffers from a large pool. Allocations will automatically be freed at the...</div><div class="ttdef"><b>Definition:</b> StagingBufferPoolVulkan.h:21</div></div>
+<div class="ttc" id="aclassez_array_ptr_htm"><div class="ttname"><a href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt; ezUInt8 &gt;</a></div></div>
+<div class="ttc" id="aclassez_ring_buffer_tracker_htm"><div class="ttname"><a href="../../d7/d22/classez_ring_buffer_tracker.htm">ezRingBufferTracker</a></div><div class="ttdoc">Tracks memory in a ring buffer on a frame by frame basis. The intended usage pattern is that for fram...</div><div class="ttdef"><b>Definition:</b> RingBufferTracker.h:8</div></div>
 <div class="ttc" id="aclassez_g_a_l_device_vulkan_htm"><div class="ttname"><a href="../../d1/d02/classez_g_a_l_device_vulkan.htm">ezGALDeviceVulkan</a></div><div class="ttdoc">The Vulkan device implementation of the graphics abstraction layer.</div><div class="ttdef"><b>Definition:</b> DeviceVulkan.h:57</div></div>
-<div class="ttc" id="astructez_vulkan_allocation_info_htm"><div class="ttname"><a href="../../de/d10/structez_vulkan_allocation_info.htm">ezVulkanAllocationInfo</a></div><div class="ttdoc">Subset of VmaAllocationInfo. Duplicated for abstraction purposes.</div><div class="ttdef"><b>Definition:</b> MemoryAllocatorVulkan.h:77</div></div>
-<div class="ttc" id="astructez_staging_buffer_vulkan_htm"><div class="ttname"><a href="../../d6/dc5/structez_staging_buffer_vulkan.htm">ezStagingBufferVulkan</a></div><div class="ttdef"><b>Definition:</b> StagingBufferPoolVulkan.h:10</div></div>
+<div class="ttc" id="astructez_vulkan_allocation_info_htm"><div class="ttname"><a href="../../de/d10/structez_vulkan_allocation_info.htm">ezVulkanAllocationInfo</a></div><div class="ttdoc">Subset of VmaAllocationInfo. Duplicated for abstraction purposes.</div><div class="ttdef"><b>Definition:</b> MemoryAllocatorVulkan.h:79</div></div>
+<div class="ttc" id="astructez_staging_buffer_vulkan_htm"><div class="ttname"><a href="../../d6/dc5/structez_staging_buffer_vulkan.htm">ezStagingBufferVulkan</a></div><div class="ttdef"><b>Definition:</b> StagingBufferPoolVulkan.h:11</div></div>
+<div class="ttc" id="aclassez_hybrid_array_htm"><div class="ttname"><a href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt; StagingBufferPool *, 8 &gt;</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_f7a638e0cc6766080d9014908e70532b.htm">RendererVulkan</a></li><li class="navelem"><a class="el" href="../../dir_b1f92f563c11033db016a8d81ef35016.htm">Pools</a></li><li class="navelem"><b>StagingBufferPoolVulkan.h</b></li>
-    <li class="footer">Generated on Sun Aug 25 2024 13:06:23 for ezEngine by
+    <li class="footer">Generated on Mon Mar 3 2025 17:23:47 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

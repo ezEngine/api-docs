@@ -8,6 +8,7 @@ var classez_qt_image_slider_widget =
     [ "mouseReleaseEvent", "d1/d9e/classez_qt_image_slider_widget.htm#a7c17fa1e8ebdf6f000f3ba70d74312de", null ],
     [ "paintEvent", "d1/d9e/classez_qt_image_slider_widget.htm#a9ef8dfb726dc7db19294882f6b5f9cbb", null ],
     [ "SetValue", "d1/d9e/classez_qt_image_slider_widget.htm#aafa8c19c37388919e4cbd39b7d5c5a81", null ],
+    [ "sliderPressed", "d1/d9e/classez_qt_image_slider_widget.htm#ab90de3a2a5982a2f29566c5cfadfe039", null ],
     [ "sliderReleased", "d1/d9e/classez_qt_image_slider_widget.htm#aa0c0fd1d7affd4956c72048fca7584eb", null ],
     [ "UpdateImage", "d1/d9e/classez_qt_image_slider_widget.htm#a9878ce7fdf962844b3d094c765138767", null ],
     [ "valueChanged", "d1/d9e/classez_qt_image_slider_widget.htm#af87b1e52d5bd2d49189503af43f99d91", null ],

@@ -1,5 +1,6 @@
 var classez_particle_trail_render_data =
 [
+    [ "CanBatch", "d1/db0/classez_particle_trail_render_data.htm#a08ddc36afdd6e0144721c460e251b1a3", null ],
     [ "m_bApplyObjectTransform", "d1/db0/classez_particle_trail_render_data.htm#a5fb87bda580caf68aa1318a263e93156", null ],
     [ "m_BaseParticleData", "d1/db0/classez_particle_trail_render_data.htm#af01f2a575de81fec49dba4ecc399d08b", null ],
     [ "m_fDistortionStrength", "d1/db0/classez_particle_trail_render_data.htm#af0786dc52820394c1c4959e6aa337eed", null ],

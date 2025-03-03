@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 24.09</span>
+   &#160;<span id="projectnumber">Release 25.03</span>
    </div>
   </td>
  </tr>
@@ -91,43 +91,54 @@ $(document).ready(function(){initNavTree('d7/d60/_sound_interface_8h_source.htm'
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;Core/CoreDLL.h&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;Foundation/Basics.h&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="../../d5/d50/classez_sound_interface.htm">    6</a></span>&#160;<span class="keyword">class </span>EZ_CORE_DLL <a class="code" href="../../d5/d50/classez_sound_interface.htm">ezSoundInterface</a></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> LoadConfiguration(<a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sFile) = 0;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetOverridePlatform(<a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sPlatform) = 0;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> UpdateSound() = 0;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetMasterChannelVolume(<span class="keywordtype">float</span> fVolume) = 0;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">float</span> GetMasterChannelVolume() <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetMasterChannelMute(<span class="keywordtype">bool</span> bMute) = 0;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> GetMasterChannelMute() <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetMasterChannelPaused(<span class="keywordtype">bool</span> bPaused) = 0;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> GetMasterChannelPaused() <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetSoundGroupVolume(<a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sVcaGroupGuid, <span class="keywordtype">float</span> fVolume) = 0;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">float</span> GetSoundGroupVolume(<a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sVcaGroupGuid) <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetNumListeners(ezUInt8 uiNumListeners) = 0;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">virtual</span> ezUInt8 GetNumListeners() = 0;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetListenerOverrideMode(<span class="keywordtype">bool</span> bEnabled) = 0;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetListener(ezInt32 iIndex, <span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; vPosition, <span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; vForward, <span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; vUp, <span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; vVelocity) = 0;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> OneShotSound(<a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sResourceID, <span class="keyword">const</span> <a class="code" href="../../d3/db1/classez_transform_template.htm">ezTransform</a>&amp; globalPosition, <span class="keywordtype">float</span> fPitch = 1.0f, <span class="keywordtype">float</span> fVolume = 1.0f, <span class="keywordtype">bool</span> bBlockIfNotLoaded = <span class="keyword">true</span>) = 0;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> PlaySound(<a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sResourceID, <span class="keyword">const</span> <a class="code" href="../../d3/db1/classez_transform_template.htm">ezTransform</a>&amp; globalPosition, <span class="keywordtype">float</span> fPitch = 1.0f, <span class="keywordtype">float</span> fVolume = 1.0f, <span class="keywordtype">bool</span> bBlockIfNotLoaded = <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;};</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;Foundation/Reflection/Reflection.h&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="../../d5/d50/classez_sound_interface.htm">    7</a></span>&#160;<span class="keyword">class </span>EZ_CORE_DLL <a class="code" href="../../d5/d50/classez_sound_interface.htm">ezSoundInterface</a></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> LoadConfiguration(<a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sFile) = 0;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetOverridePlatform(<a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sPlatform) = 0;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> UpdateSound() = 0;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetMasterChannelVolume(<span class="keywordtype">float</span> fVolume) = 0;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">float</span> GetMasterChannelVolume() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetMasterChannelMute(<span class="keywordtype">bool</span> bMute) = 0;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> GetMasterChannelMute() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetMasterChannelPaused(<span class="keywordtype">bool</span> bPaused) = 0;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> GetMasterChannelPaused() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetSoundGroupVolume(<a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sVcaGroupGuid, <span class="keywordtype">float</span> fVolume) = 0;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">float</span> GetSoundGroupVolume(<a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sVcaGroupGuid) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetNumListeners(ezUInt8 uiNumListeners) = 0;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keyword">virtual</span> ezUInt8 GetNumListeners() = 0;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetListenerOverrideMode(<span class="keywordtype">bool</span> bEnabled) = 0;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetListener(ezInt32 iIndex, <span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; vPosition, <span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; vForward, <span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; vUp, <span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; vVelocity) = 0;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> OneShotSound(<a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sResourceID, <span class="keyword">const</span> <a class="code" href="../../d3/db1/classez_transform_template.htm">ezTransform</a>&amp; globalPosition, <span class="keywordtype">float</span> fPitch = 1.0f, <span class="keywordtype">float</span> fVolume = 1.0f, <span class="keywordtype">bool</span> bBlockIfNotLoaded = <span class="keyword">true</span>) = 0;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d4/da9/structez_result.htm">ezResult</a> PlaySound(<a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sResourceID, <span class="keyword">const</span> <a class="code" href="../../d3/db1/classez_transform_template.htm">ezTransform</a>&amp; globalPosition, <span class="keywordtype">float</span> fPitch = 1.0f, <span class="keywordtype">float</span> fVolume = 1.0f, <span class="keywordtype">bool</span> bBlockIfNotLoaded = <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="../../d8/d6e/classez_script_extension_class___sound.htm">   73</a></span>&#160;<span class="keyword">class </span>EZ_CORE_DLL <a class="code" href="../../d8/d6e/classez_script_extension_class___sound.htm">ezScriptExtensionClass_Sound</a></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;{</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> PlaySound(<a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sResourceID, <span class="keyword">const</span> <a class="code" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; vGlobalPos, <span class="keyword">const</span> <a class="code" href="../../de/d15/classez_quat_template.htm">ezQuat</a>&amp; qGlobalRot, <span class="keywordtype">float</span> fPitch = 1.0f, <span class="keywordtype">float</span> fVolume = 1.0f, <span class="keywordtype">bool</span> bBlockIfNotLoaded = <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;};</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;EZ_DECLARE_REFLECTABLE_TYPE(EZ_CORE_DLL, <a class="code" href="../../d8/d6e/classez_script_extension_class___sound.htm">ezScriptExtensionClass_Sound</a>);</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition:</b> Types.h:53</div></div>
-<div class="ttc" id="aclassez_sound_interface_htm"><div class="ttname"><a href="../../d5/d50/classez_sound_interface.htm">ezSoundInterface</a></div><div class="ttdef"><b>Definition:</b> SoundInterface.h:6</div></div>
+<div class="ttc" id="aclassez_script_extension_class___sound_htm"><div class="ttname"><a href="../../d8/d6e/classez_script_extension_class___sound.htm">ezScriptExtensionClass_Sound</a></div><div class="ttdef"><b>Definition:</b> SoundInterface.h:73</div></div>
+<div class="ttc" id="aclassez_sound_interface_htm"><div class="ttname"><a href="../../d5/d50/classez_sound_interface.htm">ezSoundInterface</a></div><div class="ttdef"><b>Definition:</b> SoundInterface.h:7</div></div>
+<div class="ttc" id="aclassez_quat_template_htm"><div class="ttname"><a href="../../de/d15/classez_quat_template.htm">ezQuatTemplate&lt; float &gt;</a></div></div>
 <div class="ttc" id="aclassez_string_view_htm"><div class="ttname"><a href="../../d9/d18/classez_string_view.htm">ezStringView</a></div><div class="ttdoc">ezStringView represent a read-only sub-string of a larger string, as it can store a dedicated string ...</div><div class="ttdef"><b>Definition:</b> StringView.h:33</div></div>
 <div class="ttc" id="aclassez_transform_template_htm"><div class="ttname"><a href="../../d3/db1/classez_transform_template.htm">ezTransformTemplate&lt; float &gt;</a></div></div>
 <div class="ttc" id="aclassez_vec3_template_htm"><div class="ttname"><a href="../../da/df1/classez_vec3_template.htm">ezVec3Template&lt; float &gt;</a></div></div>
@@ -135,7 +146,7 @@ $(document).ready(function(){initNavTree('d7/d60/_sound_interface_8h_source.htm'
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_ac029bbb8a17b4d550e2f9d55d89a029.htm">Core</a></li><li class="navelem"><a class="el" href="../../dir_d8fad8ae23ad175137df9a01db00e74d.htm">Interfaces</a></li><li class="navelem"><b>SoundInterface.h</b></li>
-    <li class="footer">Generated on Sun Aug 25 2024 13:06:13 for ezEngine by
+    <li class="footer">Generated on Mon Mar 3 2025 17:23:38 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

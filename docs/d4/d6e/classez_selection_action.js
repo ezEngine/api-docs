@@ -18,7 +18,11 @@ var classez_selection_action =
       [ "SnapObjectToCamera", "d4/d6e/classez_selection_action.htm#a141057af44feca41a3293eab70e1d10daa789b601b6d8b43c0b54207d3fa63dc0", null ],
       [ "AttachToObject", "d4/d6e/classez_selection_action.htm#a141057af44feca41a3293eab70e1d10da8171bae991fa1c0716953bef6b6cd8ef", null ],
       [ "DetachFromParent", "d4/d6e/classez_selection_action.htm#a141057af44feca41a3293eab70e1d10da3042c2bfec1b2b88e18dab987ad03e6d", null ],
-      [ "CopyReference", "d4/d6e/classez_selection_action.htm#a141057af44feca41a3293eab70e1d10daae8397a6c3e0062ed798f03d82175011", null ]
+      [ "CopyReference", "d4/d6e/classez_selection_action.htm#a141057af44feca41a3293eab70e1d10daae8397a6c3e0062ed798f03d82175011", null ],
+      [ "SelectParent", "d4/d6e/classez_selection_action.htm#a141057af44feca41a3293eab70e1d10dac3438821134209690b58e6ebdf52ae8a", null ],
+      [ "SetActiveParent", "d4/d6e/classez_selection_action.htm#a141057af44feca41a3293eab70e1d10dadab2984fa886715ed736b08baad22ba3", null ],
+      [ "ClearActiveParent", "d4/d6e/classez_selection_action.htm#a141057af44feca41a3293eab70e1d10da8985e1119557d7cb8cfbc3982e3f0942", null ],
+      [ "UndoSelection", "d4/d6e/classez_selection_action.htm#a141057af44feca41a3293eab70e1d10da6d31f7274fd72340d3c0e1e8661e3e54", null ]
     ] ],
     [ "ezSelectionAction", "d4/d6e/classez_selection_action.htm#a3d0552e9a0ff6d1c004c86614e7173d7", null ],
     [ "~ezSelectionAction", "d4/d6e/classez_selection_action.htm#ad6d9d2664f34892751dc365bf4decaea", null ],

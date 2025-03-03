@@ -1,6 +1,7 @@
 var classez_lens_flare_render_data =
 [
-    [ "FillBatchIdAndSortingKey", "d9/dc0/classez_lens_flare_render_data.htm#a609fd0c6438e67e1673f9d9354792fd4", null ],
+    [ "CanBatch", "d9/dc0/classez_lens_flare_render_data.htm#a2cdbb29731958a0d098ad3cfd354ddaa", null ],
+    [ "FillSortingKey", "d9/dc0/classez_lens_flare_render_data.htm#af7d548c03c86d8a637c48899cb050a66", null ],
     [ "m_bApplyFog", "d9/dc0/classez_lens_flare_render_data.htm#a5770199357ac2684ea41c035a7dcba11", null ],
     [ "m_bGreyscaleTexture", "d9/dc0/classez_lens_flare_render_data.htm#a02db4135ee42cf097598d60aa26d4251", null ],
     [ "m_bInverseTonemap", "d9/dc0/classez_lens_flare_render_data.htm#a979542ac7947b421d13c31cde865da79", null ],

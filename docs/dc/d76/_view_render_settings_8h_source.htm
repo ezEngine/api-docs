@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 24.09</span>
+   &#160;<span id="projectnumber">Release 25.03</span>
    </div>
   </td>
  </tr>
@@ -113,118 +113,110 @@ $(document).ready(function(){initNavTree('dc/d76/_view_render_settings_8h_source
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="../../db/d36/structez_engine_view_config.htm">   25</a></span>&#160;<span class="keyword">struct </span>EZ_EDITORENGINEPROCESSFRAMEWORK_DLL <a class="code" href="../../db/d36/structez_engine_view_config.htm">ezEngineViewConfig</a></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="../../db/d36/structez_engine_view_config.htm">ezEngineViewConfig</a>()</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    m_RenderMode = ezViewRenderMode::Default;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    m_Perspective = ezSceneViewPerspective::Default;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    m_CameraUsageHint = <a class="code" href="../../d3/d61/structez_camera_usage_hint.htm#a270e5fe37f762cc03dfb710fe2e9e3d6a50657124a9f7f3a536777fd10f62bdff">ezCameraUsageHint::EditorView</a>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    m_pLinkedViewConfig = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  ezViewRenderMode::Enum m_RenderMode = ezViewRenderMode::Default;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  ezSceneViewPerspective::Enum m_Perspective = ezSceneViewPerspective::Default;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <a class="code" href="../../d3/d61/structez_camera_usage_hint.htm#a270e5fe37f762cc03dfb710fe2e9e3d6">ezCameraUsageHint::Enum</a> m_CameraUsageHint = <a class="code" href="../../d3/d61/structez_camera_usage_hint.htm#a270e5fe37f762cc03dfb710fe2e9e3d6a50657124a9f7f3a536777fd10f62bdff">ezCameraUsageHint::EditorView</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordtype">bool</span> m_bUseCameraTransformOnDevice = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <a class="code" href="../../d8/d90/classez_camera.htm">ezCamera</a> m_Camera;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <a class="code" href="../../db/d36/structez_engine_view_config.htm">ezEngineViewConfig</a>* m_pLinkedViewConfig = <span class="keyword">nullptr</span>; <span class="comment">// used to store which other view config this is linked to, for resetting values when switching views</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  ezViewRenderMode::Enum m_RenderMode;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  ezSceneViewPerspective::Enum m_Perspective;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <a class="code" href="../../d3/d61/structez_camera_usage_hint.htm#a270e5fe37f762cc03dfb710fe2e9e3d6">ezCameraUsageHint::Enum</a> m_CameraUsageHint;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordtype">bool</span> m_bUseCameraTransformOnDevice = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="../../d8/d90/classez_camera.htm">ezCamera</a> m_Camera;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="../../db/d36/structez_engine_view_config.htm">ezEngineViewConfig</a>* m_pLinkedViewConfig; <span class="comment">// used to store which other view config this is linked to, for resetting values when switching views</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordtype">void</span> ApplyPerspectiveSetting(<span class="keywordtype">float</span> fFov = 0.0f, <span class="keywordtype">float</span> fNearPlane = 0.1f, <span class="keywordtype">float</span> fFarPlane = 1000.0f);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;};</div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="../../dc/df6/structez_engine_view_light_settings_event.htm">   45</a></span>&#160;<span class="keyword">struct </span>EZ_EDITORENGINEPROCESSFRAMEWORK_DLL <a class="code" href="../../dc/df6/structez_engine_view_light_settings_event.htm">ezEngineViewLightSettingsEvent</a></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keyword">enum class</span> Type</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    SkyBoxChanged,</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    SkyLightChanged,</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    SkyLightCubeMapChanged,</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    SkyLightIntensityChanged,</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    DirectionalLightChanged,</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    DirectionalLightAngleChanged,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    DirectionalLightShadowsChanged,</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    DirectionalLightIntensityChanged,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    FogChanged,</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    DefaultValuesChanged,</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  };</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  Type m_Type;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;};</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordtype">void</span> ApplyPerspectiveSetting(<span class="keywordtype">float</span> fFov = 0.0f, <span class="keywordtype">float</span> fNearPlane = 0.1f, <span class="keywordtype">float</span> fFarPlane = 1000.0f);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="../../dc/df6/structez_engine_view_light_settings_event.htm">   37</a></span>&#160;<span class="keyword">struct </span>EZ_EDITORENGINEPROCESSFRAMEWORK_DLL <a class="code" href="../../dc/df6/structez_engine_view_light_settings_event.htm">ezEngineViewLightSettingsEvent</a></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">enum class</span> Type</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    SkyBoxChanged,</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    SkyLightChanged,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    SkyLightCubeMapChanged,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    SkyLightIntensityChanged,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    DirectionalLightChanged,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    DirectionalLightAngleChanged,</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    DirectionalLightShadowsChanged,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    DirectionalLightIntensityChanged,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    FogChanged,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    DefaultValuesChanged,</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  };</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  Type m_Type;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;};</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="../../dd/d30/classez_engine_view_light_settings.htm">   56</a></span>&#160;<span class="keyword">class </span>EZ_EDITORENGINEPROCESSFRAMEWORK_DLL <a class="code" href="../../dd/d30/classez_engine_view_light_settings.htm">ezEngineViewLightSettings</a> : <span class="keyword">public</span> <a class="code" href="../../d4/d36/classez_editor_engine_sync_object.htm">ezEditorEngineSyncObject</a></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  EZ_ADD_DYNAMIC_REFLECTION(<a class="code" href="../../dd/d30/classez_engine_view_light_settings.htm">ezEngineViewLightSettings</a>, <a class="code" href="../../d4/d36/classez_editor_engine_sync_object.htm">ezEditorEngineSyncObject</a>);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <a class="code" href="../../dd/d30/classez_engine_view_light_settings.htm">ezEngineViewLightSettings</a>(<span class="keywordtype">bool</span> bEnable = <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  ~<a class="code" href="../../dd/d30/classez_engine_view_light_settings.htm">ezEngineViewLightSettings</a>();</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="../../dd/d30/classez_engine_view_light_settings.htm">   64</a></span>&#160;<span class="keyword">class </span>EZ_EDITORENGINEPROCESSFRAMEWORK_DLL <a class="code" href="../../dd/d30/classez_engine_view_light_settings.htm">ezEngineViewLightSettings</a> : <span class="keyword">public</span> <a class="code" href="../../d4/d36/classez_editor_engine_sync_object.htm">ezEditorEngineSyncObject</a></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;{</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  EZ_ADD_DYNAMIC_REFLECTION(<a class="code" href="../../dd/d30/classez_engine_view_light_settings.htm">ezEngineViewLightSettings</a>, <a class="code" href="../../d4/d36/classez_editor_engine_sync_object.htm">ezEditorEngineSyncObject</a>);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <a class="code" href="../../dd/d30/classez_engine_view_light_settings.htm">ezEngineViewLightSettings</a>(<span class="keywordtype">bool</span> bEnable = <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  ~<a class="code" href="../../dd/d30/classez_engine_view_light_settings.htm">ezEngineViewLightSettings</a>();</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordtype">bool</span> GetSkyBox() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordtype">void</span> SetSkyBox(<span class="keywordtype">bool</span> bVal);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordtype">bool</span> GetSkyLight() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordtype">void</span> SetSkyLight(<span class="keywordtype">bool</span> bVal);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* GetSkyLightCubeMap() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keywordtype">void</span> SetSkyLightCubeMap(<span class="keyword">const</span> <span class="keywordtype">char</span>* szVal);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordtype">float</span> GetSkyLightIntensity() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keywordtype">void</span> SetSkyLightIntensity(<span class="keywordtype">float</span> fVal);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keywordtype">bool</span> GetDirectionalLight() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordtype">void</span> SetDirectionalLight(<span class="keywordtype">bool</span> bVal);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> GetDirectionalLightAngle() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keywordtype">void</span> SetDirectionalLightAngle(<a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> val);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keywordtype">bool</span> GetDirectionalLightShadows() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keywordtype">void</span> SetDirectionalLightShadows(<span class="keywordtype">bool</span> bVal);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordtype">bool</span> GetSkyBox() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordtype">void</span> SetSkyBox(<span class="keywordtype">bool</span> bVal);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordtype">bool</span> GetSkyLight() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordtype">void</span> SetSkyLight(<span class="keywordtype">bool</span> bVal);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* GetSkyLightCubeMap() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordtype">void</span> SetSkyLightCubeMap(<span class="keyword">const</span> <span class="keywordtype">char</span>* szVal);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordtype">float</span> GetSkyLightIntensity() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordtype">void</span> SetSkyLightIntensity(<span class="keywordtype">float</span> fVal);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordtype">bool</span> GetDirectionalLight() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordtype">void</span> SetDirectionalLight(<span class="keywordtype">bool</span> bVal);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> GetDirectionalLightAngle() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keywordtype">void</span> SetDirectionalLightAngle(<a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> val);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keywordtype">bool</span> GetDirectionalLightShadows() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keywordtype">void</span> SetDirectionalLightShadows(<span class="keywordtype">bool</span> bVal);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordtype">float</span> GetDirectionalLightIntensity() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keywordtype">void</span> SetDirectionalLightIntensity(<span class="keywordtype">float</span> fVal);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keywordtype">bool</span> GetFog() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keywordtype">void</span> SetFog(<span class="keywordtype">bool</span> bVal);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keyword">mutable</span> <a class="code" href="../../d0/daf/classez_event.htm">ezEvent&lt;const ezEngineViewLightSettingsEvent&amp;&gt;</a> m_EngineViewLightSettingsEvents;</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keywordtype">float</span> GetDirectionalLightIntensity() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keywordtype">void</span> SetDirectionalLightIntensity(<span class="keywordtype">float</span> fVal);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> SetupForEngine(<a class="code" href="../../da/d3c/classez_world.htm">ezWorld</a>* pWorld, ezUInt32 uiNextComponentPickingID) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> UpdateForEngine(<a class="code" href="../../da/d3c/classez_world.htm">ezWorld</a>* pWorld) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <span class="keywordtype">bool</span> GetFog() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="keywordtype">void</span> SetFog(<span class="keywordtype">bool</span> bVal);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="keywordtype">void</span> SetModifiedInternal(ezEngineViewLightSettingsEvent::Type type);</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keyword">mutable</span> <a class="code" href="../../d0/daf/classez_event.htm">ezEvent&lt;const ezEngineViewLightSettingsEvent&amp;&gt;</a> m_EngineViewLightSettingsEvents;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> SetupForEngine(<a class="code" href="../../da/d3c/classez_world.htm">ezWorld</a>* pWorld, ezUInt32 uiNextComponentPickingID) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> UpdateForEngine(<a class="code" href="../../da/d3c/classez_world.htm">ezWorld</a>* pWorld) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keywordtype">bool</span> m_bSkyBox = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keywordtype">bool</span> m_bSkyLight = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sSkyLightCubeMap = <span class="stringliteral">&quot;{ 0b202e08-a64f-465d-b38e-15b81d161822 }&quot;</span>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keywordtype">float</span> m_fSkyLightIntensity = 1.0f;</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <span class="keywordtype">void</span> SetModifiedInternal(ezEngineViewLightSettingsEvent::Type type);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <span class="keywordtype">bool</span> m_bSkyBox = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="keywordtype">bool</span> m_bSkyLight = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <a class="code" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sSkyLightCubeMap = <span class="stringliteral">&quot;{ 0b202e08-a64f-465d-b38e-15b81d161822 }&quot;</span>;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <span class="keywordtype">float</span> m_fSkyLightIntensity = 1.0f;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <span class="keywordtype">bool</span> m_bDirectionalLight = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> m_DirectionalLightAngle = <a class="code" href="../../db/d6f/classez_angle.htm#a6e6aec7948f52b69936a9074eca179fa">ezAngle::MakeFromDegree</a>(30.0f);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <span class="keywordtype">bool</span> m_bDirectionalLightShadows = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <span class="keywordtype">float</span> m_fDirectionalLightIntensity = 10.0f;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <span class="keywordtype">bool</span> m_bFog = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <span class="comment">// Engine side data</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <a class="code" href="../../da/d3c/classez_world.htm">ezWorld</a>* m_pWorld = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <a class="code" href="../../d6/d5c/structez_game_object_handle.htm">ezGameObjectHandle</a> m_hSkyBoxObject;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <a class="code" href="../../df/d34/structez_component_handle.htm">ezComponentHandle</a> m_hSkyBox;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <a class="code" href="../../d6/d5c/structez_game_object_handle.htm">ezGameObjectHandle</a> m_hGameObject;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <a class="code" href="../../df/d34/structez_component_handle.htm">ezComponentHandle</a> m_hDirLight;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <a class="code" href="../../df/d34/structez_component_handle.htm">ezComponentHandle</a> m_hSkyLight;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <a class="code" href="../../df/d34/structez_component_handle.htm">ezComponentHandle</a> m_hFog;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;};</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="keywordtype">bool</span> m_bDirectionalLight = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <a class="code" href="../../db/d6f/classez_angle.htm">ezAngle</a> m_DirectionalLightAngle = <a class="code" href="../../db/d6f/classez_angle.htm#a6e6aec7948f52b69936a9074eca179fa">ezAngle::MakeFromDegree</a>(70.0f);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="keywordtype">bool</span> m_bDirectionalLightShadows = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <span class="keywordtype">float</span> m_fDirectionalLightIntensity = 10.0f;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="keywordtype">bool</span> m_bFog = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="comment">// Engine side data</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <a class="code" href="../../da/d3c/classez_world.htm">ezWorld</a>* m_pWorld = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <a class="code" href="../../d6/d5c/structez_game_object_handle.htm">ezGameObjectHandle</a> m_hSkyBoxObject;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <a class="code" href="../../df/d34/structez_component_handle.htm">ezComponentHandle</a> m_hSkyBox;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <a class="code" href="../../d6/d5c/structez_game_object_handle.htm">ezGameObjectHandle</a> m_hGameObject;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <a class="code" href="../../df/d34/structez_component_handle.htm">ezComponentHandle</a> m_hDirLight;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <a class="code" href="../../df/d34/structez_component_handle.htm">ezComponentHandle</a> m_hSkyLight;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <a class="code" href="../../df/d34/structez_component_handle.htm">ezComponentHandle</a> m_hFog;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astructez_scene_view_perspective_htm"><div class="ttname"><a href="../../de/d4a/structez_scene_view_perspective.htm">ezSceneViewPerspective</a></div><div class="ttdef"><b>Definition:</b> ViewRenderSettings.h:9</div></div>
 <div class="ttc" id="aclassez_editor_engine_sync_object_htm"><div class="ttname"><a href="../../d4/d36/classez_editor_engine_sync_object.htm">ezEditorEngineSyncObject</a></div><div class="ttdef"><b>Definition:</b> SyncObject.h:10</div></div>
 <div class="ttc" id="aclassez_angle_htm_a6e6aec7948f52b69936a9074eca179fa"><div class="ttname"><a href="../../db/d6f/classez_angle.htm#a6e6aec7948f52b69936a9074eca179fa">ezAngle::MakeFromDegree</a></div><div class="ttdeci">constexpr static ezAngle MakeFromDegree(float fDegree)</div><div class="ttdoc">Creates an instance of ezAngle that was initialized from degree. (Performs a conversion)</div><div class="ttdef"><b>Definition:</b> Angle_inl.h:33</div></div>
 <div class="ttc" id="astructez_hybrid_string_htm"><div class="ttname"><a href="../../d4/d53/structez_hybrid_string.htm">ezHybridString&lt; 32, ezDefaultAllocatorWrapper &gt;</a></div></div>
-<div class="ttc" id="aclassez_engine_view_light_settings_htm"><div class="ttname"><a href="../../dd/d30/classez_engine_view_light_settings.htm">ezEngineViewLightSettings</a></div><div class="ttdef"><b>Definition:</b> ViewRenderSettings.h:64</div></div>
+<div class="ttc" id="aclassez_engine_view_light_settings_htm"><div class="ttname"><a href="../../dd/d30/classez_engine_view_light_settings.htm">ezEngineViewLightSettings</a></div><div class="ttdef"><b>Definition:</b> ViewRenderSettings.h:56</div></div>
 <div class="ttc" id="aclassez_angle_htm"><div class="ttname"><a href="../../db/d6f/classez_angle.htm">ezAngle</a></div><div class="ttdoc">Float wrapper struct for a safe usage and conversions of angles.</div><div class="ttdef"><b>Definition:</b> Angle.h:9</div></div>
 <div class="ttc" id="aclassez_camera_htm"><div class="ttname"><a href="../../d8/d90/classez_camera.htm">ezCamera</a></div><div class="ttdoc">A camera class that stores the orientation and some basic camera settings.</div><div class="ttdef"><b>Definition:</b> Camera.h:40</div></div>
 <div class="ttc" id="aclassez_event_htm"><div class="ttname"><a href="../../d0/daf/classez_event.htm">ezEvent&lt; const ezEngineViewLightSettingsEvent &amp; &gt;</a></div></div>
-<div class="ttc" id="astructez_engine_view_light_settings_event_htm"><div class="ttname"><a href="../../dc/df6/structez_engine_view_light_settings_event.htm">ezEngineViewLightSettingsEvent</a></div><div class="ttdef"><b>Definition:</b> ViewRenderSettings.h:45</div></div>
+<div class="ttc" id="astructez_engine_view_light_settings_event_htm"><div class="ttname"><a href="../../dc/df6/structez_engine_view_light_settings_event.htm">ezEngineViewLightSettingsEvent</a></div><div class="ttdef"><b>Definition:</b> ViewRenderSettings.h:37</div></div>
 <div class="ttc" id="astructez_component_handle_htm"><div class="ttname"><a href="../../df/d34/structez_component_handle.htm">ezComponentHandle</a></div><div class="ttdoc">A handle to a component.</div><div class="ttdef"><b>Definition:</b> Declarations.h:137</div></div>
 <div class="ttc" id="astructez_camera_usage_hint_htm_a270e5fe37f762cc03dfb710fe2e9e3d6"><div class="ttname"><a href="../../d3/d61/structez_camera_usage_hint.htm#a270e5fe37f762cc03dfb710fe2e9e3d6">ezCameraUsageHint::Enum</a></div><div class="ttdeci">Enum</div><div class="ttdef"><b>Definition:</b> Declarations.h:84</div></div>
 <div class="ttc" id="astructez_game_object_handle_htm"><div class="ttname"><a href="../../d6/d5c/structez_game_object_handle.htm">ezGameObjectHandle</a></div><div class="ttdoc">A handle to a game object.</div><div class="ttdef"><b>Definition:</b> Declarations.h:75</div></div>
@@ -235,7 +227,7 @@ $(document).ready(function(){initNavTree('dc/d76/_view_render_settings_8h_source
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_898824d97bbfb864e5ee6bfb2857fc31.htm">Editor</a></li><li class="navelem"><a class="el" href="../../dir_58cd665830f691b636779262d22385da.htm">EditorEngineProcessFramework</a></li><li class="navelem"><a class="el" href="../../dir_2191880c6b569b9c9b9d9bd637a2d0d3.htm">EngineProcess</a></li><li class="navelem"><b>ViewRenderSettings.h</b></li>
-    <li class="footer">Generated on Sun Aug 25 2024 13:06:12 for ezEngine by
+    <li class="footer">Generated on Mon Mar 3 2025 17:23:37 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

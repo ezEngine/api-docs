@@ -13,6 +13,6 @@ var classez_dynamic_mesh_buffer_resource =
     [ "GetVertexDeclaration", "d9/d6c/classez_dynamic_mesh_buffer_resource.htm#a4c39d7fd26ae5453700d0ef5f61e70cd", null ],
     [ "UnloadData", "d9/d6c/classez_dynamic_mesh_buffer_resource.htm#a84fb2c90477f6f8c4358b97aaf344400", null ],
     [ "UpdateContent", "d9/d6c/classez_dynamic_mesh_buffer_resource.htm#a4df77bac6639fdbbf14fddf16f56ec98", null ],
-    [ "UpdateGpuBuffer", "d9/d6c/classez_dynamic_mesh_buffer_resource.htm#a85bb0819a2dec1a88def6a22b677922c", null ],
+    [ "UpdateGpuBuffer", "d9/d6c/classez_dynamic_mesh_buffer_resource.htm#a572365c5fe6362f5ec9ca2624264e07c", null ],
     [ "UpdateMemoryUsage", "d9/d6c/classez_dynamic_mesh_buffer_resource.htm#a432fac2ae153998a3a5fa85f409844f1", null ]
 ];

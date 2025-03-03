@@ -109,6 +109,7 @@ var menudata={children:[
 {text:"Typedefs",url:"functions_type.htm"},
 {text:"Enumerations",url:"functions_enum.htm",children:[
 {text:"a",url:"functions_enum.htm#index_a"},
+{text:"b",url:"functions_enum.htm#index_b"},
 {text:"c",url:"functions_enum.htm#index_c"},
 {text:"d",url:"functions_enum.htm#index_d"},
 {text:"e",url:"functions_enum.htm#index_e"},

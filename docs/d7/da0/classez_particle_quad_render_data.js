@@ -1,5 +1,6 @@
 var classez_particle_quad_render_data =
 [
+    [ "CanBatch", "d7/da0/classez_particle_quad_render_data.htm#ad62cc57ab58102f59ffd3392f7186ce5", null ],
     [ "m_bApplyObjectTransform", "d7/da0/classez_particle_quad_render_data.htm#a8065efdfb7a09018d0ed1984ddb663dc", null ],
     [ "m_BaseParticleData", "d7/da0/classez_particle_quad_render_data.htm#ac71a414d65479473d748a532c7925e17", null ],
     [ "m_BillboardParticleData", "d7/da0/classez_particle_quad_render_data.htm#a502deb9f17ac660be189c6b457d7f0fa", null ],

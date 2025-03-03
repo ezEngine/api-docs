@@ -5,7 +5,7 @@ var classez_particle_quad_renderer =
     [ "ConfigureRenderMode", "da/d6b/classez_particle_quad_renderer.htm#a1f80abb55382dbac353b0a4a841a8f03", null ],
     [ "GetSupportedRenderDataTypes", "da/d6b/classez_particle_quad_renderer.htm#aa03ab341d450837ce7964b19c98a7411", null ],
     [ "RenderBatch", "da/d6b/classez_particle_quad_renderer.htm#a54b82b5ad98ae7c0e3192f8cfe4de537", null ],
-    [ "m_hBaseDataBuffer", "da/d6b/classez_particle_quad_renderer.htm#aff0a9b79ad62faa41cf80846eecae365", null ],
-    [ "m_hBillboardDataBuffer", "da/d6b/classez_particle_quad_renderer.htm#ae15f64da77eacce3b4705b38a5691f24", null ],
-    [ "m_hTangentDataBuffer", "da/d6b/classez_particle_quad_renderer.htm#a97c2dff9c73b30c4d29a89546b7afc13", null ]
+    [ "m_BaseDataBuffer", "da/d6b/classez_particle_quad_renderer.htm#a6b7cb5ac6960f090218fdad22909b89e", null ],
+    [ "m_BillboardDataBuffer", "da/d6b/classez_particle_quad_renderer.htm#aabf56998a63b12d6b1f1fa700cbbc7fc", null ],
+    [ "m_TangentDataBuffer", "da/d6b/classez_particle_quad_renderer.htm#a2144f422547edec4b958d11e3b92fb85", null ]
 ];

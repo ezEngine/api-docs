@@ -1,7 +1,7 @@
 var classez_mesh_render_data =
 [
-    [ "FillBatchIdAndSortingKey", "d7/d71/classez_mesh_render_data.htm#a0f7c823aa4f7f5140b0b0c82da67263a", null ],
-    [ "FillBatchIdAndSortingKeyInternal", "d7/d71/classez_mesh_render_data.htm#a1342228c0fc9b6d17d398d8d91c0941f", null ],
+    [ "CanBatch", "d7/d71/classez_mesh_render_data.htm#aff1af7bb8ca5dfade7655a3c731e50b2", null ],
+    [ "FillSortingKey", "d7/d71/classez_mesh_render_data.htm#a28d93631ea520f7339c5162d5a8062bc", null ],
     [ "m_Color", "d7/d71/classez_mesh_render_data.htm#afe8f41e626a3b6cfeefd0d7e842d1d1f", null ],
     [ "m_hMaterial", "d7/d71/classez_mesh_render_data.htm#ae3ca037dc068d5c22fe567f40dbfbb62", null ],
     [ "m_hMesh", "d7/d71/classez_mesh_render_data.htm#a41db4f0fbe2db61a9220bb3862f26f20", null ],

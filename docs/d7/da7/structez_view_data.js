@@ -1,8 +1,11 @@
 var structez_view_data =
 [
     [ "ezViewData", "d7/da7/structez_view_data.htm#a3616c641dd5a4f95428c9da45d96795c", null ],
-    [ "ComputePickingRay", "d7/da7/structez_view_data.htm#ae4654b9a48506f0f3b0f1cf4395fa148", null ],
-    [ "ComputeScreenSpacePos", "d7/da7/structez_view_data.htm#a4188801a6f10a24b45b85f33df086a37", null ],
+    [ "ComputePickingRay", "d7/da7/structez_view_data.htm#a7bf167ff39d18f4a69d846e2c8682978", null ],
+    [ "ComputeScreenSpacePos", "d7/da7/structez_view_data.htm#a036cd60a79223acd4565fb862abdf6a1", null ],
+    [ "ComputeWorldSpacePos", "d7/da7/structez_view_data.htm#a8ac46f70523b5b8567869716ae47b04e", null ],
+    [ "ConvertScreenNormalizedPosToPixelPos", "d7/da7/structez_view_data.htm#a8094663ce8c018de27b005222d626478", null ],
+    [ "ConvertScreenPixelPosToNormalizedPos", "d7/da7/structez_view_data.htm#a7f69ae12c0ab6914db24adb9f37651d2", null ],
     [ "m_CameraUsageHint", "d7/da7/structez_view_data.htm#ac5fbc2a1016294f9ef5877f386091d8f", null ],
     [ "m_hSwapChain", "d7/da7/structez_view_data.htm#a8a1da2f3a2d8002d62d5c8b02de393a0", null ],
     [ "m_InverseProjectionMatrix", "d7/da7/structez_view_data.htm#a7749434889c8fe46a89bb0c1e72f3fb0", null ],

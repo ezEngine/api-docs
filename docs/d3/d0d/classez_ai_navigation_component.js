@@ -9,6 +9,9 @@ var classez_ai_navigation_component =
     [ "SerializeComponent", "d3/d0d/classez_ai_navigation_component.htm#a588b912fe8a8d1003119ffa1f03c0c1c", null ],
     [ "SetDestination", "d3/d0d/classez_ai_navigation_component.htm#a4ef8e0509171916beac6521212c0fefa", null ],
     [ "Steer", "d3/d0d/classez_ai_navigation_component.htm#aab67c8d6120100c7a7cc8bb7a162079c", null ],
+    [ "StopWalking", "d3/d0d/classez_ai_navigation_component.htm#aa0d37a88763fe712bd4478b3f377a1ff", null ],
+    [ "Turn", "d3/d0d/classez_ai_navigation_component.htm#ad5228ba2f14895fbfb1f8c92f7fdd1d4", null ],
+    [ "TurnTowards", "d3/d0d/classez_ai_navigation_component.htm#aa27d900baf1ba7322739d5c726384363", null ],
     [ "Update", "d3/d0d/classez_ai_navigation_component.htm#a8db8e337c229d0e0d256f4f953fe64f0", null ],
     [ "m_bAllowPartialPath", "d3/d0d/classez_ai_navigation_component.htm#a76da0e9b63a1c217ee306230b45ddbe1", null ],
     [ "m_DebugFlags", "d3/d0d/classez_ai_navigation_component.htm#ac8d86f6455c90c7fc4715b7493ee1e73", null ],
@@ -19,11 +22,13 @@ var classez_ai_navigation_component =
     [ "m_fFootRadius", "d3/d0d/classez_ai_navigation_component.htm#a2de4c46590aa88de9b51f54ac6b7e161", null ],
     [ "m_fReachedDistance", "d3/d0d/classez_ai_navigation_component.htm#a99a49c45ce76c926af5fb1f0141f29fe", null ],
     [ "m_fSpeed", "d3/d0d/classez_ai_navigation_component.htm#ab90e807b5de6308ba3fb2b6fca62498b", null ],
+    [ "m_fStopWalkDistance", "d3/d0d/classez_ai_navigation_component.htm#a0f722d8f5b0547010e95b686498406ac", null ],
     [ "m_Navigation", "d3/d0d/classez_ai_navigation_component.htm#a02790f0037515cb5ebe4c7d5d473b414", null ],
     [ "m_sNavmeshConfig", "d3/d0d/classez_ai_navigation_component.htm#a882d1898b4bcae85010cb3705c534266", null ],
     [ "m_sPathSearchConfig", "d3/d0d/classez_ai_navigation_component.htm#a42ab4e8baab05d57cc665c07c157b282", null ],
     [ "m_State", "d3/d0d/classez_ai_navigation_component.htm#a176e233b94f0e7f0c81140aebd06e965", null ],
     [ "m_Steering", "d3/d0d/classez_ai_navigation_component.htm#aebcd2bad8d4d408f83b971f4024da184", null ],
     [ "m_uiCollisionLayer", "d3/d0d/classez_ai_navigation_component.htm#afe9bdd4efbf5a65149e4fc463a72b75b", null ],
-    [ "m_uiSkipNextFrames", "d3/d0d/classez_ai_navigation_component.htm#a60390667bd11605483fe5152cddede59", null ]
+    [ "m_uiSkipNextFrames", "d3/d0d/classez_ai_navigation_component.htm#a60390667bd11605483fe5152cddede59", null ],
+    [ "m_vTurnTowardsPos", "d3/d0d/classez_ai_navigation_component.htm#a9f49611e50814964a57072923de98b97", null ]
 ];

@@ -8,6 +8,7 @@ var classez_tag_set_template =
     [ "IsAnySet", "df/d2d/classez_tag_set_template.htm#a9a3214c81e485934ff59c298b4cdd61c", null ],
     [ "IsEmpty", "df/d2d/classez_tag_set_template.htm#a06117bf17098762da3a6ed9af61900d7", null ],
     [ "IsSet", "df/d2d/classez_tag_set_template.htm#a8c0b707f9f94e30f547468908e717e69", null ],
+    [ "IsSetByName", "df/d2d/classez_tag_set_template.htm#a3aebf38c83b24fd730a88b15a5ee9c1f", null ],
     [ "IsSetByName", "df/d2d/classez_tag_set_template.htm#a5433fab2d5c66350938661589ebee457", null ],
     [ "Load", "df/d2d/classez_tag_set_template.htm#a8c7aea7e10915798747312655a9f3dff", null ],
     [ "operator!=", "df/d2d/classez_tag_set_template.htm#abec36342b8a515aa115a1ddf31488f09", null ],

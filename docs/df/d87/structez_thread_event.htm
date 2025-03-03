@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 24.09</span>
+   &#160;<span id="projectnumber">Release 25.03</span>
    </div>
   </td>
  </tr>
@@ -94,10 +94,14 @@ $(document).ready(function(){initNavTree('df/d87/structez_thread_event.htm','../
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a4f93b4be4d9010fd58a4769273766f11"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d87/structez_thread_event.htm#a4f93b4be4d9010fd58a4769273766f11">Type</a> { <a class="el" href="../../df/d87/structez_thread_event.htm#a4f93b4be4d9010fd58a4769273766f11a11b291936db953288e049b36bb543604">Type::ThreadCreated</a>, 
+<tr class="memitem:a4f93b4be4d9010fd58a4769273766f11"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d87/structez_thread_event.htm#a4f93b4be4d9010fd58a4769273766f11">Type</a> { <br />
+&#160;&#160;<a class="el" href="../../df/d87/structez_thread_event.htm#a4f93b4be4d9010fd58a4769273766f11a11b291936db953288e049b36bb543604">Type::ThreadCreated</a>, 
 <a class="el" href="../../df/d87/structez_thread_event.htm#a4f93b4be4d9010fd58a4769273766f11a52c7c550b893f8f292ff4a7989cdb90e">Type::ThreadDestroyed</a>, 
 <a class="el" href="../../df/d87/structez_thread_event.htm#a4f93b4be4d9010fd58a4769273766f11a0751f3bd0d12d93ca4aaf7e9ea758e39">Type::StartingExecution</a>, 
-<a class="el" href="../../df/d87/structez_thread_event.htm#a4f93b4be4d9010fd58a4769273766f11a4ad2dfcc55361022c8187fd09292aeca">Type::FinishedExecution</a>
+<a class="el" href="../../df/d87/structez_thread_event.htm#a4f93b4be4d9010fd58a4769273766f11a4ad2dfcc55361022c8187fd09292aeca">Type::FinishedExecution</a>, 
+<br />
+&#160;&#160;<a class="el" href="../../df/d87/structez_thread_event.htm#a4f93b4be4d9010fd58a4769273766f11aed4d517dc85e644cd7f64a73d86a3ea4">Type::ClearThreadLocals</a>
+<br />
  }</td></tr>
 <tr class="separator:a4f93b4be4d9010fd58a4769273766f11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -131,13 +135,15 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a4f93b4be4d9010fd58a4769273766f11a11b291936db953288e049b36bb543604"></a>ThreadCreated&#160;</td><td class="fielddoc"><p>Called on the thread that creates the <a class="el" href="../../d2/d18/classez_thread.htm" title="This class is the base class for platform independent long running threads.">ezThread</a> instance. </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a4f93b4be4d9010fd58a4769273766f11a11b291936db953288e049b36bb543604"></a>ThreadCreated&#160;</td><td class="fielddoc"><p>Called on the thread that creates the <a class="el" href="../../d2/d18/classez_thread.htm" title="This class is the base class for platform independent long running threads.">ezThread</a> instance (not the <a class="el" href="../../d2/d18/classez_thread.htm" title="This class is the base class for platform independent long running threads.">ezThread</a> itself). </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a4f93b4be4d9010fd58a4769273766f11a52c7c550b893f8f292ff4a7989cdb90e"></a>ThreadDestroyed&#160;</td><td class="fielddoc"><p>Called on the thread that destroys the <a class="el" href="../../d2/d18/classez_thread.htm" title="This class is the base class for platform independent long running threads.">ezThread</a> instance. </p>
+<tr><td class="fieldname"><a id="a4f93b4be4d9010fd58a4769273766f11a52c7c550b893f8f292ff4a7989cdb90e"></a>ThreadDestroyed&#160;</td><td class="fielddoc"><p>Called on the thread that destroys the <a class="el" href="../../d2/d18/classez_thread.htm" title="This class is the base class for platform independent long running threads.">ezThread</a> instance (not the <a class="el" href="../../d2/d18/classez_thread.htm" title="This class is the base class for platform independent long running threads.">ezThread</a> itself). </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a4f93b4be4d9010fd58a4769273766f11a0751f3bd0d12d93ca4aaf7e9ea758e39"></a>StartingExecution&#160;</td><td class="fielddoc"><p>Called on the thread that executes the <a class="el" href="../../d2/d18/classez_thread.htm" title="This class is the base class for platform independent long running threads.">ezThread</a> instance. </p>
+<tr><td class="fieldname"><a id="a4f93b4be4d9010fd58a4769273766f11a0751f3bd0d12d93ca4aaf7e9ea758e39"></a>StartingExecution&#160;</td><td class="fielddoc"><p>Called on the <a class="el" href="../../d2/d18/classez_thread.htm" title="This class is the base class for platform independent long running threads.">ezThread</a> before the Run() method is executed. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a4f93b4be4d9010fd58a4769273766f11a4ad2dfcc55361022c8187fd09292aeca"></a>FinishedExecution&#160;</td><td class="fielddoc"><p>Called on the thread that executes the <a class="el" href="../../d2/d18/classez_thread.htm" title="This class is the base class for platform independent long running threads.">ezThread</a> instance. </p>
+<tr><td class="fieldname"><a id="a4f93b4be4d9010fd58a4769273766f11a4ad2dfcc55361022c8187fd09292aeca"></a>FinishedExecution&#160;</td><td class="fielddoc"><p>Called on the <a class="el" href="../../d2/d18/classez_thread.htm" title="This class is the base class for platform independent long running threads.">ezThread</a> after the Run() method was executed. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a4f93b4be4d9010fd58a4769273766f11aed4d517dc85e644cd7f64a73d86a3ea4"></a>ClearThreadLocals&#160;</td><td class="fielddoc"><p>Potentially called on the <a class="el" href="../../d2/d18/classez_thread.htm" title="This class is the base class for platform independent long running threads.">ezThread</a> (currently only for task system threads) at a time when plugins should clean up thread-local storage. </p>
 </td></tr>
 </table>
 
@@ -152,7 +158,7 @@ Public Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../df/d87/structez_thread_event.htm">ezThreadEvent</a></li>
-    <li class="footer">Generated on Sun Aug 25 2024 13:06:34 for ezEngine by
+    <li class="footer">Generated on Mon Mar 3 2025 17:23:57 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

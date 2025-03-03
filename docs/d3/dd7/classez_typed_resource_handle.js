@@ -9,6 +9,7 @@ var classez_typed_resource_handle =
     [ "AssignFromTypelessHandle", "d3/dd7/classez_typed_resource_handle.htm#a171d300909258b3f88d84593b14542ce", null ],
     [ "GetResourceID", "d3/dd7/classez_typed_resource_handle.htm#ada6d826ac72e2fa53fec339c00eab540", null ],
     [ "GetResourceIDHash", "d3/dd7/classez_typed_resource_handle.htm#a7e589a544fee87ec70806658d0a76e5e", null ],
+    [ "GetResourceIdOrDescription", "d3/dd7/classez_typed_resource_handle.htm#a34e0144541e2d77311de4d5529c302aa", null ],
     [ "Invalidate", "d3/dd7/classez_typed_resource_handle.htm#ad94613b907cb34f90ef2f57424fe87c3", null ],
     [ "IsValid", "d3/dd7/classez_typed_resource_handle.htm#ae477c3d836b941ece5ca0a77abd7e8cc", null ],
     [ "operator bool", "d3/dd7/classez_typed_resource_handle.htm#a4c562e5737d157e42be71fb68f1a10fa", null ],

@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ezEngine
-   &#160;<span id="projectnumber">Release 24.09</span>
+   &#160;<span id="projectnumber">Release 25.03</span>
    </div>
   </td>
  </tr>
@@ -89,30 +89,77 @@ $(document).ready(function(){initNavTree('d3/dae/_substance_package_asset_window
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;Foundation/Basics.h&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;GuiFoundation/DocumentWindow/DocumentWindow.moc.h&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;ToolsFoundation/Object/DocumentObjectManager.h&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="../../dd/df4/classez_qt_substance_package_asset_window.htm">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../dd/df4/classez_qt_substance_package_asset_window.htm">ezQtSubstancePackageAssetWindow</a> : <span class="keyword">public</span> <a class="code" href="../../d1/d13/classez_qt_document_window.htm">ezQtDocumentWindow</a></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  Q_OBJECT</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;EditorEngineProcessFramework/EngineProcess/ViewRenderSettings.h&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;EditorFramework/DocumentWindow/EngineDocumentWindow.moc.h&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;GuiFoundation/Action/BaseActions.h&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;ToolsFoundation/Object/DocumentObjectManager.h&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">class </span><a class="code" href="../../d9/d3c/classez_qt_orbit_cam_view_widget.htm">ezQtOrbitCamViewWidget</a>;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">class </span><a class="code" href="../../d8/d9e/classez_substance_package_asset_document.htm">ezSubstancePackageAssetDocument</a>;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <a class="code" href="../../dd/df4/classez_qt_substance_package_asset_window.htm">ezQtSubstancePackageAssetWindow</a>(<a class="code" href="../../d6/dd3/classez_document.htm">ezDocument</a>* pDocument);</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="../../dd/df4/classez_qt_substance_package_asset_window.htm#ad314a156e6e1505c5764a50019902c4a">   14</a></span>&#160;  <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="../../dd/df4/classez_qt_substance_package_asset_window.htm#ad314a156e6e1505c5764a50019902c4a">GetWindowLayoutGroupName</a>()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> <span class="stringliteral">&quot;SubstancePackageAsset&quot;</span>; }</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;};</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="../../dd/df4/classez_qt_substance_package_asset_window.htm">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../dd/df4/classez_qt_substance_package_asset_window.htm">ezQtSubstancePackageAssetWindow</a> : <span class="keyword">public</span> <a class="code" href="../../db/df1/classez_qt_engine_document_window.htm">ezQtEngineDocumentWindow</a></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  Q_OBJECT</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <a class="code" href="../../dd/df4/classez_qt_substance_package_asset_window.htm">ezQtSubstancePackageAssetWindow</a>(<a class="code" href="../../d8/d9e/classez_substance_package_asset_document.htm">ezSubstancePackageAssetDocument</a>* pDocument);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="../../dd/df4/classez_qt_substance_package_asset_window.htm#ad314a156e6e1505c5764a50019902c4a">   18</a></span>&#160;  <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="../../dd/df4/classez_qt_substance_package_asset_window.htm#ad314a156e6e1505c5764a50019902c4a">GetWindowLayoutGroupName</a>()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> <span class="stringliteral">&quot;SubstancePackageAsset&quot;</span>; }</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> InternalRedraw() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keywordtype">void</span> SendRedrawMsg();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <a class="code" href="../../db/d36/structez_engine_view_config.htm">ezEngineViewConfig</a> m_ViewConfig;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <a class="code" href="../../d9/d3c/classez_qt_orbit_cam_view_widget.htm">ezQtOrbitCamViewWidget</a>* m_pViewWidget;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;};</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="../../db/dc6/classez_substance_select_output_action.htm">   30</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../db/dc6/classez_substance_select_output_action.htm">ezSubstanceSelectOutputAction</a> : <span class="keyword">public</span> <a class="code" href="../../d8/d87/classez_dynamic_menu_action.htm">ezDynamicMenuAction</a></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  EZ_ADD_DYNAMIC_REFLECTION(<a class="code" href="../../db/dc6/classez_substance_select_output_action.htm">ezSubstanceSelectOutputAction</a>, <a class="code" href="../../d8/d87/classez_dynamic_menu_action.htm">ezDynamicMenuAction</a>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <a class="code" href="../../db/dc6/classez_substance_select_output_action.htm">ezSubstanceSelectOutputAction</a>(<span class="keyword">const</span> <a class="code" href="../../dc/dcc/structez_action_context.htm">ezActionContext</a>&amp; context, <span class="keyword">const</span> <span class="keywordtype">char</span>* szName, <span class="keyword">const</span> <span class="keywordtype">char</span>* szIconPath);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> GetEntries(<a class="code" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;Item&gt;</a>&amp; out_entries) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> Execute(<span class="keyword">const</span> <a class="code" href="../../de/de6/classez_variant.htm">ezVariant</a>&amp; value) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;};</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="../../d1/dc0/classez_substance_package_asset_actions.htm">   43</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d1/dc0/classez_substance_package_asset_actions.htm">ezSubstancePackageAssetActions</a></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> RegisterActions();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> UnregisterActions();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> MapToolbarActions(<a class="code" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sMapping);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d6/da8/classez_action_descriptor_handle.htm">ezActionDescriptorHandle</a> s_hSelectedOutput;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d6/da8/classez_action_descriptor_handle.htm">ezActionDescriptorHandle</a> s_hTextureChannelMode;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d6/da8/classez_action_descriptor_handle.htm">ezActionDescriptorHandle</a> s_hLodSlider;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassez_document_htm"><div class="ttname"><a href="../../d6/dd3/classez_document.htm">ezDocument</a></div><div class="ttdef"><b>Definition:</b> Document.h:56</div></div>
-<div class="ttc" id="aclassez_qt_substance_package_asset_window_htm_ad314a156e6e1505c5764a50019902c4a"><div class="ttname"><a href="../../dd/df4/classez_qt_substance_package_asset_window.htm#ad314a156e6e1505c5764a50019902c4a">ezQtSubstancePackageAssetWindow::GetWindowLayoutGroupName</a></div><div class="ttdeci">virtual const char * GetWindowLayoutGroupName() const override</div><div class="ttdoc">The 'GroupName' is used for serializing window layouts. It should be unique among different window ty...</div><div class="ttdef"><b>Definition:</b> SubstancePackageAssetWindow.moc.h:14</div></div>
-<div class="ttc" id="aclassez_qt_document_window_htm"><div class="ttname"><a href="../../d1/d13/classez_qt_document_window.htm">ezQtDocumentWindow</a></div><div class="ttdoc">Base class for all document windows. Handles the most basic document window management.</div><div class="ttdef"><b>Definition:</b> DocumentWindow.moc.h:33</div></div>
-<div class="ttc" id="aclassez_qt_substance_package_asset_window_htm"><div class="ttname"><a href="../../dd/df4/classez_qt_substance_package_asset_window.htm">ezQtSubstancePackageAssetWindow</a></div><div class="ttdef"><b>Definition:</b> SubstancePackageAssetWindow.moc.h:7</div></div>
+<div class="ttc" id="aclassez_qt_substance_package_asset_window_htm_ad314a156e6e1505c5764a50019902c4a"><div class="ttname"><a href="../../dd/df4/classez_qt_substance_package_asset_window.htm#ad314a156e6e1505c5764a50019902c4a">ezQtSubstancePackageAssetWindow::GetWindowLayoutGroupName</a></div><div class="ttdeci">virtual const char * GetWindowLayoutGroupName() const override</div><div class="ttdoc">The 'GroupName' is used for serializing window layouts. It should be unique among different window ty...</div><div class="ttdef"><b>Definition:</b> SubstancePackageAssetWindow.moc.h:18</div></div>
+<div class="ttc" id="aclassez_dynamic_menu_action_htm"><div class="ttname"><a href="../../d8/d87/classez_dynamic_menu_action.htm">ezDynamicMenuAction</a></div><div class="ttdef"><b>Definition:</b> BaseActions.h:68</div></div>
+<div class="ttc" id="aclassez_substance_package_asset_actions_htm"><div class="ttname"><a href="../../d1/dc0/classez_substance_package_asset_actions.htm">ezSubstancePackageAssetActions</a></div><div class="ttdef"><b>Definition:</b> SubstancePackageAssetWindow.moc.h:43</div></div>
+<div class="ttc" id="aclassez_substance_package_asset_document_htm"><div class="ttname"><a href="../../d8/d9e/classez_substance_package_asset_document.htm">ezSubstancePackageAssetDocument</a></div><div class="ttdef"><b>Definition:</b> SubstancePackageAsset.h:111</div></div>
+<div class="ttc" id="aclassez_qt_orbit_cam_view_widget_htm"><div class="ttname"><a href="../../d9/d3c/classez_qt_orbit_cam_view_widget.htm">ezQtOrbitCamViewWidget</a></div><div class="ttdef"><b>Definition:</b> OrbitCamViewWidget.moc.h:10</div></div>
+<div class="ttc" id="aclassez_action_descriptor_handle_htm"><div class="ttname"><a href="../../d6/da8/classez_action_descriptor_handle.htm">ezActionDescriptorHandle</a></div><div class="ttdoc">Handle for a ezAction.</div><div class="ttdef"><b>Definition:</b> Action.h:26</div></div>
+<div class="ttc" id="astructez_action_context_htm"><div class="ttname"><a href="../../dc/dcc/structez_action_context.htm">ezActionContext</a></div><div class="ttdef"><b>Definition:</b> Action.h:66</div></div>
+<div class="ttc" id="aclassez_substance_select_output_action_htm"><div class="ttname"><a href="../../db/dc6/classez_substance_select_output_action.htm">ezSubstanceSelectOutputAction</a></div><div class="ttdef"><b>Definition:</b> SubstancePackageAssetWindow.moc.h:30</div></div>
+<div class="ttc" id="aclassez_dynamic_array_htm"><div class="ttname"><a href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray</a></div><div class="ttdef"><b>Definition:</b> DynamicArray.h:80</div></div>
+<div class="ttc" id="aclassez_variant_htm"><div class="ttname"><a href="../../de/de6/classez_variant.htm">ezVariant</a></div><div class="ttdoc">ezVariant is a class that can store different types of variables, which is useful in situations where...</div><div class="ttdef"><b>Definition:</b> Variant.h:43</div></div>
+<div class="ttc" id="aclassez_qt_substance_package_asset_window_htm"><div class="ttname"><a href="../../dd/df4/classez_qt_substance_package_asset_window.htm">ezQtSubstancePackageAssetWindow</a></div><div class="ttdef"><b>Definition:</b> SubstancePackageAssetWindow.moc.h:11</div></div>
+<div class="ttc" id="aclassez_qt_engine_document_window_htm"><div class="ttname"><a href="../../db/df1/classez_qt_engine_document_window.htm">ezQtEngineDocumentWindow</a></div><div class="ttdoc">Base class for all document windows that need a connection to the engine process, and might want to r...</div><div class="ttdef"><b>Definition:</b> EngineDocumentWindow.moc.h:36</div></div>
+<div class="ttc" id="aclassez_string_view_htm"><div class="ttname"><a href="../../d9/d18/classez_string_view.htm">ezStringView</a></div><div class="ttdoc">ezStringView represent a read-only sub-string of a larger string, as it can store a dedicated string ...</div><div class="ttdef"><b>Definition:</b> StringView.h:33</div></div>
+<div class="ttc" id="astructez_engine_view_config_htm"><div class="ttname"><a href="../../db/d36/structez_engine_view_config.htm">ezEngineViewConfig</a></div><div class="ttdef"><b>Definition:</b> ViewRenderSettings.h:25</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_c3dd6abea2527457e93dbb576186601d.htm">EditorPlugins</a></li><li class="navelem"><a class="el" href="../../dir_a566e0e9691b53421ee0c2da247062bc.htm">Substance</a></li><li class="navelem"><a class="el" href="../../dir_00ef10af092354eb2f95380b7c08d28c.htm">EditorPluginSubstance</a></li><li class="navelem"><a class="el" href="../../dir_f487dbb8f70c195a3a466c1c673dd44f.htm">Assets</a></li><li class="navelem"><b>SubstancePackageAssetWindow.moc.h</b></li>
-    <li class="footer">Generated on Sun Aug 25 2024 13:06:13 for ezEngine by
+    <li class="footer">Generated on Mon Mar 3 2025 17:23:38 for ezEngine by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

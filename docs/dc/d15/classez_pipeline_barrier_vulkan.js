@@ -2,6 +2,7 @@ var classez_pipeline_barrier_vulkan =
 [
     [ "ezPipelineBarrierVulkan", "dc/d15/classez_pipeline_barrier_vulkan.htm#a6f1ed7e815b77c01be24f13f6ed6b7b0", null ],
     [ "AccessBuffer", "dc/d15/classez_pipeline_barrier_vulkan.htm#aa83c3950a43cbea7b104273a75fc58f7", null ],
+    [ "AddBufferBarrierInternal", "dc/d15/classez_pipeline_barrier_vulkan.htm#a6d0d0e19c2b98b1b374440e718b42743", null ],
     [ "BufferDestroyed", "dc/d15/classez_pipeline_barrier_vulkan.htm#af3ffe4ea41edcb0444d1432b4acb64e1", null ],
     [ "EnsureImageLayout", "dc/d15/classez_pipeline_barrier_vulkan.htm#ad03ad4936294ca0b28b2943479f38b4c", null ],
     [ "EnsureImageLayout", "dc/d15/classez_pipeline_barrier_vulkan.htm#a4309be22b360fec93571c194549a7cb5", null ],

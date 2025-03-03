@@ -5,6 +5,7 @@ var classez_editor_shape_icons_extractor =
     [ "Deserialize", "dd/dc5/classez_editor_shape_icons_extractor.htm#a966d099645652f37b998cd0455d5c74a", null ],
     [ "Extract", "dd/dc5/classez_editor_shape_icons_extractor.htm#a1efc8be5b9c6e7d497a984fba4651603", null ],
     [ "GetSceneContext", "dd/dc5/classez_editor_shape_icons_extractor.htm#a8df1acbc17216a4e711b15a4908f9f6e", null ],
+    [ "PostSortAndBatch", "dd/dc5/classez_editor_shape_icons_extractor.htm#a01b2fbec9f7c0e633dca8c694bcf7c8d", null ],
     [ "Serialize", "dd/dc5/classez_editor_shape_icons_extractor.htm#ab1518c150e4f46f4e4abb3c9fc854328", null ],
     [ "SetSceneContext", "dd/dc5/classez_editor_shape_icons_extractor.htm#a25816fb341adb6c5a656d5f5138dc9d0", null ]
 ];

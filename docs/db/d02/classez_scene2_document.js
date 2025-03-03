@@ -10,6 +10,7 @@ var classez_scene2_document =
     [ "GetLayerObject", "db/d02/classez_scene2_document.htm#a0128de61b44241b2d0168a14d7da7f9d", null ],
     [ "GetLayerSelectionManager", "db/d02/classez_scene2_document.htm#a552e4f0ac360fd6fbb980d2b23483aea", null ],
     [ "GetLoadedLayers", "db/d02/classez_scene2_document.htm#a7b2886abb586c69e215d013fceb86943", null ],
+    [ "GetRedirectedGameObjectDoc", "db/d02/classez_scene2_document.htm#ac7147c0deae4899ea71df2af59ac5ff1", null ],
     [ "GetSceneCommandHistory", "db/d02/classez_scene2_document.htm#ac78cbc64318a47ccda98c5e1fb626b94", null ],
     [ "GetSceneDocumentObjectMetaData", "db/d02/classez_scene2_document.htm#ab4dc7ba5e7220dae7d6da07c49e86858", null ],
     [ "GetSceneDocumentObjectMetaData", "db/d02/classez_scene2_document.htm#adc44c76147655e12cd3429985a9237d3", null ],
@@ -27,10 +28,12 @@ var classez_scene2_document =
     [ "IsAnyLayerModified", "db/d02/classez_scene2_document.htm#aa3f7980060de4b7edad01f0c5e4da76b", null ],
     [ "IsLayerLoaded", "db/d02/classez_scene2_document.htm#a51eb40d086ae74197dad3f258c65cddf", null ],
     [ "IsLayerVisible", "db/d02/classez_scene2_document.htm#a4a898c469dd8e7542244043a991487bd", null ],
+    [ "PreventDoubleSelectionChange", "db/d02/classez_scene2_document.htm#a4390c5286854553b76e226d04372cea3", null ],
     [ "SendGameWorldToEngine", "db/d02/classez_scene2_document.htm#a6ca8b06655b99b5ee448dfdce262c24e", null ],
     [ "SetActiveLayer", "db/d02/classez_scene2_document.htm#ac2664d0c15b06ecda2c75c9b98b56efc", null ],
     [ "SetLayerLoaded", "db/d02/classez_scene2_document.htm#ac77c47a239302ab2d71026c40289f2d1", null ],
     [ "SetLayerVisible", "db/d02/classez_scene2_document.htm#aeac5b08ff1a661685302284bfb09f7f2", null ],
+    [ "UndoSelection", "db/d02/classez_scene2_document.htm#a994f0e702d372118bbd7489701d1e597", null ],
     [ "ezSceneLayer", "db/d02/classez_scene2_document.htm#a9447c33fc639fcd7dc3852f16da29e85", null ],
     [ "m_LayerEvents", "db/d02/classez_scene2_document.htm#ae3c3b0b6d1336b76b2de0106798085fb", null ]
 ];

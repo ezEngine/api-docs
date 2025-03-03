@@ -17,6 +17,7 @@ var classez_preprocessor =
     [ "SetCustomFileCache", "db/dfd/classez_preprocessor.htm#ad96b9e4417188ed11e9ad94d348a2f18", null ],
     [ "SetFileLocatorFunction", "db/dfd/classez_preprocessor.htm#a08887e2a316c95f2c63f4021d8a4e09a", null ],
     [ "SetFileOpenFunction", "db/dfd/classez_preprocessor.htm#a5aa7130c854b8327834e674e699530dd", null ],
+    [ "SetImplicitPragmaOnce", "db/dfd/classez_preprocessor.htm#a5d0c771fd8dfc68358bfd764ddebc439", null ],
     [ "SetLogInterface", "db/dfd/classez_preprocessor.htm#a47b7da7b7e5fa3cb7942bd15472fafa7", null ],
     [ "SetPassThroughLine", "db/dfd/classez_preprocessor.htm#abf837cc3de89fd52b259a0bb87f4c3e0", null ],
     [ "SetPassThroughPragma", "db/dfd/classez_preprocessor.htm#a00b290ccf8cc0423d324a6286b1d455e", null ],

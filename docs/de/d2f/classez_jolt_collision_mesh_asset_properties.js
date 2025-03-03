@@ -11,6 +11,7 @@ var classez_jolt_collision_mesh_asset_properties =
     [ "m_fRadius", "de/d2f/classez_jolt_collision_mesh_asset_properties.htm#a25332fda567e5064ff78ed1c85e2dfd8", null ],
     [ "m_fRadius2", "de/d2f/classez_jolt_collision_mesh_asset_properties.htm#a33383dcc49447cf958da8a1e0b3aeb41", null ],
     [ "m_fUniformScaling", "de/d2f/classez_jolt_collision_mesh_asset_properties.htm#af717aaeccbfc5b50fa5f6e46a348ff09", null ],
+    [ "m_ImportTransform", "de/d2f/classez_jolt_collision_mesh_asset_properties.htm#a926363310e3d3e7b255b6d29d3de85da", null ],
     [ "m_RightDir", "de/d2f/classez_jolt_collision_mesh_asset_properties.htm#a7af2c51e3bda6f830c010a2e0d2f443c", null ],
     [ "m_sConvexMeshSurface", "de/d2f/classez_jolt_collision_mesh_asset_properties.htm#ad175701bd1d7c8dfd56472b0177120bd", null ],
     [ "m_Slots", "de/d2f/classez_jolt_collision_mesh_asset_properties.htm#a18df9ec5bb9e6c3904798189a6e7a566", null ],

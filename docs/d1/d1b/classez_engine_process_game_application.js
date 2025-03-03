@@ -14,6 +14,6 @@ var classez_engine_process_game_application =
     [ "Init_FileSystem_ConfigureDataDirs", "d1/d1b/classez_engine_process_game_application.htm#ad7657dae4542c281954ac22e18e0cf75", null ],
     [ "Init_LoadProjectPlugins", "d1/d1b/classez_engine_process_game_application.htm#afd6955fde22eb028ed48d8e376c4ff9c", null ],
     [ "LogWriter", "d1/d1b/classez_engine_process_game_application.htm#ab3949ad34237dcb5afba54dccb010722", null ],
-    [ "Run", "d1/d1b/classez_engine_process_game_application.htm#ab956e2222bcc2b026518a93feb2d0967", null ],
+    [ "Run", "d1/d1b/classez_engine_process_game_application.htm#acc787482cc73ad04c7d8ec61a7750272", null ],
     [ "Run_ProcessApplicationInput", "d1/d1b/classez_engine_process_game_application.htm#accce965c57d025e5ebeb666b91fe043b", null ]
 ];

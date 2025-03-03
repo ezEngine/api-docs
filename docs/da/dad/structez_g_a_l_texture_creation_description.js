@@ -2,9 +2,9 @@ var structez_g_a_l_texture_creation_description =
 [
     [ "SetAsRenderTarget", "da/dad/structez_g_a_l_texture_creation_description.htm#a1de42270882d5334e66cf9833cfbbd72", null ],
     [ "m_bAllowDynamicMipGeneration", "da/dad/structez_g_a_l_texture_creation_description.htm#a4867b05be821d2946aaf7b8dcc40196e", null ],
+    [ "m_bAllowRenderTargetView", "da/dad/structez_g_a_l_texture_creation_description.htm#a4068282a1edc3d07546ca000e32f7200", null ],
     [ "m_bAllowShaderResourceView", "da/dad/structez_g_a_l_texture_creation_description.htm#aa78db00aade24e843901ae7a778eff8b", null ],
     [ "m_bAllowUAV", "da/dad/structez_g_a_l_texture_creation_description.htm#a4b179ccedb6019e2ba6dd036c07e5494", null ],
-    [ "m_bCreateRenderTarget", "da/dad/structez_g_a_l_texture_creation_description.htm#a71dcb694123f873d4b67e54d00a2f50a", null ],
     [ "m_Format", "da/dad/structez_g_a_l_texture_creation_description.htm#a813cd2f87aae7a97ebafe3f6982caad5", null ],
     [ "m_pExisitingNativeObject", "da/dad/structez_g_a_l_texture_creation_description.htm#a36464f4e9f5a071ceef063b367829d01", null ],
     [ "m_ResourceAccess", "da/dad/structez_g_a_l_texture_creation_description.htm#ad643988d9ab765cdd65e495bb6337b3f", null ],

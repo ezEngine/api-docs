@@ -11,7 +11,7 @@ var classez_visual_script_graph_description =
     [ "UserDataArray", "d9/d17/classez_visual_script_graph_description.htm#a21ff43b79e9a71d7831c286d4a389102", null ],
     [ "ezVisualScriptGraphDescription", "d9/d17/classez_visual_script_graph_description.htm#a6290a2de8d4a69709310b2fbec6336b1", null ],
     [ "~ezVisualScriptGraphDescription", "d9/d17/classez_visual_script_graph_description.htm#a2f794878b93e2610374946377727c40c", null ],
-    [ "Deserialize", "d9/d17/classez_visual_script_graph_description.htm#a9ab13823b42dc7be8b3a715c7634aff4", null ],
+    [ "Deserialize", "d9/d17/classez_visual_script_graph_description.htm#a346e8c3cf926fd48774d8328791209d5", null ],
     [ "GetLocalDataDesc", "d9/d17/classez_visual_script_graph_description.htm#ab8c4ad3b0bdffd813eab40907d83cda6", null ],
     [ "GetMessageDesc", "d9/d17/classez_visual_script_graph_description.htm#a0a281ab77d53fa55587ddd55107f7ef8", null ],
     [ "GetNode", "d9/d17/classez_visual_script_graph_description.htm#a9581bf5a078d6530502de30fb7bbf9bd", null ],

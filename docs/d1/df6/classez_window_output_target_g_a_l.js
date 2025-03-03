@@ -10,5 +10,6 @@ var classez_window_output_target_g_a_l =
     [ "m_currentDesc", "d1/df6/classez_window_output_target_g_a_l.htm#ab851de83fe0cb5ed9c51a25e6c2adcf4", null ],
     [ "m_hSwapChain", "d1/df6/classez_window_output_target_g_a_l.htm#a75056c4ece056d0911c114cc0bcd74d9", null ],
     [ "m_OnSwapChainChanged", "d1/df6/classez_window_output_target_g_a_l.htm#a9c9f6a8be1318898f5355dd9221b9a95", null ],
+    [ "m_Readback", "d1/df6/classez_window_output_target_g_a_l.htm#a7c502c78c209a48906be80c7921fce18", null ],
     [ "m_Size", "d1/df6/classez_window_output_target_g_a_l.htm#ae5a66074dbca2199639a2153c8708b14", null ]
 ];

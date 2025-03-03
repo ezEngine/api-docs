@@ -12,6 +12,7 @@ var classez_editable_skeleton =
     [ "m_Children", "d5/d83/classez_editable_skeleton.htm#a0f419d4ddb41d4ff5a9496481a504646", null ],
     [ "m_fMaxImpulse", "d5/d83/classez_editable_skeleton.htm#a775f6bb051bfaa87de954af38d0655fa", null ],
     [ "m_fUniformScaling", "d5/d83/classez_editable_skeleton.htm#aea5b8d624d73eef5eb014f66a6b28f11", null ],
+    [ "m_ImportTransform", "d5/d83/classez_editable_skeleton.htm#a3c190d716943e56adc41e85184d1789c", null ],
     [ "m_RightDir", "d5/d83/classez_editable_skeleton.htm#a95b145b73d164f368ea5831a8f15d518", null ],
     [ "m_sPreviewMesh", "d5/d83/classez_editable_skeleton.htm#a9d9627e3f311724f0584c6f674cefc29", null ],
     [ "m_sSourceFile", "d5/d83/classez_editable_skeleton.htm#a6036b7c365f9edffa884d87aff5f0aa1", null ],

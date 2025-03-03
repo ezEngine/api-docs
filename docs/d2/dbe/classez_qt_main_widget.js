@@ -1,6 +1,6 @@
 var classez_qt_main_widget =
 [
-    [ "ezQtMainWidget", "d2/dbe/classez_qt_main_widget.htm#ac312df4baf0e821258e8f8531e24ce69", null ],
+    [ "ezQtMainWidget", "d2/dbe/classez_qt_main_widget.htm#ad768f36a3011d59bb36fc3a6fc696683", null ],
     [ "~ezQtMainWidget", "d2/dbe/classez_qt_main_widget.htm#a0dad3d3db62220d7133449b020cacc22", null ],
     [ "closeEvent", "d2/dbe/classez_qt_main_widget.htm#af0cb4c1e2846e8532d861f6b4ce15fa6", null ],
     [ "ResetStats", "d2/dbe/classez_qt_main_widget.htm#aa276f27f4a1abacce83728c2e6d28e61", null ],
