@@ -11,7 +11,5 @@ var structez_command_history_event =
       [ "TransactionEnded", "dd/d88/structez_command_history_event.htm#a9c4e8f3c8f90155bb356ed019844c2d7af7b198b6b8a5cefba4948bf467cbfe8a", null ],
       [ "TransactionCanceled", "dd/d88/structez_command_history_event.htm#a9c4e8f3c8f90155bb356ed019844c2d7a40c9bfbf896e148e824009440e1ebaa7", null ],
       [ "HistoryChanged", "dd/d88/structez_command_history_event.htm#a9c4e8f3c8f90155bb356ed019844c2d7ad4bfcc8e508351114ec1910965b0267e", null ]
-    ] ],
-    [ "m_pDocument", "dd/d88/structez_command_history_event.htm#ae57a1b8f2d8a1aa4ecf7da1efa860860", null ],
-    [ "m_Type", "dd/d88/structez_command_history_event.htm#ab58d136398c2d2c7c1d8d721d2d41f39", null ]
+    ] ]
 ];

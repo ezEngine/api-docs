@@ -1,11 +1,6 @@
 var classez_input_device_controller =
 [
-    [ "Motor", "db/dbe/structez_input_device_controller_1_1_motor.htm", "db/dbe/structez_input_device_controller_1_1_motor" ],
-    [ "MaxControllers", "d1/dd2/classez_input_device_controller.htm#a19679bb60369bf080f85b3be8a66a880a3c64f534c3356704bc276c9899ffdf6c", null ],
-    [ "VibrationSamplesPerSecond", "d1/dd2/classez_input_device_controller.htm#a19679bb60369bf080f85b3be8a66a880af87e9c95d0e8e6e357a75f76f9487f28", null ],
-    [ "VibrationTrackSeconds", "d1/dd2/classez_input_device_controller.htm#a19679bb60369bf080f85b3be8a66a880ad05109c12420a2f2f295afedbbb23c05", null ],
-    [ "MaxVibrationSamples", "d1/dd2/classez_input_device_controller.htm#a19679bb60369bf080f85b3be8a66a880a29d51e33a7118ad0a0b142ca581ec6d7", null ],
-    [ "ezInputDeviceController", "d1/dd2/classez_input_device_controller.htm#adf81ebac0648fbe2e7b1297fb47922f0", null ],
+    [ "Motor", "db/dbe/structez_input_device_controller_1_1_motor.htm", null ],
     [ "AddVibrationTrack", "d1/dd2/classez_input_device_controller.htm#a4316b87567114e60b6a27faf6ec08a32", null ],
     [ "ApplyVibration", "d1/dd2/classez_input_device_controller.htm#a751ae324f2dc6147fc74029ab75ad268", null ],
     [ "EnableVibration", "d1/dd2/classez_input_device_controller.htm#aa3bcf4f42d4fe2d3450ef8cb7c7f2ce3", null ],

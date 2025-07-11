@@ -1,16 +1,6 @@
 var classez_remote_message =
 [
-    [ "ezRemoteMessage", "d5/d37/classez_remote_message.htm#ab5fedecf1fb73a7efd37a71ade7d4a10", null ],
-    [ "ezRemoteMessage", "d5/d37/classez_remote_message.htm#a08847aca213635ee96f531b43089b732", null ],
-    [ "ezRemoteMessage", "d5/d37/classez_remote_message.htm#ad4200a73285f4dfcd46446a01615c4a2", null ],
-    [ "~ezRemoteMessage", "d5/d37/classez_remote_message.htm#aaf228bc6d0821762330aeeaa6491593a", null ],
-    [ "GetApplicationID", "d5/d37/classez_remote_message.htm#a298c9239b320ad78048e852e881b2479", null ],
-    [ "GetMessageData", "d5/d37/classez_remote_message.htm#a8b6f8df53d586558bc871e0f663ebc28", null ],
-    [ "GetMessageID", "d5/d37/classez_remote_message.htm#a02c9bdfcbca8135d39477f203ed6346e", null ],
-    [ "GetReader", "d5/d37/classez_remote_message.htm#aef6492f59c0ddb6a21c6aeecca367436", null ],
-    [ "GetSystemID", "d5/d37/classez_remote_message.htm#ad23cedc9e63aae01ce1b74a2edce12ad", null ],
-    [ "GetWriter", "d5/d37/classez_remote_message.htm#afb0848ec7a33e8b281bf704eb36e55a5", null ],
-    [ "operator=", "d5/d37/classez_remote_message.htm#ae8745226869bc61adf99399b914e0500", null ],
-    [ "SetMessageID", "d5/d37/classez_remote_message.htm#af110c8d31d99dfe94ba449d0986eb09b", null ],
-    [ "ezRemoteInterface", "d5/d37/classez_remote_message.htm#a0856201f7c2dab65ff39da09e577ace0", null ]
+    [ "GetReader", "d5/d37/classez_remote_message.htm#acf525a081884924877d761cd21767807", null ],
+    [ "GetWriter", "d5/d37/classez_remote_message.htm#a748cc0ce84af6ec84444b751ab34dcf2", null ],
+    [ "SetMessageID", "d5/d37/classez_remote_message.htm#af110c8d31d99dfe94ba449d0986eb09b", null ]
 ];

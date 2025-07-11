@@ -1,30 +1,11 @@
 var classez_lod_mesh_component =
 [
-    [ "ezLodMeshComponent", "dc/ddb/classez_lod_mesh_component.htm#aff6ddf5b553aefc725fa1128f4e5487c", null ],
-    [ "~ezLodMeshComponent", "dc/ddb/classez_lod_mesh_component.htm#ad6bfc34e44e85ba14f9e635e121f67f4", null ],
-    [ "CreateRenderData", "dc/ddb/classez_lod_mesh_component.htm#ad8b4ba3e14323945b3ea23fe6db1c54d", null ],
     [ "DeserializeComponent", "dc/ddb/classez_lod_mesh_component.htm#a736ee6aa31287671b91f10a54fa4d34b", null ],
-    [ "GetColor", "dc/ddb/classez_lod_mesh_component.htm#a4eb721e1c26ebd81cd6cf8a9a7d76770", null ],
-    [ "GetCustomData", "dc/ddb/classez_lod_mesh_component.htm#aea89c5306aa41929dc9a83ebf3d7271c", null ],
     [ "GetLocalBounds", "dc/ddb/classez_lod_mesh_component.htm#a87a7e92e09dbfcbea3248ce0e84bf2f6", null ],
-    [ "GetOverlapRanges", "dc/ddb/classez_lod_mesh_component.htm#a66cb369a0bbbd88434e5720106808fc0", null ],
-    [ "GetShowDebugInfo", "dc/ddb/classez_lod_mesh_component.htm#a6d6c7354e6852759a36dbb9e173af979", null ],
-    [ "GetSortingDepthOffset", "dc/ddb/classez_lod_mesh_component.htm#a2179c3e24333c11e134ad4645a15d914", null ],
-    [ "OnMsgExtractRenderData", "dc/ddb/classez_lod_mesh_component.htm#a6a19e539e3ded4a90b5eb9460388641c", null ],
-    [ "OnMsgSetColor", "dc/ddb/classez_lod_mesh_component.htm#a05b62aa68878ca308c4d1d3fb65ff8b4", null ],
-    [ "OnMsgSetCustomData", "dc/ddb/classez_lod_mesh_component.htm#a652a53b4ee4ace862753126c44e475b6", null ],
     [ "SerializeComponent", "dc/ddb/classez_lod_mesh_component.htm#ac5c6386e070a011bf7d1d9ae54cd89b2", null ],
     [ "SetColor", "dc/ddb/classez_lod_mesh_component.htm#a4c77d53e559f60471a2acf9a124e5181", null ],
     [ "SetCustomData", "dc/ddb/classez_lod_mesh_component.htm#ae5a6c20b225b5c30b67c4fb242140403", null ],
     [ "SetOverlapRanges", "dc/ddb/classez_lod_mesh_component.htm#a08ea74030785f47665f6d30228c55fb5", null ],
     [ "SetShowDebugInfo", "dc/ddb/classez_lod_mesh_component.htm#a0e7bfd5268a114fc703edb299c072a20", null ],
-    [ "SetSortingDepthOffset", "dc/ddb/classez_lod_mesh_component.htm#a928358b80fd4866d00707321c27aa59e", null ],
-    [ "UpdateSelectedLod", "dc/ddb/classez_lod_mesh_component.htm#a6619b1dd64e8374bd3b7603ef2a260c3", null ],
-    [ "m_Color", "dc/ddb/classez_lod_mesh_component.htm#a119ede86881617aefb6cdc0cc935cac0", null ],
-    [ "m_fBoundsRadius", "dc/ddb/classez_lod_mesh_component.htm#ad236feebd19b93cfcbe711cdcc7fa16a", null ],
-    [ "m_fSortingDepthOffset", "dc/ddb/classez_lod_mesh_component.htm#ad227d8228b047946575881fe5a3d6dcf", null ],
-    [ "m_iCurLod", "dc/ddb/classez_lod_mesh_component.htm#a61cbb2ce6d3a8c7ff6f13e0c675b25b8", null ],
-    [ "m_Meshes", "dc/ddb/classez_lod_mesh_component.htm#a26927db18335c540510d77e825c44d8f", null ],
-    [ "m_vBoundsOffset", "dc/ddb/classez_lod_mesh_component.htm#a73fa6a9d669e9ac781654963c1936d31", null ],
-    [ "m_vCustomData", "dc/ddb/classez_lod_mesh_component.htm#ad13038e8a7e57d764be0f4d88b841651", null ]
+    [ "SetSortingDepthOffset", "dc/ddb/classez_lod_mesh_component.htm#a928358b80fd4866d00707321c27aa59e", null ]
 ];

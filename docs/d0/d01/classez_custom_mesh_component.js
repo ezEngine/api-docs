@@ -1,32 +1,17 @@
 var classez_custom_mesh_component =
 [
-    [ "ezCustomMeshComponent", "d0/d01/classez_custom_mesh_component.htm#a3bc13e3ab985a883b1416d043976ad58", null ],
-    [ "~ezCustomMeshComponent", "d0/d01/classez_custom_mesh_component.htm#a50b2eae486df75810fee71da5171e304", null ],
     [ "CreateMeshResource", "d0/d01/classez_custom_mesh_component.htm#a832a999502da23fcbbea4b83fc098266", null ],
     [ "DeserializeComponent", "d0/d01/classez_custom_mesh_component.htm#a9e50ad7991cca3ea5298e612b4f11a79", null ],
-    [ "EZ_ADD_RESOURCEHANDLE_ACCESSORS", "d0/d01/classez_custom_mesh_component.htm#aa447a68ad39568ab8f93b3afa77f0158", null ],
     [ "GetColor", "d0/d01/classez_custom_mesh_component.htm#a9834c438b4c3f5f967762caceea97b35", null ],
-    [ "GetCustomData", "d0/d01/classez_custom_mesh_component.htm#afc9ecef027e1e46dfcb848875a78fbf8", null ],
     [ "GetLocalBounds", "d0/d01/classez_custom_mesh_component.htm#a7fbbd931cdd3009e60d902e52a2dd360", null ],
     [ "GetMaterial", "d0/d01/classez_custom_mesh_component.htm#a2cecdbdf4c5db5d37cd123cf9946182d", null ],
     [ "GetMeshResource", "d0/d01/classez_custom_mesh_component.htm#a9bb94936d0265e69ebcab97c4d7e817c", null ],
     [ "OnActivated", "d0/d01/classez_custom_mesh_component.htm#a1a131be40a4b57d20b23002a46edf750", null ],
-    [ "OnMsgExtractRenderData", "d0/d01/classez_custom_mesh_component.htm#a3ab69b784275c2931941b904bdb58569", null ],
-    [ "OnMsgSetColor", "d0/d01/classez_custom_mesh_component.htm#a9f402f599d6731b1749050c09533c220", null ],
-    [ "OnMsgSetCustomData", "d0/d01/classez_custom_mesh_component.htm#a4d115f4df45b651ca1713261451aef63", null ],
-    [ "OnMsgSetMeshMaterial", "d0/d01/classez_custom_mesh_component.htm#a55bfa92eb21891fe7cf5767ff7227c07", null ],
     [ "SerializeComponent", "d0/d01/classez_custom_mesh_component.htm#a8df1c116f6797bff2b97317086f5cb8e", null ],
     [ "SetBounds", "d0/d01/classez_custom_mesh_component.htm#ac6197b51bdfd20ac9de3b3d5e72004bf", null ],
     [ "SetColor", "d0/d01/classez_custom_mesh_component.htm#a34ba6b6494bb605929c629ea35f9e8c1", null ],
     [ "SetCustomData", "d0/d01/classez_custom_mesh_component.htm#a460d0248f5046e3b2ecbaa2a654b6f47", null ],
     [ "SetMaterial", "d0/d01/classez_custom_mesh_component.htm#a20a1389f7920eb5d0254545bc3334bde", null ],
     [ "SetMeshResource", "d0/d01/classez_custom_mesh_component.htm#ae0e3a135025bfec98b68462cb1ee6a68", null ],
-    [ "SetUsePrimitiveRange", "d0/d01/classez_custom_mesh_component.htm#ab5b2c1d5bffbe7ea0d2edd802ae424cb", null ],
-    [ "m_Bounds", "d0/d01/classez_custom_mesh_component.htm#a6ae6f4857c30b2146b6b5bcc672651f9", null ],
-    [ "m_Color", "d0/d01/classez_custom_mesh_component.htm#a84568b216f0a20613cb6db900546791a", null ],
-    [ "m_hDynamicMesh", "d0/d01/classez_custom_mesh_component.htm#a5c3c2831e2e9d487bb8bff5a50d3a8dc", null ],
-    [ "m_hMaterial", "d0/d01/classez_custom_mesh_component.htm#ae19ceee7241f2ea6a8bc98c512f448de", null ],
-    [ "m_uiFirstPrimitive", "d0/d01/classez_custom_mesh_component.htm#aeaf15ea6e17e7862f0ffc829774d2931", null ],
-    [ "m_uiNumPrimitives", "d0/d01/classez_custom_mesh_component.htm#a72fa800d77d8c95e7b78548352d61f65", null ],
-    [ "m_vCustomData", "d0/d01/classez_custom_mesh_component.htm#aaf05113ad2a3c9c4c7d316f1e4cc97fa", null ]
+    [ "SetUsePrimitiveRange", "d0/d01/classez_custom_mesh_component.htm#ab5b2c1d5bffbe7ea0d2edd802ae424cb", null ]
 ];

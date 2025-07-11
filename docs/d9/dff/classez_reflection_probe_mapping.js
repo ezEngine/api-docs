@@ -1,7 +1,6 @@
 var classez_reflection_probe_mapping =
 [
     [ "ezReflectionProbeMapping", "d9/dff/classez_reflection_probe_mapping.htm#a89793abfe2a7173e340669daec32cc6a", null ],
-    [ "~ezReflectionProbeMapping", "d9/dff/classez_reflection_probe_mapping.htm#a51c97b3a199bf915d4944724b6b4b252", null ],
     [ "AddProbe", "d9/dff/classez_reflection_probe_mapping.htm#ac4e2dc517dccd52f305c28116fe66ec5", null ],
     [ "AddWeight", "d9/dff/classez_reflection_probe_mapping.htm#a5122cd17ad6126f31573bb69a09dfdb3", null ],
     [ "GetReflectionIndex", "d9/dff/classez_reflection_probe_mapping.htm#a29ecb648233123d64610faadca0a917a", null ],
@@ -10,6 +9,5 @@ var classez_reflection_probe_mapping =
     [ "PreExtraction", "d9/dff/classez_reflection_probe_mapping.htm#a52e1d582af5d3bde0d554dcb0e6bd86d", null ],
     [ "ProbeUpdateFinished", "d9/dff/classez_reflection_probe_mapping.htm#a22d43c8246d2cacf8b3b11876815f16c", null ],
     [ "RemoveProbe", "d9/dff/classez_reflection_probe_mapping.htm#aa6055010f7333c23ec14c5ad6ce99be8", null ],
-    [ "UpdateProbe", "d9/dff/classez_reflection_probe_mapping.htm#a1a07a6144c0d40269716089ab61d90e8", null ],
-    [ "m_Events", "d9/dff/classez_reflection_probe_mapping.htm#a244c09a430da2a1866165ff70e923256", null ]
+    [ "UpdateProbe", "d9/dff/classez_reflection_probe_mapping.htm#a1a07a6144c0d40269716089ab61d90e8", null ]
 ];

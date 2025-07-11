@@ -1,7 +1,6 @@
 var structez_property_flags =
 [
-    [ "Bits", "d8/df3/structez_property_flags_1_1_bits.htm", "d8/df3/structez_property_flags_1_1_bits" ],
-    [ "StorageType", "d2/da3/structez_property_flags.htm#a161fcc35be25a75a263fb29e08a8cd42", null ],
+    [ "Bits", "d8/df3/structez_property_flags_1_1_bits.htm", null ],
     [ "Enum", "d2/da3/structez_property_flags.htm#a3c2cffe365eb84e9e31c93491fcf852f", [
       [ "StandardType", "d2/da3/structez_property_flags.htm#a3c2cffe365eb84e9e31c93491fcf852facf9e7b987b0f2cae4127c5f663f5470d", null ],
       [ "IsEnum", "d2/da3/structez_property_flags.htm#a3c2cffe365eb84e9e31c93491fcf852fa82e55e1f2e0c5cdf417c4428e8b3a0e1", null ],
@@ -16,6 +15,7 @@ var structez_property_flags =
       [ "Phantom", "d2/da3/structez_property_flags.htm#a3c2cffe365eb84e9e31c93491fcf852faacd2cc0185e6220d21182a92dd399ace", null ],
       [ "VarOut", "d2/da3/structez_property_flags.htm#a3c2cffe365eb84e9e31c93491fcf852fab74c0d41eab8847918935b6392e6f1b8", null ],
       [ "VarInOut", "d2/da3/structez_property_flags.htm#a3c2cffe365eb84e9e31c93491fcf852fa8e0026188b306cecb2342f8d5ad888ee", null ],
+      [ "PureFunction", "d2/da3/structez_property_flags.htm#a3c2cffe365eb84e9e31c93491fcf852fa19ce0d38adac086ebdf4edd0ca3d1f38", null ],
       [ "Default", "d2/da3/structez_property_flags.htm#a3c2cffe365eb84e9e31c93491fcf852faf2131b4fa205147ab3477ead31b1f8cc", null ],
       [ "Void", "d2/da3/structez_property_flags.htm#a3c2cffe365eb84e9e31c93491fcf852fa623f7e2e8a57d337463c50808f0f96ae", null ]
     ] ]

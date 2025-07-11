@@ -1,6 +1,5 @@
 var structez_game_object_desc =
 [
-    [ "EZ_DECLARE_POD_TYPE", "d7/d35/structez_game_object_desc.htm#a9475d5300a818bca844b2ef4ee8484b1", null ],
     [ "m_bActiveFlag", "d7/d35/structez_game_object_desc.htm#a3a28dfc327f8f1494496e761b3457aae", null ],
     [ "m_bDynamic", "d7/d35/structez_game_object_desc.htm#afc232167e05b6c12482fb2ae5fa1d6d0", null ],
     [ "m_hParent", "d7/d35/structez_game_object_desc.htm#aa8ec295e31ded2bc192cf7fafce5277a", null ],

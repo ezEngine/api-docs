@@ -1,7 +1,6 @@
 var structez_g_a_l_buffer_usage_flags =
 [
-    [ "Bits", "d7/d90/structez_g_a_l_buffer_usage_flags_1_1_bits.htm", "d7/d90/structez_g_a_l_buffer_usage_flags_1_1_bits" ],
-    [ "StorageType", "dc/d4f/structez_g_a_l_buffer_usage_flags.htm#a3314433e65d96a27296b2612f02d301d", null ],
+    [ "Bits", "d7/d90/structez_g_a_l_buffer_usage_flags_1_1_bits.htm", null ],
     [ "Enum", "dc/d4f/structez_g_a_l_buffer_usage_flags.htm#a6e98044292dc77fbbf4feb00a4b7e738", [
       [ "VertexBuffer", "dc/d4f/structez_g_a_l_buffer_usage_flags.htm#a6e98044292dc77fbbf4feb00a4b7e738a2b562787a257abc102ee1418517be1e0", null ],
       [ "IndexBuffer", "dc/d4f/structez_g_a_l_buffer_usage_flags.htm#a6e98044292dc77fbbf4feb00a4b7e738a08a7ece78290490ed4d765344a2955c5", null ],

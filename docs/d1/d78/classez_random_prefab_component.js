@@ -1,18 +1,7 @@
 var classez_random_prefab_component =
 [
-    [ "ezRandomPrefabComponent", "d1/d78/classez_random_prefab_component.htm#a989d276a6784390ec1d26d99cfdf10d6", null ],
-    [ "~ezRandomPrefabComponent", "d1/d78/classez_random_prefab_component.htm#ac9f6fe52a8c4d76535f9f8d5c5a15eb6", null ],
     [ "Deinitialize", "d1/d78/classez_random_prefab_component.htm#a79961c4e108dad7c6ec0579ab5f0a6f0", null ],
     [ "DeserializeComponent", "d1/d78/classez_random_prefab_component.htm#ad1d2b70f39293141a7059a8bc4bc7159", null ],
-    [ "GetColor1", "d1/d78/classez_random_prefab_component.htm#a92714179f34f0960138d63b0e76175af", null ],
-    [ "GetColor2", "d1/d78/classez_random_prefab_component.htm#a68cdef19329fad00dbfc8da8189e272b", null ],
-    [ "GetCount", "d1/d78/classez_random_prefab_component.htm#adbe26a923d0199eb4f0a8637bbaf165e", null ],
-    [ "GetInstantiateAsChildren", "d1/d78/classez_random_prefab_component.htm#ac1f9198e5c7f06f8536bf1adafdc1a0f", null ],
-    [ "GetMaxUniformScale", "d1/d78/classez_random_prefab_component.htm#aa0910815b751395f8d988585fb4d0de7", null ],
-    [ "GetMinUniformScale", "d1/d78/classez_random_prefab_component.htm#a96d92ca509558e20e69cde00d4bcbcaa", null ],
-    [ "GetPositionDeviation", "d1/d78/classez_random_prefab_component.htm#a1372758d053f3c272f1740d81af9e2bc", null ],
-    [ "GetPreview", "d1/d78/classez_random_prefab_component.htm#aa1ef3b3cd66b61a7833cd70d6773453b", null ],
-    [ "GetRotationDeviation", "d1/d78/classez_random_prefab_component.htm#ad06c5ab4c21fcbb3368e1553ad062a3a", null ],
     [ "OnActivated", "d1/d78/classez_random_prefab_component.htm#a8c540f974c8a1055fbc5fc2a74dd258f", null ],
     [ "OnDeactivated", "d1/d78/classez_random_prefab_component.htm#a5722ec684b54a30f538839886bbc1484", null ],
     [ "OnSimulationStarted", "d1/d78/classez_random_prefab_component.htm#a374dabde5bcb1dc08b6d35a6c880c244", null ],

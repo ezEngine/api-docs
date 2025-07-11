@@ -1,28 +1,15 @@
 var classez_standard_j_s_o_n_writer =
 [
-    [ "CommaWriter", "db/def/structez_standard_j_s_o_n_writer_1_1_comma_writer.htm", "db/def/structez_standard_j_s_o_n_writer_1_1_comma_writer" ],
-    [ "JSONState", "d5/d92/structez_standard_j_s_o_n_writer_1_1_j_s_o_n_state.htm", "d5/d92/structez_standard_j_s_o_n_writer_1_1_j_s_o_n_state" ],
-    [ "State", "d4/d70/classez_standard_j_s_o_n_writer.htm#a84575bf651f8e5a452248056d66b0c6d", [
-      [ "Invalid", "d4/d70/classez_standard_j_s_o_n_writer.htm#a84575bf651f8e5a452248056d66b0c6daa2f41583b46e89f65179857b9f7bf26b", null ],
-      [ "Empty", "d4/d70/classez_standard_j_s_o_n_writer.htm#a84575bf651f8e5a452248056d66b0c6daf07ae720361bbfe5c273db4af51cc9a5", null ],
-      [ "Variable", "d4/d70/classez_standard_j_s_o_n_writer.htm#a84575bf651f8e5a452248056d66b0c6da77e31ccf1259e7bb5e3e3d3504af77a9", null ],
-      [ "Object", "d4/d70/classez_standard_j_s_o_n_writer.htm#a84575bf651f8e5a452248056d66b0c6da67ca51df1864ef16621cc504fa64d104", null ],
-      [ "NamedObject", "d4/d70/classez_standard_j_s_o_n_writer.htm#a84575bf651f8e5a452248056d66b0c6da3933040537eaad63c63f0a35d346de73", null ],
-      [ "Array", "d4/d70/classez_standard_j_s_o_n_writer.htm#a84575bf651f8e5a452248056d66b0c6da01c1cfffbb86f5410b35210e1c5e64e2", null ],
-      [ "NamedArray", "d4/d70/classez_standard_j_s_o_n_writer.htm#a84575bf651f8e5a452248056d66b0c6dae43cd7067f44386a3a381fd43a4e7563", null ]
-    ] ],
+    [ "CommaWriter", "db/def/structez_standard_j_s_o_n_writer_1_1_comma_writer.htm", null ],
+    [ "JSONState", "d5/d92/structez_standard_j_s_o_n_writer_1_1_j_s_o_n_state.htm", null ],
     [ "ezStandardJSONWriter", "d4/d70/classez_standard_j_s_o_n_writer.htm#abffe4ecee2fc9566688739e80132e1a0", null ],
     [ "~ezStandardJSONWriter", "d4/d70/classez_standard_j_s_o_n_writer.htm#ab67fc04f74bdf03625d5b0213baf943c", null ],
     [ "BeginArray", "d4/d70/classez_standard_j_s_o_n_writer.htm#aaa33e176647955d5df20ad773ab7aa32", null ],
     [ "BeginObject", "d4/d70/classez_standard_j_s_o_n_writer.htm#a6b345d4c8a6ef75a0590b7df55273977", null ],
     [ "BeginVariable", "d4/d70/classez_standard_j_s_o_n_writer.htm#a137be08530d164b16da000e6f38e6388", null ],
-    [ "End", "d4/d70/classez_standard_j_s_o_n_writer.htm#a04c43eb7dbc32213673ef88179422af1", null ],
     [ "EndArray", "d4/d70/classez_standard_j_s_o_n_writer.htm#a70c093af47f22b016a50ff8ebf6ec41e", null ],
     [ "EndObject", "d4/d70/classez_standard_j_s_o_n_writer.htm#a21ba9932d682570431a3329196a04477", null ],
     [ "EndVariable", "d4/d70/classez_standard_j_s_o_n_writer.htm#a7bd13db0a7bdf1c73c190665e8972f4e", null ],
-    [ "OutputEscapedString", "d4/d70/classez_standard_j_s_o_n_writer.htm#acf89d622435514e9703c0f32244db1fc", null ],
-    [ "OutputIndentation", "d4/d70/classez_standard_j_s_o_n_writer.htm#a1a52add435e2763467c72f4b3d819aab", null ],
-    [ "OutputString", "d4/d70/classez_standard_j_s_o_n_writer.htm#aa86b3d1dccbd4c5a62f03ea7ee2341e1", null ],
     [ "SetOutputStream", "d4/d70/classez_standard_j_s_o_n_writer.htm#ae0c89c9839d635a1221344e0a5aa0ad5", null ],
     [ "WriteAngle", "d4/d70/classez_standard_j_s_o_n_writer.htm#ae4e8c44dcea682fcb122e50bd61cbe32", null ],
     [ "WriteBinaryData", "d4/d70/classez_standard_j_s_o_n_writer.htm#a14d7c29e1f05c0d2a918d34d65520ce1", null ],
@@ -48,8 +35,5 @@ var classez_standard_j_s_o_n_writer =
     [ "WriteVec3", "d4/d70/classez_standard_j_s_o_n_writer.htm#a1d6a02a36072fd7fecc896bee439df17", null ],
     [ "WriteVec3I32", "d4/d70/classez_standard_j_s_o_n_writer.htm#aaded9c7d28ba5a9b036f06efa0448378", null ],
     [ "WriteVec4", "d4/d70/classez_standard_j_s_o_n_writer.htm#a2f958c381d119095eb30f1a8de693210", null ],
-    [ "WriteVec4I32", "d4/d70/classez_standard_j_s_o_n_writer.htm#ad74eef79777cc6206019a2eebe096d2c", null ],
-    [ "m_iIndentation", "d4/d70/classez_standard_j_s_o_n_writer.htm#a2879cd8af06a4266ea45cf5dded0c046", null ],
-    [ "m_pOutput", "d4/d70/classez_standard_j_s_o_n_writer.htm#a9e29a21e568444f49ad87078656c62f5", null ],
-    [ "m_StateStack", "d4/d70/classez_standard_j_s_o_n_writer.htm#a7f69f61fa7788590fb0e7d78aa646030", null ]
+    [ "WriteVec4I32", "d4/d70/classez_standard_j_s_o_n_writer.htm#ad74eef79777cc6206019a2eebe096d2c", null ]
 ];

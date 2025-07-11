@@ -1,7 +1,6 @@
 var classez_j_s_o_n_parser =
 [
     [ "ezJSONParser", "d3/d3d/classez_j_s_o_n_parser.htm#a90b7252582f9de455ec7ea1c5af369b7", null ],
-    [ "~ezJSONParser", "d3/d3d/classez_j_s_o_n_parser.htm#ac8283b8fc4da53fec53d3b0d585a4e8e", null ],
     [ "ContinueParsing", "d3/d3d/classez_j_s_o_n_parser.htm#a8383fcc9a6a0a40b0ceb5fdeb75d64e0", null ],
     [ "OnBeginArray", "d3/d3d/classez_j_s_o_n_parser.htm#af22558e7bcf4c4a8abfd6f810fd343f1", null ],
     [ "OnBeginObject", "d3/d3d/classez_j_s_o_n_parser.htm#a6d12d66f93df358fb5441bc5a77104b9", null ],
@@ -18,6 +17,5 @@ var classez_j_s_o_n_parser =
     [ "SetInputStream", "d3/d3d/classez_j_s_o_n_parser.htm#a43021f6a3e0fd28e5c2508211e57b9a4", null ],
     [ "SetLogInterface", "d3/d3d/classez_j_s_o_n_parser.htm#a72c03812e9ed90797a5b6b464aae2fc7", null ],
     [ "SkipArray", "d3/d3d/classez_j_s_o_n_parser.htm#a458c0c6f31b1c1cd42aef94d7713db7c", null ],
-    [ "SkipObject", "d3/d3d/classez_j_s_o_n_parser.htm#ae1353902f9a958af1c647b1f4a4af9bd", null ],
-    [ "m_pLogInterface", "d3/d3d/classez_j_s_o_n_parser.htm#a3c6b10b149c62b10425308b893b3c838", null ]
+    [ "SkipObject", "d3/d3d/classez_j_s_o_n_parser.htm#ae1353902f9a958af1c647b1f4a4af9bd", null ]
 ];

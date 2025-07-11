@@ -73,7 +73,5 @@ var classez_j_s_o_n_writer =
     [ "WriteVec3", "d7/d35/classez_j_s_o_n_writer.htm#a5739984dbb7450f75a73f5777b4fd8b6", null ],
     [ "WriteVec3I32", "d7/d35/classez_j_s_o_n_writer.htm#a18d0acfd25f8f6c5b820c573dd32e20e", null ],
     [ "WriteVec4", "d7/d35/classez_j_s_o_n_writer.htm#af60421585e14bf88056170c9fcb65da2", null ],
-    [ "WriteVec4I32", "d7/d35/classez_j_s_o_n_writer.htm#ab3577faa971ef41594b24e83557c1cc1", null ],
-    [ "m_ArrayMode", "d7/d35/classez_j_s_o_n_writer.htm#aea4cba985da05de09525a1b6a116e760", null ],
-    [ "m_WhitespaceMode", "d7/d35/classez_j_s_o_n_writer.htm#adfdaac6ca3e317927273f35f0ca12d6f", null ]
+    [ "WriteVec4I32", "d7/d35/classez_j_s_o_n_writer.htm#ab3577faa971ef41594b24e83557c1cc1", null ]
 ];

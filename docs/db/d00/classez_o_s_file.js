@@ -2,11 +2,8 @@ var classez_o_s_file =
 [
     [ "EventData", "d3/d7e/structez_o_s_file_1_1_event_data.htm", "d3/d7e/structez_o_s_file_1_1_event_data" ],
     [ "EventType", "dd/d0f/structez_o_s_file_1_1_event_type.htm", "dd/d0f/structez_o_s_file_1_1_event_type" ],
-    [ "Event", "db/d00/classez_o_s_file.htm#a66c7167e72c52146e4dcd1574597e510", null ],
-    [ "ezOSFile", "db/d00/classez_o_s_file.htm#a688e8f6d45bc03e8885a0327d8639522", null ],
-    [ "~ezOSFile", "db/d00/classez_o_s_file.htm#a78c928660bdc7e6cde84b4b2395f0538", null ],
     [ "Close", "db/d00/classez_o_s_file.htm#aa1ba820f6aea53fbfcc3440817cd9d0c", null ],
-    [ "GetFileData", "db/d00/classez_o_s_file.htm#a433c62f8977999dc3c4e861197aa855c", null ],
+    [ "GetFileData", "db/d00/classez_o_s_file.htm#a98a55ba27328a3b11ad79b4186cf1970", null ],
     [ "GetFilePosition", "db/d00/classez_o_s_file.htm#ad89e424570a089a6df39e461f51649fb", null ],
     [ "GetFileSize", "db/d00/classez_o_s_file.htm#a0f794154671dbff752fe27f3dfacec00", null ],
     [ "GetOpenFileName", "db/d00/classez_o_s_file.htm#a6432bf88e9491d9de094ed311f947019", null ],

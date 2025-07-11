@@ -1,7 +1,5 @@
 var classez_config_file_resource =
 [
-    [ "ezConfigFileResource", "d2/dbb/classez_config_file_resource.htm#a5cfb26f45b822924672cbf3a40b53629", null ],
-    [ "~ezConfigFileResource", "d2/dbb/classez_config_file_resource.htm#aaa89e7a7368634ace8a01c2b9c4c268c", null ],
     [ "GetBool", "d2/dbb/classez_config_file_resource.htm#a14d01b38bfbdb0b3510762357af8dc2a", null ],
     [ "GetBool", "d2/dbb/classez_config_file_resource.htm#a6cf0da491f2e56ab1553b1d3a3688a42", null ],
     [ "GetFloat", "d2/dbb/classez_config_file_resource.htm#abaa2dad6221aa921abd0d8b49c8b177f", null ],
@@ -12,6 +10,5 @@ var classez_config_file_resource =
     [ "GetString", "d2/dbb/classez_config_file_resource.htm#a47365438c4435fbb85fbac2893ed6c66", null ],
     [ "UnloadData", "d2/dbb/classez_config_file_resource.htm#af0d7a3a8f8a1f2cd320cf45d9e637153", null ],
     [ "UpdateContent", "d2/dbb/classez_config_file_resource.htm#a0ec460033453d8aa6c482a588189118a", null ],
-    [ "UpdateMemoryUsage", "d2/dbb/classez_config_file_resource.htm#afa11c0977898e3a0d1e316ee2b28f0af", null ],
-    [ "ezConfigFileResourceLoader", "d2/dbb/classez_config_file_resource.htm#a89ce7de46eaff71f61d9afe245a46288", null ]
+    [ "UpdateMemoryUsage", "d2/dbb/classez_config_file_resource.htm#afa11c0977898e3a0d1e316ee2b28f0af", null ]
 ];

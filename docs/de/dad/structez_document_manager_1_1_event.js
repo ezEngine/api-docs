@@ -9,8 +9,5 @@ var structez_document_manager_1_1_event =
       [ "DocumentClosing", "de/dad/structez_document_manager_1_1_event.htm#a12c10c12bf91fea3126e6e6108c7c3b3adf94af6ddc0e5189a9b29a35142962ff", null ],
       [ "DocumentClosing2", "de/dad/structez_document_manager_1_1_event.htm#a12c10c12bf91fea3126e6e6108c7c3b3a7a9385b724d31d19c755a954292c2ced", null ],
       [ "DocumentClosed", "de/dad/structez_document_manager_1_1_event.htm#a12c10c12bf91fea3126e6e6108c7c3b3af013ac5adf847c15a85c159d10368887", null ]
-    ] ],
-    [ "m_pDocument", "de/dad/structez_document_manager_1_1_event.htm#a5c6970a5fe7e98289e90bfaa215433ba", null ],
-    [ "m_pOpenContext", "de/dad/structez_document_manager_1_1_event.htm#ac2ba6303bee40f2188256a923b3afeb9", null ],
-    [ "m_Type", "de/dad/structez_document_manager_1_1_event.htm#abb3ac610535829c8c5aa4e730b63cf72", null ]
+    ] ]
 ];

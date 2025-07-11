@@ -1,6 +1,5 @@
 var structez_object_msg_queue_type =
 [
-    [ "StorageType", "d0/d79/structez_object_msg_queue_type.htm#ac114a650dde47dc2b0976f129dec210f", null ],
     [ "Enum", "d0/d79/structez_object_msg_queue_type.htm#a5a1ec7fe76505087ad0d015b4ff3cea3", [
       [ "PostAsync", "d0/d79/structez_object_msg_queue_type.htm#a5a1ec7fe76505087ad0d015b4ff3cea3a5a0caa1e6de6cb986afbc6d87b660b41", null ],
       [ "PostTransform", "d0/d79/structez_object_msg_queue_type.htm#a5a1ec7fe76505087ad0d015b4ff3cea3a00796cc1bfc317c25eda46fc9fe560e8", null ],

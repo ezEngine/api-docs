@@ -1,9 +1,6 @@
 var classez_init_context_vulkan =
 [
-    [ "ezInitContextVulkan", "da/d70/classez_init_context_vulkan.htm#a9104d9794cc646939db0e413651f32ee", null ],
-    [ "~ezInitContextVulkan", "da/d70/classez_init_context_vulkan.htm#a643e4fc9ff4d94f388d020db2b97e2b1", null ],
-    [ "AccessLock", "da/d70/classez_init_context_vulkan.htm#a59e4d5ed6202a9a4afd7c43e544c572f", null ],
-    [ "AfterBeginFrame", "da/d70/classez_init_context_vulkan.htm#a2b1ec34a60489ed67931a1564f2242e9", null ],
+    [ "ExecutePendingCopies", "da/d70/classez_init_context_vulkan.htm#a118639378f20a58da4555204915a20d7", null ],
     [ "GetFinishedCommandBuffer", "da/d70/classez_init_context_vulkan.htm#a6b8fe1efca76eaa617a28449bbcb673e", null ],
     [ "InitBuffer", "da/d70/classez_init_context_vulkan.htm#ac757c11d7941995fd23d1f2c339be085", null ],
     [ "InitTexture", "da/d70/classez_init_context_vulkan.htm#acfb611bc0c1abde7b18bdc5cebb7298b", null ],

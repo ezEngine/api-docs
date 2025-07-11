@@ -1,8 +1,6 @@
 var structez_plane_template =
 [
-    [ "ComponentType", "d5/d8d/structez_plane_template.htm#a4518fb96bf246f4e1b6fa75a865ff50c", null ],
     [ "ezPlaneTemplate", "d5/d8d/structez_plane_template.htm#a1de3da403b933d43433a758289b7a858", null ],
-    [ "EZ_DECLARE_POD_TYPE", "d5/d8d/structez_plane_template.htm#a8deb26d449187f2b93560cce0ca4a64f", null ],
     [ "Flip", "d5/d8d/structez_plane_template.htm#ac0a1a557cb5f996bfda7d145acd23e88", null ],
     [ "FlipIfNecessary", "d5/d8d/structez_plane_template.htm#a433d69109382ca8fb062bb678dae5a9e", null ],
     [ "GetAsVec4", "d5/d8d/structez_plane_template.htm#aa4dfcf604b449b67d5d50f34fb5b204c", null ],
@@ -26,14 +24,12 @@ var structez_plane_template =
     [ "IsIdentical", "d5/d8d/structez_plane_template.htm#a28ed715903e01728f3c7d414019a5aa4", null ],
     [ "IsNaN", "d5/d8d/structez_plane_template.htm#ab552082d9b537a4d3f52f12cec194cc0", null ],
     [ "IsValid", "d5/d8d/structez_plane_template.htm#a6c1a787b6d5994e283150fb7c98fb27a", null ],
-    [ "Mirror", "d5/d8d/structez_plane_template.htm#aaa1fc827595fcd488d6165f54baba75d", null ],
-    [ "ProjectOntoPlane", "d5/d8d/structez_plane_template.htm#af96ba78aa55f0a7b1d4fc7f60f588319", null ],
+    [ "Mirror", "d5/d8d/structez_plane_template.htm#adfcfd2ba2927fc7ccf075d51a52ec315", null ],
+    [ "ProjectOntoPlane", "d5/d8d/structez_plane_template.htm#af7394d3eb65e3359ff1597e4f811a550", null ],
     [ "SetFromDirections", "d5/d8d/structez_plane_template.htm#a87c0f6bc684fca6c1736ded74b185263", null ],
     [ "SetFromPoints", "d5/d8d/structez_plane_template.htm#a82c740662e228339a4b9ee28c9d4dce0", null ],
     [ "SetFromPoints", "d5/d8d/structez_plane_template.htm#adc55d0897f8c39dc8c07afbb0a484a81", null ],
     [ "SetFromPoints", "d5/d8d/structez_plane_template.htm#a0b0257c65ce052db1a3412e14301d7a1", null ],
     [ "Transform", "d5/d8d/structez_plane_template.htm#add9700307efa3f30fbd89feb7904b86f", null ],
-    [ "Transform", "d5/d8d/structez_plane_template.htm#aa2a5beb707c03659bc2e8f66aa9e1e2e", null ],
-    [ "m_fNegDistance", "d5/d8d/structez_plane_template.htm#a0900152016a94750fe2b794352484cea", null ],
-    [ "m_vNormal", "d5/d8d/structez_plane_template.htm#a205434377f0dfb1822cf315937c1eeb2", null ]
+    [ "Transform", "d5/d8d/structez_plane_template.htm#aa2a5beb707c03659bc2e8f66aa9e1e2e", null ]
 ];

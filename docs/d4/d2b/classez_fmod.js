@@ -1,18 +1,9 @@
 var classez_fmod =
 [
-    [ "ezFmod", "d4/d2b/classez_fmod.htm#a38140d3c7be412f799dc562005b00d65", null ],
     [ "GetGlobalParameter", "d4/d2b/classez_fmod.htm#aa328d1a548b6db7dd79e1dd069735131", null ],
-    [ "GetListenerPosition", "d4/d2b/classez_fmod.htm#ad468a20949dc4f24bda41013cae38990", null ],
-    [ "GetLowLevelSystem", "d4/d2b/classez_fmod.htm#a034db020ccacff629e981918f08400fc", null ],
-    [ "GetMasterChannelMute", "d4/d2b/classez_fmod.htm#a317a0de690d7b07fa7346db627230067", null ],
-    [ "GetMasterChannelPaused", "d4/d2b/classez_fmod.htm#aad9b92c29348b69e95ff4b1dc25bad15", null ],
-    [ "GetMasterChannelVolume", "d4/d2b/classez_fmod.htm#a01d44ec37a8fe36051fe9c5fd9d5e07d", null ],
     [ "GetNumBlendedReverbVolumes", "d4/d2b/classez_fmod.htm#a1f2a109aaf3ba58717bd52e45bded485", null ],
-    [ "GetNumListeners", "d4/d2b/classez_fmod.htm#a174af360d3485c0e664d5cacdaa46101", null ],
-    [ "GetSoundGroupVolume", "d4/d2b/classez_fmod.htm#a48e84a1dbd6152b9baf90ae34e03391a", null ],
-    [ "GetStudioSystem", "d4/d2b/classez_fmod.htm#a1dd0b896bb59491a9b15219ed51f0cb7", null ],
     [ "LoadConfiguration", "d4/d2b/classez_fmod.htm#a98d1ea319c8a564a3ece5231edc3f7c2", null ],
-    [ "OneShotSound", "d4/d2b/classez_fmod.htm#adb8cbf4539a9fd246d319831ac017d18", null ],
+    [ "OneShotSound", "d4/d2b/classez_fmod.htm#af379bf532ad5defe291b712e87c38941", null ],
     [ "SetGlobalParameter", "d4/d2b/classez_fmod.htm#af5ba59929b1443209422c0b4e805c82f", null ],
     [ "SetListener", "d4/d2b/classez_fmod.htm#a4c74be54fb7b5d2d00390671da3c51fb", null ],
     [ "SetListenerOverrideMode", "d4/d2b/classez_fmod.htm#ae221aa88cfbb1f0e836e4ce1de0a8f54", null ],
@@ -23,9 +14,5 @@ var classez_fmod =
     [ "SetNumListeners", "d4/d2b/classez_fmod.htm#a2ce3f72077633f2748f3ee0c6a111305", null ],
     [ "SetOverridePlatform", "d4/d2b/classez_fmod.htm#a70324556668a340a2464322ad81f1cfb", null ],
     [ "SetSoundGroupVolume", "d4/d2b/classez_fmod.htm#ac7351a7bb1b4d955659cb106f0d1d162", null ],
-    [ "Shutdown", "d4/d2b/classez_fmod.htm#a1162e7ec284dd72af9deacfc84c706ed", null ],
-    [ "Startup", "d4/d2b/classez_fmod.htm#a389aa082ee15e0ce2f8b2ebb00339e96", null ],
-    [ "UpdateSound", "d4/d2b/classez_fmod.htm#ac5550a309e89e28c1faeaa3917dd38a0", null ],
-    [ "UpdateSoundGroupVolumes", "d4/d2b/classez_fmod.htm#a3e4510d070e657281e3efe362c82eb2a", null ],
-    [ "ezFmodSoundBankResource", "d4/d2b/classez_fmod.htm#a14738e2cddd65516d547959ec1d1f8a2", null ]
+    [ "UpdateSound", "d4/d2b/classez_fmod.htm#ac5550a309e89e28c1faeaa3917dd38a0", null ]
 ];

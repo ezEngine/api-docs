@@ -1,7 +1,6 @@
 var classez_game_state =
 [
     [ "ezGameState", "de/d84/classez_game_state.htm#ae51df6f8651ad0f42c96aad03503f5fe", null ],
-    [ "~ezGameState", "de/d84/classez_game_state.htm#a0ab849a0397a0eb52bf0f7bdc47c7fda", null ],
     [ "AddMainViewsToRender", "de/d84/classez_game_state.htm#a56e8c8bdf10c50880b36b113f43c79f1", null ],
     [ "CancelBackgroundSceneLoading", "de/d84/classez_game_state.htm#a2ed760dc63ebde0d26d843b75f01ac8d", null ],
     [ "ChangeMainWorld", "de/d84/classez_game_state.htm#ac75baa8a931c29f6a668436759dacd70", null ],
@@ -14,9 +13,9 @@ var classez_game_state =
     [ "CreateMainView", "de/d84/classez_game_state.htm#ab8f2d13bc346958346fc4b873bf1a300", null ],
     [ "CreateMainWindow", "de/d84/classez_game_state.htm#a37649a75ea91150bf5a675bdec3b822c", null ],
     [ "CreateXRActor", "de/d84/classez_game_state.htm#a4705923f93166f848f35f18836b7d883", null ],
-    [ "GetMainCamera", "de/d84/classez_game_state.htm#afc43602b3f9b086fb3b93d0dabd19a37", null ],
+    [ "GetMainCamera", "de/d84/classez_game_state.htm#adfa6bf00d7172e6bc14f5617206ad9fd", null ],
     [ "GetMainView", "de/d84/classez_game_state.htm#a25c34aa4a58a57acd0bf90771ed6a467", null ],
-    [ "GetMainWorld", "de/d84/classez_game_state.htm#aa77eda7f3cda25e1c7be04497d88ac0a", null ],
+    [ "GetMainWorld", "de/d84/classez_game_state.htm#a2159ecf1311bd5a985e8bfa82741024d", null ],
     [ "GetStartupSceneFile", "de/d84/classez_game_state.htm#ad81ae7b2162f8ec32ba0ec31c613ae50", null ],
     [ "IsInLoadingScreen", "de/d84/classez_game_state.htm#aaa320912469657d87c323ee67be0913d", null ],
     [ "IsLoadingSceneInBackground", "de/d84/classez_game_state.htm#aae4b8ca145c866cc011c0d0b08df69ee", null ],
@@ -34,18 +33,5 @@ var classez_game_state =
     [ "StartBackgroundSceneLoading", "de/d84/classez_game_state.htm#a161d214809109ba552ca52608d6379d2", null ],
     [ "SwitchToLoadingScreen", "de/d84/classez_game_state.htm#a36cc3a9d230f38e0412e98f98b5e8159", null ],
     [ "UpdateBackgroundSceneLoading", "de/d84/classez_game_state.htm#adeb7510fd514690fabba3b4586d50a2d", null ],
-    [ "WasQuitRequested", "de/d84/classez_game_state.htm#a8882b66b52eacf68033a9d15dd9f48b5", null ],
-    [ "m_bStateWantsToQuit", "de/d84/classez_game_state.htm#a36705ac881a97ed0810e5ba6c573d5ae", null ],
-    [ "m_bTransitionWhenReady", "de/d84/classez_game_state.htm#a513511493de419ecc22251c8b2fe1952", null ],
-    [ "m_bXREnabled", "de/d84/classez_game_state.htm#aaaf179a56af0b0a33ae31357239b4336", null ],
-    [ "m_bXRRemotingEnabled", "de/d84/classez_game_state.htm#a3025c067647c5cd8c52ef75edef5479d", null ],
-    [ "m_hMainView", "de/d84/classez_game_state.htm#accca8bd64d2e956c2d1c9c66fc658938", null ],
-    [ "m_MainCamera", "de/d84/classez_game_state.htm#a49752ca8b80e4aeb55532e7567ddc723", null ],
-    [ "m_pBackgroundSceneLoad", "de/d84/classez_game_state.htm#a46e3e9c4da5fcc24e2071f2e31acbf3f", null ],
-    [ "m_pDummyXR", "de/d84/classez_game_state.htm#a7da59322f7f35fb4eb2ef1ad3bb70b13", null ],
-    [ "m_pLoadedWorld", "de/d84/classez_game_state.htm#a1b3672558bd738d8abbb593ca0945c2b", null ],
-    [ "m_pLoadingScreenWorld", "de/d84/classez_game_state.htm#a3c7f5e158c25e3ac8791939b5b6c0196", null ],
-    [ "m_pMainWorld", "de/d84/classez_game_state.htm#a4a8278ec7d28bf90b6846a066500ecd4", null ],
-    [ "m_sTargetSceneSpawnPoint", "de/d84/classez_game_state.htm#a0eb2f33787d7f11607e0fd876cd572fc", null ],
-    [ "m_TargetSceneSpawnOffset", "de/d84/classez_game_state.htm#ab48d8d38d35aa512a0f9abd9f452110d", null ]
+    [ "WasQuitRequested", "de/d84/classez_game_state.htm#a8882b66b52eacf68033a9d15dd9f48b5", null ]
 ];

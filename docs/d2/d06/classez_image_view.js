@@ -3,9 +3,7 @@ var classez_image_view =
     [ "ezImageView", "d2/d06/classez_image_view.htm#adbc51d46dfaee71767895b9e4e44ce7c", null ],
     [ "ezImageView", "d2/d06/classez_image_view.htm#a163e3ba5728d08cf7044a019344f3652", null ],
     [ "Clear", "d2/d06/classez_image_view.htm#aa255f769bb1549488f6150742d5c7aab", null ],
-    [ "ComputeLayout", "d2/d06/classez_image_view.htm#a3bc29a053375f497d4cfe06b5a76c949", null ],
     [ "GetBlobPtr", "d2/d06/classez_image_view.htm#a9ec2b0a93d52545a64d26807ee043305", null ],
-    [ "GetByteBlobPtr", "d2/d06/classez_image_view.htm#a708e851de93507d75ceb0f0829d1ad80", null ],
     [ "GetDepth", "d2/d06/classez_image_view.htm#a4583269c7bb17cdfe244af0a9619a9c6", null ],
     [ "GetDepthPitch", "d2/d06/classez_image_view.htm#a6f2fdfdae20a3a08469c2573dd1a6c58", null ],
     [ "GetHeader", "d2/d06/classez_image_view.htm#a2d39ca0356fa8f64ba33d62cc0c6dbef", null ],
@@ -23,15 +21,10 @@ var classez_image_view =
     [ "GetRowPitch", "d2/d06/classez_image_view.htm#a06334f2dfa83e246ec67ff2fb0373bf7", null ],
     [ "GetRowView", "d2/d06/classez_image_view.htm#a9fa62b1df4ff5c5c718d005c0e6f733a", null ],
     [ "GetSliceView", "d2/d06/classez_image_view.htm#a6c97f9f5cc74238527b8bb47888ef86a", null ],
-    [ "GetSubImageOffset", "d2/d06/classez_image_view.htm#af98afbfa2264f910cc217921e2162a72", null ],
     [ "GetSubImageView", "d2/d06/classez_image_view.htm#a526f96d12490d12fbb45218d350f6b11", null ],
     [ "GetWidth", "d2/d06/classez_image_view.htm#ad12837e5a67d006ab2d1e53d46674289", null ],
     [ "IsValid", "d2/d06/classez_image_view.htm#afd3600fc26a77903c4eb5d5cd6946f82", null ],
     [ "ReinterpretAs", "d2/d06/classez_image_view.htm#a6890298dc696fc1ed2c98fcea5e92d6c", null ],
     [ "ResetAndViewExternalStorage", "d2/d06/classez_image_view.htm#a53b03256890a634f155fb70f7c82d8a8", null ],
-    [ "SaveTo", "d2/d06/classez_image_view.htm#acacd3320b96a240ef08df392a6304afa", null ],
-    [ "ValidateDataTypeAccessor", "d2/d06/classez_image_view.htm#af3a31d9c6d21ddbf57f9ae67a4d1d0cd", null ],
-    [ "ValidateSubImageIndices", "d2/d06/classez_image_view.htm#afde124a384ab5324384266f001c987bd", null ],
-    [ "m_DataPtr", "d2/d06/classez_image_view.htm#a18efed05a0c08f80b2828cb02796a9fe", null ],
-    [ "m_SubImageOffsets", "d2/d06/classez_image_view.htm#a05cef10923641dac492eb4530d359098", null ]
+    [ "SaveTo", "d2/d06/classez_image_view.htm#acacd3320b96a240ef08df392a6304afa", null ]
 ];

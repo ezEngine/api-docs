@@ -29,7 +29,7 @@ var classez_string_builder =
     [ "Clear", "d3/d88/classez_string_builder.htm#a162e5eb18bb60fd044c2fbbcdfa79228", null ],
     [ "GetAllocator", "d3/d88/classez_string_builder.htm#a2648971fba117e2e48484b5e828e9a99", null ],
     [ "GetCharacterCount", "d3/d88/classez_string_builder.htm#a0a3a36dcfd096259e15f167e2bd6ca07", null ],
-    [ "GetData", "d3/d88/classez_string_builder.htm#a3063473d38e978ef950a11d302983bba", null ],
+    [ "GetData", "d3/d88/classez_string_builder.htm#ae70343bc31fa6d5dff4e2bc66abbc6d5", null ],
     [ "GetElementCount", "d3/d88/classez_string_builder.htm#a946ff0b7b84634095a79a548777b51fd", null ],
     [ "GetHeapMemoryUsage", "d3/d88/classez_string_builder.htm#ae1944172cbf1eeb3faef4c4ae8c7c942", null ],
     [ "Insert", "d3/d88/classez_string_builder.htm#a256a6671500684d47ced992673752e88", null ],
@@ -88,6 +88,5 @@ var classez_string_builder =
     [ "TrimLeft", "d3/d88/classez_string_builder.htm#a541435f71c6b4cc7994ba75c58e59a73", null ],
     [ "TrimRight", "d3/d88/classez_string_builder.htm#a7f18fa8ae9436794bc90aa218d88940f", null ],
     [ "TrimWordEnd", "d3/d88/classez_string_builder.htm#aa5af41d0eecea261dde9e8e2ffc266e4", null ],
-    [ "TrimWordStart", "d3/d88/classez_string_builder.htm#ad068c80ae201219b2288a53888895d82", null ],
-    [ "ezHybridStringBase", "d3/d88/classez_string_builder.htm#afcc265e5360a53cfe7ae05cadefeedbd", null ]
+    [ "TrimWordStart", "d3/d88/classez_string_builder.htm#ad068c80ae201219b2288a53888895d82", null ]
 ];

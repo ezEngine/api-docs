@@ -1,7 +1,6 @@
 var structez_asset_document_flags =
 [
-    [ "Bits", "d2/dcb/structez_asset_document_flags_1_1_bits.htm", "d2/dcb/structez_asset_document_flags_1_1_bits" ],
-    [ "StorageType", "d4/d5d/structez_asset_document_flags.htm#a57e2c957290c4719161defbf9c71e226", null ],
+    [ "Bits", "d2/dcb/structez_asset_document_flags_1_1_bits.htm", null ],
     [ "Enum", "d4/d5d/structez_asset_document_flags.htm#a0236aa0a4d6b9b6ce90ef0e704952e16", [
       [ "None", "d4/d5d/structez_asset_document_flags.htm#a0236aa0a4d6b9b6ce90ef0e704952e16a290e4626693b10da935e88bc436329a3", null ],
       [ "AutoTransformOnSave", "d4/d5d/structez_asset_document_flags.htm#a0236aa0a4d6b9b6ce90ef0e704952e16a61bd9fa4171e8fdd940fdd756820d2cc", null ],

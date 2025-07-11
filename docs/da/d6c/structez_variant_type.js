@@ -1,6 +1,5 @@
 var structez_variant_type =
 [
-    [ "StorageType", "da/d6c/structez_variant_type.htm#ab9a93fcb28f9f2b9505575f5e544d2af", null ],
     [ "Enum", "da/d6c/structez_variant_type.htm#a91ecf53decb31d57981c71043fa30299", [
       [ "Invalid", "da/d6c/structez_variant_type.htm#a91ecf53decb31d57981c71043fa30299a4584fcc346fd11c86028e40233016612", null ],
       [ "FirstStandardType", "da/d6c/structez_variant_type.htm#a91ecf53decb31d57981c71043fa30299ac4af591f48624b00a42223fa8ecb2c97", null ],

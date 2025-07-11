@@ -8,8 +8,7 @@ var classez_chunk_stream_reader =
     [ "ezChunkStreamReader", "d1/d33/classez_chunk_stream_reader.htm#ade6690666cf3063aaddd3ffaf24fabdd", null ],
     [ "BeginStream", "d1/d33/classez_chunk_stream_reader.htm#aa7015a941e7a3d274da8215e6a874f48", null ],
     [ "EndStream", "d1/d33/classez_chunk_stream_reader.htm#a5cc5f6f11c3f94413f314a4c7e4f13c8", null ],
-    [ "GetCurrentChunk", "d1/d33/classez_chunk_stream_reader.htm#a688ba46243572f689596aa5019340c4e", null ],
+    [ "GetCurrentChunk", "d1/d33/classez_chunk_stream_reader.htm#a57a7824cd6d70a239994cc88f48e2567", null ],
     [ "NextChunk", "d1/d33/classez_chunk_stream_reader.htm#a5e2c3ddb653177be7494fe915efbf80b", null ],
-    [ "ReadBytes", "d1/d33/classez_chunk_stream_reader.htm#a4eecd65fe7869bab9613b59bca3e98b0", null ],
-    [ "SetEndChunkFileMode", "d1/d33/classez_chunk_stream_reader.htm#aac4e2f7703880b20a0850cf8f897af8d", null ]
+    [ "ReadBytes", "d1/d33/classez_chunk_stream_reader.htm#a4eecd65fe7869bab9613b59bca3e98b0", null ]
 ];

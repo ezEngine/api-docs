@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['visitorfunc_24059',['VisitorFunc',['../da/d3c/classez_world.htm#a6373b821cee463ac991cbccee4d9e9d3',1,'ezWorld']]]
+  ['updatefunction_0',['UpdateFunction',['../d1/df7/classez_world_module.htm#ad0f8409ed1df3afc0f41b50616bf1284',1,'ezWorldModule']]]
 ];

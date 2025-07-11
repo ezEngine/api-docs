@@ -1,9 +1,5 @@
 var searchData=
 [
-  ['nonconstreferencepointertype_24047',['NonConstReferencePointerType',['../d1/d32/structez_type_traits.htm#a9dcee6bb8dad253cbdc804cd45ce22f1',1,'ezTypeTraits']]],
-  ['nonconstreferencetype_24048',['NonConstReferenceType',['../d1/d32/structez_type_traits.htm#af2051eb05a731b9618b107540f8f46f8',1,'ezTypeTraits']]],
-  ['nonconsttype_24049',['NonConstType',['../d1/d32/structez_type_traits.htm#a4e377295b9ab7e2c78b1c82f92e63517',1,'ezTypeTraits']]],
-  ['nonpointertype_24050',['NonPointerType',['../d1/d32/structez_type_traits.htm#aab7bc6560987fdafa07e22956337989c',1,'ezTypeTraits']]],
-  ['nonreferencepointertype_24051',['NonReferencePointerType',['../d1/d32/structez_type_traits.htm#a1da2a2361a3c9ab3a1e8287bc3cf7176',1,'ezTypeTraits']]],
-  ['nonreferencetype_24052',['NonReferenceType',['../d1/d32/structez_type_traits.htm#a4c2f89ab5e7c70494f16e20300d0ac1c',1,'ezTypeTraits']]]
+  ['inclusioncallback_0',['InclusionCallback',['../da/d17/classez_archive_builder.htm#a127fada9b925acc484f1f877a84b76c2',1,'ezArchiveBuilder']]],
+  ['issearchedobjectcallback_1',['IsSearchedObjectCallback',['../dd/d7b/classez_path_search.htm#a2a557772e61174db725bce444032b64d',1,'ezPathSearch']]]
 ];

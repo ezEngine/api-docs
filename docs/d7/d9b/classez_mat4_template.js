@@ -1,13 +1,9 @@
 var classez_mat4_template =
 [
-    [ "ComponentType", "d7/d9b/classez_mat4_template.htm#a34ac08eca159adb1a8439931a3fe6bb0", null ],
     [ "ezMat4Template", "d7/d9b/classez_mat4_template.htm#ab02b6a87e8dec79b489b48bc393d8893", null ],
     [ "ezMat4Template", "d7/d9b/classez_mat4_template.htm#a13df85a8dea31f33c448f8a23ee21dda", null ],
     [ "ezMat4Template", "d7/d9b/classez_mat4_template.htm#adfe1087aa27fad3dff6f662b5d070eca", null ],
     [ "ezMat4Template", "d7/d9b/classez_mat4_template.htm#a0c8afa525a180aed94d5fd50b182f8cf", null ],
-    [ "Element", "d7/d9b/classez_mat4_template.htm#a36e2ba3da7ccbe70ebd47e8d49d423c4", null ],
-    [ "Element", "d7/d9b/classez_mat4_template.htm#a5e475c44bfddaac0ca012a8d5d7c2b1a", null ],
-    [ "EZ_DECLARE_POD_TYPE", "d7/d9b/classez_mat4_template.htm#aefef989009b3c2053a1ea1defc453366", null ],
     [ "GetAsArray", "d7/d9b/classez_mat4_template.htm#aeba07eba991e9b6879d13374e2f666f7", null ],
     [ "GetColumn", "d7/d9b/classez_mat4_template.htm#af795eb5a1cbd1657adbd9fdcb4f0d234", null ],
     [ "GetDiagonal", "d7/d9b/classez_mat4_template.htm#a2514d85064f32af72089c41f2c70f395", null ],
@@ -15,7 +11,7 @@ var classez_mat4_template =
     [ "GetRotationalPart", "d7/d9b/classez_mat4_template.htm#ac25997c1eb426b0537fc6f2df67b1d40", null ],
     [ "GetRow", "d7/d9b/classez_mat4_template.htm#ad5ad3b20d78e8b68b035acdcda48e6c5", null ],
     [ "GetScalingFactors", "d7/d9b/classez_mat4_template.htm#a7e7dd468c88d0d5f68a16180d72f4e58", null ],
-    [ "GetTranslationVector", "d7/d9b/classez_mat4_template.htm#aab050c258583c4d84a9a2b79ead5b5d3", null ],
+    [ "GetTranslationVector", "d7/d9b/classez_mat4_template.htm#adfcd25f6832ef5565d997d45d5249bcf", null ],
     [ "GetTranspose", "d7/d9b/classez_mat4_template.htm#a82ab389213bb162b324f25905305fac9", null ],
     [ "Invert", "d7/d9b/classez_mat4_template.htm#aa06a574bed25144d4fdec2d8b4c5627e", null ],
     [ "IsEqual", "d7/d9b/classez_mat4_template.htm#acbd7a2c0fab061db474d600439834b89", null ],

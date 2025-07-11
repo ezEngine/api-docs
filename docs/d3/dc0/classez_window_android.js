@@ -1,6 +1,5 @@
 var classez_window_android =
 [
-    [ "~ezWindowAndroid", "d3/dc0/classez_window_android.htm#aafb8b1a32cf3c6615d3312e85ee2fae7", null ],
     [ "DestroyWindow", "d3/dc0/classez_window_android.htm#afa0f9e00548c39acdc0627b32540cbca", null ],
     [ "GetNativeWindowHandle", "d3/dc0/classez_window_android.htm#aba798a47578030e712d71193c350428a", null ],
     [ "InitializeWindow", "d3/dc0/classez_window_android.htm#a705b6d271e4b09a9de855d616c093c0a", null ],

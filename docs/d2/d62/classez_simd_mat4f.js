@@ -1,26 +1,13 @@
 var classez_simd_mat4f =
 [
-    [ "ezSimdMat4f", "d2/d62/classez_simd_mat4f.htm#a2985067da3d82a491f6acea8e7ac45ad", null ],
-    [ "EZ_DECLARE_POD_TYPE", "d2/d62/classez_simd_mat4f.htm#aa92494124bd564d5b856ac9035cf6b8a", null ],
-    [ "GetAsArray", "d2/d62/classez_simd_mat4f.htm#aac17b7ee205b49a89c1326052e5977e5", null ],
     [ "GetInverse", "d2/d62/classez_simd_mat4f.htm#ae94aabff1a91372916f46978b3112b8d", null ],
-    [ "GetRows", "d2/d62/classez_simd_mat4f.htm#a7e6118506f1cb54cd57ca63afb9023ef", null ],
     [ "GetTranspose", "d2/d62/classez_simd_mat4f.htm#ad84e038695d66fad80554867cca77c68", null ],
     [ "Invert", "d2/d62/classez_simd_mat4f.htm#a9b74133932892c9cada72df5735aa808", null ],
     [ "IsEqual", "d2/d62/classez_simd_mat4f.htm#a2199d26d02f37b5a0efe26637c3e1d2d", null ],
     [ "IsIdentity", "d2/d62/classez_simd_mat4f.htm#afec30fe39d44694b39c9351480708230", null ],
     [ "IsNaN", "d2/d62/classez_simd_mat4f.htm#a7258f04c1316f743ed9911f523d43b11", null ],
     [ "IsValid", "d2/d62/classez_simd_mat4f.htm#ab8bf42b17b989ad6d82bcaaf94215a42", null ],
-    [ "operator!=", "d2/d62/classez_simd_mat4f.htm#a5fe58dddfe0ffdc634c11a9573aea1cc", null ],
-    [ "operator*", "d2/d62/classez_simd_mat4f.htm#a6da11f08ae667642a8b6376b3d419935", null ],
-    [ "operator*=", "d2/d62/classez_simd_mat4f.htm#aedb936f9822251e4b6ad3e472f121aaa", null ],
-    [ "operator==", "d2/d62/classez_simd_mat4f.htm#a60f4d10a6bc40b13f12091676baab8d8", null ],
-    [ "SetRows", "d2/d62/classez_simd_mat4f.htm#a06688b7babec4640583e77f06e53eeb5", null ],
     [ "TransformDirection", "d2/d62/classez_simd_mat4f.htm#a0c3f77da1feab8ca158346d72050e6b7", null ],
     [ "TransformPosition", "d2/d62/classez_simd_mat4f.htm#a849d351580f175be2956da10ac443d02", null ],
-    [ "Transpose", "d2/d62/classez_simd_mat4f.htm#a81a507716230ce036b34c6a500a6ac0f", null ],
-    [ "m_col0", "d2/d62/classez_simd_mat4f.htm#aa829bf5a91a4b3eb93ad8809e7dcfaef", null ],
-    [ "m_col1", "d2/d62/classez_simd_mat4f.htm#a865ab8ae87b65e3ce9fc93a3d5bf71ae", null ],
-    [ "m_col2", "d2/d62/classez_simd_mat4f.htm#a551ec7fb40b249d7866e32f0376cb5c5", null ],
-    [ "m_col3", "d2/d62/classez_simd_mat4f.htm#a16eea3687082fb7831f60ae416c7e57e", null ]
+    [ "Transpose", "d2/d62/classez_simd_mat4f.htm#a81a507716230ce036b34c6a500a6ac0f", null ]
 ];

@@ -1,7 +1,6 @@
 var classez_clock =
 [
-    [ "EventData", "d5/d1a/structez_clock_1_1_event_data.htm", "d5/d1a/structez_clock_1_1_event_data" ],
-    [ "Event", "d6/dc5/classez_clock.htm#aa4e7b3dbe3a620e90dbff7d80ab749da", null ],
+    [ "EventData", "d5/d1a/structez_clock_1_1_event_data.htm", null ],
     [ "ezClock", "d6/dc5/classez_clock.htm#ac677b037ede104b07a94934fef85231a", null ],
     [ "GetAccumulatedTime", "d6/dc5/classez_clock.htm#a8f5e2055f7b140728fc7d5a1493d8934", null ],
     [ "GetClockName", "d6/dc5/classez_clock.htm#aaba19abb38d8420f5fe815328cdc0f60", null ],

@@ -1,7 +1,6 @@
 var structez_type_flags =
 [
-    [ "Bits", "df/d19/structez_type_flags_1_1_bits.htm", "df/d19/structez_type_flags_1_1_bits" ],
-    [ "StorageType", "da/dee/structez_type_flags.htm#a004a48e3949714c6cf3081806135bf7c", null ],
+    [ "Bits", "df/d19/structez_type_flags_1_1_bits.htm", null ],
     [ "Enum", "da/dee/structez_type_flags.htm#a6fa1b2e10da3e7c3cc8eda5935e7cd33", [
       [ "StandardType", "da/dee/structez_type_flags.htm#a6fa1b2e10da3e7c3cc8eda5935e7cd33aa2f08a03f98726e7e5ee38a5894437ac", null ],
       [ "IsEnum", "da/dee/structez_type_flags.htm#a6fa1b2e10da3e7c3cc8eda5935e7cd33a394ee3cc03fa255f3146e8c82e5292f8", null ],

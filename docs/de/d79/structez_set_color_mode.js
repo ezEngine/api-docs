@@ -1,6 +1,5 @@
 var structez_set_color_mode =
 [
-    [ "StorageType", "de/d79/structez_set_color_mode.htm#a98eb243220474c0b8aae78baada8612b", null ],
     [ "Enum", "de/d79/structez_set_color_mode.htm#a440ada910464fdd803aeb9cb65a0f53e", [
       [ "SetRGBA", "de/d79/structez_set_color_mode.htm#a440ada910464fdd803aeb9cb65a0f53ea9f99d16e13706beb30eb4f7192572428", null ],
       [ "SetRGB", "de/d79/structez_set_color_mode.htm#a440ada910464fdd803aeb9cb65a0f53eac191006e2d7892328171b7fdcdc993eb", null ],

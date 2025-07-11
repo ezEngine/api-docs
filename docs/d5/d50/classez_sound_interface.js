@@ -1,12 +1,7 @@
 var classez_sound_interface =
 [
-    [ "GetMasterChannelMute", "d5/d50/classez_sound_interface.htm#a1c62114d946331300de14baa768f9953", null ],
-    [ "GetMasterChannelPaused", "d5/d50/classez_sound_interface.htm#a2aea22d412261bbe95782d92b701631a", null ],
-    [ "GetMasterChannelVolume", "d5/d50/classez_sound_interface.htm#aa18822286292e0bb1319c0b4cacfe539", null ],
-    [ "GetNumListeners", "d5/d50/classez_sound_interface.htm#a42b338c2fea18a0bab180d7811aebf65", null ],
-    [ "GetSoundGroupVolume", "d5/d50/classez_sound_interface.htm#aff0ee220d4cf8d5d55ed3a8c7c3a044e", null ],
     [ "LoadConfiguration", "d5/d50/classez_sound_interface.htm#ad280a18c2389a6e1e060bf3ff6bb5c37", null ],
-    [ "OneShotSound", "d5/d50/classez_sound_interface.htm#a0cb6c65d5287881e2b2bd134bd67bc16", null ],
+    [ "OneShotSound", "d5/d50/classez_sound_interface.htm#a9522d0b7f4bba7061f886a01af2deccd", null ],
     [ "SetListener", "d5/d50/classez_sound_interface.htm#aa55641470ebfbf63c0942f4f4d8f0663", null ],
     [ "SetListenerOverrideMode", "d5/d50/classez_sound_interface.htm#a019531b6239ffe696c358a35f47229fb", null ],
     [ "SetMasterChannelMute", "d5/d50/classez_sound_interface.htm#a4486f0b9271509c9164c60821f4769a9", null ],

@@ -1,6 +1,5 @@
 var classez_tex_comparer =
 [
-    [ "ezTexComparer", "d6/d9c/classez_tex_comparer.htm#aacfa0e82373fda07a73bae1c7b6b5fef", null ],
     [ "Compare", "d6/d9c/classez_tex_comparer.htm#aa99e3b9be4809dc9e119804004970d12", null ],
     [ "m_bExceededMSE", "d6/d9c/classez_tex_comparer.htm#ac3d1f9af11b12084701d3b7b05c3d5f9", null ],
     [ "m_Descriptor", "d6/d9c/classez_tex_comparer.htm#abf68c723e0532cf445e136b576244cdd", null ],
@@ -12,8 +11,5 @@ var classez_tex_comparer =
     [ "m_OutputImageDiffAlpha", "d6/d9c/classez_tex_comparer.htm#ae0f8e0aaaba017f4a8d40bfb4d6ad151", null ],
     [ "m_OutputImageDiffRgb", "d6/d9c/classez_tex_comparer.htm#aff10b8f7b1d5dda608fa45e1393eafc1", null ],
     [ "m_OutputMSE", "d6/d9c/classez_tex_comparer.htm#a442a5b5f6fd6f1c4901b1220553c99d4", null ],
-    [ "m_uiOutputMaxDiffAlpha", "d6/d9c/classez_tex_comparer.htm#a15c8600707683a263bea210c6b3fb565", null ],
-    [ "m_uiOutputMaxDiffRgb", "d6/d9c/classez_tex_comparer.htm#a06780f55d6c429794e6ac636014c536d", null ],
-    [ "m_uiOutputMinDiffAlpha", "d6/d9c/classez_tex_comparer.htm#aac4785f9d2a40aa0ebe803b978557e4c", null ],
     [ "m_uiOutputMinDiffRgb", "d6/d9c/classez_tex_comparer.htm#a77e542470a900e8bcec885c5c398e624", null ]
 ];

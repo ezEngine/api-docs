@@ -8,7 +8,6 @@ var classez_input_device =
     [ "ResetInputSlotValues", "df/d18/classez_input_device.htm#a9bf9a14beeae09b78c66b77c97ab6d82", null ],
     [ "UpdateHardwareState", "df/d18/classez_input_device.htm#ac56c8b35631ad7da84c901a2c64ac9f7", null ],
     [ "UpdateInputSlotValues", "df/d18/classez_input_device.htm#a45c72b370f50d7b314571fccbb0fe6e2", null ],
-    [ "ezInputManager", "df/d18/classez_input_device.htm#acf738ab77a446180fdf791df30c48f11", null ],
     [ "m_InputSlotValues", "df/d18/classez_input_device.htm#aa020904d039e3c7ee81829b22d6919ff", null ],
     [ "m_uiLastCharacter", "df/d18/classez_input_device.htm#a053bacaca498574994f6013e1fe72dc4", null ]
 ];

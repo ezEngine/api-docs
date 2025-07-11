@@ -17,20 +17,11 @@ var classez_image_header =
     [ "GetPlaneCount", "d4/dfe/classez_image_header.htm#a9c73f87a436fce5eba69d4175f64e626", null ],
     [ "GetRowPitch", "d4/dfe/classez_image_header.htm#a06334f2dfa83e246ec67ff2fb0373bf7", null ],
     [ "GetWidth", "d4/dfe/classez_image_header.htm#ad12837e5a67d006ab2d1e53d46674289", null ],
-    [ "operator!=", "d4/dfe/classez_image_header.htm#ac95cee058f0129e663f4abb0e822d9da", null ],
-    [ "operator==", "d4/dfe/classez_image_header.htm#a6b965c84c928355b8ae8653c75331a77", null ],
     [ "SetDepth", "d4/dfe/classez_image_header.htm#afbee3f53532758618d6cedaff9a369c3", null ],
     [ "SetHeight", "d4/dfe/classez_image_header.htm#a7b6aa073d2b8b4ba9126112afd56993d", null ],
     [ "SetImageFormat", "d4/dfe/classez_image_header.htm#a03ba8ebe439c5eea29514818622786d0", null ],
     [ "SetNumArrayIndices", "d4/dfe/classez_image_header.htm#ab166809329804a6eb8e8cdff8143b08c", null ],
     [ "SetNumFaces", "d4/dfe/classez_image_header.htm#a5feccd8d5c77bacd6b8e83027c9ade95", null ],
     [ "SetNumMipLevels", "d4/dfe/classez_image_header.htm#a52212da1366c3b7076da9f995af6c508", null ],
-    [ "SetWidth", "d4/dfe/classez_image_header.htm#af5052184ab4fc9a5cf6096ea14c48631", null ],
-    [ "m_Format", "d4/dfe/classez_image_header.htm#a92176379ac85e482509eb0e80c0e3656", null ],
-    [ "m_uiDepth", "d4/dfe/classez_image_header.htm#aa81dc97296a7dfb611188c56144d3817", null ],
-    [ "m_uiHeight", "d4/dfe/classez_image_header.htm#a1978f00029d2662f9a445b8751b2af66", null ],
-    [ "m_uiNumArrayIndices", "d4/dfe/classez_image_header.htm#a3b98d1e9bf99dbab84653437c0291bd4", null ],
-    [ "m_uiNumFaces", "d4/dfe/classez_image_header.htm#a5c4bf30cb2e5fe4d411f9d7a2ef88cf0", null ],
-    [ "m_uiNumMipLevels", "d4/dfe/classez_image_header.htm#a9f792360c19def388c59fa08d2c7aa4e", null ],
-    [ "m_uiWidth", "d4/dfe/classez_image_header.htm#a0a59cfa94b04125d8376164712ff3850", null ]
+    [ "SetWidth", "d4/dfe/classez_image_header.htm#af5052184ab4fc9a5cf6096ea14c48631", null ]
 ];

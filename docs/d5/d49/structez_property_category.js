@@ -1,6 +1,5 @@
 var structez_property_category =
 [
-    [ "StorageType", "d5/d49/structez_property_category.htm#a4de28d116a7db4db35190aad313ccbed", null ],
     [ "Enum", "d5/d49/structez_property_category.htm#a6900b9049e7887fa4b00d16d5eace8cf", [
       [ "Constant", "d5/d49/structez_property_category.htm#a6900b9049e7887fa4b00d16d5eace8cfa7a6cb2df5f2963d94c97d03c4855de57", null ],
       [ "Member", "d5/d49/structez_property_category.htm#a6900b9049e7887fa4b00d16d5eace8cfae8a16ea65b820b392e7480a87375f651", null ],

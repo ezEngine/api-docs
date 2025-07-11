@@ -1,7 +1,6 @@
 var structez_dependency_flags =
 [
-    [ "Bits", "d3/dd3/structez_dependency_flags_1_1_bits.htm", "d3/dd3/structez_dependency_flags_1_1_bits" ],
-    [ "StorageType", "d1/df6/structez_dependency_flags.htm#a59c2a7654d88cd6e6349dea53b5fc9a2", null ],
+    [ "Bits", "d3/dd3/structez_dependency_flags_1_1_bits.htm", null ],
     [ "Enum", "d1/df6/structez_dependency_flags.htm#a548a42f1472333d842fa714979fe3800", [
       [ "None", "d1/df6/structez_dependency_flags.htm#a548a42f1472333d842fa714979fe3800a4c5975c953a9ca77d4bf8aa6efcaf476", null ],
       [ "Thumbnail", "d1/df6/structez_dependency_flags.htm#a548a42f1472333d842fa714979fe3800ad78bfbab9ffa44fea9e9221991203fcf", null ],

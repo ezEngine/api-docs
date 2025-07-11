@@ -1,7 +1,6 @@
 var structez_shader_bind_flags =
 [
-    [ "Bits", "dd/d69/structez_shader_bind_flags_1_1_bits.htm", "dd/d69/structez_shader_bind_flags_1_1_bits" ],
-    [ "StorageType", "d6/da4/structez_shader_bind_flags.htm#a7573d1ecc8b1e9db3a383c284e81b893", null ],
+    [ "Bits", "dd/d69/structez_shader_bind_flags_1_1_bits.htm", null ],
     [ "Enum", "d6/da4/structez_shader_bind_flags.htm#addfc2892a3902a7a2dd0f85e571b11a7", [
       [ "None", "d6/da4/structez_shader_bind_flags.htm#addfc2892a3902a7a2dd0f85e571b11a7a1d7558fc09d934030786e31c2e991d6c", null ],
       [ "ForceRebind", "d6/da4/structez_shader_bind_flags.htm#addfc2892a3902a7a2dd0f85e571b11a7a3df6208d2663dd8d2b75f876956bf6e3", null ],

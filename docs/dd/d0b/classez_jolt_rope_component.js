@@ -1,14 +1,7 @@
 var classez_jolt_rope_component =
 [
-    [ "ezJoltRopeComponent", "dd/d0b/classez_jolt_rope_component.htm#aaa8c9b5935883a9da4f49afb86c90f91", null ],
-    [ "~ezJoltRopeComponent", "dd/d0b/classez_jolt_rope_component.htm#a43f118ed30751f3ae6f635a564437953", null ],
-    [ "AddForceAtPos", "dd/d0b/classez_jolt_rope_component.htm#ad6099ffd250b5b8258e2f834f751f067", null ],
     [ "AddImpulseAtPos", "dd/d0b/classez_jolt_rope_component.htm#a98670bce73587f5cf924338d586f8a16", null ],
     [ "DeserializeComponent", "dd/d0b/classez_jolt_rope_component.htm#a188c4d52b81bd230c2cffd57087b6fa0", null ],
-    [ "GetAnchor1ConstraintMode", "dd/d0b/classez_jolt_rope_component.htm#a81b8f4864a1b34556caad9a8f14fcf62", null ],
-    [ "GetAnchor2ConstraintMode", "dd/d0b/classez_jolt_rope_component.htm#a91af2d40e6d20b123e665c166e52de14", null ],
-    [ "GetGravityFactor", "dd/d0b/classez_jolt_rope_component.htm#aedadc0a8cd55c520b34055ed09d050c2", null ],
-    [ "GetSurfaceFile", "dd/d0b/classez_jolt_rope_component.htm#aed3f0dcedbc3daf08d59d7aeb2e78e24", null ],
     [ "OnActivated", "dd/d0b/classez_jolt_rope_component.htm#a93472c06f24a668cc8f3ef21bc458060", null ],
     [ "OnDeactivated", "dd/d0b/classez_jolt_rope_component.htm#a0c6ac75d7156ace89fd2fc2dd9cc313a", null ],
     [ "OnJoltMsgDisconnectConstraints", "dd/d0b/classez_jolt_rope_component.htm#a7af31d3b70a4fb14f65fb492326b1013", null ],

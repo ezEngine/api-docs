@@ -1,11 +1,9 @@
 var classez_typed_resource_handle =
 [
-    [ "ResourceType", "d3/dd7/classez_typed_resource_handle.htm#aa09477a1703606215897b6ddffed072c", null ],
     [ "ezTypedResourceHandle", "d3/dd7/classez_typed_resource_handle.htm#a3416f53038ec6a534eb6a97249e65689", null ],
     [ "ezTypedResourceHandle", "d3/dd7/classez_typed_resource_handle.htm#a55ab68b343f4d3c1a98cab53a639e0bc", null ],
     [ "ezTypedResourceHandle", "d3/dd7/classez_typed_resource_handle.htm#a7229e64c27343e2a43d72f00d03dbacf", null ],
     [ "ezTypedResourceHandle", "d3/dd7/classez_typed_resource_handle.htm#a300ab8eb449ecfd0b96a1417ce7f7e63", null ],
-    [ "ezTypedResourceHandle", "d3/dd7/classez_typed_resource_handle.htm#a0bd6eaa06059f53488915514ba4ae774", null ],
     [ "AssignFromTypelessHandle", "d3/dd7/classez_typed_resource_handle.htm#a171d300909258b3f88d84593b14542ce", null ],
     [ "GetResourceID", "d3/dd7/classez_typed_resource_handle.htm#ada6d826ac72e2fa53fec339c00eab540", null ],
     [ "GetResourceIDHash", "d3/dd7/classez_typed_resource_handle.htm#a7e589a544fee87ec70806658d0a76e5e", null ],
@@ -21,10 +19,5 @@ var classez_typed_resource_handle =
     [ "operator=", "d3/dd7/classez_typed_resource_handle.htm#a18649b702fd5b3c2515d2ef606768a5d", null ],
     [ "operator=", "d3/dd7/classez_typed_resource_handle.htm#a0549d0c949a8c421bf003ea44a7c0e91", null ],
     [ "operator==", "d3/dd7/classez_typed_resource_handle.htm#a162066ec12e16c6de6e57a39a2f11ee6", null ],
-    [ "operator==", "d3/dd7/classez_typed_resource_handle.htm#aff1f659d6ee0502349b7851e42601154", null ],
-    [ "ezTypedResourceHandle", "d3/dd7/classez_typed_resource_handle.htm#a5405b1647898af1a6f8b35394796809a", null ],
-    [ "ezResourceHandleReadContext", "d3/dd7/classez_typed_resource_handle.htm#a33fafc789a90ad89152deba59d171997", null ],
-    [ "ezResourceHandleStreamOperations", "d3/dd7/classez_typed_resource_handle.htm#a403407fa8bbd0ba548fd30687fd975c2", null ],
-    [ "ezResourceHandleWriteContext", "d3/dd7/classez_typed_resource_handle.htm#a00cb14e5f89042922d8dd1676bf64bed", null ],
-    [ "ezResourceManager", "d3/dd7/classez_typed_resource_handle.htm#a89485141196e369fad2c2da4905cd355", null ]
+    [ "operator==", "d3/dd7/classez_typed_resource_handle.htm#aff1f659d6ee0502349b7851e42601154", null ]
 ];

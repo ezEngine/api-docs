@@ -1,7 +1,6 @@
 var structez_render_pipeline_node_pin_1_1_type =
 [
-    [ "Bits", "d8/da9/structez_render_pipeline_node_pin_1_1_type_1_1_bits.htm", "d8/da9/structez_render_pipeline_node_pin_1_1_type_1_1_bits" ],
-    [ "StorageType", "d7/d9f/structez_render_pipeline_node_pin_1_1_type.htm#aeeaf61c0b90d6e97aa3740f58cf0a13f", null ],
+    [ "Bits", "d8/da9/structez_render_pipeline_node_pin_1_1_type_1_1_bits.htm", null ],
     [ "Enum", "d7/d9f/structez_render_pipeline_node_pin_1_1_type.htm#a9455676ed993804bfe1e2cd779759e0b", [
       [ "Input", "d7/d9f/structez_render_pipeline_node_pin_1_1_type.htm#a9455676ed993804bfe1e2cd779759e0ba34270450fa6165e613d8e0fa6dcab672", null ],
       [ "Output", "d7/d9f/structez_render_pipeline_node_pin_1_1_type.htm#a9455676ed993804bfe1e2cd779759e0baf3ef1c0cd4753647a721e71a0293b488", null ],

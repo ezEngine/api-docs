@@ -1,6 +1,5 @@
 var structez_basis_axis =
 [
-    [ "StorageType", "d7/d7a/structez_basis_axis.htm#a5a33cebbb883b80c3ffbce9516a30035", null ],
     [ "Enum", "d7/d7a/structez_basis_axis.htm#aabb1d746feea7b4250fd06f8e21d5fb8", [
       [ "PositiveX", "d7/d7a/structez_basis_axis.htm#aabb1d746feea7b4250fd06f8e21d5fb8ace1847c92545bdfd729fb301f4d7ee07", null ],
       [ "PositiveY", "d7/d7a/structez_basis_axis.htm#aabb1d746feea7b4250fd06f8e21d5fb8a1b8505d2e9edb2c352b038d3d8a9a64b", null ],

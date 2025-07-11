@@ -1,27 +1,4 @@
 var classez_drag_to_position_gizmo =
 [
-    [ "ezDragToPositionGizmo", "d6/d7c/classez_drag_to_position_gizmo.htm#ad3245b262f89bb52bf68203637e16818", null ],
-    [ "DoFocusLost", "d6/d7c/classez_drag_to_position_gizmo.htm#a6ebd0020e8681d3d3a786e83b8d0d9f2", null ],
-    [ "DoMouseMoveEvent", "d6/d7c/classez_drag_to_position_gizmo.htm#af2e2be5f55fd7af2e835675d67cb8db4", null ],
-    [ "DoMousePressEvent", "d6/d7c/classez_drag_to_position_gizmo.htm#a4d40e87711fe5d1abe83e7d2cfba8d0e", null ],
-    [ "DoMouseReleaseEvent", "d6/d7c/classez_drag_to_position_gizmo.htm#ab55e15bb107c6045f7cc3d5e16565b82", null ],
-    [ "GetRotationResult", "d6/d7c/classez_drag_to_position_gizmo.htm#a98a7e71345878b179d8d375485e92a57", null ],
-    [ "GetTranslationResult", "d6/d7c/classez_drag_to_position_gizmo.htm#ae9481476e4d108d0cfe765fad9425c62", null ],
-    [ "IsPickingSelectedAllowed", "d6/d7c/classez_drag_to_position_gizmo.htm#aff437ea33e76e362841d34e0c3976092", null ],
-    [ "ModifiesRotation", "d6/d7c/classez_drag_to_position_gizmo.htm#a7795eac25a394e1fe296607629cce9f1", null ],
-    [ "OnSetOwner", "d6/d7c/classez_drag_to_position_gizmo.htm#aa86eb7130ae0c86459d29b8f7b7b2685", null ],
-    [ "OnTransformationChanged", "d6/d7c/classez_drag_to_position_gizmo.htm#a43f45a57435a37300fea063509d617fb", null ],
-    [ "OnVisibleChanged", "d6/d7c/classez_drag_to_position_gizmo.htm#a519fe19b7c79dba3c2a73f7ab78bbecf", null ],
-    [ "UpdateStatusBarText", "d6/d7c/classez_drag_to_position_gizmo.htm#aed0ff92b7417d905f3d4932908d69496", null ],
-    [ "m_bModifiesRotation", "d6/d7c/classez_drag_to_position_gizmo.htm#ac2531a1dd30715020b7b0f54b169a7f3", null ],
-    [ "m_hAlignNX", "d6/d7c/classez_drag_to_position_gizmo.htm#a9fc0c2adb53ad4d6f0560a6c05c4e857", null ],
-    [ "m_hAlignNY", "d6/d7c/classez_drag_to_position_gizmo.htm#a4d8a589e0affccefe72033af24a00dc0", null ],
-    [ "m_hAlignNZ", "d6/d7c/classez_drag_to_position_gizmo.htm#a046a27b4508899ac9cc65f5b0f60afc1", null ],
-    [ "m_hAlignPX", "d6/d7c/classez_drag_to_position_gizmo.htm#aabd1a163c9e23d558f4b69aadfeb7bd1", null ],
-    [ "m_hAlignPY", "d6/d7c/classez_drag_to_position_gizmo.htm#a48a6beb1a712fc097f8818a5459aa08d", null ],
-    [ "m_hAlignPZ", "d6/d7c/classez_drag_to_position_gizmo.htm#a3cedc0cf5c56d1aff6a4d4d7e58a4e99", null ],
-    [ "m_hBobble", "d6/d7c/classez_drag_to_position_gizmo.htm#ac7729b18c7a0c5d5910ddf73f4ada8df", null ],
-    [ "m_LastInteraction", "d6/d7c/classez_drag_to_position_gizmo.htm#ac7f25ad27f5b61dadb67ad501f43ceea", null ],
-    [ "m_qStartOrientation", "d6/d7c/classez_drag_to_position_gizmo.htm#a3bd2a7ec5d89238e78684b613136739e", null ],
-    [ "m_vStartPosition", "d6/d7c/classez_drag_to_position_gizmo.htm#ad2d9cb78fb9f39e56eb8de61ff7d370b", null ]
+    [ "ModifiesRotation", "d6/d7c/classez_drag_to_position_gizmo.htm#a7795eac25a394e1fe296607629cce9f1", null ]
 ];

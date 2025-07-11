@@ -1,9 +1,6 @@
 var classez_qt_image_cache =
 [
-    [ "ezQtImageCache", "d2/d95/classez_qt_image_cache.htm#a802f70e89c5fc40a4fa032b26dc265ef", null ],
     [ "EnableRequestProcessing", "d2/d95/classez_qt_image_cache.htm#a0e2becf038bcf402e2dc6c3b272dae7e", null ],
-    [ "ImageInvalidated", "d2/d95/classez_qt_image_cache.htm#af869df3f401907c140af4e834c77c1da", null ],
-    [ "ImageLoaded", "d2/d95/classez_qt_image_cache.htm#ad98a049beece3bed60e792cd9292d597", null ],
     [ "InvalidateCache", "d2/d95/classez_qt_image_cache.htm#ad7880439cbcb6a0427aed7f344477024", null ],
     [ "QueryPixmap", "d2/d95/classez_qt_image_cache.htm#a432362ce0a4669dc1466b4fb5ffb9483", null ],
     [ "QueryPixmapForType", "d2/d95/classez_qt_image_cache.htm#a65d758b81c33f23c83a0aeeb6d27b43c", null ],

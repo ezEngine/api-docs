@@ -1,7 +1,5 @@
 var classez_render_doc =
 [
-    [ "ezRenderDoc", "d2/dfc/classez_render_doc.htm#a711f99b9c7a5de78868404691cd33f47", null ],
-    [ "~ezRenderDoc", "d2/dfc/classez_render_doc.htm#a9e3df704bbc787c246940dc5b3921c3b", null ],
     [ "EndFrameCaptureAndDiscardResult", "d2/dfc/classez_render_doc.htm#a4eef80a2aef50bbe66d78f4023919e8c", null ],
     [ "EndFrameCaptureAndWriteOutput", "d2/dfc/classez_render_doc.htm#a3c3c47322670063fae5c203ddf9d45c7", null ],
     [ "GetAbsCaptureFilePathTemplate", "d2/dfc/classez_render_doc.htm#a318684023715dcb5b1797b987b6c6c45", null ],

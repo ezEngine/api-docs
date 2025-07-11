@@ -4,7 +4,6 @@ var classez_processing_stream_group =
     [ "~ezProcessingStreamGroup", "d0/d6a/classez_processing_stream_group.htm#af6859271644eb06942a1faf70d903648", null ],
     [ "AddProcessor", "d0/d6a/classez_processing_stream_group.htm#a0b250ce09c910c476cce608530397ae6", null ],
     [ "AddStream", "d0/d6a/classez_processing_stream_group.htm#a35f6f9332ce3fef2514a3e6dc5ae5dec", null ],
-    [ "Clear", "d0/d6a/classez_processing_stream_group.htm#afb3b9f2235482a3e27ae0f8f6971c43b", null ],
     [ "ClearProcessors", "d0/d6a/classez_processing_stream_group.htm#a224adaf62905eca49b6a38ec9793b87f", null ],
     [ "GetHighestNumActiveElements", "d0/d6a/classez_processing_stream_group.htm#a6a270d9298997a89a293554f6840de23", null ],
     [ "GetNumActiveElements", "d0/d6a/classez_processing_stream_group.htm#a4817249fcb2879b7626d1e1c2a4f5722", null ],

@@ -18,6 +18,5 @@ var classez_command_line_option =
     [ "GetParamShortDesc", "db/d9d/classez_command_line_option.htm#ad66d456dd9cd6917067ab2643beee8bb", null ],
     [ "GetSortingGroup", "db/d9d/classez_command_line_option.htm#a70c87a77129eabf7dcf331b13cd9d430", null ],
     [ "GetSplitOptions", "db/d9d/classez_command_line_option.htm#a71b04c57cf00feeec91e65ce0c055990", null ],
-    [ "GetType", "db/d9d/classez_command_line_option.htm#a13b481feb7f28d9e13b9d2fd4d4a772d", null ],
-    [ "m_sSortingGroup", "db/d9d/classez_command_line_option.htm#a4ea5d234374860d428a193bdff30a5a6", null ]
+    [ "GetType", "db/d9d/classez_command_line_option.htm#a13b481feb7f28d9e13b9d2fd4d4a772d", null ]
 ];

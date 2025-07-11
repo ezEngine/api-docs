@@ -7,7 +7,5 @@ var classez_dummy_x_r_input =
     [ "GetDeviceState", "d6/d7c/classez_dummy_x_r_input.htm#a66d9065b6f6729e99b36a6ab82b51ca8", null ],
     [ "InitializeDevice", "d6/d7c/classez_dummy_x_r_input.htm#a712c0b43fdb10801b6adea97b59f78be", null ],
     [ "RegisterInputSlots", "d6/d7c/classez_dummy_x_r_input.htm#a20e32ae5b6f43ae93c2007d0896f7ed1", null ],
-    [ "UpdateInputSlotValues", "d6/d7c/classez_dummy_x_r_input.htm#aed4a86c5d09211cf9ee0d7f56747b540", null ],
-    [ "ezDummyXR", "d6/d7c/classez_dummy_x_r_input.htm#abf3b58f37c2433176440bc5adbd58f76", null ],
-    [ "m_DeviceState", "d6/d7c/classez_dummy_x_r_input.htm#a91dd337a23e4f907be5d92dfea89c16d", null ]
+    [ "UpdateInputSlotValues", "d6/d7c/classez_dummy_x_r_input.htm#aed4a86c5d09211cf9ee0d7f56747b540", null ]
 ];

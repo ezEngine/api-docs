@@ -9,7 +9,6 @@ var classez_simd_b_box =
     [ "ExpandToInclude", "db/dc7/classez_simd_b_box.htm#ab9fd8f0d0070885ca61cc1ea34e3fed6", null ],
     [ "ExpandToInclude", "db/dc7/classez_simd_b_box.htm#af9a98faeeb4c7284f1965b7dd9c3e11c", null ],
     [ "ExpandToInclude", "db/dc7/classez_simd_b_box.htm#a7421e4312f184ad16c7142a7a92446bc", null ],
-    [ "EZ_DECLARE_POD_TYPE", "db/dc7/classez_simd_b_box.htm#aa0ad73b5f84750523423874ece3e5698", null ],
     [ "GetCenter", "db/dc7/classez_simd_b_box.htm#af9772a4ac4e33ad586547a979cb2e407", null ],
     [ "GetClampedPoint", "db/dc7/classez_simd_b_box.htm#acfe0c05009ab4504aaa994f7f259ee85", null ],
     [ "GetDistanceSquaredTo", "db/dc7/classez_simd_b_box.htm#a40e4b4ad54fb2c0a19ef22e269136ba5", null ],
@@ -19,8 +18,6 @@ var classez_simd_b_box =
     [ "Grow", "db/dc7/classez_simd_b_box.htm#afcd779efdb165f226b1c680782fd4440", null ],
     [ "IsNaN", "db/dc7/classez_simd_b_box.htm#a92ecf145a208c97df76bd79e28fa1f00", null ],
     [ "IsValid", "db/dc7/classez_simd_b_box.htm#a2c4c08969894cad09616fa253c12a4e9", null ],
-    [ "operator!=", "db/dc7/classez_simd_b_box.htm#aa11bc2866e741bd07ae8c18b278b9033", null ],
-    [ "operator==", "db/dc7/classez_simd_b_box.htm#a81f65c05be2c98aeebd5d3d487ad1729", null ],
     [ "Overlaps", "db/dc7/classez_simd_b_box.htm#a1f99d5c54171f307cf3f8bdd41753535", null ],
     [ "Overlaps", "db/dc7/classez_simd_b_box.htm#ada3112c5b042de8398ec0ffbd709499c", null ],
     [ "SetCenterAndHalfExtents", "db/dc7/classez_simd_b_box.htm#a5f2c05587fd3f036ff91b0aab1e1e1f5", null ],
@@ -28,7 +25,5 @@ var classez_simd_b_box =
     [ "SetInvalid", "db/dc7/classez_simd_b_box.htm#ae429487c9d276f86fe7e89ed56d38ff0", null ],
     [ "Transform", "db/dc7/classez_simd_b_box.htm#adeeaad2f9f0d7b5c84896f4c095f79a0", null ],
     [ "Transform", "db/dc7/classez_simd_b_box.htm#aea7fd693d474236b14f7a88f47fa1730", null ],
-    [ "Translate", "db/dc7/classez_simd_b_box.htm#a6eecd0401402ca33462993f4f60d3834", null ],
-    [ "m_Max", "db/dc7/classez_simd_b_box.htm#aac599ef38255e00c974d0a12a562bb19", null ],
-    [ "m_Min", "db/dc7/classez_simd_b_box.htm#a7821036b0d2fedb5c3071991ba9db3ef", null ]
+    [ "Translate", "db/dc7/classez_simd_b_box.htm#a6eecd0401402ca33462993f4f60d3834", null ]
 ];

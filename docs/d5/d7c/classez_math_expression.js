@@ -1,6 +1,6 @@
 var classez_math_expression =
 [
-    [ "Input", "dc/d10/structez_math_expression_1_1_input.htm", "dc/d10/structez_math_expression_1_1_input" ],
+    [ "Input", "dc/d10/structez_math_expression_1_1_input.htm", null ],
     [ "ezMathExpression", "d5/d7c/classez_math_expression.htm#a3d401bc5fbbf3794c9619fa3bff84802", null ],
     [ "ezMathExpression", "d5/d7c/classez_math_expression.htm#a2539b6d9104150011ce9790c808bbd41", null ],
     [ "Evaluate", "d5/d7c/classez_math_expression.htm#a86879225eeb3c2c8e370a574d3204fa0", null ],

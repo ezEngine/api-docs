@@ -1,7 +1,6 @@
 var structez_cloth_sheet_flags =
 [
-    [ "Bits", "d6/dec/structez_cloth_sheet_flags_1_1_bits.htm", "d6/dec/structez_cloth_sheet_flags_1_1_bits" ],
-    [ "StorageType", "d8/df9/structez_cloth_sheet_flags.htm#a6844003f86cdf035c49a48da669ec362", null ],
+    [ "Bits", "d6/dec/structez_cloth_sheet_flags_1_1_bits.htm", null ],
     [ "Enum", "d8/df9/structez_cloth_sheet_flags.htm#af667eef3e23f81b556b1162bbf2923c0", [
       [ "FixedCornerTopLeft", "d8/df9/structez_cloth_sheet_flags.htm#af667eef3e23f81b556b1162bbf2923c0a8f508020fc5194c9973560a5c4e3f2bc", null ],
       [ "FixedCornerTopRight", "d8/df9/structez_cloth_sheet_flags.htm#af667eef3e23f81b556b1162bbf2923c0a941ecfac32945bd69e292f75eb67e54d", null ],

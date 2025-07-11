@@ -1,7 +1,5 @@
 var classez_game_state_base =
 [
-    [ "ezGameStateBase", "d8/d02/classez_game_state_base.htm#ae3a1ff5d55b05211e2ac089003e0ee74", null ],
-    [ "~ezGameStateBase", "d8/d02/classez_game_state_base.htm#a6f80693ad87004d975a9bc2a1d6fce61", null ],
     [ "AddMainViewsToRender", "d8/d02/classez_game_state_base.htm#af33b9152262a539b80c8081fa800a4e2", null ],
     [ "AfterWorldUpdate", "d8/d02/classez_game_state_base.htm#acdf6c74204daed82f52dc61b1a6cd10a", null ],
     [ "BeforeWorldUpdate", "d8/d02/classez_game_state_base.htm#a08132b3330ae2fcb6188d33d685d831c", null ],

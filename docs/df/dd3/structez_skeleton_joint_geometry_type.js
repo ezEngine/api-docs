@@ -1,6 +1,5 @@
 var structez_skeleton_joint_geometry_type =
 [
-    [ "StorageType", "df/dd3/structez_skeleton_joint_geometry_type.htm#ab441e132baf7ea2cb477d5a9e2b5ad3e", null ],
     [ "Enum", "df/dd3/structez_skeleton_joint_geometry_type.htm#aa5381985ff73beadd6f6746714f210e3", [
       [ "None", "df/dd3/structez_skeleton_joint_geometry_type.htm#aa5381985ff73beadd6f6746714f210e3ab3b84fffe5dad990a136f9b9192d028a", null ],
       [ "Capsule", "df/dd3/structez_skeleton_joint_geometry_type.htm#aa5381985ff73beadd6f6746714f210e3a30f729dce917117f5813224bf352eae1", null ],

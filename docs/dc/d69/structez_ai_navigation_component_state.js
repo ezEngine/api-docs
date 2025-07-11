@@ -1,6 +1,5 @@
 var structez_ai_navigation_component_state =
 [
-    [ "StorageType", "dc/d69/structez_ai_navigation_component_state.htm#ab94a3d6abf594b6f960a951dc5ff12f7", null ],
     [ "Enum", "dc/d69/structez_ai_navigation_component_state.htm#ac8c7832f1d2f3b4f8dc482b828eebb29", [
       [ "Idle", "dc/d69/structez_ai_navigation_component_state.htm#ac8c7832f1d2f3b4f8dc482b828eebb29aa03dea5dbece3f54b1c9a037b6ae45d5", null ],
       [ "Moving", "dc/d69/structez_ai_navigation_component_state.htm#ac8c7832f1d2f3b4f8dc482b828eebb29abaa627633fde946ae335dcb23537c83d", null ],

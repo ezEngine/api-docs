@@ -9,8 +9,6 @@ var classez_memory_mapped_file =
       [ "Start", "dc/d34/classez_memory_mapped_file.htm#ab974b914f116c9508d94ca4244fd7e3eaa6122a65eaa676f700ae68d393054a37", null ],
       [ "End", "dc/d34/classez_memory_mapped_file.htm#ab974b914f116c9508d94ca4244fd7e3ea87557f11575c0ad78e4e28abedc13b6e", null ]
     ] ],
-    [ "ezMemoryMappedFile", "dc/d34/classez_memory_mapped_file.htm#a2bec42642806aaee915198d3b366c2eb", null ],
-    [ "~ezMemoryMappedFile", "dc/d34/classez_memory_mapped_file.htm#a3ce09022db753321daa7d2dc98b348f8", null ],
     [ "Close", "dc/d34/classez_memory_mapped_file.htm#ab6f6614d5bac3cad577e264980031cfa", null ],
     [ "GetFileSize", "dc/d34/classez_memory_mapped_file.htm#a9060fa9bf2eff3546f3ac0582063aa83", null ],
     [ "GetMode", "dc/d34/classez_memory_mapped_file.htm#a43d3dace6a2341fc2d648b635f45df8d", null ],

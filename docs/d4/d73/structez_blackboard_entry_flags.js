@@ -1,7 +1,6 @@
 var structez_blackboard_entry_flags =
 [
-    [ "Bits", "d4/d2c/structez_blackboard_entry_flags_1_1_bits.htm", "d4/d2c/structez_blackboard_entry_flags_1_1_bits" ],
-    [ "StorageType", "d4/d73/structez_blackboard_entry_flags.htm#ad2ff344b9aba14254e1a3254d1fb77c5", null ],
+    [ "Bits", "d4/d2c/structez_blackboard_entry_flags_1_1_bits.htm", null ],
     [ "Enum", "d4/d73/structez_blackboard_entry_flags.htm#ad14f88d591c5f520c1dbe00d5adc8a1b", [
       [ "None", "d4/d73/structez_blackboard_entry_flags.htm#ad14f88d591c5f520c1dbe00d5adc8a1ba400889c71af8fe77d3e790ec0e09aaaa", null ],
       [ "Save", "d4/d73/structez_blackboard_entry_flags.htm#ad14f88d591c5f520c1dbe00d5adc8a1ba128d51323eef72350af262e39a01e3df", null ],

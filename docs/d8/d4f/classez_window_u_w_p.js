@@ -1,6 +1,5 @@
 var classez_window_u_w_p =
 [
-    [ "~ezWindowUWP", "d8/d4f/classez_window_u_w_p.htm#a559d1a26d3c9fc60d6fef9ff513a3890", null ],
     [ "DestroyWindow", "d8/d4f/classez_window_u_w_p.htm#a1ff8212cd5466ed05b8c565b30f02564", null ],
     [ "GetNativeWindowHandle", "d8/d4f/classez_window_u_w_p.htm#a249128a405bc0c47c1072c6ed9a0f9ec", null ],
     [ "InitializeWindow", "d8/d4f/classez_window_u_w_p.htm#a71e4890d1928685306186fbf6cf55150", null ],

@@ -1,11 +1,5 @@
 var classez_condition_variable =
 [
-    [ "WaitResult", "d7/d18/classez_condition_variable.htm#ad3b555c183ff7223488ab825fb171e57", [
-      [ "Signaled", "d7/d18/classez_condition_variable.htm#ad3b555c183ff7223488ab825fb171e57af666961fd3f122d43c101404d1aba5bf", null ],
-      [ "Timeout", "d7/d18/classez_condition_variable.htm#ad3b555c183ff7223488ab825fb171e57ac85a251cc457840f1e032f1b733e9398", null ]
-    ] ],
-    [ "ezConditionVariable", "d7/d18/classez_condition_variable.htm#af9e67bb8df89bc727347437a56f89e7a", null ],
-    [ "~ezConditionVariable", "d7/d18/classez_condition_variable.htm#a7672325470f4441290408981c2b20d31", null ],
     [ "Lock", "d7/d18/classez_condition_variable.htm#a167e64e7eb58bdccfd989a140844ff28", null ],
     [ "SignalAll", "d7/d18/classez_condition_variable.htm#ac33b3307ba6de893ddce4ae4bbfbc582", null ],
     [ "SignalOne", "d7/d18/classez_condition_variable.htm#a44f7bd1f6123ea7da8989cadbe68efb8", null ],

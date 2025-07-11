@@ -1,7 +1,6 @@
 var classez_date_time =
 [
     [ "ezDateTime", "df/d59/classez_date_time.htm#acd8ff78df8d6f6f1f99335b53cde79c8", null ],
-    [ "~ezDateTime", "df/d59/classez_date_time.htm#a0893d2d603a0df5683ad9562c9581123", null ],
     [ "GetDay", "df/d59/classez_date_time.htm#a5b157531aa55ed5dc78cd984eefb23cf", null ],
     [ "GetDayOfWeek", "df/d59/classez_date_time.htm#a77943a58616876da22428175bd30fcbf", null ],
     [ "GetHour", "df/d59/classez_date_time.htm#aebfa6e5194a9cb49c973a61fb4ef1351", null ],

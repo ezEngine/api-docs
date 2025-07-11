@@ -1,7 +1,5 @@
 var structez_file_stats =
 [
-    [ "ezFileStats", "de/d41/structez_file_stats.htm#a0ddc71494ad561325cbec117b3dd131a", null ],
-    [ "~ezFileStats", "de/d41/structez_file_stats.htm#a5aeb09af1e65ca8cd67a2c00e052defa", null ],
     [ "GetFullPath", "de/d41/structez_file_stats.htm#a1905a14e20ff408f51bec9a503e3c423", null ],
     [ "m_bIsDirectory", "de/d41/structez_file_stats.htm#ac8b0f85ea4820d0fbbb1860a28c399e1", null ],
     [ "m_LastModificationTime", "de/d41/structez_file_stats.htm#a1542758ee4c8dba1c13a391109b3e066", null ],

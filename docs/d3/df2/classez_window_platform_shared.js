@@ -2,11 +2,10 @@ var classez_window_platform_shared =
 [
     [ "ezWindowPlatformShared", "d3/df2/classez_window_platform_shared.htm#a6f19137da4ca6c3fda03fdc6330d3d7e", null ],
     [ "~ezWindowPlatformShared", "d3/df2/classez_window_platform_shared.htm#a7e30081dfb2fa0bb3146b950e325b593", null ],
-    [ "AddReference", "d3/df2/classez_window_platform_shared.htm#adf8e687422c3ab57d352493cb5a54903", null ],
     [ "DestroyWindow", "d3/df2/classez_window_platform_shared.htm#a318ef9b113c6449f2e78bd81b3d00ab9", null ],
     [ "GetClientAreaSize", "d3/df2/classez_window_platform_shared.htm#aee7faa4b4f7bd20cdddc765263472760", null ],
-    [ "GetCreationDescription", "d3/df2/classez_window_platform_shared.htm#ab5eceadf4cf5441d0899b6113c930384", null ],
-    [ "GetInputDevice", "d3/df2/classez_window_platform_shared.htm#a731ccd2c95277fe9d27becbec9feb352", null ],
+    [ "GetCreationDescription", "d3/df2/classez_window_platform_shared.htm#ad47fd499353f94c8fa053285a3e13776", null ],
+    [ "GetInputDevice", "d3/df2/classez_window_platform_shared.htm#a0563273a801f0dfa950809fa3abe4765", null ],
     [ "Initialize", "d3/df2/classez_window_platform_shared.htm#a7d1dec2370864a9060dd53cca746e5a3", null ],
     [ "InitializeWindow", "d3/df2/classez_window_platform_shared.htm#a93874cd6edc4182bbcdfa3b7c30c80ee", null ],
     [ "IsFullscreenWindow", "d3/df2/classez_window_platform_shared.htm#a66da46951ebaec266fa83d7af72058cc", null ],
@@ -17,12 +16,6 @@ var classez_window_platform_shared =
     [ "OnResize", "d3/df2/classez_window_platform_shared.htm#adf477443df6a080213c16d52a8ea912e", null ],
     [ "OnVisibleChange", "d3/df2/classez_window_platform_shared.htm#afd5d53e13485c970553e49a6377e7783", null ],
     [ "OnWindowMove", "d3/df2/classez_window_platform_shared.htm#ae7e88e0085da9b247ae3213afa5cd46d", null ],
-    [ "RemoveReference", "d3/df2/classez_window_platform_shared.htm#a5bd5c37489e91a8129136752b11566c2", null ],
     [ "Resize", "d3/df2/classez_window_platform_shared.htm#ace16cf5589d7338c2ae542872d9a93a5", null ],
-    [ "m_bInitialized", "d3/df2/classez_window_platform_shared.htm#ab327703f39dbfadaef414a613b8d03d4", null ],
-    [ "m_bVisible", "d3/df2/classez_window_platform_shared.htm#a361431d59984db55c7de0205ea548117", null ],
-    [ "m_CreationDescription", "d3/df2/classez_window_platform_shared.htm#aabd057749bf0bc601ccf36e87fcb0f60", null ],
-    [ "m_hWindowHandle", "d3/df2/classez_window_platform_shared.htm#a2986868f99ac56c71fb0aeb4336df5f2", null ],
-    [ "m_iReferenceCount", "d3/df2/classez_window_platform_shared.htm#aaf3118191859b8fb9e489811a51cc827", null ],
-    [ "m_pInputDevice", "d3/df2/classez_window_platform_shared.htm#a374f48d7c4ca72eb134c98122c5f56cf", null ]
+    [ "m_CreationDescription", "d3/df2/classez_window_platform_shared.htm#aabd057749bf0bc601ccf36e87fcb0f60", null ]
 ];

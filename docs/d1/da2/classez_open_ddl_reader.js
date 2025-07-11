@@ -1,11 +1,5 @@
 var classez_open_ddl_reader =
 [
-    [ "ezOpenDdlReader", "d1/da2/classez_open_ddl_reader.htm#aa1275cd99c701f9de2cd2a882861463a", null ],
-    [ "~ezOpenDdlReader", "d1/da2/classez_open_ddl_reader.htm#afbd54426dc51e80e6ce9abb2fe5faeb4", null ],
-    [ "AllocateBytes", "d1/da2/classez_open_ddl_reader.htm#a6d3a64df4b43e286594b8305fd8ceef4", null ],
-    [ "ClearDataChunks", "d1/da2/classez_open_ddl_reader.htm#a229a6f915823d13f06b84a2e81ae923c", null ],
-    [ "CopyString", "d1/da2/classez_open_ddl_reader.htm#a31aeb55d53010bd669d632b43649094b", null ],
-    [ "CreateElement", "d1/da2/classez_open_ddl_reader.htm#a0360d0649dbbc0de86b759aaff937051", null ],
     [ "FindElement", "d1/da2/classez_open_ddl_reader.htm#ac545f68b0e46aaad9705b7c9a80b0c82", null ],
     [ "GetRootElement", "d1/da2/classez_open_ddl_reader.htm#a7aa22439cf0f7c9d54c8fbc1f6315e1f", null ],
     [ "OnBeginObject", "d1/da2/classez_open_ddl_reader.htm#a653ac079ffcc81dbf71cd860e74f0224", null ],
@@ -25,14 +19,5 @@ var classez_open_ddl_reader =
     [ "OnPrimitiveUInt32", "d1/da2/classez_open_ddl_reader.htm#a8c14d0a01e848c3ce14dc4def97d786d", null ],
     [ "OnPrimitiveUInt64", "d1/da2/classez_open_ddl_reader.htm#ac9d442da8374b0702c56ab6086c2561c", null ],
     [ "OnPrimitiveUInt8", "d1/da2/classez_open_ddl_reader.htm#a356907d26cef2e457b4fd4dab905fa65", null ],
-    [ "ParseDocument", "d1/da2/classez_open_ddl_reader.htm#aab9c4e7b3e45c5cd4f2d6d51d997680d", null ],
-    [ "StorePrimitiveData", "d1/da2/classez_open_ddl_reader.htm#a98f9fcc8987a0e0c0ffc813a7503d532", null ],
-    [ "m_DataChunks", "d1/da2/classez_open_ddl_reader.htm#a8d3be7f3db0cc5c28ca05e828e88dbf1", null ],
-    [ "m_Elements", "d1/da2/classez_open_ddl_reader.htm#aebe2f66564876b76da6a5570a4b828d4", null ],
-    [ "m_GlobalNames", "d1/da2/classez_open_ddl_reader.htm#aa876f14934101b771f48947ceaf4ec91", null ],
-    [ "m_ObjectStack", "d1/da2/classez_open_ddl_reader.htm#aa5adb05f66b49aa6aa396b3e43230ed7", null ],
-    [ "m_pCurrentChunk", "d1/da2/classez_open_ddl_reader.htm#a5c04d4e96415d65300e9cefa0784cf6d", null ],
-    [ "m_Strings", "d1/da2/classez_open_ddl_reader.htm#a10983398aeec8d3c3b158447190403d1", null ],
-    [ "m_TempCache", "d1/da2/classez_open_ddl_reader.htm#a3f6ceeacbdd160b27edcd4a58181eb29", null ],
-    [ "m_uiBytesInChunkLeft", "d1/da2/classez_open_ddl_reader.htm#a528f6f0a0147e03f9f7cd52470f48a1c", null ]
+    [ "ParseDocument", "d1/da2/classez_open_ddl_reader.htm#aab9c4e7b3e45c5cd4f2d6d51d997680d", null ]
 ];

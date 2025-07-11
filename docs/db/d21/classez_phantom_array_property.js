@@ -1,7 +1,5 @@
 var classez_phantom_array_property =
 [
-    [ "ezPhantomArrayProperty", "db/d21/classez_phantom_array_property.htm#afc153bb6dea7235bedc66c271e426bf6", null ],
-    [ "~ezPhantomArrayProperty", "db/d21/classez_phantom_array_property.htm#ae5125fdfca39b9596dae4274e736b2f4", null ],
     [ "Clear", "db/d21/classez_phantom_array_property.htm#a457c381596a562ce2744a9c4f23a27b9", null ],
     [ "GetCount", "db/d21/classez_phantom_array_property.htm#a39ae76656a88510040f00e2c3f38e8e5", null ],
     [ "GetSpecificType", "db/d21/classez_phantom_array_property.htm#a07e00561f30f95093b8bbf336990d9b1", null ],

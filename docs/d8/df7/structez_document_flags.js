@@ -1,7 +1,6 @@
 var structez_document_flags =
 [
-    [ "Bits", "d4/dfa/structez_document_flags_1_1_bits.htm", "d4/dfa/structez_document_flags_1_1_bits" ],
-    [ "StorageType", "d8/df7/structez_document_flags.htm#a93bc72012d0e56dbc7730259cdfa6497", null ],
+    [ "Bits", "d4/dfa/structez_document_flags_1_1_bits.htm", null ],
     [ "Enum", "d8/df7/structez_document_flags.htm#a2e176ad4fbb82e9f36c4a05c42f57b4d", [
       [ "None", "d8/df7/structez_document_flags.htm#a2e176ad4fbb82e9f36c4a05c42f57b4da1956c477852f9a9b66e0341f7ba7f291", null ],
       [ "RequestWindow", "d8/df7/structez_document_flags.htm#a2e176ad4fbb82e9f36c4a05c42f57b4da62cc39ff434ae4ceccc4910a3a1c39ee", null ],

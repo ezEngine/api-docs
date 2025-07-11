@@ -9,7 +9,6 @@ var classez_fixed_point =
     [ "operator*=", "d7/d2d/classez_fixed_point.htm#a38b1edcd9168b236dd6d3ac6df22710a", null ],
     [ "operator*=", "d7/d2d/classez_fixed_point.htm#abb11f6b865b552b9f2354f39a468ef9e", null ],
     [ "operator+=", "d7/d2d/classez_fixed_point.htm#a3bcfae936c24d3575f48de0ffe3b42d5", null ],
-    [ "operator-", "d7/d2d/classez_fixed_point.htm#a91cf0fc4995323b60d77d129f4d2750f", null ],
     [ "operator-=", "d7/d2d/classez_fixed_point.htm#aa3b73f70f51191bcf9c7c0f7039672f2", null ],
     [ "operator/=", "d7/d2d/classez_fixed_point.htm#a545091c9c74410858c1070034390964b", null ],
     [ "operator/=", "d7/d2d/classez_fixed_point.htm#a72809084d1c5fc4aa8327611e2f2ddce", null ],

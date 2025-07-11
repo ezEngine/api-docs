@@ -1,6 +1,5 @@
 var structez_scene_load_mode =
 [
-    [ "StorageType", "d7/d75/structez_scene_load_mode.htm#a2292fa039879ee1f9fe3d7ec28385f96", null ],
     [ "Enum", "d7/d75/structez_scene_load_mode.htm#ad5484991f8d18f766dd01bd27b136505", [
       [ "None", "d7/d75/structez_scene_load_mode.htm#ad5484991f8d18f766dd01bd27b136505a587d61812c8f992944c43d0b0eabb2f8", null ],
       [ "LoadAndSwitch", "d7/d75/structez_scene_load_mode.htm#ad5484991f8d18f766dd01bd27b136505ac08abfb424d6b12a82c123ef51340909", null ],

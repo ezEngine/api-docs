@@ -1,6 +1,5 @@
 var structez_g_a_l_cull_mode =
 [
-    [ "StorageType", "d1/dd9/structez_g_a_l_cull_mode.htm#ae969b4ac3619bbf377c681700854af89", null ],
     [ "Enum", "d1/dd9/structez_g_a_l_cull_mode.htm#a00689fbc39d074419a35c7f6d9c5d9c5", [
       [ "None", "d1/dd9/structez_g_a_l_cull_mode.htm#a00689fbc39d074419a35c7f6d9c5d9c5a8bbc0d59516fc84c24a4549b79f6984a", null ],
       [ "Front", "d1/dd9/structez_g_a_l_cull_mode.htm#a00689fbc39d074419a35c7f6d9c5d9c5a546eafc9f6e61a6535b8200575a76052", null ],

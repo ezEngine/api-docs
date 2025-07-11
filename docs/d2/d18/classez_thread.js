@@ -7,9 +7,8 @@ var classez_thread =
     ] ],
     [ "ezThread", "d2/d18/classez_thread.htm#ae4384d6f5f1dcf70e43fe33728958450", null ],
     [ "~ezThread", "d2/d18/classez_thread.htm#a68feb50e97b1893022d787b1a6d9f552", null ],
-    [ "GetThreadName", "d2/d18/classez_thread.htm#aa5e0daf61cd4ce105dd842c98c2d9058", null ],
+    [ "GetThreadName", "d2/d18/classez_thread.htm#ae5b095b4258aa42829db028b9f0ebf8c", null ],
     [ "GetThreadStatus", "d2/d18/classez_thread.htm#a731822b48397af8b235f819538d80cff", null ],
     [ "IsRunning", "d2/d18/classez_thread.htm#ac51078b748e5d455ec533015b0fd2f1b", null ],
-    [ "Run", "d2/d18/classez_thread.htm#a565d7ad0f1cbcf0bde5a7365de9169c3", null ],
-    [ "RunThread", "d2/d18/classez_thread.htm#ab9ac3242b6d18623b100430be2bfdfe3", null ]
+    [ "Run", "d2/d18/classez_thread.htm#a565d7ad0f1cbcf0bde5a7365de9169c3", null ]
 ];

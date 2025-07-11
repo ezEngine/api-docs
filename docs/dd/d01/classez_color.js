@@ -1,19 +1,18 @@
 var classez_color =
 [
     [ "ezColor", "dd/d01/classez_color.htm#a6d241057cc50e7000ab9b18c476a42ff", null ],
-    [ "ezColor", "dd/d01/classez_color.htm#afccccce90272969a619eb4b2f49413d4", null ],
+    [ "ezColor", "dd/d01/classez_color.htm#adf744b4291fea1d4a05363cb4c341376", null ],
     [ "ezColor", "dd/d01/classez_color.htm#aa6eedb15b1ce1df0147726c83944787d", null ],
     [ "ezColor", "dd/d01/classez_color.htm#ae2211bcc693db49690413cb998f7c4bc", null ],
     [ "ApplyHdrExposureValue", "dd/d01/classez_color.htm#a4c465b1d09418b8faeae15dd71224555", null ],
     [ "CalcAverageRGB", "dd/d01/classez_color.htm#a35aaf606d3dc1cacd6c3eeef8f90d739", null ],
     [ "ComputeHdrExposureValue", "dd/d01/classez_color.htm#a1ae6a88467a96259d3466d0d0bfdeaab", null ],
     [ "ComputeHdrMultiplier", "dd/d01/classez_color.htm#a858ab8808b279c39fe5528e28c416d50", null ],
-    [ "EZ_DECLARE_POD_TYPE", "dd/d01/classez_color.htm#a221906e71d918c60f39056c03dfba287", null ],
     [ "GetAsVec4", "dd/d01/classez_color.htm#a12bb742c73e47673a2db6ba836516155", null ],
     [ "GetComplementaryColor", "dd/d01/classez_color.htm#a981d02e560c42f2359809f3c4847abbb", null ],
     [ "GetDarker", "dd/d01/classez_color.htm#add1f4ef35bc383d2bcfbb7d477865314", null ],
-    [ "GetData", "dd/d01/classez_color.htm#af8b6ae850a8b07bc12cc39132205252a", null ],
-    [ "GetData", "dd/d01/classez_color.htm#a67c73762ce93b471c7e985f3d44f35cf", null ],
+    [ "GetData", "dd/d01/classez_color.htm#ac3520f22061efa046cfe5f4707da541e", null ],
+    [ "GetData", "dd/d01/classez_color.htm#a06394e2f7af839f61ce6a7ac17fa9a7f", null ],
     [ "GetHSV", "dd/d01/classez_color.htm#adce21213a8463a35a056e45e7b163f7f", null ],
     [ "GetInvertedColor", "dd/d01/classez_color.htm#a26447982a5c0afdfd784aa1e0035ac4b", null ],
     [ "GetLuminance", "dd/d01/classez_color.htm#a2dfa20c3c2d69a30846502a83c71c3d1", null ],
@@ -40,9 +39,5 @@ var classez_color =
     [ "SetRGBA", "dd/d01/classez_color.htm#aeac0109af46bd2ef667e84c962a9d2ed", null ],
     [ "ToABGR8", "dd/d01/classez_color.htm#a094e6c490a6745d029b520367e3ec10e", null ],
     [ "ToRGBA8", "dd/d01/classez_color.htm#aba7246717289d8bf1e7939d87c2810d3", null ],
-    [ "WithAlpha", "dd/d01/classez_color.htm#a7663d269f1a48ccbd1bb162ba2d8f33a", null ],
-    [ "a", "dd/d01/classez_color.htm#ad1670eeff004a9cab82cf6c2360d5bbf", null ],
-    [ "b", "dd/d01/classez_color.htm#a936e43f5071e6a18807ed013cd9aaceb", null ],
-    [ "g", "dd/d01/classez_color.htm#ae1cce19dc06d67caaf5c71347ad122c3", null ],
-    [ "r", "dd/d01/classez_color.htm#a39cf94f80e08caac73f6737887198355", null ]
+    [ "WithAlpha", "dd/d01/classez_color.htm#a7663d269f1a48ccbd1bb162ba2d8f33a", null ]
 ];

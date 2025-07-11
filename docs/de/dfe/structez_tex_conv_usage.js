@@ -1,6 +1,5 @@
 var structez_tex_conv_usage =
 [
-    [ "StorageType", "de/dfe/structez_tex_conv_usage.htm#aa9ab3e0cde536a8056c500c0a2ebfce9", null ],
     [ "Enum", "de/dfe/structez_tex_conv_usage.htm#ac9be82bc405ba69301f568b8608d5f6b", [
       [ "Auto", "de/dfe/structez_tex_conv_usage.htm#ac9be82bc405ba69301f568b8608d5f6ba7d80b1422e85712fdc87568a46d547ee", null ],
       [ "Color", "de/dfe/structez_tex_conv_usage.htm#ac9be82bc405ba69301f568b8608d5f6ba29ef7f480900c86e7db7dc4f9ed21e7e", null ],

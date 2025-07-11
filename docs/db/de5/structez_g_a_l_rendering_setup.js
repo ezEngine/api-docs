@@ -1,14 +1,15 @@
 var structez_g_a_l_rendering_setup =
 [
-    [ "operator!=", "db/de5/structez_g_a_l_rendering_setup.htm#a094b667657af1b5938f84fb64ba51d24", null ],
-    [ "operator==", "db/de5/structez_g_a_l_rendering_setup.htm#a5beb4a7c57613cba842276883125459a", null ],
-    [ "m_bClearDepth", "db/de5/structez_g_a_l_rendering_setup.htm#a2b842465f6a0ae90cdd49ca0a8f9d7cb", null ],
-    [ "m_bClearStencil", "db/de5/structez_g_a_l_rendering_setup.htm#a963c9b3c867292343c42285ee628c4b0", null ],
-    [ "m_bDiscardColor", "db/de5/structez_g_a_l_rendering_setup.htm#a54301bfa598efa4b75085f22d3f0161c", null ],
-    [ "m_bDiscardDepth", "db/de5/structez_g_a_l_rendering_setup.htm#af66c93ea3e0dea53163344de4d2e398b", null ],
-    [ "m_ClearColor", "db/de5/structez_g_a_l_rendering_setup.htm#aa56b78c6613d5477bf88c6cc484db39f", null ],
-    [ "m_fDepthClear", "db/de5/structez_g_a_l_rendering_setup.htm#a7e873f43e2d7d6a70308a99653c04c01", null ],
-    [ "m_RenderTargetSetup", "db/de5/structez_g_a_l_rendering_setup.htm#a35f5a37dce652b3d5c960dae0012a687", null ],
-    [ "m_uiRenderTargetClearMask", "db/de5/structez_g_a_l_rendering_setup.htm#a007ffcda0346f9e7c0530b99fc10b67a", null ],
-    [ "m_uiStencilClear", "db/de5/structez_g_a_l_rendering_setup.htm#aa948f55fa0ed6ae13d146d4013726890", null ]
+    [ "DestroyAllAttachedViews", "db/de5/structez_g_a_l_rendering_setup.htm#a06a4809f1f8e57f1db1ede01a8d3bd23", null ],
+    [ "GetClearColor", "db/de5/structez_g_a_l_rendering_setup.htm#ac7f9d11eb307d231edcec714f2f7deb2", null ],
+    [ "GetClearDepth", "db/de5/structez_g_a_l_rendering_setup.htm#a8101b81184fa8c4852f4d24d30ad7488", null ],
+    [ "GetClearStencil", "db/de5/structez_g_a_l_rendering_setup.htm#a2002c31a434d1423631eb1d1ee3b69ae", null ],
+    [ "GetFrameBuffer", "db/de5/structez_g_a_l_rendering_setup.htm#a522c6d3dfd21732979dbf51b26845e8e", null ],
+    [ "GetRenderPass", "db/de5/structez_g_a_l_rendering_setup.htm#acce6d3b28e76d85c6189d28d2ed60471", null ],
+    [ "Reset", "db/de5/structez_g_a_l_rendering_setup.htm#ab063626f91af4b7f27e8cbb659b12c9b", null ],
+    [ "SetClearColor", "db/de5/structez_g_a_l_rendering_setup.htm#a702936ab40e98e324d1efa1a5136948d", null ],
+    [ "SetClearDepth", "db/de5/structez_g_a_l_rendering_setup.htm#a3ecc75d5819f8e29573568ea70416c86", null ],
+    [ "SetClearStencil", "db/de5/structez_g_a_l_rendering_setup.htm#a6e69f60d5767349d7d4301bdaf7a7fb2", null ],
+    [ "SetColorTarget", "db/de5/structez_g_a_l_rendering_setup.htm#ab982f889d530acdc16575fdef15b0e95", null ],
+    [ "SetDepthStencilTarget", "db/de5/structez_g_a_l_rendering_setup.htm#ac1a889dcd56f54fa0c26a3850efbdf86", null ]
 ];

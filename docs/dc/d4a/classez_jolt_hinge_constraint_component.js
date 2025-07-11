@@ -1,18 +1,6 @@
 var classez_jolt_hinge_constraint_component =
 [
-    [ "ezJoltHingeConstraintComponent", "dc/d4a/classez_jolt_hinge_constraint_component.htm#a81f9304852d7b6e47bb139ea1a33f01b", null ],
-    [ "~ezJoltHingeConstraintComponent", "dc/d4a/classez_jolt_hinge_constraint_component.htm#ab4e8908e2b3b1cc35b3fb537622de17d", null ],
-    [ "ApplySettings", "dc/d4a/classez_jolt_hinge_constraint_component.htm#aae544627f0eb55ae80cb6a31b46b78e6", null ],
-    [ "CreateContstraintType", "dc/d4a/classez_jolt_hinge_constraint_component.htm#a6eb4c51065c5f19688cd875020a2c5f1", null ],
     [ "DeserializeComponent", "dc/d4a/classez_jolt_hinge_constraint_component.htm#aa2e64f6475cb9f9e61f522a6273fe9ca", null ],
-    [ "ExceededBreakingPoint", "dc/d4a/classez_jolt_hinge_constraint_component.htm#a9e9187e6a95add6334e8c7b8db96e218", null ],
-    [ "GetDriveMode", "dc/d4a/classez_jolt_hinge_constraint_component.htm#a183fb6d011777843adcc04ffa9ac4067", null ],
-    [ "GetDriveStrength", "dc/d4a/classez_jolt_hinge_constraint_component.htm#aaf37d4bfa10d91b465ef78d10fbeb8ee", null ],
-    [ "GetDriveTargetValue", "dc/d4a/classez_jolt_hinge_constraint_component.htm#a6198aa6bb9734f54f620b69648d996b5", null ],
-    [ "GetFriction", "dc/d4a/classez_jolt_hinge_constraint_component.htm#a994b652030c889bd44006d02ba08dd98", null ],
-    [ "GetLimitMode", "dc/d4a/classez_jolt_hinge_constraint_component.htm#a89fddef17f054498ef7b10c943c38910", null ],
-    [ "GetLowerLimitAngle", "dc/d4a/classez_jolt_hinge_constraint_component.htm#a71f01391abf45bb022d075595aacb88b", null ],
-    [ "GetUpperLimitAngle", "dc/d4a/classez_jolt_hinge_constraint_component.htm#aab87f38285a2d6468034a882ba504f1c", null ],
     [ "SerializeComponent", "dc/d4a/classez_jolt_hinge_constraint_component.htm#af35d9c1d3c21efadb9ef6d9e0c9af02c", null ],
     [ "SetDriveMode", "dc/d4a/classez_jolt_hinge_constraint_component.htm#a617d9fb194e571030130721280e83927", null ],
     [ "SetDriveStrength", "dc/d4a/classez_jolt_hinge_constraint_component.htm#a6b17c8e06465d8c37c6ea94abdf1c350", null ],
@@ -20,12 +8,5 @@ var classez_jolt_hinge_constraint_component =
     [ "SetFriction", "dc/d4a/classez_jolt_hinge_constraint_component.htm#a5543ffa1763711b798f9dd6cdf5a3b7d", null ],
     [ "SetLimitMode", "dc/d4a/classez_jolt_hinge_constraint_component.htm#a6597d7c1088b642fdf7e7b57a7a7521b", null ],
     [ "SetLowerLimitAngle", "dc/d4a/classez_jolt_hinge_constraint_component.htm#a97d4a2e60cae79ad3839bae7e8c53d85", null ],
-    [ "SetUpperLimitAngle", "dc/d4a/classez_jolt_hinge_constraint_component.htm#ad62312bc3e5043934a4e77bda5f6268d", null ],
-    [ "m_DriveMode", "dc/d4a/classez_jolt_hinge_constraint_component.htm#abf81b3cfef6d9e2394fc252302d5286e", null ],
-    [ "m_DriveTargetValue", "dc/d4a/classez_jolt_hinge_constraint_component.htm#acb21a804cb27dc5f87e7a429308fdc5f", null ],
-    [ "m_fDriveStrength", "dc/d4a/classez_jolt_hinge_constraint_component.htm#afff30fcca4a3725c877d021ebd23be18", null ],
-    [ "m_fFriction", "dc/d4a/classez_jolt_hinge_constraint_component.htm#aedebd6968e37f3844f9752c0ac08203d", null ],
-    [ "m_LimitMode", "dc/d4a/classez_jolt_hinge_constraint_component.htm#a98cb50f5c9df0a93d49064d1bc785681", null ],
-    [ "m_LowerLimit", "dc/d4a/classez_jolt_hinge_constraint_component.htm#a8a440d8d14724564ec3f909fc4d1e14f", null ],
-    [ "m_UpperLimit", "dc/d4a/classez_jolt_hinge_constraint_component.htm#aa729e26a1a2df6a58a1191f9f64903a6", null ]
+    [ "SetUpperLimitAngle", "dc/d4a/classez_jolt_hinge_constraint_component.htm#ad62312bc3e5043934a4e77bda5f6268d", null ]
 ];

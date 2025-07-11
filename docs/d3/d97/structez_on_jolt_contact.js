@@ -1,9 +1,9 @@
 var structez_on_jolt_contact =
 [
-    [ "Bits", "dc/d8c/structez_on_jolt_contact_1_1_bits.htm", "dc/d8c/structez_on_jolt_contact_1_1_bits" ],
-    [ "StorageType", "d3/d97/structez_on_jolt_contact.htm#af5e5225abadcb37f8a22c5e4a2a31fed", null ],
+    [ "Bits", "dc/d8c/structez_on_jolt_contact_1_1_bits.htm", null ],
     [ "Enum", "d3/d97/structez_on_jolt_contact.htm#adaa65f2008f4d42d2f845a0f95222a3d", [
       [ "None", "d3/d97/structez_on_jolt_contact.htm#adaa65f2008f4d42d2f845a0f95222a3da655482d92b3233d745b8668bb6935644", null ],
+      [ "SendContactMsg", "d3/d97/structez_on_jolt_contact.htm#adaa65f2008f4d42d2f845a0f95222a3dac921af991ac2161149209edb048e5f63", null ],
       [ "ImpactReactions", "d3/d97/structez_on_jolt_contact.htm#adaa65f2008f4d42d2f845a0f95222a3da29780b52105df71c969cf4229cc2344a", null ],
       [ "SlideReactions", "d3/d97/structez_on_jolt_contact.htm#adaa65f2008f4d42d2f845a0f95222a3da10aa32a050143751648fedc2b7fd585a", null ],
       [ "RollXReactions", "d3/d97/structez_on_jolt_contact.htm#adaa65f2008f4d42d2f845a0f95222a3dabca2b4044c17649d5742bc3201ea2af7", null ],

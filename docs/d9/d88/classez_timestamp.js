@@ -3,7 +3,6 @@ var classez_timestamp =
     [ "CompareMode", "d0/d21/structez_timestamp_1_1_compare_mode.htm", "d0/d21/structez_timestamp_1_1_compare_mode" ],
     [ "ezTimestamp", "d9/d88/classez_timestamp.htm#ae3185ef7bce8acaee19aac97aff5a58a", null ],
     [ "Compare", "d9/d88/classez_timestamp.htm#aa96243c11a9b6ab2b33aeb1fc0ef2d71", null ],
-    [ "EZ_DECLARE_POD_TYPE", "d9/d88/classez_timestamp.htm#a959187832654822ce38e3072a02c3c70", null ],
     [ "GetInt64", "d9/d88/classez_timestamp.htm#a3b0557de426d5aa0272285daae248b34", null ],
     [ "IsValid", "d9/d88/classez_timestamp.htm#a783c02cc45eaec2991e407eb8b1160ac", null ],
     [ "operator+", "d9/d88/classez_timestamp.htm#abaffc5145f8c606c0c28fc3020dda552", null ],

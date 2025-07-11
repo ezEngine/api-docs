@@ -1,7 +1,5 @@
 var classez_random =
 [
-    [ "ezRandom", "de/d9e/classez_random.htm#a34cb9f84e871374d580b43a29948bd79", null ],
-    [ "~ezRandom", "de/d9e/classez_random.htm#a0d6f977a825c607fc6967a88af74952c", null ],
     [ "Bool", "de/d9e/classez_random.htm#a625fca24a122cec1500155179d61c4e5", null ],
     [ "DoubleMinMax", "de/d9e/classez_random.htm#a518fc403487dbabce265b461c5636e94", null ],
     [ "DoubleVariance", "de/d9e/classez_random.htm#a8af14fc4e063019220c00c4eb04c67d6", null ],

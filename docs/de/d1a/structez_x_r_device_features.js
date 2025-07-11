@@ -1,7 +1,6 @@
 var structez_x_r_device_features =
 [
-    [ "Bits", "db/d99/structez_x_r_device_features_1_1_bits.htm", "db/d99/structez_x_r_device_features_1_1_bits" ],
-    [ "StorageType", "de/d1a/structez_x_r_device_features.htm#a9cef4fa0341356e92cb5e53cf912621c", null ],
+    [ "Bits", "db/d99/structez_x_r_device_features_1_1_bits.htm", null ],
     [ "Enum", "de/d1a/structez_x_r_device_features.htm#ad3860771d4bc2547a9c6d6ad54af2f5a", [
       [ "None", "de/d1a/structez_x_r_device_features.htm#ad3860771d4bc2547a9c6d6ad54af2f5aa518956edf8db3fefa0999ff5f85bb1b6", null ],
       [ "Trigger", "de/d1a/structez_x_r_device_features.htm#ad3860771d4bc2547a9c6d6ad54af2f5aac23c14743bd0c92508868631e08206fc", null ],

@@ -1,6 +1,5 @@
 var structez_tex_conv_bump_map_filter =
 [
-    [ "StorageType", "de/da2/structez_tex_conv_bump_map_filter.htm#a63d6707fc1259f05fb26d757a98f758d", null ],
     [ "Enum", "de/da2/structez_tex_conv_bump_map_filter.htm#a5b416ff5daae7ae109e0de4b4d6037ed", [
       [ "Finite", "de/da2/structez_tex_conv_bump_map_filter.htm#a5b416ff5daae7ae109e0de4b4d6037eda501a6e65d56dfaecfe7d14892ac6d9e9", null ],
       [ "Sobel", "de/da2/structez_tex_conv_bump_map_filter.htm#a5b416ff5daae7ae109e0de4b4d6037eda3f46792220a76585eef5deb69b86912d", null ],

@@ -1,11 +1,10 @@
 var classez_dynamic_octree =
 [
-    [ "ezDynamicOctree", "da/d7a/classez_dynamic_octree.htm#a52fb129d28575958f077c5293819340e", null ],
     [ "CreateTree", "da/d7a/classez_dynamic_octree.htm#a716b1060b425d4a96ede65642b059932", null ],
     [ "FindObjectsInRange", "da/d7a/classez_dynamic_octree.htm#a31c336e486d1c4ac763d47530c886fc3", null ],
     [ "FindObjectsInRange", "da/d7a/classez_dynamic_octree.htm#ae86d5832d63e3d4fcc249597a9cbaefd", null ],
     [ "FindVisibleObjects", "da/d7a/classez_dynamic_octree.htm#a6e40b19f5fd9bf2f23f724eba6c88783", null ],
-    [ "GetBoundingBox", "da/d7a/classez_dynamic_octree.htm#ab75b2b3178119d9ff226e5db56643e89", null ],
+    [ "GetBoundingBox", "da/d7a/classez_dynamic_octree.htm#a7bcfe16c44da67c6717e00d39a401356", null ],
     [ "GetCount", "da/d7a/classez_dynamic_octree.htm#abbcc46d9b3ee6cf78c1d965751cce983", null ],
     [ "InsertObject", "da/d7a/classez_dynamic_octree.htm#a3b7feba3f5f7a07eb41a4df680791da0", null ],
     [ "IsEmpty", "da/d7a/classez_dynamic_octree.htm#a229b4601a526dd21a1c3b13ce8e4086e", null ],

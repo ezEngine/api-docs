@@ -7,8 +7,6 @@ var classez_scene_load_utility =
       [ "FinishedAndRetrieved", "d8/d5d/classez_scene_load_utility.htm#a6f28a82baca867b08f04b13158b1b85da114614c6b69d9aeda72c88002dc26dce", null ],
       [ "Failed", "d8/d5d/classez_scene_load_utility.htm#a6f28a82baca867b08f04b13158b1b85dad7c8c85bf79bbe1b7188497c32c3b0ca", null ]
     ] ],
-    [ "ezSceneLoadUtility", "d8/d5d/classez_scene_load_utility.htm#a5bf2ca19179bae637d2c987fc0c81666", null ],
-    [ "~ezSceneLoadUtility", "d8/d5d/classez_scene_load_utility.htm#a8da7db54e1d24aff44613f5738b604f2", null ],
     [ "GetLoadingFailureReason", "d8/d5d/classez_scene_load_utility.htm#a21a5b64b41acfdd686f722318abbb71b", null ],
     [ "GetLoadingProgress", "d8/d5d/classez_scene_load_utility.htm#a407a18a4aa8d4fea4f6b397d3c09c4e3", null ],
     [ "GetLoadingState", "d8/d5d/classez_scene_load_utility.htm#a7e7730c07918a48cc3518e7b4214744b", null ],

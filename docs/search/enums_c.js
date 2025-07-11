@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['patchtype_24096',['PatchType',['../d9/dfd/classez_graph_patch.htm#a7b0375807836d0240d338424da72f006',1,'ezGraphPatch']]],
-  ['processtaskstate_24097',['ProcessTaskState',['../d5/d88/classez_asset_processor.htm#aa9b59b4af953012e55985c597f2e8750',1,'ezAssetProcessor']]]
+  ['patchtype_0',['PatchType',['../d9/dfd/classez_graph_patch.htm#a7b0375807836d0240d338424da72f006',1,'ezGraphPatch']]],
+  ['processtaskstate_1',['ProcessTaskState',['../d5/d88/classez_asset_processor.htm#aa9b59b4af953012e55985c597f2e8750',1,'ezAssetProcessor']]]
 ];

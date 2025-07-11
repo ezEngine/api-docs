@@ -1,14 +1,9 @@
 var classez_world_reader =
 [
     [ "InstantiationContextBase", "df/d82/classez_world_reader_1_1_instantiation_context_base.htm", "df/d82/classez_world_reader_1_1_instantiation_context_base" ],
-    [ "FindComponentTypeCallback", "d9/dd6/classez_world_reader.htm#a70920b2df297dbc9a02521dd3beaf302", null ],
-    [ "ezWorldReader", "d9/dd6/classez_world_reader.htm#a2f400000d47805be6985359826d65faf", null ],
-    [ "~ezWorldReader", "d9/dd6/classez_world_reader.htm#a9a3b9a40c75a17a986820b184be530b6", null ],
     [ "ClearAndCompact", "d9/dd6/classez_world_reader.htm#afb20d374dacc4afcc27bbc0c53745e6e", null ],
-    [ "GetChildObjectCount", "d9/dd6/classez_world_reader.htm#acf3f935831c7a7a786384efe65700522", null ],
     [ "GetComponentTypeVersion", "d9/dd6/classez_world_reader.htm#ade957b65754cc6d376c6ed2e13831a1a", null ],
     [ "GetHeapMemoryUsage", "d9/dd6/classez_world_reader.htm#a820af3e64374542dc6b508f4c708ed21", null ],
-    [ "GetRootObjectCount", "d9/dd6/classez_world_reader.htm#adcb54dbfad49ecdf42f09ee14289d85d", null ],
     [ "GetStream", "d9/dd6/classez_world_reader.htm#a1c48fa22cb246dcc33e826fe7e51923e", null ],
     [ "HasComponentOfType", "d9/dd6/classez_world_reader.htm#a3080eae10bb90e7573a525080896a0dc", null ],
     [ "InstantiatePrefab", "d9/dd6/classez_world_reader.htm#abb526b22a12a38e51e7eee4fd2028a6f", null ],

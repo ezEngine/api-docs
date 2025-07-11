@@ -1,10 +1,7 @@
 var classez_scene_transition_component =
 [
-    [ "ezSceneTransitionComponent", "d7/d88/classez_scene_transition_component.htm#aeeba50016b0b1e2f2e1f80df258b8634", null ],
-    [ "~ezSceneTransitionComponent", "d7/d88/classez_scene_transition_component.htm#a0961e788b89b5bd07b7851428bce72af", null ],
     [ "CancelPreload", "d7/d88/classez_scene_transition_component.htm#a545a1ab1aa2322ede1aea8e9d72f7468", null ],
     [ "DeserializeComponent", "d7/d88/classez_scene_transition_component.htm#ad4d7d22338c556f8bb18e1cf7166e1d9", null ],
-    [ "OnMsgTriggerTriggered", "d7/d88/classez_scene_transition_component.htm#a7fccb20dbbfa7b3186636fe76d64c658", null ],
     [ "SerializeComponent", "d7/d88/classez_scene_transition_component.htm#a5ebf675e9d10e9848341ee23791eb18d", null ],
     [ "StartPreload", "d7/d88/classez_scene_transition_component.htm#a601fab8279b0c2757d8f3fdd909491f7", null ],
     [ "StartTransition", "d7/d88/classez_scene_transition_component.htm#a130449de44199c2c4db72bdf6a20d378", null ],

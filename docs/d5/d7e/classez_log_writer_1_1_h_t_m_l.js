@@ -1,6 +1,5 @@
 var classez_log_writer_1_1_h_t_m_l =
 [
-    [ "~HTML", "d5/d7e/classez_log_writer_1_1_h_t_m_l.htm#a0ac16f6936a8bcea9d641eee578f6fe6", null ],
     [ "BeginLog", "d5/d7e/classez_log_writer_1_1_h_t_m_l.htm#aa71556bd1d5d1bcf5bca34a423d158eb", null ],
     [ "EndLog", "d5/d7e/classez_log_writer_1_1_h_t_m_l.htm#a9838755c6485e2edf6d8ae879ad376de", null ],
     [ "GetOpenedLogFile", "d5/d7e/classez_log_writer_1_1_h_t_m_l.htm#ad3a9ba2d7bdb7236bca01eb94b7ff517", null ],

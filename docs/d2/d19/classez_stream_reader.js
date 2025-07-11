@@ -13,7 +13,6 @@ var classez_stream_reader =
     [ "ReadSet", "d2/d19/classez_stream_reader.htm#a011fbccad0850a346fc6d485b1980fe8", null ],
     [ "ReadString", "d2/d19/classez_stream_reader.htm#ae14be7ec4349d93ae79e696500780c53", null ],
     [ "ReadString", "d2/d19/classez_stream_reader.htm#aa4dca57de4bd320964884d75ba48deb6", null ],
-    [ "ReadVersion", "d2/d19/classez_stream_reader.htm#abb49f9bac3b2546989bdd2c11a4e7ab9", null ],
     [ "ReadWordValue", "d2/d19/classez_stream_reader.htm#a3b27188b834171b325c22eaffda3b6a0", null ],
     [ "SkipBytes", "d2/d19/classez_stream_reader.htm#a09fe261037e80688b72337b15ee0a616", null ]
 ];

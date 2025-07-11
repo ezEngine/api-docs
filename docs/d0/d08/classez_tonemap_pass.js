@@ -1,27 +1,5 @@
 var classez_tonemap_pass =
 [
-    [ "ezTonemapPass", "d0/d08/classez_tonemap_pass.htm#a6638b2dc2d52426b9375645afbd71f2c", null ],
-    [ "~ezTonemapPass", "d0/d08/classez_tonemap_pass.htm#a62edd996e1439e1ecb783ce6b0b539b0", null ],
-    [ "Deserialize", "d0/d08/classez_tonemap_pass.htm#a912a632e03a920abbf8a708d984be330", null ],
     [ "Execute", "d0/d08/classez_tonemap_pass.htm#ad2fd2e700f46bdd9f03768f075b22629", null ],
-    [ "EZ_ADD_RESOURCEHANDLE_ACCESSORS", "d0/d08/classez_tonemap_pass.htm#a567282f35ff1c3d361f85d57d0861001", null ],
-    [ "EZ_ADD_RESOURCEHANDLE_ACCESSORS", "d0/d08/classez_tonemap_pass.htm#adfa83221f2efab04dba8b14e8c917038", null ],
-    [ "EZ_ADD_RESOURCEHANDLE_ACCESSORS", "d0/d08/classez_tonemap_pass.htm#a240a78e079b760afa3483f9d5a722cad", null ],
-    [ "GetRenderTargetDescriptions", "d0/d08/classez_tonemap_pass.htm#a36a5889a5e012e88b36d1a62355e7775", null ],
-    [ "Serialize", "d0/d08/classez_tonemap_pass.htm#a5be2e02efbe82cd3979110b48b81706b", null ],
-    [ "m_fContrast", "d0/d08/classez_tonemap_pass.htm#a95f1ea311fd440c3c2c28558fab7fa52", null ],
-    [ "m_fLut1Strength", "d0/d08/classez_tonemap_pass.htm#a006ffdf95a6d9de1ad543704ed75d9d4", null ],
-    [ "m_fLut2Strength", "d0/d08/classez_tonemap_pass.htm#af1a0bf0976b2210ddbe7f1a8f61a0692", null ],
-    [ "m_fMoodStrength", "d0/d08/classez_tonemap_pass.htm#a54b05c573f28819306dab3ed49a128d8", null ],
-    [ "m_fSaturation", "d0/d08/classez_tonemap_pass.htm#a7f89209d006291891beee72fe34f2e1b", null ],
-    [ "m_hConstantBuffer", "d0/d08/classez_tonemap_pass.htm#a2fe041f2cb1d93e81e2ed54d252f4987", null ],
-    [ "m_hLUT1", "d0/d08/classez_tonemap_pass.htm#a8f7d2db23605c180991b5a9217b4e9c7", null ],
-    [ "m_hLUT2", "d0/d08/classez_tonemap_pass.htm#aa30f7b0592a372d4bcdc909fcbc89c93", null ],
-    [ "m_hNoiseTexture", "d0/d08/classez_tonemap_pass.htm#a3ef87d9493f2d2a137fbd4ad8d91fb71", null ],
-    [ "m_hShader", "d0/d08/classez_tonemap_pass.htm#a42682f20c446a2c3d457ddc0571a2f5c", null ],
-    [ "m_hVignettingTexture", "d0/d08/classez_tonemap_pass.htm#a270fa2884f73a5720b84c0cc06d85b11", null ],
-    [ "m_MoodColor", "d0/d08/classez_tonemap_pass.htm#aa414191da6fd496abf7a7a85d70993b9", null ],
-    [ "m_PinBloomInput", "d0/d08/classez_tonemap_pass.htm#ab24865567805cc97c23ef1adeef08d15", null ],
-    [ "m_PinColorInput", "d0/d08/classez_tonemap_pass.htm#a36d7fef2eab67bb18243f12450996509", null ],
-    [ "m_PinOutput", "d0/d08/classez_tonemap_pass.htm#ac6595ec598804d4da93078e37bbe850f", null ]
+    [ "GetRenderTargetDescriptions", "d0/d08/classez_tonemap_pass.htm#a36a5889a5e012e88b36d1a62355e7775", null ]
 ];

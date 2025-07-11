@@ -1,7 +1,6 @@
 var structez_g_a_l_resource_format_support =
 [
-    [ "Bits", "d5/de9/structez_g_a_l_resource_format_support_1_1_bits.htm", "d5/de9/structez_g_a_l_resource_format_support_1_1_bits" ],
-    [ "StorageType", "d5/d89/structez_g_a_l_resource_format_support.htm#a777d503b6e143c398a257fcbcb16c9ba", null ],
+    [ "Bits", "d5/de9/structez_g_a_l_resource_format_support_1_1_bits.htm", null ],
     [ "Enum", "d5/d89/structez_g_a_l_resource_format_support.htm#af90a4902d3b8c9098cfb92c42c231145", [
       [ "None", "d5/d89/structez_g_a_l_resource_format_support.htm#af90a4902d3b8c9098cfb92c42c231145a01e40d8630d1bd1ea1d4c2c9578c51bd", null ],
       [ "Texture", "d5/d89/structez_g_a_l_resource_format_support.htm#af90a4902d3b8c9098cfb92c42c231145ab7a9084efedaf75dd68a9c01a9193b6d", null ],

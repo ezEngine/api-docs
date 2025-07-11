@@ -1,30 +1,7 @@
 var structez_reflection_pool_1_1_data =
 [
-    [ "ProbeData", "d6/db7/structez_reflection_pool_1_1_data_1_1_probe_data.htm", "d6/db7/structez_reflection_pool_1_1_data_1_1_probe_data" ],
-    [ "WorldReflectionData", "da/da2/structez_reflection_pool_1_1_data_1_1_world_reflection_data.htm", "da/da2/structez_reflection_pool_1_1_data_1_1_world_reflection_data" ],
-    [ "Data", "dd/d99/structez_reflection_pool_1_1_data.htm#a3186e80ee05cbbda3d805da5104a42c0", null ],
-    [ "~Data", "dd/d99/structez_reflection_pool_1_1_data.htm#a03698830647b07be0a0e66f12beced66", null ],
-    [ "AddProbe", "dd/d99/structez_reflection_pool_1_1_data.htm#a48c61fcd7318dd22c0189deda9f14a13", null ],
+    [ "ProbeData", "d6/db7/structez_reflection_pool_1_1_data_1_1_probe_data.htm", null ],
+    [ "WorldReflectionData", "da/da2/structez_reflection_pool_1_1_data_1_1_world_reflection_data.htm", null ],
     [ "CreateReflectionViewsAndResources", "dd/d99/structez_reflection_pool_1_1_data.htm#ac02398b2860b392c10823827893927b4", null ],
-    [ "CreateSkyIrradianceTexture", "dd/d99/structez_reflection_pool_1_1_data.htm#a869c1752d9b23c572482c151e7fb9bb2", null ],
-    [ "GetWorldData", "dd/d99/structez_reflection_pool_1_1_data.htm#a8a31e5ad4efa6a3c7282d549dcab1225", null ],
-    [ "OnReflectionProbeMappingEvent", "dd/d99/structez_reflection_pool_1_1_data.htm#aad2e482830c535094a908a4448406165", null ],
-    [ "PostExtraction", "dd/d99/structez_reflection_pool_1_1_data.htm#a71ead744d4f14f7c0cbd80cf83f997ed", null ],
-    [ "PreExtraction", "dd/d99/structez_reflection_pool_1_1_data.htm#a4e37c02b81d03c72003c18c5e9f99299", null ],
-    [ "RemoveProbe", "dd/d99/structez_reflection_pool_1_1_data.htm#a7162b5069babfb93f52d4a11dde7a58f", null ],
-    [ "UpdateProbeData", "dd/d99/structez_reflection_pool_1_1_data.htm#a163c116331ce495cb1266f5f09fdd2d1", null ],
-    [ "UpdateSkyLightData", "dd/d99/structez_reflection_pool_1_1_data.htm#a45268e2e5ae5a4b72bd0f9d0443b3725", null ],
-    [ "m_ActiveDynamicUpdate", "dd/d99/structez_reflection_pool_1_1_data.htm#a1d48db485c8f02475a83516b2ae85957", null ],
-    [ "m_DynamicUpdateQueue", "dd/d99/structez_reflection_pool_1_1_data.htm#a5d589ab608909c1494e1af41c38a2902", null ],
-    [ "m_hDebugMaterial", "dd/d99/structez_reflection_pool_1_1_data.htm#afe7c81129bf8529913d019874053e73e", null ],
-    [ "m_hDebugSphere", "dd/d99/structez_reflection_pool_1_1_data.htm#ab5d267698986d7f5953ee732ed5a2b04", null ],
-    [ "m_hFallbackReflectionSpecularTexture", "dd/d99/structez_reflection_pool_1_1_data.htm#a26f43001da7d8eaf4eb7ec1c80284bce", null ],
-    [ "m_hSkyIrradianceTexture", "dd/d99/structez_reflection_pool_1_1_data.htm#a27ab43d56f98eb607ef5937149f457df", null ],
-    [ "m_Mutex", "dd/d99/structez_reflection_pool_1_1_data.htm#a411913f80a1129bc00388cc811becf36", null ],
-    [ "m_PendingDynamicUpdate", "dd/d99/structez_reflection_pool_1_1_data.htm#abd90462c1a498f29c41f88ef5b54b545", null ],
-    [ "m_ReflectionProbeUpdater", "dd/d99/structez_reflection_pool_1_1_data.htm#aec75057bdb98fa59215293ac1190a08e", null ],
-    [ "m_SkyIrradianceStorage", "dd/d99/structez_reflection_pool_1_1_data.htm#ac1a0028730a14cf2f44e02d1be19bec1", null ],
-    [ "m_uiSkyIrradianceChanged", "dd/d99/structez_reflection_pool_1_1_data.htm#ac2e622ddaf28302baf26bf65cb4b4d5d", null ],
-    [ "m_uiWorldHasSkyLight", "dd/d99/structez_reflection_pool_1_1_data.htm#a416ed69c467257695b34ae254a7a0b8f", null ],
-    [ "m_WorldReflectionData", "dd/d99/structez_reflection_pool_1_1_data.htm#a48bf4a697b73860595ae8b52390fcb00", null ]
+    [ "PreExtraction", "dd/d99/structez_reflection_pool_1_1_data.htm#a4e37c02b81d03c72003c18c5e9f99299", null ]
 ];

@@ -1,6 +1,5 @@
 var structez_jolt_constraint_drive_mode =
 [
-    [ "StorageType", "d0/d22/structez_jolt_constraint_drive_mode.htm#a0edcc9358cbfa73f8b19dfdd586e9426", null ],
     [ "Enum", "d0/d22/structez_jolt_constraint_drive_mode.htm#a738c044f0b8bd162e39e40129cb912be", [
       [ "NoDrive", "d0/d22/structez_jolt_constraint_drive_mode.htm#a738c044f0b8bd162e39e40129cb912bea029575e11d95c53459ad75fda6f647a1", null ],
       [ "DriveVelocity", "d0/d22/structez_jolt_constraint_drive_mode.htm#a738c044f0b8bd162e39e40129cb912bea636d7c95849a014e512583d0c440b803", null ],

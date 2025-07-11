@@ -1,6 +1,5 @@
 var structez_projectile_reaction =
 [
-    [ "StorageType", "db/d66/structez_projectile_reaction.htm#a839e355590af2bfc7d0a2c23b05c325c", null ],
     [ "Enum", "db/d66/structez_projectile_reaction.htm#a339e3628f558f283d9a38f8d7b52e7d8", [
       [ "Absorb", "db/d66/structez_projectile_reaction.htm#a339e3628f558f283d9a38f8d7b52e7d8a523789ee4dbcc6472c81c8cff8275b5a", null ],
       [ "Reflect", "db/d66/structez_projectile_reaction.htm#a339e3628f558f283d9a38f8d7b52e7d8a682ca228810d427398f442b92add4092", null ],

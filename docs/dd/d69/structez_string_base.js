@@ -1,9 +1,5 @@
 var structez_string_base =
 [
-    [ "const_iterator", "dd/d69/structez_string_base.htm#a531d3947b6eec62f004ca77f662b78e1", null ],
-    [ "const_reverse_iterator", "dd/d69/structez_string_base.htm#ae708cb6d1cfcb5ca696272434087266c", null ],
-    [ "iterator", "dd/d69/structez_string_base.htm#a6d70336d6bc99eb0ffc416dc5244e4ae", null ],
-    [ "reverse_iterator", "dd/d69/structez_string_base.htm#a4b2f3b0362604dfa9bbf4f157ac841d2", null ],
     [ "Compare", "dd/d69/structez_string_base.htm#ab4aa8e43c8a2bf68e642ad1bfbffb9fa", null ],
     [ "Compare_NoCase", "dd/d69/structez_string_base.htm#a11cc4a3305c78e7e5f062073562b78b1", null ],
     [ "CompareN", "dd/d69/structez_string_base.htm#ad59a099496386a4dc0225f2564a9e9cb", null ],
@@ -39,13 +35,5 @@ var structez_string_base =
     [ "operator ezStringView", "dd/d69/structez_string_base.htm#a2f255aa67639f3d3c0abd7a55a8ee9e3", null ],
     [ "Split", "dd/d69/structez_string_base.htm#a328c33c66707ecea8ed93512a5ad2465", null ],
     [ "StartsWith", "dd/d69/structez_string_base.htm#aa2292b0dc69f7889157e6488455f5fd6", null ],
-    [ "StartsWith_NoCase", "dd/d69/structez_string_base.htm#a5820e97ac4c87313b8874f9f03e6b902", null ],
-    [ "begin", "dd/d69/structez_string_base.htm#a4cb6c0050755ef9835d8bced36a83213", null ],
-    [ "cbegin", "dd/d69/structez_string_base.htm#a5d5514d3571797a4c41beac526221366", null ],
-    [ "cend", "dd/d69/structez_string_base.htm#a11e4e85f3d2048214516b58f6b89e159", null ],
-    [ "crbegin", "dd/d69/structez_string_base.htm#ad4d0abf89d5189320dfc6dc94b664e40", null ],
-    [ "crend", "dd/d69/structez_string_base.htm#a84c5f8f7a0f45ccb37b34a6ae2bd1089", null ],
-    [ "end", "dd/d69/structez_string_base.htm#ab0b14e81a36c0c62f6544e04a7b39965", null ],
-    [ "rbegin", "dd/d69/structez_string_base.htm#aece72d9b68ebec4c0cc5f1e9d697f9c6", null ],
-    [ "rend", "dd/d69/structez_string_base.htm#aadcb6f881c0b44a715da4ae83b3a8318", null ]
+    [ "StartsWith_NoCase", "dd/d69/structez_string_base.htm#a5820e97ac4c87313b8874f9f03e6b902", null ]
 ];

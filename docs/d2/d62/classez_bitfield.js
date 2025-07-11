@@ -1,7 +1,6 @@
 var classez_bitfield =
 [
     [ "ConstIterator", "d4/d3a/structez_bitfield_1_1_const_iterator.htm", "d4/d3a/structez_bitfield_1_1_const_iterator" ],
-    [ "ezBitfield", "d2/d62/classez_bitfield.htm#a90c13a117d66ad5fdebf3f75e110fa67", null ],
     [ "AreAllBitsSet", "d2/d62/classez_bitfield.htm#a2df952dade46abd60d44d954c4b5c821", null ],
     [ "Clear", "d2/d62/classez_bitfield.htm#aec1f88c81c67279e730d88fcd6e48723", null ],
     [ "ClearAllBits", "d2/d62/classez_bitfield.htm#a33f3b1f5dcb047a2ec667470281e7187", null ],
@@ -22,6 +21,5 @@ var classez_bitfield =
     [ "SetBitValue", "d2/d62/classez_bitfield.htm#aea4835778bbdab097300e08eb69a744b", null ],
     [ "SetCount", "d2/d62/classez_bitfield.htm#a5d2e77f2c19d452c5a81fc2da9fb05f2", null ],
     [ "SetCountUninitialized", "d2/d62/classez_bitfield.htm#a7541e5112a522c7429f2f18e95fef35c", null ],
-    [ "Swap", "d2/d62/classez_bitfield.htm#a3159aa4e2ec2324c0f091d03a2e2ec58", null ],
-    [ "ConstIterator", "d2/d62/classez_bitfield.htm#aff4ff712b78d159dd32552cea3d923c8", null ]
+    [ "Swap", "d2/d62/classez_bitfield.htm#a3159aa4e2ec2324c0f091d03a2e2ec58", null ]
 ];

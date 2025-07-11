@@ -1,6 +1,5 @@
 var structez_property_anim_target =
 [
-    [ "StorageType", "d9/da4/structez_property_anim_target.htm#ae27a1cbc3e16498dc46273d5b8394cd7", null ],
     [ "Enum", "d9/da4/structez_property_anim_target.htm#ac1eea9c12c19b2e9fb10bbee20091eb4", [
       [ "Number", "d9/da4/structez_property_anim_target.htm#ac1eea9c12c19b2e9fb10bbee20091eb4a9069059146cbe85d07fc1f6cfa0da050", null ],
       [ "VectorX", "d9/da4/structez_property_anim_target.htm#ac1eea9c12c19b2e9fb10bbee20091eb4a7567fc6f044d0c812a6da767537aad8e", null ],

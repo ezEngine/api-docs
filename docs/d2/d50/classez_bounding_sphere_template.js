@@ -1,6 +1,5 @@
 var classez_bounding_sphere_template =
 [
-    [ "ComponentType", "d2/d50/classez_bounding_sphere_template.htm#a07eb5fc02daef1589d54829a460f01ee", null ],
     [ "ezBoundingSphereTemplate", "d2/d50/classez_bounding_sphere_template.htm#a59188cb1203103214a62d9999a39ba37", null ],
     [ "Contains", "d2/d50/classez_bounding_sphere_template.htm#ad2aecda1cdf9eec78e6aa92c2dca24c3", null ],
     [ "Contains", "d2/d50/classez_bounding_sphere_template.htm#a0d07309c47daaf5276e20faed302f4f2", null ],
@@ -10,7 +9,6 @@ var classez_bounding_sphere_template =
     [ "ExpandToInclude", "d2/d50/classez_bounding_sphere_template.htm#ab71293915c565a05efcd1512fb76b812", null ],
     [ "ExpandToInclude", "d2/d50/classez_bounding_sphere_template.htm#a3285adbea41a29b883589fdf0370d855", null ],
     [ "ExpandToInclude", "d2/d50/classez_bounding_sphere_template.htm#a5daffc2f56a096553a5d48dce7244a2b", null ],
-    [ "EZ_DECLARE_POD_TYPE", "d2/d50/classez_bounding_sphere_template.htm#a3e1609bbe4457bc7fe9eca9f8888858d", null ],
     [ "GetBoundingBox", "d2/d50/classez_bounding_sphere_template.htm#a80b6b541f693e969aff08d2e95747d96", null ],
     [ "GetClampedPoint", "d2/d50/classez_bounding_sphere_template.htm#ab0567315ee824c8bcf723cc603994baf", null ],
     [ "GetDistanceTo", "d2/d50/classez_bounding_sphere_template.htm#ad2e267ad691697aa02fe4389ab20ad99", null ],
@@ -32,7 +30,5 @@ var classez_bounding_sphere_template =
     [ "ScaleFromOrigin", "d2/d50/classez_bounding_sphere_template.htm#af840875b53da0b9aee250d5d83573a2b", null ],
     [ "TransformFromCenter", "d2/d50/classez_bounding_sphere_template.htm#a8b38a976b812811631b9f192608982aa", null ],
     [ "TransformFromOrigin", "d2/d50/classez_bounding_sphere_template.htm#a1da79c5b6e6501b02730b74fe9b1b06e", null ],
-    [ "Translate", "d2/d50/classez_bounding_sphere_template.htm#acdd5e71e47085b62293239b91dbbc3c3", null ],
-    [ "m_fRadius", "d2/d50/classez_bounding_sphere_template.htm#ac991578aa868937951bd07cf0734d3a3", null ],
-    [ "m_vCenter", "d2/d50/classez_bounding_sphere_template.htm#a729bce33446dc7d963ec29b0b7396a3f", null ]
+    [ "Translate", "d2/d50/classez_bounding_sphere_template.htm#acdd5e71e47085b62293239b91dbbc3c3", null ]
 ];

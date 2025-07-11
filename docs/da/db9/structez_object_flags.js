@@ -1,7 +1,6 @@
 var structez_object_flags =
 [
-    [ "Bits", "d5/da5/structez_object_flags_1_1_bits.htm", "d5/da5/structez_object_flags_1_1_bits" ],
-    [ "StorageType", "da/db9/structez_object_flags.htm#a8286d37c76025549b562d9324a17700c", null ],
+    [ "Bits", "d5/da5/structez_object_flags_1_1_bits.htm", null ],
     [ "Enum", "da/db9/structez_object_flags.htm#a1359c6c47ec8b5f9f4c2f62d408811e0", [
       [ "None", "da/db9/structez_object_flags.htm#a1359c6c47ec8b5f9f4c2f62d408811e0a6d4e6b6dfebc8109d8e59b000fd1b540", null ],
       [ "Dynamic", "da/db9/structez_object_flags.htm#a1359c6c47ec8b5f9f4c2f62d408811e0ade15d9ae246596014be03b47d8506257", null ],
@@ -18,6 +17,7 @@ var structez_object_flags =
       [ "StaticTransformChangesNotifications", "da/db9/structez_object_flags.htm#a1359c6c47ec8b5f9f4c2f62d408811e0a97d873afad6a512e6f51f7ae3814dd80", null ],
       [ "ParentChangesNotifications", "da/db9/structez_object_flags.htm#a1359c6c47ec8b5f9f4c2f62d408811e0a0d9239d620882f24b058be99fb5a8daf", null ],
       [ "CreatedByPrefab", "da/db9/structez_object_flags.htm#a1359c6c47ec8b5f9f4c2f62d408811e0ade95aa20c95106d5863e34ad6cda3b16", null ],
+      [ "HideShapeIcon", "da/db9/structez_object_flags.htm#a1359c6c47ec8b5f9f4c2f62d408811e0a7290ad6553ed58ec90bbbde990449492", null ],
       [ "UserFlag0", "da/db9/structez_object_flags.htm#a1359c6c47ec8b5f9f4c2f62d408811e0a02e5221b507d9eb719e7cf962ff7cfb7", null ],
       [ "UserFlag1", "da/db9/structez_object_flags.htm#a1359c6c47ec8b5f9f4c2f62d408811e0a046e2f5d71412d1dd3c55bf7a06cdcdb", null ],
       [ "UserFlag2", "da/db9/structez_object_flags.htm#a1359c6c47ec8b5f9f4c2f62d408811e0a56bee7436e517171f171489a1a9dcd1d", null ],

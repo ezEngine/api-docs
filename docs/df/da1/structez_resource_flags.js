@@ -1,7 +1,6 @@
 var structez_resource_flags =
 [
-    [ "Bits", "db/d35/structez_resource_flags_1_1_bits.htm", "db/d35/structez_resource_flags_1_1_bits" ],
-    [ "StorageType", "df/da1/structez_resource_flags.htm#aaa96b8ec35a05b3c96e236d707dbd13e", null ],
+    [ "Bits", "db/d35/structez_resource_flags_1_1_bits.htm", null ],
     [ "Enum", "df/da1/structez_resource_flags.htm#a59e97090ee88970ad83f348cdf72784c", [
       [ "UpdateOnMainThread", "df/da1/structez_resource_flags.htm#a59e97090ee88970ad83f348cdf72784caeb8126b7f3656307f45637ae6a46eec7", null ],
       [ "NoFileAccessRequired", "df/da1/structez_resource_flags.htm#a59e97090ee88970ad83f348cdf72784caaf223c34547d3939d2ba9e9d535b4a33", null ],

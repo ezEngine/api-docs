@@ -1,6 +1,5 @@
 var structez_image_format =
 [
-    [ "StorageType", "da/dfa/structez_image_format.htm#a39ed1ee28b97f2fff82f3f48271d1f88", null ],
     [ "Enum", "da/dfa/structez_image_format.htm#a1c595e37b9f96c35dd90570bfcd8f853", [
       [ "UNKNOWN", "da/dfa/structez_image_format.htm#a1c595e37b9f96c35dd90570bfcd8f853a9b62cb5d335da3b78e65159dfca2c4ed", null ],
       [ "R32G32B32A32_FLOAT", "da/dfa/structez_image_format.htm#a1c595e37b9f96c35dd90570bfcd8f853a2e55e7bc097aaec4770cb68c1dfbbb4d", null ],

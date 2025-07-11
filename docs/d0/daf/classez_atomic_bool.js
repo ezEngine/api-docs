@@ -1,7 +1,6 @@
 var classez_atomic_bool =
 [
     [ "ezAtomicBool", "d0/daf/classez_atomic_bool.htm#a424309cb1e6ea517882bd5b418f9efb5", null ],
-    [ "~ezAtomicBool", "d0/daf/classez_atomic_bool.htm#ab768df910a9d23f79f3fb5c665491630", null ],
     [ "ezAtomicBool", "d0/daf/classez_atomic_bool.htm#a69e347e46d6ac69957d354229c08d6ae", null ],
     [ "ezAtomicBool", "d0/daf/classez_atomic_bool.htm#a30982ed312df03a61d3f93531cade31c", null ],
     [ "operator bool", "d0/daf/classez_atomic_bool.htm#a694187cb137de9b7e6f251ad3b0a914a", null ],

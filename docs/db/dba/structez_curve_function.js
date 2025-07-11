@@ -1,6 +1,5 @@
 var structez_curve_function =
 [
-    [ "StorageType", "db/dba/structez_curve_function.htm#a91e7aa720450e759bad39f61c0fe0fe5", null ],
     [ "Enum", "db/dba/structez_curve_function.htm#ab124c72a803fcf216de024d6bb6a6601", [
       [ "Linear", "db/dba/structez_curve_function.htm#ab124c72a803fcf216de024d6bb6a6601a58ec6c3df5a284e6a777deff3285fbe6", null ],
       [ "ConstantZero", "db/dba/structez_curve_function.htm#ab124c72a803fcf216de024d6bb6a6601ad90a33fbed34eb2b50d32679525054f7", null ],

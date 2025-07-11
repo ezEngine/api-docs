@@ -1,31 +1,7 @@
 var classez_box_reflection_probe_component =
 [
-    [ "ezBoxReflectionProbeComponent", "d2/dfc/classez_box_reflection_probe_component.htm#a3d28725923d0971b029071d36c5102c4", null ],
-    [ "~ezBoxReflectionProbeComponent", "d2/dfc/classez_box_reflection_probe_component.htm#a53a17ff4658b3aa555355a2146872ec8", null ],
     [ "DeserializeComponent", "d2/dfc/classez_box_reflection_probe_component.htm#a6f0810f9635404fb91cb8d3320ceec88", null ],
-    [ "GetBoxProjection", "d2/dfc/classez_box_reflection_probe_component.htm#a8c7ea7b614f5dc42d2f8746015f89026", null ],
-    [ "GetExtents", "d2/dfc/classez_box_reflection_probe_component.htm#a03d78ea9331ebf7231972e7bab5745d1", null ],
-    [ "GetInfluenceScale", "d2/dfc/classez_box_reflection_probe_component.htm#a7ec36cc5f0b62a880798d63aefa67541", null ],
-    [ "GetInfluenceShift", "d2/dfc/classez_box_reflection_probe_component.htm#a75280ce54b8226073034d4ecfeb69d7d", null ],
-    [ "GetNegativeFalloff", "d2/dfc/classez_box_reflection_probe_component.htm#a651fc093e84b73cf5072105eff943400", null ],
-    [ "GetPositiveFalloff", "d2/dfc/classez_box_reflection_probe_component.htm#a8503151beca89fa9c0534da4f0ab071b", null ],
     [ "OnActivated", "d2/dfc/classez_box_reflection_probe_component.htm#a7bed37a05aaa32ee74d09f021894c5e4", null ],
     [ "OnDeactivated", "d2/dfc/classez_box_reflection_probe_component.htm#aee943546abcc3bb6e8e1de567b9b03f2", null ],
-    [ "OnMsgExtractRenderData", "d2/dfc/classez_box_reflection_probe_component.htm#a5a7a87e97f194da9d02154d7d317cdde", null ],
-    [ "OnObjectCreated", "d2/dfc/classez_box_reflection_probe_component.htm#a550fbe4a283828d83f3c97b0381650a7", null ],
-    [ "OnTransformChanged", "d2/dfc/classez_box_reflection_probe_component.htm#a4924b0e7d11d17486e8bc2cd7fbc4d6d", null ],
-    [ "OnUpdateLocalBounds", "d2/dfc/classez_box_reflection_probe_component.htm#adf6bc36ed1dd6fd87e1ce936d29123e5", null ],
-    [ "SerializeComponent", "d2/dfc/classez_box_reflection_probe_component.htm#ad2545845afe33cb04de0e94bc83d879f", null ],
-    [ "SetBoxProjection", "d2/dfc/classez_box_reflection_probe_component.htm#a2064bdf23db4ad16810250d0a6a726ac", null ],
-    [ "SetExtents", "d2/dfc/classez_box_reflection_probe_component.htm#a509d676c72b4a21a57dcc49b44824284", null ],
-    [ "SetInfluenceScale", "d2/dfc/classez_box_reflection_probe_component.htm#a60932cb2bbcf42c99ae969466456b0e4", null ],
-    [ "SetInfluenceShift", "d2/dfc/classez_box_reflection_probe_component.htm#ac118ccd8d8efdd9107f540beec7532f9", null ],
-    [ "SetNegativeFalloff", "d2/dfc/classez_box_reflection_probe_component.htm#ab29a0d82d3cc60c9ec7d5468cb022c6b", null ],
-    [ "SetPositiveFalloff", "d2/dfc/classez_box_reflection_probe_component.htm#ada2a51e9dc7a643af96cbadcc5ec892e", null ],
-    [ "m_bBoxProjection", "d2/dfc/classez_box_reflection_probe_component.htm#a0c4bcd320c581a95f1e4cb1a64519464", null ],
-    [ "m_vExtents", "d2/dfc/classez_box_reflection_probe_component.htm#acede234700b5f18931757f9407cc9b58", null ],
-    [ "m_vInfluenceScale", "d2/dfc/classez_box_reflection_probe_component.htm#ae227b74866bc4c14e2431853e77c5802", null ],
-    [ "m_vInfluenceShift", "d2/dfc/classez_box_reflection_probe_component.htm#abea76dadebdb429ca8e5932e744b9b1a", null ],
-    [ "m_vNegativeFalloff", "d2/dfc/classez_box_reflection_probe_component.htm#ac69a85a1e49a4b360f92af38d1123a5a", null ],
-    [ "m_vPositiveFalloff", "d2/dfc/classez_box_reflection_probe_component.htm#a1ad4cd70060130460aab3ebb5a94c7f7", null ]
+    [ "SerializeComponent", "d2/dfc/classez_box_reflection_probe_component.htm#ad2545845afe33cb04de0e94bc83d879f", null ]
 ];

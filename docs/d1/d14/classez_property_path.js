@@ -1,7 +1,5 @@
 var classez_property_path =
 [
-    [ "ezPropertyPath", "d1/d14/classez_property_path.htm#a4ed7aa40aa7fe33709b90313cb473d2b", null ],
-    [ "~ezPropertyPath", "d1/d14/classez_property_path.htm#ae870aa61e53d1629f795e2e388cc6717", null ],
     [ "GetValue", "d1/d14/classez_property_path.htm#aea8c1b7d479d837ed5547faf6ffae6cc", null ],
     [ "GetValue", "d1/d14/classez_property_path.htm#a0c319713ce025d0e28014b8fc5b83330", null ],
     [ "InitializeFromPath", "d1/d14/classez_property_path.htm#a0a1be71d5dd706f9bd7533fee71b2d3d", null ],

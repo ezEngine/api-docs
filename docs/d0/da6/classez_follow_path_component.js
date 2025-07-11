@@ -1,10 +1,6 @@
 var classez_follow_path_component =
 [
-    [ "ezFollowPathComponent", "d0/da6/classez_follow_path_component.htm#a0b07ea4db3d52e6a26198b8ea6958a0f", null ],
-    [ "~ezFollowPathComponent", "d0/da6/classez_follow_path_component.htm#a555d3b8890c6e95d0a071d45e8f79cbd", null ],
     [ "DeserializeComponent", "d0/da6/classez_follow_path_component.htm#a922913b9c97eb3f9f84e707a8d564a10", null ],
-    [ "DummyGetter", "d0/da6/classez_follow_path_component.htm#a28a7f68681d3628d1282ddd78850a98c", null ],
-    [ "GetDistanceAlongPath", "d0/da6/classez_follow_path_component.htm#a39a51dbfe7d81d23452d0aacdd5c77bf", null ],
     [ "IsDirectionForwards", "d0/da6/classez_follow_path_component.htm#a57faefcf977ffddb47d12238d752243a", null ],
     [ "IsRunning", "d0/da6/classez_follow_path_component.htm#acdf09f8b2b1e7d0ae15c0be2c7094757", null ],
     [ "OnActivated", "d0/da6/classez_follow_path_component.htm#a9accdc986f1f36ba15dcbc65f2a8af9a", null ],
@@ -15,23 +11,11 @@ var classez_follow_path_component =
     [ "SetPathObject", "d0/da6/classez_follow_path_component.htm#a16d73693f17fe217e90802bf4b65bc5b", null ],
     [ "SetRunning", "d0/da6/classez_follow_path_component.htm#a6a5bcc48b10bbf463a820a80c89394e6", null ],
     [ "ToggleDirection", "d0/da6/classez_follow_path_component.htm#a7066439843a277e9287f8553cefdea85", null ],
-    [ "Update", "d0/da6/classez_follow_path_component.htm#a6a7a4bfe57171ed0073d61e9efd61ff2", null ],
-    [ "m_bIsRunning", "d0/da6/classez_follow_path_component.htm#aa3ef888fc98de4d55f07e386deb95a0d", null ],
-    [ "m_bIsRunningForwards", "d0/da6/classez_follow_path_component.htm#a26af7a842a217e02c36ea908b63aa522", null ],
-    [ "m_bLastStateValid", "d0/da6/classez_follow_path_component.htm#a73345db03fbb8453b7e133485420f2b4", null ],
     [ "m_fLookAhead", "d0/da6/classez_follow_path_component.htm#aa233c633e3d682167a0f95c4f910519b", null ],
     [ "m_FollowMode", "d0/da6/classez_follow_path_component.htm#a9815537c7abd98ccca8ecf63f93aba47", null ],
     [ "m_fSmoothing", "d0/da6/classez_follow_path_component.htm#ae62085c02880707827249b2167512b68", null ],
     [ "m_fSpeed", "d0/da6/classez_follow_path_component.htm#aa882ad44948307653ff16c228cd50e91", null ],
-    [ "m_fStartDistance", "d0/da6/classez_follow_path_component.htm#aefbfb1d619bf409dcc0a6c01c63a55e1", null ],
     [ "m_fTiltAmount", "d0/da6/classez_follow_path_component.htm#aa632e5cb243f37863604b5508fefd1fe", null ],
-    [ "m_hPathObject", "d0/da6/classez_follow_path_component.htm#ad7f75d90ae26494ddf9955513385fdf3", null ],
-    [ "m_LastTiltAngle", "d0/da6/classez_follow_path_component.htm#ae523558ab293e4ff40c570395a2cb67e", null ],
     [ "m_MaxTilt", "d0/da6/classez_follow_path_component.htm#a7b70295fde384b73ce2953adb6325404", null ],
-    [ "m_Mode", "d0/da6/classez_follow_path_component.htm#aeef2b1fa680318b47069a8624421c968", null ],
-    [ "m_PathSampler", "d0/da6/classez_follow_path_component.htm#ad21b9271e223371a69a76469774769de", null ],
-    [ "m_ReachedEndEvent", "d0/da6/classez_follow_path_component.htm#af0b364234d87b06e9a76cd9134ec17a3", null ],
-    [ "m_vLastPosition", "d0/da6/classez_follow_path_component.htm#aec16de7cbba9231d9890d3a31efe3734", null ],
-    [ "m_vLastTargetPosition", "d0/da6/classez_follow_path_component.htm#a53d215bc3a955ffb1fbea595e3ed03b2", null ],
-    [ "m_vLastUpDir", "d0/da6/classez_follow_path_component.htm#a26727bda65fcd5bb5a3a4230e583f51c", null ]
+    [ "m_Mode", "d0/da6/classez_follow_path_component.htm#aeef2b1fa680318b47069a8624421c968", null ]
 ];

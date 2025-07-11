@@ -15,6 +15,5 @@ var structez_game_object_event =
       [ "TriggerSnapEachSelectedObjectToGrid", "df/d98/structez_game_object_event.htm#a301e90bd520b34ae4346b344d109428bafa808bd6bd4cceab4a6e60d8d03f9d68", null ],
       [ "GameModeChanged", "df/d98/structez_game_object_event.htm#a301e90bd520b34ae4346b344d109428ba4891293c924d2073221961a4017e4ea1", null ],
       [ "GizmoTransformMayBeInvalid", "df/d98/structez_game_object_event.htm#a301e90bd520b34ae4346b344d109428ba58296d4f55981897343d7824dd1cfaca", null ]
-    ] ],
-    [ "m_Type", "df/d98/structez_game_object_event.htm#a7f820233aee6d87c0440050e9e26325c", null ]
+    ] ]
 ];

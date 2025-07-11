@@ -1,6 +1,5 @@
 var classez_bounding_box_template =
 [
-    [ "ComponentType", "d6/d25/classez_bounding_box_template.htm#ad20c97361109a815a51fad57744e0e37", null ],
     [ "ezBoundingBoxTemplate", "d6/d25/classez_bounding_box_template.htm#a9e7856a6da6bc5f71440e309584b7238", null ],
     [ "ezBoundingBoxTemplate", "d6/d25/classez_bounding_box_template.htm#a4baf0a26aafdf68d78f63ed6c0721203", null ],
     [ "Contains", "d6/d25/classez_bounding_box_template.htm#ac292e4095bebdc00d8bad2bc4643077f", null ],
@@ -11,18 +10,17 @@ var classez_bounding_box_template =
     [ "ExpandToInclude", "d6/d25/classez_bounding_box_template.htm#ac39c75f8e03718c89e4c59b7668dd26f", null ],
     [ "ExpandToInclude", "d6/d25/classez_bounding_box_template.htm#ad6684e555ebc4629c2680ceb768b1ee1", null ],
     [ "ExpandToInclude", "d6/d25/classez_bounding_box_template.htm#a9c31a9a32af0e204f169f7cf4fdc9b45", null ],
-    [ "EZ_DECLARE_POD_TYPE", "d6/d25/classez_bounding_box_template.htm#aee1247388551542b6ecd7339fcb2c915", null ],
     [ "GetBoundingSphere", "d6/d25/classez_bounding_box_template.htm#af21365085336a135e720ba9aac176dbe", null ],
-    [ "GetCenter", "d6/d25/classez_bounding_box_template.htm#a3ef1db5205e133493344196b2e3cdb80", null ],
-    [ "GetClampedPoint", "d6/d25/classez_bounding_box_template.htm#afe3f92c0e7dbb27f58925aec75e7d9f7", null ],
+    [ "GetCenter", "d6/d25/classez_bounding_box_template.htm#a5b5cf92c58c3c07892417738696d0ed6", null ],
+    [ "GetClampedPoint", "d6/d25/classez_bounding_box_template.htm#ac7b9b32702796a1039da45d8e67f3bb9", null ],
     [ "GetCorners", "d6/d25/classez_bounding_box_template.htm#ac08ca0cfe8e130b306f9cb253831ba86", null ],
     [ "GetDistanceSquaredTo", "d6/d25/classez_bounding_box_template.htm#aa97d2cdef9d1857b6088782d429e1ffe", null ],
     [ "GetDistanceSquaredTo", "d6/d25/classez_bounding_box_template.htm#a967a358a476c731641b1ad6633b8475f", null ],
     [ "GetDistanceTo", "d6/d25/classez_bounding_box_template.htm#a11c3d6d23886d0ea5e90a8d30d858a3a", null ],
     [ "GetDistanceTo", "d6/d25/classez_bounding_box_template.htm#ad5924571951717a84ec1f88f6d8d572a", null ],
     [ "GetDistanceTo", "d6/d25/classez_bounding_box_template.htm#aa6e1b369a4cba10665e6e6fb86fb9176", null ],
-    [ "GetExtents", "d6/d25/classez_bounding_box_template.htm#a7a2481364a5a6c6e320035619bfb0465", null ],
-    [ "GetHalfExtents", "d6/d25/classez_bounding_box_template.htm#a485fc4c93b1eb36b1f89b24bb4177644", null ],
+    [ "GetExtents", "d6/d25/classez_bounding_box_template.htm#a6fa427974e16355e5a87935b44e33dad", null ],
+    [ "GetHalfExtents", "d6/d25/classez_bounding_box_template.htm#aa05f968b190ff2bdd069854f6a1a9151", null ],
     [ "GetLineSegmentIntersection", "d6/d25/classez_bounding_box_template.htm#a0fa8841453c64d36e81476f7adb0fe3d", null ],
     [ "GetRayIntersection", "d6/d25/classez_bounding_box_template.htm#acc6196bf642a8e5351811db5e91ff962", null ],
     [ "Grow", "d6/d25/classez_bounding_box_template.htm#ad59a4af199ac0a7afadec9fddb8b986f", null ],
@@ -37,7 +35,5 @@ var classez_bounding_box_template =
     [ "ScaleFromOrigin", "d6/d25/classez_bounding_box_template.htm#a9c90db5c117368f3efb2325a11f7f9a7", null ],
     [ "TransformFromCenter", "d6/d25/classez_bounding_box_template.htm#a52c2dc04664fdcf22eeecc0e10d17bdb", null ],
     [ "TransformFromOrigin", "d6/d25/classez_bounding_box_template.htm#a9048b79c0771b59051c39f1bc50987eb", null ],
-    [ "Translate", "d6/d25/classez_bounding_box_template.htm#a4a2167dcbd2197b7d6b882e5596435d3", null ],
-    [ "m_vMax", "d6/d25/classez_bounding_box_template.htm#a623f909567801f15961f1f4955fb69d7", null ],
-    [ "m_vMin", "d6/d25/classez_bounding_box_template.htm#a23efa2ed27ed54494554ba9554fc0c0a", null ]
+    [ "Translate", "d6/d25/classez_bounding_box_template.htm#a4a2167dcbd2197b7d6b882e5596435d3", null ]
 ];

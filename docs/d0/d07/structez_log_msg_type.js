@@ -1,6 +1,5 @@
 var structez_log_msg_type =
 [
-    [ "StorageType", "d0/d07/structez_log_msg_type.htm#ae3ca6df40ce0acb89ba0593998601272", null ],
     [ "Enum", "d0/d07/structez_log_msg_type.htm#a109cef5358039d006c48754b19db92e8", [
       [ "GlobalDefault", "d0/d07/structez_log_msg_type.htm#a109cef5358039d006c48754b19db92e8acbadce8a51daf69fc97f08f5614460be", null ],
       [ "Flush", "d0/d07/structez_log_msg_type.htm#a109cef5358039d006c48754b19db92e8ab6300d2d031ddedaf564a5ddaaed8bc8", null ],
