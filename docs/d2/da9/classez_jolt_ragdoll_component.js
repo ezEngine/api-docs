@@ -12,7 +12,7 @@ var classez_jolt_ragdoll_component =
     [ "SerializeComponent", "d2/da9/classez_jolt_ragdoll_component.htm#a12f0b65d35b3a0b969e2a26380e7b84b", null ],
     [ "SetGravityFactor", "d2/da9/classez_jolt_ragdoll_component.htm#a1826fa98dac713694cbc0485e798f6a2", null ],
     [ "SetInitialImpulse", "d2/da9/classez_jolt_ragdoll_component.htm#ae5af4f68701eeab818e5b7d78c7b409d", null ],
-    [ "SetJointTypeOverride", "d2/da9/classez_jolt_ragdoll_component.htm#a81869181d3cba9a7d4f5e0c8ca99cd81", null ],
+    [ "SetJointTypeOverride", "d2/da9/classez_jolt_ragdoll_component.htm#a4d2ac53833016f898122ade19771b9b8", null ],
     [ "SetStartMode", "d2/da9/classez_jolt_ragdoll_component.htm#a1ca372d939608d008f43d1c55ecf2a72", null ],
     [ "m_bSelfCollision", "d2/da9/classez_jolt_ragdoll_component.htm#a9d18a9f7faf13f2fd6797ad158457c5a", null ],
     [ "m_fCenterAngularVelocity", "d2/da9/classez_jolt_ragdoll_component.htm#afa26940fb30109693d62eaa2ba698873", null ],

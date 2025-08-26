@@ -675,63 +675,56 @@ $(document).ready(function(){initNavTree('d1/d1e/_s_s_e_vec4f__inl_8h_source.htm
 <div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span>  <span class="keywordflow">return</span> _mm_shuffle_ps(c, c, EZ_TO_SHUFFLE(ezSwizzle::YZXW));</div>
 <div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span>}</div>
 <div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span> </div>
-<div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span>EZ_ALWAYS_INLINE <a class="code hl_class" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a> <a class="code hl_function" href="../../db/d0d/classez_simd_vec4f.htm#a4a0120cdc35f90d55e75beabcc30be89">ezSimdVec4f::GetOrthogonalVector</a>()<span class="keyword"> const</span></div>
-<div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span>  <span class="comment">// See http://blog.selfshadow.com/2011/10/17/perp-vectors/ - this is Stark&#39;s first variant, SIMDified.</span></div>
-<div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="../../db/d0d/classez_simd_vec4f.htm#a863f3b8ecc6cf51a9982daf6f9a98c08">CrossRH</a>(_mm_and_ps(m_v, _mm_cmpeq_ps(m_v, HorizontalMin&lt;3&gt;().m_v)));</div>
-<div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span>}</div>
-<div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span> </div>
-<div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span><span class="comment">// static</span></div>
-<div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span>EZ_ALWAYS_INLINE <a class="code hl_class" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a> ezSimdVec4f::MulAdd(<span class="keyword">const</span> <a class="code hl_class" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a>&amp; a, <span class="keyword">const</span> <a class="code hl_class" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a>&amp; b, <span class="keyword">const</span> <a class="code hl_class" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a>&amp; c)</div>
-<div class="line"><a id="l00586" name="l00586"></a><span class="lineno">  586</span>{</div>
-<div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span><span class="preprocessor">#if EZ_SSE_LEVEL &gt;= EZ_SSE_AVX2</span></div>
-<div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span>  <span class="keywordflow">return</span> _mm_fmadd_ps(a.m_v, b.m_v, c.m_v);</div>
-<div class="line"><a id="l00589" name="l00589"></a><span class="lineno">  589</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span>  <span class="keywordflow">return</span> a.CompMul(b) + c;</div>
-<div class="line"><a id="l00591" name="l00591"></a><span class="lineno">  591</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span>}</div>
-<div class="line"><a id="l00593" name="l00593"></a><span class="lineno">  593</span> </div>
-<div class="line"><a id="l00594" name="l00594"></a><span class="lineno">  594</span><span class="comment">// static</span></div>
-<div class="line"><a id="l00595" name="l00595"></a><span class="lineno">  595</span>EZ_ALWAYS_INLINE <a class="code hl_class" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a> ezSimdVec4f::MulAdd(<span class="keyword">const</span> <a class="code hl_class" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a>&amp; a, <span class="keyword">const</span> <a class="code hl_class" href="../../d2/d0c/classez_simd_float.htm">ezSimdFloat</a>&amp; b, <span class="keyword">const</span> <a class="code hl_class" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a>&amp; c)</div>
-<div class="line"><a id="l00596" name="l00596"></a><span class="lineno">  596</span>{</div>
-<div class="line"><a id="l00597" name="l00597"></a><span class="lineno">  597</span><span class="preprocessor">#if EZ_SSE_LEVEL &gt;= EZ_SSE_AVX2</span></div>
-<div class="line"><a id="l00598" name="l00598"></a><span class="lineno">  598</span>  <span class="keywordflow">return</span> _mm_fmadd_ps(a.m_v, b.m_v, c.m_v);</div>
-<div class="line"><a id="l00599" name="l00599"></a><span class="lineno">  599</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00600" name="l00600"></a><span class="lineno">  600</span>  <span class="keywordflow">return</span> a * b + c;</div>
-<div class="line"><a id="l00601" name="l00601"></a><span class="lineno">  601</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00602" name="l00602"></a><span class="lineno">  602</span>}</div>
-<div class="line"><a id="l00603" name="l00603"></a><span class="lineno">  603</span> </div>
-<div class="line"><a id="l00604" name="l00604"></a><span class="lineno">  604</span><span class="comment">// static</span></div>
-<div class="line"><a id="l00605" name="l00605"></a><span class="lineno">  605</span>EZ_ALWAYS_INLINE <a class="code hl_class" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a> ezSimdVec4f::MulSub(<span class="keyword">const</span> <a class="code hl_class" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a>&amp; a, <span class="keyword">const</span> <a class="code hl_class" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a>&amp; b, <span class="keyword">const</span> <a class="code hl_class" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a>&amp; c)</div>
-<div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span>{</div>
-<div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span><span class="preprocessor">#if EZ_SSE_LEVEL &gt;= EZ_SSE_AVX2</span></div>
-<div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span>  <span class="keywordflow">return</span> _mm_fmsub_ps(a.m_v, b.m_v, c.m_v);</div>
-<div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span>  <span class="keywordflow">return</span> a.CompMul(b) - c;</div>
-<div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span>}</div>
-<div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span> </div>
-<div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span><span class="comment">// static</span></div>
-<div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span>EZ_ALWAYS_INLINE <a class="code hl_class" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a> ezSimdVec4f::MulSub(<span class="keyword">const</span> <a class="code hl_class" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a>&amp; a, <span class="keyword">const</span> <a class="code hl_class" href="../../d2/d0c/classez_simd_float.htm">ezSimdFloat</a>&amp; b, <span class="keyword">const</span> <a class="code hl_class" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a>&amp; c)</div>
-<div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span>{</div>
-<div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span><span class="preprocessor">#if EZ_SSE_LEVEL &gt;= EZ_SSE_AVX2</span></div>
-<div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span>  <span class="keywordflow">return</span> _mm_fmsub_ps(a.m_v, b.m_v, c.m_v);</div>
-<div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span>  <span class="keywordflow">return</span> a * b - c;</div>
-<div class="line"><a id="l00621" name="l00621"></a><span class="lineno">  621</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00622" name="l00622"></a><span class="lineno">  622</span>}</div>
-<div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span> </div>
-<div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span><span class="comment">// static</span></div>
-<div class="line"><a id="l00625" name="l00625"></a><span class="lineno">  625</span>EZ_ALWAYS_INLINE <a class="code hl_class" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a> ezSimdVec4f::CopySign(<span class="keyword">const</span> <a class="code hl_class" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a>&amp; vMagnitude, <span class="keyword">const</span> <a class="code hl_class" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a>&amp; vSign)</div>
-<div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span>{</div>
-<div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span>  __m128 minusZero = _mm_set1_ps(-0.0f);</div>
-<div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span>  <span class="keywordflow">return</span> _mm_or_ps(_mm_andnot_ps(minusZero, vMagnitude.m_v), _mm_and_ps(minusZero, vSign.m_v));</div>
-<div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span>}</div>
+<div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span><span class="comment">// static</span></div>
+<div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span>EZ_ALWAYS_INLINE <a class="code hl_class" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a> ezSimdVec4f::MulAdd(<span class="keyword">const</span> <a class="code hl_class" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a>&amp; a, <span class="keyword">const</span> <a class="code hl_class" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a>&amp; b, <span class="keyword">const</span> <a class="code hl_class" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a>&amp; c)</div>
+<div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span>{</div>
+<div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span><span class="preprocessor">#if EZ_SSE_LEVEL &gt;= EZ_SSE_AVX2</span></div>
+<div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span>  <span class="keywordflow">return</span> _mm_fmadd_ps(a.m_v, b.m_v, c.m_v);</div>
+<div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span>  <span class="keywordflow">return</span> a.CompMul(b) + c;</div>
+<div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00586" name="l00586"></a><span class="lineno">  586</span>}</div>
+<div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span> </div>
+<div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span><span class="comment">// static</span></div>
+<div class="line"><a id="l00589" name="l00589"></a><span class="lineno">  589</span>EZ_ALWAYS_INLINE <a class="code hl_class" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a> ezSimdVec4f::MulAdd(<span class="keyword">const</span> <a class="code hl_class" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a>&amp; a, <span class="keyword">const</span> <a class="code hl_class" href="../../d2/d0c/classez_simd_float.htm">ezSimdFloat</a>&amp; b, <span class="keyword">const</span> <a class="code hl_class" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a>&amp; c)</div>
+<div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span>{</div>
+<div class="line"><a id="l00591" name="l00591"></a><span class="lineno">  591</span><span class="preprocessor">#if EZ_SSE_LEVEL &gt;= EZ_SSE_AVX2</span></div>
+<div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span>  <span class="keywordflow">return</span> _mm_fmadd_ps(a.m_v, b.m_v, c.m_v);</div>
+<div class="line"><a id="l00593" name="l00593"></a><span class="lineno">  593</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00594" name="l00594"></a><span class="lineno">  594</span>  <span class="keywordflow">return</span> a * b + c;</div>
+<div class="line"><a id="l00595" name="l00595"></a><span class="lineno">  595</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00596" name="l00596"></a><span class="lineno">  596</span>}</div>
+<div class="line"><a id="l00597" name="l00597"></a><span class="lineno">  597</span> </div>
+<div class="line"><a id="l00598" name="l00598"></a><span class="lineno">  598</span><span class="comment">// static</span></div>
+<div class="line"><a id="l00599" name="l00599"></a><span class="lineno">  599</span>EZ_ALWAYS_INLINE <a class="code hl_class" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a> ezSimdVec4f::MulSub(<span class="keyword">const</span> <a class="code hl_class" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a>&amp; a, <span class="keyword">const</span> <a class="code hl_class" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a>&amp; b, <span class="keyword">const</span> <a class="code hl_class" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a>&amp; c)</div>
+<div class="line"><a id="l00600" name="l00600"></a><span class="lineno">  600</span>{</div>
+<div class="line"><a id="l00601" name="l00601"></a><span class="lineno">  601</span><span class="preprocessor">#if EZ_SSE_LEVEL &gt;= EZ_SSE_AVX2</span></div>
+<div class="line"><a id="l00602" name="l00602"></a><span class="lineno">  602</span>  <span class="keywordflow">return</span> _mm_fmsub_ps(a.m_v, b.m_v, c.m_v);</div>
+<div class="line"><a id="l00603" name="l00603"></a><span class="lineno">  603</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00604" name="l00604"></a><span class="lineno">  604</span>  <span class="keywordflow">return</span> a.CompMul(b) - c;</div>
+<div class="line"><a id="l00605" name="l00605"></a><span class="lineno">  605</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span>}</div>
+<div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span> </div>
+<div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span><span class="comment">// static</span></div>
+<div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span>EZ_ALWAYS_INLINE <a class="code hl_class" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a> ezSimdVec4f::MulSub(<span class="keyword">const</span> <a class="code hl_class" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a>&amp; a, <span class="keyword">const</span> <a class="code hl_class" href="../../d2/d0c/classez_simd_float.htm">ezSimdFloat</a>&amp; b, <span class="keyword">const</span> <a class="code hl_class" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a>&amp; c)</div>
+<div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span>{</div>
+<div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span><span class="preprocessor">#if EZ_SSE_LEVEL &gt;= EZ_SSE_AVX2</span></div>
+<div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span>  <span class="keywordflow">return</span> _mm_fmsub_ps(a.m_v, b.m_v, c.m_v);</div>
+<div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span>  <span class="keywordflow">return</span> a * b - c;</div>
+<div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span>}</div>
+<div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span> </div>
+<div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span><span class="comment">// static</span></div>
+<div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span>EZ_ALWAYS_INLINE <a class="code hl_class" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a> ezSimdVec4f::CopySign(<span class="keyword">const</span> <a class="code hl_class" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a>&amp; vMagnitude, <span class="keyword">const</span> <a class="code hl_class" href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a>&amp; vSign)</div>
+<div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span>{</div>
+<div class="line"><a id="l00621" name="l00621"></a><span class="lineno">  621</span>  __m128 minusZero = _mm_set1_ps(-0.0f);</div>
+<div class="line"><a id="l00622" name="l00622"></a><span class="lineno">  622</span>  <span class="keywordflow">return</span> _mm_or_ps(_mm_andnot_ps(minusZero, vMagnitude.m_v), _mm_and_ps(minusZero, vSign.m_v));</div>
+<div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span>}</div>
 <div class="ttc" id="aclassez_simd_float_htm"><div class="ttname"><a href="../../d2/d0c/classez_simd_float.htm">ezSimdFloat</a></div><div class="ttdef"><b>Definition</b> SimdFloat.h:7</div></div>
 <div class="ttc" id="aclassez_simd_vec4b_htm"><div class="ttname"><a href="../../de/daa/classez_simd_vec4b.htm">ezSimdVec4b</a></div><div class="ttdef"><b>Definition</b> SimdVec4b.h:7</div></div>
 <div class="ttc" id="aclassez_simd_vec4f_htm"><div class="ttname"><a href="../../db/d0d/classez_simd_vec4f.htm">ezSimdVec4f</a></div><div class="ttdoc">A 4-component SIMD vector class.</div><div class="ttdef"><b>Definition</b> SimdVec4f.h:8</div></div>
 <div class="ttc" id="aclassez_simd_vec4f_htm_a44d5936d6191c43ffd45c7d9c214638c"><div class="ttname"><a href="../../db/d0d/classez_simd_vec4f.htm#a44d5936d6191c43ffd45c7d9c214638c">ezSimdVec4f::GetCombined</a></div><div class="ttdeci">ezSimdVec4f GetCombined(const ezSimdVec4f &amp;other) const</div><div class="ttdoc">x = this[s0], y = this[s1], z = other[s2], w = other[s3]</div></div>
-<div class="ttc" id="aclassez_simd_vec4f_htm_a4a0120cdc35f90d55e75beabcc30be89"><div class="ttname"><a href="../../db/d0d/classez_simd_vec4f.htm#a4a0120cdc35f90d55e75beabcc30be89">ezSimdVec4f::GetOrthogonalVector</a></div><div class="ttdeci">ezSimdVec4f GetOrthogonalVector() const</div><div class="ttdoc">Generates an arbitrary vector such that Dot&lt;3&gt;(GetOrthogonalVector()) == 0.</div><div class="ttdef"><b>Definition</b> FPUVec4f_inl.h:497</div></div>
 <div class="ttc" id="aclassez_simd_vec4f_htm_a863f3b8ecc6cf51a9982daf6f9a98c08"><div class="ttname"><a href="../../db/d0d/classez_simd_vec4f.htm#a863f3b8ecc6cf51a9982daf6f9a98c08">ezSimdVec4f::CrossRH</a></div><div class="ttdeci">ezSimdVec4f CrossRH(const ezSimdVec4f &amp;v) const</div><div class="ttdoc">3D cross product, w is ignored.</div><div class="ttdef"><b>Definition</b> FPUVec4f_inl.h:492</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -739,7 +732,7 @@ $(document).ready(function(){initNavTree('d1/d1e/_s_s_e_vec4f__inl_8h_source.htm
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_6b9381ed4ec7e78ad4ad9509acce36a5.htm">SimdMath</a></li><li class="navelem"><a class="el" href="../../dir_3d955f3f3e7fff9f34f1ed045c0694e5.htm">Implementation</a></li><li class="navelem"><a class="el" href="../../dir_eb2a90769b3faa0383b2602dbd805ef6.htm">SSE</a></li><li class="navelem"><b>SSEVec4f_inl.h</b></li>
-    <li class="footer">Generated on Fri Jul 11 2025 12:17:52 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Tue Aug 26 2025 05:00:58 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

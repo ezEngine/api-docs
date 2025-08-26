@@ -1,6 +1,8 @@
 var classez_sensor_component =
 [
     [ "DeserializeComponent", "de/d95/classez_sensor_component.htm#a79524293afc258df08a724d58170a5f7", null ],
+    [ "GetDetectedObject", "de/d95/classez_sensor_component.htm#a4c42ce3ed2ec9d7f038953d06671a044", null ],
+    [ "GetDetectedObjectsCount", "de/d95/classez_sensor_component.htm#a79215949cdb4ba583b273caf9079a20e", null ],
     [ "GetLastDetectedObjects", "de/d95/classez_sensor_component.htm#a52429461edc0772ee0223a5746a6867f", null ],
     [ "OnActivated", "de/d95/classez_sensor_component.htm#aebda787baaac709f57f27f4b0fcf6f3a", null ],
     [ "OnDeactivated", "de/d95/classez_sensor_component.htm#a1f816636ef6fa7419c49e0bdd598c7ce", null ],

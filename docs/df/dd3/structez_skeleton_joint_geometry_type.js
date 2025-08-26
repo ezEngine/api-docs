@@ -6,6 +6,7 @@ var structez_skeleton_joint_geometry_type =
       [ "Sphere", "df/dd3/structez_skeleton_joint_geometry_type.htm#aa5381985ff73beadd6f6746714f210e3a8ac2abee75c6a001a107b87c2a298f1b", null ],
       [ "Box", "df/dd3/structez_skeleton_joint_geometry_type.htm#aa5381985ff73beadd6f6746714f210e3ae47a997f403bb553b47a71b31dba0b63", null ],
       [ "ConvexMesh", "df/dd3/structez_skeleton_joint_geometry_type.htm#aa5381985ff73beadd6f6746714f210e3a1bf41e9a8b2aa92cd83bbcefb1b638b2", null ],
+      [ "CapsuleSideways", "df/dd3/structez_skeleton_joint_geometry_type.htm#aa5381985ff73beadd6f6746714f210e3a778163c2215bffa45cfd2e69ccf6539d", null ],
       [ "Default", "df/dd3/structez_skeleton_joint_geometry_type.htm#aa5381985ff73beadd6f6746714f210e3a52361bf2759c114770af3ef1624bb1ef", null ]
     ] ]
 ];

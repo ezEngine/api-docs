@@ -102,82 +102,93 @@ $(document).ready(function(){initNavTree('dc/d09/_occluder_component_8h_source.h
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;Core/World/Component.h&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;Core/World/World.h&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;RendererCore/Rasterizer/RasterizerObject.h&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;RendererCore/RendererCoreDLL.h&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">struct </span><a class="code hl_struct" href="../../d7/dd5/structez_msg_transform_changed.htm">ezMsgTransformChanged</a>;</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">struct </span><a class="code hl_struct" href="../../df/dda/structez_msg_update_local_bounds.htm">ezMsgUpdateLocalBounds</a>;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">struct </span><a class="code hl_struct" href="../../de/de7/structez_msg_extract_occluder_data.htm">ezMsgExtractOccluderData</a>;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="foldopen" id="foldopen00012" data-start="{" data-end="};">
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="../../d2/d95/classez_occluder_component_manager.htm">   12</a></span><span class="keyword">class </span>EZ_RENDERERCORE_DLL <a class="code hl_class" href="../../d2/d95/classez_occluder_component_manager.htm">ezOccluderComponentManager</a> final : <span class="keyword">public</span> <a class="code hl_class" href="../../d7/df2/classez_component_manager.htm">ezComponentManager</a>&lt;class ezOccluderComponent, ezBlockStorageType::FreeList&gt;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  <a class="code hl_class" href="../../d2/d95/classez_occluder_component_manager.htm">ezOccluderComponentManager</a>(<a class="code hl_class" href="../../da/d3c/classez_world.htm">ezWorld</a>* pWorld);</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>};</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;RendererCore/Meshes/CpuMeshResource.h&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;RendererCore/Rasterizer/RasterizerObject.h&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;RendererCore/RendererCoreDLL.h&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">struct </span><a class="code hl_struct" href="../../d7/dd5/structez_msg_transform_changed.htm">ezMsgTransformChanged</a>;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">struct </span><a class="code hl_struct" href="../../df/dda/structez_msg_update_local_bounds.htm">ezMsgUpdateLocalBounds</a>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">struct </span><a class="code hl_struct" href="../../de/de7/structez_msg_extract_occluder_data.htm">ezMsgExtractOccluderData</a>;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="../../d2/d95/classez_occluder_component_manager.htm">   13</a></span><span class="keyword">class </span>EZ_RENDERERCORE_DLL <a class="code hl_class" href="../../d2/d95/classez_occluder_component_manager.htm">ezOccluderComponentManager</a> final : <span class="keyword">public</span> <a class="code hl_class" href="../../d7/df2/classez_component_manager.htm">ezComponentManager</a>&lt;class ezOccluderComponent, ezBlockStorageType::FreeList&gt;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <a class="code hl_class" href="../../d2/d95/classez_occluder_component_manager.htm">ezOccluderComponentManager</a>(<a class="code hl_class" href="../../da/d3c/classez_world.htm">ezWorld</a>* pWorld);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>};</div>
 </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="../../d6/dbc/structez_occluder_type.htm">   18</a></span><span class="keyword">struct </span><a class="code hl_struct" href="../../d6/dbc/structez_occluder_type.htm">ezOccluderType</a></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>{</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <span class="keyword">using </span>StorageType = ezUInt8;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="foldopen" id="foldopen00022" data-start="{" data-end="};">
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="../../d6/dbc/structez_occluder_type.htm#a3730efc5edcd80aeef46fb864e5beaf5">   22</a></span>  <span class="keyword">enum</span> <a class="code hl_enumeration" href="../../d6/dbc/structez_occluder_type.htm#a3730efc5edcd80aeef46fb864e5beaf5">Enum</a> : StorageType</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  {</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="../../d6/dbc/structez_occluder_type.htm#a3730efc5edcd80aeef46fb864e5beaf5ad2aff07112f359d9b00ff4b979629648">   24</a></span>    <a class="code hl_enumvalue" href="../../d6/dbc/structez_occluder_type.htm#a3730efc5edcd80aeef46fb864e5beaf5ad2aff07112f359d9b00ff4b979629648">Box</a>,      </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="../../d6/dbc/structez_occluder_type.htm#a3730efc5edcd80aeef46fb864e5beaf5ac6452d886e050c20701488367abee296">   25</a></span>    <a class="code hl_enumvalue" href="../../d6/dbc/structez_occluder_type.htm#a3730efc5edcd80aeef46fb864e5beaf5ac6452d886e050c20701488367abee296">QuadPosX</a>, </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    Default = <a class="code hl_enumvalue" href="../../d6/dbc/structez_occluder_type.htm#a3730efc5edcd80aeef46fb864e5beaf5ad2aff07112f359d9b00ff4b979629648">Box</a></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  };</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="../../d6/dbc/structez_occluder_type.htm">   19</a></span><span class="keyword">struct </span><a class="code hl_struct" href="../../d6/dbc/structez_occluder_type.htm">ezOccluderType</a></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>{</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <span class="keyword">using </span>StorageType = ezUInt8;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="../../d6/dbc/structez_occluder_type.htm#a3730efc5edcd80aeef46fb864e5beaf5">   23</a></span>  <span class="keyword">enum</span> <a class="code hl_enumeration" href="../../d6/dbc/structez_occluder_type.htm#a3730efc5edcd80aeef46fb864e5beaf5">Enum</a> : StorageType</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="../../d6/dbc/structez_occluder_type.htm#a3730efc5edcd80aeef46fb864e5beaf5ad2aff07112f359d9b00ff4b979629648">   25</a></span>    <a class="code hl_enumvalue" href="../../d6/dbc/structez_occluder_type.htm#a3730efc5edcd80aeef46fb864e5beaf5ad2aff07112f359d9b00ff4b979629648">Box</a>,      </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="../../d6/dbc/structez_occluder_type.htm#a3730efc5edcd80aeef46fb864e5beaf5ac6452d886e050c20701488367abee296">   26</a></span>    <a class="code hl_enumvalue" href="../../d6/dbc/structez_occluder_type.htm#a3730efc5edcd80aeef46fb864e5beaf5ac6452d886e050c20701488367abee296">QuadPosX</a>, </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    Mesh,</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    Default = <a class="code hl_enumvalue" href="../../d6/dbc/structez_occluder_type.htm#a3730efc5edcd80aeef46fb864e5beaf5ad2aff07112f359d9b00ff4b979629648">Box</a></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  };</div>
 </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>};</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>};</div>
 </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>EZ_DECLARE_REFLECTABLE_TYPE(EZ_RENDERERCORE_DLL, <a class="code hl_struct" href="../../d6/dbc/structez_occluder_type.htm">ezOccluderType</a>);</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="foldopen" id="foldopen00044" data-start="{" data-end="};">
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="../../d8/d7a/classez_occluder_component.htm">   44</a></span><span class="keyword">class </span>EZ_RENDERERCORE_DLL <a class="code hl_class" href="../../d8/d7a/classez_occluder_component.htm">ezOccluderComponent</a> : <span class="keyword">public</span> <a class="code hl_class" href="../../d6/d30/classez_component.htm">ezComponent</a></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>{</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  EZ_DECLARE_COMPONENT_TYPE(<a class="code hl_class" href="../../d8/d7a/classez_occluder_component.htm">ezOccluderComponent</a>, <a class="code hl_class" href="../../d6/d30/classez_component.htm">ezComponent</a>, <a class="code hl_class" href="../../d2/d95/classez_occluder_component_manager.htm">ezOccluderComponentManager</a>);</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="comment">// ezComponent</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> SerializeComponent(<a class="code hl_class" href="../../dc/dd8/classez_world_writer.htm">ezWorldWriter</a>&amp; inout_stream) <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> DeserializeComponent(<a class="code hl_class" href="../../d9/dd6/classez_world_reader.htm">ezWorldReader</a>&amp; inout_stream) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> OnActivated() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> OnDeactivated() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <span class="comment">// ezOccluderComponent</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <a class="code hl_class" href="../../d8/d7a/classez_occluder_component.htm">ezOccluderComponent</a>();</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <a class="code hl_class" href="../../d8/d7a/classez_occluder_component.htm">~ezOccluderComponent</a>();</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <span class="keywordtype">void</span> SetExtents(<span class="keyword">const</span> <a class="code hl_class" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; vExtents);                <span class="comment">// [ property ]</span></div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <span class="keyword">const</span> <a class="code hl_class" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; GetExtents()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_vExtents; } <span class="comment">// [ property ]</span></div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  <span class="keywordtype">void</span> SetType(<a class="code hl_struct" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezOccluderType&gt;</a> type);                <span class="comment">// [ property ]</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <a class="code hl_struct" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezOccluderType&gt;</a> GetType()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_Type; } <span class="comment">// [ property ]</span></div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <a class="code hl_class" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> m_vExtents = <a class="code hl_class" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>(5.0f);</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <a class="code hl_struct" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezOccluderType&gt;</a> m_Type;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <span class="keyword">mutable</span> <a class="code hl_class" href="../../de/dc1/classez_shared_ptr.htm">ezSharedPtr&lt;const ezRasterizerObject&gt;</a> m_pOccluderObject;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <span class="keywordtype">void</span> OnUpdateLocalBounds(<a class="code hl_struct" href="../../df/dda/structez_msg_update_local_bounds.htm">ezMsgUpdateLocalBounds</a>&amp; msg);</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  <span class="keywordtype">void</span> OnMsgExtractOccluderData(<a class="code hl_struct" href="../../de/de7/structez_msg_extract_occluder_data.htm">ezMsgExtractOccluderData</a>&amp; msg) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>};</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>EZ_DECLARE_REFLECTABLE_TYPE(EZ_RENDERERCORE_DLL, <a class="code hl_struct" href="../../d6/dbc/structez_occluder_type.htm">ezOccluderType</a>);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="foldopen" id="foldopen00046" data-start="{" data-end="};">
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="../../d8/d7a/classez_occluder_component.htm">   46</a></span><span class="keyword">class </span>EZ_RENDERERCORE_DLL <a class="code hl_class" href="../../d8/d7a/classez_occluder_component.htm">ezOccluderComponent</a> : <span class="keyword">public</span> <a class="code hl_class" href="../../d6/d30/classez_component.htm">ezComponent</a></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>{</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  EZ_DECLARE_COMPONENT_TYPE(<a class="code hl_class" href="../../d8/d7a/classez_occluder_component.htm">ezOccluderComponent</a>, <a class="code hl_class" href="../../d6/d30/classez_component.htm">ezComponent</a>, <a class="code hl_class" href="../../d2/d95/classez_occluder_component_manager.htm">ezOccluderComponentManager</a>);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="comment">// ezComponent</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> SerializeComponent(<a class="code hl_class" href="../../dc/dd8/classez_world_writer.htm">ezWorldWriter</a>&amp; inout_stream) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> DeserializeComponent(<a class="code hl_class" href="../../d9/dd6/classez_world_reader.htm">ezWorldReader</a>&amp; inout_stream) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> OnActivated() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> OnDeactivated() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <span class="comment">// ezOccluderComponent</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <a class="code hl_class" href="../../d8/d7a/classez_occluder_component.htm">ezOccluderComponent</a>();</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  <a class="code hl_class" href="../../d8/d7a/classez_occluder_component.htm">~ezOccluderComponent</a>();</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <span class="keywordtype">void</span> SetExtents(<span class="keyword">const</span> <a class="code hl_class" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; vExtents);                <span class="comment">// [ property ]</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <span class="keyword">const</span> <a class="code hl_class" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; GetExtents()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_vExtents; } <span class="comment">// [ property ]</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  <span class="keywordtype">void</span> SetType(<a class="code hl_struct" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezOccluderType&gt;</a> type);                <span class="comment">// [ property ]</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <a class="code hl_struct" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezOccluderType&gt;</a> GetType()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_Type; } <span class="comment">// [ property ]</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="comment">// adds SetMeshFile() and GetMeshFile() for convenience</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  EZ_ADD_RESOURCEHANDLE_ACCESSORS_WITH_SETTER(Mesh, m_hMesh, SetMesh);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <span class="keywordtype">void</span> SetMesh(<span class="keyword">const</span> <a class="code hl_class" href="../../d3/dd7/classez_typed_resource_handle.htm">ezCpuMeshResourceHandle</a>&amp; hCubeMap); <span class="comment">// [ property ]</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <span class="keyword">const</span> <a class="code hl_class" href="../../d3/dd7/classez_typed_resource_handle.htm">ezCpuMeshResourceHandle</a>&amp; GetMesh() <span class="keyword">const</span>;        <span class="comment">// [ property ]</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <a class="code hl_class" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> m_vExtents = <a class="code hl_class" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>(5.0f);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <a class="code hl_struct" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezOccluderType&gt;</a> m_Type;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  <a class="code hl_class" href="../../d3/dd7/classez_typed_resource_handle.htm">ezCpuMeshResourceHandle</a> m_hMesh;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <span class="keyword">mutable</span> <a class="code hl_class" href="../../de/dc1/classez_shared_ptr.htm">ezSharedPtr&lt;const ezRasterizerObject&gt;</a> m_pOccluderObject;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  <span class="keywordtype">void</span> OnUpdateLocalBounds(<a class="code hl_struct" href="../../df/dda/structez_msg_update_local_bounds.htm">ezMsgUpdateLocalBounds</a>&amp; msg);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  <span class="keywordtype">void</span> OnMsgExtractOccluderData(<a class="code hl_struct" href="../../de/de7/structez_msg_extract_occluder_data.htm">ezMsgExtractOccluderData</a>&amp; msg) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  <span class="keywordtype">void</span> UpdateOccluder();</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>};</div>
 </div>
 <div class="ttc" id="aclassez_component_htm"><div class="ttname"><a href="../../d6/d30/classez_component.htm">ezComponent</a></div><div class="ttdoc">Base class of all component types.</div><div class="ttdef"><b>Definition</b> Component.h:25</div></div>
 <div class="ttc" id="aclassez_component_manager_htm"><div class="ttname"><a href="../../d7/df2/classez_component_manager.htm">ezComponentManager</a></div><div class="ttdef"><b>Definition</b> ComponentManager.h:88</div></div>
-<div class="ttc" id="aclassez_occluder_component_htm"><div class="ttname"><a href="../../d8/d7a/classez_occluder_component.htm">ezOccluderComponent</a></div><div class="ttdoc">Adds invisible geometry to a scene that is used for occlusion culling.</div><div class="ttdef"><b>Definition</b> OccluderComponent.h:45</div></div>
-<div class="ttc" id="aclassez_occluder_component_manager_htm"><div class="ttname"><a href="../../d2/d95/classez_occluder_component_manager.htm">ezOccluderComponentManager</a></div><div class="ttdef"><b>Definition</b> OccluderComponent.h:13</div></div>
+<div class="ttc" id="aclassez_occluder_component_htm"><div class="ttname"><a href="../../d8/d7a/classez_occluder_component.htm">ezOccluderComponent</a></div><div class="ttdoc">Adds invisible geometry to a scene that is used for occlusion culling.</div><div class="ttdef"><b>Definition</b> OccluderComponent.h:47</div></div>
+<div class="ttc" id="aclassez_occluder_component_manager_htm"><div class="ttname"><a href="../../d2/d95/classez_occluder_component_manager.htm">ezOccluderComponentManager</a></div><div class="ttdef"><b>Definition</b> OccluderComponent.h:14</div></div>
 <div class="ttc" id="aclassez_shared_ptr_htm"><div class="ttname"><a href="../../de/dc1/classez_shared_ptr.htm">ezSharedPtr</a></div><div class="ttdoc">A Shared ptr manages a shared object and destroys that object when no one references it anymore....</div><div class="ttdef"><b>Definition</b> SharedPtr.h:10</div></div>
+<div class="ttc" id="aclassez_typed_resource_handle_htm"><div class="ttname"><a href="../../d3/dd7/classez_typed_resource_handle.htm">ezTypedResourceHandle&lt; class ezCpuMeshResource &gt;</a></div></div>
 <div class="ttc" id="aclassez_vec3_template_htm"><div class="ttname"><a href="../../da/df1/classez_vec3_template.htm">ezVec3Template&lt; float &gt;</a></div></div>
 <div class="ttc" id="aclassez_world_htm"><div class="ttname"><a href="../../da/d3c/classez_world.htm">ezWorld</a></div><div class="ttdoc">A world encapsulates a scene graph of game objects and various component managers and their component...</div><div class="ttdef"><b>Definition</b> World.h:22</div></div>
 <div class="ttc" id="aclassez_world_reader_htm"><div class="ttname"><a href="../../d9/dd6/classez_world_reader.htm">ezWorldReader</a></div><div class="ttdoc">Reads a world description from a stream. Allows to instantiate that world multiple times in different...</div><div class="ttdef"><b>Definition</b> WorldReader.h:47</div></div>
@@ -186,17 +197,17 @@ $(document).ready(function(){initNavTree('dc/d09/_occluder_component_8h_source.h
 <div class="ttc" id="astructez_msg_extract_occluder_data_htm"><div class="ttname"><a href="../../de/de7/structez_msg_extract_occluder_data.htm">ezMsgExtractOccluderData</a></div><div class="ttdef"><b>Definition</b> RenderData.h:174</div></div>
 <div class="ttc" id="astructez_msg_transform_changed_htm"><div class="ttname"><a href="../../d7/dd5/structez_msg_transform_changed.htm">ezMsgTransformChanged</a></div><div class="ttdef"><b>Definition</b> TransformChangedMessage.h:7</div></div>
 <div class="ttc" id="astructez_msg_update_local_bounds_htm"><div class="ttname"><a href="../../df/dda/structez_msg_update_local_bounds.htm">ezMsgUpdateLocalBounds</a></div><div class="ttdef"><b>Definition</b> UpdateLocalBoundsMessage.h:9</div></div>
-<div class="ttc" id="astructez_occluder_type_htm"><div class="ttname"><a href="../../d6/dbc/structez_occluder_type.htm">ezOccluderType</a></div><div class="ttdef"><b>Definition</b> OccluderComponent.h:19</div></div>
-<div class="ttc" id="astructez_occluder_type_htm_a3730efc5edcd80aeef46fb864e5beaf5"><div class="ttname"><a href="../../d6/dbc/structez_occluder_type.htm#a3730efc5edcd80aeef46fb864e5beaf5">ezOccluderType::Enum</a></div><div class="ttdeci">Enum</div><div class="ttdef"><b>Definition</b> OccluderComponent.h:23</div></div>
-<div class="ttc" id="astructez_occluder_type_htm_a3730efc5edcd80aeef46fb864e5beaf5ac6452d886e050c20701488367abee296"><div class="ttname"><a href="../../d6/dbc/structez_occluder_type.htm#a3730efc5edcd80aeef46fb864e5beaf5ac6452d886e050c20701488367abee296">ezOccluderType::QuadPosX</a></div><div class="ttdeci">@ QuadPosX</div><div class="ttdoc">The occluder is only a single face at the positive X extent of the surrounding box.</div><div class="ttdef"><b>Definition</b> OccluderComponent.h:25</div></div>
-<div class="ttc" id="astructez_occluder_type_htm_a3730efc5edcd80aeef46fb864e5beaf5ad2aff07112f359d9b00ff4b979629648"><div class="ttname"><a href="../../d6/dbc/structez_occluder_type.htm#a3730efc5edcd80aeef46fb864e5beaf5ad2aff07112f359d9b00ff4b979629648">ezOccluderType::Box</a></div><div class="ttdeci">@ Box</div><div class="ttdoc">The occluder is a box with 6 faces.</div><div class="ttdef"><b>Definition</b> OccluderComponent.h:24</div></div>
+<div class="ttc" id="astructez_occluder_type_htm"><div class="ttname"><a href="../../d6/dbc/structez_occluder_type.htm">ezOccluderType</a></div><div class="ttdef"><b>Definition</b> OccluderComponent.h:20</div></div>
+<div class="ttc" id="astructez_occluder_type_htm_a3730efc5edcd80aeef46fb864e5beaf5"><div class="ttname"><a href="../../d6/dbc/structez_occluder_type.htm#a3730efc5edcd80aeef46fb864e5beaf5">ezOccluderType::Enum</a></div><div class="ttdeci">Enum</div><div class="ttdef"><b>Definition</b> OccluderComponent.h:24</div></div>
+<div class="ttc" id="astructez_occluder_type_htm_a3730efc5edcd80aeef46fb864e5beaf5ac6452d886e050c20701488367abee296"><div class="ttname"><a href="../../d6/dbc/structez_occluder_type.htm#a3730efc5edcd80aeef46fb864e5beaf5ac6452d886e050c20701488367abee296">ezOccluderType::QuadPosX</a></div><div class="ttdeci">@ QuadPosX</div><div class="ttdoc">The occluder is only a single face at the positive X extent of the surrounding box.</div><div class="ttdef"><b>Definition</b> OccluderComponent.h:26</div></div>
+<div class="ttc" id="astructez_occluder_type_htm_a3730efc5edcd80aeef46fb864e5beaf5ad2aff07112f359d9b00ff4b979629648"><div class="ttname"><a href="../../d6/dbc/structez_occluder_type.htm#a3730efc5edcd80aeef46fb864e5beaf5ad2aff07112f359d9b00ff4b979629648">ezOccluderType::Box</a></div><div class="ttdeci">@ Box</div><div class="ttdoc">The occluder is a box with 6 faces.</div><div class="ttdef"><b>Definition</b> OccluderComponent.h:25</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_9b39d7517b28e8ee3dee1b9d862ddabb.htm">RendererCore</a></li><li class="navelem"><a class="el" href="../../dir_59cee5fa375fe31f3adf8efa6840c9e7.htm">Components</a></li><li class="navelem"><b>OccluderComponent.h</b></li>
-    <li class="footer">Generated on Fri Jul 11 2025 12:17:55 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Tue Aug 26 2025 05:01:01 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>
