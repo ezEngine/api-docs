@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -99,7 +99,7 @@ $(document).ready(function(){initNavTree('dd/d2a/structez_generic_id.htm','../..
 </div><!--header-->
 <div class="contents">
 
-<p>A generic id class that holds an id combined of an instance index and a generation counter.  
+<p>Generic identifier template that combines instance indexing with generation counting for safe object references.  
  <a href="../../dd/d2a/structez_generic_id.htm#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../d9/d00/_id_8h_source.htm">Id.h</a>&gt;</code></p>
@@ -146,8 +146,27 @@ union {&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;ezUInt32 InstanceIndexBits, ezUInt32 GenerationBits&gt;<br />
-struct ezGenericId&lt; InstanceIndexBits, GenerationBits &gt;</div><p>A generic id class that holds an id combined of an instance index and a generation counter. </p>
-<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.htm#_todo000055">Todo:</a></b></dt><dd>Document this better. </dd></dl>
+struct ezGenericId&lt; InstanceIndexBits, GenerationBits &gt;</div><p>Generic identifier template that combines instance indexing with generation counting for safe object references. </p>
+<p>This ID system solves the "dangling pointer" problem for object management by using a two-part identifier:</p><ul>
+<li>Instance Index: Points to a slot in an object array or similar data structure</li>
+<li>Generation Counter: Detects when a slot has been reused for a different object</li>
+</ul>
+<p>When an object is destroyed, its generation counter is incremented. Any existing IDs with the old generation value become automatically invalid, preventing access to the new object that might occupy the same index.</p>
+<p>Benefits:</p><ul>
+<li>Safe object references that can detect stale access</li>
+<li>Efficient array-based object storage with O(1) access</li>
+<li>Automatic detection of use-after-free scenarios</li>
+<li>Compact representation (configurable bit allocation)</li>
+<li>Type safety when used with EZ_DECLARE_HANDLE_TYPE</li>
+</ul>
+<p>Template parameters allow customization of the index space vs. generation granularity:</p><ul>
+<li>More instance bits = larger object arrays possible</li>
+<li>More generation bits = longer time before wraparound reuse</li>
+</ul>
+<p>Typical configurations:</p><ul>
+<li><a class="el" href="../../dd/d2a/structez_generic_id.htm">ezGenericId&lt;24, 8&gt;</a>: 16M objects, 256 generations (good for most uses)</li>
+<li>ezGenericId&lt;16, 16&gt;: 64K objects, 65K generations (for high-churn scenarios) </li>
+</ul>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/Types/<a class="el" href="../../d9/d00/_id_8h_source.htm">Id.h</a></li>
 </ul>
@@ -157,7 +176,7 @@ struct ezGenericId&lt; InstanceIndexBits, GenerationBits &gt;</div><p>A generic 
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dd/d2a/structez_generic_id.htm">ezGenericId</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:04 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:45 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

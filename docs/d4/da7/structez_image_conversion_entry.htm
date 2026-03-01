@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -98,7 +98,7 @@ $(document).ready(function(){initNavTree('d4/da7/structez_image_conversion_entry
 </div><!--header-->
 <div class="contents">
 
-<p>A structure describing the pairs of source/target format that may be converted using the conversion routine.  
+<p>Describes a single conversion step between two image formats.  
  <a href="../../d4/da7/structez_image_conversion_entry.htm#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../d0/dfc/_image_conversion_8h_source.htm">ImageConversion.h</a>&gt;</code></p>
@@ -106,16 +106,16 @@ $(document).ready(function(){initNavTree('d4/da7/structez_image_conversion_entry
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:af351682eb2a41ed6a1741d5b5570a43e" id="r_af351682eb2a41ed6a1741d5b5570a43e"><td class="memItemLeft" align="right" valign="top"><a id="af351682eb2a41ed6a1741d5b5570a43e" name="af351682eb2a41ed6a1741d5b5570a43e"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ezImageConversionEntry</b> (<a class="el" href="../../da/dfa/structez_image_format.htm#a1c595e37b9f96c35dd90570bfcd8f853">ezImageFormat::Enum</a> source, <a class="el" href="../../da/dfa/structez_image_format.htm#a1c595e37b9f96c35dd90570bfcd8f853">ezImageFormat::Enum</a> target, ezImageConversionFlags::Enum flags, float fAdditionalPenalty=0)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ezImageConversionEntry</b> (ezImageFormat::Enum source, ezImageFormat::Enum target, ezImageConversionFlags::Enum flags, float fAdditionalPenalty=0)</td></tr>
 <tr class="separator:af351682eb2a41ed6a1741d5b5570a43e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a44ae04ed9e52b94ac77f0a0c992fc122" id="r_a44ae04ed9e52b94ac77f0a0c992fc122"><td class="memItemLeft" align="right" valign="top"><a id="a44ae04ed9e52b94ac77f0a0c992fc122" name="a44ae04ed9e52b94ac77f0a0c992fc122"></a>
-const <a class="el" href="../../da/dfa/structez_image_format.htm#a1c595e37b9f96c35dd90570bfcd8f853">ezImageFormat::Enum</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_sourceFormat</b></td></tr>
+const ezImageFormat::Enum&#160;</td><td class="memItemRight" valign="bottom"><b>m_sourceFormat</b></td></tr>
 <tr class="separator:a44ae04ed9e52b94ac77f0a0c992fc122"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae064592ee3135376b82f7a8eb25bc5da" id="r_ae064592ee3135376b82f7a8eb25bc5da"><td class="memItemLeft" align="right" valign="top"><a id="ae064592ee3135376b82f7a8eb25bc5da" name="ae064592ee3135376b82f7a8eb25bc5da"></a>
-const <a class="el" href="../../da/dfa/structez_image_format.htm#a1c595e37b9f96c35dd90570bfcd8f853">ezImageFormat::Enum</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_targetFormat</b></td></tr>
+const ezImageFormat::Enum&#160;</td><td class="memItemRight" valign="bottom"><b>m_targetFormat</b></td></tr>
 <tr class="separator:ae064592ee3135376b82f7a8eb25bc5da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58ad98064afa0972ae5539a921f373d4" id="r_a58ad98064afa0972ae5539a921f373d4"><td class="memItemLeft" align="right" valign="top"><a id="a58ad98064afa0972ae5539a921f373d4" name="a58ad98064afa0972ae5539a921f373d4"></a>
 const <a class="el" href="../../d1/dec/structez_bitflags.htm">ezBitflags</a>&lt; ezImageConversionFlags &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_flags</b></td></tr>
@@ -124,7 +124,8 @@ const <a class="el" href="../../d1/dec/structez_bitflags.htm">ezBitflags</a>&lt;
 <tr class="separator:ad721bd1723895d1babef45d3338b7c09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A structure describing the pairs of source/target format that may be converted using the conversion routine. </p>
+<div class="textblock"><p>Describes a single conversion step between two image formats. </p>
+<p>Used by conversion step implementations to advertise which format pairs they can handle. The conversion system uses this information to build optimal conversion paths. </p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="ad721bd1723895d1babef45d3338b7c09" name="ad721bd1723895d1babef45d3338b7c09"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad721bd1723895d1babef45d3338b7c09">&#9670;&#160;</a></span>m_fAdditionalPenalty</h2>
@@ -137,7 +138,8 @@ const <a class="el" href="../../d1/dec/structez_bitflags.htm">ezBitflags</a>&lt;
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This member adds an additional amount to the cost estimate for this conversion step. It can be used to bias the choice between steps when there are comparable conversion steps available. </p>
+<p>Additional cost penalty for this conversion step.</p>
+<p>Used to bias the pathfinding algorithm when multiple conversion routes are available. Higher penalties make this step less likely to be chosen in the optimal path. </p>
 
 </div>
 </div>
@@ -150,7 +152,7 @@ const <a class="el" href="../../d1/dec/structez_bitflags.htm">ezBitflags</a>&lt;
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d4/da7/structez_image_conversion_entry.htm">ezImageConversionEntry</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:04 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:45 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

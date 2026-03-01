@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -97,13 +97,18 @@ $(document).ready(function(){initNavTree('d6/dc2/structez_editable_skeleton_bone
   <div class="headertitle"><div class="title">ezEditableSkeletonBoneShape Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Describes the collision geometry shape for a bone.  
+ <a href="../../d6/dc2/structez_editable_skeleton_bone_shape.htm#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d9/dda/_editable_skeleton_8h_source.htm">EditableSkeleton.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ezEditableSkeletonBoneShape:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../da/d38/structez_editable_skeleton_bone_shape__inherit__graph.png" border="0" usemap="#aez_editable_skeleton_bone_shape_inherit__map" alt="Inheritance graph"/></div>
 <map name="aez_editable_skeleton_bone_shape_inherit__map" id="aez_editable_skeleton_bone_shape_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,152,224,177"/>
-<area shape="rect" href="../../db/d45/classez_reflected_class.htm" title="All classes that should be dynamically reflectable, need to be derived from this base class." alt="" coords="48,79,181,104"/>
+<area shape="rect" title="Describes the collision geometry shape for a bone." alt="" coords="5,152,224,177"/>
+<area shape="rect" href="../../db/d45/classez_reflected_class.htm" title="Base class for all types that support dynamic reflection and runtime type identification." alt="" coords="48,79,181,104"/>
 <area shape="poly" title=" " alt="" coords="117,118,117,152,112,152,112,118"/>
 <area shape="rect" href="../../d4/d02/classez_no_base.htm" title="Dummy type to pass to templates and macros that expect a base type for a class that has no base." alt="" coords="71,5,158,31"/>
 <area shape="poly" title=" " alt="" coords="117,44,117,79,112,79,112,44"/>
@@ -142,12 +147,15 @@ Public Attributes</h2></td></tr>
 <tr class="separator:aea22f25e0e7e82bf6c304ab2ea07faab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a711a935ba5c1d2d5fe8a65da14aa9505" id="r_a711a935ba5c1d2d5fe8a65da14aa9505"><td class="memItemLeft" align="right" valign="top"><a id="a711a935ba5c1d2d5fe8a65da14aa9505" name="a711a935ba5c1d2d5fe8a65da14aa9505"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>m_fLength</b> = 0</td></tr>
+<tr class="memdesc:a711a935ba5c1d2d5fe8a65da14aa9505"><td class="mdescLeft">&#160;</td><td class="mdescRight">Box, Capsule; 0 means parent joint to this joint (auto mode) <br /></td></tr>
 <tr class="separator:a711a935ba5c1d2d5fe8a65da14aa9505"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6bb92cc661ebb7219739a0e8d6ef6aaa" id="r_a6bb92cc661ebb7219739a0e8d6ef6aaa"><td class="memItemLeft" align="right" valign="top"><a id="a6bb92cc661ebb7219739a0e8d6ef6aaa" name="a6bb92cc661ebb7219739a0e8d6ef6aaa"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>m_fWidth</b> = 0</td></tr>
+<tr class="memdesc:a6bb92cc661ebb7219739a0e8d6ef6aaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Box. <br /></td></tr>
 <tr class="separator:a6bb92cc661ebb7219739a0e8d6ef6aaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f7ef68a2f9cf7f7ad797bafdf4849f1" id="r_a4f7ef68a2f9cf7f7ad797bafdf4849f1"><td class="memItemLeft" align="right" valign="top"><a id="a4f7ef68a2f9cf7f7ad797bafdf4849f1" name="a4f7ef68a2f9cf7f7ad797bafdf4849f1"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>m_fThickness</b> = 0</td></tr>
+<tr class="memdesc:a4f7ef68a2f9cf7f7ad797bafdf4849f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sphere radius, Capsule radius. <br /></td></tr>
 <tr class="separator:a4f7ef68a2f9cf7f7ad797bafdf4849f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
@@ -157,7 +165,10 @@ Additional Inherited Members</h2></td></tr>
 static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>GetStaticRTTI</b> ()</td></tr>
 <tr class="separator:a718d4e4145a2c15d0c28aaed086f1ce2 inherit pub_static_methods_classez_no_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following file:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Describes the collision geometry shape for a bone. </p>
+<p>Used during skeleton editing to define physics collision shapes for bones. The shape can be a box, capsule, or sphere. If m_fLength is 0, it automatically uses the distance from the parent joint to this joint. </p>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/RendererCore/AnimationSystem/<a class="el" href="../../d9/dda/_editable_skeleton_8h_source.htm">EditableSkeleton.h</a></li>
 </ul>
 </div><!-- contents -->
@@ -166,7 +177,7 @@ static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d6/dc2/structez_editable_skeleton_bone_shape.htm">ezEditableSkeletonBoneShape</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:03 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:44 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

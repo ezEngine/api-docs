@@ -10,7 +10,7 @@ var classez_vec2_template =
     [ "CompMin", "d1/df8/classez_vec2_template.htm#a76e3db8f7eec0f31e0de2cb82307c5bd", null ],
     [ "CompMul", "d1/df8/classez_vec2_template.htm#a5d6986dff8ddf8a5ccaf228a71b690d2", null ],
     [ "Dot", "d1/df8/classez_vec2_template.htm#a0ca7ffe429ee82c47161ddcddb4c8a33", null ],
-    [ "GetAngleBetween", "d1/df8/classez_vec2_template.htm#a3009fa693fb76d33aaee01cdd0b3c798", null ],
+    [ "GetAngleBetween", "d1/df8/classez_vec2_template.htm#a6379b901e15a40fcbfc7e6cf83bcbb17", null ],
     [ "GetAsVec3", "d1/df8/classez_vec2_template.htm#accbb8a6d344dc1238a302d634bbeb882", null ],
     [ "GetAsVec4", "d1/df8/classez_vec2_template.htm#a54ecba38b99286730db12b691454dadb", null ],
     [ "GetData", "d1/df8/classez_vec2_template.htm#a40739b31ec407ab6235f35cfa9122675", null ],

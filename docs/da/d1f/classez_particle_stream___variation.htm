@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -97,6 +97,8 @@ $(document).ready(function(){initNavTree('da/d1f/classez_particle_stream___varia
   <div class="headertitle"><div class="title">ezParticleStream_Variation Class Reference<span class="mlabels"><span class="mlabel">final</span></span></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../d1/d58/_default_particle_streams_8h_source.htm">DefaultParticleStreams.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ezParticleStream_Variation:</div>
 <div class="dyncontent">
@@ -107,7 +109,7 @@ Inheritance diagram for ezParticleStream_Variation:</div>
 <area shape="poly" title=" " alt="" coords="117,264,117,299,111,299,111,264"/>
 <area shape="rect" href="../../dc/d29/classez_processing_stream_processor.htm" title="Base class for all stream processor implementations." alt="" coords="5,152,223,177"/>
 <area shape="poly" title=" " alt="" coords="117,191,117,225,111,225,111,191"/>
-<area shape="rect" href="../../db/d45/classez_reflected_class.htm" title="All classes that should be dynamically reflectable, need to be derived from this base class." alt="" coords="47,79,181,104"/>
+<area shape="rect" href="../../db/d45/classez_reflected_class.htm" title="Base class for all types that support dynamic reflection and runtime type identification." alt="" coords="47,79,181,104"/>
 <area shape="poly" title=" " alt="" coords="117,118,117,152,111,152,111,118"/>
 <area shape="rect" href="../../d4/d02/classez_no_base.htm" title="Dummy type to pass to templates and macros that expect a base type for a class that has no base." alt="" coords="71,5,157,31"/>
 <area shape="poly" title=" " alt="" coords="117,44,117,79,111,79,111,44"/>
@@ -117,6 +119,7 @@ Inheritance diagram for ezParticleStream_Variation:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:ad7062a8307ab9655969036db3498bd66" id="r_ad7062a8307ab9655969036db3498bd66"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d1f/classez_particle_stream___variation.htm#ad7062a8307ab9655969036db3498bd66">Initialize</a> (<a class="el" href="../../dc/dd4/classez_particle_system_instance.htm">ezParticleSystemInstance</a> *pOwner) override</td></tr>
+<tr class="memdesc:ad7062a8307ab9655969036db3498bd66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called once during stream creation to set up any necessary references or state.  <br /></td></tr>
 <tr class="separator:ad7062a8307ab9655969036db3498bd66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6f4ee447511348b293c6718219f8752" id="r_aa6f4ee447511348b293c6718219f8752"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d1f/classez_particle_stream___variation.htm#aa6f4ee447511348b293c6718219f8752">InitializeElements</a> (ezUInt64 uiStartIndex, ezUInt64 uiNumElements) override</td></tr>
 <tr class="memdesc:aa6f4ee447511348b293c6718219f8752"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default implementation initializes all data with zero.  <br /></td></tr>
@@ -126,7 +129,7 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:a2af963edfcff5350503e73e374e6ae60 inherit pro_methods_classez_particle_stream"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal method which needs to be implemented, gets the concrete stream bindings. This is called every time the streams are resized. Implementations should check that their required streams exist and are of the correct data types.  <br /></td></tr>
 <tr class="separator:a2af963edfcff5350503e73e374e6ae60 inherit pro_methods_classez_particle_stream"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc69b97d20e0a3535ec03d23e26758c1 inherit pro_methods_classez_particle_stream" id="r_adc69b97d20e0a3535ec03d23e26758c1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d1e/classez_particle_stream.htm#adc69b97d20e0a3535ec03d23e26758c1">Process</a> (ezUInt64 uiNumElements) final override</td></tr>
-<tr class="memdesc:adc69b97d20e0a3535ec03d23e26758c1 inherit pro_methods_classez_particle_stream"><td class="mdescLeft">&#160;</td><td class="mdescRight">The actual method which processes the data, will be called with the number of elements to process.  <br /></td></tr>
+<tr class="memdesc:adc69b97d20e0a3535ec03d23e26758c1 inherit pro_methods_classez_particle_stream"><td class="mdescLeft">&#160;</td><td class="mdescRight">Particle streams do not process existing elements, they only initialize new ones.  <br /></td></tr>
 <tr class="separator:adc69b97d20e0a3535ec03d23e26758c1 inherit pro_methods_classez_particle_stream"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
@@ -137,6 +140,7 @@ Protected Attributes</h2></td></tr>
 <tr class="inherit_header pro_attribs_classez_particle_stream"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classez_particle_stream')"><img src="../../closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="../../db/d1e/classez_particle_stream.htm">ezParticleStream</a></td></tr>
 <tr class="memitem:aa429d3bfa8ccb8b9568ae9291d8651ba inherit pro_attribs_classez_particle_stream" id="r_aa429d3bfa8ccb8b9568ae9291d8651ba"><td class="memItemLeft" align="right" valign="top">
 <a class="el" href="../../d6/d22/classez_processing_stream.htm">ezProcessingStream</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_pStream</b></td></tr>
+<tr class="memdesc:aa429d3bfa8ccb8b9568ae9291d8651ba inherit pro_attribs_classez_particle_stream"><td class="mdescLeft">&#160;</td><td class="mdescRight">The underlying data stream managed by this particle stream. <br /></td></tr>
 <tr class="separator:aa429d3bfa8ccb8b9568ae9291d8651ba inherit pro_attribs_classez_particle_stream"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classez_processing_stream_processor"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classez_processing_stream_processor')"><img src="../../closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="../../dc/d29/classez_processing_stream_processor.htm">ezProcessingStreamProcessor</a></td></tr>
 <tr class="memitem:ac55b959c525a100cc2b2de0c654b93f3 inherit pro_attribs_classez_processing_stream_processor" id="r_ac55b959c525a100cc2b2de0c654b93f3"><td class="memItemLeft" align="right" valign="top">
@@ -178,7 +182,10 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>m_fPriority</b> = 0.
 <tr class="memdesc:a6d4d46d4edeadb4b87eaab32538e540c inherit pub_attribs_classez_processing_stream_processor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used for sorting processors, to ensure a certain order. Lower priority == executed first. <br /></td></tr>
 <tr class="separator:a6d4d46d4edeadb4b87eaab32538e540c inherit pub_attribs_classez_processing_stream_processor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Stream storing particle variation values.</p>
+<p>Initializes new particles with random unsigned integers. Used for texture atlas variations, flipbook animations, or other per-particle randomization. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ad7062a8307ab9655969036db3498bd66" name="ad7062a8307ab9655969036db3498bd66"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad7062a8307ab9655969036db3498bd66">&#9670;&#160;</a></span>Initialize()</h2>
 
@@ -203,7 +210,9 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>m_fPriority</b> = 0.
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented from <a class="el" href="../../db/d1e/classez_particle_stream.htm">ezParticleStream</a>.</p>
+<p>Called once during stream creation to set up any necessary references or state. </p>
+
+<p>Reimplemented from <a class="el" href="../../db/d1e/classez_particle_stream.htm#abfcc0667a55e022518f13f942af265e0">ezParticleStream</a>.</p>
 
 </div>
 </div>
@@ -242,6 +251,7 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>m_fPriority</b> = 0.
 </div><div class="memdoc">
 
 <p>The default implementation initializes all data with zero. </p>
+<p>Override this to provide custom initialization for new particles. The implementation should initialize elements in the range [uiStartIndex, uiStartIndex + uiNumElements). </p>
 
 <p>Reimplemented from <a class="el" href="../../db/d1e/classez_particle_stream.htm#a553d5027ec66d0bb576ff7f9cf3bdbe9">ezParticleStream</a>.</p>
 
@@ -257,7 +267,7 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>m_fPriority</b> = 0.
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../da/d1f/classez_particle_stream___variation.htm">ezParticleStream_Variation</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:05 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:46 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

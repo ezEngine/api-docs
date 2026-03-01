@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -117,14 +117,12 @@ $(document).ready(function(){initNavTree('d2/d0c/_linear_allocator__inl_8h_sourc
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="../../d8/d6e/classez_linear_allocator.htm#af81f216d2ef565c839df83e69a025107">   16</a></span><span class="keywordtype">void</span>* <a class="code hl_function" href="../../d8/d6e/classez_linear_allocator.htm#af81f216d2ef565c839df83e69a025107">ezLinearAllocator&lt;TrackingMode, OverwriteMemoryOnReset&gt;::Allocate</a>(<span class="keywordtype">size_t</span> uiSize, <span class="keywordtype">size_t</span> uiAlign, ezMemoryUtils::DestructorFunction destructorFunc)</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  EZ_LOCK(m_Mutex);</div>
-<div class="foldopen" id="foldopen00019" data-start="{" data-end="}">
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="../../d8/d6e/classez_linear_allocator.htm#af81f216d2ef565c839df83e69a025107">   19</a></span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <span class="keywordtype">void</span>* ptr = <a class="code hl_class" href="../../d8/dde/classez_allocator_with_policy.htm">ezAllocatorWithPolicy&lt;typename ezLinearAllocator&lt;TrackingMode, OverwriteMemoryOnReset&gt;::PolicyStack</a>, TrackingMode&gt;::Allocate(uiSize, uiAlign, destructorFunc);</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <span class="keywordflow">if</span> (destructorFunc != <span class="keyword">nullptr</span>)</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  {</div>
-<div class="foldopen" id="foldopen00024" data-start="{" data-end="}">
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="../../d8/d6e/classez_linear_allocator.htm#a804507c812a17da14000a86fa5ba8470">   24</a></span>    ezUInt32 uiIndex = m_DestructData.GetCount();</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    ezUInt32 uiIndex = m_DestructData.GetCount();</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    m_PtrToDestructDataIndexTable.Insert(ptr, uiIndex);</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">auto</span>&amp; data = m_DestructData.ExpandAndGetRef();</div>
@@ -134,21 +132,26 @@ $(document).ready(function(){initNavTree('d2/d0c/_linear_allocator__inl_8h_sourc
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <span class="keywordflow">return</span> ptr;</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>}</div>
+</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">template</span> &lt;ezAllocatorTrackingMode TrackingMode, <span class="keywordtype">bool</span> OverwriteMemoryOnReset&gt;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keywordtype">void</span> <a class="code hl_class" href="../../d8/d6e/classez_linear_allocator.htm">ezLinearAllocator&lt;TrackingMode, OverwriteMemoryOnReset&gt;::Deallocate</a>(<span class="keywordtype">void</span>* pPtr)</div>
+<div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="../../d8/d6e/classez_linear_allocator.htm#aff775f4811ed5c84a48fa4169ba74f72">   36</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/d6e/classez_linear_allocator.htm#aff775f4811ed5c84a48fa4169ba74f72">ezLinearAllocator&lt;TrackingMode, OverwriteMemoryOnReset&gt;::Deallocate</a>(<span class="keywordtype">void</span>* pPtr)</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>{</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  EZ_LOCK(m_Mutex);</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  ezUInt32 uiIndex;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keywordflow">if</span> (m_PtrToDestructDataIndexTable.Remove(pPtr, &amp;uiIndex))</div>
+<div class="foldopen" id="foldopen00040" data-start="{" data-end="}">
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="../../d8/d6e/classez_linear_allocator.htm#af81f216d2ef565c839df83e69a025107">   40</a></span>  ezUInt32 uiIndex;</div>
+<div class="foldopen" id="foldopen00041" data-start="{" data-end="}">
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="../../d8/d6e/classez_linear_allocator.htm#aff775f4811ed5c84a48fa4169ba74f72">   41</a></span>  <span class="keywordflow">if</span> (m_PtrToDestructDataIndexTable.Remove(pPtr, &amp;uiIndex))</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  {</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keyword">auto</span>&amp; data = m_DestructData[uiIndex];</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    data.m_Func = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    data.m_Ptr = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  }</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <a class="code hl_class" href="../../d8/dde/classez_allocator_with_policy.htm">ezAllocatorWithPolicy&lt;typename ezLinearAllocator&lt;TrackingMode, OverwriteMemoryOnReset&gt;::PolicyStack</a>, TrackingMode&gt;::Deallocate(pPtr);</div>
+<div class="foldopen" id="foldopen00048" data-start="{" data-end="}">
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="../../d8/d6e/classez_linear_allocator.htm#a804507c812a17da14000a86fa5ba8470">   48</a></span>  <a class="code hl_class" href="../../d8/dde/classez_allocator_with_policy.htm">ezAllocatorWithPolicy&lt;typename ezLinearAllocator&lt;TrackingMode, OverwriteMemoryOnReset&gt;::PolicyStack</a>, TrackingMode&gt;::Deallocate(pPtr);</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>}</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>EZ_MSVC_ANALYSIS_WARNING_PUSH</div>
@@ -191,19 +194,21 @@ $(document).ready(function(){initNavTree('d2/d0c/_linear_allocator__inl_8h_sourc
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>EZ_MSVC_ANALYSIS_WARNING_POP</div>
 </div>
 </div>
-<div class="ttc" id="aclassez_allocator_htm"><div class="ttname"><a href="../../d0/dbb/classez_allocator.htm">ezAllocator</a></div><div class="ttdoc">Base class for all memory allocators.</div><div class="ttdef"><b>Definition</b> Allocator.h:23</div></div>
-<div class="ttc" id="aclassez_allocator_with_policy_htm"><div class="ttname"><a href="../../d8/dde/classez_allocator_with_policy.htm">ezAllocatorWithPolicy</a></div><div class="ttdoc">Policy based allocator implementation of the ezAllocator interface.</div><div class="ttdef"><b>Definition</b> AllocatorWithPolicy.h:19</div></div>
-<div class="ttc" id="aclassez_linear_allocator_htm"><div class="ttname"><a href="../../d8/d6e/classez_linear_allocator.htm">ezLinearAllocator</a></div><div class="ttdef"><b>Definition</b> LinearAllocator.h:12</div></div>
+</div>
+<div class="ttc" id="aclassez_allocator_htm"><div class="ttname"><a href="../../d0/dbb/classez_allocator.htm">ezAllocator</a></div><div class="ttdoc">Base class for all memory allocators.</div><div class="ttdef"><b>Definition</b> Allocator.h:37</div></div>
+<div class="ttc" id="aclassez_allocator_with_policy_htm"><div class="ttname"><a href="../../d8/dde/classez_allocator_with_policy.htm">ezAllocatorWithPolicy</a></div><div class="ttdoc">Policy-based allocator that combines allocation strategies with tracking modes.</div><div class="ttdef"><b>Definition</b> AllocatorWithPolicy.h:19</div></div>
+<div class="ttc" id="aclassez_linear_allocator_htm"><div class="ttname"><a href="../../d8/d6e/classez_linear_allocator.htm">ezLinearAllocator</a></div><div class="ttdoc">Stack-based linear allocator that allocates memory sequentially.</div><div class="ttdef"><b>Definition</b> LinearAllocator.h:33</div></div>
 <div class="ttc" id="aclassez_linear_allocator_htm_af81f216d2ef565c839df83e69a025107"><div class="ttname"><a href="../../d8/d6e/classez_linear_allocator.htm#af81f216d2ef565c839df83e69a025107">ezLinearAllocator::Allocate</a></div><div class="ttdeci">virtual void * Allocate(size_t uiSize, size_t uiAlign, ezMemoryUtils::DestructorFunction destructorFunc) override</div><div class="ttdoc">Interface, do not use this directly, always use the new/delete macros below.</div><div class="ttdef"><b>Definition</b> LinearAllocator_inl.h:16</div></div>
+<div class="ttc" id="aclassez_linear_allocator_htm_aff775f4811ed5c84a48fa4169ba74f72"><div class="ttname"><a href="../../d8/d6e/classez_linear_allocator.htm#aff775f4811ed5c84a48fa4169ba74f72">ezLinearAllocator::Deallocate</a></div><div class="ttdeci">virtual void Deallocate(void *pPtr) override</div><div class="ttdoc">Deallocates memory previously allocated by this allocator.</div><div class="ttdef"><b>Definition</b> LinearAllocator_inl.h:36</div></div>
 <div class="ttc" id="aclassez_string_view_htm"><div class="ttname"><a href="../../d9/d18/classez_string_view.htm">ezStringView</a></div><div class="ttdoc">ezStringView represent a read-only sub-string of a larger string, as it can store a dedicated string ...</div><div class="ttdef"><b>Definition</b> StringView.h:34</div></div>
-<div class="ttc" id="astructez_allocator_1_1_stats_htm"><div class="ttname"><a href="../../d5/d3e/structez_allocator_1_1_stats.htm">ezAllocator::Stats</a></div><div class="ttdef"><b>Definition</b> Allocator.h:26</div></div>
+<div class="ttc" id="astructez_allocator_1_1_stats_htm"><div class="ttname"><a href="../../d5/d3e/structez_allocator_1_1_stats.htm">ezAllocator::Stats</a></div><div class="ttdef"><b>Definition</b> Allocator.h:40</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_adb0ac2a169525f5fa05f0527c58e205.htm">Memory</a></li><li class="navelem"><a class="el" href="../../dir_2b61d82766792ebb24827eac69b772f5.htm">Implementation</a></li><li class="navelem"><b>LinearAllocator_inl.h</b></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:00:58 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:39 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

@@ -14,6 +14,7 @@ var structez_plugin_bundle =
     [ "m_PackageDependencies", "dc/d07/structez_plugin_bundle.htm#ade902590e24a18d6913db9a113eff23f", null ],
     [ "m_RequiredBundles", "dc/d07/structez_plugin_bundle.htm#a7fe99995bee9c2f094c58e61a76b9f6d", null ],
     [ "m_RuntimePlugins", "dc/d07/structez_plugin_bundle.htm#a59a9384debc5dacc35dc9e0ee638cdca", null ],
+    [ "m_sCMakeTargetName", "dc/d07/structez_plugin_bundle.htm#af038458ce70181c5ad59b99ff1a9ebd0", null ],
     [ "m_sDescription", "dc/d07/structez_plugin_bundle.htm#a53940961afffff918f5f4e195e2644d8", null ],
     [ "m_sDisplayName", "dc/d07/structez_plugin_bundle.htm#a64d0b1d8695c34e8a2374db0de2f3ecf", null ]
 ];

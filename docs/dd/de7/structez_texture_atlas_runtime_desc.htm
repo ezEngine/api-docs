@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -98,6 +98,11 @@ $(document).ready(function(){initNavTree('dd/de7/structez_texture_atlas_runtime_
   <div class="headertitle"><div class="title">ezTextureAtlasRuntimeDesc Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Runtime data for efficiently accessing items within a generated texture atlas.  
+ <a href="../../dd/de7/structez_texture_atlas_runtime_desc.htm#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d9/db5/_texture_atlas_desc_8h_source.htm">TextureAtlasDesc.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -125,7 +130,23 @@ ezUInt32&#160;</td><td class="memItemRight" valign="bottom"><b>m_uiNumLayers</b>
 <a class="el" href="../../d4/d34/classez_array_map.htm">ezArrayMap</a>&lt; ezUInt32, <a class="el" href="../../d1/d60/structez_texture_atlas_runtime_desc_1_1_item.htm">Item</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_Items</b></td></tr>
 <tr class="separator:aba0cc610033b027692065b90dc56546a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following files:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Runtime data for efficiently accessing items within a generated texture atlas. </p>
+<p>After a texture atlas is created and processed, this structure provides the information needed to find and render individual items from the packed atlas texture. It maps unique item IDs to their rectangular regions within each layer of the atlas.</p>
+<p><b>Runtime Usage:</b> </p><div class="fragment"><div class="line"><a class="code hl_struct" href="../../dd/de7/structez_texture_atlas_runtime_desc.htm">ezTextureAtlasRuntimeDesc</a> atlas;</div>
+<div class="line">atlas.Load(<span class="stringliteral">&quot;MyAtlas.ezAtlas&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Find an item by ID</span></div>
+<div class="line"><span class="keyword">auto</span> item = atlas.m_Items.Find(itemID);</div>
+<div class="line"><span class="keywordflow">if</span> (item.IsValid())</div>
+<div class="line">{</div>
+<div class="line">  <span class="comment">// Get UV coordinates for diffuse layer (layer 0)</span></div>
+<div class="line">  <a class="code hl_class" href="../../de/dd8/classez_rect_template.htm">ezRectU32</a> rect = item.Value().m_LayerRects[0];</div>
+<div class="line">  <span class="comment">// Convert to UV coordinates based on atlas texture size</span></div>
+<div class="line">}</div>
+<div class="ttc" id="aclassez_rect_template_htm"><div class="ttname"><a href="../../de/dd8/classez_rect_template.htm">ezRectTemplate&lt; ezUInt32 &gt;</a></div></div>
+<div class="ttc" id="astructez_texture_atlas_runtime_desc_htm"><div class="ttname"><a href="../../dd/de7/structez_texture_atlas_runtime_desc.htm">ezTextureAtlasRuntimeDesc</a></div><div class="ttdoc">Runtime data for efficiently accessing items within a generated texture atlas.</div><div class="ttdef"><b>Definition</b> TextureAtlasDesc.h:83</div></div>
+</div><!-- fragment --> </div><hr/>The documentation for this struct was generated from the following files:<ul>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Texture/Utils/<a class="el" href="../../d9/db5/_texture_atlas_desc_8h_source.htm">TextureAtlasDesc.h</a></li>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Texture/Utils/Implementation/<b>TextureAtlasDesc.cpp</b></li>
 </ul>
@@ -135,7 +156,7 @@ ezUInt32&#160;</td><td class="memItemRight" valign="bottom"><b>m_uiNumLayers</b>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dd/de7/structez_texture_atlas_runtime_desc.htm">ezTextureAtlasRuntimeDesc</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:06 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:48 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

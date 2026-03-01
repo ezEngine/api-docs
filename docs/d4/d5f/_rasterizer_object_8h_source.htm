@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -100,48 +100,50 @@ $(document).ready(function(){initNavTree('d4/d5f/_rasterizer_object_8h_source.ht
 <div class="contents">
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;Foundation/Math/Mat4.h&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;Foundation/Strings/String.h&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;Foundation/Types/RefCounted.h&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;Foundation/Types/SharedPtr.h&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;RendererCore/Rasterizer/Thirdparty/Occluder.h&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;RendererCore/RendererCoreDLL.h&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">class </span><a class="code hl_class" href="../../d1/d5c/classez_geometry.htm">ezGeometry</a>;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;Foundation/Containers/Map.h&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;Foundation/Math/Mat4.h&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;Foundation/Strings/String.h&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;Foundation/Threading/Mutex.h&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;Foundation/Types/RefCounted.h&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;Foundation/Types/SharedPtr.h&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;RendererCore/Rasterizer/Thirdparty/Occluder.h&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;RendererCore/RendererCoreDLL.h&gt;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="foldopen" id="foldopen00012" data-start="{" data-end="};">
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="../../d5/d82/classez_rasterizer_object.htm">   12</a></span><span class="keyword">class </span>EZ_RENDERERCORE_DLL <a class="code hl_class" href="../../d5/d82/classez_rasterizer_object.htm">ezRasterizerObject</a> : <span class="keyword">public</span> <a class="code hl_class" href="../../d2/d70/classez_ref_counted.htm">ezRefCounted</a></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  EZ_DISALLOW_COPY_AND_ASSIGN(<a class="code hl_class" href="../../d5/d82/classez_rasterizer_object.htm">ezRasterizerObject</a>);</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <a class="code hl_class" href="../../d5/d82/classez_rasterizer_object.htm">ezRasterizerObject</a>();</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <a class="code hl_class" href="../../d5/d82/classez_rasterizer_object.htm">~ezRasterizerObject</a>();</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <span class="keyword">static</span> <a class="code hl_class" href="../../de/dc1/classez_shared_ptr.htm">ezSharedPtr&lt;const ezRasterizerObject&gt;</a> GetObject(<a class="code hl_class" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sUniqueName);</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="keyword">static</span> <a class="code hl_class" href="../../de/dc1/classez_shared_ptr.htm">ezSharedPtr&lt;const ezRasterizerObject&gt;</a> CreateBox(<span class="keyword">const</span> <a class="code hl_class" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; vFullExtents);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <span class="keyword">static</span> <a class="code hl_class" href="../../de/dc1/classez_shared_ptr.htm">ezSharedPtr&lt;const ezRasterizerObject&gt;</a> CreateQuadX(<span class="keyword">const</span> <a class="code hl_class" href="../../d1/df8/classez_vec2_template.htm">ezVec2</a>&amp; vYZExtents);</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">class </span><a class="code hl_class" href="../../d1/d5c/classez_geometry.htm">ezGeometry</a>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="../../d5/d82/classez_rasterizer_object.htm">   18</a></span><span class="keyword">class </span>EZ_RENDERERCORE_DLL <a class="code hl_class" href="../../d5/d82/classez_rasterizer_object.htm">ezRasterizerObject</a> : <span class="keyword">public</span> <a class="code hl_class" href="../../d2/d70/classez_ref_counted.htm">ezRefCounted</a></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>{</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  EZ_DISALLOW_COPY_AND_ASSIGN(<a class="code hl_class" href="../../d5/d82/classez_rasterizer_object.htm">ezRasterizerObject</a>);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <a class="code hl_class" href="../../d5/d82/classez_rasterizer_object.htm">ezRasterizerObject</a>();</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <a class="code hl_class" href="../../d5/d82/classez_rasterizer_object.htm">~ezRasterizerObject</a>();</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <span class="keyword">static</span> <a class="code hl_class" href="../../de/dc1/classez_shared_ptr.htm">ezSharedPtr&lt;const ezRasterizerObject&gt;</a> GetObject(<a class="code hl_class" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sUniqueName);</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="keyword">static</span> <a class="code hl_class" href="../../de/dc1/classez_shared_ptr.htm">ezSharedPtr&lt;const ezRasterizerObject&gt;</a> CreateMesh(<a class="code hl_class" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sUniqueName, <span class="keyword">const</span> <a class="code hl_class" href="../../d1/d5c/classez_geometry.htm">ezGeometry</a>&amp; geometry);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="keywordtype">void</span> CreateMesh(<span class="keyword">const</span> <a class="code hl_class" href="../../d1/d5c/classez_geometry.htm">ezGeometry</a>&amp; geometry);</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="../../de/d74/classez_rasterizer_view.htm">ezRasterizerView</a>;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <a class="code hl_struct" href="../../d5/d6f/struct_occluder.htm">Occluder</a> m_Occluder;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <span class="keyword">static</span> <a class="code hl_class" href="../../de/dc1/classez_shared_ptr.htm">ezSharedPtr&lt;const ezRasterizerObject&gt;</a> CreateBox(<span class="keyword">const</span> <a class="code hl_class" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; vFullExtents);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keyword">static</span> <a class="code hl_class" href="../../de/dc1/classez_shared_ptr.htm">ezSharedPtr&lt;const ezRasterizerObject&gt;</a> CreateQuadX(<span class="keyword">const</span> <a class="code hl_class" href="../../d1/df8/classez_vec2_template.htm">ezVec2</a>&amp; vYZExtents);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="keyword">static</span> <a class="code hl_class" href="../../de/dc1/classez_shared_ptr.htm">ezSharedPtr&lt;const ezRasterizerObject&gt;</a> CreateMesh(<a class="code hl_class" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sUniqueName, <span class="keyword">const</span> <a class="code hl_class" href="../../d1/d5c/classez_geometry.htm">ezGeometry</a>&amp; geometry);</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="keyword">static</span> <a class="code hl_class" href="../../dd/dbe/classez_mutex.htm">ezMutex</a> s_Mutex;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="keyword">static</span> <a class="code hl_class" href="../../d1/d79/classez_map.htm">ezMap&lt;ezString, ezSharedPtr&lt;ezRasterizerObject&gt;</a>&gt; s_Objects;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>};</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="keywordtype">void</span> CreateMesh(<span class="keyword">const</span> <a class="code hl_class" href="../../d1/d5c/classez_geometry.htm">ezGeometry</a>&amp; geometry);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="../../de/d74/classez_rasterizer_view.htm">ezRasterizerView</a>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <a class="code hl_struct" href="../../d5/d6f/struct_occluder.htm">Occluder</a> m_Occluder;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keyword">static</span> <a class="code hl_class" href="../../dd/dbe/classez_mutex.htm">ezMutex</a> s_Mutex;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keyword">static</span> <a class="code hl_class" href="../../d1/d79/classez_map.htm">ezMap&lt;ezString, ezSharedPtr&lt;ezRasterizerObject&gt;</a>&gt; s_Objects;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>};</div>
 </div>
 <div class="ttc" id="aclassez_geometry_htm"><div class="ttname"><a href="../../d1/d5c/classez_geometry.htm">ezGeometry</a></div><div class="ttdoc">Provides functions to generate standard geometric shapes, such as boxes, spheres, cylinders,...</div><div class="ttdef"><b>Definition</b> Geometry.h:18</div></div>
-<div class="ttc" id="aclassez_map_htm"><div class="ttname"><a href="../../d1/d79/classez_map.htm">ezMap</a></div><div class="ttdef"><b>Definition</b> Map.h:408</div></div>
+<div class="ttc" id="aclassez_map_htm"><div class="ttname"><a href="../../d1/d79/classez_map.htm">ezMap</a></div><div class="ttdef"><b>Definition</b> Map.h:424</div></div>
 <div class="ttc" id="aclassez_mutex_htm"><div class="ttname"><a href="../../dd/dbe/classez_mutex.htm">ezMutex</a></div><div class="ttdoc">Provides a simple mechanism for mutual exclusion to prevent multiple threads from accessing a shared ...</div><div class="ttdef"><b>Definition</b> Mutex.h:13</div></div>
-<div class="ttc" id="aclassez_rasterizer_object_htm"><div class="ttname"><a href="../../d5/d82/classez_rasterizer_object.htm">ezRasterizerObject</a></div><div class="ttdef"><b>Definition</b> RasterizerObject.h:13</div></div>
-<div class="ttc" id="aclassez_rasterizer_view_htm"><div class="ttname"><a href="../../de/d74/classez_rasterizer_view.htm">ezRasterizerView</a></div><div class="ttdef"><b>Definition</b> RasterizerView.h:16</div></div>
-<div class="ttc" id="aclassez_ref_counted_htm"><div class="ttname"><a href="../../d2/d70/classez_ref_counted.htm">ezRefCounted</a></div><div class="ttdoc">Base class for reference counted objects.</div><div class="ttdef"><b>Definition</b> RefCounted.h:54</div></div>
+<div class="ttc" id="aclassez_rasterizer_object_htm"><div class="ttname"><a href="../../d5/d82/classez_rasterizer_object.htm">ezRasterizerObject</a></div><div class="ttdef"><b>Definition</b> RasterizerObject.h:19</div></div>
+<div class="ttc" id="aclassez_rasterizer_view_htm"><div class="ttname"><a href="../../de/d74/classez_rasterizer_view.htm">ezRasterizerView</a></div><div class="ttdef"><b>Definition</b> RasterizerView.h:17</div></div>
+<div class="ttc" id="aclassez_ref_counted_htm"><div class="ttname"><a href="../../d2/d70/classez_ref_counted.htm">ezRefCounted</a></div><div class="ttdoc">Base class for objects that require reference counting with virtual destructor.</div><div class="ttdef"><b>Definition</b> RefCounted.h:64</div></div>
 <div class="ttc" id="aclassez_shared_ptr_htm"><div class="ttname"><a href="../../de/dc1/classez_shared_ptr.htm">ezSharedPtr</a></div><div class="ttdoc">A Shared ptr manages a shared object and destroys that object when no one references it anymore....</div><div class="ttdef"><b>Definition</b> SharedPtr.h:10</div></div>
 <div class="ttc" id="aclassez_string_view_htm"><div class="ttname"><a href="../../d9/d18/classez_string_view.htm">ezStringView</a></div><div class="ttdoc">ezStringView represent a read-only sub-string of a larger string, as it can store a dedicated string ...</div><div class="ttdef"><b>Definition</b> StringView.h:34</div></div>
 <div class="ttc" id="aclassez_vec2_template_htm"><div class="ttname"><a href="../../d1/df8/classez_vec2_template.htm">ezVec2Template&lt; float &gt;</a></div></div>
@@ -153,7 +155,7 @@ $(document).ready(function(){initNavTree('d4/d5f/_rasterizer_object_8h_source.ht
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_9b39d7517b28e8ee3dee1b9d862ddabb.htm">RendererCore</a></li><li class="navelem"><a class="el" href="../../dir_c1fab5cb4670f7e55a8a371e8535c0e1.htm">Rasterizer</a></li><li class="navelem"><b>RasterizerObject.h</b></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:01 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:42 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

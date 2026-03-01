@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -112,7 +112,7 @@ Inheritance diagram for ezJoltGrabObjectComponent:</div>
 <area shape="rect" title="Used to &#39;grab&#39; physical objects and attach them to an object. For player objects to pick up objects." alt="" coords="5,225,212,251"/>
 <area shape="rect" href="../../d6/d30/classez_component.htm" title="Base class of all component types." alt="" coords="53,152,165,177"/>
 <area shape="poly" title=" " alt="" coords="111,191,111,225,106,225,106,191"/>
-<area shape="rect" href="../../db/d45/classez_reflected_class.htm" title="All classes that should be dynamically reflectable, need to be derived from this base class." alt="" coords="42,79,175,104"/>
+<area shape="rect" href="../../db/d45/classez_reflected_class.htm" title="Base class for all types that support dynamic reflection and runtime type identification." alt="" coords="42,79,175,104"/>
 <area shape="poly" title=" " alt="" coords="111,118,111,152,106,152,106,118"/>
 <area shape="rect" href="../../d4/d02/classez_no_base.htm" title="Dummy type to pass to templates and macros that expect a base type for a class that has no base." alt="" coords="65,5,152,31"/>
 <area shape="poly" title=" " alt="" coords="111,44,111,79,106,79,106,44"/>
@@ -127,10 +127,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1460a1a98411b97e3018841f4e66309d" id="r_a1460a1a98411b97e3018841f4e66309d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dcd/classez_jolt_grab_object_component.htm#a1460a1a98411b97e3018841f4e66309d">DeserializeComponent</a> (<a class="el" href="../../d9/dd6/classez_world_reader.htm">ezWorldReader</a> &amp;inout_stream) override</td></tr>
 <tr class="memdesc:a1460a1a98411b97e3018841f4e66309d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override this to load the current state of the component from the given stream.  <br /></td></tr>
 <tr class="separator:a1460a1a98411b97e3018841f4e66309d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a458db9a0b0e9de7f5b454db3842dfc8c" id="r_a458db9a0b0e9de7f5b454db3842dfc8c"><td class="memItemLeft" align="right" valign="top"><a id="a458db9a0b0e9de7f5b454db3842dfc8c" name="a458db9a0b0e9de7f5b454db3842dfc8c"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>FindNearbyObject</b> (<a class="el" href="../../d6/d61/classez_game_object.htm">ezGameObject</a> *&amp;out_pObject, <a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransform</a> &amp;out_localGrabPoint) const</td></tr>
-<tr class="memdesc:a458db9a0b0e9de7f5b454db3842dfc8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether there is an object nearby. Note that this function reports static and dynamic objects that are within reach. Whether these objects are interact able or not is up to the caller. <br /></td></tr>
-<tr class="separator:a458db9a0b0e9de7f5b454db3842dfc8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac219f88ee9bf3e9bfc4d18740a28ff97" id="r_ac219f88ee9bf3e9bfc4d18740a28ff97"><td class="memItemLeft" align="right" valign="top"><a id="ac219f88ee9bf3e9bfc4d18740a28ff97" name="ac219f88ee9bf3e9bfc4d18740a28ff97"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>FindNearbyObject</b> (<a class="el" href="../../d6/d61/classez_game_object.htm">ezGameObject</a> *&amp;out_pObject, <a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransform</a> &amp;out_localGrabPoint, bool bIgnoreGrabbedActor=true) const</td></tr>
+<tr class="memdesc:ac219f88ee9bf3e9bfc4d18740a28ff97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether there is an object nearby. Note that this function reports static and dynamic objects that are within reach. Whether these objects are interact able or not is up to the caller. <br /></td></tr>
+<tr class="separator:ac219f88ee9bf3e9bfc4d18740a28ff97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad68cc6c2faa4abbc841aed0370dc0a7" id="r_aad68cc6c2faa4abbc841aed0370dc0a7"><td class="memItemLeft" align="right" valign="top"><a id="aad68cc6c2faa4abbc841aed0370dc0a7" name="aad68cc6c2faa4abbc841aed0370dc0a7"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>GrabObject</b> (<a class="el" href="../../d6/d61/classez_game_object.htm">ezGameObject</a> *pObjectToGrab, const <a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransform</a> &amp;localGrabPoint)</td></tr>
 <tr class="memdesc:aad68cc6c2faa4abbc841aed0370dc0a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Grabs the given object at the given grab point if possible. <br /></td></tr>
@@ -151,16 +151,14 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>HasObjectGrabbed</b> 
 float&#160;</td><td class="memItemRight" valign="bottom"><b>GetGrabbedActorMass</b> () const</td></tr>
 <tr class="memdesc:ab89cc0249dbb215d62e941a81be656c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the grabbed object's mass. <br /></td></tr>
 <tr class="separator:ab89cc0249dbb215d62e941a81be656c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f17849305bff25b123c232e01290a36" id="r_a0f17849305bff25b123c232e01290a36"><td class="memItemLeft" align="right" valign="top"><a id="a0f17849305bff25b123c232e01290a36" name="a0f17849305bff25b123c232e01290a36"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>DropGrabbedObject</b> ()</td></tr>
-<tr class="memdesc:a0f17849305bff25b123c232e01290a36"><td class="mdescLeft">&#160;</td><td class="mdescRight">The grabbed object is dropped in place. <br /></td></tr>
-<tr class="separator:a0f17849305bff25b123c232e01290a36"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b73791d77733f59550f8c5045fa65fc" id="r_a1b73791d77733f59550f8c5045fa65fc"><td class="memItemLeft" align="right" valign="top"><a id="a1b73791d77733f59550f8c5045fa65fc" name="a1b73791d77733f59550f8c5045fa65fc"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>ThrowGrabbedObject</b> (const <a class="el" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> &amp;vRelativeDir, ezUInt8 uiImpulseType=0)</td></tr>
-<tr class="memdesc:a1b73791d77733f59550f8c5045fa65fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Throws the held object away. <br /></td></tr>
+<tr class="memitem:aa7046527576362d998d02538c7bbf72c" id="r_aa7046527576362d998d02538c7bbf72c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dcd/classez_jolt_grab_object_component.htm#aa7046527576362d998d02538c7bbf72c">DropGrabbedObject</a> (ezUInt8 uiImpulseType=0)</td></tr>
+<tr class="memdesc:aa7046527576362d998d02538c7bbf72c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The grabbed object is dropped in place.  <br /></td></tr>
+<tr class="separator:aa7046527576362d998d02538c7bbf72c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b73791d77733f59550f8c5045fa65fc" id="r_a1b73791d77733f59550f8c5045fa65fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dcd/classez_jolt_grab_object_component.htm#a1b73791d77733f59550f8c5045fa65fc">ThrowGrabbedObject</a> (const <a class="el" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> &amp;vRelativeDir, ezUInt8 uiImpulseType=0)</td></tr>
+<tr class="memdesc:a1b73791d77733f59550f8c5045fa65fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Throws the held object away.  <br /></td></tr>
 <tr class="separator:a1b73791d77733f59550f8c5045fa65fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a200c83636ee757ae63de93afe86b63c4" id="r_a200c83636ee757ae63de93afe86b63c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dcd/classez_jolt_grab_object_component.htm#a200c83636ee757ae63de93afe86b63c4">BreakObjectGrab</a> ()</td></tr>
-<tr class="memdesc:a200c83636ee757ae63de93afe86b63c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Similar to <a class="el" href="../../d2/dcd/classez_jolt_grab_object_component.htm#a0f17849305bff25b123c232e01290a36" title="The grabbed object is dropped in place.">DropGrabbedObject()</a> but additionally posts the event message <a class="el" href="../../d5/d50/structez_msg_physics_joint_broke.htm">ezMsgPhysicsJointBroke</a>.  <br /></td></tr>
+<tr class="memdesc:a200c83636ee757ae63de93afe86b63c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Similar to <a class="el" href="../../d2/dcd/classez_jolt_grab_object_component.htm#aa7046527576362d998d02538c7bbf72c" title="The grabbed object is dropped in place.">DropGrabbedObject()</a> but additionally posts the event message <a class="el" href="../../d5/d50/structez_msg_physics_joint_broke.htm">ezMsgPhysicsJointBroke</a>.  <br /></td></tr>
 <tr class="separator:a200c83636ee757ae63de93afe86b63c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9dd9cbeba7aa0714cffe0ed1a28e1a1" id="r_ad9dd9cbeba7aa0714cffe0ed1a28e1a1"><td class="memItemLeft" align="right" valign="top"><a id="ad9dd9cbeba7aa0714cffe0ed1a28e1a1" name="ad9dd9cbeba7aa0714cffe0ed1a28e1a1"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>SetAttachToReference</b> (const char *szReference)</td></tr>
@@ -313,9 +311,9 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a6218d95982ef1b735b407a42705f6fbf" id="r_a6218d95982ef1b735b407a42705f6fbf"><td class="memItemLeft" align="right" valign="top"><a id="a6218d95982ef1b735b407a42705f6fbf" name="a6218d95982ef1b735b407a42705f6fbf"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Update</b> ()</td></tr>
 <tr class="separator:a6218d95982ef1b735b407a42705f6fbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a144225d021ef4fcc554bbd0c6c182698" id="r_a144225d021ef4fcc554bbd0c6c182698"><td class="memItemLeft" align="right" valign="top"><a id="a144225d021ef4fcc554bbd0c6c182698" name="a144225d021ef4fcc554bbd0c6c182698"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>ReleaseGrabbedObject</b> ()</td></tr>
-<tr class="separator:a144225d021ef4fcc554bbd0c6c182698"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e7d1724b11a18c65b19dc7b796dd845" id="r_a3e7d1724b11a18c65b19dc7b796dd845"><td class="memItemLeft" align="right" valign="top"><a id="a3e7d1724b11a18c65b19dc7b796dd845" name="a3e7d1724b11a18c65b19dc7b796dd845"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ReleaseGrabbedObject</b> (float fMaxAllowedImpulse)</td></tr>
+<tr class="separator:a3e7d1724b11a18c65b19dc7b796dd845"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43b74b5f0672ef436c21676c8feec5f8" id="r_a43b74b5f0672ef436c21676c8feec5f8"><td class="memItemLeft" align="right" valign="top"><a id="a43b74b5f0672ef436c21676c8feec5f8" name="a43b74b5f0672ef436c21676c8feec5f8"></a>
 <a class="el" href="../../db/dcd/classez_jolt_dynamic_actor_component.htm">ezJoltDynamicActorComponent</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>GetAttachToActor</b> ()</td></tr>
 <tr class="separator:a43b74b5f0672ef436c21676c8feec5f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -434,7 +432,7 @@ static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&
       </table>
 </div><div class="memdoc">
 
-<p>Similar to <a class="el" href="../../d2/dcd/classez_jolt_grab_object_component.htm#a0f17849305bff25b123c232e01290a36" title="The grabbed object is dropped in place.">DropGrabbedObject()</a> but additionally posts the event message <a class="el" href="../../d5/d50/structez_msg_physics_joint_broke.htm">ezMsgPhysicsJointBroke</a>. </p>
+<p>Similar to <a class="el" href="../../d2/dcd/classez_jolt_grab_object_component.htm#aa7046527576362d998d02538c7bbf72c" title="The grabbed object is dropped in place.">DropGrabbedObject()</a> but additionally posts the event message <a class="el" href="../../d5/d50/structez_msg_physics_joint_broke.htm">ezMsgPhysicsJointBroke</a>. </p>
 <p>This can be used to inform other code that the object was ripped from the hands of the player. </p>
 
 </div>
@@ -467,6 +465,27 @@ static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&
 <p>The active state will be automatically serialized. The 'initialized' state is not serialized, all components will be initialized after creation, even if they were already in an initialized state when they were serialized. </p>
 
 <p>Reimplemented from <a class="el" href="../../d6/d30/classez_component.htm#a5733baf54244ceb284fd0f7e4fd2a0b4">ezComponent</a>.</p>
+
+</div>
+</div>
+<a id="aa7046527576362d998d02538c7bbf72c" name="aa7046527576362d998d02538c7bbf72c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7046527576362d998d02538c7bbf72c">&#9670;&#160;</a></span>DropGrabbedObject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ezJoltGrabObjectComponent::DropGrabbedObject </td>
+          <td>(</td>
+          <td class="paramtype">ezUInt8&#160;</td>
+          <td class="paramname"><em>uiImpulseType</em> = <code>0</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The grabbed object is dropped in place. </p>
+<p>If an impulse type is given (see <a class="el" href="../../d5/d77/classez_impulse_type_config.htm">ezImpulseTypeConfig</a>) the dropped object is allowed to retain as much linear velocity as a push with such a force would give it. E.g. if you pass in the same impulse type as in <a class="el" href="../../d2/dcd/classez_jolt_grab_object_component.htm#a1b73791d77733f59550f8c5045fa65fc" title="Throws the held object away.">ThrowGrabbedObject()</a>, releasing a grabbed object while rotating, would allow to throw it as far as if you had actually "thrown" the object. If any invalid impulse type is passed in (e.g. 0 or 1), the object drops in place. However, momentum from the character (this objects owner) is always preserved. </p>
 
 </div>
 </div>
@@ -564,6 +583,37 @@ static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&
 
 </div>
 </div>
+<a id="a1b73791d77733f59550f8c5045fa65fc" name="a1b73791d77733f59550f8c5045fa65fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b73791d77733f59550f8c5045fa65fc">&#9670;&#160;</a></span>ThrowGrabbedObject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ezJoltGrabObjectComponent::ThrowGrabbedObject </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> &amp;&#160;</td>
+          <td class="paramname"><em>vRelativeDir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ezUInt8&#160;</td>
+          <td class="paramname"><em>uiImpulseType</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Throws the held object away. </p>
+<p>See <a class="el" href="../../d5/d77/classez_impulse_type_config.htm">ezImpulseTypeConfig</a> for impulse types. If a non-zero impulse type is given, vRelativeDir is scaled by the impulse type, such that heavy and light objects may get a different impulse. </p>
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a id="a7f7c424a5c6a0333579b4fc988081bdd" name="a7f7c424a5c6a0333579b4fc988081bdd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7f7c424a5c6a0333579b4fc988081bdd">&#9670;&#160;</a></span>m_fCastRadius</h2>
@@ -620,7 +670,7 @@ static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d2/dcd/classez_jolt_grab_object_component.htm">ezJoltGrabObjectComponent</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:04 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:45 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

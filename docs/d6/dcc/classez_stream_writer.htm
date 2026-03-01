@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('d6/dcc/classez_stream_writer.htm','../
 </div><!--header-->
 <div class="contents">
 
-<p>Interface for binary out (write) streams.  
+<p>Abstract base class for binary output streams providing unified writing interface.  
  <a href="../../d6/dcc/classez_stream_writer.htm#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../d3/d99/_stream_8h_source.htm">Stream.h</a>&gt;</code></p>
@@ -106,8 +106,8 @@ Inheritance diagram for ezStreamWriter:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../da/ddd/classez_stream_writer__inherit__graph.png" border="0" usemap="#aez_stream_writer_inherit__map" alt="Inheritance graph"/></div>
 <map name="aez_stream_writer_inherit__map" id="aez_stream_writer_inherit__map">
-<area shape="rect" title="Interface for binary out (write) streams." alt="" coords="5,179,129,204"/>
-<area shape="rect" href="../../dd/d96/classez_chunk_stream_writer.htm" title="A stream writer that separates data into &#39;chunks&#39;, which act like sub&#45;streams." alt="" coords="198,5,363,31"/>
+<area shape="rect" title="Abstract base class for binary output streams providing unified writing interface." alt="" coords="5,179,129,204"/>
+<area shape="rect" href="../../dd/d96/classez_chunk_stream_writer.htm" title="Stream writer that organizes data into named, versioned chunks." alt="" coords="198,5,363,31"/>
 <area shape="poly" title=" " alt="" coords="78,165,115,102,143,68,176,40,198,28,201,33,179,44,146,72,119,105,82,168"/>
 <area shape="rect" href="../../de/d60/classez_deferred_file_writer.htm" title="A file writer that caches all written data and only opens and writes to the output file when everythi..." alt="" coords="202,55,359,80"/>
 <area shape="poly" title=" " alt="" coords="86,166,124,126,149,106,176,89,204,78,206,83,179,94,152,110,128,130,89,170"/>
@@ -139,10 +139,10 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~ezStreamWriter</b
 <tr class="memdesc:a990823249c73675b8d78b27fe7703957"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor to ensure correct cleanup. <br /></td></tr>
 <tr class="separator:a990823249c73675b8d78b27fe7703957"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21fd5331a85b467ac9d5c11eecc3f0b0" id="r_a21fd5331a85b467ac9d5c11eecc3f0b0"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../d4/da9/structez_result.htm">ezResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dcc/classez_stream_writer.htm#a21fd5331a85b467ac9d5c11eecc3f0b0">WriteBytes</a> (const void *pWriteBuffer, ezUInt64 uiBytesToWrite)=0</td></tr>
-<tr class="memdesc:a21fd5331a85b467ac9d5c11eecc3f0b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a raw number of bytes from the buffer, this is the only method which has to be implemented to fully implement the interface.  <br /></td></tr>
+<tr class="memdesc:a21fd5331a85b467ac9d5c11eecc3f0b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a raw number of bytes from the buffer. This is the only method that must be implemented by derived classes.  <br /></td></tr>
 <tr class="separator:a21fd5331a85b467ac9d5c11eecc3f0b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3bf129d3f9646a5f70214ed4875d0c8" id="r_ad3bf129d3f9646a5f70214ed4875d0c8"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../d4/da9/structez_result.htm">ezResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dcc/classez_stream_writer.htm#ad3bf129d3f9646a5f70214ed4875d0c8">Flush</a> ()</td></tr>
-<tr class="memdesc:ad3bf129d3f9646a5f70214ed4875d0c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flushes the stream, may be implemented (not necessary to implement the interface correctly) so that user code can ensure that content is written.  <br /></td></tr>
+<tr class="memdesc:ad3bf129d3f9646a5f70214ed4875d0c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flushes buffered data to the underlying storage, ensuring data persistence.  <br /></td></tr>
 <tr class="separator:ad3bf129d3f9646a5f70214ed4875d0c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a289b0efe94ade2e6534393c3314402eb" id="r_a289b0efe94ade2e6534393c3314402eb"><td class="memTemplParams" colspan="2"><a id="a289b0efe94ade2e6534393c3314402eb" name="a289b0efe94ade2e6534393c3314402eb"></a>
 template&lt;typename T &gt; </td></tr>
@@ -199,7 +199,21 @@ template&lt;typename KeyType , typename ValueType , typename Hasher &gt; </td></
 <tr class="separator:ab64d3a462cfff2928c840300929b6bed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Interface for binary out (write) streams. </p>
+<div class="textblock"><p>Abstract base class for binary output streams providing unified writing interface. </p>
+<p>StreamWriter defines the fundamental interface for writing binary data to various destinations including files, memory buffers, network connections, and compressed streams. All write operations are performed sequentially with automatic endianness handling.</p>
+<p>Core functionality:</p><ul>
+<li><a class="el" href="../../d6/dcc/classez_stream_writer.htm#a21fd5331a85b467ac9d5c11eecc3f0b0" title="Writes a raw number of bytes from the buffer. This is the only method that must be implemented by der...">WriteBytes()</a>: Raw binary data writing (pure virtual, must be implemented)</li>
+<li>Typed writing methods with endianness conversion (WriteWordValue, WriteDWordValue, etc.)</li>
+<li>High-level container writing (arrays, sets, maps, hash tables)</li>
+<li>String writing with automatic length prefixing</li>
+<li>Optional flush support for ensuring data persistence</li>
+</ul>
+<p>Implementation requirements:</p><ul>
+<li>Derived classes must implement <a class="el" href="../../d6/dcc/classez_stream_writer.htm#a21fd5331a85b467ac9d5c11eecc3f0b0" title="Writes a raw number of bytes from the buffer. This is the only method that must be implemented by der...">WriteBytes()</a> as the primary write method</li>
+<li>All other methods are implemented in terms of <a class="el" href="../../d6/dcc/classez_stream_writer.htm#a21fd5331a85b467ac9d5c11eecc3f0b0" title="Writes a raw number of bytes from the buffer. This is the only method that must be implemented by der...">WriteBytes()</a></li>
+<li><a class="el" href="../../d6/dcc/classez_stream_writer.htm#ad3bf129d3f9646a5f70214ed4875d0c8" title="Flushes buffered data to the underlying storage, ensuring data persistence.">Flush()</a> can be overridden for buffered implementations</li>
+<li>Should handle write errors gracefully by returning appropriate <a class="el" href="../../d4/da9/structez_result.htm" title="Default enum for returning failure or success, instead of using a bool.">ezResult</a> </li>
+</ul>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ad3bf129d3f9646a5f70214ed4875d0c8" name="ad3bf129d3f9646a5f70214ed4875d0c8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad3bf129d3f9646a5f70214ed4875d0c8">&#9670;&#160;</a></span>Flush()</h2>
@@ -224,7 +238,8 @@ template&lt;typename KeyType , typename ValueType , typename Hasher &gt; </td></
 </table>
 </div><div class="memdoc">
 
-<p>Flushes the stream, may be implemented (not necessary to implement the interface correctly) so that user code can ensure that content is written. </p>
+<p>Flushes buffered data to the underlying storage, ensuring data persistence. </p>
+<p>Default implementation is a no-op. Derived classes with internal buffering should override this method to force writing of buffered data to the actual destination. </p>
 
 <p>Reimplemented in <a class="el" href="../../da/d87/classez_file_writer.htm#ad996f68116561c37cb0da9640785fbd7">ezFileWriter</a>, and <a class="el" href="../../d3/d4c/classez_stream_writer_with_stats.htm#a314487b87bc9255b59e05e3501f6a9ed">ezStreamWriterWithStats</a>.</p>
 
@@ -264,7 +279,15 @@ template&lt;typename KeyType , typename ValueType , typename Hasher &gt; </td></
 </table>
 </div><div class="memdoc">
 
-<p>Writes a raw number of bytes from the buffer, this is the only method which has to be implemented to fully implement the interface. </p>
+<p>Writes a raw number of bytes from the buffer. This is the only method that must be implemented by derived classes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pWriteBuffer</td><td>Source buffer containing data to write </td></tr>
+    <tr><td class="paramname">uiBytesToWrite</td><td>Number of bytes to write from the buffer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>EZ_SUCCESS if all bytes were written successfully, EZ_FAILURE otherwise </dd></dl>
 
 <p>Implemented in <a class="el" href="../../d5/d8f/classez_hash_stream_writer32.htm#a78a6d3104adbd76371d31e2af14b53ca">ezHashStreamWriter32</a>, <a class="el" href="../../db/d5a/classez_hash_stream_writer64.htm#a3f34e9bd45ff72daaa75b554d7b256a2">ezHashStreamWriter64</a>, <a class="el" href="../../dd/d96/classez_chunk_stream_writer.htm#a871d89b96cff6e0ba16b2ce77e20e465">ezChunkStreamWriter</a>, <a class="el" href="../../de/d60/classez_deferred_file_writer.htm#a7ac4642ed5ae6733b95b2f8b52bfa4fa">ezDeferredFileWriter</a>, <a class="el" href="../../da/d87/classez_file_writer.htm#aa5aafcd7fdcdbb688c72b6df07369fef">ezFileWriter</a>, <a class="el" href="../../dc/db9/classez_memory_stream_writer.htm#a33de2b3ccb14161fd76dfc78a7e6dd12">ezMemoryStreamWriter</a>, <a class="el" href="../../db/d19/classez_raw_memory_stream_writer.htm#a6f6c01a10397339f90e659049d8979fc">ezRawMemoryStreamWriter</a>, and <a class="el" href="../../d3/d4c/classez_stream_writer_with_stats.htm#ad9ab41b79e2e6329c1ffbd60003b1f44">ezStreamWriterWithStats</a>.</p>
 
@@ -281,7 +304,7 @@ template&lt;typename KeyType , typename ValueType , typename Hasher &gt; </td></
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:06 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:47 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('d6/d09/structez_trait_int.htm','../../
 </div><!--header-->
 <div class="contents">
 
-<p>Type traits.  
+<p>Compile-time type classification system for optimizing container operations.  
  <a href="../../d6/d09/structez_trait_int.htm#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../d4/dd5/_type_traits_8h_source.htm">TypeTraits.h</a>&gt;</code></p>
@@ -106,7 +106,7 @@ Inheritance diagram for ezTraitInt&lt; v &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../da/d54/structez_trait_int__inherit__graph.png" border="0" usemap="#aez_trait_int_3_01v_01_4_inherit__map" alt="Inheritance graph"/></div>
 <map name="aez_trait_int_3_01v_01_4_inherit__map" id="aez_trait_int_3_01v_01_4_inherit__map">
-<area shape="rect" title="Type traits." alt="" coords="109,5,229,31"/>
+<area shape="rect" title="Compile&#45;time type classification system for optimizing container operations." alt="" coords="109,5,229,31"/>
 <area shape="rect" href="../../d6/d65/structez_is_pod_type_3_01_t_01_5_01_4.htm" title="Pointers are POD types." alt="" coords="5,79,156,104"/>
 <area shape="poly" title=" " alt="" coords="146,41,97,81,93,76,142,37"/>
 <area shape="rect" href="../../d1/d13/structez_is_pod_type_3_01_t_0f_n_0e_4.htm" title="arrays are POD types" alt="" coords="180,79,336,104"/>
@@ -122,7 +122,14 @@ static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><b>value
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;int v&gt;<br />
-struct ezTraitInt&lt; v &gt;</div><p>Type traits. </p>
+struct ezTraitInt&lt; v &gt;</div><p>Compile-time type classification system for optimizing container operations. </p>
+<p>The ezEngine type trait system classifies types into three categories to enable different optimization strategies for containers and memory operations:</p>
+<ul>
+<li>Class (0): Standard types requiring constructor/destructor calls and careful copying</li>
+<li>POD (1): Plain Old Data types that can be memcpy'd and don't need destructor calls</li>
+<li>MemRelocatable (2): Types that can be moved with memcpy but may need destructor calls</li>
+</ul>
+<p>This classification allows containers to choose the most efficient implementation for construction, destruction, copying, and moving operations. </p>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/Types/<a class="el" href="../../d4/dd5/_type_traits_8h_source.htm">TypeTraits.h</a></li>
 </ul>
@@ -132,7 +139,7 @@ struct ezTraitInt&lt; v &gt;</div><p>Type traits. </p>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d6/d09/structez_trait_int.htm">ezTraitInt</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:06 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:48 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

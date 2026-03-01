@@ -2,6 +2,7 @@ var classez_document =
 [
     [ "PasteInfo", "d3/d82/structez_document_1_1_paste_info.htm", "d3/d82/structez_document_1_1_paste_info" ],
     [ "AfterSaveCallback", "d6/dd3/classez_document.htm#ab4cf1ad3bc421453f2179b6b0d81521d", null ],
+    [ "AddLoadingError", "d6/dd3/classez_document.htm#a090bf6b23661ea5082d4c4f52bfbadcd", null ],
     [ "ArePrefabsAllowed", "d6/dd3/classez_document.htm#a7b16d9249114072598ba94a8943b28ed", null ],
     [ "BroadcastInterDocumentMessage", "d6/dd3/classez_document.htm#a30f0d8f0c09c6477147ded1801642c71", null ],
     [ "CanEngineProcessBeRestarted", "d6/dd3/classez_document.htm#a170a7699197c950a56eb5ccf92e67a51", null ],
@@ -19,8 +20,10 @@ var classez_document =
     [ "GetDocumentPath", "d6/dd3/classez_document.htm#a0d9e5e81ac0eb4d70e2ff214d9a5fd72", null ],
     [ "GetDocumentTypeName", "d6/dd3/classez_document.htm#a8ce0a7070252ae3ecb2deee6bbf12189", null ],
     [ "GetEditorInputContextOverride", "d6/dd3/classez_document.htm#ac6c81b938f5014afa2555a323df708e9", null ],
+    [ "GetLoadingErrors", "d6/dd3/classez_document.htm#a5406b39c51878bcd0d066f80f1051362", null ],
     [ "GetMainDocument", "d6/dd3/classez_document.htm#ade51f127ec611df78943644076d30d11", null ],
     [ "GetManipulatorSearchStrategy", "d6/dd3/classez_document.htm#af54fc8e71a1505f02bfb82ade5c54f0c", null ],
+    [ "GetModifiedTime", "d6/dd3/classez_document.htm#ab0ada3f496446fe377edf4b98f1d23f0", null ],
     [ "GetSupportedMimeTypesForPasting", "d6/dd3/classez_document.htm#af8ee2ad8fe9cef65369689cde31993e8", null ],
     [ "GetUnknownObjectTypeInstances", "d6/dd3/classez_document.htm#a0954e7e2bc0f782ce5f7a4f894f6b99b", null ],
     [ "GetUnknownObjectTypes", "d6/dd3/classez_document.htm#a8d065cbfdc2baff3da54874f018e6b27", null ],

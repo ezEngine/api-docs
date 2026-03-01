@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -97,6 +97,8 @@ $(document).ready(function(){initNavTree('d3/d9c/classez_target_pass.htm','../..
   <div class="headertitle"><div class="title">ezTargetPass Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../de/d2f/_target_pass_8h_source.htm">TargetPass.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ezTargetPass:</div>
 <div class="dyncontent">
@@ -107,7 +109,7 @@ Inheritance diagram for ezTargetPass:</div>
 <area shape="poly" title=" " alt="" coords="93,264,93,299,87,299,87,264"/>
 <area shape="rect" href="../../de/dd2/classez_render_pipeline_node.htm" title=" " alt="" coords="5,152,175,177"/>
 <area shape="poly" title=" " alt="" coords="93,191,93,225,87,225,87,191"/>
-<area shape="rect" href="../../db/d45/classez_reflected_class.htm" title="All classes that should be dynamically reflectable, need to be derived from this base class." alt="" coords="23,79,157,104"/>
+<area shape="rect" href="../../db/d45/classez_reflected_class.htm" title="Base class for all types that support dynamic reflection and runtime type identification." alt="" coords="23,79,157,104"/>
 <area shape="poly" title=" " alt="" coords="93,118,93,152,87,152,87,118"/>
 <area shape="rect" href="../../d4/d02/classez_no_base.htm" title="Dummy type to pass to templates and macros that expect a base type for a class that has no base." alt="" coords="47,5,133,31"/>
 <area shape="poly" title=" " alt="" coords="93,44,93,79,87,79,87,44"/>
@@ -123,6 +125,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aabf2bd77be52b957f7eb0a3949c1e63b"><td class="mdescLeft">&#160;</td><td class="mdescRight">For a given input pin configuration, provide the output configuration of this node. Outputs is already resized to the number of output pins.  <br /></td></tr>
 <tr class="separator:aabf2bd77be52b957f7eb0a3949c1e63b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff46ab78ef9e29eebbfe8dd6286d2fc2" id="r_aff46ab78ef9e29eebbfe8dd6286d2fc2"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../de/d27/classez_g_a_l_texture_handle.htm">ezGALTextureHandle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d9c/classez_target_pass.htm#aff46ab78ef9e29eebbfe8dd6286d2fc2">QueryTextureProvider</a> (const <a class="el" href="../../d9/d96/structez_render_pipeline_node_pin.htm">ezRenderPipelineNodePin</a> *pPin, const <a class="el" href="../../da/dad/structez_g_a_l_texture_creation_description.htm">ezGALTextureCreationDescription</a> &amp;desc) override</td></tr>
+<tr class="memdesc:aff46ab78ef9e29eebbfe8dd6286d2fc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the actual target texture handles for connected pins.  <br /></td></tr>
 <tr class="separator:aff46ab78ef9e29eebbfe8dd6286d2fc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f70dc8c03cb2a0efe5f9560e6cfe3dd" id="r_a4f70dc8c03cb2a0efe5f9560e6cfe3dd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d9c/classez_target_pass.htm#a4f70dc8c03cb2a0efe5f9560e6cfe3dd">Execute</a> (const <a class="el" href="../../d7/d76/structez_render_view_context.htm">ezRenderViewContext</a> &amp;renderViewContext, const <a class="el" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr</a>&lt; <a class="el" href="../../d5/d3f/structez_render_pipeline_pass_connection.htm">ezRenderPipelinePassConnection</a> *const &gt; inputs, const <a class="el" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr</a>&lt; <a class="el" href="../../d5/d3f/structez_render_pipeline_pass_connection.htm">ezRenderPipelinePassConnection</a> *const &gt; outputs) override</td></tr>
 <tr class="memdesc:a4f70dc8c03cb2a0efe5f9560e6cfe3dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render into outputs. Both inputs and outputs are passed in with actual texture handles. Disconnected pins have a nullptr value in the passed in arrays. You can now create views and render target setups on the fly and fill the output targets with data.  <br /></td></tr>
@@ -204,36 +207,47 @@ template&lt;typename T &gt; </td></tr>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a0a657d0421386b3f282f23d48b127907" id="r_a0a657d0421386b3f282f23d48b127907"><td class="memItemLeft" align="right" valign="top"><a id="a0a657d0421386b3f282f23d48b127907" name="a0a657d0421386b3f282f23d48b127907"></a>
 <a class="el" href="../../d1/d2e/structez_render_pipeline_node_input_provider_pin.htm">ezRenderPipelineNodeInputProviderPin</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_PinColor0</b></td></tr>
+<tr class="memdesc:a0a657d0421386b3f282f23d48b127907"><td class="mdescLeft">&#160;</td><td class="mdescRight">Color target 0 input. <br /></td></tr>
 <tr class="separator:a0a657d0421386b3f282f23d48b127907"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee5bd92fd01f0b322fddb6f6551f86f6" id="r_aee5bd92fd01f0b322fddb6f6551f86f6"><td class="memItemLeft" align="right" valign="top"><a id="aee5bd92fd01f0b322fddb6f6551f86f6" name="aee5bd92fd01f0b322fddb6f6551f86f6"></a>
 <a class="el" href="../../d1/d2e/structez_render_pipeline_node_input_provider_pin.htm">ezRenderPipelineNodeInputProviderPin</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_PinColor1</b></td></tr>
+<tr class="memdesc:aee5bd92fd01f0b322fddb6f6551f86f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Color target 1 input. <br /></td></tr>
 <tr class="separator:aee5bd92fd01f0b322fddb6f6551f86f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c9269c5cbc75cab7925a197b90cfd45" id="r_a3c9269c5cbc75cab7925a197b90cfd45"><td class="memItemLeft" align="right" valign="top"><a id="a3c9269c5cbc75cab7925a197b90cfd45" name="a3c9269c5cbc75cab7925a197b90cfd45"></a>
 <a class="el" href="../../d1/d2e/structez_render_pipeline_node_input_provider_pin.htm">ezRenderPipelineNodeInputProviderPin</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_PinColor2</b></td></tr>
+<tr class="memdesc:a3c9269c5cbc75cab7925a197b90cfd45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Color target 2 input. <br /></td></tr>
 <tr class="separator:a3c9269c5cbc75cab7925a197b90cfd45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7b10d173d9ac0fe9c65563a4fa32438" id="r_af7b10d173d9ac0fe9c65563a4fa32438"><td class="memItemLeft" align="right" valign="top"><a id="af7b10d173d9ac0fe9c65563a4fa32438" name="af7b10d173d9ac0fe9c65563a4fa32438"></a>
 <a class="el" href="../../d1/d2e/structez_render_pipeline_node_input_provider_pin.htm">ezRenderPipelineNodeInputProviderPin</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_PinColor3</b></td></tr>
+<tr class="memdesc:af7b10d173d9ac0fe9c65563a4fa32438"><td class="mdescLeft">&#160;</td><td class="mdescRight">Color target 3 input. <br /></td></tr>
 <tr class="separator:af7b10d173d9ac0fe9c65563a4fa32438"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adacf2578575a2fce6dde36fca55dff6e" id="r_adacf2578575a2fce6dde36fca55dff6e"><td class="memItemLeft" align="right" valign="top"><a id="adacf2578575a2fce6dde36fca55dff6e" name="adacf2578575a2fce6dde36fca55dff6e"></a>
 <a class="el" href="../../d1/d2e/structez_render_pipeline_node_input_provider_pin.htm">ezRenderPipelineNodeInputProviderPin</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_PinColor4</b></td></tr>
+<tr class="memdesc:adacf2578575a2fce6dde36fca55dff6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Color target 4 input. <br /></td></tr>
 <tr class="separator:adacf2578575a2fce6dde36fca55dff6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2eb0db3270b79ed6c9e36f0eaa92bba" id="r_ae2eb0db3270b79ed6c9e36f0eaa92bba"><td class="memItemLeft" align="right" valign="top"><a id="ae2eb0db3270b79ed6c9e36f0eaa92bba" name="ae2eb0db3270b79ed6c9e36f0eaa92bba"></a>
 <a class="el" href="../../d1/d2e/structez_render_pipeline_node_input_provider_pin.htm">ezRenderPipelineNodeInputProviderPin</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_PinColor5</b></td></tr>
+<tr class="memdesc:ae2eb0db3270b79ed6c9e36f0eaa92bba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Color target 5 input. <br /></td></tr>
 <tr class="separator:ae2eb0db3270b79ed6c9e36f0eaa92bba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb75962349c82acf315e99709f7163c7" id="r_abb75962349c82acf315e99709f7163c7"><td class="memItemLeft" align="right" valign="top"><a id="abb75962349c82acf315e99709f7163c7" name="abb75962349c82acf315e99709f7163c7"></a>
 <a class="el" href="../../d1/d2e/structez_render_pipeline_node_input_provider_pin.htm">ezRenderPipelineNodeInputProviderPin</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_PinColor6</b></td></tr>
+<tr class="memdesc:abb75962349c82acf315e99709f7163c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Color target 6 input. <br /></td></tr>
 <tr class="separator:abb75962349c82acf315e99709f7163c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29562e92626fb2783136eef1ec7ea79c" id="r_a29562e92626fb2783136eef1ec7ea79c"><td class="memItemLeft" align="right" valign="top"><a id="a29562e92626fb2783136eef1ec7ea79c" name="a29562e92626fb2783136eef1ec7ea79c"></a>
 <a class="el" href="../../d1/d2e/structez_render_pipeline_node_input_provider_pin.htm">ezRenderPipelineNodeInputProviderPin</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_PinColor7</b></td></tr>
+<tr class="memdesc:a29562e92626fb2783136eef1ec7ea79c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Color target 7 input. <br /></td></tr>
 <tr class="separator:a29562e92626fb2783136eef1ec7ea79c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aadfc0b8260a823363949970bba893316" id="r_aadfc0b8260a823363949970bba893316"><td class="memItemLeft" align="right" valign="top"><a id="aadfc0b8260a823363949970bba893316" name="aadfc0b8260a823363949970bba893316"></a>
 <a class="el" href="../../d1/d2e/structez_render_pipeline_node_input_provider_pin.htm">ezRenderPipelineNodeInputProviderPin</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_PinDepthStencil</b></td></tr>
+<tr class="memdesc:aadfc0b8260a823363949970bba893316"><td class="mdescLeft">&#160;</td><td class="mdescRight">Depth-stencil target input. <br /></td></tr>
 <tr class="separator:aadfc0b8260a823363949970bba893316"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aedcfd0370cd51ac7ac1129574e917261" id="r_aedcfd0370cd51ac7ac1129574e917261"><td class="memItemLeft" align="right" valign="top"><a id="aedcfd0370cd51ac7ac1129574e917261" name="aedcfd0370cd51ac7ac1129574e917261"></a>
 <a class="el" href="../../d2/d2f/structez_g_a_l_render_targets.htm">ezGALRenderTargets</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_RenderTargets</b></td></tr>
+<tr class="memdesc:aedcfd0370cd51ac7ac1129574e917261"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configured render target setup. <br /></td></tr>
 <tr class="separator:aedcfd0370cd51ac7ac1129574e917261"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd685c1455c3035af1dea60e0b9e0965" id="r_acd685c1455c3035af1dea60e0b9e0965"><td class="memItemLeft" align="right" valign="top"><a id="acd685c1455c3035af1dea60e0b9e0965" name="acd685c1455c3035af1dea60e0b9e0965"></a>
 <a class="el" href="../../db/dae/classez_g_a_l_swap_chain_handle.htm">ezGALSwapChainHandle</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_hSwapChain</b></td></tr>
+<tr class="memdesc:acd685c1455c3035af1dea60e0b9e0965"><td class="mdescLeft">&#160;</td><td class="mdescRight">Swap chain handle if rendering to screen. <br /></td></tr>
 <tr class="separator:acd685c1455c3035af1dea60e0b9e0965"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
@@ -243,7 +257,10 @@ Additional Inherited Members</h2></td></tr>
 static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>GetStaticRTTI</b> ()</td></tr>
 <tr class="separator:a718d4e4145a2c15d0c28aaed086f1ce2 inherit pub_static_methods_classez_no_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Render pass that outputs to final render targets or swap chain.</p>
+<p>Terminal pass that writes the final pipeline output to the specified render targets. Can output to multiple color targets and depth-stencil, typically used as the final stage in a render pipeline to present results to the screen or external targets. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a4f70dc8c03cb2a0efe5f9560e6cfe3dd" name="a4f70dc8c03cb2a0efe5f9560e6cfe3dd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4f70dc8c03cb2a0efe5f9560e6cfe3dd">&#9670;&#160;</a></span>Execute()</h2>
 
@@ -369,14 +386,8 @@ static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Returns the current texture this node provides at the given *ProviderPin. This function is called every frame if this node holds a <a class="el" href="../../d1/d2e/structez_render_pipeline_node_input_provider_pin.htm">ezRenderPipelineNodeInputProviderPin</a> or <a class="el" href="../../d1/d11/structez_render_pipeline_node_output_provider_pin.htm">ezRenderPipelineNodeOutputProviderPin</a> pin. The node can return a valid texture handle, or an invalid handle, in which case the missing texture will be created from the texture pool. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pPin</td><td>The member pin for which the texture is requested. </td></tr>
-    <tr><td class="paramname">desc</td><td>The format of the texture that should be provided. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The texture to use for this pin's connections. Or invalid, in which case it reverts to a regular input / output pin. </dd></dl>
+
+<p>Provides the actual target texture handles for connected pins. </p>
 
 <p>Reimplemented from <a class="el" href="../../d1/d0d/classez_render_pipeline_pass.htm#a0ce843074aa4a8346c426ce9a718153c">ezRenderPipelinePass</a>.</p>
 
@@ -392,7 +403,7 @@ static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d3/d9c/classez_target_pass.htm">ezTargetPass</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:06 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:48 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

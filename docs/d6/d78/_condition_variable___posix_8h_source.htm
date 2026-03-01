@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -144,7 +144,7 @@ $(document).ready(function(){initNavTree('d6/d78/_condition_variable___posix_8h_
 </div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
 <div class="foldopen" id="foldopen00040" data-start="{" data-end="}">
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="../../d7/d18/classez_condition_variable.htm#adadfc30a89b4b7e993b1395723710227">   40</a></span>ezConditionVariable::WaitResult <a class="code hl_function" href="../../d7/d18/classez_condition_variable.htm#a0e8c6decc6d97b37b3c7b80d48749cb6">ezConditionVariable::UnlockWaitForSignalAndLock</a>(<a class="code hl_struct" href="../../d3/d90/structez_time.htm">ezTime</a> timeout)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="../../d7/d18/classez_condition_variable.htm#adadfc30a89b4b7e993b1395723710227">   40</a></span><a class="code hl_enumeration" href="../../d7/d18/classez_condition_variable.htm#ad3b555c183ff7223488ab825fb171e57">ezConditionVariable::WaitResult</a> <a class="code hl_function" href="../../d7/d18/classez_condition_variable.htm#a0e8c6decc6d97b37b3c7b80d48749cb6">ezConditionVariable::UnlockWaitForSignalAndLock</a>(<a class="code hl_struct" href="../../d3/d90/structez_time.htm">ezTime</a> timeout)<span class="keyword"> const</span></div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  EZ_ASSERT_DEV(m_iLockCount &gt; 0, <span class="stringliteral">&quot;ezConditionVariable must be locked when calling UnlockWaitForSignalAndLock.&quot;</span>);</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
@@ -169,17 +169,20 @@ $(document).ready(function(){initNavTree('d6/d78/_condition_variable___posix_8h_
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  {</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="comment">// inside the lock</span></div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    ++m_iLockCount;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordflow">return</span> WaitResult::Timeout;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="../../d7/d18/classez_condition_variable.htm#ad3b555c183ff7223488ab825fb171e57ac85a251cc457840f1e032f1b733e9398">WaitResult::Timeout</a>;</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  }</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <span class="comment">// inside the lock</span></div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  ++m_iLockCount;</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <span class="keywordflow">return</span> WaitResult::Signaled;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="../../d7/d18/classez_condition_variable.htm#ad3b555c183ff7223488ab825fb171e57af666961fd3f122d43c101404d1aba5bf">WaitResult::Signaled</a>;</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>}</div>
 </div>
 <div class="ttc" id="aclassez_condition_variable_htm_a0e8c6decc6d97b37b3c7b80d48749cb6"><div class="ttname"><a href="../../d7/d18/classez_condition_variable.htm#a0e8c6decc6d97b37b3c7b80d48749cb6">ezConditionVariable::UnlockWaitForSignalAndLock</a></div><div class="ttdeci">void UnlockWaitForSignalAndLock() const</div><div class="ttdoc">Puts the calling thread to sleep and waits for the variable to get signaled.</div><div class="ttdef"><b>Definition</b> ConditionVariable_Posix.h:33</div></div>
-<div class="ttc" id="aclassez_condition_variable_htm_a44f7bd1f6123ea7da8989cadbe68efb8"><div class="ttname"><a href="../../d7/d18/classez_condition_variable.htm#a44f7bd1f6123ea7da8989cadbe68efb8">ezConditionVariable::SignalOne</a></div><div class="ttdeci">void SignalOne()</div><div class="ttdoc">Wakes up one of the threads that are currently waiting for the variable.</div><div class="ttdef"><b>Definition</b> ConditionVariable_Posix.h:23</div></div>
+<div class="ttc" id="aclassez_condition_variable_htm_a44f7bd1f6123ea7da8989cadbe68efb8"><div class="ttname"><a href="../../d7/d18/classez_condition_variable.htm#a44f7bd1f6123ea7da8989cadbe68efb8">ezConditionVariable::SignalOne</a></div><div class="ttdeci">void SignalOne()</div><div class="ttdoc">Wakes up one waiting thread.</div><div class="ttdef"><b>Definition</b> ConditionVariable_Posix.h:23</div></div>
 <div class="ttc" id="aclassez_condition_variable_htm_ac33b3307ba6de893ddce4ae4bbfbc582"><div class="ttname"><a href="../../d7/d18/classez_condition_variable.htm#ac33b3307ba6de893ddce4ae4bbfbc582">ezConditionVariable::SignalAll</a></div><div class="ttdeci">void SignalAll()</div><div class="ttdoc">Wakes up all the threads that are currently waiting for the variable.</div><div class="ttdef"><b>Definition</b> ConditionVariable_Posix.h:28</div></div>
+<div class="ttc" id="aclassez_condition_variable_htm_ad3b555c183ff7223488ab825fb171e57"><div class="ttname"><a href="../../d7/d18/classez_condition_variable.htm#ad3b555c183ff7223488ab825fb171e57">ezConditionVariable::WaitResult</a></div><div class="ttdeci">WaitResult</div><div class="ttdef"><b>Definition</b> ConditionVariable.h:27</div></div>
+<div class="ttc" id="aclassez_condition_variable_htm_ad3b555c183ff7223488ab825fb171e57ac85a251cc457840f1e032f1b733e9398"><div class="ttname"><a href="../../d7/d18/classez_condition_variable.htm#ad3b555c183ff7223488ab825fb171e57ac85a251cc457840f1e032f1b733e9398">ezConditionVariable::WaitResult::Timeout</a></div><div class="ttdeci">@ Timeout</div><div class="ttdoc">The timeout period elapsed without receiving a signal.</div></div>
+<div class="ttc" id="aclassez_condition_variable_htm_ad3b555c183ff7223488ab825fb171e57af666961fd3f122d43c101404d1aba5bf"><div class="ttname"><a href="../../d7/d18/classez_condition_variable.htm#ad3b555c183ff7223488ab825fb171e57af666961fd3f122d43c101404d1aba5bf">ezConditionVariable::WaitResult::Signaled</a></div><div class="ttdeci">@ Signaled</div><div class="ttdoc">A signal was received before the timeout.</div></div>
 <div class="ttc" id="astructez_time_htm"><div class="ttname"><a href="../../d3/d90/structez_time.htm">ezTime</a></div><div class="ttdoc">The time class encapsulates a double value storing the time in seconds.</div><div class="ttdef"><b>Definition</b> Time.h:12</div></div>
 <div class="ttc" id="astructez_time_htm_a2826e7b3030634c463945164f2ce629c"><div class="ttname"><a href="../../d3/d90/structez_time.htm#a2826e7b3030634c463945164f2ce629c">ezTime::GetNanoseconds</a></div><div class="ttdeci">constexpr double GetNanoseconds() const</div><div class="ttdoc">Returns the nanoseconds value.</div><div class="ttdef"><b>Definition</b> Time_inl.h:15</div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -188,7 +191,7 @@ $(document).ready(function(){initNavTree('d6/d78/_condition_variable___posix_8h_
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_81a97b29d048515ed79592945c8b94b3.htm">Platform</a></li><li class="navelem"><a class="el" href="../../dir_ea0f1cea308dbde9b8c550f938edec5f.htm">Posix</a></li><li class="navelem"><b>ConditionVariable_Posix.h</b></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:00:58 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:39 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

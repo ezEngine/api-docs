@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -130,30 +130,43 @@ $(document).ready(function(){initNavTree('db/d23/_asset_processor_messages_8h_so
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <a class="code hl_struct" href="../../db/de0/structez_transform_status.htm">ezTransformStatus</a> m_Status;</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <span class="keyword">mutable</span> <a class="code hl_class" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezLogEntry&gt;</a> m_LogEntries;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>};</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="comment">// If the fields below are used, the ezEditorProcessor detected a hash missmatch between the editor and its own state. It will send over its own state so the editor can detect differences. See ezEditorProcessorProcess::HandleHashMissmatch.</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="../../d9/d2f/classez_process_asset_response_msg.htm#aeb15f192a2726f28b0b51addb451a938">   32</a></span>  <span class="keyword">mutable</span> <a class="code hl_class" href="../../d1/d79/classez_map.htm">ezMap&lt;ezString, ezUInt64&gt;</a> <a class="code hl_variable" href="../../d9/d2f/classez_process_asset_response_msg.htm#aeb15f192a2726f28b0b51addb451a938">m_MissmatchTransformDependencies</a>; </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="../../d9/d2f/classez_process_asset_response_msg.htm#a135ee3398865cb225d8cd32cfe5ec2d0">   33</a></span>  <span class="keyword">mutable</span> <a class="code hl_class" href="../../d1/d79/classez_map.htm">ezMap&lt;ezString, ezUInt64&gt;</a> <a class="code hl_variable" href="../../d9/d2f/classez_process_asset_response_msg.htm#a135ee3398865cb225d8cd32cfe5ec2d0">m_MissmatchThumbnailDependencies</a>; </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="../../d9/d2f/classez_process_asset_response_msg.htm#a08a0aaaf7c62c056b87b84ac9e94588d">   34</a></span>  ezUInt64 m_uiMissmatchAssetHash = 0;                                </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="../../d9/d2f/classez_process_asset_response_msg.htm#a87b275b5a701030916360e9c0b406cd7">   35</a></span>  ezUInt64 m_uiMissmatchThumbHash = 0;                                </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <a class="code hl_struct" href="../../d3/d90/structez_time.htm">ezTime</a> m_StartedProcessing;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <a class="code hl_struct" href="../../d3/d90/structez_time.htm">ezTime</a> m_StartedTransform;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <a class="code hl_struct" href="../../d3/d90/structez_time.htm">ezTime</a> m_FinishedProcessing;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>};</div>
 </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="foldopen" id="foldopen00032" data-start="{" data-end="};">
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="../../d5/d1b/classez_free_all_resources_msg.htm">   32</a></span><span class="keyword">class </span>EZ_EDITORFRAMEWORK_DLL <a class="code hl_class" href="../../d5/d1b/classez_free_all_resources_msg.htm">ezFreeAllResourcesMsg</a> : <span class="keyword">public</span> <a class="code hl_class" href="../../db/d40/classez_process_message.htm">ezProcessMessage</a></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>{</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  EZ_ADD_DYNAMIC_REFLECTION(<a class="code hl_class" href="../../d5/d1b/classez_free_all_resources_msg.htm">ezFreeAllResourcesMsg</a>, <a class="code hl_class" href="../../db/d40/classez_process_message.htm">ezProcessMessage</a>);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>};</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="foldopen" id="foldopen00041" data-start="{" data-end="};">
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="../../d5/d1b/classez_free_all_resources_msg.htm">   41</a></span><span class="keyword">class </span>EZ_EDITORFRAMEWORK_DLL <a class="code hl_class" href="../../d5/d1b/classez_free_all_resources_msg.htm">ezFreeAllResourcesMsg</a> : <span class="keyword">public</span> <a class="code hl_class" href="../../db/d40/classez_process_message.htm">ezProcessMessage</a></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>{</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  EZ_ADD_DYNAMIC_REFLECTION(<a class="code hl_class" href="../../d5/d1b/classez_free_all_resources_msg.htm">ezFreeAllResourcesMsg</a>, <a class="code hl_class" href="../../db/d40/classez_process_message.htm">ezProcessMessage</a>);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>};</div>
 </div>
 <div class="ttc" id="aclassez_dynamic_array_htm"><div class="ttname"><a href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray</a></div><div class="ttdef"><b>Definition</b> DynamicArray.h:81</div></div>
-<div class="ttc" id="aclassez_free_all_resources_msg_htm"><div class="ttname"><a href="../../d5/d1b/classez_free_all_resources_msg.htm">ezFreeAllResourcesMsg</a></div><div class="ttdef"><b>Definition</b> AssetProcessorMessages.h:33</div></div>
+<div class="ttc" id="aclassez_free_all_resources_msg_htm"><div class="ttname"><a href="../../d5/d1b/classez_free_all_resources_msg.htm">ezFreeAllResourcesMsg</a></div><div class="ttdef"><b>Definition</b> AssetProcessorMessages.h:42</div></div>
+<div class="ttc" id="aclassez_map_htm"><div class="ttname"><a href="../../d1/d79/classez_map.htm">ezMap</a></div><div class="ttdef"><b>Definition</b> Map.h:424</div></div>
 <div class="ttc" id="aclassez_process_asset_msg_htm"><div class="ttname"><a href="../../d4/d8b/classez_process_asset_msg.htm">ezProcessAssetMsg</a></div><div class="ttdef"><b>Definition</b> AssetProcessorMessages.h:10</div></div>
 <div class="ttc" id="aclassez_process_asset_response_msg_htm"><div class="ttname"><a href="../../d9/d2f/classez_process_asset_response_msg.htm">ezProcessAssetResponseMsg</a></div><div class="ttdef"><b>Definition</b> AssetProcessorMessages.h:24</div></div>
+<div class="ttc" id="aclassez_process_asset_response_msg_htm_a135ee3398865cb225d8cd32cfe5ec2d0"><div class="ttname"><a href="../../d9/d2f/classez_process_asset_response_msg.htm#a135ee3398865cb225d8cd32cfe5ec2d0">ezProcessAssetResponseMsg::m_MissmatchThumbnailDependencies</a></div><div class="ttdeci">ezMap&lt; ezString, ezUInt64 &gt; m_MissmatchThumbnailDependencies</div><div class="ttdoc">Hashes of all thumbnail dependencies.</div><div class="ttdef"><b>Definition</b> AssetProcessorMessages.h:33</div></div>
+<div class="ttc" id="aclassez_process_asset_response_msg_htm_aeb15f192a2726f28b0b51addb451a938"><div class="ttname"><a href="../../d9/d2f/classez_process_asset_response_msg.htm#aeb15f192a2726f28b0b51addb451a938">ezProcessAssetResponseMsg::m_MissmatchTransformDependencies</a></div><div class="ttdeci">ezMap&lt; ezString, ezUInt64 &gt; m_MissmatchTransformDependencies</div><div class="ttdoc">Hashes of all transform dependencies.</div><div class="ttdef"><b>Definition</b> AssetProcessorMessages.h:32</div></div>
 <div class="ttc" id="aclassez_process_message_htm"><div class="ttname"><a href="../../db/d40/classez_process_message.htm">ezProcessMessage</a></div><div class="ttdoc">Base class for IPC messages transmitted by ezIpcChannel.</div><div class="ttdef"><b>Definition</b> RemoteMessage.h:64</div></div>
-<div class="ttc" id="aclassez_uuid_htm"><div class="ttname"><a href="../../da/d89/classez_uuid.htm">ezUuid</a></div><div class="ttdoc">This data type is the abstraction for 128-bit Uuid (also known as GUID) instances.</div><div class="ttdef"><b>Definition</b> Uuid.h:11</div></div>
+<div class="ttc" id="aclassez_uuid_htm"><div class="ttname"><a href="../../da/d89/classez_uuid.htm">ezUuid</a></div><div class="ttdoc">128-bit Universally Unique Identifier (UUID/GUID) for object identification and referencing.</div><div class="ttdef"><b>Definition</b> Uuid.h:15</div></div>
 <div class="ttc" id="astructez_hybrid_string_htm"><div class="ttname"><a href="../../d4/d53/structez_hybrid_string.htm">ezHybridString&lt; 32, ezDefaultAllocatorWrapper &gt;</a></div></div>
-<div class="ttc" id="astructez_transform_status_htm"><div class="ttname"><a href="../../db/de0/structez_transform_status.htm">ezTransformStatus</a></div><div class="ttdef"><b>Definition</b> Declarations.h:116</div></div>
+<div class="ttc" id="astructez_time_htm"><div class="ttname"><a href="../../d3/d90/structez_time.htm">ezTime</a></div><div class="ttdoc">The time class encapsulates a double value storing the time in seconds.</div><div class="ttdef"><b>Definition</b> Time.h:12</div></div>
+<div class="ttc" id="astructez_transform_status_htm"><div class="ttname"><a href="../../db/de0/structez_transform_status.htm">ezTransformStatus</a></div><div class="ttdef"><b>Definition</b> Declarations.h:117</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_898824d97bbfb864e5ee6bfb2857fc31.htm">Editor</a></li><li class="navelem"><a class="el" href="../../dir_2c11fbcc86473fad6c721ead68acf992.htm">EditorFramework</a></li><li class="navelem"><a class="el" href="../../dir_5814822b5fe0e25e106f6a2b5290738d.htm">Assets</a></li><li class="navelem"><b>AssetProcessorMessages.h</b></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:00:48 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:29 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

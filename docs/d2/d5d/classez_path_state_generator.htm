@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('d2/d5d/classez_path_state_generator.ht
 </div><!--header-->
 <div class="contents">
 
-<p>The base class for all path state generates.  
+<p>Base class for path state generators that define how pathfinding expands from one node to adjacent nodes.  
  <a href="../../d2/d5d/classez_path_state_generator.htm#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../d2/d25/_path_state_8h_source.htm">PathState.h</a>&gt;</code></p>
@@ -105,7 +105,7 @@ $(document).ready(function(){initNavTree('d2/d5d/classez_path_state_generator.ht
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a549bce8c445fe2f493cb062556e63a0c" id="r_a549bce8c445fe2f493cb062556e63a0c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d5d/classez_path_state_generator.htm#a549bce8c445fe2f493cb062556e63a0c">GenerateAdjacentStates</a> (ezInt64 iNodeIndex, const PathStateType &amp;StartState, <a class="el" href="../../dd/d7b/classez_path_search.htm">ezPathSearch</a>&lt; PathStateType &gt; *pPathSearch)=0</td></tr>
-<tr class="memdesc:a549bce8c445fe2f493cb062556e63a0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called by a <a class="el" href="../../dd/d7b/classez_path_search.htm" title="Implements a directed breadth-first search through a graph (A*).">ezPathSearch</a> object to generate the adjacent states from graph node iNodeIndex.  <br /></td></tr>
+<tr class="memdesc:a549bce8c445fe2f493cb062556e63a0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates all valid adjacent states from the current node and state.  <br /></td></tr>
 <tr class="separator:a549bce8c445fe2f493cb062556e63a0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65ccdd88e5dd898a9614c38b4dbfccd4" id="r_a65ccdd88e5dd898a9614c38b4dbfccd4"><td class="memItemLeft" align="right" valign="top"><a id="a65ccdd88e5dd898a9614c38b4dbfccd4" name="a65ccdd88e5dd898a9614c38b4dbfccd4"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>StartSearchForClosest</b> (ezInt64 iStartNodeIndex, const PathStateType *pStartState)</td></tr>
@@ -122,7 +122,7 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>SearchFinishe
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename PathStateType&gt;<br />
-class ezPathStateGenerator&lt; PathStateType &gt;</div><p>The base class for all path state generates. </p>
+class ezPathStateGenerator&lt; PathStateType &gt;</div><p>Base class for path state generators that define how pathfinding expands from one node to adjacent nodes. </p>
 <p>A path state generator is a class that takes one 'path state' (typically a node in a graph) and generates all the adjacent nodes that can be reached from there. It carries state, which allows to expand nodes only in certain directions, depending on what actions are possible at some graph node.</p>
 <p>This can be used to do path searches where the capabilities of a unit are taken into account, such as limited turning speeds. The 'state' that is then carried is the current orientation of the unit at that point along the path, which determines into which directions the path search can be expanded.</p>
 <p>PathStateType needs to be derived from <a class="el" href="../../dd/dc6/structez_path_state.htm" title="Base class for all path finding state objects.">ezPathState</a>. </p>
@@ -169,9 +169,24 @@ template&lt;typename PathStateType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Called by a <a class="el" href="../../dd/d7b/classez_path_search.htm" title="Implements a directed breadth-first search through a graph (A*).">ezPathSearch</a> object to generate the adjacent states from graph node iNodeIndex. </p>
-<p>On a 2D grid the iNodeIndex would just be the grid cell index (GridHeight * Cell.y + Cell.x). This function would then 'expand' the 4 or 8 direct neighbor cells by creating a new PathStateType object for each and then passing that to the <a class="el" href="../../dd/d7b/classez_path_search.htm" title="Implements a directed breadth-first search through a graph (A*).">ezPathSearch</a> object pPathSearch by calling <a class="el" href="../../dd/d7b/classez_path_search.htm#ad8965ae10c4817da08471d0bc7553060" title="Needs to be called by the used ezPathStateGenerator to add nodes to evaluate.">ezPathSearch::AddPathNode</a>. </p>
-
+<p>Generates all valid adjacent states from the current node and state. </p>
+<p>This is the core expansion function called during pathfinding. For each valid adjacent node, create a new PathStateType with updated costs and state, then add it to the search via pPathSearch-&gt;AddPathNode().</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">iNodeIndex</td><td>The current node being expanded (e.g., grid cell index, navmesh triangle ID) </td></tr>
+    <tr><td class="paramname">StartState</td><td>The current path state at this node (costs, direction, resources, etc.) </td></tr>
+    <tr><td class="paramname">pPathSearch</td><td>The search object to add discovered adjacent nodes to</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Example for a simple grid: </p><div class="fragment"><div class="line"><span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; neighbor : GetGridNeighbors(iNodeIndex))</div>
+<div class="line">{</div>
+<div class="line">  PathStateType newState = StartState;</div>
+<div class="line">  newState.m_fCostToNode += GetMovementCost(iNodeIndex, neighbor.index);</div>
+<div class="line">  newState.m_fEstimatedCostToTarget = newState.m_fCostToNode + GetHeuristic(neighbor.index, targetIndex);</div>
+<div class="line">  pPathSearch-&gt;AddPathNode(neighbor.index, newState);</div>
+<div class="line">}</div>
+</div><!-- fragment --> 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
@@ -183,7 +198,7 @@ template&lt;typename PathStateType &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d2/d5d/classez_path_state_generator.htm">ezPathStateGenerator</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:05 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:46 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

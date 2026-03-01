@@ -1,6 +1,6 @@
 var classez_x_r_interface =
 [
-    [ "CreateActor", "d0/d10/classez_x_r_interface.htm#ab91f5b865520065b9226122a46de3ca2", null ],
+    [ "CreateXRWindow", "d0/d10/classez_x_r_interface.htm#af64914fc6dc0ec2269c064f6d8c75a05", null ],
     [ "Deinitialize", "d0/d10/classez_x_r_interface.htm#a39f4234c0fe2d2524f72fa918ca26ba3", null ],
     [ "GetCurrentTexture", "d0/d10/classez_x_r_interface.htm#a2e1afd0cdc0a3167f39c153bf0cf8fac", null ],
     [ "GetHmdInfo", "d0/d10/classez_x_r_interface.htm#a6e5b9696c1a015944640ddfff5bb6437", null ],

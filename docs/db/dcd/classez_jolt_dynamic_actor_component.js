@@ -19,6 +19,7 @@ var classez_jolt_dynamic_actor_component =
     [ "m_bCCD", "db/dcd/classez_jolt_dynamic_actor_component.htm#a43a8377c300f5630a319f4ddd534e178", null ],
     [ "m_bStartAsleep", "db/dcd/classez_jolt_dynamic_actor_component.htm#ab7b0407d459c458daa8888d28f622bfb", null ],
     [ "m_fAngularDamping", "db/dcd/classez_jolt_dynamic_actor_component.htm#a98c0f1af6d4a8bf74f378246031a7808", null ],
+    [ "m_fBuoyancyFactor", "db/dcd/classez_jolt_dynamic_actor_component.htm#afa3a0439d92eeef9ac97b92e67669544", null ],
     [ "m_fLinearDamping", "db/dcd/classez_jolt_dynamic_actor_component.htm#a151e90268b72d5f23fa5fd54d2ddf6b3", null ],
     [ "m_hSurface", "db/dcd/classez_jolt_dynamic_actor_component.htm#a8cae5c21766fd668c711f39ed8e7ab52", null ],
     [ "m_OnContact", "db/dcd/classez_jolt_dynamic_actor_component.htm#a09590e1438397fdc9443120e202083d6", null ],

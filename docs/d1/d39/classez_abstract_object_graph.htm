@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -97,6 +97,11 @@ $(document).ready(function(){initNavTree('d1/d39/classez_abstract_object_graph.h
   <div class="headertitle"><div class="title">ezAbstractObjectGraph Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>An intermediate representation for serializing/deserializing reflected objects.  
+ <a href="../../d1/d39/classez_abstract_object_graph.htm#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d4/d3a/_abstract_object_graph_8h_source.htm">AbstractObjectGraph.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
@@ -154,9 +159,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>FindTransitiveHull</b
 void&#160;</td><td class="memItemRight" valign="bottom"><b>PruneGraph</b> (const <a class="el" href="../../da/d89/classez_uuid.htm">ezUuid</a> &amp;rootGuid)</td></tr>
 <tr class="memdesc:ad7337f28756b01cce61fcc9c2782b8da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes everything not accessible by the given root node. <br /></td></tr>
 <tr class="separator:ad7337f28756b01cce61fcc9c2782b8da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf4dccc01e6b1283bbcc84c454126af7" id="r_adf4dccc01e6b1283bbcc84c454126af7"><td class="memItemLeft" align="right" valign="top"><a id="adf4dccc01e6b1283bbcc84c454126af7" name="adf4dccc01e6b1283bbcc84c454126af7"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>ModifyNodeViaNativeCounterpart</b> (<a class="el" href="../../de/d70/classez_abstract_object_node.htm">ezAbstractObjectNode</a> *pRootNode, <a class="el" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>&lt; void(void *, const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *)&gt; callback)</td></tr>
-<tr class="memdesc:adf4dccc01e6b1283bbcc84c454126af7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows for a given node to be modified as a native object. Once the callback exits any changes to the sub-hierarchy of the given root node will be written back to the node objects. <br /></td></tr>
+<tr class="memitem:adf4dccc01e6b1283bbcc84c454126af7" id="r_adf4dccc01e6b1283bbcc84c454126af7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d39/classez_abstract_object_graph.htm#adf4dccc01e6b1283bbcc84c454126af7">ModifyNodeViaNativeCounterpart</a> (<a class="el" href="../../de/d70/classez_abstract_object_node.htm">ezAbstractObjectNode</a> *pRootNode, <a class="el" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>&lt; void(void *, const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *)&gt; callback)</td></tr>
+<tr class="memdesc:adf4dccc01e6b1283bbcc84c454126af7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows a node to be modified as a native object and automatically syncs changes back.  <br /></td></tr>
 <tr class="separator:adf4dccc01e6b1283bbcc84c454126af7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25031a58130fdb8aaf69bfb037a9333a" id="r_a25031a58130fdb8aaf69bfb037a9333a"><td class="memItemLeft" align="right" valign="top"><a id="a25031a58130fdb8aaf69bfb037a9333a" name="a25031a58130fdb8aaf69bfb037a9333a"></a>
 <a class="el" href="../../de/d70/classez_abstract_object_node.htm">ezAbstractObjectNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>CopyNodeIntoGraph</b> (const <a class="el" href="../../de/d70/classez_abstract_object_node.htm">ezAbstractObjectNode</a> *pNode)</td></tr>
@@ -175,7 +179,54 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>ApplyDiff</b> (<a cla
 void&#160;</td><td class="memItemRight" valign="bottom"><b>MergeDiffs</b> (const <a class="el" href="../../d9/dfe/classez_deque.htm">ezDeque</a>&lt; <a class="el" href="../../d5/d38/structez_abstract_graph_diff_operation.htm">ezAbstractGraphDiffOperation</a> &gt; &amp;lhs, const <a class="el" href="../../d9/dfe/classez_deque.htm">ezDeque</a>&lt; <a class="el" href="../../d5/d38/structez_abstract_graph_diff_operation.htm">ezAbstractGraphDiffOperation</a> &gt; &amp;rhs, <a class="el" href="../../d9/dfe/classez_deque.htm">ezDeque</a>&lt; <a class="el" href="../../d5/d38/structez_abstract_graph_diff_operation.htm">ezAbstractGraphDiffOperation</a> &gt; &amp;ref_out) const</td></tr>
 <tr class="separator:ae79820c027c7ef459f18ac55f40fe97d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>An intermediate representation for serializing/deserializing reflected objects. </p>
+<p>The AbstractObjectGraph represents objects and their properties in a type-independent way, allowing for versioning, patching, and format conversion. It serves as the core of ezEngine's serialization system and enables advanced features like:</p>
+<ul>
+<li>Cross-format serialization (DDL, binary, JSON)</li>
+<li>Type versioning and migration</li>
+<li>Graph diffing and merging</li>
+<li>Prefab instantiation and overrides</li>
+<li>Undo/redo systems</li>
+</ul>
+<p>Structure:</p><ul>
+<li>Graph contains nodes (<a class="el" href="../../de/d70/classez_abstract_object_node.htm">ezAbstractObjectNode</a>) identified by GUIDs</li>
+<li>Each node has a type name, version, and properties</li>
+<li>Properties store values as <a class="el" href="../../de/de6/classez_variant.htm" title="ezVariant is a class that can store different types of variables, which is useful in situations where...">ezVariant</a> (including object references)</li>
+<li>References between objects are stored as GUIDs </li>
+</ul>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="adf4dccc01e6b1283bbcc84c454126af7" name="adf4dccc01e6b1283bbcc84c454126af7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf4dccc01e6b1283bbcc84c454126af7">&#9670;&#160;</a></span>ModifyNodeViaNativeCounterpart()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ezAbstractObjectGraph::ModifyNodeViaNativeCounterpart </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/d70/classez_abstract_object_node.htm">ezAbstractObjectNode</a> *&#160;</td>
+          <td class="paramname"><em>pRootNode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>&lt; void(void *, const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *)&gt;&#160;</td>
+          <td class="paramname"><em>callback</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Allows a node to be modified as a native object and automatically syncs changes back. </p>
+<p>This temporarily converts the node (and its sub-hierarchy) to native objects, calls the provided callback to allow modifications, then converts the modified objects back to the graph representation. This is useful for applying complex modifications that are easier to implement on native objects. Changes to the object hierarchy (adding/removing children) will be reflected in the graph. </p>
+
+</div>
+</div>
 <a id="a19ad89aa9b7ae01c0a8c906c6a8754d8" name="a19ad89aa9b7ae01c0a8c906c6a8754d8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a19ad89aa9b7ae01c0a8c906c6a8754d8">&#9670;&#160;</a></span>ReMapNodeGuidsToMatchGraph()</h2>
 
@@ -223,7 +274,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>MergeDiffs</b> (const
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d1/d39/classez_abstract_object_graph.htm">ezAbstractObjectGraph</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:02 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:43 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

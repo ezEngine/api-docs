@@ -14,6 +14,7 @@ var structez_g_a_l_shader_resource_type =
       [ "TexelBufferRW", "de/d81/structez_g_a_l_shader_resource_type.htm#a56b09cf1b044f64a16ccc3bd9bc8ba22a60e12a06f6956758e0cd76981035abcd", null ],
       [ "StructuredBufferRW", "de/d81/structez_g_a_l_shader_resource_type.htm#a56b09cf1b044f64a16ccc3bd9bc8ba22a5b9b6088d883debb72a6c07bd24106c2", null ],
       [ "ByteAddressBufferRW", "de/d81/structez_g_a_l_shader_resource_type.htm#a56b09cf1b044f64a16ccc3bd9bc8ba22a52b6bbfbb57b0f99e5da4c21141b94a4", null ],
+      [ "COUNT", "de/d81/structez_g_a_l_shader_resource_type.htm#a56b09cf1b044f64a16ccc3bd9bc8ba22af129dc99e5f207d9b80f8e9545c9e5f3", null ],
       [ "Default", "de/d81/structez_g_a_l_shader_resource_type.htm#a56b09cf1b044f64a16ccc3bd9bc8ba22a78e5834dfd89fb5bed4a2fbacf741b42", null ]
     ] ]
 ];

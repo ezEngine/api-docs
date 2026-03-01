@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -99,7 +99,7 @@ $(document).ready(function(){initNavTree('d3/db1/classez_transform_template.htm'
 </div><!--header-->
 <div class="contents">
 
-<p>A class that represents position, rotation and scaling via a position vector, a quaternion and a scale vector.  
+<p>Represents position, rotation and scaling using separate components for efficient hierarchical transformations.  
  <a href="../../d3/db1/classez_transform_template.htm#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../db/d56/_transform_8h_source.htm">Transform.h</a>&gt;</code></p>
@@ -125,14 +125,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SetIdentity</b> ()</t
 Type&#160;</td><td class="memItemRight" valign="bottom"><b>GetMaxScale</b> () const</td></tr>
 <tr class="memdesc:acf35fe28ece862bc442af6550d95d60f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the scale component with maximum magnitude. <br /></td></tr>
 <tr class="separator:acf35fe28ece862bc442af6550d95d60f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30e2c126ab05b4c8ba04e7bb4e23574e" id="r_a30e2c126ab05b4c8ba04e7bb4e23574e"><td class="memItemLeft" align="right" valign="top"><a id="a30e2c126ab05b4c8ba04e7bb4e23574e" name="a30e2c126ab05b4c8ba04e7bb4e23574e"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>HasMirrorScaling</b> () const</td></tr>
-<tr class="memdesc:a30e2c126ab05b4c8ba04e7bb4e23574e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether this transform contains negative scaling aka mirroring. <br /></td></tr>
+<tr class="memitem:a30e2c126ab05b4c8ba04e7bb4e23574e" id="r_a30e2c126ab05b4c8ba04e7bb4e23574e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/db1/classez_transform_template.htm#a30e2c126ab05b4c8ba04e7bb4e23574e">HasMirrorScaling</a> () const</td></tr>
+<tr class="memdesc:a30e2c126ab05b4c8ba04e7bb4e23574e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether this transform contains negative scaling aka mirroring.  <br /></td></tr>
 <tr class="separator:a30e2c126ab05b4c8ba04e7bb4e23574e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61bc322679bd592d6c3264162d64029b" id="r_a61bc322679bd592d6c3264162d64029b"><td class="memItemLeft" align="right" valign="top"><a id="a61bc322679bd592d6c3264162d64029b" name="a61bc322679bd592d6c3264162d64029b"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>ContainsUniformScale</b> () const</td></tr>
-<tr class="memdesc:a61bc322679bd592d6c3264162d64029b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether this transform contains uniform scaling. <br /></td></tr>
-<tr class="separator:a61bc322679bd592d6c3264162d64029b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af42bf21be0d42924d11b2e03c3e14b93" id="r_af42bf21be0d42924d11b2e03c3e14b93"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/db1/classez_transform_template.htm#af42bf21be0d42924d11b2e03c3e14b93">HasOnlyUniformScaling</a> () const</td></tr>
+<tr class="memdesc:af42bf21be0d42924d11b2e03c3e14b93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether this transform contains only uniform scaling (including scale == 1).  <br /></td></tr>
+<tr class="separator:af42bf21be0d42924d11b2e03c3e14b93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac10021515ba38eb36f216de50bba5c9" id="r_aac10021515ba38eb36f216de50bba5c9"><td class="memItemLeft" align="right" valign="top"><a id="aac10021515ba38eb36f216de50bba5c9" name="aac10021515ba38eb36f216de50bba5c9"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsValid</b> () const</td></tr>
 <tr class="memdesc:aac10021515ba38eb36f216de50bba5c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks that all components are valid (no NaN, only finite numbers). <br /></td></tr>
@@ -155,15 +153,19 @@ const <a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransfo
 <tr class="separator:ae3486362d41fb7fecd769c7851f44435"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3607a8e4c621323f62265ddab2bc89bd" id="r_a3607a8e4c621323f62265ddab2bc89bd"><td class="memItemLeft" align="right" valign="top"><a id="a3607a8e4c621323f62265ddab2bc89bd" name="a3607a8e4c621323f62265ddab2bc89bd"></a>
 <a class="el" href="../../da/df1/classez_vec3_template.htm">ezVec3Template</a>&lt; Type &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>TransformPosition</b> (const <a class="el" href="../../da/df1/classez_vec3_template.htm">ezVec3Template</a>&lt; Type &gt; &amp;v) const</td></tr>
+<tr class="memdesc:a3607a8e4c621323f62265ddab2bc89bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforms a position vector by this transform (applies scale, rotation, and translation). <br /></td></tr>
 <tr class="separator:a3607a8e4c621323f62265ddab2bc89bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a383ee40f1ba23f57ce0ac2fa272c9fcb" id="r_a383ee40f1ba23f57ce0ac2fa272c9fcb"><td class="memItemLeft" align="right" valign="top"><a id="a383ee40f1ba23f57ce0ac2fa272c9fcb" name="a383ee40f1ba23f57ce0ac2fa272c9fcb"></a>
 <a class="el" href="../../da/df1/classez_vec3_template.htm">ezVec3Template</a>&lt; Type &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>TransformDirection</b> (const <a class="el" href="../../da/df1/classez_vec3_template.htm">ezVec3Template</a>&lt; Type &gt; &amp;v) const</td></tr>
+<tr class="memdesc:a383ee40f1ba23f57ce0ac2fa272c9fcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforms a direction vector by this transform (applies scale and rotation, but not translation). <br /></td></tr>
 <tr class="separator:a383ee40f1ba23f57ce0ac2fa272c9fcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79fbf6eff777db2f58ed13eac7c253c5" id="r_a79fbf6eff777db2f58ed13eac7c253c5"><td class="memItemLeft" align="right" valign="top"><a id="a79fbf6eff777db2f58ed13eac7c253c5" name="a79fbf6eff777db2f58ed13eac7c253c5"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>operator+=</b> (const <a class="el" href="../../da/df1/classez_vec3_template.htm">ezVec3Template</a>&lt; Type &gt; &amp;v)</td></tr>
+<tr class="memdesc:a79fbf6eff777db2f58ed13eac7c253c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translates the transform by the given vector in global space. <br /></td></tr>
 <tr class="separator:a79fbf6eff777db2f58ed13eac7c253c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab43c78d22483ec86780036d3be9e319d" id="r_ab43c78d22483ec86780036d3be9e319d"><td class="memItemLeft" align="right" valign="top"><a id="ab43c78d22483ec86780036d3be9e319d" name="ab43c78d22483ec86780036d3be9e319d"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>operator-=</b> (const <a class="el" href="../../da/df1/classez_vec3_template.htm">ezVec3Template</a>&lt; Type &gt; &amp;v)</td></tr>
+<tr class="memdesc:ab43c78d22483ec86780036d3be9e319d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translates the transform by the negative of the given vector in global space. <br /></td></tr>
 <tr class="separator:ab43c78d22483ec86780036d3be9e319d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b105957dcec7a96125c0524777560df" id="r_a1b105957dcec7a96125c0524777560df"><td class="memItemLeft" align="right" valign="top"><a id="a1b105957dcec7a96125c0524777560df" name="a1b105957dcec7a96125c0524777560df"></a>
 const <a class="el" href="../../d7/d9b/classez_mat4_template.htm">ezMat4Template</a>&lt; Type &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>GetAsMat4</b> () const</td></tr>
@@ -181,15 +183,13 @@ static <a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransf
 <tr class="memdesc:a097bfb7a7c048011a677dde51015c9e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an identity transform. <br /></td></tr>
 <tr class="separator:a097bfb7a7c048011a677dde51015c9e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b218c428aa5ff446350fe1a504c685f" id="r_a0b218c428aa5ff446350fe1a504c685f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransformTemplate</a>&lt; Type &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/db1/classez_transform_template.htm#a0b218c428aa5ff446350fe1a504c685f">MakeFromMat4</a> (const <a class="el" href="../../d7/d9b/classez_mat4_template.htm">ezMat4Template</a>&lt; Type &gt; &amp;mMat)</td></tr>
-<tr class="memdesc:a0b218c428aa5ff446350fe1a504c685f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a transform from the given matrix.  <br /></td></tr>
+<tr class="memdesc:a0b218c428aa5ff446350fe1a504c685f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a transform from the given matrix using decomposition.  <br /></td></tr>
 <tr class="separator:a0b218c428aa5ff446350fe1a504c685f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7218e0afa79474040f8ce661e39ac0ce" id="r_a7218e0afa79474040f8ce661e39ac0ce"><td class="memItemLeft" align="right" valign="top"><a id="a7218e0afa79474040f8ce661e39ac0ce" name="a7218e0afa79474040f8ce661e39ac0ce"></a>
-static <a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransformTemplate</a>&lt; Type &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>MakeLocalTransform</b> (const <a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransformTemplate</a> &amp;globalTransformParent, const <a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransformTemplate</a> &amp;globalTransformChild)</td></tr>
-<tr class="memdesc:a7218e0afa79474040f8ce661e39ac0ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a transform that is the local transformation needed to get from the parent's transform to the child's. <br /></td></tr>
+<tr class="memitem:a7218e0afa79474040f8ce661e39ac0ce" id="r_a7218e0afa79474040f8ce661e39ac0ce"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransformTemplate</a>&lt; Type &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/db1/classez_transform_template.htm#a7218e0afa79474040f8ce661e39ac0ce">MakeLocalTransform</a> (const <a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransformTemplate</a> &amp;globalTransformParent, const <a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransformTemplate</a> &amp;globalTransformChild)</td></tr>
+<tr class="memdesc:a7218e0afa79474040f8ce661e39ac0ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a transform that is the local transformation needed to get from the parent's transform to the child's.  <br /></td></tr>
 <tr class="separator:a7218e0afa79474040f8ce661e39ac0ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade952b3e50f3e7ccb7c2223d8418a3db" id="r_ade952b3e50f3e7ccb7c2223d8418a3db"><td class="memItemLeft" align="right" valign="top"><a id="ade952b3e50f3e7ccb7c2223d8418a3db" name="ade952b3e50f3e7ccb7c2223d8418a3db"></a>
-static <a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransformTemplate</a>&lt; Type &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>MakeGlobalTransform</b> (const <a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransformTemplate</a> &amp;globalTransformParent, const <a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransformTemplate</a> &amp;localTransformChild)</td></tr>
-<tr class="memdesc:ade952b3e50f3e7ccb7c2223d8418a3db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a transform that is the global transform, that is reached by applying the child's local transform to the parent's global one. <br /></td></tr>
+<tr class="memitem:ade952b3e50f3e7ccb7c2223d8418a3db" id="r_ade952b3e50f3e7ccb7c2223d8418a3db"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransformTemplate</a>&lt; Type &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/db1/classez_transform_template.htm#ade952b3e50f3e7ccb7c2223d8418a3db">MakeGlobalTransform</a> (const <a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransformTemplate</a> &amp;globalTransformParent, const <a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransformTemplate</a> &amp;localTransformChild)</td></tr>
+<tr class="memdesc:ade952b3e50f3e7ccb7c2223d8418a3db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a transform that is the global transform, that is reached by applying the child's local transform to the parent's global one.  <br /></td></tr>
 <tr class="separator:ade952b3e50f3e7ccb7c2223d8418a3db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -206,13 +206,68 @@ Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename Type&gt;<br />
-class ezTransformTemplate&lt; Type &gt;</div><p>A class that represents position, rotation and scaling via a position vector, a quaternion and a scale vector. </p>
-<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.htm#_todo000044">Todo:</a></b></dt><dd>Fix docs and unit tests </dd></dl>
-<p>Scale is applied first, then rotation and finally translation is added. Thus scale and rotation are always in 'local space', i.e. applying a rotation to the <a class="el" href="../../d3/db1/classez_transform_template.htm" title="A class that represents position, rotation and scaling via a position vector, a quaternion and a scal...">ezTransformTemplate</a> will rotate objects in place around their local center. Since the translation is added afterwards, the translation component is always the global center position, around which objects rotate.</p>
-<p>The functions SetLocalTransform() and SetGlobalTransform() allow to create transforms that either represent the full global transformation of an object, factoring its parent's transform in, or the local transformation that will get you from the parent's global transformation to the current global transformation of a child (i.e. only the difference). This is particularly useful when editing entities in a hierarchical structure.</p>
-<p>This representation cannot handle shearing, which means rotations and scalings cannot be combined correctly. Many parts of game engine cannot handle shearing or non-uniform scaling across hierarchies anyway. Therefore this class implements a simplified way of combining scalings when multiplying two ezTransform's. Instead of rotating scale into the proper space, the two values are simply multiplied component-wise.</p>
-<p>In situations where this is insufficient, use a 3x3 or 4x4 matrix instead. Sometimes it is sufficient to use the matrix for the computation and the result can be stored in a transform again. </p>
+class ezTransformTemplate&lt; Type &gt;</div><p>Represents position, rotation and scaling using separate components for efficient hierarchical transformations. </p>
+<p>Transform operations follow the order: Scale → Rotation → Translation (SRT). This ensures that scale and rotation are applied in local space, while translation occurs in global space. This makes the translation component represent the global center position around which objects rotate.</p>
+<p>Hierarchical transformation support:</p><ul>
+<li><a class="el" href="../../d3/db1/classez_transform_template.htm#a7218e0afa79474040f8ce661e39ac0ce" title="Creates a transform that is the local transformation needed to get from the parent&#39;s transform to the...">MakeLocalTransform()</a>: Creates the local transformation difference between parent and child</li>
+<li><a class="el" href="../../d3/db1/classez_transform_template.htm#ade952b3e50f3e7ccb7c2223d8418a3db" title="Creates a transform that is the global transform, that is reached by applying the child&#39;s local trans...">MakeGlobalTransform()</a>: Combines parent's global transform with child's local transform</li>
+<li>Useful for editing entities in hierarchical structures where you need to factor in parent transforms</li>
+</ul>
+<p>Limitations:</p><ul>
+<li>Cannot represent shearing transformations</li>
+<li>Non-uniform scaling across hierarchies uses simplified component-wise multiplication</li>
+<li>When these limitations are problematic, use ezMat3 or ezMat4T instead</li>
+</ul>
+<p>Performance characteristics:</p><ul>
+<li>More memory efficient than 4x4 matrices (7 floats vs 16)</li>
+<li>Faster interpolation and concatenation than matrices</li>
+<li>Suitable for real-time animation and game object hierarchies </li>
+</ul>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a30e2c126ab05b4c8ba04e7bb4e23574e" name="a30e2c126ab05b4c8ba04e7bb4e23574e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30e2c126ab05b4c8ba04e7bb4e23574e">&#9670;&#160;</a></span>HasMirrorScaling()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">EZ_ALWAYS_INLINE bool <a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransformTemplate</a>&lt; Type &gt;::HasMirrorScaling </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns whether this transform contains negative scaling aka mirroring. </p>
+<p>Checks if any scale component is negative, which indicates mirroring along that axis. Important for correct normal vector transformations and culling operations. </p>
+
+</div>
+</div>
+<a id="af42bf21be0d42924d11b2e03c3e14b93" name="af42bf21be0d42924d11b2e03c3e14b93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af42bf21be0d42924d11b2e03c3e14b93">&#9670;&#160;</a></span>HasOnlyUniformScaling()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">EZ_ALWAYS_INLINE bool <a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransformTemplate</a>&lt; Type &gt;::HasOnlyUniformScaling </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns whether this transform contains only uniform scaling (including scale == 1). </p>
+<p>Returns true if all three scale components have the same absolute value. </p>
+
+</div>
+</div>
 <a id="a0b218c428aa5ff446350fe1a504c685f" name="a0b218c428aa5ff446350fe1a504c685f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0b218c428aa5ff446350fe1a504c685f">&#9670;&#160;</a></span>MakeFromMat4()</h2>
 
@@ -239,8 +294,91 @@ template&lt;typename Type &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Creates a transform from the given matrix. </p>
-<dl class="section note"><dt>Note</dt><dd>This operation always succeeds, even though the matrix may be complete garbage (e.g. a zero matrix) or may not be representable as a transform (containing shearing). Also be careful with mirroring. The transform may or may not be able to represent that. </dd></dl>
+<p>Creates a transform from the given matrix using decomposition. </p>
+<p>Attempts to decompose the matrix into separate translation, rotation, and scale components. The operation always succeeds but may produce unexpected results with invalid matrices.</p>
+<dl class="section note"><dt>Note</dt><dd>Matrices containing shearing cannot be accurately represented as transforms. Mirroring (negative determinant) may not be preserved correctly. Zero or near-zero matrices will produce degenerate transforms. </dd></dl>
+
+</div>
+</div>
+<a id="ade952b3e50f3e7ccb7c2223d8418a3db" name="ade952b3e50f3e7ccb7c2223d8418a3db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade952b3e50f3e7ccb7c2223d8418a3db">&#9670;&#160;</a></span>MakeGlobalTransform()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Type &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">EZ_ALWAYS_INLINE <a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransformTemplate</a>&lt; Type &gt; <a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransformTemplate</a>&lt; Type &gt;::MakeGlobalTransform </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransformTemplate</a>&lt; Type &gt; &amp;&#160;</td>
+          <td class="paramname"><em>globalTransformParent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransformTemplate</a>&lt; Type &gt; &amp;&#160;</td>
+          <td class="paramname"><em>localTransformChild</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a transform that is the global transform, that is reached by applying the child's local transform to the parent's global one. </p>
+<p>Computes: globalTransform = globalTransformParent * localTransformChild </p>
+
+</div>
+</div>
+<a id="a7218e0afa79474040f8ce661e39ac0ce" name="a7218e0afa79474040f8ce661e39ac0ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7218e0afa79474040f8ce661e39ac0ce">&#9670;&#160;</a></span>MakeLocalTransform()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Type &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransformTemplate</a>&lt; Type &gt; <a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransformTemplate</a>&lt; Type &gt;::MakeLocalTransform </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransformTemplate</a>&lt; Type &gt; &amp;&#160;</td>
+          <td class="paramname"><em>globalTransformParent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransformTemplate</a>&lt; Type &gt; &amp;&#160;</td>
+          <td class="paramname"><em>globalTransformChild</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a transform that is the local transformation needed to get from the parent's transform to the child's. </p>
+<p>Computes: localTransform = inverse(globalTransformParent) * globalTransformChild </p>
 
 </div>
 </div>
@@ -255,7 +393,7 @@ template&lt;typename Type &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransformTemplate</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:06 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:48 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

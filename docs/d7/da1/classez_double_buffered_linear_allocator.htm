@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -99,16 +99,16 @@ $(document).ready(function(){initNavTree('d7/da1/classez_double_buffered_linear_
 </div><!--header-->
 <div class="contents">
 
-<p>A double buffered stack allocator.  
+<p>A double buffered linear allocator for temporary per-frame allocations.  
  <a href="../../d7/da1/classez_double_buffered_linear_allocator.htm#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../d5/d40/_frame_allocator_8h_source.htm">FrameAllocator.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a23079266c9b668372010d17979977304" id="r_a23079266c9b668372010d17979977304"><td class="memItemLeft" align="right" valign="top"><a id="a23079266c9b668372010d17979977304" name="a23079266c9b668372010d17979977304"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>StackAllocatorType</b> = <a class="el" href="../../d8/d6e/classez_linear_allocator.htm">ezLinearAllocator</a>&lt; ezAllocatorTrackingMode::Basics, OverwriteMemoryOnReset &gt;</td></tr>
-<tr class="separator:a23079266c9b668372010d17979977304"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44d84b2834ad974d0931d969f13cd971" id="r_a44d84b2834ad974d0931d969f13cd971"><td class="memItemLeft" align="right" valign="top"><a id="a44d84b2834ad974d0931d969f13cd971" name="a44d84b2834ad974d0931d969f13cd971"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>LinearAllocatorType</b> = <a class="el" href="../../d8/d6e/classez_linear_allocator.htm">ezLinearAllocator</a>&lt; ezAllocatorTrackingMode::Basics, OverwriteMemoryOnReset &gt;</td></tr>
+<tr class="separator:a44d84b2834ad974d0931d969f13cd971"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -132,7 +132,8 @@ static constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>Over
 <tr class="separator:a65b231828192bfd5d996218bac224f4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A double buffered stack allocator. </p>
+<div class="textblock"><p>A double buffered linear allocator for temporary per-frame allocations. </p>
+<p>This allocator maintains two linear allocators and swaps between them each frame. One allocator is used for the current frame while the previous frame's allocator is reset. This pattern ensures that allocations from the previous frame remain valid until the next frame begins, which is useful for data that needs to persist across frame boundaries. </p>
 </div><hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/Memory/<a class="el" href="../../d5/d40/_frame_allocator_8h_source.htm">FrameAllocator.h</a></li>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/Memory/Implementation/<b>FrameAllocator.cpp</b></li>
@@ -143,7 +144,7 @@ static constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>Over
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d7/da1/classez_double_buffered_linear_allocator.htm">ezDoubleBufferedLinearAllocator</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:03 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:44 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

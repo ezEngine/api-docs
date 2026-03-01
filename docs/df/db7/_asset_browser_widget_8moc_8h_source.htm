@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -192,31 +192,33 @@ $(document).ready(function(){initNavTree('df/db7/_asset_browser_widget_8moc_8h_s
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  <span class="keywordtype">void</span> ImportSelection();</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  <span class="keywordtype">void</span> OnOpenImportReferenceAsset();</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  <span class="keywordtype">void</span> RenameCurrent();</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  <span class="keywordtype">void</span> DeleteSelection();</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  <span class="keywordtype">void</span> OnImportAsAboutToShow();</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  <span class="keywordtype">void</span> OnImportAsClicked();</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> keyPressEvent(QKeyEvent* e) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> mousePressEvent(QMouseEvent* e) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>  <span class="keywordtype">void</span> AssetCuratorEventHandler(<span class="keyword">const</span> <a class="code hl_struct" href="../../d0/d24/structez_asset_curator_event.htm">ezAssetCuratorEvent</a>&amp; e);</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  <span class="keywordtype">void</span> UpdateAssetTypes();</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  <span class="keywordtype">void</span> ProjectEventHandler(<span class="keyword">const</span> <a class="code hl_struct" href="../../d4/d43/structez_tools_project_event.htm">ezToolsProjectEvent</a>&amp; e);</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  <span class="keywordtype">void</span> AddAssetCreatorMenu(QMenu* pMenu, <span class="keywordtype">bool</span> useSelectedAsset);</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  <span class="keywordtype">void</span> AddImportedViaMenu(QMenu* pMenu);</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  <span class="keywordtype">void</span> GetSelectedImportableFiles(<a class="code hl_class" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezString&gt;</a>&amp; out_Files) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  Mode m_Mode = Mode::Browser;</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  <a class="code hl_class" href="../../db/d42/classez_qt_tool_bar_action_map_view.htm">ezQtToolBarActionMapView</a>* m_pToolbar = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sAllTypesFilter;</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  QSharedPointer&lt;ezQtAssetBrowserModel&gt; m_Model;</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  <a class="code hl_class" href="../../d5/d1f/classez_qt_asset_browser_filter.htm">ezQtAssetBrowserFilter</a>* m_pFilter = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  <span class="keywordtype">bool</span> m_bOpenAfterRename = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>};</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  <span class="keywordtype">void</span> DeleteSelection(<span class="keywordtype">bool</span> bAskUser);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  <span class="keywordtype">void</span> DeleteAndReplaceSelection();</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  <span class="keywordtype">void</span> OnImportAsAboutToShow();</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  <span class="keywordtype">void</span> OnImportAsClicked();</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  <span class="keywordtype">void</span> OnExportAssetWithDependencies();</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> keyPressEvent(QKeyEvent* e) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> mousePressEvent(QMouseEvent* e) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  <span class="keywordtype">void</span> AssetCuratorEventHandler(<span class="keyword">const</span> <a class="code hl_struct" href="../../d0/d24/structez_asset_curator_event.htm">ezAssetCuratorEvent</a>&amp; e);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  <span class="keywordtype">void</span> UpdateAssetTypes();</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  <span class="keywordtype">void</span> ProjectEventHandler(<span class="keyword">const</span> <a class="code hl_struct" href="../../d4/d43/structez_tools_project_event.htm">ezToolsProjectEvent</a>&amp; e);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  <span class="keywordtype">void</span> AddAssetCreatorMenu(QMenu* pMenu, <span class="keywordtype">bool</span> useSelectedAsset);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  <span class="keywordtype">void</span> AddImportedViaMenu(QMenu* pMenu);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  <span class="keywordtype">void</span> GetSelectedImportableFiles(<a class="code hl_class" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezString&gt;</a>&amp; out_Files) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  Mode m_Mode = Mode::Browser;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  <a class="code hl_class" href="../../db/d42/classez_qt_tool_bar_action_map_view.htm">ezQtToolBarActionMapView</a>* m_pToolbar = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sAllTypesFilter;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  QSharedPointer&lt;ezQtAssetBrowserModel&gt; m_Model;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  <a class="code hl_class" href="../../d5/d1f/classez_qt_asset_browser_filter.htm">ezQtAssetBrowserFilter</a>* m_pFilter = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  <span class="keywordtype">bool</span> m_bOpenAfterRename = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>};</div>
 </div>
 <div class="ttc" id="aclassez_dynamic_array_htm"><div class="ttname"><a href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray</a></div><div class="ttdef"><b>Definition</b> DynamicArray.h:81</div></div>
 <div class="ttc" id="aclassez_qt_asset_browser_filter_htm"><div class="ttname"><a href="../../d5/d1f/classez_qt_asset_browser_filter.htm">ezQtAssetBrowserFilter</a></div><div class="ttdef"><b>Definition</b> AssetBrowserFilter.moc.h:8</div></div>
@@ -224,7 +226,7 @@ $(document).ready(function(){initNavTree('df/db7/_asset_browser_widget_8moc_8h_s
 <div class="ttc" id="aclassez_qt_asset_browser_widget_htm"><div class="ttname"><a href="../../db/d27/classez_qt_asset_browser_widget.htm">ezQtAssetBrowserWidget</a></div><div class="ttdef"><b>Definition</b> AssetBrowserWidget.moc.h:17</div></div>
 <div class="ttc" id="aclassez_qt_tool_bar_action_map_view_htm"><div class="ttname"><a href="../../db/d42/classez_qt_tool_bar_action_map_view.htm">ezQtToolBarActionMapView</a></div><div class="ttdef"><b>Definition</b> ToolBarActionMapView.moc.h:16</div></div>
 <div class="ttc" id="aclassez_string_view_htm"><div class="ttname"><a href="../../d9/d18/classez_string_view.htm">ezStringView</a></div><div class="ttdoc">ezStringView represent a read-only sub-string of a larger string, as it can store a dedicated string ...</div><div class="ttdef"><b>Definition</b> StringView.h:34</div></div>
-<div class="ttc" id="aclassez_uuid_htm"><div class="ttname"><a href="../../da/d89/classez_uuid.htm">ezUuid</a></div><div class="ttdoc">This data type is the abstraction for 128-bit Uuid (also known as GUID) instances.</div><div class="ttdef"><b>Definition</b> Uuid.h:11</div></div>
+<div class="ttc" id="aclassez_uuid_htm"><div class="ttname"><a href="../../da/d89/classez_uuid.htm">ezUuid</a></div><div class="ttdoc">128-bit Universally Unique Identifier (UUID/GUID) for object identification and referencing.</div><div class="ttdef"><b>Definition</b> Uuid.h:15</div></div>
 <div class="ttc" id="astructez_asset_curator_event_htm"><div class="ttname"><a href="../../d0/d24/structez_asset_curator_event.htm">ezAssetCuratorEvent</a></div><div class="ttdef"><b>Definition</b> AssetCurator.h:125</div></div>
 <div class="ttc" id="astructez_hybrid_string_htm"><div class="ttname"><a href="../../d4/d53/structez_hybrid_string.htm">ezHybridString&lt; 32, ezDefaultAllocatorWrapper &gt;</a></div></div>
 <div class="ttc" id="astructez_tools_project_event_htm"><div class="ttname"><a href="../../d4/d43/structez_tools_project_event.htm">ezToolsProjectEvent</a></div><div class="ttdef"><b>Definition</b> ToolsProject.h:13</div></div>
@@ -234,7 +236,7 @@ $(document).ready(function(){initNavTree('df/db7/_asset_browser_widget_8moc_8h_s
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_898824d97bbfb864e5ee6bfb2857fc31.htm">Editor</a></li><li class="navelem"><a class="el" href="../../dir_2c11fbcc86473fad6c721ead68acf992.htm">EditorFramework</a></li><li class="navelem"><a class="el" href="../../dir_5814822b5fe0e25e106f6a2b5290738d.htm">Assets</a></li><li class="navelem"><b>AssetBrowserWidget.moc.h</b></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:00:48 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:29 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -97,20 +97,18 @@ $(document).ready(function(){initNavTree('d6/d25/structez_atomic_utils.htm','../
 </div><!--header-->
 <div class="contents">
 
-<p>This class provides functions to do atomic operations.  
+<p>Low-level platform-independent atomic operations for thread-safe programming.  
  <a href="../../d6/d25/structez_atomic_utils.htm#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../d0/d8e/_atomic_utils_8h_source.htm">AtomicUtils.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a010b48d5ef3131037a09d1d46dfc1c83" id="r_a010b48d5ef3131037a09d1d46dfc1c83"><td class="memItemLeft" align="right" valign="top"><a id="a010b48d5ef3131037a09d1d46dfc1c83" name="a010b48d5ef3131037a09d1d46dfc1c83"></a>
-static ezInt32&#160;</td><td class="memItemRight" valign="bottom"><b>Read</b> (const ezInt32 &amp;iSrc)</td></tr>
-<tr class="memdesc:a010b48d5ef3131037a09d1d46dfc1c83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns src as an atomic operation and returns its value. <br /></td></tr>
+<tr class="memitem:a010b48d5ef3131037a09d1d46dfc1c83" id="r_a010b48d5ef3131037a09d1d46dfc1c83"><td class="memItemLeft" align="right" valign="top">static ezInt32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d25/structez_atomic_utils.htm#a010b48d5ef3131037a09d1d46dfc1c83">Read</a> (const ezInt32 &amp;iSrc)</td></tr>
+<tr class="memdesc:a010b48d5ef3131037a09d1d46dfc1c83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Atomically reads a 32-bit integer value.  <br /></td></tr>
 <tr class="separator:a010b48d5ef3131037a09d1d46dfc1c83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c2611086293e0fcc193709af52ec616" id="r_a8c2611086293e0fcc193709af52ec616"><td class="memItemLeft" align="right" valign="top"><a id="a8c2611086293e0fcc193709af52ec616" name="a8c2611086293e0fcc193709af52ec616"></a>
-static ezInt64&#160;</td><td class="memItemRight" valign="bottom"><b>Read</b> (const ezInt64 &amp;iSrc)</td></tr>
-<tr class="memdesc:a8c2611086293e0fcc193709af52ec616"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns src as an atomic operation and returns its value. <br /></td></tr>
+<tr class="memitem:a8c2611086293e0fcc193709af52ec616" id="r_a8c2611086293e0fcc193709af52ec616"><td class="memItemLeft" align="right" valign="top">static ezInt64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d25/structez_atomic_utils.htm#a8c2611086293e0fcc193709af52ec616">Read</a> (const ezInt64 &amp;iSrc)</td></tr>
+<tr class="memdesc:a8c2611086293e0fcc193709af52ec616"><td class="mdescLeft">&#160;</td><td class="mdescRight">Atomically reads a 64-bit integer value.  <br /></td></tr>
 <tr class="separator:a8c2611086293e0fcc193709af52ec616"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1d9c32986d0a8437b66af5d0e450fa5" id="r_ac1d9c32986d0a8437b66af5d0e450fa5"><td class="memItemLeft" align="right" valign="top"><a id="ac1d9c32986d0a8437b66af5d0e450fa5" name="ac1d9c32986d0a8437b66af5d0e450fa5"></a>
 static ezInt32&#160;</td><td class="memItemRight" valign="bottom"><b>Increment</b> (ezInt32 &amp;ref_iDest)</td></tr>
@@ -222,9 +220,75 @@ static ezInt64&#160;</td><td class="memItemRight" valign="bottom"><b>CompareAndS
 <tr class="separator:aa2d42f393edb39a773dd4f38abb922b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This class provides functions to do atomic operations. </p>
-<p>Atomic operations are generally faster than mutexes, and should therefore be preferred whenever possible. However only the operations in themselves are atomic, once you execute several of them in sequence, the sequence will not be atomic. Also atomic operations are a lot slower than non-atomic operations, thus you should not use them in code that does not need to be thread-safe. <a class="el" href="../../da/d01/classez_atomic_integer.htm" title="Integer class that can be manipulated in an atomic (i.e. thread-safe) fashion.">ezAtomicInteger</a> is built on top of <a class="el" href="../../d6/d25/structez_atomic_utils.htm" title="This class provides functions to do atomic operations.">ezAtomicUtils</a> and provides a more convenient interface to use atomic integer instructions. </p>
-</div><hr/>The documentation for this struct was generated from the following files:<ul>
+<div class="textblock"><p>Low-level platform-independent atomic operations for thread-safe programming. </p>
+<p>Provides atomic (indivisible) operations that are faster than mutexes for simple operations but slower than regular operations. Use only when thread safety is required.</p>
+<p>Important considerations:</p><ul>
+<li>Individual operations are atomic, but sequences of operations are not</li>
+<li>Only use in code that requires thread safety - atomic ops have performance overhead</li>
+<li>For higher-level usage, prefer <a class="el" href="../../da/d01/classez_atomic_integer.htm" title="Thread-safe atomic integer with lock-free operations.">ezAtomicInteger</a> which wraps these utilities</li>
+<li>All operations use lock-free hardware instructions where available</li>
+</ul>
+<p>These functions form the foundation for lock-free data structures and algorithms. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a010b48d5ef3131037a09d1d46dfc1c83" name="a010b48d5ef3131037a09d1d46dfc1c83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a010b48d5ef3131037a09d1d46dfc1c83">&#9670;&#160;</a></span>Read() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">EZ_ALWAYS_INLINE ezInt32 ezAtomicUtils::Read </td>
+          <td>(</td>
+          <td class="paramtype">const ezInt32 &amp;&#160;</td>
+          <td class="paramname"><em>iSrc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Atomically reads a 32-bit integer value. </p>
+<p>Ensures the read operation is atomic and not subject to partial reads on all platforms. </p>
+
+</div>
+</div>
+<a id="a8c2611086293e0fcc193709af52ec616" name="a8c2611086293e0fcc193709af52ec616"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c2611086293e0fcc193709af52ec616">&#9670;&#160;</a></span>Read() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">EZ_ALWAYS_INLINE ezInt64 ezAtomicUtils::Read </td>
+          <td>(</td>
+          <td class="paramtype">const ezInt64 &amp;&#160;</td>
+          <td class="paramname"><em>iSrc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Atomically reads a 64-bit integer value. </p>
+<p>Ensures the read operation is atomic and not subject to partial reads on all platforms. </p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following files:<ul>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/Threading/<a class="el" href="../../d0/d8e/_atomic_utils_8h_source.htm">AtomicUtils.h</a></li>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/Platform/Posix/<a class="el" href="../../d4/d4d/_atomic_utils___posix_8h_source.htm">AtomicUtils_Posix.h</a></li>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/Platform/Win/<a class="el" href="../../d3/dc1/_win_2_atomic_utils___platform_8h_source.htm">AtomicUtils_Platform.h</a></li>
@@ -235,7 +299,7 @@ static ezInt64&#160;</td><td class="memItemRight" valign="bottom"><b>CompareAndS
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d6/d25/structez_atomic_utils.htm">ezAtomicUtils</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:02 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:44 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

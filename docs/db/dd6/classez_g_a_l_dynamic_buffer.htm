@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -117,10 +117,10 @@ Public Member Functions</h2></td></tr>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Clear</b> ()</td></tr>
 <tr class="memdesc:ab0965ee356c2534096bd3ed6b3c180aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deallocates all data. <br /></td></tr>
 <tr class="separator:ab0965ee356c2534096bd3ed6b3c180aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa43763f190c10e418c06745f1c3b282f" id="r_aa43763f190c10e418c06745f1c3b282f"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
-<tr class="memitem:aa43763f190c10e418c06745f1c3b282f"><td class="memTemplItemLeft" align="right" valign="top">ezUInt32&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/dd6/classez_g_a_l_dynamic_buffer.htm#aa43763f190c10e418c06745f1c3b282f">Allocate</a> (const U &amp;userData, ezUInt32 uiCount=1, <a class="el" href="../../d1/dec/structez_bitflags.htm">ezBitflags</a>&lt; <a class="el" href="../../d1/dc7/structez_g_a_l_dynamic_buffer_1_1_allocate_flags.htm">AllocateFlags</a> &gt; allocateFlags=AllocateFlags::None)</td></tr>
-<tr class="memdesc:aa43763f190c10e418c06745f1c3b282f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates a single or multiple elements and returns the offset to the first element. This offset is used to identify the allocation and should also be used in a shader to read the data from the buffer.  <br /></td></tr>
-<tr class="separator:aa43763f190c10e418c06745f1c3b282f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2898ffc1181f0299f7a6103d6cc98526" id="r_a2898ffc1181f0299f7a6103d6cc98526"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
+<tr class="memitem:a2898ffc1181f0299f7a6103d6cc98526"><td class="memTemplItemLeft" align="right" valign="top">ezUInt32&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/dd6/classez_g_a_l_dynamic_buffer.htm#a2898ffc1181f0299f7a6103d6cc98526">Allocate</a> (const U &amp;userData, ezUInt32 uiCount=1, <a class="el" href="../../d1/dec/structez_bitflags.htm">ezBitflags</a>&lt; <a class="el" href="../../d1/dc7/structez_g_a_l_dynamic_buffer_1_1_allocate_flags.htm">AllocateFlags</a> &gt; allocateFlags=AllocateFlags::None, <a class="el" href="../../d0/dbb/classez_allocator.htm">ezAllocator</a> *pTempAllocator=nullptr)</td></tr>
+<tr class="memdesc:a2898ffc1181f0299f7a6103d6cc98526"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates a single or multiple elements and returns the offset to the first element. This offset is used to identify the allocation and should also be used in a shader to read the data from the buffer.  <br /></td></tr>
+<tr class="separator:a2898ffc1181f0299f7a6103d6cc98526"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae53871039642480a248450c8c8519941" id="r_ae53871039642480a248450c8c8519941"><td class="memItemLeft" align="right" valign="top"><a id="ae53871039642480a248450c8c8519941" name="ae53871039642480a248450c8c8519941"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Deallocate</b> (ezUInt32 uiOffset)</td></tr>
 <tr class="memdesc:ae53871039642480a248450c8c8519941"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes an allocation at the given offset. The offset must have been returned by Allocate. This will create unused space in the buffer that can be filled by subsequent allocations or closed later by compaction. <br /></td></tr>
@@ -130,6 +130,15 @@ template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a49b73ab389a7b3873aa08c24aa3c3104"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>MapForWriting</b> (ezUInt32 uiOffset)</td></tr>
 <tr class="memdesc:a49b73ab389a7b3873aa08c24aa3c3104"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps a range of elements for writing. <br /></td></tr>
 <tr class="separator:a49b73ab389a7b3873aa08c24aa3c3104"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb01ac264c864d1f1ca9b5b26705b649" id="r_adb01ac264c864d1f1ca9b5b26705b649"><td class="memItemLeft" align="right" valign="top"><a id="adb01ac264c864d1f1ca9b5b26705b649" name="adb01ac264c864d1f1ca9b5b26705b649"></a>
+<a class="el" href="../../dc/dae/classez_array_ptr.htm">ezByteArrayPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><b>MapBytesForWriting</b> (ezUInt32 uiOffset)</td></tr>
+<tr class="memdesc:adb01ac264c864d1f1ca9b5b26705b649"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps a range of bytes for writing. <br /></td></tr>
+<tr class="separator:adb01ac264c864d1f1ca9b5b26705b649"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b47e3ea018b10a140fc461218ed2507" id="r_a2b47e3ea018b10a140fc461218ed2507"><td class="memTemplParams" colspan="2"><a id="a2b47e3ea018b10a140fc461218ed2507" name="a2b47e3ea018b10a140fc461218ed2507"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a2b47e3ea018b10a140fc461218ed2507"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr</a>&lt; const T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>MapForReading</b> (ezUInt32 uiOffset) const</td></tr>
+<tr class="memdesc:a2b47e3ea018b10a140fc461218ed2507"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps a range of elements for reading. <br /></td></tr>
+<tr class="separator:a2b47e3ea018b10a140fc461218ed2507"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6df0b1478d5130c06bb831c3e993193" id="r_ad6df0b1478d5130c06bb831c3e993193"><td class="memItemLeft" align="right" valign="top"><a id="ad6df0b1478d5130c06bb831c3e993193" name="ad6df0b1478d5130c06bb831c3e993193"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>UploadChangesForNextFrame</b> ()</td></tr>
 <tr class="memdesc:ad6df0b1478d5130c06bb831c3e993193"><td class="mdescLeft">&#160;</td><td class="mdescRight">Upload all changed data to the GPU buffer for the next rendering frame, aka the next time BeginFrame is called on the GALDevice. <br /></td></tr>
@@ -140,6 +149,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>UploadChangesForNextF
 <tr class="memitem:ad2bad02053b5f09f2dd9bcf3a855d1b0" id="r_ad2bad02053b5f09f2dd9bcf3a855d1b0"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d3/d59/classez_g_a_l_buffer_handle.htm">ezGALBufferHandle</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dd6/classez_g_a_l_dynamic_buffer.htm#ad2bad02053b5f09f2dd9bcf3a855d1b0">GetBufferForRendering</a> () const</td></tr>
 <tr class="memdesc:ad2bad02053b5f09f2dd9bcf3a855d1b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">This should be called inside the rendering code to retrieve the underlying buffer for rendering.  <br /></td></tr>
 <tr class="separator:ad2bad02053b5f09f2dd9bcf3a855d1b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4a22640e86b75c79ab85688ff0945ae" id="r_ad4a22640e86b75c79ab85688ff0945ae"><td class="memItemLeft" align="right" valign="top"><a id="ad4a22640e86b75c79ab85688ff0945ae" name="ad4a22640e86b75c79ab85688ff0945ae"></a>
+const <a class="el" href="../../d1/da8/structez_g_a_l_buffer_creation_description.htm">ezGALBufferCreationDescription</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetDescription</b> () const</td></tr>
+<tr class="memdesc:ad4a22640e86b75c79ab85688ff0945ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the description that was used to create this dynamic buffer. <br /></td></tr>
+<tr class="separator:ad4a22640e86b75c79ab85688ff0945ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94dc9e278d8caab219f671dc61995eb5" id="r_a94dc9e278d8caab219f671dc61995eb5"><td class="memItemLeft" align="right" valign="top"><a id="a94dc9e278d8caab219f671dc61995eb5" name="a94dc9e278d8caab219f671dc61995eb5"></a>
+<a class="el" href="../../d9/d18/classez_string_view.htm">ezStringView</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GetDebugName</b> () const</td></tr>
+<tr class="memdesc:a94dc9e278d8caab219f671dc61995eb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the debug name that was used to create this dynamic buffer. <br /></td></tr>
+<tr class="separator:a94dc9e278d8caab219f671dc61995eb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
@@ -154,8 +171,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>ezGALDevice</b></td>
 <div class="textblock"><p>A dynamic buffer can be used when a lot of data needs to be stored in a single large buffer with dynamic size. </p>
 <p>This class supports allocation and deallocation of single elements or ranges of multiple elements. An allocation is identified by an offset and can have additional user data attached. The indented usage patterns is that data is allocated and written to the buffer during game play or extraction code. After all data has been written UploadChangesForNextFrame needs to be called to upload changed data to the GPU buffer. The renderer would then call GetBufferForRendering to get the correct buffer for rendering. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="aa43763f190c10e418c06745f1c3b282f" name="aa43763f190c10e418c06745f1c3b282f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa43763f190c10e418c06745f1c3b282f">&#9670;&#160;</a></span>Allocate()</h2>
+<a id="a2898ffc1181f0299f7a6103d6cc98526" name="a2898ffc1181f0299f7a6103d6cc98526"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2898ffc1181f0299f7a6103d6cc98526">&#9670;&#160;</a></span>Allocate()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -181,7 +198,13 @@ template&lt;typename U &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="../../d1/dec/structez_bitflags.htm">ezBitflags</a>&lt; <a class="el" href="../../d1/dc7/structez_g_a_l_dynamic_buffer_1_1_allocate_flags.htm">AllocateFlags</a> &gt;&#160;</td>
-          <td class="paramname"><em>allocateFlags</em> = <code>AllocateFlags::None</code>&#160;</td>
+          <td class="paramname"><em>allocateFlags</em> = <code>AllocateFlags::None</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d0/dbb/classez_allocator.htm">ezAllocator</a> *&#160;</td>
+          <td class="paramname"><em>pTempAllocator</em> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -270,7 +293,7 @@ template&lt;typename U &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../db/dd6/classez_g_a_l_dynamic_buffer.htm">ezGALDynamicBuffer</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:03 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:45 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

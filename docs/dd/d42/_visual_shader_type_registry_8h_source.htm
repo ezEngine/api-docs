@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -104,135 +104,145 @@ $(document).ready(function(){initNavTree('dd/d42/_visual_shader_type_registry_8h
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;Foundation/Configuration/Singleton.h&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;Foundation/Configuration/Startup.h&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;Foundation/Strings/String.h&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;ToolsFoundation/NodeObject/DocumentNodeManager.h&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;ToolsFoundation/VisualGraph/VisualGraphObjectManager.h&gt;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">class </span><a class="code hl_class" href="../../db/d71/classez_open_ddl_reader_element.htm">ezOpenDdlReaderElement</a>;</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="foldopen" id="foldopen00011" data-start="{" data-end="};">
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="../../d1/d05/structez_visual_shader_pin_descriptor.htm">   11</a></span><span class="keyword">struct </span><a class="code hl_struct" href="../../d1/d05/structez_visual_shader_pin_descriptor.htm">ezVisualShaderPinDescriptor</a></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>  <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sName;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  <span class="keyword">const</span> <a class="code hl_class" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a>* m_pDataType = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  <a class="code hl_struct" href="../../db/deb/structez_reflected_property_descriptor.htm">ezReflectedPropertyDescriptor</a> m_PropertyDesc;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <a class="code hl_class" href="../../da/d51/classez_color_gamma_u_b.htm">ezColorGammaUB</a> m_Color = <a class="code hl_function" href="../../df/dfe/classez_color_scheme.htm#a331f96675b5cfc784a12aa746a5835cd">ezColorScheme::DarkUI</a>(ezColorScheme::Gray);</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <span class="keywordtype">bool</span> m_bExposeAsProperty = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sDefaultValue;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <a class="code hl_class" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezString&gt;</a> m_sDefinesWhenUsingDefaultValue;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sShaderCodeInline;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sTooltip;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>};</div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="};">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="../../d1/d05/structez_visual_shader_pin_descriptor.htm">   15</a></span><span class="keyword">struct </span><a class="code hl_struct" href="../../d1/d05/structez_visual_shader_pin_descriptor.htm">ezVisualShaderPinDescriptor</a></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sName;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <span class="keyword">const</span> <a class="code hl_class" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a>* m_pDataType = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <a class="code hl_struct" href="../../db/deb/structez_reflected_property_descriptor.htm">ezReflectedPropertyDescriptor</a> m_PropertyDesc;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <a class="code hl_class" href="../../da/d51/classez_color_gamma_u_b.htm">ezColorGammaUB</a> m_Color = <a class="code hl_function" href="../../df/dfe/classez_color_scheme.htm#a331f96675b5cfc784a12aa746a5835cd">ezColorScheme::DarkUI</a>(ezColorScheme::Gray);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <span class="keywordtype">bool</span> m_bExposeAsProperty = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sDefaultValue;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <a class="code hl_class" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezString&gt;</a> m_sDefinesWhenUsingDefaultValue;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sShaderCodeInline;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sTooltip;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>};</div>
 </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="foldopen" id="foldopen00024" data-start="{" data-end="};">
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="../../d3/da3/structez_visual_shader_node_type.htm">   24</a></span><span class="keyword">struct </span><a class="code hl_struct" href="../../d3/da3/structez_visual_shader_node_type.htm">ezVisualShaderNodeType</a></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>{</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="keyword">using </span>StorageType = ezUInt8;</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <span class="keyword">enum</span> Enum</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  {</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    Generic,</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    Main,</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    Texture,</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    Default = Generic</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  };</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>};</div>
+<div class="foldopen" id="foldopen00028" data-start="{" data-end="};">
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="../../d3/da3/structez_visual_shader_node_type.htm">   28</a></span><span class="keyword">struct </span><a class="code hl_struct" href="../../d3/da3/structez_visual_shader_node_type.htm">ezVisualShaderNodeType</a></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>{</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  <span class="keyword">using </span>StorageType = ezUInt8;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="foldopen" id="foldopen00032" data-start="{" data-end="};">
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="../../d3/da3/structez_visual_shader_node_type.htm#a4b085a75223aea1ad964c787e0e8be21">   32</a></span>  <span class="keyword">enum</span> <a class="code hl_enumeration" href="../../d3/da3/structez_visual_shader_node_type.htm#a4b085a75223aea1ad964c787e0e8be21">Enum</a></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    Generic,</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    Main,</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    Texture,</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="../../d3/da3/structez_visual_shader_node_type.htm#a4b085a75223aea1ad964c787e0e8be21a2adc421b34224429cef2499037690bcf">   37</a></span>    <a class="code hl_enumvalue" href="../../d3/da3/structez_visual_shader_node_type.htm#a4b085a75223aea1ad964c787e0e8be21a2adc421b34224429cef2499037690bcf">ShaderState</a>, </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="../../d3/da3/structez_visual_shader_node_type.htm#a4b085a75223aea1ad964c787e0e8be21a4ff91d22cee5ee9f01b02323f7ef8991">   38</a></span>    <a class="code hl_enumvalue" href="../../d3/da3/structez_visual_shader_node_type.htm#a4b085a75223aea1ad964c787e0e8be21a4ff91d22cee5ee9f01b02323f7ef8991">Parameter</a>,   </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    Default = Generic</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  };</div>
 </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="foldopen" id="foldopen00038" data-start="{" data-end="};">
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="../../dd/dfb/structez_visual_shader_node_descriptor.htm">   38</a></span><span class="keyword">struct </span><a class="code hl_struct" href="../../dd/dfb/structez_visual_shader_node_descriptor.htm">ezVisualShaderNodeDescriptor</a></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>{</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <a class="code hl_struct" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezVisualShaderNodeType&gt;</a> m_NodeType;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="../../dd/dfb/structez_visual_shader_node_descriptor.htm#a9cfc29582bbc41517398f68cbd9b3431">   41</a></span>  <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> <a class="code hl_variable" href="../../dd/dfb/structez_visual_shader_node_descriptor.htm#a9cfc29582bbc41517398f68cbd9b3431">m_sCfgFile</a>; </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sName;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <a class="code hl_class" href="../../de/dce/classez_hashed_string.htm">ezHashedString</a> m_sCategory;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sCheckPermutations;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <a class="code hl_class" href="../../da/d51/classez_color_gamma_u_b.htm">ezColorGammaUB</a> m_Color = <a class="code hl_function" href="../../df/dfe/classez_color_scheme.htm#a331f96675b5cfc784a12aa746a5835cd">ezColorScheme::DarkUI</a>(ezColorScheme::Gray);</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sShaderCodePixelDefines;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sShaderCodePixelIncludes;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sShaderCodePixelSamplers;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sShaderCodePixelConstants;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sShaderCodePixelBody;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sShaderCodePermutations;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sShaderCodeMaterialParams;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sShaderCodeMaterialConstants;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sShaderCodeMaterialCB;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sShaderCodeRenderState;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sShaderCodeVertexShader;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sShaderCodeGeometryShader;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <a class="code hl_class" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezVisualShaderPinDescriptor, 4&gt;</a> m_InputPins;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <a class="code hl_class" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezVisualShaderPinDescriptor, 4&gt;</a> m_OutputPins;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <a class="code hl_class" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezReflectedPropertyDescriptor, 4&gt;</a> m_Properties;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <a class="code hl_class" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezInt8, 4&gt;</a> m_UniquePropertyValueGroups; <span class="comment">// no property in the same group may share the same value, -1 for disabled</span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>};</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>};</div>
 </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="foldopen" id="foldopen00066" data-start="{" data-end="};">
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="../../d6/ddb/classez_visual_shader_type_registry.htm">   66</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d6/ddb/classez_visual_shader_type_registry.htm">ezVisualShaderTypeRegistry</a></div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>{</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  EZ_DECLARE_SINGLETON(<a class="code hl_class" href="../../d6/ddb/classez_visual_shader_type_registry.htm">ezVisualShaderTypeRegistry</a>);</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  <a class="code hl_class" href="../../d6/ddb/classez_visual_shader_type_registry.htm">ezVisualShaderTypeRegistry</a>();</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <a class="code hl_class" href="../../d6/ddb/classez_visual_shader_type_registry.htm">~ezVisualShaderTypeRegistry</a>();</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="foldopen" id="foldopen00049" data-start="{" data-end="};">
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="../../dd/dfb/structez_visual_shader_node_descriptor.htm">   49</a></span><span class="keyword">struct </span><a class="code hl_struct" href="../../dd/dfb/structez_visual_shader_node_descriptor.htm">ezVisualShaderNodeDescriptor</a></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>{</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <a class="code hl_struct" href="../../d6/dd9/structez_enum.htm">ezEnum&lt;ezVisualShaderNodeType&gt;</a> m_NodeType;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="../../dd/dfb/structez_visual_shader_node_descriptor.htm#a9cfc29582bbc41517398f68cbd9b3431">   52</a></span>  <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> <a class="code hl_variable" href="../../dd/dfb/structez_visual_shader_node_descriptor.htm#a9cfc29582bbc41517398f68cbd9b3431">m_sCfgFile</a>; </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sName;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sTitle;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sDocs;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <a class="code hl_class" href="../../de/dce/classez_hashed_string.htm">ezHashedString</a> m_sCategory;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sCheckPermutations;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <a class="code hl_class" href="../../da/d51/classez_color_gamma_u_b.htm">ezColorGammaUB</a> m_Color = <a class="code hl_function" href="../../df/dfe/classez_color_scheme.htm#a331f96675b5cfc784a12aa746a5835cd">ezColorScheme::DarkUI</a>(ezColorScheme::Gray);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sShaderCodePixelDefines;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sShaderCodePixelIncludes;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sShaderCodePixelSamplers;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sShaderCodePixelConstants;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sShaderCodePixelBody;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sShaderCodePermutations;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sShaderCodeMaterialParams;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sShaderCodeMaterialConstants;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sShaderCodeMaterialCB;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sShaderCodeRenderState;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sShaderCodeShaderShared;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sShaderCodeVertexDefines;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sShaderCodeVertexIncludes;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sShaderCodeVertexBody;</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <span class="keyword">const</span> <a class="code hl_struct" href="../../dd/dfb/structez_visual_shader_node_descriptor.htm">ezVisualShaderNodeDescriptor</a>* GetDescriptorForType(<span class="keyword">const</span> <a class="code hl_class" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a>* pRtti) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="keyword">const</span> <a class="code hl_class" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a>* GetNodeBaseType()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pBaseType; }</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <span class="keyword">const</span> <a class="code hl_class" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a>* GetPinSamplerType()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pSamplerPinType; }</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <a class="code hl_class" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezVisualShaderPinDescriptor, 4&gt;</a> m_InputPins;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <a class="code hl_class" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezVisualShaderPinDescriptor, 4&gt;</a> m_OutputPins;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <a class="code hl_class" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezReflectedPropertyDescriptor, 4&gt;</a> m_Properties;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  <a class="code hl_class" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezInt8, 4&gt;</a> m_UniquePropertyValueGroups; <span class="comment">// no property in the same group may share the same value, -1 for disabled</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>};</div>
+</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <span class="keywordtype">void</span> UpdateNodeData();</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  <span class="keywordtype">void</span> UpdateNodeData(<a class="code hl_class" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sCfgFileRelative);</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  EZ_MAKE_SUBSYSTEM_STARTUP_FRIEND(EditorPluginAssets, VisualShader);</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <span class="keywordtype">void</span> EditorEventHandler(<span class="keyword">const</span> <a class="code hl_struct" href="../../d3/d7b/structez_editor_app_event.htm">ezEditorAppEvent</a>&amp; e);</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  <span class="keywordtype">void</span> LoadNodeData();</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  <span class="keyword">const</span> <a class="code hl_class" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a>* GenerateTypeFromDesc(<span class="keyword">const</span> <a class="code hl_struct" href="../../dd/dfb/structez_visual_shader_node_descriptor.htm">ezVisualShaderNodeDescriptor</a>&amp; desc);</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  <span class="keywordtype">void</span> LoadConfigFile(<span class="keyword">const</span> <span class="keywordtype">char</span>* szFile);</div>
+<div class="foldopen" id="foldopen00084" data-start="{" data-end="};">
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="../../d6/ddb/classez_visual_shader_type_registry.htm">   84</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d6/ddb/classez_visual_shader_type_registry.htm">ezVisualShaderTypeRegistry</a></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>{</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  EZ_DECLARE_SINGLETON(<a class="code hl_class" href="../../d6/ddb/classez_visual_shader_type_registry.htm">ezVisualShaderTypeRegistry</a>);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  <a class="code hl_class" href="../../d6/ddb/classez_visual_shader_type_registry.htm">ezVisualShaderTypeRegistry</a>();</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  <a class="code hl_class" href="../../d6/ddb/classez_visual_shader_type_registry.htm">~ezVisualShaderTypeRegistry</a>();</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  <span class="keywordtype">void</span> ExtractNodePins(</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keyword">const</span> <a class="code hl_class" href="../../db/d71/classez_open_ddl_reader_element.htm">ezOpenDdlReaderElement</a>* pNode, <span class="keyword">const</span> <span class="keywordtype">char</span>* szPinType, <a class="code hl_class" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezVisualShaderPinDescriptor, 4&gt;</a>&amp; pinArray, <span class="keywordtype">bool</span> bOutput);</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  <span class="keywordtype">void</span> ExtractNodeProperties(<span class="keyword">const</span> <a class="code hl_class" href="../../db/d71/classez_open_ddl_reader_element.htm">ezOpenDdlReaderElement</a>* pNode, <a class="code hl_struct" href="../../dd/dfb/structez_visual_shader_node_descriptor.htm">ezVisualShaderNodeDescriptor</a>&amp; nd);</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  <span class="keywordtype">void</span> ExtractNodeConfig(<span class="keyword">const</span> <a class="code hl_class" href="../../db/d71/classez_open_ddl_reader_element.htm">ezOpenDdlReaderElement</a>* pNode, <a class="code hl_struct" href="../../dd/dfb/structez_visual_shader_node_descriptor.htm">ezVisualShaderNodeDescriptor</a>&amp; nd);</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  <span class="keyword">const</span> <a class="code hl_struct" href="../../dd/dfb/structez_visual_shader_node_descriptor.htm">ezVisualShaderNodeDescriptor</a>* GetDescriptorForType(<span class="keyword">const</span> <a class="code hl_class" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a>* pRtti) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  <span class="keyword">const</span> <a class="code hl_class" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a>* GetNodeBaseType()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pBaseType; }</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  <span class="keyword">const</span> <a class="code hl_class" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a>* GetPinSamplerType()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pSamplerPinType; }</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  <a class="code hl_class" href="../../d1/d79/classez_map.htm">ezMap&lt;const ezRTTI*, ezVisualShaderNodeDescriptor&gt;</a> m_NodeDescriptors;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  <span class="keywordtype">void</span> UpdateNodeData();</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  <span class="keyword">const</span> <a class="code hl_class" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a>* m_pBaseType;</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  <span class="keyword">const</span> <a class="code hl_class" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a>* m_pSamplerPinType;</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>};</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  <span class="keywordtype">void</span> UpdateNodeData(<a class="code hl_class" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sCfgFileRelative);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  EZ_MAKE_SUBSYSTEM_STARTUP_FRIEND(EditorPluginAssets, VisualShader);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  <span class="keywordtype">void</span> EditorEventHandler(<span class="keyword">const</span> <a class="code hl_struct" href="../../d3/d7b/structez_editor_app_event.htm">ezEditorAppEvent</a>&amp; e);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  <span class="keywordtype">void</span> LoadNodeData();</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  <span class="keyword">const</span> <a class="code hl_class" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a>* GenerateTypeFromDesc(<span class="keyword">const</span> <a class="code hl_struct" href="../../dd/dfb/structez_visual_shader_node_descriptor.htm">ezVisualShaderNodeDescriptor</a>&amp; desc);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  <span class="keywordtype">void</span> LoadConfigFile(<span class="keyword">const</span> <span class="keywordtype">char</span>* szFile);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  <span class="keywordtype">void</span> ExtractNodePins(</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keyword">const</span> <a class="code hl_class" href="../../db/d71/classez_open_ddl_reader_element.htm">ezOpenDdlReaderElement</a>* pNode, <span class="keyword">const</span> <span class="keywordtype">char</span>* szPinType, <a class="code hl_class" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezVisualShaderPinDescriptor, 4&gt;</a>&amp; pinArray, <span class="keywordtype">bool</span> bOutput);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  <span class="keywordtype">void</span> ExtractNodeProperties(<span class="keyword">const</span> <a class="code hl_class" href="../../db/d71/classez_open_ddl_reader_element.htm">ezOpenDdlReaderElement</a>* pNode, <a class="code hl_struct" href="../../dd/dfb/structez_visual_shader_node_descriptor.htm">ezVisualShaderNodeDescriptor</a>&amp; nd);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  <span class="keywordtype">void</span> ExtractNodeConfig(<span class="keyword">const</span> <a class="code hl_class" href="../../db/d71/classez_open_ddl_reader_element.htm">ezOpenDdlReaderElement</a>* pNode, <a class="code hl_struct" href="../../dd/dfb/structez_visual_shader_node_descriptor.htm">ezVisualShaderNodeDescriptor</a>&amp; nd);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  <a class="code hl_class" href="../../d1/d79/classez_map.htm">ezMap&lt;const ezRTTI*, ezVisualShaderNodeDescriptor&gt;</a> m_NodeDescriptors;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  <span class="keyword">const</span> <a class="code hl_class" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a>* m_pBaseType;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  <span class="keyword">const</span> <a class="code hl_class" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a>* m_pSamplerPinType;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>};</div>
 </div>
 <div class="ttc" id="aclassez_color_gamma_u_b_htm"><div class="ttname"><a href="../../da/d51/classez_color_gamma_u_b.htm">ezColorGammaUB</a></div><div class="ttdoc">A 8bit per channel unsigned normalized (values interpreted as 0-1) color storage format that represen...</div><div class="ttdef"><b>Definition</b> Color8UNorm.h:99</div></div>
 <div class="ttc" id="aclassez_color_scheme_htm_a331f96675b5cfc784a12aa746a5835cd"><div class="ttname"><a href="../../df/dfe/classez_color_scheme.htm#a331f96675b5cfc784a12aa746a5835cd">ezColorScheme::DarkUI</a></div><div class="ttdeci">static EZ_ALWAYS_INLINE ezColor DarkUI(Enum schemeColor)</div><div class="ttdoc">Get a scheme color with predefined brightness and saturation to look good with the EZ tools dark UI s...</div><div class="ttdef"><b>Definition</b> ColorScheme.h:49</div></div>
 <div class="ttc" id="aclassez_dynamic_array_htm"><div class="ttname"><a href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray</a></div><div class="ttdef"><b>Definition</b> DynamicArray.h:81</div></div>
 <div class="ttc" id="aclassez_hashed_string_htm"><div class="ttname"><a href="../../de/dce/classez_hashed_string.htm">ezHashedString</a></div><div class="ttdoc">This class is optimized to take nearly no memory (sizeof(void*)) and to allow very fast checks whethe...</div><div class="ttdef"><b>Definition</b> HashedString.h:25</div></div>
 <div class="ttc" id="aclassez_hybrid_array_htm"><div class="ttname"><a href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray</a></div><div class="ttdoc">A hybrid array uses in-place storage to handle the first few elements without any allocation....</div><div class="ttdef"><b>Definition</b> HybridArray.h:12</div></div>
-<div class="ttc" id="aclassez_map_htm"><div class="ttname"><a href="../../d1/d79/classez_map.htm">ezMap</a></div><div class="ttdef"><b>Definition</b> Map.h:408</div></div>
-<div class="ttc" id="aclassez_open_ddl_reader_element_htm"><div class="ttname"><a href="../../db/d71/classez_open_ddl_reader_element.htm">ezOpenDdlReaderElement</a></div><div class="ttdoc">Represents a single 'object' in a DDL document, e.g. either a custom type or a primitives list.</div><div class="ttdef"><b>Definition</b> OpenDdlReader.h:11</div></div>
-<div class="ttc" id="aclassez_r_t_t_i_htm"><div class="ttname"><a href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a></div><div class="ttdoc">This class holds information about reflected types. Each instance represents one type that is known t...</div><div class="ttdef"><b>Definition</b> RTTI.h:30</div></div>
+<div class="ttc" id="aclassez_map_htm"><div class="ttname"><a href="../../d1/d79/classez_map.htm">ezMap</a></div><div class="ttdef"><b>Definition</b> Map.h:424</div></div>
+<div class="ttc" id="aclassez_open_ddl_reader_element_htm"><div class="ttname"><a href="../../db/d71/classez_open_ddl_reader_element.htm">ezOpenDdlReaderElement</a></div><div class="ttdoc">Represents a single element in an OpenDDL document.</div><div class="ttdef"><b>Definition</b> OpenDdlReader.h:16</div></div>
+<div class="ttc" id="aclassez_r_t_t_i_htm"><div class="ttname"><a href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a></div><div class="ttdoc">Core class of ezEngine's reflection system that holds complete runtime type information.</div><div class="ttdef"><b>Definition</b> RTTI.h:51</div></div>
 <div class="ttc" id="aclassez_string_view_htm"><div class="ttname"><a href="../../d9/d18/classez_string_view.htm">ezStringView</a></div><div class="ttdoc">ezStringView represent a read-only sub-string of a larger string, as it can store a dedicated string ...</div><div class="ttdef"><b>Definition</b> StringView.h:34</div></div>
-<div class="ttc" id="aclassez_visual_shader_type_registry_htm"><div class="ttname"><a href="../../d6/ddb/classez_visual_shader_type_registry.htm">ezVisualShaderTypeRegistry</a></div><div class="ttdef"><b>Definition</b> VisualShaderTypeRegistry.h:67</div></div>
+<div class="ttc" id="aclassez_visual_shader_type_registry_htm"><div class="ttname"><a href="../../d6/ddb/classez_visual_shader_type_registry.htm">ezVisualShaderTypeRegistry</a></div><div class="ttdef"><b>Definition</b> VisualShaderTypeRegistry.h:85</div></div>
 <div class="ttc" id="astructez_editor_app_event_htm"><div class="ttname"><a href="../../d3/d7b/structez_editor_app_event.htm">ezEditorAppEvent</a></div><div class="ttdef"><b>Definition</b> EditorApp.moc.h:35</div></div>
-<div class="ttc" id="astructez_enum_htm"><div class="ttname"><a href="../../d6/dd9/structez_enum.htm">ezEnum</a></div><div class="ttdoc">A custom enum implementation that allows to define the underlying storage type to control its memory ...</div><div class="ttdef"><b>Definition</b> Enum.h:37</div></div>
+<div class="ttc" id="astructez_enum_htm"><div class="ttname"><a href="../../d6/dd9/structez_enum.htm">ezEnum</a></div><div class="ttdoc">A custom enum implementation that allows to define the underlying storage type to control its memory ...</div><div class="ttdef"><b>Definition</b> Enum.h:39</div></div>
 <div class="ttc" id="astructez_hybrid_string_htm"><div class="ttname"><a href="../../d4/d53/structez_hybrid_string.htm">ezHybridString&lt; 32, ezDefaultAllocatorWrapper &gt;</a></div></div>
 <div class="ttc" id="astructez_reflected_property_descriptor_htm"><div class="ttname"><a href="../../db/deb/structez_reflected_property_descriptor.htm">ezReflectedPropertyDescriptor</a></div><div class="ttdoc">Stores the description of a reflected property in a serializable form, used by ezReflectedTypeDescrip...</div><div class="ttdef"><b>Definition</b> ReflectedType.h:43</div></div>
-<div class="ttc" id="astructez_visual_shader_node_descriptor_htm"><div class="ttname"><a href="../../dd/dfb/structez_visual_shader_node_descriptor.htm">ezVisualShaderNodeDescriptor</a></div><div class="ttdef"><b>Definition</b> VisualShaderTypeRegistry.h:39</div></div>
-<div class="ttc" id="astructez_visual_shader_node_descriptor_htm_a9cfc29582bbc41517398f68cbd9b3431"><div class="ttname"><a href="../../dd/dfb/structez_visual_shader_node_descriptor.htm#a9cfc29582bbc41517398f68cbd9b3431">ezVisualShaderNodeDescriptor::m_sCfgFile</a></div><div class="ttdeci">ezString m_sCfgFile</div><div class="ttdoc">from which config file this node type was loaded</div><div class="ttdef"><b>Definition</b> VisualShaderTypeRegistry.h:41</div></div>
-<div class="ttc" id="astructez_visual_shader_node_type_htm"><div class="ttname"><a href="../../d3/da3/structez_visual_shader_node_type.htm">ezVisualShaderNodeType</a></div><div class="ttdef"><b>Definition</b> VisualShaderTypeRegistry.h:25</div></div>
-<div class="ttc" id="astructez_visual_shader_pin_descriptor_htm"><div class="ttname"><a href="../../d1/d05/structez_visual_shader_pin_descriptor.htm">ezVisualShaderPinDescriptor</a></div><div class="ttdef"><b>Definition</b> VisualShaderTypeRegistry.h:12</div></div>
+<div class="ttc" id="astructez_visual_shader_node_descriptor_htm"><div class="ttname"><a href="../../dd/dfb/structez_visual_shader_node_descriptor.htm">ezVisualShaderNodeDescriptor</a></div><div class="ttdef"><b>Definition</b> VisualShaderTypeRegistry.h:50</div></div>
+<div class="ttc" id="astructez_visual_shader_node_descriptor_htm_a9cfc29582bbc41517398f68cbd9b3431"><div class="ttname"><a href="../../dd/dfb/structez_visual_shader_node_descriptor.htm#a9cfc29582bbc41517398f68cbd9b3431">ezVisualShaderNodeDescriptor::m_sCfgFile</a></div><div class="ttdeci">ezString m_sCfgFile</div><div class="ttdoc">from which config file this node type was loaded</div><div class="ttdef"><b>Definition</b> VisualShaderTypeRegistry.h:52</div></div>
+<div class="ttc" id="astructez_visual_shader_node_type_htm"><div class="ttname"><a href="../../d3/da3/structez_visual_shader_node_type.htm">ezVisualShaderNodeType</a></div><div class="ttdef"><b>Definition</b> VisualShaderTypeRegistry.h:29</div></div>
+<div class="ttc" id="astructez_visual_shader_node_type_htm_a4b085a75223aea1ad964c787e0e8be21"><div class="ttname"><a href="../../d3/da3/structez_visual_shader_node_type.htm#a4b085a75223aea1ad964c787e0e8be21">ezVisualShaderNodeType::Enum</a></div><div class="ttdeci">Enum</div><div class="ttdef"><b>Definition</b> VisualShaderTypeRegistry.h:33</div></div>
+<div class="ttc" id="astructez_visual_shader_node_type_htm_a4b085a75223aea1ad964c787e0e8be21a2adc421b34224429cef2499037690bcf"><div class="ttname"><a href="../../d3/da3/structez_visual_shader_node_type.htm#a4b085a75223aea1ad964c787e0e8be21a2adc421b34224429cef2499037690bcf">ezVisualShaderNodeType::ShaderState</a></div><div class="ttdeci">@ ShaderState</div><div class="ttdoc">These have no connections, but must be part of the shader.</div><div class="ttdef"><b>Definition</b> VisualShaderTypeRegistry.h:37</div></div>
+<div class="ttc" id="astructez_visual_shader_node_type_htm_a4b085a75223aea1ad964c787e0e8be21a4ff91d22cee5ee9f01b02323f7ef8991"><div class="ttname"><a href="../../d3/da3/structez_visual_shader_node_type.htm#a4b085a75223aea1ad964c787e0e8be21a4ff91d22cee5ee9f01b02323f7ef8991">ezVisualShaderNodeType::Parameter</a></div><div class="ttdeci">@ Parameter</div><div class="ttdoc">Will be added to the shader, even if there's no connection, to prevent that data is lost while editin...</div><div class="ttdef"><b>Definition</b> VisualShaderTypeRegistry.h:38</div></div>
+<div class="ttc" id="astructez_visual_shader_pin_descriptor_htm"><div class="ttname"><a href="../../d1/d05/structez_visual_shader_pin_descriptor.htm">ezVisualShaderPinDescriptor</a></div><div class="ttdef"><b>Definition</b> VisualShaderTypeRegistry.h:16</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_c3dd6abea2527457e93dbb576186601d.htm">EditorPlugins</a></li><li class="navelem"><a class="el" href="../../dir_f73160fc1de82bd0c489b7d6957db993.htm">Assets</a></li><li class="navelem"><a class="el" href="../../dir_36797f34b63cd6b13411dd97d5ce0a9f.htm">EditorPluginAssets</a></li><li class="navelem"><a class="el" href="../../dir_c7578d9c3c226e09fccd0adab70a031b.htm">VisualShader</a></li><li class="navelem"><b>VisualShaderTypeRegistry.h</b></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:00:49 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:30 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

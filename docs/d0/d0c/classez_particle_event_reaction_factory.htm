@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -98,7 +98,7 @@ $(document).ready(function(){initNavTree('d0/d0c/classez_particle_event_reaction
 </div><!--header-->
 <div class="contents">
 
-<p>Base class for all particle event reactions.  
+<p>Base class for all particle event reaction factories.  
  <a href="../../d0/d0c/classez_particle_event_reaction_factory.htm#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../de/d45/_particle_event_reaction_8h_source.htm">ParticleEventReaction.h</a>&gt;</code></p>
@@ -107,12 +107,12 @@ Inheritance diagram for ezParticleEventReactionFactory:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d5/d89/classez_particle_event_reaction_factory__inherit__graph.png" border="0" usemap="#aez_particle_event_reaction_factory_inherit__map" alt="Inheritance graph"/></div>
 <map name="aez_particle_event_reaction_factory_inherit__map" id="aez_particle_event_reaction_factory_inherit__map">
-<area shape="rect" title="Base class for all particle event reactions." alt="" coords="131,152,357,177"/>
+<area shape="rect" title="Base class for all particle event reaction factories." alt="" coords="131,152,357,177"/>
 <area shape="rect" href="../../d1/d13/classez_particle_event_reaction_factory___effect.htm" title=" " alt="" coords="5,225,232,265"/>
 <area shape="poly" title=" " alt="" coords="216,187,150,227,147,223,213,182"/>
 <area shape="rect" href="../../d3/dd4/classez_particle_event_reaction_factory___prefab.htm" title=" " alt="" coords="256,225,483,265"/>
 <area shape="poly" title=" " alt="" coords="275,182,341,223,338,227,272,187"/>
-<area shape="rect" href="../../db/d45/classez_reflected_class.htm" title="All classes that should be dynamically reflectable, need to be derived from this base class." alt="" coords="177,79,311,104"/>
+<area shape="rect" href="../../db/d45/classez_reflected_class.htm" title="Base class for all types that support dynamic reflection and runtime type identification." alt="" coords="177,79,311,104"/>
 <area shape="poly" title=" " alt="" coords="247,118,247,152,241,152,241,118"/>
 <area shape="rect" href="../../d4/d02/classez_no_base.htm" title="Dummy type to pass to templates and macros that expect a base type for a class that has no base." alt="" coords="201,5,287,31"/>
 <area shape="poly" title=" " alt="" coords="247,44,247,79,241,79,241,44"/>
@@ -129,6 +129,7 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>CopyReactionP
 <tr class="separator:a8468791684aefe991609cd7099813719"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a136ebbd81453632dc04d12e83f8b4376" id="r_a136ebbd81453632dc04d12e83f8b4376"><td class="memItemLeft" align="right" valign="top"><a id="a136ebbd81453632dc04d12e83f8b4376" name="a136ebbd81453632dc04d12e83f8b4376"></a>
 <a class="el" href="../../d0/d3f/classez_particle_event_reaction.htm">ezParticleEventReaction</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>CreateEventReaction</b> (<a class="el" href="../../d9/d98/classez_particle_effect_instance.htm">ezParticleEffectInstance</a> *pOwner) const</td></tr>
+<tr class="memdesc:a136ebbd81453632dc04d12e83f8b4376"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and initializes a new event reaction instance for the given effect. <br /></td></tr>
 <tr class="separator:a136ebbd81453632dc04d12e83f8b4376"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af196b02f3e610388d345ff1d53619341" id="r_af196b02f3e610388d345ff1d53619341"><td class="memItemLeft" align="right" valign="top"><a id="af196b02f3e610388d345ff1d53619341" name="af196b02f3e610388d345ff1d53619341"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Save</b> (<a class="el" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a> &amp;inout_stream) const</td></tr>
@@ -154,9 +155,11 @@ template&lt;typename T &gt; </td></tr>
 Public Attributes</h2></td></tr>
 <tr class="memitem:ace30f3ede53d13c3be41fa3b08985492" id="r_ace30f3ede53d13c3be41fa3b08985492"><td class="memItemLeft" align="right" valign="top"><a id="ace30f3ede53d13c3be41fa3b08985492" name="ace30f3ede53d13c3be41fa3b08985492"></a>
 <a class="el" href="../../d4/d53/structez_hybrid_string.htm">ezString</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_sEventType</b></td></tr>
+<tr class="memdesc:ace30f3ede53d13c3be41fa3b08985492"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of particle event this reaction responds to. <br /></td></tr>
 <tr class="separator:ace30f3ede53d13c3be41fa3b08985492"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3efaee26b2094f9c7f3479faf9b2a20c" id="r_a3efaee26b2094f9c7f3479faf9b2a20c"><td class="memItemLeft" align="right" valign="top"><a id="a3efaee26b2094f9c7f3479faf9b2a20c" name="a3efaee26b2094f9c7f3479faf9b2a20c"></a>
 ezUInt8&#160;</td><td class="memItemRight" valign="bottom"><b>m_uiProbability</b> = 100</td></tr>
+<tr class="memdesc:a3efaee26b2094f9c7f3479faf9b2a20c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Probability (1-100) that this reaction triggers when the event occurs. <br /></td></tr>
 <tr class="separator:a3efaee26b2094f9c7f3479faf9b2a20c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
@@ -167,7 +170,8 @@ static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&
 <tr class="separator:a718d4e4145a2c15d0c28aaed086f1ce2 inherit pub_static_methods_classez_no_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Base class for all particle event reactions. </p>
+<div class="textblock"><p>Base class for all particle event reaction factories. </p>
+<p>Event reaction factories create and configure event reactions that respond to particle events. Each factory specifies which event type to respond to and the probability of triggering. </p>
 </div><hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/runner/work/ezEngine/ezEngine/Code/EnginePlugins/ParticlePlugin/Events/<a class="el" href="../../de/d45/_particle_event_reaction_8h_source.htm">ParticleEventReaction.h</a></li>
 <li>/home/runner/work/ezEngine/ezEngine/Code/EnginePlugins/ParticlePlugin/Events/<b>ParticleEventReaction.cpp</b></li>
@@ -178,7 +182,7 @@ static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d0/d0c/classez_particle_event_reaction_factory.htm">ezParticleEventReactionFactory</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:05 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:46 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

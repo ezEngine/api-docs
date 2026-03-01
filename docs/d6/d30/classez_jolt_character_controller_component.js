@@ -3,7 +3,7 @@ var classez_jolt_character_controller_component =
     [ "ContactPoint", "d7/de5/structez_jolt_character_controller_component_1_1_contact_point.htm", null ],
     [ "ClearObjectToIgnore", "d6/d30/classez_jolt_character_controller_component.htm#add75494e90a7978543d768d992271cdc", null ],
     [ "CollectCastContacts", "d6/d30/classez_jolt_character_controller_component.htm#adcde1407ed376b66f6ef1816633364b2", null ],
-    [ "CollectContacts", "d6/d30/classez_jolt_character_controller_component.htm#a819161f309e076024c16dfcad75356f4", null ],
+    [ "CollectContacts", "d6/d30/classez_jolt_character_controller_component.htm#aa4eb40562cffddf89cc507396b535740", null ],
     [ "DeserializeComponent", "d6/d30/classez_jolt_character_controller_component.htm#aaed536bd2e0bb0200e67db5d0b908aa9", null ],
     [ "GetContactVelocityAndPushAway", "d6/d30/classez_jolt_character_controller_component.htm#a3302b875dedbe37bb53f2e400f3200e1", null ],
     [ "GetInverseUpdateTimeDelta", "d6/d30/classez_jolt_character_controller_component.htm#af7369e777234df0a85413085b7e7f01c", null ],

@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('dc/dfb/classez_abstract_array_property
 </div><!--header-->
 <div class="contents">
 
-<p>The base class for a property that represents an array of values.  
+<p>Base class for properties that represent arrays or sequential containers.  
  <a href="../../dc/dfb/classez_abstract_array_property.htm#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../d8/d4a/_abstract_property_8h_source.htm">AbstractProperty.h</a>&gt;</code></p>
@@ -106,7 +106,7 @@ Inheritance diagram for ezAbstractArrayProperty:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d9/d49/classez_abstract_array_property__inherit__graph.png" border="0" usemap="#aez_abstract_array_property_inherit__map" alt="Inheritance graph"/></div>
 <map name="aez_abstract_array_property_inherit__map" id="aez_abstract_array_property_inherit__map">
-<area shape="rect" title="The base class for a property that represents an array of values." alt="" coords="200,141,381,166"/>
+<area shape="rect" title="Base class for properties that represent arrays or sequential containers." alt="" coords="200,141,381,166"/>
 <area shape="rect" href="../../d2/d33/classez_typed_array_property.htm" title=" " alt="" coords="429,33,648,87"/>
 <area shape="poly" title=" " alt="" coords="336,133,428,98,462,85,464,90,430,102,338,138"/>
 <area shape="rect" href="../../db/d21/classez_phantom_array_property.htm" title=" " alt="" coords="446,111,631,137"/>
@@ -115,7 +115,7 @@ Inheritance diagram for ezAbstractArrayProperty:</div>
 <area shape="poly" title=" " alt="" coords="396,162,456,169,455,175,395,168"/>
 <area shape="rect" href="../../dc/d7a/classez_typed_array_property_3_01const_01char_01_5_01_4.htm" title="Specialization of ezTypedArrayProperty to retain the pointer in const char*." alt="" coords="456,225,621,265"/>
 <area shape="poly" title=" " alt="" coords="332,169,430,211,466,223,464,228,428,216,330,174"/>
-<area shape="rect" href="../../d6/d81/classez_abstract_property.htm" title="This is the base interface for all properties in the reflection system. It provides enough informatio..." alt="" coords="5,141,152,166"/>
+<area shape="rect" href="../../d6/d81/classez_abstract_property.htm" title="Base interface for all properties in the reflection system." alt="" coords="5,141,152,166"/>
 <area shape="poly" title=" " alt="" coords="166,151,200,151,200,156,166,156"/>
 <area shape="rect" href="../../d4/d8b/classez_member_array_property.htm" title=" " alt="" coords="720,5,916,45"/>
 <area shape="poly" title=" " alt="" coords="661,42,720,35,720,40,662,47"/>
@@ -130,7 +130,7 @@ Inheritance diagram for ezAbstractArrayProperty:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a4a170bb0722e792b9f70f3736e22e190" id="r_a4a170bb0722e792b9f70f3736e22e190"><td class="memItemLeft" align="right" valign="top"><a id="a4a170bb0722e792b9f70f3736e22e190" name="a4a170bb0722e792b9f70f3736e22e190"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>ezAbstractArrayProperty</b> (const char *szPropertyName)</td></tr>
-<tr class="memdesc:a4a170bb0722e792b9f70f3736e22e190"><td class="mdescLeft">&#160;</td><td class="mdescRight">Passes the property name through to <a class="el" href="../../d6/d81/classez_abstract_property.htm" title="This is the base interface for all properties in the reflection system. It provides enough informatio...">ezAbstractProperty</a>. <br /></td></tr>
+<tr class="memdesc:a4a170bb0722e792b9f70f3736e22e190"><td class="mdescLeft">&#160;</td><td class="mdescRight">Passes the property name through to <a class="el" href="../../d6/d81/classez_abstract_property.htm" title="Base interface for all properties in the reflection system.">ezAbstractProperty</a>. <br /></td></tr>
 <tr class="separator:a4a170bb0722e792b9f70f3736e22e190"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54d83354c7d25e4fba72d398f9456713" id="r_a54d83354c7d25e4fba72d398f9456713"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../d5/d49/structez_property_category.htm#a6900b9049e7887fa4b00d16d5eace8cf">ezPropertyCategory::Enum</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dfb/classez_abstract_array_property.htm#a54d83354c7d25e4fba72d398f9456713">GetCategory</a> () const override</td></tr>
 <tr class="memdesc:a54d83354c7d25e4fba72d398f9456713"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <a class="el" href="../../d5/d49/structez_property_category.htm#a6900b9049e7887fa4b00d16d5eace8cfa83adeecf73ec8bb2d142c4c46d270862" title="The property is actually an array of values. The array dimensions might be changeable....">ezPropertyCategory::Array</a>.  <br /></td></tr>
@@ -207,7 +207,24 @@ const char *&#160;</td><td class="memItemRight" valign="bottom"><b>m_szPropertyN
 <tr class="separator:a4db885baa76eabd60628aef04d77923b inherit pro_attribs_classez_abstract_property"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The base class for a property that represents an array of values. </p>
+<div class="textblock"><p>Base class for properties that represent arrays or sequential containers. </p>
+<p>Array properties provide indexed access to collections of elements with dynamic or fixed sizing. They support all standard container operations: access, insertion, removal, and resizing.</p>
+<p>Supported container types:</p><ul>
+<li><a class="el" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray</a>, <a class="el" href="../../d8/deb/classez_hybrid_array.htm" title="A hybrid array uses in-place storage to handle the first few elements without any allocation....">ezHybridArray</a>, <a class="el" href="../../df/d5c/classez_static_array.htm" title="Wraps a C-style array, which has a fixed size at compile-time, with a more convenient interface.">ezStaticArray</a></li>
+<li>Standard arrays (T[N])</li>
+<li>Custom containers implementing the array interface</li>
+</ul>
+<p>Key operations:</p><ul>
+<li>Indexed access: <a class="el" href="../../dc/dfb/classez_abstract_array_property.htm#a9dee8fab9379e30d620e2d7c5f9f61f2" title="Writes element at index uiIndex to the target of pObject.">GetValue()</a>/SetValue() by index</li>
+<li>Dynamic sizing: <a class="el" href="../../dc/dfb/classez_abstract_array_property.htm#a0737cb583f10b7987b22a54d5c4a1776" title="Resizes the array to uiCount.">SetCount()</a>, <a class="el" href="../../dc/dfb/classez_abstract_array_property.htm#a128ab0c99cad7b4d4270e1e5f3b3ebb0" title="Inserts the target of pObject into the array at index uiIndex.">Insert()</a>, <a class="el" href="../../dc/dfb/classez_abstract_array_property.htm#a109e7d531640b338b7410b71771c50fe" title="Removes the element in the array at index uiIndex.">Remove()</a></li>
+<li>Bulk operations: Clear() for efficiency</li>
+</ul>
+<p>Performance considerations:</p><ul>
+<li><a class="el" href="../../dc/dfb/classez_abstract_array_property.htm#a21a08998539fd5dad94ffb1472db38a3" title="Returns number of elements.">GetCount()</a> may involve virtual calls for dynamic containers</li>
+<li>Insert/Remove operations may require element shifting</li>
+<li><a class="el" href="../../dc/dfb/classez_abstract_array_property.htm#a0737cb583f10b7987b22a54d5c4a1776" title="Resizes the array to uiCount.">SetCount()</a> can be expensive for complex element types</li>
+<li>GetValuePointer() provides direct access when available </li>
+</ul>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a2e2a86f485a265fa008a4d9de932b368" name="a2e2a86f485a265fa008a4d9de932b368"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2e2a86f485a265fa008a4d9de932b368">&#9670;&#160;</a></span>Clear()</h2>
@@ -525,7 +542,7 @@ const char *&#160;</td><td class="memItemRight" valign="bottom"><b>m_szPropertyN
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dc/dfb/classez_abstract_array_property.htm">ezAbstractArrayProperty</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:02 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:43 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

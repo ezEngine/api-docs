@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -131,9 +131,8 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a64fb8627f46bc984072e682977b92172" id="r_a64fb8627f46bc984072e682977b92172"><td class="memItemLeft" align="right" valign="top"><a id="a64fb8627f46bc984072e682977b92172" name="a64fb8627f46bc984072e682977b92172"></a>
-<a class="el" href="../../d4/da9/structez_result.htm">ezResult</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Parse</b> (<a class="el" href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a> &amp;ref_input, ezUInt32 uiFirstLineOffset=0)</td></tr>
-<tr class="memdesc:a64fb8627f46bc984072e682977b92172"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the entire stream and creates the internal data structure that represents the JSON document. Returns EZ_FAILURE if any parsing error occurred. <br /></td></tr>
+<tr class="memitem:a64fb8627f46bc984072e682977b92172" id="r_a64fb8627f46bc984072e682977b92172"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/da9/structez_result.htm">ezResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d02/classez_j_s_o_n_reader.htm#a64fb8627f46bc984072e682977b92172">Parse</a> (<a class="el" href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a> &amp;ref_input, ezUInt32 uiFirstLineOffset=0)</td></tr>
+<tr class="memdesc:a64fb8627f46bc984072e682977b92172"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the entire stream and creates the internal data structure that represents the JSON document.  <br /></td></tr>
 <tr class="separator:a64fb8627f46bc984072e682977b92172"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada8445ea0292a3a69afe4afeb0e7607c" id="r_ada8445ea0292a3a69afe4afeb0e7607c"><td class="memItemLeft" align="right" valign="top"><a id="ada8445ea0292a3a69afe4afeb0e7607c" name="ada8445ea0292a3a69afe4afeb0e7607c"></a>
 const <a class="el" href="../../d8/d86/classez_hash_table.htm">ezVariantDictionary</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetTopLevelObject</b> () const</td></tr>
@@ -586,6 +585,46 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>ParsingError</b> (<a 
 
 </div>
 </div>
+<a id="a64fb8627f46bc984072e682977b92172" name="a64fb8627f46bc984072e682977b92172"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64fb8627f46bc984072e682977b92172">&#9670;&#160;</a></span>Parse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/da9/structez_result.htm">ezResult</a> ezJSONReader::Parse </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a> &amp;&#160;</td>
+          <td class="paramname"><em>ref_input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ezUInt32&#160;</td>
+          <td class="paramname"><em>uiFirstLineOffset</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reads the entire stream and creates the internal data structure that represents the JSON document. </p>
+<p>Parses the complete JSON document from the input stream, building the variant tree structure. The entire document must be valid JSON - parsing stops on the first error encountered.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ref_input</td><td>Stream containing the JSON document to parse </td></tr>
+    <tr><td class="paramname">uiFirstLineOffset</td><td>Line number offset for error reporting (useful when JSON is embedded) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>EZ_SUCCESS if parsing completed without errors, EZ_FAILURE if any parsing error occurred</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>After successful parsing, use <a class="el" href="../../d7/d02/classez_j_s_o_n_reader.htm#ada8445ea0292a3a69afe4afeb0e7607c" title="Returns the top-level object of the JSON document.">GetTopLevelObject()</a> or <a class="el" href="../../d7/d02/classez_j_s_o_n_reader.htm#af9abac314d18d707330ed3a01608787d" title="Returns the top-level array of the JSON document.">GetTopLevelArray()</a> to access the data. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/IO/<a class="el" href="../../db/d67/_j_s_o_n_reader_8h_source.htm">JSONReader.h</a></li>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/IO/Implementation/<b>JSONReader.cpp</b></li>
@@ -596,7 +635,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>ParsingError</b> (<a 
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d7/d02/classez_j_s_o_n_reader.htm">ezJSONReader</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:04 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:45 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

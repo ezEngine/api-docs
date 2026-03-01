@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -109,7 +109,7 @@ Inheritance diagram for ezProcGenOutput:</div>
 <area shape="poly" title=" " alt="" coords="262,255,331,296,328,301,259,260"/>
 <area shape="rect" href="../../dc/de5/classez_proc_gen_node_base.htm" title=" " alt="" coords="151,152,308,177"/>
 <area shape="poly" title=" " alt="" coords="232,191,232,225,227,225,227,191"/>
-<area shape="rect" href="../../db/d45/classez_reflected_class.htm" title="All classes that should be dynamically reflectable, need to be derived from this base class." alt="" coords="163,79,296,104"/>
+<area shape="rect" href="../../db/d45/classez_reflected_class.htm" title="Base class for all types that support dynamic reflection and runtime type identification." alt="" coords="163,79,296,104"/>
 <area shape="poly" title=" " alt="" coords="232,118,232,152,227,152,227,118"/>
 <area shape="rect" href="../../d4/d02/classez_no_base.htm" title="Dummy type to pass to templates and macros that expect a base type for a class that has no base." alt="" coords="186,5,273,31"/>
 <area shape="poly" title=" " alt="" coords="232,44,232,79,227,79,227,44"/>
@@ -121,6 +121,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a85da51a5ad14f318ff044b7d516d6875" id="r_a85da51a5ad14f318ff044b7d516d6875"><td class="memItemLeft" align="right" valign="top"><a id="a85da51a5ad14f318ff044b7d516d6875" name="a85da51a5ad14f318ff044b7d516d6875"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Save</b> (<a class="el" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a> &amp;inout_stream)</td></tr>
 <tr class="separator:a85da51a5ad14f318ff044b7d516d6875"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed94f45acbde7730dda6febb90518b20" id="r_aed94f45acbde7730dda6febb90518b20"><td class="memItemLeft" align="right" valign="top"><a id="aed94f45acbde7730dda6febb90518b20" name="aed94f45acbde7730dda6febb90518b20"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>CopyValuesFromContext</b> (const <a class="el" href="../../dd/dfc/structez_proc_gen_node_base_1_1_graph_context.htm">GraphContext</a> &amp;context)</td></tr>
+<tr class="separator:aed94f45acbde7730dda6febb90518b20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classez_proc_gen_node_base"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classez_proc_gen_node_base')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../dc/de5/classez_proc_gen_node_base.htm">ezProcGenNodeBase</a></td></tr>
 <tr class="memitem:a35c5cd7aba57543ffdc9b6d161ef0ed9 inherit pub_methods_classez_proc_gen_node_base" id="r_a35c5cd7aba57543ffdc9b6d161ef0ed9"><td class="memItemLeft" align="right" valign="top">
 virtual <a class="el" href="../../d2/d95/structez_expression_a_s_t_1_1_node.htm">ezExpressionAST::Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>GenerateExpressionASTNode</b> (<a class="el" href="../../db/dcf/classez_temp_hashed_string.htm">ezTempHashedString</a> sOutputName, <a class="el" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr</a>&lt; <a class="el" href="../../d2/d95/structez_expression_a_s_t_1_1_node.htm">ezExpressionAST::Node</a> * &gt; inputs, <a class="el" href="../../d6/d10/classez_expression_a_s_t.htm">ezExpressionAST</a> &amp;out_ast, <a class="el" href="../../dd/dfc/structez_proc_gen_node_base_1_1_graph_context.htm">GraphContext</a> &amp;ref_context)=0</td></tr>
@@ -147,9 +150,12 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_bActive</b> = true<
 <tr class="memitem:aff8ea030ea8511f1af609dcc8af5f689" id="r_aff8ea030ea8511f1af609dcc8af5f689"><td class="memItemLeft" align="right" valign="top"><a id="aff8ea030ea8511f1af609dcc8af5f689" name="aff8ea030ea8511f1af609dcc8af5f689"></a>
 <a class="el" href="../../d4/d53/structez_hybrid_string.htm">ezString</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_sName</b></td></tr>
 <tr class="separator:aff8ea030ea8511f1af609dcc8af5f689"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28e80035546240630d7b39acbae35311" id="r_a28e80035546240630d7b39acbae35311"><td class="memItemLeft" align="right" valign="top"><a id="a28e80035546240630d7b39acbae35311" name="a28e80035546240630d7b39acbae35311"></a>
-<a class="el" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray</a>&lt; ezUInt8, 4 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_VolumeTagSetIndices</b></td></tr>
-<tr class="separator:a28e80035546240630d7b39acbae35311"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa08669cdffe623363e5ee079b89fab04" id="r_aa08669cdffe623363e5ee079b89fab04"><td class="memItemLeft" align="right" valign="top"><a id="aa08669cdffe623363e5ee079b89fab04" name="aa08669cdffe623363e5ee079b89fab04"></a>
+<a class="el" href="../../d0/d0c/classez_small_array.htm">ezSmallArray</a>&lt; ezUInt8, 4 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_VolumeTagSetIndices</b></td></tr>
+<tr class="separator:aa08669cdffe623363e5ee079b89fab04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d091c074ff12aa8b5a3fae540fe86f1" id="r_a2d091c074ff12aa8b5a3fae540fe86f1"><td class="memItemLeft" align="right" valign="top"><a id="a2d091c074ff12aa8b5a3fae540fe86f1" name="a2d091c074ff12aa8b5a3fae540fe86f1"></a>
+<a class="el" href="../../d0/d0c/classez_small_array.htm">ezSmallArray</a>&lt; ezUInt8, 4 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_CurveIndices</b></td></tr>
+<tr class="separator:a2d091c074ff12aa8b5a3fae540fe86f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -168,7 +174,7 @@ static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../de/d0b/classez_proc_gen_output.htm">ezProcGenOutput</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:05 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:46 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

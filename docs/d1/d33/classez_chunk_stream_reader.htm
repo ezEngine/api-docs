@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -99,7 +99,7 @@ $(document).ready(function(){initNavTree('d1/d33/classez_chunk_stream_reader.htm
 </div><!--header-->
 <div class="contents">
 
-<p>Reader for the chunk format that <a class="el" href="../../dd/d96/classez_chunk_stream_writer.htm" title="A stream writer that separates data into &#39;chunks&#39;, which act like sub-streams.">ezChunkStreamWriter</a> writes.  
+<p>Stream reader that parses chunked data written by <a class="el" href="../../dd/d96/classez_chunk_stream_writer.htm" title="Stream writer that organizes data into named, versioned chunks.">ezChunkStreamWriter</a>.  
  <a href="../../d1/d33/classez_chunk_stream_reader.htm#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../d6/d47/_chunk_stream_8h_source.htm">ChunkStream.h</a>&gt;</code></p>
@@ -108,8 +108,8 @@ Inheritance diagram for ezChunkStreamReader:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d2/d40/classez_chunk_stream_reader__inherit__graph.png" border="0" usemap="#aez_chunk_stream_reader_inherit__map" alt="Inheritance graph"/></div>
 <map name="aez_chunk_stream_reader_inherit__map" id="aez_chunk_stream_reader_inherit__map">
-<area shape="rect" title="Reader for the chunk format that ezChunkStreamWriter writes." alt="" coords="5,79,176,104"/>
-<area shape="rect" href="../../d2/d19/classez_stream_reader.htm" title="Interface for binary in (read) streams." alt="" coords="25,5,156,31"/>
+<area shape="rect" title="Stream reader that parses chunked data written by ezChunkStreamWriter." alt="" coords="5,79,176,104"/>
+<area shape="rect" href="../../d2/d19/classez_stream_reader.htm" title="Abstract base class for binary input streams providing unified reading interface." alt="" coords="25,5,156,31"/>
 <area shape="poly" title=" " alt="" coords="93,44,93,79,88,79,88,44"/>
 </map>
 <center><span class="legend">[<a target="top" href="../../graph_legend.htm">legend</a>]</span></center></div>
@@ -117,7 +117,7 @@ Inheritance diagram for ezChunkStreamReader:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d65/structez_chunk_stream_reader_1_1_chunk_info.htm">ChunkInfo</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Describes the state of the current chunk.  <a href="../../d5/d65/structez_chunk_stream_reader_1_1_chunk_info.htm#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metadata and status information for the current chunk.  <a href="../../d5/d65/structez_chunk_stream_reader_1_1_chunk_info.htm#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
@@ -125,6 +125,7 @@ Public Types</h2></td></tr>
 <tr class="memitem:acecac5fb6c4084eb5141c6db8b1ff1e7" id="r_acecac5fb6c4084eb5141c6db8b1ff1e7"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d33/classez_chunk_stream_reader.htm#acecac5fb6c4084eb5141c6db8b1ff1e7">EndChunkFileMode</a> { <a class="el" href="../../d1/d33/classez_chunk_stream_reader.htm#acecac5fb6c4084eb5141c6db8b1ff1e7a83f3b6b9134037da512928be2f543e40">SkipToEnd</a>
 , <a class="el" href="../../d1/d33/classez_chunk_stream_reader.htm#acecac5fb6c4084eb5141c6db8b1ff1e7a80e5f30cc3cfd4028d844e71364853c0">JustClose</a>
  }</td></tr>
+<tr class="memdesc:acecac5fb6c4084eb5141c6db8b1ff1e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controls how the reader behaves when ending the chunk file.  <a href="../../d1/d33/classez_chunk_stream_reader.htm#acecac5fb6c4084eb5141c6db8b1ff1e7">More...</a><br /></td></tr>
 <tr class="separator:acecac5fb6c4084eb5141c6db8b1ff1e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -134,14 +135,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ade6690666cf3063aaddd3ffaf24fabdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pass the underlying stream writer to the constructor. <br /></td></tr>
 <tr class="separator:ade6690666cf3063aaddd3ffaf24fabdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4eecd65fe7869bab9613b59bca3e98b0" id="r_a4eecd65fe7869bab9613b59bca3e98b0"><td class="memItemLeft" align="right" valign="top">virtual ezUInt64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d33/classez_chunk_stream_reader.htm#a4eecd65fe7869bab9613b59bca3e98b0">ReadBytes</a> (void *pReadBuffer, ezUInt64 uiBytesToRead) override</td></tr>
-<tr class="memdesc:a4eecd65fe7869bab9613b59bca3e98b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads bytes directly from the stream. Only allowed while a valid chunk is available. Returns 0 bytes when the end of a chunk is reached, even if there are more chunks to come.  <br /></td></tr>
+<tr class="memdesc:a4eecd65fe7869bab9613b59bca3e98b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads data from the current chunk.  <br /></td></tr>
 <tr class="separator:a4eecd65fe7869bab9613b59bca3e98b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac4e2f7703880b20a0850cf8f897af8d" id="r_aac4e2f7703880b20a0850cf8f897af8d"><td class="memItemLeft" align="right" valign="top"><a id="aac4e2f7703880b20a0850cf8f897af8d" name="aac4e2f7703880b20a0850cf8f897af8d"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>SetEndChunkFileMode</b> (<a class="el" href="../../d1/d33/classez_chunk_stream_reader.htm#acecac5fb6c4084eb5141c6db8b1ff1e7">EndChunkFileMode</a> mode)</td></tr>
 <tr class="separator:aac4e2f7703880b20a0850cf8f897af8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa7015a941e7a3d274da8215e6a874f48" id="r_aa7015a941e7a3d274da8215e6a874f48"><td class="memItemLeft" align="right" valign="top"><a id="aa7015a941e7a3d274da8215e6a874f48" name="aa7015a941e7a3d274da8215e6a874f48"></a>
-virtual ezUInt16&#160;</td><td class="memItemRight" valign="bottom"><b>BeginStream</b> ()</td></tr>
-<tr class="memdesc:aa7015a941e7a3d274da8215e6a874f48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts reading from the chunk file. Returns the version number that was passed to <a class="el" href="../../dd/d96/classez_chunk_stream_writer.htm#a93ba860f09ae9d86b752c0a6ffff4b32" title="Starts writing to the chunk file. Has to be the first thing that is called. The version number is wri...">ezChunkStreamWriter::BeginStream()</a>. <br /></td></tr>
+<tr class="memitem:aa7015a941e7a3d274da8215e6a874f48" id="r_aa7015a941e7a3d274da8215e6a874f48"><td class="memItemLeft" align="right" valign="top">virtual ezUInt16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d33/classez_chunk_stream_reader.htm#aa7015a941e7a3d274da8215e6a874f48">BeginStream</a> ()</td></tr>
+<tr class="memdesc:aa7015a941e7a3d274da8215e6a874f48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes reading and returns the stream format version.  <br /></td></tr>
 <tr class="separator:aa7015a941e7a3d274da8215e6a874f48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5cc5f6f11c3f94413f314a4c7e4f13c8" id="r_a5cc5f6f11c3f94413f314a4c7e4f13c8"><td class="memItemLeft" align="right" valign="top"><a id="a5cc5f6f11c3f94413f314a4c7e4f13c8" name="a5cc5f6f11c3f94413f314a4c7e4f13c8"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>EndStream</b> ()</td></tr>
@@ -220,12 +220,16 @@ template&lt;typename KeyType , typename ValueType , typename Hasher &gt; </td></
 <tr class="memitem:a09fe261037e80688b72337b15ee0a616 inherit pub_methods_classez_stream_reader" id="r_a09fe261037e80688b72337b15ee0a616"><td class="memItemLeft" align="right" valign="top">virtual ezUInt64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d19/classez_stream_reader.htm#a09fe261037e80688b72337b15ee0a616">SkipBytes</a> (ezUInt64 uiBytesToSkip)</td></tr>
 <tr class="memdesc:a09fe261037e80688b72337b15ee0a616 inherit pub_methods_classez_stream_reader"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper method to skip a number of bytes (implementations of the stream reader may implement this more efficiently for example)  <br /></td></tr>
 <tr class="separator:a09fe261037e80688b72337b15ee0a616 inherit pub_methods_classez_stream_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4f6bb6e54248d92cad9a966f2cda6a5 inherit pub_methods_classez_stream_reader" id="r_ad4f6bb6e54248d92cad9a966f2cda6a5"><td class="memItemLeft" align="right" valign="top">
+EZ_ALWAYS_INLINE ezTypeVersion&#160;</td><td class="memItemRight" valign="bottom"><b>ReadVersion</b> ()</td></tr>
+<tr class="separator:ad4f6bb6e54248d92cad9a966f2cda6a5 inherit pub_methods_classez_stream_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb49f9bac3b2546989bdd2c11a4e7ab9 inherit pub_methods_classez_stream_reader" id="r_abb49f9bac3b2546989bdd2c11a4e7ab9"><td class="memItemLeft" align="right" valign="top">
 EZ_ALWAYS_INLINE ezTypeVersion&#160;</td><td class="memItemRight" valign="bottom"><b>ReadVersion</b> (ezTypeVersion expectedMaxVersion)</td></tr>
 <tr class="separator:abb49f9bac3b2546989bdd2c11a4e7ab9 inherit pub_methods_classez_stream_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Reader for the chunk format that <a class="el" href="../../dd/d96/classez_chunk_stream_writer.htm" title="A stream writer that separates data into &#39;chunks&#39;, which act like sub-streams.">ezChunkStreamWriter</a> writes. </p>
+<div class="textblock"><p>Stream reader that parses chunked data written by <a class="el" href="../../dd/d96/classez_chunk_stream_writer.htm" title="Stream writer that organizes data into named, versioned chunks.">ezChunkStreamWriter</a>. </p>
+<p>This reader provides sequential access to chunks within a stream, allowing selective reading based on chunk names and versions. Each chunk can be read completely or skipped entirely. The reader tracks chunk boundaries automatically and provides metadata about each chunk. Use BeginStream/EndStream to initialize and cleanup, then iterate through chunks with <a class="el" href="../../d1/d33/classez_chunk_stream_reader.htm#a5e2c3ddb653177be7494fe915efbf80b" title="Skips the rest of the current chunk and starts reading the next chunk.">NextChunk()</a>. </p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="acecac5fb6c4084eb5141c6db8b1ff1e7" name="acecac5fb6c4084eb5141c6db8b1ff1e7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acecac5fb6c4084eb5141c6db8b1ff1e7">&#9670;&#160;</a></span>EndChunkFileMode</h2>
@@ -246,6 +250,8 @@ EZ_ALWAYS_INLINE ezTypeVersion&#160;</td><td class="memItemRight" valign="bottom
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Controls how the reader behaves when ending the chunk file. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="acecac5fb6c4084eb5141c6db8b1ff1e7a83f3b6b9134037da512928be2f543e40" name="acecac5fb6c4084eb5141c6db8b1ff1e7a83f3b6b9134037da512928be2f543e40"></a>SkipToEnd&#160;</td><td class="fielddoc"><p>Makes sure all data is properly read, so that the stream read position is after the chunk file data. Useful if the chunk file is embedded in another file stream. </p>
 </td></tr>
@@ -256,6 +262,34 @@ EZ_ALWAYS_INLINE ezTypeVersion&#160;</td><td class="memItemRight" valign="bottom
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="aa7015a941e7a3d274da8215e6a874f48" name="aa7015a941e7a3d274da8215e6a874f48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7015a941e7a3d274da8215e6a874f48">&#9670;&#160;</a></span>BeginStream()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ezUInt16 ezChunkStreamReader::BeginStream </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes reading and returns the stream format version. </p>
+<p>Returns the version number that was passed to <a class="el" href="../../dd/d96/classez_chunk_stream_writer.htm#a93ba860f09ae9d86b752c0a6ffff4b32" title="Initializes the chunk stream with a format version.">ezChunkStreamWriter::BeginStream()</a>. Use this version for compatibility checking before processing chunks. </p>
+
+</div>
+</div>
 <a id="a4eecd65fe7869bab9613b59bca3e98b0" name="a4eecd65fe7869bab9613b59bca3e98b0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4eecd65fe7869bab9613b59bca3e98b0">&#9670;&#160;</a></span>ReadBytes()</h2>
 
@@ -290,7 +324,8 @@ EZ_ALWAYS_INLINE ezTypeVersion&#160;</td><td class="memItemRight" valign="bottom
 </table>
 </div><div class="memdoc">
 
-<p>Reads bytes directly from the stream. Only allowed while a valid chunk is available. Returns 0 bytes when the end of a chunk is reached, even if there are more chunks to come. </p>
+<p>Reads data from the current chunk. </p>
+<p>Only allowed while a valid chunk is available. Returns 0 bytes when the end of a chunk is reached, even if there are more chunks to come. Use <a class="el" href="../../d1/d33/classez_chunk_stream_reader.htm#a5e2c3ddb653177be7494fe915efbf80b" title="Skips the rest of the current chunk and starts reading the next chunk.">NextChunk()</a> to advance to the next chunk. </p>
 
 <p>Implements <a class="el" href="../../d2/d19/classez_stream_reader.htm#a9b8ce20de04610d28b4118ff23b42020">ezStreamReader</a>.</p>
 
@@ -306,7 +341,7 @@ EZ_ALWAYS_INLINE ezTypeVersion&#160;</td><td class="memItemRight" valign="bottom
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d1/d33/classez_chunk_stream_reader.htm">ezChunkStreamReader</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:03 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:44 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

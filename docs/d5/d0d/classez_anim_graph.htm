@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -98,6 +98,8 @@ $(document).ready(function(){initNavTree('d5/d0d/classez_anim_graph.htm','../../
   <div class="headertitle"><div class="title">ezAnimGraph Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../da/d4b/_anim_graph_8h_source.htm">AnimGraph.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -122,8 +124,7 @@ const <a class="el" href="../../da/d1b/classez_instance_data_allocator.htm">ezIn
 <tr class="memitem:a0df4ebd0711969ffd0f0886307099345" id="r_a0df4ebd0711969ffd0f0886307099345"><td class="memItemLeft" align="right" valign="top"><a id="a0df4ebd0711969ffd0f0886307099345" name="a0df4ebd0711969ffd0f0886307099345"></a>
 <a class="el" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr</a>&lt; const <a class="el" href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr</a>&lt; <a class="el" href="../../df/df1/classez_anim_graph_node.htm">ezAnimGraphNode</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>GetNodes</b> () const</td></tr>
 <tr class="separator:a0df4ebd0711969ffd0f0886307099345"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9dd9625a23a56e0d0cf7b11bb4a0328a" id="r_a9dd9625a23a56e0d0cf7b11bb4a0328a"><td class="memItemLeft" align="right" valign="top"><a id="a9dd9625a23a56e0d0cf7b11bb4a0328a" name="a9dd9625a23a56e0d0cf7b11bb4a0328a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>PrepareForUse</b> ()</td></tr>
+<tr class="memitem:a9dd9625a23a56e0d0cf7b11bb4a0328a" id="r_a9dd9625a23a56e0d0cf7b11bb4a0328a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d0d/classez_anim_graph.htm#a9dd9625a23a56e0d0cf7b11bb4a0328a">PrepareForUse</a> ()</td></tr>
 <tr class="separator:a9dd9625a23a56e0d0cf7b11bb4a0328a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
@@ -146,10 +147,56 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>ezAnimGraphBoneWeigh
 <tr class="memitem:a5c868cbb2535e67950dabfd1d1b5ad44" id="r_a5c868cbb2535e67950dabfd1d1b5ad44"><td class="memItemLeft" align="right" valign="top"><a id="a5c868cbb2535e67950dabfd1d1b5ad44" name="a5c868cbb2535e67950dabfd1d1b5ad44"></a>
 class&#160;</td><td class="memItemRight" valign="bottom"><b>ezAnimGraphLocalPoseOutputPin</b></td></tr>
 <tr class="separator:a5c868cbb2535e67950dabfd1d1b5ad44"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad014fd7b66deb191a9f5984e01aaa42c" id="r_ad014fd7b66deb191a9f5984e01aaa42c"><td class="memItemLeft" align="right" valign="top"><a id="ad014fd7b66deb191a9f5984e01aaa42c" name="ad014fd7b66deb191a9f5984e01aaa42c"></a>
-class&#160;</td><td class="memItemRight" valign="bottom"><b>ezAnimGraphModelPoseOutputPin</b></td></tr>
-<tr class="separator:ad014fd7b66deb191a9f5984e01aaa42c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Defines the structure and logic of an animation graph as a directed acyclic graph (DAG) of nodes.</p>
+<p>An animation graph consists of interconnected nodes that process animation data. Nodes can sample animation clips, blend poses, handle logic and math operations, react to events, and output final poses. Data flows through typed pins that connect nodes together.</p>
+<h2>Architecture</h2>
+<p><b>Graph Definition vs Instance:</b></p><ul>
+<li><a class="el" href="../../d5/d0d/classez_anim_graph.htm">ezAnimGraph</a> is the shared definition (nodes, connections, structure)</li>
+<li><a class="el" href="../../db/d86/classez_anim_graph_instance.htm">ezAnimGraphInstance</a> is per-character runtime state (playback time, blend weights, pin values)</li>
+<li>One graph can be shared by hundreds of characters, each with their own instance</li>
+</ul>
+<p><b>Node Types:</b></p><ul>
+<li>Pose sampling: Sample animation clips, blend spaces, sequences</li>
+<li>Blending: Lerp, switch between poses, blend spaces (1D/2D)</li>
+<li>Logic: Boolean operations, comparisons, state machines</li>
+<li>Math: Add, multiply, clamp numbers for blend weights</li>
+<li>Events: Trigger gameplay events at specific animation times</li>
+<li>Bone weights: Control which bones are affected by animations</li>
+<li>Root motion: Extract character movement from animations</li>
+<li>Output: Final pose output to renderer</li>
+</ul>
+<p><b>Pin Types:</b></p><ul>
+<li>Trigger: One-shot events (animation finished, state entered)</li>
+<li>Number: Blend weights, playback speeds, parameters</li>
+<li>Bool: Conditions, flags</li>
+<li>BoneWeights: Masks controlling which bones are affected</li>
+<li>LocalPose: Bone transforms in local space</li>
+<li>ModelPose: Bone transforms in model space</li>
+</ul>
+<h2>Usage Pattern</h2>
+<p>Animation graphs are typically created by the editor and stored in <a class="el" href="../../d0/dcb/classez_anim_graph_resource.htm">ezAnimGraphResource</a>. At runtime, <a class="el" href="../../d2/de1/classez_anim_controller.htm">ezAnimController</a> is used to load a graph resource, create an <a class="el" href="../../db/d86/classez_anim_graph_instance.htm">ezAnimGraphInstance</a> and updates it each frame. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a9dd9625a23a56e0d0cf7b11bb4a0328a" name="a9dd9625a23a56e0d0cf7b11bb4a0328a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9dd9625a23a56e0d0cf7b11bb4a0328a">&#9670;&#160;</a></span>PrepareForUse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ezAnimGraph::PrepareForUse </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Prepares the graph for use by sorting nodes, assigning pin indices, and allocating instance data descriptors.</p>
+<p>Must be called after all nodes and connections have been added and before creating instances. This is automatically called when deserializing a graph or when creating instances. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/RendererCore/AnimationSystem/AnimGraph/<a class="el" href="../../da/d4b/_anim_graph_8h_source.htm">AnimGraph.h</a></li>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/RendererCore/AnimationSystem/AnimGraph/Implementation/<b>AnimGraph.cpp</b></li>
@@ -160,7 +207,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>ezAnimGraphModelPose
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d5/d0d/classez_anim_graph.htm">ezAnimGraph</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:02 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:44 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -98,6 +98,8 @@ $(document).ready(function(){initNavTree('d0/d43/classez_texture_resource_loader
   <div class="headertitle"><div class="title">ezTextureResourceLoader Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../d6/d11/_texture_loader_8h_source.htm">TextureLoader.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ezTextureResourceLoader:</div>
 <div class="dyncontent">
@@ -112,6 +114,7 @@ Inheritance diagram for ezTextureResourceLoader:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d5f/structez_texture_resource_loader_1_1_loaded_data.htm">LoadedData</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data structure for loaded texture information.  <a href="../../d1/d5f/structez_texture_resource_loader_1_1_loaded_data.htm#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -130,12 +133,17 @@ Public Member Functions</h2></td></tr>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a2e8a26ca80e0fae0e81de8d38befe857" id="r_a2e8a26ca80e0fae0e81de8d38befe857"><td class="memItemLeft" align="right" valign="top"><a id="a2e8a26ca80e0fae0e81de8d38befe857" name="a2e8a26ca80e0fae0e81de8d38befe857"></a>
 static <a class="el" href="../../d4/da9/structez_result.htm">ezResult</a>&#160;</td><td class="memItemRight" valign="bottom"><b>LoadTexFile</b> (<a class="el" href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a> &amp;inout_stream, <a class="el" href="../../d1/d5f/structez_texture_resource_loader_1_1_loaded_data.htm">LoadedData</a> &amp;ref_data)</td></tr>
+<tr class="memdesc:a2e8a26ca80e0fae0e81de8d38befe857"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads texture data from a .ezTex file stream. <br /></td></tr>
 <tr class="separator:a2e8a26ca80e0fae0e81de8d38befe857"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abaa00cfc8c4b08fa7969614878a3ac43" id="r_abaa00cfc8c4b08fa7969614878a3ac43"><td class="memItemLeft" align="right" valign="top"><a id="abaa00cfc8c4b08fa7969614878a3ac43" name="abaa00cfc8c4b08fa7969614878a3ac43"></a>
 static void&#160;</td><td class="memItemRight" valign="bottom"><b>WriteTextureLoadStream</b> (<a class="el" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a> &amp;inout_stream, const <a class="el" href="../../d1/d5f/structez_texture_resource_loader_1_1_loaded_data.htm">LoadedData</a> &amp;data)</td></tr>
+<tr class="memdesc:abaa00cfc8c4b08fa7969614878a3ac43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes texture data to a stream in the loader's internal format. <br /></td></tr>
 <tr class="separator:abaa00cfc8c4b08fa7969614878a3ac43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Resource loader for texture resources.</p>
+<p>Loads textures from .ezTex files which contain compressed texture data and metadata. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a30c1543d2075bbb602ee4bb95e5327a2" name="a30c1543d2075bbb602ee4bb95e5327a2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a30c1543d2075bbb602ee4bb95e5327a2">&#9670;&#160;</a></span>CloseDataStream()</h2>
 
@@ -235,7 +243,7 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>WriteTextureLo
 <p>This function should take the information from <em>pResource</em>, e.g. which file to load, and do the loading work. It should allocate temporary storage for the loaded data and encode it in a memory stream, such that the resource can read all necessary information from the stream.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dc/da8/structez_resource_load_data.htm" title="Data returned by ezResourceTypeLoader implementations.">ezResourceLoadData</a> </dd></dl>
 <p>In case this is not a proper asset (ezTextureXX format), this is a hack to get the SRGB information for the texture</p>
-<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.htm#_todo000070">Todo:</a></b></dt><dd>A conversion to B8G8R8X8_UNORM currently fails </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.htm#_todo000072">Todo:</a></b></dt><dd>A conversion to B8G8R8X8_UNORM currently fails </dd></dl>
 
 <p>Implements <a class="el" href="../../d1/d17/classez_resource_type_loader.htm#a5168be72df83272cc17909312543b4f5">ezResourceTypeLoader</a>.</p>
 
@@ -251,7 +259,7 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>WriteTextureLo
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d0/d43/classez_texture_resource_loader.htm">ezTextureResourceLoader</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:06 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:48 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

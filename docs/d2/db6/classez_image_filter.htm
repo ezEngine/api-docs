@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -98,7 +98,7 @@ $(document).ready(function(){initNavTree('d2/db6/classez_image_filter.htm','../.
 </div><!--header-->
 <div class="contents">
 
-<p>Represents a function used for filtering an image.  
+<p>Base class for image filtering functions used in scaling and resampling operations.  
  <a href="../../d2/db6/classez_image_filter.htm#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../d2/d45/_image_filter_8h_source.htm">ImageFilter.h</a>&gt;</code></p>
@@ -107,12 +107,12 @@ Inheritance diagram for ezImageFilter:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d9/dbc/classez_image_filter__inherit__graph.png" border="0" usemap="#aez_image_filter_inherit__map" alt="Inheritance graph"/></div>
 <map name="aez_image_filter_inherit__map" id="aez_image_filter_inherit__map">
-<area shape="rect" title="Represents a function used for filtering an image." alt="" coords="215,5,326,31"/>
-<area shape="rect" href="../../d7/d7d/classez_image_filter_box.htm" title="Box filter." alt="" coords="5,86,141,111"/>
+<area shape="rect" title="Base class for image filtering functions used in scaling and resampling operations." alt="" coords="215,5,326,31"/>
+<area shape="rect" href="../../d7/d7d/classez_image_filter_box.htm" title="Box filter &#45; fastest, produces blocky results." alt="" coords="5,86,141,111"/>
 <area shape="poly" title=" " alt="" coords="230,38,103,88,101,83,228,33"/>
-<area shape="rect" href="../../d1/d42/classez_image_filter_sinc_with_kaiser_window.htm" title="Kaiser&#45;windowed sinc filter." alt="" coords="166,79,375,119"/>
+<area shape="rect" href="../../d1/d42/classez_image_filter_sinc_with_kaiser_window.htm" title="Kaiser&#45;windowed sinc filter &#45; highest quality but may introduce ringing." alt="" coords="166,79,375,119"/>
 <area shape="poly" title=" " alt="" coords="273,44,273,79,268,79,268,44"/>
-<area shape="rect" href="../../d3/dc8/classez_image_filter_triangle.htm" title="Triangle filter." alt="" coords="400,86,563,111"/>
+<area shape="rect" href="../../d3/dc8/classez_image_filter_triangle.htm" title="Triangle (bilinear) filter &#45; good balance of speed and quality." alt="" coords="400,86,563,111"/>
 <area shape="poly" title=" " alt="" coords="315,33,452,83,450,88,313,38"/>
 </map>
 <center><span class="legend">[<a target="top" href="../../graph_legend.htm">legend</a>]</span></center></div>
@@ -120,11 +120,10 @@ Inheritance diagram for ezImageFilter:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad2056c893d95632632b590e548d8284e" id="r_ad2056c893d95632632b590e548d8284e"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../d2/d0c/classez_simd_float.htm">ezSimdFloat</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/db6/classez_image_filter.htm#ad2056c893d95632632b590e548d8284e">SamplePoint</a> (const <a class="el" href="../../d2/d0c/classez_simd_float.htm">ezSimdFloat</a> &amp;x) const =0</td></tr>
-<tr class="memdesc:ad2056c893d95632632b590e548d8284e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Samples the filter function at a single point. Note that the distribution isn't necessarily normalized.  <br /></td></tr>
+<tr class="memdesc:ad2056c893d95632632b590e548d8284e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the filter function at the given distance from the center.  <br /></td></tr>
 <tr class="separator:ad2056c893d95632632b590e548d8284e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf9d4628eea060ea247f93fe295be6b3" id="r_aaf9d4628eea060ea247f93fe295be6b3"><td class="memItemLeft" align="right" valign="top"><a id="aaf9d4628eea060ea247f93fe295be6b3" name="aaf9d4628eea060ea247f93fe295be6b3"></a>
-<a class="el" href="../../d2/d0c/classez_simd_float.htm">ezSimdFloat</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GetWidth</b> () const</td></tr>
-<tr class="memdesc:aaf9d4628eea060ea247f93fe295be6b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the width of the filter; outside of the interval [-width, width], the filter function is always zero. <br /></td></tr>
+<tr class="memitem:aaf9d4628eea060ea247f93fe295be6b3" id="r_aaf9d4628eea060ea247f93fe295be6b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d0c/classez_simd_float.htm">ezSimdFloat</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/db6/classez_image_filter.htm#aaf9d4628eea060ea247f93fe295be6b3">GetWidth</a> () const</td></tr>
+<tr class="memdesc:aaf9d4628eea060ea247f93fe295be6b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the filter support width (radius).  <br /></td></tr>
 <tr class="separator:aaf9d4628eea060ea247f93fe295be6b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
@@ -134,8 +133,29 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:aeb641e93161b6e875dfaddd89ed4cf67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Represents a function used for filtering an image. </p>
+<div class="textblock"><p>Base class for image filtering functions used in scaling and resampling operations. </p>
+<p>Image filters define how pixels are weighted when scaling images up or down. Different filters provide different trade-offs between sharpness, aliasing, and ringing artifacts. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="aaf9d4628eea060ea247f93fe295be6b3" name="aaf9d4628eea060ea247f93fe295be6b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf9d4628eea060ea247f93fe295be6b3">&#9670;&#160;</a></span>GetWidth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d0c/classez_simd_float.htm">ezSimdFloat</a> ezImageFilter::GetWidth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the filter support width (radius). </p>
+<p>The filter function is guaranteed to return 0 for |x| &gt; width. Larger widths generally mean higher quality but slower filtering. </p>
+
+</div>
+</div>
 <a id="ad2056c893d95632632b590e548d8284e" name="ad2056c893d95632632b590e548d8284e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad2056c893d95632632b590e548d8284e">&#9670;&#160;</a></span>SamplePoint()</h2>
 
@@ -160,7 +180,8 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Samples the filter function at a single point. Note that the distribution isn't necessarily normalized. </p>
+<p>Evaluates the filter function at the given distance from the center. </p>
+<p>The returned value represents the weight to apply to a sample at this distance. The function should return 0 for distances beyond the filter width. Note: The distribution may not be normalized - normalization is handled by the caller. </p>
 
 <p>Implemented in <a class="el" href="../../d7/d7d/classez_image_filter_box.htm#a78af3b87751c90bfec06f61cbd909569">ezImageFilterBox</a>, <a class="el" href="../../d3/dc8/classez_image_filter_triangle.htm#ac61283c156813ceb02f097bb6b2b970f">ezImageFilterTriangle</a>, and <a class="el" href="../../d1/d42/classez_image_filter_sinc_with_kaiser_window.htm#a943df2d9dfd3fc884011a8507ee6585f">ezImageFilterSincWithKaiserWindow</a>.</p>
 
@@ -176,7 +197,7 @@ Protected Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d2/db6/classez_image_filter.htm">ezImageFilter</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:04 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:45 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

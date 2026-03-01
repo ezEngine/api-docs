@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -99,7 +99,7 @@ $(document).ready(function(){initNavTree('d6/d01/structez_data_block.htm','../..
 </div><!--header-->
 <div class="contents">
 
-<p>This struct represents a block of type T, typically 4kb.  
+<p>Represents a typed block of memory with fixed size, typically used for bulk allocations.  
  <a href="../../d6/d01/structez_data_block.htm#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../d8/de7/_large_block_allocator_8h_source.htm">LargeBlockAllocator.h</a>&gt;</code></p>
@@ -118,12 +118,13 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a3a618ad3dba13767cc88f83b24b79415"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04dc2e198d584410c49b50342af8934f" id="r_a04dc2e198d584410c49b50342af8934f"><td class="memItemLeft" align="right" valign="top"><a id="a04dc2e198d584410c49b50342af8934f" name="a04dc2e198d584410c49b50342af8934f"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>ezDataBlock</b> (T *pData, ezUInt32 uiCount)</td></tr>
+<tr class="memdesc:a04dc2e198d584410c49b50342af8934f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a data block wrapping the given memory region. <br /></td></tr>
 <tr class="separator:a04dc2e198d584410c49b50342af8934f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ad38dc1e6cbf62dbc3f99798b6db092" id="r_a2ad38dc1e6cbf62dbc3f99798b6db092"><td class="memItemLeft" align="right" valign="top"><a id="a2ad38dc1e6cbf62dbc3f99798b6db092" name="a2ad38dc1e6cbf62dbc3f99798b6db092"></a>
-T *&#160;</td><td class="memItemRight" valign="bottom"><b>ReserveBack</b> ()</td></tr>
+<tr class="memitem:a2ad38dc1e6cbf62dbc3f99798b6db092" id="r_a2ad38dc1e6cbf62dbc3f99798b6db092"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d01/structez_data_block.htm#a2ad38dc1e6cbf62dbc3f99798b6db092">ReserveBack</a> ()</td></tr>
+<tr class="memdesc:a2ad38dc1e6cbf62dbc3f99798b6db092"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserves space for one element at the end of the block.  <br /></td></tr>
 <tr class="separator:a2ad38dc1e6cbf62dbc3f99798b6db092"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13c5e9349cea900170431053a2fef504" id="r_a13c5e9349cea900170431053a2fef504"><td class="memItemLeft" align="right" valign="top"><a id="a13c5e9349cea900170431053a2fef504" name="a13c5e9349cea900170431053a2fef504"></a>
-T *&#160;</td><td class="memItemRight" valign="bottom"><b>PopBack</b> ()</td></tr>
+<tr class="memitem:a13c5e9349cea900170431053a2fef504" id="r_a13c5e9349cea900170431053a2fef504"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d01/structez_data_block.htm#a13c5e9349cea900170431053a2fef504">PopBack</a> ()</td></tr>
+<tr class="memdesc:a13c5e9349cea900170431053a2fef504"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes and returns pointer to the last element in the block.  <br /></td></tr>
 <tr class="separator:a13c5e9349cea900170431053a2fef504"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a430533cec44943bdc69bddd86fc677de" id="r_a430533cec44943bdc69bddd86fc677de"><td class="memItemLeft" align="right" valign="top"><a id="a430533cec44943bdc69bddd86fc677de" name="a430533cec44943bdc69bddd86fc677de"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsEmpty</b> () const</td></tr>
@@ -133,6 +134,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsFull</b> () const</
 <tr class="separator:ac28633406e30fb292b9f6c705dcc6e7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0373326f674e4271b340222be54db8af" id="r_a0373326f674e4271b340222be54db8af"><td class="memItemLeft" align="right" valign="top"><a id="a0373326f674e4271b340222be54db8af" name="a0373326f674e4271b340222be54db8af"></a>
 T &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator[]</b> (ezUInt32 uiIndex) const</td></tr>
+<tr class="memdesc:a0373326f674e4271b340222be54db8af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides access to elements by index within the used range. <br /></td></tr>
 <tr class="separator:a0373326f674e4271b340222be54db8af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -146,8 +148,54 @@ ezUInt32&#160;</td><td class="memItemRight" valign="bottom"><b>m_uiCount</b></td
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename T, ezUInt32 SizeInBytes&gt;<br />
-struct ezDataBlock&lt; T, SizeInBytes &gt;</div><p>This struct represents a block of type T, typically 4kb. </p>
-</div><hr/>The documentation for this struct was generated from the following files:<ul>
+struct ezDataBlock&lt; T, SizeInBytes &gt;</div><p>Represents a typed block of memory with fixed size, typically used for bulk allocations. </p>
+<p>This wrapper provides type-safe access to a block of memory that can hold multiple elements of type T. The block has a fixed capacity determined by SizeInBytes and sizeof(T). It tracks the current count of used elements and provides stack-like operations for efficient allocation/deallocation within the block. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a13c5e9349cea900170431053a2fef504" name="a13c5e9349cea900170431053a2fef504"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13c5e9349cea900170431053a2fef504">&#9670;&#160;</a></span>PopBack()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , ezUInt32 SizeInBytes&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">EZ_FORCE_INLINE T * <a class="el" href="../../d6/d01/structez_data_block.htm">ezDataBlock</a>&lt; T, SizeInBytes &gt;::PopBack </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Removes and returns pointer to the last element in the block. </p>
+<p>Returns nullptr if the block is empty. </p>
+
+</div>
+</div>
+<a id="a2ad38dc1e6cbf62dbc3f99798b6db092" name="a2ad38dc1e6cbf62dbc3f99798b6db092"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ad38dc1e6cbf62dbc3f99798b6db092">&#9670;&#160;</a></span>ReserveBack()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , ezUInt32 SizeInBytes&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">EZ_FORCE_INLINE T * <a class="el" href="../../d6/d01/structez_data_block.htm">ezDataBlock</a>&lt; T, SizeInBytes &gt;::ReserveBack </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reserves space for one element at the end of the block. </p>
+<p>Returns pointer to the reserved element, or nullptr if the block is full. </p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following files:<ul>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/Memory/<a class="el" href="../../d8/de7/_large_block_allocator_8h_source.htm">LargeBlockAllocator.h</a></li>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/Memory/Implementation/<a class="el" href="../../d0/d5c/_large_block_allocator__inl_8h_source.htm">LargeBlockAllocator_inl.h</a></li>
 </ul>
@@ -157,7 +205,7 @@ struct ezDataBlock&lt; T, SizeInBytes &gt;</div><p>This struct represents a bloc
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d6/d01/structez_data_block.htm">ezDataBlock</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:03 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:44 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

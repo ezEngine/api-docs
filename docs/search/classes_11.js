@@ -9,7 +9,8 @@ var searchData=
   ['registertype_6',['RegisterType',['../d5/dd0/structez_expression_1_1_register_type.htm',1,'ezExpression']]],
   ['renderdatacacheentry_7',['RenderDataCacheEntry',['../d4/dec/structez_internal_1_1_render_data_cache_entry.htm',1,'ezInternal']]],
   ['renderinterface_8',['RenderInterface',['../dc/d70/classez_rml_ui_internal_1_1_render_interface.htm',1,'ezRmlUiInternal']]],
-  ['request_9',['Request',['../dd/dc9/structez_document_manager_1_1_request.htm',1,'ezDocumentManager']]],
-  ['result_10',['result',['../d8/d1b/structez_gather_objects_of_type_msg_inter_doc_1_1_result.htm',1,'ezGatherObjectsOfTypeMsgInterDoc::Result'],['../d9/d63/structez_script_coroutine_1_1_result.htm',1,'ezScriptCoroutine::Result']]],
-  ['reverse_5fpointer_5fiterator_11',['reverse_pointer_iterator',['../d3/df2/structreverse__pointer__iterator.htm',1,'']]]
+  ['replaceassetresult_9',['ReplaceAssetResult',['../d7/d9b/structez_asset_curator_1_1_replace_asset_result.htm',1,'ezAssetCurator']]],
+  ['request_10',['Request',['../dd/dc9/structez_document_manager_1_1_request.htm',1,'ezDocumentManager']]],
+  ['result_11',['result',['../d8/d1b/structez_gather_objects_of_type_msg_inter_doc_1_1_result.htm',1,'ezGatherObjectsOfTypeMsgInterDoc::Result'],['../d9/d63/structez_script_coroutine_1_1_result.htm',1,'ezScriptCoroutine::Result']]],
+  ['reverse_5fpointer_5fiterator_12',['reverse_pointer_iterator',['../d3/df2/structreverse__pointer__iterator.htm',1,'']]]
 ];

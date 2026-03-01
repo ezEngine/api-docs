@@ -1,6 +1,6 @@
 var classez_dummy_x_r =
 [
-    [ "CreateActor", "d2/db4/classez_dummy_x_r.htm#a0267338649b0dda08e9fbd95464a2916", null ],
+    [ "CreateXRWindow", "d2/db4/classez_dummy_x_r.htm#ab3357e704e7f04b990d375663c43b920", null ],
     [ "Deinitialize", "d2/db4/classez_dummy_x_r.htm#ae08c71f8b9c66738834ee9efd4ccb423", null ],
     [ "GetCurrentTexture", "d2/db4/classez_dummy_x_r.htm#a7d0baa5f580a8fc2220959a0b7d18249", null ],
     [ "GetHmdInfo", "d2/db4/classez_dummy_x_r.htm#a17473666196e8bf05d8ee2dcd3b2f0a1", null ],

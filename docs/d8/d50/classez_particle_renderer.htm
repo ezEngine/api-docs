@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -92,7 +92,6 @@ $(document).ready(function(){initNavTree('d8/d50/classez_particle_renderer.htm',
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="../../d5/de3/classez_particle_renderer-members.htm">List of all members</a>  </div>
@@ -110,15 +109,15 @@ Inheritance diagram for ezParticleRenderer:</div>
 <div class="center"><img src="../../db/d6c/classez_particle_renderer__inherit__graph.png" border="0" usemap="#aez_particle_renderer_inherit__map" alt="Inheritance graph"/></div>
 <map name="aez_particle_renderer_inherit__map" id="aez_particle_renderer_inherit__map">
 <area shape="rect" title="Implements rendering of particle systems." alt="" coords="225,225,369,251"/>
-<area shape="rect" href="../../db/dcd/classez_particle_point_renderer.htm" title="Implements rendering of particle systems." alt="" coords="5,299,183,324"/>
+<area shape="rect" href="../../db/dcd/classez_particle_point_renderer.htm" title="Renderer for point particle systems." alt="" coords="5,299,183,324"/>
 <area shape="poly" title=" " alt="" coords="252,258,128,301,126,296,251,253"/>
-<area shape="rect" href="../../da/d6b/classez_particle_quad_renderer.htm" title="Implements rendering of particle systems." alt="" coords="207,299,386,324"/>
+<area shape="rect" href="../../da/d6b/classez_particle_quad_renderer.htm" title="Renderer for quad particle systems." alt="" coords="207,299,386,324"/>
 <area shape="poly" title=" " alt="" coords="299,264,299,299,294,299,294,264"/>
 <area shape="rect" href="../../d5/dd7/classez_particle_trail_renderer.htm" title="Implements rendering of a trail particle systems." alt="" coords="410,299,581,324"/>
 <area shape="poly" title=" " alt="" coords="342,253,464,296,462,301,341,258"/>
 <area shape="rect" href="../../d5/daa/classez_renderer.htm" title="This is the base class for types that handle rendering of different object types." alt="" coords="249,152,345,177"/>
 <area shape="poly" title=" " alt="" coords="299,191,299,225,294,225,294,191"/>
-<area shape="rect" href="../../db/d45/classez_reflected_class.htm" title="All classes that should be dynamically reflectable, need to be derived from this base class." alt="" coords="230,79,363,104"/>
+<area shape="rect" href="../../db/d45/classez_reflected_class.htm" title="Base class for all types that support dynamic reflection and runtime type identification." alt="" coords="230,79,363,104"/>
 <area shape="poly" title=" " alt="" coords="299,118,299,152,294,152,294,118"/>
 <area shape="rect" href="../../d4/d02/classez_no_base.htm" title="Dummy type to pass to templates and macros that expect a base type for a class that has no base." alt="" coords="253,5,340,31"/>
 <area shape="poly" title=" " alt="" coords="299,44,299,79,294,79,294,44"/>
@@ -130,14 +129,33 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d13/structez_particle_renderer_1_1_temp_system_c_b.htm">TempSystemCB</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a42f433382e3532c57c683f5b1a5d0b6f" id="r_a42f433382e3532c57c683f5b1a5d0b6f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d50/classez_particle_renderer.htm#a42f433382e3532c57c683f5b1a5d0b6f">GetSupportedRenderDataCategories</a> (<a class="el" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray</a>&lt; <a class="el" href="../../de/dc4/structez_render_data_1_1_category.htm">ezRenderData::Category</a>, 8 &gt; &amp;ref_categories) const override</td></tr>
-<tr class="separator:a42f433382e3532c57c683f5b1a5d0b6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a8a135961617f008bb1626ebe280ad78a" id="r_a8a135961617f008bb1626ebe280ad78a"><td class="memItemLeft" align="right" valign="top"><a id="a8a135961617f008bb1626ebe280ad78a" name="a8a135961617f008bb1626ebe280ad78a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>CreateParticleDataBuffer</b> (<a class="el" href="../../de/d9a/classez_g_a_l_buffer_pool.htm">ezGALBufferPool</a> &amp;inout_Buffer, ezUInt32 uiDataTypeSize, ezUInt32 uiNumParticlesPerBatch)</td></tr>
+<tr class="memdesc:a8a135961617f008bb1626ebe280ad78a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates a GPU buffer from the pool for uploading particle data. <br /></td></tr>
+<tr class="separator:a8a135961617f008bb1626ebe280ad78a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f616b7a60a70a22974e550db7bfa306" id="r_a7f616b7a60a70a22974e550db7bfa306"><td class="memItemLeft" align="right" valign="top"><a id="a7f616b7a60a70a22974e550db7bfa306" name="a7f616b7a60a70a22974e550db7bfa306"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>DestroyParticleDataBuffer</b> (<a class="el" href="../../de/d9a/classez_g_a_l_buffer_pool.htm">ezGALBufferPool</a> &amp;inout_Buffer)</td></tr>
+<tr class="memdesc:a7f616b7a60a70a22974e550db7bfa306"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a particle data buffer to the pool. <br /></td></tr>
+<tr class="separator:a7f616b7a60a70a22974e550db7bfa306"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a127d7ab976b052c9c4b1ae9a9ecc1aef" id="r_a127d7ab976b052c9c4b1ae9a9ecc1aef"><td class="memItemLeft" align="right" valign="top"><a id="a127d7ab976b052c9c4b1ae9a9ecc1aef" name="a127d7ab976b052c9c4b1ae9a9ecc1aef"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>BindParticleShader</b> (<a class="el" href="../../db/d04/classez_render_context.htm">ezRenderContext</a> *pRenderContext, const char *szShader) const</td></tr>
+<tr class="memdesc:a127d7ab976b052c9c4b1ae9a9ecc1aef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads and binds the specified particle shader for rendering. <br /></td></tr>
+<tr class="separator:a127d7ab976b052c9c4b1ae9a9ecc1aef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:aa6129f86d2457e126c47d95952ab4cc9" id="r_aa6129f86d2457e126c47d95952ab4cc9"><td class="memItemLeft" align="right" valign="top"><a id="aa6129f86d2457e126c47d95952ab4cc9" name="aa6129f86d2457e126c47d95952ab4cc9"></a>
+<a class="el" href="../../d3/dd7/classez_typed_resource_handle.htm">ezShaderResourceHandle</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_hShader</b></td></tr>
+<tr class="separator:aa6129f86d2457e126c47d95952ab4cc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_methods_classez_renderer"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classez_renderer')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d5/daa/classez_renderer.htm">ezRenderer</a></td></tr>
-<tr class="memitem:a1938420a56781a7e9863f6c8d393dc30 inherit pub_methods_classez_renderer" id="r_a1938420a56781a7e9863f6c8d393dc30"><td class="memItemLeft" align="right" valign="top">
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>GetSupportedRenderDataTypes</b> (<a class="el" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray</a>&lt; const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *, 8 &gt; &amp;ref_types) const =0</td></tr>
-<tr class="separator:a1938420a56781a7e9863f6c8d393dc30 inherit pub_methods_classez_renderer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3593188b231769b1ea6dd1d0c2e893dc inherit pub_methods_classez_renderer" id="r_a3593188b231769b1ea6dd1d0c2e893dc"><td class="memItemLeft" align="right" valign="top">
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>GetSupportedRenderDataTypes</b> (<a class="el" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray</a>&lt; const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> * &gt; &amp;out_types) const =0</td></tr>
+<tr class="separator:a3593188b231769b1ea6dd1d0c2e893dc inherit pub_methods_classez_renderer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c76a4567cb0dfb664b7b7aa461b3c3d inherit pub_methods_classez_renderer" id="r_a7c76a4567cb0dfb664b7b7aa461b3c3d"><td class="memItemLeft" align="right" valign="top">
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>RenderBatch</b> (const <a class="el" href="../../d7/d76/structez_render_view_context.htm">ezRenderViewContext</a> &amp;renderViewContext, const <a class="el" href="../../d1/d0d/classez_render_pipeline_pass.htm">ezRenderPipelinePass</a> *pPass, const <a class="el" href="../../d1/d11/classez_render_data_batch.htm">ezRenderDataBatch</a> &amp;batch) const =0</td></tr>
 <tr class="separator:a7c76a4567cb0dfb664b7b7aa461b3c3d inherit pub_methods_classez_renderer"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -154,27 +172,6 @@ template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a86c6a804cc97a425928bce744607400a inherit pub_methods_classez_reflected_class"><td class="memTemplItemLeft" align="right" valign="top">EZ_ALWAYS_INLINE bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>IsInstanceOf</b> () const</td></tr>
 <tr class="memdesc:a86c6a804cc97a425928bce744607400a inherit pub_methods_classez_reflected_class"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the type of this instance is of the given type or derived from it. <br /></td></tr>
 <tr class="separator:a86c6a804cc97a425928bce744607400a inherit pub_methods_classez_reflected_class"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
-Protected Member Functions</h2></td></tr>
-<tr class="memitem:a8a135961617f008bb1626ebe280ad78a" id="r_a8a135961617f008bb1626ebe280ad78a"><td class="memItemLeft" align="right" valign="top"><a id="a8a135961617f008bb1626ebe280ad78a" name="a8a135961617f008bb1626ebe280ad78a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>CreateParticleDataBuffer</b> (<a class="el" href="../../de/d9a/classez_g_a_l_buffer_pool.htm">ezGALBufferPool</a> &amp;inout_Buffer, ezUInt32 uiDataTypeSize, ezUInt32 uiNumParticlesPerBatch)</td></tr>
-<tr class="separator:a8a135961617f008bb1626ebe280ad78a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f616b7a60a70a22974e550db7bfa306" id="r_a7f616b7a60a70a22974e550db7bfa306"><td class="memItemLeft" align="right" valign="top"><a id="a7f616b7a60a70a22974e550db7bfa306" name="a7f616b7a60a70a22974e550db7bfa306"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>DestroyParticleDataBuffer</b> (<a class="el" href="../../de/d9a/classez_g_a_l_buffer_pool.htm">ezGALBufferPool</a> &amp;inout_Buffer)</td></tr>
-<tr class="separator:a7f616b7a60a70a22974e550db7bfa306"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a127d7ab976b052c9c4b1ae9a9ecc1aef" id="r_a127d7ab976b052c9c4b1ae9a9ecc1aef"><td class="memItemLeft" align="right" valign="top"><a id="a127d7ab976b052c9c4b1ae9a9ecc1aef" name="a127d7ab976b052c9c4b1ae9a9ecc1aef"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>BindParticleShader</b> (<a class="el" href="../../db/d04/classez_render_context.htm">ezRenderContext</a> *pRenderContext, const char *szShader) const</td></tr>
-<tr class="separator:a127d7ab976b052c9c4b1ae9a9ecc1aef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:aa6129f86d2457e126c47d95952ab4cc9" id="r_aa6129f86d2457e126c47d95952ab4cc9"><td class="memItemLeft" align="right" valign="top"><a id="aa6129f86d2457e126c47d95952ab4cc9" name="aa6129f86d2457e126c47d95952ab4cc9"></a>
-<a class="el" href="../../d3/dd7/classez_typed_resource_handle.htm">ezShaderResourceHandle</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_hShader</b></td></tr>
-<tr class="separator:aa6129f86d2457e126c47d95952ab4cc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_static_methods_classez_no_base"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classez_no_base')"><img src="../../closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="../../d4/d02/classez_no_base.htm">ezNoBase</a></td></tr>
 <tr class="memitem:a718d4e4145a2c15d0c28aaed086f1ce2 inherit pub_static_methods_classez_no_base" id="r_a718d4e4145a2c15d0c28aaed086f1ce2"><td class="memItemLeft" align="right" valign="top">
 static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>GetStaticRTTI</b> ()</td></tr>
@@ -182,36 +179,8 @@ static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Implements rendering of particle systems. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a42f433382e3532c57c683f5b1a5d0b6f" name="a42f433382e3532c57c683f5b1a5d0b6f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a42f433382e3532c57c683f5b1a5d0b6f">&#9670;&#160;</a></span>GetSupportedRenderDataCategories()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ezParticleRenderer::GetSupportedRenderDataCategories </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray</a>&lt; <a class="el" href="../../de/dc4/structez_render_data_1_1_category.htm">ezRenderData::Category</a>, 8 &gt; &amp;&#160;</td>
-          <td class="paramname"><em>ref_categories</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="../../d5/daa/classez_renderer.htm">ezRenderer</a>.</p>
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<p>Base class for all particle renderers. Provides common functionality for uploading particle data to the GPU and binding shaders with particle system constants. </p>
+</div><hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/runner/work/ezEngine/ezEngine/Code/EnginePlugins/ParticlePlugin/Renderer/<a class="el" href="../../d8/d9f/_particle_renderer_8h_source.htm">ParticleRenderer.h</a></li>
 <li>/home/runner/work/ezEngine/ezEngine/Code/EnginePlugins/ParticlePlugin/Renderer/<b>ParticleRenderer.cpp</b></li>
 </ul>
@@ -221,7 +190,7 @@ static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d8/d50/classez_particle_renderer.htm">ezParticleRenderer</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:05 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:46 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

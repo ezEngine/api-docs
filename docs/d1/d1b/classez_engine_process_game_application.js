@@ -5,5 +5,7 @@ var classez_engine_process_game_application =
     [ "BeforeCoreSystemsShutdown", "d1/d1b/classez_engine_process_game_application.htm#a87cae231699aba703305fbd5cc642927", null ],
     [ "BeforeCoreSystemsStartup", "d1/d1b/classez_engine_process_game_application.htm#a702c7f667c6dd4a09a0cb50748670ac0", null ],
     [ "FindProjectDirectory", "d1/d1b/classez_engine_process_game_application.htm#a31ba79111c4448b530f3c9af621d74d1", null ],
-    [ "Run", "d1/d1b/classez_engine_process_game_application.htm#acc787482cc73ad04c7d8ec61a7750272", null ]
+    [ "Run", "d1/d1b/classez_engine_process_game_application.htm#acc787482cc73ad04c7d8ec61a7750272", null ],
+    [ "Run_ProcessApplicationInput", "d1/d1b/classez_engine_process_game_application.htm#accce965c57d025e5ebeb666b91fe043b", null ],
+    [ "ShouldApplicationQuit", "d1/d1b/classez_engine_process_game_application.htm#abc78aa0e1a70b6d5de1753baf6a3b280", null ]
 ];

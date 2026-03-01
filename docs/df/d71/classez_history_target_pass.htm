@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -98,21 +98,18 @@ $(document).ready(function(){initNavTree('df/d71/classez_history_target_pass.htm
 </div><!--header-->
 <div class="contents">
 
-<p>Allows to write data to be accessible in the next frame. See <a class="el" href="../../da/dcd/classez_history_source_pass.htm" title="Allows to access data from a previous frame. Always comes in a pair with a ezHistoryTargetPass....">ezHistorySourcePass</a> for usage.  
- <a href="../../df/d71/classez_history_target_pass.htm#details">More...</a></p>
-
 <p><code>#include &lt;<a class="el" href="../../da/d1c/_history_target_pass_8h_source.htm">HistoryTargetPass.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ezHistoryTargetPass:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../de/d70/classez_history_target_pass__inherit__graph.png" border="0" usemap="#aez_history_target_pass_inherit__map" alt="Inheritance graph"/></div>
 <map name="aez_history_target_pass_inherit__map" id="aez_history_target_pass_inherit__map">
-<area shape="rect" title="Allows to write data to be accessible in the next frame. See ezHistorySourcePass for usage." alt="" coords="13,299,167,324"/>
+<area shape="rect" title=" " alt="" coords="13,299,167,324"/>
 <area shape="rect" href="../../d1/d0d/classez_render_pipeline_pass.htm" title=" " alt="" coords="8,225,172,251"/>
 <area shape="poly" title=" " alt="" coords="93,264,93,299,87,299,87,264"/>
 <area shape="rect" href="../../de/dd2/classez_render_pipeline_node.htm" title=" " alt="" coords="5,152,175,177"/>
 <area shape="poly" title=" " alt="" coords="93,191,93,225,87,225,87,191"/>
-<area shape="rect" href="../../db/d45/classez_reflected_class.htm" title="All classes that should be dynamically reflectable, need to be derived from this base class." alt="" coords="23,79,157,104"/>
+<area shape="rect" href="../../db/d45/classez_reflected_class.htm" title="Base class for all types that support dynamic reflection and runtime type identification." alt="" coords="23,79,157,104"/>
 <area shape="poly" title=" " alt="" coords="93,118,93,152,87,152,87,118"/>
 <area shape="rect" href="../../d4/d02/classez_no_base.htm" title="Dummy type to pass to templates and macros that expect a base type for a class that has no base." alt="" coords="47,5,133,31"/>
 <area shape="poly" title=" " alt="" coords="93,44,93,79,87,79,87,44"/>
@@ -128,6 +125,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aafba999d88ee2d3fa596dac47b1aedc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">For a given input pin configuration, provide the output configuration of this node. Outputs is already resized to the number of output pins.  <br /></td></tr>
 <tr class="separator:aafba999d88ee2d3fa596dac47b1aedc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a86ece38a867cacf3b1601f60b927ce" id="r_a9a86ece38a867cacf3b1601f60b927ce"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../de/d27/classez_g_a_l_texture_handle.htm">ezGALTextureHandle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d71/classez_history_target_pass.htm#a9a86ece38a867cacf3b1601f60b927ce">QueryTextureProvider</a> (const <a class="el" href="../../d9/d96/structez_render_pipeline_node_pin.htm">ezRenderPipelineNodePin</a> *pPin, const <a class="el" href="../../da/dad/structez_g_a_l_texture_creation_description.htm">ezGALTextureCreationDescription</a> &amp;desc) override</td></tr>
+<tr class="memdesc:a9a86ece38a867cacf3b1601f60b927ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the history texture handle for the input pin.  <br /></td></tr>
 <tr class="separator:a9a86ece38a867cacf3b1601f60b927ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73eb3a6f5a889ece746dabc4df0dd3ec" id="r_a73eb3a6f5a889ece746dabc4df0dd3ec"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d71/classez_history_target_pass.htm#a73eb3a6f5a889ece746dabc4df0dd3ec">Execute</a> (const <a class="el" href="../../d7/d76/structez_render_view_context.htm">ezRenderViewContext</a> &amp;renderViewContext, const <a class="el" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr</a>&lt; <a class="el" href="../../d5/d3f/structez_render_pipeline_pass_connection.htm">ezRenderPipelinePassConnection</a> *const &gt; inputs, const <a class="el" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr</a>&lt; <a class="el" href="../../d5/d3f/structez_render_pipeline_pass_connection.htm">ezRenderPipelinePassConnection</a> *const &gt; outputs) override</td></tr>
 <tr class="memdesc:a73eb3a6f5a889ece746dabc4df0dd3ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render into outputs. Both inputs and outputs are passed in with actual texture handles. Disconnected pins have a nullptr value in the passed in arrays. You can now create views and render target setups on the fly and fill the output targets with data.  <br /></td></tr>
@@ -207,9 +205,11 @@ template&lt;typename T &gt; </td></tr>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a182145b22c06bde6950f412b8e91a192" id="r_a182145b22c06bde6950f412b8e91a192"><td class="memItemLeft" align="right" valign="top"><a id="a182145b22c06bde6950f412b8e91a192" name="a182145b22c06bde6950f412b8e91a192"></a>
 <a class="el" href="../../d1/d2e/structez_render_pipeline_node_input_provider_pin.htm">ezRenderPipelineNodeInputProviderPin</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_PinInput</b></td></tr>
+<tr class="memdesc:a182145b22c06bde6950f412b8e91a192"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input texture to store for next frame. <br /></td></tr>
 <tr class="separator:a182145b22c06bde6950f412b8e91a192"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a554ce05e2f06cedb8925294b7aa2a71b" id="r_a554ce05e2f06cedb8925294b7aa2a71b"><td class="memItemLeft" align="right" valign="top"><a id="a554ce05e2f06cedb8925294b7aa2a71b" name="a554ce05e2f06cedb8925294b7aa2a71b"></a>
 <a class="el" href="../../d4/d53/structez_hybrid_string.htm">ezString</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_sSourcePassName</b> = &quot;HistorySourcePass&quot;</td></tr>
+<tr class="memdesc:a554ce05e2f06cedb8925294b7aa2a71b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the paired <a class="el" href="../../da/dcd/classez_history_source_pass.htm" title="Allows to access data from a previous frame. Always comes in a pair with a ezHistoryTargetPass....">ezHistorySourcePass</a>. <br /></td></tr>
 <tr class="separator:a554ce05e2f06cedb8925294b7aa2a71b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
@@ -220,7 +220,8 @@ static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&
 <tr class="separator:a718d4e4145a2c15d0c28aaed086f1ce2 inherit pub_static_methods_classez_no_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Allows to write data to be accessible in the next frame. See <a class="el" href="../../da/dcd/classez_history_source_pass.htm" title="Allows to access data from a previous frame. Always comes in a pair with a ezHistoryTargetPass....">ezHistorySourcePass</a> for usage. </p>
+<div class="textblock"><p>Render pass that stores data to be accessible in the next frame.</p>
+<p>Works in pairs with <a class="el" href="../../da/dcd/classez_history_source_pass.htm" title="Allows to access data from a previous frame. Always comes in a pair with a ezHistoryTargetPass....">ezHistorySourcePass</a>. Receives the current frame's data as input and stores it for the next frame. Set SourcePassName to match the corresponding <a class="el" href="../../da/dcd/classez_history_source_pass.htm" title="Allows to access data from a previous frame. Always comes in a pair with a ezHistoryTargetPass....">ezHistorySourcePass</a>. See <a class="el" href="../../da/dcd/classez_history_source_pass.htm" title="Allows to access data from a previous frame. Always comes in a pair with a ezHistoryTargetPass....">ezHistorySourcePass</a> for usage details. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a7f89d00ae65441a1fb78666e665e5862" name="a7f89d00ae65441a1fb78666e665e5862"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7f89d00ae65441a1fb78666e665e5862">&#9670;&#160;</a></span>Deserialize()</h2>
@@ -375,14 +376,8 @@ static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Returns the current texture this node provides at the given *ProviderPin. This function is called every frame if this node holds a <a class="el" href="../../d1/d2e/structez_render_pipeline_node_input_provider_pin.htm">ezRenderPipelineNodeInputProviderPin</a> or <a class="el" href="../../d1/d11/structez_render_pipeline_node_output_provider_pin.htm">ezRenderPipelineNodeOutputProviderPin</a> pin. The node can return a valid texture handle, or an invalid handle, in which case the missing texture will be created from the texture pool. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pPin</td><td>The member pin for which the texture is requested. </td></tr>
-    <tr><td class="paramname">desc</td><td>The format of the texture that should be provided. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The texture to use for this pin's connections. Or invalid, in which case it reverts to a regular input / output pin. </dd></dl>
+
+<p>Provides the history texture handle for the input pin. </p>
 
 <p>Reimplemented from <a class="el" href="../../d1/d0d/classez_render_pipeline_pass.htm#a0ce843074aa4a8346c426ce9a718153c">ezRenderPipelinePass</a>.</p>
 
@@ -426,7 +421,7 @@ static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../df/d71/classez_history_target_pass.htm">ezHistoryTargetPass</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:04 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:45 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

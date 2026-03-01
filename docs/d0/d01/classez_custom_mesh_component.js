@@ -7,6 +7,7 @@ var classez_custom_mesh_component =
     [ "GetMaterial", "d0/d01/classez_custom_mesh_component.htm#a2cecdbdf4c5db5d37cd123cf9946182d", null ],
     [ "GetMeshResource", "d0/d01/classez_custom_mesh_component.htm#a9bb94936d0265e69ebcab97c4d7e817c", null ],
     [ "OnActivated", "d0/d01/classez_custom_mesh_component.htm#a1a131be40a4b57d20b23002a46edf750", null ],
+    [ "OnDeactivated", "d0/d01/classez_custom_mesh_component.htm#a2cf0362269ca0a775c9767cc5a68d7c7", null ],
     [ "SerializeComponent", "d0/d01/classez_custom_mesh_component.htm#a8df1c116f6797bff2b97317086f5cb8e", null ],
     [ "SetBounds", "d0/d01/classez_custom_mesh_component.htm#ac6197b51bdfd20ac9de3b3d5e72004bf", null ],
     [ "SetColor", "d0/d01/classez_custom_mesh_component.htm#a34ba6b6494bb605929c629ea35f9e8c1", null ],

@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -113,7 +113,7 @@ Inheritance diagram for ezJoltRagdollComponent:</div>
 <area shape="rect" title="Creates a physics ragdoll for an animated mesh and creates animation poses from the physics simulatio..." alt="" coords="5,225,188,251"/>
 <area shape="rect" href="../../d6/d30/classez_component.htm" title="Base class of all component types." alt="" coords="41,152,153,177"/>
 <area shape="poly" title=" " alt="" coords="99,191,99,225,94,225,94,191"/>
-<area shape="rect" href="../../db/d45/classez_reflected_class.htm" title="All classes that should be dynamically reflectable, need to be derived from this base class." alt="" coords="30,79,163,104"/>
+<area shape="rect" href="../../db/d45/classez_reflected_class.htm" title="Base class for all types that support dynamic reflection and runtime type identification." alt="" coords="30,79,163,104"/>
 <area shape="poly" title=" " alt="" coords="99,118,99,152,94,152,94,118"/>
 <area shape="rect" href="../../d4/d02/classez_no_base.htm" title="Dummy type to pass to templates and macros that expect a base type for a class that has no base." alt="" coords="53,5,140,31"/>
 <area shape="poly" title=" " alt="" coords="99,44,99,79,94,79,94,44"/>
@@ -171,18 +171,18 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>OnMsgPhysicsAddImpuls
 void&#160;</td><td class="memItemRight" valign="bottom"><b>AddInitialImpulse</b> (const <a class="el" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> &amp;vPosition, const <a class="el" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> &amp;vDirectionAndStrength)</td></tr>
 <tr class="memdesc:a34e8093aed70aca43d00f56876897122"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds to the existing initial impulse. See <a class="el" href="../../d2/da9/classez_jolt_ragdoll_component.htm#ae5af4f68701eeab818e5b7d78c7b409d" title="Call this function BEFORE activating the ragdoll component to specify an impulse that shall be applie...">SetInitialImpulse()</a>. <br /></td></tr>
 <tr class="separator:a34e8093aed70aca43d00f56876897122"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d2ac53833016f898122ade19771b9b8" id="r_a4d2ac53833016f898122ade19771b9b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/da9/classez_jolt_ragdoll_component.htm#a4d2ac53833016f898122ade19771b9b8">SetJointTypeOverride</a> (<a class="el" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sJointName, <a class="el" href="../../d6/dd9/structez_enum.htm">ezEnum</a>&lt; <a class="el" href="../../d4/dc3/structez_skeleton_joint_type.htm">ezSkeletonJointType</a> &gt; overrideType)</td></tr>
+<tr class="memitem:a4d2ac53833016f898122ade19771b9b8" id="r_a4d2ac53833016f898122ade19771b9b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/da9/classez_jolt_ragdoll_component.htm#a4d2ac53833016f898122ade19771b9b8">SetJointTypeOverride</a> (<a class="el" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sJointName, <a class="el" href="../../d6/dd9/structez_enum.htm">ezEnum</a>&lt; ezSkeletonJointType &gt; overrideType)</td></tr>
 <tr class="memdesc:a4d2ac53833016f898122ade19771b9b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows to override the type of joint to be used for a bone.  <br /></td></tr>
 <tr class="separator:a4d2ac53833016f898122ade19771b9b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac7d736c4f1450ded2379a725da0b1e8" id="r_aac7d736c4f1450ded2379a725da0b1e8"><td class="memItemLeft" align="right" valign="top"><a id="aac7d736c4f1450ded2379a725da0b1e8" name="aac7d736c4f1450ded2379a725da0b1e8"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>OnAnimationPoseUpdated</b> (<a class="el" href="../../d5/d98/structez_msg_animation_pose_updated.htm">ezMsgAnimationPoseUpdated</a> &amp;ref_msg)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>OnAnimationPoseUpdated</b> (ezMsgAnimationPoseUpdated &amp;ref_msg)</td></tr>
 <tr class="separator:aac7d736c4f1450ded2379a725da0b1e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3ce1a683e4694edd8c6fd6118fcb402" id="r_af3ce1a683e4694edd8c6fd6118fcb402"><td class="memItemLeft" align="right" valign="top"><a id="af3ce1a683e4694edd8c6fd6118fcb402" name="af3ce1a683e4694edd8c6fd6118fcb402"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>OnRetrieveBoneState</b> (<a class="el" href="../../da/dd5/structez_msg_retrieve_bone_state.htm">ezMsgRetrieveBoneState</a> &amp;ref_msg) const</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>OnRetrieveBoneState</b> (ezMsgRetrieveBoneState &amp;ref_msg) const</td></tr>
 <tr class="separator:af3ce1a683e4694edd8c6fd6118fcb402"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24d29dfeb14311b7f558d602ee5bc62b" id="r_a24d29dfeb14311b7f558d602ee5bc62b"><td class="memItemLeft" align="right" valign="top"><a id="a24d29dfeb14311b7f558d602ee5bc62b" name="a24d29dfeb14311b7f558d602ee5bc62b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>OnMsgAnimationPoseGeneration</b> (<a class="el" href="../../d6/d9b/structez_msg_animation_pose_generation.htm">ezMsgAnimationPoseGeneration</a> &amp;ref_msg)</td></tr>
-<tr class="separator:a24d29dfeb14311b7f558d602ee5bc62b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac240fe378bb39063719479a94bb98f2f" id="r_ac240fe378bb39063719479a94bb98f2f"><td class="memItemLeft" align="right" valign="top"><a id="ac240fe378bb39063719479a94bb98f2f" name="ac240fe378bb39063719479a94bb98f2f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>OnInjectPoseCommands</b> (ezMsgInjectPoseCommands &amp;ref_msg)</td></tr>
+<tr class="separator:ac240fe378bb39063719479a94bb98f2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3694b381f6b1222e06ff1040d0431699" id="r_a3694b381f6b1222e06ff1040d0431699"><td class="memItemLeft" align="right" valign="top"><a id="a3694b381f6b1222e06ff1040d0431699" name="a3694b381f6b1222e06ff1040d0431699"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>SetJointMotorStrength</b> (float fStrength)</td></tr>
 <tr class="separator:a3694b381f6b1222e06ff1040d0431699"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -361,7 +361,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>CreateLimbsFromCurren
 void&#160;</td><td class="memItemRight" valign="bottom"><b>DestroyAllLimbs</b> ()</td></tr>
 <tr class="separator:a5ddda8552b4546100b3a08142db2ac25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:accbf28d3acf3845d258fdefde5737249" id="r_accbf28d3acf3845d258fdefde5737249"><td class="memItemLeft" align="right" valign="top"><a id="accbf28d3acf3845d258fdefde5737249" name="accbf28d3acf3845d258fdefde5737249"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>CreateLimbsFromPose</b> (const <a class="el" href="../../d5/d98/structez_msg_animation_pose_updated.htm">ezMsgAnimationPoseUpdated</a> &amp;pose)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>CreateLimbsFromPose</b> (const ezMsgAnimationPoseUpdated &amp;pose)</td></tr>
 <tr class="separator:accbf28d3acf3845d258fdefde5737249"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a9ed256acd8d91b495c967c4dd721a4" id="r_a2a9ed256acd8d91b495c967c4dd721a4"><td class="memItemLeft" align="right" valign="top"><a id="a2a9ed256acd8d91b495c967c4dd721a4" name="a2a9ed256acd8d91b495c967c4dd721a4"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>HasCreatedLimbs</b> () const</td></tr>
@@ -376,16 +376,16 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SendAnimationPoseMsg<
 void&#160;</td><td class="memItemRight" valign="bottom"><b>ConfigureRagdollPart</b> (void *pRagdollSettingsPart, const <a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransform</a> &amp;globalTransform, ezUInt8 uiCollisionLayer, <a class="el" href="../../dc/da2/classez_jolt_world_module.htm">ezJoltWorldModule</a> &amp;worldModule)</td></tr>
 <tr class="separator:a08b6e33bcb770c2fbe9fc2c3565b6e74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa100143354784794ecd08363b92335d1" id="r_aa100143354784794ecd08363b92335d1"><td class="memItemLeft" align="right" valign="top"><a id="aa100143354784794ecd08363b92335d1" name="aa100143354784794ecd08363b92335d1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>CreateAllLimbs</b> (const <a class="el" href="../../d9/d0c/classez_skeleton_resource.htm">ezSkeletonResource</a> &amp;skeletonResource, const <a class="el" href="../../d5/d98/structez_msg_animation_pose_updated.htm">ezMsgAnimationPoseUpdated</a> &amp;pose, <a class="el" href="../../dc/da2/classez_jolt_world_module.htm">ezJoltWorldModule</a> &amp;worldModule, float fObjectScale, JPH::RagdollSettings *pRagdollSettings)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>CreateAllLimbs</b> (const <a class="el" href="../../d9/d0c/classez_skeleton_resource.htm">ezSkeletonResource</a> &amp;skeletonResource, const ezMsgAnimationPoseUpdated &amp;pose, <a class="el" href="../../dc/da2/classez_jolt_world_module.htm">ezJoltWorldModule</a> &amp;worldModule, float fObjectScale, JPH::RagdollSettings *pRagdollSettings)</td></tr>
 <tr class="separator:aa100143354784794ecd08363b92335d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75e9e06eda37f9dfdaf717877d248e3b" id="r_a75e9e06eda37f9dfdaf717877d248e3b"><td class="memItemLeft" align="right" valign="top"><a id="a75e9e06eda37f9dfdaf717877d248e3b" name="a75e9e06eda37f9dfdaf717877d248e3b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>ComputeLimbModelSpaceTransform</b> (<a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransform</a> &amp;transform, const <a class="el" href="../../d5/d98/structez_msg_animation_pose_updated.htm">ezMsgAnimationPoseUpdated</a> &amp;pose, ezUInt32 uiPoseJointIndex)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ComputeLimbModelSpaceTransform</b> (<a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransform</a> &amp;transform, const ezMsgAnimationPoseUpdated &amp;pose, ezUInt32 uiPoseJointIndex)</td></tr>
 <tr class="separator:a75e9e06eda37f9dfdaf717877d248e3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc9d213744d761f68aee75331b4e3b22" id="r_adc9d213744d761f68aee75331b4e3b22"><td class="memItemLeft" align="right" valign="top"><a id="adc9d213744d761f68aee75331b4e3b22" name="adc9d213744d761f68aee75331b4e3b22"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>ComputeLimbGlobalTransform</b> (<a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransform</a> &amp;transform, const <a class="el" href="../../d5/d98/structez_msg_animation_pose_updated.htm">ezMsgAnimationPoseUpdated</a> &amp;pose, ezUInt32 uiPoseJointIndex)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ComputeLimbGlobalTransform</b> (<a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransform</a> &amp;transform, const ezMsgAnimationPoseUpdated &amp;pose, ezUInt32 uiPoseJointIndex)</td></tr>
 <tr class="separator:adc9d213744d761f68aee75331b4e3b22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28235e36c16b23bd3351d12a73c89626" id="r_a28235e36c16b23bd3351d12a73c89626"><td class="memItemLeft" align="right" valign="top"><a id="a28235e36c16b23bd3351d12a73c89626" name="a28235e36c16b23bd3351d12a73c89626"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>CreateLimb</b> (const <a class="el" href="../../d9/d0c/classez_skeleton_resource.htm">ezSkeletonResource</a> &amp;skeletonResource, <a class="el" href="../../d1/d79/classez_map.htm">ezMap</a>&lt; ezUInt16, <a class="el" href="../../d1/dba/structez_jolt_ragdoll_component_1_1_limb_construction_info.htm">LimbConstructionInfo</a> &gt; &amp;limbConstructionInfos, <a class="el" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr</a>&lt; const <a class="el" href="../../d3/d9a/structez_skeleton_resource_geometry.htm">ezSkeletonResourceGeometry</a> * &gt; geometries, const <a class="el" href="../../d5/d98/structez_msg_animation_pose_updated.htm">ezMsgAnimationPoseUpdated</a> &amp;pose, <a class="el" href="../../dc/da2/classez_jolt_world_module.htm">ezJoltWorldModule</a> &amp;worldModule, float fObjectScale, JPH::RagdollSettings *pRagdollSettings)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>CreateLimb</b> (const <a class="el" href="../../d9/d0c/classez_skeleton_resource.htm">ezSkeletonResource</a> &amp;skeletonResource, <a class="el" href="../../d1/d79/classez_map.htm">ezMap</a>&lt; ezUInt16, <a class="el" href="../../d1/dba/structez_jolt_ragdoll_component_1_1_limb_construction_info.htm">LimbConstructionInfo</a> &gt; &amp;limbConstructionInfos, <a class="el" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr</a>&lt; const <a class="el" href="../../d3/d9a/structez_skeleton_resource_geometry.htm">ezSkeletonResourceGeometry</a> * &gt; geometries, const ezMsgAnimationPoseUpdated &amp;pose, <a class="el" href="../../dc/da2/classez_jolt_world_module.htm">ezJoltWorldModule</a> &amp;worldModule, float fObjectScale, JPH::RagdollSettings *pRagdollSettings)</td></tr>
 <tr class="separator:a28235e36c16b23bd3351d12a73c89626"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45f455dc3b463aeebf920956562ca9d3" id="r_a45f455dc3b463aeebf920956562ca9d3"><td class="memItemLeft" align="right" valign="top"><a id="a45f455dc3b463aeebf920956562ca9d3" name="a45f455dc3b463aeebf920956562ca9d3"></a>
 JPH::Shape *&#160;</td><td class="memItemRight" valign="bottom"><b>CreateLimbGeoShape</b> (const <a class="el" href="../../d1/dba/structez_jolt_ragdoll_component_1_1_limb_construction_info.htm">LimbConstructionInfo</a> &amp;limbConstructionInfo, const <a class="el" href="../../d3/d9a/structez_skeleton_resource_geometry.htm">ezSkeletonResourceGeometry</a> &amp;geo, const <a class="el" href="../../d9/de3/classez_jolt_material.htm">ezJoltMaterial</a> *pJoltMaterial, const <a class="el" href="../../de/d15/classez_quat_template.htm">ezQuat</a> &amp;qBoneDirAdjustment, const <a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransform</a> &amp;skeletonRootTransform, <a class="el" href="../../d3/db1/classez_transform_template.htm">ezTransform</a> &amp;out_shapeTransform, float fObjectScale)</td></tr>
@@ -553,7 +553,7 @@ static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Creates a physics ragdoll for an animated mesh and creates animation poses from the physics simulation. </p>
-<p>By activating this component on an animated mesh, the component creates the necessary physics shapes to simulate a falling body. The component queries the bone transforms from the physics engine and sends <a class="el" href="../../d5/d98/structez_msg_animation_pose_updated.htm" title="Used by components that skin a mesh to inform children whenever a new pose has been computed.">ezMsgAnimationPoseUpdated</a> with new poses.</p>
+<p>By activating this component on an animated mesh, the component creates the necessary physics shapes to simulate a falling body. The component queries the bone transforms from the physics engine and sends ezMsgAnimationPoseUpdated with new poses.</p>
 <p>Once this component is active on an animated mesh, no other pose generating component should be active anymore, otherwise multiple components generate conflicting animation poses. The typical way to use this, is to have the component created and configured, but in an inactive state. Once an NPC dies, the component is activated and all other components that generate animation poses should be deactivated.</p>
 <p>The ragdoll shapes are configured through the <a class="el" href="../../d9/d0c/classez_skeleton_resource.htm">ezSkeletonResource</a>.</p>
 <p>Ragdolls are also used to create fake "breakable" objects. This is achieved by building a skinned object out of several pieces and giving every piece a bone that has no constraint (joint), so that the object just breaks apart. </p>
@@ -752,7 +752,7 @@ static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../d6/dd9/structez_enum.htm">ezEnum</a>&lt; <a class="el" href="../../d4/dc3/structez_skeleton_joint_type.htm">ezSkeletonJointType</a> &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d6/dd9/structez_enum.htm">ezEnum</a>&lt; ezSkeletonJointType &gt;&#160;</td>
           <td class="paramname"><em>overrideType</em>&#160;</td>
         </tr>
         <tr>
@@ -797,7 +797,7 @@ static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d2/da9/classez_jolt_ragdoll_component.htm">ezJoltRagdollComponent</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:04 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:45 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

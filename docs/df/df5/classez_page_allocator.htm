@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('df/df5/classez_page_allocator.htm','..
 </div><!--header-->
 <div class="contents">
 
-<p>This helper class can reserve and allocate whole memory pages.  
+<p>Low-level memory allocator that manages whole memory pages from the operating system.  
  <a href="../../df/df5/classez_page_allocator.htm#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../dd/d50/_page_allocator_8h_source.htm">PageAllocator.h</a>&gt;</code></p>
@@ -106,16 +106,26 @@ $(document).ready(function(){initNavTree('df/df5/classez_page_allocator.htm','..
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a6b60822f20097029eebadaaad21942d0" id="r_a6b60822f20097029eebadaaad21942d0"><td class="memItemLeft" align="right" valign="top"><a id="a6b60822f20097029eebadaaad21942d0" name="a6b60822f20097029eebadaaad21942d0"></a>
 static void *&#160;</td><td class="memItemRight" valign="bottom"><b>AllocatePage</b> (size_t uiSize)</td></tr>
+<tr class="memdesc:a6b60822f20097029eebadaaad21942d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates a page-aligned memory block of at least the specified size. <br /></td></tr>
 <tr class="separator:a6b60822f20097029eebadaaad21942d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0cb9cad6d74c6134e374f7458f6047e" id="r_ac0cb9cad6d74c6134e374f7458f6047e"><td class="memItemLeft" align="right" valign="top"><a id="ac0cb9cad6d74c6134e374f7458f6047e" name="ac0cb9cad6d74c6134e374f7458f6047e"></a>
 static void&#160;</td><td class="memItemRight" valign="bottom"><b>DeallocatePage</b> (void *pPtr)</td></tr>
+<tr class="memdesc:ac0cb9cad6d74c6134e374f7458f6047e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deallocates a memory block previously allocated with AllocatePage. <br /></td></tr>
 <tr class="separator:ac0cb9cad6d74c6134e374f7458f6047e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab63d2caea3dc5b4a4def60d75a9e7949" id="r_ab63d2caea3dc5b4a4def60d75a9e7949"><td class="memItemLeft" align="right" valign="top"><a id="ab63d2caea3dc5b4a4def60d75a9e7949" name="ab63d2caea3dc5b4a4def60d75a9e7949"></a>
 static <a class="el" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GetId</b> ()</td></tr>
+<tr class="memdesc:ab63d2caea3dc5b4a4def60d75a9e7949"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the allocator identifier for tracking and debugging purposes. <br /></td></tr>
 <tr class="separator:ab63d2caea3dc5b4a4def60d75a9e7949"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This helper class can reserve and allocate whole memory pages. </p>
+<div class="textblock"><p>Low-level memory allocator that manages whole memory pages from the operating system. </p>
+<p>This allocator requests memory directly from the OS in page-aligned chunks, typically 4KB or larger. It's designed for scenarios where you need large, aligned memory blocks with minimal overhead. Unlike general-purpose allocators, this operates at the virtual memory level and may reserve address space that isn't immediately committed to physical memory.</p>
+<p>Use this allocator when:</p><ul>
+<li>You need very large memory blocks (typically &gt;64KB)</li>
+<li>Memory must be page-aligned for specific algorithms or OS APIs</li>
+<li>You want to minimize memory overhead for large allocations</li>
+<li>You're implementing higher-level allocators that need backing storage </li>
+</ul>
 </div><hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/Memory/<a class="el" href="../../dd/d50/_page_allocator_8h_source.htm">PageAllocator.h</a></li>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/Memory/Implementation/<b>PageAllocator.cpp</b></li>
@@ -127,7 +137,7 @@ static <a class="el" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../df/df5/classez_page_allocator.htm">ezPageAllocator</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:05 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:46 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

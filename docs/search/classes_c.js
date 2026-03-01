@@ -11,5 +11,6 @@ var searchData=
   ['messagehandlertraits_8',['MessageHandlerTraits',['../dc/d29/structez_internal_1_1_message_handler_traits.htm',1,'ezInternal']]],
   ['mipmapoptions_9',['MipMapOptions',['../dd/d74/structez_image_utils_1_1_mip_map_options.htm',1,'ezImageUtils']]],
   ['mode_10',['Mode',['../d9/db0/structez_ipc_channel_1_1_mode.htm',1,'ezIpcChannel']]],
-  ['motor_11',['Motor',['../db/dbe/structez_input_device_controller_1_1_motor.htm',1,'ezInputDeviceController']]]
+  ['motor_11',['Motor',['../db/dbe/structez_input_device_controller_1_1_motor.htm',1,'ezInputDeviceController']]],
+  ['mousebuttonmapping_12',['MouseButtonMapping',['../dd/d37/structez_rml_ui_input_buttons_1_1_mouse_button_mapping.htm',1,'ezRmlUiInputButtons']]]
 ];

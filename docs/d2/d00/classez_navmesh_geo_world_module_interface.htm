@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -110,9 +110,9 @@ Inheritance diagram for ezNavmeshGeoWorldModuleInterface:</div>
 <area shape="rect" title="A world module that retrieves triangle data that should be used for building navmeshes at runtime." alt="" coords="5,225,273,251"/>
 <area shape="rect" href="../../d7/d5c/classez_jolt_navmesh_geo_world_module.htm" title="Implementation of the ezNavmeshGeoWorldModuleInterface that uses Jolt physics to retrieve the geometr..." alt="" coords="24,299,255,324"/>
 <area shape="poly" title=" " alt="" coords="142,264,142,299,137,299,137,264"/>
-<area shape="rect" href="../../d1/df7/classez_world_module.htm" title=" " alt="" coords="78,152,201,177"/>
+<area shape="rect" href="../../d1/df7/classez_world_module.htm" title="Base class for world modules that extend world functionality." alt="" coords="78,152,201,177"/>
 <area shape="poly" title=" " alt="" coords="142,191,142,225,137,225,137,191"/>
-<area shape="rect" href="../../db/d45/classez_reflected_class.htm" title="All classes that should be dynamically reflectable, need to be derived from this base class." alt="" coords="73,79,206,104"/>
+<area shape="rect" href="../../db/d45/classez_reflected_class.htm" title="Base class for all types that support dynamic reflection and runtime type identification." alt="" coords="73,79,206,104"/>
 <area shape="poly" title=" " alt="" coords="142,118,142,152,137,152,137,118"/>
 <area shape="rect" href="../../d4/d02/classez_no_base.htm" title="Dummy type to pass to templates and macros that expect a base type for a class that has no base." alt="" coords="96,5,183,31"/>
 <area shape="poly" title=" " alt="" coords="142,44,142,79,137,79,137,44"/>
@@ -121,8 +121,7 @@ Inheritance diagram for ezNavmeshGeoWorldModuleInterface:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:afcea234217d2d330bf3d8e819a85cd3d" id="r_afcea234217d2d330bf3d8e819a85cd3d"><td class="memItemLeft" align="right" valign="top"><a id="afcea234217d2d330bf3d8e819a85cd3d" name="afcea234217d2d330bf3d8e819a85cd3d"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>RetrieveGeometryInArea</b> (ezUInt32 uiCollisionLayer, const <a class="el" href="../../d6/d25/classez_bounding_box_template.htm">ezBoundingBox</a> &amp;box, <a class="el" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray</a>&lt; <a class="el" href="../../de/d86/structez_navmesh_triangle.htm">ezNavmeshTriangle</a> &gt; &amp;out_triangles) const =0</td></tr>
+<tr class="memitem:afcea234217d2d330bf3d8e819a85cd3d" id="r_afcea234217d2d330bf3d8e819a85cd3d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d00/classez_navmesh_geo_world_module_interface.htm#afcea234217d2d330bf3d8e819a85cd3d">RetrieveGeometryInArea</a> (ezUInt32 uiCollisionLayer, const <a class="el" href="../../d6/d25/classez_bounding_box_template.htm">ezBoundingBox</a> &amp;box, <a class="el" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray</a>&lt; <a class="el" href="../../de/d86/structez_navmesh_triangle.htm">ezNavmeshTriangle</a> &gt; &amp;out_triangles) const =0</td></tr>
 <tr class="separator:afcea234217d2d330bf3d8e819a85cd3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classez_world_module"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classez_world_module')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d1/df7/classez_world_module.htm">ezWorldModule</a></td></tr>
 <tr class="memitem:aafb8b5a9c2be416114513d83c0027933 inherit pub_methods_classez_world_module" id="r_aafb8b5a9c2be416114513d83c0027933"><td class="memItemLeft" align="right" valign="top">
@@ -212,8 +211,62 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>UpdateFunction</b> =
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A world module that retrieves triangle data that should be used for building navmeshes at runtime. </p>
 <p>If a physics engine is active, it usually automatically provides such a world module to retrieve the triangle data through physics queries.</p>
-<p>In other types of games, a custom world module can be implemented, to generate this data in a different way. If a physics engine is active, but a custom method should be used, you can write a custom world module and then use <a class="el" href="../../d0/ddd/classez_world_module_factory.htm#ac069f3ec9f1435a4cd508e2b89e57ead" title="Register explicit a mapping of a world module interface to a specific implementation.">ezWorldModuleFactory::RegisterInterfaceImplementation()</a> to specify which module to use. Also see <a class="el" href="../../d1/df9/classez_world_module_config.htm">ezWorldModuleConfig</a>. </p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+<p>In other types of games, a custom world module can be implemented, to generate this data in a different way. If a physics engine is active, but a custom method should be used, you can write a custom world module and then use <a class="el" href="../../d0/ddd/classez_world_module_factory.htm#ac069f3ec9f1435a4cd508e2b89e57ead" title="Register explicit a mapping of a world module interface to a specific implementation.">ezWorldModuleFactory::RegisterInterfaceImplementation()</a> to specify which module to use. Also see <a class="el" href="../../d1/df9/classez_world_module_config.htm" title="Configuration class for world module interface implementations.">ezWorldModuleConfig</a>. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="afcea234217d2d330bf3d8e819a85cd3d" name="afcea234217d2d330bf3d8e819a85cd3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcea234217d2d330bf3d8e819a85cd3d">&#9670;&#160;</a></span>RetrieveGeometryInArea()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ezNavmeshGeoWorldModuleInterface::RetrieveGeometryInArea </td>
+          <td>(</td>
+          <td class="paramtype">ezUInt32&#160;</td>
+          <td class="paramname"><em>uiCollisionLayer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d6/d25/classez_bounding_box_template.htm">ezBoundingBox</a> &amp;&#160;</td>
+          <td class="paramname"><em>box</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray</a>&lt; <a class="el" href="../../de/d86/structez_navmesh_triangle.htm">ezNavmeshTriangle</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>out_triangles</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Retrieves triangles within a specified area for navmesh generation.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uiCollisionLayer</td><td>The collision layer to query for geometry </td></tr>
+    <tr><td class="paramname">box</td><td>The bounding box defining the area to retrieve geometry from </td></tr>
+    <tr><td class="paramname">out_triangles</td><td>Array to fill with triangles found in the specified area </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="../../d7/d5c/classez_jolt_navmesh_geo_world_module.htm#af4a02c15aa7285e6093b89972b51c9b6">ezJoltNavmeshGeoWorldModule</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Core/Interfaces/<a class="el" href="../../d8/d85/_navmesh_geo_world_module_8h_source.htm">NavmeshGeoWorldModule.h</a></li>
 </ul>
 </div><!-- contents -->
@@ -222,7 +275,7 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>UpdateFunction</b> =
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d2/d00/classez_navmesh_geo_world_module_interface.htm">ezNavmeshGeoWorldModuleInterface</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:04 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:46 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

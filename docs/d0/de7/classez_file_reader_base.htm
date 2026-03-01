@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -108,7 +108,7 @@ Inheritance diagram for ezFileReaderBase:</div>
 <area shape="rect" title=" " alt="" coords="5,79,144,104"/>
 <area shape="rect" href="../../da/d44/classez_file_reader.htm" title="The default class to use to read data from a file, implements the ezStreamReader interface." alt="" coords="21,152,128,177"/>
 <area shape="poly" title=" " alt="" coords="77,118,77,152,72,152,72,118"/>
-<area shape="rect" href="../../d2/d19/classez_stream_reader.htm" title="Interface for binary in (read) streams." alt="" coords="9,5,140,31"/>
+<area shape="rect" href="../../d2/d19/classez_stream_reader.htm" title="Abstract base class for binary input streams providing unified reading interface." alt="" coords="9,5,140,31"/>
 <area shape="poly" title=" " alt="" coords="77,44,77,79,72,79,72,44"/>
 </map>
 <center><span class="legend">[<a target="top" href="../../graph_legend.htm">legend</a>]</span></center></div>
@@ -145,7 +145,7 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~ezStreamReader</b
 <tr class="memdesc:a1f0259cae661bd1ca6b9f88d6a576955 inherit pub_methods_classez_stream_reader"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor to ensure correct cleanup. <br /></td></tr>
 <tr class="separator:a1f0259cae661bd1ca6b9f88d6a576955 inherit pub_methods_classez_stream_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b8ce20de04610d28b4118ff23b42020 inherit pub_methods_classez_stream_reader" id="r_a9b8ce20de04610d28b4118ff23b42020"><td class="memItemLeft" align="right" valign="top">virtual ezUInt64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d19/classez_stream_reader.htm#a9b8ce20de04610d28b4118ff23b42020">ReadBytes</a> (void *pReadBuffer, ezUInt64 uiBytesToRead)=0</td></tr>
-<tr class="memdesc:a9b8ce20de04610d28b4118ff23b42020 inherit pub_methods_classez_stream_reader"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a raw number of bytes into the read buffer, this is the only method which has to be implemented to fully implement the interface.  <br /></td></tr>
+<tr class="memdesc:a9b8ce20de04610d28b4118ff23b42020 inherit pub_methods_classez_stream_reader"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a raw number of bytes into the read buffer. This is the only method that must be implemented by derived classes.  <br /></td></tr>
 <tr class="separator:a9b8ce20de04610d28b4118ff23b42020 inherit pub_methods_classez_stream_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b27188b834171b325c22eaffda3b6a0 inherit pub_methods_classez_stream_reader" id="r_a3b27188b834171b325c22eaffda3b6a0"><td class="memTemplParams" colspan="2">
 template&lt;typename T &gt; </td></tr>
@@ -203,6 +203,9 @@ template&lt;typename KeyType , typename ValueType , typename Hasher &gt; </td></
 <tr class="memitem:a09fe261037e80688b72337b15ee0a616 inherit pub_methods_classez_stream_reader" id="r_a09fe261037e80688b72337b15ee0a616"><td class="memItemLeft" align="right" valign="top">virtual ezUInt64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d19/classez_stream_reader.htm#a09fe261037e80688b72337b15ee0a616">SkipBytes</a> (ezUInt64 uiBytesToSkip)</td></tr>
 <tr class="memdesc:a09fe261037e80688b72337b15ee0a616 inherit pub_methods_classez_stream_reader"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper method to skip a number of bytes (implementations of the stream reader may implement this more efficiently for example)  <br /></td></tr>
 <tr class="separator:a09fe261037e80688b72337b15ee0a616 inherit pub_methods_classez_stream_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4f6bb6e54248d92cad9a966f2cda6a5 inherit pub_methods_classez_stream_reader" id="r_ad4f6bb6e54248d92cad9a966f2cda6a5"><td class="memItemLeft" align="right" valign="top">
+EZ_ALWAYS_INLINE ezTypeVersion&#160;</td><td class="memItemRight" valign="bottom"><b>ReadVersion</b> ()</td></tr>
+<tr class="separator:ad4f6bb6e54248d92cad9a966f2cda6a5 inherit pub_methods_classez_stream_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb49f9bac3b2546989bdd2c11a4e7ab9 inherit pub_methods_classez_stream_reader" id="r_abb49f9bac3b2546989bdd2c11a4e7ab9"><td class="memItemLeft" align="right" valign="top">
 EZ_ALWAYS_INLINE ezTypeVersion&#160;</td><td class="memItemRight" valign="bottom"><b>ReadVersion</b> (ezTypeVersion expectedMaxVersion)</td></tr>
 <tr class="separator:abb49f9bac3b2546989bdd2c11a4e7ab9 inherit pub_methods_classez_stream_reader"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -230,7 +233,7 @@ Protected Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d0/de7/classez_file_reader_base.htm">ezFileReaderBase</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:03 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:45 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

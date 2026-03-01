@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('d9/d4f/classez_lock.htm','../../'); in
 </div><!--header-->
 <div class="contents">
 
-<p>Manages a lock (e.g. a mutex) and ensures that it is properly released as the lock object goes out of scope.  
+<p>Manages a lock (e.g. a mutex) and ensures that it is properly released as the lock object goes out of scope. Works with any object that implements Lock() and Unlock() methods (<a class="el" href="../../dd/dbe/classez_mutex.htm" title="Provides a simple mechanism for mutual exclusion to prevent multiple threads from accessing a shared ...">ezMutex</a>, etc.). Use the EZ_LOCK macro for convenient scoped locking.  
  <a href="../../d9/d4f/classez_lock.htm#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../dc/d2d/_lock_8h_source.htm">Lock.h</a>&gt;</code></p>
@@ -106,11 +106,16 @@ $(document).ready(function(){initNavTree('d9/d4f/classez_lock.htm','../../'); in
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a1a8fb0c11bcac4f132faf00f2dea79e1" id="r_a1a8fb0c11bcac4f132faf00f2dea79e1"><td class="memItemLeft" align="right" valign="top"><a id="a1a8fb0c11bcac4f132faf00f2dea79e1" name="a1a8fb0c11bcac4f132faf00f2dea79e1"></a>
 EZ_ALWAYS_INLINE&#160;</td><td class="memItemRight" valign="bottom"><b>ezLock</b> (T &amp;ref_lock)</td></tr>
+<tr class="memdesc:a1a8fb0c11bcac4f132faf00f2dea79e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Acquires the lock immediately upon construction. <br /></td></tr>
 <tr class="separator:a1a8fb0c11bcac4f132faf00f2dea79e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab734d63f43ef1919e257d9969460032b" id="r_ab734d63f43ef1919e257d9969460032b"><td class="memItemLeft" align="right" valign="top"><a id="ab734d63f43ef1919e257d9969460032b" name="ab734d63f43ef1919e257d9969460032b"></a>
+EZ_ALWAYS_INLINE&#160;</td><td class="memItemRight" valign="bottom"><b>~ezLock</b> ()</td></tr>
+<tr class="memdesc:ab734d63f43ef1919e257d9969460032b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Automatically releases the lock when the object is destroyed. <br /></td></tr>
+<tr class="separator:ab734d63f43ef1919e257d9969460032b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
-class ezLock&lt; T &gt;</div><p>Manages a lock (e.g. a mutex) and ensures that it is properly released as the lock object goes out of scope. </p>
+class ezLock&lt; T &gt;</div><p>Manages a lock (e.g. a mutex) and ensures that it is properly released as the lock object goes out of scope. Works with any object that implements Lock() and Unlock() methods (<a class="el" href="../../dd/dbe/classez_mutex.htm" title="Provides a simple mechanism for mutual exclusion to prevent multiple threads from accessing a shared ...">ezMutex</a>, etc.). Use the EZ_LOCK macro for convenient scoped locking. </p>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/Threading/<a class="el" href="../../dc/d2d/_lock_8h_source.htm">Lock.h</a></li>
 </ul>
@@ -120,7 +125,7 @@ class ezLock&lt; T &gt;</div><p>Manages a lock (e.g. a mutex) and ensures that i
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d9/d4f/classez_lock.htm">ezLock</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:04 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:45 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

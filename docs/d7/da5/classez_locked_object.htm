@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('d7/da5/classez_locked_object.htm','../
 </div><!--header-->
 <div class="contents">
 
-<p>Provides access to an object while managing a lock (e.g. a mutex) that ensures that during its lifetime the access to the object happens under the lock.  
+<p>RAII wrapper providing thread-safe access to an object with automatic lock management.  
  <a href="../../d7/da5/classez_locked_object.htm#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../d9/d79/_locked_object_8h_source.htm">LockedObject.h</a>&gt;</code></p>
@@ -156,7 +156,13 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!</b> () cons
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename T, typename O&gt;<br />
-class ezLockedObject&lt; T, O &gt;</div><p>Provides access to an object while managing a lock (e.g. a mutex) that ensures that during its lifetime the access to the object happens under the lock. </p>
+class ezLockedObject&lt; T, O &gt;</div><p>RAII wrapper providing thread-safe access to an object with automatic lock management. </p>
+<p>Combines object access with lock acquisition/release in a single type. The lock is acquired in the constructor and automatically released in the destructor, ensuring exception-safe critical sections. Only move semantics are supported to prevent accidental lock duplication.</p>
+<p>Template parameters:</p><ul>
+<li>T: Lock type (e.g., <a class="el" href="../../dd/dbe/classez_mutex.htm" title="Provides a simple mechanism for mutual exclusion to prevent multiple threads from accessing a shared ...">ezMutex</a>, ezSharedMutex)</li>
+<li>O: Object type being protected</li>
+</ul>
+<p>Typical usage involves creating this as a temporary object to access shared data safely. </p>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/Threading/<a class="el" href="../../d9/d79/_locked_object_8h_source.htm">LockedObject.h</a></li>
 </ul>
@@ -166,7 +172,7 @@ class ezLockedObject&lt; T, O &gt;</div><p>Provides access to an object while ma
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d7/da5/classez_locked_object.htm">ezLockedObject</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:04 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:45 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

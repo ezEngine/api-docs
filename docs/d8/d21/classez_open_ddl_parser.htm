@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('d8/d21/classez_open_ddl_parser.htm','.
 </div><!--header-->
 <div class="contents">
 
-<p>A low level parser for the OpenDDL format. It can incrementally parse the structure, individual blocks can be skipped.  
+<p>Low-level streaming parser for OpenDDL documents.  
  <a href="../../d8/d21/classez_open_ddl_parser.htm#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../da/d91/_open_ddl_parser_8h_source.htm">OpenDdlParser.h</a>&gt;</code></p>
@@ -109,8 +109,8 @@ Inheritance diagram for ezOpenDdlParser:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../db/d3c/classez_open_ddl_parser__inherit__graph.png" border="0" usemap="#aez_open_ddl_parser_inherit__map" alt="Inheritance graph"/></div>
 <map name="aez_open_ddl_parser_inherit__map" id="aez_open_ddl_parser_inherit__map">
-<area shape="rect" title="A low level parser for the OpenDDL format. It can incrementally parse the structure,..." alt="" coords="8,5,141,31"/>
-<area shape="rect" href="../../d1/da2/classez_open_ddl_reader.htm" title="An OpenDDL reader parses an entire DDL document and creates an in&#45;memory representation of the docume..." alt="" coords="5,79,144,104"/>
+<area shape="rect" title="Low&#45;level streaming parser for OpenDDL documents." alt="" coords="8,5,141,31"/>
+<area shape="rect" href="../../d1/da2/classez_open_ddl_reader.htm" title="Parses OpenDDL documents into an in&#45;memory tree structure." alt="" coords="5,79,144,104"/>
 <area shape="poly" title=" " alt="" coords="77,44,77,79,72,79,72,44"/>
 <area shape="rect" title=" " alt="" coords="17,152,132,177"/>
 <area shape="poly" title=" " alt="" coords="77,118,77,152,72,152,72,118"/>
@@ -131,18 +131,18 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SetLogInterface</b> (
 <tr class="memdesc:a0eee36c22e3458505b4cd58e64ce9f6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets an <a class="el" href="../../d2/d9e/classez_log_interface.htm" title="Base class for all logging classes.">ezLogInterface</a> through which errors and warnings are reported. <br /></td></tr>
 <tr class="separator:a0eee36c22e3458505b4cd58e64ce9f6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94317297f9cb10f776d3ce4e88819471" id="r_a94317297f9cb10f776d3ce4e88819471"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d21/classez_open_ddl_parser.htm#a94317297f9cb10f776d3ce4e88819471">SetCacheSize</a> (ezUInt32 uiSizeInKB)</td></tr>
-<tr class="memdesc:a94317297f9cb10f776d3ce4e88819471"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data is returned in larger chunks, to reduce the number of function calls. The cache size determines the maximum chunk size per primitive type.  <br /></td></tr>
+<tr class="memdesc:a94317297f9cb10f776d3ce4e88819471"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the internal cache size for batching primitive data callbacks.  <br /></td></tr>
 <tr class="separator:a94317297f9cb10f776d3ce4e88819471"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adeeede91d44957ce0e02e64e2f94419b" id="r_adeeede91d44957ce0e02e64e2f94419b"><td class="memItemLeft" align="right" valign="top"><a id="adeeede91d44957ce0e02e64e2f94419b" name="adeeede91d44957ce0e02e64e2f94419b"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>SetInputStream</b> (<a class="el" href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a> &amp;stream, ezUInt32 uiFirstLineOffset=0)</td></tr>
 <tr class="memdesc:adeeede91d44957ce0e02e64e2f94419b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures the parser to read from the given stream. This can only be called once on a parser instance. <br /></td></tr>
 <tr class="separator:adeeede91d44957ce0e02e64e2f94419b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e9ee80d5b067c08610d237f6a79943b" id="r_a3e9ee80d5b067c08610d237f6a79943b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d21/classez_open_ddl_parser.htm#a3e9ee80d5b067c08610d237f6a79943b">ContinueParsing</a> ()</td></tr>
-<tr class="memdesc:a3e9ee80d5b067c08610d237f6a79943b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call this to parse the next piece of the document. This may trigger a callback through which data is returned.  <br /></td></tr>
+<tr class="memdesc:a3e9ee80d5b067c08610d237f6a79943b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses the next portion of the document and triggers appropriate callbacks.  <br /></td></tr>
 <tr class="separator:a3e9ee80d5b067c08610d237f6a79943b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2c410934ae9d8c6360b14e79d72a8fa" id="r_ae2c410934ae9d8c6360b14e79d72a8fa"><td class="memItemLeft" align="right" valign="top"><a id="ae2c410934ae9d8c6360b14e79d72a8fa" name="ae2c410934ae9d8c6360b14e79d72a8fa"></a>
 <a class="el" href="../../d4/da9/structez_result.htm">ezResult</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ParseAll</b> ()</td></tr>
-<tr class="memdesc:ae2c410934ae9d8c6360b14e79d72a8fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <a class="el" href="../../d8/d21/classez_open_ddl_parser.htm#a3e9ee80d5b067c08610d237f6a79943b" title="Call this to parse the next piece of the document. This may trigger a callback through which data is ...">ContinueParsing()</a> in a loop until that returns false. <br /></td></tr>
+<tr class="memdesc:ae2c410934ae9d8c6360b14e79d72a8fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <a class="el" href="../../d8/d21/classez_open_ddl_parser.htm#a3e9ee80d5b067c08610d237f6a79943b" title="Parses the next portion of the document and triggers appropriate callbacks.">ContinueParsing()</a> in a loop until that returns false. <br /></td></tr>
 <tr class="separator:ae2c410934ae9d8c6360b14e79d72a8fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a704de2efaa46e0984aa80efca34741ea" id="r_a704de2efaa46e0984aa80efca34741ea"><td class="memItemLeft" align="right" valign="top"><a id="a704de2efaa46e0984aa80efca34741ea" name="a704de2efaa46e0984aa80efca34741ea"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>SkipRestOfObject</b> ()</td></tr>
@@ -172,7 +172,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>ParsingError</b> (<a 
 <tr class="memdesc:ab8e3edb1873b57306d8a83ff3f17633b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the end of a primitive object is encountered.  <br /></td></tr>
 <tr class="separator:ab8e3edb1873b57306d8a83ff3f17633b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1082b07190d2f2e55ca762f07e3b2e99" id="r_a1082b07190d2f2e55ca762f07e3b2e99"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d21/classez_open_ddl_parser.htm#a1082b07190d2f2e55ca762f07e3b2e99">OnPrimitiveBool</a> (ezUInt32 count, const bool *pData, bool bThisIsAll)=0</td></tr>
-<tr class="memdesc:a1082b07190d2f2e55ca762f07e3b2e99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when data for a primitive type is available. More than one value may be reported at a time.  <br /></td></tr>
+<tr class="memdesc:a1082b07190d2f2e55ca762f07e3b2e99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when boolean primitive data is available.  <br /></td></tr>
 <tr class="separator:a1082b07190d2f2e55ca762f07e3b2e99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6adbd68a2d8faf97c802b55f63fc1db" id="r_af6adbd68a2d8faf97c802b55f63fc1db"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d21/classez_open_ddl_parser.htm#af6adbd68a2d8faf97c802b55f63fc1db">OnPrimitiveInt8</a> (ezUInt32 count, const ezInt8 *pData, bool bThisIsAll)=0</td></tr>
 <tr class="memdesc:af6adbd68a2d8faf97c802b55f63fc1db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when data for a primitive type is available. More than one value may be reported at a time.  <br /></td></tr>
@@ -215,8 +215,8 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a5baafeef74c5314b298d2c7935a43d22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A low level parser for the OpenDDL format. It can incrementally parse the structure, individual blocks can be skipped. </p>
-<p>The document structure is returned through virtual functions that need to be overridden. </p>
+<div class="textblock"><p>Low-level streaming parser for OpenDDL documents. </p>
+<p>This abstract base class provides incremental parsing of OpenDDL (Open Data Description Language) format. Unlike <a class="el" href="../../d1/da2/classez_open_ddl_reader.htm" title="Parses OpenDDL documents into an in-memory tree structure.">ezOpenDdlReader</a> which builds a complete in-memory tree, this parser operates in streaming mode, calling virtual functions as elements are encountered. This allows processing large documents with minimal memory usage and enables selective parsing where only certain parts are processed. Derived classes must override the virtual On* methods to handle parsed elements. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a3e9ee80d5b067c08610d237f6a79943b" name="a3e9ee80d5b067c08610d237f6a79943b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3e9ee80d5b067c08610d237f6a79943b">&#9670;&#160;</a></span>ContinueParsing()</h2>
@@ -241,8 +241,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Call this to parse the next piece of the document. This may trigger a callback through which data is returned. </p>
-<p>This function returns false when the end of the document has been reached, or a fatal parsing error has been reported. </p>
+<p>Parses the next portion of the document and triggers appropriate callbacks. </p>
+<p>Returns false when the end of the document has been reached or a fatal parsing error occurred. Use this for incremental parsing where you want to control when parsing happens. </p>
 
 </div>
 </div>
@@ -489,8 +489,9 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Called when data for a primitive type is available. More than one value may be reported at a time. </p>
-<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.htm#_todo000040">Todo:</a></b></dt><dd>Currently not supported </dd></dl>
+<p>Called when boolean primitive data is available. </p>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.htm#_todo000039">Todo:</a></b></dt><dd>Currently not supported </dd></dl>
+<p>Multiple values may be reported at once for efficiency. bThisIsAll indicates if this is the final batch for the current primitive list. Implementations should accumulate data if bThisIsAll is false. </p>
 
 <p>Implemented in <a class="el" href="../../d1/da2/classez_open_ddl_reader.htm#a6b9bd6e85697eedcdb7406c7de6886bd">ezOpenDdlReader</a>.</p>
 
@@ -1026,8 +1027,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Data is returned in larger chunks, to reduce the number of function calls. The cache size determines the maximum chunk size per primitive type. </p>
-<p>Default cache size is 4 KB. That means up to 1000 integers may be returned in one chunk (or 500 doubles). It does not help to increase the chunk size, when the input data doesn't use such large data lists. </p>
+<p>Sets the internal cache size for batching primitive data callbacks. </p>
+<p>Data is returned in larger chunks to reduce the number of function calls. The cache size determines the maximum chunk size per primitive type. Default cache size is 4 KB, allowing up to 1000 integers or 500 doubles per chunk. Increasing the cache size only helps when the input data contains large primitive arrays, otherwise it provides no benefit. </p>
 
 </div>
 </div>
@@ -1041,7 +1042,7 @@ Protected Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d8/d21/classez_open_ddl_parser.htm">ezOpenDdlParser</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:05 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:46 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

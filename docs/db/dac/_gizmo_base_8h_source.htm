@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -151,32 +151,39 @@ $(document).ready(function(){initNavTree('db/dac/_gizmo_base_8h_source.htm','../
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> OnVisibleChanged(<span class="keywordtype">bool</span> bVisible) = 0;</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> OnTransformationChanged(<span class="keyword">const</span> <a class="code hl_class" href="../../d3/db1/classez_transform_template.htm">ezTransform</a>&amp; transform) = 0;</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keyword">const</span> <a class="code hl_class" href="../../d8/d90/classez_camera.htm">ezCamera</a>* m_pCamera;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <a class="code hl_class" href="../../d2/db8/classez_gizmo_handle.htm">ezGizmoHandle</a>* m_pInteractionGizmoHandle;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <a class="code hl_class" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> m_vInteractionPivot;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <a class="code hl_class" href="../../d1/df8/classez_vec2_template.htm">ezVec2I32</a> m_vViewport;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keywordtype">bool</span> m_bVisible;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <a class="code hl_class" href="../../d3/db1/classez_transform_template.htm">ezTransform</a> m_Transformation;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>};</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keywordtype">void</span> GetInverseViewProjectionMatrix(<a class="code hl_class" href="../../d7/d9b/classez_mat4_template.htm">ezMat4</a>&amp; out_mInvViewProj) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <a class="code hl_struct" href="../../d4/da9/structez_result.htm">ezResult</a> GetPointOnPlane(<span class="keyword">const</span> <a class="code hl_class" href="../../d5/d8d/structez_plane_template.htm">ezPlane</a>&amp; plane, <span class="keyword">const</span> <a class="code hl_class" href="../../d1/df8/classez_vec2_template.htm">ezVec2I32</a>&amp; vScreenPos, <span class="keyword">const</span> <a class="code hl_class" href="../../d7/d9b/classez_mat4_template.htm">ezMat4</a>&amp; mInvViewProj, <a class="code hl_class" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; out_Result) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <a class="code hl_struct" href="../../d4/da9/structez_result.htm">ezResult</a> GetPointOnAxis(<span class="keyword">const</span> <a class="code hl_class" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; vStartPos, <span class="keyword">const</span> <a class="code hl_class" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; vAxis, <span class="keyword">const</span> <a class="code hl_class" href="../../d1/df8/classez_vec2_template.htm">ezVec2I32</a>&amp; vScreenPos, <span class="keyword">const</span> <a class="code hl_class" href="../../d7/d9b/classez_mat4_template.htm">ezMat4</a>&amp; mInvViewProj, <a class="code hl_class" href="../../da/df1/classez_vec3_template.htm">ezVec3</a>&amp; out_Result, <span class="keywordtype">float</span>* out_pProjectedLength = <span class="keyword">nullptr</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keyword">const</span> <a class="code hl_class" href="../../d8/d90/classez_camera.htm">ezCamera</a>* m_pCamera;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <a class="code hl_class" href="../../d2/db8/classez_gizmo_handle.htm">ezGizmoHandle</a>* m_pInteractionGizmoHandle;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <a class="code hl_class" href="../../da/df1/classez_vec3_template.htm">ezVec3</a> m_vInteractionPivot;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <a class="code hl_class" href="../../d1/df8/classez_vec2_template.htm">ezVec2I32</a> m_vViewport;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <span class="keywordtype">bool</span> m_bVisible;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <a class="code hl_class" href="../../d3/db1/classez_transform_template.htm">ezTransform</a> m_Transformation;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>};</div>
 </div>
-<div class="ttc" id="aclassez_camera_htm"><div class="ttname"><a href="../../d8/d90/classez_camera.htm">ezCamera</a></div><div class="ttdoc">A camera class that stores the orientation and some basic camera settings.</div><div class="ttdef"><b>Definition</b> Camera.h:41</div></div>
+<div class="ttc" id="aclassez_camera_htm"><div class="ttname"><a href="../../d8/d90/classez_camera.htm">ezCamera</a></div><div class="ttdoc">A camera class that stores the orientation and camera settings for rendering.</div><div class="ttdef"><b>Definition</b> Camera.h:51</div></div>
 <div class="ttc" id="aclassez_editor_input_context_htm"><div class="ttname"><a href="../../df/d1c/classez_editor_input_context.htm">ezEditorInputContext</a></div><div class="ttdef"><b>Definition</b> EditorInputContext.h:22</div></div>
 <div class="ttc" id="aclassez_event_htm"><div class="ttname"><a href="../../d0/daf/classez_event.htm">ezEvent</a></div><div class="ttdef"><b>Definition</b> Event.h:177</div></div>
 <div class="ttc" id="aclassez_gizmo_handle_htm"><div class="ttname"><a href="../../d2/db8/classez_gizmo_handle.htm">ezGizmoHandle</a></div><div class="ttdef"><b>Definition</b> GizmoHandle.h:13</div></div>
 <div class="ttc" id="aclassez_gizmo_htm"><div class="ttname"><a href="../../d4/d05/classez_gizmo.htm">ezGizmo</a></div><div class="ttdef"><b>Definition</b> GizmoBase.h:25</div></div>
+<div class="ttc" id="aclassez_mat4_template_htm"><div class="ttname"><a href="../../d7/d9b/classez_mat4_template.htm">ezMat4Template&lt; float &gt;</a></div></div>
 <div class="ttc" id="aclassez_transform_template_htm"><div class="ttname"><a href="../../d3/db1/classez_transform_template.htm">ezTransformTemplate&lt; float &gt;</a></div></div>
 <div class="ttc" id="aclassez_vec2_template_htm"><div class="ttname"><a href="../../d1/df8/classez_vec2_template.htm">ezVec2Template&lt; ezInt32 &gt;</a></div></div>
 <div class="ttc" id="aclassez_vec3_template_htm"><div class="ttname"><a href="../../da/df1/classez_vec3_template.htm">ezVec3Template&lt; float &gt;</a></div></div>
 <div class="ttc" id="astructez_gizmo_event_htm"><div class="ttname"><a href="../../de/d12/structez_gizmo_event.htm">ezGizmoEvent</a></div><div class="ttdef"><b>Definition</b> GizmoBase.h:11</div></div>
+<div class="ttc" id="astructez_plane_template_htm"><div class="ttname"><a href="../../d5/d8d/structez_plane_template.htm">ezPlaneTemplate&lt; float &gt;</a></div></div>
+<div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition</b> Types.h:58</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_898824d97bbfb864e5ee6bfb2857fc31.htm">Editor</a></li><li class="navelem"><a class="el" href="../../dir_2c11fbcc86473fad6c721ead68acf992.htm">EditorFramework</a></li><li class="navelem"><a class="el" href="../../dir_fb78a76a6f2e71510e5a3a757ac00ffa.htm">Gizmos</a></li><li class="navelem"><b>GizmoBase.h</b></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:00:48 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:29 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

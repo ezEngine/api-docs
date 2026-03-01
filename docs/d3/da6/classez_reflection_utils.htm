@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -254,6 +254,14 @@ static <a class="el" href="../../d4/da9/structez_result.htm">ezResult</a>&#160;<
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Helper functions for handling reflection related operations. </p>
+<p>This utility class provides high-level functions for working with ezEngine's reflection system. It offers functionality for type introspection, property manipulation, enum/bitflag conversion, object comparison, and dependency analysis.</p>
+<p>Key functionality:</p><ul>
+<li>Property value access and modification through <a class="el" href="../../de/de6/classez_variant.htm" title="ezVariant is a class that can store different types of variables, which is useful in situations where...">ezVariant</a></li>
+<li>Enum and bitflag string conversion</li>
+<li>Type dependency analysis and sorting</li>
+<li>Object comparison and default value handling</li>
+<li>Safe property access with automatic type checking </li>
+</ul>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="aea9ee9442bbdcb0a056cf68ec88bc367" name="aea9ee9442bbdcb0a056cf68ec88bc367"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aea9ee9442bbdcb0a056cf68ec88bc367">&#9670;&#160;</a></span>CreateDependencySortedTypeArray()</h2>
@@ -341,7 +349,14 @@ static <a class="el" href="../../d4/da9/structez_result.htm">ezResult</a>&#160;<
 </div><div class="memdoc">
 
 <p>Converts an enum or bitfield value into its string representation. </p>
-<p>The type of pEnumerationRtti will be automatically detected. The syntax of out_sOutput equals MSVC debugger output. </p>
+<p>The type of pEnumerationRtti will be automatically detected. The syntax of out_sOutput equals MSVC debugger output. For bitflags, multiple values are combined with the '|' operator (e.g., "Flag1 | Flag2"). For enums, single values are returned (e.g., "MyEnum::Value1").</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">conversionMode</td><td>Controls whether to include the full type name or just the value name </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>false if the type is not an enum/bitflag or if the value is invalid </dd></dl>
 
 </div>
 </div>
@@ -545,7 +560,8 @@ static <a class="el" href="../../d4/da9/structez_result.htm">ezResult</a>&#160;<
 </div><div class="memdoc">
 
 <p>Compares pObject with pObject2 of type pType and returns whether they are equal. </p>
-<p>In case a class derived from <a class="el" href="../../db/d45/classez_reflected_class.htm" title="All classes that should be dynamically reflectable, need to be derived from this base class.">ezReflectedClass</a> is passed in the correct derived type will automatically be determined so it is not necessary to put the exact type into pType, any derived class type will do. However, the function will return false pObject and pObject2 actually have a different type. </p>
+<p>Performs a deep comparison of all reflected properties. For classes derived from <a class="el" href="../../db/d45/classez_reflected_class.htm" title="Base class for all types that support dynamic reflection and runtime type identification.">ezReflectedClass</a>, the correct derived type will automatically be determined, so it is not necessary to pass the exact type into pType. However, the function will return false if pObject and pObject2 actually have different types.</p>
+<p>Performance warning: This function recursively compares all properties, which can be expensive for complex object hierarchies or large containers. </p>
 
 </div>
 </div>
@@ -643,7 +659,7 @@ static <a class="el" href="../../d4/da9/structez_result.htm">ezResult</a>&#160;<
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d3/da6/classez_reflection_utils.htm">ezReflectionUtils</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:05 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:47 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

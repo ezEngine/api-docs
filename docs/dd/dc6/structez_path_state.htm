@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -111,9 +111,7 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a79d8d6c6592c304382b9d4b5b1f5b662" id="r_a79d8d6c6592c304382b9d4b5b1f5b662"><td class="memItemLeft" align="right" valign="top"><a id="a79d8d6c6592c304382b9d4b5b1f5b662" name="a79d8d6c6592c304382b9d4b5b1f5b662"></a>
-ezInt64&#160;</td><td class="memItemRight" valign="bottom"><b>m_iReachedThroughNode</b></td></tr>
-<tr class="memdesc:a79d8d6c6592c304382b9d4b5b1f5b662"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialized by the path searcher. Back-pointer to the node from which this node was reached. <br /></td></tr>
+<tr class="memitem:a79d8d6c6592c304382b9d4b5b1f5b662" id="r_a79d8d6c6592c304382b9d4b5b1f5b662"><td class="memItemLeft" align="right" valign="top">ezInt64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dc6/structez_path_state.htm#a79d8d6c6592c304382b9d4b5b1f5b662">m_iReachedThroughNode</a></td></tr>
 <tr class="separator:a79d8d6c6592c304382b9d4b5b1f5b662"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71ce1b11e105b916f0c5bb661ff44df0" id="r_a71ce1b11e105b916f0c5bb661ff44df0"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dc6/structez_path_state.htm#a71ce1b11e105b916f0c5bb661ff44df0">m_fCostToNode</a></td></tr>
 <tr class="separator:a71ce1b11e105b916f0c5bb661ff44df0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -122,6 +120,7 @@ ezInt64&#160;</td><td class="memItemRight" valign="bottom"><b>m_iReachedThroughN
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Base class for all path finding state objects. </p>
+<p>Path states carry information about the current state of a pathfinding agent at a specific node. This includes costs accumulated so far and can be extended to include custom state like facing direction, remaining fuel, unlocked abilities, or any other data that affects movement possibilities. </p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a71ce1b11e105b916f0c5bb661ff44df0" name="a71ce1b11e105b916f0c5bb661ff44df0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a71ce1b11e105b916f0c5bb661ff44df0">&#9670;&#160;</a></span>m_fCostToNode</h2>
@@ -134,7 +133,8 @@ ezInt64&#160;</td><td class="memItemRight" valign="bottom"><b>m_iReachedThroughN
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Each <a class="el" href="../../d2/d5d/classez_path_state_generator.htm" title="The base class for all path state generates.">ezPathStateGenerator</a> needs to update the costs by taking the nodes from the predecessor state and adding a non-zero cost value to it. </p>
+<p>The accumulated cost to reach this node from the start.</p>
+<p>Must be updated by <a class="el" href="../../d2/d5d/classez_path_state_generator.htm" title="Base class for path state generators that define how pathfinding expands from one node to adjacent no...">ezPathStateGenerator</a> implementations by taking the cost from the predecessor state and adding the movement cost to reach this node. Should always be non-negative and increase along the path. </p>
 
 </div>
 </div>
@@ -153,6 +153,22 @@ ezInt64&#160;</td><td class="memItemRight" valign="bottom"><b>m_iReachedThroughN
 
 </div>
 </div>
+<a id="a79d8d6c6592c304382b9d4b5b1f5b662" name="a79d8d6c6592c304382b9d4b5b1f5b662"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79d8d6c6592c304382b9d4b5b1f5b662">&#9670;&#160;</a></span>m_iReachedThroughNode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ezInt64 ezPathState::m_iReachedThroughNode</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Back-pointer to the node from which this node was reached.</p>
+<p>Set automatically by the path searcher during the search process. Used to reconstruct the final path once the target is found. </p>
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Utilities/PathFinding/<a class="el" href="../../d2/d25/_path_state_8h_source.htm">PathState.h</a></li>
 </ul>
@@ -162,7 +178,7 @@ ezInt64&#160;</td><td class="memItemRight" valign="bottom"><b>m_iReachedThroughN
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dd/dc6/structez_path_state.htm">ezPathState</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:05 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:46 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

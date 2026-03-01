@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -93,6 +93,7 @@ $(document).ready(function(){initNavTree('d8/d5d/classez_scene_load_utility.htm'
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="../../de/d13/classez_scene_load_utility-members.htm">List of all members</a>  </div>
   <div class="headertitle"><div class="title">ezSceneLoadUtility Class Reference</div></div>
 </div><!--header-->
@@ -147,6 +148,15 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>GetLoadingProgress</
 <a class="el" href="../../d9/d18/classez_string_view.htm">ezStringView</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GetRedirectedScene</b> () const</td></tr>
 <tr class="memdesc:a89540f531f8bac298b1de976df0fa084"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the path to the scene file after it was redirected. <br /></td></tr>
 <tr class="separator:a89540f531f8bac298b1de976df0fa084"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a321e8b87dc457a2613bdbeb02f4977be" id="r_a321e8b87dc457a2613bdbeb02f4977be"><td class="memItemLeft" align="right" valign="top"><a id="a321e8b87dc457a2613bdbeb02f4977be" name="a321e8b87dc457a2613bdbeb02f4977be"></a>
+static <a class="el" href="../../d7/d6e/structez_status.htm">ezStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><b>FindRedirectedSceneFile</b> (<a class="el" href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a> &amp;ref_sFinalPath, <a class="el" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sSceneFile)</td></tr>
+<tr class="memdesc:a321e8b87dc457a2613bdbeb02f4977be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Redirects a scene path to the actual binary scene file, if necessary. <br /></td></tr>
+<tr class="separator:a321e8b87dc457a2613bdbeb02f4977be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6c93bb045e25b04c311fe3ac701e4ac" id="r_ae6c93bb045e25b04c311fe3ac701e4ac"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d7/d6e/structez_status.htm">ezStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d5d/classez_scene_load_utility.htm#ae6c93bb045e25b04c311fe3ac701e4ac">LoadSceneImmediate</a> (<a class="el" href="../../da/d3c/classez_world.htm">ezWorld</a> &amp;inout_targetWorld, <a class="el" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sSceneFile)</td></tr>
+<tr class="separator:ae6c93bb045e25b04c311fe3ac701e4ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class allows to load a scene in the background and switch to it, once loading has finished. </p>
@@ -178,6 +188,44 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>GetLoadingProgress</
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae6c93bb045e25b04c311fe3ac701e4ac" name="ae6c93bb045e25b04c311fe3ac701e4ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6c93bb045e25b04c311fe3ac701e4ac">&#9670;&#160;</a></span>LoadSceneImmediate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/d6e/structez_status.htm">ezStatus</a> ezSceneLoadUtility::LoadSceneImmediate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../da/d3c/classez_world.htm">ezWorld</a> &amp;&#160;</td>
+          <td class="paramname"><em>inout_targetWorld</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d9/d18/classez_string_view.htm">ezStringView</a>&#160;</td>
+          <td class="paramname"><em>sSceneFile</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Loads a scene immediately into the given target world.</p>
+<p>Doesn't clear the world beforehand. Does call <a class="el" href="../../d8/d5d/classez_scene_load_utility.htm#a321e8b87dc457a2613bdbeb02f4977be" title="Redirects a scene path to the actual binary scene file, if necessary.">FindRedirectedSceneFile()</a> on the scene path first. </p>
+
+</div>
+</div>
 <a id="a0130054f0164e1719d576ce8b0f94c0a" name="a0130054f0164e1719d576ce8b0f94c0a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0130054f0164e1719d576ce8b0f94c0a">&#9670;&#160;</a></span>RetrieveLoadedScene()</h2>
 
@@ -259,7 +307,7 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>GetLoadingProgress</
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d8/d5d/classez_scene_load_utility.htm">ezSceneLoadUtility</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:06 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:47 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

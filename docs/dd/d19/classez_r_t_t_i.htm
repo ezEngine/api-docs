@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -102,7 +102,7 @@ $(document).ready(function(){initNavTree('dd/d19/classez_r_t_t_i.htm','../../');
 </div><!--header-->
 <div class="contents">
 
-<p>This class holds information about reflected types. Each instance represents one type that is known to the reflection system.  
+<p>Core class of ezEngine's reflection system that holds complete runtime type information.  
  <a href="../../dd/d19/classez_r_t_t_i.htm#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../de/dd7/_r_t_t_i_8h_source.htm">RTTI.h</a>&gt;</code></p>
@@ -111,12 +111,12 @@ Inheritance diagram for ezRTTI:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d0/dab/classez_r_t_t_i__inherit__graph.png" border="0" usemap="#aez_r_t_t_i_inherit__map" alt="Inheritance graph"/></div>
 <map name="aez_r_t_t_i_inherit__map" id="aez_r_t_t_i_inherit__map">
-<area shape="rect" title="This class holds information about reflected types. Each instance represents one type that is known t..." alt="" coords="202,5,267,31"/>
+<area shape="rect" title="Core class of ezEngine&#39;s reflection system that holds complete runtime type information." alt="" coords="202,5,267,31"/>
 <area shape="rect" href="../../dd/d98/classez_phantom_r_t_t_i.htm" title=" " alt="" coords="5,79,128,104"/>
 <area shape="poly" title=" " alt="" coords="196,38,95,81,93,76,194,34"/>
 <area shape="rect" href="../../d4/d12/classez_script_coroutine_r_t_t_i.htm" title="A coroutine type that stores a custom allocator." alt="" coords="152,79,317,104"/>
 <area shape="poly" title=" " alt="" coords="237,44,237,79,232,79,232,44"/>
-<area shape="rect" href="../../dd/da5/classez_script_r_t_t_i.htm" title=" " alt="" coords="342,79,445,104"/>
+<area shape="rect" href="../../dd/da5/classez_script_r_t_t_i.htm" title="Runtime type information for script classes, extending ezRTTI with script&#45;specific functionality." alt="" coords="342,79,445,104"/>
 <area shape="poly" title=" " alt="" coords="273,34,368,76,366,81,271,39"/>
 </map>
 <center><span class="legend">[<a target="top" href="../../graph_legend.htm">legend</a>]</span></center></div>
@@ -161,9 +161,8 @@ EZ_ALWAYS_INLINE const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezR
 EZ_ALWAYS_INLINE <a class="el" href="../../da/d6c/structez_variant_type.htm#a91ecf53decb31d57981c71043fa30299">ezVariantType::Enum</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GetVariantType</b> () const</td></tr>
 <tr class="memdesc:abbf81f248b97259ac66a7f6863475815"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the corresponding variant type for this type or Invalid if there is none. <br /></td></tr>
 <tr class="separator:abbf81f248b97259ac66a7f6863475815"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19672c9984fefea00552f02dd010ae6e" id="r_a19672c9984fefea00552f02dd010ae6e"><td class="memItemLeft" align="right" valign="top"><a id="a19672c9984fefea00552f02dd010ae6e" name="a19672c9984fefea00552f02dd010ae6e"></a>
-EZ_ALWAYS_INLINE bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsDerivedFrom</b> (const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *pBaseType) const</td></tr>
-<tr class="memdesc:a19672c9984fefea00552f02dd010ae6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if this type is derived from the given type (or of the same type). <br /></td></tr>
+<tr class="memitem:a19672c9984fefea00552f02dd010ae6e" id="r_a19672c9984fefea00552f02dd010ae6e"><td class="memItemLeft" align="right" valign="top">EZ_ALWAYS_INLINE bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d19/classez_r_t_t_i.htm#a19672c9984fefea00552f02dd010ae6e">IsDerivedFrom</a> (const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *pBaseType) const</td></tr>
+<tr class="memdesc:a19672c9984fefea00552f02dd010ae6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fast O(1) check if this type is derived from the given type (or is the same type).  <br /></td></tr>
 <tr class="separator:a19672c9984fefea00552f02dd010ae6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27fdc49f927f74d2946a73975eb7accb" id="r_a27fdc49f927f74d2946a73975eb7accb"><td class="memTemplParams" colspan="2"><a id="a27fdc49f927f74d2946a73975eb7accb" name="a27fdc49f927f74d2946a73975eb7accb"></a>
 template&lt;typename BASE &gt; </td></tr>
@@ -217,13 +216,11 @@ EZ_ALWAYS_INLINE <a class="el" href="../../d9/d18/classez_string_view.htm">ezStr
 EZ_ALWAYS_INLINE const <a class="el" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr</a>&lt; <a class="el" href="../../d5/d1b/classez_abstract_message_handler.htm">ezAbstractMessageHandler</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetMessageHandlers</b> () const</td></tr>
 <tr class="memdesc:a6ac7d5fe07dfd58a3311c92c1cbc7a65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the array of message handlers that this type has. <br /></td></tr>
 <tr class="separator:a6ac7d5fe07dfd58a3311c92c1cbc7a65"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa39cdcea201461bf8c6454503c32639b" id="r_aa39cdcea201461bf8c6454503c32639b"><td class="memItemLeft" align="right" valign="top"><a id="aa39cdcea201461bf8c6454503c32639b" name="aa39cdcea201461bf8c6454503c32639b"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>DispatchMessage</b> (void *pInstance, <a class="el" href="../../dd/d22/classez_message.htm">ezMessage</a> &amp;ref_msg) const</td></tr>
-<tr class="memdesc:aa39cdcea201461bf8c6454503c32639b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dispatches the given message to the proper message handler, if there is one available. Returns true if so, false if no message handler for this type exists. <br /></td></tr>
+<tr class="memitem:aa39cdcea201461bf8c6454503c32639b" id="r_aa39cdcea201461bf8c6454503c32639b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d19/classez_r_t_t_i.htm#aa39cdcea201461bf8c6454503c32639b">DispatchMessage</a> (void *pInstance, <a class="el" href="../../dd/d22/classez_message.htm">ezMessage</a> &amp;ref_msg) const</td></tr>
+<tr class="memdesc:aa39cdcea201461bf8c6454503c32639b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dispatches a message to the appropriate handler for this type.  <br /></td></tr>
 <tr class="separator:aa39cdcea201461bf8c6454503c32639b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a700622ab9657979990db167a999cfdb7" id="r_a700622ab9657979990db167a999cfdb7"><td class="memItemLeft" align="right" valign="top"><a id="a700622ab9657979990db167a999cfdb7" name="a700622ab9657979990db167a999cfdb7"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>DispatchMessage</b> (const void *pInstance, <a class="el" href="../../dd/d22/classez_message.htm">ezMessage</a> &amp;ref_msg) const</td></tr>
-<tr class="memdesc:a700622ab9657979990db167a999cfdb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dispatches the given message to the proper message handler, if there is one available. Returns true if so, false if no message handler for this type exists. <br /></td></tr>
+<tr class="memitem:a700622ab9657979990db167a999cfdb7" id="r_a700622ab9657979990db167a999cfdb7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d19/classez_r_t_t_i.htm#a700622ab9657979990db167a999cfdb7">DispatchMessage</a> (const void *pInstance, <a class="el" href="../../dd/d22/classez_message.htm">ezMessage</a> &amp;ref_msg) const</td></tr>
+<tr class="memdesc:a700622ab9657979990db167a999cfdb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dispatches a message to the appropriate handler (const version).  <br /></td></tr>
 <tr class="separator:a700622ab9657979990db167a999cfdb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac62ddda33b64a09a59f0fdb636dc6d75" id="r_ac62ddda33b64a09a59f0fdb636dc6d75"><td class="memTemplParams" colspan="2"><a id="ac62ddda33b64a09a59f0fdb636dc6d75" name="ac62ddda33b64a09a59f0fdb636dc6d75"></a>
 template&lt;typename MessageType &gt; </td></tr>
@@ -242,22 +239,22 @@ EZ_ALWAYS_INLINE const <a class="el" href="../../dc/dae/classez_array_ptr.htm">e
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ac9bac69084affe20bbaf00bd02ef2356" id="r_ac9bac69084affe20bbaf00bd02ef2356"><td class="memItemLeft" align="right" valign="top"><a id="ac9bac69084affe20bbaf00bd02ef2356" name="ac9bac69084affe20bbaf00bd02ef2356"></a>
 static void&#160;</td><td class="memItemRight" valign="bottom"><b>VerifyCorrectnessForAllTypes</b> ()</td></tr>
-<tr class="memdesc:ac9bac69084affe20bbaf00bd02ef2356"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <a class="el" href="../../dd/d19/classez_r_t_t_i.htm#a7a43da286be40a74f38bd0f2f72bb439" title="Can be called in debug builds to check that all reflected objects are correctly set up.">VerifyCorrectness()</a> on all <a class="el" href="../../dd/d19/classez_r_t_t_i.htm" title="This class holds information about reflected types. Each instance represents one type that is known t...">ezRTTI</a> objects. <br /></td></tr>
+<tr class="memdesc:ac9bac69084affe20bbaf00bd02ef2356"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <a class="el" href="../../dd/d19/classez_r_t_t_i.htm#a7a43da286be40a74f38bd0f2f72bb439" title="Can be called in debug builds to check that all reflected objects are correctly set up.">VerifyCorrectness()</a> on all <a class="el" href="../../dd/d19/classez_r_t_t_i.htm" title="Core class of ezEngine&#39;s reflection system that holds complete runtime type information.">ezRTTI</a> objects. <br /></td></tr>
 <tr class="separator:ac9bac69084affe20bbaf00bd02ef2356"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd87c140d164747f60c74a0f9fecc321" id="r_abd87c140d164747f60c74a0f9fecc321"><td class="memItemLeft" align="right" valign="top"><a id="abd87c140d164747f60c74a0f9fecc321" name="abd87c140d164747f60c74a0f9fecc321"></a>
 static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>FindTypeByName</b> (<a class="el" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sName)</td></tr>
-<tr class="memdesc:abd87c140d164747f60c74a0f9fecc321"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches all <a class="el" href="../../dd/d19/classez_r_t_t_i.htm" title="This class holds information about reflected types. Each instance represents one type that is known t...">ezRTTI</a> instances for the one with the given name, or nullptr if no such type exists. <br /></td></tr>
+<tr class="memdesc:abd87c140d164747f60c74a0f9fecc321"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches all <a class="el" href="../../dd/d19/classez_r_t_t_i.htm" title="Core class of ezEngine&#39;s reflection system that holds complete runtime type information.">ezRTTI</a> instances for the one with the given name, or nullptr if no such type exists. <br /></td></tr>
 <tr class="separator:abd87c140d164747f60c74a0f9fecc321"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aecc309a512d1e58a06777386f8d3029b" id="r_aecc309a512d1e58a06777386f8d3029b"><td class="memItemLeft" align="right" valign="top"><a id="aecc309a512d1e58a06777386f8d3029b" name="aecc309a512d1e58a06777386f8d3029b"></a>
 static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>FindTypeByNameHash</b> (ezUInt64 uiNameHash)</td></tr>
-<tr class="memdesc:aecc309a512d1e58a06777386f8d3029b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches all <a class="el" href="../../dd/d19/classez_r_t_t_i.htm" title="This class holds information about reflected types. Each instance represents one type that is known t...">ezRTTI</a> instances for the one with the given hashed name, or nullptr if no such type exists. <br /></td></tr>
+<tr class="memdesc:aecc309a512d1e58a06777386f8d3029b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches all <a class="el" href="../../dd/d19/classez_r_t_t_i.htm" title="Core class of ezEngine&#39;s reflection system that holds complete runtime type information.">ezRTTI</a> instances for the one with the given hashed name, or nullptr if no such type exists. <br /></td></tr>
 <tr class="separator:aecc309a512d1e58a06777386f8d3029b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a600af954678a4764370264c1e3364b1e" id="r_a600af954678a4764370264c1e3364b1e"><td class="memItemLeft" align="right" valign="top"><a id="a600af954678a4764370264c1e3364b1e" name="a600af954678a4764370264c1e3364b1e"></a>
 static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>FindTypeByNameHash32</b> (ezUInt32 uiNameHash)</td></tr>
 <tr class="separator:a600af954678a4764370264c1e3364b1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd02e62ca37a8c940fba25d02a2148e6" id="r_afd02e62ca37a8c940fba25d02a2148e6"><td class="memItemLeft" align="right" valign="top"><a id="afd02e62ca37a8c940fba25d02a2148e6" name="afd02e62ca37a8c940fba25d02a2148e6"></a>
 static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>FindTypeIf</b> (<a class="el" href="../../d5/d68/structez_delegate.htm">PredicateFunc</a> func)</td></tr>
-<tr class="memdesc:afd02e62ca37a8c940fba25d02a2148e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches all <a class="el" href="../../dd/d19/classez_r_t_t_i.htm" title="This class holds information about reflected types. Each instance represents one type that is known t...">ezRTTI</a> instances for one where the given predicate function returns true. <br /></td></tr>
+<tr class="memdesc:afd02e62ca37a8c940fba25d02a2148e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches all <a class="el" href="../../dd/d19/classez_r_t_t_i.htm" title="Core class of ezEngine&#39;s reflection system that holds complete runtime type information.">ezRTTI</a> instances for one where the given predicate function returns true. <br /></td></tr>
 <tr class="separator:afd02e62ca37a8c940fba25d02a2148e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a916b34ccd59a7eb000661d19cbcfabd9" id="r_a916b34ccd59a7eb000661d19cbcfabd9"><td class="memItemLeft" align="right" valign="top"><a id="a916b34ccd59a7eb000661d19cbcfabd9" name="a916b34ccd59a7eb000661d19cbcfabd9"></a>
 static void&#160;</td><td class="memItemRight" valign="bottom"><b>ForEachType</b> (<a class="el" href="../../d5/d68/structez_delegate.htm">VisitorFunc</a> func, <a class="el" href="../../d1/dec/structez_bitflags.htm">ezBitflags</a>&lt; <a class="el" href="../../d5/d8e/structez_r_t_t_i_1_1_for_each_options.htm">ForEachOptions</a> &gt; options=ForEachOptions::Default)</td></tr>
@@ -349,9 +346,124 @@ const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *(*&#160;
 <tr class="separator:a4ff903e9b570d369cc7680a16e5eb7d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This class holds information about reflected types. Each instance represents one type that is known to the reflection system. </p>
-<p>Instances of this class are typically created through the macros from the <a class="el" href="../../d2/d39/_static_r_t_t_i_8h_source.htm">StaticRTTI.h</a> header. Each instance represents one type. This class holds information about derivation hierarchies and exposed properties. You can thus find out whether a type is derived from some base class and what properties of which types are available. Properties can then be read and modified on instances of this type. </p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+<div class="textblock"><p>Core class of ezEngine's reflection system that holds complete runtime type information. </p>
+<p>Each <a class="el" href="../../dd/d19/classez_r_t_t_i.htm" title="Core class of ezEngine&#39;s reflection system that holds complete runtime type information.">ezRTTI</a> instance represents one reflected type and contains all metadata needed for runtime introspection, serialization, and object creation. The reflection system enables:</p>
+<ul>
+<li>Runtime type queries and inheritance checks</li>
+<li>Dynamic property access and modification</li>
+<li>Object serialization and deserialization</li>
+<li>Message dispatching and handling</li>
+<li>Dynamic object creation and destruction</li>
+<li>Editor property grids and tools</li>
+</ul>
+<p>Key features:</p><ul>
+<li>Complete type hierarchy information with fast inheritance checks</li>
+<li>Property metadata including types, attributes, and access methods</li>
+<li>Message handling system for decoupled communication</li>
+<li>Allocator integration for controlled object creation</li>
+<li>Plugin-aware type registration for modular systems</li>
+<li>Version tracking for data migration and compatibility</li>
+</ul>
+<p>Performance considerations:</p><ul>
+<li>Type lookups are O(log n) using hash tables</li>
+<li>Inheritance checks are O(1) using pre-computed hierarchy arrays</li>
+<li>Property access involves virtual calls and type conversions</li>
+<li>Message dispatching uses optimized jump tables</li>
+</ul>
+<p>Usage: Types are typically registered using macros (EZ_BEGIN_STATIC_REFLECTED_TYPE, etc.) rather than creating <a class="el" href="../../dd/d19/classez_r_t_t_i.htm" title="Core class of ezEngine&#39;s reflection system that holds complete runtime type information.">ezRTTI</a> instances manually. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a700622ab9657979990db167a999cfdb7" name="a700622ab9657979990db167a999cfdb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a700622ab9657979990db167a999cfdb7">&#9670;&#160;</a></span>DispatchMessage() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ezRTTI::DispatchMessage </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>pInstance</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../dd/d22/classez_message.htm">ezMessage</a> &amp;&#160;</td>
+          <td class="paramname"><em>ref_msg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dispatches a message to the appropriate handler (const version). </p>
+<p>Same as the non-const version but for read-only message handlers. Some messages may only be handled by const handlers for safety reasons. </p>
+
+</div>
+</div>
+<a id="aa39cdcea201461bf8c6454503c32639b" name="aa39cdcea201461bf8c6454503c32639b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa39cdcea201461bf8c6454503c32639b">&#9670;&#160;</a></span>DispatchMessage() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ezRTTI::DispatchMessage </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>pInstance</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../dd/d22/classez_message.htm">ezMessage</a> &amp;&#160;</td>
+          <td class="paramname"><em>ref_msg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dispatches a message to the appropriate handler for this type. </p>
+<p>Uses optimized message dispatch tables for fast O(1) message routing. Returns true if a handler was found and the message was processed, false if no handler exists for this message type. The message system enables decoupled communication between components. </p>
+
+</div>
+</div>
+<a id="a19672c9984fefea00552f02dd010ae6e" name="a19672c9984fefea00552f02dd010ae6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19672c9984fefea00552f02dd010ae6e">&#9670;&#160;</a></span>IsDerivedFrom()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">EZ_ALWAYS_INLINE bool ezRTTI::IsDerivedFrom </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&#160;</td>
+          <td class="paramname"><em>pBaseType</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fast O(1) check if this type is derived from the given type (or is the same type). </p>
+<p>Uses pre-computed parent hierarchy arrays for constant-time inheritance checks. Returns true if this type inherits from pBaseType or if they are the same type. This is the preferred method for inheritance testing in performance-critical code. </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/Reflection/Implementation/<a class="el" href="../../de/dd7/_r_t_t_i_8h_source.htm">RTTI.h</a></li>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/Reflection/Implementation/<a class="el" href="../../db/db5/_property_attributes_8h_source.htm">PropertyAttributes.h</a></li>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/Reflection/Implementation/<b>RTTI.cpp</b></li>
@@ -362,7 +474,7 @@ const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *(*&#160;
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:06 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:47 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

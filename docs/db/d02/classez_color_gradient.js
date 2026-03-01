@@ -1,8 +1,5 @@
 var classez_color_gradient =
 [
-    [ "AlphaCP", "d5/dd9/structez_color_gradient_1_1_alpha_c_p.htm", "d5/dd9/structez_color_gradient_1_1_alpha_c_p" ],
-    [ "ColorCP", "df/de7/structez_color_gradient_1_1_color_c_p.htm", "df/de7/structez_color_gradient_1_1_color_c_p" ],
-    [ "IntensityCP", "d9/d76/structez_color_gradient_1_1_intensity_c_p.htm", "d9/d76/structez_color_gradient_1_1_intensity_c_p" ],
     [ "AddAlphaControlPoint", "db/d02/classez_color_gradient.htm#a7fed59bcae2b70cd5396ff38bf48f533", null ],
     [ "AddColorControlPoint", "db/d02/classez_color_gradient.htm#a6de4d1c1ca47fd6ebca68b23bd806745", null ],
     [ "AddIntensityControlPoint", "db/d02/classez_color_gradient.htm#ad704f1e8ec78e5c7fb57459247744ef0", null ],
@@ -24,6 +21,5 @@ var classez_color_gradient =
     [ "ModifyAlphaControlPoint", "db/d02/classez_color_gradient.htm#a6c561d9c187c8fd2d1c43cfa3ddb651f", null ],
     [ "ModifyColorControlPoint", "db/d02/classez_color_gradient.htm#a281f99949e963aebd0b209b1f667d314", null ],
     [ "ModifyIntensityControlPoint", "db/d02/classez_color_gradient.htm#a1c909feac7ca073bfff9c894028ecd51", null ],
-    [ "Save", "db/d02/classez_color_gradient.htm#a19f522dada0aa8e3e1c233ba532c2c10", null ],
-    [ "SortControlPoints", "db/d02/classez_color_gradient.htm#a6d576ee11b1f1980ef9512096db82b4a", null ]
+    [ "Save", "db/d02/classez_color_gradient.htm#a19f522dada0aa8e3e1c233ba532c2c10", null ]
 ];

@@ -13,6 +13,5 @@ var structez_window_creation_desc =
     [ "m_Position", "dd/d3b/structez_window_creation_desc.htm#af8bfb9ba851d7c56a856f363748bfb60", null ],
     [ "m_Resolution", "dd/d3b/structez_window_creation_desc.htm#a887fbcdbd14bce043e3c85edbbfa695e", null ],
     [ "m_Title", "dd/d3b/structez_window_creation_desc.htm#a6cc221a1e2c439f2c7a0d3b0978bc2b0", null ],
-    [ "m_uiWindowNumber", "dd/d3b/structez_window_creation_desc.htm#a55e6b8930abc977981f44765c0b17bd2", null ],
     [ "m_WindowMode", "dd/d3b/structez_window_creation_desc.htm#ab66e09a1992de3ab00d880fdac785864", null ]
 ];

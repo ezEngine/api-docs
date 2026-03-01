@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -114,7 +114,7 @@ Inheritance diagram for ezJoltDynamicActorComponent:</div>
 <area shape="poly" title=" " alt="" coords="121,264,121,299,115,299,115,264"/>
 <area shape="rect" href="../../d6/d30/classez_component.htm" title="Base class of all component types." alt="" coords="62,152,174,177"/>
 <area shape="poly" title=" " alt="" coords="121,191,121,225,115,225,115,191"/>
-<area shape="rect" href="../../db/d45/classez_reflected_class.htm" title="All classes that should be dynamically reflectable, need to be derived from this base class." alt="" coords="51,79,185,104"/>
+<area shape="rect" href="../../db/d45/classez_reflected_class.htm" title="Base class for all types that support dynamic reflection and runtime type identification." alt="" coords="51,79,185,104"/>
 <area shape="poly" title=" " alt="" coords="121,118,121,152,115,152,115,118"/>
 <area shape="rect" href="../../d4/d02/classez_no_base.htm" title="Dummy type to pass to templates and macros that expect a base type for a class that has no base." alt="" coords="75,5,161,31"/>
 <area shape="poly" title=" " alt="" coords="121,44,121,79,115,79,115,44"/>
@@ -317,7 +317,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_bAllowSleeping</b> 
 <tr class="memdesc:a663a01883e130a2bfb84cf604942cc2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether this actor is allowed to go to sleep. Disabling sleeping will come with a performance impact and should only be done in very rare cases. <br /></td></tr>
 <tr class="separator:a663a01883e130a2bfb84cf604942cc2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a0114dc8a758957fd12444461b3162b" id="r_a2a0114dc8a758957fd12444461b3162b"><td class="memItemLeft" align="right" valign="top"><a id="a2a0114dc8a758957fd12444461b3162b" name="a2a0114dc8a758957fd12444461b3162b"></a>
-ezUInt8&#160;</td><td class="memItemRight" valign="bottom"><b>m_uiWeightCategory</b></td></tr>
+ezUInt8&#160;</td><td class="memItemRight" valign="bottom"><b>m_uiWeightCategory</b> = 0</td></tr>
 <tr class="separator:a2a0114dc8a758957fd12444461b3162b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82482fc3684debebcce3227516207332" id="r_a82482fc3684debebcce3227516207332"><td class="memItemLeft" align="right" valign="top"><a id="a82482fc3684debebcce3227516207332" name="a82482fc3684debebcce3227516207332"></a>
 <a class="el" href="../../d7/dca/classez_float16.htm">ezFloat16</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_fWeightMass</b> = 10.0f</td></tr>
@@ -328,6 +328,10 @@ ezUInt8&#160;</td><td class="memItemRight" valign="bottom"><b>m_uiWeightCategory
 <tr class="memitem:a5e3cd69b6952fd5785a063d493dca65c" id="r_a5e3cd69b6952fd5785a063d493dca65c"><td class="memItemLeft" align="right" valign="top"><a id="a5e3cd69b6952fd5785a063d493dca65c" name="a5e3cd69b6952fd5785a063d493dca65c"></a>
 <a class="el" href="../../d7/dca/classez_float16.htm">ezFloat16</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_fWeightScale</b> = 1.0f</td></tr>
 <tr class="separator:a5e3cd69b6952fd5785a063d493dca65c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa3a0439d92eeef9ac97b92e67669544" id="r_afa3a0439d92eeef9ac97b92e67669544"><td class="memItemLeft" align="right" valign="top"><a id="afa3a0439d92eeef9ac97b92e67669544" name="afa3a0439d92eeef9ac97b92e67669544"></a>
+<a class="el" href="../../d7/dca/classez_float16.htm">ezFloat16</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_fBuoyancyFactor</b> = 1.1f</td></tr>
+<tr class="memdesc:afa3a0439d92eeef9ac97b92e67669544"><td class="mdescLeft">&#160;</td><td class="mdescRight">How much buoyancy to apply when the actor is submerged in a fluid. 1.0 means neutral buoyancy, &lt;1.0 sinks, &gt;1.0 floats. <br /></td></tr>
+<tr class="separator:afa3a0439d92eeef9ac97b92e67669544"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a151e90268b72d5f23fa5fd54d2ddf6b3" id="r_a151e90268b72d5f23fa5fd54d2ddf6b3"><td class="memItemLeft" align="right" valign="top"><a id="a151e90268b72d5f23fa5fd54d2ddf6b3" name="a151e90268b72d5f23fa5fd54d2ddf6b3"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>m_fLinearDamping</b> = 0.1f</td></tr>
 <tr class="memdesc:a151e90268b72d5f23fa5fd54d2ddf6b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">How much to dampen linear motion. The higher the value, the quicker a moving object comes to rest. <br /></td></tr>
@@ -372,6 +376,9 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>GetWeight_Mass</b> (
 <tr class="memitem:a2727ca0ec4628097d62ec66c0e050154" id="r_a2727ca0ec4628097d62ec66c0e050154"><td class="memItemLeft" align="right" valign="top"><a id="a2727ca0ec4628097d62ec66c0e050154" name="a2727ca0ec4628097d62ec66c0e050154"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>GetWeight_Density</b> () const</td></tr>
 <tr class="separator:a2727ca0ec4628097d62ec66c0e050154"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d26675607c2a602ce7aca3daea9ab7a" id="r_a5d26675607c2a602ce7aca3daea9ab7a"><td class="memItemLeft" align="right" valign="top"><a id="a5d26675607c2a602ce7aca3daea9ab7a" name="a5d26675607c2a602ce7aca3daea9ab7a"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>GetBuoyancyFactor</b> () const</td></tr>
+<tr class="separator:a5d26675607c2a602ce7aca3daea9ab7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f41d448dd2927fe3cfe155b93d1e9e9" id="r_a8f41d448dd2927fe3cfe155b93d1e9e9"><td class="memItemLeft" align="right" valign="top"><a id="a8f41d448dd2927fe3cfe155b93d1e9e9" name="a8f41d448dd2927fe3cfe155b93d1e9e9"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>SetWeight_Scale</b> (float fValue)</td></tr>
 <tr class="separator:a8f41d448dd2927fe3cfe155b93d1e9e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -381,6 +388,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SetWeight_Mass</b> (f
 <tr class="memitem:ad6a3daaadc67edbcb27064e14fbfdbaf" id="r_ad6a3daaadc67edbcb27064e14fbfdbaf"><td class="memItemLeft" align="right" valign="top"><a id="ad6a3daaadc67edbcb27064e14fbfdbaf" name="ad6a3daaadc67edbcb27064e14fbfdbaf"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>SetWeight_Density</b> (float fValue)</td></tr>
 <tr class="separator:ad6a3daaadc67edbcb27064e14fbfdbaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf05351753dd258e134f0e32c487f4a7" id="r_acf05351753dd258e134f0e32c487f4a7"><td class="memItemLeft" align="right" valign="top"><a id="acf05351753dd258e134f0e32c487f4a7" name="acf05351753dd258e134f0e32c487f4a7"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SetBuoyancyFactor</b> (float fValue)</td></tr>
+<tr class="separator:acf05351753dd258e134f0e32c487f4a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classez_jolt_actor_component"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classez_jolt_actor_component')"><img src="../../closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="../../d9/d79/classez_jolt_actor_component.htm">ezJoltActorComponent</a></td></tr>
 <tr class="memitem:a18f893e9591f36e202887637a9d93ea9 inherit pro_methods_classez_jolt_actor_component" id="r_a18f893e9591f36e202887637a9d93ea9"><td class="memItemLeft" align="right" valign="top">
 const <a class="el" href="../../d4/dcb/classez_jolt_user_data.htm">ezJoltUserData</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>GetUserData</b> () const</td></tr>
@@ -822,7 +832,7 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>GatherShapes</
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../db/dcd/classez_jolt_dynamic_actor_component.htm">ezJoltDynamicActorComponent</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:04 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:45 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

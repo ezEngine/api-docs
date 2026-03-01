@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -109,7 +109,7 @@ Inheritance diagram for ezGameStateBase:</div>
 <area shape="rect" title="ezGameStateBase is the base class for all game states. Game states are used to implement custom high ..." alt="" coords="15,152,158,177"/>
 <area shape="rect" href="../../de/d84/classez_game_state.htm" title="ezGameState implements the ezGameStateBase interface and adds several convenience features." alt="" coords="31,225,142,251"/>
 <area shape="poly" title=" " alt="" coords="89,191,89,225,84,225,84,191"/>
-<area shape="rect" href="../../db/d45/classez_reflected_class.htm" title="All classes that should be dynamically reflectable, need to be derived from this base class." alt="" coords="20,79,153,104"/>
+<area shape="rect" href="../../db/d45/classez_reflected_class.htm" title="Base class for all types that support dynamic reflection and runtime type identification." alt="" coords="20,79,153,104"/>
 <area shape="poly" title=" " alt="" coords="89,118,89,152,84,152,84,118"/>
 <area shape="rect" href="../../d4/d02/classez_no_base.htm" title="Dummy type to pass to templates and macros that expect a base type for a class that has no base." alt="" coords="43,5,130,31"/>
 <area shape="poly" title=" " alt="" coords="89,44,89,79,84,79,84,44"/>
@@ -143,9 +143,9 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>AfterWorldUpd
 <tr class="memitem:af33b9152262a539b80c8081fa800a4e2" id="r_af33b9152262a539b80c8081fa800a4e2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d02/classez_game_state_base.htm#af33b9152262a539b80c8081fa800a4e2">AddMainViewsToRender</a> ()=0</td></tr>
 <tr class="memdesc:af33b9152262a539b80c8081fa800a4e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Has to call ezRenderLoop::AddMainView for all views that need to be rendered.  <br /></td></tr>
 <tr class="separator:af33b9152262a539b80c8081fa800a4e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62468f85386f9cd3675cc166adcc96e2" id="r_a62468f85386f9cd3675cc166adcc96e2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d02/classez_game_state_base.htm#a62468f85386f9cd3675cc166adcc96e2">RequestQuit</a> ()=0</td></tr>
-<tr class="memdesc:a62468f85386f9cd3675cc166adcc96e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call this to signal that a game state requested the application to quit.  <br /></td></tr>
-<tr class="separator:a62468f85386f9cd3675cc166adcc96e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6657556f36fb586aa1df1d238b9940a8" id="r_a6657556f36fb586aa1df1d238b9940a8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d02/classez_game_state_base.htm#a6657556f36fb586aa1df1d238b9940a8">RequestQuit</a> (<a class="el" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sRequestedBy)=0</td></tr>
+<tr class="memdesc:a6657556f36fb586aa1df1d238b9940a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call this to signal that a game state requested the application to quit.  <br /></td></tr>
+<tr class="separator:a6657556f36fb586aa1df1d238b9940a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f4a7ded32f4dbbfed6880c8eba05eb5" id="r_a5f4a7ded32f4dbbfed6880c8eba05eb5"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d02/classez_game_state_base.htm#a5f4a7ded32f4dbbfed6880c8eba05eb5">WasQuitRequested</a> () const =0</td></tr>
 <tr class="memdesc:a5f4a7ded32f4dbbfed6880c8eba05eb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the game state wants to quit the application.  <br /></td></tr>
 <tr class="separator:a5f4a7ded32f4dbbfed6880c8eba05eb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -381,8 +381,8 @@ static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&
 
 </div>
 </div>
-<a id="a62468f85386f9cd3675cc166adcc96e2" name="a62468f85386f9cd3675cc166adcc96e2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a62468f85386f9cd3675cc166adcc96e2">&#9670;&#160;</a></span>RequestQuit()</h2>
+<a id="a6657556f36fb586aa1df1d238b9940a8" name="a6657556f36fb586aa1df1d238b9940a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6657556f36fb586aa1df1d238b9940a8">&#9670;&#160;</a></span>RequestQuit()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -393,7 +393,8 @@ static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&
         <tr>
           <td class="memname">virtual void ezGameStateBase::RequestQuit </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="../../d9/d18/classez_string_view.htm">ezStringView</a>&#160;</td>
+          <td class="paramname"><em>sRequestedBy</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -405,9 +406,9 @@ static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&
 </div><div class="memdoc">
 
 <p>Call this to signal that a game state requested the application to quit. </p>
-<p><a class="el" href="../../db/db6/classez_game_application.htm" title="The base class for all typical game applications made with ezEngine.">ezGameApplication</a> will shut down when this happens. ezEditor will stop play-the-game mode when it is running. </p>
+<p><a class="el" href="../../db/db6/classez_game_application.htm" title="The base class for all typical game applications made with ezEngine.">ezGameApplication</a> will shut down when this happens. ezEditor will stop play-the-game mode when it is running. When calling this, pass a string to identify where the request comes from, e.g. "window" for when clicking the window close button, "game" when game logic (UI) decided to quite, etc. ezEditor will pass in "editor-esc" and "editor-force" when a game-state should be shut down due to the user pressing Escape or clicking the "stop" button. </p>
 
-<p>Implemented in <a class="el" href="../../de/d84/classez_game_state.htm#a0ddc77a03b285fb1b06a55383f2145fb">ezGameState</a>.</p>
+<p>Implemented in <a class="el" href="../../de/d84/classez_game_state.htm#ada300cf3d184358d606ad6b9e3d4b696">ezGameState</a>.</p>
 
 </div>
 </div>
@@ -435,6 +436,7 @@ static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&
 </div><div class="memdoc">
 
 <p>Returns whether the game state wants to quit the application. </p>
+<p><a class="el" href="../../db/db6/classez_game_application.htm" title="The base class for all typical game applications made with ezEngine.">ezGameApplication</a> will shut down when this function returns true. Logic for whether to shut down should typically be handled in <a class="el" href="../../d8/d02/classez_game_state_base.htm#a6657556f36fb586aa1df1d238b9940a8" title="Call this to signal that a game state requested the application to quit.">RequestQuit()</a>. </p>
 
 <p>Implemented in <a class="el" href="../../de/d84/classez_game_state.htm#a8882b66b52eacf68033a9d15dd9f48b5">ezGameState</a>.</p>
 
@@ -449,7 +451,7 @@ static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d8/d02/classez_game_state_base.htm">ezGameStateBase</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:04 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:45 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

@@ -7,5 +7,6 @@ var classez_g_a_l_command_encoder =
     [ "InsertFence", "de/d3d/classez_g_a_l_command_encoder.htm#a88bf61f99b7f64fe5b083963e709a340", null ],
     [ "InsertTimestamp", "de/d3d/classez_g_a_l_command_encoder.htm#aad18cad96c090d09e4c3e87dc826ba0b", null ],
     [ "SetBindGroup", "de/d3d/classez_g_a_l_command_encoder.htm#aa1667b3a91c839e25ecde589aacb3c76", null ],
+    [ "SetBindGroup", "de/d3d/classez_g_a_l_command_encoder.htm#a660d6311c355f3fe071d40069ac4ba05", null ],
     [ "SetIndexBuffer", "de/d3d/classez_g_a_l_command_encoder.htm#aead022ecc4da4026d197549bc29f7f65", null ]
 ];

@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -100,205 +100,287 @@ $(document).ready(function(){initNavTree('d5/d33/_asset_processor_8h_source.htm'
 <div class="contents">
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;EditorFramework/Assets/Declarations.h&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;EditorFramework/EditorFrameworkDLL.h&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;EditorFramework/IPC/EditorProcessCommunicationChannel.h&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;Foundation/Configuration/Singleton.h&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;Foundation/Logging/Log.h&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;Foundation/Logging/LogEntry.h&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;Foundation/Threading/AtomicInteger.h&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;Foundation/Threading/TaskSystem.h&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;EditorFramework/Assets/AssetCurator.h&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;EditorFramework/Assets/Declarations.h&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;EditorFramework/EditorFrameworkDLL.h&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;EditorFramework/IPC/EditorProcessCommunicationChannel.h&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;Foundation/Configuration/Singleton.h&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;Foundation/Logging/Log.h&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;Foundation/Logging/LogEntry.h&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;Foundation/Threading/AtomicInteger.h&gt;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;Foundation/Threading/Thread.h&gt;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;Foundation/Types/UniquePtr.h&gt;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;ToolsFoundation/FileSystem/DataDirPath.h&gt;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;atomic&gt;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">struct </span><a class="code hl_struct" href="../../d0/d24/structez_asset_curator_event.htm">ezAssetCuratorEvent</a>;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">class </span><a class="code hl_class" href="../../dd/d2b/classez_task.htm">ezTask</a>;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">struct </span><a class="code hl_struct" href="../../dc/d20/structez_asset_info.htm">ezAssetInfo</a>;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="foldopen" id="foldopen00021" data-start="{" data-end="};">
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="../../d0/d5a/classez_asset_processor_log.htm">   21</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d0/d5a/classez_asset_processor_log.htm">ezAssetProcessorLog</a> : <span class="keyword">public</span> <a class="code hl_class" href="../../d2/d9e/classez_log_interface.htm">ezLogInterface</a></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>{</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d0/d5a/classez_asset_processor_log.htm#a99e5d5dcef203dec4d9105c42e7409e5">HandleLogMessage</a>(<span class="keyword">const</span> <a class="code hl_struct" href="../../de/d62/structez_logging_event_data.htm">ezLoggingEventData</a>&amp; le) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="keywordtype">void</span> AddLogWriter(<a class="code hl_class" href="../../d5/d68/structez_delegate.htm">ezLoggingEvent::Handler</a> handler);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="keywordtype">void</span> RemoveLogWriter(<a class="code hl_class" href="../../d5/d68/structez_delegate.htm">ezLoggingEvent::Handler</a> handler);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <a class="code hl_class" href="../../d0/daf/classez_event.htm">ezLoggingEvent</a> m_LoggingEvent;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>};</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;Foundation/Threading/ThreadSignal.h&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;Foundation/Types/UniquePtr.h&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;ToolsFoundation/FileSystem/DataDirPath.h&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;atomic&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">struct </span><a class="code hl_struct" href="../../d0/d24/structez_asset_curator_event.htm">ezAssetCuratorEvent</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">class </span><a class="code hl_class" href="../../dd/d2b/classez_task.htm">ezTask</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">struct </span><a class="code hl_struct" href="../../dc/d20/structez_asset_info.htm">ezAssetInfo</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="};">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="../../d0/d5a/classez_asset_processor_log.htm">   22</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d0/d5a/classez_asset_processor_log.htm">ezAssetProcessorLog</a> : <span class="keyword">public</span> <a class="code hl_class" href="../../d2/d9e/classez_log_interface.htm">ezLogInterface</a></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>{</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d0/d5a/classez_asset_processor_log.htm#a99e5d5dcef203dec4d9105c42e7409e5">HandleLogMessage</a>(<span class="keyword">const</span> <a class="code hl_struct" href="../../de/d62/structez_logging_event_data.htm">ezLoggingEventData</a>&amp; le) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="keywordtype">void</span> AddLogWriter(<a class="code hl_class" href="../../d5/d68/structez_delegate.htm">ezLoggingEvent::Handler</a> handler);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <span class="keywordtype">void</span> RemoveLogWriter(<a class="code hl_class" href="../../d5/d68/structez_delegate.htm">ezLoggingEvent::Handler</a> handler);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <a class="code hl_class" href="../../d0/daf/classez_event.htm">ezLoggingEvent</a> m_LoggingEvent;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>};</div>
 </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="foldopen" id="foldopen00031" data-start="{" data-end="};">
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="../../d9/d15/structez_asset_processor_event.htm">   31</a></span><span class="keyword">struct </span><a class="code hl_struct" href="../../d9/d15/structez_asset_processor_event.htm">ezAssetProcessorEvent</a></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>{</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <span class="keyword">enum class</span> Type</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  {</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    ProcessTaskStateChanged</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  };</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  Type m_Type;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>};</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="};">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="../../d9/d15/structez_asset_processor_event.htm">   33</a></span><span class="keyword">struct </span><a class="code hl_struct" href="../../d9/d15/structez_asset_processor_event.htm">ezAssetProcessorEvent</a></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>{</div>
+<div class="foldopen" id="foldopen00035" data-start="{" data-end="};">
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="../../d9/d15/structez_asset_processor_event.htm#af7dea71db90d629bf2044f72d6a3f5a9">   35</a></span>  <span class="keyword">enum class</span> <a class="code hl_enumeration" href="../../d9/d15/structez_asset_processor_event.htm#af7dea71db90d629bf2044f72d6a3f5a9">Type</a></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <a class="code hl_enumvalue" href="../../d9/d15/structez_asset_processor_event.htm#af7dea71db90d629bf2044f72d6a3f5a9ad7c0dd1dfc9288eee54d7b241949db37">AssetProcessorStateChanged</a>, </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <a class="code hl_enumvalue" href="../../d9/d15/structez_asset_processor_event.htm#af7dea71db90d629bf2044f72d6a3f5a9aaed15536a6ca3125cd00e30a68bf57d0">ProcessStateChanged</a>,        </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  };</div>
 </div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="foldopen" id="foldopen00042" data-start="{" data-end="};">
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="../../da/dac/classez_process_thread.htm">   42</a></span><span class="keyword">class </span><a class="code hl_class" href="../../da/dac/classez_process_thread.htm">ezProcessThread</a> : <span class="keyword">public</span> <a class="code hl_class" href="../../d2/d18/classez_thread.htm">ezThread</a></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>{</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <a class="code hl_class" href="../../da/dac/classez_process_thread.htm">ezProcessThread</a>()</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    : <a class="code hl_class" href="../../d2/d18/classez_thread.htm">ezThread</a>(<span class="stringliteral">&quot;ezProcessThread&quot;</span>)</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  {</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  }</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keyword">virtual</span> ezUInt32 <a class="code hl_function" href="../../da/dac/classez_process_thread.htm#ab5788fab6ca39d1048cd98eca62edaa4">Run</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>};</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <a class="code hl_enumeration" href="../../d9/d15/structez_asset_processor_event.htm#af7dea71db90d629bf2044f72d6a3f5a9">Type</a> m_Type;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="../../d9/d15/structez_asset_processor_event.htm#a6ac56525f3c82485b812c080fb57ff69">   42</a></span>  ezUInt8 <a class="code hl_variable" href="../../d9/d15/structez_asset_processor_event.htm#a6ac56525f3c82485b812c080fb57ff69">m_uiProcessCount</a> = 0; </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="../../d9/d15/structez_asset_processor_event.htm#afd5f5edb5dcc52405772952e40dc7ad0">   43</a></span>  ezUInt8 <a class="code hl_variable" href="../../d9/d15/structez_asset_processor_event.htm#afd5f5edb5dcc52405772952e40dc7ad0">m_uiProcessorID</a> = 0;  </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>};</div>
 </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="foldopen" id="foldopen00054" data-start="{" data-end="};">
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="../../d6/d4e/classez_process_task.htm">   54</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d6/d4e/classez_process_task.htm">ezProcessTask</a></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>{</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keyword">enum class</span> State</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  {</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    LookingForWork,</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    WaitingForConnection,</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    Ready,</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    Processing,</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    ReportResult</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  };</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="foldopen" id="foldopen00047" data-start="{" data-end="};">
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="../../dc/d15/structez_asset_processor_progress_event.htm">   47</a></span><span class="keyword">struct </span><a class="code hl_struct" href="../../dc/d15/structez_asset_processor_progress_event.htm">ezAssetProcessorProgressEvent</a></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>{</div>
+<div class="foldopen" id="foldopen00049" data-start="{" data-end="};">
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="../../dc/d15/structez_asset_processor_progress_event.htm#af4bfda8cd82fe9d4e0a410242091d784">   49</a></span>  <span class="keyword">enum class</span> <a class="code hl_enumeration" href="../../dc/d15/structez_asset_processor_progress_event.htm#af4bfda8cd82fe9d4e0a410242091d784">Type</a> : ezUInt8</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  {</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <a class="code hl_enumvalue" href="../../dc/d15/structez_asset_processor_progress_event.htm#af4bfda8cd82fe9d4e0a410242091d784aea669116d89a01db3b429aed79564469">ProcessingStarted</a>, </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <a class="code hl_enumvalue" href="../../dc/d15/structez_asset_processor_progress_event.htm#af4bfda8cd82fe9d4e0a410242091d784a531af5f621f498957ed1ca67752bdbe7">ProcessingFinished</a> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  };</div>
+</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <a class="code hl_enumeration" href="../../dc/d15/structez_asset_processor_progress_event.htm#af4bfda8cd82fe9d4e0a410242091d784">Type</a> m_Type;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  ezAssetInfo::TransformState m_TransformState = ezAssetInfo::Unknown;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  ezUInt8 m_uiProcessorID;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <a class="code hl_class" href="../../da/d89/classez_uuid.htm">ezUuid</a> m_AssetGuid;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sAssetPath;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <a class="code hl_struct" href="../../d3/d90/structez_time.htm">ezTime</a> m_StartTime;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <a class="code hl_struct" href="../../d3/d90/structez_time.htm">ezTime</a> m_TransformStartTime;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <a class="code hl_struct" href="../../d3/d90/structez_time.htm">ezTime</a> m_EndTime;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="../../dc/d15/structez_asset_processor_progress_event.htm#a9363db05f57d3426726cc4a5eed3e152">   63</a></span>  <a class="code hl_struct" href="../../db/de0/structez_transform_status.htm">ezTransformStatus</a> <a class="code hl_variable" href="../../dc/d15/structez_asset_processor_progress_event.htm#a9363db05f57d3426726cc4a5eed3e152">m_Result</a>; </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>};</div>
+</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <a class="code hl_class" href="../../d6/d4e/classez_process_task.htm">ezProcessTask</a>();</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <a class="code hl_class" href="../../d6/d4e/classez_process_task.htm">~ezProcessTask</a>();</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  ezUInt32 m_uiProcessorID;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <span class="keywordtype">bool</span> Tick(<span class="keywordtype">bool</span> bStartNewWork); <span class="comment">// returns false, if all processing is done, otherwise call Tick again.</span></div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <span class="keywordtype">bool</span> IsConnected();</div>
+<div class="foldopen" id="foldopen00067" data-start="{" data-end="};">
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="../../d9/def/classez_asset_processor_thread.htm">   67</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d9/def/classez_asset_processor_thread.htm">ezAssetProcessorThread</a> : <span class="keyword">public</span> <a class="code hl_class" href="../../d2/d18/classez_thread.htm">ezThread</a></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>{</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <a class="code hl_class" href="../../d9/def/classez_asset_processor_thread.htm">ezAssetProcessorThread</a>()</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    : <a class="code hl_class" href="../../d2/d18/classez_thread.htm">ezThread</a>(<span class="stringliteral">&quot;ezProcessThread&quot;</span>)</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  }</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="keywordtype">bool</span> HasProcessCrashed();</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <a class="code hl_struct" href="../../d4/da9/structez_result.htm">ezResult</a> StartProcess();</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <span class="keywordtype">void</span> ShutdownProcess();</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <span class="keywordtype">void</span> EventHandlerIPC(<span class="keyword">const</span> <a class="code hl_struct" href="../../d2/d48/structez_process_communication_channel_1_1_event.htm">ezProcessCommunicationChannel::Event</a>&amp; e);</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  <span class="keywordtype">bool</span> GetNextAssetToProcess(<a class="code hl_struct" href="../../dc/d20/structez_asset_info.htm">ezAssetInfo</a>* pInfo, <a class="code hl_class" href="../../da/d89/classez_uuid.htm">ezUuid</a>&amp; out_guid, <a class="code hl_class" href="../../d0/d6a/classez_data_dir_path.htm">ezDataDirPath</a>&amp; out_path);</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  <span class="keywordtype">bool</span> GetNextAssetToProcess(<a class="code hl_class" href="../../da/d89/classez_uuid.htm">ezUuid</a>&amp; out_guid, <a class="code hl_class" href="../../d0/d6a/classez_data_dir_path.htm">ezDataDirPath</a>&amp; out_path);</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <span class="keywordtype">void</span> OnProcessCrashed(<a class="code hl_class" href="../../d9/d18/classez_string_view.htm">ezStringView</a> message);</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  State m_State = State::LookingForWork;</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  <a class="code hl_class" href="../../da/d89/classez_uuid.htm">ezUuid</a> m_AssetGuid;</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  ezUInt64 m_uiAssetHash = 0;</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  ezUInt64 m_uiThumbHash = 0;</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  ezUInt64 m_uiPackageHash = 0;</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  <a class="code hl_class" href="../../d0/d6a/classez_data_dir_path.htm">ezDataDirPath</a> m_AssetPath;</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  <a class="code hl_class" href="../../df/df4/classez_editor_process_communication_channel.htm">ezEditorProcessCommunicationChannel</a>* m_pIPC;</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  <span class="keywordtype">bool</span> m_bProcessShouldBeRunning = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  <a class="code hl_struct" href="../../db/de0/structez_transform_status.htm">ezTransformStatus</a> m_Status;</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  <a class="code hl_class" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezLogEntry&gt;</a> m_LogEntries;</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  <a class="code hl_class" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezString&gt;</a> m_TransitiveHull;</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>};</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="keyword">virtual</span> ezUInt32 <a class="code hl_function" href="../../d9/def/classez_asset_processor_thread.htm#a678729ea8a93dee232562459cd1b7069">Run</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>};</div>
 </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="foldopen" id="foldopen00080" data-start="{" data-end="};">
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="../../d9/dbd/classez_editor_processor_process.htm">   80</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d9/dbd/classez_editor_processor_process.htm">ezEditorProcessorProcess</a></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>{</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <span class="keyword">enum class</span> State</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  {</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    LookingForWork,</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    WaitingForConnection,</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    Ready,</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    Processing,</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    ReportResult,</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    Crashed</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  };</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  <a class="code hl_class" href="../../d9/dbd/classez_editor_processor_process.htm">ezEditorProcessorProcess</a>();</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  <a class="code hl_class" href="../../d9/dbd/classez_editor_processor_process.htm">~ezEditorProcessorProcess</a>();</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  ezUInt32 m_uiProcessorID;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  <a class="code hl_struct" href="../../d3/d90/structez_time.htm">ezTime</a> m_ProcessingStartTime;  <span class="comment">// When a work item was started.</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  <a class="code hl_class" href="../../d4/d84/classez_thread_signal.htm">ezThreadSignal</a>* m_pNewWorkSignal = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  <span class="keywordtype">bool</span> Tick(<span class="keywordtype">bool</span> bStartNewWork); <span class="comment">// returns false, if all processing is done, otherwise call Tick again.</span></div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
-<div class="foldopen" id="foldopen00105" data-start="{" data-end="};">
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="../../d5/d88/classez_asset_processor.htm">  105</a></span><span class="keyword">class </span>EZ_EDITORFRAMEWORK_DLL <a class="code hl_class" href="../../d5/d88/classez_asset_processor.htm">ezAssetProcessor</a></div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>{</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  EZ_DECLARE_SINGLETON(<a class="code hl_class" href="../../d5/d88/classez_asset_processor.htm">ezAssetProcessor</a>);</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="keyword">public</span>:</div>
-<div class="foldopen" id="foldopen00110" data-start="{" data-end="};">
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="../../d5/d88/classez_asset_processor.htm#aa9b59b4af953012e55985c597f2e8750">  110</a></span>  <span class="keyword">enum class</span> <a class="code hl_enumeration" href="../../d5/d88/classez_asset_processor.htm#aa9b59b4af953012e55985c597f2e8750">ProcessTaskState</a> : ezUInt8</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  {</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    Stopped,  </div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    Running,  </div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    Stopping, </div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  };</div>
-</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  <a class="code hl_class" href="../../d5/d88/classez_asset_processor.htm">ezAssetProcessor</a>();</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  <a class="code hl_class" href="../../d5/d88/classez_asset_processor.htm">~ezAssetProcessor</a>();</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d9/dbd/classez_editor_processor_process.htm#a170408db2884e75ee49f9891fb1831b2">RequestRestart</a>();</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  <span class="keywordtype">bool</span> IsConnected() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  <span class="keywordtype">bool</span> IsRunning() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  <span class="keywordtype">bool</span> IsCrashed() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  ezOsProcessID GetProcessId() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  <span class="keywordtype">bool</span> HasProcessCrashed();</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  <span class="keywordtype">void</span> HandleHashMissmatch();</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  <a class="code hl_struct" href="../../d4/da9/structez_result.htm">ezResult</a> StartProcess();</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  <span class="keywordtype">void</span> ShutdownProcess();</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  <span class="keywordtype">void</span> EventHandlerIPC(<span class="keyword">const</span> <a class="code hl_struct" href="../../d2/d48/structez_process_communication_channel_1_1_event.htm">ezProcessCommunicationChannel::Event</a>&amp; e);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  <span class="keywordtype">void</span> ChannelEventHandler(<span class="keyword">const</span> <a class="code hl_struct" href="../../d5/dab/structez_ipc_channel_event.htm">ezIpcChannelEvent</a>&amp; e);</div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  <span class="comment">// used to temporarily not process assets, usually because currently assets get imported</span></div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  <a class="code hl_class" href="../../da/d01/classez_atomic_integer.htm">ezAtomicInteger32</a> m_iPauseProcessing;</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  <span class="keywordtype">void</span> StartProcessTask();</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>  <span class="keywordtype">void</span> StopProcessTask(<span class="keywordtype">bool</span> bForce);</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  ProcessTaskState GetProcessTaskState()<span class="keyword"> const</span></div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><span class="keyword">  </span>{</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="keywordflow">return</span> m_ProcessTaskState;</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>  }</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>  <span class="keywordtype">void</span> AddLogWriter(<a class="code hl_class" href="../../d5/d68/structez_delegate.htm">ezLoggingEvent::Handler</a> handler);</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>  <span class="keywordtype">void</span> RemoveLogWriter(<a class="code hl_class" href="../../d5/d68/structez_delegate.htm">ezLoggingEvent::Handler</a> handler);</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>  <span class="comment">// Can be called from worker threads!</span></div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>  <a class="code hl_class" href="../../d0/daf/classez_event.htm">ezEvent&lt;const ezAssetProcessorEvent&amp;&gt;</a> m_Events;</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="../../d6/d4e/classez_process_task.htm">ezProcessTask</a>;</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="../../da/dac/classez_process_thread.htm">ezProcessThread</a>;</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="../../d5/d5f/classez_asset_curator.htm">ezAssetCurator</a>;</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>  <span class="keywordtype">void</span> Run();</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>  <a class="code hl_class" href="../../d0/d5a/classez_asset_processor_log.htm">ezAssetProcessorLog</a> m_CuratorLog;</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>  <span class="comment">// Process thread and its state</span></div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>  <a class="code hl_class" href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt;ezProcessThread&gt;</a> m_pThread;</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>  std::atomic&lt;bool&gt; m_bForceStop = <span class="keyword">false</span>; </div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>  <span class="comment">// Locks writes to m_ProcessTaskState to make sure the state machine does not go from running to stopped before having fired stopping.</span></div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>  <span class="keyword">mutable</span> <a class="code hl_class" href="../../dd/dbe/classez_mutex.htm">ezMutex</a> m_ProcessorMutex;</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>  std::atomic&lt;ProcessTaskState&gt; m_ProcessTaskState = ProcessTaskState::Stopped;</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>  <span class="comment">// Data owned by the process thread.</span></div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>  <a class="code hl_class" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezProcessTask&gt;</a> m_ProcessTasks;</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>};</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  <span class="keywordtype">bool</span> GetNextAssetToProcess(<a class="code hl_struct" href="../../dc/d20/structez_asset_info.htm">ezAssetInfo</a>* pInfo, <a class="code hl_class" href="../../da/d89/classez_uuid.htm">ezUuid</a>&amp; out_guid, <a class="code hl_class" href="../../d0/d6a/classez_data_dir_path.htm">ezDataDirPath</a>&amp; out_path, ezAssetInfo::TransformState&amp; out_transformState);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  <span class="keywordtype">bool</span> GetNextAssetToProcess(<a class="code hl_class" href="../../da/d89/classez_uuid.htm">ezUuid</a>&amp; out_guid, <a class="code hl_class" href="../../d0/d6a/classez_data_dir_path.htm">ezDataDirPath</a>&amp; out_path, ezAssetInfo::TransformState&amp; out_transformState);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  <span class="keywordtype">void</span> OnProcessCrashed(<a class="code hl_class" href="../../d9/d18/classez_string_view.htm">ezStringView</a> message);</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  State m_State = State::LookingForWork;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>  <a class="code hl_class" href="../../df/df4/classez_editor_process_communication_channel.htm">ezEditorProcessCommunicationChannel</a>* m_pIPC;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>  <span class="keywordtype">bool</span> m_bProcessShouldBeRunning = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>  <span class="keywordtype">bool</span> m_bIsIdle = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>  ezOsProcessID m_CurrentProcessID = {};</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>  <span class="comment">// New asset to process</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  <a class="code hl_class" href="../../da/d89/classez_uuid.htm">ezUuid</a> m_AssetGuid;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>  <a class="code hl_class" href="../../d0/d6a/classez_data_dir_path.htm">ezDataDirPath</a> m_AssetPath;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>  ezAssetInfo::TransformState m_TransformState = ezAssetInfo::TransformState::Unknown;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>  <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sPlatform;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>  ezUInt64 m_uiAssetHash = 0;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>  ezUInt64 m_uiThumbHash = 0;</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>  ezUInt64 m_uiPackageHash = 0;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>  <a class="code hl_class" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezString&gt;</a> m_TransitiveHull;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>  <span class="comment">// Transform result</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>  <a class="code hl_struct" href="../../db/de0/structez_transform_status.htm">ezTransformStatus</a> m_Status;</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>  <a class="code hl_class" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezLogEntry&gt;</a> m_LogEntries;</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>  <a class="code hl_class" href="../../d1/d79/classez_map.htm">ezMap&lt;ezString, ezUInt64&gt;</a> m_MissmatchTransformDependencies;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>  <a class="code hl_class" href="../../d1/d79/classez_map.htm">ezMap&lt;ezString, ezUInt64&gt;</a> m_MissmatchThumbnailDependencies;</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>  ezUInt64 m_uiMissmatchAssetHash = 0;</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>  ezUInt64 m_uiMissmatchThumbHash = 0;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>  <a class="code hl_struct" href="../../d3/d90/structez_time.htm">ezTime</a> m_StartedProcessing;</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>  <a class="code hl_struct" href="../../d3/d90/structez_time.htm">ezTime</a> m_StartedTransform;</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>  <a class="code hl_struct" href="../../d3/d90/structez_time.htm">ezTime</a> m_FinishedProcessing;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>};</div>
+</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="foldopen" id="foldopen00155" data-start="{" data-end="};">
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno"><a class="line" href="../../d5/d88/classez_asset_processor.htm">  155</a></span><span class="keyword">class </span>EZ_EDITORFRAMEWORK_DLL <a class="code hl_class" href="../../d5/d88/classez_asset_processor.htm">ezAssetProcessor</a></div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>{</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>  EZ_DECLARE_SINGLETON(<a class="code hl_class" href="../../d5/d88/classez_asset_processor.htm">ezAssetProcessor</a>);</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00160" data-start="{" data-end="};">
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno"><a class="line" href="../../d5/d88/classez_asset_processor.htm#abf8a67778364a44ebfab96a8f47b48e9">  160</a></span>  <span class="keyword">enum class</span> <a class="code hl_enumeration" href="../../d5/d88/classez_asset_processor.htm#abf8a67778364a44ebfab96a8f47b48e9">ProcessorState</a> : ezUInt8</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>  {</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    Stopped,  </div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    Running,  </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    Stopping, </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>  };</div>
+</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>  <a class="code hl_class" href="../../d5/d88/classez_asset_processor.htm">ezAssetProcessor</a>();</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>  <a class="code hl_class" href="../../d5/d88/classez_asset_processor.htm">~ezAssetProcessor</a>();</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>  <span class="comment">// used to temporarily not process assets, usually because currently assets get imported</span></div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>  <a class="code hl_class" href="../../da/d01/classez_atomic_integer.htm">ezAtomicInteger32</a> m_iPauseProcessing;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>  <span class="keywordtype">void</span> StartProcessor();</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>  <span class="keywordtype">void</span> StopProcessor(<span class="keywordtype">bool</span> bForce);</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
+<div class="foldopen" id="foldopen00177" data-start="{" data-end="}">
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno"><a class="line" href="../../d5/d88/classez_asset_processor.htm#afc2d58f333b5077bbfa161e59c7f64f2">  177</a></span>  <a class="code hl_enumeration" href="../../d5/d88/classez_asset_processor.htm#abf8a67778364a44ebfab96a8f47b48e9">ProcessorState</a> <a class="code hl_function" href="../../d5/d88/classez_asset_processor.htm#afc2d58f333b5077bbfa161e59c7f64f2">GetProcessorState</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span><span class="keyword">  </span>{</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    <span class="keywordflow">return</span> m_ProcessorState;</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>  }</div>
+</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>  ezUInt32 GetProcessCount() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>  <a class="code hl_struct" href="../../d4/d03/structez_editor_processor_state.htm">ezEditorProcessorState</a> GetProcessState(ezUInt32 uiProcessIndex) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>  <span class="keywordtype">void</span> RequestRestartProcess(ezUInt32 uiProcessIndex);</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>  <span class="keywordtype">void</span> AddLogWriter(<a class="code hl_class" href="../../d5/d68/structez_delegate.htm">ezLoggingEvent::Handler</a> handler);</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>  <span class="keywordtype">void</span> RemoveLogWriter(<a class="code hl_class" href="../../d5/d68/structez_delegate.htm">ezLoggingEvent::Handler</a> handler);</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>  <span class="keywordtype">void</span> UpdateProcessStates();</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>  <span class="comment">// Can be called from worker threads!</span></div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>  <a class="code hl_class" href="../../d0/daf/classez_event.htm">ezCopyOnBroadcastEvent&lt;const ezAssetProcessorEvent&amp;, ezMutex&gt;</a> m_Events;</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>  <a class="code hl_class" href="../../d0/daf/classez_event.htm">ezCopyOnBroadcastEvent&lt;const ezAssetProcessorProgressEvent&amp;, ezMutex&gt;</a> m_ProgressEvents;</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span> </div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="../../d9/dbd/classez_editor_processor_process.htm">ezEditorProcessorProcess</a>;</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="../../d9/def/classez_asset_processor_thread.htm">ezAssetProcessorThread</a>;</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="../../d5/d5f/classez_asset_curator.htm">ezAssetCurator</a>;</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>  <span class="keywordtype">void</span> Run();</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> </div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>  <a class="code hl_class" href="../../d0/d5a/classez_asset_processor_log.htm">ezAssetProcessorLog</a> m_CuratorLog;</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>  <span class="comment">// Process thread and its state</span></div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>  <a class="code hl_class" href="../../d4/d84/classez_thread_signal.htm">ezThreadSignal</a> m_NewWorkSignal;</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>  <a class="code hl_class" href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt;ezAssetProcessorThread&gt;</a> m_pThread;</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>  std::atomic&lt;bool&gt; m_bForceStop = <span class="keyword">false</span>; </div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span> </div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>  <span class="comment">// Locks writes to m_ProcessTaskState to make sure the state machine does not go from running to stopped before having fired stopping.</span></div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>  <span class="keyword">mutable</span> <a class="code hl_class" href="../../dd/dbe/classez_mutex.htm">ezMutex</a> m_ProcessorMutex;</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>  std::atomic&lt;ProcessorState&gt; m_ProcessorState = ProcessorState::Stopped;</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>  <a class="code hl_class" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezEditorProcessorState&gt;</a> m_EditorProcessorStates;</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>  <a class="code hl_class" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezAtomicBool&gt;</a> m_RestartRequests; </div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span> </div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>  <span class="comment">// Data owned by the process thread.</span></div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>  <a class="code hl_class" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray&lt;ezEditorProcessorProcess&gt;</a> m_Processes;</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>};</div>
 </div>
 <div class="ttc" id="aclassez_asset_curator_htm"><div class="ttname"><a href="../../d5/d5f/classez_asset_curator.htm">ezAssetCurator</a></div><div class="ttdef"><b>Definition</b> AssetCurator.h:142</div></div>
-<div class="ttc" id="aclassez_asset_processor_htm"><div class="ttname"><a href="../../d5/d88/classez_asset_processor.htm">ezAssetProcessor</a></div><div class="ttdoc">Background asset processing is handled by this class. Creates EditorProcessor processes.</div><div class="ttdef"><b>Definition</b> AssetProcessor.h:106</div></div>
-<div class="ttc" id="aclassez_asset_processor_htm_aa9b59b4af953012e55985c597f2e8750"><div class="ttname"><a href="../../d5/d88/classez_asset_processor.htm#aa9b59b4af953012e55985c597f2e8750">ezAssetProcessor::ProcessTaskState</a></div><div class="ttdeci">ProcessTaskState</div><div class="ttdef"><b>Definition</b> AssetProcessor.h:111</div></div>
-<div class="ttc" id="aclassez_asset_processor_log_htm"><div class="ttname"><a href="../../d0/d5a/classez_asset_processor_log.htm">ezAssetProcessorLog</a></div><div class="ttdoc">Log for all background processing results.</div><div class="ttdef"><b>Definition</b> AssetProcessor.h:22</div></div>
-<div class="ttc" id="aclassez_asset_processor_log_htm_a99e5d5dcef203dec4d9105c42e7409e5"><div class="ttname"><a href="../../d0/d5a/classez_asset_processor_log.htm#a99e5d5dcef203dec4d9105c42e7409e5">ezAssetProcessorLog::HandleLogMessage</a></div><div class="ttdeci">virtual void HandleLogMessage(const ezLoggingEventData &amp;le) override</div><div class="ttdoc">Override this function to handle logging events.</div><div class="ttdef"><b>Definition</b> AssetProcessor.cpp:47</div></div>
+<div class="ttc" id="aclassez_asset_processor_htm"><div class="ttname"><a href="../../d5/d88/classez_asset_processor.htm">ezAssetProcessor</a></div><div class="ttdoc">Background asset processing is handled by this class. Creates ezEditorProcessor processes which are m...</div><div class="ttdef"><b>Definition</b> AssetProcessor.h:156</div></div>
+<div class="ttc" id="aclassez_asset_processor_htm_abf8a67778364a44ebfab96a8f47b48e9"><div class="ttname"><a href="../../d5/d88/classez_asset_processor.htm#abf8a67778364a44ebfab96a8f47b48e9">ezAssetProcessor::ProcessorState</a></div><div class="ttdeci">ProcessorState</div><div class="ttdef"><b>Definition</b> AssetProcessor.h:161</div></div>
+<div class="ttc" id="aclassez_asset_processor_htm_afc2d58f333b5077bbfa161e59c7f64f2"><div class="ttname"><a href="../../d5/d88/classez_asset_processor.htm#afc2d58f333b5077bbfa161e59c7f64f2">ezAssetProcessor::GetProcessorState</a></div><div class="ttdeci">ProcessorState GetProcessorState() const</div><div class="ttdoc">Returns whether the asset processor is running, stopped or stopping.</div><div class="ttdef"><b>Definition</b> AssetProcessor.h:177</div></div>
+<div class="ttc" id="aclassez_asset_processor_log_htm"><div class="ttname"><a href="../../d0/d5a/classez_asset_processor_log.htm">ezAssetProcessorLog</a></div><div class="ttdoc">Log for all background processing results.</div><div class="ttdef"><b>Definition</b> AssetProcessor.h:23</div></div>
+<div class="ttc" id="aclassez_asset_processor_log_htm_a99e5d5dcef203dec4d9105c42e7409e5"><div class="ttname"><a href="../../d0/d5a/classez_asset_processor_log.htm#a99e5d5dcef203dec4d9105c42e7409e5">ezAssetProcessorLog::HandleLogMessage</a></div><div class="ttdeci">virtual void HandleLogMessage(const ezLoggingEventData &amp;le) override</div><div class="ttdoc">Override this function to handle logging events.</div><div class="ttdef"><b>Definition</b> AssetProcessor.cpp:46</div></div>
+<div class="ttc" id="aclassez_asset_processor_thread_htm"><div class="ttname"><a href="../../d9/def/classez_asset_processor_thread.htm">ezAssetProcessorThread</a></div><div class="ttdoc">Thread used by ezAssetProcessor to schedule work items on the ezEditorProcessorProcess instances.</div><div class="ttdef"><b>Definition</b> AssetProcessor.h:68</div></div>
+<div class="ttc" id="aclassez_asset_processor_thread_htm_a678729ea8a93dee232562459cd1b7069"><div class="ttname"><a href="../../d9/def/classez_asset_processor_thread.htm#a678729ea8a93dee232562459cd1b7069">ezAssetProcessorThread::Run</a></div><div class="ttdeci">virtual ezUInt32 Run() override</div><div class="ttdoc">Pure virtual function that contains the thread's main execution logic.</div><div class="ttdef"><b>Definition</b> AssetProcessor.cpp:871</div></div>
 <div class="ttc" id="aclassez_atomic_integer_htm"><div class="ttname"><a href="../../da/d01/classez_atomic_integer.htm">ezAtomicInteger&lt; ezInt32 &gt;</a></div></div>
 <div class="ttc" id="aclassez_data_dir_path_htm"><div class="ttname"><a href="../../d0/d6a/classez_data_dir_path.htm">ezDataDirPath</a></div><div class="ttdoc">A reference to a file or folder inside a data directory.</div><div class="ttdef"><b>Definition</b> DataDirPath.h:18</div></div>
 <div class="ttc" id="aclassez_dynamic_array_htm"><div class="ttname"><a href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray</a></div><div class="ttdef"><b>Definition</b> DynamicArray.h:81</div></div>
-<div class="ttc" id="aclassez_editor_process_communication_channel_htm"><div class="ttname"><a href="../../df/df4/classez_editor_process_communication_channel.htm">ezEditorProcessCommunicationChannel</a></div><div class="ttdef"><b>Definition</b> EditorProcessCommunicationChannel.h:13</div></div>
+<div class="ttc" id="aclassez_editor_process_communication_channel_htm"><div class="ttname"><a href="../../df/df4/classez_editor_process_communication_channel.htm">ezEditorProcessCommunicationChannel</a></div><div class="ttdef"><b>Definition</b> EditorProcessCommunicationChannel.h:15</div></div>
+<div class="ttc" id="aclassez_editor_processor_process_htm"><div class="ttname"><a href="../../d9/dbd/classez_editor_processor_process.htm">ezEditorProcessorProcess</a></div><div class="ttdoc">Encapsulates one ezEditorProcessor process managed by ezAssetProcessor.</div><div class="ttdef"><b>Definition</b> AssetProcessor.h:81</div></div>
+<div class="ttc" id="aclassez_editor_processor_process_htm_a170408db2884e75ee49f9891fb1831b2"><div class="ttname"><a href="../../d9/dbd/classez_editor_processor_process.htm#a170408db2884e75ee49f9891fb1831b2">ezEditorProcessorProcess::RequestRestart</a></div><div class="ttdeci">void RequestRestart()</div><div class="ttdoc">Called by the worker thread to restart a crashed process.</div><div class="ttdef"><b>Definition</b> AssetProcessor.cpp:510</div></div>
 <div class="ttc" id="aclassez_event_htm"><div class="ttname"><a href="../../d0/daf/classez_event.htm">ezEvent&lt; const ezLoggingEventData &amp;, ezMutex &gt;</a></div></div>
 <div class="ttc" id="aclassez_log_interface_htm"><div class="ttname"><a href="../../d2/d9e/classez_log_interface.htm">ezLogInterface</a></div><div class="ttdoc">Base class for all logging classes.</div><div class="ttdef"><b>Definition</b> Log.h:77</div></div>
+<div class="ttc" id="aclassez_map_htm"><div class="ttname"><a href="../../d1/d79/classez_map.htm">ezMap</a></div><div class="ttdef"><b>Definition</b> Map.h:424</div></div>
 <div class="ttc" id="aclassez_mutex_htm"><div class="ttname"><a href="../../dd/dbe/classez_mutex.htm">ezMutex</a></div><div class="ttdoc">Provides a simple mechanism for mutual exclusion to prevent multiple threads from accessing a shared ...</div><div class="ttdef"><b>Definition</b> Mutex.h:13</div></div>
-<div class="ttc" id="aclassez_process_task_htm"><div class="ttname"><a href="../../d6/d4e/classez_process_task.htm">ezProcessTask</a></div><div class="ttdef"><b>Definition</b> AssetProcessor.h:55</div></div>
-<div class="ttc" id="aclassez_process_thread_htm"><div class="ttname"><a href="../../da/dac/classez_process_thread.htm">ezProcessThread</a></div><div class="ttdef"><b>Definition</b> AssetProcessor.h:43</div></div>
-<div class="ttc" id="aclassez_process_thread_htm_ab5788fab6ca39d1048cd98eca62edaa4"><div class="ttname"><a href="../../da/dac/classez_process_thread.htm#ab5788fab6ca39d1048cd98eca62edaa4">ezProcessThread::Run</a></div><div class="ttdeci">virtual ezUInt32 Run() override</div><div class="ttdoc">The run function can be used to implement a long running task in a thread in a platform independent w...</div><div class="ttdef"><b>Definition</b> AssetProcessor.cpp:568</div></div>
 <div class="ttc" id="aclassez_string_view_htm"><div class="ttname"><a href="../../d9/d18/classez_string_view.htm">ezStringView</a></div><div class="ttdoc">ezStringView represent a read-only sub-string of a larger string, as it can store a dedicated string ...</div><div class="ttdef"><b>Definition</b> StringView.h:34</div></div>
 <div class="ttc" id="aclassez_task_htm"><div class="ttname"><a href="../../dd/d2b/classez_task.htm">ezTask</a></div><div class="ttdoc">Base class for custom tasks.</div><div class="ttdef"><b>Definition</b> Task.h:10</div></div>
-<div class="ttc" id="aclassez_thread_htm"><div class="ttname"><a href="../../d2/d18/classez_thread.htm">ezThread</a></div><div class="ttdoc">This class is the base class for platform independent long running threads.</div><div class="ttdef"><b>Definition</b> Thread.h:41</div></div>
+<div class="ttc" id="aclassez_thread_htm"><div class="ttname"><a href="../../d2/d18/classez_thread.htm">ezThread</a></div><div class="ttdoc">This class is the base class for platform independent long running threads.</div><div class="ttdef"><b>Definition</b> Thread.h:42</div></div>
+<div class="ttc" id="aclassez_thread_signal_htm"><div class="ttname"><a href="../../d4/d84/classez_thread_signal.htm">ezThreadSignal</a></div><div class="ttdoc">Waiting on a thread signal puts the waiting thread to sleep. Other threads can wake it up by raising ...</div><div class="ttdef"><b>Definition</b> ThreadSignal.h:19</div></div>
 <div class="ttc" id="aclassez_unique_ptr_htm"><div class="ttname"><a href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr</a></div><div class="ttdoc">A Unique ptr manages an object and destroys that object when it goes out of scope....</div><div class="ttdef"><b>Definition</b> UniquePtr.h:10</div></div>
-<div class="ttc" id="aclassez_uuid_htm"><div class="ttname"><a href="../../da/d89/classez_uuid.htm">ezUuid</a></div><div class="ttdoc">This data type is the abstraction for 128-bit Uuid (also known as GUID) instances.</div><div class="ttdef"><b>Definition</b> Uuid.h:11</div></div>
+<div class="ttc" id="aclassez_uuid_htm"><div class="ttname"><a href="../../da/d89/classez_uuid.htm">ezUuid</a></div><div class="ttdoc">128-bit Universally Unique Identifier (UUID/GUID) for object identification and referencing.</div><div class="ttdef"><b>Definition</b> Uuid.h:15</div></div>
 <div class="ttc" id="astructez_asset_curator_event_htm"><div class="ttname"><a href="../../d0/d24/structez_asset_curator_event.htm">ezAssetCuratorEvent</a></div><div class="ttdef"><b>Definition</b> AssetCurator.h:125</div></div>
 <div class="ttc" id="astructez_asset_info_htm"><div class="ttname"><a href="../../dc/d20/structez_asset_info.htm">ezAssetInfo</a></div><div class="ttdef"><b>Definition</b> AssetCurator.h:62</div></div>
-<div class="ttc" id="astructez_asset_processor_event_htm"><div class="ttname"><a href="../../d9/d15/structez_asset_processor_event.htm">ezAssetProcessorEvent</a></div><div class="ttdef"><b>Definition</b> AssetProcessor.h:32</div></div>
+<div class="ttc" id="astructez_asset_processor_event_htm"><div class="ttname"><a href="../../d9/d15/structez_asset_processor_event.htm">ezAssetProcessorEvent</a></div><div class="ttdoc">Event type used by ezAssetProcessor::m_Events.</div><div class="ttdef"><b>Definition</b> AssetProcessor.h:34</div></div>
+<div class="ttc" id="astructez_asset_processor_event_htm_a6ac56525f3c82485b812c080fb57ff69"><div class="ttname"><a href="../../d9/d15/structez_asset_processor_event.htm#a6ac56525f3c82485b812c080fb57ff69">ezAssetProcessorEvent::m_uiProcessCount</a></div><div class="ttdeci">ezUInt8 m_uiProcessCount</div><div class="ttdoc">Total number of processes. Only valid if ProcessorStateChanged.</div><div class="ttdef"><b>Definition</b> AssetProcessor.h:42</div></div>
+<div class="ttc" id="astructez_asset_processor_event_htm_af7dea71db90d629bf2044f72d6a3f5a9"><div class="ttname"><a href="../../d9/d15/structez_asset_processor_event.htm#af7dea71db90d629bf2044f72d6a3f5a9">ezAssetProcessorEvent::Type</a></div><div class="ttdeci">Type</div><div class="ttdef"><b>Definition</b> AssetProcessor.h:36</div></div>
+<div class="ttc" id="astructez_asset_processor_event_htm_af7dea71db90d629bf2044f72d6a3f5a9aaed15536a6ca3125cd00e30a68bf57d0"><div class="ttname"><a href="../../d9/d15/structez_asset_processor_event.htm#af7dea71db90d629bf2044f72d6a3f5a9aaed15536a6ca3125cd00e30a68bf57d0">ezAssetProcessorEvent::Type::ProcessStateChanged</a></div><div class="ttdeci">@ ProcessStateChanged</div><div class="ttdoc">ezAssetProcessor::GetProcessState changed</div></div>
+<div class="ttc" id="astructez_asset_processor_event_htm_af7dea71db90d629bf2044f72d6a3f5a9ad7c0dd1dfc9288eee54d7b241949db37"><div class="ttname"><a href="../../d9/d15/structez_asset_processor_event.htm#af7dea71db90d629bf2044f72d6a3f5a9ad7c0dd1dfc9288eee54d7b241949db37">ezAssetProcessorEvent::Type::AssetProcessorStateChanged</a></div><div class="ttdeci">@ AssetProcessorStateChanged</div><div class="ttdoc">ezAssetProcessor::GetProcessorState changed</div></div>
+<div class="ttc" id="astructez_asset_processor_event_htm_afd5f5edb5dcc52405772952e40dc7ad0"><div class="ttname"><a href="../../d9/d15/structez_asset_processor_event.htm#afd5f5edb5dcc52405772952e40dc7ad0">ezAssetProcessorEvent::m_uiProcessorID</a></div><div class="ttdeci">ezUInt8 m_uiProcessorID</div><div class="ttdoc">The changed process index. Only valid if ProcessStateChanged.</div><div class="ttdef"><b>Definition</b> AssetProcessor.h:43</div></div>
+<div class="ttc" id="astructez_asset_processor_progress_event_htm"><div class="ttname"><a href="../../dc/d15/structez_asset_processor_progress_event.htm">ezAssetProcessorProgressEvent</a></div><div class="ttdoc">Event type used by ezAssetProcessor::m_ProgressEvents.</div><div class="ttdef"><b>Definition</b> AssetProcessor.h:48</div></div>
+<div class="ttc" id="astructez_asset_processor_progress_event_htm_a9363db05f57d3426726cc4a5eed3e152"><div class="ttname"><a href="../../dc/d15/structez_asset_processor_progress_event.htm#a9363db05f57d3426726cc4a5eed3e152">ezAssetProcessorProgressEvent::m_Result</a></div><div class="ttdeci">ezTransformStatus m_Result</div><div class="ttdoc">Only valid when m_Type == ProcessingFinished.</div><div class="ttdef"><b>Definition</b> AssetProcessor.h:63</div></div>
+<div class="ttc" id="astructez_asset_processor_progress_event_htm_af4bfda8cd82fe9d4e0a410242091d784"><div class="ttname"><a href="../../dc/d15/structez_asset_processor_progress_event.htm#af4bfda8cd82fe9d4e0a410242091d784">ezAssetProcessorProgressEvent::Type</a></div><div class="ttdeci">Type</div><div class="ttdef"><b>Definition</b> AssetProcessor.h:50</div></div>
+<div class="ttc" id="astructez_asset_processor_progress_event_htm_af4bfda8cd82fe9d4e0a410242091d784a531af5f621f498957ed1ca67752bdbe7"><div class="ttname"><a href="../../dc/d15/structez_asset_processor_progress_event.htm#af4bfda8cd82fe9d4e0a410242091d784a531af5f621f498957ed1ca67752bdbe7">ezAssetProcessorProgressEvent::Type::ProcessingFinished</a></div><div class="ttdeci">@ ProcessingFinished</div><div class="ttdoc">A process finished working on an asset.</div></div>
+<div class="ttc" id="astructez_asset_processor_progress_event_htm_af4bfda8cd82fe9d4e0a410242091d784aea669116d89a01db3b429aed79564469"><div class="ttname"><a href="../../dc/d15/structez_asset_processor_progress_event.htm#af4bfda8cd82fe9d4e0a410242091d784aea669116d89a01db3b429aed79564469">ezAssetProcessorProgressEvent::Type::ProcessingStarted</a></div><div class="ttdeci">@ ProcessingStarted</div><div class="ttdoc">A process started working on an asset.</div></div>
 <div class="ttc" id="astructez_delegate_htm"><div class="ttname"><a href="../../d5/d68/structez_delegate.htm">ezDelegate&lt; void(EventData)&gt;</a></div></div>
+<div class="ttc" id="astructez_editor_processor_state_htm"><div class="ttname"><a href="../../d4/d03/structez_editor_processor_state.htm">ezEditorProcessorState</a></div><div class="ttdoc">Used by ezEditorProcessorProcess to define the current state of one of the running ezEditorProcessor ...</div><div class="ttdef"><b>Definition</b> Declarations.h:185</div></div>
+<div class="ttc" id="astructez_hybrid_string_htm"><div class="ttname"><a href="../../d4/d53/structez_hybrid_string.htm">ezHybridString&lt; 32, ezDefaultAllocatorWrapper &gt;</a></div></div>
+<div class="ttc" id="astructez_ipc_channel_event_htm"><div class="ttname"><a href="../../d5/dab/structez_ipc_channel_event.htm">ezIpcChannelEvent</a></div><div class="ttdoc">Event data for ezIpcChannel::m_Events.</div><div class="ttdef"><b>Definition</b> IpcChannel.h:13</div></div>
 <div class="ttc" id="astructez_logging_event_data_htm"><div class="ttname"><a href="../../de/d62/structez_logging_event_data.htm">ezLoggingEventData</a></div><div class="ttdoc">The data that is sent through ezLogInterface.</div><div class="ttdef"><b>Definition</b> Log.h:50</div></div>
-<div class="ttc" id="astructez_process_communication_channel_1_1_event_htm"><div class="ttname"><a href="../../d2/d48/structez_process_communication_channel_1_1_event.htm">ezProcessCommunicationChannel::Event</a></div><div class="ttdef"><b>Definition</b> ProcessCommunicationChannel.h:33</div></div>
-<div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition</b> Types.h:54</div></div>
-<div class="ttc" id="astructez_transform_status_htm"><div class="ttname"><a href="../../db/de0/structez_transform_status.htm">ezTransformStatus</a></div><div class="ttdef"><b>Definition</b> Declarations.h:116</div></div>
+<div class="ttc" id="astructez_process_communication_channel_1_1_event_htm"><div class="ttname"><a href="../../d2/d48/structez_process_communication_channel_1_1_event.htm">ezProcessCommunicationChannel::Event</a></div><div class="ttdef"><b>Definition</b> ProcessCommunicationChannel.h:35</div></div>
+<div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition</b> Types.h:58</div></div>
+<div class="ttc" id="astructez_time_htm"><div class="ttname"><a href="../../d3/d90/structez_time.htm">ezTime</a></div><div class="ttdoc">The time class encapsulates a double value storing the time in seconds.</div><div class="ttdef"><b>Definition</b> Time.h:12</div></div>
+<div class="ttc" id="astructez_transform_status_htm"><div class="ttname"><a href="../../db/de0/structez_transform_status.htm">ezTransformStatus</a></div><div class="ttdef"><b>Definition</b> Declarations.h:117</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_898824d97bbfb864e5ee6bfb2857fc31.htm">Editor</a></li><li class="navelem"><a class="el" href="../../dir_2c11fbcc86473fad6c721ead68acf992.htm">EditorFramework</a></li><li class="navelem"><a class="el" href="../../dir_5814822b5fe0e25e106f6a2b5290738d.htm">Assets</a></li><li class="navelem"><b>AssetProcessor.h</b></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:00:48 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:29 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -109,9 +109,9 @@ Inheritance diagram for ezBlackboard:</div>
 <div class="center"><img src="../../d7/d37/classez_blackboard__inherit__graph.png" border="0" usemap="#aez_blackboard_inherit__map" alt="Inheritance graph"/></div>
 <map name="aez_blackboard_inherit__map" id="aez_blackboard_inherit__map">
 <area shape="rect" title="A blackboard is a key/value store that provides OnChange events to be informed when a value changes." alt="" coords="23,152,134,177"/>
-<area shape="rect" href="../../d2/d70/classez_ref_counted.htm" title="Base class for reference counted objects." alt="" coords="22,79,135,104"/>
+<area shape="rect" href="../../d2/d70/classez_ref_counted.htm" title="Base class for objects that require reference counting with virtual destructor." alt="" coords="22,79,135,104"/>
 <area shape="poly" title=" " alt="" coords="81,118,81,152,76,152,76,118"/>
-<area shape="rect" href="../../d9/d13/classez_ref_counting_impl.htm" title=" " alt="" coords="5,5,152,31"/>
+<area shape="rect" href="../../d9/d13/classez_ref_counting_impl.htm" title="Thread&#45;safe reference counting implementation using atomic operations." alt="" coords="5,5,152,31"/>
 <area shape="poly" title=" " alt="" coords="81,44,81,79,76,79,76,44"/>
 </map>
 <center><span class="legend">[<a target="top" href="../../graph_legend.htm">legend</a>]</span></center></div>
@@ -171,6 +171,29 @@ const <a class="el" href="../../de/d1b/structez_blackboard_1_1_entry.htm">Entry<
 <a class="el" href="../../de/de6/classez_variant.htm">ezVariant</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GetEntryValue</b> (const <a class="el" href="../../db/dcf/classez_temp_hashed_string.htm">ezTempHashedString</a> &amp;sName, const <a class="el" href="../../de/de6/classez_variant.htm">ezVariant</a> &amp;fallback=<a class="el" href="../../de/de6/classez_variant.htm">ezVariant</a>()) const</td></tr>
 <tr class="memdesc:af643020deb4611ae1ebcbf08b3e12f54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of the named entry, or the fallback <a class="el" href="../../de/de6/classez_variant.htm" title="ezVariant is a class that can store different types of variables, which is useful in situations where...">ezVariant</a>, if no such entry was registered. <br /></td></tr>
 <tr class="separator:af643020deb4611ae1ebcbf08b3e12f54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c1fc74006b462111a8e47508efbdf60" id="r_a4c1fc74006b462111a8e47508efbdf60"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d82/classez_blackboard.htm#a4c1fc74006b462111a8e47508efbdf60">GetBoolValue</a> (const <a class="el" href="../../db/dcf/classez_temp_hashed_string.htm">ezTempHashedString</a> &amp;sName, bool bFallback=false) const</td></tr>
+<tr class="memdesc:a4c1fc74006b462111a8e47508efbdf60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience functions to directly get the value of an entry as a specific type.  <br /></td></tr>
+<tr class="separator:a4c1fc74006b462111a8e47508efbdf60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ed1c4e56493dfca420d31913f47393d" id="r_a0ed1c4e56493dfca420d31913f47393d"><td class="memItemLeft" align="right" valign="top"><a id="a0ed1c4e56493dfca420d31913f47393d" name="a0ed1c4e56493dfca420d31913f47393d"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>GetIntValue</b> (const <a class="el" href="../../db/dcf/classez_temp_hashed_string.htm">ezTempHashedString</a> &amp;sName, int iFallback=0) const</td></tr>
+<tr class="separator:a0ed1c4e56493dfca420d31913f47393d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33f0ced7768cc0ab2f29b528a4f1a827" id="r_a33f0ced7768cc0ab2f29b528a4f1a827"><td class="memItemLeft" align="right" valign="top"><a id="a33f0ced7768cc0ab2f29b528a4f1a827" name="a33f0ced7768cc0ab2f29b528a4f1a827"></a>
+ezUInt32&#160;</td><td class="memItemRight" valign="bottom"><b>GetUIntValue</b> (const <a class="el" href="../../db/dcf/classez_temp_hashed_string.htm">ezTempHashedString</a> &amp;sName, ezUInt32 uiFallback=0) const</td></tr>
+<tr class="separator:a33f0ced7768cc0ab2f29b528a4f1a827"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a592abf327c1c03204dd15456c8bf8c13" id="r_a592abf327c1c03204dd15456c8bf8c13"><td class="memItemLeft" align="right" valign="top"><a id="a592abf327c1c03204dd15456c8bf8c13" name="a592abf327c1c03204dd15456c8bf8c13"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>GetFloatValue</b> (const <a class="el" href="../../db/dcf/classez_temp_hashed_string.htm">ezTempHashedString</a> &amp;sName, float fFallback=0.0f) const</td></tr>
+<tr class="separator:a592abf327c1c03204dd15456c8bf8c13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9527f80ee70a00710cc5649ff0def917" id="r_a9527f80ee70a00710cc5649ff0def917"><td class="memItemLeft" align="right" valign="top"><a id="a9527f80ee70a00710cc5649ff0def917" name="a9527f80ee70a00710cc5649ff0def917"></a>
+<a class="el" href="../../d4/d53/structez_hybrid_string.htm">ezString</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GetStringValue</b> (const <a class="el" href="../../db/dcf/classez_temp_hashed_string.htm">ezTempHashedString</a> &amp;sName, <a class="el" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sFallback=<a class="el" href="../../d9/d18/classez_string_view.htm">ezStringView</a>()) const</td></tr>
+<tr class="separator:a9527f80ee70a00710cc5649ff0def917"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee95cbc6b0e342fb7a6feedcdf8f70cb" id="r_aee95cbc6b0e342fb7a6feedcdf8f70cb"><td class="memItemLeft" align="right" valign="top"><a id="aee95cbc6b0e342fb7a6feedcdf8f70cb" name="aee95cbc6b0e342fb7a6feedcdf8f70cb"></a>
+<a class="el" href="../../d4/da9/structez_result.htm">ezResult</a>&#160;</td><td class="memItemRight" valign="bottom"><b>SetEditorIndex</b> (const <a class="el" href="../../db/dcf/classez_temp_hashed_string.htm">ezTempHashedString</a> &amp;sName, ezUInt8 uiEditorIndex)</td></tr>
+<tr class="memdesc:aee95cbc6b0e342fb7a6feedcdf8f70cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">For the editor to know what index an element had, so that it can pass through exposed properties (which are given by index). <br /></td></tr>
+<tr class="separator:aee95cbc6b0e342fb7a6feedcdf8f70cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87df950ed4ebc3bbecbf33ebf6ef0ded" id="r_a87df950ed4ebc3bbecbf33ebf6ef0ded"><td class="memItemLeft" align="right" valign="top"><a id="a87df950ed4ebc3bbecbf33ebf6ef0ded" name="a87df950ed4ebc3bbecbf33ebf6ef0ded"></a>
+<a class="el" href="../../de/dce/classez_hashed_string.htm">ezHashedString</a>&#160;</td><td class="memItemRight" valign="bottom"><b>FindNameForEditorIndex</b> (ezUInt8 uiEditorIndex) const</td></tr>
+<tr class="memdesc:a87df950ed4ebc3bbecbf33ebf6ef0ded"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches for the first item that has the previously set index. Returns an empty string, if none was found. <br /></td></tr>
+<tr class="separator:a87df950ed4ebc3bbecbf33ebf6ef0ded"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c15beab1c66b1a8843cc10327f4058c" id="r_a8c15beab1c66b1a8843cc10327f4058c"><td class="memItemLeft" align="right" valign="top"><a id="a8c15beab1c66b1a8843cc10327f4058c" name="a8c15beab1c66b1a8843cc10327f4058c"></a>
 <a class="el" href="../../de/de6/classez_variant.htm">ezVariant</a>&#160;</td><td class="memItemRight" valign="bottom"><b>IncrementEntryValue</b> (const <a class="el" href="../../db/dcf/classez_temp_hashed_string.htm">ezTempHashedString</a> &amp;sName)</td></tr>
 <tr class="memdesc:a8c15beab1c66b1a8843cc10327f4058c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increments the value of the named entry. Returns the incremented value or an invalid variant if the entry does not exist or is not a number type. <br /></td></tr>
@@ -358,6 +381,37 @@ static <a class="el" href="../../de/dc1/classez_shared_ptr.htm">ezSharedPtr</a>&
 
 </div>
 </div>
+<a id="a4c1fc74006b462111a8e47508efbdf60" name="a4c1fc74006b462111a8e47508efbdf60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c1fc74006b462111a8e47508efbdf60">&#9670;&#160;</a></span>GetBoolValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ezBlackboard::GetBoolValue </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../db/dcf/classez_temp_hashed_string.htm">ezTempHashedString</a> &amp;&#160;</td>
+          <td class="paramname"><em>sName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>bFallback</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convenience functions to directly get the value of an entry as a specific type. </p>
+<p>Returns the fallback value, if no such entry was registered or if the entry's value cannot be converted to the requested type. </p>
+
+</div>
+</div>
 <a id="a33a467284a99bf351397c901187317c3" name="a33a467284a99bf351397c901187317c3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a33a467284a99bf351397c901187317c3">&#9670;&#160;</a></span>GetOrCreateGlobal()</h2>
 
@@ -493,7 +547,7 @@ static <a class="el" href="../../de/dc1/classez_shared_ptr.htm">ezSharedPtr</a>&
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d3/d82/classez_blackboard.htm">ezBlackboard</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:02 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:44 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

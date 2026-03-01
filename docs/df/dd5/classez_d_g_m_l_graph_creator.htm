@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -97,21 +97,69 @@ $(document).ready(function(){initNavTree('df/dd5/classez_d_g_m_l_graph_creator.h
 </div><!--header-->
 <div class="contents">
 
-<p>This class encapsulates creating graphs from various core engine structures (like the game object graph etc.)  
+<p>Creates DGML (Directed Graph Markup Language) graphs from engine structures for visualization and debugging.  
  <a href="../../df/dd5/classez_d_g_m_l_graph_creator.htm#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../d4/dc4/_d_g_m_l_creator_8h_source.htm">DGMLCreator.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a42f788be27f6818997f8481e16c94232" id="r_a42f788be27f6818997f8481e16c94232"><td class="memItemLeft" align="right" valign="top"><a id="a42f788be27f6818997f8481e16c94232" name="a42f788be27f6818997f8481e16c94232"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>FillGraphFromWorld</b> (<a class="el" href="../../da/d3c/classez_world.htm">ezWorld</a> *pWorld, <a class="el" href="../../d1/dd8/classez_d_g_m_l_graph.htm">ezDGMLGraph</a> &amp;ref_graph)</td></tr>
-<tr class="memdesc:a42f788be27f6818997f8481e16c94232"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the world hierarchy (game objects and components) to the given graph object. <br /></td></tr>
+<tr class="memitem:a42f788be27f6818997f8481e16c94232" id="r_a42f788be27f6818997f8481e16c94232"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dd5/classez_d_g_m_l_graph_creator.htm#a42f788be27f6818997f8481e16c94232">FillGraphFromWorld</a> (<a class="el" href="../../da/d3c/classez_world.htm">ezWorld</a> *pWorld, <a class="el" href="../../d1/dd8/classez_d_g_m_l_graph.htm">ezDGMLGraph</a> &amp;ref_graph)</td></tr>
+<tr class="memdesc:a42f788be27f6818997f8481e16c94232"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the world hierarchy (game objects and components) to the given graph object.  <br /></td></tr>
 <tr class="separator:a42f788be27f6818997f8481e16c94232"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This class encapsulates creating graphs from various core engine structures (like the game object graph etc.) </p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+<div class="textblock"><p>Creates DGML (Directed Graph Markup Language) graphs from engine structures for visualization and debugging. </p>
+<p>DGML is a Visual Studio format for representing directed graphs that can be viewed in the Visual Studio graph viewer. This class provides utilities to export engine structures like world hierarchies into DGML format, which is useful for debugging complex object relationships, component dependencies, and scene structure.</p>
+<p>The generated DGML files can be opened in Visual Studio to provide an interactive graph view where you can explore relationships, search for specific nodes, and analyze the structure visually. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a42f788be27f6818997f8481e16c94232" name="a42f788be27f6818997f8481e16c94232"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42f788be27f6818997f8481e16c94232">&#9670;&#160;</a></span>FillGraphFromWorld()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ezDGMLGraphCreator::FillGraphFromWorld </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../da/d3c/classez_world.htm">ezWorld</a> *&#160;</td>
+          <td class="paramname"><em>pWorld</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d1/dd8/classez_d_g_m_l_graph.htm">ezDGMLGraph</a> &amp;&#160;</td>
+          <td class="paramname"><em>ref_graph</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds the world hierarchy (game objects and components) to the given graph object. </p>
+<p>Creates nodes for each game object and component in the world, with edges representing parent-child relationships and component ownership. The resulting graph provides a complete view of the world's structure that can be visualized in tools supporting DGML format.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pWorld</td><td>The world whose hierarchy should be added to the graph. Must not be nullptr. </td></tr>
+    <tr><td class="paramname">ref_graph</td><td>The DGML graph object that will receive the world structure data. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Utilities/DGML/<a class="el" href="../../d4/dc4/_d_g_m_l_creator_8h_source.htm">DGMLCreator.h</a></li>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Utilities/DGML/Implementation/<b>DGMLCreator.cpp</b></li>
 </ul>
@@ -121,7 +169,7 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>FillGraphFromW
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../df/dd5/classez_d_g_m_l_graph_creator.htm">ezDGMLGraphCreator</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:03 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:44 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

@@ -5,7 +5,11 @@ var structez_g_a_l_bind_group_item_flags =
       [ "Sampler", "d2/dbd/structez_g_a_l_bind_group_item_flags.htm#a928d49a31bcfa65d5f5329c11ef6d83daa28566dc808ae19dd057a8f3f7c99fc7", null ],
       [ "Texture", "d2/dbd/structez_g_a_l_bind_group_item_flags.htm#a928d49a31bcfa65d5f5329c11ef6d83da69f8652d11226378539d45a687c3d4da", null ],
       [ "Buffer", "d2/dbd/structez_g_a_l_bind_group_item_flags.htm#a928d49a31bcfa65d5f5329c11ef6d83dacd3e9be3922ccd5ac9b650765137ec93", null ],
-      [ "Fallback", "d2/dbd/structez_g_a_l_bind_group_item_flags.htm#a928d49a31bcfa65d5f5329c11ef6d83da02c5e23dc120d46ba0843b6274e0f712", null ],
+      [ "EmptyBinding", "d2/dbd/structez_g_a_l_bind_group_item_flags.htm#a928d49a31bcfa65d5f5329c11ef6d83da0ce468cf961216d02fc496c07f242108", null ],
+      [ "FallbackResource", "d2/dbd/structez_g_a_l_bind_group_item_flags.htm#a928d49a31bcfa65d5f5329c11ef6d83da13026674ea8f3e0cd55965220e81ac97", null ],
+      [ "PartiallyLoaded", "d2/dbd/structez_g_a_l_bind_group_item_flags.htm#a928d49a31bcfa65d5f5329c11ef6d83daa75df034be148097dba54d3dfc09f039", null ],
+      [ "TypeFlags", "d2/dbd/structez_g_a_l_bind_group_item_flags.htm#a928d49a31bcfa65d5f5329c11ef6d83da50097b9dbfb781ee85c0b7bd2d8b8aa5", null ],
+      [ "MetaFlags", "d2/dbd/structez_g_a_l_bind_group_item_flags.htm#a928d49a31bcfa65d5f5329c11ef6d83da007ab6b021f1a400ccaec0882a95c999", null ],
       [ "Default", "d2/dbd/structez_g_a_l_bind_group_item_flags.htm#a928d49a31bcfa65d5f5329c11ef6d83da625c78fa819686aa2d3b2f53ed4be260", null ]
     ] ]
 ];

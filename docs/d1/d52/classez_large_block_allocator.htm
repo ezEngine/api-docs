@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -98,7 +98,7 @@ $(document).ready(function(){initNavTree('d1/d52/classez_large_block_allocator.h
 </div><!--header-->
 <div class="contents">
 
-<p>A block allocator which can only allocates blocks of memory at once.  
+<p>Specialized allocator for fixed-size memory blocks, optimized for bulk allocations.  
  <a href="../../d1/d52/classez_large_block_allocator.htm#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../d8/de7/_large_block_allocator_8h_source.htm">LargeBlockAllocator.h</a>&gt;</code></p>
@@ -108,19 +108,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a023361693df7628ced0bb255ac46135d" id="r_a023361693df7628ced0bb255ac46135d"><td class="memItemLeft" align="right" valign="top"><a id="a023361693df7628ced0bb255ac46135d" name="a023361693df7628ced0bb255ac46135d"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>ezLargeBlockAllocator</b> (<a class="el" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sName, <a class="el" href="../../d0/dbb/classez_allocator.htm">ezAllocator</a> *pParent, ezAllocatorTrackingMode mode=ezAllocatorTrackingMode::Default)</td></tr>
 <tr class="separator:a023361693df7628ced0bb255ac46135d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7b3894f891d006fe21424819b815bb1" id="r_ab7b3894f891d006fe21424819b815bb1"><td class="memTemplParams" colspan="2"><a id="ab7b3894f891d006fe21424819b815bb1" name="ab7b3894f891d006fe21424819b815bb1"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ab7b3894f891d006fe21424819b815bb1"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d6/d01/structez_data_block.htm">ezDataBlock</a>&lt; T, BlockSizeInByte &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>AllocateBlock</b> ()</td></tr>
+<tr class="memitem:ab7b3894f891d006fe21424819b815bb1" id="r_ab7b3894f891d006fe21424819b815bb1"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ab7b3894f891d006fe21424819b815bb1"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d6/d01/structez_data_block.htm">ezDataBlock</a>&lt; T, BlockSizeInByte &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d52/classez_large_block_allocator.htm#ab7b3894f891d006fe21424819b815bb1">AllocateBlock</a> ()</td></tr>
+<tr class="memdesc:ab7b3894f891d006fe21424819b815bb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates a new typed block capable of holding elements of type T.  <br /></td></tr>
 <tr class="separator:ab7b3894f891d006fe21424819b815bb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ddcba647a5781b4e0401e5887ab89d9" id="r_a6ddcba647a5781b4e0401e5887ab89d9"><td class="memTemplParams" colspan="2"><a id="a6ddcba647a5781b4e0401e5887ab89d9" name="a6ddcba647a5781b4e0401e5887ab89d9"></a>
 template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a6ddcba647a5781b4e0401e5887ab89d9"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>DeallocateBlock</b> (<a class="el" href="../../d6/d01/structez_data_block.htm">ezDataBlock</a>&lt; T, BlockSizeInByte &gt; &amp;ref_block)</td></tr>
+<tr class="memdesc:a6ddcba647a5781b4e0401e5887ab89d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deallocates a previously allocated block. <br /></td></tr>
 <tr class="separator:a6ddcba647a5781b4e0401e5887ab89d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3079404444ce24e480870f003097f8a" id="r_aa3079404444ce24e480870f003097f8a"><td class="memItemLeft" align="right" valign="top"><a id="aa3079404444ce24e480870f003097f8a" name="aa3079404444ce24e480870f003097f8a"></a>
 <a class="el" href="../../d9/d18/classez_string_view.htm">ezStringView</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GetName</b> () const</td></tr>
 <tr class="separator:aa3079404444ce24e480870f003097f8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd7346db15f46630c8dec7acb7a6d327" id="r_abd7346db15f46630c8dec7acb7a6d327"><td class="memItemLeft" align="right" valign="top"><a id="abd7346db15f46630c8dec7acb7a6d327" name="abd7346db15f46630c8dec7acb7a6d327"></a>
 <a class="el" href="../../dd/d2a/structez_generic_id.htm">ezAllocatorId</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GetId</b> () const</td></tr>
+<tr class="memdesc:abd7346db15f46630c8dec7acb7a6d327"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the unique identifier for this allocator instance. <br /></td></tr>
 <tr class="separator:abd7346db15f46630c8dec7acb7a6d327"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca23ce42c7c656f575ce70d1e4284483" id="r_aca23ce42c7c656f575ce70d1e4284483"><td class="memItemLeft" align="right" valign="top"><a id="aca23ce42c7c656f575ce70d1e4284483" name="aca23ce42c7c656f575ce70d1e4284483"></a>
 const <a class="el" href="../../d5/d3e/structez_allocator_1_1_stats.htm">ezAllocator::Stats</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetStats</b> () const</td></tr>
@@ -136,8 +138,40 @@ template&lt;typename T &gt; </td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;ezUInt32 BlockSizeInByte&gt;<br />
-class ezLargeBlockAllocator&lt; BlockSizeInByte &gt;</div><p>A block allocator which can only allocates blocks of memory at once. </p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+class ezLargeBlockAllocator&lt; BlockSizeInByte &gt;</div><p>Specialized allocator for fixed-size memory blocks, optimized for bulk allocations. </p>
+<p>This allocator manages memory in large chunks called "SuperBlocks" (16 blocks each) and provides individual blocks of the specified size on demand. It's designed for scenarios where you need many identically-sized allocations with good spatial locality.</p>
+<p>SuperBlock strategy reduces fragmentation and improves cache performance by grouping related allocations together. When blocks are freed, they're added to a free list for immediate reuse without returning memory to the OS.</p>
+<p>Best used for:</p><ul>
+<li>Object pools where objects have uniform size</li>
+<li>Bulk allocations for data structures like arrays or strings</li>
+<li>Memory regions that benefit from spatial locality </li>
+</ul>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ab7b3894f891d006fe21424819b815bb1" name="ab7b3894f891d006fe21424819b815bb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7b3894f891d006fe21424819b815bb1">&#9670;&#160;</a></span>AllocateBlock()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;ezUInt32 BlockSizeInByte&gt; </div>
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d6/d01/structez_data_block.htm">ezDataBlock</a>&lt; T, BlockSizeInByte &gt; <a class="el" href="../../d1/d52/classez_large_block_allocator.htm">ezLargeBlockAllocator</a>&lt; BlockSizeInByte &gt;::AllocateBlock </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Allocates a new typed block capable of holding elements of type T. </p>
+<p>Returns a typed wrapper around a raw memory block. The block can hold BlockSizeInByte / sizeof(T) elements. If allocation fails, returns an invalid block (check with IsEmpty()). </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/Memory/<a class="el" href="../../d8/de7/_large_block_allocator_8h_source.htm">LargeBlockAllocator.h</a></li>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/Memory/Implementation/<a class="el" href="../../d0/d5c/_large_block_allocator__inl_8h_source.htm">LargeBlockAllocator_inl.h</a></li>
 </ul>
@@ -147,7 +181,7 @@ class ezLargeBlockAllocator&lt; BlockSizeInByte &gt;</div><p>A block allocator w
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d1/d52/classez_large_block_allocator.htm">ezLargeBlockAllocator</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:04 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:45 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

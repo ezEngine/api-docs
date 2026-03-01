@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('da/d01/classez_atomic_integer.htm','..
 </div><!--header-->
 <div class="contents">
 
-<p>Integer class that can be manipulated in an atomic (i.e. thread-safe) fashion.  
+<p>Thread-safe atomic integer with lock-free operations.  
  <a href="../../da/d01/classez_atomic_integer.htm#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../de/dcd/_atomic_integer_8h_source.htm">AtomicInteger.h</a>&gt;</code></p>
@@ -168,13 +168,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Max</b> (T x)</td></t
 T&#160;</td><td class="memItemRight" valign="bottom"><b>Set</b> (T x)</td></tr>
 <tr class="memdesc:a35e0a26b7b0b3975410d36df360f45c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the internal value to x and returns the original internal value. <br /></td></tr>
 <tr class="separator:a35e0a26b7b0b3975410d36df360f45c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56a0ed4d78e6495d46ddfadc6492d5d9" id="r_a56a0ed4d78e6495d46ddfadc6492d5d9"><td class="memItemLeft" align="right" valign="top"><a id="a56a0ed4d78e6495d46ddfadc6492d5d9" name="a56a0ed4d78e6495d46ddfadc6492d5d9"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>TestAndSet</b> (T expected, T x)</td></tr>
-<tr class="memdesc:a56a0ed4d78e6495d46ddfadc6492d5d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the internal value to x if the internal value is equal to expected and returns true, otherwise does nothing and returns false. <br /></td></tr>
+<tr class="memitem:a56a0ed4d78e6495d46ddfadc6492d5d9" id="r_a56a0ed4d78e6495d46ddfadc6492d5d9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d01/classez_atomic_integer.htm#a56a0ed4d78e6495d46ddfadc6492d5d9">TestAndSet</a> (T expected, T x)</td></tr>
+<tr class="memdesc:a56a0ed4d78e6495d46ddfadc6492d5d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Atomic conditional assignment operation.  <br /></td></tr>
 <tr class="separator:a56a0ed4d78e6495d46ddfadc6492d5d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62bab9f52c740f1abd61526236d52843" id="r_a62bab9f52c740f1abd61526236d52843"><td class="memItemLeft" align="right" valign="top"><a id="a62bab9f52c740f1abd61526236d52843" name="a62bab9f52c740f1abd61526236d52843"></a>
-T&#160;</td><td class="memItemRight" valign="bottom"><b>CompareAndSwap</b> (T expected, T x)</td></tr>
-<tr class="memdesc:a62bab9f52c740f1abd61526236d52843"><td class="mdescLeft">&#160;</td><td class="mdescRight">If this is equal to <em>expected</em>, it is set to <em>value</em>. Otherwise it won't be modified. Always returns the previous value of this before the modification. <br /></td></tr>
+<tr class="memitem:a62bab9f52c740f1abd61526236d52843" id="r_a62bab9f52c740f1abd61526236d52843"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d01/classez_atomic_integer.htm#a62bab9f52c740f1abd61526236d52843">CompareAndSwap</a> (T expected, T x)</td></tr>
+<tr class="memdesc:a62bab9f52c740f1abd61526236d52843"><td class="mdescLeft">&#160;</td><td class="mdescRight">Atomic compare-and-swap operation returning the previous value.  <br /></td></tr>
 <tr class="separator:a62bab9f52c740f1abd61526236d52843"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73c3e3143a8e53cb344dfd0401a1885b" id="r_a73c3e3143a8e53cb344dfd0401a1885b"><td class="memItemLeft" align="right" valign="top"><a id="a73c3e3143a8e53cb344dfd0401a1885b" name="a73c3e3143a8e53cb344dfd0401a1885b"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>operator T</b> () const</td></tr>
@@ -182,8 +180,76 @@ T&#160;</td><td class="memItemRight" valign="bottom"><b>CompareAndSwap</b> (T ex
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
-class ezAtomicInteger&lt; T &gt;</div><p>Integer class that can be manipulated in an atomic (i.e. thread-safe) fashion. </p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+class ezAtomicInteger&lt; T &gt;</div><p>Thread-safe atomic integer with lock-free operations. </p>
+<p>Provides atomic (thread-safe) operations on integer types without requiring explicit locking. All operations are lock-free and use hardware atomic instructions where available. Supports common atomic operations like increment, decrement, compare-and-swap, and bitwise operations. The class is templated to work with various integer types while ensuring proper atomic alignment. Use ezAtomicInteger32 or ezAtomicInteger64 typedefs for common cases. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a62bab9f52c740f1abd61526236d52843" name="a62bab9f52c740f1abd61526236d52843"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62bab9f52c740f1abd61526236d52843">&#9670;&#160;</a></span>CompareAndSwap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">EZ_ALWAYS_INLINE T <a class="el" href="../../da/d01/classez_atomic_integer.htm">ezAtomicInteger</a>&lt; T &gt;::CompareAndSwap </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>expected</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Atomic compare-and-swap operation returning the previous value. </p>
+<p>If the current value equals expected, it is atomically replaced with x. Always returns the value that was present before the operation, regardless of whether the swap occurred. This enables retry loops in lock-free algorithms. </p>
+
+</div>
+</div>
+<a id="a56a0ed4d78e6495d46ddfadc6492d5d9" name="a56a0ed4d78e6495d46ddfadc6492d5d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56a0ed4d78e6495d46ddfadc6492d5d9">&#9670;&#160;</a></span>TestAndSet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">EZ_ALWAYS_INLINE bool <a class="el" href="../../da/d01/classez_atomic_integer.htm">ezAtomicInteger</a>&lt; T &gt;::TestAndSet </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>expected</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Atomic conditional assignment operation. </p>
+<p>Sets the value to x only if the current value equals expected. Returns true if the assignment occurred, false otherwise. This is a fundamental building block for lock-free algorithms. </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/Threading/<a class="el" href="../../de/dcd/_atomic_integer_8h_source.htm">AtomicInteger.h</a></li>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/Threading/Implementation/<a class="el" href="../../d8/d88/_atomic_integer__inl_8h_source.htm">AtomicInteger_inl.h</a></li>
 </ul>
@@ -193,7 +259,7 @@ class ezAtomicInteger&lt; T &gt;</div><p>Integer class that can be manipulated i
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../da/d01/classez_atomic_integer.htm">ezAtomicInteger</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:02 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:44 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

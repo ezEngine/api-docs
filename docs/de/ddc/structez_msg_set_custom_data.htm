@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -97,15 +97,20 @@ $(document).ready(function(){initNavTree('de/ddc/structez_msg_set_custom_data.ht
   <div class="headertitle"><div class="title">ezMsgSetCustomData Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Message to set custom float data on components.  
+ <a href="../../de/ddc/structez_msg_set_custom_data.htm#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d8/d2a/_set_color_message_8h_source.htm">SetColorMessage.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ezMsgSetCustomData:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../de/dc5/structez_msg_set_custom_data__inherit__graph.png" border="0" usemap="#aez_msg_set_custom_data_inherit__map" alt="Inheritance graph"/></div>
 <map name="aez_msg_set_custom_data_inherit__map" id="aez_msg_set_custom_data_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,225,172,251"/>
+<area shape="rect" title="Message to set custom float data on components." alt="" coords="5,225,172,251"/>
 <area shape="rect" href="../../dd/d22/classez_message.htm" title="Base class for all message types. Each message type has it&#39;s own id which is used to dispatch message..." alt="" coords="41,152,136,177"/>
 <area shape="poly" title=" " alt="" coords="91,191,91,225,86,225,86,191"/>
-<area shape="rect" href="../../db/d45/classez_reflected_class.htm" title="All classes that should be dynamically reflectable, need to be derived from this base class." alt="" coords="22,79,155,104"/>
+<area shape="rect" href="../../db/d45/classez_reflected_class.htm" title="Base class for all types that support dynamic reflection and runtime type identification." alt="" coords="22,79,155,104"/>
 <area shape="poly" title=" " alt="" coords="91,118,91,152,86,152,86,118"/>
 <area shape="rect" href="../../d4/d02/classez_no_base.htm" title="Dummy type to pass to templates and macros that expect a base type for a class that has no base." alt="" coords="45,5,132,31"/>
 <area shape="poly" title=" " alt="" coords="91,44,91,79,86,79,86,44"/>
@@ -201,7 +206,10 @@ ezUInt16&#160;</td><td class="memItemRight" valign="bottom"><b>m_uiSize</b></td>
 static ezMessageId&#160;</td><td class="memItemRight" valign="bottom"><b>s_NextMsgId</b> = 0</td></tr>
 <tr class="separator:aa2c434521275f3d430f8bea51a2266c6 inherit pro_static_attribs_classez_message"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Message to set custom float data on components. </p>
+<p>Provides four float values that can be used to pass arbitrary data to components. The interpretation of these values depends on the receiving component. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ab6618b8505c1a8aed2dd7a4760bf4967" name="ab6618b8505c1a8aed2dd7a4760bf4967"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab6618b8505c1a8aed2dd7a4760bf4967">&#9670;&#160;</a></span>Deserialize()</h2>
 
@@ -267,7 +275,7 @@ static ezMessageId&#160;</td><td class="memItemRight" valign="bottom"><b>s_NextM
 
 <p>Implement this for efficient transmission across process boundaries (e.g. network transfer etc.) </p>
 <p>If the message is only ever sent within the same process between nodes of the same <a class="el" href="../../da/d3c/classez_world.htm" title="A world encapsulates a scene graph of game objects and various component managers and their component...">ezWorld</a>, this does not need to be implemented.</p>
-<p>Note that <a class="el" href="../../dd/d22/classez_message.htm#adf8f33891890eb904aae7a68449c94c8" title="Writes msg to stream in such a way that ReplicatePackedMessage() can restore it even in another proce...">PackageForTransfer()</a> will automatically include the <a class="el" href="../../dd/d19/classez_r_t_t_i.htm" title="This class holds information about reflected types. Each instance represents one type that is known t...">ezRTTI</a> type version into the stream and <a class="el" href="../../dd/d22/classez_message.htm#ac5a9c80f43bd69c2d4b64139844e305c" title="Restores a message that was written by PackageForTransfer()">ReplicatePackedMessage()</a> will pass this into <a class="el" href="../../de/ddc/structez_msg_set_custom_data.htm#ab6618b8505c1a8aed2dd7a4760bf4967">Deserialize()</a>. Use this if the serialization changes. </p>
+<p>Note that <a class="el" href="../../dd/d22/classez_message.htm#adf8f33891890eb904aae7a68449c94c8" title="Writes msg to stream in such a way that ReplicatePackedMessage() can restore it even in another proce...">PackageForTransfer()</a> will automatically include the <a class="el" href="../../dd/d19/classez_r_t_t_i.htm" title="Core class of ezEngine&#39;s reflection system that holds complete runtime type information.">ezRTTI</a> type version into the stream and <a class="el" href="../../dd/d22/classez_message.htm#ac5a9c80f43bd69c2d4b64139844e305c" title="Restores a message that was written by PackageForTransfer()">ReplicatePackedMessage()</a> will pass this into <a class="el" href="../../de/ddc/structez_msg_set_custom_data.htm#ab6618b8505c1a8aed2dd7a4760bf4967">Deserialize()</a>. Use this if the serialization changes. </p>
 
 <p>Reimplemented from <a class="el" href="../../dd/d22/classez_message.htm#aec488eadcc8ea7670dae9716a3277ccc">ezMessage</a>.</p>
 
@@ -283,7 +291,7 @@ static ezMessageId&#160;</td><td class="memItemRight" valign="bottom"><b>s_NextM
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../de/ddc/structez_msg_set_custom_data.htm">ezMsgSetCustomData</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:04 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:46 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

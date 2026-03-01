@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -105,86 +105,103 @@ $(document).ready(function(){initNavTree('de/de6/_shader_helper_8h_source.htm','
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span>ezShaderHelper</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
-<div class="foldopen" id="foldopen00008" data-start="{" data-end="};">
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="../../d6/ddb/classez_shader_helper_1_1ez_text_sectionizer.htm">    8</a></span>  <span class="keyword">class </span>EZ_RENDERERCORE_DLL <a class="code hl_class" href="../../d6/ddb/classez_shader_helper_1_1ez_text_sectionizer.htm">ezTextSectionizer</a></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>  {</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>  <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordtype">void</span> Clear();</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordtype">void</span> AddSection(<span class="keyword">const</span> <span class="keywordtype">char</span>* szName);</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordtype">void</span> Process(<span class="keyword">const</span> <span class="keywordtype">char</span>* szText);</div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="};">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="../../d6/ddb/classez_shader_helper_1_1ez_text_sectionizer.htm">   12</a></span>  <span class="keyword">class </span>EZ_RENDERERCORE_DLL <a class="code hl_class" href="../../d6/ddb/classez_shader_helper_1_1ez_text_sectionizer.htm">ezTextSectionizer</a></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>  {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordtype">void</span> Clear();</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <a class="code hl_class" href="../../d9/d18/classez_string_view.htm">ezStringView</a> GetSectionContent(ezUInt32 uiSection, ezUInt32&amp; out_uiFirstLine) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">struct </span>ezTextSection</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    {</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>      ezTextSection(<span class="keyword">const</span> <span class="keywordtype">char</span>* szName)</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        : m_sName(szName)</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>      {</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>      }</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>      <span class="keywordtype">void</span> Reset()</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>      {</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        m_szSectionStart = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        m_Content = <a class="code hl_class" href="../../d9/d18/classez_string_view.htm">ezStringView</a>();</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        m_uiFirstLine = 0;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordtype">void</span> AddSection(<span class="keyword">const</span> <span class="keywordtype">char</span>* szName);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordtype">void</span> Process(<span class="keyword">const</span> <span class="keywordtype">char</span>* szText);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_class" href="../../d9/d18/classez_string_view.htm">ezStringView</a> GetSectionContent(ezUInt32 uiSection, ezUInt32&amp; out_uiFirstLine) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">struct </span>ezTextSection</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>      ezTextSection(<span class="keyword">const</span> <span class="keywordtype">char</span>* szName)</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        : m_sName(szName)</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>      {</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>      }</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>      <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sName;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>      <span class="keyword">const</span> <span class="keywordtype">char</span>* m_szSectionStart = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>      <a class="code hl_class" href="../../d9/d18/classez_string_view.htm">ezStringView</a> m_Content;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>      ezUInt32 m_uiFirstLine = 0;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    };</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <a class="code hl_class" href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a> m_sText;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <a class="code hl_class" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezTextSection, 16&gt;</a> m_Sections;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  };</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>      <span class="keywordtype">void</span> Reset()</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>      {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        m_szSectionStart = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        m_Content = <a class="code hl_class" href="../../d9/d18/classez_string_view.htm">ezStringView</a>();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        m_uiFirstLine = 0;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>      }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>      <a class="code hl_class" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> m_sName;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>      <span class="keyword">const</span> <span class="keywordtype">char</span>* m_szSectionStart = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>      <a class="code hl_class" href="../../d9/d18/classez_string_view.htm">ezStringView</a> m_Content;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>      ezUInt32 m_uiFirstLine = 0;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    };</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <a class="code hl_class" href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a> m_sText;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <a class="code hl_class" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezTextSection, 16&gt;</a> m_Sections;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  };</div>
 </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="foldopen" id="foldopen00045" data-start="{" data-end="};">
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm">   45</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm">ezShaderSections</a></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  {</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keyword">enum</span> Enum</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    {</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>      PLATFORMS,</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>      PERMUTATIONS,</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>      MATERIALPARAMETER,</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>      MATERIALCONFIG,</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>      MATERIALCONSTANTS,</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>      RENDERSTATE,</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>      SHADER,</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>      VERTEXSHADER,</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>      HULLSHADER,</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>      DOMAINSHADER,</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>      GEOMETRYSHADER,</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>      PIXELSHADER,</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>      COMPUTESHADER,</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>      TEMPLATE_VARS</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    };</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  };</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="foldopen" id="foldopen00053" data-start="{" data-end="};">
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm">   53</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm">ezShaderSections</a></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  {</div>
+<div class="foldopen" id="foldopen00055" data-start="{" data-end="};">
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402">   55</a></span>    <span class="keyword">enum</span> <a class="code hl_enumeration" href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402">Enum</a></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402ad5655ea21a9f4025d37848255ab439b8">   57</a></span>      <a class="code hl_enumvalue" href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402ad5655ea21a9f4025d37848255ab439b8">PLATFORMS</a>,         </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402a2ca7dc70b301287f6f8d4e752b854cdc">   58</a></span>      <a class="code hl_enumvalue" href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402a2ca7dc70b301287f6f8d4e752b854cdc">PERMUTATIONS</a>,      </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402a86b0b976ab62e10c492e11ea413f504f">   59</a></span>      <a class="code hl_enumvalue" href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402a86b0b976ab62e10c492e11ea413f504f">MATERIALPARAMETER</a>, </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402a18b71e827984a7cec9907da54ed6e92f">   60</a></span>      <a class="code hl_enumvalue" href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402a18b71e827984a7cec9907da54ed6e92f">MATERIALCONFIG</a>,    </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402a240b1dd537dabeca721ba2245011888d">   61</a></span>      <a class="code hl_enumvalue" href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402a240b1dd537dabeca721ba2245011888d">MATERIALCONSTANTS</a>, </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402ad3c93da52185c716a2724a441748ae1d">   62</a></span>      <a class="code hl_enumvalue" href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402ad3c93da52185c716a2724a441748ae1d">RENDERSTATE</a>,       </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402a70ef474b02446988a44dd3614b0effc6">   63</a></span>      <a class="code hl_enumvalue" href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402a70ef474b02446988a44dd3614b0effc6">SHADER</a>,            </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402a6a6e724737d1409bc1c22e08965cf73c">   64</a></span>      <a class="code hl_enumvalue" href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402a6a6e724737d1409bc1c22e08965cf73c">VERTEXSHADER</a>,      </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402af67e47274a22ac0fb56ed9f2a5190a61">   65</a></span>      <a class="code hl_enumvalue" href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402af67e47274a22ac0fb56ed9f2a5190a61">HULLSHADER</a>,        </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402a43f92c2da5dcc26c3c6231e3efd4601b">   66</a></span>      <a class="code hl_enumvalue" href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402a43f92c2da5dcc26c3c6231e3efd4601b">DOMAINSHADER</a>,      </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402a309431c755c63c8273465809f40702f2">   67</a></span>      <a class="code hl_enumvalue" href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402a309431c755c63c8273465809f40702f2">GEOMETRYSHADER</a>,    </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402affd32d2387e6498df3471776e32a5412">   68</a></span>      <a class="code hl_enumvalue" href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402affd32d2387e6498df3471776e32a5412">PIXELSHADER</a>,       </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402aae7d54d3120f86dbeaa44be303a4f1aa">   69</a></span>      <a class="code hl_enumvalue" href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402aae7d54d3120f86dbeaa44be303a4f1aa">COMPUTESHADER</a>,     </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>      <a class="code hl_enumvalue" href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402abc3e76f912c84825caba17c02668699b">TEMPLATE_VARS</a>      </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402abc3e76f912c84825caba17c02668699b">   71</a></span>    };</div>
 </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  EZ_RENDERERCORE_DLL <span class="keywordtype">void</span> GetShaderSections(<span class="keyword">const</span> <span class="keywordtype">char</span>* szContent, <a class="code hl_class" href="../../d6/ddb/classez_shader_helper_1_1ez_text_sectionizer.htm">ezTextSectionizer</a>&amp; out_sections);</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  ezUInt32 CalculateHash(<span class="keyword">const</span> <a class="code hl_class" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;ezPermutationVar&gt;</a>&amp; vars);</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>} <span class="comment">// namespace ezShaderHelper</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  };</div>
+</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  EZ_RENDERERCORE_DLL <span class="keywordtype">void</span> GetShaderSections(<span class="keyword">const</span> <span class="keywordtype">char</span>* szContent, ezTextSectionizer&amp; out_sections);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  ezUInt32 CalculateHash(<span class="keyword">const</span> <a class="code hl_class" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;ezPermutationVar&gt;</a>&amp; vars);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>} <span class="comment">// namespace ezShaderHelper</span></div>
 <div class="ttc" id="aclassez_array_ptr_htm"><div class="ttname"><a href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr</a></div><div class="ttdoc">This class encapsulates an array and it's size. It is recommended to use this class instead of plain ...</div><div class="ttdef"><b>Definition</b> ArrayPtr.h:41</div></div>
 <div class="ttc" id="aclassez_hybrid_array_htm"><div class="ttname"><a href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray</a></div><div class="ttdoc">A hybrid array uses in-place storage to handle the first few elements without any allocation....</div><div class="ttdef"><b>Definition</b> HybridArray.h:12</div></div>
-<div class="ttc" id="aclassez_shader_helper_1_1ez_text_sectionizer_htm"><div class="ttname"><a href="../../d6/ddb/classez_shader_helper_1_1ez_text_sectionizer.htm">ezShaderHelper::ezTextSectionizer</a></div><div class="ttdef"><b>Definition</b> ShaderHelper.h:9</div></div>
+<div class="ttc" id="aclassez_shader_helper_1_1ez_text_sectionizer_htm"><div class="ttname"><a href="../../d6/ddb/classez_shader_helper_1_1ez_text_sectionizer.htm">ezShaderHelper::ezTextSectionizer</a></div><div class="ttdef"><b>Definition</b> ShaderHelper.h:13</div></div>
 <div class="ttc" id="aclassez_string_builder_htm"><div class="ttname"><a href="../../d3/d88/classez_string_builder.htm">ezStringBuilder</a></div><div class="ttdoc">ezStringBuilder is a class that is meant for creating and modifying strings.</div><div class="ttdef"><b>Definition</b> StringBuilder.h:35</div></div>
 <div class="ttc" id="aclassez_string_view_htm"><div class="ttname"><a href="../../d9/d18/classez_string_view.htm">ezStringView</a></div><div class="ttdoc">ezStringView represent a read-only sub-string of a larger string, as it can store a dedicated string ...</div><div class="ttdef"><b>Definition</b> StringView.h:34</div></div>
 <div class="ttc" id="astructez_hybrid_string_htm"><div class="ttname"><a href="../../d4/d53/structez_hybrid_string.htm">ezHybridString&lt; 32, ezDefaultAllocatorWrapper &gt;</a></div></div>
-<div class="ttc" id="astructez_shader_helper_1_1ez_shader_sections_htm"><div class="ttname"><a href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm">ezShaderHelper::ezShaderSections</a></div><div class="ttdef"><b>Definition</b> ShaderHelper.h:46</div></div>
+<div class="ttc" id="astructez_shader_helper_1_1ez_shader_sections_htm"><div class="ttname"><a href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm">ezShaderHelper::ezShaderSections</a></div><div class="ttdoc">Defines the standard section names in shader files.</div><div class="ttdef"><b>Definition</b> ShaderHelper.h:54</div></div>
+<div class="ttc" id="astructez_shader_helper_1_1ez_shader_sections_htm_ae0509bbdc7d1769b99bda61ef1a0c402"><div class="ttname"><a href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402">ezShaderHelper::ezShaderSections::Enum</a></div><div class="ttdeci">Enum</div><div class="ttdef"><b>Definition</b> ShaderHelper.h:56</div></div>
+<div class="ttc" id="astructez_shader_helper_1_1ez_shader_sections_htm_ae0509bbdc7d1769b99bda61ef1a0c402a18b71e827984a7cec9907da54ed6e92f"><div class="ttname"><a href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402a18b71e827984a7cec9907da54ed6e92f">ezShaderHelper::ezShaderSections::MATERIALCONFIG</a></div><div class="ttdeci">@ MATERIALCONFIG</div><div class="ttdoc">Material configuration.</div><div class="ttdef"><b>Definition</b> ShaderHelper.h:60</div></div>
+<div class="ttc" id="astructez_shader_helper_1_1ez_shader_sections_htm_ae0509bbdc7d1769b99bda61ef1a0c402a240b1dd537dabeca721ba2245011888d"><div class="ttname"><a href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402a240b1dd537dabeca721ba2245011888d">ezShaderHelper::ezShaderSections::MATERIALCONSTANTS</a></div><div class="ttdeci">@ MATERIALCONSTANTS</div><div class="ttdoc">Material constant definitions.</div><div class="ttdef"><b>Definition</b> ShaderHelper.h:61</div></div>
+<div class="ttc" id="astructez_shader_helper_1_1ez_shader_sections_htm_ae0509bbdc7d1769b99bda61ef1a0c402a2ca7dc70b301287f6f8d4e752b854cdc"><div class="ttname"><a href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402a2ca7dc70b301287f6f8d4e752b854cdc">ezShaderHelper::ezShaderSections::PERMUTATIONS</a></div><div class="ttdeci">@ PERMUTATIONS</div><div class="ttdoc">Shader permutation variables.</div><div class="ttdef"><b>Definition</b> ShaderHelper.h:58</div></div>
+<div class="ttc" id="astructez_shader_helper_1_1ez_shader_sections_htm_ae0509bbdc7d1769b99bda61ef1a0c402a309431c755c63c8273465809f40702f2"><div class="ttname"><a href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402a309431c755c63c8273465809f40702f2">ezShaderHelper::ezShaderSections::GEOMETRYSHADER</a></div><div class="ttdeci">@ GEOMETRYSHADER</div><div class="ttdoc">Geometry shader entry point.</div><div class="ttdef"><b>Definition</b> ShaderHelper.h:67</div></div>
+<div class="ttc" id="astructez_shader_helper_1_1ez_shader_sections_htm_ae0509bbdc7d1769b99bda61ef1a0c402a43f92c2da5dcc26c3c6231e3efd4601b"><div class="ttname"><a href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402a43f92c2da5dcc26c3c6231e3efd4601b">ezShaderHelper::ezShaderSections::DOMAINSHADER</a></div><div class="ttdeci">@ DOMAINSHADER</div><div class="ttdoc">Domain shader entry point (tessellation)</div><div class="ttdef"><b>Definition</b> ShaderHelper.h:66</div></div>
+<div class="ttc" id="astructez_shader_helper_1_1ez_shader_sections_htm_ae0509bbdc7d1769b99bda61ef1a0c402a6a6e724737d1409bc1c22e08965cf73c"><div class="ttname"><a href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402a6a6e724737d1409bc1c22e08965cf73c">ezShaderHelper::ezShaderSections::VERTEXSHADER</a></div><div class="ttdeci">@ VERTEXSHADER</div><div class="ttdoc">Vertex shader entry point.</div><div class="ttdef"><b>Definition</b> ShaderHelper.h:64</div></div>
+<div class="ttc" id="astructez_shader_helper_1_1ez_shader_sections_htm_ae0509bbdc7d1769b99bda61ef1a0c402a70ef474b02446988a44dd3614b0effc6"><div class="ttname"><a href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402a70ef474b02446988a44dd3614b0effc6">ezShaderHelper::ezShaderSections::SHADER</a></div><div class="ttdeci">@ SHADER</div><div class="ttdoc">Shared shader code.</div><div class="ttdef"><b>Definition</b> ShaderHelper.h:63</div></div>
+<div class="ttc" id="astructez_shader_helper_1_1ez_shader_sections_htm_ae0509bbdc7d1769b99bda61ef1a0c402a86b0b976ab62e10c492e11ea413f504f"><div class="ttname"><a href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402a86b0b976ab62e10c492e11ea413f504f">ezShaderHelper::ezShaderSections::MATERIALPARAMETER</a></div><div class="ttdeci">@ MATERIALPARAMETER</div><div class="ttdoc">Material parameters exposed to materials.</div><div class="ttdef"><b>Definition</b> ShaderHelper.h:59</div></div>
+<div class="ttc" id="astructez_shader_helper_1_1ez_shader_sections_htm_ae0509bbdc7d1769b99bda61ef1a0c402aae7d54d3120f86dbeaa44be303a4f1aa"><div class="ttname"><a href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402aae7d54d3120f86dbeaa44be303a4f1aa">ezShaderHelper::ezShaderSections::COMPUTESHADER</a></div><div class="ttdeci">@ COMPUTESHADER</div><div class="ttdoc">Compute shader entry point.</div><div class="ttdef"><b>Definition</b> ShaderHelper.h:69</div></div>
+<div class="ttc" id="astructez_shader_helper_1_1ez_shader_sections_htm_ae0509bbdc7d1769b99bda61ef1a0c402abc3e76f912c84825caba17c02668699b"><div class="ttname"><a href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402abc3e76f912c84825caba17c02668699b">ezShaderHelper::ezShaderSections::TEMPLATE_VARS</a></div><div class="ttdeci">@ TEMPLATE_VARS</div><div class="ttdoc">Template variables for shader generation.</div><div class="ttdef"><b>Definition</b> ShaderHelper.h:70</div></div>
+<div class="ttc" id="astructez_shader_helper_1_1ez_shader_sections_htm_ae0509bbdc7d1769b99bda61ef1a0c402ad3c93da52185c716a2724a441748ae1d"><div class="ttname"><a href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402ad3c93da52185c716a2724a441748ae1d">ezShaderHelper::ezShaderSections::RENDERSTATE</a></div><div class="ttdeci">@ RENDERSTATE</div><div class="ttdoc">Render state configuration.</div><div class="ttdef"><b>Definition</b> ShaderHelper.h:62</div></div>
+<div class="ttc" id="astructez_shader_helper_1_1ez_shader_sections_htm_ae0509bbdc7d1769b99bda61ef1a0c402ad5655ea21a9f4025d37848255ab439b8"><div class="ttname"><a href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402ad5655ea21a9f4025d37848255ab439b8">ezShaderHelper::ezShaderSections::PLATFORMS</a></div><div class="ttdeci">@ PLATFORMS</div><div class="ttdoc">Platform requirements.</div><div class="ttdef"><b>Definition</b> ShaderHelper.h:57</div></div>
+<div class="ttc" id="astructez_shader_helper_1_1ez_shader_sections_htm_ae0509bbdc7d1769b99bda61ef1a0c402af67e47274a22ac0fb56ed9f2a5190a61"><div class="ttname"><a href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402af67e47274a22ac0fb56ed9f2a5190a61">ezShaderHelper::ezShaderSections::HULLSHADER</a></div><div class="ttdeci">@ HULLSHADER</div><div class="ttdoc">Hull shader entry point (tessellation)</div><div class="ttdef"><b>Definition</b> ShaderHelper.h:65</div></div>
+<div class="ttc" id="astructez_shader_helper_1_1ez_shader_sections_htm_ae0509bbdc7d1769b99bda61ef1a0c402affd32d2387e6498df3471776e32a5412"><div class="ttname"><a href="../../db/db8/structez_shader_helper_1_1ez_shader_sections.htm#ae0509bbdc7d1769b99bda61ef1a0c402affd32d2387e6498df3471776e32a5412">ezShaderHelper::ezShaderSections::PIXELSHADER</a></div><div class="ttdeci">@ PIXELSHADER</div><div class="ttdoc">Pixel shader entry point.</div><div class="ttdef"><b>Definition</b> ShaderHelper.h:68</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_9b39d7517b28e8ee3dee1b9d862ddabb.htm">RendererCore</a></li><li class="navelem"><a class="el" href="../../dir_bbba5547a77e7a860d8f671f6dd17def.htm">Shader</a></li><li class="navelem"><b>ShaderHelper.h</b></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:01 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:42 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

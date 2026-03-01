@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -98,7 +98,7 @@ $(document).ready(function(){initNavTree('d1/d14/classez_property_path.htm','../
 </div><!--header-->
 <div class="contents">
 
-<p>Stores a path from an object of a given type to a property inside of it. Once initialized to a specific path, the target property/object of the path can be read or written on multiple root objects. An empty path is allowed in which case WriteToLeafObject/ReadFromLeafObject will return pRootObject directly.  
+<p>Stores a path from an object of a given type to a property inside of it.  
  <a href="../../d1/d14/classez_property_path.htm#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../d2/dbd/_property_path_8h_source.htm">PropertyPath.h</a>&gt;</code></p>
@@ -107,15 +107,13 @@ $(document).ready(function(){initNavTree('d1/d14/classez_property_path.htm','../
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac25651366be3fcf3b02f6648fbf2e909" id="r_ac25651366be3fcf3b02f6648fbf2e909"><td class="memItemLeft" align="right" valign="top"><a id="ac25651366be3fcf3b02f6648fbf2e909" name="ac25651366be3fcf3b02f6648fbf2e909"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsValid</b> () const</td></tr>
-<tr class="memdesc:ac25651366be3fcf3b02f6648fbf2e909"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if <a class="el" href="../../d1/d14/classez_property_path.htm#a0a1be71d5dd706f9bd7533fee71b2d3d" title="Resolves a path in the syntax &#39;propertyName[index]/propertyName[index]/...&#39; into steps....">InitializeFromPath()</a> has been successfully called and it is therefore possible to use the other functions. <br /></td></tr>
+<tr class="memdesc:ac25651366be3fcf3b02f6648fbf2e909"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if <a class="el" href="../../d1/d14/classez_property_path.htm#a0a1be71d5dd706f9bd7533fee71b2d3d" title="Resolves a path string into property steps and validates them against the root type.">InitializeFromPath()</a> has been successfully called and it is therefore possible to use the other functions. <br /></td></tr>
 <tr class="separator:ac25651366be3fcf3b02f6648fbf2e909"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a1be71d5dd706f9bd7533fee71b2d3d" id="r_a0a1be71d5dd706f9bd7533fee71b2d3d"><td class="memItemLeft" align="right" valign="top"><a id="a0a1be71d5dd706f9bd7533fee71b2d3d" name="a0a1be71d5dd706f9bd7533fee71b2d3d"></a>
-<a class="el" href="../../d4/da9/structez_result.htm">ezResult</a>&#160;</td><td class="memItemRight" valign="bottom"><b>InitializeFromPath</b> (const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> &amp;rootObjectRtti, const char *szPath)</td></tr>
-<tr class="memdesc:a0a1be71d5dd706f9bd7533fee71b2d3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resolves a path in the syntax 'propertyName[index]/propertyName[index]/...' into steps. The '[index]' part is only added for properties that require indices (arrays and maps). <br /></td></tr>
+<tr class="memitem:a0a1be71d5dd706f9bd7533fee71b2d3d" id="r_a0a1be71d5dd706f9bd7533fee71b2d3d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/da9/structez_result.htm">ezResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d14/classez_property_path.htm#a0a1be71d5dd706f9bd7533fee71b2d3d">InitializeFromPath</a> (const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> &amp;rootObjectRtti, const char *szPath)</td></tr>
+<tr class="memdesc:a0a1be71d5dd706f9bd7533fee71b2d3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resolves a path string into property steps and validates them against the root type.  <br /></td></tr>
 <tr class="separator:a0a1be71d5dd706f9bd7533fee71b2d3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28c0e61f8da54e3b24d8690078089e1f" id="r_a28c0e61f8da54e3b24d8690078089e1f"><td class="memItemLeft" align="right" valign="top"><a id="a28c0e61f8da54e3b24d8690078089e1f" name="a28c0e61f8da54e3b24d8690078089e1f"></a>
-<a class="el" href="../../d4/da9/structez_result.htm">ezResult</a>&#160;</td><td class="memItemRight" valign="bottom"><b>InitializeFromPath</b> (const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *pRootObjectRtti, const <a class="el" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr</a>&lt; const <a class="el" href="../../d4/dc8/structez_property_path_step.htm">ezPropertyPathStep</a> &gt; path)</td></tr>
-<tr class="memdesc:a28c0e61f8da54e3b24d8690078089e1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resolves a path provided as an array of <a class="el" href="../../d4/dc8/structez_property_path_step.htm" title="Reflected property step that can be used to init an ezPropertyPath.">ezPropertyPathStep</a>. <br /></td></tr>
+<tr class="memitem:a28c0e61f8da54e3b24d8690078089e1f" id="r_a28c0e61f8da54e3b24d8690078089e1f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/da9/structez_result.htm">ezResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d14/classez_property_path.htm#a28c0e61f8da54e3b24d8690078089e1f">InitializeFromPath</a> (const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *pRootObjectRtti, const <a class="el" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr</a>&lt; const <a class="el" href="../../d4/dc8/structez_property_path_step.htm">ezPropertyPathStep</a> &gt; path)</td></tr>
+<tr class="memdesc:a28c0e61f8da54e3b24d8690078089e1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resolves a path provided as an array of <a class="el" href="../../d4/dc8/structez_property_path_step.htm" title="Reflected property step that can be used to init an ezPropertyPath.">ezPropertyPathStep</a> and validates it.  <br /></td></tr>
 <tr class="separator:a28c0e61f8da54e3b24d8690078089e1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9919eacd01b481a2a01869cff9db03d" id="r_ae9919eacd01b481a2a01869cff9db03d"><td class="memItemLeft" align="right" valign="top"><a id="ae9919eacd01b481a2a01869cff9db03d" name="ae9919eacd01b481a2a01869cff9db03d"></a>
 <a class="el" href="../../d4/da9/structez_result.htm">ezResult</a>&#160;</td><td class="memItemRight" valign="bottom"><b>WriteToLeafObject</b> (void *pRootObject, const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *pType, <a class="el" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>&lt; void(void *pLeaf, const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> &amp;pType)&gt; func) const</td></tr>
@@ -153,9 +151,83 @@ template&lt;typename T &gt; </td></tr>
 <tr class="separator:aea8c1b7d479d837ed5547faf6ffae6cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Stores a path from an object of a given type to a property inside of it. Once initialized to a specific path, the target property/object of the path can be read or written on multiple root objects. An empty path is allowed in which case WriteToLeafObject/ReadFromLeafObject will return pRootObject directly. </p>
-<p>TODO: read/write methods and ResolvePath should return a failure state. </p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+<div class="textblock"><p>Stores a path from an object of a given type to a property inside of it. </p>
+<p>Once initialized to a specific path, the target property/object of the path can be read or written on multiple root objects. This is useful for implementing property binding, serialization, and generic property editors.</p>
+<p>Path syntax: 'propertyName[index]/propertyName[index]/...'</p><ul>
+<li>The '[index]' part is only required for properties that need indices (arrays and maps)</li>
+<li>Example: "Transform/Position[0]" accesses the X component of a Position vector in a Transform property</li>
+<li>An empty path is allowed, in which case operations work directly on the root object</li>
+</ul>
+<p>Usage pattern:</p><ol type="1">
+<li>Create <a class="el" href="../../d1/d14/classez_property_path.htm" title="Stores a path from an object of a given type to a property inside of it.">ezPropertyPath</a> instance</li>
+<li>Initialize with <a class="el" href="../../d1/d14/classez_property_path.htm#a0a1be71d5dd706f9bd7533fee71b2d3d" title="Resolves a path string into property steps and validates them against the root type.">InitializeFromPath()</a> using root type and path string</li>
+<li>Use <a class="el" href="../../d1/d14/classez_property_path.htm#ab14b78699d2811eab87e3d6dc059b7fa" title="Convenience function that writes &#39;value&#39; to the &#39;pRootObject&#39; at the current path.">SetValue()</a>/GetValue() for simple access or <a class="el" href="../../d1/d14/classez_property_path.htm#a11bad9a8bac2592cf572f74747430918" title="Applies the path up to the last step and allows a functor to write to the final property.">WriteProperty()</a>/ReadProperty() for complex operations</li>
+<li>Reuse the same path instance for multiple objects of the same root type </li>
+</ol>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a0a1be71d5dd706f9bd7533fee71b2d3d" name="a0a1be71d5dd706f9bd7533fee71b2d3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a1be71d5dd706f9bd7533fee71b2d3d">&#9670;&#160;</a></span>InitializeFromPath() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/da9/structez_result.htm">ezResult</a> ezPropertyPath::InitializeFromPath </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> &amp;&#160;</td>
+          <td class="paramname"><em>rootObjectRtti</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>szPath</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resolves a path string into property steps and validates them against the root type. </p>
+<p>The path syntax is 'propertyName[index]/propertyName[index]/...'. The '[index]' part is only required for properties that need indices (arrays and maps). Returns failure if any property in the path doesn't exist or has incompatible types. </p>
+
+</div>
+</div>
+<a id="a28c0e61f8da54e3b24d8690078089e1f" name="a28c0e61f8da54e3b24d8690078089e1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28c0e61f8da54e3b24d8690078089e1f">&#9670;&#160;</a></span>InitializeFromPath() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/da9/structez_result.htm">ezResult</a> ezPropertyPath::InitializeFromPath </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&#160;</td>
+          <td class="paramname"><em>pRootObjectRtti</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr</a>&lt; const <a class="el" href="../../d4/dc8/structez_property_path_step.htm">ezPropertyPathStep</a> &gt;&#160;</td>
+          <td class="paramname"><em>path</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resolves a path provided as an array of <a class="el" href="../../d4/dc8/structez_property_path_step.htm" title="Reflected property step that can be used to init an ezPropertyPath.">ezPropertyPathStep</a> and validates it. </p>
+<p>This overload allows programmatic construction of paths. Each step must have a valid property name and appropriate index (if required by the property type). </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/Reflection/<a class="el" href="../../d2/dbd/_property_path_8h_source.htm">PropertyPath.h</a></li>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/Reflection/Implementation/<b>PropertyPath.cpp</b></li>
 </ul>
@@ -165,7 +237,7 @@ template&lt;typename T &gt; </td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d1/d14/classez_property_path.htm">ezPropertyPath</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:05 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:46 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

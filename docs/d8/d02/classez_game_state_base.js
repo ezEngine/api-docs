@@ -8,6 +8,6 @@ var classez_game_state_base =
     [ "OnActivation", "d8/d02/classez_game_state_base.htm#ae6aa395c7207aa973d71197206a12796", null ],
     [ "OnDeactivation", "d8/d02/classez_game_state_base.htm#a6947f8af9f0a6eba2d45b1b74be5d4fd", null ],
     [ "ProcessInput", "d8/d02/classez_game_state_base.htm#afa5fd779bcc55cf16174da688ed81db1", null ],
-    [ "RequestQuit", "d8/d02/classez_game_state_base.htm#a62468f85386f9cd3675cc166adcc96e2", null ],
+    [ "RequestQuit", "d8/d02/classez_game_state_base.htm#a6657556f36fb586aa1df1d238b9940a8", null ],
     [ "WasQuitRequested", "d8/d02/classez_game_state_base.htm#a5f4a7ded32f4dbbfed6880c8eba05eb5", null ]
 ];

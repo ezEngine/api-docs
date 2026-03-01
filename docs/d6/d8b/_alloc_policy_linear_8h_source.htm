@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -124,7 +124,7 @@ $(document).ready(function(){initNavTree('d6/d8b/_alloc_policy_linear_8h_source.
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>      <span class="stringliteral">&quot;There is still something allocated!&quot;</span>);</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; bucket : m_Buckets)</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    {</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>      m_pParent-&gt;Deallocate(bucket.GetPtr());</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>      m_pParent-&gt;<a class="code hl_function" href="../../d0/dbb/classez_allocator.htm#a52f4f289a1df783791e9b68537f69c6d">Deallocate</a>(bucket.GetPtr());</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    }</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  }</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
@@ -221,7 +221,8 @@ $(document).ready(function(){initNavTree('d6/d8b/_alloc_policy_linear_8h_source.
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>};</div>
 </div>
 <div class="ttc" id="aclassez_alloc_policy_linear_htm"><div class="ttname"><a href="../../df/dde/classez_alloc_policy_linear.htm">ezAllocPolicyLinear</a></div><div class="ttdoc">This policy implements a linear allocator that can only grow and at some point all allocations gets r...</div><div class="ttdef"><b>Definition</b> AllocPolicyLinear.h:12</div></div>
-<div class="ttc" id="aclassez_allocator_htm"><div class="ttname"><a href="../../d0/dbb/classez_allocator.htm">ezAllocator</a></div><div class="ttdoc">Base class for all memory allocators.</div><div class="ttdef"><b>Definition</b> Allocator.h:23</div></div>
+<div class="ttc" id="aclassez_allocator_htm"><div class="ttname"><a href="../../d0/dbb/classez_allocator.htm">ezAllocator</a></div><div class="ttdoc">Base class for all memory allocators.</div><div class="ttdef"><b>Definition</b> Allocator.h:37</div></div>
+<div class="ttc" id="aclassez_allocator_htm_a52f4f289a1df783791e9b68537f69c6d"><div class="ttname"><a href="../../d0/dbb/classez_allocator.htm#a52f4f289a1df783791e9b68537f69c6d">ezAllocator::Deallocate</a></div><div class="ttdeci">virtual void Deallocate(void *pPtr)=0</div><div class="ttdoc">Deallocates memory previously allocated by this allocator.</div></div>
 <div class="ttc" id="aclassez_allocator_htm_aa7821be46ed6588c027abb25b845ab08"><div class="ttname"><a href="../../d0/dbb/classez_allocator.htm#aa7821be46ed6588c027abb25b845ab08">ezAllocator::Allocate</a></div><div class="ttdeci">virtual void * Allocate(size_t uiSize, size_t uiAlign, ezMemoryUtils::DestructorFunction destructorFunc=nullptr)=0</div><div class="ttdoc">Interface, do not use this directly, always use the new/delete macros below.</div></div>
 <div class="ttc" id="aclassez_array_base_htm_a35630a870ec53cf3b022653232a31c60"><div class="ttname"><a href="../../dc/d59/classez_array_base.htm#a35630a870ec53cf3b022653232a31c60">ezArrayBase::IsEmpty</a></div><div class="ttdeci">bool IsEmpty() const</div><div class="ttdoc">Returns true, if the array does not contain any elements.</div><div class="ttdef"><b>Definition</b> ArrayBase_inl.h:178</div></div>
 <div class="ttc" id="aclassez_array_base_htm_a51ba61fcbd2350ae8850754a41acbaa1"><div class="ttname"><a href="../../dc/d59/classez_array_base.htm#a51ba61fcbd2350ae8850754a41acbaa1">ezArrayBase::GetCount</a></div><div class="ttdeci">ezUInt32 GetCount() const</div><div class="ttdoc">Returns the number of active elements in the array.</div><div class="ttdef"><b>Definition</b> ArrayBase_inl.h:172</div></div>
@@ -230,16 +231,16 @@ $(document).ready(function(){initNavTree('d6/d8b/_alloc_policy_linear_8h_source.
 <div class="ttc" id="aclassez_hybrid_array_htm"><div class="ttname"><a href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray</a></div><div class="ttdoc">A hybrid array uses in-place storage to handle the first few elements without any allocation....</div><div class="ttdef"><b>Definition</b> HybridArray.h:12</div></div>
 <div class="ttc" id="aclassez_memory_utils_htm_a2583fd48644a0a7b3eb72797c7c65a34"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm#a2583fd48644a0a7b3eb72797c7c65a34">ezMemoryUtils::AlignSize</a></div><div class="ttdeci">static T AlignSize(T uiSize, T uiAlignment)</div><div class="ttdoc">Aligns the given size uiSize by rounding up to the next multiple of the size.</div></div>
 <div class="ttc" id="aclassez_memory_utils_htm_aab6acdb7a4c70e50c5b23b2d6b29c243"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm#aab6acdb7a4c70e50c5b23b2d6b29c243">ezMemoryUtils::PatternFill</a></div><div class="ttdeci">static void PatternFill(T *pDestination, ezUInt8 uiBytePattern, size_t uiCount=1)</div><div class="ttdoc">Fills every byte of the provided buffer with the given value.</div></div>
-<div class="ttc" id="astructez_allocator_1_1_stats_htm"><div class="ttname"><a href="../../d5/d3e/structez_allocator_1_1_stats.htm">ezAllocator::Stats</a></div><div class="ttdef"><b>Definition</b> Allocator.h:26</div></div>
-<div class="ttc" id="astructez_allocator_1_1_stats_htm_a5785c54ad94113fdd027173d7f77c0ab"><div class="ttname"><a href="../../d5/d3e/structez_allocator_1_1_stats.htm#a5785c54ad94113fdd027173d7f77c0ab">ezAllocator::Stats::m_uiAllocationSize</a></div><div class="ttdeci">ezUInt64 m_uiAllocationSize</div><div class="ttdoc">total allocation size in bytes</div><div class="ttdef"><b>Definition</b> Allocator.h:31</div></div>
-<div class="ttc" id="astructez_allocator_1_1_stats_htm_a7b02d6bd56b8cb550b79dd21bf805523"><div class="ttname"><a href="../../d5/d3e/structez_allocator_1_1_stats.htm#a7b02d6bd56b8cb550b79dd21bf805523">ezAllocator::Stats::m_uiNumAllocations</a></div><div class="ttdeci">ezUInt64 m_uiNumAllocations</div><div class="ttdoc">total number of allocations</div><div class="ttdef"><b>Definition</b> Allocator.h:29</div></div>
+<div class="ttc" id="astructez_allocator_1_1_stats_htm"><div class="ttname"><a href="../../d5/d3e/structez_allocator_1_1_stats.htm">ezAllocator::Stats</a></div><div class="ttdef"><b>Definition</b> Allocator.h:40</div></div>
+<div class="ttc" id="astructez_allocator_1_1_stats_htm_a5785c54ad94113fdd027173d7f77c0ab"><div class="ttname"><a href="../../d5/d3e/structez_allocator_1_1_stats.htm#a5785c54ad94113fdd027173d7f77c0ab">ezAllocator::Stats::m_uiAllocationSize</a></div><div class="ttdeci">ezUInt64 m_uiAllocationSize</div><div class="ttdoc">total allocation size in bytes</div><div class="ttdef"><b>Definition</b> Allocator.h:45</div></div>
+<div class="ttc" id="astructez_allocator_1_1_stats_htm_a7b02d6bd56b8cb550b79dd21bf805523"><div class="ttname"><a href="../../d5/d3e/structez_allocator_1_1_stats.htm#a7b02d6bd56b8cb550b79dd21bf805523">ezAllocator::Stats::m_uiNumAllocations</a></div><div class="ttdeci">ezUInt64 m_uiNumAllocations</div><div class="ttdoc">total number of allocations</div><div class="ttdef"><b>Definition</b> Allocator.h:43</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_adb0ac2a169525f5fa05f0527c58e205.htm">Memory</a></li><li class="navelem"><a class="el" href="../../dir_7e8e2491845ec7b2b62df622f0295925.htm">Policies</a></li><li class="navelem"><b>AllocPolicyLinear.h</b></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:00:58 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:39 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

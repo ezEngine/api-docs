@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -96,11 +96,16 @@ $(document).ready(function(){initNavTree('d3/dff/classez_reflection_serializer.h
   <div class="headertitle"><div class="title">ezReflectionSerializer Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>High-level serialization interface for reflected objects using DDL and binary formats.  
+ <a href="../../d3/dff/classez_reflection_serializer.htm#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d1/d9c/_reflection_serializer_8h_source.htm">ReflectionSerializer.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a98c5a06a1c35e38e435364176aebda68" id="r_a98c5a06a1c35e38e435364176aebda68"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dff/classez_reflection_serializer.htm#a98c5a06a1c35e38e435364176aebda68">WriteObjectToDDL</a> (<a class="el" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a> &amp;inout_stream, const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *pRtti, const void *pObject, bool bCompactMmode=true, <a class="el" href="../../d0/ddb/classez_open_ddl_writer.htm#ac979ff3b3595bc87506be39e55b0c5d2">ezOpenDdlWriter::TypeStringMode</a> typeMode=<a class="el" href="../../d0/ddb/classez_open_ddl_writer.htm#ac979ff3b3595bc87506be39e55b0c5d2ace42b65744e60ed9b32e7d4f750a66a5">ezOpenDdlWriter::TypeStringMode::Shortest</a>)</td></tr>
-<tr class="memdesc:a98c5a06a1c35e38e435364176aebda68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes all property values of the reflected <em>pObject</em> of type <em>pRtti</em> to <em>stream</em> in DDL format.  <br /></td></tr>
+<tr class="memdesc:a98c5a06a1c35e38e435364176aebda68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes all property values of the reflected object to stream in DDL format.  <br /></td></tr>
 <tr class="separator:a98c5a06a1c35e38e435364176aebda68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf6148167373ed389b41ab2960001c9d" id="r_aaf6148167373ed389b41ab2960001c9d"><td class="memItemLeft" align="right" valign="top"><a id="aaf6148167373ed389b41ab2960001c9d" name="aaf6148167373ed389b41ab2960001c9d"></a>
 static void&#160;</td><td class="memItemRight" valign="bottom"><b>WriteObjectToDDL</b> (<a class="el" href="../../d0/ddb/classez_open_ddl_writer.htm">ezOpenDdlWriter</a> &amp;ref_ddl, const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *pRtti, const void *pObject, <a class="el" href="../../da/d89/classez_uuid.htm">ezUuid</a> guid=<a class="el" href="../../da/d89/classez_uuid.htm">ezUuid</a>())</td></tr>
@@ -111,7 +116,7 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>WriteObjectToB
 <tr class="memdesc:a65537094b05e595f2bcb0381c2f129b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as WriteObjectToDDL but binary. <br /></td></tr>
 <tr class="separator:a65537094b05e595f2bcb0381c2f129b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a048ce7e390441a95f4445ba996a6b497" id="r_a048ce7e390441a95f4445ba996a6b497"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dff/classez_reflection_serializer.htm#a048ce7e390441a95f4445ba996a6b497">ReadObjectFromDDL</a> (<a class="el" href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a> &amp;inout_stream, const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&amp;ref_pRtti)</td></tr>
-<tr class="memdesc:a048ce7e390441a95f4445ba996a6b497"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the entire DDL data in the stream and restores a reflected object.  <br /></td></tr>
+<tr class="memdesc:a048ce7e390441a95f4445ba996a6b497"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads DDL data from stream and creates a new reflected object with restored properties.  <br /></td></tr>
 <tr class="separator:a048ce7e390441a95f4445ba996a6b497"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a4ffd4a3042def116aaed16694b0349" id="r_a7a4ffd4a3042def116aaed16694b0349"><td class="memItemLeft" align="right" valign="top"><a id="a7a4ffd4a3042def116aaed16694b0349" name="a7a4ffd4a3042def116aaed16694b0349"></a>
 static void *&#160;</td><td class="memItemRight" valign="bottom"><b>ReadObjectFromDDL</b> (const <a class="el" href="../../db/d71/classez_open_ddl_reader_element.htm">ezOpenDdlReaderElement</a> *pRootElement, const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&amp;ref_pRtti)</td></tr>
@@ -121,7 +126,7 @@ static void *&#160;</td><td class="memItemRight" valign="bottom"><b>ReadObjectFr
 <tr class="memdesc:a4b6dd7ccf1223fb591f9d8386ba7124c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as ReadObjectFromDDL but binary. <br /></td></tr>
 <tr class="separator:a4b6dd7ccf1223fb591f9d8386ba7124c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0832d94f4981d26171926fe4462ce9a" id="r_ac0832d94f4981d26171926fe4462ce9a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dff/classez_reflection_serializer.htm#ac0832d94f4981d26171926fe4462ce9a">ReadObjectPropertiesFromDDL</a> (<a class="el" href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a> &amp;inout_stream, const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> &amp;rtti, void *pObject)</td></tr>
-<tr class="memdesc:ac0832d94f4981d26171926fe4462ce9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the entire DDL data in the stream and sets all properties of the given object.  <br /></td></tr>
+<tr class="memdesc:ac0832d94f4981d26171926fe4462ce9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads DDL data and applies property values to an existing object.  <br /></td></tr>
 <tr class="separator:ac0832d94f4981d26171926fe4462ce9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9680214d39a47626c124d014647d1c5" id="r_af9680214d39a47626c124d014647d1c5"><td class="memItemLeft" align="right" valign="top"><a id="af9680214d39a47626c124d014647d1c5" name="af9680214d39a47626c124d014647d1c5"></a>
 static void&#160;</td><td class="memItemRight" valign="bottom"><b>ReadObjectPropertiesFromBinary</b> (<a class="el" href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a> &amp;inout_stream, const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> &amp;rtti, void *pObject)</td></tr>
@@ -139,7 +144,10 @@ template&lt;typename T &gt; </td></tr>
 <tr class="memdesc:a66f45a45d0ed9a3f8bf828234566a458"><td class="mdescLeft">&#160;</td><td class="mdescRight">Templated convenience function that calls Clone and automatically deduces the type. <br /></td></tr>
 <tr class="separator:a66f45a45d0ed9a3f8bf828234566a458"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>High-level serialization interface for reflected objects using DDL and binary formats. </p>
+<p>This class provides convenient functions for serializing/deserializing individual objects or their properties using ezEngine's reflection system. It supports both DDL (Data Definition Language) and binary formats with the same interface. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a2c22bef6cb508e5e6c8c7546cc2d2520" name="a2c22bef6cb508e5e6c8c7546cc2d2520"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2c22bef6cb508e5e6c8c7546cc2d2520">&#9670;&#160;</a></span>Clone() <span class="overload">[1/2]</span></h2>
 
@@ -175,7 +183,7 @@ template&lt;typename T &gt; </td></tr>
 </div><div class="memdoc">
 
 <p>Clones pObject of type pType and returns it. </p>
-<p>In case a class derived from <a class="el" href="../../db/d45/classez_reflected_class.htm" title="All classes that should be dynamically reflectable, need to be derived from this base class.">ezReflectedClass</a> is passed in the correct derived type will automatically be determined so it is not necessary to put the exact type into pType, any derived class type will do. </p>
+<p>In case a class derived from <a class="el" href="../../db/d45/classez_reflected_class.htm" title="Base class for all types that support dynamic reflection and runtime type identification.">ezReflectedClass</a> is passed in the correct derived type will automatically be determined so it is not necessary to put the exact type into pType, any derived class type will do. </p>
 
 </div>
 </div>
@@ -220,7 +228,7 @@ template&lt;typename T &gt; </td></tr>
 </div><div class="memdoc">
 
 <p>Clones pObject of type pType into the already existing pClone. </p>
-<p>In case a class derived from <a class="el" href="../../db/d45/classez_reflected_class.htm" title="All classes that should be dynamically reflectable, need to be derived from this base class.">ezReflectedClass</a> is passed in the correct derived type will automatically be determined so it is not necessary to put the exact type into pType, any derived class type will do. However, the function will assert if pObject and pClone actually have a different type. </p>
+<p>In case a class derived from <a class="el" href="../../db/d45/classez_reflected_class.htm" title="Base class for all types that support dynamic reflection and runtime type identification.">ezReflectedClass</a> is passed in the correct derived type will automatically be determined so it is not necessary to put the exact type into pType, any derived class type will do. However, the function will assert if pObject and pClone actually have a different type. </p>
 
 </div>
 </div>
@@ -258,9 +266,15 @@ template&lt;typename T &gt; </td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reads the entire DDL data in the stream and restores a reflected object. </p>
-<p>The object type is read from the DDL information in the stream and the object is either allocated through the given allocator, or, if none is provided, the default allocator for the type is used.</p>
-<p>All properties are set to the values as described in the DDL data, as long as the properties can be matched to the runtime type. </p>
+<p>Reads DDL data from stream and creates a new reflected object with restored properties. </p>
+<p>The object type is read from the DDL data and the object is allocated using the default allocator for that type. All properties are restored as described in the DDL data, as long as the properties can be matched to the runtime type. Properties that don't exist in the current type are ignored (useful for forward compatibility).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ref_pRtti</td><td>Outputs the RTTI type of the created object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the newly created object, or nullptr on failure </dd></dl>
 
 </div>
 </div>
@@ -304,9 +318,13 @@ template&lt;typename T &gt; </td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reads the entire DDL data in the stream and sets all properties of the given object. </p>
-<p>All properties are set to the values as described in the DDL data, as long as the properties can be matched to the runtime type. The given object should ideally be of the same type as the object had that was written to the stream. However, if the types do not match or the properties have changed, the data will still be restored as good as possible.</p>
-<p>The object itself will not be reset to the default state before the properties are set, so properties that do not appear in the DDL data, or cannot be matched, will not be affected. </p>
+<p>Reads DDL data and applies property values to an existing object. </p>
+<p>This function only modifies properties that exist in the DDL data and can be matched to the object's type. Properties not present in the DDL data remain unchanged. This is useful for:</p><ul>
+<li>Partial object updates</li>
+<li>Configuration loading</li>
+<li>Applying saved settings to default objects</li>
+</ul>
+<p>The object should ideally be of the same type that was serialized, but type mismatches are handled gracefully - compatible properties will be restored, incompatible ones ignored. </p>
 
 </div>
 </div>
@@ -362,10 +380,16 @@ template&lt;typename T &gt; </td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Writes all property values of the reflected <em>pObject</em> of type <em>pRtti</em> to <em>stream</em> in DDL format. </p>
-<p>Using <a class="el" href="../../d3/dff/classez_reflection_serializer.htm#ac0832d94f4981d26171926fe4462ce9a" title="Reads the entire DDL data in the stream and sets all properties of the given object.">ReadObjectPropertiesFromDDL()</a> you can read those properties back into an existing object. Using <a class="el" href="../../d3/dff/classez_reflection_serializer.htm#a048ce7e390441a95f4445ba996a6b497" title="Reads the entire DDL data in the stream and restores a reflected object.">ReadObjectFromDDL()</a> an object of the same type is allocated and its properties are restored from the DDL data.</p>
-<p>Non-existing objects (pObject == nullptr) are stored as objects of type "null". The compact mode and typeMode should be set according to whether the DDL data is used for interchange with other code only, or might also be read by humans.</p>
-<p>Read-only properties are not written out, as they cannot be restored anyway. </p>
+<p>Writes all property values of the reflected object to stream in DDL format. </p>
+<p>Serializes the complete object state including all reflected properties. Non-existing objects (pObject == nullptr) are stored as objects of type "null". Read-only properties are not written as they cannot be restored.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bCompactMode</td><td>Controls formatting: true for machine-readable, false for human-readable </td></tr>
+    <tr><td class="paramname">typeMode</td><td>Controls type name verbosity in output</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Use <a class="el" href="../../d3/dff/classez_reflection_serializer.htm#ac0832d94f4981d26171926fe4462ce9a" title="Reads DDL data and applies property values to an existing object.">ReadObjectPropertiesFromDDL()</a> to restore properties into an existing object, or <a class="el" href="../../d3/dff/classez_reflection_serializer.htm#a048ce7e390441a95f4445ba996a6b497" title="Reads DDL data from stream and creates a new reflected object with restored properties.">ReadObjectFromDDL()</a> to create a new object and restore its properties. </p>
 
 </div>
 </div>
@@ -379,7 +403,7 @@ template&lt;typename T &gt; </td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d3/dff/classez_reflection_serializer.htm">ezReflectionSerializer</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:05 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:47 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

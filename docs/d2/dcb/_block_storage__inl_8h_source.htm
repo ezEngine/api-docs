@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -107,7 +107,7 @@ $(document).ready(function(){initNavTree('d2/dcb/_block_storage__inl_8h_source.h
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>  m_uiCurrentIndex = uiStartIndex;</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>  m_uiEndIndex = <a class="code hl_function" href="../../db/d78/namespaceez_math.htm#a6f7ee19d0f8e81ff6ae5f394075e3a56">ezMath::Max</a>(uiStartIndex + uiCount, uiCount);</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>  <span class="keywordflow">if</span> (StorageType == ezBlockStorageType::FreeList)</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>  <span class="keywordflow">if</span> (StorageType == <a class="code hl_enumvalue" href="../../d9/d03/structez_block_storage_type.htm#a6aa9ff9fec7b6c8f0e5b31cd44ded91ba4c4f02aa8591c4203e8134b13fd87bb5">ezBlockStorageType::FreeList</a>)</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>  {</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    ezUInt32 uiEndIndex = <a class="code hl_function" href="../../db/d78/namespaceez_math.htm#ad8009b4da9cb427658d71e30576f209e">ezMath::Min</a>(m_uiEndIndex, m_Storage.m_uiCount);</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordflow">while</span> (m_uiCurrentIndex &lt; uiEndIndex &amp;&amp; !m_Storage.m_UsedEntries.IsBitSet(m_uiCurrentIndex))</div>
@@ -148,7 +148,7 @@ $(document).ready(function(){initNavTree('d2/dcb/_block_storage__inl_8h_source.h
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>{</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  ++m_uiCurrentIndex;</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keywordflow">if</span> (StorageType == ezBlockStorageType::FreeList)</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keywordflow">if</span> (StorageType == <a class="code hl_enumvalue" href="../../d9/d03/structez_block_storage_type.htm#a6aa9ff9fec7b6c8f0e5b31cd44ded91ba4c4f02aa8591c4203e8134b13fd87bb5">ezBlockStorageType::FreeList</a>)</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  {</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    ezUInt32 uiEndIndex = <a class="code hl_function" href="../../db/d78/namespaceez_math.htm#ad8009b4da9cb427658d71e30576f209e">ezMath::Min</a>(m_uiEndIndex, m_Storage.m_uiCount);</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordflow">while</span> (m_uiCurrentIndex &lt; uiEndIndex &amp;&amp; !m_Storage.m_UsedEntries.IsBitSet(m_uiCurrentIndex))</div>
@@ -171,31 +171,38 @@ $(document).ready(function(){initNavTree('d2/dcb/_block_storage__inl_8h_source.h
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>}</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, ezUInt32 BlockSize, ezBlockStorageType::Enum StorageType&gt;</div>
+<div class="foldopen" id="foldopen00075" data-start="{" data-end="}">
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="../../d3/d1f/classez_block_storage.htm#aa148388aaa0d738f9c67b9be5a106cd7">   75</a></span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, ezUInt32 BlockSize, ezBlockStorageType::Enum StorageType&gt;</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>EZ_FORCE_INLINE <a class="code hl_class" href="../../d3/d1f/classez_block_storage.htm">ezBlockStorage&lt;T, BlockSize, StorageType&gt;::Iterator::Iterator</a>(</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  <span class="keyword">const</span> <a class="code hl_class" href="../../d3/d1f/classez_block_storage.htm">ezBlockStorage&lt;T, BlockSize, StorageType&gt;</a>&amp; storage, ezUInt32 uiStartIndex, ezUInt32 uiCount)</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  : ConstIterator(storage, uiStartIndex, uiCount)</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>{</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>}</div>
+<div class="foldopen" id="foldopen00080" data-start="{" data-end="}">
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="../../d3/d1f/classez_block_storage.htm#adb116b120c3614ddecb6f58accd45d8d">   80</a></span>}</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, ezUInt32 BlockSize, ezBlockStorageType::Enum StorageType&gt;</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>EZ_ALWAYS_INLINE T&amp; <a class="code hl_class" href="../../d3/d1f/classez_block_storage.htm">ezBlockStorage&lt;T, BlockSize, StorageType&gt;::Iterator::operator*</a>()</div>
+<div class="foldopen" id="foldopen00083" data-start="{" data-end="}">
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="../../d3/d1f/classez_block_storage.htm#ab0a92ec402d0eb986f678a7bc6f3fc1c">   83</a></span>EZ_ALWAYS_INLINE T&amp; <a class="code hl_class" href="../../d3/d1f/classez_block_storage.htm">ezBlockStorage&lt;T, BlockSize, StorageType&gt;::Iterator::operator*</a>()</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>{</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  <span class="keywordflow">return</span> this-&gt;CurrentElement();</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>}</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, ezUInt32 BlockSize, ezBlockStorageType::Enum StorageType&gt;</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>EZ_ALWAYS_INLINE T* <a class="code hl_class" href="../../d3/d1f/classez_block_storage.htm">ezBlockStorage&lt;T, BlockSize, StorageType&gt;::Iterator::operator-&gt;</a>()</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>{</div>
+<div class="foldopen" id="foldopen00090" data-start="{" data-end="}">
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="../../d3/d1f/classez_block_storage.htm#a2b3e58ae3cd00c557ea6960fdd5f56b2">   90</a></span>{</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  <span class="keywordflow">return</span> &amp;(this-&gt;CurrentElement());</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>}</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="foldopen" id="foldopen00093" data-start="{" data-end="}">
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="../../d3/d1f/classez_block_storage.htm#a58566b46d2ab2f9b83c282528b4327e7">   93</a></span> </div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, ezUInt32 BlockSize, ezBlockStorageType::Enum StorageType&gt;</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>EZ_ALWAYS_INLINE <a class="code hl_class" href="../../d3/d1f/classez_block_storage.htm">ezBlockStorage&lt;T, BlockSize, StorageType&gt;::Iterator::operator</a> T*()</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>{</div>
+<div class="foldopen" id="foldopen00096" data-start="{" data-end="}">
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="../../d3/d1f/classez_block_storage.htm#a8754aad12ba8a14e7bca9c5ff2d6dff5">   96</a></span>{</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  <span class="keywordflow">return</span> &amp;(this-&gt;CurrentElement());</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>}</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="foldopen" id="foldopen00099" data-start="{" data-end="}">
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="../../d3/d1f/classez_block_storage.htm#ae7bdb7441553d6b53da68edf3fd8861f">   99</a></span> </div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, ezUInt32 BlockSize, ezBlockStorageType::Enum StorageType&gt;</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>EZ_FORCE_INLINE <a class="code hl_class" href="../../d3/d1f/classez_block_storage.htm">ezBlockStorage&lt;T, BlockSize, StorageType&gt;::ezBlockStorage</a>(</div>
@@ -213,13 +220,14 @@ $(document).ready(function(){initNavTree('d2/dcb/_block_storage__inl_8h_source.h
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>}</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, ezUInt32 BlockSize, ezBlockStorageType::Enum StorageType&gt;</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="keywordtype">void</span> <a class="code hl_class" href="../../d3/d1f/classez_block_storage.htm">ezBlockStorage&lt;T, BlockSize, StorageType&gt;::Clear</a>()</div>
+<div class="foldopen" id="foldopen00118" data-start="{" data-end="}">
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="../../d3/d1f/classez_block_storage.htm#aa148388aaa0d738f9c67b9be5a106cd7">  118</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d3/d1f/classez_block_storage.htm#aa148388aaa0d738f9c67b9be5a106cd7">ezBlockStorage&lt;T, BlockSize, StorageType&gt;::Clear</a>()</div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>{</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  <span class="keywordflow">for</span> (ezUInt32 uiBlockIndex = 0; uiBlockIndex &lt; m_Blocks.GetCount(); ++uiBlockIndex)</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  {</div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <a class="code hl_struct" href="../../d6/d01/structez_data_block.htm">ezDataBlock&lt;T, BlockSize&gt;</a>&amp; block = m_Blocks[uiBlockIndex];</div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="keywordflow">if</span> (StorageType == ezBlockStorageType::Compact)</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="keywordflow">if</span> (StorageType == <a class="code hl_enumvalue" href="../../d9/d03/structez_block_storage_type.htm#a6aa9ff9fec7b6c8f0e5b31cd44ded91baee70985583f55d84c098b35e8e9b53ab">ezBlockStorageType::Compact</a>)</div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    {</div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>      <a class="code hl_function" href="../../dc/d4d/classez_memory_utils.htm#add65b87c39dade4ee7b0671c16b10a39">ezMemoryUtils::Destruct</a>(block.m_pData, block.m_uiCount);</div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    }</div>
@@ -240,14 +248,16 @@ $(document).ready(function(){initNavTree('d2/dcb/_block_storage__inl_8h_source.h
 <div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
 <div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>  m_Blocks.Clear();</div>
 <div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>}</div>
+</div>
 <div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
 <div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, ezUInt32 BlockSize, ezBlockStorageType::Enum StorageType&gt;</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>T* <a class="code hl_class" href="../../d3/d1f/classez_block_storage.htm">ezBlockStorage&lt;T, BlockSize, StorageType&gt;::Create</a>()</div>
+<div class="foldopen" id="foldopen00147" data-start="{" data-end="}">
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno"><a class="line" href="../../d3/d1f/classez_block_storage.htm#adb116b120c3614ddecb6f58accd45d8d">  147</a></span>T* <a class="code hl_function" href="../../d3/d1f/classez_block_storage.htm#adb116b120c3614ddecb6f58accd45d8d">ezBlockStorage&lt;T, BlockSize, StorageType&gt;::Create</a>()</div>
 <div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>{</div>
 <div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>  T* pNewObject = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>  ezUInt32 uiNewIndex = ezInvalidIndex;</div>
 <div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>  <span class="keywordflow">if</span> (StorageType == ezBlockStorageType::FreeList &amp;&amp; m_uiFreelistStart != ezInvalidIndex)</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>  <span class="keywordflow">if</span> (StorageType == <a class="code hl_enumvalue" href="../../d9/d03/structez_block_storage_type.htm#a6aa9ff9fec7b6c8f0e5b31cd44ded91ba4c4f02aa8591c4203e8134b13fd87bb5">ezBlockStorageType::FreeList</a> &amp;&amp; m_uiFreelistStart != ezInvalidIndex)</div>
 <div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>  {</div>
 <div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    uiNewIndex = m_uiFreelistStart;</div>
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
@@ -273,7 +283,7 @@ $(document).ready(function(){initNavTree('d2/dcb/_block_storage__inl_8h_source.h
 <div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>      pBlock = &amp;m_Blocks.PeekBack();</div>
 <div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    }</div>
 <div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    pNewObject = pBlock-&gt;ReserveBack();</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    pNewObject = pBlock-&gt;<a class="code hl_function" href="../../d6/d01/structez_data_block.htm#a2ad38dc1e6cbf62dbc3f99798b6db092">ReserveBack</a>();</div>
 <div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    uiNewIndex = m_uiCount;</div>
 <div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
 <div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    ++m_uiCount;</div>
@@ -281,7 +291,7 @@ $(document).ready(function(){initNavTree('d2/dcb/_block_storage__inl_8h_source.h
 <div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span> </div>
 <div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>  ezMemoryUtils::Construct&lt;SkipTrivialTypes&gt;(pNewObject, 1);</div>
 <div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>  <span class="keywordflow">if</span> (StorageType == ezBlockStorageType::FreeList)</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>  <span class="keywordflow">if</span> (StorageType == <a class="code hl_enumvalue" href="../../d9/d03/structez_block_storage_type.htm#a6aa9ff9fec7b6c8f0e5b31cd44ded91ba4c4f02aa8591c4203e8134b13fd87bb5">ezBlockStorageType::FreeList</a>)</div>
 <div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>  {</div>
 <div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    m_UsedEntries.SetCount(m_uiCount);</div>
 <div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    m_UsedEntries.SetBit(uiNewIndex);</div>
@@ -289,45 +299,57 @@ $(document).ready(function(){initNavTree('d2/dcb/_block_storage__inl_8h_source.h
 <div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
 <div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>  <span class="keywordflow">return</span> pNewObject;</div>
 <div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>}</div>
+</div>
 <div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
 <div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, ezUInt32 BlockSize, ezBlockStorageType::Enum StorageType&gt;</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>EZ_FORCE_INLINE <span class="keywordtype">void</span> <a class="code hl_class" href="../../d3/d1f/classez_block_storage.htm">ezBlockStorage&lt;T, BlockSize, StorageType&gt;::Delete</a>(T* pObject)</div>
+<div class="foldopen" id="foldopen00196" data-start="{" data-end="}">
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno"><a class="line" href="../../d3/d1f/classez_block_storage.htm#ab0a92ec402d0eb986f678a7bc6f3fc1c">  196</a></span>EZ_FORCE_INLINE <span class="keywordtype">void</span> <a class="code hl_function" href="../../d3/d1f/classez_block_storage.htm#ab0a92ec402d0eb986f678a7bc6f3fc1c">ezBlockStorage&lt;T, BlockSize, StorageType&gt;::Delete</a>(T* pObject)</div>
 <div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>{</div>
 <div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>  T* pDummy;</div>
 <div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>  Delete(pObject, pDummy);</div>
 <div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>}</div>
+</div>
 <div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span> </div>
 <div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, ezUInt32 BlockSize, ezBlockStorageType::Enum StorageType&gt;</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span><span class="keywordtype">void</span> <a class="code hl_class" href="../../d3/d1f/classez_block_storage.htm">ezBlockStorage&lt;T, BlockSize, StorageType&gt;::Delete</a>(T* pObject, T*&amp; out_pMovedObject)</div>
+<div class="foldopen" id="foldopen00203" data-start="{" data-end="}">
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno"><a class="line" href="../../d3/d1f/classez_block_storage.htm#a2b3e58ae3cd00c557ea6960fdd5f56b2">  203</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d3/d1f/classez_block_storage.htm#ab0a92ec402d0eb986f678a7bc6f3fc1c">ezBlockStorage&lt;T, BlockSize, StorageType&gt;::Delete</a>(T* pObject, T*&amp; out_pMovedObject)</div>
 <div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>{</div>
 <div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>  Delete(pObject, out_pMovedObject, <a class="code hl_struct" href="../../d6/d09/structez_trait_int.htm">ezTraitInt&lt;StorageType&gt;</a>());</div>
 <div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>}</div>
+</div>
 <div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span> </div>
 <div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, ezUInt32 BlockSize, ezBlockStorageType::Enum StorageType&gt;</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>EZ_ALWAYS_INLINE ezUInt32 <a class="code hl_class" href="../../d3/d1f/classez_block_storage.htm">ezBlockStorage&lt;T, BlockSize, StorageType&gt;::GetCount</a>()<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00209" data-start="{" data-end="}">
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno"><a class="line" href="../../d3/d1f/classez_block_storage.htm#a58566b46d2ab2f9b83c282528b4327e7">  209</a></span>EZ_ALWAYS_INLINE ezUInt32 <a class="code hl_function" href="../../d3/d1f/classez_block_storage.htm#a58566b46d2ab2f9b83c282528b4327e7">ezBlockStorage&lt;T, BlockSize, StorageType&gt;::GetCount</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>  <span class="keywordflow">return</span> m_uiCount;</div>
 <div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>}</div>
+</div>
 <div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
 <div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, ezUInt32 BlockSize, ezBlockStorageType::Enum StorageType&gt;</div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>EZ_ALWAYS_INLINE <span class="keyword">typename</span> <a class="code hl_class" href="../../d8/de1/classez_block_storage_1_1_iterator.htm">ezBlockStorage&lt;T, BlockSize, StorageType&gt;::Iterator</a> <a class="code hl_class" href="../../d3/d1f/classez_block_storage.htm">ezBlockStorage&lt;T, BlockSize, StorageType&gt;::GetIterator</a>(</div>
+<div class="foldopen" id="foldopen00215" data-start="{" data-end="}">
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno"><a class="line" href="../../d3/d1f/classez_block_storage.htm#a8754aad12ba8a14e7bca9c5ff2d6dff5">  215</a></span>EZ_ALWAYS_INLINE <span class="keyword">typename</span> <a class="code hl_class" href="../../d8/de1/classez_block_storage_1_1_iterator.htm">ezBlockStorage&lt;T, BlockSize, StorageType&gt;::Iterator</a> <a class="code hl_function" href="../../d3/d1f/classez_block_storage.htm#a8754aad12ba8a14e7bca9c5ff2d6dff5">ezBlockStorage&lt;T, BlockSize, StorageType&gt;::GetIterator</a>(</div>
 <div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>  ezUInt32 uiStartIndex <span class="comment">/*= 0*/</span>, ezUInt32 uiCount <span class="comment">/*= ezInvalidIndex*/</span>)</div>
 <div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>{</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>  <span class="keywordflow">return</span> Iterator(*<span class="keyword">this</span>, uiStartIndex, uiCount);</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>  <span class="keywordflow">return</span> <a class="code hl_class" href="../../d8/de1/classez_block_storage_1_1_iterator.htm">Iterator</a>(*<span class="keyword">this</span>, uiStartIndex, uiCount);</div>
 <div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>}</div>
+</div>
 <div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
 <div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, ezUInt32 BlockSize, ezBlockStorageType::Enum StorageType&gt;</div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>EZ_ALWAYS_INLINE <span class="keyword">typename</span> <a class="code hl_class" href="../../d5/d8b/classez_block_storage_1_1_const_iterator.htm">ezBlockStorage&lt;T, BlockSize, StorageType&gt;::ConstIterator</a> <a class="code hl_class" href="../../d3/d1f/classez_block_storage.htm">ezBlockStorage&lt;T, BlockSize, StorageType&gt;::GetIterator</a>(</div>
+<div class="foldopen" id="foldopen00222" data-start="{" data-end="}">
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno"><a class="line" href="../../d3/d1f/classez_block_storage.htm#ae7bdb7441553d6b53da68edf3fd8861f">  222</a></span>EZ_ALWAYS_INLINE <span class="keyword">typename</span> <a class="code hl_class" href="../../d5/d8b/classez_block_storage_1_1_const_iterator.htm">ezBlockStorage&lt;T, BlockSize, StorageType&gt;::ConstIterator</a> <a class="code hl_function" href="../../d3/d1f/classez_block_storage.htm#a8754aad12ba8a14e7bca9c5ff2d6dff5">ezBlockStorage&lt;T, BlockSize, StorageType&gt;::GetIterator</a>(</div>
 <div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>  ezUInt32 uiStartIndex <span class="comment">/*= 0*/</span>, ezUInt32 uiCount <span class="comment">/*= ezInvalidIndex*/</span>)<span class="keyword"> const</span></div>
 <div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>  <span class="keywordflow">return</span> ConstIterator(*<span class="keyword">this</span>, uiStartIndex, uiCount);</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>  <span class="keywordflow">return</span> <a class="code hl_class" href="../../d5/d8b/classez_block_storage_1_1_const_iterator.htm">ConstIterator</a>(*<span class="keyword">this</span>, uiStartIndex, uiCount);</div>
 <div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>}</div>
+</div>
+</div>
 <div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
 <div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, ezUInt32 BlockSize, ezBlockStorageType::Enum StorageType&gt;</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>EZ_FORCE_INLINE <span class="keywordtype">void</span> <a class="code hl_class" href="../../d3/d1f/classez_block_storage.htm">ezBlockStorage&lt;T, BlockSize, StorageType&gt;::Delete</a>(T* pObject, T*&amp; out_pMovedObject, <a class="code hl_struct" href="../../d6/d09/structez_trait_int.htm">ezTraitInt&lt;ezBlockStorageType::Compact&gt;</a>)</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>EZ_FORCE_INLINE <span class="keywordtype">void</span> <a class="code hl_function" href="../../d3/d1f/classez_block_storage.htm#ab0a92ec402d0eb986f678a7bc6f3fc1c">ezBlockStorage&lt;T, BlockSize, StorageType&gt;::Delete</a>(T* pObject, T*&amp; out_pMovedObject, <a class="code hl_struct" href="../../d6/d09/structez_trait_int.htm">ezTraitInt&lt;ezBlockStorageType::Compact&gt;</a>)</div>
 <div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>{</div>
 <div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>  <a class="code hl_struct" href="../../d6/d01/structez_data_block.htm">ezDataBlock&lt;T, BlockSize&gt;</a>&amp; lastBlock = m_Blocks.PeekBack();</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>  T* pLast = lastBlock.PopBack();</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>  T* pLast = lastBlock.<a class="code hl_function" href="../../d6/d01/structez_data_block.htm#a13c5e9349cea900170431053a2fef504">PopBack</a>();</div>
 <div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span> </div>
 <div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>  --m_uiCount;</div>
 <div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>  <span class="keywordflow">if</span> (pObject != pLast)</div>
@@ -349,7 +371,7 @@ $(document).ready(function(){initNavTree('d2/dcb/_block_storage__inl_8h_source.h
 <div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>}</div>
 <div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span> </div>
 <div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, ezUInt32 BlockSize, ezBlockStorageType::Enum StorageType&gt;</div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>EZ_FORCE_INLINE <span class="keywordtype">void</span> <a class="code hl_class" href="../../d3/d1f/classez_block_storage.htm">ezBlockStorage&lt;T, BlockSize, StorageType&gt;::Delete</a>(T* pObject, T*&amp; out_pMovedObject, <a class="code hl_struct" href="../../d6/d09/structez_trait_int.htm">ezTraitInt&lt;ezBlockStorageType::FreeList&gt;</a>)</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>EZ_FORCE_INLINE <span class="keywordtype">void</span> <a class="code hl_function" href="../../d3/d1f/classez_block_storage.htm#ab0a92ec402d0eb986f678a7bc6f3fc1c">ezBlockStorage&lt;T, BlockSize, StorageType&gt;::Delete</a>(T* pObject, T*&amp; out_pMovedObject, <a class="code hl_struct" href="../../d6/d09/structez_trait_int.htm">ezTraitInt&lt;ezBlockStorageType::FreeList&gt;</a>)</div>
 <div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>{</div>
 <div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>  ezUInt32 uiIndex = ezInvalidIndex;</div>
 <div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>  <span class="keywordflow">for</span> (ezUInt32 uiBlockIndex = 0; uiBlockIndex &lt; m_Blocks.GetCount(); ++uiBlockIndex)</div>
@@ -372,25 +394,40 @@ $(document).ready(function(){initNavTree('d2/dcb/_block_storage__inl_8h_source.h
 <div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>  *<span class="keyword">reinterpret_cast&lt;</span>ezUInt32*<span class="keyword">&gt;</span>(pObject) = m_uiFreelistStart;</div>
 <div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>  m_uiFreelistStart = uiIndex;</div>
 <div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>}</div>
-<div class="ttc" id="aclassez_allocator_htm"><div class="ttname"><a href="../../d0/dbb/classez_allocator.htm">ezAllocator</a></div><div class="ttdoc">Base class for all memory allocators.</div><div class="ttdef"><b>Definition</b> Allocator.h:23</div></div>
-<div class="ttc" id="aclassez_block_storage_1_1_const_iterator_htm"><div class="ttname"><a href="../../d5/d8b/classez_block_storage_1_1_const_iterator.htm">ezBlockStorage::ConstIterator</a></div><div class="ttdef"><b>Definition</b> BlockStorage.h:20</div></div>
-<div class="ttc" id="aclassez_block_storage_1_1_iterator_htm"><div class="ttname"><a href="../../d8/de1/classez_block_storage_1_1_iterator.htm">ezBlockStorage::Iterator</a></div><div class="ttdef"><b>Definition</b> BlockStorage.h:45</div></div>
-<div class="ttc" id="aclassez_block_storage_htm"><div class="ttname"><a href="../../d3/d1f/classez_block_storage.htm">ezBlockStorage</a></div><div class="ttdef"><b>Definition</b> BlockStorage.h:17</div></div>
-<div class="ttc" id="aclassez_large_block_allocator_htm"><div class="ttname"><a href="../../d1/d52/classez_large_block_allocator.htm">ezLargeBlockAllocator</a></div><div class="ttdoc">A block allocator which can only allocates blocks of memory at once.</div><div class="ttdef"><b>Definition</b> LargeBlockAllocator.h:40</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="ttc" id="aclassez_allocator_htm"><div class="ttname"><a href="../../d0/dbb/classez_allocator.htm">ezAllocator</a></div><div class="ttdoc">Base class for all memory allocators.</div><div class="ttdef"><b>Definition</b> Allocator.h:37</div></div>
+<div class="ttc" id="aclassez_block_storage_1_1_const_iterator_htm"><div class="ttname"><a href="../../d5/d8b/classez_block_storage_1_1_const_iterator.htm">ezBlockStorage::ConstIterator</a></div><div class="ttdef"><b>Definition</b> BlockStorage.h:33</div></div>
+<div class="ttc" id="aclassez_block_storage_1_1_iterator_htm"><div class="ttname"><a href="../../d8/de1/classez_block_storage_1_1_iterator.htm">ezBlockStorage::Iterator</a></div><div class="ttdef"><b>Definition</b> BlockStorage.h:58</div></div>
+<div class="ttc" id="aclassez_block_storage_htm"><div class="ttname"><a href="../../d3/d1f/classez_block_storage.htm">ezBlockStorage</a></div><div class="ttdoc">High-performance container for objects with pluggable storage strategies.</div><div class="ttdef"><b>Definition</b> BlockStorage.h:30</div></div>
+<div class="ttc" id="aclassez_block_storage_htm_a58566b46d2ab2f9b83c282528b4327e7"><div class="ttname"><a href="../../d3/d1f/classez_block_storage.htm#a58566b46d2ab2f9b83c282528b4327e7">ezBlockStorage::GetCount</a></div><div class="ttdeci">ezUInt32 GetCount() const</div><div class="ttdoc">Returns the total number of objects currently stored.</div><div class="ttdef"><b>Definition</b> BlockStorage_inl.h:209</div></div>
+<div class="ttc" id="aclassez_block_storage_htm_a8754aad12ba8a14e7bca9c5ff2d6dff5"><div class="ttname"><a href="../../d3/d1f/classez_block_storage.htm#a8754aad12ba8a14e7bca9c5ff2d6dff5">ezBlockStorage::GetIterator</a></div><div class="ttdeci">Iterator GetIterator(ezUInt32 uiStartIndex=0, ezUInt32 uiCount=ezInvalidIndex)</div><div class="ttdoc">Returns an iterator for traversing objects in a specified range.</div><div class="ttdef"><b>Definition</b> BlockStorage_inl.h:215</div></div>
+<div class="ttc" id="aclassez_block_storage_htm_aa148388aaa0d738f9c67b9be5a106cd7"><div class="ttname"><a href="../../d3/d1f/classez_block_storage.htm#aa148388aaa0d738f9c67b9be5a106cd7">ezBlockStorage::Clear</a></div><div class="ttdeci">void Clear()</div><div class="ttdoc">Removes all objects and deallocates all blocks.</div><div class="ttdef"><b>Definition</b> BlockStorage_inl.h:118</div></div>
+<div class="ttc" id="aclassez_block_storage_htm_ab0a92ec402d0eb986f678a7bc6f3fc1c"><div class="ttname"><a href="../../d3/d1f/classez_block_storage.htm#ab0a92ec402d0eb986f678a7bc6f3fc1c">ezBlockStorage::Delete</a></div><div class="ttdeci">void Delete(T *pObject)</div><div class="ttdoc">Deletes the specified object.</div><div class="ttdef"><b>Definition</b> BlockStorage_inl.h:196</div></div>
+<div class="ttc" id="aclassez_block_storage_htm_adb116b120c3614ddecb6f58accd45d8d"><div class="ttname"><a href="../../d3/d1f/classez_block_storage.htm#adb116b120c3614ddecb6f58accd45d8d">ezBlockStorage::Create</a></div><div class="ttdeci">T * Create()</div><div class="ttdoc">Creates a new object and returns a pointer to it.</div><div class="ttdef"><b>Definition</b> BlockStorage_inl.h:147</div></div>
+<div class="ttc" id="aclassez_large_block_allocator_htm"><div class="ttname"><a href="../../d1/d52/classez_large_block_allocator.htm">ezLargeBlockAllocator</a></div><div class="ttdoc">Specialized allocator for fixed-size memory blocks, optimized for bulk allocations.</div><div class="ttdef"><b>Definition</b> LargeBlockAllocator.h:67</div></div>
 <div class="ttc" id="aclassez_memory_utils_htm_ad6e16a61a60f0979acacc0d918abf74a"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm#ad6e16a61a60f0979acacc0d918abf74a">ezMemoryUtils::Relocate</a></div><div class="ttdeci">static void Relocate(T *pDestination, T *pSource, size_t uiCount=1)</div><div class="ttdoc">Moves objects of type T from pSource to pDestination.</div></div>
 <div class="ttc" id="aclassez_memory_utils_htm_add65b87c39dade4ee7b0671c16b10a39"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm#add65b87c39dade4ee7b0671c16b10a39">ezMemoryUtils::Destruct</a></div><div class="ttdeci">static void Destruct(T *pDestination, size_t uiCount=1)</div><div class="ttdoc">Destructs uiCount objects of type T at pDestination.</div></div>
 <div class="ttc" id="anamespaceez_math_htm_a6f7ee19d0f8e81ff6ae5f394075e3a56"><div class="ttname"><a href="../../db/d78/namespaceez_math.htm#a6f7ee19d0f8e81ff6ae5f394075e3a56">ezMath::Max</a></div><div class="ttdeci">constexpr EZ_ALWAYS_INLINE T Max(T f1, T f2)</div><div class="ttdoc">Returns the greater value, f1 or f2.</div><div class="ttdef"><b>Definition</b> Math_inl.h:39</div></div>
 <div class="ttc" id="anamespaceez_math_htm_ad8009b4da9cb427658d71e30576f209e"><div class="ttname"><a href="../../db/d78/namespaceez_math.htm#ad8009b4da9cb427658d71e30576f209e">ezMath::Min</a></div><div class="ttdeci">constexpr EZ_ALWAYS_INLINE T Min(T f1, T f2)</div><div class="ttdoc">Returns the smaller value, f1 or f2.</div><div class="ttdef"><b>Definition</b> Math_inl.h:27</div></div>
-<div class="ttc" id="astructez_arg_p_htm"><div class="ttname"><a href="../../d7/d5f/structez_arg_p.htm">ezArgP</a></div><div class="ttdef"><b>Definition</b> FormatStringArgs.h:76</div></div>
-<div class="ttc" id="astructez_data_block_htm"><div class="ttname"><a href="../../d6/d01/structez_data_block.htm">ezDataBlock</a></div><div class="ttdoc">This struct represents a block of type T, typically 4kb.</div><div class="ttdef"><b>Definition</b> LargeBlockAllocator.h:14</div></div>
-<div class="ttc" id="astructez_trait_int_htm"><div class="ttname"><a href="../../d6/d09/structez_trait_int.htm">ezTraitInt</a></div><div class="ttdoc">Type traits.</div><div class="ttdef"><b>Definition</b> TypeTraits.h:12</div></div>
+<div class="ttc" id="astructez_arg_p_htm"><div class="ttname"><a href="../../d7/d5f/structez_arg_p.htm">ezArgP</a></div><div class="ttdef"><b>Definition</b> FormatStringArgs.h:82</div></div>
+<div class="ttc" id="astructez_block_storage_type_htm_a6aa9ff9fec7b6c8f0e5b31cd44ded91ba4c4f02aa8591c4203e8134b13fd87bb5"><div class="ttname"><a href="../../d9/d03/structez_block_storage_type.htm#a6aa9ff9fec7b6c8f0e5b31cd44ded91ba4c4f02aa8591c4203e8134b13fd87bb5">ezBlockStorageType::FreeList</a></div><div class="ttdeci">@ FreeList</div><div class="ttdoc">Uses a free list to track available slots, preserving element positions.</div><div class="ttdef"><b>Definition</b> BlockStorage.h:12</div></div>
+<div class="ttc" id="astructez_block_storage_type_htm_a6aa9ff9fec7b6c8f0e5b31cd44ded91baee70985583f55d84c098b35e8e9b53ab"><div class="ttname"><a href="../../d9/d03/structez_block_storage_type.htm#a6aa9ff9fec7b6c8f0e5b31cd44ded91baee70985583f55d84c098b35e8e9b53ab">ezBlockStorageType::Compact</a></div><div class="ttdeci">@ Compact</div><div class="ttdoc">Maintains elements in contiguous memory by moving last element to fill gaps.</div><div class="ttdef"><b>Definition</b> BlockStorage.h:11</div></div>
+<div class="ttc" id="astructez_data_block_htm"><div class="ttname"><a href="../../d6/d01/structez_data_block.htm">ezDataBlock</a></div><div class="ttdoc">Represents a typed block of memory with fixed size, typically used for bulk allocations.</div><div class="ttdef"><b>Definition</b> LargeBlockAllocator.h:19</div></div>
+<div class="ttc" id="astructez_data_block_htm_a13c5e9349cea900170431053a2fef504"><div class="ttname"><a href="../../d6/d01/structez_data_block.htm#a13c5e9349cea900170431053a2fef504">ezDataBlock::PopBack</a></div><div class="ttdeci">T * PopBack()</div><div class="ttdoc">Removes and returns pointer to the last element in the block.</div><div class="ttdef"><b>Definition</b> LargeBlockAllocator_inl.h:17</div></div>
+<div class="ttc" id="astructez_data_block_htm_a2ad38dc1e6cbf62dbc3f99798b6db092"><div class="ttname"><a href="../../d6/d01/structez_data_block.htm#a2ad38dc1e6cbf62dbc3f99798b6db092">ezDataBlock::ReserveBack</a></div><div class="ttdeci">T * ReserveBack()</div><div class="ttdoc">Reserves space for one element at the end of the block.</div><div class="ttdef"><b>Definition</b> LargeBlockAllocator_inl.h:10</div></div>
+<div class="ttc" id="astructez_trait_int_htm"><div class="ttname"><a href="../../d6/d09/structez_trait_int.htm">ezTraitInt</a></div><div class="ttdoc">Compile-time type classification system for optimizing container operations.</div><div class="ttdef"><b>Definition</b> TypeTraits.h:22</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_adb0ac2a169525f5fa05f0527c58e205.htm">Memory</a></li><li class="navelem"><a class="el" href="../../dir_2b61d82766792ebb24827eac69b772f5.htm">Implementation</a></li><li class="navelem"><b>BlockStorage_inl.h</b></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:00:58 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:39 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

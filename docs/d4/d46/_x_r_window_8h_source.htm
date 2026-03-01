@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -100,8 +100,8 @@ $(document).ready(function(){initNavTree('d4/d46/_x_r_window_8h_source.htm','../
 <div class="contents">
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;Core/ActorSystem/ActorPluginWindow.h&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;Core/ResourceManager/ResourceHandle.h&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;Core/ResourceManager/ResourceHandle.h&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;Core/System/Window.h&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;Foundation/Reflection/Reflection.h&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;GameEngine/GameApplication/WindowOutputTarget.h&gt;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;RendererCore/Shader/ConstantBufferStorage.h&gt;</span></div>
@@ -161,38 +161,13 @@ $(document).ready(function(){initNavTree('d4/d46/_x_r_window_8h_source.htm','../
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <span class="keywordtype">bool</span> m_bRender = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>};</div>
 </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="foldopen" id="foldopen00066" data-start="{" data-end="};">
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="../../de/d1b/classez_actor_plugin_window_x_r.htm">   66</a></span><span class="keyword">class </span>EZ_GAMEENGINE_DLL <a class="code hl_class" href="../../de/d1b/classez_actor_plugin_window_x_r.htm">ezActorPluginWindowXR</a> : <span class="keyword">public</span> <a class="code hl_class" href="../../d2/d8c/classez_actor_plugin_window.htm">ezActorPluginWindow</a></div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>{</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  EZ_ADD_DYNAMIC_REFLECTION(<a class="code hl_class" href="../../de/d1b/classez_actor_plugin_window_x_r.htm">ezActorPluginWindowXR</a>, <a class="code hl_class" href="../../d2/d8c/classez_actor_plugin_window.htm">ezActorPluginWindow</a>);</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  <a class="code hl_class" href="../../de/d1b/classez_actor_plugin_window_x_r.htm">ezActorPluginWindowXR</a>(<a class="code hl_class" href="../../d0/d10/classez_x_r_interface.htm">ezXRInterface</a>* pVrInterface, <a class="code hl_class" href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt;ezWindowBase&gt;</a> pCompanionWindow, <a class="code hl_class" href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt;ezWindowOutputTargetGAL&gt;</a> pCompanionWindowOutput);</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <a class="code hl_class" href="../../de/d1b/classez_actor_plugin_window_x_r.htm">~ezActorPluginWindowXR</a>();</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  <span class="keywordtype">void</span> Initialize();</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <span class="keyword">virtual</span> <a class="code hl_class" href="../../d4/d8c/classez_window_base.htm">ezWindowBase</a>* GetWindow() <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="keyword">virtual</span> <a class="code hl_class" href="../../df/d7b/classez_window_output_target_base.htm">ezWindowOutputTargetBase</a>* GetOutputTarget() <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> Update() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  <a class="code hl_class" href="../../d0/d10/classez_x_r_interface.htm">ezXRInterface</a>* m_pVrInterface = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <a class="code hl_class" href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt;ezWindowXR&gt;</a> m_pWindow;</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <a class="code hl_class" href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr&lt;ezWindowOutputTargetXR&gt;</a> m_pWindowOutputTarget;</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>};</div>
-</div>
-<div class="ttc" id="aclassez_actor_plugin_window_htm"><div class="ttname"><a href="../../d2/d8c/classez_actor_plugin_window.htm">ezActorPluginWindow</a></div><div class="ttdef"><b>Definition</b> ActorPluginWindow.h:13</div></div>
-<div class="ttc" id="aclassez_actor_plugin_window_x_r_htm"><div class="ttname"><a href="../../de/d1b/classez_actor_plugin_window_x_r.htm">ezActorPluginWindowXR</a></div><div class="ttdoc">XR actor plugin window base implementation. Optionally wraps a companion window and output target.</div><div class="ttdef"><b>Definition</b> XRWindow.h:67</div></div>
 <div class="ttc" id="aclassez_atomic_integer_htm"><div class="ttname"><a href="../../da/d01/classez_atomic_integer.htm">ezAtomicInteger&lt; ezInt32 &gt;</a></div></div>
-<div class="ttc" id="aclassez_constant_buffer_storage_handle_htm"><div class="ttname"><a href="../../d3/dfa/classez_constant_buffer_storage_handle.htm">ezConstantBufferStorageHandle</a></div><div class="ttdef"><b>Definition</b> ConstantBufferStorage.h:59</div></div>
-<div class="ttc" id="aclassez_image_htm"><div class="ttname"><a href="../../d4/d43/classez_image.htm">ezImage</a></div><div class="ttdoc">A class containing image data and associated meta data.</div><div class="ttdef"><b>Definition</b> Image.h:103</div></div>
+<div class="ttc" id="aclassez_constant_buffer_storage_handle_htm"><div class="ttname"><a href="../../d3/dfa/classez_constant_buffer_storage_handle.htm">ezConstantBufferStorageHandle</a></div><div class="ttdef"><b>Definition</b> ConstantBufferStorage.h:77</div></div>
+<div class="ttc" id="aclassez_image_htm"><div class="ttname"><a href="../../d4/d43/classez_image.htm">ezImage</a></div><div class="ttdoc">Container for image data with automatic memory management.</div><div class="ttdef"><b>Definition</b> Image.h:139</div></div>
 <div class="ttc" id="aclassez_size_template_htm"><div class="ttname"><a href="../../d1/d2c/classez_size_template.htm">ezSizeTemplate&lt; ezUInt32 &gt;</a></div></div>
 <div class="ttc" id="aclassez_typed_resource_handle_htm"><div class="ttname"><a href="../../d3/dd7/classez_typed_resource_handle.htm">ezTypedResourceHandle&lt; class ezShaderResource &gt;</a></div></div>
 <div class="ttc" id="aclassez_unique_ptr_htm"><div class="ttname"><a href="../../d8/d96/classez_unique_ptr.htm">ezUniquePtr</a></div><div class="ttdoc">A Unique ptr manages an object and destroys that object when it goes out of scope....</div><div class="ttdef"><b>Definition</b> UniquePtr.h:10</div></div>
-<div class="ttc" id="aclassez_window_base_htm"><div class="ttname"><a href="../../d4/d8c/classez_window_base.htm">ezWindowBase</a></div><div class="ttdoc">Base class of all window classes that have a client area and a native window handle.</div><div class="ttdef"><b>Definition</b> Window.h:23</div></div>
+<div class="ttc" id="aclassez_window_base_htm"><div class="ttname"><a href="../../d4/d8c/classez_window_base.htm">ezWindowBase</a></div><div class="ttdoc">Base class of all window classes that have a client area and a native window handle.</div><div class="ttdef"><b>Definition</b> Window.h:24</div></div>
 <div class="ttc" id="aclassez_window_base_htm_a451e8408115c8efa7d4e41e0baf82b07"><div class="ttname"><a href="../../d4/d8c/classez_window_base.htm#a451e8408115c8efa7d4e41e0baf82b07">ezWindowBase::GetNativeWindowHandle</a></div><div class="ttdeci">virtual ezWindowHandle GetNativeWindowHandle() const =0</div><div class="ttdoc">Returns the platform specific window handle.</div></div>
 <div class="ttc" id="aclassez_window_base_htm_aa484f96a512ef8bd97c0dc60e38fc78e"><div class="ttname"><a href="../../d4/d8c/classez_window_base.htm#aa484f96a512ef8bd97c0dc60e38fc78e">ezWindowBase::ProcessWindowMessages</a></div><div class="ttdeci">virtual void ProcessWindowMessages()=0</div><div class="ttdoc">Runs the platform specific message pump.</div></div>
 <div class="ttc" id="aclassez_window_base_htm_afb1c39e95a74064ba59eab5cfeffe09d"><div class="ttname"><a href="../../d4/d8c/classez_window_base.htm#afb1c39e95a74064ba59eab5cfeffe09d">ezWindowBase::IsFullscreenWindow</a></div><div class="ttdeci">virtual bool IsFullscreenWindow(bool bOnlyProperFullscreenMode=false) const =0</div><div class="ttdoc">Whether the window is a fullscreen window or should be one - some platforms may enforce this via the ...</div></div>
@@ -200,8 +175,8 @@ $(document).ready(function(){initNavTree('d4/d46/_x_r_window_8h_source.htm','../
 <div class="ttc" id="aclassez_window_output_target_x_r_htm"><div class="ttname"><a href="../../d2/d8b/classez_window_output_target_x_r.htm">ezWindowOutputTargetXR</a></div><div class="ttdoc">XR Window output target base implementation. Optionally wraps a companion window output target.</div><div class="ttdef"><b>Definition</b> XRWindow.h:42</div></div>
 <div class="ttc" id="aclassez_window_x_r_htm"><div class="ttname"><a href="../../d0/de4/classez_window_x_r.htm">ezWindowXR</a></div><div class="ttdoc">XR Window base implementation. Optionally wraps a companion window.</div><div class="ttdef"><b>Definition</b> XRWindow.h:14</div></div>
 <div class="ttc" id="aclassez_window_x_r_htm_a0a1e3e21dd2b210b1e0352cb88e3f425"><div class="ttname"><a href="../../d0/de4/classez_window_x_r.htm#a0a1e3e21dd2b210b1e0352cb88e3f425">ezWindowXR::IsVisible</a></div><div class="ttdeci">virtual bool IsVisible() const override</div><div class="ttdoc">Whether the window can potentially be seen by the user. Windows that are minimized or hidden are not ...</div><div class="ttdef"><b>Definition</b> XRWindow.h:23</div></div>
-<div class="ttc" id="aclassez_x_r_interface_htm"><div class="ttname"><a href="../../d0/d10/classez_x_r_interface.htm">ezXRInterface</a></div><div class="ttdoc">XR singleton interface. Needs to be initialized to be used for VR or AR purposes.</div><div class="ttdef"><b>Definition</b> XRInterface.h:29</div></div>
-<div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition</b> Types.h:54</div></div>
+<div class="ttc" id="aclassez_x_r_interface_htm"><div class="ttname"><a href="../../d0/d10/classez_x_r_interface.htm">ezXRInterface</a></div><div class="ttdoc">XR singleton interface. Needs to be initialized to be used for VR or AR purposes.</div><div class="ttdef"><b>Definition</b> XRInterface.h:31</div></div>
+<div class="ttc" id="astructez_result_htm"><div class="ttname"><a href="../../d4/da9/structez_result.htm">ezResult</a></div><div class="ttdoc">Default enum for returning failure or success, instead of using a bool.</div><div class="ttdef"><b>Definition</b> Types.h:58</div></div>
 <div class="ttc" id="astructez_time_htm"><div class="ttname"><a href="../../d3/d90/structez_time.htm">ezTime</a></div><div class="ttdoc">The time class encapsulates a double value storing the time in seconds.</div><div class="ttdef"><b>Definition</b> Time.h:12</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -209,7 +184,7 @@ $(document).ready(function(){initNavTree('d4/d46/_x_r_window_8h_source.htm','../
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_fe4f349dd73c6459187bb04ae7deb06f.htm">GameEngine</a></li><li class="navelem"><a class="el" href="../../dir_6ea317da2c1164954fd28554a89c40c2.htm">XR</a></li><li class="navelem"><b>XRWindow.h</b></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:00 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:42 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

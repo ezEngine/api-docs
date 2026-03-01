@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('de/dcf/classez_conditional_lock.htm','
 </div><!--header-->
 <div class="contents">
 
-<p>Manages a lock (e.g. a mutex) and ensures that it is properly released as the lock object goes out of scope. The lock/unlock will only be done if the boolean condition is satisfied at scope creation time.  
+<p>RAII lock guard that conditionally acquires and releases locks based on runtime conditions.  
  <a href="../../de/dcf/classez_conditional_lock.htm#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../d5/d1e/_conditional_lock_8h_source.htm">ConditionalLock.h</a>&gt;</code></p>
@@ -110,7 +110,9 @@ EZ_ALWAYS_INLINE&#160;</td><td class="memItemRight" valign="bottom"><b>ezConditi
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
-class ezConditionalLock&lt; T &gt;</div><p>Manages a lock (e.g. a mutex) and ensures that it is properly released as the lock object goes out of scope. The lock/unlock will only be done if the boolean condition is satisfied at scope creation time. </p>
+class ezConditionalLock&lt; T &gt;</div><p>RAII lock guard that conditionally acquires and releases locks based on runtime conditions. </p>
+<p>Provides the same automatic lock management as <a class="el" href="../../d9/d4f/classez_lock.htm" title="Manages a lock (e.g. a mutex) and ensures that it is properly released as the lock object goes out of...">ezLock</a> but only performs the actual locking when a boolean condition is met. Useful in scenarios where locking is only required under certain circumstances, avoiding unnecessary synchronization overhead when protection is not needed.</p>
+<p>The condition is evaluated once at construction time. If false, no locking occurs throughout the object's lifetime, making this essentially a no-op with zero runtime cost. </p>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/Threading/<a class="el" href="../../d5/d1e/_conditional_lock_8h_source.htm">ConditionalLock.h</a></li>
 </ul>
@@ -120,7 +122,7 @@ class ezConditionalLock&lt; T &gt;</div><p>Manages a lock (e.g. a mutex) and ens
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../de/dcf/classez_conditional_lock.htm">ezConditionalLock</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:03 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:44 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

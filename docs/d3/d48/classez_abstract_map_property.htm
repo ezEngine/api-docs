@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('d3/d48/classez_abstract_map_property.h
 </div><!--header-->
 <div class="contents">
 
-<p>The base class for a property that represents a set of values.  
+<p>Base class for properties that represent maps or key-value collections.  
  <a href="../../d3/d48/classez_abstract_map_property.htm#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../d8/d4a/_abstract_property_8h_source.htm">AbstractProperty.h</a>&gt;</code></p>
@@ -106,14 +106,14 @@ Inheritance diagram for ezAbstractMapProperty:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d0/dc7/classez_abstract_map_property__inherit__graph.png" border="0" usemap="#aez_abstract_map_property_inherit__map" alt="Inheritance graph"/></div>
 <map name="aez_abstract_map_property_inherit__map" id="aez_abstract_map_property_inherit__map">
-<area shape="rect" title="The base class for a property that represents a set of values." alt="" coords="200,84,375,109"/>
+<area shape="rect" title="Base class for properties that represent maps or key&#45;value collections." alt="" coords="200,84,375,109"/>
 <area shape="rect" href="../../d6/d97/classez_typed_map_property.htm" title=" " alt="" coords="423,5,641,60"/>
 <area shape="poly" title=" " alt="" coords="350,78,426,58,428,63,351,83"/>
 <area shape="rect" href="../../d8/d39/classez_phantom_map_property.htm" title=" " alt="" coords="443,84,621,109"/>
 <area shape="poly" title=" " alt="" coords="388,94,442,94,442,99,388,99"/>
 <area shape="rect" href="../../d6/d97/classez_typed_map_property.htm" title=" " alt="" coords="453,134,611,174"/>
 <area shape="poly" title=" " alt="" coords="356,110,453,133,452,138,355,115"/>
-<area shape="rect" href="../../d6/d81/classez_abstract_property.htm" title="This is the base interface for all properties in the reflection system. It provides enough informatio..." alt="" coords="5,84,152,109"/>
+<area shape="rect" href="../../d6/d81/classez_abstract_property.htm" title="Base interface for all properties in the reflection system." alt="" coords="5,84,152,109"/>
 <area shape="poly" title=" " alt="" coords="166,94,200,94,200,99,166,99"/>
 <area shape="rect" href="../../dc/d36/classez_member_map_property.htm" title=" " alt="" coords="709,5,883,60"/>
 <area shape="poly" title=" " alt="" coords="655,30,708,30,708,35,655,35"/>
@@ -128,7 +128,7 @@ Inheritance diagram for ezAbstractMapProperty:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a417cc414770a81ba1e4b4318af6b8dbc" id="r_a417cc414770a81ba1e4b4318af6b8dbc"><td class="memItemLeft" align="right" valign="top"><a id="a417cc414770a81ba1e4b4318af6b8dbc" name="a417cc414770a81ba1e4b4318af6b8dbc"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>ezAbstractMapProperty</b> (const char *szPropertyName)</td></tr>
-<tr class="memdesc:a417cc414770a81ba1e4b4318af6b8dbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Passes the property name through to <a class="el" href="../../d6/d81/classez_abstract_property.htm" title="This is the base interface for all properties in the reflection system. It provides enough informatio...">ezAbstractProperty</a>. <br /></td></tr>
+<tr class="memdesc:a417cc414770a81ba1e4b4318af6b8dbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Passes the property name through to <a class="el" href="../../d6/d81/classez_abstract_property.htm" title="Base interface for all properties in the reflection system.">ezAbstractProperty</a>. <br /></td></tr>
 <tr class="separator:a417cc414770a81ba1e4b4318af6b8dbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8999fb55ce5554591e2f023adf8039e9" id="r_a8999fb55ce5554591e2f023adf8039e9"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../d5/d49/structez_property_category.htm#a6900b9049e7887fa4b00d16d5eace8cf">ezPropertyCategory::Enum</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d48/classez_abstract_map_property.htm#a8999fb55ce5554591e2f023adf8039e9">GetCategory</a> () const override</td></tr>
 <tr class="memdesc:a8999fb55ce5554591e2f023adf8039e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <a class="el" href="../../d5/d49/structez_property_category.htm#a6900b9049e7887fa4b00d16d5eace8cfa6dd3b0e2fa23af50f7224edbc1b77cfb" title="The property is actually a map from string to values. Cast to ezAbstractMapProperty.">ezPropertyCategory::Map</a>.  <br /></td></tr>
@@ -202,8 +202,28 @@ const char *&#160;</td><td class="memItemRight" valign="bottom"><b>m_szPropertyN
 <tr class="separator:a4db885baa76eabd60628aef04d77923b inherit pro_attribs_classez_abstract_property"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The base class for a property that represents a set of values. </p>
-<p>The element type must either be a standard type or a pointer. </p>
+<div class="textblock"><p>Base class for properties that represent maps or key-value collections. </p>
+<p>Map properties provide associative container semantics with string keys and typed values. They support standard map operations: key-based access, insertion, removal, and enumeration.</p>
+<p>Supported map types:</p><ul>
+<li><a class="el" href="../../d1/d79/classez_map.htm">ezMap</a> (tree-based, ordered by key)</li>
+<li><a class="el" href="../../d8/d86/classez_hash_table.htm">ezHashTable</a> (hash-based, unordered)</li>
+<li>Custom containers implementing the map interface</li>
+</ul>
+<p>Key restrictions:</p><ul>
+<li>Keys are always strings (const char*)</li>
+<li>Keys must be valid UTF-8 strings</li>
+<li>Key comparison is case-sensitive</li>
+</ul>
+<p>Value type restrictions:</p><ul>
+<li>Standard types (int, float, string, etc.)</li>
+<li>Pointer types (for object references)</li>
+<li>Complex types supported through reflection</li>
+</ul>
+<p>Performance characteristics:</p><ul>
+<li>GetValue/Contains: O(log n) for <a class="el" href="../../d1/d79/classez_map.htm">ezMap</a>, O(1) average for <a class="el" href="../../d8/d86/classez_hash_table.htm">ezHashTable</a></li>
+<li>Insert/Remove: O(log n) for <a class="el" href="../../d1/d79/classez_map.htm">ezMap</a>, O(1) average for <a class="el" href="../../d8/d86/classez_hash_table.htm">ezHashTable</a></li>
+<li>GetKeys: O(n) - creates a copy of all key strings </li>
+</ul>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ab30871c546810ce8d8dbd4c678c65e88" name="ab30871c546810ce8d8dbd4c678c65e88"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab30871c546810ce8d8dbd4c678c65e88">&#9670;&#160;</a></span>Clear()</h2>
@@ -515,7 +535,7 @@ const char *&#160;</td><td class="memItemRight" valign="bottom"><b>m_szPropertyN
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d3/d48/classez_abstract_map_property.htm">ezAbstractMapProperty</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:02 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:43 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

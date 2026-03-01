@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -102,7 +102,7 @@ $(document).ready(function(){initNavTree('d0/ddb/classez_open_ddl_writer.htm','.
 </div><!--header-->
 <div class="contents">
 
-<p>The base class for OpenDDL writers.  
+<p>Writes OpenDDL documents to a stream with configurable formatting.  
  <a href="../../d0/ddb/classez_open_ddl_writer.htm#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../d3/d29/_open_ddl_writer_8h_source.htm">OpenDdlWriter.h</a>&gt;</code></p>
@@ -118,10 +118,12 @@ Public Types</h2></td></tr>
 , <a class="el" href="../../d0/ddb/classez_open_ddl_writer.htm#ac979ff3b3595bc87506be39e55b0c5d2a5b3571429e97357bc5cd927384ed2d10">ShortenedUnsignedInt</a>
 , <a class="el" href="../../d0/ddb/classez_open_ddl_writer.htm#ac979ff3b3595bc87506be39e55b0c5d2ace42b65744e60ed9b32e7d4f750a66a5">Shortest</a>
  }</td></tr>
+<tr class="memdesc:ac979ff3b3595bc87506be39e55b0c5d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controls how primitive type names are written in the output.  <a href="../../d0/ddb/classez_open_ddl_writer.htm#ac979ff3b3595bc87506be39e55b0c5d2">More...</a><br /></td></tr>
 <tr class="separator:ac979ff3b3595bc87506be39e55b0c5d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84e5b5178414d764add6a840a0bedeaa" id="r_a84e5b5178414d764add6a840a0bedeaa"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/ddb/classez_open_ddl_writer.htm#a84e5b5178414d764add6a840a0bedeaa">FloatPrecisionMode</a> { <a class="el" href="../../d0/ddb/classez_open_ddl_writer.htm#a84e5b5178414d764add6a840a0bedeaaa4b8123df4e2b3456270c11394adf7607">Readable</a>
 , <a class="el" href="../../d0/ddb/classez_open_ddl_writer.htm#a84e5b5178414d764add6a840a0bedeaaa1649aed298f99d587e2eb30c1db5946b">Exact</a>
  }</td></tr>
+<tr class="memdesc:a84e5b5178414d764add6a840a0bedeaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controls how floating-point values are formatted in the output.  <a href="../../d0/ddb/classez_open_ddl_writer.htm#a84e5b5178414d764add6a840a0bedeaa">More...</a><br /></td></tr>
 <tr class="separator:a84e5b5178414d764add6a840a0bedeaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -150,9 +152,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SetFloatPrecisionMode
 <a class="el" href="../../d0/ddb/classez_open_ddl_writer.htm#a84e5b5178414d764add6a840a0bedeaa">FloatPrecisionMode</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GetFloatPrecisionMode</b> () const</td></tr>
 <tr class="memdesc:a09cf82bc0c2e3035a75180235b597189"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns how float values are output. <br /></td></tr>
 <tr class="separator:a09cf82bc0c2e3035a75180235b597189"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad503564c8d45134785bbf70802938578" id="r_ad503564c8d45134785bbf70802938578"><td class="memItemLeft" align="right" valign="top"><a id="ad503564c8d45134785bbf70802938578" name="ad503564c8d45134785bbf70802938578"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetIndentation</b> (ezInt8 iIndentation)</td></tr>
-<tr class="memdesc:ad503564c8d45134785bbf70802938578"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows to set the indentation. Negative values are possible. This makes it possible to set the indentation e.g. to -2, thus the output will only have indentation after a level of 3 has been reached. <br /></td></tr>
+<tr class="memitem:ad503564c8d45134785bbf70802938578" id="r_ad503564c8d45134785bbf70802938578"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/ddb/classez_open_ddl_writer.htm#ad503564c8d45134785bbf70802938578">SetIndentation</a> (ezInt8 iIndentation)</td></tr>
+<tr class="memdesc:ad503564c8d45134785bbf70802938578"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the base indentation level for output formatting.  <br /></td></tr>
 <tr class="separator:ad503564c8d45134785bbf70802938578"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb8d208f8486f9fd968ceeb24e32d304" id="r_afb8d208f8486f9fd968ceeb24e32d304"><td class="memItemLeft" align="right" valign="top"><a id="afb8d208f8486f9fd968ceeb24e32d304" name="afb8d208f8486f9fd968ceeb24e32d304"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>BeginObject</b> (<a class="el" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sType, <a class="el" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sName={}, bool bGlobalName=false, bool bSingleLine=false)</td></tr>
@@ -219,7 +220,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>WriteString</b> (cons
 <tr class="memdesc:a330825b72827355374bb03003257c1f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a single string to the primitive list. Can be called multiple times between <a class="el" href="../../d0/ddb/classez_open_ddl_writer.htm#a9271ffad431817b74d14d32f529c0bad" title="Begins outputting a list of primitives of the given type.">BeginPrimitiveList()</a> / <a class="el" href="../../d0/ddb/classez_open_ddl_writer.htm#acd40a751eaf59ed7635649a9d4a6fe22" title="Ends outputting the list of primitives.">EndPrimitiveList()</a>. <br /></td></tr>
 <tr class="separator:a330825b72827355374bb03003257c1f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f5e3cf8301cdd4f671ad3b059c326e6" id="r_a9f5e3cf8301cdd4f671ad3b059c326e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/ddb/classez_open_ddl_writer.htm#a9f5e3cf8301cdd4f671ad3b059c326e6">WriteBinaryAsString</a> (const void *pData, ezUInt32 uiBytes)</td></tr>
-<tr class="memdesc:a9f5e3cf8301cdd4f671ad3b059c326e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a single string to the primitive list, but the value is a HEX representation of the given binary data.  <br /></td></tr>
+<tr class="memdesc:a9f5e3cf8301cdd4f671ad3b059c326e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes binary data as a hexadecimal string to the primitive list.  <br /></td></tr>
 <tr class="separator:a9f5e3cf8301cdd4f671ad3b059c326e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-types" name="pro-types"></a>
@@ -310,8 +311,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_bCompactMode</b> = 
 <tr class="separator:a521e7a1fe23951a6a290fced01278892"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The base class for OpenDDL writers. </p>
-<p>Declares a common interface for writing OpenDDL files. </p>
+<div class="textblock"><p>Writes OpenDDL documents to a stream with configurable formatting. </p>
+<p>OpenDDL (Open Data Description Language) is a text format for describing structured data. This writer generates OpenDDL text from programmatically created object hierarchies and primitive data. Supports various output modes including compact/verbose formatting, different type name styles, and precise floating-point representation. Objects and primitive lists can be nested arbitrarily. Call <a class="el" href="../../d0/ddb/classez_open_ddl_writer.htm#a3e94d3ebe2ded7ee6ee684343fdb787a" title="All output is written to this binary stream.">SetOutputStream()</a> first, then use BeginObject/EndObject and BeginPrimitiveList/EndPrimitiveList pairs. </p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a84e5b5178414d764add6a840a0bedeaa" name="a84e5b5178414d764add6a840a0bedeaa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a84e5b5178414d764add6a840a0bedeaa">&#9670;&#160;</a></span>FloatPrecisionMode</h2>
@@ -332,6 +333,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_bCompactMode</b> = 
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Controls how floating-point values are formatted in the output. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a84e5b5178414d764add6a840a0bedeaaa4b8123df4e2b3456270c11394adf7607" name="a84e5b5178414d764add6a840a0bedeaaa4b8123df4e2b3456270c11394adf7607"></a>Readable&#160;</td><td class="fielddoc"><p>Float values are printed as readable numbers. Precision might get lost though. </p>
 </td></tr>
@@ -360,6 +363,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_bCompactMode</b> = 
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Controls how primitive type names are written in the output. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac979ff3b3595bc87506be39e55b0c5d2a952358fc53c0167a1ea7354f338ed5af" name="ac979ff3b3595bc87506be39e55b0c5d2a952358fc53c0167a1ea7354f338ed5af"></a>Compliant&#160;</td><td class="fielddoc"><p>All primitive types are written as the OpenDDL standard defines them (very verbose) </p>
 </td></tr>
@@ -409,6 +414,35 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_bCompactMode</b> = 
 
 </div>
 </div>
+<a id="ad503564c8d45134785bbf70802938578" name="ad503564c8d45134785bbf70802938578"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad503564c8d45134785bbf70802938578">&#9670;&#160;</a></span>SetIndentation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ezOpenDdlWriter::SetIndentation </td>
+          <td>(</td>
+          <td class="paramtype">ezInt8&#160;</td>
+          <td class="paramname"><em>iIndentation</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the base indentation level for output formatting. </p>
+<p>Negative values are allowed to delay indentation until deeper nesting levels. For example, setting -2 means indentation only starts at nesting level 3. </p>
+
+</div>
+</div>
 <a id="a9f5e3cf8301cdd4f671ad3b059c326e6" name="a9f5e3cf8301cdd4f671ad3b059c326e6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9f5e3cf8301cdd4f671ad3b059c326e6">&#9670;&#160;</a></span>WriteBinaryAsString()</h2>
 
@@ -435,8 +469,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_bCompactMode</b> = 
       </table>
 </div><div class="memdoc">
 
-<p>Writes a single string to the primitive list, but the value is a HEX representation of the given binary data. </p>
-<dl class="test"><dt><b><a class="el" href="../../d4/df6/test.htm#_test000014">Test:</a></b></dt><dd><a class="el" href="../../d0/ddb/classez_open_ddl_writer.htm#a9f5e3cf8301cdd4f671ad3b059c326e6" title="Writes a single string to the primitive list, but the value is a HEX representation of the given bina...">ezOpenDdlWriter::WriteBinaryAsString</a> </dd></dl>
+<p>Writes binary data as a hexadecimal string to the primitive list. </p>
+<p>Converts the binary data to a hex string representation and writes it as a string primitive. Useful for embedding binary data within OpenDDL text format. </p>
+<dl class="test"><dt><b><a class="el" href="../../d4/df6/test.htm#_test000014">Test:</a></b></dt><dd><a class="el" href="../../d0/ddb/classez_open_ddl_writer.htm#a9f5e3cf8301cdd4f671ad3b059c326e6" title="Writes binary data as a hexadecimal string to the primitive list.">ezOpenDdlWriter::WriteBinaryAsString</a> </dd></dl>
 
 </div>
 </div>
@@ -450,7 +485,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_bCompactMode</b> = 
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d0/ddb/classez_open_ddl_writer.htm">ezOpenDdlWriter</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:05 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:46 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('d1/da2/classez_open_ddl_reader.htm','.
 </div><!--header-->
 <div class="contents">
 
-<p>An OpenDDL reader parses an entire DDL document and creates an in-memory representation of the document structure.  
+<p>Parses OpenDDL documents into an in-memory tree structure.  
  <a href="../../d1/da2/classez_open_ddl_reader.htm#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../d3/d4f/_open_ddl_reader_8h_source.htm">OpenDdlReader.h</a>&gt;</code></p>
@@ -109,10 +109,10 @@ Inheritance diagram for ezOpenDdlReader:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d5/d83/classez_open_ddl_reader__inherit__graph.png" border="0" usemap="#aez_open_ddl_reader_inherit__map" alt="Inheritance graph"/></div>
 <map name="aez_open_ddl_reader_inherit__map" id="aez_open_ddl_reader_inherit__map">
-<area shape="rect" title="An OpenDDL reader parses an entire DDL document and creates an in&#45;memory representation of the docume..." alt="" coords="5,79,144,104"/>
+<area shape="rect" title="Parses OpenDDL documents into an in&#45;memory tree structure." alt="" coords="5,79,144,104"/>
 <area shape="rect" title=" " alt="" coords="17,152,132,177"/>
 <area shape="poly" title=" " alt="" coords="77,118,77,152,72,152,72,118"/>
-<area shape="rect" href="../../d8/d21/classez_open_ddl_parser.htm" title="A low level parser for the OpenDDL format. It can incrementally parse the structure,..." alt="" coords="8,5,141,31"/>
+<area shape="rect" href="../../d8/d21/classez_open_ddl_parser.htm" title="Low&#45;level streaming parser for OpenDDL documents." alt="" coords="8,5,141,31"/>
 <area shape="poly" title=" " alt="" coords="77,44,77,79,72,79,72,44"/>
 </map>
 <center><span class="legend">[<a target="top" href="../../graph_legend.htm">legend</a>]</span></center></div>
@@ -120,7 +120,7 @@ Inheritance diagram for ezOpenDdlReader:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aab9c4e7b3e45c5cd4f2d6d51d997680d" id="r_aab9c4e7b3e45c5cd4f2d6d51d997680d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/da9/structez_result.htm">ezResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/da2/classez_open_ddl_reader.htm#aab9c4e7b3e45c5cd4f2d6d51d997680d">ParseDocument</a> (<a class="el" href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a> &amp;inout_stream, ezUInt32 uiFirstLineOffset=0, <a class="el" href="../../d2/d9e/classez_log_interface.htm">ezLogInterface</a> *pLog=<a class="el" href="../../dc/d9e/classez_log.htm#ac43e2f0e2d7a5faef5fc24ccbf84f937">ezLog::GetThreadLocalLogSystem</a>(), ezUInt32 uiCacheSizeInKB=4)</td></tr>
-<tr class="memdesc:aab9c4e7b3e45c5cd4f2d6d51d997680d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses the given document, returns EZ_FAILURE if an unrecoverable parsing error was encountered.  <br /></td></tr>
+<tr class="memdesc:aab9c4e7b3e45c5cd4f2d6d51d997680d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses an OpenDDL document from a stream.  <br /></td></tr>
 <tr class="separator:aab9c4e7b3e45c5cd4f2d6d51d997680d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7aa22439cf0f7c9d54c8fbc1f6315e1f" id="r_a7aa22439cf0f7c9d54c8fbc1f6315e1f"><td class="memItemLeft" align="right" valign="top"><a id="a7aa22439cf0f7c9d54c8fbc1f6315e1f" name="a7aa22439cf0f7c9d54c8fbc1f6315e1f"></a>
 const <a class="el" href="../../db/d71/classez_open_ddl_reader_element.htm">ezOpenDdlReaderElement</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>GetRootElement</b> () const</td></tr>
@@ -151,7 +151,7 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:a71e8ae259f566363a82e12157b7ff581"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the end of a primitive object is encountered.  <br /></td></tr>
 <tr class="separator:a71e8ae259f566363a82e12157b7ff581"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b9bd6e85697eedcdb7406c7de6886bd" id="r_a6b9bd6e85697eedcdb7406c7de6886bd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/da2/classez_open_ddl_reader.htm#a6b9bd6e85697eedcdb7406c7de6886bd">OnPrimitiveBool</a> (ezUInt32 count, const bool *pData, bool bThisIsAll) override</td></tr>
-<tr class="memdesc:a6b9bd6e85697eedcdb7406c7de6886bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when data for a primitive type is available. More than one value may be reported at a time.  <br /></td></tr>
+<tr class="memdesc:a6b9bd6e85697eedcdb7406c7de6886bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when boolean primitive data is available.  <br /></td></tr>
 <tr class="separator:a6b9bd6e85697eedcdb7406c7de6886bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19f03925798eab3724333404a0f288cf" id="r_a19f03925798eab3724333404a0f288cf"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/da2/classez_open_ddl_reader.htm#a19f03925798eab3724333404a0f288cf">OnPrimitiveInt8</a> (ezUInt32 count, const ezInt8 *pData, bool bThisIsAll) override</td></tr>
 <tr class="memdesc:a19f03925798eab3724333404a0f288cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when data for a primitive type is available. More than one value may be reported at a time.  <br /></td></tr>
@@ -210,18 +210,18 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SetLogInterface</b> (
 <tr class="memdesc:a0eee36c22e3458505b4cd58e64ce9f6f inherit pro_methods_classez_open_ddl_parser"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets an <a class="el" href="../../d2/d9e/classez_log_interface.htm" title="Base class for all logging classes.">ezLogInterface</a> through which errors and warnings are reported. <br /></td></tr>
 <tr class="separator:a0eee36c22e3458505b4cd58e64ce9f6f inherit pro_methods_classez_open_ddl_parser"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94317297f9cb10f776d3ce4e88819471 inherit pro_methods_classez_open_ddl_parser" id="r_a94317297f9cb10f776d3ce4e88819471"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d21/classez_open_ddl_parser.htm#a94317297f9cb10f776d3ce4e88819471">SetCacheSize</a> (ezUInt32 uiSizeInKB)</td></tr>
-<tr class="memdesc:a94317297f9cb10f776d3ce4e88819471 inherit pro_methods_classez_open_ddl_parser"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data is returned in larger chunks, to reduce the number of function calls. The cache size determines the maximum chunk size per primitive type.  <br /></td></tr>
+<tr class="memdesc:a94317297f9cb10f776d3ce4e88819471 inherit pro_methods_classez_open_ddl_parser"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the internal cache size for batching primitive data callbacks.  <br /></td></tr>
 <tr class="separator:a94317297f9cb10f776d3ce4e88819471 inherit pro_methods_classez_open_ddl_parser"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adeeede91d44957ce0e02e64e2f94419b inherit pro_methods_classez_open_ddl_parser" id="r_adeeede91d44957ce0e02e64e2f94419b"><td class="memItemLeft" align="right" valign="top">
 void&#160;</td><td class="memItemRight" valign="bottom"><b>SetInputStream</b> (<a class="el" href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a> &amp;stream, ezUInt32 uiFirstLineOffset=0)</td></tr>
 <tr class="memdesc:adeeede91d44957ce0e02e64e2f94419b inherit pro_methods_classez_open_ddl_parser"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures the parser to read from the given stream. This can only be called once on a parser instance. <br /></td></tr>
 <tr class="separator:adeeede91d44957ce0e02e64e2f94419b inherit pro_methods_classez_open_ddl_parser"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e9ee80d5b067c08610d237f6a79943b inherit pro_methods_classez_open_ddl_parser" id="r_a3e9ee80d5b067c08610d237f6a79943b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d21/classez_open_ddl_parser.htm#a3e9ee80d5b067c08610d237f6a79943b">ContinueParsing</a> ()</td></tr>
-<tr class="memdesc:a3e9ee80d5b067c08610d237f6a79943b inherit pro_methods_classez_open_ddl_parser"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call this to parse the next piece of the document. This may trigger a callback through which data is returned.  <br /></td></tr>
+<tr class="memdesc:a3e9ee80d5b067c08610d237f6a79943b inherit pro_methods_classez_open_ddl_parser"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses the next portion of the document and triggers appropriate callbacks.  <br /></td></tr>
 <tr class="separator:a3e9ee80d5b067c08610d237f6a79943b inherit pro_methods_classez_open_ddl_parser"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2c410934ae9d8c6360b14e79d72a8fa inherit pro_methods_classez_open_ddl_parser" id="r_ae2c410934ae9d8c6360b14e79d72a8fa"><td class="memItemLeft" align="right" valign="top">
 <a class="el" href="../../d4/da9/structez_result.htm">ezResult</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ParseAll</b> ()</td></tr>
-<tr class="memdesc:ae2c410934ae9d8c6360b14e79d72a8fa inherit pro_methods_classez_open_ddl_parser"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <a class="el" href="../../d8/d21/classez_open_ddl_parser.htm#a3e9ee80d5b067c08610d237f6a79943b" title="Call this to parse the next piece of the document. This may trigger a callback through which data is ...">ContinueParsing()</a> in a loop until that returns false. <br /></td></tr>
+<tr class="memdesc:ae2c410934ae9d8c6360b14e79d72a8fa inherit pro_methods_classez_open_ddl_parser"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls <a class="el" href="../../d8/d21/classez_open_ddl_parser.htm#a3e9ee80d5b067c08610d237f6a79943b" title="Parses the next portion of the document and triggers appropriate callbacks.">ContinueParsing()</a> in a loop until that returns false. <br /></td></tr>
 <tr class="separator:ae2c410934ae9d8c6360b14e79d72a8fa inherit pro_methods_classez_open_ddl_parser"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a704de2efaa46e0984aa80efca34741ea inherit pro_methods_classez_open_ddl_parser" id="r_a704de2efaa46e0984aa80efca34741ea"><td class="memItemLeft" align="right" valign="top">
 void&#160;</td><td class="memItemRight" valign="bottom"><b>SkipRestOfObject</b> ()</td></tr>
@@ -274,7 +274,8 @@ static constexpr ezUInt32&#160;</td><td class="memItemRight" valign="bottom"><b>
 <tr class="separator:a7a564334432c75086493d7f958e9d51f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>An OpenDDL reader parses an entire DDL document and creates an in-memory representation of the document structure. </p>
+<div class="textblock"><p>Parses OpenDDL documents into an in-memory tree structure. </p>
+<p>OpenDDL (Open Data Description Language) is a text format for describing structured data. This reader parses an entire DDL document and creates a tree of <a class="el" href="../../db/d71/classez_open_ddl_reader_element.htm" title="Represents a single element in an OpenDDL document.">ezOpenDdlReaderElement</a> objects that can be traversed to extract data. The parser handles both custom object types and primitive data arrays. All parsed data remains valid until the reader is destroyed. Use <a class="el" href="../../d1/da2/classez_open_ddl_reader.htm#ac545f68b0e46aaad9705b7c9a80b0c82" title="Searches for an element with a global name. NULL if there is no such element.">FindElement()</a> to locate elements by global name, or traverse the tree starting from <a class="el" href="../../d1/da2/classez_open_ddl_reader.htm#a7aa22439cf0f7c9d54c8fbc1f6315e1f" title="Every document has exactly one root element.">GetRootElement()</a>. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a653ac079ffcc81dbf71cd860e74f0224" name="a653ac079ffcc81dbf71cd860e74f0224"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a653ac079ffcc81dbf71cd860e74f0224">&#9670;&#160;</a></span>OnBeginObject()</h2>
@@ -519,8 +520,9 @@ static constexpr ezUInt32&#160;</td><td class="memItemRight" valign="bottom"><b>
 </table>
 </div><div class="memdoc">
 
-<p>Called when data for a primitive type is available. More than one value may be reported at a time. </p>
-<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.htm#_todo000040">Todo:</a></b></dt><dd>Currently not supported </dd></dl>
+<p>Called when boolean primitive data is available. </p>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.htm#_todo000039">Todo:</a></b></dt><dd>Currently not supported </dd></dl>
+<p>Multiple values may be reported at once for efficiency. bThisIsAll indicates if this is the final batch for the current primitive list. Implementations should accumulate data if bThisIsAll is false. </p>
 
 <p>Implements <a class="el" href="../../d8/d21/classez_open_ddl_parser.htm#a1082b07190d2f2e55ca762f07e3b2e99">ezOpenDdlParser</a>.</p>
 
@@ -1070,13 +1072,14 @@ static constexpr ezUInt32&#160;</td><td class="memItemRight" valign="bottom"><b>
       </table>
 </div><div class="memdoc">
 
-<p>Parses the given document, returns EZ_FAILURE if an unrecoverable parsing error was encountered. </p>
+<p>Parses an OpenDDL document from a stream. </p>
+<p>Returns EZ_FAILURE if an unrecoverable parsing error was encountered. The parsed element tree can be accessed via <a class="el" href="../../d1/da2/classez_open_ddl_reader.htm#a7aa22439cf0f7c9d54c8fbc1f6315e1f" title="Every document has exactly one root element.">GetRootElement()</a> after successful parsing. All previous parse results are cleared before parsing begins.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">stream</td><td>is the input data. </td></tr>
-    <tr><td class="paramname">uiFirstLineOffset</td><td>allows to adjust the reported line numbers in error messages, in case the given stream represents a sub-section of a larger file.</td></tr>
-    <tr><td class="paramname">pLog</td><td>is used for outputting details about parsing errors. If nullptr is given, no details are logged.</td></tr>
-    <tr><td class="paramname">uiCacheSizeInKB</td><td>is the internal cache size that the parser uses. If the parsed documents contain primitives lists with several thousand elements in a single list, increasing the cache size can improve performance, but typically this doesn't need to be adjusted. </td></tr>
+    <tr><td class="paramname">stream</td><td>Input data stream containing OpenDDL text </td></tr>
+    <tr><td class="paramname">uiFirstLineOffset</td><td>Line number offset for error reporting (useful for sub-documents) </td></tr>
+    <tr><td class="paramname">pLog</td><td>Interface for outputting parsing error details (nullptr disables logging) </td></tr>
+    <tr><td class="paramname">uiCacheSizeInKB</td><td>Internal cache size - increase for documents with large primitive arrays </td></tr>
   </table>
   </dd>
 </dl>
@@ -1093,7 +1096,7 @@ static constexpr ezUInt32&#160;</td><td class="memItemRight" valign="bottom"><b>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d1/da2/classez_open_ddl_reader.htm">ezOpenDdlReader</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:05 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:46 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

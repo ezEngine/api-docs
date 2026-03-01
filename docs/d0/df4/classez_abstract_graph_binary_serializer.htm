@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -96,16 +96,138 @@ $(document).ready(function(){initNavTree('d0/df4/classez_abstract_graph_binary_s
   <div class="headertitle"><div class="title">ezAbstractGraphBinarySerializer Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Low-level binary serializer for <a class="el" href="../../d1/d39/classez_abstract_object_graph.htm" title="An intermediate representation for serializing/deserializing reflected objects.">ezAbstractObjectGraph</a>.  
+ <a href="../../d0/df4/classez_abstract_graph_binary_serializer.htm#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../dc/df7/_binary_serializer_8h_source.htm">BinarySerializer.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a6a3b4f309e65bddefd6b3e5756c78cb3" id="r_a6a3b4f309e65bddefd6b3e5756c78cb3"><td class="memItemLeft" align="right" valign="top"><a id="a6a3b4f309e65bddefd6b3e5756c78cb3" name="a6a3b4f309e65bddefd6b3e5756c78cb3"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>Write</b> (<a class="el" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a> &amp;inout_stream, const <a class="el" href="../../d1/d39/classez_abstract_object_graph.htm">ezAbstractObjectGraph</a> *pGraph, const <a class="el" href="../../d1/d39/classez_abstract_object_graph.htm">ezAbstractObjectGraph</a> *pTypesGraph=nullptr)</td></tr>
+<tr class="memitem:a6a3b4f309e65bddefd6b3e5756c78cb3" id="r_a6a3b4f309e65bddefd6b3e5756c78cb3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/df4/classez_abstract_graph_binary_serializer.htm#a6a3b4f309e65bddefd6b3e5756c78cb3">Write</a> (<a class="el" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a> &amp;inout_stream, const <a class="el" href="../../d1/d39/classez_abstract_object_graph.htm">ezAbstractObjectGraph</a> *pGraph, const <a class="el" href="../../d1/d39/classez_abstract_object_graph.htm">ezAbstractObjectGraph</a> *pTypesGraph=nullptr)</td></tr>
+<tr class="memdesc:a6a3b4f309e65bddefd6b3e5756c78cb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes an abstract object graph to a binary stream.  <br /></td></tr>
 <tr class="separator:a6a3b4f309e65bddefd6b3e5756c78cb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a0f56e0036010c860a32b31ab1c9ef5" id="r_a6a0f56e0036010c860a32b31ab1c9ef5"><td class="memItemLeft" align="right" valign="top"><a id="a6a0f56e0036010c860a32b31ab1c9ef5" name="a6a0f56e0036010c860a32b31ab1c9ef5"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>Read</b> (<a class="el" href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a> &amp;inout_stream, <a class="el" href="../../d1/d39/classez_abstract_object_graph.htm">ezAbstractObjectGraph</a> *pGraph, <a class="el" href="../../d1/d39/classez_abstract_object_graph.htm">ezAbstractObjectGraph</a> *pTypesGraph=nullptr, bool bApplyPatches=false)</td></tr>
+<tr class="memitem:a6a0f56e0036010c860a32b31ab1c9ef5" id="r_a6a0f56e0036010c860a32b31ab1c9ef5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/df4/classez_abstract_graph_binary_serializer.htm#a6a0f56e0036010c860a32b31ab1c9ef5">Read</a> (<a class="el" href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a> &amp;inout_stream, <a class="el" href="../../d1/d39/classez_abstract_object_graph.htm">ezAbstractObjectGraph</a> *pGraph, <a class="el" href="../../d1/d39/classez_abstract_object_graph.htm">ezAbstractObjectGraph</a> *pTypesGraph=nullptr, bool bApplyPatches=false)</td></tr>
+<tr class="memdesc:a6a0f56e0036010c860a32b31ab1c9ef5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads an abstract object graph from a binary stream.  <br /></td></tr>
 <tr class="separator:a6a0f56e0036010c860a32b31ab1c9ef5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Low-level binary serializer for <a class="el" href="../../d1/d39/classez_abstract_object_graph.htm" title="An intermediate representation for serializing/deserializing reflected objects.">ezAbstractObjectGraph</a>. </p>
+<p>This class provides efficient binary serialization of abstract object graphs. It is used internally by the higher-level serialization systems and offers the fastest serialization performance.</p>
+<p>Features:</p><ul>
+<li>Compact binary format optimized for size and speed</li>
+<li>Support for type information graphs (for versioning)</li>
+<li>Optional patch application during deserialization</li>
+<li>Platform-independent format (handles endianness) </li>
+</ul>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a6a0f56e0036010c860a32b31ab1c9ef5" name="a6a0f56e0036010c860a32b31ab1c9ef5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a0f56e0036010c860a32b31ab1c9ef5">&#9670;&#160;</a></span>Read()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ezAbstractGraphBinarySerializer::Read </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d2/d19/classez_stream_reader.htm">ezStreamReader</a> &amp;&#160;</td>
+          <td class="paramname"><em>inout_stream</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d1/d39/classez_abstract_object_graph.htm">ezAbstractObjectGraph</a> *&#160;</td>
+          <td class="paramname"><em>pGraph</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d1/d39/classez_abstract_object_graph.htm">ezAbstractObjectGraph</a> *&#160;</td>
+          <td class="paramname"><em>pTypesGraph</em> = <code>nullptr</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>bApplyPatches</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reads an abstract object graph from a binary stream. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pTypesGraph</td><td>Optional type information graph for versioning support </td></tr>
+    <tr><td class="paramname">bApplyPatches</td><td>If true, applies version patches during deserialization </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6a3b4f309e65bddefd6b3e5756c78cb3" name="a6a3b4f309e65bddefd6b3e5756c78cb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a3b4f309e65bddefd6b3e5756c78cb3">&#9670;&#160;</a></span>Write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ezAbstractGraphBinarySerializer::Write </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d6/dcc/classez_stream_writer.htm">ezStreamWriter</a> &amp;&#160;</td>
+          <td class="paramname"><em>inout_stream</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d1/d39/classez_abstract_object_graph.htm">ezAbstractObjectGraph</a> *&#160;</td>
+          <td class="paramname"><em>pGraph</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d1/d39/classez_abstract_object_graph.htm">ezAbstractObjectGraph</a> *&#160;</td>
+          <td class="paramname"><em>pTypesGraph</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Writes an abstract object graph to a binary stream. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pTypesGraph</td><td>Optional type information graph for versioning support </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/Serialization/<a class="el" href="../../dc/df7/_binary_serializer_8h_source.htm">BinarySerializer.h</a></li>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/Serialization/Implementation/<b>BinarySerializer.cpp</b></li>
@@ -116,7 +238,7 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>Read</b> (<a c
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d0/df4/classez_abstract_graph_binary_serializer.htm">ezAbstractGraphBinarySerializer</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:02 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:43 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

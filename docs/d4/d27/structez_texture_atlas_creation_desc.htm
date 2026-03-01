@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -98,12 +98,19 @@ $(document).ready(function(){initNavTree('d4/d27/structez_texture_atlas_creation
   <div class="headertitle"><div class="title">ezTextureAtlasCreationDesc Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Describes how to create a texture atlas from multiple input images.  
+ <a href="../../d4/d27/structez_texture_atlas_creation_desc.htm#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d9/db5/_texture_atlas_desc_8h_source.htm">TextureAtlasDesc.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d55/structez_texture_atlas_creation_desc_1_1_item.htm">Item</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents one item (image) to be packed into the atlas.  <a href="../../d9/d55/structez_texture_atlas_creation_desc_1_1_item.htm#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d35/structez_texture_atlas_creation_desc_1_1_layer.htm">Layer</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines a single layer in the texture atlas (e.g., diffuse, normal, roughness).  <a href="../../d8/d35/structez_texture_atlas_creation_desc_1_1_layer.htm#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -130,7 +137,27 @@ Public Attributes</h2></td></tr>
 <a class="el" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray</a>&lt; <a class="el" href="../../d9/d55/structez_texture_atlas_creation_desc_1_1_item.htm">Item</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_Items</b></td></tr>
 <tr class="separator:af6093d265e9dd58dd263c4c3470cbc06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following files:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Describes how to create a texture atlas from multiple input images. </p>
+<p>A texture atlas packs multiple images into a single texture for improved rendering performance. This structure defines the layers (different image types like diffuse, normal maps) and items (individual images to pack) that will be combined.</p>
+<p><b>Workflow:</b></p><ol type="1">
+<li>Create <a class="el" href="../../d4/d27/structez_texture_atlas_creation_desc.htm" title="Describes how to create a texture atlas from multiple input images.">ezTextureAtlasCreationDesc</a> with desired layers and items</li>
+<li>Use texture conversion system to generate the actual atlas</li>
+<li>Load the resulting <a class="el" href="../../dd/de7/structez_texture_atlas_runtime_desc.htm" title="Runtime data for efficiently accessing items within a generated texture atlas.">ezTextureAtlasRuntimeDesc</a> for runtime access</li>
+</ol>
+<p><b>Example:</b> </p><div class="fragment"><div class="line"><a class="code hl_struct" href="../../d4/d27/structez_texture_atlas_creation_desc.htm">ezTextureAtlasCreationDesc</a> desc;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Add a diffuse layer</span></div>
+<div class="line"><span class="keyword">auto</span>&amp; diffuseLayer = desc.m_Layers.ExpandAndGetRef();</div>
+<div class="line">diffuseLayer.m_Usage = ezTexConvUsage::Color;</div>
+<div class="line">diffuseLayer.m_uiNumChannels = 4;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Add an item (sprite/icon)</span></div>
+<div class="line"><span class="keyword">auto</span>&amp; item = desc.m_Items.ExpandAndGetRef();</div>
+<div class="line">item.m_uiUniqueID = 100;</div>
+<div class="line">item.m_sLayerInput[0] = <span class="stringliteral">&quot;icon_sword.png&quot;</span>;</div>
+<div class="ttc" id="astructez_texture_atlas_creation_desc_htm"><div class="ttname"><a href="../../d4/d27/structez_texture_atlas_creation_desc.htm">ezTextureAtlasCreationDesc</a></div><div class="ttdoc">Describes how to create a texture atlas from multiple input images.</div><div class="ttdef"><b>Definition</b> TextureAtlasDesc.h:35</div></div>
+</div><!-- fragment --> </div><hr/>The documentation for this struct was generated from the following files:<ul>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Texture/Utils/<a class="el" href="../../d9/db5/_texture_atlas_desc_8h_source.htm">TextureAtlasDesc.h</a></li>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Texture/Utils/Implementation/<b>TextureAtlasDesc.cpp</b></li>
 </ul>
@@ -140,7 +167,7 @@ Public Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d4/d27/structez_texture_atlas_creation_desc.htm">ezTextureAtlasCreationDesc</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:06 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:48 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

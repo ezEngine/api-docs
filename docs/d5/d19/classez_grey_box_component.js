@@ -3,6 +3,7 @@ var classez_grey_box_component =
     [ "DeserializeComponent", "d5/d19/classez_grey_box_component.htm#ac62b4b728d0215dc173f46a4135a34e9", null ],
     [ "GetLocalBounds", "d5/d19/classez_grey_box_component.htm#a677c3e7c21176b4be056f256068c1668", null ],
     [ "OnActivated", "d5/d19/classez_grey_box_component.htm#a2698749ca6fbdce8771ab4c06696b31e", null ],
+    [ "OnDeactivated", "d5/d19/classez_grey_box_component.htm#a870870a5b75fac3252aeb37aa0ca7147", null ],
     [ "SerializeComponent", "d5/d19/classez_grey_box_component.htm#a2ab1c1d1ceb0555b58a83388ac015149", null ],
     [ "SetColor", "d5/d19/classez_grey_box_component.htm#a8ae56583bc6e3716f515f78f874adff7", null ],
     [ "SetCurvature", "d5/d19/classez_grey_box_component.htm#a326bf360e6b14c730a8166a14571300a", null ],

@@ -9,5 +9,6 @@ var classez_lens_flare_component =
     [ "SetOcclusionSampleRadius", "de/d0d/classez_lens_flare_component.htm#ab20d1e079dd505413c33107cd488c5a8", null ],
     [ "m_fIntensity", "de/d0d/classez_lens_flare_component.htm#a942837fa5f8102059e0dd2404b42c39a", null ],
     [ "m_fOcclusionDepthOffset", "de/d0d/classez_lens_flare_component.htm#a316800cf2ece00c016839043642a2e63", null ],
-    [ "m_fOcclusionSampleSpread", "de/d0d/classez_lens_flare_component.htm#a0c3e1ab61fd44ad9acc54d04d47d66ed", null ]
+    [ "m_fOcclusionSampleSpread", "de/d0d/classez_lens_flare_component.htm#a0c3e1ab61fd44ad9acc54d04d47d66ed", null ],
+    [ "m_LightColor", "de/d0d/classez_lens_flare_component.htm#a9a25870a041339a40bf24c0b5f266bc9", null ]
 ];

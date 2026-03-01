@@ -1,5 +1,6 @@
 var classez_mesh_resource =
 [
+    [ "GetAssetHash", "df/d2f/classez_mesh_resource.htm#a7fc54d765e4f2b1550ee8c8006270118", null ],
     [ "GetBounds", "df/d2f/classez_mesh_resource.htm#a00e9d617d4554cc23ed27f115aa6e1d0", null ],
     [ "GetMaterials", "df/d2f/classez_mesh_resource.htm#a3ef617a3510d4730fa1361524f30e7d2", null ],
     [ "GetMeshBuffer", "df/d2f/classez_mesh_resource.htm#adbae74479a1db978aa666c485cf5f995", null ],

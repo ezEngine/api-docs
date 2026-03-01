@@ -1,6 +1,6 @@
 var classez_world_module =
 [
-    [ "UpdateContext", "d6/d3c/structez_world_module_1_1_update_context.htm", null ],
+    [ "UpdateContext", "d6/d3c/structez_world_module_1_1_update_context.htm", "d6/d3c/structez_world_module_1_1_update_context" ],
     [ "UpdateFunctionDesc", "df/dfe/structez_world_module_1_1_update_function_desc.htm", "df/dfe/structez_world_module_1_1_update_function_desc" ],
     [ "UpdateFunction", "d1/df7/classez_world_module.htm#ad0f8409ed1df3afc0f41b50616bf1284", null ],
     [ "Deinitialize", "d1/df7/classez_world_module.htm#a810bb207fc9e3e66c74bb8d13b8d1c63", null ],

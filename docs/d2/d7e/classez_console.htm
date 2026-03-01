@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -95,12 +95,17 @@ $(document).ready(function(){initNavTree('d2/d7e/classez_console.htm','../../');
   <div class="headertitle"><div class="title">ezConsole Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Base console system for command input, output display, and history management.  
+ <a href="../../d2/d7e/classez_console.htm#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d3/d6e/_console_8h_source.htm">Console.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ezConsole:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../de/dfe/classez_console__inherit__graph.png" border="0" usemap="#aez_console_inherit__map" alt="Inheritance graph"/></div>
 <map name="aez_console_inherit__map" id="aez_console_inherit__map">
-<area shape="rect" title=" " alt="" coords="26,5,115,31"/>
+<area shape="rect" title="Base console system for command input, output display, and history management." alt="" coords="26,5,115,31"/>
 <area shape="rect" href="../../dc/d33/classez_quake_console.htm" title="A Quake&#45;style console for in&#45;game configuration of ezCVar and ezConsoleFunction." alt="" coords="5,79,136,104"/>
 <area shape="poly" title=" " alt="" coords="73,44,73,79,68,79,68,44"/>
 </map>
@@ -112,6 +117,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac7a98faff2eacd44561505fc85bda0d8" id="r_ac7a98faff2eacd44561505fc85bda0d8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7e/classez_console.htm#ac7a98faff2eacd44561505fc85bda0d8">AddConsoleString</a> (<a class="el" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sText, ezConsoleString::Type type=ezConsoleString::Type::Default)</td></tr>
 <tr class="memdesc:ac7a98faff2eacd44561505fc85bda0d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a string to the console.  <br /></td></tr>
 <tr class="separator:ac7a98faff2eacd44561505fc85bda0d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d33bf74b25c6610ccc99cb8e8c2a0ad" id="r_a4d33bf74b25c6610ccc99cb8e8c2a0ad"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7e/classez_console.htm#a4d33bf74b25c6610ccc99cb8e8c2a0ad">RenderConsole</a> (bool bIsOpen)</td></tr>
+<tr class="memdesc:a4d33bf74b25c6610ccc99cb8e8c2a0ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display the console state.  <br /></td></tr>
+<tr class="separator:a4d33bf74b25c6610ccc99cb8e8c2a0ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Events</h2></td></tr>
 <tr class="memitem:a798eb446a56925f0d2d0e2612d5ce619" id="r_a798eb446a56925f0d2d0e2612d5ce619"><td class="memItemLeft" align="right" valign="top"><a id="a798eb446a56925f0d2d0e2612d5ce619" name="a798eb446a56925f0d2d0e2612d5ce619"></a>
@@ -156,13 +164,16 @@ const <a class="el" href="../../de/dc1/classez_shared_ptr.htm">ezSharedPtr</a>&l
 <tr class="memdesc:a5269ac08aa1a688b29eb7ac9c038b0c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the given input string.  <br /></td></tr>
 <tr class="separator:a5269ac08aa1a688b29eb7ac9c038b0c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Input History</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Input</h2></td></tr>
 <tr class="memitem:a8ffb0de17aa3c86a4da80364a26dc71b" id="r_a8ffb0de17aa3c86a4da80364a26dc71b"><td class="memItemLeft" align="right" valign="top"><a id="a8ffb0de17aa3c86a4da80364a26dc71b" name="a8ffb0de17aa3c86a4da80364a26dc71b"></a>
 ezInt32&#160;</td><td class="memItemRight" valign="bottom"><b>m_iCurrentInputHistoryElement</b> = -1</td></tr>
 <tr class="separator:a8ffb0de17aa3c86a4da80364a26dc71b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad53fff41ce845422c9a9fe3b463751e9" id="r_ad53fff41ce845422c9a9fe3b463751e9"><td class="memItemLeft" align="right" valign="top"><a id="ad53fff41ce845422c9a9fe3b463751e9" name="ad53fff41ce845422c9a9fe3b463751e9"></a>
 <a class="el" href="../../df/d5c/classez_static_array.htm">ezStaticArray</a>&lt; <a class="el" href="../../d4/d53/structez_hybrid_string.htm">ezString</a>, 16 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_InputHistory</b></td></tr>
 <tr class="separator:ad53fff41ce845422c9a9fe3b463751e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a966df44534391c8f8a8fafcb3ba06c99" id="r_a966df44534391c8f8a8fafcb3ba06c99"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7e/classez_console.htm#a966df44534391c8f8a8fafcb3ba06c99">HandleInput</a> (bool bIsOpen)</td></tr>
+<tr class="memdesc:a966df44534391c8f8a8fafcb3ba06c99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the console with the latest input.  <br /></td></tr>
+<tr class="separator:a966df44534391c8f8a8fafcb3ba06c99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8fde80e7b38c1bb693d051ee0847d7b2" id="r_a8fde80e7b38c1bb693d051ee0847d7b2"><td class="memItemLeft" align="right" valign="top"><a id="a8fde80e7b38c1bb693d051ee0847d7b2" name="a8fde80e7b38c1bb693d051ee0847d7b2"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>AddToInputHistory</b> (<a class="el" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sText)</td></tr>
 <tr class="memdesc:a8fde80e7b38c1bb693d051ee0847d7b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an item to the input history. <br /></td></tr>
@@ -183,7 +194,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>LoadInputHistory</b> 
 <tr class="memdesc:a969a1067143f2aa15a4e17b718887b99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the text file and appends all lines to the input history. <br /></td></tr>
 <tr class="separator:a969a1067143f2aa15a4e17b718887b99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Base console system for command input, output display, and history management. </p>
+<p>Provides infrastructure for command execution through pluggable interpreters, maintains input history, and broadcasts events when output is added. Thread-safe through internal mutex protection.</p>
+<p>This base class handles core functionality but doesn't store output strings. Derived classes typically provide persistent storage and visual representation. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ac7a98faff2eacd44561505fc85bda0d8" name="ac7a98faff2eacd44561505fc85bda0d8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac7a98faff2eacd44561505fc85bda0d8">&#9670;&#160;</a></span>AddConsoleString()</h2>
 
@@ -313,6 +328,66 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>LoadInputHistory</b> 
 
 </div>
 </div>
+<a id="a966df44534391c8f8a8fafcb3ba06c99" name="a966df44534391c8f8a8fafcb3ba06c99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a966df44534391c8f8a8fafcb3ba06c99">&#9670;&#160;</a></span>HandleInput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ezConsole::HandleInput </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>bIsOpen</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Update the console with the latest input. </p>
+
+<p>Reimplemented in <a class="el" href="../../dc/d33/classez_quake_console.htm#af956ee4d8448a71767a9b0a990e3dd95">ezQuakeConsole</a>.</p>
+
+</div>
+</div>
+<a id="a4d33bf74b25c6610ccc99cb8e8c2a0ad" name="a4d33bf74b25c6610ccc99cb8e8c2a0ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d33bf74b25c6610ccc99cb8e8c2a0ad">&#9670;&#160;</a></span>RenderConsole()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ezConsole::RenderConsole </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>bIsOpen</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Display the console state. </p>
+
+<p>Reimplemented in <a class="el" href="../../dc/d33/classez_quake_console.htm#a64e9c4072170dd489d57948a662aec4b">ezQuakeConsole</a>.</p>
+
+</div>
+</div>
 <a id="a41e4a48c58aba06edc06efa14782d437" name="a41e4a48c58aba06edc06efa14782d437"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a41e4a48c58aba06edc06efa14782d437">&#9670;&#160;</a></span>SetCommandInterpreter()</h2>
 
@@ -352,7 +427,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>LoadInputHistory</b> 
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d2/d7e/classez_console.htm">ezConsole</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:03 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:44 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

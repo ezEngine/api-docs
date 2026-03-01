@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -110,16 +110,18 @@ Inheritance diagram for ezInternal::ezAllocatorMixinReallocate&lt; AllocationPol
 <area shape="poly" title=" " alt="" coords="698,188,743,188,743,193,698,193"/>
 <area shape="rect" href="../../d8/dde/classez_allocator_with_policy.htm" title=" " alt="" coords="747,243,936,312"/>
 <area shape="poly" title=" " alt="" coords="668,220,747,245,745,250,667,225"/>
-<area shape="rect" href="../../d8/dde/classez_allocator_with_policy.htm" title="Policy based allocator implementation of the ezAllocator interface." alt="" coords="740,337,943,391"/>
+<area shape="rect" href="../../d8/dde/classez_allocator_with_policy.htm" title="Policy&#45;based allocator that combines allocation strategies with tracking modes." alt="" coords="740,337,943,391"/>
 <area shape="poly" title=" " alt="" coords="608,226,665,275,733,322,759,334,756,339,731,326,662,279,605,230"/>
 <area shape="rect" href="../../d2/d98/classez_internal_1_1ez_allocator_impl.htm" title=" " alt="" coords="148,171,403,211"/>
 <area shape="poly" title=" " alt="" coords="416,188,450,188,450,193,416,193"/>
 <area shape="rect" href="../../d0/dbb/classez_allocator.htm" title="Base class for all memory allocators." alt="" coords="5,178,100,203"/>
 <area shape="poly" title=" " alt="" coords="114,188,148,188,148,193,114,193"/>
-<area shape="rect" href="../../d8/d6e/classez_linear_allocator.htm" title=" " alt="" coords="1025,297,1215,351"/>
-<area shape="poly" title=" " alt="" coords="956,345,1025,335,1025,340,956,350"/>
-<area shape="rect" href="../../d8/d6e/classez_linear_allocator.htm" title=" " alt="" coords="999,375,1241,430"/>
-<area shape="poly" title=" " alt="" coords="956,377,999,383,998,388,956,383"/>
+<area shape="rect" href="../../d8/d6e/classez_linear_allocator.htm" title=" " alt="" coords="1025,258,1215,313"/>
+<area shape="poly" title=" " alt="" coords="951,330,1024,309,1026,315,952,335"/>
+<area shape="rect" href="../../d8/d6e/classez_linear_allocator.htm" title=" " alt="" coords="1025,337,1215,391"/>
+<area shape="poly" title=" " alt="" coords="956,361,1025,361,1025,367,956,367"/>
+<area shape="rect" href="../../d8/d6e/classez_linear_allocator.htm" title="Stack&#45;based linear allocator that allocates memory sequentially." alt="" coords="999,415,1241,470"/>
+<area shape="poly" title=" " alt="" coords="952,392,1023,413,1022,418,951,398"/>
 </map>
 <center><span class="legend">[<a target="top" href="../../graph_legend.htm">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -136,6 +138,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aabec1ee3d4ac63bd6ca376a04580bfcd inherit pub_methods_classez_internal_1_1ez_allocator_impl"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface, do not use this directly, always use the new/delete macros below.  <br /></td></tr>
 <tr class="separator:aabec1ee3d4ac63bd6ca376a04580bfcd inherit pub_methods_classez_internal_1_1ez_allocator_impl"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad423a25e8849c15c0ff4fc21be7e9fc1 inherit pub_methods_classez_internal_1_1ez_allocator_impl" id="r_ad423a25e8849c15c0ff4fc21be7e9fc1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d98/classez_internal_1_1ez_allocator_impl.htm#ad423a25e8849c15c0ff4fc21be7e9fc1">Deallocate</a> (void *pPtr) override</td></tr>
+<tr class="memdesc:ad423a25e8849c15c0ff4fc21be7e9fc1 inherit pub_methods_classez_internal_1_1ez_allocator_impl"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deallocates memory previously allocated by this allocator.  <br /></td></tr>
 <tr class="separator:ad423a25e8849c15c0ff4fc21be7e9fc1 inherit pub_methods_classez_internal_1_1ez_allocator_impl"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a5fc910e3d8048d63e91519ef4edf4f inherit pub_methods_classez_internal_1_1ez_allocator_impl" id="r_a0a5fc910e3d8048d63e91519ef4edf4f"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d98/classez_internal_1_1ez_allocator_impl.htm#a0a5fc910e3d8048d63e91519ef4edf4f">AllocatedSize</a> (const void *pPtr) override</td></tr>
 <tr class="memdesc:a0a5fc910e3d8048d63e91519ef4edf4f inherit pub_methods_classez_internal_1_1ez_allocator_impl"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of bytes allocated at this address.  <br /></td></tr>
@@ -148,8 +151,8 @@ Public Member Functions</h2></td></tr>
 <a class="el" href="../../d0/dbb/classez_allocator.htm">ezAllocator</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>GetParent</b> () const</td></tr>
 <tr class="separator:ae9177ebea0d021554bf871fd264e7dc9 inherit pub_methods_classez_internal_1_1ez_allocator_impl"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classez_allocator"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classez_allocator')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d0/dbb/classez_allocator.htm">ezAllocator</a></td></tr>
-<tr class="memitem:aa65b02d0f12571babe56825f0cd25741 inherit pub_methods_classez_allocator" id="r_aa65b02d0f12571babe56825f0cd25741"><td class="memItemLeft" align="right" valign="top">
-virtual void *&#160;</td><td class="memItemRight" valign="bottom"><b>Reallocate</b> (void *pPtr, size_t uiCurrentSize, size_t uiNewSize, size_t uiAlign)</td></tr>
+<tr class="memitem:aa65b02d0f12571babe56825f0cd25741 inherit pub_methods_classez_allocator" id="r_aa65b02d0f12571babe56825f0cd25741"><td class="memItemLeft" align="right" valign="top">virtual void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dbb/classez_allocator.htm#aa65b02d0f12571babe56825f0cd25741">Reallocate</a> (void *pPtr, size_t uiCurrentSize, size_t uiNewSize, size_t uiAlign)</td></tr>
+<tr class="memdesc:aa65b02d0f12571babe56825f0cd25741 inherit pub_methods_classez_allocator"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reallocates memory, potentially moving the data to a new location.  <br /></td></tr>
 <tr class="separator:aa65b02d0f12571babe56825f0cd25741 inherit pub_methods_classez_allocator"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
@@ -174,7 +177,7 @@ ezThreadID&#160;</td><td class="memItemRight" valign="bottom"><b>m_ThreadID</b><
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>ezInternal</b></li><li class="navelem"><a class="el" href="../../d6/dc9/classez_internal_1_1ez_allocator_mixin_reallocate.htm">ezAllocatorMixinReallocate</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:07 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:48 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

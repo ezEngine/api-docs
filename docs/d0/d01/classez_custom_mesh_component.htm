@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -113,7 +113,7 @@ Inheritance diagram for ezCustomMeshComponent:</div>
 <area shape="poly" title=" " alt="" coords="107,264,107,299,101,299,101,264"/>
 <area shape="rect" href="../../d6/d30/classez_component.htm" title="Base class of all component types." alt="" coords="48,152,160,177"/>
 <area shape="poly" title=" " alt="" coords="107,191,107,225,101,225,101,191"/>
-<area shape="rect" href="../../db/d45/classez_reflected_class.htm" title="All classes that should be dynamically reflectable, need to be derived from this base class." alt="" coords="37,79,171,104"/>
+<area shape="rect" href="../../db/d45/classez_reflected_class.htm" title="Base class for all types that support dynamic reflection and runtime type identification." alt="" coords="37,79,171,104"/>
 <area shape="poly" title=" " alt="" coords="107,118,107,152,101,152,101,118"/>
 <area shape="rect" href="../../d4/d02/classez_no_base.htm" title="Dummy type to pass to templates and macros that expect a base type for a class that has no base." alt="" coords="61,5,147,31"/>
 <area shape="poly" title=" " alt="" coords="107,44,107,79,101,79,101,44"/>
@@ -122,6 +122,12 @@ Inheritance diagram for ezCustomMeshComponent:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a1a131be40a4b57d20b23002a46edf750" id="r_a1a131be40a4b57d20b23002a46edf750"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d01/classez_custom_mesh_component.htm#a1a131be40a4b57d20b23002a46edf750">OnActivated</a> () override</td></tr>
+<tr class="memdesc:a1a131be40a4b57d20b23002a46edf750"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is called when the component gets activated.  <br /></td></tr>
+<tr class="separator:a1a131be40a4b57d20b23002a46edf750"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cf0362269ca0a775c9767cc5a68d7c7" id="r_a2cf0362269ca0a775c9767cc5a68d7c7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d01/classez_custom_mesh_component.htm#a2cf0362269ca0a775c9767cc5a68d7c7">OnDeactivated</a> () override</td></tr>
+<tr class="memdesc:a2cf0362269ca0a775c9767cc5a68d7c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is called when the component gets deactivated.  <br /></td></tr>
+<tr class="separator:a2cf0362269ca0a775c9767cc5a68d7c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8df1c116f6797bff2b97317086f5cb8e" id="r_a8df1c116f6797bff2b97317086f5cb8e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d01/classez_custom_mesh_component.htm#a8df1c116f6797bff2b97317086f5cb8e">SerializeComponent</a> (<a class="el" href="../../dc/dd8/classez_world_writer.htm">ezWorldWriter</a> &amp;inout_stream) const override</td></tr>
 <tr class="memdesc:a8df1c116f6797bff2b97317086f5cb8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override this to save the current state of the component to the given stream.  <br /></td></tr>
 <tr class="separator:a8df1c116f6797bff2b97317086f5cb8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -188,10 +194,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>OnMsgSetCustomData</b
 void&#160;</td><td class="memItemRight" valign="bottom"><b>TriggerLocalBoundsUpdate</b> ()</td></tr>
 <tr class="memdesc:a9476bf02dd09295467c8c084f6ac8ac7 inherit pub_methods_classez_render_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call this when some value was modified that affects the size of the local bounding box and it should be recomputed. <br /></td></tr>
 <tr class="separator:a9476bf02dd09295467c8c084f6ac8ac7 inherit pub_methods_classez_render_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a3235a2dd0a592eaa3c281f8fc442e0 inherit pub_methods_classez_render_component" id="r_a9a3235a2dd0a592eaa3c281f8fc442e0"><td class="memItemLeft" align="right" valign="top">
-EZ_ALWAYS_INLINE ezUInt32&#160;</td><td class="memItemRight" valign="bottom"><b>GetUniqueIdForRendering</b> (ezUInt32 uiInnerIndex=0, ezUInt32 uiInnerIndexShift=24) const</td></tr>
-<tr class="memdesc:a9a3235a2dd0a592eaa3c281f8fc442e0 inherit pub_methods_classez_render_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes a unique ID for the given component, that is usually given to the renderer to distinguish objects. <br /></td></tr>
-<tr class="separator:a9a3235a2dd0a592eaa3c281f8fc442e0 inherit pub_methods_classez_render_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b3c0f75b4cf1e2c7a5fa13ae9794608 inherit pub_methods_classez_render_component" id="r_a6b3c0f75b4cf1e2c7a5fa13ae9794608"><td class="memItemLeft" align="right" valign="top">
+void&#160;</td><td class="memItemRight" valign="bottom"><b>QueueLocalBoundsUpdate</b> ()</td></tr>
+<tr class="memdesc:a6b3c0f75b4cf1e2c7a5fa13ae9794608 inherit pub_methods_classez_render_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Like <a class="el" href="../../d3/d8e/classez_render_component.htm#a9476bf02dd09295467c8c084f6ac8ac7" title="Call this when some value was modified that affects the size of the local bounding box and it should ...">TriggerLocalBoundsUpdate()</a>, but defers the update and is safe to call from async update functions. <br /></td></tr>
+<tr class="separator:a6b3c0f75b4cf1e2c7a5fa13ae9794608 inherit pub_methods_classez_render_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7591c867337aca97225a3e6602423b5a inherit pub_methods_classez_render_component" id="r_a7591c867337aca97225a3e6602423b5a"><td class="memItemLeft" align="right" valign="top">
+EZ_ALWAYS_INLINE ezUInt32&#160;</td><td class="memItemRight" valign="bottom"><b>GetUniqueIdForRendering</b> () const</td></tr>
+<tr class="memdesc:a7591c867337aca97225a3e6602423b5a inherit pub_methods_classez_render_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes a unique ID for the given component, that is usually given to the renderer to distinguish objects. <br /></td></tr>
+<tr class="separator:a7591c867337aca97225a3e6602423b5a inherit pub_methods_classez_render_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classez_component"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classez_component')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d6/d30/classez_component.htm">ezComponent</a></td></tr>
 <tr class="memitem:a20c74db2c47a6f6dd254a40b02ccf008 inherit pub_methods_classez_component" id="r_a20c74db2c47a6f6dd254a40b02ccf008"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d30/classez_component.htm#a20c74db2c47a6f6dd254a40b02ccf008">SetActiveFlag</a> (bool bEnabled)</td></tr>
 <tr class="memdesc:a20c74db2c47a6f6dd254a40b02ccf008 inherit pub_methods_classez_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the active flag of the component, which affects its active state.  <br /></td></tr>
@@ -305,16 +315,7 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a3ab69b784275c2931941b904bdb58569" id="r_a3ab69b784275c2931941b904bdb58569"><td class="memItemLeft" align="right" valign="top"><a id="a3ab69b784275c2931941b904bdb58569" name="a3ab69b784275c2931941b904bdb58569"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>OnMsgExtractRenderData</b> (<a class="el" href="../../d8/dab/structez_msg_extract_render_data.htm">ezMsgExtractRenderData</a> &amp;msg) const</td></tr>
 <tr class="separator:a3ab69b784275c2931941b904bdb58569"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a131be40a4b57d20b23002a46edf750" id="r_a1a131be40a4b57d20b23002a46edf750"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d01/classez_custom_mesh_component.htm#a1a131be40a4b57d20b23002a46edf750">OnActivated</a> () override</td></tr>
-<tr class="memdesc:a1a131be40a4b57d20b23002a46edf750"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is called when the component gets activated.  <br /></td></tr>
-<tr class="separator:a1a131be40a4b57d20b23002a46edf750"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classez_render_component"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classez_render_component')"><img src="../../closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="../../d3/d8e/classez_render_component.htm">ezRenderComponent</a></td></tr>
-<tr class="memitem:a62f8701eab46745cabf09a9d4948d05c inherit pro_methods_classez_render_component" id="r_a62f8701eab46745cabf09a9d4948d05c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d8e/classez_render_component.htm#a62f8701eab46745cabf09a9d4948d05c">Deinitialize</a> () override</td></tr>
-<tr class="memdesc:a62f8701eab46745cabf09a9d4948d05c inherit pro_methods_classez_render_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is called before the component is destroyed. A derived type can override this method to do common de-initialization work.  <br /></td></tr>
-<tr class="separator:a62f8701eab46745cabf09a9d4948d05c inherit pro_methods_classez_render_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac847f72c05243ee92094c6cba9b079c3 inherit pro_methods_classez_render_component" id="r_ac847f72c05243ee92094c6cba9b079c3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d8e/classez_render_component.htm#ac847f72c05243ee92094c6cba9b079c3">OnDeactivated</a> () override</td></tr>
-<tr class="memdesc:ac847f72c05243ee92094c6cba9b079c3 inherit pro_methods_classez_render_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is called when the component gets deactivated.  <br /></td></tr>
-<tr class="separator:ac847f72c05243ee92094c6cba9b079c3 inherit pro_methods_classez_render_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86daac373a1927a8591343d43af7fa06 inherit pro_methods_classez_render_component" id="r_a86daac373a1927a8591343d43af7fa06"><td class="memItemLeft" align="right" valign="top">
 void&#160;</td><td class="memItemRight" valign="bottom"><b>OnUpdateLocalBounds</b> (<a class="el" href="../../df/dda/structez_msg_update_local_bounds.htm">ezMsgUpdateLocalBounds</a> &amp;msg)</td></tr>
 <tr class="separator:a86daac373a1927a8591343d43af7fa06 inherit pro_methods_classez_render_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -339,6 +340,9 @@ virtual ezComponentMode::Enum&#160;</td><td class="memItemRight" valign="bottom"
 <tr class="memitem:ac23da898c747537846308946db06ea09 inherit pro_methods_classez_component" id="r_ac23da898c747537846308946db06ea09"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d30/classez_component.htm#ac23da898c747537846308946db06ea09">Initialize</a> ()</td></tr>
 <tr class="memdesc:ac23da898c747537846308946db06ea09 inherit pro_methods_classez_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Can be overridden for basic initialization that depends on a valid hierarchy and position.  <br /></td></tr>
 <tr class="separator:ac23da898c747537846308946db06ea09 inherit pro_methods_classez_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fa1de7a6ea68259f8ce7f096e515b16 inherit pro_methods_classez_component" id="r_a9fa1de7a6ea68259f8ce7f096e515b16"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d30/classez_component.htm#a9fa1de7a6ea68259f8ce7f096e515b16">Deinitialize</a> ()</td></tr>
+<tr class="memdesc:a9fa1de7a6ea68259f8ce7f096e515b16 inherit pro_methods_classez_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is called before the component is destroyed. A derived type can override this method to do common de-initialization work.  <br /></td></tr>
+<tr class="separator:a9fa1de7a6ea68259f8ce7f096e515b16 inherit pro_methods_classez_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2dc05ad8b8ffdecd5bc9b5f68f14ae3f inherit pro_methods_classez_component" id="r_a2dc05ad8b8ffdecd5bc9b5f68f14ae3f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d30/classez_component.htm#a2dc05ad8b8ffdecd5bc9b5f68f14ae3f">OnSimulationStarted</a> ()</td></tr>
 <tr class="memdesc:a2dc05ad8b8ffdecd5bc9b5f68f14ae3f inherit pro_methods_classez_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is called once for active components, at the start of the next world update, but only when the world is simulated.  <br /></td></tr>
 <tr class="separator:a2dc05ad8b8ffdecd5bc9b5f68f14ae3f inherit pro_methods_classez_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -373,15 +377,18 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:aaf05113ad2a3c9c4c7d316f1e4cc97fa" id="r_aaf05113ad2a3c9c4c7d316f1e4cc97fa"><td class="memItemLeft" align="right" valign="top"><a id="aaf05113ad2a3c9c4c7d316f1e4cc97fa" name="aaf05113ad2a3c9c4c7d316f1e4cc97fa"></a>
 <a class="el" href="../../da/dd2/classez_vec4_template.htm">ezVec4</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_vCustomData</b> = <a class="el" href="../../da/dd2/classez_vec4_template.htm">ezVec4</a>(0, 1, 0, 1)</td></tr>
 <tr class="separator:aaf05113ad2a3c9c4c7d316f1e4cc97fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ae6f4857c30b2146b6b5bcc672651f9" id="r_a6ae6f4857c30b2146b6b5bcc672651f9"><td class="memItemLeft" align="right" valign="top"><a id="a6ae6f4857c30b2146b6b5bcc672651f9" name="a6ae6f4857c30b2146b6b5bcc672651f9"></a>
+<a class="el" href="../../dc/d77/classez_bounding_box_sphere_template.htm">ezBoundingBoxSphere</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_Bounds</b> = <a class="el" href="../../dc/d77/classez_bounding_box_sphere_template.htm#a2bfa9868c670effec89b59bbe02c8192">ezBoundingBoxSphere::MakeInvalid</a>()</td></tr>
+<tr class="separator:a6ae6f4857c30b2146b6b5bcc672651f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a332cbafef0ec2a1ff67043cf44b17452" id="r_a332cbafef0ec2a1ff67043cf44b17452"><td class="memItemLeft" align="right" valign="top"><a id="a332cbafef0ec2a1ff67043cf44b17452" name="a332cbafef0ec2a1ff67043cf44b17452"></a>
+<a class="el" href="../../d7/d34/structez_instance_data_offset.htm">ezInstanceDataOffset</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_InstanceDataOffset</b></td></tr>
+<tr class="separator:a332cbafef0ec2a1ff67043cf44b17452"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeaf15ea6e17e7862f0ffc829774d2931" id="r_aeaf15ea6e17e7862f0ffc829774d2931"><td class="memItemLeft" align="right" valign="top"><a id="aeaf15ea6e17e7862f0ffc829774d2931" name="aeaf15ea6e17e7862f0ffc829774d2931"></a>
 ezUInt32&#160;</td><td class="memItemRight" valign="bottom"><b>m_uiFirstPrimitive</b> = 0</td></tr>
 <tr class="separator:aeaf15ea6e17e7862f0ffc829774d2931"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72fa800d77d8c95e7b78548352d61f65" id="r_a72fa800d77d8c95e7b78548352d61f65"><td class="memItemLeft" align="right" valign="top"><a id="a72fa800d77d8c95e7b78548352d61f65" name="a72fa800d77d8c95e7b78548352d61f65"></a>
 ezUInt32&#160;</td><td class="memItemRight" valign="bottom"><b>m_uiNumPrimitives</b> = 0xFFFFFFFF</td></tr>
 <tr class="separator:a72fa800d77d8c95e7b78548352d61f65"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ae6f4857c30b2146b6b5bcc672651f9" id="r_a6ae6f4857c30b2146b6b5bcc672651f9"><td class="memItemLeft" align="right" valign="top"><a id="a6ae6f4857c30b2146b6b5bcc672651f9" name="a6ae6f4857c30b2146b6b5bcc672651f9"></a>
-<a class="el" href="../../dc/d77/classez_bounding_box_sphere_template.htm">ezBoundingBoxSphere</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_Bounds</b></td></tr>
-<tr class="separator:a6ae6f4857c30b2146b6b5bcc672651f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c3c2831e2e9d487bb8bff5a50d3a8dc" id="r_a5c3c2831e2e9d487bb8bff5a50d3a8dc"><td class="memItemLeft" align="right" valign="top"><a id="a5c3c2831e2e9d487bb8bff5a50d3a8dc" name="a5c3c2831e2e9d487bb8bff5a50d3a8dc"></a>
 <a class="el" href="../../d3/dd7/classez_typed_resource_handle.htm">ezDynamicMeshBufferResourceHandle</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_hDynamicMesh</b></td></tr>
 <tr class="separator:a5c3c2831e2e9d487bb8bff5a50d3a8dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -394,10 +401,10 @@ const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&#160;</
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_static_methods_classez_render_component"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classez_render_component')"><img src="../../closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="../../d3/d8e/classez_render_component.htm">ezRenderComponent</a></td></tr>
-<tr class="memitem:a058b1894a90b0a6b7310fe90ade5fb4c inherit pub_static_methods_classez_render_component" id="r_a058b1894a90b0a6b7310fe90ade5fb4c"><td class="memItemLeft" align="right" valign="top">
-static ezUInt32&#160;</td><td class="memItemRight" valign="bottom"><b>GetUniqueIdForRendering</b> (const <a class="el" href="../../d6/d30/classez_component.htm">ezComponent</a> &amp;component, ezUInt32 uiInnerIndex=0, ezUInt32 uiInnerIndexShift=24)</td></tr>
-<tr class="memdesc:a058b1894a90b0a6b7310fe90ade5fb4c inherit pub_static_methods_classez_render_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes a unique ID for the given component, that is usually given to the renderer to distinguish objects. <br /></td></tr>
-<tr class="separator:a058b1894a90b0a6b7310fe90ade5fb4c inherit pub_static_methods_classez_render_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d1e94e97ae2ee8c0e45460d7bceaf91 inherit pub_static_methods_classez_render_component" id="r_a5d1e94e97ae2ee8c0e45460d7bceaf91"><td class="memItemLeft" align="right" valign="top">
+static ezUInt32&#160;</td><td class="memItemRight" valign="bottom"><b>GetUniqueIdForRendering</b> (const <a class="el" href="../../d6/d30/classez_component.htm">ezComponent</a> &amp;component)</td></tr>
+<tr class="memdesc:a5d1e94e97ae2ee8c0e45460d7bceaf91 inherit pub_static_methods_classez_render_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes a unique ID for the given component, that is usually given to the renderer to distinguish objects. <br /></td></tr>
+<tr class="separator:a5d1e94e97ae2ee8c0e45460d7bceaf91 inherit pub_static_methods_classez_render_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_methods_classez_no_base"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classez_no_base')"><img src="../../closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="../../d4/d02/classez_no_base.htm">ezNoBase</a></td></tr>
 <tr class="memitem:a718d4e4145a2c15d0c28aaed086f1ce2 inherit pub_static_methods_classez_no_base" id="r_a718d4e4145a2c15d0c28aaed086f1ce2"><td class="memItemLeft" align="right" valign="top">
 static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>GetStaticRTTI</b> ()</td></tr>
@@ -546,16 +553,47 @@ static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>This method is called when the component gets activated. </p>
-<p>By default a component is active, but it can be created in an inactive state. In such a case <a class="el" href="../../d0/d01/classez_custom_mesh_component.htm#a1a131be40a4b57d20b23002a46edf750" title="This method is called when the component gets activated.">OnActivated()</a> is only called once a component is activated. If a component gets switched between active and inactive at runtime, <a class="el" href="../../d0/d01/classez_custom_mesh_component.htm#a1a131be40a4b57d20b23002a46edf750" title="This method is called when the component gets activated.">OnActivated()</a> and <a class="el" href="../../d3/d8e/classez_render_component.htm#ac847f72c05243ee92094c6cba9b079c3" title="This method is called when the component gets deactivated.">OnDeactivated()</a> are called accordingly. In contrast <a class="el" href="../../d6/d30/classez_component.htm#ac23da898c747537846308946db06ea09" title="Can be overridden for basic initialization that depends on a valid hierarchy and position.">Initialize()</a> and <a class="el" href="../../d3/d8e/classez_render_component.htm#a62f8701eab46745cabf09a9d4948d05c" title="This method is called before the component is destroyed. A derived type can override this method to d...">Deinitialize()</a> are only ever called once.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d0/d01/classez_custom_mesh_component.htm#a1a131be40a4b57d20b23002a46edf750" title="This method is called when the component gets activated.">OnActivated()</a>, <a class="el" href="../../d3/d8e/classez_render_component.htm#ac847f72c05243ee92094c6cba9b079c3" title="This method is called when the component gets deactivated.">OnDeactivated()</a>, <a class="el" href="../../d6/d30/classez_component.htm#ac23da898c747537846308946db06ea09" title="Can be overridden for basic initialization that depends on a valid hierarchy and position.">Initialize()</a>, <a class="el" href="../../d3/d8e/classez_render_component.htm#a62f8701eab46745cabf09a9d4948d05c" title="This method is called before the component is destroyed. A derived type can override this method to d...">Deinitialize()</a>, <a class="el" href="../../d6/d30/classez_component.htm#a2dc05ad8b8ffdecd5bc9b5f68f14ae3f" title="This method is called once for active components, at the start of the next world update,...">OnSimulationStarted()</a> </dd></dl>
+<p>By default a component is active, but it can be created in an inactive state. In such a case <a class="el" href="../../d0/d01/classez_custom_mesh_component.htm#a1a131be40a4b57d20b23002a46edf750" title="This method is called when the component gets activated.">OnActivated()</a> is only called once a component is activated. If a component gets switched between active and inactive at runtime, <a class="el" href="../../d0/d01/classez_custom_mesh_component.htm#a1a131be40a4b57d20b23002a46edf750" title="This method is called when the component gets activated.">OnActivated()</a> and <a class="el" href="../../d0/d01/classez_custom_mesh_component.htm#a2cf0362269ca0a775c9767cc5a68d7c7" title="This method is called when the component gets deactivated.">OnDeactivated()</a> are called accordingly. In contrast <a class="el" href="../../d6/d30/classez_component.htm#ac23da898c747537846308946db06ea09" title="Can be overridden for basic initialization that depends on a valid hierarchy and position.">Initialize()</a> and <a class="el" href="../../d6/d30/classez_component.htm#a9fa1de7a6ea68259f8ce7f096e515b16" title="This method is called before the component is destroyed. A derived type can override this method to d...">Deinitialize()</a> are only ever called once.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d0/d01/classez_custom_mesh_component.htm#a1a131be40a4b57d20b23002a46edf750" title="This method is called when the component gets activated.">OnActivated()</a>, <a class="el" href="../../d0/d01/classez_custom_mesh_component.htm#a2cf0362269ca0a775c9767cc5a68d7c7" title="This method is called when the component gets deactivated.">OnDeactivated()</a>, <a class="el" href="../../d6/d30/classez_component.htm#ac23da898c747537846308946db06ea09" title="Can be overridden for basic initialization that depends on a valid hierarchy and position.">Initialize()</a>, <a class="el" href="../../d6/d30/classez_component.htm#a9fa1de7a6ea68259f8ce7f096e515b16" title="This method is called before the component is destroyed. A derived type can override this method to d...">Deinitialize()</a>, <a class="el" href="../../d6/d30/classez_component.htm#a2dc05ad8b8ffdecd5bc9b5f68f14ae3f" title="This method is called once for active components, at the start of the next world update,...">OnSimulationStarted()</a> </dd></dl>
 
 <p>Reimplemented from <a class="el" href="../../d3/d8e/classez_render_component.htm#a29e50cf148be01cc49a21f7d1692de6a">ezRenderComponent</a>.</p>
+
+</div>
+</div>
+<a id="a2cf0362269ca0a775c9767cc5a68d7c7" name="a2cf0362269ca0a775c9767cc5a68d7c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cf0362269ca0a775c9767cc5a68d7c7">&#9670;&#160;</a></span>OnDeactivated()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ezCustomMeshComponent::OnDeactivated </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This method is called when the component gets deactivated. </p>
+<p>Upon destruction, a component that is active first gets deactivated. Therefore <a class="el" href="../../d0/d01/classez_custom_mesh_component.htm#a2cf0362269ca0a775c9767cc5a68d7c7" title="This method is called when the component gets deactivated.">OnDeactivated()</a> should be used for typical game code cleanup.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d0/d01/classez_custom_mesh_component.htm#a1a131be40a4b57d20b23002a46edf750" title="This method is called when the component gets activated.">OnActivated()</a>, <a class="el" href="../../d0/d01/classez_custom_mesh_component.htm#a2cf0362269ca0a775c9767cc5a68d7c7" title="This method is called when the component gets deactivated.">OnDeactivated()</a>, <a class="el" href="../../d6/d30/classez_component.htm#ac23da898c747537846308946db06ea09" title="Can be overridden for basic initialization that depends on a valid hierarchy and position.">Initialize()</a>, <a class="el" href="../../d6/d30/classez_component.htm#a9fa1de7a6ea68259f8ce7f096e515b16" title="This method is called before the component is destroyed. A derived type can override this method to d...">Deinitialize()</a>, <a class="el" href="../../d6/d30/classez_component.htm#a2dc05ad8b8ffdecd5bc9b5f68f14ae3f" title="This method is called once for active components, at the start of the next world update,...">OnSimulationStarted()</a> </dd></dl>
+
+<p>Reimplemented from <a class="el" href="../../d3/d8e/classez_render_component.htm#ac847f72c05243ee92094c6cba9b079c3">ezRenderComponent</a>.</p>
 
 </div>
 </div>
@@ -641,7 +679,7 @@ static const <a class="el" href="../../dd/d19/classez_r_t_t_i.htm">ezRTTI</a> *&
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d0/d01/classez_custom_mesh_component.htm">ezCustomMeshComponent</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:03 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:44 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

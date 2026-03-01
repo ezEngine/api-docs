@@ -2,8 +2,8 @@ var classez_jolt_grab_object_component =
 [
     [ "BreakObjectGrab", "d2/dcd/classez_jolt_grab_object_component.htm#a200c83636ee757ae63de93afe86b63c4", null ],
     [ "DeserializeComponent", "d2/dcd/classez_jolt_grab_object_component.htm#a1460a1a98411b97e3018841f4e66309d", null ],
-    [ "DropGrabbedObject", "d2/dcd/classez_jolt_grab_object_component.htm#a0f17849305bff25b123c232e01290a36", null ],
-    [ "FindNearbyObject", "d2/dcd/classez_jolt_grab_object_component.htm#a458db9a0b0e9de7f5b454db3842dfc8c", null ],
+    [ "DropGrabbedObject", "d2/dcd/classez_jolt_grab_object_component.htm#aa7046527576362d998d02538c7bbf72c", null ],
+    [ "FindNearbyObject", "d2/dcd/classez_jolt_grab_object_component.htm#ac219f88ee9bf3e9bfc4d18740a28ff97", null ],
     [ "GetGrabbedActor", "d2/dcd/classez_jolt_grab_object_component.htm#aa11adcabe1dcf37975fa233a99f27154", null ],
     [ "GetGrabbedActorMass", "d2/dcd/classez_jolt_grab_object_component.htm#ab89cc0249dbb215d62e941a81be656c8", null ],
     [ "GrabNearbyObject", "d2/dcd/classez_jolt_grab_object_component.htm#a2dbc9447d78b161951007a07cb28ae15", null ],

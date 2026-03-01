@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -98,7 +98,7 @@ $(document).ready(function(){initNavTree('db/dd7/classez_image_conversion.htm','
 </div><!--header-->
 <div class="contents">
 
-<p>Helper class containing utilities to convert between different image formats and layouts.  
+<p>High-level image format conversion system with automatic path finding.  
  <a href="../../db/dd7/classez_image_conversion.htm#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../d0/dfc/_image_conversion_8h_source.htm">ImageConversion.h</a>&gt;</code></p>
@@ -111,19 +111,17 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a93c0d45510878e6998461b707f54dc65" id="r_a93c0d45510878e6998461b707f54dc65"><td class="memItemLeft" align="right" valign="top"><a id="a93c0d45510878e6998461b707f54dc65" name="a93c0d45510878e6998461b707f54dc65"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsConvertible</b> (<a class="el" href="../../da/dfa/structez_image_format.htm#a1c595e37b9f96c35dd90570bfcd8f853">ezImageFormat::Enum</a> sourceFormat, <a class="el" href="../../da/dfa/structez_image_format.htm#a1c595e37b9f96c35dd90570bfcd8f853">ezImageFormat::Enum</a> targetFormat)</td></tr>
-<tr class="memdesc:a93c0d45510878e6998461b707f54dc65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if there is a known conversion path between the two formats. <br /></td></tr>
+<tr class="memitem:a93c0d45510878e6998461b707f54dc65" id="r_a93c0d45510878e6998461b707f54dc65"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dd7/classez_image_conversion.htm#a93c0d45510878e6998461b707f54dc65">IsConvertible</a> (ezImageFormat::Enum sourceFormat, ezImageFormat::Enum targetFormat)</td></tr>
+<tr class="memdesc:a93c0d45510878e6998461b707f54dc65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a conversion path exists between two formats.  <br /></td></tr>
 <tr class="separator:a93c0d45510878e6998461b707f54dc65"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45bef150225313274883bc1c972a8fe8" id="r_a45bef150225313274883bc1c972a8fe8"><td class="memItemLeft" align="right" valign="top"><a id="a45bef150225313274883bc1c972a8fe8" name="a45bef150225313274883bc1c972a8fe8"></a>
-static <a class="el" href="../../da/dfa/structez_image_format.htm#a1c595e37b9f96c35dd90570bfcd8f853">ezImageFormat::Enum</a>&#160;</td><td class="memItemRight" valign="bottom"><b>FindClosestCompatibleFormat</b> (<a class="el" href="../../da/dfa/structez_image_format.htm#a1c595e37b9f96c35dd90570bfcd8f853">ezImageFormat::Enum</a> format, <a class="el" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr</a>&lt; const <a class="el" href="../../da/dfa/structez_image_format.htm#a1c595e37b9f96c35dd90570bfcd8f853">ezImageFormat::Enum</a> &gt; compatibleFormats)</td></tr>
-<tr class="memdesc:a45bef150225313274883bc1c972a8fe8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the image format from a given list of formats which is the cheapest to convert to. <br /></td></tr>
+<tr class="memitem:a45bef150225313274883bc1c972a8fe8" id="r_a45bef150225313274883bc1c972a8fe8"><td class="memItemLeft" align="right" valign="top">static ezImageFormat::Enum&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dd7/classez_image_conversion.htm#a45bef150225313274883bc1c972a8fe8">FindClosestCompatibleFormat</a> (ezImageFormat::Enum format, <a class="el" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr</a>&lt; const ezImageFormat::Enum &gt; compatibleFormats)</td></tr>
+<tr class="memdesc:a45bef150225313274883bc1c972a8fe8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the format requiring the least conversion cost from a list of candidates.  <br /></td></tr>
 <tr class="separator:a45bef150225313274883bc1c972a8fe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75109a8cc743342252cd618bbc0d7646" id="r_a75109a8cc743342252cd618bbc0d7646"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d4/da9/structez_result.htm">ezResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dd7/classez_image_conversion.htm#a75109a8cc743342252cd618bbc0d7646">BuildPath</a> (<a class="el" href="../../da/dfa/structez_image_format.htm#a1c595e37b9f96c35dd90570bfcd8f853">ezImageFormat::Enum</a> sourceFormat, <a class="el" href="../../da/dfa/structez_image_format.htm#a1c595e37b9f96c35dd90570bfcd8f853">ezImageFormat::Enum</a> targetFormat, bool bSourceEqualsTarget, <a class="el" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray</a>&lt; <a class="el" href="../../d1/dac/structez_image_conversion_1_1_conversion_path_node.htm">ConversionPathNode</a>, 16 &gt; &amp;out_path, ezUInt32 &amp;out_uiNumScratchBuffers)</td></tr>
+<tr class="memitem:a75109a8cc743342252cd618bbc0d7646" id="r_a75109a8cc743342252cd618bbc0d7646"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d4/da9/structez_result.htm">ezResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dd7/classez_image_conversion.htm#a75109a8cc743342252cd618bbc0d7646">BuildPath</a> (ezImageFormat::Enum sourceFormat, ezImageFormat::Enum targetFormat, bool bSourceEqualsTarget, <a class="el" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray</a>&lt; <a class="el" href="../../d1/dac/structez_image_conversion_1_1_conversion_path_node.htm">ConversionPathNode</a>, 16 &gt; &amp;out_path, ezUInt32 &amp;out_uiNumScratchBuffers)</td></tr>
 <tr class="memdesc:a75109a8cc743342252cd618bbc0d7646"><td class="mdescLeft">&#160;</td><td class="mdescRight">Precomputes an optimal conversion path between two formats and the minimal number of required scratch buffers.  <br /></td></tr>
 <tr class="separator:a75109a8cc743342252cd618bbc0d7646"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c88b734ab7128027997e432ef28ad64" id="r_a8c88b734ab7128027997e432ef28ad64"><td class="memItemLeft" align="right" valign="top"><a id="a8c88b734ab7128027997e432ef28ad64" name="a8c88b734ab7128027997e432ef28ad64"></a>
-static <a class="el" href="../../d4/da9/structez_result.htm">ezResult</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Convert</b> (const <a class="el" href="../../d2/d06/classez_image_view.htm">ezImageView</a> &amp;source, <a class="el" href="../../d4/d43/classez_image.htm">ezImage</a> &amp;ref_target, <a class="el" href="../../da/dfa/structez_image_format.htm#a1c595e37b9f96c35dd90570bfcd8f853">ezImageFormat::Enum</a> targetFormat)</td></tr>
+static <a class="el" href="../../d4/da9/structez_result.htm">ezResult</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Convert</b> (const <a class="el" href="../../d2/d06/classez_image_view.htm">ezImageView</a> &amp;source, <a class="el" href="../../d4/d43/classez_image.htm">ezImage</a> &amp;ref_target, ezImageFormat::Enum targetFormat)</td></tr>
 <tr class="memdesc:a8c88b734ab7128027997e432ef28ad64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the source image into a target image with the given format. Source and target may be the same. <br /></td></tr>
 <tr class="separator:a8c88b734ab7128027997e432ef28ad64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a895bb810914e0788ac7f114b783bedd5" id="r_a895bb810914e0788ac7f114b783bedd5"><td class="memItemLeft" align="right" valign="top"><a id="a895bb810914e0788ac7f114b783bedd5" name="a895bb810914e0788ac7f114b783bedd5"></a>
@@ -131,7 +129,7 @@ static <a class="el" href="../../d4/da9/structez_result.htm">ezResult</a>&#160;<
 <tr class="memdesc:a895bb810914e0788ac7f114b783bedd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the source image into a target image using a precomputed conversion path. <br /></td></tr>
 <tr class="separator:a895bb810914e0788ac7f114b783bedd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a759a802fd6cf4899f7080db1a3fe0ec8" id="r_a759a802fd6cf4899f7080db1a3fe0ec8"><td class="memItemLeft" align="right" valign="top"><a id="a759a802fd6cf4899f7080db1a3fe0ec8" name="a759a802fd6cf4899f7080db1a3fe0ec8"></a>
-static <a class="el" href="../../d4/da9/structez_result.htm">ezResult</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ConvertRaw</b> (<a class="el" href="../../d3/da7/classez_blob_ptr.htm">ezConstByteBlobPtr</a> source, <a class="el" href="../../d3/da7/classez_blob_ptr.htm">ezByteBlobPtr</a> target, ezUInt32 uiNumElements, <a class="el" href="../../da/dfa/structez_image_format.htm#a1c595e37b9f96c35dd90570bfcd8f853">ezImageFormat::Enum</a> sourceFormat, <a class="el" href="../../da/dfa/structez_image_format.htm#a1c595e37b9f96c35dd90570bfcd8f853">ezImageFormat::Enum</a> targetFormat)</td></tr>
+static <a class="el" href="../../d4/da9/structez_result.htm">ezResult</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ConvertRaw</b> (<a class="el" href="../../d3/da7/classez_blob_ptr.htm">ezConstByteBlobPtr</a> source, <a class="el" href="../../d3/da7/classez_blob_ptr.htm">ezByteBlobPtr</a> target, ezUInt32 uiNumElements, ezImageFormat::Enum sourceFormat, ezImageFormat::Enum targetFormat)</td></tr>
 <tr class="memdesc:a759a802fd6cf4899f7080db1a3fe0ec8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the raw source data into a target data buffer with the given format. Source and target may be the same. <br /></td></tr>
 <tr class="separator:a759a802fd6cf4899f7080db1a3fe0ec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7bd5452133c058b9970e5d6307ae796" id="r_ac7bd5452133c058b9970e5d6307ae796"><td class="memItemLeft" align="right" valign="top"><a id="ac7bd5452133c058b9970e5d6307ae796" name="ac7bd5452133c058b9970e5d6307ae796"></a>
@@ -140,7 +138,34 @@ static <a class="el" href="../../d4/da9/structez_result.htm">ezResult</a>&#160;<
 <tr class="separator:ac7bd5452133c058b9970e5d6307ae796"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Helper class containing utilities to convert between different image formats and layouts. </p>
+<div class="textblock"><p>High-level image format conversion system with automatic path finding. </p>
+<p>This class provides a complete image conversion system that can automatically find optimal conversion paths between any two supported formats. It uses a plugin-based architecture where conversion steps register themselves at startup.</p>
+<p><b>Basic Usage:</b> </p><div class="fragment"><div class="line"><span class="comment">// Simple format conversion</span></div>
+<div class="line"><a class="code hl_class" href="../../d4/d43/classez_image.htm">ezImage</a> sourceImage;</div>
+<div class="line">sourceImage.<a class="code hl_function" href="../../d4/d43/classez_image.htm#a4687bb48efce2121800d224303007dd4">LoadFrom</a>(<span class="stringliteral">&quot;texture.png&quot;</span>);</div>
+<div class="line"><a class="code hl_class" href="../../d4/d43/classez_image.htm">ezImage</a> targetImage;</div>
+<div class="line"><a class="code hl_function" href="../../db/dd7/classez_image_conversion.htm#a8c88b734ab7128027997e432ef28ad64">ezImageConversion::Convert</a>(sourceImage, targetImage, ezImageFormat::BC1_UNORM);</div>
+<div class="ttc" id="aclassez_image_conversion_htm_a8c88b734ab7128027997e432ef28ad64"><div class="ttname"><a href="../../db/dd7/classez_image_conversion.htm#a8c88b734ab7128027997e432ef28ad64">ezImageConversion::Convert</a></div><div class="ttdeci">static ezResult Convert(const ezImageView &amp;source, ezImage &amp;ref_target, ezImageFormat::Enum targetFormat)</div><div class="ttdoc">Converts the source image into a target image with the given format. Source and target may be the sam...</div><div class="ttdef"><b>Definition</b> ImageConversion.cpp:380</div></div>
+<div class="ttc" id="aclassez_image_htm"><div class="ttname"><a href="../../d4/d43/classez_image.htm">ezImage</a></div><div class="ttdoc">Container for image data with automatic memory management.</div><div class="ttdef"><b>Definition</b> Image.h:139</div></div>
+<div class="ttc" id="aclassez_image_htm_a4687bb48efce2121800d224303007dd4"><div class="ttname"><a href="../../d4/d43/classez_image.htm#a4687bb48efce2121800d224303007dd4">ezImage::LoadFrom</a></div><div class="ttdeci">ezResult LoadFrom(ezStringView sFileName)</div><div class="ttdoc">Convenience function to load the image from the given file.</div><div class="ttdef"><b>Definition</b> Image.cpp:260</div></div>
+</div><!-- fragment --><p><b>Advanced Usage with Path Caching:</b> </p><div class="fragment"><div class="line"><span class="comment">// Build reusable conversion path</span></div>
+<div class="line"><a class="code hl_class" href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray&lt;ezImageConversion::ConversionPathNode, 16&gt;</a> path;</div>
+<div class="line">ezUInt32 numScratchBuffers;</div>
+<div class="line"><a class="code hl_function" href="../../db/dd7/classez_image_conversion.htm#a75109a8cc743342252cd618bbc0d7646">ezImageConversion::BuildPath</a>(sourceFormat, targetFormat, <span class="keyword">false</span>, path, numScratchBuffers);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Use cached path for multiple conversions</span></div>
+<div class="line"><span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; image : images)</div>
+<div class="line">{</div>
+<div class="line">  <a class="code hl_function" href="../../db/dd7/classez_image_conversion.htm#a8c88b734ab7128027997e432ef28ad64">ezImageConversion::Convert</a>(image, convertedImage, path, numScratchBuffers);</div>
+<div class="line">}</div>
+<div class="ttc" id="aclassez_hybrid_array_htm"><div class="ttname"><a href="../../d8/deb/classez_hybrid_array.htm">ezHybridArray</a></div><div class="ttdoc">A hybrid array uses in-place storage to handle the first few elements without any allocation....</div><div class="ttdef"><b>Definition</b> HybridArray.h:12</div></div>
+<div class="ttc" id="aclassez_image_conversion_htm_a75109a8cc743342252cd618bbc0d7646"><div class="ttname"><a href="../../db/dd7/classez_image_conversion.htm#a75109a8cc743342252cd618bbc0d7646">ezImageConversion::BuildPath</a></div><div class="ttdeci">static ezResult BuildPath(ezImageFormat::Enum sourceFormat, ezImageFormat::Enum targetFormat, bool bSourceEqualsTarget, ezHybridArray&lt; ConversionPathNode, 16 &gt; &amp;out_path, ezUInt32 &amp;out_uiNumScratchBuffers)</div><div class="ttdoc">Precomputes an optimal conversion path between two formats and the minimal number of required scratch...</div><div class="ttdef"><b>Definition</b> ImageConversion.cpp:162</div></div>
+</div><!-- fragment --><p>The conversion system automatically handles:</p><ul>
+<li>Multi-step conversions (e.g., BC1 -&gt; RGBA8 -&gt; BC7)</li>
+<li>Memory layout differences (linear, block-compressed, planar)</li>
+<li>Optimal path selection based on quality and performance</li>
+<li>In-place conversions when possible </li>
+</ul>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a75109a8cc743342252cd618bbc0d7646" name="a75109a8cc743342252cd618bbc0d7646"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a75109a8cc743342252cd618bbc0d7646">&#9670;&#160;</a></span>BuildPath()</h2>
@@ -154,13 +179,13 @@ static <a class="el" href="../../d4/da9/structez_result.htm">ezResult</a>&#160;<
         <tr>
           <td class="memname"><a class="el" href="../../d4/da9/structez_result.htm">ezResult</a> ezImageConversion::BuildPath </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../da/dfa/structez_image_format.htm#a1c595e37b9f96c35dd90570bfcd8f853">ezImageFormat::Enum</a>&#160;</td>
+          <td class="paramtype">ezImageFormat::Enum&#160;</td>
           <td class="paramname"><em>sourceFormat</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../da/dfa/structez_image_format.htm#a1c595e37b9f96c35dd90570bfcd8f853">ezImageFormat::Enum</a>&#160;</td>
+          <td class="paramtype">ezImageFormat::Enum&#160;</td>
           <td class="paramname"><em>targetFormat</em>, </td>
         </tr>
         <tr>
@@ -210,6 +235,84 @@ static <a class="el" href="../../d4/da9/structez_result.htm">ezResult</a>&#160;<
 
 </div>
 </div>
+<a id="a45bef150225313274883bc1c972a8fe8" name="a45bef150225313274883bc1c972a8fe8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45bef150225313274883bc1c972a8fe8">&#9670;&#160;</a></span>FindClosestCompatibleFormat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ezImageFormat::Enum ezImageConversion::FindClosestCompatibleFormat </td>
+          <td>(</td>
+          <td class="paramtype">ezImageFormat::Enum&#160;</td>
+          <td class="paramname"><em>format</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr</a>&lt; const ezImageFormat::Enum &gt;&#160;</td>
+          <td class="paramname"><em>compatibleFormats</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Finds the format requiring the least conversion cost from a list of candidates. </p>
+<p>Useful when you have multiple acceptable target formats and want to choose the one that preserves the most quality or requires the least processing. </p>
+
+</div>
+</div>
+<a id="a93c0d45510878e6998461b707f54dc65" name="a93c0d45510878e6998461b707f54dc65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93c0d45510878e6998461b707f54dc65">&#9670;&#160;</a></span>IsConvertible()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ezImageConversion::IsConvertible </td>
+          <td>(</td>
+          <td class="paramtype">ezImageFormat::Enum&#160;</td>
+          <td class="paramname"><em>sourceFormat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ezImageFormat::Enum&#160;</td>
+          <td class="paramname"><em>targetFormat</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks if a conversion path exists between two formats. </p>
+<p>This is a fast query that doesn't build the actual conversion path. Use this to validate format compatibility before attempting conversion. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Texture/Image/<a class="el" href="../../d0/dfc/_image_conversion_8h_source.htm">ImageConversion.h</a></li>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Texture/Image/Implementation/<b>ImageConversion.cpp</b></li>
@@ -220,7 +323,7 @@ static <a class="el" href="../../d4/da9/structez_result.htm">ezResult</a>&#160;<
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../db/dd7/classez_image_conversion.htm">ezImageConversion</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:04 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:45 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

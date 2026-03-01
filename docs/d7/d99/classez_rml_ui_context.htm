@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -114,6 +114,9 @@ Public Types</h2></td></tr>
 <tr class="memitem:a5d0ad3e5207262f79e9b99af96de4834" id="r_a5d0ad3e5207262f79e9b99af96de4834"><td class="memItemLeft" align="right" valign="top"><a id="a5d0ad3e5207262f79e9b99af96de4834" name="a5d0ad3e5207262f79e9b99af96de4834"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>EventHandler</b> = <a class="el" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>&lt; void(Rml::Event &amp;)&gt;</td></tr>
 <tr class="separator:a5d0ad3e5207262f79e9b99af96de4834"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa05b7315d02b2fbf42e6f1e3aeb12bb3" id="r_aa05b7315d02b2fbf42e6f1e3aeb12bb3"><td class="memItemLeft" align="right" valign="top"><a id="aa05b7315d02b2fbf42e6f1e3aeb12bb3" name="aa05b7315d02b2fbf42e6f1e3aeb12bb3"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>FallbackEventHandler</b> = <a class="el" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>&lt; void(const <a class="el" href="../../de/dce/classez_hashed_string.htm">ezHashedString</a> &amp;, Rml::Event &amp;)&gt;</td></tr>
+<tr class="separator:aa05b7315d02b2fbf42e6f1e3aeb12bb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -141,10 +144,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>ShowDocument</b> ()</
 <tr class="memitem:a236d34c4b769f8d3d2c7fde6a3b118ee" id="r_a236d34c4b769f8d3d2c7fde6a3b118ee"><td class="memItemLeft" align="right" valign="top"><a id="a236d34c4b769f8d3d2c7fde6a3b118ee" name="a236d34c4b769f8d3d2c7fde6a3b118ee"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>HideDocument</b> ()</td></tr>
 <tr class="separator:a236d34c4b769f8d3d2c7fde6a3b118ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade2dc4640e774d9534baaaee03b33ebc" id="r_ade2dc4640e774d9534baaaee03b33ebc"><td class="memItemLeft" align="right" valign="top"><a id="ade2dc4640e774d9534baaaee03b33ebc" name="ade2dc4640e774d9534baaaee03b33ebc"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>UpdateInput</b> (const <a class="el" href="../../d1/df8/classez_vec2_template.htm">ezVec2</a> &amp;vMousePos)</td></tr>
-<tr class="memdesc:ade2dc4640e774d9534baaaee03b33ebc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the input was consumed. <br /></td></tr>
-<tr class="separator:ade2dc4640e774d9534baaaee03b33ebc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b598d4f0f3d3c1bd3cb22a262b584e5" id="r_a3b598d4f0f3d3c1bd3cb22a262b584e5"><td class="memItemLeft" align="right" valign="top"><a id="a3b598d4f0f3d3c1bd3cb22a262b584e5" name="a3b598d4f0f3d3c1bd3cb22a262b584e5"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>UpdateInput</b> (const <a class="el" href="../../d1/df8/classez_vec2_template.htm">ezVec2</a> &amp;vMousePos, const <a class="el" href="../../d1/d51/structez_rml_ui_input_provider.htm">ezRmlUiInputProvider</a> &amp;input)</td></tr>
+<tr class="memdesc:a3b598d4f0f3d3c1bd3cb22a262b584e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the input was consumed. <br /></td></tr>
+<tr class="separator:a3b598d4f0f3d3c1bd3cb22a262b584e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d99ec5ac5158940ea9c4a12429320f0" id="r_a5d99ec5ac5158940ea9c4a12429320f0"><td class="memItemLeft" align="right" valign="top"><a id="a5d99ec5ac5158940ea9c4a12429320f0" name="a5d99ec5ac5158940ea9c4a12429320f0"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>WantsInput</b> () const</td></tr>
 <tr class="separator:a5d99ec5ac5158940ea9c4a12429320f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -154,12 +157,21 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SetSize</b> (const <a
 <tr class="memitem:af65d971559bfac8c3d909701be48a405" id="r_af65d971559bfac8c3d909701be48a405"><td class="memItemLeft" align="right" valign="top"><a id="af65d971559bfac8c3d909701be48a405" name="af65d971559bfac8c3d909701be48a405"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>SetDpiScale</b> (float fScale)</td></tr>
 <tr class="separator:af65d971559bfac8c3d909701be48a405"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1917cc5e4af1e4d1c661ece34a923c32" id="r_a1917cc5e4af1e4d1c661ece34a923c32"><td class="memItemLeft" align="right" valign="top"><a id="a1917cc5e4af1e4d1c661ece34a923c32" name="a1917cc5e4af1e4d1c661ece34a923c32"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>RegisterEventHandler</b> (const char *szIdentifier, <a class="el" href="../../d5/d68/structez_delegate.htm">EventHandler</a> handler)</td></tr>
+<tr class="memitem:a1917cc5e4af1e4d1c661ece34a923c32" id="r_a1917cc5e4af1e4d1c661ece34a923c32"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d99/classez_rml_ui_context.htm#a1917cc5e4af1e4d1c661ece34a923c32">RegisterEventHandler</a> (const char *szIdentifier, <a class="el" href="../../d5/d68/structez_delegate.htm">EventHandler</a> handler)</td></tr>
+<tr class="memdesc:a1917cc5e4af1e4d1c661ece34a923c32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers an event handler for a RmlUI event (such as 'onclick')  <br /></td></tr>
 <tr class="separator:a1917cc5e4af1e4d1c661ece34a923c32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ec4b7fa9e7c3bcb1f1fe1c68c448903" id="r_a7ec4b7fa9e7c3bcb1f1fe1c68c448903"><td class="memItemLeft" align="right" valign="top"><a id="a7ec4b7fa9e7c3bcb1f1fe1c68c448903" name="a7ec4b7fa9e7c3bcb1f1fe1c68c448903"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>DeregisterEventHandler</b> (const char *szIdentifier)</td></tr>
+<tr class="memdesc:a7ec4b7fa9e7c3bcb1f1fe1c68c448903"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a previously registered RmlUI event handler. <br /></td></tr>
 <tr class="separator:a7ec4b7fa9e7c3bcb1f1fe1c68c448903"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa188f39da95f3ac25d2db678e4d64822" id="r_aa188f39da95f3ac25d2db678e4d64822"><td class="memItemLeft" align="right" valign="top"><a id="aa188f39da95f3ac25d2db678e4d64822" name="aa188f39da95f3ac25d2db678e4d64822"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>RegisterFallbackEventHandler</b> (<a class="el" href="../../d5/d68/structez_delegate.htm">FallbackEventHandler</a> handler)</td></tr>
+<tr class="memdesc:aa188f39da95f3ac25d2db678e4d64822"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a fallback event handler for RmlUI events which is called when no specific event handler is registered for the event's type. <br /></td></tr>
+<tr class="separator:aa188f39da95f3ac25d2db678e4d64822"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41f1233a59778f6debe8957abad2897a" id="r_a41f1233a59778f6debe8957abad2897a"><td class="memItemLeft" align="right" valign="top"><a id="a41f1233a59778f6debe8957abad2897a" name="a41f1233a59778f6debe8957abad2897a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>DeregisterFallbackEventHandler</b> ()</td></tr>
+<tr class="memdesc:a41f1233a59778f6debe8957abad2897a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the previously registered fallback event handler. <br /></td></tr>
+<tr class="separator:a41f1233a59778f6debe8957abad2897a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9c869a5870636226ec72d2befac27ed" id="r_aa9c869a5870636226ec72d2befac27ed"><td class="memItemLeft" align="right" valign="top"><a id="aa9c869a5870636226ec72d2befac27ed" name="aa9c869a5870636226ec72d2befac27ed"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Update</b> ()</td></tr>
 <tr class="separator:aa9c869a5870636226ec72d2befac27ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -173,6 +185,38 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>ezRmlUi</b></td></tr
 class&#160;</td><td class="memItemRight" valign="bottom"><b>ezRmlUiInternal::EventListener</b></td></tr>
 <tr class="separator:a36aaa9270d53a923c815f6744f689217"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a1917cc5e4af1e4d1c661ece34a923c32" name="a1917cc5e4af1e4d1c661ece34a923c32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1917cc5e4af1e4d1c661ece34a923c32">&#9670;&#160;</a></span>RegisterEventHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ezRmlUiContext::RegisterEventHandler </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>szIdentifier</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d5/d68/structez_delegate.htm">EventHandler</a>&#160;</td>
+          <td class="paramname"><em>handler</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Registers an event handler for a RmlUI event (such as 'onclick') </p>
+<p>There can only be one event handler for each event type. If called multiple times, the existing event handler is overridden. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/runner/work/ezEngine/ezEngine/Code/EnginePlugins/RmlUiPlugin/<a class="el" href="../../d3/d8f/_rml_ui_context_8h_source.htm">RmlUiContext.h</a></li>
 <li>/home/runner/work/ezEngine/ezEngine/Code/EnginePlugins/RmlUiPlugin/Implementation/<b>RmlUiContext.cpp</b></li>
@@ -183,7 +227,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>ezRmlUiInternal::Eve
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d7/d99/classez_rml_ui_context.htm">ezRmlUiContext</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:06 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:47 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

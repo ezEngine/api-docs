@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('d3/d4c/classez_abstract_function_prope
 </div><!--header-->
 <div class="contents">
 
-<p>The base class for a property that represents a function.  
+<p>Base class for properties that represent callable functions or methods.  
  <a href="../../d3/d4c/classez_abstract_function_property.htm#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../d8/d4a/_abstract_property_8h_source.htm">AbstractProperty.h</a>&gt;</code></p>
@@ -106,7 +106,7 @@ Inheritance diagram for ezAbstractFunctionProperty:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../da/dd9/classez_abstract_function_property__inherit__graph.png" border="0" usemap="#aez_abstract_function_property_inherit__map" alt="Inheritance graph"/></div>
 <map name="aez_abstract_function_property_inherit__map" id="aez_abstract_function_property_inherit__map">
-<area shape="rect" title="The base class for a property that represents a function." alt="" coords="200,218,401,243"/>
+<area shape="rect" title="Base class for properties that represent callable functions or methods." alt="" coords="200,218,401,243"/>
 <area shape="rect" href="../../db/d3b/classez_typed_function_property.htm" title=" " alt="" coords="459,45,645,85"/>
 <area shape="poly" title=" " alt="" coords="331,208,519,83,522,88,334,213"/>
 <area shape="rect" href="../../db/d3b/classez_typed_function_property.htm" title=" " alt="" coords="459,148,645,188"/>
@@ -117,7 +117,7 @@ Inheritance diagram for ezAbstractFunctionProperty:</div>
 <area shape="poly" title=" " alt="" coords="369,244,499,275,497,281,367,249"/>
 <area shape="rect" href="../../db/d3b/classez_typed_function_property.htm" title=" " alt="" coords="459,328,645,368"/>
 <area shape="poly" title=" " alt="" coords="334,249,387,281,450,314,481,325,479,330,448,318,384,286,331,253"/>
-<area shape="rect" href="../../d6/d81/classez_abstract_property.htm" title="This is the base interface for all properties in the reflection system. It provides enough informatio..." alt="" coords="5,218,152,243"/>
+<area shape="rect" href="../../d6/d81/classez_abstract_property.htm" title="Base interface for all properties in the reflection system." alt="" coords="5,218,152,243"/>
 <area shape="poly" title=" " alt="" coords="166,228,200,228,200,233,166,233"/>
 <area shape="rect" href="../../d7/dc4/classez_constructor_function_property.htm" title=" " alt="" coords="703,5,926,45"/>
 <area shape="poly" title=" " alt="" coords="658,47,702,40,703,45,659,52"/>
@@ -140,7 +140,7 @@ Inheritance diagram for ezAbstractFunctionProperty:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a2e7ca0bbfce4b60e6a346769ddbd2ea0" id="r_a2e7ca0bbfce4b60e6a346769ddbd2ea0"><td class="memItemLeft" align="right" valign="top"><a id="a2e7ca0bbfce4b60e6a346769ddbd2ea0" name="a2e7ca0bbfce4b60e6a346769ddbd2ea0"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>ezAbstractFunctionProperty</b> (const char *szPropertyName)</td></tr>
-<tr class="memdesc:a2e7ca0bbfce4b60e6a346769ddbd2ea0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Passes the property name through to <a class="el" href="../../d6/d81/classez_abstract_property.htm" title="This is the base interface for all properties in the reflection system. It provides enough informatio...">ezAbstractProperty</a>. <br /></td></tr>
+<tr class="memdesc:a2e7ca0bbfce4b60e6a346769ddbd2ea0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Passes the property name through to <a class="el" href="../../d6/d81/classez_abstract_property.htm" title="Base interface for all properties in the reflection system.">ezAbstractProperty</a>. <br /></td></tr>
 <tr class="separator:a2e7ca0bbfce4b60e6a346769ddbd2ea0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f02f21d2e947e71578054b08cb491d0" id="r_a8f02f21d2e947e71578054b08cb491d0"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../d5/d49/structez_property_category.htm#a6900b9049e7887fa4b00d16d5eace8cf">ezPropertyCategory::Enum</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d4c/classez_abstract_function_property.htm#a8f02f21d2e947e71578054b08cb491d0">GetCategory</a> () const override</td></tr>
 <tr class="memdesc:a8f02f21d2e947e71578054b08cb491d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the category of this property. Cast this property to the next higher type for more information.  <br /></td></tr>
@@ -222,7 +222,26 @@ const char *&#160;</td><td class="memItemRight" valign="bottom"><b>m_szPropertyN
 <tr class="separator:a4db885baa76eabd60628aef04d77923b inherit pro_attribs_classez_abstract_property"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The base class for a property that represents a function. </p>
+<div class="textblock"><p>Base class for properties that represent callable functions or methods. </p>
+<p>Function properties enable runtime invocation of methods with type-safe parameter passing and return value handling. They support member functions, static functions, and constructors.</p>
+<p>Function types:</p><ul>
+<li>Member: Instance methods requiring a valid object pointer</li>
+<li>StaticMember: Static methods, instance pointer ignored</li>
+<li>Constructor: Special functions that create new objects</li>
+</ul>
+<p>Parameter handling:</p><ul>
+<li>Standard types: Passed by value, exact type matching required</li>
+<li>Enums/Bitflags: Passed as ezInt64 values through ezEnum/ezBitflags</li>
+<li>Classes: Always passed by pointer regardless of declaration</li>
+<li>Out parameters: Written back to source variants after execution</li>
+<li>Null values: Represented as invalid variants (except for <a class="el" href="../../de/de6/classez_variant.htm" title="ezVariant is a class that can store different types of variables, which is useful in situations where...">ezVariant</a> parameters)</li>
+</ul>
+<p>Performance considerations:</p><ul>
+<li>Function calls involve virtual dispatch and parameter marshaling</li>
+<li>Parameter conversion can be expensive for complex types</li>
+<li>Out parameter writeback requires variant assignments</li>
+<li>Constructor calls include allocation overhead </li>
+</ul>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a9ae7f67941d80367ee4b5bb978133250" name="a9ae7f67941d80367ee4b5bb978133250"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9ae7f67941d80367ee4b5bb978133250">&#9670;&#160;</a></span>Execute()</h2>
@@ -514,7 +533,7 @@ const char *&#160;</td><td class="memItemRight" valign="bottom"><b>m_szPropertyN
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d3/d4c/classez_abstract_function_property.htm">ezAbstractFunctionProperty</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:02 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:43 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

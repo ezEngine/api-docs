@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -98,7 +98,7 @@ $(document).ready(function(){initNavTree('da/d1b/classez_instance_data_allocator
 </div><!--header-->
 <div class="contents">
 
-<p>Helper class to manager instance data allocation, construction and destruction.  
+<p>Manages complex multi-type instance data allocation with proper construction and destruction.  
  <a href="../../da/d1b/classez_instance_data_allocator.htm#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../d6/d72/_instance_data_allocator_8h_source.htm">InstanceDataAllocator.h</a>&gt;</code></p>
@@ -142,7 +142,14 @@ static EZ_ALWAYS_INLINE void *&#160;</td><td class="memItemRight" valign="bottom
 <tr class="separator:a92eb75337bd46c6195db2f8b50f00c24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Helper class to manager instance data allocation, construction and destruction. </p>
+<div class="textblock"><p>Manages complex multi-type instance data allocation with proper construction and destruction. </p>
+<p>This allocator is designed for systems that need to allocate heterogeneous data structures in a single memory block, such as VM instances, state machines, or script execution contexts. It calculates proper alignments for mixed data types and handles construction/destruction automatically.</p>
+<p>Typical workflow:</p><ol type="1">
+<li>Use <a class="el" href="../../da/d1b/classez_instance_data_allocator.htm#ae578e4c70b9f45bf4f079441258ff684" title="Adds the given desc to internal list of data that needs to be allocated and returns the byte offset.">AddDesc()</a> to register all data types needed for an instance</li>
+<li>Call <a class="el" href="../../da/d1b/classez_instance_data_allocator.htm#aa308719554cf6a1c3fe9c481f82d806e" title="Allocates memory and constructs the instance data objects inside it. The returned ezBlob must be stor...">AllocateAndConstruct()</a> to create initialized memory</li>
+<li>Use <a class="el" href="../../da/d1b/classez_instance_data_allocator.htm#a92eb75337bd46c6195db2f8b50f00c24" title="Retrieves a void pointer to the instance data within the given blob at the given offset,...">GetInstanceData()</a> to access individual data by offset</li>
+<li>Call <a class="el" href="../../da/d1b/classez_instance_data_allocator.htm#a1746a30ad8b06d42b16bfab1a917e704" title="Destructs and deallocates the instance data objects and the given memory block.">DestructAndDeallocate()</a> when the instance is no longer needed </li>
+</ol>
 </div><hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/Memory/<a class="el" href="../../d6/d72/_instance_data_allocator_8h_source.htm">InstanceDataAllocator.h</a></li>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/Memory/Implementation/<b>InstanceDataAllocator.cpp</b></li>
@@ -153,7 +160,7 @@ static EZ_ALWAYS_INLINE void *&#160;</td><td class="memItemRight" valign="bottom
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../da/d1b/classez_instance_data_allocator.htm">ezInstanceDataAllocator</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:04 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:45 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

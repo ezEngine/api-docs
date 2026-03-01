@@ -13,6 +13,10 @@ var structez_x_r_device_features =
       [ "SecondaryAnalogStick", "de/d1a/structez_x_r_device_features.htm#ad3860771d4bc2547a9c6d6ad54af2f5aaa9b5045f9d7619f4c79b5935cf054de3", null ],
       [ "SecondaryAnalogStickClick", "de/d1a/structez_x_r_device_features.htm#ad3860771d4bc2547a9c6d6ad54af2f5aad0107cf010a1e4176f51d05ffe04054d", null ],
       [ "SecondaryAnalogStickTouch", "de/d1a/structez_x_r_device_features.htm#ad3860771d4bc2547a9c6d6ad54af2f5aa8ebf9530ae629f4ca38332517ef9a196", null ],
+      [ "PrimaryButton", "de/d1a/structez_x_r_device_features.htm#ad3860771d4bc2547a9c6d6ad54af2f5aa27d1b857411b61a4361daa6450bc6108", null ],
+      [ "PrimaryButtonTouch", "de/d1a/structez_x_r_device_features.htm#ad3860771d4bc2547a9c6d6ad54af2f5aa9cdf7de6885eebea9b26ab55f86cd997", null ],
+      [ "SecondaryButton", "de/d1a/structez_x_r_device_features.htm#ad3860771d4bc2547a9c6d6ad54af2f5aa3bd12a980f2919707ba433a6399e9572", null ],
+      [ "SecondaryButtonTouch", "de/d1a/structez_x_r_device_features.htm#ad3860771d4bc2547a9c6d6ad54af2f5aab61bb6033f8484168af3a17a45e6671f", null ],
       [ "GripPose", "de/d1a/structez_x_r_device_features.htm#ad3860771d4bc2547a9c6d6ad54af2f5aa620fe1aebd599fd34d1273f79f83d957", null ],
       [ "AimPose", "de/d1a/structez_x_r_device_features.htm#ad3860771d4bc2547a9c6d6ad54af2f5aa0f9a8a41106dd09d4a6550d299f40dae", null ],
       [ "Default", "de/d1a/structez_x_r_device_features.htm#ad3860771d4bc2547a9c6d6ad54af2f5aa5feec1428552269ff14c8880136ae3df", null ]

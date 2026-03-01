@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -193,49 +193,59 @@ $(document).ready(function(){initNavTree('dc/dba/_crash_handler___posix_8h_sourc
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="keywordtype">bool</span> ezCrashHandler_WriteMiniDump::WriteOwnProcessMiniDump(<span class="keywordtype">void</span>* pOsSpecificData)</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>{</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>}</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="keywordtype">void</span> ezCrashHandler_WriteMiniDump::PrintStackTrace(<span class="keywordtype">void</span>* pOsSpecificData)</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>{</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  <a class="code hl_function" href="../../dc/d9e/classez_log.htm#a151496b9618cf53b4389d8f125ee9e2c">ezLog::Printf</a>(<span class="stringliteral">&quot;***Unhandled Exception:***\n&quot;</span>);</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  <span class="comment">// ezLog::Printf exception type</span></div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>  <span class="keywordflow">if</span> (std::type_info* type = abi::__cxa_current_exception_type())</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  {</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keywordflow">if</span> (<span class="keyword">const</span> <span class="keywordtype">char</span>* szName = type-&gt;name())</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    {</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>      <span class="keywordtype">int</span> status = -1;</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>      <span class="comment">// Try to print nice name</span></div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>      <span class="keywordflow">if</span> (<span class="keywordtype">char</span>* szNiceName = abi::__cxa_demangle(szName, 0, 0, &amp;status))</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        <a class="code hl_function" href="../../dc/d9e/classez_log.htm#a151496b9618cf53b4389d8f125ee9e2c">ezLog::Printf</a>(<span class="stringliteral">&quot;Exception: %s\n&quot;</span>, szNiceName);</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>      <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        <a class="code hl_function" href="../../dc/d9e/classez_log.htm#a151496b9618cf53b4389d8f125ee9e2c">ezLog::Printf</a>(<span class="stringliteral">&quot;Exception: %s\n&quot;</span>, szName);</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    }</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  }</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  {</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <a class="code hl_function" href="../../dc/d9e/classez_log.htm#a151496b9618cf53b4389d8f125ee9e2c">ezLog::Printf</a>(<span class="stringliteral">&quot;\n\n***Stack Trace:***\n&quot;</span>);</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="keywordtype">void</span>* pBuffer[64];</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <a class="code hl_class" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;void*&gt;</a> tempTrace(pBuffer);</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="keyword">const</span> ezUInt32 uiNumTraces = <a class="code hl_function" href="../../d3/d42/classez_stack_tracer.htm#aee255882e5055806075bc3b59b01048c">ezStackTracer::GetStackTrace</a>(tempTrace);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="preprocessor">#if EZ_ENABLED(EZ_SUPPORTS_CRASH_DUMPS)</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  <a class="code hl_struct" href="../../d7/d6e/structez_status.htm">ezStatus</a> res = <a class="code hl_function" href="../../da/d49/namespaceez_mini_dump_utils.htm#a9b3e4d5dd2358ccacbbddb9ad095f5d2">ezMiniDumpUtils::WriteOwnProcessMiniDump</a>(m_sDumpFilePath, pOsSpecificData);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  <span class="keywordflow">if</span> (res.Failed())</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <a class="code hl_function" href="../../dc/d9e/classez_log.htm#a151496b9618cf53b4389d8f125ee9e2c">ezLog::Printf</a>(<span class="stringliteral">&quot;WriteOwnProcessMiniDump failed: %s\n&quot;</span>, res.GetMessageString().<a class="code hl_function" href="../../d6/d43/structez_hybrid_string_base.htm#a98fb76791e36685a3d4dc2303c50f854">GetData</a>());</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  <span class="keywordflow">return</span> res.Succeeded();</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>}</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="keywordtype">void</span> ezCrashHandler_WriteMiniDump::PrintStackTrace(<span class="keywordtype">void</span>* pOsSpecificData)</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>{</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  <a class="code hl_function" href="../../dc/d9e/classez_log.htm#a151496b9618cf53b4389d8f125ee9e2c">ezLog::Printf</a>(<span class="stringliteral">&quot;***Unhandled Exception:***\n&quot;</span>);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  <span class="comment">// ezLog::Printf exception type</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  <span class="keywordflow">if</span> (std::type_info* type = abi::__cxa_current_exception_type())</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  {</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keywordflow">if</span> (<span class="keyword">const</span> <span class="keywordtype">char</span>* szName = type-&gt;name())</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    {</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>      <span class="keywordtype">int</span> status = -1;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>      <span class="comment">// Try to print nice name</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>      <span class="keywordflow">if</span> (<span class="keywordtype">char</span>* szNiceName = abi::__cxa_demangle(szName, 0, 0, &amp;status))</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        <a class="code hl_function" href="../../dc/d9e/classez_log.htm#a151496b9618cf53b4389d8f125ee9e2c">ezLog::Printf</a>(<span class="stringliteral">&quot;Exception: %s\n&quot;</span>, szNiceName);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>      <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        <a class="code hl_function" href="../../dc/d9e/classez_log.htm#a151496b9618cf53b4389d8f125ee9e2c">ezLog::Printf</a>(<span class="stringliteral">&quot;Exception: %s\n&quot;</span>, szName);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    }</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  }</div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <a class="code hl_function" href="../../d3/d42/classez_stack_tracer.htm#a198faaf655ef637ce094c0dc3d282def">ezStackTracer::ResolveStackTrace</a>(tempTrace.GetSubArray(0, uiNumTraces), &amp;PrintHelper);</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  }</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>}</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>  {</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <a class="code hl_function" href="../../dc/d9e/classez_log.htm#a151496b9618cf53b4389d8f125ee9e2c">ezLog::Printf</a>(<span class="stringliteral">&quot;\n\n***Stack Trace:***\n&quot;</span>);</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="keywordtype">void</span>* pBuffer[64];</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <a class="code hl_class" href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr&lt;void*&gt;</a> tempTrace(pBuffer);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <span class="keyword">const</span> ezUInt32 uiNumTraces = <a class="code hl_function" href="../../d3/d42/classez_stack_tracer.htm#aee255882e5055806075bc3b59b01048c">ezStackTracer::GetStackTrace</a>(tempTrace);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <a class="code hl_function" href="../../d3/d42/classez_stack_tracer.htm#a198faaf655ef637ce094c0dc3d282def">ezStackTracer::ResolveStackTrace</a>(tempTrace.GetSubArray(0, uiNumTraces), &amp;PrintHelper);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  }</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>}</div>
 <div class="ttc" id="aclassez_array_ptr_htm"><div class="ttname"><a href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr</a></div><div class="ttdoc">This class encapsulates an array and it's size. It is recommended to use this class instead of plain ...</div><div class="ttdef"><b>Definition</b> ArrayPtr.h:41</div></div>
 <div class="ttc" id="aclassez_crash_handler_htm"><div class="ttname"><a href="../../db/d82/classez_crash_handler.htm">ezCrashHandler</a></div><div class="ttdoc">Helper class to manage the top level exception handler.</div><div class="ttdef"><b>Definition</b> CrashHandler.h:21</div></div>
 <div class="ttc" id="aclassez_log_htm_a151496b9618cf53b4389d8f125ee9e2c"><div class="ttname"><a href="../../dc/d9e/classez_log.htm#a151496b9618cf53b4389d8f125ee9e2c">ezLog::Printf</a></div><div class="ttdeci">static void Printf(const char *szFormat,...)</div><div class="ttdoc">Calls low-level OS functionality to print a string to the typical outputs. Forwards to Print.</div><div class="ttdef"><b>Definition</b> Log.cpp:275</div></div>
 <div class="ttc" id="aclassez_stack_tracer_htm_a198faaf655ef637ce094c0dc3d282def"><div class="ttname"><a href="../../d3/d42/classez_stack_tracer.htm#a198faaf655ef637ce094c0dc3d282def">ezStackTracer::ResolveStackTrace</a></div><div class="ttdeci">static void ResolveStackTrace(const ezArrayPtr&lt; void * &gt; &amp;trace, PrintFunc printFunc)</div><div class="ttdoc">Print a stack trace.</div><div class="ttdef"><b>Definition</b> StackTracer_NoImpl.h:12</div></div>
 <div class="ttc" id="aclassez_stack_tracer_htm_aee255882e5055806075bc3b59b01048c"><div class="ttname"><a href="../../d3/d42/classez_stack_tracer.htm#aee255882e5055806075bc3b59b01048c">ezStackTracer::GetStackTrace</a></div><div class="ttdeci">static ezUInt32 GetStackTrace(ezArrayPtr&lt; void * &gt; &amp;ref_trace, void *pContext=nullptr)</div><div class="ttdoc">Captures the current stack trace.</div><div class="ttdef"><b>Definition</b> StackTracer_NoImpl.h:7</div></div>
+<div class="ttc" id="anamespaceez_mini_dump_utils_htm_a9b3e4d5dd2358ccacbbddb9ad095f5d2"><div class="ttname"><a href="../../da/d49/namespaceez_mini_dump_utils.htm#a9b3e4d5dd2358ccacbbddb9ad095f5d2">ezMiniDumpUtils::WriteOwnProcessMiniDump</a></div><div class="ttdeci">EZ_FOUNDATION_DLL ezStatus WriteOwnProcessMiniDump(ezStringView sDumpFile, void *pOsSpecificData, ezDumpType dumpTypeOverride=ezDumpType::Auto)</div><div class="ttdoc">Linux-specific implementation for writing a core dump of the running process.</div></div>
+<div class="ttc" id="astructez_hybrid_string_base_htm_a98fb76791e36685a3d4dc2303c50f854"><div class="ttname"><a href="../../d6/d43/structez_hybrid_string_base.htm#a98fb76791e36685a3d4dc2303c50f854">ezHybridStringBase::GetData</a></div><div class="ttdeci">const char * GetData() const</div><div class="ttdoc">Returns a pointer to the internal Utf8 string.</div><div class="ttdef"><b>Definition</b> String_inl.h:56</div></div>
+<div class="ttc" id="astructez_status_htm"><div class="ttname"><a href="../../d7/d6e/structez_status.htm">ezStatus</a></div><div class="ttdoc">An ezResult with an additional message for the reason of failure.</div><div class="ttdef"><b>Definition</b> Status.h:12</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_81a97b29d048515ed79592945c8b94b3.htm">Platform</a></li><li class="navelem"><a class="el" href="../../dir_ea0f1cea308dbde9b8c550f938edec5f.htm">Posix</a></li><li class="navelem"><b>CrashHandler_Posix.h</b></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:00:58 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:39 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

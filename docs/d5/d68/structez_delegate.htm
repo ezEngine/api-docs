@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -122,9 +122,16 @@ Additional Inherited Members</h2></td></tr>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename T, ezUInt32 DataSize = 16&gt;<br />
 struct ezDelegate&lt; T, DataSize &gt;</div><p>A generic delegate class which supports static functions and member functions. </p>
 <p>A delegate is a function pointer that may be used to call both simple C functions, as well as member functions of some class, which requires a 'this' pointer to go along with. The delegate can capture both these use cases dynamically, so this distinction does not need to be made statically, but is the choice of the user who assigns some function to the delegate.</p>
+<p>Unlike std::function, delegates are designed for performance-critical scenarios with:</p><ul>
+<li>Small, predictable memory footprint (configurable via DataSize template parameter)</li>
+<li>No heap allocation for small callables</li>
+<li>Minimal call overhead (single indirect function call)</li>
+<li>Move semantics for efficient passing</li>
+</ul>
+<p>The delegate stores the callable object inline if it fits within DataSize bytes, otherwise it uses heap allocation. The default 16-byte storage accommodates most function pointers and member function pointers without allocation.</p>
 <p>Delegates have a rather strange syntax:</p>
 <div class="fragment"><div class="line"><span class="keyword">using </span>SomeCallback = <a class="code hl_struct" href="../../d5/d68/structez_delegate.htm">ezDelegate</a>&lt;void (ezUInt32, <span class="keywordtype">float</span>)&gt;;</div>
-<div class="ttc" id="astructez_delegate_htm"><div class="ttname"><a href="../../d5/d68/structez_delegate.htm">ezDelegate</a></div><div class="ttdoc">A generic delegate class which supports static functions and member functions.</div><div class="ttdef"><b>Definition</b> Delegate.h:76</div></div>
+<div class="ttc" id="astructez_delegate_htm"><div class="ttname"><a href="../../d5/d68/structez_delegate.htm">ezDelegate</a></div><div class="ttdoc">A generic delegate class which supports static functions and member functions.</div><div class="ttdef"><b>Definition</b> Delegate.h:86</div></div>
 </div><!-- fragment --><p>This defines a type 'SomeCallback' that can call any function that returns void and takes two parameters, the first being ezUInt32, the second being a float parameter. Now you can use SomeCallback just like any other function pointer type.</p>
 <p>Assigning a C function as the value to the delegate is straight-forward:</p>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> SomeFunction(ezUInt32 i, <span class="keywordtype">float</span> f);</div>
@@ -152,7 +159,7 @@ struct ezDelegate&lt; T, DataSize &gt;</div><p>A generic delegate class which su
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d5/d68/structez_delegate.htm">ezDelegate</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:03 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:44 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

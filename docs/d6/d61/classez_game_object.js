@@ -6,6 +6,7 @@ var classez_game_object =
       [ "None", "d6/d61/classez_game_object.htm#a52f1f7043a9fa1816061e0a5ca6b6476a6adf97f83acf6453d4a6a4b1070f3754", null ],
       [ "UpdateImmediately", "d6/d61/classez_game_object.htm#a52f1f7043a9fa1816061e0a5ca6b6476a28495bc4bd0366e01fb565853b6bfcd2", null ]
     ] ],
+    [ "ActivateChildByName", "d6/d61/classez_game_object.htm#a867189ef915b85833e3dd54ab041e12c", null ],
     [ "AddChild", "d6/d61/classez_game_object.htm#acc1e561b7176f2d57322cf9a314b41ec", null ],
     [ "AddChildren", "d6/d61/classez_game_object.htm#a44837e003e312e053598512612abee3d", null ],
     [ "DetachChild", "d6/d61/classez_game_object.htm#a65f4db0f4b8fdc8bb43be3d19ee01da6", null ],
@@ -47,6 +48,7 @@ var classez_game_object =
     [ "PostEventMessage", "d6/d61/classez_game_object.htm#acff6462769a58d482e4da0a107319b17", null ],
     [ "PostMessage", "d6/d61/classez_game_object.htm#acfca22a69a106e811438828c4b7f1d9f", null ],
     [ "PostMessageRecursive", "d6/d61/classez_game_object.htm#aa55bab58debd50b2646ec82dc12c86a7", null ],
+    [ "QueueLocalBoundsUpdate", "d6/d61/classez_game_object.htm#ab3d4f2d001e83e6b2049ebfd7c3b13e7", null ],
     [ "RemoveTag", "d6/d61/classez_game_object.htm#ad816a0b91575eda8959fb8226f0f8691", null ],
     [ "SearchForChildByNameSequence", "d6/d61/classez_game_object.htm#a4f34b830561e19a58ad1ffa31b77c4bb", null ],
     [ "SearchForChildByNameSequence", "d6/d61/classez_game_object.htm#aa258ba82be078f3313a74eea3c038be4", null ],

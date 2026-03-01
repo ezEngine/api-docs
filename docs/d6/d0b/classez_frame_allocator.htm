@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -96,19 +96,95 @@ $(document).ready(function(){initNavTree('d6/d0b/classez_frame_allocator.htm','.
   <div class="headertitle"><div class="title">ezFrameAllocator Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Global frame allocator for temporary allocations that are reset each frame.  
+ <a href="../../d6/d0b/classez_frame_allocator.htm#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d5/d40/_frame_allocator_8h_source.htm">FrameAllocator.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a9f73b4d5adc30e1fdd6c237a33db8a7c" id="r_a9f73b4d5adc30e1fdd6c237a33db8a7c"><td class="memItemLeft" align="right" valign="top"><a id="a9f73b4d5adc30e1fdd6c237a33db8a7c" name="a9f73b4d5adc30e1fdd6c237a33db8a7c"></a>
-static EZ_ALWAYS_INLINE <a class="el" href="../../d0/dbb/classez_allocator.htm">ezAllocator</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>GetCurrentAllocator</b> ()</td></tr>
+<tr class="memitem:a9f73b4d5adc30e1fdd6c237a33db8a7c" id="r_a9f73b4d5adc30e1fdd6c237a33db8a7c"><td class="memItemLeft" align="right" valign="top">static EZ_ALWAYS_INLINE <a class="el" href="../../d0/dbb/classez_allocator.htm">ezAllocator</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0b/classez_frame_allocator.htm#a9f73b4d5adc30e1fdd6c237a33db8a7c">GetCurrentAllocator</a> ()</td></tr>
+<tr class="memdesc:a9f73b4d5adc30e1fdd6c237a33db8a7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the allocator for the current frame.  <br /></td></tr>
 <tr class="separator:a9f73b4d5adc30e1fdd6c237a33db8a7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59c46c26006e42d84866d122316fb89a" id="r_a59c46c26006e42d84866d122316fb89a"><td class="memItemLeft" align="right" valign="top"><a id="a59c46c26006e42d84866d122316fb89a" name="a59c46c26006e42d84866d122316fb89a"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>Swap</b> ()</td></tr>
+<tr class="memitem:a59c46c26006e42d84866d122316fb89a" id="r_a59c46c26006e42d84866d122316fb89a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0b/classez_frame_allocator.htm#a59c46c26006e42d84866d122316fb89a">Swap</a> ()</td></tr>
+<tr class="memdesc:a59c46c26006e42d84866d122316fb89a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Swaps the active buffer, should be called once per frame.  <br /></td></tr>
 <tr class="separator:a59c46c26006e42d84866d122316fb89a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afabc395b3bd2e9cdfb332a9bc64ba1ba" id="r_afabc395b3bd2e9cdfb332a9bc64ba1ba"><td class="memItemLeft" align="right" valign="top"><a id="afabc395b3bd2e9cdfb332a9bc64ba1ba" name="afabc395b3bd2e9cdfb332a9bc64ba1ba"></a>
 static void&#160;</td><td class="memItemRight" valign="bottom"><b>Reset</b> ()</td></tr>
+<tr class="memdesc:afabc395b3bd2e9cdfb332a9bc64ba1ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets both buffers, typically called during shutdown. <br /></td></tr>
 <tr class="separator:afabc395b3bd2e9cdfb332a9bc64ba1ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Global frame allocator for temporary allocations that are reset each frame. </p>
+<p>This is a convenience wrapper around <a class="el" href="../../d7/da1/classez_double_buffered_linear_allocator.htm" title="A double buffered linear allocator for temporary per-frame allocations.">ezDoubleBufferedLinearAllocator</a> that provides a global instance for frame-based allocations. Very efficient for temporary data that only needs to live for one frame (UI layouts, temporary strings, intermediate calculations, etc.).</p>
+<p>Usage pattern:</p><ul>
+<li><a class="el" href="../../d6/d0b/classez_frame_allocator.htm#a9f73b4d5adc30e1fdd6c237a33db8a7c" title="Returns the allocator for the current frame.">GetCurrentAllocator()</a> - get allocator for current frame</li>
+<li><a class="el" href="../../d6/d0b/classez_frame_allocator.htm#a59c46c26006e42d84866d122316fb89a" title="Swaps the active buffer, should be called once per frame.">Swap()</a> - called once per frame to switch buffers (usually by the engine)</li>
+<li><a class="el" href="../../d6/d0b/classez_frame_allocator.htm#afabc395b3bd2e9cdfb332a9bc64ba1ba" title="Resets both buffers, typically called during shutdown.">Reset()</a> - resets both buffers (usually called during shutdown)</li>
+</ul>
+<p>Performance characteristics:</p><ul>
+<li>Allocation: O(1) - just advances a pointer</li>
+<li>Deallocation: Not supported individually, entire frame is reset at once</li>
+<li>Memory overhead: Minimal, just stack pointers </li>
+</ul>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a9f73b4d5adc30e1fdd6c237a33db8a7c" name="a9f73b4d5adc30e1fdd6c237a33db8a7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f73b4d5adc30e1fdd6c237a33db8a7c">&#9670;&#160;</a></span>GetCurrentAllocator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static EZ_ALWAYS_INLINE <a class="el" href="../../d0/dbb/classez_allocator.htm">ezAllocator</a> * ezFrameAllocator::GetCurrentAllocator </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the allocator for the current frame. </p>
+<p>All allocations from this allocator will be automatically freed when the frame ends. </p>
+
+</div>
+</div>
+<a id="a59c46c26006e42d84866d122316fb89a" name="a59c46c26006e42d84866d122316fb89a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59c46c26006e42d84866d122316fb89a">&#9670;&#160;</a></span>Swap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ezFrameAllocator::Swap </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Swaps the active buffer, should be called once per frame. </p>
+<p>This makes the previous frame's allocations invalid and resets the allocator for new allocations. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/Memory/<a class="el" href="../../d5/d40/_frame_allocator_8h_source.htm">FrameAllocator.h</a></li>
 <li>/home/runner/work/ezEngine/ezEngine/Code/Engine/Foundation/Memory/Implementation/<b>FrameAllocator.cpp</b></li>
@@ -119,7 +195,7 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>Reset</b> ()</
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d6/d0b/classez_frame_allocator.htm">ezFrameAllocator</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:03 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:45 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -171,7 +171,7 @@ ezUInt32&#160;</td><td class="memItemRight" valign="bottom"><b>GetUIntOption</b>
 <tr class="memdesc:a0552434b0fc221e04d97736d371d49d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a float interpretation of the option <em>szOption</em> or fDefault if it cannot be found.  <br /></td></tr>
 <tr class="separator:a0552434b0fc221e04d97736d371d49d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a922c61528f768ef07b43e9cfe05dce37" id="r_a922c61528f768ef07b43e9cfe05dce37"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc2/classez_command_line_utils.htm#a922c61528f768ef07b43e9cfe05dce37">InjectCustomArgument</a> (<a class="el" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sArgument)</td></tr>
-<tr class="memdesc:a922c61528f768ef07b43e9cfe05dce37"><td class="mdescLeft">&#160;</td><td class="mdescRight">This allows to append an argument programmatically, that wasn't actually set through the command line.  <br /></td></tr>
+<tr class="memdesc:a922c61528f768ef07b43e9cfe05dce37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends an argument programmatically, as if it was specified on the command line.  <br /></td></tr>
 <tr class="separator:a922c61528f768ef07b43e9cfe05dce37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
@@ -180,13 +180,25 @@ Static Public Member Functions</h2></td></tr>
 static <a class="el" href="../../d0/dc2/classez_command_line_utils.htm">ezCommandLineUtils</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>GetGlobalInstance</b> ()</td></tr>
 <tr class="memdesc:afebfede9ab7bb5f29685025c77706f7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns one global instance of <a class="el" href="../../d0/dc2/classez_command_line_utils.htm" title="This is a helper class to parse command lines.">ezCommandLineUtils</a>. <br /></td></tr>
 <tr class="separator:afebfede9ab7bb5f29685025c77706f7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abdbfcbb6aead5b744429bf8899fabcfa" id="r_abdbfcbb6aead5b744429bf8899fabcfa"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc2/classez_command_line_utils.htm#abdbfcbb6aead5b744429bf8899fabcfa">SplitCommandLineString</a> (const char *szCommandString, bool bAddExecutableDir, <a class="el" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray</a>&lt; <a class="el" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> &gt; &amp;out_args, <a class="el" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray</a>&lt; const char * &gt; &amp;out_argsV)</td></tr>
-<tr class="memdesc:abdbfcbb6aead5b744429bf8899fabcfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits a string into the classic argc/argv string.  <br /></td></tr>
-<tr class="separator:abdbfcbb6aead5b744429bf8899fabcfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5ccec90e36ae7c63f6dcd780e05b0ce" id="r_af5ccec90e36ae7c63f6dcd780e05b0ce"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc2/classez_command_line_utils.htm#af5ccec90e36ae7c63f6dcd780e05b0ce">SplitCommandLineString</a> (<a class="el" href="../../d9/d18/classez_string_view.htm">ezStringView</a> sCommandString, bool bAddExecutableDir, <a class="el" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray</a>&lt; <a class="el" href="../../d4/d53/structez_hybrid_string.htm">ezString</a> &gt; &amp;out_args, <a class="el" href="../../d2/d4f/classez_dynamic_array.htm">ezDynamicArray</a>&lt; const char * &gt; &amp;out_argsV)</td></tr>
+<tr class="memdesc:af5ccec90e36ae7c63f6dcd780e05b0ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits a string into the classic argc/argv string.  <br /></td></tr>
+<tr class="separator:af5ccec90e36ae7c63f6dcd780e05b0ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This is a helper class to parse command lines. </p>
-<p>Initialize it using <a class="el" href="../../d0/dc2/classez_command_line_utils.htm#ad7783b833293ba9cf65cdee74e0e764e" title="Initializes ezCommandLineUtils from the parameter arguments that were passed to the application.">SetCommandLine()</a>. Then query for command line options using <a class="el" href="../../d0/dc2/classez_command_line_utils.htm#ae3eabc619e1f2e615a33c95b392e46f4" title="Returns the n-th parameter to the command line option with the name szOption.">GetStringOption()</a>, <a class="el" href="../../d0/dc2/classez_command_line_utils.htm#a16366371c0a5a1a7dd0a7fd87d1f1351" title="Returns a boolean interpretation of the option szOption or bDefault if it cannot be found.">GetBoolOption()</a>, <a class="el" href="../../d0/dc2/classez_command_line_utils.htm#a099df6e40e072ed0c288bfa9568b8809" title="Returns an integer interpretation of the option szOption or iDefault if it cannot be found.">GetIntOption()</a> or <a class="el" href="../../d0/dc2/classez_command_line_utils.htm#a0552434b0fc221e04d97736d371d49d2" title="Returns a float interpretation of the option szOption or fDefault if it cannot be found.">GetFloatOption()</a> </p>
+<p>Initialize it using <a class="el" href="../../d0/dc2/classez_command_line_utils.htm#ad7783b833293ba9cf65cdee74e0e764e" title="Initializes ezCommandLineUtils from the parameter arguments that were passed to the application.">SetCommandLine()</a>. Then query for command line options using <a class="el" href="../../d0/dc2/classez_command_line_utils.htm#ae3eabc619e1f2e615a33c95b392e46f4" title="Returns the n-th parameter to the command line option with the name szOption.">GetStringOption()</a>, <a class="el" href="../../d0/dc2/classez_command_line_utils.htm#a16366371c0a5a1a7dd0a7fd87d1f1351" title="Returns a boolean interpretation of the option szOption or bDefault if it cannot be found.">GetBoolOption()</a>, <a class="el" href="../../d0/dc2/classez_command_line_utils.htm#a099df6e40e072ed0c288bfa9568b8809" title="Returns an integer interpretation of the option szOption or iDefault if it cannot be found.">GetIntOption()</a> or <a class="el" href="../../d0/dc2/classez_command_line_utils.htm#a0552434b0fc221e04d97736d371d49d2" title="Returns a float interpretation of the option szOption or fDefault if it cannot be found.">GetFloatOption()</a>.</p>
+<p>Command line format:</p><ul>
+<li>Options start with a hyphen (-) and can have zero or more arguments</li>
+<li>Arguments that don't start with a hyphen are considered values for the preceding option</li>
+<li>Boolean options can be specified alone (-verbose) or with a value (-verbose true)</li>
+<li>Multiple arguments can follow an option (-input file1.txt file2.txt)</li>
+</ul>
+<p>Examples:</p><ul>
+<li>Simple flags: "-verbose -debug"</li>
+<li>Options with values: "-input data.txt -output result.bin"</li>
+<li>Multiple values: "-files a.txt b.txt c.txt -count 3"</li>
+<li>Mixed usage: "-v -input file.dat -threads 4 -optimize" </li>
+</ul>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a14d1f89aa920f099f4cc902455098bb2" name="a14d1f89aa920f099f4cc902455098bb2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a14d1f89aa920f099f4cc902455098bb2">&#9670;&#160;</a></span>ArgMode</h2>
@@ -200,9 +212,9 @@ static <a class="el" href="../../d0/dc2/classez_command_line_utils.htm">ezComman
       </table>
 </div><div class="memdoc">
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a14d1f89aa920f099f4cc902455098bb2a7a7f4852d6e1f0fef79bce0a4098b9df" name="a14d1f89aa920f099f4cc902455098bb2a7a7f4852d6e1f0fef79bce0a4098b9df"></a>UseArgcArgv&#160;</td><td class="fielddoc"><p>Use the passed in argc/argv values as they are passed in. </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a14d1f89aa920f099f4cc902455098bb2a7a7f4852d6e1f0fef79bce0a4098b9df" name="a14d1f89aa920f099f4cc902455098bb2a7a7f4852d6e1f0fef79bce0a4098b9df"></a>UseArgcArgv&#160;</td><td class="fielddoc"><p>Use the passed in argc/argv values as they are passed in. May have limited Unicode support on some platforms. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a14d1f89aa920f099f4cc902455098bb2ad72667d24737fe879bf8286b6e121936" name="a14d1f89aa920f099f4cc902455098bb2ad72667d24737fe879bf8286b6e121936"></a>PreferOsArgs&#160;</td><td class="fielddoc"><p>On Windows, ignore argc/argv and instead query the global arguments from the OS. Necessary to properly support Unicode strings in arguments. </p>
+<tr><td class="fieldname"><a id="a14d1f89aa920f099f4cc902455098bb2ad72667d24737fe879bf8286b6e121936" name="a14d1f89aa920f099f4cc902455098bb2ad72667d24737fe879bf8286b6e121936"></a>PreferOsArgs&#160;</td><td class="fielddoc"><p>On Windows, ignore argc/argv and query arguments directly from GetCommandLineW(). This provides full Unicode support and handles special characters correctly. On non-Windows platforms, falls back to UseArgcArgv behavior. </p>
 </td></tr>
 </table>
 
@@ -516,14 +528,17 @@ static <a class="el" href="../../d0/dc2/classez_command_line_utils.htm">ezComman
       </table>
 </div><div class="memdoc">
 
-<p>This allows to append an argument programmatically, that wasn't actually set through the command line. </p>
-<p>This can be useful when the command-line is a method to configure something, which might be hidden away in a plugin, and we have no other easy way to configure it.</p>
-<p>Be aware that each call to this function is like one command line argument. Therefore to add "-arg test", call it two times, once with "-arg", once with "test". To add a string with spaces, call it once, but do not wrap the string in artificial quotes. </p>
-
+<p>Appends an argument programmatically, as if it was specified on the command line. </p>
+<p>This can be useful when the command-line is a method to configure something, which might be hidden away in a plugin, and we have no other easy way to configure it. Also useful for programmatically adding default values or configuration overrides.</p>
+<p>Each call to this function adds one command line argument. Therefore to add "-arg test", call it two times, once with "-arg", once with "test". To add a string with spaces, call it once, but do not wrap the string in artificial quotes - the function handles strings with spaces correctly.</p>
+<p>Example usage: </p><div class="fragment"><div class="line">cmdLine.InjectCustomArgument(<span class="stringliteral">&quot;-config&quot;</span>);</div>
+<div class="line">cmdLine.InjectCustomArgument(<span class="stringliteral">&quot;default.cfg&quot;</span>);</div>
+<div class="line">cmdLine.InjectCustomArgument(<span class="stringliteral">&quot;path with spaces&quot;</span>);  <span class="comment">// Handled correctly without quotes</span></div>
+</div><!-- fragment --> 
 </div>
 </div>
-<a id="abdbfcbb6aead5b744429bf8899fabcfa" name="abdbfcbb6aead5b744429bf8899fabcfa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abdbfcbb6aead5b744429bf8899fabcfa">&#9670;&#160;</a></span>SplitCommandLineString()</h2>
+<a id="af5ccec90e36ae7c63f6dcd780e05b0ce" name="af5ccec90e36ae7c63f6dcd780e05b0ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5ccec90e36ae7c63f6dcd780e05b0ce">&#9670;&#160;</a></span>SplitCommandLineString()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -534,8 +549,8 @@ static <a class="el" href="../../d0/dc2/classez_command_line_utils.htm">ezComman
         <tr>
           <td class="memname">void ezCommandLineUtils::SplitCommandLineString </td>
           <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>szCommandString</em>, </td>
+          <td class="paramtype"><a class="el" href="../../d9/d18/classez_string_view.htm">ezStringView</a>&#160;</td>
+          <td class="paramname"><em>sCommandString</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -588,7 +603,7 @@ static <a class="el" href="../../d0/dc2/classez_command_line_utils.htm">ezComman
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d0/dc2/classez_command_line_utils.htm">ezCommandLineUtils</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:03 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:44 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

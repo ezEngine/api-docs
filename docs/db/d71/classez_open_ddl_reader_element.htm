@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -98,7 +98,7 @@ $(document).ready(function(){initNavTree('db/d71/classez_open_ddl_reader_element
 </div><!--header-->
 <div class="contents">
 
-<p>Represents a single 'object' in a DDL document, e.g. either a custom type or a primitives list.  
+<p>Represents a single element in an OpenDDL document.  
  <a href="../../db/d71/classez_open_ddl_reader_element.htm#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../d3/d4f/_open_ddl_reader_8h_source.htm">OpenDdlReader.h</a>&gt;</code></p>
@@ -153,7 +153,7 @@ EZ_ALWAYS_INLINE ezOpenDdlPrimitiveType&#160;</td><td class="memItemRight" valig
 <tr class="memdesc:a12109ab66d7ded089d3c0269bd5c9e72"><td class="mdescLeft">&#160;</td><td class="mdescRight">For non-custom types this returns the type of primitive that is stored at this element. <br /></td></tr>
 <tr class="separator:a12109ab66d7ded089d3c0269bd5c9e72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aacc5908328a8244d3786d2a8f4220c1f" id="r_aacc5908328a8244d3786d2a8f4220c1f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d71/classez_open_ddl_reader_element.htm#aacc5908328a8244d3786d2a8f4220c1f">HasPrimitives</a> (ezOpenDdlPrimitiveType type, ezUInt32 uiMinNumberOfPrimitives=1) const</td></tr>
-<tr class="memdesc:aacc5908328a8244d3786d2a8f4220c1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the element stores the requested type of primitives AND has at least the desired amount of them, so that accessing the data array at certain indices is safe.  <br /></td></tr>
+<tr class="memdesc:aacc5908328a8244d3786d2a8f4220c1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates primitive data type and count for safe array access.  <br /></td></tr>
 <tr class="separator:aacc5908328a8244d3786d2a8f4220c1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5f86647567543e0f15716eee27d7c44" id="r_aa5f86647567543e0f15716eee27d7c44"><td class="memItemLeft" align="right" valign="top"><a id="aa5f86647567543e0f15716eee27d7c44" name="aa5f86647567543e0f15716eee27d7c44"></a>
 EZ_ALWAYS_INLINE const bool *&#160;</td><td class="memItemRight" valign="bottom"><b>GetPrimitivesBool</b> () const</td></tr>
@@ -222,7 +222,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>ezOpenDdlReader</b><
 <tr class="separator:aec7e8b32b7796cb5a8126dd9cdb0d677"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Represents a single 'object' in a DDL document, e.g. either a custom type or a primitives list. </p>
+<div class="textblock"><p>Represents a single element in an OpenDDL document. </p>
+<p>OpenDDL elements can be either custom objects that contain child elements, or primitive data lists containing arrays of basic types (bool, integers, floats, strings). This class provides access to the element's type, name, child hierarchy, and primitive data. Elements are organized in a tree structure with parent-child relationships. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="afa490e9d4efdab2f0380f74af6ed190f" name="afa490e9d4efdab2f0380f74af6ed190f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afa490e9d4efdab2f0380f74af6ed190f">&#9670;&#160;</a></span>FindChildOfType()</h2>
@@ -287,6 +288,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>ezOpenDdlReader</b><
       </table>
 </div><div class="memdoc">
 
+<p>Validates primitive data type and count for safe array access. </p>
 <p>Returns true if the element stores the requested type of primitives AND has at least the desired amount of them, so that accessing the data array at certain indices is safe. </p>
 <dl class="test"><dt><b><a class="el" href="../../d4/df6/test.htm#_test000003">Test:</a></b></dt><dd>This is new </dd></dl>
 
@@ -302,7 +304,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>ezOpenDdlReader</b><
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../db/d71/classez_open_ddl_reader_element.htm">ezOpenDdlReaderElement</a></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:01:05 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:46 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

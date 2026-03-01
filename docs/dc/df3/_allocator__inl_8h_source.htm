@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="../../EZ-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 25.08</span>
+   <div id="projectname">ezEngine<span id="projectnumber">&#160;Release 26.3</span>
    </div>
   </td>
  </tr>
@@ -168,7 +168,7 @@ $(document).ready(function(){initNavTree('dc/df3/_allocator__inl_8h_source.htm',
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordflow">if</span> (pPtr != <span class="keyword">nullptr</span>)</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    {</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>      <a class="code hl_function" href="../../dc/d4d/classez_memory_utils.htm#add65b87c39dade4ee7b0671c16b10a39">ezMemoryUtils::Destruct</a>(pPtr, 1);</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>      pAllocator-&gt;Deallocate(pPtr);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>      pAllocator-&gt;<a class="code hl_function" href="../../d0/dbb/classez_allocator.htm#a52f4f289a1df783791e9b68537f69c6d">Deallocate</a>(pPtr);</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    }</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  }</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
@@ -183,7 +183,7 @@ $(document).ready(function(){initNavTree('dc/df3/_allocator__inl_8h_source.htm',
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  {</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordflow">if</span> (pPtr != <span class="keyword">nullptr</span>)</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    {</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>      pAllocator-&gt;Deallocate(pPtr);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>      pAllocator-&gt;<a class="code hl_function" href="../../d0/dbb/classez_allocator.htm#a52f4f289a1df783791e9b68537f69c6d">Deallocate</a>(pPtr);</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    }</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  }</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
@@ -203,20 +203,20 @@ $(document).ready(function(){initNavTree('dc/df3/_allocator__inl_8h_source.htm',
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keywordflow">if</span> (buffer != <span class="keyword">nullptr</span>)</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    {</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>      <a class="code hl_function" href="../../dc/d4d/classez_memory_utils.htm#add65b87c39dade4ee7b0671c16b10a39">ezMemoryUtils::Destruct</a>(buffer, arrayPtr.<a class="code hl_function" href="../../dc/dae/classez_array_ptr.htm#a9f222695f57e4cf200e07135dbbd7edd">GetCount</a>());</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>      pAllocator-&gt;Deallocate(buffer);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>      pAllocator-&gt;<a class="code hl_function" href="../../d0/dbb/classez_allocator.htm#a52f4f289a1df783791e9b68537f69c6d">Deallocate</a>(buffer);</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    }</div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  }</div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  EZ_FORCE_INLINE T* ExtendRawBuffer(T* pPtr, <a class="code hl_class" href="../../d0/dbb/classez_allocator.htm">ezAllocator</a>* pAllocator, <span class="keywordtype">size_t</span> uiCurrentCount, <span class="keywordtype">size_t</span> uiNewCount, <a class="code hl_struct" href="../../d6/d09/structez_trait_int.htm">ezTypeIsPod</a>)</div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  {</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keywordflow">return</span> (T*)pAllocator-&gt;Reallocate(pPtr, uiCurrentCount * <span class="keyword">sizeof</span>(T), uiNewCount * <span class="keyword">sizeof</span>(T), <span class="keyword">alignof</span>(T));</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keywordflow">return</span> (T*)pAllocator-&gt;<a class="code hl_function" href="../../d0/dbb/classez_allocator.htm#aa65b02d0f12571babe56825f0cd25741">Reallocate</a>(pPtr, uiCurrentCount * <span class="keyword">sizeof</span>(T), uiNewCount * <span class="keyword">sizeof</span>(T), <span class="keyword">alignof</span>(T));</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  }</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  EZ_FORCE_INLINE T* ExtendRawBuffer(T* pPtr, <a class="code hl_class" href="../../d0/dbb/classez_allocator.htm">ezAllocator</a>* pAllocator, <span class="keywordtype">size_t</span> uiCurrentCount, <span class="keywordtype">size_t</span> uiNewCount, <a class="code hl_struct" href="../../d6/d09/structez_trait_int.htm">ezTypeIsMemRelocatable</a>)</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  {</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keywordflow">return</span> (T*)pAllocator-&gt;Reallocate(pPtr, uiCurrentCount * <span class="keyword">sizeof</span>(T), uiNewCount * <span class="keyword">sizeof</span>(T), <span class="keyword">alignof</span>(T));</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keywordflow">return</span> (T*)pAllocator-&gt;<a class="code hl_function" href="../../d0/dbb/classez_allocator.htm#aa65b02d0f12571babe56825f0cd25741">Reallocate</a>(pPtr, uiCurrentCount * <span class="keyword">sizeof</span>(T), uiNewCount * <span class="keyword">sizeof</span>(T), <span class="keyword">alignof</span>(T));</div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  }</div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
@@ -245,7 +245,9 @@ $(document).ready(function(){initNavTree('dc/df3/_allocator__inl_8h_source.htm',
 <div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <span class="keywordflow">return</span> ExtendRawBuffer(pPtr, pAllocator, uiCurrentCount, uiNewCount, <a class="code hl_struct" href="../../d5/d86/structez_get_type_class.htm">ezGetTypeClass&lt;T&gt;</a>());</div>
 <div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>  }</div>
 <div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>} <span class="comment">// namespace ezInternal</span></div>
-<div class="ttc" id="aclassez_allocator_htm"><div class="ttname"><a href="../../d0/dbb/classez_allocator.htm">ezAllocator</a></div><div class="ttdoc">Base class for all memory allocators.</div><div class="ttdef"><b>Definition</b> Allocator.h:23</div></div>
+<div class="ttc" id="aclassez_allocator_htm"><div class="ttname"><a href="../../d0/dbb/classez_allocator.htm">ezAllocator</a></div><div class="ttdoc">Base class for all memory allocators.</div><div class="ttdef"><b>Definition</b> Allocator.h:37</div></div>
+<div class="ttc" id="aclassez_allocator_htm_a52f4f289a1df783791e9b68537f69c6d"><div class="ttname"><a href="../../d0/dbb/classez_allocator.htm#a52f4f289a1df783791e9b68537f69c6d">ezAllocator::Deallocate</a></div><div class="ttdeci">virtual void Deallocate(void *pPtr)=0</div><div class="ttdoc">Deallocates memory previously allocated by this allocator.</div></div>
+<div class="ttc" id="aclassez_allocator_htm_aa65b02d0f12571babe56825f0cd25741"><div class="ttname"><a href="../../d0/dbb/classez_allocator.htm#aa65b02d0f12571babe56825f0cd25741">ezAllocator::Reallocate</a></div><div class="ttdeci">virtual void * Reallocate(void *pPtr, size_t uiCurrentSize, size_t uiNewSize, size_t uiAlign)</div><div class="ttdoc">Reallocates memory, potentially moving the data to a new location.</div><div class="ttdef"><b>Definition</b> Allocator.cpp:4</div></div>
 <div class="ttc" id="aclassez_allocator_htm_aa7821be46ed6588c027abb25b845ab08"><div class="ttname"><a href="../../d0/dbb/classez_allocator.htm#aa7821be46ed6588c027abb25b845ab08">ezAllocator::Allocate</a></div><div class="ttdeci">virtual void * Allocate(size_t uiSize, size_t uiAlign, ezMemoryUtils::DestructorFunction destructorFunc=nullptr)=0</div><div class="ttdoc">Interface, do not use this directly, always use the new/delete macros below.</div></div>
 <div class="ttc" id="aclassez_array_ptr_htm"><div class="ttname"><a href="../../dc/dae/classez_array_ptr.htm">ezArrayPtr</a></div><div class="ttdoc">This class encapsulates an array and it's size. It is recommended to use this class instead of plain ...</div><div class="ttdef"><b>Definition</b> ArrayPtr.h:41</div></div>
 <div class="ttc" id="aclassez_array_ptr_htm_a9f222695f57e4cf200e07135dbbd7edd"><div class="ttname"><a href="../../dc/dae/classez_array_ptr.htm#a9f222695f57e4cf200e07135dbbd7edd">ezArrayPtr::GetCount</a></div><div class="ttdeci">EZ_ALWAYS_INLINE ezUInt32 GetCount() const</div><div class="ttdoc">Returns the number of elements in the array.</div><div class="ttdef"><b>Definition</b> ArrayPtr.h:175</div></div>
@@ -254,16 +256,16 @@ $(document).ready(function(){initNavTree('dc/df3/_allocator__inl_8h_source.htm',
 <div class="ttc" id="aclassez_memory_utils_htm_ae016ea37ee5fc0eb1d922d02f042746c"><div class="ttname"><a href="../../dc/d4d/classez_memory_utils.htm#ae016ea37ee5fc0eb1d922d02f042746c">ezMemoryUtils::RelocateConstruct</a></div><div class="ttdeci">static void RelocateConstruct(T *pDestination, T *pSource, size_t uiCount=1)</div><div class="ttdoc">Constructs uiCount objects of type T in a raw buffer at pDestination from an existing array of object...</div></div>
 <div class="ttc" id="anamespaceez_math_htm"><div class="ttname"><a href="../../db/d78/namespaceez_math.htm">ezMath</a></div><div class="ttdoc">This namespace provides common math-functionality as functions.</div><div class="ttdef"><b>Definition</b> Constants.h:6</div></div>
 <div class="ttc" id="anamespaceez_math_htm_aa782473cf562ce4044652dec9ec0498f"><div class="ttname"><a href="../../db/d78/namespaceez_math.htm#aa782473cf562ce4044652dec9ec0498f">ezMath::SafeMultiply64</a></div><div class="ttdeci">EZ_FOUNDATION_DLL ezUInt64 SafeMultiply64(ezUInt64 a, ezUInt64 b, ezUInt64 c=1, ezUInt64 d=1)</div><div class="ttdoc">returns a * b. If an overflow happens, the program is terminated.</div><div class="ttdef"><b>Definition</b> Math.cpp:200</div></div>
-<div class="ttc" id="astructez_get_type_class_htm"><div class="ttname"><a href="../../d5/d86/structez_get_type_class.htm">ezGetTypeClass</a></div><div class="ttdoc">If there is an % operator which takes a ezTypeIsMemRelocatable and returns a CompileTimeTrueType T is...</div><div class="ttdef"><b>Definition</b> TypeTraits.h:67</div></div>
+<div class="ttc" id="astructez_get_type_class_htm"><div class="ttname"><a href="../../d5/d86/structez_get_type_class.htm">ezGetTypeClass</a></div><div class="ttdoc">If there is an % operator which takes a ezTypeIsMemRelocatable and returns a CompileTimeTrueType T is...</div><div class="ttdef"><b>Definition</b> TypeTraits.h:77</div></div>
 <div class="ttc" id="astructez_internal_1_1_new_instance_htm"><div class="ttname"><a href="../../da/d7c/structez_internal_1_1_new_instance.htm">ezInternal::NewInstance</a></div><div class="ttdef"><b>Definition</b> Allocator_inl.h:18</div></div>
-<div class="ttc" id="astructez_trait_int_htm"><div class="ttname"><a href="../../d6/d09/structez_trait_int.htm">ezTraitInt</a></div><div class="ttdoc">Type traits.</div><div class="ttdef"><b>Definition</b> TypeTraits.h:12</div></div>
+<div class="ttc" id="astructez_trait_int_htm"><div class="ttname"><a href="../../d6/d09/structez_trait_int.htm">ezTraitInt</a></div><div class="ttdoc">Compile-time type classification system for optimizing container operations.</div><div class="ttdef"><b>Definition</b> TypeTraits.h:22</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.htm">home</a></li><li class="navelem"><a class="el" href="../../dir_1036706e55c22cab35bc1c58ee689f1d.htm">runner</a></li><li class="navelem"><a class="el" href="../../dir_629f8151d55d307162ff2d619fb1783d.htm">work</a></li><li class="navelem"><a class="el" href="../../dir_915904df4e2c9d6aaec5e4f68658d2dd.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_5c4c7e4a15e643c7da040f906f2ba5c5.htm">ezEngine</a></li><li class="navelem"><a class="el" href="../../dir_d9e5f712eee30f228fb2a3d56da53e33.htm">Code</a></li><li class="navelem"><a class="el" href="../../dir_5471e92246f162412d7d0c81097fb3f4.htm">Engine</a></li><li class="navelem"><a class="el" href="../../dir_a38a3ced8161f20ff6bf34f1243b8348.htm">Foundation</a></li><li class="navelem"><a class="el" href="../../dir_adb0ac2a169525f5fa05f0527c58e205.htm">Memory</a></li><li class="navelem"><a class="el" href="../../dir_2b61d82766792ebb24827eac69b772f5.htm">Implementation</a></li><li class="navelem"><b>Allocator_inl.h</b></li>
-    <li class="footer">Generated on Tue Aug 26 2025 05:00:57 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Mar 1 2026 20:20:38 for ezEngine by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>
